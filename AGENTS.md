@@ -38,6 +38,10 @@ Patch releases such as `8.4.1` or `8.4.2` do not normally receive separate gramm
 6. **Maintain semantic parity.**
    - The `.ebnf` and `.md` files for a PHP version must describe the same accepted language syntax.
 
+7. **Keep every version standalone.**
+   - Each PHP grammar version must be complete, standalone, and independently consumable.
+   - A version's canonical grammar must not depend on another version through inheritance, includes, overlays, patches, or diffs.
+
 ## Repository Structure
 
 Expected structure:
@@ -101,6 +105,45 @@ If a patch release appears to require a syntax-level grammar change:
 
 Repository releases and Git tags are independent of PHP language versions.
 
+## Standalone Version Grammars
+
+Each:
+
+```text
+grammar/<version>/php.ebnf
+```
+
+must fully define the syntax for that PHP major.minor version.
+
+Each:
+
+```text
+grammar/<version>/php.md
+```
+
+must fully document that version's grammar.
+
+A consumer must be able to use a version grammar directly, for example:
+
+```text
+grammar/8.5/php.ebnf
+```
+
+without loading any other PHP grammar version.
+
+Do not use version-to-version dependency constructs such as:
+
+- `extends 8.4`
+- `include ../8.4/php.ebnf`
+- "same as PHP 8.4 except..."
+- delta, overlay, or patch files required to reconstruct the grammar
+
+Cross-version comparison is allowed for research, review, and change documentation, but the final canonical grammar and Markdown documentation for each version must remain self-contained.
+
+Historical versions must remain independently accurate. Do not rewrite an older grammar merely to share structure with a newer version.
+
+Version differences may be documented separately for convenience, but such documentation is non-canonical and must never be required to reconstruct a version's grammar.
+
 ## EBNF Requirements
 
 Follow the EBNF dialect and conventions defined in `docs/grammar-conventions.md`.
@@ -120,7 +163,7 @@ The canonical grammar should remain consumable by general-purpose tooling.
 
 ## Grammar Organization
 
-Prefer a single canonical file per PHP version:
+Prefer a single complete canonical file per PHP version:
 
 ```text
 grammar/<version>/php.ebnf
@@ -142,7 +185,7 @@ Organize the file internally into logical sections such as:
 
 Do not split the canonical grammar into many files unless there is a demonstrated tooling or maintenance need.
 
-If modular source files are introduced later, the repository should still provide an assembled canonical `php.ebnf` artifact for each supported PHP version.
+If modular source files are introduced later, the repository must still provide a complete assembled canonical `php.ebnf` artifact for each supported PHP version. The assembled artifact must not require another PHP version's grammar to be loaded.
 
 ## Human-Readable Markdown
 
@@ -152,7 +195,7 @@ Each:
 grammar/<version>/php.md
 ```
 
-must describe the same grammar as:
+must fully document and describe the same grammar as:
 
 ```text
 grammar/<version>/php.ebnf
@@ -189,16 +232,18 @@ Do not silently copy grammar from an unrelated third-party grammar implementatio
 
 When adding a new major/minor PHP version:
 
-1. copy the previous version as a starting point when appropriate;
+1. copy the previous version as a working starting point when appropriate;
 2. identify all accepted syntax changes for the new PHP version;
 3. verify changes against primary sources;
-4. update the canonical EBNF;
-5. update the corresponding Markdown;
+4. update the canonical EBNF so the committed result is a complete independent grammar;
+5. update the corresponding Markdown so the committed result fully documents that version;
 6. add or update valid and invalid fixtures;
 7. verify existing syntax that should remain compatible;
 8. document important differences from the previous PHP version.
 
 Do not assume that a new PHP version differs only by the published headline features.
+
+Do not commit a new version as an extension, include, overlay, patch, or diff against an older version.
 
 ## Tests and Conformance
 
@@ -244,6 +289,8 @@ A change to the grammar may affect downstream parsers and tools even when it loo
 A correction to an older PHP grammar version is allowed when the existing grammar is demonstrably wrong.
 
 Do not change historical grammar merely to match a newer PHP version.
+
+Do not change historical grammar merely to share structure or reduce duplication with newer versions.
 
 For corrections:
 
