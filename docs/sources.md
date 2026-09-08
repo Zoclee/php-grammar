@@ -250,9 +250,9 @@ For example:
 ```markdown
 ## Sources
 
-- PHP 8.4 parser grammar
-- Accepted RFC: Property Hooks
-- PHP 8.4 migration guide
+- PHP 8.5 parser grammar
+- Accepted RFC: Pipe Operator v3
+- PHP 8.5 migration guide
 - Relevant upstream parser tests
 ```
 

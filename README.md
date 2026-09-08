@@ -34,10 +34,10 @@ The intended project layout is:
 
 ```text
 grammar/
-  8.4/
+  8.5/
     php.ebnf
     php.md
-  8.5/
+  8.6/
     php.ebnf
     php.md
   9.0/
@@ -60,12 +60,12 @@ tests/
 Grammar versions correspond to PHP major/minor language releases:
 
 ```text
-grammar/8.4/php.ebnf
 grammar/8.5/php.ebnf
+grammar/8.6/php.ebnf
 grammar/9.0/php.ebnf
 ```
 
-Patch releases such as `8.4.1` or `8.4.2` do not normally receive separate grammar directories. A patch-specific grammar should only be introduced when PHP syntax materially differs between patch releases and that difference is verified against authoritative sources.
+Patch releases such as `8.5.1` or `8.5.2` do not normally receive separate grammar directories. A patch-specific grammar should only be introduced when PHP syntax materially differs between patch releases and that difference is verified against authoritative sources.
 
 Repository releases are independent of PHP language versions. A project release such as `v0.2.0` may contain new grammar versions, corrections to existing grammars, documentation updates, tooling changes, or tests.
 

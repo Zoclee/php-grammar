@@ -417,7 +417,7 @@ When syntax changes between versions, update the affected production in the appr
 Version-specific comments may be used where helpful:
 
 ```ebnf
-(* Available in PHP 8.4 and later. *)
+(* Available in PHP 8.5 and later. *)
 ```
 
 However, the grammar itself must remain correct without relying on the comment.

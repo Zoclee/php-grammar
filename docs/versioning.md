@@ -9,8 +9,8 @@ Grammar versions correspond to PHP **major.minor** language releases.
 Examples:
 
 ```text
-8.4
 8.5
+8.6
 9.0
 9.1
 ```
@@ -24,16 +24,16 @@ grammar/<major.minor>/
 For example:
 
 ```text
-grammar/8.4/
 grammar/8.5/
+grammar/8.6/
 grammar/9.0/
 ```
 
 Each directory contains the canonical grammar and its human-readable representation:
 
 ```text
-grammar/8.4/php.ebnf
-grammar/8.4/php.md
+grammar/8.5/php.ebnf
+grammar/8.5/php.md
 ```
 
 ## 2. Patch Releases
@@ -43,9 +43,9 @@ PHP patch releases do not normally receive separate grammar directories.
 For example, these should not normally exist:
 
 ```text
-grammar/8.4.1/
-grammar/8.4.2/
-grammar/8.4.3/
+grammar/8.5.1/
+grammar/8.5.2/
+grammar/8.5.3/
 ```
 
 Patch releases generally contain bug fixes and implementation corrections rather than intentional changes to PHP language syntax.
@@ -68,8 +68,8 @@ Create a new grammar directory for each PHP release that introduces a new major 
 For example:
 
 ```text
-grammar/8.4/
 grammar/8.5/
+grammar/8.6/
 grammar/9.0/
 ```
 
@@ -92,17 +92,17 @@ Published grammar files may be corrected when they are demonstrably inaccurate.
 For example, if:
 
 ```text
-grammar/8.4/php.ebnf
+grammar/8.5/php.ebnf
 ```
 
-incorrectly rejects syntax that PHP 8.4 accepts, the PHP 8.4 grammar should be corrected.
+incorrectly rejects syntax that PHP 8.5 accepts, the PHP 8.5 grammar should be corrected.
 
 Such a correction does not create a new PHP grammar version.
 
 The directory remains:
 
 ```text
-grammar/8.4/
+grammar/8.5/
 ```
 
 A correction should:
@@ -122,8 +122,8 @@ PHP grammar versions and repository release versions are independent.
 PHP grammar versions identify the language being described:
 
 ```text
-8.4
 8.5
+8.6
 9.0
 ```
 
@@ -187,7 +187,7 @@ grammar/8.5/php.ebnf
 may accept syntax that:
 
 ```text
-grammar/8.4/php.ebnf
+grammar/8.5/php.ebnf
 ```
 
 must reject.
@@ -225,10 +225,10 @@ Suggested statuses are:
 
 Status should not change the grammar's version identifier.
 
-For example, PHP 8.4 remains:
+For example, PHP 8.5 remains:
 
 ```text
-8.4
+8.5
 ```
 
 whether its repository status is draft, stable, or historical.
@@ -240,8 +240,8 @@ The repository should avoid using an unversioned grammar as the only canonical r
 Consumers should reference an explicit PHP version:
 
 ```text
-grammar/8.4/php.ebnf
 grammar/8.5/php.ebnf
+grammar/8.6/php.ebnf
 ```
 
 If a convenience alias such as `latest` is introduced, it must resolve to a specific PHP major.minor grammar and must not replace versioned paths.
