@@ -118,6 +118,20 @@ For grammar changes:
 
 Each versioned grammar must remain complete and standalone. Do not implement a grammar version as an overlay, diff, include, or extension of another PHP version.
 
+## Running Fixture Tests
+
+Use the PHP CLI fixture runner:
+
+```bash
+php tools/run-fixtures.php
+php tools/run-fixtures.php 8.5
+php tools/run-fixtures.php --version=8.5 --php=/path/to/php8.5
+```
+
+The runner executes `php -l` against every `valid` and `invalid` fixture,
+reports per-file results, and prints a `passed/total` summary. Use a PHP binary
+for the grammar version being tested.
+
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE).
