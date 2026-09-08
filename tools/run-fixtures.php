@@ -58,6 +58,13 @@ function normalizePath(string $path): string
     return str_replace(DIRECTORY_SEPARATOR, '/', $path);
 }
 
+function colorizeStatus(string $status, bool $passed): string
+{
+    $color = $passed ? "\033[32m" : "\033[31m";
+
+    return '[' . $color . $status . "\033[0m" . ']';
+}
+
 function discoverVersions(): array
 {
     $root = fixtureRoot();
@@ -250,10 +257,10 @@ foreach ($versions as $version) {
 
         $expected = $result->expectedPass ? 'valid' : 'invalid';
         $actual = $result->actualPass ? 'accepted' : 'rejected';
-        $status = $ok ? 'PASS' : 'FAIL';
+        $status = colorizeStatus($ok ? 'PASS' : 'FAIL', $ok);
 
         echo sprintf(
-            "  [%s] %s expected %s, got %s\n",
+            "  %s %s expected %s, got %s\n",
             $status,
             normalizePath($result->path),
             $expected,
