@@ -302,6 +302,11 @@ They cover lexical constructs, names and namespaces, literals, types,
 expression precedence, statements, functions and closures, classes, interfaces,
 traits, enums, attributes, declarations, and PHP 8.5-specific syntax.
 
+Phase 1 repository tests validate the canonical `php.ebnf` file directly with
+the project EBNF parser and integrity validator. These PHP source fixtures are
+retained for later conformance phases and are not linted with the installed PHP
+CLI as part of grammar validation.
+
 ## Known Limitations
 
 The grammar is implementation-neutral EBNF and intentionally avoids copying

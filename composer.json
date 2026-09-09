@@ -1,0 +1,25 @@
+{
+    "name": "php-grammar/php-grammar",
+    "description": "Versioned EBNF grammars and human-readable specifications for PHP language syntax.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PhpGrammar\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhpGrammar\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

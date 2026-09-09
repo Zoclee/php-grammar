@@ -49,10 +49,18 @@ docs/
   sources.md
   versioning.md
 
+src/
+  Ebnf/
+    Lexer.php
+    Parser.php
+    Validation/
+
 tests/
   fixtures/
-    valid/
-    invalid/
+    ebnf/
+    <version>/
+      valid/
+      invalid/
 ```
 
 ## Versioning Model
@@ -118,19 +126,27 @@ For grammar changes:
 
 Each versioned grammar must remain complete and standalone. Do not implement a grammar version as an overlay, diff, include, or extension of another PHP version.
 
-## Running Fixture Tests
+## Testing
 
-Use the PHP CLI fixture runner:
+Phase 1 tests validate this repository's canonical EBNF files directly. They do
+not use `php -l`, the installed PHP parser, or the local PHP version to decide
+whether PHP source syntax is valid.
+
+Install dependencies and run the PHPUnit suite:
 
 ```bash
-php tools/run-fixtures.php
-php tools/run-fixtures.php 8.5
-php tools/run-fixtures.php --version=8.5 --php=/path/to/php8.5
+composer install
+composer test
 ```
 
-The runner executes `php -l` against every `valid` and `invalid` fixture,
-reports per-file results, and prints a `passed/total` summary. Use a PHP binary
-for the grammar version being tested.
+The Phase 1 suite parses every `grammar/<version>/php.ebnf` file with the
+project's EBNF parser and validates grammar integrity, including malformed EBNF,
+duplicate productions, undefined references, unreachable productions, the
+required root production, production naming, and unintended empty productions.
+
+The PHP files under `tests/fixtures/<version>/` remain representative source
+examples for later conformance phases. They are not used as an oracle for Phase
+1 grammar correctness.
 
 ## License
 

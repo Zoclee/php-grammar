@@ -1,0 +1,8 @@
+source-file =
+    item ;
+
+item =
+    "a" ;
+
+item =
+    "b" ;

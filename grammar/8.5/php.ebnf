@@ -110,16 +110,16 @@ name-identifier =
     semi-reserved-identifier ;
 
 namespace-declaration-name =
-    name-identifier , { "\" , name-identifier } ;
+    name-identifier , { "\\" , name-identifier } ;
 
 qualified-name =
-    name-identifier , { "\" , name-identifier } ;
+    name-identifier , { "\\" , name-identifier } ;
 
 fully-qualified-name =
-    "\" , qualified-name ;
+    "\\" , qualified-name ;
 
 namespace-relative-name =
-    "namespace" , "\" , qualified-name ;
+    "namespace" , "\\" , qualified-name ;
 
 name =
       qualified-name
@@ -470,11 +470,6 @@ variable-expression =
     | variable-expression , nullsafe-object-operator , member-name ;
 
 member-name =
-      identifier
-    | "{" , expression , "}"
-    | variable-expression ;
-
-property-name =
       identifier
     | "{" , expression , "}"
     | variable-expression ;
@@ -991,10 +986,10 @@ legacy-namespace-name =
     | fully-qualified-name ;
 
 group-use-declaration =
-    legacy-namespace-name , "\" , "{" , unprefixed-use-declaration-list , [ "," ] , "}" ;
+    legacy-namespace-name , "\\" , "{" , unprefixed-use-declaration-list , [ "," ] , "}" ;
 
 mixed-group-use-declaration =
-    legacy-namespace-name , "\" , "{" , inline-use-declaration-list , [ "," ] , "}" ;
+    legacy-namespace-name , "\\" , "{" , inline-use-declaration-list , [ "," ] , "}" ;
 
 unprefixed-use-declaration-list =
     unprefixed-use-declaration , { "," , unprefixed-use-declaration } ;
@@ -1078,7 +1073,7 @@ nowdoc-character =
     source-character ;
 
 escape-sequence =
-    "\" , source-character ;
+    "\\" , source-character ;
 
 whitespace-character =
       " "
@@ -1108,3 +1103,9 @@ any-source-code-unit =
 
 source-text-code-unit =
     code-unit ;
+
+code-unit =
+    implementation-defined-code-unit ;
+
+implementation-defined-code-unit =
+    "<implementation-defined-source-code-unit>" ;
