@@ -17,7 +17,7 @@ final class Lexer
         '=', '|', '^', '&', '+', '-', '*', '/', '.', '%', '!', '~', '<', '>', '?', '@',
     ];
 
-    private const PUNCTUATION = [';', ':', ',', '(', ')', '[', ']', '{', '}', '\\'];
+    private const PUNCTUATION = [';', ':', ',', '(', ')', '[', ']', '{', '}', '\\', '$'];
 
     public function __construct(
         private readonly PhpVersion $version,
@@ -122,7 +122,10 @@ final class Lexer
             return $this->consumeHereString($state);
         }
 
-        foreach (['(int)', '(float)', '(string)', '(array)', '(object)', '(bool)', '(unset)', '(void)'] as $cast) {
+        foreach ([
+            '(integer)', '(double)', '(boolean)',
+            '(binary)', '(int)', '(float)', '(string)', '(array)', '(object)', '(bool)', '(void)',
+        ] as $cast) {
             if ($state->startsWith($cast)) {
                 return $state->consume(strlen($cast), TokenType::Operator);
             }
@@ -163,6 +166,10 @@ final class Lexer
     {
         $length = 0;
         while (!$state->atEnd($length) && !in_array($state->charAt($length), ["\r", "\n"], true)) {
+            if ($state->charAt($length) === '?' && $state->charAt($length + 1) === '>') {
+                break;
+            }
+
             $length++;
         }
 

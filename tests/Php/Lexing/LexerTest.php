@@ -49,6 +49,16 @@ final class LexerTest extends TestCase
         self::assertSame(TokenType::Variable, $tokens[6]->type);
     }
 
+    public function testTokenizesContextualFromAsIdentifierAndDieAsKeyword(): void
+    {
+        $tokens = Lexer::forPhp85()->tokenize('<?php from die')->withoutTrivia()->all();
+
+        self::assertSame(TokenType::Identifier, $tokens[1]->type);
+        self::assertSame('from', $tokens[1]->lexeme);
+        self::assertSame(TokenType::Keyword, $tokens[2]->type);
+        self::assertSame('die', $tokens[2]->lexeme);
+    }
+
     #[DataProvider('numericLiteralProvider')]
     public function testTokenizesNumericLiterals(string $source, TokenType $expectedType): void
     {
@@ -67,6 +77,9 @@ final class LexerTest extends TestCase
         yield 'binary integer' => ['0b1010_0101', TokenType::IntegerLiteral];
         yield 'explicit octal integer' => ['0o755', TokenType::IntegerLiteral];
         yield 'hex integer' => ['0xCAFE', TokenType::IntegerLiteral];
+        yield 'uppercase binary integer' => ['0B1010', TokenType::IntegerLiteral];
+        yield 'uppercase explicit octal integer' => ['0O755', TokenType::IntegerLiteral];
+        yield 'uppercase hex integer' => ['0XCAFE', TokenType::IntegerLiteral];
         yield 'decimal float' => ['1.25', TokenType::FloatingLiteral];
         yield 'leading-dot float' => ['.5', TokenType::FloatingLiteral];
         yield 'exponent float' => ['1e-3', TokenType::FloatingLiteral];
@@ -92,6 +105,29 @@ final class LexerTest extends TestCase
         self::assertContains(TokenType::Whitespace, array_map(static fn ($token): TokenType => $token->type, $tokens));
         self::assertContains(TokenType::DocComment, array_map(static fn ($token): TokenType => $token->type, $tokens));
         self::assertSame(3, count(array_filter($tokens, static fn ($token): bool => $token->type === TokenType::Comment)));
+    }
+
+    public function testLineCommentsEndBeforeCloseTag(): void
+    {
+        $tokens = Lexer::forPhp85()->tokenize("<?php // comment ?>tail")->all();
+
+        self::assertSame(['<?php', ' ', '// comment ', '?>', 'tail'], array_map(static fn ($token): string => $token->lexeme, $tokens));
+        self::assertSame(TokenType::CloseTag, $tokens[3]->type);
+        self::assertSame(TokenType::InlineHtml, $tokens[4]->type);
+    }
+
+    public function testTokenizesCastAliasesButNotUnsetCast(): void
+    {
+        $tokens = Lexer::forPhp85()->tokenize('<?php (integer) (double) (boolean) (binary) (unset)')->withoutTrivia()->all();
+
+        self::assertSame(TokenType::Operator, $tokens[1]->type);
+        self::assertSame(TokenType::Operator, $tokens[2]->type);
+        self::assertSame(TokenType::Operator, $tokens[3]->type);
+        self::assertSame(TokenType::Operator, $tokens[4]->type);
+        self::assertSame('(', $tokens[5]->lexeme);
+        self::assertSame(TokenType::Keyword, $tokens[6]->type);
+        self::assertSame('unset', $tokens[6]->lexeme);
+        self::assertSame(')', $tokens[7]->lexeme);
     }
 
     public function testTokenizesRepresentativeStringForms(): void

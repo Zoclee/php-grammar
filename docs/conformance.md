@@ -19,6 +19,11 @@ PHP source
 The installed PHP interpreter is not used as an oracle. Tests do not call
 `php -l`, `token_get_all()`, or subprocesses for grammar correctness.
 
+The project conformance target is valid PHP language syntax for the selected
+major/minor version. It is not "whatever the installed PHP binary accepts," and
+it is also not every intermediate form that the upstream Zend parser can reduce
+before later compile-time contextual validation.
+
 ## Token Contract
 
 Syntactic EBNF literals match token lexemes. For example, `"function"`, `"|"`,
@@ -28,6 +33,27 @@ Lexical productions such as `identifier`, `variable`, `integer-literal`,
 `floating-literal`, `string-literal`, `heredoc-string`, and `inline-html-text`
 are matched by PHP-specific token category primitives. Whitespace, comments,
 and doc comments are trivia and are removed before syntactic grammar matching.
+
+The PHP source-mode boundary is lexical, not an ambiguous EBNF preference.
+Inline HTML is emitted only outside PHP mode. `<?php`, `<?=`, and
+configuration-enabled `<?` enter PHP mode; `?>` leaves PHP mode and can also
+serve as a statement terminator where PHP permits it. The echo opening tag
+matches an expression list, so forms such as `<?= $a, $b ?>` are tested without
+using the local PHP interpreter.
+
+Identifier primitives distinguish ordinary identifiers from contextual name
+positions. Hard language constructs such as `unset` and `list` do not become
+ordinary callable names merely because a grammar position asks for a
+`name-identifier`. Numeric literal primitives validate the exact token lexeme
+for decimal, binary, octal, explicit octal, hexadecimal, and floating literal
+subclasses, including separator placement.
+
+Some PHP validity checks are contextual and remain outside ordinary EBNF:
+heredoc/nowdoc opening and closing label equality, flexible heredoc indentation,
+duplicate modifiers, impossible type combinations, invalid attribute targets,
+and callable validity for the pipe operator. These are syntax-adjacent
+compile-time checks, not runtime semantics, and should be enforced by a future
+contextual validation layer when the repository grows one.
 
 ## Fixture Layout
 

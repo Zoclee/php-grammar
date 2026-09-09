@@ -233,6 +233,29 @@ syntax-only: semantic analysis, type checking, name resolution, runtime
 behavior, installed-PHP comparisons, and cross-version boundary checks are out
 of scope.
 
+PHP 8.5 audit remediation follows this conformance boundary: the canonical
+grammar describes valid PHP 8.5 language syntax, not every intermediate form the
+Zend parser can reduce before contextual validation. The PHP lexer and
+conformance adapter now model PHP/HTML source-mode transitions explicitly,
+including `<?php`, `<?=`, `?>`, inline HTML, close tags as statement
+terminators, and configuration-dependent short open tags. Lexical primitives
+distinguish ordinary identifiers from contextual name keywords, validate numeric
+literal subclasses by lexeme, and keep `code-unit` as the byte-oriented source
+primitive for uninterpreted lexical regions.
+
+The PHP 8.5 grammar has been tightened around expression precedence,
+dereferenceability, argument lists, destructuring assignments, variable
+variables, statement target restrictions, property hooks, typed class constants,
+trait adaptations, casts, nullable/DNF type syntax, and constant-expression
+syntax. Restrictions that are not reasonably expressible in ordinary EBNF, such
+as exact heredoc label equality, flexible heredoc indentation, duplicate
+modifiers, impossible type combinations, and some compile-time contextual
+checks, are documented as contextual constraints rather than treated as runtime
+semantics.
+
+See [docs/php85-audit-remediation.md](docs/php85-audit-remediation.md) for the
+Phase 2 audit disposition checklist.
+
 Grammar coverage reporting measures which EBNF productions and branches are
 exercised by conformance inputs. It is separate from PHP code coverage. The
 coverage command reports production coverage, alternative coverage, attempted

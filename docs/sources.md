@@ -217,6 +217,13 @@ When researching a rule, distinguish between:
 
 Canonical EBNF should describe syntax, not unrelated semantic restrictions.
 
+For PHP conformance in this repository, canonical grammar targets valid PHP
+language syntax for the selected major/minor release. A form accepted by
+`zend_language_parser.y` before later contextual validation is not automatically
+valid source syntax. When the upstream parser and valid-language boundary differ,
+record whether the repository fixed the EBNF, fixed lexer/tokenization, fixed
+the conformance adapter, or documented an explicit contextual constraint.
+
 ## 14. Recording Sources
 
 Material grammar changes should be traceable.

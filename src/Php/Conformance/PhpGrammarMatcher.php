@@ -96,14 +96,16 @@ final readonly class PhpGrammarMatcher
             'code-unit' => static fn (Input $input, int $offset): array => $offset < $input->length() ? [$offset + 1] : [],
             'inline-html-text' => self::tokenTypeMatcher(TokenType::InlineHtml),
             'identifier' => self::tokenTypeMatcher(TokenType::Identifier),
+            'semi-reserved-identifier' => self::semiReservedIdentifierMatcher(),
+            'name-identifier' => self::semiReservedIdentifierMatcher(),
             'variable' => self::tokenTypeMatcher(TokenType::Variable),
             'integer-literal' => self::tokenTypeMatcher(TokenType::IntegerLiteral),
-            'decimal-integer-literal' => self::tokenTypeMatcher(TokenType::IntegerLiteral),
-            'binary-integer-literal' => self::tokenTypeMatcher(TokenType::IntegerLiteral),
-            'octal-integer-literal' => self::tokenTypeMatcher(TokenType::IntegerLiteral),
-            'explicit-octal-integer-literal' => self::tokenTypeMatcher(TokenType::IntegerLiteral),
-            'hexadecimal-integer-literal' => self::tokenTypeMatcher(TokenType::IntegerLiteral),
-            'floating-literal' => self::tokenTypeMatcher(TokenType::FloatingLiteral),
+            'decimal-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^(?:0|[1-9](?:_?[0-9])*)$/'),
+            'binary-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^0[bB][01](?:_?[01])*$/'),
+            'octal-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^0[0-7](?:_?[0-7])*$/'),
+            'explicit-octal-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^0[oO][0-7](?:_?[0-7])*$/'),
+            'hexadecimal-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^0[xX][0-9A-Fa-f](?:_?[0-9A-Fa-f])*$/'),
+            'floating-literal' => self::lexemeMatcher(TokenType::FloatingLiteral, '/^(?:(?:[0-9](?:_?[0-9])*)?\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\.(?:[0-9](?:_?[0-9])*)?)(?:[eE][+-]?[0-9](?:_?[0-9])*)?$|^[0-9](?:_?[0-9])*[eE][+-]?[0-9](?:_?[0-9])*$/'),
             'string-literal' => self::tokenTypesMatcher(TokenType::StringLiteral, TokenType::HeredocString, TokenType::NowdocString),
             'single-quoted-string' => self::tokenTypeMatcher(TokenType::StringLiteral),
             'double-quoted-string' => self::tokenTypeMatcher(TokenType::StringLiteral),
@@ -125,6 +127,37 @@ final readonly class PhpGrammarMatcher
             }
 
             return in_array($input->tokenAt($offset)->type, $types, true) ? [$offset + 1] : [];
+        };
+    }
+
+    private static function lexemeMatcher(TokenType $type, string $pattern): callable
+    {
+        return static function (Input $input, int $offset) use ($type, $pattern): array {
+            if (!$input instanceof PhpGrammarInput || $offset >= $input->length()) {
+                return [];
+            }
+
+            $token = $input->tokenAt($offset);
+            return $token->type === $type && preg_match($pattern, $token->lexeme) === 1 ? [$offset + 1] : [];
+        };
+    }
+
+    private static function semiReservedIdentifierMatcher(): callable
+    {
+        return static function (Input $input, int $offset): array {
+            if (!$input instanceof PhpGrammarInput || $offset >= $input->length()) {
+                return [];
+            }
+
+            $token = $input->tokenAt($offset);
+            if ($token->type === TokenType::Identifier) {
+                return [$offset + 1];
+            }
+
+            $allowedContextualKeywords = ['enum' => true, 'readonly' => true];
+            return $token->type === TokenType::Keyword && isset($allowedContextualKeywords[strtolower($token->lexeme)])
+                ? [$offset + 1]
+                : [];
         };
     }
 }

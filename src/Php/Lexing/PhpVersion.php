@@ -31,7 +31,7 @@ final readonly class PhpVersion
             'print', 'private', 'protected', 'public', 'readonly',
             'require', 'require_once', 'return', 'static', 'switch',
             'throw', 'trait', 'try', 'unset', 'use', 'var',
-            'while', 'xor', 'yield', 'from',
+            'while', 'xor', 'yield', 'die',
         ];
 
         return new self('8.5', array_fill_keys($keywords, true));

@@ -5,16 +5,19 @@ in `php.ebnf`. The `.ebnf` file is authoritative; this Markdown describes the
 same standalone language target and records the source evidence used to compile
 it.
 
-The grammar is complete as a direct PHP 8.5 source syntax specification. It does
-not include, extend, or depend on another PHP version.
+The grammar is a direct PHP 8.5 source syntax specification. It describes valid
+PHP 8.5 language syntax, not every intermediate form the Zend parser can reduce
+before later contextual validation. It does not include, extend, or depend on
+another PHP version.
 
 ## Source Unit
 
 A PHP source file is modeled as a sequence of inline HTML regions and PHP code
 regions. PHP code begins with an opening tag, either `<?php`, `<?`, or the echo
 opening tag `<?=`. A closing tag `?>` is optional at the end of a PHP code
-region. The echo opening tag is represented as an expression-producing code
-region equivalent to an echo expression in source syntax.
+region and can act as a statement terminator where PHP permits that. The echo
+opening tag accepts an expression list, so `<?= $a, $b ?>` is represented
+directly instead of relying on PHP CLI behavior.
 
 Top-level PHP code accepts statements, attributed declarations, namespace
 declarations, namespace import declarations, global constants, and
@@ -74,9 +77,10 @@ The grammar covers PHP 8.5 type syntax, including:
 - intersection types;
 - disjunctive-normal-form style unions containing parenthesized intersections.
 
-Parameter types use `type-without-static` to preserve the parser's restriction
-that `static` is not accepted as a parameter type. Return types and property
-types use `type`.
+Parameter and property types use `type-without-static` to preserve PHP's
+restriction that `static` is not accepted in those positions. Return types may
+use `static`. Nullable types apply to simple types; nullable parenthesized
+intersections such as `?(A&B)` are not valid PHP 8.5 syntax.
 
 The grammar describes syntax only. It does not encode semantic restrictions such
 as duplicate union members, impossible type combinations, or class existence.
@@ -86,6 +90,9 @@ as duplicate union members, impossible type combinations, or class existence.
 Expression precedence is represented by layered productions:
 
 ```text
+logical-or-expression
+logical-xor-expression
+logical-and-expression
 assignment-expression
 conditional-expression
 coalesce-expression
@@ -101,6 +108,7 @@ concatenation-expression
 shift-expression
 additive-expression
 multiplicative-expression
+power-expression
 instanceof-expression
 unary-expression
 postfix-expression
@@ -110,17 +118,24 @@ primary-expression
 This ordering places PHP 8.5 `|>` tighter than relational comparisons and looser
 than concatenation, matching the PHP 8.5 parser precedence declarations.
 
-The grammar covers assignments, compound assignments, reference assignments,
+The grammar covers textual `or`, `xor`, and `and`, assignments, compound
+assignments, reference assignments,
 conditional and coalesce expressions, logical and bitwise operators, equality
 and relational operators, the pipe operator, concatenation, shifts, arithmetic,
-`instanceof`, unary operators, casts, postfix access, calls, object and nullsafe
+right-associative exponentiation, `instanceof`, unary operators, casts, postfix
+access, calls, object and nullsafe
 object access, static access, array access, increments, `yield`, `yield from`,
 `throw`, include/require forms, `print`, closures, arrow functions, `match`,
 arrays, lists, constants, class constants, object creation, cloning, `isset`,
 `empty`, `eval`, `exit`, and backticks.
 
+Equality and relational operators are modeled as non-associative grammar levels,
+so chained forms such as `$a == $b == $c` and `$a < $b < $c` are rejected by the
+canonical grammar. `??` and `**` are modeled as right-associative.
+
 Function and method calls also include the first-class callable argument-list
-form `...`.
+form `...`. The bare `...` form is the entire argument list and is not mixed
+with ordinary arguments.
 
 ### PHP 8.5 Pipe Operator
 
@@ -151,10 +166,12 @@ adding it to `cast-expression`.
 
 ### Constant Expressions
 
-The grammar allows the PHP 8.5 constant-expression surface to include closures,
-first-class callables, and casts. Whether a particular expression is permitted
-in a given constant-expression context may still involve compile-time semantic
-validation beyond syntax.
+The grammar uses a restricted constant-expression hierarchy rather than aliasing
+constant expressions to all expressions. Assignments, `yield`, `throw`,
+include/require, and other non-constant expression forms are not accepted in
+constant-expression productions. PHP 8.5 constant-expression additions such as
+closures, first-class callables, arrays, and casts are represented where they
+are syntactic forms; additional compile-time checks remain contextual.
 
 ## Statements
 
@@ -163,8 +180,13 @@ Statements include block statements, ordinary and alternative `if`, `while`,
 expression statements, `(void)` discard statements, echo, global, static,
 unset, return, throw, break, continue, goto, labels, and empty statements.
 
-Switch cases accept either `:` or `;` after `case` and `default`. The semicolon
-form remains syntactically accepted in PHP 8.5 even though it is deprecated.
+`unset` targets are variable forms rather than arbitrary expressions. `foreach`
+key and value targets use foreach-variable forms, including destructuring.
+`for` condition lists are separated from initializer/increment expression lists
+so `(void)` discard syntax is not accepted in the condition slot. Switch case
+lists support PHP's optional leading semicolon form. Switch cases accept either
+`:` or `;` after `case` and `default`; the semicolon form remains syntactically
+accepted in PHP 8.5 even though it is deprecated.
 
 ## Functions And Closures
 
@@ -176,10 +198,11 @@ function-declaration =
     return-type , compound-statement ;
 ```
 
-Anonymous functions support optional `static`, by-reference returns, parameter
-lists, lexical `use (...)` variables, return types, and compound bodies. Arrow
-functions support optional `static`, by-reference returns, parameter lists,
-return types, and a single expression body.
+Anonymous functions support attributes, optional `static`, by-reference returns,
+parameter lists, non-empty lexical `use (...)` variables, return types, and
+compound bodies. Arrow functions support attributes, optional `static`,
+by-reference returns, parameter lists, return types, and a single expression
+body.
 
 Parameters support attributes, visibility and promotion modifiers, final
 promotion, readonly promotion, by-reference passing, variadics, default values,
@@ -203,11 +226,21 @@ PHP 8.5 extends asymmetric visibility to static properties and permits final
 constructor property promotion; both forms are represented in the modifier
 productions.
 
+Ordinary property declarations and hooked property declarations are distinct.
+An ordinary property declaration contains a property list and ends in `;`; a
+hooked property declaration contains exactly one property with a hook block and
+does not have a trailing semicolon after the hook block. Unmodified class
+properties such as `$foo;` are not valid PHP 8.5 syntax.
+
+Class constant declarations place the optional type after `const` and before
+the shared constant list, as in `const int X = 1, Y = 2;`.
+
 ## Interfaces
 
-Interfaces may extend one or more interfaces and contain method declarations and
-class constant declarations. Attributes may appear on interface declarations,
-methods, and constants where the parser accepts attributed declarations.
+Interfaces may extend one or more interfaces and contain method declarations,
+class constant declarations, and PHP 8.4+ hooked property declarations.
+Attributes may appear on interface declarations, methods, constants, and
+properties where the parser accepts attributed declarations.
 
 ## Traits
 
@@ -221,6 +254,10 @@ use A, B {
     B::method as private alias;
 }
 ```
+
+Trait use declarations are either `use T;` or `use T { ... }`; the adaptation
+block form does not carry an additional outer semicolon. Attributes are not
+attached to trait-use declarations.
 
 ## Enums
 
@@ -250,13 +287,14 @@ attribute grammar.
 - `|>` pipe operator with its PHP 8.5 precedence position.
 - `(void)` discard syntax as a statement and in `for` expression lists.
 - Constant-expression expansion for closures, first-class callables, and casts.
+- Deprecated-but-valid cast aliases `(integer)`, `(double)`, `(boolean)`, and
+  `(binary)`; `(unset)` is not valid PHP 8.5 syntax.
 - Attributes on compile-time non-class constants.
 - `#[NoDiscard]` and `#[DelayedTargetValidation]` as ordinary attribute names.
 - Static properties with asymmetric visibility.
 - Final constructor property promotion.
 - `__PROPERTY__` magic constant.
 - `clone(...)` function-style syntax and clone first-class callable syntax.
-
 ## Source Evidence
 
 Primary evidence used for this PHP 8.5 grammar:

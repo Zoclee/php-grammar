@@ -16,7 +16,7 @@ open-tag =
     | "<?" ;
 
 echo-open-tag =
-    "<?=" , expression , [ ";" ] ;
+    "<?=" , expression-list , [ ";" ] ;
 
 close-tag =
     "?>" ;
@@ -81,8 +81,12 @@ variable =
     "$" , identifier ;
 
 variable-variable =
-      "$" , variable
+      "$" , variable-like
     | "$" , "{" , expression , "}" ;
+
+variable-like =
+      variable
+    | variable-variable ;
 
 label =
     identifier ;
@@ -93,6 +97,7 @@ reserved-keyword =
     | "continue" | "declare" | "default" | "do" | "echo" | "else"
     | "elseif" | "empty" | "enddeclare" | "endfor" | "endforeach"
     | "endif" | "endswitch" | "endwhile" | "enum" | "eval" | "exit"
+    | "die"
     | "extends" | "final" | "finally" | "fn" | "for" | "foreach"
     | "function" | "global" | "goto" | "if" | "implements" | "include"
     | "include_once" | "instanceof" | "insteadof" | "interface"
@@ -100,7 +105,7 @@ reserved-keyword =
     | "print" | "private" | "protected" | "public" | "readonly"
     | "require" | "require_once" | "return" | "static" | "switch"
     | "throw" | "trait" | "try" | "unset" | "use" | "var"
-    | "while" | "xor" | "yield" | "from" ;
+    | "while" | "xor" | "yield" ;
 
 semi-reserved-identifier =
       reserved-keyword
@@ -138,19 +143,20 @@ integer-literal =
     | hexadecimal-integer-literal ;
 
 decimal-integer-literal =
-    decimal-digit-nonzero , { numeric-separator-or-decimal-digit } ;
+      "0"
+    | decimal-digit-nonzero , { [ numeric-separator ] , decimal-digit } ;
 
 binary-integer-literal =
-    "0b" , binary-digit , { numeric-separator-or-binary-digit } ;
+    ( "0b" | "0B" ) , binary-digit , { [ numeric-separator ] , binary-digit } ;
 
 octal-integer-literal =
-    "0" , octal-digit , { numeric-separator-or-octal-digit } ;
+    "0" , octal-digit , { [ numeric-separator ] , octal-digit } ;
 
 explicit-octal-integer-literal =
-    "0o" , octal-digit , { numeric-separator-or-octal-digit } ;
+    ( "0o" | "0O" ) , octal-digit , { [ numeric-separator ] , octal-digit } ;
 
 hexadecimal-integer-literal =
-    "0x" , hexadecimal-digit , { numeric-separator-or-hexadecimal-digit } ;
+    ( "0x" | "0X" ) , hexadecimal-digit , { [ numeric-separator ] , hexadecimal-digit } ;
 
 floating-literal =
       decimal-digits , "." , [ decimal-digits ] , [ exponent-part ]
@@ -161,26 +167,10 @@ exponent-part =
     exponent-marker , [ "+" | "-" ] , decimal-digits ;
 
 decimal-digits =
-    decimal-digit , { numeric-separator-or-decimal-digit } ;
+    decimal-digit , { [ numeric-separator ] , decimal-digit } ;
 
 numeric-separator =
     "_" ;
-
-numeric-separator-or-decimal-digit =
-      decimal-digit
-    | numeric-separator ;
-
-numeric-separator-or-binary-digit =
-      binary-digit
-    | numeric-separator ;
-
-numeric-separator-or-octal-digit =
-      octal-digit
-    | numeric-separator ;
-
-numeric-separator-or-hexadecimal-digit =
-      hexadecimal-digit
-    | numeric-separator ;
 
 string-literal =
       single-quoted-string
@@ -269,9 +259,6 @@ type =
     | nullable-type
     | simple-type ;
 
-optional-type =
-    [ type ] ;
-
 optional-type-without-static =
     [ type-without-static ] ;
 
@@ -292,10 +279,10 @@ simple-type-without-static =
     | "false" | "true" | "self" | "parent" | name ;
 
 nullable-type =
-    "?" , ( simple-type | parenthesized-intersection-type ) ;
+    "?" , simple-type ;
 
 nullable-type-without-static =
-    "?" , ( simple-type-without-static | parenthesized-intersection-type-without-static ) ;
+    "?" , simple-type-without-static ;
 
 union-type =
     union-type-element , "|" , union-type-element , { "|" , union-type-element } ;
@@ -329,16 +316,122 @@ return-type =
     [ ":" , type ] ;
 
 constant-expression =
-    expression ;
+    constant-coalesce-expression ;
+
+constant-coalesce-expression =
+    constant-conditional-expression , [ "??" , constant-coalesce-expression ] ;
+
+constant-conditional-expression =
+      constant-logical-or-expression
+    | constant-logical-or-expression , "?" , constant-expression , ":" , constant-conditional-expression ;
+
+constant-logical-or-expression =
+    constant-logical-xor-expression , { "or" , constant-logical-xor-expression } ;
+
+constant-logical-xor-expression =
+    constant-logical-and-expression , { "xor" , constant-logical-and-expression } ;
+
+constant-logical-and-expression =
+    constant-boolean-or-expression , { "and" , constant-boolean-or-expression } ;
+
+constant-boolean-or-expression =
+    constant-boolean-and-expression , { "||" , constant-boolean-and-expression } ;
+
+constant-boolean-and-expression =
+    constant-bitwise-or-expression , { "&&" , constant-bitwise-or-expression } ;
+
+constant-bitwise-or-expression =
+    constant-bitwise-xor-expression , { "|" , constant-bitwise-xor-expression } ;
+
+constant-bitwise-xor-expression =
+    constant-bitwise-and-expression , { "^" , constant-bitwise-and-expression } ;
+
+constant-bitwise-and-expression =
+    constant-equality-expression , { "&" , constant-equality-expression } ;
+
+constant-equality-expression =
+    constant-relational-expression ,
+    [ ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , constant-relational-expression ] ;
+
+constant-relational-expression =
+    constant-concatenation-expression ,
+    [ ( "<" | "<=" | ">" | ">=" ) , constant-concatenation-expression ] ;
+
+constant-concatenation-expression =
+    constant-shift-expression , { "." , constant-shift-expression } ;
+
+constant-shift-expression =
+    constant-additive-expression , { ( "<<" | ">>" ) , constant-additive-expression } ;
+
+constant-additive-expression =
+    constant-multiplicative-expression , { ( "+" | "-" ) , constant-multiplicative-expression } ;
+
+constant-multiplicative-expression =
+    constant-power-expression , { ( "*" | "/" | "%" ) , constant-power-expression } ;
+
+constant-power-expression =
+    constant-unary-expression , [ "**" , constant-power-expression ] ;
+
+constant-unary-expression =
+      constant-primary-expression
+    | "+" , constant-unary-expression
+    | "-" , constant-unary-expression
+    | "!" , constant-unary-expression
+    | "~" , constant-unary-expression
+    | constant-cast-expression ;
+
+constant-cast-expression =
+      "(int)" , constant-unary-expression
+    | "(integer)" , constant-unary-expression
+    | "(float)" , constant-unary-expression
+    | "(double)" , constant-unary-expression
+    | "(string)" , constant-unary-expression
+    | "(binary)" , constant-unary-expression
+    | "(array)" , constant-unary-expression
+    | "(object)" , constant-unary-expression
+    | "(bool)" , constant-unary-expression
+    | "(boolean)" , constant-unary-expression ;
+
+constant-primary-expression =
+      literal
+    | constant
+    | class-constant
+    | magic-constant
+    | "(" , constant-expression , ")"
+    | array-creation-constant-expression
+    | [ attribute-groups ] , [ "static" ] , "function" , [ "&" ] ,
+      "(" , parameter-list , ")" , [ lexical-variable-list ] , return-type ,
+      compound-statement ;
+
+array-creation-constant-expression =
+      "array" , "(" , constant-array-pair-list , ")"
+    | "[" , constant-array-pair-list , "]" ;
+
+constant-array-pair-list =
+    [ constant-array-pair , { "," , [ constant-array-pair ] } , [ "," ] ] ;
+
+constant-array-pair =
+      constant-expression
+    | constant-expression , "=>" , constant-expression
+    | "..." , constant-expression ;
 
 expression =
-    assignment-expression ;
+    logical-or-expression ;
+
+logical-or-expression =
+    logical-xor-expression , { "or" , logical-xor-expression } ;
+
+logical-xor-expression =
+    logical-and-expression , { "xor" , logical-and-expression } ;
+
+logical-and-expression =
+    assignment-expression , { "and" , assignment-expression } ;
 
 assignment-expression =
       conditional-expression
     | variable-expression , assignment-operator , assignment-expression
-    | variable-expression , "=" , "&" , variable-expression
-    | "clone" , clone-argument-list ;
+    | list-expression , "=" , assignment-expression
+    | variable-expression , "=" , "&" , variable-expression ;
 
 assignment-operator =
       "=" | "+=" | "-=" | "*=" | "/=" | ".=" | "%="
@@ -349,7 +442,7 @@ conditional-expression =
     | coalesce-expression , "?" , [ expression ] , ":" , conditional-expression ;
 
 coalesce-expression =
-    boolean-or-expression , { "??" , boolean-or-expression } ;
+    boolean-or-expression , [ "??" , coalesce-expression ] ;
 
 boolean-or-expression =
     boolean-and-expression , { "||" , boolean-and-expression } ;
@@ -368,11 +461,11 @@ bitwise-and-expression =
 
 equality-expression =
     relational-expression ,
-    { ( "==" | "!=" | "===" | "!==" | "<=>" ) , relational-expression } ;
+    [ ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , relational-expression ] ;
 
 relational-expression =
     pipe-expression ,
-    { ( "<" | "<=" | ">" | ">=" ) , pipe-expression } ;
+    [ ( "<" | "<=" | ">" | ">=" ) , pipe-expression ] ;
 
 pipe-expression =
     concatenation-expression , { "|>" , concatenation-expression } ;
@@ -387,19 +480,26 @@ additive-expression =
     multiplicative-expression , { ( "+" | "-" ) , multiplicative-expression } ;
 
 multiplicative-expression =
-    instanceof-expression , { ( "*" | "/" | "%" ) , instanceof-expression } ;
+    power-expression , { ( "*" | "/" | "%" ) , power-expression } ;
+
+power-expression =
+    instanceof-expression , [ "**" , power-expression ] ;
 
 instanceof-expression =
     unary-expression , [ "instanceof" , class-name-reference ] ;
 
 unary-expression =
       postfix-expression
+    | "++" , variable-expression
+    | "--" , variable-expression
     | "+" , unary-expression
     | "-" , unary-expression
     | "!" , unary-expression
     | "~" , unary-expression
     | "@" , unary-expression
     | cast-expression
+    | "clone" , unary-expression
+    | "clone" , clone-argument-list
     | "print" , unary-expression
     | "yield"
     | "yield" , expression
@@ -413,22 +513,43 @@ unary-expression =
 
 cast-expression =
       "(int)" , unary-expression
+    | "(integer)" , unary-expression
     | "(float)" , unary-expression
+    | "(double)" , unary-expression
     | "(string)" , unary-expression
+    | "(binary)" , unary-expression
     | "(array)" , unary-expression
     | "(object)" , unary-expression
     | "(bool)" , unary-expression
-    | "(unset)" , unary-expression ;
+    | "(boolean)" , unary-expression ;
 
 void-cast-statement =
     "(void)" , expression , ";" ;
 
 postfix-expression =
-    primary-expression , { postfix-operation } ;
+      fully-dereferenceable-expression , { postfix-operation }
+    | callable-expression , argument-list , { postfix-operation }
+    | primary-expression ;
+
+fully-dereferenceable-expression =
+      variable-expression
+    | function-call
+    | array-creation-expression
+    | string-literal
+    | "(" , expression , ")"
+    | "new" , class-name-reference , [ argument-list ]
+    | "new" , anonymous-class ;
+
+callable-expression =
+      variable-expression
+    | "(" , expression , ")"
+    | array-creation-expression
+    | string-literal
+    | "new" , class-name-reference , [ argument-list ]
+    | "new" , anonymous-class ;
 
 postfix-operation =
       "[" , [ expression ] , "]"
-    | "{" , expression , "}"
     | object-operator , member-name
     | nullsafe-object-operator , member-name
     | object-operator , member-name , argument-list
@@ -445,19 +566,18 @@ primary-expression =
     | function-call
     | literal
     | array-creation-expression
-    | list-expression
     | constant
     | class-constant
     | magic-constant
     | "(" , expression , ")"
     | "new" , class-name-reference , [ argument-list ]
     | "new" , anonymous-class
-    | "clone" , expression
     | "`" , backtick-string-part-list , "`"
     | "isset" , "(" , expression-list , [ "," ] , ")"
     | "empty" , "(" , expression , ")"
     | "eval" , "(" , expression , ")"
-    | "exit" , [ argument-list ] ;
+    | "exit" , [ argument-list ]
+    | "die" , [ argument-list ] ;
 
 variable-expression =
       variable
@@ -472,7 +592,7 @@ variable-expression =
 member-name =
       identifier
     | "{" , expression , "}"
-    | variable-expression ;
+    | variable ;
 
 object-operator =
     "->" ;
@@ -501,17 +621,11 @@ function-call =
     | variable-expression , argument-list ;
 
 argument-list =
-    "(" , [ argument , { "," , argument } , [ "," ] ] , ")" ;
+      "(" , "..." , ")"
+    | "(" , [ argument , { "," , argument } , [ "," ] ] , ")" ;
 
 clone-argument-list =
-      "(" , ")"
-    | "(" , clone-argument , { "," , argument } , [ "," ] , ")"
-    | "(" , expression , "," , ")"
-    | "(" , "..." , ")" ;
-
-clone-argument =
-      expression , "," , argument
-    | argument-no-expression ;
+    "(" , expression , { "," , argument } , [ "," ] , ")" ;
 
 argument =
       expression
@@ -519,9 +633,7 @@ argument =
 
 argument-no-expression =
       name-identifier , ":" , expression
-    | name-identifier , ":" , "&" , variable-expression
-    | "..." , expression
-    | "..." ;
+    | "..." , expression ;
 
 expression-list =
     expression , { "," , expression } ;
@@ -559,22 +671,23 @@ match-arm-list =
     match-arm , { "," , match-arm } , [ "," ] ;
 
 match-arm =
-      match-arm-condition-list , "=>" , expression
-    | "default" , "=>" , expression ;
+      match-arm-condition-list , [ "," ] , "=>" , expression
+    | "default" , [ "," ] , "=>" , expression ;
 
 match-arm-condition-list =
     expression , { "," , expression } ;
 
 closure-expression =
-    [ "static" ] , "function" , [ "&" ] , "(" , parameter-list , ")" ,
-    [ lexical-variable-list ] , return-type , compound-statement ;
+    [ attribute-groups ] , [ "static" ] , "function" , [ "&" ] ,
+    "(" , parameter-list , ")" , [ lexical-variable-list ] , return-type ,
+    compound-statement ;
 
 arrow-function =
-    [ "static" ] , "fn" , [ "&" ] , "(" , parameter-list , ")" ,
-    return-type , "=>" , expression ;
+    [ attribute-groups ] , [ "static" ] , "fn" , [ "&" ] ,
+    "(" , parameter-list , ")" , return-type , "=>" , expression ;
 
 lexical-variable-list =
-    "use" , "(" , [ lexical-variable , { "," , lexical-variable } , [ "," ] ] , ")" ;
+    "use" , "(" , lexical-variable , { "," , lexical-variable } , [ "," ] , ")" ;
 
 lexical-variable =
       variable
@@ -623,10 +736,14 @@ inner-statement =
       | enum-declaration ) ;
 
 expression-statement =
-    [ expression ] , ";" ;
+    [ expression ] , statement-terminator ;
 
 echo-statement =
-    "echo" , expression-list , ";" ;
+    "echo" , expression-list , statement-terminator ;
+
+statement-terminator =
+      ";"
+    | close-tag ;
 
 global-statement =
     "global" , global-variable-list , ";" ;
@@ -649,7 +766,23 @@ static-variable =
     variable , [ "=" , constant-expression ] ;
 
 unset-statement =
-    "unset" , "(" , expression-list , [ "," ] , ")" , ";" ;
+    "unset" , "(" , unset-variable-list , [ "," ] , ")" , ";" ;
+
+unset-variable-list =
+    unset-variable , { "," , unset-variable } ;
+
+unset-variable =
+    unset-variable-root , { unset-variable-postfix } ;
+
+unset-variable-root =
+      variable
+    | variable-variable
+    | "$" , "{" , expression , "}" ;
+
+unset-variable-postfix =
+      "[" , [ expression ] , "]"
+    | object-operator , member-name
+    | nullsafe-object-operator , member-name ;
 
 return-statement =
     "return" , [ expression ] , ";" ;
@@ -700,9 +833,9 @@ do-statement =
     "do" , statement , "while" , "(" , expression , ")" , ";" ;
 
 for-statement =
-      "for" , "(" , for-expression-list , ";" , for-expression-list , ";" ,
+      "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
       for-expression-list , ")" , statement
-    | "for" , "(" , for-expression-list , ";" , for-expression-list , ";" ,
+    | "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
       for-expression-list , ")" , ":" , inner-statement-list , "endfor" , ";" ;
 
 for-expression-list =
@@ -711,6 +844,9 @@ for-expression-list =
 for-expression =
       expression
     | "(void)" , expression ;
+
+for-condition-expression-list =
+    [ expression , { "," , expression } ] ;
 
 foreach-statement =
       "foreach" , "(" , expression , "as" , foreach-target , ")" , statement
@@ -721,9 +857,12 @@ foreach-target =
     [ foreach-key , "=>" ] , foreach-value ;
 
 foreach-key =
-    expression ;
+    foreach-variable ;
 
 foreach-value =
+    foreach-variable ;
+
+foreach-variable =
       variable-expression
     | "&" , variable-expression
     | list-expression ;
@@ -734,12 +873,11 @@ switch-statement =
       "endswitch" , ";" ;
 
 switch-case-list =
-    { switch-case } ;
+    [ ";" ] , { switch-case } ;
 
 switch-case =
       "case" , expression , ( ":" | ";" ) , inner-statement-list
     | "default" , ( ":" | ";" ) , inner-statement-list ;
-
 declare-statement =
       "declare" , "(" , declare-directive-list , ")" , statement
     | "declare" , "(" , declare-directive-list , ")" , ":" ,
@@ -790,7 +928,7 @@ class-declaration =
     [ implements-clause ] , "{" , class-member-list , "}" ;
 
 anonymous-class =
-    class-modifiers , "class" , [ argument-list ] , [ extends-clause ] ,
+    [ attribute-groups ] , class-modifiers , "class" , [ argument-list ] , [ extends-clause ] ,
     [ implements-clause ] , "{" , class-member-list , "}" ;
 
 class-modifiers =
@@ -815,23 +953,25 @@ class-member =
       [ attribute-groups ] ,
       ( property-declaration
       | method-declaration
-      | class-constant-declaration
-      | trait-use-declaration )
-    | visibility-modifier , ";"
-    | ";" ;
+      | class-constant-declaration )
+    | trait-use-declaration ;
 
 property-declaration =
-    property-modifiers , optional-type , property-list , ";" ;
+      property-modifier-list , optional-type-without-static , property-list , ";"
+    | "var" , optional-type-without-static , property-list , ";"
+    | property-modifier-list , optional-type-without-static , hooked-property ;
+
+property-modifier-list =
+    property-modifier , { property-modifier } ;
 
 property-list =
     property-element , { "," , property-element } ;
 
 property-element =
-      variable , [ "=" , constant-expression ]
-    | hooked-property ;
+    variable , [ "=" , constant-expression ] ;
 
 hooked-property =
-    variable , [ "=" , expression ] , property-hook-block ;
+    variable , [ "=" , constant-expression ] , property-hook-block ;
 
 property-hook-block =
     "{" , property-hook-list , "}" ;
@@ -854,14 +994,11 @@ property-hook-modifiers =
 property-hook-modifier =
       "public" | "protected" | "private" | "final" ;
 
-property-modifiers =
-    { property-modifier } ;
-
 property-modifier =
-      visibility-modifier | set-visibility-modifier | "static" | "readonly" | "final" ;
+      property-visibility-modifier | set-visibility-modifier | "static" | "readonly" | "final" ;
 
-visibility-modifier =
-      "public" | "protected" | "private" | "var" ;
+property-visibility-modifier =
+      "public" | "protected" | "private" ;
 
 set-visibility-modifier =
       "public(set)" | "protected(set)" | "private(set)" ;
@@ -881,7 +1018,7 @@ method-body =
     | ";" ;
 
 class-constant-declaration =
-    class-constant-modifiers , "const" , class-constant-list , ";" ;
+    class-constant-modifiers , "const" , [ type ] , class-constant-list , ";" ;
 
 class-constant-modifiers =
     { class-constant-modifier } ;
@@ -893,7 +1030,7 @@ class-constant-list =
     class-constant-element , { "," , class-constant-element } ;
 
 class-constant-element =
-    identifier , [ ":" , type ] , "=" , constant-expression ;
+    identifier , "=" , constant-expression ;
 
 constant-declaration =
     "const" , constant-list , ";" ;
@@ -916,14 +1053,20 @@ interface-member-list =
 
 interface-member =
       [ attribute-groups ] ,
-      ( method-declaration | class-constant-declaration )
-    | ";" ;
+      ( method-declaration | class-constant-declaration | interface-property-declaration ) ;
+
+interface-property-declaration =
+    interface-property-modifiers , optional-type-without-static , hooked-property ;
+
+interface-property-modifiers =
+    property-visibility-modifier , { property-modifier } ;
 
 trait-declaration =
     "trait" , identifier , "{" , class-member-list , "}" ;
 
 trait-use-declaration =
-    "use" , name-list , [ trait-adaptation-block ] , ";" ;
+      "use" , name-list , ";"
+    | "use" , name-list , trait-adaptation-block ;
 
 trait-adaptation-block =
     "{" , { trait-adaptation } , "}" ;
