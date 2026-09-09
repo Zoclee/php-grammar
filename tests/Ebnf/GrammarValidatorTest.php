@@ -24,6 +24,13 @@ final class GrammarValidatorTest extends TestCase
         self::assertTrue($result->isValid(), implode(', ', $result->codes()));
     }
 
+    public function testAllowsConfiguredLexicalPrimitiveReferences(): void
+    {
+        $result = $this->validate('source-file = code-unit ;');
+
+        self::assertTrue($result->isValid(), implode(', ', $result->codes()));
+    }
+
     #[DataProvider('invalidGrammarProvider')]
     public function testReportsStructuralValidationErrors(string $source, string $expectedCode): void
     {

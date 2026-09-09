@@ -53,6 +53,7 @@ src/
   Ebnf/
     Lexer.php
     Parser.php
+    Matching/
     Validation/
 
 tests/
@@ -128,9 +129,9 @@ Each versioned grammar must remain complete and standalone. Do not implement a g
 
 ## Testing
 
-Phase 1 tests validate this repository's canonical EBNF files directly. They do
-not use `php -l`, the installed PHP parser, or the local PHP version to decide
-whether PHP source syntax is valid.
+The test suite validates this repository's canonical EBNF files directly. It
+does not use `php -l`, `token_get_all()`, the installed PHP parser, or the local
+PHP version to decide whether PHP source syntax is valid.
 
 Install dependencies and run the PHPUnit suite:
 
@@ -139,14 +140,43 @@ composer install
 composer test
 ```
 
-The Phase 1 suite parses every `grammar/<version>/php.ebnf` file with the
-project's EBNF parser and validates grammar integrity, including malformed EBNF,
-duplicate productions, undefined references, unreachable productions, the
-required root production, production naming, and unintended empty productions.
+Phase 1 parses every `grammar/<version>/php.ebnf` file with the project's EBNF
+parser and validates grammar integrity, including malformed EBNF, duplicate
+productions, undefined references, unreachable productions, the required root
+production, production naming, and unintended empty productions.
+
+Phase 2 adds a reusable EBNF matcher. It evaluates parsed grammar productions
+against input, supports complete-input matching from the root production, and
+can match an explicitly selected production:
+
+```php
+use PhpGrammar\Ebnf\Matching\Matcher;
+use PhpGrammar\Ebnf\Parser;
+
+$grammar = (new Parser())->parse(file_get_contents('grammar/8.5/php.ebnf'));
+$matcher = Matcher::withDefaultPrimitives();
+
+$result = $matcher->matches($grammar, $input);
+$operator = $matcher->matchesRule($grammar, 'object-operator', '->');
+```
+
+The matcher supports the repository EBNF constructs: references, sequences,
+alternatives, literals, groups, optionals, repetitions, and intentional empty
+constructs. It backtracks deterministically, requires full input consumption for
+success, guards recursive evaluations, and prevents zero-width repetition loops.
+Failed matches report the furthest input offset and expected literals or
+productions where practical.
+
+`code-unit` is treated as a lexical primitive by validation and matching rather
+than as an ordinary EBNF production. This follows the repository convention that
+low-level source text leaves are named categories instead of implementation
+regular expressions. The default matcher consumes one PHP string byte for
+`code-unit`; a future PHP lexical layer may replace that primitive behavior with
+version-independent source text handling.
 
 The PHP files under `tests/fixtures/<version>/` remain representative source
 examples for later conformance phases. They are not used as an oracle for Phase
-1 grammar correctness.
+1 or Phase 2 grammar correctness.
 
 ## License
 

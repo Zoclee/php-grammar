@@ -14,11 +14,13 @@ final readonly class GrammarValidator
     /**
      * @param non-empty-list<string> $reachabilityRoots
      * @param list<string> $allowedEmptyProductions
+     * @param list<string> $lexicalPrimitives
      */
     public function __construct(
         private string $requiredRoot = 'source-file',
         private array $reachabilityRoots = ['source-file', 'whitespace', 'comment'],
         private array $allowedEmptyProductions = [],
+        private array $lexicalPrimitives = ['code-unit'],
     ) {
     }
 
@@ -65,7 +67,7 @@ final readonly class GrammarValidator
 
         foreach ($productions as $production) {
             foreach ($production->references() as $reference) {
-                if (!array_key_exists($reference, $productionMap)) {
+                if (!array_key_exists($reference, $productionMap) && !in_array($reference, $this->lexicalPrimitives, true)) {
                     $errors[] = new ValidationError(
                         'undefined-production',
                         sprintf('Production "%s" references undefined production "%s".', $production->name, $reference),

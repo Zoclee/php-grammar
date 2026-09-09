@@ -566,6 +566,18 @@ A grammar change should be checked for at least:
 
 Tooling may impose additional validation, but must not redefine the canonical grammar dialect without updating this document.
 
+Some lexical leaves may be declared by convention as primitive source-text
+categories rather than ordinary productions. `code-unit` is currently such a
+primitive: it represents an implementation-level source text unit used by
+uninterpreted lexical regions. It is intentionally not expanded with ad hoc
+range notation in canonical EBNF. Validators and matchers may recognize this
+primitive explicitly while still reporting other undefined non-terminals.
+
+The Phase 2 EBNF matcher is a structural matcher for this EBNF dialect. It is
+useful for testing productions and small grammar fragments, but it is not a full
+PHP lexer or conformance runner. PHP-specific tokenization, source encodings,
+and version-boundary source fixture validation belong to later tooling phases.
+
 ## 31. Example Canonical Style
 
 ```ebnf

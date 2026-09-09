@@ -315,6 +315,12 @@ lexical categories rather than byte-level regular expressions, especially
 source encodings, heredoc indentation checks, and uninterpreted string/comment
 text.
 
+The `code-unit` reference at the bottom of the lexical grammar is a primitive
+source-text category for tooling, not an ordinary production expanded in
+`php.ebnf`. Phase 2 EBNF matching treats it as a configurable primitive that
+consumes one PHP string byte by default. Full version-independent PHP source
+lexing remains outside this grammar and is deferred to later conformance phases.
+
 The grammar describes syntax and not PHP's separate semantic validation phase.
 Examples include duplicate modifiers, invalid attribute targets, impossible type
 combinations, and callable validity for `|>`.

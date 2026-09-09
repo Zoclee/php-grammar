@@ -1103,9 +1103,3 @@ any-source-code-unit =
 
 source-text-code-unit =
     code-unit ;
-
-code-unit =
-    implementation-defined-code-unit ;
-
-implementation-defined-code-unit =
-    "<implementation-defined-source-code-unit>" ;
