@@ -580,6 +580,17 @@ that classifies PHP source into repository tokens without depending on the
 installed PHP interpreter. Full source conformance, source encoding policy, and
 version-boundary fixture validation belong to later tooling phases.
 
+Phase 4 source conformance uses a PHP-specific adapter between token streams and
+the generic matcher. Syntactic terminals match token lexemes. Lexical
+productions such as `identifier`, `variable`, and literal categories are matched
+by token category primitives. Trivia tokens are removed before syntactic
+matching. This adapter is implementation tooling; canonical EBNF should remain
+language-oriented and should not be rewritten merely to mirror token class names.
+
+Whole-source conformance fixtures live under `tests/fixtures/php/<version>/`.
+The older `tests/fixtures/<version>/` layout belonged to the PHP CLI lint-based
+strategy and should not be used for new grammar conformance tests.
+
 ## 31. Example Canonical Style
 
 ```ebnf

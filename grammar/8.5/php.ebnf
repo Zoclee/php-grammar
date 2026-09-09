@@ -520,7 +520,8 @@ argument =
 argument-no-expression =
       name-identifier , ":" , expression
     | name-identifier , ":" , "&" , variable-expression
-    | "..." , expression ;
+    | "..." , expression
+    | "..." ;
 
 expression-list =
     expression , { "," , expression } ;

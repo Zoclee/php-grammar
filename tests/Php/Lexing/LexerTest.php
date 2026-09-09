@@ -103,7 +103,9 @@ final class LexerTest extends TestCase
         self::assertSame("'single\\''", $tokens[1]->lexeme);
         self::assertSame(TokenType::StringLiteral, $tokens[2]->type);
         self::assertSame(TokenType::HeredocString, $tokens[3]->type);
-        self::assertSame(TokenType::NowdocString, $tokens[4]->type);
+        self::assertSame(TokenType::Punctuation, $tokens[4]->type);
+        self::assertSame(';', $tokens[4]->lexeme);
+        self::assertSame(TokenType::NowdocString, $tokens[5]->type);
     }
 
     public function testTracksSourceOffsetsLengthsAndLines(): void

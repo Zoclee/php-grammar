@@ -12,8 +12,9 @@ final class RepositoryLexerSmokeTest extends TestCase
 {
     public function testLexesCurrentPhp85FixturesWithoutInterpreterDependency(): void
     {
-        $root = dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'fixtures' . DIRECTORY_SEPARATOR . '8.5';
-        $paths = glob($root . DIRECTORY_SEPARATOR . '*' . DIRECTORY_SEPARATOR . '*.php') ?: [];
+        $root = dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'fixtures'
+            . DIRECTORY_SEPARATOR . 'php' . DIRECTORY_SEPARATOR . '8.5' . DIRECTORY_SEPARATOR . 'valid';
+        $paths = glob($root . DIRECTORY_SEPARATOR . '*.php') ?: [];
         self::assertNotSame([], $paths);
 
         $lexer = Lexer::forPhp85();

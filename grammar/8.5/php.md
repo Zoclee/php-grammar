@@ -119,6 +119,9 @@ object access, static access, array access, increments, `yield`, `yield from`,
 arrays, lists, constants, class constants, object creation, cloning, `isset`,
 `empty`, `eval`, `exit`, and backticks.
 
+Function and method calls also include the first-class callable argument-list
+form `...`.
+
 ### PHP 8.5 Pipe Operator
 
 PHP 8.5 adds the binary pipe operator:
@@ -294,8 +297,8 @@ Primary evidence used for this PHP 8.5 grammar:
 Representative fixtures are under:
 
 ```text
-tests/fixtures/8.5/valid/
-tests/fixtures/8.5/invalid/
+tests/fixtures/php/8.5/valid/
+tests/fixtures/php/8.5/invalid/
 ```
 
 They cover lexical constructs, names and namespaces, literals, types,
@@ -303,9 +306,10 @@ expression precedence, statements, functions and closures, classes, interfaces,
 traits, enums, attributes, declarations, and PHP 8.5-specific syntax.
 
 Phase 1 repository tests validate the canonical `php.ebnf` file directly with
-the project EBNF parser and integrity validator. These PHP source fixtures are
-retained for later conformance phases and are not linted with the installed PHP
-CLI as part of grammar validation.
+the project EBNF parser and integrity validator. Phase 4 conformance tests lex
+these PHP source fixtures with the repository-owned lexer and match them against
+the canonical EBNF. They are not linted with the installed PHP CLI as part of
+grammar validation.
 
 ## Known Limitations
 

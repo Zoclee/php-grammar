@@ -22,6 +22,7 @@ final readonly class Matcher
     public function __construct(
         private string $rootRule = 'source-file',
         private array $primitiveMatchers = [],
+        private bool $primitiveMatchersOverrideProductions = false,
     ) {
     }
 
@@ -121,15 +122,14 @@ final readonly class Matcher
             return [];
         }
 
+        if ($this->primitiveMatchersOverrideProductions && array_key_exists($rule, $this->primitiveMatchers)) {
+            return $this->matchPrimitive($rule, $offset, $context);
+        }
+
         $production = $grammar->productionMap()[$rule] ?? null;
         if ($production === null) {
             if (array_key_exists($rule, $this->primitiveMatchers)) {
-                $offsets = ($this->primitiveMatchers[$rule])($context->input, $offset);
-                if ($offsets === []) {
-                    $context->recordFailure($offset, $rule);
-                }
-
-                return $this->uniqueOffsets($offsets);
+                return $this->matchPrimitive($rule, $offset, $context);
             }
 
             $context->recordFailure($offset, $rule);
@@ -142,6 +142,19 @@ final readonly class Matcher
 
         $context->memo[$key] = $this->uniqueOffsets($offsets);
         return $context->memo[$key];
+    }
+
+    /**
+     * @return list<int>
+     */
+    private function matchPrimitive(string $rule, int $offset, MatchContext $context): array
+    {
+        $offsets = ($this->primitiveMatchers[$rule])($context->input, $offset);
+        if ($offsets === []) {
+            $context->recordFailure($offset, $rule);
+        }
+
+        return $this->uniqueOffsets($offsets);
     }
 
     /**
@@ -256,6 +269,10 @@ final readonly class Matcher
 
     private function literalFailureOffset(Input $input, int $offset, string $literal): int
     {
+        if (!$input instanceof StringInput) {
+            return $offset;
+        }
+
         if ($offset < $input->length() && $input->valueAt($offset) === $literal) {
             return $offset;
         }

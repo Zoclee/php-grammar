@@ -56,14 +56,16 @@ src/
     Matching/
     Validation/
   Php/
+    Conformance/
     Lexing/
 
 tests/
   fixtures/
     ebnf/
-    <version>/
-      valid/
-      invalid/
+    php/
+      <version>/
+        valid/
+        invalid/
 ```
 
 ## Versioning Model
@@ -189,12 +191,52 @@ means one raw source byte in the PHP source file. That matches PHP's byte-
 oriented scanner model for low-level source text categories and avoids inventing
 Unicode code point semantics that PHP's lexer does not impose. `StringInput`
 therefore exposes one byte per input offset, and the default `code-unit`
-primitive consumes one byte. A later conformance layer may add richer
-source-encoding policy without changing canonical grammar productions.
+primitive consumes one byte. A later source-encoding layer may add richer policy
+without changing canonical grammar productions.
 
-The PHP files under `tests/fixtures/<version>/` remain representative source
-examples for later conformance phases. They are not used as an oracle for Phase
-1, Phase 2, or Phase 3 grammar correctness.
+Phase 4 adds full PHP grammar conformance tests against the canonical EBNF:
+
+```text
+PHP source
+  -> repository PHP lexer
+  -> TokenStream
+  -> PHP grammar input adapter
+  -> generic EBNF matcher
+  -> grammar/<version>/php.ebnf
+```
+
+The grammar-to-token contract is explicit:
+
+- syntactic EBNF literals such as `"function"`, `"|"`, `"?>"`, and `"public"`
+  match token lexemes;
+- keywords are matched by their lexeme after the lexer classifies them as
+  keyword tokens;
+- punctuation and operators are matched by their exact lexeme;
+- lexical productions such as `identifier`, `variable`, `integer-literal`,
+  `floating-literal`, `string-literal`, `heredoc-string`, and
+  `inline-html-text` are matched by PHP-specific token category primitives;
+- whitespace, comments, and doc comments are trivia and are removed before
+  syntactic grammar matching;
+- raw `StringInput` and `code-unit` matching remain available for EBNF and
+  lexical leaf tests, while full PHP source conformance uses token input.
+
+Conformance fixtures live under:
+
+```text
+tests/fixtures/php/8.5/valid/
+tests/fixtures/php/8.5/invalid/
+```
+
+Whole-file tests call `PhpGrammarMatcher::matches('8.5', $source)` from
+`source-file`. Targeted rule-level tests call `matchesRule()` on PHP fragments;
+for non-root rules, the conformance layer lexes fragments in PHP-code mode
+without requiring each fragment to include an opening tag.
+
+The conformance suite proves that focused valid fixtures are accepted by the
+repository grammar and focused invalid fixtures are rejected by it. It remains
+syntax-only: semantic analysis, type checking, name resolution, runtime
+behavior, installed-PHP comparisons, and cross-version boundary checks are out
+of scope.
 
 ## License
 

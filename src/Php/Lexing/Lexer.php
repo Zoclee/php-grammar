@@ -93,6 +93,10 @@ final class Lexer
             return $this->consumeBlockComment($state, TokenType::DocComment);
         }
 
+        if ($state->startsWith('#[')) {
+            return $state->consume(2, TokenType::Punctuation);
+        }
+
         if ($state->startsWith('/*')) {
             return $this->consumeBlockComment($state, TokenType::Comment);
         }
@@ -111,6 +115,12 @@ final class Lexer
 
         if ($state->startsWith('<<<')) {
             return $this->consumeHereString($state);
+        }
+
+        foreach (['(int)', '(float)', '(string)', '(array)', '(object)', '(bool)', '(unset)', '(void)'] as $cast) {
+            if ($state->startsWith($cast)) {
+                return $state->consume(strlen($cast), TokenType::Operator);
+            }
         }
 
         if ($this->isNumberStart($state)) {
@@ -210,8 +220,8 @@ final class Lexer
         }
 
         $endOffset = $match[0][1] + strlen($match[0][0]);
-        if (str_starts_with($match[0][0], "\r\n")) {
-            $endOffset -= 0;
+        if (str_ends_with($match[0][0], ';')) {
+            $endOffset--;
         }
 
         return $state->consume($endOffset - $state->offset, $type);
