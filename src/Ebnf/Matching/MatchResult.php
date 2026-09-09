@@ -12,7 +12,7 @@ final readonly class MatchResult
     public function __construct(
         public bool $matched,
         public string $rule,
-        public string $input,
+        public Input $input,
         public int $furthestOffset,
         public array $expected,
     ) {

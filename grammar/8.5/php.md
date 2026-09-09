@@ -317,9 +317,11 @@ text.
 
 The `code-unit` reference at the bottom of the lexical grammar is a primitive
 source-text category for tooling, not an ordinary production expanded in
-`php.ebnf`. Phase 2 EBNF matching treats it as a configurable primitive that
-consumes one PHP string byte by default. Full version-independent PHP source
-lexing remains outside this grammar and is deferred to later conformance phases.
+`php.ebnf`. It denotes one raw source byte. The generic EBNF matcher consumes
+one byte for this primitive when matching `StringInput`, while the separate
+Phase 3 PHP lexer classifies byte ranges into repository-owned tokens. Full PHP
+source conformance and version-boundary fixture validation are deferred to later
+phases.
 
 The grammar describes syntax and not PHP's separate semantic validation phase.
 Examples include duplicate modifiers, invalid attribute targets, impossible type

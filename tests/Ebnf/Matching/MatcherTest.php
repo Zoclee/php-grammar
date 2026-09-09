@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PhpGrammar\Tests\Ebnf\Matching;
 
 use PhpGrammar\Ebnf\Matching\Matcher;
+use PhpGrammar\Ebnf\Matching\StringInput;
 use PhpGrammar\Ebnf\Parser;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -47,6 +48,14 @@ final class MatcherTest extends TestCase
         self::assertFalse($result->matched);
         self::assertSame(1, $result->furthestOffset);
         self::assertSame(['end of input'], $result->expected);
+    }
+
+    public function testAcceptsStringInputObject(): void
+    {
+        $grammar = (new Parser())->parse('source-file = "a" , "b" ;');
+        $result = Matcher::withDefaultPrimitives()->matches($grammar, new StringInput('ab'));
+
+        self::assertTrue($result->matched);
     }
 
     public function testMatchesSelectedRule(): void
@@ -114,6 +123,7 @@ final class MatcherTest extends TestCase
         $matcher = Matcher::withDefaultPrimitives();
 
         self::assertTrue($matcher->matches($grammar, 'ab')->matched);
+        self::assertTrue($matcher->matches($grammar, 'é')->matched);
         self::assertFalse($matcher->matches($grammar, 'a')->matched);
     }
 

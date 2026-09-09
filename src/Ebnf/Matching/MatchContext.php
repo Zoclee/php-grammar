@@ -18,7 +18,7 @@ final class MatchContext
     public int $furthestOffset = 0;
 
     public function __construct(
-        public readonly string $input,
+        public readonly Input $input,
     ) {
     }
 

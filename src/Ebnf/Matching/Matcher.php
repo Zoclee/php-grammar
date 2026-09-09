@@ -17,7 +17,7 @@ use PhpGrammar\Ebnf\SequenceNode;
 final readonly class Matcher
 {
     /**
-     * @param array<string, callable(string, int): list<int>> $primitiveMatchers
+     * @param array<string, callable(Input, int): list<int>> $primitiveMatchers
      */
     public function __construct(
         private string $rootRule = 'source-file',
@@ -28,22 +28,23 @@ final readonly class Matcher
     public static function withDefaultPrimitives(string $rootRule = 'source-file'): self
     {
         return new self($rootRule, [
-            'code-unit' => static function (string $input, int $offset): array {
-                return $offset < strlen($input) ? [$offset + 1] : [];
+            'code-unit' => static function (Input $input, int $offset): array {
+                return $offset < $input->length() ? [$offset + 1] : [];
             },
         ]);
     }
 
-    public function matches(Grammar $grammar, string $input): MatchResult
+    public function matches(Grammar $grammar, string|Input $input): MatchResult
     {
         return $this->matchesRule($grammar, $this->rootRule, $input);
     }
 
-    public function matchesRule(Grammar $grammar, string $rule, string $input): MatchResult
+    public function matchesRule(Grammar $grammar, string $rule, string|Input $input): MatchResult
     {
+        $input = is_string($input) ? new StringInput($input) : $input;
         $context = new MatchContext($input);
         $endOffsets = $this->matchReference($grammar, $rule, 0, $context);
-        $matched = in_array(strlen($input), $endOffsets, true);
+        $matched = in_array($input->length(), $endOffsets, true);
 
         if (!$matched && $endOffsets !== []) {
             $context->recordFailure(max($endOffsets), 'end of input');
@@ -53,7 +54,7 @@ final readonly class Matcher
             matched: $matched,
             rule: $rule,
             input: $input,
-            furthestOffset: $matched ? strlen($input) : $context->furthestOffset,
+            furthestOffset: $matched ? $input->length() : $context->furthestOffset,
             expected: $matched ? [] : $context->expected(),
         );
     }
@@ -68,8 +69,8 @@ final readonly class Matcher
         }
 
         if ($node instanceof LiteralNode) {
-            if (substr($context->input, $offset, strlen($node->value)) === $node->value) {
-                return [$offset + strlen($node->value)];
+            if ($this->literalMatches($context->input, $offset, $node->value)) {
+                return [$this->literalEndOffset($context->input, $offset, $node->value)];
             }
 
             $context->recordFailure(
@@ -216,11 +217,52 @@ final readonly class Matcher
         return $offsets;
     }
 
-    private function literalFailureOffset(string $input, int $offset, string $literal): int
+    private function literalMatches(Input $input, int $offset, string $literal): bool
     {
-        $limit = min(strlen($literal), strlen($input) - $offset);
+        if ($literal === '') {
+            return true;
+        }
+
+        if ($offset >= $input->length()) {
+            return false;
+        }
+
+        $value = $input->valueAt($offset);
+        if (is_string($value) && $value === $literal) {
+            return true;
+        }
+
+        if ($offset + strlen($literal) > $input->length()) {
+            return false;
+        }
+
+        for ($index = 0; $index < strlen($literal); $index++) {
+            if ($input->valueAt($offset + $index) !== $literal[$index]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private function literalEndOffset(Input $input, int $offset, string $literal): int
+    {
+        if ($offset < $input->length() && $input->valueAt($offset) === $literal) {
+            return $offset + 1;
+        }
+
+        return $offset + strlen($literal);
+    }
+
+    private function literalFailureOffset(Input $input, int $offset, string $literal): int
+    {
+        if ($offset < $input->length() && $input->valueAt($offset) === $literal) {
+            return $offset;
+        }
+
+        $limit = min(strlen($literal), $input->length() - $offset);
         for ($index = 0; $index < $limit; $index++) {
-            if ($input[$offset + $index] !== $literal[$index]) {
+            if ($input->valueAt($offset + $index) !== $literal[$index]) {
                 return $offset + $index;
             }
         }

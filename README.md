@@ -55,6 +55,8 @@ src/
     Parser.php
     Matching/
     Validation/
+  Php/
+    Lexing/
 
 tests/
   fixtures/
@@ -160,23 +162,39 @@ $result = $matcher->matches($grammar, $input);
 $operator = $matcher->matchesRule($grammar, 'object-operator', '->');
 ```
 
+Phase 3 refactors the matcher around a generic input abstraction. `StringInput`
+preserves the Phase 2 string behavior, and callers may still pass strings
+directly to the matcher. Internally, matching consumes input elements through
+`Input::length()` and `Input::valueAt()`, which keeps the EBNF layer reusable for
+future token-based inputs.
+
 The matcher supports the repository EBNF constructs: references, sequences,
-alternatives, literals, groups, optionals, repetitions, and intentional empty
-constructs. It backtracks deterministically, requires full input consumption for
-success, guards recursive evaluations, and prevents zero-width repetition loops.
-Failed matches report the furthest input offset and expected literals or
-productions where practical.
+alternatives, literals, groups, optionals, repetitions, intentional empty
+constructs, and configured lexical primitives. It backtracks deterministically,
+requires full input consumption for success, guards recursive evaluations, and
+prevents zero-width repetition loops. Failed matches report the furthest input
+offset and expected literals or productions where practical.
+
+Phase 3 also adds a repository-owned PHP lexical layer under `Php\Lexing`.
+It converts PHP source text into a `TokenStream` of project tokens without using
+`token_get_all()`, `php -l`, the installed PHP parser, or subprocesses. Tokens
+retain their type/category, exact lexeme, source offset, source length, line, and
+column. The PHP 8.5 lexer currently covers identifiers, variables, keywords,
+numeric literals, representative string forms, operators, punctuation,
+whitespace, comments, doc comments, inline HTML, and PHP open/close tags.
 
 `code-unit` is treated as a lexical primitive by validation and matching rather
-than as an ordinary EBNF production. This follows the repository convention that
-low-level source text leaves are named categories instead of implementation
-regular expressions. The default matcher consumes one PHP string byte for
-`code-unit`; a future PHP lexical layer may replace that primitive behavior with
-version-independent source text handling.
+than as an ordinary EBNF production. In this repository a code unit currently
+means one raw source byte in the PHP source file. That matches PHP's byte-
+oriented scanner model for low-level source text categories and avoids inventing
+Unicode code point semantics that PHP's lexer does not impose. `StringInput`
+therefore exposes one byte per input offset, and the default `code-unit`
+primitive consumes one byte. A later conformance layer may add richer
+source-encoding policy without changing canonical grammar productions.
 
 The PHP files under `tests/fixtures/<version>/` remain representative source
 examples for later conformance phases. They are not used as an oracle for Phase
-1 or Phase 2 grammar correctness.
+1, Phase 2, or Phase 3 grammar correctness.
 
 ## License
 
