@@ -329,6 +329,12 @@ When adding a new PHP major.minor grammar version, review at least:
 
 Compare the new grammar against the previous PHP version and account for every intentional syntax difference.
 
+When a syntax difference is version-specific, add a version-boundary fixture
+where practical. Boundary metadata should identify the feature, first supported
+version, optional last supported version, fixture source, and authoritative
+reference such as a PHP RFC, parser grammar, scanner source, migration guide, or
+official test.
+
 ## 21. Source Review for Grammar Corrections
 
 When correcting an existing grammar:

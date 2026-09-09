@@ -1,0 +1,15 @@
+{
+    "versions": [
+        {
+            "version": "8.5",
+            "rootProduction": "source-file",
+            "grammar": "grammar/8.5/php.ebnf",
+            "documentation": "grammar/8.5/php.md",
+            "conformanceFixtures": "tests/fixtures/php/8.5",
+            "lexer": "8.5"
+        }
+    ],
+    "lexicalPrimitives": [
+        "code-unit"
+    ]
+}

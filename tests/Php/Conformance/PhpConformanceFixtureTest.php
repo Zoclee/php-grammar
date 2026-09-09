@@ -5,18 +5,19 @@ declare(strict_types=1);
 namespace PhpGrammar\Tests\Php\Conformance;
 
 use PhpGrammar\Php\Conformance\PhpGrammarMatcher;
+use PhpGrammar\Repository\RepositoryManifest;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class PhpConformanceFixtureTest extends TestCase
 {
     #[DataProvider('validFixtureProvider')]
-    public function testPhp85ValidFixturesMatchCanonicalGrammar(string $path): void
+    public function testValidFixturesMatchCanonicalGrammar(string $version, string $path): void
     {
         $source = file_get_contents($path);
         self::assertIsString($source);
 
-        $result = self::matcher()->matches('8.5', $source);
+        $result = self::matcher()->matches($version, $source);
 
         self::assertTrue(
             $result->matched,
@@ -25,18 +26,18 @@ final class PhpConformanceFixtureTest extends TestCase
     }
 
     #[DataProvider('invalidFixtureProvider')]
-    public function testPhp85InvalidFixturesDoNotMatchCanonicalGrammar(string $path): void
+    public function testInvalidFixturesDoNotMatchCanonicalGrammar(string $version, string $path): void
     {
         $source = file_get_contents($path);
         self::assertIsString($source);
 
-        $result = self::matcher()->matches('8.5', $source);
+        $result = self::matcher()->matches($version, $source);
 
         self::assertFalse($result->matched, $path);
     }
 
     /**
-     * @return iterable<string, array{string}>
+     * @return iterable<string, array{string, string}>
      */
     public static function validFixtureProvider(): iterable
     {
@@ -44,7 +45,7 @@ final class PhpConformanceFixtureTest extends TestCase
     }
 
     /**
-     * @return iterable<string, array{string}>
+     * @return iterable<string, array{string, string}>
      */
     public static function invalidFixtureProvider(): iterable
     {
@@ -61,11 +62,13 @@ final class PhpConformanceFixtureTest extends TestCase
      */
     private static function fixtures(string $kind): iterable
     {
-        $root = dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'fixtures'
-            . DIRECTORY_SEPARATOR . 'php' . DIRECTORY_SEPARATOR . '8.5' . DIRECTORY_SEPARATOR . $kind;
+        $manifest = RepositoryManifest::fromRepositoryRoot(dirname(__DIR__, 3));
+        foreach ($manifest->packages() as $package) {
+            $root = $manifest->absolutePath($package->conformanceFixturePath) . DIRECTORY_SEPARATOR . $kind;
 
-        foreach (glob($root . DIRECTORY_SEPARATOR . '*.php') ?: [] as $path) {
-            yield basename($path) => [$path];
+            foreach (glob($root . DIRECTORY_SEPARATOR . '*.php') ?: [] as $path) {
+                yield $package->version . '/' . basename($path) => [$package->version, $path];
+            }
         }
     }
 }

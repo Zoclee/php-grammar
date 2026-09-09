@@ -21,12 +21,21 @@ Each supported PHP language version has its own directory:
 grammar/<major.minor>/
 ```
 
-For example:
+Supported versions are declared in the repository manifest:
 
 ```text
-grammar/8.5/
-grammar/8.6/
-grammar/9.0/
+php-grammar.json
+```
+
+The manifest is the source of truth for version discovery, grammar loading,
+conformance fixture discovery, lexer configuration, and version-boundary tests.
+Adding a grammar directory without adding a manifest entry is incomplete.
+Adding a manifest version without its required package files is invalid.
+
+For example, future repositories may contain packages such as:
+
+```text
+grammar/<major.minor>/
 ```
 
 Each directory contains the canonical grammar and its human-readable representation:
@@ -68,9 +77,7 @@ Create a new grammar directory for each PHP release that introduces a new major 
 For example:
 
 ```text
-grammar/8.5/
-grammar/8.6/
-grammar/9.0/
+grammar/<new-major.minor>/
 ```
 
 When adding a new version:
@@ -81,7 +88,9 @@ When adding a new version:
 4. update the canonical `.ebnf` grammar;
 5. update the corresponding `.md` documentation;
 6. add or update conformance fixtures;
-7. document meaningful differences from the previous PHP version.
+7. add the version package to `php-grammar.json`;
+8. add version-boundary fixtures for syntax introduced or removed in the new version;
+9. document meaningful differences from the previous PHP version.
 
 Do not assume that only headline language features affect the grammar.
 
@@ -122,9 +131,7 @@ PHP grammar versions and repository release versions are independent.
 PHP grammar versions identify the language being described:
 
 ```text
-8.5
-8.6
-9.0
+<major.minor>
 ```
 
 Repository versions identify releases of the `php-grammar` project itself:
@@ -178,7 +185,7 @@ A grammar version represents the syntax of one PHP major.minor language version.
 
 Compatibility between PHP versions must not be assumed.
 
-For example:
+For example, one version package:
 
 ```text
 grammar/8.5/php.ebnf
@@ -187,7 +194,7 @@ grammar/8.5/php.ebnf
 may accept syntax that:
 
 ```text
-grammar/8.5/php.ebnf
+grammar/<another-major.minor>/php.ebnf
 ```
 
 must reject.
@@ -241,7 +248,6 @@ Consumers should reference an explicit PHP version:
 
 ```text
 grammar/8.5/php.ebnf
-grammar/8.6/php.ebnf
 ```
 
 If a convenience alias such as `latest` is introduced, it must resolve to a specific PHP major.minor grammar and must not replace versioned paths.

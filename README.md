@@ -37,12 +37,6 @@ grammar/
   8.5/
     php.ebnf
     php.md
-  8.6/
-    php.ebnf
-    php.md
-  9.0/
-    php.ebnf
-    php.md
 
 docs/
   grammar-conventions.md
@@ -70,12 +64,11 @@ tests/
 
 ## Versioning Model
 
-Grammar versions correspond to PHP major/minor language releases:
+Grammar versions correspond to PHP major/minor language releases and are
+declared in `php-grammar.json`. The current manifest includes:
 
 ```text
 grammar/8.5/php.ebnf
-grammar/8.6/php.ebnf
-grammar/9.0/php.ebnf
 ```
 
 Patch releases such as `8.5.1` or `8.5.2` do not normally receive separate grammar directories. A patch-specific grammar should only be introduced when PHP syntax materially differs between patch releases and that difference is verified against authoritative sources.
@@ -237,6 +230,59 @@ repository grammar and focused invalid fixtures are rejected by it. It remains
 syntax-only: semantic analysis, type checking, name resolution, runtime
 behavior, installed-PHP comparisons, and cross-version boundary checks are out
 of scope.
+
+Phase 5 adds repository-wide version package validation and version-boundary
+test infrastructure. Supported grammar versions are declared in the repository
+manifest:
+
+```text
+php-grammar.json
+```
+
+That manifest is the source of truth for:
+
+- supported PHP grammar versions;
+- the root production for each version;
+- canonical EBNF and Markdown paths;
+- conformance fixture paths;
+- the PHP lexer configuration for each version;
+- shared lexical primitives such as `code-unit`.
+
+Every supported version package must include:
+
+```text
+grammar/<version>/php.ebnf
+grammar/<version>/php.md
+tests/fixtures/php/<version>/valid/
+tests/fixtures/php/<version>/invalid/
+```
+
+Each version remains complete and standalone. The manifest declares available
+packages; it does not introduce grammar inheritance, overlays, includes, or
+diff-based versioning.
+
+Version-boundary fixture infrastructure is available under:
+
+```text
+tests/fixtures/version-boundaries/
+```
+
+Boundary metadata can describe a syntax feature, its first supported version,
+an optional last supported version, the source snippet or fixture path, and an
+authoritative reference. With only PHP 8.5 currently present, no real
+cross-version boundary fixtures are required; the framework handles a
+single-version repository cleanly. When another grammar version is added,
+boundary fixtures should verify introduced or removed syntax across the
+manifest versions.
+
+When adding a new PHP grammar version:
+
+1. add `grammar/<version>/php.ebnf` and `grammar/<version>/php.md`;
+2. add `tests/fixtures/php/<version>/valid/` and `invalid/` fixtures;
+3. add or select the corresponding PHP lexer configuration;
+4. add the version package to `php-grammar.json`;
+5. add boundary fixtures for syntax introduced or removed across versions;
+6. run `composer test`.
 
 ## License
 

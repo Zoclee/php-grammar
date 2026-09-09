@@ -37,6 +37,14 @@ final readonly class PhpVersion
         return new self('8.5', array_fill_keys($keywords, true));
     }
 
+    public static function forVersion(string $version): self
+    {
+        return match ($version) {
+            '8.5' => self::php85(),
+            default => throw new LexerException(sprintf('No PHP lexical configuration exists for version "%s".', $version)),
+        };
+    }
+
     public function isKeyword(string $identifier): bool
     {
         return isset($this->keywords[strtolower($identifier)]);

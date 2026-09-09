@@ -7,15 +7,21 @@ namespace PhpGrammar\Php\Conformance;
 use PhpGrammar\Ebnf\Grammar;
 use PhpGrammar\Ebnf\Parser;
 use PhpGrammar\Ebnf\Validation\GrammarValidator;
+use PhpGrammar\Repository\RepositoryManifest;
 
 final class GrammarRepository
 {
     /** @var array<string, Grammar> */
     private array $cache = [];
 
+    private readonly RepositoryManifest $manifest;
+
     public function __construct(
-        private readonly string $repositoryRoot,
+        string|RepositoryManifest $repositoryRootOrManifest,
     ) {
+        $this->manifest = is_string($repositoryRootOrManifest)
+            ? RepositoryManifest::fromRepositoryRoot($repositoryRootOrManifest)
+            : $repositoryRootOrManifest;
     }
 
     public function load(string $version): Grammar
@@ -24,7 +30,8 @@ final class GrammarRepository
             return $this->cache[$version];
         }
 
-        $path = $this->repositoryRoot . DIRECTORY_SEPARATOR . 'grammar' . DIRECTORY_SEPARATOR . $version . DIRECTORY_SEPARATOR . 'php.ebnf';
+        $package = $this->manifest->package($version);
+        $path = $this->manifest->absolutePath($package->grammarPath);
         if (!is_file($path)) {
             throw new ConformanceException(sprintf('Unknown grammar version "%s".', $version));
         }
@@ -36,10 +43,10 @@ final class GrammarRepository
 
         $grammar = (new Parser())->parse($source);
         $result = (new GrammarValidator(
-            requiredRoot: 'source-file',
+            requiredRoot: $package->rootProduction,
             reachabilityRoots: ['source-file', 'whitespace', 'comment'],
             allowedEmptyProductions: self::allowedEmptyProductions(),
-            lexicalPrimitives: ['code-unit'],
+            lexicalPrimitives: $this->manifest->lexicalPrimitives(),
         ))->validate($grammar);
 
         if (!$result->isValid()) {
@@ -50,6 +57,11 @@ final class GrammarRepository
         }
 
         return $this->cache[$version] = $grammar;
+    }
+
+    public function manifest(): RepositoryManifest
+    {
+        return $this->manifest;
     }
 
     /**

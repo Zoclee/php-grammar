@@ -29,6 +29,11 @@ final class Lexer
         return new self(PhpVersion::php85());
     }
 
+    public static function forVersion(string $version): self
+    {
+        return new self(PhpVersion::forVersion($version));
+    }
+
     public function tokenize(string $source): TokenStream
     {
         $state = new LexerState($source);

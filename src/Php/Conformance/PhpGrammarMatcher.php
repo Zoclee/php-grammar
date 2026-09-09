@@ -12,6 +12,7 @@ use PhpGrammar\Php\Lexing\Lexer;
 use PhpGrammar\Php\Lexing\LexerException;
 use PhpGrammar\Php\Lexing\TokenStream;
 use PhpGrammar\Php\Lexing\TokenType;
+use PhpGrammar\Repository\RepositoryManifest;
 
 final readonly class PhpGrammarMatcher
 {
@@ -25,6 +26,11 @@ final readonly class PhpGrammarMatcher
         return new self(new GrammarRepository($repositoryRoot));
     }
 
+    public static function forManifest(RepositoryManifest $manifest): self
+    {
+        return new self(new GrammarRepository($manifest));
+    }
+
     public function matches(string $version, string $source): MatchResult
     {
         return $this->matchesRule($version, 'source-file', $source);
@@ -33,8 +39,9 @@ final readonly class PhpGrammarMatcher
     public function matchesRule(string $version, string $rule, string $source): MatchResult
     {
         $grammar = $this->grammars->load($version);
+        $lexer = $this->lexerFor($version);
         try {
-            $tokens = $this->tokenizeForRule($version, $rule, $source);
+            $tokens = $this->tokenizeForRule($lexer, $rule, $source);
         } catch (LexerException $exception) {
             return new MatchResult(false, $rule, new StringInput($source), 0, [$exception->getMessage()]);
         }
@@ -44,9 +51,8 @@ final readonly class PhpGrammarMatcher
         return $this->matcher($rule)->matchesRule($grammar, $rule, $input);
     }
 
-    private function tokenizeForRule(string $version, string $rule, string $source): TokenStream
+    private function tokenizeForRule(Lexer $lexer, string $rule, string $source): TokenStream
     {
-        $lexer = $this->lexerFor($version);
         if ($rule === 'source-file' || str_starts_with($source, '<?')) {
             return $lexer->tokenize($source)->withoutTrivia();
         }
@@ -59,10 +65,9 @@ final readonly class PhpGrammarMatcher
 
     private function lexerFor(string $version): Lexer
     {
-        return match ($version) {
-            '8.5' => Lexer::forPhp85(),
-            default => throw new ConformanceException(sprintf('No PHP lexer configured for grammar version "%s".', $version)),
-        };
+        $package = $this->grammars->manifest()->package($version);
+
+        return Lexer::forVersion($package->lexerVersion);
     }
 
     private function matcher(string $rootRule): Matcher
