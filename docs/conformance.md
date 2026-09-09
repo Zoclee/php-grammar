@@ -1,0 +1,88 @@
+# Conformance And Grammar Coverage
+
+This document describes repository-owned grammar conformance and coverage
+reporting.
+
+## Conformance Pipeline
+
+PHP source conformance uses this pipeline:
+
+```text
+PHP source
+  -> repository PHP lexer
+  -> TokenStream
+  -> PHP grammar input adapter
+  -> generic EBNF matcher
+  -> grammar/<version>/php.ebnf
+```
+
+The installed PHP interpreter is not used as an oracle. Tests do not call
+`php -l`, `token_get_all()`, or subprocesses for grammar correctness.
+
+## Token Contract
+
+Syntactic EBNF literals match token lexemes. For example, `"function"`, `"|"`,
+`"=>"`, and `";"` match tokens with those exact source lexemes.
+
+Lexical productions such as `identifier`, `variable`, `integer-literal`,
+`floating-literal`, `string-literal`, `heredoc-string`, and `inline-html-text`
+are matched by PHP-specific token category primitives. Whitespace, comments,
+and doc comments are trivia and are removed before syntactic grammar matching.
+
+## Fixture Layout
+
+Whole-source conformance fixtures live under:
+
+```text
+tests/fixtures/php/<version>/valid/
+tests/fixtures/php/<version>/invalid/
+```
+
+Valid fixtures must be accepted by the canonical grammar for that version.
+Invalid fixtures must be rejected by it. Fixtures should target syntax, not
+semantic errors such as missing classes, impossible type combinations, or
+runtime behavior.
+
+## Grammar Coverage
+
+Grammar coverage is not PHP code coverage. It measures which canonical EBNF
+productions and branch constructs are exercised by conformance inputs.
+
+The coverage command is:
+
+```bash
+composer grammar:coverage
+```
+
+The report currently includes:
+
+- production coverage;
+- alternative coverage;
+- attempted production count;
+- attempted alternative count;
+- uncovered production identities;
+- uncovered alternative identities.
+
+Stable coverage identities are derived from the parsed grammar. Productions use
+their production name. Alternatives, optionals, and repetitions use deterministic
+per-production counters such as:
+
+```text
+function-declaration
+function-declaration/alternative:1
+function-declaration/optional:2
+function-declaration/repetition:1
+```
+
+## Valid And Invalid Fixture Coverage
+
+Coverage distinguishes attempted traversal from successful coverage.
+
+Valid whole-file fixtures and selected rule-level samples contribute to both
+attempted and successfully matched coverage. Invalid fixtures contribute only to
+attempted coverage. This preserves useful information about grammar paths that
+were explored before rejection without allowing invalid source to make valid
+branches appear fully covered.
+
+Coverage percentages are informational in the current completeness phase. No
+minimum threshold is enforced yet.

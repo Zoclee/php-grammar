@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PhpGrammar\Php\Conformance;
 
+use PhpGrammar\Ebnf\Coverage\CoverageCollector;
 use PhpGrammar\Ebnf\Matching\Input;
 use PhpGrammar\Ebnf\Matching\Matcher;
 use PhpGrammar\Ebnf\Matching\MatchResult;
@@ -18,6 +19,7 @@ final readonly class PhpGrammarMatcher
 {
     public function __construct(
         private GrammarRepository $grammars,
+        private ?CoverageCollector $coverage = null,
     ) {
     }
 
@@ -29,6 +31,11 @@ final readonly class PhpGrammarMatcher
     public static function forManifest(RepositoryManifest $manifest): self
     {
         return new self(new GrammarRepository($manifest));
+    }
+
+    public function withCoverage(CoverageCollector $coverage): self
+    {
+        return new self($this->grammars, $coverage);
     }
 
     public function matches(string $version, string $source): MatchResult
@@ -76,6 +83,7 @@ final readonly class PhpGrammarMatcher
             rootRule: $rootRule,
             primitiveMatchers: $this->lexicalPrimitiveMatchers(),
             primitiveMatchersOverrideProductions: true,
+            coverage: $this->coverage,
         );
     }
 

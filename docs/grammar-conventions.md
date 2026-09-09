@@ -591,6 +591,12 @@ Whole-source conformance fixtures live under `tests/fixtures/php/<version>/`.
 The older `tests/fixtures/<version>/` layout belonged to the PHP CLI lint-based
 strategy and should not be used for new grammar conformance tests.
 
+Grammar coverage identities are stable strings derived from parsed grammar
+structure. Production coverage uses the production name. Branch coverage uses
+deterministic per-production counters such as `production/alternative:1`,
+`production/optional:1`, and `production/repetition:1`. These identities are
+tooling metadata and are not part of the canonical grammar syntax.
+
 ## 31. Example Canonical Style
 
 ```ebnf

@@ -39,6 +39,7 @@ grammar/
     php.md
 
 docs/
+  conformance.md
   grammar-conventions.md
   sources.md
   versioning.md
@@ -135,6 +136,7 @@ Install dependencies and run the PHPUnit suite:
 ```bash
 composer install
 composer test
+composer grammar:coverage
 ```
 
 Phase 1 parses every `grammar/<version>/php.ebnf` file with the project's EBNF
@@ -230,6 +232,18 @@ repository grammar and focused invalid fixtures are rejected by it. It remains
 syntax-only: semantic analysis, type checking, name resolution, runtime
 behavior, installed-PHP comparisons, and cross-version boundary checks are out
 of scope.
+
+Grammar coverage reporting measures which EBNF productions and branches are
+exercised by conformance inputs. It is separate from PHP code coverage. The
+coverage command reports production coverage, alternative coverage, attempted
+coverage from invalid fixtures, and explicit uncovered grammar-element lists.
+Valid fixtures and selected rule-level samples count as successfully matched
+coverage. Invalid fixtures count only as attempted coverage so rejected source
+does not make valid syntax branches appear covered. Coverage percentages are
+informational at this stage; no threshold is enforced.
+
+See [docs/conformance.md](docs/conformance.md) for the conformance pipeline,
+token contract, fixture layout, and coverage methodology.
 
 Phase 5 adds repository-wide version package validation and version-boundary
 test infrastructure. Supported grammar versions are declared in the repository

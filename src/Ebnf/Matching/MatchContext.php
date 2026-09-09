@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace PhpGrammar\Ebnf\Matching;
 
+use PhpGrammar\Ebnf\Coverage\CoverageCollector;
+use PhpGrammar\Ebnf\Coverage\CoverageIdentityMap;
+
 final class MatchContext
 {
     /** @var array<string, list<int>> */
@@ -19,6 +22,8 @@ final class MatchContext
 
     public function __construct(
         public readonly Input $input,
+        public readonly ?CoverageCollector $coverage = null,
+        public readonly ?CoverageIdentityMap $coverageIdentities = null,
     ) {
     }
 

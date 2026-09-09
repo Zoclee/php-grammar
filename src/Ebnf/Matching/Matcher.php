@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace PhpGrammar\Ebnf\Matching;
 
+use PhpGrammar\Ebnf\Coverage\CoverageCollector;
+use PhpGrammar\Ebnf\Coverage\CoverageIdentityMap;
 use PhpGrammar\Ebnf\AlternativeNode;
 use PhpGrammar\Ebnf\Grammar;
 use PhpGrammar\Ebnf\GroupNode;
@@ -23,6 +25,7 @@ final readonly class Matcher
         private string $rootRule = 'source-file',
         private array $primitiveMatchers = [],
         private bool $primitiveMatchersOverrideProductions = false,
+        private ?CoverageCollector $coverage = null,
     ) {
     }
 
@@ -43,7 +46,11 @@ final readonly class Matcher
     public function matchesRule(Grammar $grammar, string $rule, string|Input $input): MatchResult
     {
         $input = is_string($input) ? new StringInput($input) : $input;
-        $context = new MatchContext($input);
+        $context = new MatchContext(
+            input: $input,
+            coverage: $this->coverage,
+            coverageIdentities: $this->coverage === null ? null : CoverageIdentityMap::fromGrammar($grammar),
+        );
         $endOffsets = $this->matchReference($grammar, $rule, 0, $context);
         $matched = in_array($input->length(), $endOffsets, true);
 
@@ -94,10 +101,17 @@ final readonly class Matcher
         }
 
         if ($node instanceof OptionalNode) {
-            return $this->uniqueOffsets(array_merge(
-                [$offset],
-                $this->matchNode($grammar, $node->expression, $offset, $context),
-            ));
+            $id = $context->coverageIdentities?->optionalId($node);
+            if ($id !== null) {
+                $context->coverage?->recordOptionalSkipped($id);
+            }
+
+            $matched = $this->matchNode($grammar, $node->expression, $offset, $context);
+            if ($id !== null && array_filter($matched, static fn (int $nextOffset): bool => $nextOffset > $offset) !== []) {
+                $context->coverage?->recordOptionalTaken($id);
+            }
+
+            return $this->uniqueOffsets(array_merge([$offset], $matched));
         }
 
         if ($node instanceof RepetitionNode) {
@@ -136,11 +150,16 @@ final readonly class Matcher
             return [];
         }
 
+        $context->coverage?->recordProductionEntered($rule);
         $context->active[$key] = true;
         $offsets = $this->matchNode($grammar, $production->expression, $offset, $context);
         unset($context->active[$key]);
 
         $context->memo[$key] = $this->uniqueOffsets($offsets);
+        if ($context->memo[$key] !== []) {
+            $context->coverage?->recordProductionMatched($rule);
+        }
+
         return $context->memo[$key];
     }
 
@@ -152,6 +171,8 @@ final readonly class Matcher
         $offsets = ($this->primitiveMatchers[$rule])($context->input, $offset);
         if ($offsets === []) {
             $context->recordFailure($offset, $rule);
+        } else {
+            $context->coverage?->recordPrimitiveMatched($rule);
         }
 
         return $this->uniqueOffsets($offsets);
@@ -184,8 +205,18 @@ final readonly class Matcher
     private function matchAlternative(Grammar $grammar, AlternativeNode $node, int $offset, MatchContext $context): array
     {
         $offsets = [];
-        foreach ($node->alternatives as $alternative) {
-            array_push($offsets, ...$this->matchNode($grammar, $alternative, $offset, $context));
+        foreach ($node->alternatives as $index => $alternative) {
+            $id = $context->coverageIdentities?->alternativeId($node, $index);
+            if ($id !== null) {
+                $context->coverage?->recordAlternativeVisited($id);
+            }
+
+            $alternativeOffsets = $this->matchNode($grammar, $alternative, $offset, $context);
+            if ($id !== null && $alternativeOffsets !== []) {
+                $context->coverage?->recordAlternativeMatched($id);
+            }
+
+            array_push($offsets, ...$alternativeOffsets);
         }
 
         return $this->uniqueOffsets($offsets);
@@ -199,12 +230,20 @@ final readonly class Matcher
         $results = [$offset];
         $queue = [$offset];
         $visited = [$offset => true];
+        $id = $context->coverageIdentities?->repetitionId($node);
+        if ($id !== null) {
+            $context->coverage?->recordRepetitionEntered($id);
+        }
 
         while ($queue !== []) {
             $currentOffset = array_shift($queue);
             foreach ($this->matchNode($grammar, $node->expression, $currentOffset, $context) as $nextOffset) {
                 if ($nextOffset === $currentOffset) {
                     continue;
+                }
+
+                if ($id !== null) {
+                    $context->coverage?->recordRepetitionExercised($id);
                 }
 
                 if (!isset($visited[$nextOffset])) {

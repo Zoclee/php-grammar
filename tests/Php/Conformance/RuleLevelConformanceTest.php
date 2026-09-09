@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PhpGrammar\Tests\Php\Conformance;
 
 use PhpGrammar\Php\Conformance\PhpGrammarMatcher;
+use PhpGrammar\Php\Conformance\Php85CoverageCases;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -34,16 +35,9 @@ final class RuleLevelConformanceTest extends TestCase
      */
     public static function validRuleProvider(): iterable
     {
-        yield 'function declaration' => ['function-declaration', 'function f(int|string $value): ?string { return "x"; }'];
-        yield 'class declaration' => ['class-declaration', 'final class User extends Person implements Named { public string $name; }'];
-        yield 'interface declaration' => ['interface-declaration', 'interface Named { public function name(): string; }'];
-        yield 'trait declaration' => ['trait-declaration', 'trait T { public function f(): int { return 1; } }'];
-        yield 'enum declaration' => ['enum-declaration', 'enum Status: string { case Active = "active"; }'];
-        yield 'attribute group' => ['attribute-groups', '#[Example("value")]'];
-        yield 'match expression' => ['match-expression', 'match ($x) { 1 => "one", default => "other", }'];
-        yield 'closure expression' => ['closure-expression', 'static function (&$x): int { return 1; }'];
-        yield 'arrow function' => ['arrow-function', 'fn ($x): int => $x'];
-        yield 'array creation' => ['array-creation-expression', '["a" => 1, ...$items]'];
+        foreach (Php85CoverageCases::ruleLevelCases() as $case) {
+            yield $case->rule => [$case->rule, $case->source];
+        }
     }
 
     /**
