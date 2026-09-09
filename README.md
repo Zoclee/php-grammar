@@ -1,8 +1,8 @@
 # php-grammar
 
-Canonical EBNF grammars and human-readable specifications for PHP language syntax.
+Versioned EBNF grammars and human-readable specifications for PHP language syntax.
 
-`php-grammar` is a versioned, source-backed reference for PHP syntax. Each supported PHP major/minor release has a complete grammar that can be consumed directly by tools and read alongside matching Markdown documentation.
+php-grammar provides a complete, source-backed grammar for each supported PHP major/minor release, designed for direct use by tools and accompanied by matching Markdown documentation.
 
 ## Purpose
 
