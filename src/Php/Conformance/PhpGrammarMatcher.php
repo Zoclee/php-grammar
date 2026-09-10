@@ -112,6 +112,12 @@ final readonly class PhpGrammarMatcher
         );
     }
 
+    /** @return list<string> Production bodies replaced by token primitives. */
+    public function lexicalPrimitiveNames(): array
+    {
+        return array_keys($this->lexicalPrimitiveMatchers());
+    }
+
     /**
      * @return array<string, callable(Input, int): list<int>>
      */

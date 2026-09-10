@@ -35,8 +35,8 @@ final class RuleLevelConformanceTest extends TestCase
      */
     public static function validRuleProvider(): iterable
     {
-        foreach (Php85CoverageCases::ruleLevelCases() as $case) {
-            yield $case->rule => [$case->rule, $case->source];
+        foreach (Php85CoverageCases::ruleLevelCases() as $index => $case) {
+            yield $case->rule . ' #' . $index => [$case->rule, $case->source];
         }
     }
 

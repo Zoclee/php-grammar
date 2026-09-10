@@ -114,6 +114,19 @@ fixture `hooks-concrete-no-body` records the actual compiler behavior.
 
 ## Verification record
 
+The following counts are the historical post-audit baseline. Grammar
+Completeness Phase 3 subsequently adds positive evidence for imports, trait
+precedence/aliases (including every reserved alias alternative), alternate
+source transitions, dereference categories, operator/type matrices, and hooks.
+See [the Phase 3 report](php85-phase3-coverage.md) for current counts and the
+generated per-element evidence ledger. No canonical grammar correction was
+required in Phase 3. The original regression corpus remains in all checks.
+
+The positive review also confirmed the contextual ban on mixing `[]` and
+`list()` within one destructuring tree (`zend_compile.c`, lines 3250–3255 at
+the pin). The new keyed and nested `list()` fixtures consistently use `list()`;
+this constraint is not forced into EBNF or expanded into a negative campaign.
+
 The differential command uses the same fixture files for independent EBNF
 recognition and official PHP lint, including separate enabled/disabled short-tag
 profiles. The final run on PHP 8.5.10 recorded 108 positive, 76

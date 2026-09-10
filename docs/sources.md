@@ -12,6 +12,14 @@ release-tag/RFC references below remain supporting historical evidence.
 
 This document defines the source policy for the `php-grammar` repository.
 
+Grammar Completeness Phase 3 uses the same implementation pin and verified
+PHP 8.5.10 binary. The [positive coverage report](php85-phase3-coverage.md)
+maps syntax areas and 8.5 additions to parser/compiler families and fixtures.
+The official distribution's `NEWS` entry for PHP 8.5.0 was also reviewed for
+casts, closures and first-class callables in constant expressions, pipe,
+clone-with, final promotion, and `(void)`. Library/API additions introduce no
+extra EBNF alternatives merely because their names are new.
+
 The goal is to ensure that every grammar rule is based on authoritative evidence and that material grammar changes remain traceable to the PHP language sources from which they were derived.
 
 ## 1. Purpose

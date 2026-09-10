@@ -79,3 +79,48 @@ fixtures. Coverage has no minimum threshold.
 See `docs/php85-audit-remediation.md` for remaining discrepancies. Source
 inventory coverage is not an exhaustive production-by-production equivalence
 proof.
+
+## Systematic positive coverage (Grammar Completeness Phase 3)
+
+The work queue is the actual `composer grammar:coverage` output. A production
+hit establishes that some form completed; alternatives measure distinct choices
+inside that production, including nested groups. Optional presence/absence and
+repetition cardinality are reviewed through focused matrices; these percentages
+do not measure all combinations.
+
+The chart collector records completed items anywhere during an accepted input,
+including ambiguous/local completions, rather than reconstructing a unique
+successful derivation. Attempted totals additionally include structural-negative
+inputs. Contextual-negative files remain separate. Positive fixtures and rule
+cases must be accepted before their coverage can be reported; rejected positives
+abort generation instead of contributing partial coverage.
+
+The default-profile corpus and `Php85CoverageCases` drive these raw totals.
+The four short-tags-disabled positive files additionally participate in PHPUnit
+and differential checks, but are not added to the historical coverage denominator.
+Direct primitive unit cases are likewise reported as lexer/adapter evidence,
+not added as artificial EBNF production hits.
+
+To add positive coverage:
+
+1. Select an uncovered production/alternative or a missing optional-form variant.
+2. Check the pinned PHP 8.5 parser, scanner, or compiler family in the source inventory.
+3. Add a small descriptive `valid/*.php` file when integration matters, or a
+   `Php85CoverageCases` fragment when a complete file would obscure the form.
+4. Keep whole-file examples legal under documented contextual constraints.
+   A fragment such as `type: void` is valid in a return position; it does not
+   permit a void parameter. Constant fragments involving unresolved symbols
+   establish structural shape, not constant folding or name resolution.
+5. Run PHPUnit, the PHP 8.5 differential runner, and coverage; regenerate
+   `php tools/php85-coverage-report.php` and verify with `--check`.
+
+The generated report includes every remaining identity, classification, syntax
+area, reason, first positive witnesses for exercised items, actual primitive
+successes, all rule fragments, and the original Phase 3 backlog. A graph walk
+from `source-file` stops at the actual adapter primitive registry; descendants
+also reachable through a syntactic path are **not** silently classified as
+bypassed. Removed trivia has its own category. New gaps remain visible and make
+the report command fail until investigated. No percentage threshold is used.
+
+Current coverage and the language-area/feature matrices are in
+[php85-phase3-coverage.md](php85-phase3-coverage.md).

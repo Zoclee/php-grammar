@@ -6,11 +6,21 @@ namespace PhpGrammar\Tests\Php\Conformance;
 
 use PhpGrammar\Php\Conformance\GrammarCoverageAnalyzer;
 use PhpGrammar\Php\Conformance\Php85CoverageCases;
+use PhpGrammar\Php\Conformance\ConformanceException;
+use PhpGrammar\Php\Conformance\RuleLevelCase;
 use PhpGrammar\Repository\RepositoryManifest;
 use PHPUnit\Framework\TestCase;
 
 final class GrammarCoverageAnalyzerTest extends TestCase
 {
+    public function testRejectsInvalidPositiveRuleInsteadOfReportingPartialCoverage(): void
+    {
+        $this->expectException(ConformanceException::class);
+        $this->expectExceptionMessage('Positive coverage rule rejected: expression #0');
+        (new GrammarCoverageAnalyzer(RepositoryManifest::fromRepositoryRoot(dirname(__DIR__, 3))))
+            ->analyze('8.5', [new RuleLevelCase('expression', '1 +')]);
+    }
+
     public function testAnalyzesPhp85CoverageAgainstRepositoryGrammar(): void
     {
         $report = (new GrammarCoverageAnalyzer(RepositoryManifest::fromRepositoryRoot(dirname(__DIR__, 3))))

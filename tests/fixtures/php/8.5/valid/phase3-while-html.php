@@ -1,0 +1,1 @@
+<?php while ($x): ?>item<?= $x ?><?php break; endwhile; ?>

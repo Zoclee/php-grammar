@@ -1,0 +1,1 @@
+<?php if ($x): ?>yes<?php elseif ($y): ?>maybe<?php else: ?>no<?php endif; ?>

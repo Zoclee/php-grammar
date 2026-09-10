@@ -4,6 +4,13 @@ Versioned EBNF grammars and human-readable specifications for PHP language synta
 
 php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [remaining discrepancies](docs/php85-audit-remediation.md).
 
+PHP 8.5 Grammar Completeness Phase 3 now provides systematic positive coverage:
+265/331 productions (80.1%) and 570/769 alternatives (74.1%). All remaining
+elements are classified as primitive-bypassed lexical rules, removed trivia,
+or contextual-only type alternatives. The positive differential corpus contains
+173 files across both short-tag profiles. See the [Phase 3 evidence report](docs/php85-phase3-coverage.md)
+and [generated branch backlog and witnesses](docs/php85-phase3-coverage.json).
+
 ## Purpose
 
 PHP syntax is often described through a mix of parser implementation files, manual pages, RFCs, migration guides, examples, and third-party grammars. This project brings those pieces together into a maintained grammar reference with two goals:
@@ -270,6 +277,24 @@ Valid fixtures and selected rule-level samples count as successfully matched
 coverage. Invalid fixtures count only as attempted coverage so rejected source
 does not make valid syntax branches appear covered. Coverage percentages are
 informational at this stage; no threshold is enforced.
+
+For the Grammar Completeness Phase 3 workstream (distinct from the historical
+implementation phases above), add small positive files for integration and
+cases in `Php85CoverageCases` for individual alternatives. Production coverage
+alone does not show whether a production's alternatives have been exercised.
+Primitive successes are recorded separately from traversal of their EBNF bodies;
+do not add artificial files to traverse token-internal lexical rules.
+Positive coverage generation fails if a positive input is rejected.
+
+```text
+php tools/php85-coverage-report.php
+php tools/php85-coverage-report.php --check
+```
+
+The generated report links completed chart items to their first positive
+fixture/rule witness, preserves the original backlog, and leaves newly uncovered
+syntax visible as `meaningful-gap`. It does not prove unique parse derivations,
+AST binding, full contextual validation, or runtime behavior.
 
 See [docs/conformance.md](docs/conformance.md) for the conformance pipeline,
 token contract, fixture layout, and coverage methodology.

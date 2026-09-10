@@ -19,7 +19,7 @@ final readonly class GrammarCoverageAnalyzer
     /**
      * @param list<RuleLevelCase> $ruleLevelCases
      */
-    public function analyze(string $version, array $ruleLevelCases = []): CoverageReport
+    public function analyze(string $version, array $ruleLevelCases = [], ?callable $onPositive = null): CoverageReport
     {
         $repository = new GrammarRepository($this->manifest);
         $grammar = $repository->load($version);
@@ -35,7 +35,13 @@ final readonly class GrammarCoverageAnalyzer
                 throw new ConformanceException(sprintf('Unable to read conformance fixture: %s', $path));
             }
 
-            PhpGrammarMatcher::forManifest($this->manifest)->withCoverage($coverage)->matches($version, $source);
+            $result = PhpGrammarMatcher::forManifest($this->manifest)->withCoverage($coverage)->matches($version, $source);
+            if (!$result->matched) {
+                throw new ConformanceException('Positive coverage fixture rejected: ' . $path);
+            }
+            if ($onPositive !== null) {
+                $onPositive('fixture:' . basename($path), $coverage);
+            }
             $attempted->merge($coverage);
             $matched->merge($coverage);
         }
@@ -51,9 +57,15 @@ final readonly class GrammarCoverageAnalyzer
             $attempted->merge($coverage);
         }
 
-        foreach ($ruleLevelCases as $case) {
+        foreach ($ruleLevelCases as $index => $case) {
             $coverage = new CoverageCollector();
-            PhpGrammarMatcher::forManifest($this->manifest)->withCoverage($coverage)->matchesRule($version, $case->rule, $case->source);
+            $result = PhpGrammarMatcher::forManifest($this->manifest)->withCoverage($coverage)->matchesRule($version, $case->rule, $case->source);
+            if (!$result->matched) {
+                throw new ConformanceException('Positive coverage rule rejected: ' . $case->rule . ' #' . $index);
+            }
+            if ($onPositive !== null) {
+                $onPositive('rule:' . $case->rule . ' #' . $index, $coverage);
+            }
             $attempted->merge($coverage);
             $matched->merge($coverage);
         }
