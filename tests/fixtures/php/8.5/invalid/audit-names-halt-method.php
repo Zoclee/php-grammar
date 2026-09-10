@@ -1,0 +1,1 @@
+<?php class C { function __halt_compiler() {} }

@@ -1,25 +1,11 @@
-(* Canonical standalone EBNF for PHP 8.5 source syntax. *)
+(* Standalone PHP 8.5 syntactic EBNF over the source-token stream.
+   Apply the lexical-state contract and contextual constraints in php.md. *)
 
 source-file =
-    { inline-html | php-code } ;
+    top-statement-list ;
 
 inline-html =
     inline-html-text ;
-
-php-code =
-    ( open-tag | echo-open-tag ) ,
-    top-statement-list ,
-    [ close-tag ] ;
-
-open-tag =
-      "<?php"
-    | "<?" ;
-
-echo-open-tag =
-    "<?=" , expression-list , [ ";" ] ;
-
-close-tag =
-    "?>" ;
 
 top-statement-list =
     { top-statement } ;
@@ -33,18 +19,16 @@ top-statement =
 
 attributed-top-declaration =
     [ attribute-groups ] ,
-    ( function-declaration
-    | class-declaration
-    | interface-declaration
-    | trait-declaration
-    | enum-declaration
-    | constant-declaration ) ;
+    ( function-declaration | class-declaration | interface-declaration
+    | trait-declaration | enum-declaration )
+    | constant-declaration
+    | attribute-groups , "const" , constant-element , ";" ;
 
 (* Lexical grammar. Whitespace and comments may appear between tokens unless
    a lexical production states otherwise. PHP keywords are case-insensitive. *)
 
 whitespace =
-    { whitespace-character } ;
+    whitespace-character , { whitespace-character } ;
 
 comment =
       line-comment
@@ -91,45 +75,28 @@ variable-like =
 label =
     identifier ;
 
-reserved-keyword =
-      "__halt_compiler" | "abstract" | "and" | "array" | "as" | "break"
-    | "callable" | "case" | "catch" | "class" | "clone" | "const"
-    | "continue" | "declare" | "default" | "do" | "echo" | "else"
-    | "elseif" | "empty" | "enddeclare" | "endfor" | "endforeach"
-    | "endif" | "endswitch" | "endwhile" | "enum" | "eval" | "exit"
-    | "die"
-    | "extends" | "final" | "finally" | "fn" | "for" | "foreach"
-    | "function" | "global" | "goto" | "if" | "implements" | "include"
-    | "include_once" | "instanceof" | "insteadof" | "interface"
-    | "isset" | "list" | "match" | "namespace" | "new" | "or"
-    | "print" | "private" | "protected" | "public" | "readonly"
-    | "require" | "require_once" | "return" | "static" | "switch"
-    | "throw" | "trait" | "try" | "unset" | "use" | "var"
-    | "while" | "xor" | "yield" ;
 
 semi-reserved-identifier =
-      reserved-keyword
-    | identifier ;
+    identifier | reserved-non-modifiers | "static" | "abstract" | "final"
+    | "private" | "protected" | "public" | "readonly" ;
 
 name-identifier =
-    semi-reserved-identifier ;
+    identifier-start , { identifier-part } ;
 
 namespace-declaration-name =
-    name-identifier , { "\\" , name-identifier } ;
+    semi-reserved-identifier | qualified-name ;
 
 qualified-name =
-    name-identifier , { "\\" , name-identifier } ;
+    name-identifier , "\\" , name-identifier , { "\\" , name-identifier } ;
 
 fully-qualified-name =
-    "\\" , qualified-name ;
+    "\\" , name-identifier , { "\\" , name-identifier } ;
 
 namespace-relative-name =
-    "namespace" , "\\" , qualified-name ;
+    "namespace" , "\\" , name-identifier , { "\\" , name-identifier } ;
 
 name =
-      qualified-name
-    | fully-qualified-name
-    | namespace-relative-name ;
+    identifier | qualified-name | fully-qualified-name | namespace-relative-name ;
 
 class-name =
       name
@@ -150,7 +117,7 @@ binary-integer-literal =
     ( "0b" | "0B" ) , binary-digit , { [ numeric-separator ] , binary-digit } ;
 
 octal-integer-literal =
-    "0" , octal-digit , { [ numeric-separator ] , octal-digit } ;
+    "0" , [ numeric-separator ] , octal-digit , { [ numeric-separator ] , octal-digit } ;
 
 explicit-octal-integer-literal =
     ( "0o" | "0O" ) , octal-digit , { [ numeric-separator ] , octal-digit } ;
@@ -179,16 +146,19 @@ string-literal =
     | nowdoc-string ;
 
 single-quoted-string =
-    [ "b" ] , "'" , single-quoted-string-content , "'" ;
+    [ "b" | "B" ] , "'" , single-quoted-string-content , "'" ;
 
 double-quoted-string =
-    [ "b" ] , "\"" , [ encapsulated-string-part , { encapsulated-string-part } ] , "\"" ;
+    [ "b" | "B" ] , "\"" , [ encapsulated-string-part , { encapsulated-string-part } ] , "\"" ;
 
 heredoc-string =
-    [ "b" ] , "<<<" , heredoc-label , heredoc-body , heredoc-label ;
+    [ "b" | "B" ] , "<<<" , { " " | "\t" } ,
+    ( heredoc-label | "\"" , heredoc-label , "\"" ) , newline ,
+    heredoc-body , { " " | "\t" } , heredoc-label ;
 
 nowdoc-string =
-    [ "b" ] , "<<<" , "'" , heredoc-label , "'" , nowdoc-body , heredoc-label ;
+    [ "b" | "B" ] , "<<<" , { " " | "\t" } ,
+    "'" , heredoc-label , "'" , newline , nowdoc-body , { " " | "\t" } , heredoc-label ;
 
 encapsulated-string-part =
       string-text
@@ -202,13 +172,16 @@ encapsulated-variable =
     | "${" , expression , "}"
     | "${" , identifier , "}"
     | "${" , identifier , "[" , expression , "]" , "}"
-    | "{$" , variable-expression , "}" ;
+    | "{" , variable-expression , "}" ;
 
 encapsulated-offset =
       identifier
-    | integer-literal
-    | "-" , integer-literal
+    | numeric-string
+    | "-" , numeric-string
     | variable ;
+
+numeric-string =
+    decimal-digits | binary-integer-literal | explicit-octal-integer-literal | hexadecimal-integer-literal ;
 
 literal =
       integer-literal
@@ -316,14 +289,15 @@ return-type =
     [ ":" , type ] ;
 
 constant-expression =
-    constant-coalesce-expression ;
+    constant-logical-or-expression ;
 
 constant-coalesce-expression =
-    constant-conditional-expression , [ "??" , constant-coalesce-expression ] ;
+    constant-boolean-or-expression , [ "??" , constant-coalesce-expression ] ;
 
 constant-conditional-expression =
-      constant-logical-or-expression
-    | constant-logical-or-expression , "?" , constant-expression , ":" , constant-conditional-expression ;
+    constant-coalesce-expression ,
+    [ "?" , constant-expression , ":" , constant-coalesce-expression
+    | "?" , ":" , constant-coalesce-expression , { "?" , ":" , constant-coalesce-expression } ] ;
 
 constant-logical-or-expression =
     constant-logical-xor-expression , { "or" , constant-logical-xor-expression } ;
@@ -332,7 +306,7 @@ constant-logical-xor-expression =
     constant-logical-and-expression , { "xor" , constant-logical-and-expression } ;
 
 constant-logical-and-expression =
-    constant-boolean-or-expression , { "and" , constant-boolean-or-expression } ;
+    constant-conditional-expression , { "and" , constant-conditional-expression } ;
 
 constant-boolean-or-expression =
     constant-boolean-and-expression , { "||" , constant-boolean-and-expression } ;
@@ -367,13 +341,13 @@ constant-additive-expression =
     constant-multiplicative-expression , { ( "+" | "-" ) , constant-multiplicative-expression } ;
 
 constant-multiplicative-expression =
-    constant-power-expression , { ( "*" | "/" | "%" ) , constant-power-expression } ;
+    constant-unary-expression , { ( "*" | "/" | "%" ) , constant-unary-expression } ;
 
 constant-power-expression =
-    constant-unary-expression , [ "**" , constant-power-expression ] ;
+    constant-postfix-expression , [ "**" , constant-unary-expression ] ;
 
 constant-unary-expression =
-      constant-primary-expression
+      constant-power-expression
     | "+" , constant-unary-expression
     | "-" , constant-unary-expression
     | "!" , constant-unary-expression
@@ -393,22 +367,19 @@ constant-cast-expression =
     | "(boolean)" , constant-unary-expression ;
 
 constant-primary-expression =
-      literal
-    | constant
-    | class-constant
-    | magic-constant
-    | "(" , constant-expression , ")"
-    | array-creation-constant-expression
-    | [ attribute-groups ] , [ "static" ] , "function" , [ "&" ] ,
-      "(" , parameter-list , ")" , [ lexical-variable-list ] , return-type ,
-      compound-statement ;
+    constant-literal | constant | constant-class-access | magic-constant
+    | "(" , constant-expression , ")" | array-creation-constant-expression
+    | [ attribute-groups ] , "static" , "function" , [ "&" ] ,
+      "(" , parameter-list , ")" , return-type , compound-statement
+    | constant-callable
+    | "new" , name , [ constant-argument-list ] ;
 
 array-creation-constant-expression =
       "array" , "(" , constant-array-pair-list , ")"
     | "[" , constant-array-pair-list , "]" ;
 
 constant-array-pair-list =
-    [ constant-array-pair , { "," , [ constant-array-pair ] } , [ "," ] ] ;
+    [ constant-array-pair , { "," , constant-array-pair } , [ "," ] ] ;
 
 constant-array-pair =
       constant-expression
@@ -416,7 +387,7 @@ constant-array-pair =
     | "..." , constant-expression ;
 
 expression =
-    logical-or-expression ;
+    throw-expression ;
 
 logical-or-expression =
     logical-xor-expression , { "or" , logical-xor-expression } ;
@@ -425,7 +396,7 @@ logical-xor-expression =
     logical-and-expression , { "xor" , logical-and-expression } ;
 
 logical-and-expression =
-    assignment-expression , { "and" , assignment-expression } ;
+    print-expression , { "and" , print-expression } ;
 
 assignment-expression =
       conditional-expression
@@ -438,8 +409,9 @@ assignment-operator =
     | "&=" | "|=" | "^=" | "<<=" | ">>=" | "**=" | "??=" ;
 
 conditional-expression =
-      coalesce-expression
-    | coalesce-expression , "?" , [ expression ] , ":" , conditional-expression ;
+    coalesce-expression ,
+    [ "?" , expression , ":" , coalesce-expression
+    | "?" , ":" , coalesce-expression , { "?" , ":" , coalesce-expression } ] ;
 
 coalesce-expression =
     boolean-or-expression , [ "??" , coalesce-expression ] ;
@@ -480,36 +452,22 @@ additive-expression =
     multiplicative-expression , { ( "+" | "-" ) , multiplicative-expression } ;
 
 multiplicative-expression =
-    power-expression , { ( "*" | "/" | "%" ) , power-expression } ;
+    boolean-not-expression , { ( "*" | "/" | "%" ) , boolean-not-expression } ;
 
 power-expression =
-    instanceof-expression , [ "**" , power-expression ] ;
+    clone-expression , [ "**" , unary-expression ] ;
 
 instanceof-expression =
-    unary-expression , [ "instanceof" , class-name-reference ] ;
+    unary-expression , { "instanceof" , class-name-reference } ;
 
 unary-expression =
-      postfix-expression
-    | "++" , variable-expression
-    | "--" , variable-expression
-    | "+" , unary-expression
-    | "-" , unary-expression
-    | "!" , unary-expression
-    | "~" , unary-expression
-    | "@" , unary-expression
-    | cast-expression
-    | "clone" , unary-expression
-    | "clone" , clone-argument-list
-    | "print" , unary-expression
-    | "yield"
-    | "yield" , expression
-    | "yield" , expression , "=>" , expression
-    | "yield" , "from" , expression
-    | "throw" , expression
-    | include-expression
-    | closure-expression
-    | arrow-function
-    | match-expression ;
+    power-expression | prefix-unary-expression ;
+
+prefix-unary-expression =
+    "++" , variable-expression | "--" , variable-expression
+    | ( "+" | "-" | "~" | "@" ) , unary-expression
+    | "!" , boolean-not-expression
+    | cast-expression | prefix-expression | closure-expression | match-expression ;
 
 cast-expression =
       "(int)" , unary-expression
@@ -527,72 +485,29 @@ void-cast-statement =
     "(void)" , expression , ";" ;
 
 postfix-expression =
-      fully-dereferenceable-expression , { postfix-operation }
-    | callable-expression , argument-list , { postfix-operation }
-    | primary-expression ;
+    variable-expression , [ "++" | "--" ] | primary-expression ;
 
 fully-dereferenceable-expression =
-      variable-expression
-    | function-call
-    | array-creation-expression
-    | string-literal
-    | "(" , expression , ")"
-    | "new" , class-name-reference , [ argument-list ]
-    | "new" , anonymous-class ;
+    variable-expression | "(" , expression , ")" | dereferenceable-scalar
+    | class-constant | new-dereferenceable ;
 
 callable-expression =
-      variable-expression
-    | "(" , expression , ")"
-    | array-creation-expression
-    | string-literal
-    | "new" , class-name-reference , [ argument-list ]
-    | "new" , anonymous-class ;
-
-postfix-operation =
-      "[" , [ expression ] , "]"
-    | object-operator , member-name
-    | nullsafe-object-operator , member-name
-    | object-operator , member-name , argument-list
-    | nullsafe-object-operator , member-name , argument-list
-    | "::" , member-name
-    | "::" , member-name , argument-list
-    | "::" , "{" , expression , "}"
-    | argument-list
-    | "++"
-    | "--" ;
+    callable-variable | "(" , expression , ")" | dereferenceable-scalar | new-dereferenceable ;
 
 primary-expression =
-      variable-expression
-    | function-call
-    | literal
-    | array-creation-expression
-    | constant
-    | class-constant
-    | magic-constant
-    | "(" , expression , ")"
-    | "new" , class-name-reference , [ argument-list ]
-    | "new" , anonymous-class
-    | "`" , backtick-string-part-list , "`"
+    literal | array-creation-expression | constant | class-constant | magic-constant
+    | "(" , expression , ")" | new-dereferenceable | "new" , class-name-reference
+    | backtick-string
     | "isset" , "(" , expression-list , [ "," ] , ")"
-    | "empty" , "(" , expression , ")"
-    | "eval" , "(" , expression , ")"
-    | "exit" , [ argument-list ]
-    | "die" , [ argument-list ] ;
+    | "empty" , "(" , expression , ")" | "eval" , "(" , expression , ")"
+    | "exit" , [ argument-list ] | "die" , [ argument-list ] ;
 
 variable-expression =
-      variable
-    | variable-variable
-    | "$" , "{" , expression , "}"
-    | class-name-reference , "::" , variable
-    | variable-expression , "::" , variable
-    | variable-expression , "[" , [ expression ] , "]"
-    | variable-expression , object-operator , member-name
-    | variable-expression , nullsafe-object-operator , member-name ;
+    callable-variable | static-member
+    | array-object-dereferenceable , ( object-operator | nullsafe-object-operator ) , property-name ;
 
 member-name =
-      identifier
-    | "{" , expression , "}"
-    | variable ;
+    semi-reserved-identifier | "{" , expression , "}" | variable-like ;
 
 object-operator =
     "->" ;
@@ -604,36 +519,31 @@ constant =
     name ;
 
 class-constant =
-      class-name-reference , "::" , name-identifier
-    | variable-expression , "::" , name-identifier
-    | class-name-reference , "::" , "{" , expression , "}"
-    | variable-expression , "::" , "{" , expression , "}" ;
+    ( class-name | fully-dereferenceable-expression ) , "::" ,
+    ( semi-reserved-identifier | "{" , expression , "}" ) ;
 
 class-name-reference =
-      class-name
-    | variable-expression
-    | "(" , expression , ")" ;
+    class-name | new-variable | "(" , expression , ")" ;
 
 function-call =
-      name , argument-list
-    | "readonly" , argument-list
-    | class-name-reference , "::" , member-name , argument-list
-    | variable-expression , argument-list ;
+    name , argument-list | "readonly" , argument-list
+    | ( class-name | fully-dereferenceable-expression ) , "::" , member-name , argument-list
+    | callable-expression , argument-list ;
 
 argument-list =
       "(" , "..." , ")"
     | "(" , [ argument , { "," , argument } , [ "," ] ] , ")" ;
 
 clone-argument-list =
-    "(" , expression , { "," , argument } , [ "," ] , ")" ;
+    "(" , [ "..." | expression , "," , [ argument , { "," , argument } , [ "," ] ]
+    | argument-no-expression , { "," , argument } , [ "," ] ] , ")" ;
 
 argument =
       expression
     | argument-no-expression ;
 
 argument-no-expression =
-      name-identifier , ":" , expression
-    | "..." , expression ;
+    semi-reserved-identifier , ":" , expression | "..." , expression ;
 
 expression-list =
     expression , { "," , expression } ;
@@ -697,7 +607,8 @@ backtick-string-part-list =
     { encapsulated-string-part } ;
 
 statement =
-      compound-statement
+      inline-html
+    | compound-statement
     | if-statement
     | while-statement
     | do-statement
@@ -742,8 +653,7 @@ echo-statement =
     "echo" , expression-list , statement-terminator ;
 
 statement-terminator =
-      ";"
-    | close-tag ;
+    ";" ;
 
 global-statement =
     "global" , global-variable-list , ";" ;
@@ -752,9 +662,7 @@ global-variable-list =
     global-variable , { "," , global-variable } ;
 
 global-variable =
-      variable
-    | "$" , variable
-    | "$" , "{" , expression , "}" ;
+    variable-like ;
 
 static-statement =
     "static" , static-variable-list , ";" ;
@@ -763,7 +671,7 @@ static-variable-list =
     static-variable , { "," , static-variable } ;
 
 static-variable =
-    variable , [ "=" , constant-expression ] ;
+    variable , [ "=" , expression ] ;
 
 unset-statement =
     "unset" , "(" , unset-variable-list , [ "," ] , ")" , ";" ;
@@ -772,17 +680,7 @@ unset-variable-list =
     unset-variable , { "," , unset-variable } ;
 
 unset-variable =
-    unset-variable-root , { unset-variable-postfix } ;
-
-unset-variable-root =
-      variable
-    | variable-variable
-    | "$" , "{" , expression , "}" ;
-
-unset-variable-postfix =
-      "[" , [ expression ] , "]"
-    | object-operator , member-name
-    | nullsafe-object-operator , member-name ;
+    variable-expression ;
 
 return-statement =
     "return" , [ expression ] , ";" ;
@@ -846,7 +744,7 @@ for-expression =
     | "(void)" , expression ;
 
 for-condition-expression-list =
-    [ expression , { "," , expression } ] ;
+    [ [ for-expression-list , "," ] , expression ] ;
 
 foreach-statement =
       "foreach" , "(" , expression , "as" , foreach-target , ")" , statement
@@ -887,10 +785,11 @@ declare-directive-list =
     declare-directive , { "," , declare-directive } ;
 
 declare-directive =
-    identifier , "=" , literal ;
+    identifier , "=" , constant-expression ;
 
 try-statement =
-    "try" , compound-statement , catch-list , [ finally-clause ] ;
+    "try" , compound-statement ,
+    ( catch-clause , catch-list , [ finally-clause ] | finally-clause ) ;
 
 catch-list =
     { catch-clause } ;
@@ -905,7 +804,7 @@ finally-clause =
     "finally" , compound-statement ;
 
 function-declaration =
-    "function" , [ "&" ] , identifier , "(" , parameter-list , ")" ,
+    "function" , [ "&" ] , ( identifier | "readonly" ) , "(" , parameter-list , ")" ,
     return-type , compound-statement ;
 
 parameter-list =
@@ -913,7 +812,7 @@ parameter-list =
 
 parameter =
     [ attribute-groups ] , parameter-modifiers , optional-type-without-static ,
-    [ "&" ] , [ "..." ] , variable , [ "=" , constant-expression ] ,
+    [ "&" ] , [ "..." ] , variable , [ "=" , parameter-default ] ,
     [ property-hook-block ] ;
 
 parameter-modifiers =
@@ -958,7 +857,7 @@ class-member =
 
 property-declaration =
       property-modifier-list , optional-type-without-static , property-list , ";"
-    | "var" , optional-type-without-static , property-list , ";"
+    | "var" , optional-type-without-static , ( property-list , ";" | hooked-property )
     | property-modifier-list , optional-type-without-static , hooked-property ;
 
 property-modifier-list =
@@ -968,20 +867,21 @@ property-list =
     property-element , { "," , property-element } ;
 
 property-element =
-    variable , [ "=" , constant-expression ] ;
+    variable , [ "=" , property-default ] ;
 
 hooked-property =
-    variable , [ "=" , constant-expression ] , property-hook-block ;
+    variable , [ "=" , property-default ] , property-hook-block ;
 
 property-hook-block =
     "{" , property-hook-list , "}" ;
 
 property-hook-list =
-    { [ attribute-groups ] , property-hook } ;
+    [ attribute-groups ] , property-hook , { [ attribute-groups ] , property-hook } ;
 
 property-hook =
-    property-hook-modifiers , [ "&" ] , identifier ,
-    [ "(" , parameter-list , ")" ] , property-hook-body ;
+    property-hook-modifiers ,
+    ( [ "&" ] , "get" , property-hook-body
+    | "set" , [ "(" , parameter , [ "," ] , ")" ] , property-hook-body ) ;
 
 property-hook-body =
       ";"
@@ -992,10 +892,10 @@ property-hook-modifiers =
     { property-hook-modifier } ;
 
 property-hook-modifier =
-      "public" | "protected" | "private" | "final" ;
+    "final" ;
 
 property-modifier =
-      property-visibility-modifier | set-visibility-modifier | "static" | "readonly" | "final" ;
+    property-visibility-modifier | set-visibility-modifier | "static" | "readonly" | "final" | "abstract" ;
 
 property-visibility-modifier =
       "public" | "protected" | "private" ;
@@ -1004,7 +904,7 @@ set-visibility-modifier =
       "public(set)" | "protected(set)" | "private(set)" ;
 
 method-declaration =
-    method-modifiers , "function" , [ "&" ] , identifier ,
+    method-modifiers , "function" , [ "&" ] , semi-reserved-identifier ,
     "(" , parameter-list , ")" , return-type , method-body ;
 
 method-modifiers =
@@ -1030,7 +930,7 @@ class-constant-list =
     class-constant-element , { "," , class-constant-element } ;
 
 class-constant-element =
-    identifier , "=" , constant-expression ;
+    semi-reserved-identifier , "=" , class-constant-initializer ;
 
 constant-declaration =
     "const" , constant-list , ";" ;
@@ -1039,7 +939,7 @@ constant-list =
     constant-element , { "," , constant-element } ;
 
 constant-element =
-    identifier , "=" , constant-expression ;
+    identifier , "=" , global-constant-initializer ;
 
 interface-declaration =
     "interface" , identifier , [ interface-extends-clause ] ,
@@ -1059,7 +959,7 @@ interface-property-declaration =
     interface-property-modifiers , optional-type-without-static , hooked-property ;
 
 interface-property-modifiers =
-    property-visibility-modifier , { property-modifier } ;
+    property-modifier , { property-modifier } ;
 
 trait-declaration =
     "trait" , identifier , "{" , class-member-list , "}" ;
@@ -1076,14 +976,14 @@ trait-adaptation =
     | trait-alias ;
 
 trait-precedence =
-    trait-method-reference , "insteadof" , name-list , ";" ;
+    class-name , "::" , semi-reserved-identifier , "insteadof" , name-list , ";" ;
 
 trait-alias =
-    trait-method-reference , "as" , [ method-modifier ] , [ identifier ] , ";" ;
+    trait-method-reference , "as" ,
+    ( identifier | reserved-non-modifiers | method-modifier , [ semi-reserved-identifier ] ) , ";" ;
 
 trait-method-reference =
-      identifier
-    | name , "::" , identifier ;
+    semi-reserved-identifier | class-name , "::" , semi-reserved-identifier ;
 
 enum-declaration =
     "enum" , identifier , [ enum-backing-type ] , [ implements-clause ] ,
@@ -1096,14 +996,11 @@ enum-member-list =
     { enum-member } ;
 
 enum-member =
-      [ attribute-groups ] , enum-case
-    | [ attribute-groups ] , method-declaration
-    | [ attribute-groups ] , class-constant-declaration
-    | trait-use-declaration
-    | ";" ;
+    [ attribute-groups ] , ( enum-case | method-declaration | class-constant-declaration )
+    | trait-use-declaration ;
 
 enum-case =
-    "case" , identifier , [ "=" , expression ] , ";" ;
+    "case" , semi-reserved-identifier , [ "=" , enum-case-initializer ] , ";" ;
 
 namespace-definition =
       "namespace" , namespace-declaration-name , ";"
@@ -1126,8 +1023,7 @@ use-declaration =
     legacy-namespace-name , [ "as" , identifier ] ;
 
 legacy-namespace-name =
-      qualified-name
-    | fully-qualified-name ;
+    identifier | qualified-name | fully-qualified-name ;
 
 group-use-declaration =
     legacy-namespace-name , "\\" , "{" , unprefixed-use-declaration-list , [ "," ] , "}" ;
@@ -1139,7 +1035,7 @@ unprefixed-use-declaration-list =
     unprefixed-use-declaration , { "," , unprefixed-use-declaration } ;
 
 unprefixed-use-declaration =
-    qualified-name , [ "as" , identifier ] ;
+    ( identifier | qualified-name ) , [ "as" , identifier ] ;
 
 inline-use-declaration-list =
     inline-use-declaration , { "," , inline-use-declaration } ;
@@ -1157,7 +1053,7 @@ attribute-list =
     attribute , { "," , attribute } ;
 
 attribute =
-    class-name , [ argument-list ] ;
+    class-name , [ constant-argument-list ] ;
 
 halt-compiler-statement =
     "__halt_compiler" , "(" , ")" , ";" , halt-compiler-data ;
@@ -1181,10 +1077,10 @@ single-quoted-string-content =
     { single-quoted-string-character | escape-sequence } ;
 
 string-text =
-    string-character , { string-character } ;
+    ( string-character | escape-sequence ) , { string-character | escape-sequence } ;
 
 heredoc-label =
-    identifier ;
+    name-identifier ;
 
 heredoc-body =
     { encapsulated-string-part } ;
@@ -1196,54 +1092,159 @@ halt-compiler-data =
     { source-character } ;
 
 source-character =
-    byte ;
+    code-unit ;
 
 inline-html-character =
-    source-character ;
+    html-code-unit ;
 
 line-comment-character =
-    source-character ;
+    line-comment-code-unit ;
 
 block-comment-character =
-    source-character ;
+    block-comment-code-unit ;
 
 single-quoted-string-character =
-    source-character ;
+    single-quoted-code-unit ;
 
 string-character =
-    source-character ;
+    encapsed-code-unit ;
 
 nowdoc-character =
-    source-character ;
+    nowdoc-code-unit ;
 
 escape-sequence =
     "\\" , source-character ;
 
 whitespace-character =
-      " "
-    | "\t"
-    | "\n"
-    | "\r"
-    | "\f"
-    | "\v" ;
+    " " | "\t" | "\n" | "\r" ;
 
 non-ascii-byte =
-    byte ;
+    non-ascii-code-unit ;
 
-byte =
-    source-byte ;
 
-source-byte =
-    implementation-character ;
+reserved-non-modifiers =
+    "and" | "array" | "as" | "break" | "callable" | "case" | "catch" | "class" | "clone" | "const" | "continue" | "declare" | "default" | "do" | "echo" | "else" | "elseif" | "empty" | "enddeclare" | "endfor" | "endforeach" | "endif" | "endswitch" | "endwhile" | "enum" | "eval" | "exit" | "die" | "extends" | "finally" | "fn" | "for" | "foreach" | "function" | "global" | "goto" | "if" | "implements" | "include" | "include_once" | "instanceof" | "insteadof" | "interface" | "isset" | "list" | "match" | "namespace" | "new" | "or" | "print" | "require" | "require_once" | "return" | "switch" | "throw" | "trait" | "try" | "unset" | "use" | "var" | "while" | "xor" | "yield"
+    | magic-constant ;
 
-implementation-character =
-    character ;
+constant-argument-list =
+    "(" , [ constant-argument , { "," , constant-argument } , [ "," ] ] , ")" ;
 
-character =
-    any-source-code-unit ;
+constant-argument =
+    [ semi-reserved-identifier , ":" ] , attribute-or-constructor-argument ;
 
-any-source-code-unit =
-    source-text-code-unit ;
+constant-callable =
+    ( name | "readonly" | "clone" | "exit" | "die"
+    | single-quoted-string | constant-double-quoted-string | "(" , constant-expression , ")"
+    | constant-class-reference , "::" , ( semi-reserved-identifier | "{" , constant-expression , "}" ) ) ,
+    "(" , "..." , ")" ;
 
-source-text-code-unit =
-    code-unit ;
+constant-class-access =
+    constant-class-reference , "::" , ( semi-reserved-identifier | "{" , constant-expression , "}" ) ;
+
+constant-class-reference =
+    name | single-quoted-string | constant-double-quoted-string | "(" , constant-expression , ")" ;
+
+boolean-not-expression =
+    "!" , boolean-not-expression | instanceof-expression ;
+
+clone-expression =
+    "clone" , ( clone-expression | prefix-unary-expression )
+    | "clone" , clone-argument-list | postfix-expression ;
+
+dereferenceable-scalar =
+    array-creation-expression | single-quoted-string | double-quoted-string ;
+
+new-dereferenceable =
+    "new" , class-name-reference , argument-list | "new" , anonymous-class ;
+
+array-object-dereferenceable =
+    fully-dereferenceable-expression | constant | magic-constant ;
+
+callable-variable =
+    variable-like
+    | array-object-dereferenceable , "[" , [ expression ] , "]"
+    | array-object-dereferenceable , ( object-operator | nullsafe-object-operator ) , property-name , argument-list
+    | function-call ;
+
+static-member =
+    ( class-name | fully-dereferenceable-expression ) , "::" , variable-like ;
+
+new-variable =
+    variable-like
+    | new-variable , "[" , [ expression ] , "]"
+    | new-variable , ( object-operator | nullsafe-object-operator ) , property-name
+    | ( class-name | new-variable ) , "::" , variable-like ;
+
+property-name =
+    identifier | "{" , expression , "}" | variable-like ;
+
+backtick-string =
+    "`" , backtick-string-part-list , "`" ;
+
+newline =
+    "\r\n" | "\n" | "\r" ;
+
+constant-postfix-expression =
+    constant-primary-expression
+    | constant-dereferenceable , ( "[" , constant-expression , "]"
+    | ( "->" | "?->" ) , ( semi-reserved-identifier | "{" , constant-expression , "}" ) ) ,
+    { "[" , constant-expression , "]"
+    | ( "->" | "?->" ) , ( semi-reserved-identifier | "{" , constant-expression , "}" ) } ;
+
+constant-dereferenceable =
+    constant | magic-constant | constant-class-access | array-creation-constant-expression
+    | single-quoted-string | constant-double-quoted-string | "(" , constant-expression , ")"
+    | constant-callable | "new" , name , constant-argument-list ;
+
+throw-expression =
+    "throw" , expression | arrow-expression ;
+
+arrow-expression =
+    arrow-function | include-expression | logical-or-expression ;
+
+print-expression =
+    "print" , print-expression | yield-expression ;
+
+yield-expression =
+    "yield" , [ yield-from-expression , [ "=>" , yield-from-expression ] ] | yield-from-expression ;
+
+yield-from-expression =
+    "yield" , "from" , assignment-expression | assignment-expression ;
+
+prefix-expression =
+    "throw" , expression | arrow-function | include-expression
+    | "print" , print-expression
+    | "yield" , [ yield-from-expression , [ "=>" , yield-from-expression ] ]
+    | "yield" , "from" , assignment-expression ;
+
+constant-literal =
+    integer-literal | floating-literal | constant-string-literal ;
+
+constant-string-literal =
+    single-quoted-string | constant-double-quoted-string | nowdoc-string | constant-heredoc ;
+
+constant-double-quoted-string =
+    [ "b" | "B" ] , "\"" , { string-text } , "\"" ;
+
+constant-heredoc =
+    [ "b" | "B" ] , "<<<" , { " " | "\t" } ,
+    ( heredoc-label | "\"" , heredoc-label , "\"" ) , newline ,
+    { string-text } , { " " | "\t" } , heredoc-label ;
+
+parameter-default =
+    constant-expression ;
+
+property-default =
+    constant-expression ;
+
+class-constant-initializer =
+    constant-expression ;
+
+global-constant-initializer =
+    constant-expression ;
+
+enum-case-initializer =
+    constant-expression ;
+
+attribute-or-constructor-argument =
+    constant-expression ;

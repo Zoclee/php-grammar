@@ -1,0 +1,1 @@
+<?php broken PHP syntax

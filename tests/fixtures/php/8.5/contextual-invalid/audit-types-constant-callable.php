@@ -1,0 +1,1 @@
+<?php class C { const callable F = null; }

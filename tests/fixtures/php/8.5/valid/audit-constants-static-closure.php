@@ -1,0 +1,1 @@
+<?php const F = static function () { return 1; };

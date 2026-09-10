@@ -10,6 +10,13 @@
         }
     ],
     "lexicalPrimitives": [
-        "code-unit"
+        "code-unit",
+        "non-ascii-code-unit",
+        "html-code-unit",
+        "line-comment-code-unit",
+        "block-comment-code-unit",
+        "single-quoted-code-unit",
+        "encapsed-code-unit",
+        "nowdoc-code-unit"
     ]
 }

@@ -1,0 +1,1 @@
+<?php /* one /* two */ echo 1;

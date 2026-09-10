@@ -1,0 +1,1 @@
+<?php $f = #[A] static function &() { static $x; return $x; };

@@ -1,0 +1,1 @@
+<?php for (; (void) f(), true; (void) g()) { break; }

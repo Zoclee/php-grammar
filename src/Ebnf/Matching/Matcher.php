@@ -32,6 +32,10 @@ final readonly class Matcher
     public static function withDefaultPrimitives(string $rootRule = 'source-file'): self
     {
         return new self($rootRule, [
+            'non-ascii-code-unit' => static function (Input $input, int $offset): array {
+                return $offset < $input->length() && strlen($input->valueAt($offset)) === 1
+                    && ord($input->valueAt($offset)) >= 128 ? [$offset + 1] : [];
+            },
             'code-unit' => static function (Input $input, int $offset): array {
                 return $offset < $input->length() ? [$offset + 1] : [];
             },

@@ -1,0 +1,1 @@
+<?php enum E: string { case A = "a"; } const N = E::A->name;

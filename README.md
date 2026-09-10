@@ -2,7 +2,7 @@
 
 Versioned EBNF grammars and human-readable specifications for PHP language syntax.
 
-php-grammar provides a complete, source-backed grammar for each supported PHP major/minor release, designed for direct use by tools and accompanied by matching Markdown documentation.
+php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [remaining discrepancies](docs/php85-audit-remediation.md).
 
 ## Purpose
 
@@ -127,9 +127,15 @@ Each versioned grammar must remain complete and standalone. Do not implement a g
 
 ## Testing
 
-The test suite validates this repository's canonical EBNF files directly. It
-does not use `php -l`, `token_get_all()`, the installed PHP parser, or the local
-PHP version to decide whether PHP source syntax is valid.
+The PHPUnit suite validates repository EBNF independently. A separate
+differential command compares the same corpus with official PHP 8.5 lint:
+
+```text
+php bin/php85-conformance.php /path/to/php-8.5
+```
+
+Structural acceptance and contextual compilation constraints are reported
+separately. The runner rejects binaries outside PHP 8.5.x.
 
 Install dependencies and run the PHPUnit suite:
 
@@ -227,11 +233,11 @@ Whole-file tests call `PhpGrammarMatcher::matches('8.5', $source)` from
 for non-root rules, the conformance layer lexes fragments in PHP-code mode
 without requiring each fragment to include an opening tag.
 
-The conformance suite proves that focused valid fixtures are accepted by the
-repository grammar and focused invalid fixtures are rejected by it. It remains
-syntax-only: semantic analysis, type checking, name resolution, runtime
-behavior, installed-PHP comparisons, and cross-version boundary checks are out
-of scope.
+The structural suite checks focused positive and negative fixtures. The
+differential suite additionally compares official PHP 8.5 compilation.
+Documented contextual constraints form a mandatory third specification layer;
+their implementation remains incomplete. Passing fixtures do not establish
+exhaustive grammar equivalence or runtime validity.
 
 PHP 8.5 audit remediation follows this conformance boundary: the canonical
 grammar describes valid PHP 8.5 language syntax, not every intermediate form the

@@ -1,0 +1,1 @@
+<?php $x = clone(object: $o, with: ["x" => 1]);

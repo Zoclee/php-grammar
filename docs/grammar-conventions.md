@@ -402,7 +402,9 @@ Do not encode runtime requirements such as:
 - whether a function call is valid at runtime;
 - whether an expression evaluates successfully.
 
-A source form may be syntactically valid even if PHP later rejects it during compilation or semantic analysis.
+A source form may reduce in the parser and still be invalid PHP source because
+of contextual compilation constraints. PHP 8.5 specifies those constraints
+separately from pure EBNF; structural acceptance alone is not source validity.
 
 If the distinction matters, document it outside the grammar production.
 
@@ -566,12 +568,12 @@ A grammar change should be checked for at least:
 
 Tooling may impose additional validation, but must not redefine the canonical grammar dialect without updating this document.
 
-Some lexical leaves may be declared by convention as primitive source-text
-categories rather than ordinary productions. `code-unit` is currently such a
-primitive: it represents one raw source byte used by uninterpreted lexical
-regions. It is intentionally not expanded with ad hoc range notation in
-canonical EBNF. Validators and matchers may recognize this primitive explicitly
-while still reporting other undefined non-terminals.
+Lexical leaves may be explicitly declared as external primitives in
+`php-grammar.json`. Their normative definitions must appear in the standalone
+version specification. `code-unit` consumes one raw byte; `non-ascii-code-unit`
+consumes only 0x80–0xFF. State-dependent HTML, comment, and string byte primitives
+have delimiter exclusions and scanner-state requirements. They are not token
+wildcards. Validators report all undeclared external references as undefined.
 
 The Phase 2 EBNF matcher is a structural matcher for this EBNF dialect. It is
 useful for testing productions and small grammar fragments, but it is not a full
@@ -588,8 +590,8 @@ matching. This adapter is implementation tooling; canonical EBNF should remain
 language-oriented and should not be rewritten merely to mirror token class names.
 
 Whole-source conformance fixtures live under `tests/fixtures/php/<version>/`.
-The older `tests/fixtures/<version>/` layout belonged to the PHP CLI lint-based
-strategy and should not be used for new grammar conformance tests.
+The differential PHP 8.5 lint runner uses this same versioned corpus, plus
+`contextual-invalid` for forms requiring contextual rejection after parsing.
 
 Grammar coverage identities are stable strings derived from parsed grammar
 structure. Production coverage uses the production name. Branch coverage uses

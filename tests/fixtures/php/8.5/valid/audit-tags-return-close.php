@@ -1,0 +1,1 @@
+<?php function f() { return 1 ?><?php }

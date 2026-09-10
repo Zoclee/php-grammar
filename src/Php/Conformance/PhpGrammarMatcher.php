@@ -6,12 +6,14 @@ namespace PhpGrammar\Php\Conformance;
 
 use PhpGrammar\Ebnf\Coverage\CoverageCollector;
 use PhpGrammar\Ebnf\Matching\Input;
-use PhpGrammar\Ebnf\Matching\Matcher;
+use PhpGrammar\Ebnf\Matching\ChartMatcher;
 use PhpGrammar\Ebnf\Matching\MatchResult;
 use PhpGrammar\Ebnf\Matching\StringInput;
 use PhpGrammar\Php\Lexing\Lexer;
 use PhpGrammar\Php\Lexing\LexerException;
 use PhpGrammar\Php\Lexing\TokenStream;
+use PhpGrammar\Php\Lexing\Token;
+use PhpGrammar\Php\Lexing\StringSyntax;
 use PhpGrammar\Php\Lexing\TokenType;
 use PhpGrammar\Repository\RepositoryManifest;
 
@@ -20,6 +22,7 @@ final readonly class PhpGrammarMatcher
     public function __construct(
         private GrammarRepository $grammars,
         private ?CoverageCollector $coverage = null,
+        private bool $shortOpenTag = true,
     ) {
     }
 
@@ -35,7 +38,12 @@ final readonly class PhpGrammarMatcher
 
     public function withCoverage(CoverageCollector $coverage): self
     {
-        return new self($this->grammars, $coverage);
+        return new self($this->grammars, $coverage, $this->shortOpenTag);
+    }
+
+    public function withShortOpenTag(bool $enabled): self
+    {
+        return new self($this->grammars, $this->coverage, $enabled);
     }
 
     public function matches(string $version, string $source): MatchResult
@@ -49,40 +57,57 @@ final readonly class PhpGrammarMatcher
         $lexer = $this->lexerFor($version);
         try {
             $tokens = $this->tokenizeForRule($lexer, $rule, $source);
+            foreach ($tokens->all() as $token) {
+                if ($token->type === TokenType::HeredocString || $token->type === TokenType::BacktickString
+                    || ($token->type === TokenType::StringLiteral && preg_match('/^[bB]?"/', $token->lexeme))) {
+                    foreach (StringSyntax::fragments($token->lexeme) as [$fragmentRule, $fragment]) {
+                        if (!$this->matchesRule($version, $fragmentRule, $fragment)->matched) {
+                            throw new LexerException('Invalid ' . $fragmentRule . ' in string interpolation.');
+                        }
+                    }
+                }
+            }
         } catch (LexerException $exception) {
             return new MatchResult(false, $rule, new StringInput($source), 0, [$exception->getMessage()]);
         }
 
         $input = new PhpGrammarInput($tokens);
 
-        return $this->matcher($rule)->matchesRule($grammar, $rule, $input);
+        return $this->matcher()->matchesRule($grammar, $rule, $input);
     }
 
     private function tokenizeForRule(Lexer $lexer, string $rule, string $source): TokenStream
     {
-        if ($rule === 'source-file' || str_starts_with($source, '<?')) {
-            return $lexer->tokenize($source)->withoutTrivia();
+        $wholeSource = $rule === 'source-file' || str_starts_with($source, '<?');
+        $tokens = $lexer->tokenize($wholeSource ? $source : '<?php ' . $source)->withoutTrivia()->all();
+        $result = [];
+        foreach ($tokens as $token) {
+            if ($token->type === TokenType::OpenTag) {
+                continue;
+            }
+            if ($token->type === TokenType::EchoOpenTag || $token->type === TokenType::CloseTag) {
+                $token = new Token(
+                    $token->type === TokenType::EchoOpenTag ? TokenType::Keyword : TokenType::Punctuation,
+                    $token->type === TokenType::EchoOpenTag ? 'echo' : ';',
+                    $token->offset, $token->length, $token->line, $token->column,
+                );
+            }
+            $result[] = $token;
         }
-
-        $tokens = $lexer->tokenize('<?php ' . $source)->withoutTrivia()->all();
-        array_shift($tokens);
-
-        return new TokenStream(array_values($tokens));
+        return new TokenStream($result);
     }
 
     private function lexerFor(string $version): Lexer
     {
         $package = $this->grammars->manifest()->package($version);
 
-        return Lexer::forVersion($package->lexerVersion);
+        return Lexer::forVersion($package->lexerVersion)->withShortOpenTag($this->shortOpenTag);
     }
 
-    private function matcher(string $rootRule): Matcher
+    private function matcher(): ChartMatcher
     {
-        return new Matcher(
-            rootRule: $rootRule,
-            primitiveMatchers: $this->lexicalPrimitiveMatchers(),
-            primitiveMatchersOverrideProductions: true,
+        return new ChartMatcher(
+            primitives: $this->lexicalPrimitiveMatchers(),
             coverage: $this->coverage,
         );
     }
@@ -96,19 +121,27 @@ final readonly class PhpGrammarMatcher
             'code-unit' => static fn (Input $input, int $offset): array => $offset < $input->length() ? [$offset + 1] : [],
             'inline-html-text' => self::tokenTypeMatcher(TokenType::InlineHtml),
             'identifier' => self::tokenTypeMatcher(TokenType::Identifier),
+            'qualified-name' => self::tokenTypeMatcher(TokenType::QualifiedName),
+            'fully-qualified-name' => self::tokenTypeMatcher(TokenType::FullyQualifiedName),
+            'namespace-relative-name' => self::tokenTypeMatcher(TokenType::RelativeName),
             'semi-reserved-identifier' => self::semiReservedIdentifierMatcher(),
-            'name-identifier' => self::semiReservedIdentifierMatcher(),
+            'name-identifier' => self::lexemeMatcher(TokenType::Identifier, '/^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$/'),
             'variable' => self::tokenTypeMatcher(TokenType::Variable),
-            'integer-literal' => self::tokenTypeMatcher(TokenType::IntegerLiteral),
             'decimal-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^(?:0|[1-9](?:_?[0-9])*)$/'),
             'binary-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^0[bB][01](?:_?[01])*$/'),
-            'octal-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^0[0-7](?:_?[0-7])*$/'),
+            'octal-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^0(?:_?[0-7])+$/'),
             'explicit-octal-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^0[oO][0-7](?:_?[0-7])*$/'),
             'hexadecimal-integer-literal' => self::lexemeMatcher(TokenType::IntegerLiteral, '/^0[xX][0-9A-Fa-f](?:_?[0-9A-Fa-f])*$/'),
             'floating-literal' => self::lexemeMatcher(TokenType::FloatingLiteral, '/^(?:(?:[0-9](?:_?[0-9])*)?\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\.(?:[0-9](?:_?[0-9])*)?)(?:[eE][+-]?[0-9](?:_?[0-9])*)?$|^[0-9](?:_?[0-9])*[eE][+-]?[0-9](?:_?[0-9])*$/'),
             'string-literal' => self::tokenTypesMatcher(TokenType::StringLiteral, TokenType::HeredocString, TokenType::NowdocString),
-            'single-quoted-string' => self::tokenTypeMatcher(TokenType::StringLiteral),
-            'double-quoted-string' => self::tokenTypeMatcher(TokenType::StringLiteral),
+            'constant-string-literal' => self::constantStringMatcher(),
+            'constant-double-quoted-string' => self::constantStringMatcher(true),
+            'single-quoted-string' => self::lexemeMatcher(TokenType::StringLiteral, '/^[bB]?\'/'),
+            'double-quoted-string' => self::lexemeMatcher(TokenType::StringLiteral, '/^[bB]?"/'),
+            'backtick-string' => self::tokenTypeMatcher(TokenType::BacktickString),
+            'halt-compiler-data' => static function (Input $input, int $offset): array {
+                return $offset === $input->length() ? [$offset] : (self::tokenTypeMatcher(TokenType::HaltCompilerData))($input, $offset);
+            },
             'heredoc-string' => self::tokenTypeMatcher(TokenType::HeredocString),
             'nowdoc-string' => self::tokenTypeMatcher(TokenType::NowdocString),
         ];
@@ -117,6 +150,23 @@ final readonly class PhpGrammarMatcher
     private static function tokenTypeMatcher(TokenType $type): callable
     {
         return self::tokenTypesMatcher($type);
+    }
+
+    private static function constantStringMatcher(bool $doubleQuotedOnly = false): callable
+    {
+        return static function (Input $input, int $offset) use ($doubleQuotedOnly): array {
+            if (!$input instanceof PhpGrammarInput || $offset >= $input->length()) return [];
+            $token = $input->tokenAt($offset);
+            if ($doubleQuotedOnly && ($token->type !== TokenType::StringLiteral || !preg_match('/^[bB]?"/', $token->lexeme))) return [];
+            if ($token->type === TokenType::NowdocString) return [$offset + 1];
+            if (!in_array($token->type, [TokenType::StringLiteral, TokenType::HeredocString], true)) return [];
+            if (preg_match('/^[bB]?\'/', $token->lexeme)) return [$offset + 1];
+            for ($i = 0; $i < strlen($token->lexeme); $i++) {
+                if ($token->lexeme[$i] === '\\') { $i++; continue; }
+                if ($token->lexeme[$i] === '$' && preg_match('/[a-zA-Z_\x80-\xff{]/', $token->lexeme[$i + 1] ?? '') === 1) return [];
+            }
+            return [$offset + 1];
+        };
     }
 
     private static function tokenTypesMatcher(TokenType ...$types): callable
@@ -154,8 +204,8 @@ final readonly class PhpGrammarMatcher
                 return [$offset + 1];
             }
 
-            $allowedContextualKeywords = ['enum' => true, 'readonly' => true];
-            return $token->type === TokenType::Keyword && isset($allowedContextualKeywords[strtolower($token->lexeme)])
+            return $token->type === TokenType::Keyword && strtolower($token->lexeme) !== '__halt_compiler'
+                && $token->length === strlen($token->lexeme)
                 ? [$offset + 1]
                 : [];
         };

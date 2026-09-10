@@ -1,0 +1,1 @@
+<?php namespace N; function enum() {} \Foo\class();

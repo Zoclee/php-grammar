@@ -7,6 +7,7 @@ namespace PhpGrammar\Php\Conformance;
 use PhpGrammar\Ebnf\Matching\Input;
 use PhpGrammar\Php\Lexing\Token;
 use PhpGrammar\Php\Lexing\TokenStream;
+use PhpGrammar\Php\Lexing\TokenType;
 
 final readonly class PhpGrammarInput implements Input
 {
@@ -22,7 +23,15 @@ final readonly class PhpGrammarInput implements Input
 
     public function valueAt(int $offset): string
     {
-        return $this->tokenAt($offset)->lexeme;
+        $token = $this->tokenAt($offset);
+        if ($token->type === TokenType::Keyword && str_starts_with($token->lexeme, '__')
+            && strtolower($token->lexeme) !== '__halt_compiler') {
+            return strtoupper($token->lexeme);
+        }
+        if (in_array($token->type, [TokenType::Keyword, TokenType::Operator], true)) {
+            return strtolower(preg_replace('/[ \t]+/', '', $token->lexeme));
+        }
+        return $token->lexeme;
     }
 
     public function tokenAt(int $offset): Token

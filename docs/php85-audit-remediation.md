@@ -1,85 +1,130 @@
-# PHP 8.5 Audit Remediation
+# PHP 8.5 audit and remediation
 
-This note records the Phase 2 authoritative audit remediation disposition for
-`grammar/8.5/php.ebnf`.
+This audit supersedes the earlier disposition checklist. That checklist called
+several unresolved areas fixed. The current result is a substantial structural
+remediation with explicit remaining discrepancies; it is **not** a certification
+of PHP 8.5 conformance.
 
-## Conformance Boundary
+## Evidence and method
 
-The canonical grammar describes valid PHP 8.5 language syntax. It is not a
-mirror of every form the Zend parser can reduce before contextual compile-time
-validation, and it is not based on the installed PHP CLI.
+Primary source: `php-src` branch `PHP-8.5`, revision
+`7a4c62795365ed6a97a0184c96375b9fb4d53b1e`, retrieved 2026-09-10.
+The parser, scanner, and compiler are pinned together. Supporting manual/RFC
+references in `docs/sources.md` do not override these implementation sources.
 
-Primary references:
+The source inventory records every parser production, scanner rule entry,
+compiler function in the selected compile-related families, and EBNF production.
+It provides locations and file hashes in `docs/php85-source-inventory.json`.
+There are 177 parser productions and 190 scanner rule entries. Regenerate with:
 
-- PHP 8.5 parser grammar:
-  <https://github.com/php/php-src/blob/php-8.5.10/Zend/zend_language_parser.y>
-- PHP 8.5 scanner:
-  <https://github.com/php/php-src/blob/php-8.5.10/Zend/zend_language_scanner.l>
-- PHP 8.5 migration guide:
-  <https://www.php.net/manual/en/migration85.php>
+```text
+python tools/fetch-php85-sources.py .audit
+python tools/php85-source-inventory.py .audit
+```
 
-## Disposition Checklist
+This inventory prevents entire grammar areas from disappearing from view. It is
+not a proof of equivalence or a substitute for a fresh manual comparison of all
+alternatives. That exhaustive final reconciliation is still outstanding in the
+areas identified below.
 
-| Audit area | Disposition |
-|---|---|
-| Valid PHP syntax boundary | Documented in README, conformance docs, source policy, and PHP 8.5 companion docs. |
-| Inline HTML versus PHP opening tags | Fixed in lexer/source-mode model; inline HTML is emitted only outside PHP mode. |
-| `<?php` boundary | Fixed in lexer: `<?php` requires a non-identifier boundary. |
-| `<?=` expression lists | Fixed in EBNF; echo open tag accepts `expression-list`. |
-| `?>` source transition | Fixed in lexer and EBNF statement terminators. |
-| Short open tags | Documented as lexer configuration-dependent. |
-| `code-unit` | Retained as byte-oriented lexical primitive for uninterpreted source regions. |
-| Ordinary identifiers versus keywords | Fixed in conformance primitives; ordinary `identifier` matches identifier tokens only. |
-| Semi-reserved/contextual names | Fixed in conformance adapter with a narrower contextual keyword primitive. |
-| `die` exit alias | Fixed in lexer keyword table and EBNF expression syntax. |
-| `from` keyword handling | Fixed in lexer; `from` is no longer a general reserved keyword. |
-| `__halt_compiler` | Retained as reserved keyword and top-level halt compiler statement. |
-| `enum` contextual handling | Represented as contextual name keyword in the adapter. |
-| Non-ASCII identifier bytes | Lexer continues to restrict identifier bytes to `0x80`-`0xff`; EBNF keeps `code-unit` primitive for byte-level leaves. |
-| Numeric literal prefixes and decimal zero | Fixed in EBNF and token-lexeme primitive predicates. |
-| Numeric separator placement | Fixed in EBNF and token-lexeme primitive predicates. |
-| Comments and `#[` | Lexer already separated `#[`; line comments now stop before `?>`. |
-| String delimiter constraints | Retained in project lexer; deeper interpolation equality/indentation constraints remain contextual. |
-| Heredoc/nowdoc label equality and indentation | Documented as contextual lexical constraints enforced by the project lexer where currently implemented. |
-| Expression hierarchy | Rebuilt around PHP precedence layers. |
-| `or`, `xor`, `and` | Fixed in EBNF. |
-| `**` associativity | Fixed as right-associative in EBNF. |
-| Prefix `++` and `--` | Fixed in EBNF. |
-| `<>` inequality | Fixed in EBNF. |
-| `??` associativity | Fixed as right-associative in EBNF. |
-| Equality and relational chaining | Fixed as non-associative grammar levels. |
-| Ternary associativity | Retained as a right-nested conditional production to reject chained modern invalid forms. |
-| Clone and clone-with precedence | Fixed as unary expression forms, including `clone(...)`. |
-| Dereferenceability and literal calls/member access | Fixed by separating fully dereferenceable/callable expression categories and removing universal postfixing. |
-| Curly-brace offset syntax | Removed from postfix operations. |
-| Destructuring assignment | Fixed for `list(...) =` and `[...] =`. |
-| Named arguments and by-reference special case | Fixed by removing separate named-by-reference argument syntax. |
-| Bare `...` first-class-callable argument list | Fixed as whole argument-list alternative only. |
-| Recursive variable variables | Fixed in lexer and EBNF. |
-| Member-name breadth | Fixed by limiting member-name to identifier, variable, or expression braces. |
-| Closure and arrow function attributes | Fixed in EBNF. |
-| Anonymous class attributes | Fixed in EBNF. |
-| Empty closure `use ()` | Fixed in EBNF by requiring at least one lexical variable. |
-| `unset` target restrictions | Fixed in EBNF with variable-only unset targets. |
-| `foreach` target restrictions | Fixed in EBNF with foreach-variable categories. |
-| `for` `(void)` locations | Fixed by separating condition expression lists. |
-| `switch` optional leading semicolon | Fixed in EBNF. |
-| `match` comma before `=>` | Fixed in EBNF. |
-| Nullable/DNF types | Fixed by rejecting nullable parenthesized intersections. |
-| Property type `static` | Fixed by using `type-without-static` for properties. |
-| Hooked properties and ordinary property lists | Fixed by separating ordinary list properties from single hooked properties. |
-| Unmodified class properties | Fixed by requiring a property modifier list or `var`. |
-| Interface property hooks | Fixed in EBNF. |
-| Bare class/interface member semicolons | Removed from class and interface member alternatives. Enum separators remain modeled. |
-| Typed class constants | Fixed as `const [type] X = ...`. |
-| Trait use adaptation semicolon | Fixed by separating `use T;` from `use T { ... }`. |
-| Attributes on trait use | Fixed by excluding trait-use declarations from attributed member alternatives. |
-| Cast aliases and `(unset)` | Fixed by accepting deprecated valid aliases and removing `(unset)` from valid cast syntax. |
-| Constant expressions | Fixed by replacing `constant-expression = expression` with a restricted expression hierarchy. |
+Executable oracle: official Windows PHP 8.5.10 NTS x64 release ZIP,
+`php-8.5.10-nts-Win32-vs17-x64.zip`, SHA-256
+`22ec430195984d233eb9e62c637a945bbcda06efca2f392d9d96d62c6acd34f8`.
+The checksum was verified before use. This is a released patch build, not a
+build of the pinned branch commit. Downloads live in ignored `.audit/` and are
+not distributed with the grammar.
 
-## Contextual Constraints
+## Issues and regressions
 
-The following remain documented contextual constraints rather than ordinary EBNF
-rules: heredoc/nowdoc label equality, flexible heredoc indentation, duplicate
-modifiers, impossible type combinations, invalid attribute targets, callable
-validity for `|>`, and other compile-time checks that are not pure syntax.
+`P` means `Zend/zend_language_parser.y`, `S` means
+`Zend/zend_language_scanner.l`, and `C` means `Zend/zend_compile.c` at the pinned
+revision. Fixture names below omit the `audit-` prefix and `.php` suffix; they
+are under `tests/fixtures/php/8.5/{valid,invalid,contextual-invalid}`.
+
+| Issue | Productions / implementation | Source reference | Change / regression |
+|---|---|---|---|
+| Independent PHP regions reject templates | source-file, statement, token adapter | P start/statement; S INITIAL and close-tag rule | One token stream; `tags-interleaved`, `tags-return-close` |
+| Long tag boundary too broad | Lexer consumeOpenTag | S INITIAL `<?php` rules, lines 2309–2334 | Require whitespace/EOF; `tags-empty-php`, `tags-case`; disabled-tag lexer tests |
+| Echo EOF wrongly optional | source stream, echo-statement | S `<?=` emits T_ECHO; P statement | No fabricated EOF semicolon; `tags-echo-eof`, `tags-echo-empty` |
+| Closing tags only terminate selected statements | token adapter | S close-tag emits `;`, line 2524 | Normalize all close tags; `tags-return-close`, `tags-comment-close` |
+| Byte and whitespace categories too broad | non-ascii-byte, whitespace-character | S LABEL/WHITESPACE, lines 1377–1378 | Explicit primitive registry and four whitespace bytes; `names-high-byte`, `lexical-form-feed`, `lexical-vertical-tab` |
+| Comments swallow delimiters / attributes | comment primitives, Lexer | S line/block comment states | First terminator and `#[` distinction; `comments-first-terminator`, `comments-unclosed`, `comments-attribute` |
+| Qualified-name trivia and reserved names | name, identifier, semi-reserved-identifier | P name/identifier/reserved_non_modifiers; S name tokens | Atomic names and distinct identifier contexts; `names-trivia-qualified`, `names-reserved-class`, `names-keyword-method`, `names-halt-method` |
+| Contextual enum and readonly function names | function-declaration, Lexer | P function_name; S enum lookahead | Preserve enum as a name where appropriate; `names-enum-class`, `names-readonly-function` |
+| Magic constants accepted as declaration names | PhpVersion keyword table | S magic-constant rules; P T_STRING contexts | Separate tokens; `names-magic-declaration`, `names-magic-constant` |
+| Octal separator and invalid numeric spellings | integer-literal and subclasses | S LNUM/HNUM/BNUM/ONUM and octal validation | Remove unrestricted integer primitive; `numbers-octal-separator`, `numbers-prefixes`, `numbers-invalid-octal`, separator negatives |
+| Numeric floats / prefixes | floating-literal, Lexer | S DNUM/EXPONENT_DNUM | Base/separator fixtures; `numbers-floats`, `numbers-float-dot-underscore` |
+| Binary-prefixed strings and heredocs | string productions, Lexer | S `b?` string/header rules | Both prefix cases; `strings-binary`, `strings-binary-heredoc` |
+| Duplicated dollar in complex interpolation | encapsulated-variable | P encaps_var/T_CURLY_OPEN | `{` plus existing variable; `strings-interpolation`, `strings-interpolation-expression` |
+| Quoted offsets and nested interpolation quotes | StringSyntax, Lexer, adapter | P encaps_var_offset; S interpolation states | Validate extracted fragments independently; `strings-nested-quotes`, `strings-interpolation-quoted-offset`, `strings-interpolation-unclosed` |
+| Unicode escape errors ignored | StringSyntax | S zend_scan_escape_string | Reject malformed/out-of-range escapes; `strings-unicode-empty`, `strings-unicode-range` |
+| Heredoc closing label/indentation/newline | heredoc/nowdoc productions, Lexer | S ST_HEREDOC/ST_NOWDOC/header rules | Equality, indentation, quoted/empty headers, closing punctuation; `strings-heredoc-*`, `strings-nowdoc-indented` |
+| Precedence hierarchy incorrect | expression layers | P precedence declarations lines 64–96; C zend_compile_conditional | Reorder high operators and introduce low levels; `precedence-unary-power`, `precedence-not-instanceof`, `precedence-coalesce`, chaining negatives. AST grouping remains open. |
+| Universal postfix grammar | variable-expression and dereferenceable categories | P variable/callable_variable/fully_dereferenceable/new_variable | Preserve Zend categories; `dereference-call-chain`, `dereference-new-*`, `dereference-curly-offset` |
+| Matcher discards indirect left recursion | ChartMatcher | P mutually recursive dereference categories | Earley recognition; ChartMatcherTest nullable-cycle and indirect-recursion cases |
+| Recursive globals and static unset | global-variable, unset-variable | P global_var/unset_variable | Use proper recursive categories; `dereference-global-recursive`, `dereference-unset-static`, contextual `dereference-unset-call` |
+| Callable marker mixed with arguments | argument-list | P argument_list | Complete special form retained; `arguments-first-class`, `arguments-mixed-callable`, `arguments-reference` |
+| Clone-with special list too narrow | clone-argument-list | P clone_argument_list/non_empty_clone_argument_list | Named, unpacked, trailing-comma and callable forms; `php85-clone-*` |
+| Static local initializer restricted to constants | static-variable | P static_var `= expr` | Runtime expressions; `statements-static-runtime` |
+| Void for-condition nuance | for-condition-expression-list | P for_cond_exprs/non_empty_for_exprs | Earlier elements may discard; last must be expression; `statements-for-void-prefix`, `statements-for-final-void` |
+| Try without handler, switch leading semicolon | try-statement, switch-case-list | P statement/switch_case_list; C zend_compile_try | Require catch/finally, retain leading `;`; `statements-try-*`, `statements-switch-semicolon` |
+| Constant syntax too broad/narrow | constant-expression hierarchy and context wrappers | C zend_is_allowed_in_const_expr / zend_compile_const_expr | Static noncapturing closures, callable conversion, casts, new, offsets/property reads; reject runtime calls/captures/interpolation; `constants-*`. Folding edge cases remain open. |
+| Attributes reuse unrestricted arguments | attribute, constant-argument-list | C zend_compile_attributes | No unpacking/callable list; `attributes-unpacking`, `constants-attribute-new` |
+| Multiple attributed global constants | attributed-top-declaration | C zend_compile_const_decl | Single global constant; class multiple constants remain valid; `attributes-multiple-global`, `attributes-class-multiple` |
+| Hook list/name/modifier/forms | property-hook and property-declaration | P property_hook/hooked_property; C zend_compile_property_hooks | Nonempty get/set, final-only hook modifier, separate hooked declaration; `hooks-*` |
+| Abstract / var hooked properties | property-modifier, property-declaration | P property_modifiers; C zend_compile_prop_decl | Retain valid forms; `hooks-abstract`, `hooks-var` |
+| Empty trait aliases and wrong precedence reference | trait-alias, trait-precedence | P trait_alias/absolute_trait_method_reference | Nonempty alias action and qualified precedence reference; `members-trait-empty-as` |
+| Bare enum/class member semicolons | enum-member, class-member | P class_statement | Exclude separators; `members-enum-semicolon`, `members-class-semicolon` |
+| Type context/promotion/enum consistency | type and context constraints | C zend_compile_params/typename/enum_case | Document mandatory contextual checks; `promotion-*`, `types-*`, `enums-*` |
+| Cast token normalization and aliases | cast-expression, token adapter | S cast rules lines 1636–1713 | Horizontal whitespace/case and deprecated aliases; `casts-whitespace-case`, `casts-real`, `casts-unset` |
+| Halt payload lexed as PHP | halt-compiler-data, Lexer | P top_statement; zend_stop_lexing | Stop tokenization after terminator; `halt-data` |
+| Markdown drift | generated EBNF block | Repository EBNF authority policy | Full production parity test and synchronization command |
+
+## Contextual constraints
+
+The PHP 8.5 Markdown specification contains the normative matrix: constant
+validation modes, type legality, modifiers, hook combinations, constructor
+promotion, enum values, argument ordering, writable variables, declaration
+placement, and control flow. These are part of source validity even when not
+encoded in pure EBNF. Twenty-five focused fixtures currently expose the
+structural/contextual boundary; the lint runner prints their count separately.
+
+The earlier positive unit example `class A { public int $x { get; } }` was
+invalid concrete-class source. It now uses a hook body; the contextual-negative
+fixture `hooks-concrete-no-body` records the actual compiler behavior.
+
+## Remaining discrepancies
+
+1. No unique AST comparison for precedence or dangling else. Low-precedence
+   prefix escape paths remain ambiguous. Mixed-prefix acceptance is covered,
+   but a passing lint fixture cannot prove
+   the EBNF groups an expression correctly.
+2. Constant folding and computed literal class/callable names require further
+   audit. Computed names and dead/folded subexpressions
+   are not proven equivalent to Zend validation modes.
+3. Nested interpolation/comment/heredoc scanner stacks are not fully implemented.
+   Numeric-string offsets, shebang handling, and object-property lookup now have
+   specific regressions, but their entire state space is not proven equivalent.
+4. The contextual validator remains documentation plus a differential corpus,
+   not a complete repository-owned implementation. Lint also defers some
+   symbol/value checks to later phases.
+5. The final exhaustive fresh production-by-production and scanner-rule
+   equivalence review remains incomplete. The inventory is explicit about this
+   limit rather than turning generated coverage into a conformance claim.
+
+## Verification record
+
+The differential command uses the same fixture files for independent EBNF
+recognition and official PHP lint, including separate enabled/disabled short-tag
+profiles. The final run on PHP 8.5.10 recorded 108 positive, 76
+structural-negative, and 25 contextual-negative fixtures with zero unexpected
+mismatches. The repository suite passed 387 tests and 1,094 assertions on PHP
+8.4.22. Integrity checks passed for 331 productions: no undefined references
+outside the explicit primitive registry, duplicates, unreachable productions,
+or unintended nullable productions. Markdown production parity and diff
+whitespace checks passed. Coverage reporting completed: 236/331 productions
+(71.3%) and 277/769 alternatives (36.0%) exercised. Generated chart symbols are
+excluded from coverage totals. Subsequent changes must rerun these checks.
+
+Final assessment: substantially improved, source-traceable structural grammar;
+**full PHP 8.5 source conformance is not established**.

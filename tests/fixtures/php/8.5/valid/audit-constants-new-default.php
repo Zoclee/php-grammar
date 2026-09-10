@@ -1,0 +1,1 @@
+<?php function f($x = new stdClass) {}

@@ -12,7 +12,7 @@ final class Lexer
         '===', '!==', '<=>', '??=', '<<=', '>>=', '**=',
         '+=', '-=', '*=', '/=', '.=', '%=', '&=', '|=', '^=',
         '|>', '?->', '->', '::', '=>', '++', '--', '&&', '||',
-        '<=', '>=', '==', '!=', '??', '<<', '>>', '**',
+        '<=', '>=', '==', '!=', '<>', '??', '<<', '>>', '**',
         '...',
         '=', '|', '^', '&', '+', '-', '*', '/', '.', '%', '!', '~', '<', '>', '?', '@',
     ];
@@ -34,15 +34,33 @@ final class Lexer
         return new self(PhpVersion::forVersion($version));
     }
 
+    public function withShortOpenTag(bool $enabled): self
+    {
+        return new self($this->version->withShortOpenTag($enabled));
+    }
+
     public function tokenize(string $source): TokenStream
     {
         $state = new LexerState($source);
         $tokens = [];
         $inPhp = false;
+        $lookingForProperty = false;
+        $last = [];
+        if (str_starts_with($source, '#!') && ($end = $this->findLineEnd($source, 0)) !== null) {
+            $tokens[] = $state->consume($this->lineBreakEnd($source, $end), TokenType::Comment);
+        }
 
         while (!$state->atEnd()) {
+            if (count($last) === 4 && $last[0]->type === TokenType::Keyword && strtolower($last[0]->lexeme) === '__halt_compiler'
+                && $last[1]->lexeme === '(' && $last[2]->lexeme === ')'
+                && ($last[3]->lexeme === ';' || $last[3]->type === TokenType::CloseTag)) {
+                $tokens[] = $state->consume(strlen($source) - $state->offset, TokenType::HaltCompilerData);
+                break;
+            }
             if (!$inPhp) {
-                $openOffset = strpos($source, '<?', $state->offset);
+                $pattern = $this->version->shortOpenTag ? '/<\?/i' : '/<\?(?:=|php(?=[ \t\r\n]|$))/i';
+                $found = preg_match($pattern, $source, $opening, PREG_OFFSET_CAPTURE, $state->offset);
+                $openOffset = $found === 1 ? $opening[0][1] : false;
                 if ($openOffset === false) {
                     $tokens[] = $state->consume(strlen($source) - $state->offset, TokenType::InlineHtml);
                     break;
@@ -50,6 +68,7 @@ final class Lexer
 
                 if ($openOffset > $state->offset) {
                     $tokens[] = $state->consume($openOffset - $state->offset, TokenType::InlineHtml);
+                    $last = [];
                 }
 
                 $tokens[] = $this->consumeOpenTag($state);
@@ -58,12 +77,26 @@ final class Lexer
             }
 
             if ($state->startsWith('?>')) {
-                $tokens[] = $state->consume(2, TokenType::CloseTag);
+                $length = 2;
+                if ($state->charAt(2) === "\r") {
+                    $length += $state->charAt(3) === "\n" ? 2 : 1;
+                } elseif ($state->charAt(2) === "\n") {
+                    $length++;
+                }
+                $token = $state->consume($length, TokenType::CloseTag);
+                $tokens[] = $token;
+                $last = array_slice([...$last, $token], -4);
+                $lookingForProperty = false;
                 $inPhp = false;
                 continue;
             }
 
-            $tokens[] = $this->consumePhpToken($state);
+            $token = $this->consumePhpToken($state, $lookingForProperty);
+            $tokens[] = $token;
+            if (!$token->isTrivia()) {
+                $last = array_slice([...$last, $token], -4);
+                $lookingForProperty = in_array($token->lexeme, ['->', '?->'], true);
+            }
         }
 
         return new TokenStream($tokens);
@@ -75,7 +108,8 @@ final class Lexer
             return $state->consume(3, TokenType::EchoOpenTag);
         }
 
-        if ($state->startsWith('<?php') && !$this->isIdentifierPart($state->charAt(5))) {
+        if (strtolower(substr($state->source, $state->offset, 5)) === '<?php'
+            && ($state->charAt(5) === null || in_array($state->charAt(5), [" ", "\t", "\r", "\n"], true))) {
             return $state->consume(5, TokenType::OpenTag);
         }
 
@@ -86,15 +120,19 @@ final class Lexer
         throw $state->error('Expected PHP open tag.');
     }
 
-    private function consumePhpToken(LexerState $state): Token
+    private function consumePhpToken(LexerState $state, bool $lookingForProperty = false): Token
     {
         $char = $state->charAt(0);
+
+        if ($lookingForProperty && $this->isIdentifierStart($char)) {
+            return $this->consumeIdentifierOrKeyword($state, true);
+        }
 
         if ($this->isWhitespace($char)) {
             return $this->consumeWhile($state, TokenType::Whitespace, fn (string $value): bool => $this->isWhitespace($value));
         }
 
-        if ($state->startsWith('/**')) {
+        if ($state->startsWith('/**') && in_array($state->charAt(3), [" ", "\t", "\r", "\n"], true)) {
             return $this->consumeBlockComment($state, TokenType::DocComment);
         }
 
@@ -114,25 +152,45 @@ final class Lexer
             return $this->consumeVariable($state);
         }
 
-        if ($char === '\'' || $char === '"') {
+        if (($char === 'b' || $char === 'B') && in_array($state->charAt(1), ["'", '"'], true)) {
+            return $this->consumeQuotedString($state, $state->charAt(1), 1);
+        }
+
+        if ($char === '\'' || $char === '"' || $char === '`') {
             return $this->consumeQuotedString($state, $char);
         }
 
         if ($state->startsWith('<<<')) {
             return $this->consumeHereString($state);
         }
+        if (($char === 'b' || $char === 'B') && substr($state->source, $state->offset + 1, 3) === '<<<') {
+            return $this->consumeHereString($state, 1);
+        }
 
-        foreach ([
-            '(integer)', '(double)', '(boolean)',
-            '(binary)', '(int)', '(float)', '(string)', '(array)', '(object)', '(bool)', '(void)',
-        ] as $cast) {
-            if ($state->startsWith($cast)) {
-                return $state->consume(strlen($cast), TokenType::Operator);
+        if (preg_match('/^\([ \t]*(?:integer|double|boolean|binary|int|float|string|array|object|bool|void)[ \t]*\)/i', substr($state->source, $state->offset), $cast) === 1) {
+            return $state->consume(strlen($cast[0]), TokenType::Operator);
+        }
+
+        foreach (['public(set)', 'protected(set)', 'private(set)'] as $modifier) {
+            if (strtolower(substr($state->source, $state->offset, strlen($modifier))) === $modifier) {
+                return $state->consume(strlen($modifier), TokenType::Operator);
             }
         }
 
         if ($this->isNumberStart($state)) {
             return $this->consumeNumber($state);
+        }
+
+        $label = '[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*';
+        $rest = substr($state->source, $state->offset);
+        foreach ([
+            TokenType::RelativeName->value => '/^namespace\\\\' . $label . '(?:\\\\' . $label . ')*/i',
+            TokenType::FullyQualifiedName->value => '/^\\\\' . $label . '(?:\\\\' . $label . ')*/',
+            TokenType::QualifiedName->value => '/^' . $label . '(?:\\\\' . $label . ')+/',
+        ] as $type => $pattern) {
+            if (preg_match($pattern, $rest, $name) === 1) {
+                return $state->consume(strlen($name[0]), TokenType::from($type));
+            }
         }
 
         if ($this->isIdentifierStart($char)) {
@@ -186,9 +244,9 @@ final class Lexer
         return $state->consume($length, TokenType::Variable);
     }
 
-    private function consumeQuotedString(LexerState $state, string $quote): Token
+    private function consumeQuotedString(LexerState $state, string $quote, int $prefix = 0): Token
     {
-        $length = 1;
+        $length = 1 + $prefix;
         while (!$state->atEnd($length)) {
             $char = $state->charAt($length);
             if ($char === '\\') {
@@ -196,45 +254,68 @@ final class Lexer
                 continue;
             }
 
+            if ($quote !== "'" && in_array(substr($state->source, $state->offset + $length, 2), ['{$', '${'], true)) {
+                $opening = $state->offset + $length + ($char === '$' ? 1 : 0);
+                $length = StringSyntax::closingBrace($state->source, $opening) - $state->offset + 1;
+                continue;
+            }
+
             $length++;
             if ($char === $quote) {
-                return $state->consume($length, TokenType::StringLiteral);
+                return $state->consume($length, $quote === '`' ? TokenType::BacktickString : TokenType::StringLiteral);
             }
         }
 
         throw $state->error('Unterminated string literal.');
     }
 
-    private function consumeHereString(LexerState $state): Token
+    private function consumeHereString(LexerState $state, int $prefix = 0): Token
     {
         $lineEnd = $this->findLineEnd($state->source, $state->offset);
         if ($lineEnd === null) {
             throw $state->error('Unterminated heredoc or nowdoc header.');
         }
 
-        $header = substr($state->source, $state->offset + 3, $lineEnd - ($state->offset + 3));
-        $trimmed = trim($header);
+        $header = substr($state->source, $state->offset + 3 + $prefix, $lineEnd - ($state->offset + 3 + $prefix));
+        $trimmed = ltrim($header, " \t");
         $type = TokenType::HeredocString;
+        $labelPattern = '[A-Za-z_\x80-\xff][A-Za-z0-9_\x80-\xff]*';
 
-        if (preg_match('/^([A-Za-z_][A-Za-z0-9_]*)$/', $trimmed, $match) === 1) {
+        if (preg_match('/^(' . $labelPattern . ')$/D', $trimmed, $match) === 1) {
             $label = $match[1];
-        } elseif (preg_match('/^\'([A-Za-z_][A-Za-z0-9_]*)\'$/', $trimmed, $match) === 1) {
+        } elseif (preg_match('/^\'(' . $labelPattern . ')\'$/D', $trimmed, $match) === 1) {
             $label = $match[1];
             $type = TokenType::NowdocString;
+        } elseif (preg_match('/^"(' . $labelPattern . ')"$/D', $trimmed, $match) === 1) {
+            $label = $match[1];
         } else {
             throw $state->error('Malformed heredoc or nowdoc label.');
         }
 
         $bodyStart = $this->lineBreakEnd($state->source, $lineEnd);
-        $pattern = '/(?:^|\R)' . preg_quote($label, '/') . ';?(?=\R|$)/';
-        if (preg_match($pattern, $state->source, $match, PREG_OFFSET_CAPTURE, $bodyStart) !== 1) {
+        $body = substr($state->source, $bodyStart);
+        $pattern = '/(?:\A|(?<=[\r\n]))([ \t]*)' . preg_quote($label, '/') . '(?![A-Za-z0-9_\x80-\xff])/';
+        if (preg_match($pattern, $body, $match, PREG_OFFSET_CAPTURE) !== 1) {
             throw $state->error('Unterminated heredoc or nowdoc body.');
         }
 
-        $endOffset = $match[0][1] + strlen($match[0][0]);
-        if (str_ends_with($match[0][0], ';')) {
-            $endOffset--;
+        $indent = $match[1][0];
+        if (str_contains($indent, ' ') && str_contains($indent, "\t")) {
+            throw $state->error('Heredoc closing indentation mixes spaces and tabs.');
         }
+        if ($indent !== '') {
+            foreach (preg_split('/\r\n|\r|\n/', substr($body, 0, $match[0][1])) as $line) {
+                if (trim($line, " \t") === '') {
+                    $prefix = substr($line, 0, min(strlen($line), strlen($indent)));
+                    if ($prefix !== str_repeat($indent[0], strlen($prefix))) {
+                        throw $state->error('Heredoc body indentation mixes spaces and tabs.');
+                    }
+                } elseif (!str_starts_with($line, $indent)) {
+                    throw $state->error('Heredoc body indentation is less than the closing label.');
+                }
+            }
+        }
+        $endOffset = $bodyStart + $match[0][1] + strlen($match[0][0]);
 
         return $state->consume($endOffset - $state->offset, $type);
     }
@@ -242,10 +323,11 @@ final class Lexer
     private function consumeNumber(LexerState $state): Token
     {
         $rest = substr($state->source, $state->offset);
-
+        $digits = '[0-9](?:_?[0-9])*';
+        $fraction = '(?:' . $digits . '\.(?:' . $digits . ')?|\.' . $digits . ')';
         foreach ([
-            '/^(?:[0-9]+(?:_[0-9]+)*(?:\.[0-9]*(?:_[0-9]+)*)?|\.[0-9]+(?:_[0-9]+)*)(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)/',
-            '/^(?:[0-9]+(?:_[0-9]+)*\.[0-9]*(?:_[0-9]+)*|\.[0-9]+(?:_[0-9]+)*)/',
+            '/^(?:' . $fraction . '|' . $digits . ')[eE][+-]?' . $digits . '/',
+            '/^' . $fraction . '/',
         ] as $pattern) {
             if (preg_match($pattern, $rest, $match) === 1) {
                 return $state->consume(strlen($match[0]), TokenType::FloatingLiteral);
@@ -266,7 +348,7 @@ final class Lexer
         throw $state->error('Malformed numeric literal.');
     }
 
-    private function consumeIdentifierOrKeyword(LexerState $state): Token
+    private function consumeIdentifierOrKeyword(LexerState $state, bool $forceIdentifier = false): Token
     {
         $length = 1;
         while ($this->isIdentifierPart($state->charAt($length))) {
@@ -274,6 +356,16 @@ final class Lexer
         }
 
         $lexeme = substr($state->source, $state->offset, $length);
+        if ($forceIdentifier) {
+            return $state->consume($length, TokenType::Identifier);
+        }
+        if (strtolower($lexeme) === 'enum') {
+            $tail = substr($state->source, $state->offset + $length);
+            $trivia = '(?:[ \t\r\n]+|/\*.*?\*/|//[^\r\n]*(?:\r\n|\r|\n)|\#(?!\[)[^\r\n]*(?:\r\n|\r|\n))+';
+            $enumKeyword = preg_match('~^' . $trivia . '([a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*)~s', $tail, $next) === 1
+                && !in_array(strtolower($next[1]), ['extends', 'implements'], true);
+            return $state->consume($length, $enumKeyword ? TokenType::Keyword : TokenType::Identifier);
+        }
         return $state->consume($length, $this->version->isKeyword($lexeme) ? TokenType::Keyword : TokenType::Identifier);
     }
 
@@ -289,7 +381,7 @@ final class Lexer
 
     private function isWhitespace(?string $char): bool
     {
-        return $char !== null && str_contains(" \n\r\t\f\v", $char);
+        return $char !== null && str_contains(" \n\r\t", $char);
     }
 
     private function isNumberStart(LexerState $state): bool

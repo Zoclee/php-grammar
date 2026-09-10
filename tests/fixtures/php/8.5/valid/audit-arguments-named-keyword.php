@@ -1,0 +1,1 @@
+<?php f(match: 1, enum: 2);

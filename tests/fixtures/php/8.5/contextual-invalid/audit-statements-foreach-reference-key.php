@@ -1,0 +1,1 @@
+<?php foreach ($a as &$k => $v) {}

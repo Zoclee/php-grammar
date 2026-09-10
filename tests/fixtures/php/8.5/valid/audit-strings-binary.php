@@ -1,0 +1,1 @@
+<?php $a = B'text'; $b = b"text";

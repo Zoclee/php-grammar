@@ -1,0 +1,1 @@
+<?php $x = clone(...$args);

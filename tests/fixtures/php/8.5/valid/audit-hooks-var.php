@@ -1,0 +1,1 @@
+<?php class C { var $x { get => 1; } }

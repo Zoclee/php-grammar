@@ -1,0 +1,1 @@
+<?php function f((A&B)|C $x): (A&B)|C {}

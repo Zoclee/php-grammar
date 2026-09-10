@@ -1,0 +1,1 @@
+<?php class C { #[A] const X = 1, Y = 2; }

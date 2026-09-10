@@ -56,7 +56,7 @@ final class Php85AuditRemediationTest extends TestCase
         yield 'textual logical operators and <> inequality' => ['<?php $x = $a or $b xor $c and 1 <> 2;'];
         yield 'cast aliases' => ['<?php $x = (integer) 1 + (double) 2 + (boolean) 3 + (binary) "x";'];
         yield 'typed class constants' => ['<?php class A { public const int X = 1, Y = 2; }'];
-        yield 'hooked property' => ['<?php class A { public int $x { get; } }'];
+        yield 'hooked property' => ['<?php class A { public int $x { get => 1; } }'];
         yield 'interface hooked property' => ['<?php interface I { public string $name { get; } }'];
         yield 'trait adaptation block without outer semicolon' => ['<?php trait T { public function m() {} } class A { use T { m as public n; } }'];
     }

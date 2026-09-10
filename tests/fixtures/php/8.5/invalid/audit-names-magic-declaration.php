@@ -1,0 +1,1 @@
+<?php class __LINE__ {}

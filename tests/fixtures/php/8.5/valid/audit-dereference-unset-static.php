@@ -1,0 +1,1 @@
+<?php unset(C::$x);

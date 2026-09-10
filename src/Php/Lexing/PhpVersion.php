@@ -32,6 +32,8 @@ final readonly class PhpVersion
             'require', 'require_once', 'return', 'static', 'switch',
             'throw', 'trait', 'try', 'unset', 'use', 'var',
             'while', 'xor', 'yield', 'die',
+            '__line__', '__file__', '__dir__', '__class__', '__trait__', '__method__',
+            '__function__', '__property__', '__namespace__',
         ];
 
         return new self('8.5', array_fill_keys($keywords, true));
@@ -48,5 +50,10 @@ final readonly class PhpVersion
     public function isKeyword(string $identifier): bool
     {
         return isset($this->keywords[strtolower($identifier)]);
+    }
+
+    public function withShortOpenTag(bool $enabled): self
+    {
+        return new self($this->version, $this->keywords, $enabled);
     }
 }

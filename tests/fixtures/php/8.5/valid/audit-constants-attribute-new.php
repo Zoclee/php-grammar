@@ -1,0 +1,1 @@
+<?php #[A(new stdClass)] function f() {}

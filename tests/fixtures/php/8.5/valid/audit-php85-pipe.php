@@ -1,0 +1,1 @@
+<?php $x = "a" |> strtoupper(...);

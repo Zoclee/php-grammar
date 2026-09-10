@@ -1,0 +1,1 @@
+<?php function &f() { static $x; return $x; }

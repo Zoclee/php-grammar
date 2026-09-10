@@ -29,14 +29,14 @@ final class RepositoryMatcherSmokeTest extends TestCase
      */
     public static function repositoryRuleProvider(): iterable
     {
-        yield 'open-tag' => ['open-tag', '<?php'];
-        yield 'close-tag' => ['close-tag', '?>'];
+        yield 'octal separator' => ['octal-integer-literal', '0_7'];
+        yield 'empty source stream' => ['source-file', ''];
         yield 'object-operator' => ['object-operator', '->'];
         yield 'nullsafe-object-operator' => ['nullsafe-object-operator', '?->'];
         yield 'integer-literal' => ['integer-literal', '123'];
         yield 'variable' => ['variable', '$name'];
         yield 'qualified-name' => ['qualified-name', 'Vendor\\Package'];
         yield 'whitespace' => ['whitespace', " \t\n"];
-        yield 'inline-html-text' => ['inline-html-text', '<p>html</p>'];
+        yield 'non-ascii-byte' => ['non-ascii-byte', "\x80"];
     }
 }

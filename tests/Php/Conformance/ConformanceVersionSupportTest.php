@@ -32,7 +32,7 @@ final class ConformanceVersionSupportTest extends TestCase
                     'lexer' => '9.9',
                 ],
             ],
-            'lexicalPrimitives' => ['code-unit'],
+            'lexicalPrimitives' => RepositoryManifest::fromRepositoryRoot(dirname(__DIR__, 3))->lexicalPrimitives(),
         ]);
 
         $this->expectException(\PhpGrammar\Php\Lexing\LexerException::class);

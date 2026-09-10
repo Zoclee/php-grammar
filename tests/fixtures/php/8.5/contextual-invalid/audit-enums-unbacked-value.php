@@ -1,0 +1,1 @@
+<?php enum E { case A = 1; }

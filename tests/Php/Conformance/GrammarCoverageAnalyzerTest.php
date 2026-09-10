@@ -17,6 +17,7 @@ final class GrammarCoverageAnalyzerTest extends TestCase
             ->analyze('8.5', Php85CoverageCases::ruleLevelCases());
 
         self::assertGreaterThan(0, $report->totalProductions());
+        self::assertLessThanOrEqual($report->totalProductions(), $report->attemptedProductions());
         self::assertGreaterThan(0, $report->exercisedProductions());
         self::assertGreaterThan(0, $report->totalAlternatives());
         self::assertGreaterThan(0, $report->exercisedAlternatives());

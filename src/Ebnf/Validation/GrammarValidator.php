@@ -6,6 +6,7 @@ namespace PhpGrammar\Ebnf\Validation;
 
 use PhpGrammar\Ebnf\Grammar;
 use PhpGrammar\Ebnf\Production;
+use PhpGrammar\Ebnf\{AlternativeNode, GroupNode, LiteralNode, Node, OptionalNode, ReferenceNode, RepetitionNode, SequenceNode};
 
 final readonly class GrammarValidator
 {
@@ -20,7 +21,7 @@ final readonly class GrammarValidator
         private string $requiredRoot = 'source-file',
         private array $reachabilityRoots = ['source-file', 'whitespace', 'comment'],
         private array $allowedEmptyProductions = [],
-        private array $lexicalPrimitives = ['code-unit'],
+        private array $lexicalPrimitives = ['code-unit', 'non-ascii-code-unit', 'html-code-unit', 'line-comment-code-unit', 'block-comment-code-unit', 'single-quoted-code-unit', 'encapsed-code-unit', 'nowdoc-code-unit'],
     ) {
     }
 
@@ -30,6 +31,15 @@ final readonly class GrammarValidator
         $productions = $grammar->productions();
         $productionMap = $grammar->productionMap();
         $counts = [];
+        $nullable = [];
+        do {
+            $previous = $nullable;
+            foreach ($productions as $production) {
+                if ($this->isNullable($production->expression, $nullable)) {
+                    $nullable[$production->name] = true;
+                }
+            }
+        } while ($nullable !== $previous);
 
         foreach ($productions as $production) {
             $counts[$production->name] = ($counts[$production->name] ?? 0) + 1;
@@ -41,7 +51,7 @@ final readonly class GrammarValidator
                 );
             }
 
-            if ($production->expression->allowsEmpty() && !in_array($production->name, $this->allowedEmptyProductions, true)) {
+            if (isset($nullable[$production->name]) && !in_array($production->name, $this->allowedEmptyProductions, true)) {
                 $errors[] = new ValidationError(
                     'empty-production',
                     sprintf('Production "%s" can match an empty sequence.', $production->name),
@@ -84,6 +94,27 @@ final readonly class GrammarValidator
         }
 
         return new ValidationResult($errors);
+    }
+
+    private function isNullable(Node $node, array $nullable): bool
+    {
+        if ($node instanceof ReferenceNode) return isset($nullable[$node->name]);
+        if ($node instanceof LiteralNode) return $node->value === '';
+        if ($node instanceof OptionalNode || $node instanceof RepetitionNode) return true;
+        if ($node instanceof GroupNode) return $this->isNullable($node->expression, $nullable);
+        if ($node instanceof AlternativeNode) {
+            foreach ($node->alternatives as $child) {
+                if ($this->isNullable($child, $nullable)) return true;
+            }
+            return false;
+        }
+        if ($node instanceof SequenceNode) {
+            foreach ($node->elements as $child) {
+                if (!$this->isNullable($child, $nullable)) return false;
+            }
+            return true;
+        }
+        return false;
     }
 
     /**

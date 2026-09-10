@@ -1,0 +1,1 @@
+<?php class C { function f(): static { return $this; } }

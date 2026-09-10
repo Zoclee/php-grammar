@@ -1,0 +1,1 @@
+<?php class C { function foreach() {} const return = 1; } C::foreach();

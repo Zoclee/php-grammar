@@ -1,0 +1,5 @@
+{
+  "zend_language_parser.y": "f108f2c2ff4c98c68b6478e7fbdebc16d8afb8bbbc3ae6079e5b285b448dac0c",
+  "zend_language_scanner.l": "8dfed84b0f6cabe73f004ea00c69614ea84542130a9b97e7699f801ef7ce7403",
+  "zend_compile.c": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225"
+}

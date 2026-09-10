@@ -1,0 +1,1 @@
+<?php const S = `echo a`;

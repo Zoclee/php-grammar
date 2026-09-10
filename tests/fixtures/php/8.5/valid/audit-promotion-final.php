@@ -1,0 +1,1 @@
+<?php class C { function __construct(final public int $x) {} }

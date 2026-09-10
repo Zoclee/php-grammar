@@ -1,5 +1,15 @@
 # Sources
 
+## PHP 8.5 implementation pin
+
+The current remediation uses branch `PHP-8.5` at commit
+`7a4c62795365ed6a97a0184c96375b9fb4d53b1e` for
+`Zend/zend_language_parser.y`, `Zend/zend_language_scanner.l`, and
+`Zend/zend_compile.c`. File hashes and rule/function locations are recorded in
+`php85-source-inventory.json`. See `php85-audit-remediation.md` for changes,
+regressions, verification results, and unresolved discrepancies. Earlier
+release-tag/RFC references below remain supporting historical evidence.
+
 This document defines the source policy for the `php-grammar` repository.
 
 The goal is to ensure that every grammar rule is based on authoritative evidence and that material grammar changes remain traceable to the PHP language sources from which they were derived.

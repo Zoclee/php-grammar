@@ -1,114 +1,81 @@
-# Conformance And Grammar Coverage
+# PHP 8.5 conformance
 
-This document describes repository-owned grammar conformance and coverage
-reporting.
+The target is valid PHP 8.5 source, with three required layers:
 
-## Conformance Pipeline
+1. The lexical/source contract converts bytes and scanner states to tokens.
+2. The standalone EBNF recognizes syntactic token sequences.
+3. Contextual constraints exclude constructs rejected during Zend compilation.
 
-PHP source conformance uses this pipeline:
+The normative contract and full EBNF appear in `grammar/8.5/php.md`.
+Structural acceptance alone is not a conformance verdict. The repository
+implements the first two layers with a PHP lexer, token adapter, and Earley
+chart recognizer. It does **not** yet implement a complete contextual validator
+or expose parse trees for precedence comparison.
 
-```text
-PHP source
-  -> repository PHP lexer
-  -> TokenStream
-  -> PHP grammar input adapter
-  -> generic EBNF matcher
-  -> grammar/<version>/php.ebnf
-```
-
-The installed PHP interpreter is not used as an oracle. Tests do not call
-`php -l`, `token_get_all()`, or subprocesses for grammar correctness.
-
-The project conformance target is valid PHP language syntax for the selected
-major/minor version. It is not "whatever the installed PHP binary accepts," and
-it is also not every intermediate form that the upstream Zend parser can reduce
-before later compile-time contextual validation.
-
-## Token Contract
-
-Syntactic EBNF literals match token lexemes. For example, `"function"`, `"|"`,
-`"=>"`, and `";"` match tokens with those exact source lexemes.
-
-Lexical productions such as `identifier`, `variable`, `integer-literal`,
-`floating-literal`, `string-literal`, `heredoc-string`, and `inline-html-text`
-are matched by PHP-specific token category primitives. Whitespace, comments,
-and doc comments are trivia and are removed before syntactic grammar matching.
-
-The PHP source-mode boundary is lexical, not an ambiguous EBNF preference.
-Inline HTML is emitted only outside PHP mode. `<?php`, `<?=`, and
-configuration-enabled `<?` enter PHP mode; `?>` leaves PHP mode and can also
-serve as a statement terminator where PHP permits it. The echo opening tag
-matches an expression list, so forms such as `<?= $a, $b ?>` are tested without
-using the local PHP interpreter.
-
-Identifier primitives distinguish ordinary identifiers from contextual name
-positions. Hard language constructs such as `unset` and `list` do not become
-ordinary callable names merely because a grammar position asks for a
-`name-identifier`. Numeric literal primitives validate the exact token lexeme
-for decimal, binary, octal, explicit octal, hexadecimal, and floating literal
-subclasses, including separator placement.
-
-Some PHP validity checks are contextual and remain outside ordinary EBNF:
-heredoc/nowdoc opening and closing label equality, flexible heredoc indentation,
-duplicate modifiers, impossible type combinations, invalid attribute targets,
-and callable validity for the pipe operator. These are syntax-adjacent
-compile-time checks, not runtime semantics, and should be enforced by a future
-contextual validation layer when the repository grows one.
-
-## Fixture Layout
-
-Whole-source conformance fixtures live under:
+## Reproducible checks
 
 ```text
-tests/fixtures/php/<version>/valid/
-tests/fixtures/php/<version>/invalid/
+composer test
+php bin/php85-conformance.php /path/to/php-8.5
+python tools/fetch-php85-sources.py .audit
+python tools/php85-source-inventory.py .audit
 ```
 
-Valid fixtures must be accepted by the canonical grammar for that version.
-Invalid fixtures must be rejected by it. Fixtures should target syntax, not
-semantic errors such as missing classes, impossible type combinations, or
-runtime behavior.
+`PHP85_BINARY` can supply the binary when the lint command has no argument.
+The command requires PHP 8.5.x and uses `-n`, `short_open_tag=1`, and
+`zend.multibyte=0`. The `short-tags-disabled` subcorpus additionally uses
+`short_open_tag=0` in both engines. It calls `php -l` without executing fixtures.
+Deprecations and warnings do not constitute rejection; a nonzero lint exit
+status does. EBNF results are obtained independently of PHP's parser/tokenizer.
 
-## Grammar Coverage
+The shared corpus is under `tests/fixtures/php/8.5/`:
 
-Grammar coverage is not PHP code coverage. It measures which canonical EBNF
-productions and branch constructs are exercised by conformance inputs.
+| Directory | EBNF expectation | PHP lint expectation |
+|---|---|---|
+| `valid` | Accept | Accept |
+| `invalid` | Reject | Reject |
+| `contextual-invalid` | Accept structurally | Reject during compilation |
 
-The coverage command is:
+The third category measures the boundary of the missing contextual
+implementation; it is not counted as rejection by EBNF. Contextual constraints
+that are economical to encode, such as nonempty hook blocks, already have
+structural restrictions and regressions in `invalid`.
 
-```bash
-composer grammar:coverage
-```
+Lint does not resolve every autoloaded symbol, deferred constant value,
+attribute class, or inheritance relationship. Its successful result does not
+prove runtime validity or all environment-dependent contextual constraints.
 
-The report currently includes:
+## Token contract
 
-- production coverage;
-- alternative coverage;
-- attempted production count;
-- attempted alternative count;
-- uncovered production identities;
-- uncovered alternative identities.
+Opening tags are skipped, `<?=` emits `echo`, and `?>` emits `;`. Inline HTML
+remains a statement token. One construct can span many PHP regions. Recognized
+PHP source cannot fall back to HTML to avoid a syntax error. `<?php` needs space,
+tab, newline, or EOF, not merely a non-identifier boundary. Short tags depend on
+configuration.
 
-Stable coverage identities are derived from the parsed grammar. Productions use
-their production name. Alternatives, optionals, and repetitions use deterministic
-per-production counters such as:
+Names containing backslashes are atomic tokens: trivia removal cannot turn
+`Foo \ Bar` into `Foo\Bar`. Variables, ordinary identifiers, semi-reserved
+identifiers, numeric subclasses, and strings use distinct primitive matchers.
+Casts normalize case and horizontal whitespace. Literal token matching never
+joins multiple tokens to synthesize one token.
 
-```text
-function-declaration
-function-declaration/alternative:1
-function-declaration/optional:2
-function-declaration/repetition:1
-```
+The chart recognizer supports nullable and indirectly left-recursive EBNF,
+needed for Zend's dereferencing categories. The original generic recursive
+matcher remains available for byte-level and small-rule tests.
 
-## Valid And Invalid Fixture Coverage
+## Integrity, parity, and coverage
 
-Coverage distinguishes attempted traversal from successful coverage.
+Repository tests check EBNF parsing, duplicate definitions, references against
+the declared primitive registry, root reachability, and allowed empty rules.
+The parity test compares the full Markdown grammar block with EBNF.
+Intentional empty lists are not empty lexical tokens: whitespace, identifiers,
+numeric tokens, and text tokens must consume input.
 
-Valid whole-file fixtures and selected rule-level samples contribute to both
-attempted and successfully matched coverage. Invalid fixtures contribute only to
-attempted coverage. This preserves useful information about grammar paths that
-were explored before rejection without allowing invalid source to make valid
-branches appear fully covered.
+`composer grammar:coverage` reports production and alternative traversal.
+Successful structural paths do not prove contextual validity or unique AST
+grouping. Lexical primitives are exercised through lexer and differential
+fixtures. Coverage has no minimum threshold.
 
-Coverage percentages are informational in the current completeness phase. No
-minimum threshold is enforced yet.
+See `docs/php85-audit-remediation.md` for remaining discrepancies. Source
+inventory coverage is not an exhaustive production-by-production equivalence
+proof.

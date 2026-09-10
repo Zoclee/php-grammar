@@ -1,0 +1,1 @@
+<?php const N = (integer) "1"; const O = (object) [];

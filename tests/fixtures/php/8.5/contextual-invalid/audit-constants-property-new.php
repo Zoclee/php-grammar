@@ -1,0 +1,1 @@
+<?php class C { public $x = new stdClass; }

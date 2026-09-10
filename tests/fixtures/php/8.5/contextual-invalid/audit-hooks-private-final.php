@@ -1,0 +1,1 @@
+<?php class C { private int $x { final get => 1; } }

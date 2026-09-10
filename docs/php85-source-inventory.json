@@ -1,0 +1,2394 @@
+{
+  "branch": "PHP-8.5",
+  "revision": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+  "files": {
+    "zend_language_parser.y": {
+      "sha256": "f108f2c2ff4c98c68b6478e7fbdebc16d8afb8bbbc3ae6079e5b285b448dac0c",
+      "entries": [
+        {
+          "name": "start",
+          "line": 303
+        },
+        {
+          "name": "reserved_non_modifiers",
+          "line": 307
+        },
+        {
+          "name": "semi_reserved",
+          "line": 318
+        },
+        {
+          "name": "ampersand",
+          "line": 323
+        },
+        {
+          "name": "identifier",
+          "line": 328
+        },
+        {
+          "name": "top_statement_list",
+          "line": 337
+        },
+        {
+          "name": "namespace_declaration_name",
+          "line": 343
+        },
+        {
+          "name": "namespace_name",
+          "line": 349
+        },
+        {
+          "name": "legacy_namespace_name",
+          "line": 355
+        },
+        {
+          "name": "name",
+          "line": 360
+        },
+        {
+          "name": "attribute_decl",
+          "line": 367
+        },
+        {
+          "name": "attribute_group",
+          "line": 374
+        },
+        {
+          "name": "attribute",
+          "line": 381
+        },
+        {
+          "name": "attributes",
+          "line": 385
+        },
+        {
+          "name": "attributed_statement",
+          "line": 390
+        },
+        {
+          "name": "attributed_top_statement",
+          "line": 398
+        },
+        {
+          "name": "top_statement",
+          "line": 403
+        },
+        {
+          "name": "use_type",
+          "line": 426
+        },
+        {
+          "name": "group_use_declaration",
+          "line": 431
+        },
+        {
+          "name": "mixed_group_use_declaration",
+          "line": 436
+        },
+        {
+          "name": "possible_comma",
+          "line": 441
+        },
+        {
+          "name": "inline_use_declarations",
+          "line": 446
+        },
+        {
+          "name": "unprefixed_use_declarations",
+          "line": 453
+        },
+        {
+          "name": "use_declarations",
+          "line": 460
+        },
+        {
+          "name": "inline_use_declaration",
+          "line": 467
+        },
+        {
+          "name": "unprefixed_use_declaration",
+          "line": 472
+        },
+        {
+          "name": "use_declaration",
+          "line": 479
+        },
+        {
+          "name": "const_list",
+          "line": 486
+        },
+        {
+          "name": "inner_statement_list",
+          "line": 491
+        },
+        {
+          "name": "inner_statement",
+          "line": 499
+        },
+        {
+          "name": "statement",
+          "line": 509
+        },
+        {
+          "name": "catch_list",
+          "line": 547
+        },
+        {
+          "name": "catch_name_list",
+          "line": 554
+        },
+        {
+          "name": "optional_variable",
+          "line": 559
+        },
+        {
+          "name": "finally_statement",
+          "line": 564
+        },
+        {
+          "name": "unset_variables",
+          "line": 569
+        },
+        {
+          "name": "unset_variable",
+          "line": 574
+        },
+        {
+          "name": "function_name",
+          "line": 578
+        },
+        {
+          "name": "function_declaration_statement",
+          "line": 587
+        },
+        {
+          "name": "is_reference",
+          "line": 594
+        },
+        {
+          "name": "is_variadic",
+          "line": 599
+        },
+        {
+          "name": "class_declaration_statement",
+          "line": 604
+        },
+        {
+          "name": "class_modifiers",
+          "line": 613
+        },
+        {
+          "name": "anonymous_class_modifiers",
+          "line": 619
+        },
+        {
+          "name": "anonymous_class_modifiers_optional",
+          "line": 626
+        },
+        {
+          "name": "class_modifier",
+          "line": 631
+        },
+        {
+          "name": "trait_declaration_statement",
+          "line": 637
+        },
+        {
+          "name": "interface_declaration_statement",
+          "line": 643
+        },
+        {
+          "name": "enum_declaration_statement",
+          "line": 649
+        },
+        {
+          "name": "enum_backing_type",
+          "line": 655
+        },
+        {
+          "name": "enum_case",
+          "line": 660
+        },
+        {
+          "name": "enum_case_expr",
+          "line": 665
+        },
+        {
+          "name": "extends_from",
+          "line": 670
+        },
+        {
+          "name": "interface_extends_list",
+          "line": 675
+        },
+        {
+          "name": "implements_list",
+          "line": 680
+        },
+        {
+          "name": "foreach_variable",
+          "line": 685
+        },
+        {
+          "name": "for_statement",
+          "line": 692
+        },
+        {
+          "name": "foreach_statement",
+          "line": 697
+        },
+        {
+          "name": "declare_statement",
+          "line": 702
+        },
+        {
+          "name": "switch_case_list",
+          "line": 707
+        },
+        {
+          "name": "case_list",
+          "line": 714
+        },
+        {
+          "name": "match",
+          "line": 727
+        },
+        {
+          "name": "match_arm_list",
+          "line": 732
+        },
+        {
+          "name": "non_empty_match_arm_list",
+          "line": 737
+        },
+        {
+          "name": "match_arm",
+          "line": 742
+        },
+        {
+          "name": "match_arm_cond_list",
+          "line": 749
+        },
+        {
+          "name": "while_statement",
+          "line": 755
+        },
+        {
+          "name": "if_stmt_without_else",
+          "line": 761
+        },
+        {
+          "name": "if_stmt",
+          "line": 770
+        },
+        {
+          "name": "alt_if_stmt_without_else",
+          "line": 776
+        },
+        {
+          "name": "alt_if_stmt",
+          "line": 785
+        },
+        {
+          "name": "parameter_list",
+          "line": 792
+        },
+        {
+          "name": "non_empty_parameter_list",
+          "line": 798
+        },
+        {
+          "name": "attributed_parameter",
+          "line": 805
+        },
+        {
+          "name": "optional_cpp_modifiers",
+          "line": 810
+        },
+        {
+          "name": "parameter",
+          "line": 818
+        },
+        {
+          "name": "optional_type_without_static",
+          "line": 829
+        },
+        {
+          "name": "type_expr",
+          "line": 834
+        },
+        {
+          "name": "type",
+          "line": 841
+        },
+        {
+          "name": "union_type_element",
+          "line": 846
+        },
+        {
+          "name": "union_type",
+          "line": 851
+        },
+        {
+          "name": "intersection_type",
+          "line": 858
+        },
+        {
+          "name": "type_expr_without_static",
+          "line": 866
+        },
+        {
+          "name": "type_without_static",
+          "line": 873
+        },
+        {
+          "name": "union_type_without_static_element",
+          "line": 879
+        },
+        {
+          "name": "union_type_without_static",
+          "line": 884
+        },
+        {
+          "name": "intersection_type_without_static",
+          "line": 891
+        },
+        {
+          "name": "return_type",
+          "line": 898
+        },
+        {
+          "name": "argument_list",
+          "line": 903
+        },
+        {
+          "name": "non_empty_argument_list",
+          "line": 909
+        },
+        {
+          "name": "clone_argument_list",
+          "line": 925
+        },
+        {
+          "name": "non_empty_clone_argument_list",
+          "line": 932
+        },
+        {
+          "name": "argument_no_expr",
+          "line": 941
+        },
+        {
+          "name": "argument",
+          "line": 947
+        },
+        {
+          "name": "global_var_list",
+          "line": 952
+        },
+        {
+          "name": "global_var",
+          "line": 957
+        },
+        {
+          "name": "static_var_list",
+          "line": 963
+        },
+        {
+          "name": "static_var",
+          "line": 968
+        },
+        {
+          "name": "class_statement_list",
+          "line": 973
+        },
+        {
+          "name": "attributed_class_statement",
+          "line": 981
+        },
+        {
+          "name": "class_statement",
+          "line": 1001
+        },
+        {
+          "name": "class_name_list",
+          "line": 1008
+        },
+        {
+          "name": "trait_adaptations",
+          "line": 1013
+        },
+        {
+          "name": "trait_adaptation_list",
+          "line": 1019
+        },
+        {
+          "name": "trait_adaptation",
+          "line": 1026
+        },
+        {
+          "name": "trait_precedence",
+          "line": 1031
+        },
+        {
+          "name": "trait_alias",
+          "line": 1036
+        },
+        {
+          "name": "trait_method_reference",
+          "line": 1055
+        },
+        {
+          "name": "absolute_trait_method_reference",
+          "line": 1061
+        },
+        {
+          "name": "method_body",
+          "line": 1066
+        },
+        {
+          "name": "property_modifiers",
+          "line": 1071
+        },
+        {
+          "name": "method_modifiers",
+          "line": 1079
+        },
+        {
+          "name": "class_const_modifiers",
+          "line": 1088
+        },
+        {
+          "name": "non_empty_member_modifiers",
+          "line": 1097
+        },
+        {
+          "name": "member_modifier",
+          "line": 1104
+        },
+        {
+          "name": "property_list",
+          "line": 1117
+        },
+        {
+          "name": "property",
+          "line": 1122
+        },
+        {
+          "name": "hooked_property",
+          "line": 1129
+        },
+        {
+          "name": "property_hook_list",
+          "line": 1136
+        },
+        {
+          "name": "optional_property_hook_list",
+          "line": 1144
+        },
+        {
+          "name": "property_hook_modifiers",
+          "line": 1149
+        },
+        {
+          "name": "property_hook",
+          "line": 1157
+        },
+        {
+          "name": "property_hook_body",
+          "line": 1168
+        },
+        {
+          "name": "optional_parameter_list",
+          "line": 1175
+        },
+        {
+          "name": "class_const_list",
+          "line": 1180
+        },
+        {
+          "name": "class_const_decl",
+          "line": 1185
+        },
+        {
+          "name": "const_decl",
+          "line": 1194
+        },
+        {
+          "name": "echo_expr_list",
+          "line": 1198
+        },
+        {
+          "name": "echo_expr",
+          "line": 1202
+        },
+        {
+          "name": "for_cond_exprs",
+          "line": 1206
+        },
+        {
+          "name": "for_exprs",
+          "line": 1212
+        },
+        {
+          "name": "non_empty_for_exprs",
+          "line": 1217
+        },
+        {
+          "name": "anonymous_class",
+          "line": 1224
+        },
+        {
+          "name": "new_dereferenceable",
+          "line": 1234
+        },
+        {
+          "name": "new_non_dereferenceable",
+          "line": 1243
+        },
+        {
+          "name": "expr",
+          "line": 1248
+        },
+        {
+          "name": "inline_function",
+          "line": 1392
+        },
+        {
+          "name": "fn",
+          "line": 1405
+        },
+        {
+          "name": "function",
+          "line": 1409
+        },
+        {
+          "name": "backup_doc_comment",
+          "line": 1413
+        },
+        {
+          "name": "backup_fn_flags",
+          "line": 1417
+        },
+        {
+          "name": "backup_lex_pos",
+          "line": 1421
+        },
+        {
+          "name": "returns_ref",
+          "line": 1425
+        },
+        {
+          "name": "lexical_vars",
+          "line": 1430
+        },
+        {
+          "name": "lexical_var_list",
+          "line": 1435
+        },
+        {
+          "name": "lexical_var",
+          "line": 1440
+        },
+        {
+          "name": "function_call",
+          "line": 1445
+        },
+        {
+          "name": "class_name",
+          "line": 1463
+        },
+        {
+          "name": "class_name_reference",
+          "line": 1470
+        },
+        {
+          "name": "backticks_expr",
+          "line": 1476
+        },
+        {
+          "name": "ctor_arguments",
+          "line": 1484
+        },
+        {
+          "name": "dereferenceable_scalar",
+          "line": 1490
+        },
+        {
+          "name": "scalar",
+          "line": 1497
+        },
+        {
+          "name": "constant",
+          "line": 1509
+        },
+        {
+          "name": "class_constant",
+          "line": 1522
+        },
+        {
+          "name": "optional_expr",
+          "line": 1533
+        },
+        {
+          "name": "variable_class_name",
+          "line": 1538
+        },
+        {
+          "name": "fully_dereferenceable",
+          "line": 1542
+        },
+        {
+          "name": "array_object_dereferenceable",
+          "line": 1553
+        },
+        {
+          "name": "callable_expr",
+          "line": 1558
+        },
+        {
+          "name": "callable_variable",
+          "line": 1565
+        },
+        {
+          "name": "variable",
+          "line": 1577
+        },
+        {
+          "name": "simple_variable",
+          "line": 1588
+        },
+        {
+          "name": "static_member",
+          "line": 1594
+        },
+        {
+          "name": "new_variable",
+          "line": 1601
+        },
+        {
+          "name": "member_name",
+          "line": 1616
+        },
+        {
+          "name": "property_name",
+          "line": 1622
+        },
+        {
+          "name": "array_pair_list",
+          "line": 1628
+        },
+        {
+          "name": "possible_array_pair",
+          "line": 1633
+        },
+        {
+          "name": "non_empty_array_pair_list",
+          "line": 1638
+        },
+        {
+          "name": "array_pair",
+          "line": 1645
+        },
+        {
+          "name": "encaps_list",
+          "line": 1664
+        },
+        {
+          "name": "encaps_var",
+          "line": 1675
+        },
+        {
+          "name": "encaps_var_offset",
+          "line": 1697
+        },
+        {
+          "name": "internal_functions_in_yacc",
+          "line": 1705
+        },
+        {
+          "name": "isset_variables",
+          "line": 1720
+        },
+        {
+          "name": "isset_variable",
+          "line": 1726
+        }
+      ]
+    },
+    "zend_language_scanner.l": {
+      "sha256": "8dfed84b0f6cabe73f004ea00c69614ea84542130a9b97e7699f801ef7ce7403",
+      "entries": [
+        {
+          "rule": "<ST_IN_SCRIPTING>\"exit\"",
+          "line": 1397
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"die\"",
+          "line": 1401
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"fn\"",
+          "line": 1405
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"function\"",
+          "line": 1409
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"const\"",
+          "line": 1413
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"return\"",
+          "line": 1417
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"#[\"",
+          "line": 1421
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"yield\"{WHITESPACE_OR_COMMENTS}\"from\"[^a-zA-Z0-9_\\x80-\\xff]",
+          "line": 1426
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"yield\"",
+          "line": 1432
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"try\"",
+          "line": 1436
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"catch\"",
+          "line": 1440
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"finally\"",
+          "line": 1444
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"throw\"",
+          "line": 1448
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"if\"",
+          "line": 1452
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"elseif\"",
+          "line": 1456
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"endif\"",
+          "line": 1460
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"else\"",
+          "line": 1464
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"while\"",
+          "line": 1468
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"endwhile\"",
+          "line": 1472
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"do\"",
+          "line": 1476
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"for\"",
+          "line": 1480
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"endfor\"",
+          "line": 1484
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"foreach\"",
+          "line": 1488
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"endforeach\"",
+          "line": 1492
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"declare\"",
+          "line": 1496
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"enddeclare\"",
+          "line": 1500
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"instanceof\"",
+          "line": 1504
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"as\"",
+          "line": 1508
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"switch\"",
+          "line": 1512
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"match\"",
+          "line": 1516
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"endswitch\"",
+          "line": 1520
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"case\"",
+          "line": 1524
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"default\"",
+          "line": 1528
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"break\"",
+          "line": 1532
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"continue\"",
+          "line": 1536
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"goto\"",
+          "line": 1540
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"echo\"",
+          "line": 1544
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"print\"",
+          "line": 1548
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"class\"",
+          "line": 1552
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"interface\"",
+          "line": 1556
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"trait\"",
+          "line": 1560
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"enum\"{WHITESPACE_OR_COMMENTS}(\"extends\"|\"implements\")",
+          "line": 1568
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"enum\"{WHITESPACE_OR_COMMENTS}[a-zA-Z_\\x80-\\xff]",
+          "line": 1572
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"extends\"",
+          "line": 1577
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"implements\"",
+          "line": 1581
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"->\"",
+          "line": 1585
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"?->\"",
+          "line": 1590
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING,ST_LOOKING_FOR_PROPERTY>{WHITESPACE}+",
+          "line": 1595
+        },
+        {
+          "rule": "<ST_LOOKING_FOR_PROPERTY>\"->\"",
+          "line": 1599
+        },
+        {
+          "rule": "<ST_LOOKING_FOR_PROPERTY>\"?->\"",
+          "line": 1603
+        },
+        {
+          "rule": "<ST_LOOKING_FOR_PROPERTY>{LABEL}",
+          "line": 1607
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"::\"",
+          "line": 1612
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"...\"",
+          "line": 1616
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"??\"",
+          "line": 1620
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"new\"",
+          "line": 1624
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"clone\"",
+          "line": 1628
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"var\"",
+          "line": 1632
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}(\"int\"){TABS_AND_SPACES}\")\"",
+          "line": 1636
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}(\"integer\"){TABS_AND_SPACES}\")\"",
+          "line": 1640
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}(\"float\"){TABS_AND_SPACES}\")\"",
+          "line": 1650
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}(\"double\"){TABS_AND_SPACES}\")\"",
+          "line": 1654
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}\"real\"{TABS_AND_SPACES}\")\"",
+          "line": 1664
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}(\"string\"){TABS_AND_SPACES}\")\"",
+          "line": 1672
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}(\"binary\"){TABS_AND_SPACES}\")\"",
+          "line": 1676
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}\"array\"{TABS_AND_SPACES}\")\"",
+          "line": 1686
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}\"object\"{TABS_AND_SPACES}\")\"",
+          "line": 1690
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}(\"bool\"){TABS_AND_SPACES}\")\"",
+          "line": 1694
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}(\"boolean\"){TABS_AND_SPACES}\")\"",
+          "line": 1698
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}(\"unset\"){TABS_AND_SPACES}\")\"",
+          "line": 1708
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"(\"{TABS_AND_SPACES}(\"void\"){TABS_AND_SPACES}\")\"",
+          "line": 1712
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"eval\"",
+          "line": 1716
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"include\"",
+          "line": 1720
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"include_once\"",
+          "line": 1724
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"require\"",
+          "line": 1728
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"require_once\"",
+          "line": 1732
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"namespace\"",
+          "line": 1736
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"use\"",
+          "line": 1740
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"insteadof\"",
+          "line": 1744
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"global\"",
+          "line": 1748
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"isset\"",
+          "line": 1752
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"empty\"",
+          "line": 1756
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"__halt_compiler\"",
+          "line": 1760
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"static\"",
+          "line": 1764
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"abstract\"",
+          "line": 1768
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"final\"",
+          "line": 1772
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"private\"",
+          "line": 1776
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"protected\"",
+          "line": 1780
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"public(set)\"",
+          "line": 1784
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"protected(set)\"",
+          "line": 1788
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"private(set)\"",
+          "line": 1792
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"public\"",
+          "line": 1796
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"readonly\"",
+          "line": 1800
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"unset\"",
+          "line": 1804
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"=>\"",
+          "line": 1808
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"list\"",
+          "line": 1812
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"array\"",
+          "line": 1816
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"callable\"",
+          "line": 1820
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"++\"",
+          "line": 1824
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"--\"",
+          "line": 1828
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"===\"",
+          "line": 1832
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"!==\"",
+          "line": 1836
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"==\"",
+          "line": 1840
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"!=\"|\"<>\"",
+          "line": 1844
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"<=>\"",
+          "line": 1848
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"<=\"",
+          "line": 1852
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\">=\"",
+          "line": 1856
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"+=\"",
+          "line": 1860
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"-=\"",
+          "line": 1864
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"*=\"",
+          "line": 1868
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"**\"",
+          "line": 1872
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"**=\"",
+          "line": 1876
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"/=\"",
+          "line": 1880
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\".=\"",
+          "line": 1884
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"%=\"",
+          "line": 1888
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"<<=\"",
+          "line": 1892
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\">>=\"",
+          "line": 1896
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"&=\"",
+          "line": 1900
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"|=\"",
+          "line": 1904
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"^=\"",
+          "line": 1908
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"??=\"",
+          "line": 1912
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"|>\"",
+          "line": 1916
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"||\"",
+          "line": 1920
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"&&\"",
+          "line": 1924
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"OR\"",
+          "line": 1928
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"AND\"",
+          "line": 1932
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"XOR\"",
+          "line": 1936
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"<<\"",
+          "line": 1940
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\">>\"",
+          "line": 1944
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"&\"{OPTIONAL_WHITESPACE_OR_COMMENTS}(\"$\"|\"...\")",
+          "line": 1948
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"&\"",
+          "line": 1953
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"]\"|\")\"",
+          "line": 1957
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"[\"|\"(\"",
+          "line": 1962
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>{TOKENS}",
+          "line": 1967
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"{\"",
+          "line": 1972
+        },
+        {
+          "rule": "<ST_DOUBLE_QUOTES,ST_BACKQUOTE,ST_HEREDOC>\"${\"",
+          "line": 1979
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"}\"",
+          "line": 1985
+        },
+        {
+          "rule": "<ST_LOOKING_FOR_VARNAME>{LABEL}[[}]",
+          "line": 1994
+        },
+        {
+          "rule": "<ST_LOOKING_FOR_VARNAME>{ANY_CHAR}",
+          "line": 2002
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>{BNUM}",
+          "line": 2009
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>{ONUM}",
+          "line": 2051
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>{LNUM}",
+          "line": 2101
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>{HNUM}",
+          "line": 2164
+        },
+        {
+          "rule": "<ST_VAR_OFFSET>[0]|([1-9][0-9]*)",
+          "line": 2206
+        },
+        {
+          "rule": "<ST_VAR_OFFSET>{LNUM}|{HNUM}|{BNUM}|{ONUM}",
+          "line": 2222
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>{DNUM}|{EXPONENT_DNUM}",
+          "line": 2231
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"__CLASS__\"",
+          "line": 2251
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"__TRAIT__\"",
+          "line": 2255
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"__FUNCTION__\"",
+          "line": 2259
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"__PROPERTY__\"",
+          "line": 2263
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"__METHOD__\"",
+          "line": 2267
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"__LINE__\"",
+          "line": 2271
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"__FILE__\"",
+          "line": 2275
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"__DIR__\"",
+          "line": 2279
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"__NAMESPACE__\"",
+          "line": 2283
+        },
+        {
+          "rule": "<SHEBANG>\"#!\" .*",
+          "line": 2287
+        },
+        {
+          "rule": "<SHEBANG>{ANY_CHAR}",
+          "line": 2293
+        },
+        {
+          "rule": "<INITIAL>\"<?=\"",
+          "line": 2299
+        },
+        {
+          "rule": "<INITIAL>\"<?php\"([ \\t]|{NEWLINE})",
+          "line": 2309
+        },
+        {
+          "rule": "<INITIAL>\"<?php\"",
+          "line": 2315
+        },
+        {
+          "rule": "<INITIAL>\"<?\"",
+          "line": 2330
+        },
+        {
+          "rule": "<INITIAL>{ANY_CHAR}",
+          "line": 2339
+        },
+        {
+          "rule": "<ST_DOUBLE_QUOTES,ST_HEREDOC,ST_BACKQUOTE>\"$\"{LABEL}\"->\"[a-zA-Z_\\x80-\\xff]",
+          "line": 2395
+        },
+        {
+          "rule": "<ST_DOUBLE_QUOTES,ST_HEREDOC,ST_BACKQUOTE>\"$\"{LABEL}\"?->\"[a-zA-Z_\\x80-\\xff]",
+          "line": 2401
+        },
+        {
+          "rule": "<ST_DOUBLE_QUOTES,ST_HEREDOC,ST_BACKQUOTE>\"$\"{LABEL}\"[\"",
+          "line": 2409
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING,ST_DOUBLE_QUOTES,ST_HEREDOC,ST_BACKQUOTE,ST_VAR_OFFSET>\"$\"{LABEL}",
+          "line": 2415
+        },
+        {
+          "rule": "<ST_VAR_OFFSET>\"]\"",
+          "line": 2419
+        },
+        {
+          "rule": "<ST_VAR_OFFSET>{TOKENS}|[[(){}\"`]",
+          "line": 2424
+        },
+        {
+          "rule": "<ST_VAR_OFFSET>[ \\n\\r\\t\\\\'#]",
+          "line": 2429
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"namespace\"(\"\\\\\"{LABEL})+",
+          "line": 2437
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>{LABEL}(\"\\\\\"{LABEL})+",
+          "line": 2441
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"\\\\\"{LABEL}(\"\\\\\"{LABEL})*",
+          "line": 2445
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"\\\\\"",
+          "line": 2449
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING,ST_VAR_OFFSET>{LABEL}",
+          "line": 2453
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING,ST_LOOKING_FOR_PROPERTY>\"#\"|\"//\"",
+          "line": 2458
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING,ST_LOOKING_FOR_PROPERTY>\"/*\"|\"/**\"{WHITESPACE}",
+          "line": 2482
+        },
+        {
+          "rule": "<ST_LOOKING_FOR_PROPERTY>{ANY_CHAR}",
+          "line": 2518
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>\"?>\"{NEWLINE}?",
+          "line": 2524
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>b?[']",
+          "line": 2536
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>b?[\"]",
+          "line": 2630
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>b?\"<<<\"{TABS_AND_SPACES}({LABEL}|([']{LABEL}['])|([\"]{LABEL}[\"])){NEWLINE}",
+          "line": 2676
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING>[`]",
+          "line": 2823
+        },
+        {
+          "rule": "<ST_END_HEREDOC>{ANY_CHAR}",
+          "line": 2829
+        },
+        {
+          "rule": "<ST_DOUBLE_QUOTES,ST_BACKQUOTE,ST_HEREDOC>\"{$\"",
+          "line": 2843
+        },
+        {
+          "rule": "<ST_DOUBLE_QUOTES>[\"]",
+          "line": 2851
+        },
+        {
+          "rule": "<ST_BACKQUOTE>[`]",
+          "line": 2856
+        },
+        {
+          "rule": "<ST_DOUBLE_QUOTES>{ANY_CHAR}",
+          "line": 2862
+        },
+        {
+          "rule": "<ST_BACKQUOTE>{ANY_CHAR}",
+          "line": 2916
+        },
+        {
+          "rule": "<ST_HEREDOC>{ANY_CHAR}",
+          "line": 2962
+        },
+        {
+          "rule": "<ST_NOWDOC>{ANY_CHAR}",
+          "line": 3086
+        },
+        {
+          "rule": "<ST_IN_SCRIPTING,ST_VAR_OFFSET>{ANY_CHAR}",
+          "line": 3177
+        }
+      ]
+    },
+    "zend_compile.c": {
+      "sha256": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225",
+      "entries": [
+        {
+          "name": "zend_eval_const_expr",
+          "line": 97
+        },
+        {
+          "name": "zend_compile_expr",
+          "line": 101
+        },
+        {
+          "name": "zend_compile_stmt",
+          "line": 102
+        },
+        {
+          "name": "zend_compile_assign",
+          "line": 103
+        },
+        {
+          "name": "zend_compile_memoized_expr",
+          "line": 2587
+        },
+        {
+          "name": "zend_compile_class_ref",
+          "line": 2819
+        },
+        {
+          "name": "zend_compile_list_assign",
+          "line": 3298
+        },
+        {
+          "name": "zend_compile_expr_with_potential_assign_to_self",
+          "line": 3436
+        },
+        {
+          "name": "zend_compile_assign",
+          "line": 3452
+        },
+        {
+          "name": "zend_compile_assign_ref",
+          "line": 3549
+        },
+        {
+          "name": "zend_compile_compound_assign",
+          "line": 3621
+        },
+        {
+          "name": "zend_compile_args",
+          "line": 3717
+        },
+        {
+          "name": "zend_compile_call_common",
+          "line": 3953
+        },
+        {
+          "name": "zend_compile_function_name",
+          "line": 4005
+        },
+        {
+          "name": "zend_compile_dynamic_call",
+          "line": 4018
+        },
+        {
+          "name": "zend_compile_func_strlen",
+          "line": 4065
+        },
+        {
+          "name": "zend_compile_func_typecheck",
+          "line": 4085
+        },
+        {
+          "name": "zend_compile_func_is_scalar",
+          "line": 4105
+        },
+        {
+          "name": "zend_compile_func_cast",
+          "line": 4120
+        },
+        {
+          "name": "zend_compile_func_defined",
+          "line": 4140
+        },
+        {
+          "name": "zend_compile_func_chr",
+          "line": 4172
+        },
+        {
+          "name": "zend_compile_func_ord",
+          "line": 4192
+        },
+        {
+          "name": "zend_compile_ignore_class",
+          "line": 4218
+        },
+        {
+          "name": "zend_compile_ignore_function",
+          "line": 4228
+        },
+        {
+          "name": "zend_compile_init_user_func",
+          "line": 4271
+        },
+        {
+          "name": "zend_compile_func_cufa",
+          "line": 4290
+        },
+        {
+          "name": "zend_compile_func_cuf",
+          "line": 4343
+        },
+        {
+          "name": "zend_compile_assert",
+          "line": 4369
+        },
+        {
+          "name": "zend_compile_func_in_array",
+          "line": 4419
+        },
+        {
+          "name": "zend_compile_func_count",
+          "line": 4504
+        },
+        {
+          "name": "zend_compile_func_get_class",
+          "line": 4521
+        },
+        {
+          "name": "zend_compile_func_get_called_class",
+          "line": 4539
+        },
+        {
+          "name": "zend_compile_func_gettype",
+          "line": 4550
+        },
+        {
+          "name": "zend_compile_func_num_args",
+          "line": 4564
+        },
+        {
+          "name": "zend_compile_func_get_args",
+          "line": 4575
+        },
+        {
+          "name": "zend_compile_func_array_key_exists",
+          "line": 4586
+        },
+        {
+          "name": "zend_compile_func_array_slice",
+          "line": 4602
+        },
+        {
+          "name": "zend_compile_frameless_icall_ex",
+          "line": 4690
+        },
+        {
+          "name": "zend_compile_frameless_icall",
+          "line": 4724
+        },
+        {
+          "name": "zend_compile_ns_call",
+          "line": 4734
+        },
+        {
+          "name": "zend_compile_rope_finalize",
+          "line": 4794
+        },
+        {
+          "name": "zend_compile_func_sprintf",
+          "line": 4796
+        },
+        {
+          "name": "zend_compile_func_clone",
+          "line": 4964
+        },
+        {
+          "name": "zend_compile_parent_property_hook_call",
+          "line": 5096
+        },
+        {
+          "name": "zend_compile_call",
+          "line": 5161
+        },
+        {
+          "name": "zend_compile_method_call",
+          "line": 5240
+        },
+        {
+          "name": "zend_compile_static_call",
+          "line": 5332
+        },
+        {
+          "name": "zend_compile_class_decl",
+          "line": 5408
+        },
+        {
+          "name": "zend_compile_new",
+          "line": 5410
+        },
+        {
+          "name": "zend_compile_global_var",
+          "line": 5441
+        },
+        {
+          "name": "zend_compile_static_var_common",
+          "line": 5478
+        },
+        {
+          "name": "zend_compile_static_var",
+          "line": 5501
+        },
+        {
+          "name": "zend_compile_unset",
+          "line": 5555
+        },
+        {
+          "name": "zend_compile_return",
+          "line": 5694
+        },
+        {
+          "name": "zend_compile_void_cast",
+          "line": 5762
+        },
+        {
+          "name": "zend_compile_echo",
+          "line": 5782
+        },
+        {
+          "name": "zend_compile_throw",
+          "line": 5795
+        },
+        {
+          "name": "zend_compile_break_continue",
+          "line": 5812
+        },
+        {
+          "name": "zend_compile_goto",
+          "line": 5950
+        },
+        {
+          "name": "zend_compile_label",
+          "line": 5967
+        },
+        {
+          "name": "zend_compile_while",
+          "line": 5986
+        },
+        {
+          "name": "zend_compile_do_while",
+          "line": 6010
+        },
+        {
+          "name": "zend_compile_for_expr_list",
+          "line": 6032
+        },
+        {
+          "name": "zend_compile_for",
+          "line": 6060
+        },
+        {
+          "name": "zend_compile_foreach",
+          "line": 6094
+        },
+        {
+          "name": "zend_compile_if",
+          "line": 6186
+        },
+        {
+          "name": "zend_compile_switch",
+          "line": 6294
+        },
+        {
+          "name": "zend_compile_pipe",
+          "line": 6491
+        },
+        {
+          "name": "zend_compile_match",
+          "line": 6549
+        },
+        {
+          "name": "zend_compile_try",
+          "line": 6735
+        },
+        {
+          "name": "zend_compile_declare",
+          "line": 6983
+        },
+        {
+          "name": "zend_compile_stmt_list",
+          "line": 7047
+        },
+        {
+          "name": "zend_compile_single_typename",
+          "line": 7082
+        },
+        {
+          "name": "zend_compile_typename",
+          "line": 7253
+        },
+        {
+          "name": "zend_compile_typename_ex",
+          "line": 7255
+        },
+        {
+          "name": "zend_compile_typename",
+          "line": 7486
+        },
+        {
+          "name": "zend_compile_attributes",
+          "line": 7507
+        },
+        {
+          "name": "zend_compile_property_hooks",
+          "line": 7654
+        },
+        {
+          "name": "zend_compile_params",
+          "line": 7731
+        },
+        {
+          "name": "zend_compile_closure_binding",
+          "line": 8039
+        },
+        {
+          "name": "zend_compile_closure_uses",
+          "line": 8185
+        },
+        {
+          "name": "zend_compile_implicit_closure_uses",
+          "line": 8219
+        },
+        {
+          "name": "zend_compile_property_hooks",
+          "line": 8655
+        },
+        {
+          "name": "zend_compile_prop_decl",
+          "line": 8835
+        },
+        {
+          "name": "zend_compile_prop_group",
+          "line": 8983
+        },
+        {
+          "name": "zend_compile_class_const_decl",
+          "line": 9003
+        },
+        {
+          "name": "zend_compile_class_const_group",
+          "line": 9067
+        },
+        {
+          "name": "zend_compile_method_ref",
+          "line": 9077
+        },
+        {
+          "name": "zend_compile_trait_precedence",
+          "line": 9092
+        },
+        {
+          "name": "zend_compile_trait_alias",
+          "line": 9113
+        },
+        {
+          "name": "zend_compile_use_trait",
+          "line": 9137
+        },
+        {
+          "name": "zend_compile_implements",
+          "line": 9180
+        },
+        {
+          "name": "zend_compile_enum_backing_type",
+          "line": 9221
+        },
+        {
+          "name": "zend_compile_class_decl",
+          "line": 9241
+        },
+        {
+          "name": "zend_compile_enum_case",
+          "line": 9460
+        },
+        {
+          "name": "zend_compile_use",
+          "line": 9574
+        },
+        {
+          "name": "zend_compile_group_use",
+          "line": 9647
+        },
+        {
+          "name": "zend_compile_const_decl",
+          "line": 9667
+        },
+        {
+          "name": "zend_compile_namespace",
+          "line": 9741
+        },
+        {
+          "name": "zend_compile_halt_compiler",
+          "line": 9804
+        },
+        {
+          "name": "zend_compile_binary_op",
+          "line": 10212
+        },
+        {
+          "name": "zend_compile_greater",
+          "line": 10283
+        },
+        {
+          "name": "zend_compile_unary_op",
+          "line": 10309
+        },
+        {
+          "name": "zend_compile_unary_pm",
+          "line": 10328
+        },
+        {
+          "name": "zend_compile_short_circuiting",
+          "line": 10350
+        },
+        {
+          "name": "zend_compile_post_incdec",
+          "line": 10405
+        },
+        {
+          "name": "zend_compile_pre_incdec",
+          "line": 10432
+        },
+        {
+          "name": "zend_compile_cast",
+          "line": 10461
+        },
+        {
+          "name": "zend_compile_shorthand_conditional",
+          "line": 10480
+        },
+        {
+          "name": "zend_compile_conditional",
+          "line": 10505
+        },
+        {
+          "name": "zend_compile_coalesce",
+          "line": 10565
+        },
+        {
+          "name": "zend_compile_assign_coalesce",
+          "line": 10597
+        },
+        {
+          "name": "zend_compile_print",
+          "line": 10700
+        },
+        {
+          "name": "zend_compile_yield",
+          "line": 10716
+        },
+        {
+          "name": "zend_compile_yield_from",
+          "line": 10751
+        },
+        {
+          "name": "zend_compile_instanceof",
+          "line": 10768
+        },
+        {
+          "name": "zend_compile_include_or_eval",
+          "line": 10800
+        },
+        {
+          "name": "zend_compile_isset_or_empty",
+          "line": 10816
+        },
+        {
+          "name": "zend_compile_silence",
+          "line": 10896
+        },
+        {
+          "name": "zend_compile_shell_exec",
+          "line": 10915
+        },
+        {
+          "name": "zend_compile_array",
+          "line": 10935
+        },
+        {
+          "name": "zend_compile_const",
+          "line": 11014
+        },
+        {
+          "name": "zend_compile_class_const",
+          "line": 11064
+        },
+        {
+          "name": "zend_compile_class_name",
+          "line": 11105
+        },
+        {
+          "name": "zend_compile_rope_finalize",
+          "line": 11168
+        },
+        {
+          "name": "zend_compile_encaps_list",
+          "line": 11221
+        },
+        {
+          "name": "zend_compile_magic_const",
+          "line": 11300
+        },
+        {
+          "name": "zend_is_allowed_in_const_expr",
+          "line": 11318
+        },
+        {
+          "name": "zend_compile_const_expr_class_const",
+          "line": 11341
+        },
+        {
+          "name": "zend_compile_const_expr_class_name",
+          "line": 11379
+        },
+        {
+          "name": "zend_compile_const_expr_const",
+          "line": 11407
+        },
+        {
+          "name": "zend_compile_const_expr_magic_const",
+          "line": 11434
+        },
+        {
+          "name": "zend_compile_const_expr_class_reference",
+          "line": 11446
+        },
+        {
+          "name": "zend_compile_const_expr_new",
+          "line": 11470
+        },
+        {
+          "name": "zend_compile_const_expr_closure",
+          "line": 11481
+        },
+        {
+          "name": "zend_compile_const_expr_fcc",
+          "line": 11501
+        },
+        {
+          "name": "zend_compile_const_expr_args",
+          "line": 11552
+        },
+        {
+          "name": "zend_compile_const_expr",
+          "line": 11579
+        },
+        {
+          "name": "zend_compile_top_stmt",
+          "line": 11653
+        },
+        {
+          "name": "zend_compile_stmt",
+          "line": 11685
+        },
+        {
+          "name": "zend_compile_expr_inner",
+          "line": 11804
+        },
+        {
+          "name": "zend_compile_expr",
+          "line": 11946
+        },
+        {
+          "name": "zend_eval_const_expr",
+          "line": 12079
+        }
+      ]
+    }
+  },
+  "ebnf_productions": [
+    "source-file",
+    "inline-html",
+    "top-statement-list",
+    "top-statement",
+    "attributed-top-declaration",
+    "whitespace",
+    "comment",
+    "line-comment",
+    "block-comment",
+    "doc-comment",
+    "identifier",
+    "identifier-start",
+    "identifier-part",
+    "identifier-start-character",
+    "variable",
+    "variable-variable",
+    "variable-like",
+    "label",
+    "semi-reserved-identifier",
+    "name-identifier",
+    "namespace-declaration-name",
+    "qualified-name",
+    "fully-qualified-name",
+    "namespace-relative-name",
+    "name",
+    "class-name",
+    "integer-literal",
+    "decimal-integer-literal",
+    "binary-integer-literal",
+    "octal-integer-literal",
+    "explicit-octal-integer-literal",
+    "hexadecimal-integer-literal",
+    "floating-literal",
+    "exponent-part",
+    "decimal-digits",
+    "numeric-separator",
+    "string-literal",
+    "single-quoted-string",
+    "double-quoted-string",
+    "heredoc-string",
+    "nowdoc-string",
+    "encapsulated-string-part",
+    "encapsulated-variable",
+    "encapsulated-offset",
+    "numeric-string",
+    "literal",
+    "magic-constant",
+    "binary-digit",
+    "octal-digit",
+    "decimal-digit",
+    "decimal-digit-nonzero",
+    "hexadecimal-digit",
+    "exponent-marker",
+    "ascii-letter",
+    "type",
+    "optional-type-without-static",
+    "type-without-static",
+    "simple-type",
+    "simple-type-without-static",
+    "nullable-type",
+    "nullable-type-without-static",
+    "union-type",
+    "union-type-element",
+    "union-type-without-static",
+    "union-type-without-static-element",
+    "intersection-type",
+    "intersection-type-without-static",
+    "parenthesized-intersection-type",
+    "parenthesized-intersection-type-without-static",
+    "return-type",
+    "constant-expression",
+    "constant-coalesce-expression",
+    "constant-conditional-expression",
+    "constant-logical-or-expression",
+    "constant-logical-xor-expression",
+    "constant-logical-and-expression",
+    "constant-boolean-or-expression",
+    "constant-boolean-and-expression",
+    "constant-bitwise-or-expression",
+    "constant-bitwise-xor-expression",
+    "constant-bitwise-and-expression",
+    "constant-equality-expression",
+    "constant-relational-expression",
+    "constant-concatenation-expression",
+    "constant-shift-expression",
+    "constant-additive-expression",
+    "constant-multiplicative-expression",
+    "constant-power-expression",
+    "constant-unary-expression",
+    "constant-cast-expression",
+    "constant-primary-expression",
+    "array-creation-constant-expression",
+    "constant-array-pair-list",
+    "constant-array-pair",
+    "expression",
+    "logical-or-expression",
+    "logical-xor-expression",
+    "logical-and-expression",
+    "assignment-expression",
+    "assignment-operator",
+    "conditional-expression",
+    "coalesce-expression",
+    "boolean-or-expression",
+    "boolean-and-expression",
+    "bitwise-or-expression",
+    "bitwise-xor-expression",
+    "bitwise-and-expression",
+    "equality-expression",
+    "relational-expression",
+    "pipe-expression",
+    "concatenation-expression",
+    "shift-expression",
+    "additive-expression",
+    "multiplicative-expression",
+    "power-expression",
+    "instanceof-expression",
+    "unary-expression",
+    "prefix-unary-expression",
+    "cast-expression",
+    "void-cast-statement",
+    "postfix-expression",
+    "fully-dereferenceable-expression",
+    "callable-expression",
+    "primary-expression",
+    "variable-expression",
+    "member-name",
+    "object-operator",
+    "nullsafe-object-operator",
+    "constant",
+    "class-constant",
+    "class-name-reference",
+    "function-call",
+    "argument-list",
+    "clone-argument-list",
+    "argument",
+    "argument-no-expression",
+    "expression-list",
+    "array-creation-expression",
+    "array-pair-list",
+    "array-pair",
+    "list-expression",
+    "include-expression",
+    "match-expression",
+    "match-arm-list",
+    "match-arm",
+    "match-arm-condition-list",
+    "closure-expression",
+    "arrow-function",
+    "lexical-variable-list",
+    "lexical-variable",
+    "backtick-string-part-list",
+    "statement",
+    "compound-statement",
+    "inner-statement-list",
+    "inner-statement",
+    "expression-statement",
+    "echo-statement",
+    "statement-terminator",
+    "global-statement",
+    "global-variable-list",
+    "global-variable",
+    "static-statement",
+    "static-variable-list",
+    "static-variable",
+    "unset-statement",
+    "unset-variable-list",
+    "unset-variable",
+    "return-statement",
+    "throw-statement",
+    "break-statement",
+    "continue-statement",
+    "goto-statement",
+    "label-statement",
+    "empty-statement",
+    "if-statement",
+    "elseif-list",
+    "else-clause",
+    "alt-elseif-list",
+    "alt-else-clause",
+    "while-statement",
+    "do-statement",
+    "for-statement",
+    "for-expression-list",
+    "for-expression",
+    "for-condition-expression-list",
+    "foreach-statement",
+    "foreach-target",
+    "foreach-key",
+    "foreach-value",
+    "foreach-variable",
+    "switch-statement",
+    "switch-case-list",
+    "switch-case",
+    "declare-statement",
+    "declare-directive-list",
+    "declare-directive",
+    "try-statement",
+    "catch-list",
+    "catch-clause",
+    "catch-type-list",
+    "finally-clause",
+    "function-declaration",
+    "parameter-list",
+    "parameter",
+    "parameter-modifiers",
+    "parameter-modifier",
+    "class-declaration",
+    "anonymous-class",
+    "class-modifiers",
+    "class-modifier",
+    "extends-clause",
+    "implements-clause",
+    "name-list",
+    "class-member-list",
+    "class-member",
+    "property-declaration",
+    "property-modifier-list",
+    "property-list",
+    "property-element",
+    "hooked-property",
+    "property-hook-block",
+    "property-hook-list",
+    "property-hook",
+    "property-hook-body",
+    "property-hook-modifiers",
+    "property-hook-modifier",
+    "property-modifier",
+    "property-visibility-modifier",
+    "set-visibility-modifier",
+    "method-declaration",
+    "method-modifiers",
+    "method-modifier",
+    "method-body",
+    "class-constant-declaration",
+    "class-constant-modifiers",
+    "class-constant-modifier",
+    "class-constant-list",
+    "class-constant-element",
+    "constant-declaration",
+    "constant-list",
+    "constant-element",
+    "interface-declaration",
+    "interface-extends-clause",
+    "interface-member-list",
+    "interface-member",
+    "interface-property-declaration",
+    "interface-property-modifiers",
+    "trait-declaration",
+    "trait-use-declaration",
+    "trait-adaptation-block",
+    "trait-adaptation",
+    "trait-precedence",
+    "trait-alias",
+    "trait-method-reference",
+    "enum-declaration",
+    "enum-backing-type",
+    "enum-member-list",
+    "enum-member",
+    "enum-case",
+    "namespace-definition",
+    "namespace-use-declaration",
+    "use-type",
+    "use-declaration-list",
+    "use-declaration",
+    "legacy-namespace-name",
+    "group-use-declaration",
+    "mixed-group-use-declaration",
+    "unprefixed-use-declaration-list",
+    "unprefixed-use-declaration",
+    "inline-use-declaration-list",
+    "inline-use-declaration",
+    "attribute-groups",
+    "attribute-group",
+    "attribute-list",
+    "attribute",
+    "halt-compiler-statement",
+    "inline-html-text",
+    "line-comment-text",
+    "block-comment-text",
+    "doc-comment-text",
+    "single-quoted-string-content",
+    "string-text",
+    "heredoc-label",
+    "heredoc-body",
+    "nowdoc-body",
+    "halt-compiler-data",
+    "source-character",
+    "inline-html-character",
+    "line-comment-character",
+    "block-comment-character",
+    "single-quoted-string-character",
+    "string-character",
+    "nowdoc-character",
+    "escape-sequence",
+    "whitespace-character",
+    "non-ascii-byte",
+    "reserved-non-modifiers",
+    "constant-argument-list",
+    "constant-argument",
+    "constant-callable",
+    "constant-class-access",
+    "constant-class-reference",
+    "boolean-not-expression",
+    "clone-expression",
+    "dereferenceable-scalar",
+    "new-dereferenceable",
+    "array-object-dereferenceable",
+    "callable-variable",
+    "static-member",
+    "new-variable",
+    "property-name",
+    "backtick-string",
+    "newline",
+    "constant-postfix-expression",
+    "constant-dereferenceable",
+    "throw-expression",
+    "arrow-expression",
+    "print-expression",
+    "yield-expression",
+    "yield-from-expression",
+    "prefix-expression",
+    "constant-literal",
+    "constant-string-literal",
+    "constant-double-quoted-string",
+    "constant-heredoc",
+    "parameter-default",
+    "property-default",
+    "class-constant-initializer",
+    "global-constant-initializer",
+    "enum-case-initializer",
+    "attribute-or-constructor-argument"
+  ]
+}
