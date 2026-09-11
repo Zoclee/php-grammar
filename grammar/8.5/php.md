@@ -7,6 +7,16 @@ artifact; it is not by itself an implementation of all Zend compile-time checks.
 The implementation remains under audit. The verification limits below prevent
 a claim of full PHP 8.5 conformance.
 
+Grammar Completeness Phase 4 adds paired negative-boundary evidence without
+changing the canonical productions below. Its 250 new structural-negative
+fixtures reject during repository recognition; 22 new contextual-negative
+fixtures parse structurally and reject during PHP compilation. All have nearby
+valid repairs. The [boundary ledger](../../docs/php85-negative-boundaries.md)
+records source evidence and the [Phase 4 report](../../docs/php85-phase4-negative-coverage.md)
+records methodology and validation. This evidence does not replace the
+standalone lexical or contextual rules in this specification. The two known
+discarded-closure discrepancies remain unresolved.
+
 Sources are `php-src` branch `PHP-8.5`, pinned at
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`:
 

@@ -1,0 +1,1 @@
+<?php while (?>HTML<?php $a): endwhile;

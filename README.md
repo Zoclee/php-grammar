@@ -4,12 +4,19 @@ Versioned EBNF grammars and human-readable specifications for PHP language synta
 
 php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [remaining discrepancies](docs/php85-audit-remediation.md).
 
-PHP 8.5 Grammar Completeness Phase 3 now provides systematic positive coverage:
-265/331 productions (80.1%) and 570/769 alternatives (74.1%). All remaining
-elements are classified as primitive-bypassed lexical rules, removed trivia,
-or contextual-only type alternatives. The positive differential corpus contains
-173 files across both short-tag profiles. See the [Phase 3 evidence report](docs/php85-phase3-coverage.md)
-and [generated branch backlog and witnesses](docs/php85-phase3-coverage.json).
+PHP 8.5 Grammar Completeness Phase 4 adds systematic negative-boundary evidence:
+250 structural-negative and 22 contextual-negative fixtures, each paired with
+a nearby valid repair. The corpus contains 497 valid, 335 structural-negative,
+and 85 contextual-negative files across both short-tag profiles. PHP 8.5.10
+differential validation reports zero unexpected mismatches; two known
+discarded-closure discrepancies remain. Full PHP 8.5 conformance is not established.
+
+Positive coverage remains 303/366 productions (82.8%) and 609/794 alternatives
+(76.7%). Rejection evidence has a separate [boundary ledger](docs/php85-negative-boundaries.md),
+with 14 boundary categories and no misleading rejection percentage. See the
+[Phase 4 report](docs/php85-phase4-negative-coverage.md),
+[Phase 3 evidence](docs/php85-phase3-coverage.md), and
+[generated positive witnesses](docs/php85-phase3-coverage.json).
 
 ## Purpose
 
@@ -286,9 +293,21 @@ Primitive successes are recorded separately from traversal of their EBNF bodies;
 do not add artificial files to traverse token-internal lexical rules.
 Positive coverage generation fails if a positive input is rejected.
 
+For Grammar Completeness Phase 4, add minimal `invalid/phase4-*.php` or
+`contextual-invalid/phase4-*.php` fixtures and matching `valid/phase4-*.php`
+repairs. Record the production anchor, boundary category, classification, and
+pinned source evidence in `docs/php85-negative-boundaries.json`. Update the
+contextual review for every contextual-negative fixture. All ordinary fixtures
+automatically participate in PHPUnit and differential lint. Constant-expression
+and argument-order restrictions may be contextual even when they look structural:
+PHP can discard an invalid operation before checking it. Follow the
+[negative-boundary methodology](docs/php85-phase4-negative-coverage.md).
+
 ```text
 php tools/php85-coverage-report.php
 php tools/php85-coverage-report.php --check
+php tools/php85-negative-report.php
+php tools/php85-negative-report.php --check
 ```
 
 The generated report links completed chart items to their first positive

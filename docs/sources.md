@@ -20,6 +20,26 @@ casts, closures and first-class callables in constant expressions, pipe,
 clone-with, final promotion, and `(void)`. Library/API additions introduce no
 extra EBNF alternatives merely because their names are new.
 
+Grammar Completeness Phase 4 reverified the SHA-256 hashes of all three pinned
+source files against `tools/php85-source-lock.json`. Its
+[negative-boundary ledger](php85-negative-boundaries.md) records parser/scanner
+families or compiler functions for each pair and each contextual review.
+PHP 8.5.10 lint independently checks the fixtures without executing them.
+
+Particularly relevant pinned evidence:
+
+- [Parser precedence and expression syntax](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_language_parser.y#L64): equality/relational nonassociativity; argument, variable, type, hook, adaptation and statement productions elsewhere in the same file.
+- [Argument ordering](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_compile.c#L3717): `zend_compile_args` checks positional/named/unpack order after parsing.
+- [Ternary chains](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_compile.c#L10505): `zend_compile_conditional` checks full/mixed unparenthesized chains.
+- [Constant folding order](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_compile.c#L11634): `zend_const_expr_to_zval` calls `zend_eval_const_expr` before `zend_compile_const_expr`.
+- [Enum backing validation](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_compile.c#L9221): `enum_backing_type` parses `type_expr`; int/string legality is checked when the declaration is compiled.
+- [Trait alias validation](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_compile.c#L8993): static/abstract are rejected by `zend_check_trait_alias_modifiers`, called from `zend_compile_trait_alias`; readonly is rejected by parser modifier conversion.
+- [Long-tag boundaries](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_language_scanner.l#L2309): `<?phpX` falls back to a short PHP tag only when enabled; disabled short tags leave the sequence in HTML.
+
+The two discarded-declaration gaps remain source-confirmed contextual ordering
+discrepancies. Their live rejection fixtures do not prove that EBNF rejection
+before folding is correct in a discarded closure.
+
 The goal is to ensure that every grammar rule is based on authoritative evidence and that material grammar changes remain traceable to the PHP language sources from which they were derived.
 
 ## 1. Purpose

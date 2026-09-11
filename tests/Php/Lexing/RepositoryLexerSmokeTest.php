@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PhpGrammar\Tests\Php\Lexing;
 
 use PhpGrammar\Php\Lexing\Lexer;
-use PhpGrammar\Php\Lexing\TokenType;
+use PhpGrammar\Php\Lexing\Token;
 use PhpGrammar\Repository\RepositoryManifest;
 use PHPUnit\Framework\TestCase;
 
@@ -26,7 +26,8 @@ final class RepositoryLexerSmokeTest extends TestCase
 
                 $stream = $lexer->tokenize($source);
                 self::assertGreaterThan(0, $stream->length(), $path);
-                self::assertContains(TokenType::OpenTag, array_map(static fn ($token): TokenType => $token->type, $stream->all()), $path);
+                // Echo-only PHP and inline HTML do not require an ordinary opening tag.
+                self::assertSame($source, implode('', array_map(static fn (Token $token): string => $token->lexeme, $stream->all())), $path);
             }
         }
     }

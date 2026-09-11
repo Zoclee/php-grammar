@@ -9,17 +9,19 @@ use PhpGrammar\Repository\RepositoryManifest;
 require dirname(__DIR__) . '/vendor/autoload.php';
 $root = dirname(__DIR__);
 $manifest = RepositoryManifest::fromRepositoryRoot($root);
-$witnesses = $primitiveWitnesses = [];
+$witnesses = $primitiveWitnesses = $phase3Witnesses = [];
 $baselineCoverage = new CoverageCollector();
 $cases = Php85CoverageCases::ruleLevelCases();
 $report = (new GrammarCoverageAnalyzer($manifest))->analyze('8.5', $cases,
-    static function (string $witness, CoverageCollector $coverage) use (&$witnesses, &$primitiveWitnesses, $baselineCoverage): void {
-        if ((str_starts_with($witness, 'fixture:') && !str_starts_with($witness, 'fixture:phase3-'))
+    static function (string $witness, CoverageCollector $coverage) use (&$witnesses, &$primitiveWitnesses, &$phase3Witnesses, $baselineCoverage): void {
+        if ((str_starts_with($witness, 'fixture:') && !str_starts_with($witness, 'fixture:phase3-')
+                && !str_starts_with($witness, 'fixture:phase4-'))
             || (str_starts_with($witness, 'rule:') && (int)substr($witness, strrpos($witness, '#') + 1) < 10)) {
             $baselineCoverage->merge($coverage);
         }
         foreach ([...$coverage->matchedProductions(), ...$coverage->matchedAlternatives()] as $id) {
             $witnesses[$id] ??= $witness;
+            if (!str_starts_with($witness, 'fixture:phase4-')) $phase3Witnesses[$id] ??= $witness;
         }
         foreach ($coverage->matchedPrimitives() as $id) $primitiveWitnesses[$id] ??= $witness;
     });
@@ -40,8 +42,8 @@ $baselineBacklog = [];
 foreach (['production' => [$report->identityMap->productions(), $baselineCoverage->matchedProductions()],
     'alternative' => [$report->identityMap->alternatives(), $baselineCoverage->matchedAlternatives()]] as $kind => [$all, $covered]) {
     foreach (array_diff($all, $covered) as $identity) {
-        $baselineBacklog[] = ['kind' => $kind, 'identity' => $identity] + (isset($witnesses[$identity])
-            ? ['classification' => 'meaningful-valid-syntax', 'area' => explode('/', $identity)[0], 'evidence' => $witnesses[$identity], 'reason' => 'Positive witness added in Phase 3.']
+        $baselineBacklog[] = ['kind' => $kind, 'identity' => $identity] + (isset($phase3Witnesses[$identity])
+            ? ['classification' => 'meaningful-valid-syntax', 'area' => explode('/', $identity)[0], 'evidence' => $phase3Witnesses[$identity], 'reason' => 'Positive witness added in Phase 3.']
             : $classifier->classify($identity));
     }
 }

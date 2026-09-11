@@ -10,6 +10,16 @@ been regenerated for the [remaining-audit corrections](php85-remaining-audit.md)
 evidence. No uncovered identity is classified as a meaningful coverage gap;
 this does not eliminate the two recorded conformance discrepancies.
 
+Grammar Completeness [Phase 4](php85-phase4-negative-coverage.md) subsequently
+adds 272 paired positive repairs and systematic negative evidence. Positive
+totals remain **303/366 productions (82.8%) and 609/794 alternatives (76.7%)**;
+attempted totals remain 303/366 and 611/794. The current corpus has 497 valid
+fixtures (492 default profile plus five disabled-short-tag fixtures).
+The generated JSON is current; tables labeled historical below remain Phase 3
+records. Phase 4 fixtures are excluded from reconstruction of the historical
+Phase 3 backlog. Rejection evidence is in its own
+[ledger](php85-negative-boundaries.md), not added to successful coverage.
+
 ## Historical results
 
 | Metric | Post-audit baseline | Phase 3 |

@@ -1,0 +1,1 @@
+<?php if ($a) ?>HTML<?php : endif;

@@ -4,6 +4,12 @@ The [remaining-audit corrections](php85-remaining-audit.md) supersede this
 historical report's precedence, dangling-else, folding and scanner status.
 The validation counts below are retained as a historical baseline.
 
+Grammar Completeness [Phase 4](php85-phase4-negative-coverage.md) supplies the
+current negative-boundary results and [complete contextual review](php85-negative-boundaries.md).
+There are 917 ordinary fixtures and two separately retained discarded-closure
+discrepancies. No new grammar, scanner, adapter, matcher or chart-recognizer
+correction was required by the Phase 4 matrix; full conformance remains unproven.
+
 This audit supersedes the earlier disposition checklist. That checklist called
 several unresolved areas fixed. The current result is a substantial structural
 remediation with explicit remaining discrepancies; it is **not** a certification

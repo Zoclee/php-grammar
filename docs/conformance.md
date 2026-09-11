@@ -96,7 +96,7 @@ cases must be accepted before their coverage can be reported; rejected positives
 abort generation instead of contributing partial coverage.
 
 The default-profile corpus and `Php85CoverageCases` drive these raw totals.
-The four short-tags-disabled positive files additionally participate in PHPUnit
+The five short-tags-disabled positive files additionally participate in PHPUnit
 and differential checks, but are not added to the historical coverage denominator.
 Direct primitive unit cases are likewise reported as lexer/adapter evidence,
 not added as artificial EBNF production hits.
@@ -124,3 +124,41 @@ the report command fail until investigated. No percentage threshold is used.
 
 Current coverage and the language-area/feature matrices are in
 [php85-phase3-coverage.md](php85-phase3-coverage.md).
+
+## Systematic negative boundaries (Grammar Completeness Phase 4)
+
+The [negative ledger](php85-negative-boundaries.md) pairs 250 structural-negative
+and 22 contextual-negative sources with 272 nearby valid repairs. It anchors
+124 productions across every major syntax area and all 14 requested boundary
+categories. These are reviewed examples, not exhaustive alternative or mutation
+coverage. Successful-production and attempted-coverage percentages do not
+measure rejection coverage.
+
+Every structural-negative fixture must fail repository recognition and PHP lint.
+Every contextual-negative fixture must pass repository recognition and fail
+PHP lint. Every positive repair must pass both. The ledger reviews all 85
+contextual-negative fixtures separately, including the 63 inherited fixtures;
+none count as EBNF rejection evidence. This classification describes repository
+behavior, not whether Zend diagnoses an error during parsing or compilation.
+Some earlier EBNF restrictions anticipate compilation checks, which explains
+the two documented discrepancies for discarded nested declarations.
+
+The final ordinary corpus is 497 valid, 335 structural-negative, and 85
+contextual-negative fixtures (917 total), plus two separately reported known
+discrepancies. Both source-tag profiles run through PHP 8.5.10 using the existing
+runner. The binary is a cross-check of expectations derived from pinned source;
+neither lint acceptance nor fixture agreement proves complete conformance.
+
+Constant expressions still use `constant-expression = expression`. Assignment,
+yield, include/require, dynamic offsets/callables, captures, pipe and clone-with
+have live contextual-negative and discarded-branch positive witnesses. An
+unconditional EBNF ban would reject accepted PHP. `isset()` and constructor FCC
+restrictions retain their earlier live/dead witnesses. Repeated hooks and type,
+promotion, enum consistency and write-context rules remain separately documented.
+
+Contributor instructions, source evidence, gap dispositions and verification
+results are in [the Phase 4 report](php85-phase4-negative-coverage.md). Regenerate
+the negative ledger with `php tools/php85-negative-report.php`; `--check` detects
+changes to ledger metadata, grammar, fixture content or corpus membership.
+PHPUnit checks fixture/ledger parity, production references, classifications,
+distinct repairs, contextual-review completeness and report freshness.

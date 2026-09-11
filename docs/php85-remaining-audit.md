@@ -5,6 +5,22 @@ argument categories, constant-expression folding and scanner boundaries are
 corrected. **Full PHP 8.5 conformance is not established:** two confirmed
 discarded-declaration discrepancies remain.
 
+Grammar Completeness [Phase 4](php85-phase4-negative-coverage.md) now adds 272
+nearby-invalid/repair pairs and reviews all contextual negatives. Its current
+validation counts supersede the historical counts below: 917 ordinary
+differential fixtures, zero unexpected mismatches, and the same two separately
+reported discrepancies. The EBNF and its positive coverage totals are unchanged.
+
+The two gaps were reverified against the same source hashes and PHP 8.5.10.
+`enum_backing_type` accepts `type_expr`; `zend_compile_enum_backing_type` later
+limits it to int/string. Trait aliases accept method-target modifiers in the
+parser; `zend_check_trait_alias_modifiers`, called during alias compilation,
+rejects static/abstract. Readonly fails earlier modifier conversion. Phase 4
+adds live enum object/union and static/abstract/readonly alias regressions while
+retaining the discarded-closure discrepancy fixtures. The complete live/dead
+distinction belongs to contextual declaration validation; it is not resolved
+by adding an unconditional EBNF restriction.
+
 ## Evidence
 
 The source pin remains `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`.

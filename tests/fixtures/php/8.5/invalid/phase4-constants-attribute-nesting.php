@@ -1,0 +1,2 @@
+<?php
+#[A(1] function f() {}

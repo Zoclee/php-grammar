@@ -1,0 +1,2 @@
+<?php
+throw $e;

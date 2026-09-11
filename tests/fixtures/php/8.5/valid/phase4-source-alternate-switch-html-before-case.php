@@ -1,0 +1,1 @@
+<?php switch ($a): case 1: ?>HTML<?php endswitch;

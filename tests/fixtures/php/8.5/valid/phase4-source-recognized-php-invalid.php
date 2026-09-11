@@ -1,0 +1,1 @@
+HTML<?php echo 1; ?>HTML

@@ -1,0 +1,3543 @@
+{
+  "schema": 1,
+  "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+  "method": "Paired nearby-invalid and repaired whole-source fixtures. Counts are evidence inventory, not rejection coverage percentages.",
+  "categories": [
+    "missing required element",
+    "unexpected extra element",
+    "invalid token/order",
+    "invalid delimiter",
+    "illegal empty form",
+    "invalid alternative combination",
+    "duplicate syntactic component",
+    "malformed nesting",
+    "invalid associativity/chaining",
+    "illegal trailing token",
+    "illegal prefix/postfix form",
+    "invalid declaration structure",
+    "invalid source-mode transition",
+    "lexical boundary violation"
+  ],
+  "cases": [
+    {
+      "id": "phase4-expressions-equality-chain",
+      "area": "expressions",
+      "production": "equality-expression",
+      "category": "invalid associativity/chaining",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-equality-chain.php",
+      "positive": "valid/phase4-expressions-equality-chain.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "equality chain"
+    },
+    {
+      "id": "phase4-expressions-spaceship-chain",
+      "area": "expressions",
+      "production": "equality-expression",
+      "category": "invalid associativity/chaining",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-spaceship-chain.php",
+      "positive": "valid/phase4-expressions-spaceship-chain.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "spaceship chain"
+    },
+    {
+      "id": "phase4-expressions-relational-chain",
+      "area": "expressions",
+      "production": "relational-expression",
+      "category": "invalid associativity/chaining",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-relational-chain.php",
+      "positive": "valid/phase4-expressions-relational-chain.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "relational chain"
+    },
+    {
+      "id": "phase4-expressions-ternary-colon",
+      "area": "expressions",
+      "production": "conditional-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-ternary-colon.php",
+      "positive": "valid/phase4-expressions-ternary-colon.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "ternary colon"
+    },
+    {
+      "id": "phase4-expressions-coalesce-rhs",
+      "area": "expressions",
+      "production": "coalesce-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-coalesce-rhs.php",
+      "positive": "valid/phase4-expressions-coalesce-rhs.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "coalesce rhs"
+    },
+    {
+      "id": "phase4-expressions-coalesce-lhs",
+      "area": "expressions",
+      "production": "coalesce-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-coalesce-lhs.php",
+      "positive": "valid/phase4-expressions-coalesce-lhs.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "coalesce lhs"
+    },
+    {
+      "id": "phase4-expressions-coalesce-assignment-rhs",
+      "area": "expressions",
+      "production": "assignment-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-coalesce-assignment-rhs.php",
+      "positive": "valid/phase4-expressions-coalesce-assignment-rhs.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "coalesce assignment rhs"
+    },
+    {
+      "id": "phase4-expressions-coalesce-assignment-duplicate",
+      "area": "expressions",
+      "production": "assignment-expression",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-coalesce-assignment-duplicate.php",
+      "positive": "valid/phase4-expressions-coalesce-assignment-duplicate.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "coalesce assignment duplicate"
+    },
+    {
+      "id": "phase4-expressions-power-rhs",
+      "area": "expressions",
+      "production": "power-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-power-rhs.php",
+      "positive": "valid/phase4-expressions-power-rhs.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "power rhs"
+    },
+    {
+      "id": "phase4-expressions-power-prefix",
+      "area": "expressions",
+      "production": "power-expression",
+      "category": "illegal prefix/postfix form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-power-prefix.php",
+      "positive": "valid/phase4-expressions-power-prefix.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "power prefix"
+    },
+    {
+      "id": "phase4-expressions-increment-literal",
+      "area": "expressions",
+      "production": "postfix-expression",
+      "category": "illegal prefix/postfix form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-increment-literal.php",
+      "positive": "valid/phase4-expressions-increment-literal.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "increment literal"
+    },
+    {
+      "id": "phase4-expressions-decrement-literal",
+      "area": "expressions",
+      "production": "postfix-expression",
+      "category": "illegal prefix/postfix form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-decrement-literal.php",
+      "positive": "valid/phase4-expressions-decrement-literal.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "decrement literal"
+    },
+    {
+      "id": "phase4-expressions-increment-postfix-chain",
+      "area": "expressions",
+      "production": "postfix-expression",
+      "category": "invalid associativity/chaining",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-increment-postfix-chain.php",
+      "positive": "valid/phase4-expressions-increment-postfix-chain.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "increment postfix chain"
+    },
+    {
+      "id": "phase4-expressions-decrement-prefix-chain",
+      "area": "expressions",
+      "production": "postfix-expression",
+      "category": "invalid associativity/chaining",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-decrement-prefix-chain.php",
+      "positive": "valid/phase4-expressions-decrement-prefix-chain.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "decrement prefix chain"
+    },
+    {
+      "id": "phase4-expressions-pipe-rhs",
+      "area": "expressions",
+      "production": "pipe-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-pipe-rhs.php",
+      "positive": "valid/phase4-expressions-pipe-rhs.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "pipe rhs"
+    },
+    {
+      "id": "phase4-expressions-pipe-lhs",
+      "area": "expressions",
+      "production": "pipe-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-pipe-lhs.php",
+      "positive": "valid/phase4-expressions-pipe-lhs.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "pipe lhs"
+    },
+    {
+      "id": "phase4-expressions-pipe-duplicate",
+      "area": "expressions",
+      "production": "pipe-expression",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-pipe-duplicate.php",
+      "positive": "valid/phase4-expressions-pipe-duplicate.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "pipe duplicate"
+    },
+    {
+      "id": "phase4-expressions-clone-separator",
+      "area": "expressions",
+      "production": "clone-argument-list",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-clone-separator.php",
+      "positive": "valid/phase4-expressions-clone-separator.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "clone separator"
+    },
+    {
+      "id": "phase4-expressions-clone-named-value",
+      "area": "expressions",
+      "production": "clone-argument-list",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-clone-named-value.php",
+      "positive": "valid/phase4-expressions-clone-named-value.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "clone named value"
+    },
+    {
+      "id": "phase4-expressions-clone-duplicate-comma",
+      "area": "expressions",
+      "production": "clone-argument-list",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-clone-duplicate-comma.php",
+      "positive": "valid/phase4-expressions-clone-duplicate-comma.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "clone duplicate comma"
+    },
+    {
+      "id": "phase4-expressions-and-rhs",
+      "area": "expressions",
+      "production": "logical-and-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-and-rhs.php",
+      "positive": "valid/phase4-expressions-and-rhs.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "and rhs"
+    },
+    {
+      "id": "phase4-expressions-xor-prefix",
+      "area": "expressions",
+      "production": "logical-xor-expression",
+      "category": "illegal prefix/postfix form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-xor-prefix.php",
+      "positive": "valid/phase4-expressions-xor-prefix.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "xor prefix"
+    },
+    {
+      "id": "phase4-expressions-or-duplicate",
+      "area": "expressions",
+      "production": "logical-or-expression",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-or-duplicate.php",
+      "positive": "valid/phase4-expressions-or-duplicate.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "or duplicate"
+    },
+    {
+      "id": "phase4-expressions-instanceof-rhs",
+      "area": "expressions",
+      "production": "instanceof-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-instanceof-rhs.php",
+      "positive": "valid/phase4-expressions-instanceof-rhs.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "instanceof rhs"
+    },
+    {
+      "id": "phase4-expressions-instanceof-number",
+      "area": "expressions",
+      "production": "instanceof-expression",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-instanceof-number.php",
+      "positive": "valid/phase4-expressions-instanceof-number.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "instanceof number"
+    },
+    {
+      "id": "phase4-expressions-cast-close",
+      "area": "expressions",
+      "production": "cast-expression",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-cast-close.php",
+      "positive": "valid/phase4-expressions-cast-close.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "cast close"
+    },
+    {
+      "id": "phase4-expressions-cast-value",
+      "area": "expressions",
+      "production": "cast-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-cast-value.php",
+      "positive": "valid/phase4-expressions-cast-value.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "cast value"
+    },
+    {
+      "id": "phase4-expressions-yield-from-value",
+      "area": "expressions",
+      "production": "yield-from-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-yield-from-value.php",
+      "positive": "valid/phase4-expressions-yield-from-value.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "yield from value"
+    },
+    {
+      "id": "phase4-expressions-throw-value",
+      "area": "expressions",
+      "production": "throw-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-throw-value.php",
+      "positive": "valid/phase4-expressions-throw-value.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "throw value"
+    },
+    {
+      "id": "phase4-expressions-include-value",
+      "area": "expressions",
+      "production": "include-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-include-value.php",
+      "positive": "valid/phase4-expressions-include-value.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "include value"
+    },
+    {
+      "id": "phase4-expressions-require-value",
+      "area": "expressions",
+      "production": "include-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-require-value.php",
+      "positive": "valid/phase4-expressions-require-value.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "require value"
+    },
+    {
+      "id": "phase4-expressions-void-cast-expression",
+      "area": "expressions",
+      "production": "void-cast-statement",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-expressions-void-cast-expression.php",
+      "positive": "valid/phase4-expressions-void-cast-expression.php",
+      "evidence": "zend_language_parser.y: expr and precedence declarations",
+      "boundary": "void cast expression"
+    },
+    {
+      "id": "phase4-dereference-integer-object",
+      "area": "dereference",
+      "production": "fully-dereferenceable-expression",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-integer-object.php",
+      "positive": "valid/phase4-dereference-integer-object.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "integer object"
+    },
+    {
+      "id": "phase4-dereference-integer-call",
+      "area": "dereference",
+      "production": "callable-expression",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-integer-call.php",
+      "positive": "valid/phase4-dereference-integer-call.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "integer call"
+    },
+    {
+      "id": "phase4-dereference-integer-offset",
+      "area": "dereference",
+      "production": "callable-variable",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-integer-offset.php",
+      "positive": "valid/phase4-dereference-integer-offset.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "integer offset"
+    },
+    {
+      "id": "phase4-dereference-float-nullsafe",
+      "area": "dereference",
+      "production": "fully-dereferenceable-expression",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-float-nullsafe.php",
+      "positive": "valid/phase4-dereference-float-nullsafe.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "float nullsafe"
+    },
+    {
+      "id": "phase4-dereference-integer-static",
+      "area": "dereference",
+      "production": "class-constant",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-integer-static.php",
+      "positive": "valid/phase4-dereference-integer-static.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "integer static"
+    },
+    {
+      "id": "phase4-dereference-new-no-parentheses-member",
+      "area": "dereference",
+      "production": "new-dereferenceable",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-new-no-parentheses-member.php",
+      "positive": "valid/phase4-dereference-new-no-parentheses-member.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "new no parentheses member"
+    },
+    {
+      "id": "phase4-dereference-new-no-parentheses-offset",
+      "area": "dereference",
+      "production": "new-dereferenceable",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-new-no-parentheses-offset.php",
+      "positive": "valid/phase4-dereference-new-no-parentheses-offset.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "new no parentheses offset"
+    },
+    {
+      "id": "phase4-dereference-anonymous-class-name",
+      "area": "dereference",
+      "production": "anonymous-class",
+      "category": "invalid declaration structure",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-anonymous-class-name.php",
+      "positive": "valid/phase4-dereference-anonymous-class-name.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "anonymous class name"
+    },
+    {
+      "id": "phase4-dereference-anonymous-class-parent",
+      "area": "dereference",
+      "production": "anonymous-class",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-anonymous-class-parent.php",
+      "positive": "valid/phase4-dereference-anonymous-class-parent.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "anonymous class parent"
+    },
+    {
+      "id": "phase4-dereference-curly-offset",
+      "area": "dereference",
+      "production": "callable-variable",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-curly-offset.php",
+      "positive": "valid/phase4-dereference-curly-offset.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "curly offset"
+    },
+    {
+      "id": "phase4-dereference-callable-property-empty",
+      "area": "dereference",
+      "production": "property-name",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-callable-property-empty.php",
+      "positive": "valid/phase4-dereference-callable-property-empty.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "callable property empty"
+    },
+    {
+      "id": "phase4-dereference-static-empty",
+      "area": "dereference",
+      "production": "static-member",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-dereference-static-empty.php",
+      "positive": "valid/phase4-dereference-static-empty.php",
+      "evidence": "zend_language_parser.y: variable, callable_expr, dereferenceable, new_expr",
+      "boundary": "static empty"
+    },
+    {
+      "id": "phase4-arguments-fcc-before-value",
+      "area": "arguments",
+      "production": "first-class-callable-arguments",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-fcc-before-value.php",
+      "positive": "valid/phase4-arguments-fcc-before-value.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "fcc before value"
+    },
+    {
+      "id": "phase4-arguments-fcc-after-value",
+      "area": "arguments",
+      "production": "first-class-callable-arguments",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-fcc-after-value.php",
+      "positive": "valid/phase4-arguments-fcc-after-value.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "fcc after value"
+    },
+    {
+      "id": "phase4-arguments-fcc-trailing-comma",
+      "area": "arguments",
+      "production": "first-class-callable-arguments",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-fcc-trailing-comma.php",
+      "positive": "valid/phase4-arguments-fcc-trailing-comma.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "fcc trailing comma"
+    },
+    {
+      "id": "phase4-arguments-empty-leading-comma",
+      "area": "arguments",
+      "production": "argument-list",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-empty-leading-comma.php",
+      "positive": "valid/phase4-arguments-empty-leading-comma.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "empty leading comma"
+    },
+    {
+      "id": "phase4-arguments-double-separator",
+      "area": "arguments",
+      "production": "argument-list",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-double-separator.php",
+      "positive": "valid/phase4-arguments-double-separator.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "double separator"
+    },
+    {
+      "id": "phase4-arguments-double-trailing-comma",
+      "area": "arguments",
+      "production": "argument-list",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-double-trailing-comma.php",
+      "positive": "valid/phase4-arguments-double-trailing-comma.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "double trailing comma"
+    },
+    {
+      "id": "phase4-arguments-named-missing-value",
+      "area": "arguments",
+      "production": "argument-no-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-named-missing-value.php",
+      "positive": "valid/phase4-arguments-named-missing-value.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "named missing value"
+    },
+    {
+      "id": "phase4-arguments-named-variable",
+      "area": "arguments",
+      "production": "argument-no-expression",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-named-variable.php",
+      "positive": "valid/phase4-arguments-named-variable.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "named variable"
+    },
+    {
+      "id": "phase4-arguments-named-double-colon",
+      "area": "arguments",
+      "production": "argument-no-expression",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-named-double-colon.php",
+      "positive": "valid/phase4-arguments-named-double-colon.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "named double colon"
+    },
+    {
+      "id": "phase4-arguments-unpack-missing-value",
+      "area": "arguments",
+      "production": "argument-no-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-unpack-missing-value.php",
+      "positive": "valid/phase4-arguments-unpack-missing-value.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "unpack missing value"
+    },
+    {
+      "id": "phase4-arguments-unpack-after-colon",
+      "area": "arguments",
+      "production": "argument-no-expression",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-unpack-after-colon.php",
+      "positive": "valid/phase4-arguments-unpack-after-colon.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "unpack after colon"
+    },
+    {
+      "id": "phase4-arguments-call-time-reference",
+      "area": "arguments",
+      "production": "argument",
+      "category": "illegal prefix/postfix form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-arguments-call-time-reference.php",
+      "positive": "valid/phase4-arguments-call-time-reference.php",
+      "evidence": "zend_language_parser.y: argument_list, argument_no_expr, possible_comma",
+      "boundary": "call time reference"
+    },
+    {
+      "id": "phase4-variables-double-dollar-empty",
+      "area": "variables",
+      "production": "variable-variable",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-double-dollar-empty.php",
+      "positive": "valid/phase4-variables-double-dollar-empty.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "double dollar empty"
+    },
+    {
+      "id": "phase4-variables-braced-empty",
+      "area": "variables",
+      "production": "variable-variable",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-braced-empty.php",
+      "positive": "valid/phase4-variables-braced-empty.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "braced empty"
+    },
+    {
+      "id": "phase4-variables-braced-unclosed",
+      "area": "variables",
+      "production": "variable-variable",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-braced-unclosed.php",
+      "positive": "valid/phase4-variables-braced-unclosed.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "braced unclosed"
+    },
+    {
+      "id": "phase4-variables-assignment-literal",
+      "area": "variables",
+      "production": "assignment-expression",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-assignment-literal.php",
+      "positive": "valid/phase4-variables-assignment-literal.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "assignment literal"
+    },
+    {
+      "id": "phase4-variables-assignment-parenthesized",
+      "area": "variables",
+      "production": "assignment-expression",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-assignment-parenthesized.php",
+      "positive": "valid/phase4-variables-assignment-parenthesized.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "assignment parenthesized"
+    },
+    {
+      "id": "phase4-variables-assignment-reference-value",
+      "area": "variables",
+      "production": "assignment-expression",
+      "category": "illegal prefix/postfix form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-assignment-reference-value.php",
+      "positive": "valid/phase4-variables-assignment-reference-value.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "assignment reference value"
+    },
+    {
+      "id": "phase4-variables-assignment-reference-double",
+      "area": "variables",
+      "production": "assignment-expression",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-assignment-reference-double.php",
+      "positive": "valid/phase4-variables-assignment-reference-double.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "assignment reference double"
+    },
+    {
+      "id": "phase4-variables-list-missing-comma",
+      "area": "variables",
+      "production": "long-list-expression",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-list-missing-comma.php",
+      "positive": "valid/phase4-variables-list-missing-comma.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "list missing comma"
+    },
+    {
+      "id": "phase4-variables-list-wrong-close",
+      "area": "variables",
+      "production": "long-list-expression",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-list-wrong-close.php",
+      "positive": "valid/phase4-variables-list-wrong-close.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "list wrong close"
+    },
+    {
+      "id": "phase4-variables-short-key-no-target",
+      "area": "variables",
+      "production": "array-pair-list",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-short-key-no-target.php",
+      "positive": "valid/phase4-variables-short-key-no-target.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "short key no target"
+    },
+    {
+      "id": "phase4-variables-nested-list-close",
+      "area": "variables",
+      "production": "list-expression",
+      "category": "malformed nesting",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-nested-list-close.php",
+      "positive": "valid/phase4-variables-nested-list-close.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "nested list close"
+    },
+    {
+      "id": "phase4-variables-short-reference-missing",
+      "area": "variables",
+      "production": "array-pair-list",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-short-reference-missing.php",
+      "positive": "valid/phase4-variables-short-reference-missing.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "short reference missing"
+    },
+    {
+      "id": "phase4-variables-member-number",
+      "area": "variables",
+      "production": "property-name",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-member-number.php",
+      "positive": "valid/phase4-variables-member-number.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "member number"
+    },
+    {
+      "id": "phase4-variables-member-brace-close",
+      "area": "variables",
+      "production": "property-name",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-variables-member-brace-close.php",
+      "positive": "valid/phase4-variables-member-brace-close.php",
+      "evidence": "zend_language_parser.y: simple_variable, variable, array_pair, expr",
+      "boundary": "member brace close"
+    },
+    {
+      "id": "phase4-types-nullable-missing",
+      "area": "types",
+      "production": "nullable-type-without-static",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-nullable-missing.php",
+      "positive": "valid/phase4-types-nullable-missing.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "nullable missing"
+    },
+    {
+      "id": "phase4-types-nullable-repeat",
+      "area": "types",
+      "production": "nullable-type-without-static",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-nullable-repeat.php",
+      "positive": "valid/phase4-types-nullable-repeat.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "nullable repeat"
+    },
+    {
+      "id": "phase4-types-nullable-intersection",
+      "area": "types",
+      "production": "nullable-type-without-static",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-nullable-intersection.php",
+      "positive": "valid/phase4-types-nullable-intersection.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "nullable intersection"
+    },
+    {
+      "id": "phase4-types-nullable-union",
+      "area": "types",
+      "production": "nullable-type-without-static",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-nullable-union.php",
+      "positive": "valid/phase4-types-nullable-union.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "nullable union"
+    },
+    {
+      "id": "phase4-types-union-missing",
+      "area": "types",
+      "production": "union-type-without-static",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-union-missing.php",
+      "positive": "valid/phase4-types-union-missing.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "union missing"
+    },
+    {
+      "id": "phase4-types-union-repeat",
+      "area": "types",
+      "production": "union-type-without-static",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-union-repeat.php",
+      "positive": "valid/phase4-types-union-repeat.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "union repeat"
+    },
+    {
+      "id": "phase4-types-intersection-repeat",
+      "area": "types",
+      "production": "intersection-type-without-static",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-intersection-repeat.php",
+      "positive": "valid/phase4-types-intersection-repeat.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "intersection repeat"
+    },
+    {
+      "id": "phase4-types-intersection-return-missing",
+      "area": "types",
+      "production": "intersection-type",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-intersection-return-missing.php",
+      "positive": "valid/phase4-types-intersection-return-missing.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "intersection return missing"
+    },
+    {
+      "id": "phase4-types-dnf-unparenthesized",
+      "area": "types",
+      "production": "union-type-without-static-element",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-dnf-unparenthesized.php",
+      "positive": "valid/phase4-types-dnf-unparenthesized.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "dnf unparenthesized"
+    },
+    {
+      "id": "phase4-types-dnf-union-group",
+      "area": "types",
+      "production": "union-type-without-static-element",
+      "category": "malformed nesting",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-dnf-union-group.php",
+      "positive": "valid/phase4-types-dnf-union-group.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "dnf union group"
+    },
+    {
+      "id": "phase4-types-dnf-single-group",
+      "area": "types",
+      "production": "union-type-without-static-element",
+      "category": "malformed nesting",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-dnf-single-group.php",
+      "positive": "valid/phase4-types-dnf-single-group.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "dnf single group"
+    },
+    {
+      "id": "phase4-types-parameter-static",
+      "area": "types",
+      "production": "type-without-static",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-parameter-static.php",
+      "positive": "valid/phase4-types-parameter-static.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "parameter static"
+    },
+    {
+      "id": "phase4-types-property-static-union",
+      "area": "types",
+      "production": "type-without-static",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-property-static-union.php",
+      "positive": "valid/phase4-types-property-static-union.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "property static union"
+    },
+    {
+      "id": "phase4-types-return-missing",
+      "area": "types",
+      "production": "return-type",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-return-missing.php",
+      "positive": "valid/phase4-types-return-missing.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "return missing"
+    },
+    {
+      "id": "phase4-types-property-type-after",
+      "area": "types",
+      "production": "property-declaration",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-types-property-type-after.php",
+      "positive": "valid/phase4-types-property-type-after.php",
+      "evidence": "zend_language_parser.y: type_expr, type_expr_without_static, union_type_element, intersection_type",
+      "boundary": "property type after"
+    },
+    {
+      "id": "phase4-hooks-outer-semicolon",
+      "area": "hooks",
+      "production": "hooked-property",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-outer-semicolon.php",
+      "positive": "valid/phase4-hooks-outer-semicolon.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "outer semicolon"
+    },
+    {
+      "id": "phase4-hooks-ordinary-then-hooked",
+      "area": "hooks",
+      "production": "property-declaration",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-ordinary-then-hooked.php",
+      "positive": "valid/phase4-hooks-ordinary-then-hooked.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "ordinary then hooked"
+    },
+    {
+      "id": "phase4-hooks-hooked-then-ordinary",
+      "area": "hooks",
+      "production": "property-declaration",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-hooked-then-ordinary.php",
+      "positive": "valid/phase4-hooks-hooked-then-ordinary.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "hooked then ordinary"
+    },
+    {
+      "id": "phase4-hooks-block-delimiter",
+      "area": "hooks",
+      "production": "property-hook-block",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-block-delimiter.php",
+      "positive": "valid/phase4-hooks-block-delimiter.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "block delimiter"
+    },
+    {
+      "id": "phase4-hooks-body-missing",
+      "area": "hooks",
+      "production": "property-hook-body",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-body-missing.php",
+      "positive": "valid/phase4-hooks-body-missing.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "body missing"
+    },
+    {
+      "id": "phase4-hooks-short-value-missing",
+      "area": "hooks",
+      "production": "property-hook-body",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-short-value-missing.php",
+      "positive": "valid/phase4-hooks-short-value-missing.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "short value missing"
+    },
+    {
+      "id": "phase4-hooks-short-terminator-missing",
+      "area": "hooks",
+      "production": "property-hook-body",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-short-terminator-missing.php",
+      "positive": "valid/phase4-hooks-short-terminator-missing.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "short terminator missing"
+    },
+    {
+      "id": "phase4-hooks-modifier-after-name",
+      "area": "hooks",
+      "production": "property-hook",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-modifier-after-name.php",
+      "positive": "valid/phase4-hooks-modifier-after-name.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "modifier after name"
+    },
+    {
+      "id": "phase4-hooks-duplicated-body",
+      "area": "hooks",
+      "production": "property-hook-body",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-duplicated-body.php",
+      "positive": "valid/phase4-hooks-duplicated-body.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "duplicated body"
+    },
+    {
+      "id": "phase4-hooks-set-parameter-separator",
+      "area": "hooks",
+      "production": "property-hook",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-set-parameter-separator.php",
+      "positive": "valid/phase4-hooks-set-parameter-separator.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "set parameter separator"
+    },
+    {
+      "id": "phase4-hooks-asymmetric-missing-close",
+      "area": "hooks",
+      "production": "set-visibility-modifier",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-asymmetric-missing-close.php",
+      "positive": "valid/phase4-hooks-asymmetric-missing-close.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "asymmetric missing close"
+    },
+    {
+      "id": "phase4-hooks-asymmetric-wrong-keyword",
+      "area": "hooks",
+      "production": "set-visibility-modifier",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-asymmetric-wrong-keyword.php",
+      "positive": "valid/phase4-hooks-asymmetric-wrong-keyword.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "asymmetric wrong keyword"
+    },
+    {
+      "id": "phase4-hooks-promotion-modifier-after-type",
+      "area": "hooks",
+      "production": "parameter",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-promotion-modifier-after-type.php",
+      "positive": "valid/phase4-hooks-promotion-modifier-after-type.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "promotion modifier after type"
+    },
+    {
+      "id": "phase4-hooks-promotion-default-after-hook",
+      "area": "hooks",
+      "production": "parameter",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-promotion-default-after-hook.php",
+      "positive": "valid/phase4-hooks-promotion-default-after-hook.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "promotion default after hook"
+    },
+    {
+      "id": "phase4-hooks-interface-semicolon",
+      "area": "hooks",
+      "production": "interface-property-declaration",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-interface-semicolon.php",
+      "positive": "valid/phase4-hooks-interface-semicolon.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "interface semicolon"
+    },
+    {
+      "id": "phase4-hooks-var-public",
+      "area": "hooks",
+      "production": "property-declaration",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-var-public.php",
+      "positive": "valid/phase4-hooks-var-public.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "var public"
+    },
+    {
+      "id": "phase4-hooks-interface-var-public",
+      "area": "hooks",
+      "production": "interface-property-declaration",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-hooks-interface-var-public.php",
+      "positive": "valid/phase4-hooks-interface-var-public.php",
+      "evidence": "zend_language_parser.y: attributed_class_statement, hooked_property, property_hook, property_hook_body, parameter",
+      "boundary": "interface var public"
+    },
+    {
+      "id": "phase4-declarations-class-name-missing",
+      "area": "declarations",
+      "production": "class-declaration",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-class-name-missing.php",
+      "positive": "valid/phase4-declarations-class-name-missing.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "class name missing"
+    },
+    {
+      "id": "phase4-declarations-class-body-missing",
+      "area": "declarations",
+      "production": "class-declaration",
+      "category": "invalid declaration structure",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-class-body-missing.php",
+      "positive": "valid/phase4-declarations-class-body-missing.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "class body missing"
+    },
+    {
+      "id": "phase4-declarations-class-bare-semicolon",
+      "area": "declarations",
+      "production": "class-declaration",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-class-bare-semicolon.php",
+      "positive": "valid/phase4-declarations-class-bare-semicolon.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "class bare semicolon"
+    },
+    {
+      "id": "phase4-declarations-interface-name-missing",
+      "area": "declarations",
+      "production": "interface-declaration",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-interface-name-missing.php",
+      "positive": "valid/phase4-declarations-interface-name-missing.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "interface name missing"
+    },
+    {
+      "id": "phase4-declarations-interface-bare-semicolon",
+      "area": "declarations",
+      "production": "interface-declaration",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-interface-bare-semicolon.php",
+      "positive": "valid/phase4-declarations-interface-bare-semicolon.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "interface bare semicolon"
+    },
+    {
+      "id": "phase4-declarations-trait-name-missing",
+      "area": "declarations",
+      "production": "trait-declaration",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-trait-name-missing.php",
+      "positive": "valid/phase4-declarations-trait-name-missing.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "trait name missing"
+    },
+    {
+      "id": "phase4-declarations-trait-extends",
+      "area": "declarations",
+      "production": "trait-declaration",
+      "category": "invalid declaration structure",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-trait-extends.php",
+      "positive": "valid/phase4-declarations-trait-extends.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "trait extends"
+    },
+    {
+      "id": "phase4-declarations-inheritance-order",
+      "area": "declarations",
+      "production": "class-declaration",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-inheritance-order.php",
+      "positive": "valid/phase4-declarations-inheritance-order.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "inheritance order"
+    },
+    {
+      "id": "phase4-declarations-extends-two",
+      "area": "declarations",
+      "production": "extends-clause",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-extends-two.php",
+      "positive": "valid/phase4-declarations-extends-two.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "extends two"
+    },
+    {
+      "id": "phase4-declarations-implements-trailing-comma",
+      "area": "declarations",
+      "production": "implements-clause",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-implements-trailing-comma.php",
+      "positive": "valid/phase4-declarations-implements-trailing-comma.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "implements trailing comma"
+    },
+    {
+      "id": "phase4-declarations-interface-implements",
+      "area": "declarations",
+      "production": "interface-declaration",
+      "category": "invalid declaration structure",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-interface-implements.php",
+      "positive": "valid/phase4-declarations-interface-implements.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "interface implements"
+    },
+    {
+      "id": "phase4-declarations-interface-extends-missing",
+      "area": "declarations",
+      "production": "interface-declaration",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-interface-extends-missing.php",
+      "positive": "valid/phase4-declarations-interface-extends-missing.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "interface extends missing"
+    },
+    {
+      "id": "phase4-declarations-member-comma",
+      "area": "declarations",
+      "production": "class-member-list",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-member-comma.php",
+      "positive": "valid/phase4-declarations-member-comma.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "member comma"
+    },
+    {
+      "id": "phase4-declarations-typed-constant-missing-name",
+      "area": "declarations",
+      "production": "class-constant-declaration",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-typed-constant-missing-name.php",
+      "positive": "valid/phase4-declarations-typed-constant-missing-name.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "typed constant missing name"
+    },
+    {
+      "id": "phase4-declarations-typed-constant-missing-equals",
+      "area": "declarations",
+      "production": "class-constant-declaration",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-typed-constant-missing-equals.php",
+      "positive": "valid/phase4-declarations-typed-constant-missing-equals.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "typed constant missing equals"
+    },
+    {
+      "id": "phase4-declarations-constant-trailing-comma",
+      "area": "declarations",
+      "production": "class-constant-list",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-declarations-constant-trailing-comma.php",
+      "positive": "valid/phase4-declarations-constant-trailing-comma.php",
+      "evidence": "zend_language_parser.y: class_declaration_statement, interface_declaration_statement, trait_declaration_statement, class_statement",
+      "boundary": "constant trailing comma"
+    },
+    {
+      "id": "phase4-traits-enums-trait-use-empty",
+      "area": "traits-enums",
+      "production": "trait-use-declaration",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-trait-use-empty.php",
+      "positive": "valid/phase4-traits-enums-trait-use-empty.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "trait use empty"
+    },
+    {
+      "id": "phase4-traits-enums-trait-use-trailing-comma",
+      "area": "traits-enums",
+      "production": "trait-use-declaration",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-trait-use-trailing-comma.php",
+      "positive": "valid/phase4-traits-enums-trait-use-trailing-comma.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "trait use trailing comma"
+    },
+    {
+      "id": "phase4-traits-enums-insteadof-target-missing",
+      "area": "traits-enums",
+      "production": "trait-precedence",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-insteadof-target-missing.php",
+      "positive": "valid/phase4-traits-enums-insteadof-target-missing.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "insteadof target missing"
+    },
+    {
+      "id": "phase4-traits-enums-alias-missing",
+      "area": "traits-enums",
+      "production": "trait-alias",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-alias-missing.php",
+      "positive": "valid/phase4-traits-enums-alias-missing.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "alias missing"
+    },
+    {
+      "id": "phase4-traits-enums-adaptation-comma",
+      "area": "traits-enums",
+      "production": "trait-adaptation-block",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-adaptation-comma.php",
+      "positive": "valid/phase4-traits-enums-adaptation-comma.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "adaptation comma"
+    },
+    {
+      "id": "phase4-traits-enums-adaptation-outer-semicolon",
+      "area": "traits-enums",
+      "production": "trait-adaptation-block",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-adaptation-outer-semicolon.php",
+      "positive": "valid/phase4-traits-enums-adaptation-outer-semicolon.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "adaptation outer semicolon"
+    },
+    {
+      "id": "phase4-traits-enums-trait-use-attribute",
+      "area": "traits-enums",
+      "production": "trait-use-declaration",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-trait-use-attribute.php",
+      "positive": "valid/phase4-traits-enums-trait-use-attribute.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "trait use attribute"
+    },
+    {
+      "id": "phase4-traits-enums-alias-modifier-before-as",
+      "area": "traits-enums",
+      "production": "trait-alias",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-alias-modifier-before-as.php",
+      "positive": "valid/phase4-traits-enums-alias-modifier-before-as.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "alias modifier before as"
+    },
+    {
+      "id": "phase4-traits-enums-alias-two-modifiers",
+      "area": "traits-enums",
+      "production": "trait-alias",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-alias-two-modifiers.php",
+      "positive": "valid/phase4-traits-enums-alias-two-modifiers.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "alias two modifiers"
+    },
+    {
+      "id": "phase4-traits-enums-enum-name-missing",
+      "area": "traits-enums",
+      "production": "enum-declaration",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-enum-name-missing.php",
+      "positive": "valid/phase4-traits-enums-enum-name-missing.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "enum name missing"
+    },
+    {
+      "id": "phase4-traits-enums-enum-bare-semicolon",
+      "area": "traits-enums",
+      "production": "enum-member-list",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-enum-bare-semicolon.php",
+      "positive": "valid/phase4-traits-enums-enum-bare-semicolon.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "enum bare semicolon"
+    },
+    {
+      "id": "phase4-traits-enums-enum-extends",
+      "area": "traits-enums",
+      "production": "enum-declaration",
+      "category": "invalid declaration structure",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-enum-extends.php",
+      "positive": "valid/phase4-traits-enums-enum-extends.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "enum extends"
+    },
+    {
+      "id": "phase4-traits-enums-enum-case-name-missing",
+      "area": "traits-enums",
+      "production": "enum-case",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-enum-case-name-missing.php",
+      "positive": "valid/phase4-traits-enums-enum-case-name-missing.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "enum case name missing"
+    },
+    {
+      "id": "phase4-traits-enums-enum-case-value-missing",
+      "area": "traits-enums",
+      "production": "enum-case",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-enum-case-value-missing.php",
+      "positive": "valid/phase4-traits-enums-enum-case-value-missing.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "enum case value missing"
+    },
+    {
+      "id": "phase4-traits-enums-enum-case-comma",
+      "area": "traits-enums",
+      "production": "enum-case",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-enum-case-comma.php",
+      "positive": "valid/phase4-traits-enums-enum-case-comma.php",
+      "evidence": "zend_language_parser.y: trait_adaptations, trait_precedence, trait_alias, enum_declaration_statement, enum_case",
+      "boundary": "enum case comma"
+    },
+    {
+      "id": "phase4-functions-parameter-leading-comma",
+      "area": "functions",
+      "production": "parameter-list",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-parameter-leading-comma.php",
+      "positive": "valid/phase4-functions-parameter-leading-comma.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "parameter leading comma"
+    },
+    {
+      "id": "phase4-functions-parameter-double-comma",
+      "area": "functions",
+      "production": "parameter-list",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-parameter-double-comma.php",
+      "positive": "valid/phase4-functions-parameter-double-comma.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "parameter double comma"
+    },
+    {
+      "id": "phase4-functions-variadic-after-variable",
+      "area": "functions",
+      "production": "parameter",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-variadic-after-variable.php",
+      "positive": "valid/phase4-functions-variadic-after-variable.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "variadic after variable"
+    },
+    {
+      "id": "phase4-functions-variadic-reference-order",
+      "area": "functions",
+      "production": "parameter",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-variadic-reference-order.php",
+      "positive": "valid/phase4-functions-variadic-reference-order.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "variadic reference order"
+    },
+    {
+      "id": "phase4-functions-return-reference-after-name",
+      "area": "functions",
+      "production": "function-declaration",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-return-reference-after-name.php",
+      "positive": "valid/phase4-functions-return-reference-after-name.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "return reference after name"
+    },
+    {
+      "id": "phase4-functions-return-reference-double",
+      "area": "functions",
+      "production": "function-declaration",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-return-reference-double.php",
+      "positive": "valid/phase4-functions-return-reference-double.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "return reference double"
+    },
+    {
+      "id": "phase4-functions-closure-use-empty",
+      "area": "functions",
+      "production": "lexical-variable-list",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-closure-use-empty.php",
+      "positive": "valid/phase4-functions-closure-use-empty.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "closure use empty"
+    },
+    {
+      "id": "phase4-functions-closure-use-expression",
+      "area": "functions",
+      "production": "lexical-variable-list",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-closure-use-expression.php",
+      "positive": "valid/phase4-functions-closure-use-expression.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "closure use expression"
+    },
+    {
+      "id": "phase4-functions-closure-use-unpack",
+      "area": "functions",
+      "production": "lexical-variable-list",
+      "category": "illegal prefix/postfix form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-closure-use-unpack.php",
+      "positive": "valid/phase4-functions-closure-use-unpack.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "closure use unpack"
+    },
+    {
+      "id": "phase4-functions-closure-use-reference-missing",
+      "area": "functions",
+      "production": "lexical-variable-list",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-closure-use-reference-missing.php",
+      "positive": "valid/phase4-functions-closure-use-reference-missing.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "closure use reference missing"
+    },
+    {
+      "id": "phase4-functions-arrow-missing-value",
+      "area": "functions",
+      "production": "arrow-function",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-arrow-missing-value.php",
+      "positive": "valid/phase4-functions-arrow-missing-value.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "arrow missing value"
+    },
+    {
+      "id": "phase4-functions-arrow-block-body",
+      "area": "functions",
+      "production": "arrow-function",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-arrow-block-body.php",
+      "positive": "valid/phase4-functions-arrow-block-body.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "arrow block body"
+    },
+    {
+      "id": "phase4-functions-arrow-use",
+      "area": "functions",
+      "production": "arrow-function",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-arrow-use.php",
+      "positive": "valid/phase4-functions-arrow-use.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "arrow use"
+    },
+    {
+      "id": "phase4-functions-closure-attribute-after-static",
+      "area": "functions",
+      "production": "closure-expression",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-closure-attribute-after-static.php",
+      "positive": "valid/phase4-functions-closure-attribute-after-static.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "closure attribute after static"
+    },
+    {
+      "id": "phase4-functions-arrow-attribute-empty",
+      "area": "functions",
+      "production": "attribute-group",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-arrow-attribute-empty.php",
+      "positive": "valid/phase4-functions-arrow-attribute-empty.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "arrow attribute empty"
+    },
+    {
+      "id": "phase4-functions-closure-return-use-order",
+      "area": "functions",
+      "production": "closure-expression",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-functions-closure-return-use-order.php",
+      "positive": "valid/phase4-functions-closure-return-use-order.php",
+      "evidence": "zend_language_parser.y: parameter_list, parameter, lexical_vars, lexical_var, inline_function, fn",
+      "boundary": "closure return use order"
+    },
+    {
+      "id": "phase4-statements-if-condition-empty",
+      "area": "statements",
+      "production": "if-statement",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-if-condition-empty.php",
+      "positive": "valid/phase4-statements-if-condition-empty.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "if condition empty"
+    },
+    {
+      "id": "phase4-statements-elseif-after-else",
+      "area": "statements",
+      "production": "if-statement",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-elseif-after-else.php",
+      "positive": "valid/phase4-statements-elseif-after-else.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "elseif after else"
+    },
+    {
+      "id": "phase4-statements-else-duplicate",
+      "area": "statements",
+      "production": "if-statement",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-else-duplicate.php",
+      "positive": "valid/phase4-statements-else-duplicate.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "else duplicate"
+    },
+    {
+      "id": "phase4-statements-alternate-if-close",
+      "area": "statements",
+      "production": "alternative-if-statement",
+      "category": "malformed nesting",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-alternate-if-close.php",
+      "positive": "valid/phase4-statements-alternate-if-close.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "alternate if close"
+    },
+    {
+      "id": "phase4-statements-alternate-elseif-colon",
+      "area": "statements",
+      "production": "alt-elseif-list",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-alternate-elseif-colon.php",
+      "positive": "valid/phase4-statements-alternate-elseif-colon.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "alternate elseif colon"
+    },
+    {
+      "id": "phase4-statements-alternate-else-condition",
+      "area": "statements",
+      "production": "alt-else-clause",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-alternate-else-condition.php",
+      "positive": "valid/phase4-statements-alternate-else-condition.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "alternate else condition"
+    },
+    {
+      "id": "phase4-statements-while-condition",
+      "area": "statements",
+      "production": "while-statement",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-while-condition.php",
+      "positive": "valid/phase4-statements-while-condition.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "while condition"
+    },
+    {
+      "id": "phase4-statements-do-while-missing",
+      "area": "statements",
+      "production": "do-statement",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-do-while-missing.php",
+      "positive": "valid/phase4-statements-do-while-missing.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "do while missing"
+    },
+    {
+      "id": "phase4-statements-do-terminator",
+      "area": "statements",
+      "production": "do-statement",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-do-terminator.php",
+      "positive": "valid/phase4-statements-do-terminator.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "do terminator"
+    },
+    {
+      "id": "phase4-statements-for-separator",
+      "area": "statements",
+      "production": "for-statement",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-for-separator.php",
+      "positive": "valid/phase4-statements-for-separator.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "for separator"
+    },
+    {
+      "id": "phase4-statements-for-extra-separator",
+      "area": "statements",
+      "production": "for-statement",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-for-extra-separator.php",
+      "positive": "valid/phase4-statements-for-extra-separator.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "for extra separator"
+    },
+    {
+      "id": "phase4-statements-foreach-as",
+      "area": "statements",
+      "production": "foreach-statement",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-foreach-as.php",
+      "positive": "valid/phase4-statements-foreach-as.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "foreach as"
+    },
+    {
+      "id": "phase4-statements-foreach-target",
+      "area": "statements",
+      "production": "foreach-statement",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-foreach-target.php",
+      "positive": "valid/phase4-statements-foreach-target.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "foreach target"
+    },
+    {
+      "id": "phase4-statements-foreach-key-value",
+      "area": "statements",
+      "production": "foreach-statement",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-foreach-key-value.php",
+      "positive": "valid/phase4-statements-foreach-key-value.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "foreach key value"
+    },
+    {
+      "id": "phase4-statements-alternate-while-close",
+      "area": "statements",
+      "production": "matched-while-statement",
+      "category": "malformed nesting",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-alternate-while-close.php",
+      "positive": "valid/phase4-statements-alternate-while-close.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "alternate while close"
+    },
+    {
+      "id": "phase4-statements-alternate-for-close",
+      "area": "statements",
+      "production": "matched-for-statement",
+      "category": "malformed nesting",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-alternate-for-close.php",
+      "positive": "valid/phase4-statements-alternate-for-close.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "alternate for close"
+    },
+    {
+      "id": "phase4-statements-alternate-foreach-close",
+      "area": "statements",
+      "production": "matched-foreach-statement",
+      "category": "malformed nesting",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-alternate-foreach-close.php",
+      "positive": "valid/phase4-statements-alternate-foreach-close.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "alternate foreach close"
+    },
+    {
+      "id": "phase4-statements-switch-case-value",
+      "area": "statements",
+      "production": "switch-case",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-switch-case-value.php",
+      "positive": "valid/phase4-statements-switch-case-value.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "switch case value"
+    },
+    {
+      "id": "phase4-statements-switch-case-delimiter",
+      "area": "statements",
+      "production": "switch-case",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-switch-case-delimiter.php",
+      "positive": "valid/phase4-statements-switch-case-delimiter.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "switch case delimiter"
+    },
+    {
+      "id": "phase4-statements-alternate-switch-close",
+      "area": "statements",
+      "production": "switch-statement",
+      "category": "malformed nesting",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-alternate-switch-close.php",
+      "positive": "valid/phase4-statements-alternate-switch-close.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "alternate switch close"
+    },
+    {
+      "id": "phase4-statements-match-arrow",
+      "area": "statements",
+      "production": "match-arm",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-match-arrow.php",
+      "positive": "valid/phase4-statements-match-arrow.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "match arrow"
+    },
+    {
+      "id": "phase4-statements-match-value",
+      "area": "statements",
+      "production": "match-arm",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-match-value.php",
+      "positive": "valid/phase4-statements-match-value.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "match value"
+    },
+    {
+      "id": "phase4-statements-match-separator",
+      "area": "statements",
+      "production": "match-arm",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-match-separator.php",
+      "positive": "valid/phase4-statements-match-separator.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "match separator"
+    },
+    {
+      "id": "phase4-statements-try-catch-body",
+      "area": "statements",
+      "production": "try-statement",
+      "category": "invalid declaration structure",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-try-catch-body.php",
+      "positive": "valid/phase4-statements-try-catch-body.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "try catch body"
+    },
+    {
+      "id": "phase4-statements-catch-type-empty",
+      "area": "statements",
+      "production": "catch-clause",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-catch-type-empty.php",
+      "positive": "valid/phase4-statements-catch-type-empty.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "catch type empty"
+    },
+    {
+      "id": "phase4-statements-catch-type-trailing-union",
+      "area": "statements",
+      "production": "catch-clause",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-catch-type-trailing-union.php",
+      "positive": "valid/phase4-statements-catch-type-trailing-union.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "catch type trailing union"
+    },
+    {
+      "id": "phase4-statements-finally-catch-order",
+      "area": "statements",
+      "production": "try-statement",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-finally-catch-order.php",
+      "positive": "valid/phase4-statements-finally-catch-order.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "finally catch order"
+    },
+    {
+      "id": "phase4-statements-return-comma",
+      "area": "statements",
+      "production": "return-statement",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-return-comma.php",
+      "positive": "valid/phase4-statements-return-comma.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "return comma"
+    },
+    {
+      "id": "phase4-statements-throw-comma",
+      "area": "statements",
+      "production": "throw-expression",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-throw-comma.php",
+      "positive": "valid/phase4-statements-throw-comma.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "throw comma"
+    },
+    {
+      "id": "phase4-statements-break-comma",
+      "area": "statements",
+      "production": "break-statement",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-break-comma.php",
+      "positive": "valid/phase4-statements-break-comma.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "break comma"
+    },
+    {
+      "id": "phase4-statements-continue-comma",
+      "area": "statements",
+      "production": "continue-statement",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-continue-comma.php",
+      "positive": "valid/phase4-statements-continue-comma.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "continue comma"
+    },
+    {
+      "id": "phase4-statements-goto-variable",
+      "area": "statements",
+      "production": "goto-statement",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-goto-variable.php",
+      "positive": "valid/phase4-statements-goto-variable.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "goto variable"
+    },
+    {
+      "id": "phase4-statements-label-double-colon",
+      "area": "statements",
+      "production": "label-statement",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-label-double-colon.php",
+      "positive": "valid/phase4-statements-label-double-colon.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "label double colon"
+    },
+    {
+      "id": "phase4-statements-declare-empty",
+      "area": "statements",
+      "production": "declare-directive-list",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-declare-empty.php",
+      "positive": "valid/phase4-statements-declare-empty.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "declare empty"
+    },
+    {
+      "id": "phase4-statements-declare-no-equals",
+      "area": "statements",
+      "production": "declare-directive-list",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-declare-no-equals.php",
+      "positive": "valid/phase4-statements-declare-no-equals.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "declare no equals"
+    },
+    {
+      "id": "phase4-statements-global-trailing-comma",
+      "area": "statements",
+      "production": "global-statement",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-global-trailing-comma.php",
+      "positive": "valid/phase4-statements-global-trailing-comma.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "global trailing comma"
+    },
+    {
+      "id": "phase4-statements-static-trailing-comma",
+      "area": "statements",
+      "production": "static-statement",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-static-trailing-comma.php",
+      "positive": "valid/phase4-statements-static-trailing-comma.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "static trailing comma"
+    },
+    {
+      "id": "phase4-statements-unset-empty",
+      "area": "statements",
+      "production": "unset-statement",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-unset-empty.php",
+      "positive": "valid/phase4-statements-unset-empty.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "unset empty"
+    },
+    {
+      "id": "phase4-statements-echo-empty",
+      "area": "statements",
+      "production": "echo-statement",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-echo-empty.php",
+      "positive": "valid/phase4-statements-echo-empty.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "echo empty"
+    },
+    {
+      "id": "phase4-statements-echo-trailing-comma",
+      "area": "statements",
+      "production": "echo-statement",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-statements-echo-trailing-comma.php",
+      "positive": "valid/phase4-statements-echo-trailing-comma.php",
+      "evidence": "zend_language_parser.y: statement, alt_if_stmt, for_statement, foreach_statement, switch_case_list, match_arm, catch_list",
+      "boundary": "echo trailing comma"
+    },
+    {
+      "id": "phase4-imports-namespace-name-missing",
+      "area": "imports",
+      "production": "namespace-definition",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-namespace-name-missing.php",
+      "positive": "valid/phase4-imports-namespace-name-missing.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "namespace name missing"
+    },
+    {
+      "id": "phase4-imports-namespace-leading-slash",
+      "area": "imports",
+      "production": "namespace-definition",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-namespace-leading-slash.php",
+      "positive": "valid/phase4-imports-namespace-leading-slash.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "namespace leading slash"
+    },
+    {
+      "id": "phase4-imports-namespace-trailing-slash",
+      "area": "imports",
+      "production": "namespace-definition",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-namespace-trailing-slash.php",
+      "positive": "valid/phase4-imports-namespace-trailing-slash.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "namespace trailing slash"
+    },
+    {
+      "id": "phase4-imports-qualified-whitespace",
+      "area": "imports",
+      "production": "qualified-name",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-qualified-whitespace.php",
+      "positive": "valid/phase4-imports-qualified-whitespace.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "qualified whitespace"
+    },
+    {
+      "id": "phase4-imports-use-empty",
+      "area": "imports",
+      "production": "namespace-use-declaration",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-use-empty.php",
+      "positive": "valid/phase4-imports-use-empty.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "use empty"
+    },
+    {
+      "id": "phase4-imports-alias-variable",
+      "area": "imports",
+      "production": "use-declaration",
+      "category": "invalid token/order",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-alias-variable.php",
+      "positive": "valid/phase4-imports-alias-variable.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "alias variable"
+    },
+    {
+      "id": "phase4-imports-alias-missing",
+      "area": "imports",
+      "production": "use-declaration",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-alias-missing.php",
+      "positive": "valid/phase4-imports-alias-missing.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "alias missing"
+    },
+    {
+      "id": "phase4-imports-group-empty",
+      "area": "imports",
+      "production": "mixed-group-use-declaration",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-group-empty.php",
+      "positive": "valid/phase4-imports-group-empty.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "group empty"
+    },
+    {
+      "id": "phase4-imports-group-no-slash",
+      "area": "imports",
+      "production": "mixed-group-use-declaration",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-group-no-slash.php",
+      "positive": "valid/phase4-imports-group-no-slash.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "group no slash"
+    },
+    {
+      "id": "phase4-imports-group-double-comma",
+      "area": "imports",
+      "production": "mixed-group-use-declaration",
+      "category": "duplicate syntactic component",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-group-double-comma.php",
+      "positive": "valid/phase4-imports-group-double-comma.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "group double comma"
+    },
+    {
+      "id": "phase4-imports-group-leading-slash",
+      "area": "imports",
+      "production": "mixed-group-use-declaration",
+      "category": "illegal prefix/postfix form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-group-leading-slash.php",
+      "positive": "valid/phase4-imports-group-leading-slash.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "group leading slash"
+    },
+    {
+      "id": "phase4-imports-function-empty",
+      "area": "imports",
+      "production": "namespace-use-declaration",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-function-empty.php",
+      "positive": "valid/phase4-imports-function-empty.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "function empty"
+    },
+    {
+      "id": "phase4-imports-const-empty",
+      "area": "imports",
+      "production": "namespace-use-declaration",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-const-empty.php",
+      "positive": "valid/phase4-imports-const-empty.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "const empty"
+    },
+    {
+      "id": "phase4-imports-typed-group-mixed",
+      "area": "imports",
+      "production": "group-use-declaration",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-typed-group-mixed.php",
+      "positive": "valid/phase4-imports-typed-group-mixed.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "typed group mixed"
+    },
+    {
+      "id": "phase4-imports-ungrouped-trailing-comma",
+      "area": "imports",
+      "production": "namespace-use-declaration",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-ungrouped-trailing-comma.php",
+      "positive": "valid/phase4-imports-ungrouped-trailing-comma.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "ungrouped trailing comma"
+    },
+    {
+      "id": "phase4-imports-group-wrong-close",
+      "area": "imports",
+      "production": "mixed-group-use-declaration",
+      "category": "invalid delimiter",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-imports-group-wrong-close.php",
+      "positive": "valid/phase4-imports-group-wrong-close.php",
+      "evidence": "zend_language_parser.y: top_statement, use_declaration, group_use_declaration, inline_use_declarations",
+      "boundary": "group wrong close"
+    },
+    {
+      "id": "phase4-constants-assignment",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-assignment.php",
+      "positive": "valid/phase4-constants-assignment.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "assignment"
+    },
+    {
+      "id": "phase4-constants-yield",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-yield.php",
+      "positive": "valid/phase4-constants-yield.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "yield"
+    },
+    {
+      "id": "phase4-constants-yield-from",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-yield-from.php",
+      "positive": "valid/phase4-constants-yield-from.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "yield from"
+    },
+    {
+      "id": "phase4-constants-include",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-include.php",
+      "positive": "valid/phase4-constants-include.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "include"
+    },
+    {
+      "id": "phase4-constants-require",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-require.php",
+      "positive": "valid/phase4-constants-require.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "require"
+    },
+    {
+      "id": "phase4-constants-dynamic-offset",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-dynamic-offset.php",
+      "positive": "valid/phase4-constants-dynamic-offset.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "dynamic offset"
+    },
+    {
+      "id": "phase4-constants-increment",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "illegal prefix/postfix form",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-increment.php",
+      "positive": "valid/phase4-constants-increment.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "increment"
+    },
+    {
+      "id": "phase4-constants-closure-use",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-closure-use.php",
+      "positive": "valid/phase4-constants-closure-use.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "closure use"
+    },
+    {
+      "id": "phase4-constants-callable-dynamic-name",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-callable-dynamic-name.php",
+      "positive": "valid/phase4-constants-callable-dynamic-name.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "callable dynamic name"
+    },
+    {
+      "id": "phase4-constants-pipe",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-pipe.php",
+      "positive": "valid/phase4-constants-pipe.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "pipe"
+    },
+    {
+      "id": "phase4-constants-clone-with",
+      "area": "constants",
+      "production": "constant-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-clone-with.php",
+      "positive": "valid/phase4-constants-clone-with.php",
+      "evidence": "zend_language_parser.y: expr; zend_compile.c: zend_const_expr_to_zval, zend_compile_const_expr",
+      "boundary": "clone with"
+    },
+    {
+      "id": "phase4-constants-initializer-missing",
+      "area": "constants",
+      "production": "constant-declaration",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-constants-initializer-missing.php",
+      "positive": "valid/phase4-constants-initializer-missing.php",
+      "evidence": "zend_language_parser.y: top_statement, const_list, class_const_list, parameter, attribute",
+      "boundary": "initializer missing"
+    },
+    {
+      "id": "phase4-constants-declaration-trailing-comma",
+      "area": "constants",
+      "production": "constant-declaration",
+      "category": "illegal trailing token",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-constants-declaration-trailing-comma.php",
+      "positive": "valid/phase4-constants-declaration-trailing-comma.php",
+      "evidence": "zend_language_parser.y: top_statement, const_list, class_const_list, parameter, attribute",
+      "boundary": "declaration trailing comma"
+    },
+    {
+      "id": "phase4-constants-attributed-multiple",
+      "area": "constants",
+      "production": "constant-declaration",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-constants-attributed-multiple.php",
+      "positive": "valid/phase4-constants-attributed-multiple.php",
+      "evidence": "zend_language_parser.y: top_statement, const_list, class_const_list, parameter, attribute",
+      "boundary": "attributed multiple"
+    },
+    {
+      "id": "phase4-constants-property-default-missing",
+      "area": "constants",
+      "production": "property-default",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-constants-property-default-missing.php",
+      "positive": "valid/phase4-constants-property-default-missing.php",
+      "evidence": "zend_language_parser.y: top_statement, const_list, class_const_list, parameter, attribute",
+      "boundary": "property default missing"
+    },
+    {
+      "id": "phase4-constants-parameter-default-missing",
+      "area": "constants",
+      "production": "parameter-default",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-constants-parameter-default-missing.php",
+      "positive": "valid/phase4-constants-parameter-default-missing.php",
+      "evidence": "zend_language_parser.y: top_statement, const_list, class_const_list, parameter, attribute",
+      "boundary": "parameter default missing"
+    },
+    {
+      "id": "phase4-constants-attribute-argument-missing",
+      "area": "constants",
+      "production": "attribute",
+      "category": "missing required element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-constants-attribute-argument-missing.php",
+      "positive": "valid/phase4-constants-attribute-argument-missing.php",
+      "evidence": "zend_language_parser.y: top_statement, const_list, class_const_list, parameter, attribute",
+      "boundary": "attribute argument missing"
+    },
+    {
+      "id": "phase4-constants-attribute-nesting",
+      "area": "constants",
+      "production": "attribute",
+      "category": "malformed nesting",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-constants-attribute-nesting.php",
+      "positive": "valid/phase4-constants-attribute-nesting.php",
+      "evidence": "zend_language_parser.y: top_statement, const_list, class_const_list, parameter, attribute",
+      "boundary": "attribute nesting"
+    },
+    {
+      "id": "phase4-traits-enums-live-object-backing",
+      "area": "traits-enums",
+      "production": "enum-backing-type",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-live-object-backing.php",
+      "positive": "valid/phase4-traits-enums-live-object-backing.php",
+      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_compile_trait_alias; see retained discarded-closure discrepancies",
+      "boundary": "live object backing"
+    },
+    {
+      "id": "phase4-traits-enums-live-union-backing",
+      "area": "traits-enums",
+      "production": "enum-backing-type",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-live-union-backing.php",
+      "positive": "valid/phase4-traits-enums-live-union-backing.php",
+      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_compile_trait_alias; see retained discarded-closure discrepancies",
+      "boundary": "live union backing"
+    },
+    {
+      "id": "phase4-traits-enums-live-static-alias",
+      "area": "traits-enums",
+      "production": "trait-alias",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-live-static-alias.php",
+      "positive": "valid/phase4-traits-enums-live-static-alias.php",
+      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_compile_trait_alias; see retained discarded-closure discrepancies",
+      "boundary": "live static alias"
+    },
+    {
+      "id": "phase4-traits-enums-live-abstract-alias",
+      "area": "traits-enums",
+      "production": "trait-alias",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-live-abstract-alias.php",
+      "positive": "valid/phase4-traits-enums-live-abstract-alias.php",
+      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_compile_trait_alias; see retained discarded-closure discrepancies",
+      "boundary": "live abstract alias"
+    },
+    {
+      "id": "phase4-traits-enums-readonly-alias",
+      "area": "traits-enums",
+      "production": "trait-alias",
+      "category": "invalid alternative combination",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-traits-enums-readonly-alias.php",
+      "positive": "valid/phase4-traits-enums-readonly-alias.php",
+      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_compile_trait_alias; see retained discarded-closure discrepancies",
+      "boundary": "readonly alias"
+    },
+    {
+      "id": "phase4-context-positional-after-named",
+      "area": "context",
+      "production": "argument-list",
+      "category": "invalid token/order",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-positional-after-named.php",
+      "positive": "valid/phase4-context-positional-after-named.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "positional after named"
+    },
+    {
+      "id": "phase4-context-positional-after-unpack",
+      "area": "context",
+      "production": "argument-list",
+      "category": "invalid token/order",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-positional-after-unpack.php",
+      "positive": "valid/phase4-context-positional-after-unpack.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "positional after unpack"
+    },
+    {
+      "id": "phase4-context-unpack-after-named",
+      "area": "context",
+      "production": "argument-list",
+      "category": "invalid token/order",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-unpack-after-named.php",
+      "positive": "valid/phase4-context-unpack-after-named.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "unpack after named"
+    },
+    {
+      "id": "phase4-context-ternary-chain",
+      "area": "context",
+      "production": "conditional-expression",
+      "category": "invalid associativity/chaining",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-ternary-chain.php",
+      "positive": "valid/phase4-context-ternary-chain.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "ternary chain"
+    },
+    {
+      "id": "phase4-context-variadic-not-last",
+      "area": "context",
+      "production": "parameter",
+      "category": "invalid token/order",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-variadic-not-last.php",
+      "positive": "valid/phase4-context-variadic-not-last.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "variadic not last"
+    },
+    {
+      "id": "phase4-context-variadic-default",
+      "area": "context",
+      "production": "parameter",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-variadic-default.php",
+      "positive": "valid/phase4-context-variadic-default.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "variadic default"
+    },
+    {
+      "id": "phase4-context-hook-duplicate",
+      "area": "context",
+      "production": "property-hook-list",
+      "category": "duplicate syntactic component",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-hook-duplicate.php",
+      "positive": "valid/phase4-context-hook-duplicate.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "hook duplicate"
+    },
+    {
+      "id": "phase4-context-destructure-empty",
+      "area": "context",
+      "production": "list-expression",
+      "category": "illegal empty form",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-destructure-empty.php",
+      "positive": "valid/phase4-context-destructure-empty.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "destructure empty"
+    },
+    {
+      "id": "phase4-context-list-empty",
+      "area": "context",
+      "production": "long-list-expression",
+      "category": "illegal empty form",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-list-empty.php",
+      "positive": "valid/phase4-context-list-empty.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "list empty"
+    },
+    {
+      "id": "phase4-context-destructure-mixed-keys",
+      "area": "context",
+      "production": "list-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-destructure-mixed-keys.php",
+      "positive": "valid/phase4-context-destructure-mixed-keys.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "destructure mixed keys"
+    },
+    {
+      "id": "phase4-context-nullsafe-assignment",
+      "area": "context",
+      "production": "assignment-expression",
+      "category": "invalid alternative combination",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-context-nullsafe-assignment.php",
+      "positive": "valid/phase4-context-nullsafe-assignment.php",
+      "evidence": "zend_compile.c: zend_compile_args, zend_compile_conditional, zend_compile_params, zend_compile_prop_decl, zend_compile_assign",
+      "boundary": "nullsafe assignment"
+    },
+    {
+      "id": "phase4-source-open-tag-no-boundary",
+      "area": "source",
+      "production": "source-file",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-open-tag-no-boundary.php",
+      "positive": "valid/phase4-source-open-tag-no-boundary.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "open tag no boundary"
+    },
+    {
+      "id": "phase4-source-open-tag-formfeed",
+      "area": "source",
+      "production": "source-file",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-open-tag-formfeed.php",
+      "positive": "valid/phase4-source-open-tag-formfeed.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "open tag formfeed"
+    },
+    {
+      "id": "phase4-source-echo-tag-empty",
+      "area": "source",
+      "production": "source-file",
+      "category": "illegal empty form",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-echo-tag-empty.php",
+      "positive": "valid/phase4-source-echo-tag-empty.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "echo tag empty"
+    },
+    {
+      "id": "phase4-source-echo-tag-extra-equals",
+      "area": "source",
+      "production": "source-file",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-echo-tag-extra-equals.php",
+      "positive": "valid/phase4-source-echo-tag-extra-equals.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "echo tag extra equals"
+    },
+    {
+      "id": "phase4-source-nested-open-tag",
+      "area": "source",
+      "production": "source-file",
+      "category": "invalid source-mode transition",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-nested-open-tag.php",
+      "positive": "valid/phase4-source-nested-open-tag.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "nested open tag"
+    },
+    {
+      "id": "phase4-source-close-tag-split",
+      "area": "source",
+      "production": "source-file",
+      "category": "invalid source-mode transition",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-close-tag-split.php",
+      "positive": "valid/phase4-source-close-tag-split.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "close tag split"
+    },
+    {
+      "id": "phase4-source-recognized-php-invalid",
+      "area": "source",
+      "production": "source-file",
+      "category": "invalid source-mode transition",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-recognized-php-invalid.php",
+      "positive": "valid/phase4-source-recognized-php-invalid.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "recognized php invalid"
+    },
+    {
+      "id": "phase4-source-alternate-if-html-header",
+      "area": "source",
+      "production": "source-file",
+      "category": "invalid source-mode transition",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-alternate-if-html-header.php",
+      "positive": "valid/phase4-source-alternate-if-html-header.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "alternate if html header"
+    },
+    {
+      "id": "phase4-source-alternate-while-html-condition",
+      "area": "source",
+      "production": "source-file",
+      "category": "invalid source-mode transition",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-alternate-while-html-condition.php",
+      "positive": "valid/phase4-source-alternate-while-html-condition.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "alternate while html condition"
+    },
+    {
+      "id": "phase4-source-alternate-switch-html-before-case",
+      "area": "source",
+      "production": "source-file",
+      "category": "invalid source-mode transition",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-alternate-switch-html-before-case.php",
+      "positive": "valid/phase4-source-alternate-switch-html-before-case.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "alternate switch html before case"
+    },
+    {
+      "id": "phase4-source-alternate-foreach-wrong-close",
+      "area": "source",
+      "production": "source-file",
+      "category": "invalid source-mode transition",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-alternate-foreach-wrong-close.php",
+      "positive": "valid/phase4-source-alternate-foreach-wrong-close.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "alternate foreach wrong close"
+    },
+    {
+      "id": "phase4-source-halt-argument",
+      "area": "source",
+      "production": "halt-compiler-statement",
+      "category": "unexpected extra element",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-source-halt-argument.php",
+      "positive": "valid/phase4-source-halt-argument.php",
+      "evidence": "zend_language_scanner.l: INITIAL, ST_IN_SCRIPTING, T_OPEN_TAG, T_OPEN_TAG_WITH_ECHO, T_CLOSE_TAG; zend_language_parser.y: statement",
+      "boundary": "halt argument"
+    },
+    {
+      "id": "phase4-lexical-numeric-double-separator",
+      "area": "lexical",
+      "production": "integer-literal",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-numeric-double-separator.php",
+      "positive": "valid/phase4-lexical-numeric-double-separator.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "numeric double separator"
+    },
+    {
+      "id": "phase4-lexical-numeric-trailing-separator",
+      "area": "lexical",
+      "production": "integer-literal",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-numeric-trailing-separator.php",
+      "positive": "valid/phase4-lexical-numeric-trailing-separator.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "numeric trailing separator"
+    },
+    {
+      "id": "phase4-lexical-hex-prefix-separator",
+      "area": "lexical",
+      "production": "hexadecimal-integer-literal",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-hex-prefix-separator.php",
+      "positive": "valid/phase4-lexical-hex-prefix-separator.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "hex prefix separator"
+    },
+    {
+      "id": "phase4-lexical-binary-invalid-digit",
+      "area": "lexical",
+      "production": "binary-integer-literal",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-binary-invalid-digit.php",
+      "positive": "valid/phase4-lexical-binary-invalid-digit.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "binary invalid digit"
+    },
+    {
+      "id": "phase4-lexical-octal-invalid-digit",
+      "area": "lexical",
+      "production": "explicit-octal-integer-literal",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-octal-invalid-digit.php",
+      "positive": "valid/phase4-lexical-octal-invalid-digit.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "octal invalid digit"
+    },
+    {
+      "id": "phase4-lexical-hex-prefix-empty",
+      "area": "lexical",
+      "production": "hexadecimal-integer-literal",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-hex-prefix-empty.php",
+      "positive": "valid/phase4-lexical-hex-prefix-empty.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "hex prefix empty"
+    },
+    {
+      "id": "phase4-lexical-exponent-separator",
+      "area": "lexical",
+      "production": "floating-literal",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-exponent-separator.php",
+      "positive": "valid/phase4-lexical-exponent-separator.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "exponent separator"
+    },
+    {
+      "id": "phase4-lexical-exponent-sign-only",
+      "area": "lexical",
+      "production": "floating-literal",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-exponent-sign-only.php",
+      "positive": "valid/phase4-lexical-exponent-sign-only.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "exponent sign only"
+    },
+    {
+      "id": "phase4-lexical-identifier-digit-start",
+      "area": "lexical",
+      "production": "identifier",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-identifier-digit-start.php",
+      "positive": "valid/phase4-lexical-identifier-digit-start.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "identifier digit start"
+    },
+    {
+      "id": "phase4-lexical-keyword-split",
+      "area": "lexical",
+      "production": "identifier",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-keyword-split.php",
+      "positive": "valid/phase4-lexical-keyword-split.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "keyword split"
+    },
+    {
+      "id": "phase4-lexical-single-quote-unclosed",
+      "area": "lexical",
+      "production": "single-quoted-string",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-single-quote-unclosed.php",
+      "positive": "valid/phase4-lexical-single-quote-unclosed.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "single quote unclosed"
+    },
+    {
+      "id": "phase4-lexical-double-quote-unclosed",
+      "area": "lexical",
+      "production": "double-quoted-string",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-double-quote-unclosed.php",
+      "positive": "valid/phase4-lexical-double-quote-unclosed.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "double quote unclosed"
+    },
+    {
+      "id": "phase4-lexical-interpolation-empty",
+      "area": "lexical",
+      "production": "encapsulated-variable",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-interpolation-empty.php",
+      "positive": "valid/phase4-lexical-interpolation-empty.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "interpolation empty"
+    },
+    {
+      "id": "phase4-lexical-interpolation-offset",
+      "area": "lexical",
+      "production": "encapsulated-variable",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-interpolation-offset.php",
+      "positive": "valid/phase4-lexical-interpolation-offset.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "interpolation offset"
+    },
+    {
+      "id": "phase4-lexical-heredoc-unclosed",
+      "area": "lexical",
+      "production": "heredoc-string",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-heredoc-unclosed.php",
+      "positive": "valid/phase4-lexical-heredoc-unclosed.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "heredoc unclosed"
+    },
+    {
+      "id": "phase4-lexical-nowdoc-unclosed",
+      "area": "lexical",
+      "production": "nowdoc-string",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-nowdoc-unclosed.php",
+      "positive": "valid/phase4-lexical-nowdoc-unclosed.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "nowdoc unclosed"
+    },
+    {
+      "id": "phase4-lexical-heredoc-label-digit",
+      "area": "lexical",
+      "production": "heredoc-string",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-heredoc-label-digit.php",
+      "positive": "valid/phase4-lexical-heredoc-label-digit.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "heredoc label digit"
+    },
+    {
+      "id": "phase4-lexical-comment-unclosed",
+      "area": "lexical",
+      "production": "block-comment",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-comment-unclosed.php",
+      "positive": "valid/phase4-lexical-comment-unclosed.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "comment unclosed"
+    },
+    {
+      "id": "phase4-lexical-attribute-unclosed",
+      "area": "lexical",
+      "production": "attribute-group",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-attribute-unclosed.php",
+      "positive": "valid/phase4-lexical-attribute-unclosed.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "attribute unclosed"
+    },
+    {
+      "id": "phase4-lexical-nul-in-code",
+      "area": "lexical",
+      "production": "source-file",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-nul-in-code.php",
+      "positive": "valid/phase4-lexical-nul-in-code.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "nul in code"
+    },
+    {
+      "id": "phase4-lexical-cast-newline",
+      "area": "lexical",
+      "production": "cast-operator",
+      "category": "lexical boundary violation",
+      "classification": "structural-negative",
+      "negative": "invalid/phase4-lexical-cast-newline.php",
+      "positive": "valid/phase4-lexical-cast-newline.php",
+      "evidence": "zend_language_scanner.l: numeric rules, LABEL, ST_DOUBLE_QUOTES, ST_HEREDOC, ST_NOWDOC, ST_IN_SCRIPTING",
+      "boundary": "cast newline"
+    }
+  ],
+  "contextual_review": [
+    {
+      "fixture": "contextual-invalid/audit-arguments-new-callable.php",
+      "restriction": "callable-conversion",
+      "reason": "FCC argument syntax parses; surviving constructor/nullsafe calls cannot become first-class callables.",
+      "evidence": "zend_compile.c: zend_compile_new, zend_compile_call_common"
+    },
+    {
+      "fixture": "contextual-invalid/audit-arguments-positional-after-named.php",
+      "restriction": "argument-order",
+      "reason": "argument lists parse positional, named and unpack elements; compilation checks their order.",
+      "evidence": "zend_compile.c: zend_compile_args"
+    },
+    {
+      "fixture": "contextual-invalid/audit-constants-arrow.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-constants-attribute-positional.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-constants-backticks.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-constants-capturing-closure.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-constants-class-object-cast.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-constants-interpolation.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-constants-nonstatic-closure.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-constants-property-new.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-constants-runtime-call.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-constants-variable.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-dereference-nullsafe-write.php",
+      "restriction": "write-context",
+      "reason": "Variable-shaped syntax parses; write/read/unset and destructuring context imposes further restrictions.",
+      "evidence": "zend_compile.c: zend_compile_assign, zend_compile_var, zend_compile_list_assign, zend_compile_unset"
+    },
+    {
+      "fixture": "contextual-invalid/audit-dereference-unset-call.php",
+      "restriction": "write-context",
+      "reason": "Variable-shaped syntax parses; write/read/unset and destructuring context imposes further restrictions.",
+      "evidence": "zend_compile.c: zend_compile_assign, zend_compile_var, zend_compile_list_assign, zend_compile_unset"
+    },
+    {
+      "fixture": "contextual-invalid/audit-enums-backed-no-value.php",
+      "restriction": "enum-consistency",
+      "reason": "Case value presence depends on the enclosing enum backing declaration.",
+      "evidence": "zend_compile.c: zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/audit-enums-unbacked-value.php",
+      "restriction": "enum-consistency",
+      "reason": "Case value presence depends on the enclosing enum backing declaration.",
+      "evidence": "zend_compile.c: zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-concrete-no-body.php",
+      "restriction": "hooks",
+      "reason": "Hook structure parses; duplicate hooks, implementations, parameter compatibility and modifier combinations require contextual validation.",
+      "evidence": "zend_compile.c: zend_compile_prop_decl, zend_compile_property_hooks"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-duplicate.php",
+      "restriction": "hooks",
+      "reason": "Hook structure parses; duplicate hooks, implementations, parameter compatibility and modifier combinations require contextual validation.",
+      "evidence": "zend_compile.c: zend_compile_prop_decl, zend_compile_property_hooks"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-interface-body.php",
+      "restriction": "hooks",
+      "reason": "Hook structure parses; duplicate hooks, implementations, parameter compatibility and modifier combinations require contextual validation.",
+      "evidence": "zend_compile.c: zend_compile_prop_decl, zend_compile_property_hooks"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-private-final.php",
+      "restriction": "hooks",
+      "reason": "Hook structure parses; duplicate hooks, implementations, parameter compatibility and modifier combinations require contextual validation.",
+      "evidence": "zend_compile.c: zend_compile_prop_decl, zend_compile_property_hooks"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-readonly.php",
+      "restriction": "hooks",
+      "reason": "Hook structure parses; duplicate hooks, implementations, parameter compatibility and modifier combinations require contextual validation.",
+      "evidence": "zend_compile.c: zend_compile_prop_decl, zend_compile_property_hooks"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-set-reference.php",
+      "restriction": "hooks",
+      "reason": "Hook structure parses; duplicate hooks, implementations, parameter compatibility and modifier combinations require contextual validation.",
+      "evidence": "zend_compile.c: zend_compile_prop_decl, zend_compile_property_hooks"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-static.php",
+      "restriction": "hooks",
+      "reason": "Hook structure parses; duplicate hooks, implementations, parameter compatibility and modifier combinations require contextual validation.",
+      "evidence": "zend_compile.c: zend_compile_prop_decl, zend_compile_property_hooks"
+    },
+    {
+      "fixture": "contextual-invalid/audit-precedence-chained-ternary.php",
+      "restriction": "ternary-chain",
+      "reason": "Full/mixed unparenthesized chains parse but fail compilation when not discarded by constant folding.",
+      "evidence": "zend_compile.c: zend_compile_conditional, zend_eval_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/audit-promotion-function.php",
+      "restriction": "promotion",
+      "reason": "Parameter modifiers parse; promotion requires an eligible constructor context.",
+      "evidence": "zend_compile.c: zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/audit-promotion-nonconstructor.php",
+      "restriction": "promotion",
+      "reason": "Parameter modifiers parse; promotion requires an eligible constructor context.",
+      "evidence": "zend_compile.c: zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/audit-properties-duplicate-modifiers.php",
+      "restriction": "declaration-modifiers",
+      "reason": "Repeated modifier tokens are accepted by EBNF but rejected by Zend modifier validation; this is not EBNF rejection evidence.",
+      "evidence": "zend_language_parser.y: non_empty_member_modifiers and zend_modifier_list_to_flags"
+    },
+    {
+      "fixture": "contextual-invalid/audit-statements-break-outside.php",
+      "restriction": "control-context",
+      "reason": "Break needs a surrounding loop/switch; a reference is not a valid foreach key.",
+      "evidence": "zend_compile.c: zend_compile_break_continue, zend_compile_foreach"
+    },
+    {
+      "fixture": "contextual-invalid/audit-statements-foreach-reference-key.php",
+      "restriction": "control-context",
+      "reason": "Break needs a surrounding loop/switch; a reference is not a valid foreach key.",
+      "evidence": "zend_compile.c: zend_compile_break_continue, zend_compile_foreach"
+    },
+    {
+      "fixture": "contextual-invalid/audit-types-constant-callable.php",
+      "restriction": "type-legality",
+      "reason": "Type spelling parses; position, nullable mixed, or callable legality is checked during compilation.",
+      "evidence": "zend_compile.c: zend_compile_typename, zend_compile_params, zend_compile_prop_decl, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/audit-types-nullable-mixed.php",
+      "restriction": "type-legality",
+      "reason": "Type spelling parses; position, nullable mixed, or callable legality is checked during compilation.",
+      "evidence": "zend_compile.c: zend_compile_typename, zend_compile_params, zend_compile_prop_decl, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/audit-types-parameter-void.php",
+      "restriction": "type-legality",
+      "reason": "Type spelling parses; position, nullable mixed, or callable legality is checked during compilation.",
+      "evidence": "zend_compile.c: zend_compile_typename, zend_compile_params, zend_compile_prop_decl, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/audit-types-property-callable.php",
+      "restriction": "type-legality",
+      "reason": "Type spelling parses; position, nullable mixed, or callable legality is checked during compilation.",
+      "evidence": "zend_compile.c: zend_compile_typename, zend_compile_params, zend_compile_prop_decl, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-assignment.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-callable-dynamic-name.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-clone-with.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-closure-use.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-dynamic-offset.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-include.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-increment.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-pipe.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-require.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-yield-from.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-yield.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-destructure-empty.php",
+      "restriction": "write-context",
+      "reason": "Variable-shaped syntax parses; write/read/unset and destructuring context imposes further restrictions.",
+      "evidence": "zend_compile.c: zend_compile_assign, zend_compile_var, zend_compile_list_assign, zend_compile_unset"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-destructure-mixed-keys.php",
+      "restriction": "write-context",
+      "reason": "Variable-shaped syntax parses; write/read/unset and destructuring context imposes further restrictions.",
+      "evidence": "zend_compile.c: zend_compile_assign, zend_compile_var, zend_compile_list_assign, zend_compile_unset"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-hook-duplicate.php",
+      "restriction": "hooks",
+      "reason": "Hook structure parses; duplicate hooks, implementations, parameter compatibility and modifier combinations require contextual validation.",
+      "evidence": "zend_compile.c: zend_compile_prop_decl, zend_compile_property_hooks"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-list-empty.php",
+      "restriction": "write-context",
+      "reason": "Variable-shaped syntax parses; write/read/unset and destructuring context imposes further restrictions.",
+      "evidence": "zend_compile.c: zend_compile_assign, zend_compile_var, zend_compile_list_assign, zend_compile_unset"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-nullsafe-assignment.php",
+      "restriction": "write-context",
+      "reason": "Variable-shaped syntax parses; write/read/unset and destructuring context imposes further restrictions.",
+      "evidence": "zend_compile.c: zend_compile_assign, zend_compile_var, zend_compile_list_assign, zend_compile_unset"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-positional-after-named.php",
+      "restriction": "argument-order",
+      "reason": "argument lists parse positional, named and unpack elements; compilation checks their order.",
+      "evidence": "zend_compile.c: zend_compile_args"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-positional-after-unpack.php",
+      "restriction": "argument-order",
+      "reason": "argument lists parse positional, named and unpack elements; compilation checks their order.",
+      "evidence": "zend_compile.c: zend_compile_args"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-ternary-chain.php",
+      "restriction": "ternary-chain",
+      "reason": "Full/mixed unparenthesized chains parse but fail compilation when not discarded by constant folding.",
+      "evidence": "zend_compile.c: zend_compile_conditional, zend_eval_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-unpack-after-named.php",
+      "restriction": "argument-order",
+      "reason": "argument lists parse positional, named and unpack elements; compilation checks their order.",
+      "evidence": "zend_compile.c: zend_compile_args"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-variadic-default.php",
+      "restriction": "variadic-parameters",
+      "reason": "Variadic syntax parses; placement and defaults are checked during parameter compilation.",
+      "evidence": "zend_compile.c: zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-context-variadic-not-last.php",
+      "restriction": "variadic-parameters",
+      "reason": "Variadic syntax parses; placement and defaults are checked during parameter compilation.",
+      "evidence": "zend_compile.c: zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-array-omission.php",
+      "restriction": "write-context",
+      "reason": "Variable-shaped syntax parses; write/read/unset and destructuring context imposes further restrictions.",
+      "evidence": "zend_compile.c: zend_compile_assign, zend_compile_var, zend_compile_list_assign, zend_compile_unset"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-capture-default.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-fcc-object.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-fcc-unfolded-method.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-fcc-unfolded-name.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-live-arrow.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-live-attribute.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-live-call.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-live-default.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-live-enum.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-live-new-property.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-live-object-class.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-live-throw.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-live-variable.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-new-anonymous.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-new-class.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-new-static.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-new-unpack.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-nonstatic-property.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-object-enum.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-object-property.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-unfolded-class.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constant-unfolded-new.php",
+      "restriction": "constant-expression",
+      "reason": "Expressions parse; fold first, validate the surviving AST and allow_dynamic mode, then compile surviving closure bodies.",
+      "evidence": "zend_compile.c: zend_const_expr_to_zval, zend_eval_const_expr, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-constructor-anonymous-fcc.php",
+      "restriction": "callable-conversion",
+      "reason": "FCC argument syntax parses; surviving constructor/nullsafe calls cannot become first-class callables.",
+      "evidence": "zend_compile.c: zend_compile_new, zend_compile_call_common"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-fcc-nullsafe-chain.php",
+      "restriction": "callable-conversion",
+      "reason": "FCC argument syntax parses; surviving constructor/nullsafe calls cannot become first-class callables.",
+      "evidence": "zend_compile.c: zend_compile_new, zend_compile_call_common"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-fcc-nullsafe.php",
+      "restriction": "callable-conversion",
+      "reason": "FCC argument syntax parses; surviving constructor/nullsafe calls cannot become first-class callables.",
+      "evidence": "zend_compile.c: zend_compile_new, zend_compile_call_common"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-interface-var-default.php",
+      "restriction": "hooks",
+      "reason": "Hook structure parses; duplicate hooks, implementations, parameter compatibility and modifier combinations require contextual validation.",
+      "evidence": "zend_compile.c: zend_compile_prop_decl, zend_compile_property_hooks"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-isset-call.php",
+      "restriction": "isset",
+      "reason": "isset_variable is expr in Zend; compilation checks surviving target shape and empty offsets.",
+      "evidence": "zend_language_parser.y: isset_variable; zend_compile.c: zend_compile_isset_or_empty"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-isset-empty-offset.php",
+      "restriction": "isset",
+      "reason": "isset_variable is expr in Zend; compilation checks surviving target shape and empty offsets.",
+      "evidence": "zend_language_parser.y: isset_variable; zend_compile.c: zend_compile_isset_or_empty"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-isset-expression.php",
+      "restriction": "isset",
+      "reason": "isset_variable is expr in Zend; compilation checks surviving target shape and empty offsets.",
+      "evidence": "zend_language_parser.y: isset_variable; zend_compile.c: zend_compile_isset_or_empty"
+    }
+  ],
+  "known_discrepancies": [
+    {
+      "fixture": "known-discrepancies/valid/discarded-enum-type.php",
+      "restriction": "enum backing type",
+      "owner": "contextual declaration compilation after constant folding",
+      "evidence": "zend_language_parser.y: enum_backing_type accepts type_expr; zend_compile.c: zend_compile_enum_backing_type validates int/string only",
+      "disposition": "Retained. EBNF rejects the nested enum before PHP discards its closure. Fixing the full live/dead distinction requires broader contextual declaration validation."
+    },
+    {
+      "fixture": "known-discrepancies/valid/discarded-trait-alias.php",
+      "restriction": "trait alias modifiers in discarded closures",
+      "owner": "contextual trait alias compilation after constant folding",
+      "evidence": "zend_language_parser.y: trait_alias accepts a method-target member_modifier; zend_compile.c: zend_compile_trait_alias calls zend_check_trait_alias_modifiers",
+      "disposition": "Retained. Static/abstract alias restrictions run at compilation; readonly is rejected during parser modifier conversion. EBNF remains stricter for discarded static/abstract aliases."
+    }
+  ]
+}

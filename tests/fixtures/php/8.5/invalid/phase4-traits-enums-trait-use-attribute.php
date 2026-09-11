@@ -1,0 +1,2 @@
+<?php
+class C { #[A] use T; }
