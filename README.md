@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/php-grammar-logo.svg" alt="php-grammar" width="220">
+</p>
+
 # php-grammar
 
 Versioned EBNF grammars and human-readable specifications for the PHP language syntax.
