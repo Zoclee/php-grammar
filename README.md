@@ -1,6 +1,6 @@
 # php-grammar
 
-Versioned EBNF grammars and human-readable specifications for PHP language syntax.
+Versioned EBNF grammars and human-readable specifications for the PHP language syntax.
 
 php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [remaining discrepancies](docs/php85-audit-remediation.md).
 
