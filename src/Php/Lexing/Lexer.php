@@ -92,6 +92,13 @@ final class Lexer
             }
 
             $token = $this->consumePhpToken($state, $lookingForProperty);
+            $previous = $last === [] ? null : $last[array_key_last($last)];
+            if ($token->type === TokenType::Identifier && strtolower($token->lexeme) === 'from'
+                && $previous?->type === TokenType::Keyword && strtolower($previous->lexeme) === 'yield') {
+                // The EBNF spells Zend's atomic T_YIELD_FROM as two terminals.
+                $token = new Token(TokenType::Keyword, $token->lexeme, $token->offset,
+                    $token->length, $token->line, $token->column);
+            }
             $tokens[] = $token;
             if (!$token->isTrivia()) {
                 $last = array_slice([...$last, $token], -4);
@@ -136,7 +143,7 @@ final class Lexer
             return $this->consumeBlockComment($state, TokenType::DocComment);
         }
 
-        if ($state->startsWith('#[')) {
+        if (!$lookingForProperty && $state->startsWith('#[')) {
             return $state->consume(2, TokenType::Punctuation);
         }
 
@@ -256,7 +263,7 @@ final class Lexer
 
             if ($quote !== "'" && in_array(substr($state->source, $state->offset + $length, 2), ['{$', '${'], true)) {
                 $opening = $state->offset + $length + ($char === '$' ? 1 : 0);
-                $length = StringSyntax::closingBrace($state->source, $opening) - $state->offset + 1;
+                $length = $this->interpolationEnd($state->source, $opening) - $state->offset + 1;
                 continue;
             }
 
@@ -267,6 +274,30 @@ final class Lexer
         }
 
         throw $state->error('Unterminated string literal.');
+    }
+
+    /** Match the scripting brace that restores the enclosing string scanner state. */
+    public function interpolationEnd(string $source, int $opening): int
+    {
+        $state = new LexerState($source);
+        $state->offset = $opening + 1;
+        $depth = 1;
+        $lookingForProperty = false;
+        while (!$state->atEnd()) {
+            if ($state->startsWith('?>')) {
+                $pattern = $this->version->shortOpenTag ? '/<\?/i' : '/<\?(?:=|php(?=[ \t\r\n]|$))/i';
+                if (!preg_match($pattern, $source, $tag, PREG_OFFSET_CAPTURE, $state->offset + 2)) break;
+                $state->offset = $tag[0][1];
+                $this->consumeOpenTag($state);
+                $lookingForProperty = false;
+                continue;
+            }
+            $token = $this->consumePhpToken($state, $lookingForProperty);
+            if ($token->lexeme === '{') $depth++;
+            if ($token->lexeme === '}' && --$depth === 0) return $token->offset;
+            if (!$token->isTrivia()) $lookingForProperty = in_array($token->lexeme, ['->', '?->'], true);
+        }
+        throw $state->error('Unterminated braced string interpolation.');
     }
 
     private function consumeHereString(LexerState $state, int $prefix = 0): Token
@@ -295,7 +326,27 @@ final class Lexer
         $bodyStart = $this->lineBreakEnd($state->source, $lineEnd);
         $body = substr($state->source, $bodyStart);
         $pattern = '/(?:\A|(?<=[\r\n]))([ \t]*)' . preg_quote($label, '/') . '(?![A-Za-z0-9_\x80-\xff])/';
-        if (preg_match($pattern, $body, $match, PREG_OFFSET_CAPTURE) !== 1) {
+        $searchOffset = 0;
+        $found = false;
+        while (preg_match($pattern, $body, $match, PREG_OFFSET_CAPTURE, $searchOffset) === 1) {
+            $candidate = $match[0][1];
+            if ($type === TokenType::HeredocString) {
+                for ($i = $searchOffset; $i < $candidate; $i++) {
+                    if ($body[$i] === '\\') { $i++; continue; }
+                    if (in_array(substr($body, $i, 2), ['{$', '${'], true)) {
+                        $opening = $i + ($body[$i] === '$' ? 1 : 0);
+                        $i = $this->interpolationEnd($body, $opening);
+                        if ($i >= $candidate) {
+                            $searchOffset = $i + 1;
+                            continue 2;
+                        }
+                    }
+                }
+            }
+            $found = true;
+            break;
+        }
+        if (!$found) {
             throw $state->error('Unterminated heredoc or nowdoc body.');
         }
 
@@ -304,7 +355,19 @@ final class Lexer
             throw $state->error('Heredoc closing indentation mixes spaces and tabs.');
         }
         if ($indent !== '') {
-            foreach (preg_split('/\r\n|\r|\n/', substr($body, 0, $match[0][1])) as $line) {
+            $indentationBody = substr($body, 0, $match[0][1]);
+            if ($type === TokenType::HeredocString) {
+                for ($i = 0; $i < strlen($indentationBody); $i++) {
+                    if ($body[$i] === '\\') { $i++; continue; }
+                    if (in_array(substr($body, $i, 2), ['{$', '${'], true)) {
+                        $end = $this->interpolationEnd($body, $i + ($body[$i] === '$' ? 1 : 0));
+                        // Nested scripting lines are not heredoc text to be dedented.
+                        $indentationBody = substr_replace($indentationBody, 'X' . str_repeat(' ', $end - $i), $i, $end - $i + 1);
+                        $i = $end;
+                    }
+                }
+            }
+            foreach (preg_split('/\r\n|\r|\n/', $indentationBody) as $line) {
                 if (trim($line, " \t") === '') {
                     $prefix = substr($line, 0, min(strlen($line), strlen($indent)));
                     if ($prefix !== str_repeat($indent[0], strlen($prefix))) {

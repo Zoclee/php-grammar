@@ -1,0 +1,1 @@
+<?php const X = static function() { return foo(); }; class C { public $x = static function() {}; const X = static function() {}; } function f($x = static function() {}) {} #[A(static function(){})] class D {}

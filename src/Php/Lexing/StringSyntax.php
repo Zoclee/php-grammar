@@ -7,32 +7,13 @@ namespace PhpGrammar\Php\Lexing;
 /** Source-level string boundaries; expression fragments are checked by the EBNF adapter. */
 final class StringSyntax
 {
-    public static function closingBrace(string $source, int $opening): int
+    public static function closingBrace(string $source, int $opening, bool $shortOpenTag = true): int
     {
-        $depth = 1;
-        for ($i = $opening + 1, $length = strlen($source); $i < $length; $i++) {
-            if (in_array($source[$i], ["'", '"', '`'], true)) {
-                $quote = $source[$i++];
-                for (; $i < $length && $source[$i] !== $quote; $i++) {
-                    if ($source[$i] === '\\') $i++;
-                }
-            } elseif (substr($source, $i, 2) === '/*') {
-                $end = strpos($source, '*/', $i + 2);
-                if ($end === false) break;
-                $i = $end + 1;
-            } elseif (substr($source, $i, 2) === '//' || ($source[$i] === '#' && ($source[$i + 1] ?? '') !== '[')) {
-                $i += strcspn($source, "\r\n", $i);
-            } elseif ($source[$i] === '{') {
-                $depth++;
-            } elseif ($source[$i] === '}' && --$depth === 0) {
-                return $i;
-            }
-        }
-        throw new LexerException('Unterminated braced string interpolation.');
+        return Lexer::forPhp85()->withShortOpenTag($shortOpenTag)->interpolationEnd($source, $opening);
     }
 
     /** @return list<array{string, string}> */
-    public static function fragments(string $source): array
+    public static function fragments(string $source, bool $shortOpenTag = true): array
     {
         $fragments = [];
         for ($i = 0, $length = strlen($source); $i < $length; $i++) {
@@ -49,8 +30,13 @@ final class StringSyntax
             $pair = substr($source, $i, 2);
             if ($pair === '{$' || $pair === '${') {
                 $opening = $pair === '{$' ? $i : $i + 1;
-                $closing = self::closingBrace($source, $opening);
-                $fragments[] = [$pair === '{$' ? 'variable-expression' : 'expression', substr($source, $opening + 1, $closing - $opening - 1)];
+                $closing = self::closingBrace($source, $opening, $shortOpenTag);
+                $fragment = substr($source, $opening + 1, $closing - $opening - 1);
+                if ($pair === '${' && preg_match('/^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*(?:\[|$)/D', $fragment)) {
+                    // ST_LOOKING_FOR_VARNAME emits T_STRING_VARNAME, including keywords.
+                    $fragment = '$' . $fragment;
+                }
+                $fragments[] = [$pair === '{$' ? 'variable-expression' : 'expression', $fragment];
                 $i = $closing;
             } elseif ($source[$i] === '$' && preg_match('/^\$[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*\[/', substr($source, $i), $variable) === 1) {
                 $start = $i + strlen($variable[0]);

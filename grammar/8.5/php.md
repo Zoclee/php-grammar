@@ -4,7 +4,7 @@ This standalone specification has three parts: lexical/source rules, syntactic
 EBNF, and contextual syntax constraints. All three apply when deciding whether
 source is valid PHP 8.5. The EBNF is the repository's authoritative syntactic
 artifact; it is not by itself an implementation of all Zend compile-time checks.
-The implementation remains under audit. The known discrepancies below prevent
+The implementation remains under audit. The verification limits below prevent
 a claim of full PHP 8.5 conformance.
 
 Sources are `php-src` branch `PHP-8.5`, pinned at
@@ -91,11 +91,46 @@ trailing header whitespace follows the label or its quote. A heredoc label may
 be unquoted or double quoted; a nowdoc label is single quoted. The closing label
 must equal the opening label byte for byte, start at a line boundary after
 optional indentation, and not be followed by an identifier byte. It need not
-be followed by a semicolon or newline. All nonblank body lines must have at least
-the closing indentation. Tabs and spaces must not be mixed in the indentation
+be followed by a semicolon or newline. All nonblank lines of text in the active heredoc/nowdoc state must have at least
+the closing indentation. Lines inside nested scripting or nested strings are
+not outer heredoc text and do not inherit its indentation requirement. Tabs and spaces must not be mixed in the indentation
 being stripped. Blank lines may have less indentation. The scanner enforces
 label equality and indentation; these are lexical constraints beyond ordinary
 context-free EBNF. An empty body is valid.
+
+### Scanner state transitions
+
+The scanner maintains a stack; a string is not terminated by a quote, brace or
+heredoc label that belongs to a nested state. The following transitions are
+normative, following the pinned scanner's named states:
+
+| Active state | Event and transition |
+|---|---|
+| SHEBANG | At executable-file entry with shebang skipping enabled, consume an initial `#!` line including its newline and enter INITIAL. Otherwise replay the input in INITIAL. `#!` in scripting is an ordinary hash comment. |
+| INITIAL | Emit HTML until a recognized enabled opening tag; enter ST_IN_SCRIPTING. Short-tag configuration applies at every re-entry, including nested interpolation. |
+| ST_IN_SCRIPTING | Quotes/backticks enter their string state. A valid heredoc header pushes its label and enters ST_HEREDOC or ST_NOWDOC. `{` pushes scripting; `}` pops its matching state. `?>` enters INITIAL and emits a semicolon. |
+| ST_DOUBLE_QUOTES / ST_BACKQUOTE / ST_HEREDOC | Escapes and text remain in this state. `{$` pushes scripting and leaves `$` for normal variable scanning; `${` pushes ST_LOOKING_FOR_VARNAME. A simple variable followed immediately by `[` enters ST_VAR_OFFSET; a following `->`/`?->` enters property lookup only when an identifier-start byte follows the operator immediately. |
+| ST_LOOKING_FOR_VARNAME | A label immediately followed by `[` or `}` emits T_STRING_VARNAME (including keyword spellings) and replaces this state with scripting. Otherwise replay the next byte in scripting. This distinguishes `${class[0]}` from `${name + 1}`. |
+| ST_LOOKING_FOR_PROPERTY | Whitespace and comments retain lookup state. `->`/`?->` retain it; a label emits an ordinary property identifier and pops it. Any other byte pops and is replayed in the enclosing state. In particular `#[` here starts a hash comment, unlike its attribute meaning in scripting. |
+| ST_VAR_OFFSET | Accept a label, variable, or T_NUM_STRING optionally preceded by `-`; `]` restores the string state. Quotes, comments, whitespace and floating-point spellings are not offset syntax. A following second offset is literal text unless a braced interpolation starts it. |
+| ST_HEREDOC / ST_NOWDOC | Recognize only the active label at a line boundary, with the indentation and identifier-boundary conditions above. A label inside a nested interpolation/string cannot close the outer heredoc. ST_NOWDOC performs no interpolation/escape decoding. ST_END_HEREDOC pops the label and restores scripting. |
+
+Comments have meaning in scripting and property lookup; their markers are text
+in the enclosing string states. Braced interpolation can itself contain a
+closure that exits PHP with `?>` and re-enters it: intervening HTML braces do
+not close the interpolation. Nested strings use the same rules recursively.
+
+T_NUM_STRING spelling is decimal LNUM (including leading zeroes and separators),
+HNUM, BNUM or ONUM. Plain decimal values within the signed-long range may carry
+an integer token value; other spellings keep their source text as the offset
+string. Do not validate `08` as an octal PHP numeral in this state. The parser's
+leading minus is separate; it is not allowed before a label or variable.
+
+`yield` plus scanner whitespace/comments plus `from` with an identifier boundary
+is the case-insensitive T_YIELD_FROM token. This EBNF spells it as two terminals;
+the adapter must preserve that lexical decision. `&` lookahead selects Zend's
+two ampersand token categories across whitespace/comments; their identical
+spelling does not remove reference/type-position restrictions.
 
 ### Names and literal tokens
 
@@ -149,8 +184,10 @@ Increment/decrement take Zend `variable`, not arbitrary postfix results.
 `!($x instanceof Foo)`; coalescing groups right. Equality/relational chains are
 invalid without parentheses. Full ternary chains and full/short mixed chains
 require parentheses. Repeated short ternaries and nesting in the middle
-operand are accepted. Low-precedence prefix forms and AST grouping still have
-the implementation limitations listed below; the table is the binding contract.
+operand are accepted. Ternary chains are structurally left-associated; the
+mandatory restriction is applied during compilation, after constant folding
+where applicable. A constant initializer can therefore discard an otherwise
+forbidden chain before that check.
 
 The EBNF preserves Zend's `simple_variable`, `new_variable`, `variable`,
 `callable_variable`, `callable_expr`, `fully_dereferenceable`,
@@ -161,11 +198,41 @@ is Zend's syntactic `variable`. There is no universal postfix production.
 scalars but not direct dereferenceable scalars. Removed curly-brace offsets
 are excluded. Write-context restrictions remain contextual.
 
-Bare `...` is a complete first-class-callable argument list. It cannot be mixed
-with ordinary arguments. There is no call-time `&` argument modifier.
+`ordinary-argument-list` and `first-class-callable-arguments` are disjoint.
+Bare `...` is a complete callable-conversion list and cannot be mixed with
+ordinary arguments. `constructor-argument-list` retains both parser forms:
+Zend rejects constructor conversion during compilation, not parsing.
+There is no call-time `&` argument modifier.
 Clone-with permits named/unpacked lists and callable conversion. `clone($o)`
 is also unary clone applied to a parenthesized expression; the special clone
 argument production follows Zend's separate comma/named/unpacked alternatives.
+
+### Unambiguous prefix and statement structure
+
+Each `*-prefix-context` is a **nonempty expression prefix with its final
+operand absent**. It records pending higher-precedence operators. Only a
+prefix operator's own layer fills that position and consumes its operand.
+For example, in `$x = print $y = 1`, the assignment before `print` belongs to
+`assignment-prefix-context`; `print` consumes the complete right assignment.
+In `2 ** -2 ** 2`, the first exponentiation is pending and unary minus consumes
+the second exponentiation. Context productions do not introduce a second
+high-precedence `throw`, `print`, arrow, include, yield, or `!` expression.
+Binary repetition denotes a left fold; coalescing and exponentiation recurse
+on their right operand. Context nodes record pending operations, not additional
+PHP AST operations.
+
+Yield's optional `=>` needs a further distinction: `closed-yield-*` productions
+exclude a trailing yield with an operand but without its own key separator.
+The separator therefore binds to the nearest such yield. This preserves
+`yield yield 1 => 2`, `yield 1 => yield 2`, and nested keyed yields without
+duplicating their trees. Parentheses delimit a complete ordinary expression.
+
+Matched/unmatched statements propagate through the final bodies of `while`,
+`for`, `foreach`, and `declare`. Braces, alternative-syntax terminators, and
+the terminating `while` of `do` close that propagation. Both `else` and
+`elseif` attach to the nearest unmatched `if`. A semicolon, including the
+token emitted by `?>`, has only the `empty-statement` derivation when no
+expression precedes it. `throw $e;` is an expression statement.
 
 ## Contextual syntax constraints
 
@@ -174,11 +241,11 @@ The repository's structural matcher does not implement this entire layer.
 
 | Context | Required validation and source |
 |---|---|
-| Constant expressions | `zend_is_allowed_in_const_expr`, `zend_compile_const_expr`, and constant folding define the permitted AST forms. No arbitrary calls, variables, assignments, shell execution, interpolation, match, throw, or arrow functions. Static noncapturing closures and named first-class callables are permitted in 8.5. |
+| Constant expressions | Parse `expression`, perform the folding procedure below, then validate the surviving AST with `zend_is_allowed_in_const_expr` and `zend_compile_const_expr`. Surviving arbitrary calls, variables, assignments, shell execution, interpolation, match, throw, and arrow functions are forbidden. Static noncapturing closures and named first-class callables are permitted in 8.5. |
 | Parameter defaults, global constants, attribute/constructor arguments | `allow_dynamic=true`: `new` with a statically determined class and object casts are allowed. No anonymous/dynamic class construction, `static`, unpacked constructor arguments, or constructor callable conversion. |
-| Property defaults, class constants, enum values | `allow_dynamic=false`: `new` and object casts are forbidden recursively. Other supported casts, static closures, and named callable conversion remain subject to the declared type and context. |
+| Property defaults, class constants, enum values | `allow_dynamic=false`: surviving `new` and object casts are forbidden recursively. Other supported casts, static closures, and named callable conversion remain subject to the declared type and context. |
 | Static locals | Initializers are runtime `expression`, not the constant-expression subset; PHP 8.3+ behavior is retained. |
-| Constant calls | Only callable conversion is accepted; names/classes/methods must satisfy Zend's static-name checks. Literal-folding cases are broader than simple source names. `static` is forbidden. |
+| Constant calls | Surviving calls must be function/static-method callable conversions. The function/class/method name must already be an appropriate literal AST when its compiler check runs; see folding order below. Object-method conversions are forbidden. `static` class references are forbidden. |
 | Arguments | No positional argument after named arguments/unpacking, no unpacking after named arguments, no duplicate named arguments. Attribute argument lists forbid unpacking and bare callable conversion. Built-in arity/name checks may reject clone/exit forms. |
 | Attributed constants | Only one **global** constant per attributed declaration. Class constants may share attributes in a multiple-constant declaration. |
 | Types | `mixed`, `void`, `never` must stand alone as applicable; `?mixed`, `?null`, duplicate/redundant unions, `true|false`, and built-in/scoped-name intersection members are invalid. `void`/`never` are return-only. Properties/promoted properties/class constants cannot use callable, void, or never. `static` is return-only with class scope. `self`/`parent` require the appropriate scope. |
@@ -187,9 +254,12 @@ The repository's structural matcher does not implement this entire layer.
 | Modifiers and declarations | Reject duplicate/conflicting modifiers, abstract-final conflicts, reserved class names, redeclarations, illegal nested class declarations, and invalid anonymous-class modifiers. Interfaces cannot use traits. Method bodies/visibility must match abstract/interface/concrete context. |
 | Properties | Readonly properties need a type and cannot be static or have ordinary defaults. Only hooked properties may be abstract. Visibility/set visibility combinations and final/private combinations must be valid. |
 | Hooks | One or two distinct hook kinds; no duplicate get/set; no static/readonly hooked properties. Only final is an explicit hook modifier. A get hook has no parameter list; a set list has one non-reference, nonvariadic parameter without a default and compatible type. Only get may return by reference. Concrete hooks need bodies; abstract/interface hooks follow body restrictions. A final hook cannot be private or abstract. |
-| Interface properties | Public hooked properties only; no final, protected/private, or explicitly abstract property. Hooks have no implementation body. |
+| Interface properties | Public or historical `var` hooked properties only; no property default; no final, protected/private, or explicitly abstract property. Hooks have no implementation body. |
 | Class constants | One type precedes the entire list. Enforce type restrictions/value compatibility, modifier legality, and final/private restrictions. |
 | Enums | Only int/string backing types. Backed cases require constant values; unbacked cases forbid values. Case names/values must satisfy uniqueness and type rules; some value checks are deferred beyond lint. No properties; trait composition and forbidden magic/member declarations require further checks. |
+| Callable conversion | Reject surviving `new Foo(...)` and anonymous-class constructor conversion (`zend_compile_new`, `zend_compile_const_expr_new`). Reject conversion on a nullsafe call or the same nullsafe short-circuit chain (`zend_compile_call_common`). Ordinary function, object-method and static-method conversions remain valid. Clone conversion follows its separate parser production. |
+| isset | `isset_variables` is a nonempty comma-separated list with optional trailing comma; pinned `isset_variable` is **expr**, not variable. At compilation, require `zend_is_variable`: VAR, DIM, PROP, NULLSAFE_PROP, STATIC_PROP. Direct calls and arithmetic fail, while `foo()[0]`, `foo()->p`, parenthesized variables, and nullsafe property reads can qualify. Reject empty read offsets and invalid read targets later in `zend_compile_isset_or_empty`. |
+| Trait aliases | Exactly one public/protected/private/final alias modifier, or an alias name alone. `zend_compile_trait_alias` rejects static and abstract; readonly is rejected by the parser's modifier-target conversion. Modifiers cannot be combined. |
 | Writable variables | Assignment, reference binding, increment, unset, isset, destructuring, and foreach need appropriate read/write targets. Calls can reduce as `variable` but cannot be unset; nullsafe access cannot be written. Foreach keys cannot be references or destructuring lists. Empty array elements are only valid in destructuring. A destructuring tree cannot mix `[]` and `list()` forms (pinned `zend_compile.c`, lines 3250–3255). |
 | Control flow | break/continue need a legal enclosing construct and positive literal level; goto targets/scope crossings must be legal; yield requires function scope; generator return types and return statements must be compatible. Match/switch permit only one default. |
 | declare and namespaces | Directives require their specific literal values and placement; strict_types is 0/1, first statement, and not block form. Namespace styles cannot mix and namespace/import placement/conflicts must be legal. |
@@ -199,6 +269,75 @@ Authoritative compiler areas include `zend_compile_params`,
 `zend_compile_property_hooks`, `zend_compile_class_const_decl`,
 `zend_compile_enum_case`, `zend_compile_foreach`, `zend_compile_conditional`,
 `zend_compile_declare`, and `zend_compile_const_expr`.
+
+### Constant-expression validation order
+
+The constant wrappers all derive `expression`. A source-level subset cannot
+faithfully specify Zend's acceptance: `const X = true ? 1 : foo();` is valid,
+as are discarded `new Foo(...)` and `isset(1 + 2)` branches. Their live
+companions are invalid. Consequently constructor/FCC and isset target checks
+are contextual, even though syntactic helper productions distinguish their
+lists. This is a necessary correction to the assumption that the pinned
+`isset_variable` parser production takes `variable`.
+
+Apply the following order from `zend_const_expr_to_zval` (compiler lines
+11634–11649), not a blanket recursive ban on source tokens:
+
+1. Apply parser actions and lexical validity first. A discarded branch must
+   still parse; folding cannot repair an unmatched delimiter or invalid token.
+2. Run `zend_eval_const_expr` (12079–12383). Fold literal binary/comparison,
+   unary, supported cast, array and offset operations when the corresponding
+   `zend_try_ct_eval_*` helper succeeds. Resolve eligible ordinary/class/magic
+   constants and class names using Zend's compile-time environment. This is
+   not arbitrary evaluation of user code or resolution of every named constant.
+3. For `&&`/`||` (including word forms), visit both children for folding, then
+   discard the irrelevant child when a literal left operand determines the
+   result. For `??`, a literal non-null left operand discards the right without
+   visiting it; literal null selects the right. Ternary folding visits the
+   condition and only the selected arm when the condition is literal. With a
+   nonliteral condition, visit both arms. A folding-time error in a visited
+   node is not suppressed merely because later validation could discard it.
+4. Validate only the surviving AST. Allowed kinds are literal values, binary
+   operations, greater/greater-equal, AND/OR, unary operations/plus/minus,
+   casts, conditional, dimensions, arrays/elements/unpack, constants, class
+   constants/names, magic constants, coalesce, enum initialization, new,
+   argument lists/named arguments, property/nullsafe-property reads, closures,
+   function/static calls, and callable-conversion markers. Every other surviving
+   kind is invalid. Array unpacking is distinct from constructor-argument
+   unpacking; the latter is forbidden.
+5. Enforce `allow_dynamic` on surviving new/object-cast nodes. It is true for
+   parameter defaults, global constants, and attribute arguments (including
+   nested constructor arguments), and false for property defaults, class
+   constants and enum case values. Inherit it into surviving children. Scalar,
+   boolean and array casts remain allowed; object casts are not folded into
+   literal objects by `zend_try_ct_eval_cast`. Warning-sensitive operations may
+   remain ASTs for later evaluation rather than being compile-time literals.
+6. New expressions require a literal resolved class reference, no anonymous
+   class or late-static reference, no callable conversion and no unpacked
+   arguments. Names/class references may become literal through the actual
+   folding traversal, as in `new ("std" . "Class")()`.
+7. Function/static-method callable conversion requires literal string names
+   at `zend_compile_const_expr_fcc`. Folding does not recursively traverse
+   CALL/STATIC_CALL in `zend_eval_const_expr`; parser-time literal concatenation
+   can nevertheless have produced a literal name already. Thus
+   `("str" . "len")(...)` is valid, while
+   `(true ? "strlen" : "foo")(...)` is not. The same distinction applies to
+   computed method names. CLASS_CONST, NEW, properties, named arguments and
+   argument lists have their own explicit traversal cases; do not infer a
+   universal recursive folding rule. `static::`/`static::class` are forbidden;
+   `self`/`parent` still require the appropriate class scope.
+8. A surviving closure must be static and have no `use` captures. Compile its
+   body as function code; do not apply the constant AST whitelist to that body.
+   Compile parameter defaults and attributes using their own contexts. An
+   ordinary nonstatic closure or arrow can occur in a discarded branch only.
+9. Apply declared-type, declaration and argument-order checks in their actual
+   compiler contexts. Lint does not prove callable existence, enum value
+   uniqueness/type evaluation or all deferred constant resolution succeeds.
+
+This reconciles the previous restricted constant-expression hierarchy with
+folding and retains the three-layer architecture. The structural matcher
+intentionally accepts the contextual-negative corpus; it does not execute this
+validation algorithm.
 
 ## Deprecated but accepted syntax
 
@@ -211,22 +350,26 @@ do not remove accepted forms.
 
 ## Remaining discrepancies and deliberate abstractions
 
-- The low-precedence prefix escape paths do not establish a unique parse tree.
-  Mixed-prefix acceptance has regressions, but lint tests alone cannot verify
-  operator AST grouping. Dangling
-  else binding likewise requires an explicit disambiguation policy.
-- The constant-expression subset still needs an exhaustive comparison with
-  constant folding. Literal computed class/callable names and folded/dead
-  subexpressions are not fully reconciled.
-- The repository lexer does not fully implement Zend's nested scanner stack
-  for every interpolation/comment/heredoc combination. Property lookup,
-  scripting shebang handling, and numeric string offset spelling have dedicated
-  regressions, but the full scanner-state transition space is not proven.
-- The external lexical primitives require a stateful scanner. A raw
-  character-only EBNF expansion is not a PHP source validator. Numeric overflow
-  token categorization is deliberately abstracted; accepted spelling is retained.
-- Contextual rules above are normative but not fully automated. The contextual
-  negative corpus explicitly demonstrates this implementation boundary.
+- Prefix contexts and matched/unmatched statements have derivation-count and
+  operand-span regressions. They are not an exhaustive equivalence proof for
+  every PHP expression/declaration. Two confirmed constant-folding gaps remain:
+  `const X = true ? 1 : static function() { enum E: object {} };` and
+  `const X = true ? 1 : static function() { class C { use T { foo as static bar; } } };`.
+  PHP discards these closure bodies before declaration compilation, while the
+  EBNF's enum-backing-type and trait-alias restrictions reject them structurally.
+  They are recorded separately as known discrepancies, not as passing valid
+  fixtures. Reconciliation of constant folding with restricted nested
+  declarations is therefore not complete.
+- The lexical contract specifies the requested scanner states and the lexer
+  now recurses through nested interpolation, comments and heredoc labels.
+  Its token abstraction is not Zend's exact token stream. Source acceptance
+  across the complete scanner/parser product has not been proven equivalent.
+- External lexical primitives require a stateful scanner; raw character-only
+  expansion is not a PHP source validator. Numeric overflow token/value
+  categorization is deliberately abstracted while preserving numeral spelling.
+- Contextual constraints, especially folding and deferred name/type checks,
+  remain normative rather than a complete repository-owned validator. PHP lint
+  is an independent compilation oracle, not a proof of later evaluation.
 
 ## Syntactic productions
 
@@ -525,102 +668,7 @@ return-type =
     [ ":" , type ] ;
 
 constant-expression =
-    constant-logical-or-expression ;
-
-constant-coalesce-expression =
-    constant-boolean-or-expression , [ "??" , constant-coalesce-expression ] ;
-
-constant-conditional-expression =
-    constant-coalesce-expression ,
-    [ "?" , constant-expression , ":" , constant-coalesce-expression
-    | "?" , ":" , constant-coalesce-expression , { "?" , ":" , constant-coalesce-expression } ] ;
-
-constant-logical-or-expression =
-    constant-logical-xor-expression , { "or" , constant-logical-xor-expression } ;
-
-constant-logical-xor-expression =
-    constant-logical-and-expression , { "xor" , constant-logical-and-expression } ;
-
-constant-logical-and-expression =
-    constant-conditional-expression , { "and" , constant-conditional-expression } ;
-
-constant-boolean-or-expression =
-    constant-boolean-and-expression , { "||" , constant-boolean-and-expression } ;
-
-constant-boolean-and-expression =
-    constant-bitwise-or-expression , { "&&" , constant-bitwise-or-expression } ;
-
-constant-bitwise-or-expression =
-    constant-bitwise-xor-expression , { "|" , constant-bitwise-xor-expression } ;
-
-constant-bitwise-xor-expression =
-    constant-bitwise-and-expression , { "^" , constant-bitwise-and-expression } ;
-
-constant-bitwise-and-expression =
-    constant-equality-expression , { "&" , constant-equality-expression } ;
-
-constant-equality-expression =
-    constant-relational-expression ,
-    [ ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , constant-relational-expression ] ;
-
-constant-relational-expression =
-    constant-concatenation-expression ,
-    [ ( "<" | "<=" | ">" | ">=" ) , constant-concatenation-expression ] ;
-
-constant-concatenation-expression =
-    constant-shift-expression , { "." , constant-shift-expression } ;
-
-constant-shift-expression =
-    constant-additive-expression , { ( "<<" | ">>" ) , constant-additive-expression } ;
-
-constant-additive-expression =
-    constant-multiplicative-expression , { ( "+" | "-" ) , constant-multiplicative-expression } ;
-
-constant-multiplicative-expression =
-    constant-unary-expression , { ( "*" | "/" | "%" ) , constant-unary-expression } ;
-
-constant-power-expression =
-    constant-postfix-expression , [ "**" , constant-unary-expression ] ;
-
-constant-unary-expression =
-      constant-power-expression
-    | "+" , constant-unary-expression
-    | "-" , constant-unary-expression
-    | "!" , constant-unary-expression
-    | "~" , constant-unary-expression
-    | constant-cast-expression ;
-
-constant-cast-expression =
-      "(int)" , constant-unary-expression
-    | "(integer)" , constant-unary-expression
-    | "(float)" , constant-unary-expression
-    | "(double)" , constant-unary-expression
-    | "(string)" , constant-unary-expression
-    | "(binary)" , constant-unary-expression
-    | "(array)" , constant-unary-expression
-    | "(object)" , constant-unary-expression
-    | "(bool)" , constant-unary-expression
-    | "(boolean)" , constant-unary-expression ;
-
-constant-primary-expression =
-    constant-literal | constant | constant-class-access | magic-constant
-    | "(" , constant-expression , ")" | array-creation-constant-expression
-    | [ attribute-groups ] , "static" , "function" , [ "&" ] ,
-      "(" , parameter-list , ")" , return-type , compound-statement
-    | constant-callable
-    | "new" , name , [ constant-argument-list ] ;
-
-array-creation-constant-expression =
-      "array" , "(" , constant-array-pair-list , ")"
-    | "[" , constant-array-pair-list , "]" ;
-
-constant-array-pair-list =
-    [ constant-array-pair , { "," , constant-array-pair } , [ "," ] ] ;
-
-constant-array-pair =
-      constant-expression
-    | constant-expression , "=>" , constant-expression
-    | "..." , constant-expression ;
+    expression ;
 
 expression =
     throw-expression ;
@@ -635,9 +683,7 @@ logical-and-expression =
     print-expression , { "and" , print-expression } ;
 
 assignment-expression =
-      conditional-expression
-    | variable-expression , assignment-operator , assignment-expression
-    | list-expression , "=" , assignment-expression
+    conditional-expression | assignment-prefix , assignment-expression
     | variable-expression , "=" , "&" , variable-expression ;
 
 assignment-operator =
@@ -645,9 +691,7 @@ assignment-operator =
     | "&=" | "|=" | "^=" | "<<=" | ">>=" | "**=" | "??=" ;
 
 conditional-expression =
-    coalesce-expression ,
-    [ "?" , expression , ":" , coalesce-expression
-    | "?" , ":" , coalesce-expression , { "?" , ":" , coalesce-expression } ] ;
+    coalesce-expression , { "?" , [ expression ] , ":" , coalesce-expression } ;
 
 coalesce-expression =
     boolean-or-expression , [ "??" , coalesce-expression ] ;
@@ -668,12 +712,10 @@ bitwise-and-expression =
     equality-expression , { "&" , equality-expression } ;
 
 equality-expression =
-    relational-expression ,
-    [ ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , relational-expression ] ;
+    relational-expression , [ ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , relational-expression ] ;
 
 relational-expression =
-    pipe-expression ,
-    [ ( "<" | "<=" | ">" | ">=" ) , pipe-expression ] ;
+    pipe-expression , [ ( "<" | "<=" | ">" | ">=" ) , pipe-expression ] ;
 
 pipe-expression =
     concatenation-expression , { "|>" , concatenation-expression } ;
@@ -691,37 +733,24 @@ multiplicative-expression =
     boolean-not-expression , { ( "*" | "/" | "%" ) , boolean-not-expression } ;
 
 power-expression =
-    clone-expression , [ "**" , unary-expression ] ;
+    clone-expression , [ "**" , power-expression ] ;
 
 instanceof-expression =
     unary-expression , { "instanceof" , class-name-reference } ;
 
 unary-expression =
-    power-expression | prefix-unary-expression ;
-
-prefix-unary-expression =
-    "++" , variable-expression | "--" , variable-expression
-    | ( "+" | "-" | "~" | "@" ) , unary-expression
-    | "!" , boolean-not-expression
-    | cast-expression | prefix-expression | closure-expression | match-expression ;
+    power-expression
+    | [ power-prefix-context ] , ( ( "+" | "-" | "~" | "@" ) , unary-expression | cast-expression ) ;
 
 cast-expression =
-      "(int)" , unary-expression
-    | "(integer)" , unary-expression
-    | "(float)" , unary-expression
-    | "(double)" , unary-expression
-    | "(string)" , unary-expression
-    | "(binary)" , unary-expression
-    | "(array)" , unary-expression
-    | "(object)" , unary-expression
-    | "(bool)" , unary-expression
-    | "(boolean)" , unary-expression ;
+    cast-operator , unary-expression ;
 
 void-cast-statement =
     "(void)" , expression , ";" ;
 
 postfix-expression =
-    variable-expression , [ "++" | "--" ] | primary-expression ;
+    variable-expression , [ "++" | "--" ] | primary-expression
+    | ( "++" | "--" ) , variable-expression | closure-expression | match-expression ;
 
 fully-dereferenceable-expression =
     variable-expression | "(" , expression , ")" | dereferenceable-scalar
@@ -734,7 +763,7 @@ primary-expression =
     literal | array-creation-expression | constant | class-constant | magic-constant
     | "(" , expression , ")" | new-dereferenceable | "new" , class-name-reference
     | backtick-string
-    | "isset" , "(" , expression-list , [ "," ] , ")"
+    | "isset" , "(" , isset-variable-list , [ "," ] , ")"
     | "empty" , "(" , expression , ")" | "eval" , "(" , expression , ")"
     | "exit" , [ argument-list ] | "die" , [ argument-list ] ;
 
@@ -767,8 +796,7 @@ function-call =
     | callable-expression , argument-list ;
 
 argument-list =
-      "(" , "..." , ")"
-    | "(" , [ argument , { "," , argument } , [ "," ] ] , ")" ;
+    ordinary-argument-list | first-class-callable-arguments ;
 
 clone-argument-list =
     "(" , [ "..." | expression , "," , [ argument , { "," , argument } , [ "," ] ]
@@ -789,7 +817,7 @@ array-creation-expression =
     | "[" , array-pair-list , "]" ;
 
 array-pair-list =
-    [ array-pair , { "," , [ array-pair ] } , [ "," ] ] ;
+    [ array-pair ] , { "," , [ array-pair ] } ;
 
 array-pair =
       expression
@@ -797,18 +825,19 @@ array-pair =
     | "&" , variable-expression
     | expression , "=>" , "&" , variable-expression
     | "..." , expression
-    | list-expression
-    | expression , "=>" , list-expression ;
+    | long-list-expression
+    | expression , "=>" , long-list-expression ;
 
 list-expression =
-      "list" , "(" , array-pair-list , ")"
+      long-list-expression
     | "[" , array-pair-list , "]" ;
 
+long-list-expression =
+    "list" , "(" , array-pair-list , ")" ;
+
 include-expression =
-      "include" , expression
-    | "include_once" , expression
-    | "require" , expression
-    | "require_once" , expression ;
+    logical-or-expression
+    | [ logical-or-prefix-context ] , include-operator , include-expression ;
 
 match-expression =
     "match" , "(" , expression , ")" , "{" , [ match-arm-list ] , "}" ;
@@ -829,8 +858,7 @@ closure-expression =
     compound-statement ;
 
 arrow-function =
-    [ attribute-groups ] , [ "static" ] , "fn" , [ "&" ] ,
-    "(" , parameter-list , ")" , return-type , "=>" , expression ;
+    arrow-function-header , arrow-expression ;
 
 lexical-variable-list =
     "use" , "(" , lexical-variable , { "," , lexical-variable } , [ "," ] , ")" ;
@@ -843,29 +871,8 @@ backtick-string-part-list =
     { encapsulated-string-part } ;
 
 statement =
-      inline-html
-    | compound-statement
-    | if-statement
-    | while-statement
-    | do-statement
-    | for-statement
-    | foreach-statement
-    | switch-statement
-    | declare-statement
-    | try-statement
-    | expression-statement
-    | void-cast-statement
-    | echo-statement
-    | global-statement
-    | static-statement
-    | unset-statement
-    | return-statement
-    | throw-statement
-    | break-statement
-    | continue-statement
-    | goto-statement
-    | label-statement
-    | empty-statement ;
+    simple-statement | if-statement | while-statement | for-statement
+    | foreach-statement | declare-statement ;
 
 compound-statement =
     "{" , inner-statement-list , "}" ;
@@ -883,7 +890,7 @@ inner-statement =
       | enum-declaration ) ;
 
 expression-statement =
-    [ expression ] , statement-terminator ;
+    expression , statement-terminator ;
 
 echo-statement =
     "echo" , expression-list , statement-terminator ;
@@ -921,9 +928,6 @@ unset-variable =
 return-statement =
     "return" , [ expression ] , ";" ;
 
-throw-statement =
-    "throw" , expression , ";" ;
-
 break-statement =
     "break" , [ expression ] , ";" ;
 
@@ -940,16 +944,7 @@ empty-statement =
     ";" ;
 
 if-statement =
-      "if" , "(" , expression , ")" , statement , [ elseif-list ] , [ else-clause ]
-    | "if" , "(" , expression , ")" , ":" , inner-statement-list ,
-      [ alt-elseif-list ] , [ alt-else-clause ] , "endif" , ";" ;
-
-elseif-list =
-    "elseif" , "(" , expression , ")" , statement ,
-    { "elseif" , "(" , expression , ")" , statement } ;
-
-else-clause =
-    "else" , statement ;
+    matched-if-statement | unmatched-if-statement ;
 
 alt-elseif-list =
     "elseif" , "(" , expression , ")" , ":" , inner-statement-list ,
@@ -959,18 +954,13 @@ alt-else-clause =
     "else" , ":" , inner-statement-list ;
 
 while-statement =
-      "while" , "(" , expression , ")" , statement
-    | "while" , "(" , expression , ")" , ":" , inner-statement-list ,
-      "endwhile" , ";" ;
+    matched-while-statement | unmatched-while-statement ;
 
 do-statement =
     "do" , statement , "while" , "(" , expression , ")" , ";" ;
 
 for-statement =
-      "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
-      for-expression-list , ")" , statement
-    | "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
-      for-expression-list , ")" , ":" , inner-statement-list , "endfor" , ";" ;
+    matched-for-statement | unmatched-for-statement ;
 
 for-expression-list =
     [ for-expression , { "," , for-expression } ] ;
@@ -983,9 +973,7 @@ for-condition-expression-list =
     [ [ for-expression-list , "," ] , expression ] ;
 
 foreach-statement =
-      "foreach" , "(" , expression , "as" , foreach-target , ")" , statement
-    | "foreach" , "(" , expression , "as" , foreach-target , ")" , ":" ,
-      inner-statement-list , "endforeach" , ";" ;
+    matched-foreach-statement | unmatched-foreach-statement ;
 
 foreach-target =
     [ foreach-key , "=>" ] , foreach-value ;
@@ -1013,9 +1001,7 @@ switch-case =
       "case" , expression , ( ":" | ";" ) , inner-statement-list
     | "default" , ( ":" | ";" ) , inner-statement-list ;
 declare-statement =
-      "declare" , "(" , declare-directive-list , ")" , statement
-    | "declare" , "(" , declare-directive-list , ")" , ":" ,
-      inner-statement-list , "enddeclare" , ";" ;
+    matched-declare-statement | unmatched-declare-statement ;
 
 declare-directive-list =
     declare-directive , { "," , declare-directive } ;
@@ -1063,7 +1049,7 @@ class-declaration =
     [ implements-clause ] , "{" , class-member-list , "}" ;
 
 anonymous-class =
-    [ attribute-groups ] , class-modifiers , "class" , [ argument-list ] , [ extends-clause ] ,
+    [ attribute-groups ] , class-modifiers , "class" , [ constructor-argument-list ] , [ extends-clause ] ,
     [ implements-clause ] , "{" , class-member-list , "}" ;
 
 class-modifiers =
@@ -1192,7 +1178,7 @@ interface-member =
       ( method-declaration | class-constant-declaration | interface-property-declaration ) ;
 
 interface-property-declaration =
-    interface-property-modifiers , optional-type-without-static , hooked-property ;
+    ( interface-property-modifiers | "var" ) , optional-type-without-static , hooked-property ;
 
 interface-property-modifiers =
     property-modifier , { property-modifier } ;
@@ -1216,7 +1202,7 @@ trait-precedence =
 
 trait-alias =
     trait-method-reference , "as" ,
-    ( identifier | reserved-non-modifiers | method-modifier , [ semi-reserved-identifier ] ) , ";" ;
+    ( identifier | reserved-non-modifiers | trait-alias-modifier , [ semi-reserved-identifier ] ) , ";" ;
 
 trait-method-reference =
     semi-reserved-identifier | class-name , "::" , semi-reserved-identifier ;
@@ -1368,30 +1354,18 @@ constant-argument-list =
 constant-argument =
     [ semi-reserved-identifier , ":" ] , attribute-or-constructor-argument ;
 
-constant-callable =
-    ( name | "readonly" | "clone" | "exit" | "die"
-    | single-quoted-string | constant-double-quoted-string | "(" , constant-expression , ")"
-    | constant-class-reference , "::" , ( semi-reserved-identifier | "{" , constant-expression , "}" ) ) ,
-    "(" , "..." , ")" ;
-
-constant-class-access =
-    constant-class-reference , "::" , ( semi-reserved-identifier | "{" , constant-expression , "}" ) ;
-
-constant-class-reference =
-    name | single-quoted-string | constant-double-quoted-string | "(" , constant-expression , ")" ;
-
 boolean-not-expression =
-    "!" , boolean-not-expression | instanceof-expression ;
+    instanceof-expression
+    | [ instanceof-prefix-context ] , "!" , boolean-not-expression ;
 
 clone-expression =
-    "clone" , ( clone-expression | prefix-unary-expression )
-    | "clone" , clone-argument-list | postfix-expression ;
+    "clone" , clone-expression | "clone" , clone-argument-list | postfix-expression ;
 
 dereferenceable-scalar =
     array-creation-expression | single-quoted-string | double-quoted-string ;
 
 new-dereferenceable =
-    "new" , class-name-reference , argument-list | "new" , anonymous-class ;
+    "new" , class-name-reference , constructor-argument-list | "new" , anonymous-class ;
 
 array-object-dereferenceable =
     fully-dereferenceable-expression | constant | magic-constant ;
@@ -1420,52 +1394,24 @@ backtick-string =
 newline =
     "\r\n" | "\n" | "\r" ;
 
-constant-postfix-expression =
-    constant-primary-expression
-    | constant-dereferenceable , ( "[" , constant-expression , "]"
-    | ( "->" | "?->" ) , ( semi-reserved-identifier | "{" , constant-expression , "}" ) ) ,
-    { "[" , constant-expression , "]"
-    | ( "->" | "?->" ) , ( semi-reserved-identifier | "{" , constant-expression , "}" ) } ;
-
-constant-dereferenceable =
-    constant | magic-constant | constant-class-access | array-creation-constant-expression
-    | single-quoted-string | constant-double-quoted-string | "(" , constant-expression , ")"
-    | constant-callable | "new" , name , constant-argument-list ;
-
 throw-expression =
-    "throw" , expression | arrow-expression ;
+    arrow-expression
+    | [ arrow-prefix-context ] , "throw" , throw-expression ;
 
 arrow-expression =
-    arrow-function | include-expression | logical-or-expression ;
+    include-expression | [ include-prefix-context ] , arrow-function ;
 
 print-expression =
-    "print" , print-expression | yield-expression ;
+    yield-expression
+    | [ yield-prefix-context ] , "print" , print-expression ;
 
 yield-expression =
-    "yield" , [ yield-from-expression , [ "=>" , yield-from-expression ] ] | yield-from-expression ;
+    yield-key-expression
+    | [ yield-key-prefix-context ] , "yield" , [ yield-expression ] ;
 
 yield-from-expression =
-    "yield" , "from" , assignment-expression | assignment-expression ;
-
-prefix-expression =
-    "throw" , expression | arrow-function | include-expression
-    | "print" , print-expression
-    | "yield" , [ yield-from-expression , [ "=>" , yield-from-expression ] ]
-    | "yield" , "from" , assignment-expression ;
-
-constant-literal =
-    integer-literal | floating-literal | constant-string-literal ;
-
-constant-string-literal =
-    single-quoted-string | constant-double-quoted-string | nowdoc-string | constant-heredoc ;
-
-constant-double-quoted-string =
-    [ "b" | "B" ] , "\"" , { string-text } , "\"" ;
-
-constant-heredoc =
-    [ "b" | "B" ] , "<<<" , { " " | "\t" } ,
-    ( heredoc-label | "\"" , heredoc-label , "\"" ) , newline ,
-    { string-text } , { " " | "\t" } , heredoc-label ;
+    assignment-expression
+    | [ assignment-prefix-context ] , "yield" , "from" , yield-from-expression ;
 
 parameter-default =
     constant-expression ;
@@ -1484,5 +1430,323 @@ enum-case-initializer =
 
 attribute-or-constructor-argument =
     constant-expression ;
+
+
+trait-alias-modifier =
+    "public" | "protected" | "private" | "final" ;
+
+
+ordinary-argument-list =
+    "(" , [ argument , { "," , argument } , [ "," ] ] , ")" ;
+
+
+first-class-callable-arguments =
+    "(" , "..." , ")" ;
+
+
+constructor-argument-list =
+    ordinary-argument-list | first-class-callable-arguments ;
+
+
+isset-variable-list =
+    isset-variable , { "," , isset-variable } ;
+
+
+isset-variable =
+    expression ;
+
+
+matched-statement =
+    simple-statement | matched-if-statement
+    | matched-while-statement | matched-for-statement
+    | matched-foreach-statement | matched-declare-statement ;
+
+
+simple-statement =
+    inline-html
+    | compound-statement
+    | do-statement
+    | switch-statement
+    | try-statement
+    | expression-statement
+    | void-cast-statement
+    | echo-statement
+    | global-statement
+    | static-statement
+    | unset-statement
+    | return-statement
+    | break-statement
+    | continue-statement
+    | goto-statement
+    | label-statement
+    | empty-statement ;
+
+
+unmatched-statement =
+    unmatched-if-statement | unmatched-while-statement
+    | unmatched-for-statement | unmatched-foreach-statement | unmatched-declare-statement ;
+
+
+matched-if-statement =
+    "if" , "(" , expression , ")" , matched-statement ,
+    { "elseif" , "(" , expression , ")" , matched-statement } , "else" , matched-statement
+    | alternative-if-statement ;
+
+
+unmatched-if-statement =
+    "if" , "(" , expression , ")" ,
+    ( statement
+    | matched-statement , { "elseif" , "(" , expression , ")" , matched-statement } ,
+      ( "elseif" , "(" , expression , ")" , unmatched-statement
+      | "else" , unmatched-statement )
+    | matched-statement , "elseif" , "(" , expression , ")" , matched-statement ,
+      { "elseif" , "(" , expression , ")" , matched-statement } ) ;
+
+
+alternative-if-statement =
+    "if" , "(" , expression , ")" , ":" , inner-statement-list ,
+    [ alt-elseif-list ] , [ alt-else-clause ] , "endif" , ";" ;
+
+
+matched-while-statement =
+    "while" , "(" , expression , ")" , matched-statement
+    | "while" , "(" , expression , ")" , ":" , inner-statement-list ,
+      "endwhile" , ";" ;
+
+
+unmatched-while-statement =
+    "while" , "(" , expression , ")" , unmatched-statement ;
+
+
+matched-for-statement =
+    "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
+      for-expression-list , ")" , matched-statement
+    | "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
+      for-expression-list , ")" , ":" , inner-statement-list , "endfor" , ";" ;
+
+
+unmatched-for-statement =
+    "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
+      for-expression-list , ")" , unmatched-statement ;
+
+
+matched-foreach-statement =
+    "foreach" , "(" , expression , "as" , foreach-target , ")" , matched-statement
+    | "foreach" , "(" , expression , "as" , foreach-target , ")" , ":" ,
+      inner-statement-list , "endforeach" , ";" ;
+
+
+unmatched-foreach-statement =
+    "foreach" , "(" , expression , "as" , foreach-target , ")" , unmatched-statement ;
+
+
+matched-declare-statement =
+    "declare" , "(" , declare-directive-list , ")" , matched-statement
+    | "declare" , "(" , declare-directive-list , ")" , ":" ,
+      inner-statement-list , "enddeclare" , ";" ;
+
+
+unmatched-declare-statement =
+    "declare" , "(" , declare-directive-list , ")" , unmatched-statement ;
+
+
+arrow-prefix-context =
+    include-prefix-context | [ include-prefix-context ] , arrow-function-header , [ arrow-prefix-context ] ;
+
+
+include-prefix-context =
+    logical-or-prefix-context | [ logical-or-prefix-context ] , include-operator , [ include-prefix-context ] ;
+
+
+logical-or-prefix-context =
+    logical-xor-prefix-context | logical-or-expression , "or" , [ logical-xor-prefix-context ] ;
+
+
+logical-xor-prefix-context =
+    logical-and-prefix-context | logical-xor-expression , "xor" , [ logical-and-prefix-context ] ;
+
+
+logical-and-prefix-context =
+    print-prefix-context | logical-and-expression , "and" , [ print-prefix-context ] ;
+
+
+print-prefix-context =
+    yield-prefix-context | [ yield-prefix-context ] , "print" , [ print-prefix-context ] ;
+
+
+yield-prefix-context =
+    yield-key-prefix-context
+    | [ yield-key-prefix-context ] , "yield" , [ yield-prefix-context ] ;
+
+
+yield-from-prefix-context =
+    assignment-prefix-context | [ assignment-prefix-context ] , "yield" , "from" , [ yield-from-prefix-context ] ;
+
+
+assignment-prefix =
+    variable-expression , assignment-operator | list-expression , "=" ;
+
+
+assignment-prefix-context =
+    conditional-prefix-context | assignment-prefix , { assignment-prefix } , [ conditional-prefix-context ] ;
+
+
+conditional-prefix-context =
+    coalesce-prefix-context
+    | conditional-expression , "?" , [ expression ] , ":" , [ coalesce-prefix-context ] ;
+
+
+coalesce-prefix-context =
+    boolean-or-prefix-context | boolean-or-expression , "??" , { boolean-or-expression , "??" } , [ boolean-or-prefix-context ] ;
+
+
+boolean-or-prefix-context =
+    boolean-and-prefix-context | boolean-or-expression , "||" , [ boolean-and-prefix-context ] ;
+
+
+boolean-and-prefix-context =
+    bitwise-or-prefix-context | boolean-and-expression , "&&" , [ bitwise-or-prefix-context ] ;
+
+
+bitwise-or-prefix-context =
+    bitwise-xor-prefix-context | bitwise-or-expression , "|" , [ bitwise-xor-prefix-context ] ;
+
+
+bitwise-xor-prefix-context =
+    bitwise-and-prefix-context | bitwise-xor-expression , "^" , [ bitwise-and-prefix-context ] ;
+
+
+bitwise-and-prefix-context =
+    equality-prefix-context | bitwise-and-expression , "&" , [ equality-prefix-context ] ;
+
+
+equality-prefix-context =
+    relational-prefix-context | relational-expression , ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , [ relational-prefix-context ] ;
+
+
+relational-prefix-context =
+    pipe-prefix-context | pipe-expression , ( "<" | "<=" | ">" | ">=" ) , [ pipe-prefix-context ] ;
+
+
+pipe-prefix-context =
+    concatenation-prefix-context | pipe-expression , "|>" , [ concatenation-prefix-context ] ;
+
+
+concatenation-prefix-context =
+    shift-prefix-context | concatenation-expression , "." , [ shift-prefix-context ] ;
+
+
+shift-prefix-context =
+    additive-prefix-context | shift-expression , ( "<<" | ">>" ) , [ additive-prefix-context ] ;
+
+
+additive-prefix-context =
+    multiplicative-prefix-context | additive-expression , ( "+" | "-" ) , [ multiplicative-prefix-context ] ;
+
+
+multiplicative-prefix-context =
+    boolean-not-prefix-context | multiplicative-expression , ( "*" | "/" | "%" ) , [ boolean-not-prefix-context ] ;
+
+
+boolean-not-prefix-context =
+    instanceof-prefix-context | [ instanceof-prefix-context ] , "!" , [ boolean-not-prefix-context ] ;
+
+
+instanceof-prefix-context =
+    unary-prefix-context ;
+
+
+unary-prefix-context =
+    power-prefix-context | [ power-prefix-context ] , unary-operator , [ unary-prefix-context ] ;
+
+
+power-prefix-context =
+    clone-prefix-context | clone-expression , "**" , { clone-expression , "**" } , [ clone-prefix-context ] ;
+
+
+clone-prefix-context =
+    "clone" , { "clone" } ;
+
+
+arrow-function-header =
+    [ attribute-groups ] , [ "static" ] , "fn" , [ "&" ] ,
+    "(" , parameter-list , ")" , return-type , "=>" ;
+
+
+include-operator =
+    "include" | "include_once" | "require" | "require_once" ;
+
+
+unary-operator =
+    "+" | "-" | "~" | "@" | cast-operator ;
+
+
+cast-operator =
+    "(int)" | "(integer)" | "(float)" | "(double)" | "(string)"
+    | "(binary)" | "(array)" | "(object)" | "(bool)" | "(boolean)" ;
+
+yield-key-expression =
+    yield-from-expression
+    | [ yield-from-prefix-context ] , "yield" , yield-key , "=>" , yield-key-expression ;
+
+yield-key-prefix-context =
+    yield-from-prefix-context
+    | [ yield-from-prefix-context ] , "yield" , yield-key , "=>" , [ yield-key-prefix-context ] ;
+
+closed-yield-throw-expression =
+    closed-yield-arrow-expression
+    | [ closed-yield-arrow-prefix-context ] , "throw" , closed-yield-throw-expression ;
+
+closed-yield-arrow-expression =
+    closed-yield-include-expression | [ closed-yield-include-prefix-context ] , arrow-function-header , closed-yield-arrow-expression ;
+
+closed-yield-arrow-prefix-context =
+    closed-yield-include-prefix-context | [ closed-yield-include-prefix-context ] , arrow-function-header , [ closed-yield-arrow-prefix-context ] ;
+
+closed-yield-include-expression =
+    closed-yield-logical-or-expression
+    | [ closed-yield-logical-or-prefix-context ] , include-operator , closed-yield-include-expression ;
+
+closed-yield-include-prefix-context =
+    closed-yield-logical-or-prefix-context | [ closed-yield-logical-or-prefix-context ] , include-operator , [ closed-yield-include-prefix-context ] ;
+
+closed-yield-logical-or-expression =
+    closed-yield-logical-xor-expression , { "or" , closed-yield-logical-xor-expression } ;
+
+closed-yield-logical-or-prefix-context =
+    closed-yield-logical-xor-prefix-context | closed-yield-logical-or-expression , "or" , [ closed-yield-logical-xor-prefix-context ] ;
+
+closed-yield-logical-xor-expression =
+    closed-yield-logical-and-expression , { "xor" , closed-yield-logical-and-expression } ;
+
+closed-yield-logical-xor-prefix-context =
+    closed-yield-logical-and-prefix-context | closed-yield-logical-xor-expression , "xor" , [ closed-yield-logical-and-prefix-context ] ;
+
+closed-yield-logical-and-expression =
+    closed-yield-print-expression , { "and" , closed-yield-print-expression } ;
+
+closed-yield-logical-and-prefix-context =
+    closed-yield-print-prefix-context | closed-yield-logical-and-expression , "and" , [ closed-yield-print-prefix-context ] ;
+
+closed-yield-print-expression =
+    closed-yield-yield-expression
+    | [ closed-yield-yield-prefix-context ] , "print" , closed-yield-print-expression ;
+
+closed-yield-print-prefix-context =
+    closed-yield-yield-prefix-context | [ closed-yield-yield-prefix-context ] , "print" , [ closed-yield-print-prefix-context ] ;
+
+closed-yield-yield-expression =
+    yield-key-expression | [ yield-key-prefix-context ] , "yield" ;
+
+closed-yield-yield-prefix-context =
+    yield-key-prefix-context ;
+
+yield-key =
+    closed-yield-yield-expression
+    | [ yield-key-prefix-context ] ,
+      ( "throw" , closed-yield-throw-expression
+      | arrow-function-header , closed-yield-arrow-expression
+      | include-operator , closed-yield-include-expression
+      | "print" , closed-yield-print-expression ) ;
 ```
 <!-- END GENERATED EBNF -->

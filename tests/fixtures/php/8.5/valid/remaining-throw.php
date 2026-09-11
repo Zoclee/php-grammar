@@ -1,0 +1,1 @@
+<?php throw $a ?? $b;

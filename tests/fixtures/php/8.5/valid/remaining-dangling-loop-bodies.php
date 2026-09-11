@@ -1,0 +1,17 @@
+<?php for (;;) if ($a) foo();
+foreach ($xs as $x) if ($a) foo();
+declare(ticks=1) if ($a) foo();
+if ($a) for (;;) if ($b) foo(); else bar();
+if ($a) foreach ($xs as $x) if ($b) foo(); else bar();
+if ($a) declare(ticks=1) if ($b) foo(); else bar();
+if ($a) foo(); elseif ($b) if ($c) bar();
+if ($a) foo(); else if ($b) bar();
+if ($a) foo(); elseif ($b) bar();
+if ($a) if ($b) for (;;) if ($c) foo();
+if ($a) if ($b) foreach ($xs as $x) if ($c) foo();
+if ($a) if ($b) declare(ticks=1) if ($c) foo();
+if ($a) if ($b) while ($c) if ($d) foo();
+if ($a) foo(); else while ($b) if ($c) bar();
+if ($a) foo(); else for (;;) if ($b) bar();
+if ($a) foo(); else foreach ($xs as $x) if ($b) bar();
+if ($a) foo(); else declare(ticks=1) if ($b) bar();

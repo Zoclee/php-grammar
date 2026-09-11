@@ -29,7 +29,7 @@ if ($status !== 0 || !preg_match('/PHP 8\.5\.\d+/', $version, $match)) {
 }
 $root = dirname(__DIR__);
 $matcher = PhpGrammarMatcher::forRepositoryRoot($root);
-$counts = ['valid' => 0, 'invalid' => 0, 'contextual-invalid' => 0, 'mismatches' => 0];
+$counts = ['valid' => 0, 'invalid' => 0, 'contextual-invalid' => 0, 'known-discrepancies' => 0, 'mismatches' => 0];
 echo $match[0] . "; short_open_tag=1 and 0; zend.multibyte=0\n";
 foreach (['' => true, 'short-tags-disabled/' => false] as $profile => $shortTags) {
 foreach (['valid', 'invalid', 'contextual-invalid'] as $category) {
@@ -48,6 +48,17 @@ foreach (['valid', 'invalid', 'contextual-invalid'] as $category) {
     }
 }
 }
+foreach (glob($root . '/tests/fixtures/php/8.5/known-discrepancies/valid/*.php') as $file) {
+    $counts['known-discrepancies']++;
+    $result = $matcher->matches('8.5', file_get_contents($file));
+    [$status, $output] = run([$binary, '-n', '-d', 'short_open_tag=1', '-d', 'zend.multibyte=0', '-l', $file]);
+    echo 'KNOWN DISCREPANCY ' . basename($file) . ': EBNF=' . (int)$result->matched . ', PHP=' . (int)($status === 0) . "\n";
+    if ($result->matched || $status !== 0) {
+        $counts['mismatches']++;
+        echo "Recorded discrepancy changed; investigate and reclassify.\n" . $output;
+    }
+}
 echo json_encode($counts, JSON_PRETTY_PRINT) . "\n";
 echo "Contextual-invalid fixtures intentionally pass structural EBNF and fail PHP compilation.\n";
+if ($counts['known-discrepancies'] !== 0) echo "Known discrepancies remain; zero unexpected mismatches is not full conformance.\n";
 exit($counts['mismatches'] === 0 ? 0 : 1);

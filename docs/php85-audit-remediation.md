@@ -1,5 +1,9 @@
 # PHP 8.5 audit and remediation
 
+The [remaining-audit corrections](php85-remaining-audit.md) supersede this
+historical report's precedence, dangling-else, folding and scanner status.
+The validation counts below are retained as a historical baseline.
+
 This audit supersedes the earlier disposition checklist. That checklist called
 several unresolved areas fixed. The current result is a substantial structural
 remediation with explicit remaining discrepancies; it is **not** a certification

@@ -1,0 +1,1 @@
+<?php $obj?->child->method(...);

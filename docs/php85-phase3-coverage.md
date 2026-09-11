@@ -4,7 +4,13 @@ Phase 3 establishes systematic positive evidence for the major PHP 8.5 syntax
 areas. Every remaining uncovered identity has an explicit classification.
 This completes the positive-coverage phase, not the full conformance audit.
 
-## Results
+The tables below record the historical Phase 3 baseline. The JSON ledger has
+been regenerated for the [remaining-audit corrections](php85-remaining-audit.md):
+303/366 productions and 609/794 alternatives now have positive recognition
+evidence. No uncovered identity is classified as a meaningful coverage gap;
+this does not eliminate the two recorded conformance discrepancies.
+
+## Historical results
 
 | Metric | Post-audit baseline | Phase 3 |
 |---|---:|---:|

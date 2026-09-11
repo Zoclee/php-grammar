@@ -289,102 +289,7 @@ return-type =
     [ ":" , type ] ;
 
 constant-expression =
-    constant-logical-or-expression ;
-
-constant-coalesce-expression =
-    constant-boolean-or-expression , [ "??" , constant-coalesce-expression ] ;
-
-constant-conditional-expression =
-    constant-coalesce-expression ,
-    [ "?" , constant-expression , ":" , constant-coalesce-expression
-    | "?" , ":" , constant-coalesce-expression , { "?" , ":" , constant-coalesce-expression } ] ;
-
-constant-logical-or-expression =
-    constant-logical-xor-expression , { "or" , constant-logical-xor-expression } ;
-
-constant-logical-xor-expression =
-    constant-logical-and-expression , { "xor" , constant-logical-and-expression } ;
-
-constant-logical-and-expression =
-    constant-conditional-expression , { "and" , constant-conditional-expression } ;
-
-constant-boolean-or-expression =
-    constant-boolean-and-expression , { "||" , constant-boolean-and-expression } ;
-
-constant-boolean-and-expression =
-    constant-bitwise-or-expression , { "&&" , constant-bitwise-or-expression } ;
-
-constant-bitwise-or-expression =
-    constant-bitwise-xor-expression , { "|" , constant-bitwise-xor-expression } ;
-
-constant-bitwise-xor-expression =
-    constant-bitwise-and-expression , { "^" , constant-bitwise-and-expression } ;
-
-constant-bitwise-and-expression =
-    constant-equality-expression , { "&" , constant-equality-expression } ;
-
-constant-equality-expression =
-    constant-relational-expression ,
-    [ ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , constant-relational-expression ] ;
-
-constant-relational-expression =
-    constant-concatenation-expression ,
-    [ ( "<" | "<=" | ">" | ">=" ) , constant-concatenation-expression ] ;
-
-constant-concatenation-expression =
-    constant-shift-expression , { "." , constant-shift-expression } ;
-
-constant-shift-expression =
-    constant-additive-expression , { ( "<<" | ">>" ) , constant-additive-expression } ;
-
-constant-additive-expression =
-    constant-multiplicative-expression , { ( "+" | "-" ) , constant-multiplicative-expression } ;
-
-constant-multiplicative-expression =
-    constant-unary-expression , { ( "*" | "/" | "%" ) , constant-unary-expression } ;
-
-constant-power-expression =
-    constant-postfix-expression , [ "**" , constant-unary-expression ] ;
-
-constant-unary-expression =
-      constant-power-expression
-    | "+" , constant-unary-expression
-    | "-" , constant-unary-expression
-    | "!" , constant-unary-expression
-    | "~" , constant-unary-expression
-    | constant-cast-expression ;
-
-constant-cast-expression =
-      "(int)" , constant-unary-expression
-    | "(integer)" , constant-unary-expression
-    | "(float)" , constant-unary-expression
-    | "(double)" , constant-unary-expression
-    | "(string)" , constant-unary-expression
-    | "(binary)" , constant-unary-expression
-    | "(array)" , constant-unary-expression
-    | "(object)" , constant-unary-expression
-    | "(bool)" , constant-unary-expression
-    | "(boolean)" , constant-unary-expression ;
-
-constant-primary-expression =
-    constant-literal | constant | constant-class-access | magic-constant
-    | "(" , constant-expression , ")" | array-creation-constant-expression
-    | [ attribute-groups ] , "static" , "function" , [ "&" ] ,
-      "(" , parameter-list , ")" , return-type , compound-statement
-    | constant-callable
-    | "new" , name , [ constant-argument-list ] ;
-
-array-creation-constant-expression =
-      "array" , "(" , constant-array-pair-list , ")"
-    | "[" , constant-array-pair-list , "]" ;
-
-constant-array-pair-list =
-    [ constant-array-pair , { "," , constant-array-pair } , [ "," ] ] ;
-
-constant-array-pair =
-      constant-expression
-    | constant-expression , "=>" , constant-expression
-    | "..." , constant-expression ;
+    expression ;
 
 expression =
     throw-expression ;
@@ -399,9 +304,7 @@ logical-and-expression =
     print-expression , { "and" , print-expression } ;
 
 assignment-expression =
-      conditional-expression
-    | variable-expression , assignment-operator , assignment-expression
-    | list-expression , "=" , assignment-expression
+    conditional-expression | assignment-prefix , assignment-expression
     | variable-expression , "=" , "&" , variable-expression ;
 
 assignment-operator =
@@ -409,9 +312,7 @@ assignment-operator =
     | "&=" | "|=" | "^=" | "<<=" | ">>=" | "**=" | "??=" ;
 
 conditional-expression =
-    coalesce-expression ,
-    [ "?" , expression , ":" , coalesce-expression
-    | "?" , ":" , coalesce-expression , { "?" , ":" , coalesce-expression } ] ;
+    coalesce-expression , { "?" , [ expression ] , ":" , coalesce-expression } ;
 
 coalesce-expression =
     boolean-or-expression , [ "??" , coalesce-expression ] ;
@@ -432,12 +333,10 @@ bitwise-and-expression =
     equality-expression , { "&" , equality-expression } ;
 
 equality-expression =
-    relational-expression ,
-    [ ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , relational-expression ] ;
+    relational-expression , [ ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , relational-expression ] ;
 
 relational-expression =
-    pipe-expression ,
-    [ ( "<" | "<=" | ">" | ">=" ) , pipe-expression ] ;
+    pipe-expression , [ ( "<" | "<=" | ">" | ">=" ) , pipe-expression ] ;
 
 pipe-expression =
     concatenation-expression , { "|>" , concatenation-expression } ;
@@ -455,37 +354,24 @@ multiplicative-expression =
     boolean-not-expression , { ( "*" | "/" | "%" ) , boolean-not-expression } ;
 
 power-expression =
-    clone-expression , [ "**" , unary-expression ] ;
+    clone-expression , [ "**" , power-expression ] ;
 
 instanceof-expression =
     unary-expression , { "instanceof" , class-name-reference } ;
 
 unary-expression =
-    power-expression | prefix-unary-expression ;
-
-prefix-unary-expression =
-    "++" , variable-expression | "--" , variable-expression
-    | ( "+" | "-" | "~" | "@" ) , unary-expression
-    | "!" , boolean-not-expression
-    | cast-expression | prefix-expression | closure-expression | match-expression ;
+    power-expression
+    | [ power-prefix-context ] , ( ( "+" | "-" | "~" | "@" ) , unary-expression | cast-expression ) ;
 
 cast-expression =
-      "(int)" , unary-expression
-    | "(integer)" , unary-expression
-    | "(float)" , unary-expression
-    | "(double)" , unary-expression
-    | "(string)" , unary-expression
-    | "(binary)" , unary-expression
-    | "(array)" , unary-expression
-    | "(object)" , unary-expression
-    | "(bool)" , unary-expression
-    | "(boolean)" , unary-expression ;
+    cast-operator , unary-expression ;
 
 void-cast-statement =
     "(void)" , expression , ";" ;
 
 postfix-expression =
-    variable-expression , [ "++" | "--" ] | primary-expression ;
+    variable-expression , [ "++" | "--" ] | primary-expression
+    | ( "++" | "--" ) , variable-expression | closure-expression | match-expression ;
 
 fully-dereferenceable-expression =
     variable-expression | "(" , expression , ")" | dereferenceable-scalar
@@ -498,7 +384,7 @@ primary-expression =
     literal | array-creation-expression | constant | class-constant | magic-constant
     | "(" , expression , ")" | new-dereferenceable | "new" , class-name-reference
     | backtick-string
-    | "isset" , "(" , expression-list , [ "," ] , ")"
+    | "isset" , "(" , isset-variable-list , [ "," ] , ")"
     | "empty" , "(" , expression , ")" | "eval" , "(" , expression , ")"
     | "exit" , [ argument-list ] | "die" , [ argument-list ] ;
 
@@ -531,8 +417,7 @@ function-call =
     | callable-expression , argument-list ;
 
 argument-list =
-      "(" , "..." , ")"
-    | "(" , [ argument , { "," , argument } , [ "," ] ] , ")" ;
+    ordinary-argument-list | first-class-callable-arguments ;
 
 clone-argument-list =
     "(" , [ "..." | expression , "," , [ argument , { "," , argument } , [ "," ] ]
@@ -553,7 +438,7 @@ array-creation-expression =
     | "[" , array-pair-list , "]" ;
 
 array-pair-list =
-    [ array-pair , { "," , [ array-pair ] } , [ "," ] ] ;
+    [ array-pair ] , { "," , [ array-pair ] } ;
 
 array-pair =
       expression
@@ -561,18 +446,19 @@ array-pair =
     | "&" , variable-expression
     | expression , "=>" , "&" , variable-expression
     | "..." , expression
-    | list-expression
-    | expression , "=>" , list-expression ;
+    | long-list-expression
+    | expression , "=>" , long-list-expression ;
 
 list-expression =
-      "list" , "(" , array-pair-list , ")"
+      long-list-expression
     | "[" , array-pair-list , "]" ;
 
+long-list-expression =
+    "list" , "(" , array-pair-list , ")" ;
+
 include-expression =
-      "include" , expression
-    | "include_once" , expression
-    | "require" , expression
-    | "require_once" , expression ;
+    logical-or-expression
+    | [ logical-or-prefix-context ] , include-operator , include-expression ;
 
 match-expression =
     "match" , "(" , expression , ")" , "{" , [ match-arm-list ] , "}" ;
@@ -593,8 +479,7 @@ closure-expression =
     compound-statement ;
 
 arrow-function =
-    [ attribute-groups ] , [ "static" ] , "fn" , [ "&" ] ,
-    "(" , parameter-list , ")" , return-type , "=>" , expression ;
+    arrow-function-header , arrow-expression ;
 
 lexical-variable-list =
     "use" , "(" , lexical-variable , { "," , lexical-variable } , [ "," ] , ")" ;
@@ -607,29 +492,8 @@ backtick-string-part-list =
     { encapsulated-string-part } ;
 
 statement =
-      inline-html
-    | compound-statement
-    | if-statement
-    | while-statement
-    | do-statement
-    | for-statement
-    | foreach-statement
-    | switch-statement
-    | declare-statement
-    | try-statement
-    | expression-statement
-    | void-cast-statement
-    | echo-statement
-    | global-statement
-    | static-statement
-    | unset-statement
-    | return-statement
-    | throw-statement
-    | break-statement
-    | continue-statement
-    | goto-statement
-    | label-statement
-    | empty-statement ;
+    simple-statement | if-statement | while-statement | for-statement
+    | foreach-statement | declare-statement ;
 
 compound-statement =
     "{" , inner-statement-list , "}" ;
@@ -647,7 +511,7 @@ inner-statement =
       | enum-declaration ) ;
 
 expression-statement =
-    [ expression ] , statement-terminator ;
+    expression , statement-terminator ;
 
 echo-statement =
     "echo" , expression-list , statement-terminator ;
@@ -685,9 +549,6 @@ unset-variable =
 return-statement =
     "return" , [ expression ] , ";" ;
 
-throw-statement =
-    "throw" , expression , ";" ;
-
 break-statement =
     "break" , [ expression ] , ";" ;
 
@@ -704,16 +565,7 @@ empty-statement =
     ";" ;
 
 if-statement =
-      "if" , "(" , expression , ")" , statement , [ elseif-list ] , [ else-clause ]
-    | "if" , "(" , expression , ")" , ":" , inner-statement-list ,
-      [ alt-elseif-list ] , [ alt-else-clause ] , "endif" , ";" ;
-
-elseif-list =
-    "elseif" , "(" , expression , ")" , statement ,
-    { "elseif" , "(" , expression , ")" , statement } ;
-
-else-clause =
-    "else" , statement ;
+    matched-if-statement | unmatched-if-statement ;
 
 alt-elseif-list =
     "elseif" , "(" , expression , ")" , ":" , inner-statement-list ,
@@ -723,18 +575,13 @@ alt-else-clause =
     "else" , ":" , inner-statement-list ;
 
 while-statement =
-      "while" , "(" , expression , ")" , statement
-    | "while" , "(" , expression , ")" , ":" , inner-statement-list ,
-      "endwhile" , ";" ;
+    matched-while-statement | unmatched-while-statement ;
 
 do-statement =
     "do" , statement , "while" , "(" , expression , ")" , ";" ;
 
 for-statement =
-      "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
-      for-expression-list , ")" , statement
-    | "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
-      for-expression-list , ")" , ":" , inner-statement-list , "endfor" , ";" ;
+    matched-for-statement | unmatched-for-statement ;
 
 for-expression-list =
     [ for-expression , { "," , for-expression } ] ;
@@ -747,9 +594,7 @@ for-condition-expression-list =
     [ [ for-expression-list , "," ] , expression ] ;
 
 foreach-statement =
-      "foreach" , "(" , expression , "as" , foreach-target , ")" , statement
-    | "foreach" , "(" , expression , "as" , foreach-target , ")" , ":" ,
-      inner-statement-list , "endforeach" , ";" ;
+    matched-foreach-statement | unmatched-foreach-statement ;
 
 foreach-target =
     [ foreach-key , "=>" ] , foreach-value ;
@@ -777,9 +622,7 @@ switch-case =
       "case" , expression , ( ":" | ";" ) , inner-statement-list
     | "default" , ( ":" | ";" ) , inner-statement-list ;
 declare-statement =
-      "declare" , "(" , declare-directive-list , ")" , statement
-    | "declare" , "(" , declare-directive-list , ")" , ":" ,
-      inner-statement-list , "enddeclare" , ";" ;
+    matched-declare-statement | unmatched-declare-statement ;
 
 declare-directive-list =
     declare-directive , { "," , declare-directive } ;
@@ -827,7 +670,7 @@ class-declaration =
     [ implements-clause ] , "{" , class-member-list , "}" ;
 
 anonymous-class =
-    [ attribute-groups ] , class-modifiers , "class" , [ argument-list ] , [ extends-clause ] ,
+    [ attribute-groups ] , class-modifiers , "class" , [ constructor-argument-list ] , [ extends-clause ] ,
     [ implements-clause ] , "{" , class-member-list , "}" ;
 
 class-modifiers =
@@ -956,7 +799,7 @@ interface-member =
       ( method-declaration | class-constant-declaration | interface-property-declaration ) ;
 
 interface-property-declaration =
-    interface-property-modifiers , optional-type-without-static , hooked-property ;
+    ( interface-property-modifiers | "var" ) , optional-type-without-static , hooked-property ;
 
 interface-property-modifiers =
     property-modifier , { property-modifier } ;
@@ -980,7 +823,7 @@ trait-precedence =
 
 trait-alias =
     trait-method-reference , "as" ,
-    ( identifier | reserved-non-modifiers | method-modifier , [ semi-reserved-identifier ] ) , ";" ;
+    ( identifier | reserved-non-modifiers | trait-alias-modifier , [ semi-reserved-identifier ] ) , ";" ;
 
 trait-method-reference =
     semi-reserved-identifier | class-name , "::" , semi-reserved-identifier ;
@@ -1132,30 +975,18 @@ constant-argument-list =
 constant-argument =
     [ semi-reserved-identifier , ":" ] , attribute-or-constructor-argument ;
 
-constant-callable =
-    ( name | "readonly" | "clone" | "exit" | "die"
-    | single-quoted-string | constant-double-quoted-string | "(" , constant-expression , ")"
-    | constant-class-reference , "::" , ( semi-reserved-identifier | "{" , constant-expression , "}" ) ) ,
-    "(" , "..." , ")" ;
-
-constant-class-access =
-    constant-class-reference , "::" , ( semi-reserved-identifier | "{" , constant-expression , "}" ) ;
-
-constant-class-reference =
-    name | single-quoted-string | constant-double-quoted-string | "(" , constant-expression , ")" ;
-
 boolean-not-expression =
-    "!" , boolean-not-expression | instanceof-expression ;
+    instanceof-expression
+    | [ instanceof-prefix-context ] , "!" , boolean-not-expression ;
 
 clone-expression =
-    "clone" , ( clone-expression | prefix-unary-expression )
-    | "clone" , clone-argument-list | postfix-expression ;
+    "clone" , clone-expression | "clone" , clone-argument-list | postfix-expression ;
 
 dereferenceable-scalar =
     array-creation-expression | single-quoted-string | double-quoted-string ;
 
 new-dereferenceable =
-    "new" , class-name-reference , argument-list | "new" , anonymous-class ;
+    "new" , class-name-reference , constructor-argument-list | "new" , anonymous-class ;
 
 array-object-dereferenceable =
     fully-dereferenceable-expression | constant | magic-constant ;
@@ -1184,52 +1015,24 @@ backtick-string =
 newline =
     "\r\n" | "\n" | "\r" ;
 
-constant-postfix-expression =
-    constant-primary-expression
-    | constant-dereferenceable , ( "[" , constant-expression , "]"
-    | ( "->" | "?->" ) , ( semi-reserved-identifier | "{" , constant-expression , "}" ) ) ,
-    { "[" , constant-expression , "]"
-    | ( "->" | "?->" ) , ( semi-reserved-identifier | "{" , constant-expression , "}" ) } ;
-
-constant-dereferenceable =
-    constant | magic-constant | constant-class-access | array-creation-constant-expression
-    | single-quoted-string | constant-double-quoted-string | "(" , constant-expression , ")"
-    | constant-callable | "new" , name , constant-argument-list ;
-
 throw-expression =
-    "throw" , expression | arrow-expression ;
+    arrow-expression
+    | [ arrow-prefix-context ] , "throw" , throw-expression ;
 
 arrow-expression =
-    arrow-function | include-expression | logical-or-expression ;
+    include-expression | [ include-prefix-context ] , arrow-function ;
 
 print-expression =
-    "print" , print-expression | yield-expression ;
+    yield-expression
+    | [ yield-prefix-context ] , "print" , print-expression ;
 
 yield-expression =
-    "yield" , [ yield-from-expression , [ "=>" , yield-from-expression ] ] | yield-from-expression ;
+    yield-key-expression
+    | [ yield-key-prefix-context ] , "yield" , [ yield-expression ] ;
 
 yield-from-expression =
-    "yield" , "from" , assignment-expression | assignment-expression ;
-
-prefix-expression =
-    "throw" , expression | arrow-function | include-expression
-    | "print" , print-expression
-    | "yield" , [ yield-from-expression , [ "=>" , yield-from-expression ] ]
-    | "yield" , "from" , assignment-expression ;
-
-constant-literal =
-    integer-literal | floating-literal | constant-string-literal ;
-
-constant-string-literal =
-    single-quoted-string | constant-double-quoted-string | nowdoc-string | constant-heredoc ;
-
-constant-double-quoted-string =
-    [ "b" | "B" ] , "\"" , { string-text } , "\"" ;
-
-constant-heredoc =
-    [ "b" | "B" ] , "<<<" , { " " | "\t" } ,
-    ( heredoc-label | "\"" , heredoc-label , "\"" ) , newline ,
-    { string-text } , { " " | "\t" } , heredoc-label ;
+    assignment-expression
+    | [ assignment-prefix-context ] , "yield" , "from" , yield-from-expression ;
 
 parameter-default =
     constant-expression ;
@@ -1248,3 +1051,321 @@ enum-case-initializer =
 
 attribute-or-constructor-argument =
     constant-expression ;
+
+
+trait-alias-modifier =
+    "public" | "protected" | "private" | "final" ;
+
+
+ordinary-argument-list =
+    "(" , [ argument , { "," , argument } , [ "," ] ] , ")" ;
+
+
+first-class-callable-arguments =
+    "(" , "..." , ")" ;
+
+
+constructor-argument-list =
+    ordinary-argument-list | first-class-callable-arguments ;
+
+
+isset-variable-list =
+    isset-variable , { "," , isset-variable } ;
+
+
+isset-variable =
+    expression ;
+
+
+matched-statement =
+    simple-statement | matched-if-statement
+    | matched-while-statement | matched-for-statement
+    | matched-foreach-statement | matched-declare-statement ;
+
+
+simple-statement =
+    inline-html
+    | compound-statement
+    | do-statement
+    | switch-statement
+    | try-statement
+    | expression-statement
+    | void-cast-statement
+    | echo-statement
+    | global-statement
+    | static-statement
+    | unset-statement
+    | return-statement
+    | break-statement
+    | continue-statement
+    | goto-statement
+    | label-statement
+    | empty-statement ;
+
+
+unmatched-statement =
+    unmatched-if-statement | unmatched-while-statement
+    | unmatched-for-statement | unmatched-foreach-statement | unmatched-declare-statement ;
+
+
+matched-if-statement =
+    "if" , "(" , expression , ")" , matched-statement ,
+    { "elseif" , "(" , expression , ")" , matched-statement } , "else" , matched-statement
+    | alternative-if-statement ;
+
+
+unmatched-if-statement =
+    "if" , "(" , expression , ")" ,
+    ( statement
+    | matched-statement , { "elseif" , "(" , expression , ")" , matched-statement } ,
+      ( "elseif" , "(" , expression , ")" , unmatched-statement
+      | "else" , unmatched-statement )
+    | matched-statement , "elseif" , "(" , expression , ")" , matched-statement ,
+      { "elseif" , "(" , expression , ")" , matched-statement } ) ;
+
+
+alternative-if-statement =
+    "if" , "(" , expression , ")" , ":" , inner-statement-list ,
+    [ alt-elseif-list ] , [ alt-else-clause ] , "endif" , ";" ;
+
+
+matched-while-statement =
+    "while" , "(" , expression , ")" , matched-statement
+    | "while" , "(" , expression , ")" , ":" , inner-statement-list ,
+      "endwhile" , ";" ;
+
+
+unmatched-while-statement =
+    "while" , "(" , expression , ")" , unmatched-statement ;
+
+
+matched-for-statement =
+    "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
+      for-expression-list , ")" , matched-statement
+    | "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
+      for-expression-list , ")" , ":" , inner-statement-list , "endfor" , ";" ;
+
+
+unmatched-for-statement =
+    "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
+      for-expression-list , ")" , unmatched-statement ;
+
+
+matched-foreach-statement =
+    "foreach" , "(" , expression , "as" , foreach-target , ")" , matched-statement
+    | "foreach" , "(" , expression , "as" , foreach-target , ")" , ":" ,
+      inner-statement-list , "endforeach" , ";" ;
+
+
+unmatched-foreach-statement =
+    "foreach" , "(" , expression , "as" , foreach-target , ")" , unmatched-statement ;
+
+
+matched-declare-statement =
+    "declare" , "(" , declare-directive-list , ")" , matched-statement
+    | "declare" , "(" , declare-directive-list , ")" , ":" ,
+      inner-statement-list , "enddeclare" , ";" ;
+
+
+unmatched-declare-statement =
+    "declare" , "(" , declare-directive-list , ")" , unmatched-statement ;
+
+
+arrow-prefix-context =
+    include-prefix-context | [ include-prefix-context ] , arrow-function-header , [ arrow-prefix-context ] ;
+
+
+include-prefix-context =
+    logical-or-prefix-context | [ logical-or-prefix-context ] , include-operator , [ include-prefix-context ] ;
+
+
+logical-or-prefix-context =
+    logical-xor-prefix-context | logical-or-expression , "or" , [ logical-xor-prefix-context ] ;
+
+
+logical-xor-prefix-context =
+    logical-and-prefix-context | logical-xor-expression , "xor" , [ logical-and-prefix-context ] ;
+
+
+logical-and-prefix-context =
+    print-prefix-context | logical-and-expression , "and" , [ print-prefix-context ] ;
+
+
+print-prefix-context =
+    yield-prefix-context | [ yield-prefix-context ] , "print" , [ print-prefix-context ] ;
+
+
+yield-prefix-context =
+    yield-key-prefix-context
+    | [ yield-key-prefix-context ] , "yield" , [ yield-prefix-context ] ;
+
+
+yield-from-prefix-context =
+    assignment-prefix-context | [ assignment-prefix-context ] , "yield" , "from" , [ yield-from-prefix-context ] ;
+
+
+assignment-prefix =
+    variable-expression , assignment-operator | list-expression , "=" ;
+
+
+assignment-prefix-context =
+    conditional-prefix-context | assignment-prefix , { assignment-prefix } , [ conditional-prefix-context ] ;
+
+
+conditional-prefix-context =
+    coalesce-prefix-context
+    | conditional-expression , "?" , [ expression ] , ":" , [ coalesce-prefix-context ] ;
+
+
+coalesce-prefix-context =
+    boolean-or-prefix-context | boolean-or-expression , "??" , { boolean-or-expression , "??" } , [ boolean-or-prefix-context ] ;
+
+
+boolean-or-prefix-context =
+    boolean-and-prefix-context | boolean-or-expression , "||" , [ boolean-and-prefix-context ] ;
+
+
+boolean-and-prefix-context =
+    bitwise-or-prefix-context | boolean-and-expression , "&&" , [ bitwise-or-prefix-context ] ;
+
+
+bitwise-or-prefix-context =
+    bitwise-xor-prefix-context | bitwise-or-expression , "|" , [ bitwise-xor-prefix-context ] ;
+
+
+bitwise-xor-prefix-context =
+    bitwise-and-prefix-context | bitwise-xor-expression , "^" , [ bitwise-and-prefix-context ] ;
+
+
+bitwise-and-prefix-context =
+    equality-prefix-context | bitwise-and-expression , "&" , [ equality-prefix-context ] ;
+
+
+equality-prefix-context =
+    relational-prefix-context | relational-expression , ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , [ relational-prefix-context ] ;
+
+
+relational-prefix-context =
+    pipe-prefix-context | pipe-expression , ( "<" | "<=" | ">" | ">=" ) , [ pipe-prefix-context ] ;
+
+
+pipe-prefix-context =
+    concatenation-prefix-context | pipe-expression , "|>" , [ concatenation-prefix-context ] ;
+
+
+concatenation-prefix-context =
+    shift-prefix-context | concatenation-expression , "." , [ shift-prefix-context ] ;
+
+
+shift-prefix-context =
+    additive-prefix-context | shift-expression , ( "<<" | ">>" ) , [ additive-prefix-context ] ;
+
+
+additive-prefix-context =
+    multiplicative-prefix-context | additive-expression , ( "+" | "-" ) , [ multiplicative-prefix-context ] ;
+
+
+multiplicative-prefix-context =
+    boolean-not-prefix-context | multiplicative-expression , ( "*" | "/" | "%" ) , [ boolean-not-prefix-context ] ;
+
+
+boolean-not-prefix-context =
+    instanceof-prefix-context | [ instanceof-prefix-context ] , "!" , [ boolean-not-prefix-context ] ;
+
+
+instanceof-prefix-context =
+    unary-prefix-context ;
+
+
+unary-prefix-context =
+    power-prefix-context | [ power-prefix-context ] , unary-operator , [ unary-prefix-context ] ;
+
+
+power-prefix-context =
+    clone-prefix-context | clone-expression , "**" , { clone-expression , "**" } , [ clone-prefix-context ] ;
+
+
+clone-prefix-context =
+    "clone" , { "clone" } ;
+
+
+arrow-function-header =
+    [ attribute-groups ] , [ "static" ] , "fn" , [ "&" ] ,
+    "(" , parameter-list , ")" , return-type , "=>" ;
+
+
+include-operator =
+    "include" | "include_once" | "require" | "require_once" ;
+
+
+unary-operator =
+    "+" | "-" | "~" | "@" | cast-operator ;
+
+
+cast-operator =
+    "(int)" | "(integer)" | "(float)" | "(double)" | "(string)"
+    | "(binary)" | "(array)" | "(object)" | "(bool)" | "(boolean)" ;
+
+yield-key-expression =
+    yield-from-expression
+    | [ yield-from-prefix-context ] , "yield" , yield-key , "=>" , yield-key-expression ;
+
+yield-key-prefix-context =
+    yield-from-prefix-context
+    | [ yield-from-prefix-context ] , "yield" , yield-key , "=>" , [ yield-key-prefix-context ] ;
+
+closed-yield-throw-expression =
+    closed-yield-arrow-expression
+    | [ closed-yield-arrow-prefix-context ] , "throw" , closed-yield-throw-expression ;
+
+closed-yield-arrow-expression =
+    closed-yield-include-expression | [ closed-yield-include-prefix-context ] , arrow-function-header , closed-yield-arrow-expression ;
+
+closed-yield-arrow-prefix-context =
+    closed-yield-include-prefix-context | [ closed-yield-include-prefix-context ] , arrow-function-header , [ closed-yield-arrow-prefix-context ] ;
+
+closed-yield-include-expression =
+    closed-yield-logical-or-expression
+    | [ closed-yield-logical-or-prefix-context ] , include-operator , closed-yield-include-expression ;
+
+closed-yield-include-prefix-context =
+    closed-yield-logical-or-prefix-context | [ closed-yield-logical-or-prefix-context ] , include-operator , [ closed-yield-include-prefix-context ] ;
+
+closed-yield-logical-or-expression =
+    closed-yield-logical-xor-expression , { "or" , closed-yield-logical-xor-expression } ;
+
+closed-yield-logical-or-prefix-context =
+    closed-yield-logical-xor-prefix-context | closed-yield-logical-or-expression , "or" , [ closed-yield-logical-xor-prefix-context ] ;
+
+closed-yield-logical-xor-expression =
+    closed-yield-logical-and-expression , { "xor" , closed-yield-logical-and-expression } ;
+
+closed-yield-logical-xor-prefix-context =
+    closed-yield-logical-and-prefix-context | closed-yield-logical-xor-expression , "xor" , [ closed-yield-logical-and-prefix-context ] ;
+
+closed-yield-logical-and-expression =
+    closed-yield-print-expression , { "and" , closed-yield-print-expression } ;
+
+closed-yield-logical-and-prefix-context =
+    closed-yield-print-prefix-context | closed-yield-logical-and-expression , "and" , [ closed-yield-print-prefix-context ] ;
+
+closed-yield-print-expression =
+    closed-yield-yield-expression
+    | [ closed-yield-yield-prefix-context ] , "print" , closed-yield-print-expression ;
+
+closed-yield-print-prefix-context =
+    closed-yield-yield-prefix-context | [ closed-yield-yield-prefix-context ] , "print" , [ closed-yield-print-prefix-context ] ;
+
+closed-yield-yield-expression =
+    yield-key-expression | [ yield-key-prefix-context ] , "yield" ;
+
+closed-yield-yield-prefix-context =
+    yield-key-prefix-context ;
+
+yield-key =
+    closed-yield-yield-expression
+    | [ yield-key-prefix-context ] ,
+      ( "throw" , closed-yield-throw-expression
+      | arrow-function-header , closed-yield-arrow-expression
+      | include-operator , closed-yield-include-expression
+      | "print" , closed-yield-print-expression ) ;

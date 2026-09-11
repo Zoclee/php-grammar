@@ -60,7 +60,7 @@ final readonly class PhpGrammarMatcher
             foreach ($tokens->all() as $token) {
                 if ($token->type === TokenType::HeredocString || $token->type === TokenType::BacktickString
                     || ($token->type === TokenType::StringLiteral && preg_match('/^[bB]?"/', $token->lexeme))) {
-                    foreach (StringSyntax::fragments($token->lexeme) as [$fragmentRule, $fragment]) {
+                    foreach (StringSyntax::fragments($token->lexeme, $this->shortOpenTag) as [$fragmentRule, $fragment]) {
                         if (!$this->matchesRule($version, $fragmentRule, $fragment)->matched) {
                             throw new LexerException('Invalid ' . $fragmentRule . ' in string interpolation.');
                         }
