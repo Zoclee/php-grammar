@@ -53,7 +53,7 @@ result = {'source_pin':'7a4c62795365ed6a97a0184c96375b9fb4d53b1e', 'sha256': loc
           'scope':'Every direct fatal diagnostic call in zend_compile.c; parser-reachable helpers classified before folding. Runtime/deferred helpers in other translation units and individual-path fixture completeness remain outside this inventory.',
           'parser_reachable_functions': sorted(early), 'sites': rows}
 output = json.dumps(result, indent=2)+'\n'
-path = root/'docs/php85-compiler-boundaries.json'
+path = root/'docs/8.5/compiler-boundaries.json'
 if args.check:
     if path.read_text() != output: raise SystemExit('Compiler boundary inventory is stale')
 else:

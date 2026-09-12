@@ -76,7 +76,7 @@ Successful structural paths do not prove contextual validity or unique AST
 grouping. Lexical primitives are exercised through lexer and differential
 fixtures. Coverage has no minimum threshold.
 
-See `docs/php85-audit-remediation.md` for remaining discrepancies. Source
+See `docs/8.5/audit-remediation.md` for remaining discrepancies. Source
 inventory coverage is not an exhaustive production-by-production equivalence
 proof.
 
@@ -123,11 +123,11 @@ bypassed. Removed trivia has its own category. New gaps remain visible and make
 the report command fail until investigated. No percentage threshold is used.
 
 Current coverage and the language-area/feature matrices are in
-[php85-phase3-coverage.md](php85-phase3-coverage.md).
+[8.5/phase3-coverage.md](8.5/phase3-coverage.md).
 
 ## Systematic negative boundaries (Grammar Completeness Phase 4)
 
-The [negative ledger](php85-negative-boundaries.md) pairs 250 structural-negative
+The [negative ledger](8.5/negative-boundaries.md) pairs 250 structural-negative
 and 22 contextual-negative sources with 272 nearby valid repairs. It anchors
 124 productions across every major syntax area and all 14 requested boundary
 categories. These are reviewed examples, not exhaustive alternative or mutation
@@ -140,7 +140,7 @@ PHP lint. Every positive repair must pass both. The ledger reviews all 85
 contextual-negative fixtures separately, including the 63 inherited fixtures;
 none count as EBNF rejection evidence. This classification describes repository
 behavior, not whether Zend diagnoses an error during parsing or compilation.
-The [parser/compiler boundary remediation](php85-parser-compiler-remediation.md)
+The [parser/compiler boundary remediation](8.5/parser-compiler-remediation.md)
 removes the earlier structural restrictions responsible for discarded nested
 declaration discrepancies. Parser-action constraints still precede folding.
 
@@ -158,7 +158,7 @@ restrictions retain their earlier live/dead witnesses. Repeated hooks and type,
 promotion, enum consistency and write-context rules remain separately documented.
 
 Contributor instructions, source evidence, gap dispositions and verification
-results are in [the Phase 4 report](php85-phase4-negative-coverage.md). Regenerate
+results are in [the Phase 4 report](8.5/phase4-negative-coverage.md). Regenerate
 the negative ledger with `php tools/php85-negative-report.php`; `--check` detects
 changes to ledger metadata, grammar, fixture content or corpus membership.
 PHPUnit checks fixture/ledger parity, production references, classifications,
@@ -168,7 +168,7 @@ distinct repairs, contextual-review completeness and report freshness.
 
 `composer lexer:coverage` executes independent source/token matrices, numeric
 and string primitives, and whole-source lexical integration cases. It checks
-the generated [lexical ledger](php85-phase5-lexical-evidence.json) for freshness;
+the generated [lexical ledger](8.5/phase5-lexical-evidence.json) for freshness;
 use `composer lexer:coverage -- --write` after reviewed changes. The ledger maps
 each of the 190 source rules and every remaining primitive/trivia grammar
 identity to implementation, states, evidence, and disposition. It measures
@@ -200,5 +200,5 @@ lexical rejection/integration cases in parser mode, and compares token streams
 for the ordinary valid corpus. Token values and internal string-token counts
 are intentionally abstracted. `token_get_all()` is used only by this optional
 tool, never by the lexer, primitives, coverage correctness, or normal PHPUnit
-recognition. See [Phase 5](php85-phase5-lexer-audit.md) for the normalization
+recognition. See [Phase 5](8.5/phase5-lexer-audit.md) for the normalization
 rules, known folding discrepancy, and remaining proof limits.

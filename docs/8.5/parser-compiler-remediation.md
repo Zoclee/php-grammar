@@ -1,7 +1,7 @@
 # PHP 8.5 parser/compiler boundary remediation
 
 Phase 5 update: the declaration and AST decisions below remain in force.
-The [scanner audit](php85-phase5-lexer-audit.md) now adds direct evidence for all
+The [scanner audit](phase5-lexer-audit.md) now adds direct evidence for all
 190 scanner rules and records one new folding discrepancy, `false && (unset) 1;`.
 The historical statement below about zero recorded discrepancies describes this
 report's original validation, not the current corpus. Current counts and the
@@ -27,9 +27,9 @@ The source pin remains `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`:
 - [Compiler](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_compile.c)
 
 All three SHA-256 hashes were verified against `tools/php85-source-lock.json`.
-The [source inventory](php85-source-inventory.json) contains 177 parser
+The [source inventory](source-inventory.json) contains 177 parser
 productions, 190 scanner rules, and 143 selected compiler functions.
-The new [fatal diagnostic inventory](php85-compiler-boundaries.json) records
+The new [fatal diagnostic inventory](compiler-boundaries.json) records
 244 direct fatal diagnostic sites in 87 functions, including 14 sites in
 parser-reachable helpers. Constant-folding failures and implementation resource
 limits are classified separately. It includes locations and diagnostics, not
@@ -102,7 +102,7 @@ complete and standalone, with 363 productions.
 
 ## Fixtures and independent checks
 
-The [boundary matrix](../tests/fixtures/php/8.5/parser-compiler-boundaries.json)
+The [boundary matrix](../../tests/fixtures/php/8.5/parser-compiler-boundaries.json)
 contains 85 families with separate live, retained-static-closure and discarded
 ternary fixtures: 84 compiler-invalid families and the accepted `&set` exception.
 Each family records its parser/compiler evidence. There are 255 matrix PHP
@@ -119,7 +119,7 @@ It checks both structural acceptance and PHP lint. It does not assume that
 AND/OR visit children in the same order as ternary/coalesce; the normative
 folding traversal in `php.md` is preserved.
 
-The [structure matrix](../tests/fixtures/php/8.5/parser-structure.json) supplies
+The [structure matrix](../../tests/fixtures/php/8.5/parser-structure.json) supplies
 59 expressions/statements and explicit parenthesized/braced equivalents.
 `ext-ast` compares the actual Zend ASTs; only line metadata, declaration IDs and
 the explicit-parentheses marker on conditional nodes are normalized away.

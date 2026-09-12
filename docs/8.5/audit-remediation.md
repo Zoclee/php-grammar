@@ -1,11 +1,11 @@
 # PHP 8.5 audit and remediation
 
-The [remaining-audit corrections](php85-remaining-audit.md) supersede this
+The [remaining-audit corrections](remaining-audit.md) supersede this
 historical report's precedence, dangling-else, folding and scanner status.
 The validation counts below are retained as a historical baseline.
 
-Grammar Completeness [Phase 4](php85-phase4-negative-coverage.md) supplies the
-current negative-boundary results and [complete contextual review](php85-negative-boundaries.md).
+Grammar Completeness [Phase 4](phase4-negative-coverage.md) supplies the
+current negative-boundary results and [complete contextual review](negative-boundaries.md).
 There are 917 ordinary fixtures and two separately retained discarded-closure
 discrepancies. No new grammar, scanner, adapter, matcher or chart-recognizer
 correction was required by the Phase 4 matrix; full conformance remains unproven.
@@ -24,7 +24,7 @@ references in `docs/sources.md` do not override these implementation sources.
 
 The source inventory records every parser production, scanner rule entry,
 compiler function in the selected compile-related families, and EBNF production.
-It provides locations and file hashes in `docs/php85-source-inventory.json`.
+It provides locations and file hashes in `docs/8.5/source-inventory.json`.
 There are 177 parser productions and 190 scanner rule entries. Regenerate with:
 
 ```text
@@ -128,7 +128,7 @@ The following counts are the historical post-audit baseline. Grammar
 Completeness Phase 3 subsequently adds positive evidence for imports, trait
 precedence/aliases (including every reserved alias alternative), alternate
 source transitions, dereference categories, operator/type matrices, and hooks.
-See [the Phase 3 report](php85-phase3-coverage.md) for current counts and the
+See [the Phase 3 report](phase3-coverage.md) for current counts and the
 generated per-element evidence ledger. No canonical grammar correction was
 required in Phase 3. The original regression corpus remains in all checks.
 

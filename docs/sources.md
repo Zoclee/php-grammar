@@ -1,7 +1,7 @@
 # Sources
 
-The [Phase 5 scanner audit](php85-phase5-lexer-audit.md) and generated
-[lexical evidence ledger](php85-phase5-lexical-evidence.json) map every one of
+The [Phase 5 scanner audit](8.5/phase5-lexer-audit.md) and generated
+[lexical evidence ledger](8.5/phase5-lexical-evidence.json) map every one of
 the 190 pinned scanner rules to states, implementation, positive/boundary
 evidence, and disposition. The same source pin and SHA-256 lock remain in use.
 Supporting review includes `zend_scan_escape_string`, indentation/newline and
@@ -22,14 +22,14 @@ The current remediation uses branch `PHP-8.5` at commit
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e` for
 `Zend/zend_language_parser.y`, `Zend/zend_language_scanner.l`, and
 `Zend/zend_compile.c`. File hashes and rule/function locations are recorded in
-`php85-source-inventory.json`. See `php85-audit-remediation.md` for changes,
+`8.5/source-inventory.json`. See `8.5/audit-remediation.md` for changes,
 regressions, verification results, and unresolved discrepancies. Earlier
 release-tag/RFC references below remain supporting historical evidence.
 
 This document defines the source policy for the `php-grammar` repository.
 
 Grammar Completeness Phase 3 uses the same implementation pin and verified
-PHP 8.5.10 binary. The [positive coverage report](php85-phase3-coverage.md)
+PHP 8.5.10 binary. The [positive coverage report](8.5/phase3-coverage.md)
 maps syntax areas and 8.5 additions to parser/compiler families and fixtures.
 The official distribution's `NEWS` entry for PHP 8.5.0 was also reviewed for
 casts, closures and first-class callables in constant expressions, pipe,
@@ -38,7 +38,7 @@ extra EBNF alternatives merely because their names are new.
 
 Grammar Completeness Phase 4 reverified the SHA-256 hashes of all three pinned
 source files against `tools/php85-source-lock.json`. Its
-[negative-boundary ledger](php85-negative-boundaries.md) records parser/scanner
+[negative-boundary ledger](8.5/negative-boundaries.md) records parser/scanner
 families or compiler functions for each pair and each contextual review.
 PHP 8.5.10 lint independently checks the fixtures without executing them.
 

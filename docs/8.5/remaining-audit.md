@@ -1,13 +1,13 @@
 # PHP 8.5 remaining-audit corrections
 
-Historical audit snapshot. The [parser/compiler boundary remediation](php85-parser-compiler-remediation.md) supersedes its outstanding-gap descriptions and counts.
+Historical audit snapshot. The [parser/compiler boundary remediation](parser-compiler-remediation.md) supersedes its outstanding-gap descriptions and counts.
 
 The audited expression/statement ambiguities, interface `var` properties,
 argument categories, constant-expression folding and scanner boundaries are
 corrected. **Full PHP 8.5 conformance is not established:** two confirmed
 discarded-declaration discrepancies remain.
 
-Grammar Completeness [Phase 4](php85-phase4-negative-coverage.md) now adds 272
+Grammar Completeness [Phase 4](phase4-negative-coverage.md) now adds 272
 nearby-invalid/repair pairs and reviews all contextual negatives. Its current
 validation counts supersede the historical counts below: 917 ordinary
 differential fixtures, zero unexpected mismatches, and the same two separately

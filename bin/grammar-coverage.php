@@ -35,7 +35,7 @@ try {
             ksort($counts);
             echo $kind . ': ' . json_encode($counts, JSON_THROW_ON_ERROR) . "\n";
         }
-        echo "Evidence and regeneration: docs/php85-phase3-coverage.md\n";
+        echo "Evidence and regeneration: docs/8.5/phase3-coverage.md\n";
     }
     exit(0);
 } catch (Throwable $exception) {

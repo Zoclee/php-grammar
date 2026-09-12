@@ -4,7 +4,7 @@
 
 Versioned EBNF grammars and human-readable specifications for the PHP language syntax.
 
-php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [Phase 5 findings and limits](docs/php85-phase5-lexer-audit.md).
+php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [Phase 5 findings and limits](docs/8.5/phase5-lexer-audit.md).
 
 The PHP 8.5 parser/compiler boundary audit reconciles common class-like members,
 enum types, trait aliases, hooks, attributes and try syntax. It adds 85
@@ -16,20 +16,20 @@ Full PHP 8.5 conformance is not established.
 
 Grammar Completeness Phase 5 audits all 190 pinned scanner rules across 25
 families. `composer lexer:coverage` checks independent byte/token expectations,
-lexical primitives, and a [persistent evidence ledger](docs/php85-phase5-lexical-evidence.json).
+lexical primitives, and a [persistent evidence ledger](docs/8.5/phase5-lexical-evidence.json).
 It preserves the 52 primitive-bypassed and 11 removed-trivia productions without
 inflating syntactic coverage. The audit fixes enum/yield lookahead, keyword
 adaptation, heredoc EOF handling, removed `(real)` recognition, and CRLF tracking.
 One newly recorded folding discrepancy, `false && (unset) 1;`, remains for
-Phase 6. See the [audit report](docs/php85-phase5-lexer-audit.md) for reproduction
+Phase 6. See the [audit report](docs/8.5/phase5-lexer-audit.md) for reproduction
 commands, source-byte guarantees, scanner abstractions, and validation totals.
 
 Current positive evidence is recorded in the generated coverage report.
-Rejection evidence has a separate [boundary ledger](docs/php85-negative-boundaries.md),
+Rejection evidence has a separate [boundary ledger](docs/8.5/negative-boundaries.md),
 with 14 boundary categories and no misleading rejection percentage. See the
-[Phase 4 report](docs/php85-phase4-negative-coverage.md),
-[Phase 3 evidence](docs/php85-phase3-coverage.md), and
-[generated positive witnesses](docs/php85-phase3-coverage.json).
+[Phase 4 report](docs/8.5/phase4-negative-coverage.md),
+[Phase 3 evidence](docs/8.5/phase3-coverage.md), and
+[generated positive witnesses](docs/8.5/phase3-coverage.json).
 
 ## Purpose
 
@@ -287,7 +287,7 @@ modifiers, impossible type combinations, and some compile-time contextual
 checks, are documented as contextual constraints rather than treated as runtime
 semantics.
 
-See [docs/php85-audit-remediation.md](docs/php85-audit-remediation.md) for the
+See [docs/8.5/audit-remediation.md](docs/8.5/audit-remediation.md) for the
 Phase 2 audit disposition checklist.
 
 Grammar coverage reporting measures which EBNF productions and branches are
@@ -310,12 +310,12 @@ Positive coverage generation fails if a positive input is rejected.
 For Grammar Completeness Phase 4, add minimal `invalid/phase4-*.php` or
 `contextual-invalid/phase4-*.php` fixtures and matching `valid/phase4-*.php`
 repairs. Record the production anchor, boundary category, classification, and
-pinned source evidence in `docs/php85-negative-boundaries.json`. Update the
+pinned source evidence in `docs/8.5/negative-boundaries.json`. Update the
 contextual review for every contextual-negative fixture. All ordinary fixtures
 automatically participate in PHPUnit and differential lint. Constant-expression
 and argument-order restrictions may be contextual even when they look structural:
 PHP can discard an invalid operation before checking it. Follow the
-[negative-boundary methodology](docs/php85-phase4-negative-coverage.md).
+[negative-boundary methodology](docs/8.5/phase4-negative-coverage.md).
 
 ```text
 php tools/php85-coverage-report.php

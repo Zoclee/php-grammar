@@ -1,6 +1,6 @@
 # Grammar Conventions
 
-PHP 8.5's [Phase 5 scanner audit](php85-phase5-lexer-audit.md) defines the current
+PHP 8.5's [Phase 5 scanner audit](8.5/phase5-lexer-audit.md) defines the current
 byte-oriented source profile and lexical evidence policy. Token offsets,
 lengths, and columns count raw bytes; CRLF is one newline. Lexical primitives
 and removed trivia have direct evidence outside syntactic production coverage.

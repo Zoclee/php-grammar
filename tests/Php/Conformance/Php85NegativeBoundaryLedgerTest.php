@@ -12,7 +12,7 @@ final class Php85NegativeBoundaryLedgerTest extends TestCase
     public function testBoundariesHaveDistinctRepairsAndTraceableClassifications(): void
     {
         $root = dirname(__DIR__, 3);
-        $data = json_decode(file_get_contents($root . '/docs/php85-negative-boundaries.json'), true, flags: JSON_THROW_ON_ERROR);
+        $data = json_decode(file_get_contents($root . '/docs/8.5/negative-boundaries.json'), true, flags: JSON_THROW_ON_ERROR);
         $grammar = (new GrammarRepository($root))->load('8.5');
         $fixtureRoot = $root . '/tests/fixtures/php/8.5/';
         $errors = $ids = $fixtures = $categories = [];
@@ -56,7 +56,7 @@ final class Php85NegativeBoundaryLedgerTest extends TestCase
     public function testEveryContextualNegativeAndKnownDiscrepancyHasAReview(): void
     {
         $root = dirname(__DIR__, 3);
-        $data = json_decode(file_get_contents($root . '/docs/php85-negative-boundaries.json'), true, flags: JSON_THROW_ON_ERROR);
+        $data = json_decode(file_get_contents($root . '/docs/8.5/negative-boundaries.json'), true, flags: JSON_THROW_ON_ERROR);
         $fixtureRoot = $root . '/tests/fixtures/php/8.5/';
         $actual = [];
         foreach (['', 'short-tags-disabled/'] as $profile) {
@@ -93,7 +93,7 @@ final class Php85NegativeBoundaryLedgerTest extends TestCase
 
     public function testPhase3BacklogRetainsHistoricalWitnesses(): void
     {
-        $path = dirname(__DIR__, 3) . '/docs/php85-phase3-coverage.json';
+        $path = dirname(__DIR__, 3) . '/docs/8.5/phase3-coverage.json';
         $data = json_decode(file_get_contents($path), true, flags: JSON_THROW_ON_ERROR);
         $phase4Witnesses = array_filter($data['baseline_backlog'],
             static fn (array $row): bool => preg_match('/^fixture:phase[45]-/', $row['evidence'] ?? '') === 1);

@@ -62,7 +62,7 @@ $data = [
     'rule_cases' => array_map(static fn ($case) => ['rule' => $case->rule, 'source' => $case->source], $cases),
 ];
 $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
-$path = $root . '/docs/php85-phase3-coverage.json';
+$path = $root . '/docs/8.5/phase3-coverage.json';
 if (in_array('--check', $argv, true)) {
     if (!is_file($path) || file_get_contents($path) !== $json) {
         fwrite(STDERR, "Phase 3 coverage report is stale. Run php tools/php85-coverage-report.php\n");

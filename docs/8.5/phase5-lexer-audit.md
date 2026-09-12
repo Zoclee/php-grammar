@@ -7,7 +7,7 @@ not a proof of all possible scanner/parser state combinations or full PHP 8.5
 language conformance. One newly discovered **folding-dependent acceptance
 discrepancy** remains assigned to Phase 6.
 
-The [generated lexical ledger](php85-phase5-lexical-evidence.json) is the
+The [generated lexical ledger](phase5-lexical-evidence.json) is the
 machine-readable audit index. It records the original scanner rule and line,
 lexical states, repository implementation, status, family evidence, deliberate
 abstractions, supporting helper/parser sources, and every primitive/trivia
@@ -278,8 +278,8 @@ Added:
 - `tests/fixtures/php/8.5/valid/phase5-{yield-comment-close,real-name,enum-name}.php`
 - `tests/fixtures/php/8.5/invalid/phase5-{real-parentheses,enum-prefix}.php`
 - `tests/fixtures/php/8.5/known-discrepancies/valid/phase5-discarded-unset.php`
-- `docs/php85-phase5-lexer-audit.md`
-- `docs/php85-phase5-lexical-evidence.json`
+- `docs/8.5/phase5-lexer-audit.md`
+- `docs/8.5/phase5-lexical-evidence.json`
 
 Changed:
 
@@ -288,8 +288,8 @@ Changed:
 - `tests/Php/Conformance/{Php85CoverageClassificationTest,Php85NegativeBoundaryLedgerTest}.php`
 - `tools/{php85-source-inventory.py,php85-coverage-report.php}`
 - `composer.json`, `README.md`, `grammar/8.5/php.md`
-- `docs/{conformance,grammar-conventions,sources,php85-phase3-coverage,php85-phase4-negative-coverage,php85-parser-compiler-remediation}.md`
-- Generated `docs/php85-phase3-coverage.json`, `docs/php85-source-inventory.json`,
+- `docs/{conformance,grammar-conventions,sources}.md` and `docs/8.5/{phase3-coverage,phase4-negative-coverage,parser-compiler-remediation}.md`
+- Generated `docs/8.5/phase3-coverage.json`, `docs/8.5/source-inventory.json`,
   and the negative ledger's `.json` and `.md` files.
 
 Removed: **none**. The canonical `grammar/8.5/php.ebnf` remains unchanged and

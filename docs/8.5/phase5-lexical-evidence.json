@@ -10,10 +10,10 @@
         "src/Php/Conformance/PhpGrammarMatcher.php": "1ea7d24e027d7e94eb0d6ee3a256b7247c0f47aa0ffc7aa027bf026f94e0c355",
         "src/Php/Conformance/PhpGrammarInput.php": "09c02bde1e0d3183bb0afe89969c6ac2cbfd9dd3311650e7352ff1231a786e8e",
         "tests/Support/Php85LexicalCases.php": "2b5cf3fbc6e248b9f3c1eccbbaebbd7d15e14bd7b65aaebf751c697a15c4a68d",
-        "tests/Support/Php85LexicalAudit.php": "8408e078a0011700d14818f4a594c25431438340ff441791c23318a4a26a1363",
+        "tests/Support/Php85LexicalAudit.php": "66d2a0ac6438c9fb2e970c2ce94033cecf640067c8e8bf8f63691ce8738aef06",
         "tools/php85-lexer-differential.php": "9ec968a81bfef862d5a64e397f1e4d5d67ef4f08d202e0a70ba67bf9f10892e5",
-        "docs/php85-source-inventory.json": "2ed2b6da0d5de6a9aca70b291278167a9d04de9a38cbf5b2ab153a2265c02992",
-        "docs/php85-phase3-coverage.json": "9e28da7bf6eba27e9f3b0efa5d91a25ec151304c6effc15adef5d62070e1de3a",
+        "docs/8.5/source-inventory.json": "2ed2b6da0d5de6a9aca70b291278167a9d04de9a38cbf5b2ab153a2265c02992",
+        "docs/8.5/phase3-coverage.json": "d86e289fbc3af533804359a6a9f30d401b65a411c25a96cb251f7350de51bec1",
         "grammar/8.5/php.ebnf": "e6dc2cdc4e5d6c8d1783e980ab46f352fdb4e98954424c1a20aed79794330ffc"
     },
     "families": {
@@ -7123,7 +7123,7 @@
             "classification": "contextual-only",
             "area": "types",
             "reason": "never/void are return-only; this helper is used for parameters and properties. Positive type/return coverage exists, but this placement has no valid source witness.",
-            "evidence": "Php85CoverageCases type matrix; contextual-invalid/audit-types-parameter-void.php; docs/php85-audit-remediation.md"
+            "evidence": "Php85CoverageCases type matrix; contextual-invalid/audit-types-parameter-void.php; docs/8.5/audit-remediation.md"
         }
     ],
     "scanner_context_only": [
@@ -7133,7 +7133,7 @@
             "classification": "scanner-context-only",
             "area": "source/lexical",
             "reason": "The non-primitive path is an unmodified trait alias immediately before a semicolon. enum is then T_STRING, handled by identifier; the T_ENUM lookahead requires a following label-start byte. Earlier coverage incorrectly matched its identifier spelling as a keyword terminal.",
-            "evidence": "docs/php85-phase5-lexer-audit.md; scanner rules 1568/1572; trait_alias parser production; phase3 keyword-alias corpus"
+            "evidence": "docs/8.5/phase5-lexer-audit.md; scanner rules 1568/1572; trait_alias parser production; phase3 keyword-alias corpus"
         }
     ],
     "syntax_evidence": [

@@ -1,6 +1,6 @@
 # PHP 8.5 Grammar Completeness — Phase 4 of 7
 
-Phase 5 update: [the scanner audit](php85-phase5-lexer-audit.md) supersedes
+Phase 5 update: [the scanner audit](phase5-lexer-audit.md) supersedes
 scanner-evidence gaps and current counts in this historical report. It maps
 all 190 scanner rules, preserves 52 primitive-bypassed and 11 removed-trivia
 productions, and removes one false reserved-enum alternative hit (601 to 600).
@@ -8,7 +8,7 @@ The original contextual-only alternative remains; one scanner-context-only
 alternative is now explicit. A newly recorded discarded-unset folding witness
 is assigned to Phase 6. Historical phase-specific results below are retained.
 
-Historical audit snapshot. The [parser/compiler boundary remediation](php85-parser-compiler-remediation.md) supersedes its outstanding-gap descriptions and counts.
+Historical audit snapshot. The [parser/compiler boundary remediation](parser-compiler-remediation.md) supersedes its outstanding-gap descriptions and counts.
 
 Phase 4 establishes systematic nearby-invalid evidence for every major PHP 8.5
 syntax area. It adds **250 structural-negative fixtures, 22 contextual-negative
@@ -50,10 +50,10 @@ incompatible alternatives. A paired valid file demonstrates the nearby form
 that should still be accepted. The two files intentionally share a descriptive
 boundary basename in their respective classification directories.
 
-The machine-readable [ledger](php85-negative-boundaries.json) records each
+The machine-readable [ledger](negative-boundaries.json) records each
 negative/repair pair, production anchor, syntax area, boundary category,
 classification and pinned source evidence. Its generated
-[readable report](php85-negative-boundaries.md) contains every fixture path,
+[readable report](negative-boundaries.md) contains every fixture path,
 category totals, the complete contextual review and the known gap dispositions.
 The 272 pairs anchor 124 distinct productions. Anchors locate the syntax under
 review; they do not prove that every alternative or combination has been
@@ -147,7 +147,7 @@ the installed executable.
 The parser, scanner and compiler hashes match the locked source pin
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`. The known fixtures still produce
 **repository rejection / PHP 8.5.10 acceptance**, separately from the ordinary
-corpus. Pinned evidence and locations are linked in [sources.md](sources.md).
+corpus. Pinned evidence and locations are linked in [sources.md](../sources.md).
 
 | Gap | Source and owning layer | Phase 4 disposition |
 |---|---|---|
@@ -196,7 +196,7 @@ The final differential run has no unexpected mismatch.
    `contextual-invalid/phase4-<area>-<boundary>.php` file and the matching
    `valid/phase4-<area>-<boundary>.php` repair. Keep both complete source files.
 3. Add their paths, production anchor, boundary category, classification and
-   evidence to `docs/php85-negative-boundaries.json`. Add a contextual review
+   evidence to `docs/8.5/negative-boundaries.json`. Add a contextual review
    entry whenever the negative requires contextual rejection. Document any
    folded/dead-branch exception instead of silently tightening the EBNF.
 4. Run the ordinary PHPUnit/differential suites. Both sides of each pair must
@@ -265,7 +265,7 @@ The scope limitations below remain in force.
 ## File inventory
 
 Added fixtures: **544 files**, all enumerated with clickable negative and
-positive paths in [the generated ledger](php85-negative-boundaries.md):
+positive paths in [the generated ledger](negative-boundaries.md):
 
 - `tests/fixtures/php/8.5/invalid/phase4-*.php`: 250 files.
 - `tests/fixtures/php/8.5/contextual-invalid/phase4-*.php`: 22 files.
@@ -273,24 +273,24 @@ positive paths in [the generated ledger](php85-negative-boundaries.md):
 
 Added reporting and tests:
 
-- [docs/php85-negative-boundaries.json](php85-negative-boundaries.json)
-- [docs/php85-negative-boundaries.md](php85-negative-boundaries.md)
-- [docs/php85-phase4-negative-coverage.md](php85-phase4-negative-coverage.md)
-- [tools/php85-negative-report.php](../tools/php85-negative-report.php)
-- [tests/Php/Conformance/Php85NegativeBoundaryLedgerTest.php](../tests/Php/Conformance/Php85NegativeBoundaryLedgerTest.php)
+- [docs/8.5/negative-boundaries.json](negative-boundaries.json)
+- [docs/8.5/negative-boundaries.md](negative-boundaries.md)
+- [docs/8.5/phase4-negative-coverage.md](phase4-negative-coverage.md)
+- [tools/php85-negative-report.php](../../tools/php85-negative-report.php)
+- [tests/Php/Conformance/Php85NegativeBoundaryLedgerTest.php](../../tests/Php/Conformance/Php85NegativeBoundaryLedgerTest.php)
 
 Changed files:
 
-- [README.md](../README.md)
-- [docs/conformance.md](conformance.md)
-- [docs/php85-phase3-coverage.md](php85-phase3-coverage.md)
-- [docs/php85-phase3-coverage.json](php85-phase3-coverage.json)
-- [docs/php85-remaining-audit.md](php85-remaining-audit.md)
-- [docs/php85-audit-remediation.md](php85-audit-remediation.md)
-- [docs/sources.md](sources.md)
-- [grammar/8.5/php.md](../grammar/8.5/php.md), informative evidence notes only.
-- [tests/Php/Lexing/RepositoryLexerSmokeTest.php](../tests/Php/Lexing/RepositoryLexerSmokeTest.php)
-- [tools/php85-coverage-report.php](../tools/php85-coverage-report.php)
+- [README.md](../../README.md)
+- [docs/conformance.md](../conformance.md)
+- [docs/8.5/phase3-coverage.md](phase3-coverage.md)
+- [docs/8.5/phase3-coverage.json](phase3-coverage.json)
+- [docs/8.5/remaining-audit.md](remaining-audit.md)
+- [docs/8.5/audit-remediation.md](audit-remediation.md)
+- [docs/sources.md](../sources.md)
+- [grammar/8.5/php.md](../../grammar/8.5/php.md), informative evidence notes only.
+- [tests/Php/Lexing/RepositoryLexerSmokeTest.php](../../tests/Php/Lexing/RepositoryLexerSmokeTest.php)
+- [tools/php85-coverage-report.php](../../tools/php85-coverage-report.php)
 
 Total: **549 added, 10 changed, none removed**. The canonical EBNF and grammar
 conventions required no changes. Research inputs/scripts in ignored `.audit/`

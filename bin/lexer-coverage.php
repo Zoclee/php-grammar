@@ -32,7 +32,7 @@ foreach (Php85LexicalCases::syntax() as $id => [$source, $expected]) {
     if ($matcher->matches('8.5', $source)->matched !== $expected) $failures[] = 'syntax:' . $id;
 }
 $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
-$path = $root . '/docs/php85-phase5-lexical-evidence.json';
+$path = $root . '/docs/8.5/phase5-lexical-evidence.json';
 if (in_array('--write', $argv, true) && $failures === []) file_put_contents($path, $json);
 elseif (!is_file($path) || file_get_contents($path) !== $json) $failures[] = 'Ledger stale: run composer lexer:coverage -- --write';
 foreach ($data['families'] as $name => $family) {

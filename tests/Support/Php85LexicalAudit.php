@@ -11,8 +11,8 @@ final class Php85LexicalAudit
 {
     public static function report(string $root): array
     {
-        $inventory = json_decode(file_get_contents($root . '/docs/php85-source-inventory.json'), true, flags: JSON_THROW_ON_ERROR);
-        $coverage = json_decode(file_get_contents($root . '/docs/php85-phase3-coverage.json'), true, flags: JSON_THROW_ON_ERROR);
+        $inventory = json_decode(file_get_contents($root . '/docs/8.5/source-inventory.json'), true, flags: JSON_THROW_ON_ERROR);
+        $coverage = json_decode(file_get_contents($root . '/docs/8.5/phase3-coverage.json'), true, flags: JSON_THROW_ON_ERROR);
         $families = [];
         $definitions = [
             'tags' => ['represented-differently', 'Lexer::tokenize/consumeOpenTag', 'Opening delimiter excludes following whitespace; closing delimiter includes one newline. Both short-tag profiles.'],
@@ -110,8 +110,8 @@ final class Php85LexicalAudit
         }
         $inputs = ['src/Php/Lexing/Lexer.php', 'src/Php/Lexing/LexerState.php', 'src/Php/Lexing/PhpVersion.php',
             'src/Php/Lexing/StringSyntax.php', 'src/Php/Conformance/PhpGrammarMatcher.php', 'src/Php/Conformance/PhpGrammarInput.php', 'tests/Support/Php85LexicalCases.php',
-            'tests/Support/Php85LexicalAudit.php', 'tools/php85-lexer-differential.php', 'docs/php85-source-inventory.json',
-            'docs/php85-phase3-coverage.json', 'grammar/8.5/php.ebnf'];
+            'tests/Support/Php85LexicalAudit.php', 'tools/php85-lexer-differential.php', 'docs/8.5/source-inventory.json',
+            'docs/8.5/phase3-coverage.json', 'grammar/8.5/php.ebnf'];
         $hashes = [];
         foreach ($inputs as $file) $hashes[$file] = hash_file('sha256', $root . '/' . $file);
         return ['revision' => $inventory['revision'], 'scanner_sha256' => $inventory['files']['zend_language_scanner.l']['sha256'],

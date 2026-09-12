@@ -1,6 +1,6 @@
 # PHP 8.5 Grammar Completeness — Phase 3 of 7
 
-Phase 5 update: [the scanner audit](php85-phase5-lexer-audit.md) supersedes
+Phase 5 update: [the scanner audit](phase5-lexer-audit.md) supersedes
 scanner-evidence gaps and current counts in this historical report. It maps
 all 190 scanner rules, preserves 52 primitive-bypassed and 11 removed-trivia
 productions, and removes one false reserved-enum alternative hit (601 to 600).
@@ -13,12 +13,12 @@ areas. Every remaining uncovered identity has an explicit classification.
 This completes the positive-coverage phase, not the full conformance audit.
 
 The tables below record the historical Phase 3 baseline. The JSON ledger has
-been regenerated for the [remaining-audit corrections](php85-remaining-audit.md):
+been regenerated for the [remaining-audit corrections](remaining-audit.md):
 303/366 productions and 609/794 alternatives now have positive recognition
 evidence. No uncovered identity is classified as a meaningful coverage gap;
 this does not eliminate the two recorded conformance discrepancies.
 
-Grammar Completeness [Phase 4](php85-phase4-negative-coverage.md) subsequently
+Grammar Completeness [Phase 4](phase4-negative-coverage.md) subsequently
 adds 272 paired positive repairs and systematic negative evidence. Positive
 totals remain **303/366 productions (82.8%) and 609/794 alternatives (76.7%)**;
 attempted totals remain 303/366 and 611/794. The current corpus has 497 valid
@@ -26,7 +26,7 @@ fixtures (492 default profile plus five disabled-short-tag fixtures).
 The generated JSON is current; tables labeled historical below remain Phase 3
 records. Phase 4 fixtures are excluded from reconstruction of the historical
 Phase 3 backlog. Rejection evidence is in its own
-[ledger](php85-negative-boundaries.md), not added to successful coverage.
+[ledger](negative-boundaries.md), not added to successful coverage.
 
 ## Historical results
 
@@ -50,7 +50,7 @@ Added **65 positive fixtures**, **236 coverage rule cases**, and **35 direct
 primitive cases**. The latter validate token primitives and intentionally do
 not inflate EBNF traversal counts. No fixtures were removed or reclassified.
 
-The generated [coverage ledger](php85-phase3-coverage.json) contains the original
+The generated [coverage ledger](phase3-coverage.json) contains the original
 95-production/492-alternative backlog, its disposition, current remaining
 identities, classification counts, the first accepted witness for every
 exercised identity, primitive successes, and the full indexed rule matrix.
@@ -213,7 +213,7 @@ outside this positive coverage phase. Full PHP 8.5 conformance is not claimed.
 Sources: the [pinned parser](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_language_parser.y),
 [scanner](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_language_scanner.l),
 and [compiler](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_compile.c),
-with function/rule locations in `php85-source-inventory.json`.
+with function/rule locations in `source-inventory.json`.
 
 Final verification on 2026-09-10: `composer validate --strict`, `composer test`
 (726 tests, 1,780 assertions), `composer grammar:coverage`, PHP 8.5.10
@@ -227,12 +227,12 @@ production parity are included in the test suite.
 
 Added implementation, tests, and reports:
 
-- [docs/php85-phase3-coverage.json](../docs/php85-phase3-coverage.json)
-- [docs/php85-phase3-coverage.md](../docs/php85-phase3-coverage.md)
-- [src/Php/Conformance/Php85CoverageClassification.php](../src/Php/Conformance/Php85CoverageClassification.php)
-- [tests/Php/Conformance/Php85CoverageClassificationTest.php](../tests/Php/Conformance/Php85CoverageClassificationTest.php)
-- [tests/Php/Conformance/Php85LexicalPrimitiveTest.php](../tests/Php/Conformance/Php85LexicalPrimitiveTest.php)
-- [tools/php85-coverage-report.php](../tools/php85-coverage-report.php)
+- [docs/8.5/phase3-coverage.json](phase3-coverage.json)
+- [docs/8.5/phase3-coverage.md](phase3-coverage.md)
+- [src/Php/Conformance/Php85CoverageClassification.php](../../src/Php/Conformance/Php85CoverageClassification.php)
+- [tests/Php/Conformance/Php85CoverageClassificationTest.php](../../tests/Php/Conformance/Php85CoverageClassificationTest.php)
+- [tests/Php/Conformance/Php85LexicalPrimitiveTest.php](../../tests/Php/Conformance/Php85LexicalPrimitiveTest.php)
+- [tools/php85-coverage-report.php](../../tools/php85-coverage-report.php)
 
 Added 65 fixtures under `tests/fixtures/php/8.5/valid/`:
 
@@ -306,14 +306,14 @@ phase3-while-html.php
 
 Changed files:
 
-- [README.md](../README.md)
-- [bin/grammar-coverage.php](../bin/grammar-coverage.php)
-- [docs/conformance.md](../docs/conformance.md)
-- [docs/php85-audit-remediation.md](../docs/php85-audit-remediation.md)
-- [docs/sources.md](../docs/sources.md)
-- [grammar/8.5/php.md](../grammar/8.5/php.md)
-- [src/Php/Conformance/GrammarCoverageAnalyzer.php](../src/Php/Conformance/GrammarCoverageAnalyzer.php)
-- [src/Php/Conformance/Php85CoverageCases.php](../src/Php/Conformance/Php85CoverageCases.php)
-- [src/Php/Conformance/PhpGrammarMatcher.php](../src/Php/Conformance/PhpGrammarMatcher.php)
-- [tests/Php/Conformance/GrammarCoverageAnalyzerTest.php](../tests/Php/Conformance/GrammarCoverageAnalyzerTest.php)
-- [tests/Php/Conformance/RuleLevelConformanceTest.php](../tests/Php/Conformance/RuleLevelConformanceTest.php)
+- [README.md](../../README.md)
+- [bin/grammar-coverage.php](../../bin/grammar-coverage.php)
+- [docs/conformance.md](../conformance.md)
+- [docs/8.5/audit-remediation.md](audit-remediation.md)
+- [docs/sources.md](../sources.md)
+- [grammar/8.5/php.md](../../grammar/8.5/php.md)
+- [src/Php/Conformance/GrammarCoverageAnalyzer.php](../../src/Php/Conformance/GrammarCoverageAnalyzer.php)
+- [src/Php/Conformance/Php85CoverageCases.php](../../src/Php/Conformance/Php85CoverageCases.php)
+- [src/Php/Conformance/PhpGrammarMatcher.php](../../src/Php/Conformance/PhpGrammarMatcher.php)
+- [tests/Php/Conformance/GrammarCoverageAnalyzerTest.php](../../tests/Php/Conformance/GrammarCoverageAnalyzerTest.php)
+- [tests/Php/Conformance/RuleLevelConformanceTest.php](../../tests/Php/Conformance/RuleLevelConformanceTest.php)

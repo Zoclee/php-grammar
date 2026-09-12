@@ -83,7 +83,7 @@ final class Php85ScannerAuditTest extends TestCase
         $root = dirname(__DIR__, 3);
         $data = Php85LexicalAudit::report($root);
         self::assertSame(json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n",
-            file_get_contents($root . '/docs/php85-phase5-lexical-evidence.json'));
+            file_get_contents($root . '/docs/8.5/phase5-lexical-evidence.json'));
         self::assertCount(190, $data['rules']);
         $counts = [];
         foreach ($data['grammar_bypasses'] as $entry) {

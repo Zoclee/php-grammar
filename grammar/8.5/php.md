@@ -11,16 +11,16 @@ Grammar Completeness Phase 4 adds paired negative-boundary evidence without
 changing the canonical productions below. Its 250 new structural-negative
 fixtures reject during repository recognition; 22 new contextual-negative
 fixtures parse structurally and reject during PHP compilation. All have nearby
-valid repairs. The [boundary ledger](../../docs/php85-negative-boundaries.md)
-records source evidence and the [Phase 4 report](../../docs/php85-phase4-negative-coverage.md)
+valid repairs. The [boundary ledger](../../docs/8.5/negative-boundaries.md)
+records source evidence and the [Phase 4 report](../../docs/8.5/phase4-negative-coverage.md)
 records methodology and validation. This evidence does not replace the
 standalone lexical or contextual rules in this specification. The
-[parser/compiler boundary remediation](../../docs/php85-parser-compiler-remediation.md)
+[parser/compiler boundary remediation](../../docs/8.5/parser-compiler-remediation.md)
 resolves the previously recorded discarded-closure witnesses and expands
 coverage to the broader declaration category. Full conformance remains unproven.
 
 Grammar Completeness Phase 5 supplies a rule-by-rule scanner audit and direct
-byte/token evidence in the [Phase 5 report](../../docs/php85-phase5-lexer-audit.md).
+byte/token evidence in the [Phase 5 report](../../docs/8.5/phase5-lexer-audit.md).
 The canonical EBNF is unchanged. The source contract below incorporates the
 confirmed lookahead and EOF corrections. One newly recorded discarded-unset
 folding discrepancy remains outside the current removed-cast grammar policy.
