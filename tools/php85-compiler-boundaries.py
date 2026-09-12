@@ -57,5 +57,5 @@ path = root/'docs/8.5/compiler-boundaries.json'
 if args.check:
     if path.read_text() != output: raise SystemExit('Compiler boundary inventory is stale')
 else:
-    path.write_text(output)
+    path.write_text(output, encoding='utf-8', newline='\r\n')
 print({'sites':len(rows),'parser_action_sites':sum(r['phase']=='parser-action' for r in rows),'functions':len(set(r['function'] for r in rows))})

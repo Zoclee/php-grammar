@@ -11,7 +11,7 @@
     "docs/8.5/negative-boundaries.json": "852fea73afe110094dab954adcabab184d36c353613bfdf264cd010026522e8f",
     "tests/fixtures/php/8.5/parser-compiler-boundaries.json": "20a19b518308828b8e09e0356bbf92b68fa6dfc1c34e989d1071f52f36315633",
     "docs/8.5/compiler-boundaries.json": "66c2dfe1bfff7af8a403163266de9f949d090d6215b758fc8a39c50c528e4c60",
-    "tools/php85-reconcile.py": "2b14be6c45f321a30537f676e7af784e6c006fc5914b86542952a458a974bff2"
+    "tools/php85-reconcile.py": "adbd2e4e48930815182f6f8c273aceec2e013463f8978e876d867b180318e18c"
   },
   "method": "Exact-name or explicit reviewed production anchors; every RHS and action call retained. Evidence links are indexed at production/function-family granularity, not proofs of branch coverage.",
   "parser_productions": 177,

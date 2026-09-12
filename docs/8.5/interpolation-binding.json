@@ -1,0 +1,1812 @@
+{
+    "php": "8.5.10",
+    "ast": "1.1.3",
+    "schema": 120,
+    "hashes": {
+        "grammar/8.5/php.ebnf": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755",
+        "src/Php/Lexing/StringSyntax.php": "7b634e9aeafc6b1b1625e1c257577829e75cce78897f5a4c96d27a974ff1857a",
+        "src/Php/Lexing/Lexer.php": "d2da555fc5ec7fabecfa5719ca1f5cc08287886008b5cf6e62d825b65d4172c9",
+        "tests/Support/DerivationForest.php": "365824975335ef203920b1ba80989db2f28533028f380b11e40db3c3f3f9f77f",
+        "tests/Support/InterpolationSegments.php": "30f8ff0bc7aa668c576a04cb63c8c1377701235725ac65ba5314042581362395",
+        "tools/php85-interpolation-binding.php": "1beca42c23096742043e5b4eef7716b1b443d267c96f6b92392a2968d2e798c8"
+    },
+    "positive": 44,
+    "malformed": 6,
+    "operand_comparisons": 54,
+    "limits": "Unindented ASCII bodies without escapes; simple bare offset has boundary-only evidence. Nested aggregate strings, closures/classes in embedded expressions, dedent/escape-value normalization and arbitrary recursive binding remain unproven.",
+    "cases": [
+        {
+            "style": "quoted",
+            "body": "$a",
+            "segments": [
+                [
+                    "expression",
+                    "$a"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "a"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "left $a right",
+            "segments": [
+                [
+                    "text",
+                    "left "
+                ],
+                [
+                    "expression",
+                    "$a"
+                ],
+                [
+                    "text",
+                    " right"
+                ]
+            ],
+            "normalized": [
+                "left ",
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "a"
+                    }
+                ],
+                " right"
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "$a$b",
+            "segments": [
+                [
+                    "expression",
+                    "$a"
+                ],
+                [
+                    "expression",
+                    "$b"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "a"
+                    }
+                ],
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "b"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "$a $b {$c}",
+            "segments": [
+                [
+                    "expression",
+                    "$a"
+                ],
+                [
+                    "text",
+                    " "
+                ],
+                [
+                    "expression",
+                    "$b"
+                ],
+                [
+                    "text",
+                    " "
+                ],
+                [
+                    "expression",
+                    "$c"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "a"
+                    }
+                ],
+                " ",
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "b"
+                    }
+                ],
+                " ",
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "c"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "$a[0]",
+            "segments": [
+                [
+                    "expression",
+                    "$a[0]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": 0
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "$a[-1]",
+            "segments": [
+                [
+                    "expression",
+                    "$a[-1]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": -1
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "$a[key]",
+            "segments": [
+                [
+                    "expression",
+                    "$a['key']"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": "key"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": [
+                "$a['key']"
+            ]
+        },
+        {
+            "style": "quoted",
+            "body": "$a[$i]",
+            "segments": [
+                [
+                    "expression",
+                    "$a[$i]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "i"
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "$a->p",
+            "segments": [
+                [
+                    "expression",
+                    "$a->p"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": "p"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "$a?->p",
+            "segments": [
+                [
+                    "expression",
+                    "$a?->p"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_NULLSAFE_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": "p"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "{$a[0]}",
+            "segments": [
+                [
+                    "expression",
+                    "$a[0]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": 0
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "{$a[$i + $j * 2]}",
+            "segments": [
+                [
+                    "expression",
+                    "$a[$i + $j * 2]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": [
+                            "AST_BINARY_OP",
+                            1,
+                            {
+                                "left": [
+                                    "AST_VAR",
+                                    0,
+                                    {
+                                        "name": "i"
+                                    }
+                                ],
+                                "right": [
+                                    "AST_BINARY_OP",
+                                    3,
+                                    {
+                                        "left": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "j"
+                                            }
+                                        ],
+                                        "right": 2
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "{$a->p}",
+            "segments": [
+                [
+                    "expression",
+                    "$a->p"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": "p"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "{$a?->p}",
+            "segments": [
+                [
+                    "expression",
+                    "$a?->p"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_NULLSAFE_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": "p"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "{$a->{$b}}",
+            "segments": [
+                [
+                    "expression",
+                    "$a->{$b}"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "b"
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "{$a->{$b + $c * 2}}",
+            "segments": [
+                [
+                    "expression",
+                    "$a->{$b + $c * 2}"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": [
+                            "AST_BINARY_OP",
+                            1,
+                            {
+                                "left": [
+                                    "AST_VAR",
+                                    0,
+                                    {
+                                        "name": "b"
+                                    }
+                                ],
+                                "right": [
+                                    "AST_BINARY_OP",
+                                    3,
+                                    {
+                                        "left": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "c"
+                                            }
+                                        ],
+                                        "right": 2
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "{$a[${$b}]}",
+            "segments": [
+                [
+                    "expression",
+                    "$a[${$b}]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": [
+                                    "AST_VAR",
+                                    0,
+                                    {
+                                        "name": "b"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "${name}",
+            "segments": [
+                [
+                    "expression",
+                    "$name"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "name"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "${name[0]}",
+            "segments": [
+                [
+                    "expression",
+                    "$name[0]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "name"
+                            }
+                        ],
+                        "dim": 0
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "${$a + $b * 2}",
+            "segments": [
+                [
+                    "expression",
+                    "${$a + $b * 2}"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": [
+                            "AST_BINARY_OP",
+                            1,
+                            {
+                                "left": [
+                                    "AST_VAR",
+                                    0,
+                                    {
+                                        "name": "a"
+                                    }
+                                ],
+                                "right": [
+                                    "AST_BINARY_OP",
+                                    3,
+                                    {
+                                        "left": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "b"
+                                            }
+                                        ],
+                                        "right": 2
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "left {$a[$i + $j * 2]} middle $b->p end {$c}",
+            "segments": [
+                [
+                    "text",
+                    "left "
+                ],
+                [
+                    "expression",
+                    "$a[$i + $j * 2]"
+                ],
+                [
+                    "text",
+                    " middle "
+                ],
+                [
+                    "expression",
+                    "$b->p"
+                ],
+                [
+                    "text",
+                    " end "
+                ],
+                [
+                    "expression",
+                    "$c"
+                ]
+            ],
+            "normalized": [
+                "left ",
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": [
+                            "AST_BINARY_OP",
+                            1,
+                            {
+                                "left": [
+                                    "AST_VAR",
+                                    0,
+                                    {
+                                        "name": "i"
+                                    }
+                                ],
+                                "right": [
+                                    "AST_BINARY_OP",
+                                    3,
+                                    {
+                                        "left": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "j"
+                                            }
+                                        ],
+                                        "right": 2
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                " middle ",
+                [
+                    "AST_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "b"
+                            }
+                        ],
+                        "prop": "p"
+                    }
+                ],
+                " end ",
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "c"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "quoted",
+            "body": "{$a[1 + 2 * 3]}{$b[($i + $j) * 2]}",
+            "segments": [
+                [
+                    "expression",
+                    "$a[1 + 2 * 3]"
+                ],
+                [
+                    "expression",
+                    "$b[($i + $j) * 2]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": [
+                            "AST_BINARY_OP",
+                            1,
+                            {
+                                "left": 1,
+                                "right": [
+                                    "AST_BINARY_OP",
+                                    3,
+                                    {
+                                        "left": 2,
+                                        "right": 3
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "b"
+                            }
+                        ],
+                        "dim": [
+                            "AST_BINARY_OP",
+                            3,
+                            {
+                                "left": [
+                                    "AST_BINARY_OP",
+                                    1,
+                                    {
+                                        "left": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "i"
+                                            }
+                                        ],
+                                        "right": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "j"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "right": 2
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "$a",
+            "segments": [
+                [
+                    "expression",
+                    "$a"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "a"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "left $a right",
+            "segments": [
+                [
+                    "text",
+                    "left "
+                ],
+                [
+                    "expression",
+                    "$a"
+                ],
+                [
+                    "text",
+                    " right"
+                ]
+            ],
+            "normalized": [
+                "left ",
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "a"
+                    }
+                ],
+                " right"
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "$a$b",
+            "segments": [
+                [
+                    "expression",
+                    "$a"
+                ],
+                [
+                    "expression",
+                    "$b"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "a"
+                    }
+                ],
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "b"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "$a $b {$c}",
+            "segments": [
+                [
+                    "expression",
+                    "$a"
+                ],
+                [
+                    "text",
+                    " "
+                ],
+                [
+                    "expression",
+                    "$b"
+                ],
+                [
+                    "text",
+                    " "
+                ],
+                [
+                    "expression",
+                    "$c"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "a"
+                    }
+                ],
+                " ",
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "b"
+                    }
+                ],
+                " ",
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "c"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "$a[0]",
+            "segments": [
+                [
+                    "expression",
+                    "$a[0]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": 0
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "$a[-1]",
+            "segments": [
+                [
+                    "expression",
+                    "$a[-1]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": -1
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "$a[key]",
+            "segments": [
+                [
+                    "expression",
+                    "$a['key']"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": "key"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": [
+                "$a['key']"
+            ]
+        },
+        {
+            "style": "heredoc",
+            "body": "$a[$i]",
+            "segments": [
+                [
+                    "expression",
+                    "$a[$i]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "i"
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "$a->p",
+            "segments": [
+                [
+                    "expression",
+                    "$a->p"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": "p"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "$a?->p",
+            "segments": [
+                [
+                    "expression",
+                    "$a?->p"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_NULLSAFE_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": "p"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "{$a[0]}",
+            "segments": [
+                [
+                    "expression",
+                    "$a[0]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": 0
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "{$a[$i + $j * 2]}",
+            "segments": [
+                [
+                    "expression",
+                    "$a[$i + $j * 2]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": [
+                            "AST_BINARY_OP",
+                            1,
+                            {
+                                "left": [
+                                    "AST_VAR",
+                                    0,
+                                    {
+                                        "name": "i"
+                                    }
+                                ],
+                                "right": [
+                                    "AST_BINARY_OP",
+                                    3,
+                                    {
+                                        "left": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "j"
+                                            }
+                                        ],
+                                        "right": 2
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "{$a->p}",
+            "segments": [
+                [
+                    "expression",
+                    "$a->p"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": "p"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "{$a?->p}",
+            "segments": [
+                [
+                    "expression",
+                    "$a?->p"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_NULLSAFE_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": "p"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "{$a->{$b}}",
+            "segments": [
+                [
+                    "expression",
+                    "$a->{$b}"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "b"
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "{$a->{$b + $c * 2}}",
+            "segments": [
+                [
+                    "expression",
+                    "$a->{$b + $c * 2}"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "prop": [
+                            "AST_BINARY_OP",
+                            1,
+                            {
+                                "left": [
+                                    "AST_VAR",
+                                    0,
+                                    {
+                                        "name": "b"
+                                    }
+                                ],
+                                "right": [
+                                    "AST_BINARY_OP",
+                                    3,
+                                    {
+                                        "left": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "c"
+                                            }
+                                        ],
+                                        "right": 2
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "{$a[${$b}]}",
+            "segments": [
+                [
+                    "expression",
+                    "$a[${$b}]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": [
+                                    "AST_VAR",
+                                    0,
+                                    {
+                                        "name": "b"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "${name}",
+            "segments": [
+                [
+                    "expression",
+                    "$name"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "name"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "${name[0]}",
+            "segments": [
+                [
+                    "expression",
+                    "$name[0]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "name"
+                            }
+                        ],
+                        "dim": 0
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "${$a + $b * 2}",
+            "segments": [
+                [
+                    "expression",
+                    "${$a + $b * 2}"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": [
+                            "AST_BINARY_OP",
+                            1,
+                            {
+                                "left": [
+                                    "AST_VAR",
+                                    0,
+                                    {
+                                        "name": "a"
+                                    }
+                                ],
+                                "right": [
+                                    "AST_BINARY_OP",
+                                    3,
+                                    {
+                                        "left": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "b"
+                                            }
+                                        ],
+                                        "right": 2
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "left {$a[$i + $j * 2]} middle $b->p end {$c}",
+            "segments": [
+                [
+                    "text",
+                    "left "
+                ],
+                [
+                    "expression",
+                    "$a[$i + $j * 2]"
+                ],
+                [
+                    "text",
+                    " middle "
+                ],
+                [
+                    "expression",
+                    "$b->p"
+                ],
+                [
+                    "text",
+                    " end "
+                ],
+                [
+                    "expression",
+                    "$c"
+                ]
+            ],
+            "normalized": [
+                "left ",
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": [
+                            "AST_BINARY_OP",
+                            1,
+                            {
+                                "left": [
+                                    "AST_VAR",
+                                    0,
+                                    {
+                                        "name": "i"
+                                    }
+                                ],
+                                "right": [
+                                    "AST_BINARY_OP",
+                                    3,
+                                    {
+                                        "left": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "j"
+                                            }
+                                        ],
+                                        "right": 2
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                " middle ",
+                [
+                    "AST_PROP",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "b"
+                            }
+                        ],
+                        "prop": "p"
+                    }
+                ],
+                " end ",
+                [
+                    "AST_VAR",
+                    0,
+                    {
+                        "name": "c"
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "style": "heredoc",
+            "body": "{$a[1 + 2 * 3]}{$b[($i + $j) * 2]}",
+            "segments": [
+                [
+                    "expression",
+                    "$a[1 + 2 * 3]"
+                ],
+                [
+                    "expression",
+                    "$b[($i + $j) * 2]"
+                ]
+            ],
+            "normalized": [
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "a"
+                            }
+                        ],
+                        "dim": [
+                            "AST_BINARY_OP",
+                            1,
+                            {
+                                "left": 1,
+                                "right": [
+                                    "AST_BINARY_OP",
+                                    3,
+                                    {
+                                        "left": 2,
+                                        "right": 3
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                [
+                    "AST_DIM",
+                    0,
+                    {
+                        "expr": [
+                            "AST_VAR",
+                            0,
+                            {
+                                "name": "b"
+                            }
+                        ],
+                        "dim": [
+                            "AST_BINARY_OP",
+                            3,
+                            {
+                                "left": [
+                                    "AST_BINARY_OP",
+                                    1,
+                                    {
+                                        "left": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "i"
+                                            }
+                                        ],
+                                        "right": [
+                                            "AST_VAR",
+                                            0,
+                                            {
+                                                "name": "j"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "right": 2
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "boundary_equal": true,
+            "matched": true,
+            "operand_check_exclusions": []
+        },
+        {
+            "malformed": "\"{$a[}\"",
+            "zend": false,
+            "matched": false
+        },
+        {
+            "malformed": "\"{$a->}\"",
+            "zend": false,
+            "matched": false
+        },
+        {
+            "malformed": "\"{$a[1 + ]}\"",
+            "zend": false,
+            "matched": false
+        },
+        {
+            "malformed": "\"{$a->{$b}\"",
+            "zend": false,
+            "matched": false
+        },
+        {
+            "malformed": "\"$a[ ]\"",
+            "zend": false,
+            "matched": false
+        },
+        {
+            "malformed": "<<<TEXT\n{$a[}\nTEXT",
+            "zend": false,
+            "matched": false
+        }
+    ],
+    "failures": []
+}

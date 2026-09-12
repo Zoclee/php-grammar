@@ -1,5 +1,9 @@
 # PHP 8.5 Grammar Completeness — Phase 6 of 7
 
+Historical report: [Phase 7 completeness](completeness.md) now supplies the
+current release decision and final C1–C4 dispositions. Counts and open-blocker
+descriptions below record the Phase 6 evidence at that time.
+
 Phase 6 reconciles 177 pinned Zend parser productions and their 623 alternatives,
 adds early modifier validation, and expands binding, folding, ambiguity and
 recursive-source evidence. No unexplained differential mismatch remains in the

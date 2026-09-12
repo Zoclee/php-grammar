@@ -1,0 +1,107 @@
+{
+  "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+  "release": "php-8.5.10",
+  "release_revision": "34308a6666b2d489c509541ea9befea9e2b42348",
+  "binary_revision": "unverified; PHP_VERSION reports 8.5.10",
+  "exact_pin_executable": false,
+  "scope": "Seven audited translation units only; headers, build options, generated files and binary provenance are not established by this comparison.",
+  "files": [
+    {
+      "file": "Zend/zend_language_parser.y",
+      "pin_sha256": "f108f2c2ff4c98c68b6478e7fbdebc16d8afb8bbbc3ae6079e5b285b448dac0c",
+      "release_sha256": "f108f2c2ff4c98c68b6478e7fbdebc16d8afb8bbbc3ae6079e5b285b448dac0c",
+      "identical": true,
+      "diff_release_to_pin": []
+    },
+    {
+      "file": "Zend/zend_language_scanner.l",
+      "pin_sha256": "8dfed84b0f6cabe73f004ea00c69614ea84542130a9b97e7699f801ef7ce7403",
+      "release_sha256": "5e178b9e0a4f865a423a098ac97ba5fc04ef2f68503382e18599d89d9ad8d15b",
+      "identical": false,
+      "diff_release_to_pin": [
+        "--- 34308a6666b2d489c509541ea9befea9e2b42348/Zend/zend_language_scanner.l",
+        "+++ 7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_language_scanner.l",
+        "@@ -328,14 +328,13 @@",
+        " static const zend_encoding *zend_multibyte_detect_utf_encoding(const unsigned char *script, size_t script_size)",
+        " {",
+        " \tconst unsigned char *p;",
+        "+\tsize_t offset = 0;",
+        " \tint wchar_size = 2;",
+        " \tint le = 0;",
+        " ",
+        " \t/* utf-16 or utf-32? */",
+        "-\tp = script;",
+        "-\tassert(p >= script);",
+        "-\twhile ((size_t)(p-script) < script_size) {",
+        "-\t\tp = memchr(p, 0, script_size-(p-script)-2);",
+        "+\twhile (offset < script_size && script_size - offset > 2) {",
+        "+\t\tp = memchr(script + offset, 0, script_size - offset - 2);",
+        " \t\tif (!p) {",
+        " \t\t\tbreak;",
+        " \t\t}",
+        "@@ -345,13 +344,13 @@",
+        " \t\t}",
+        " ",
+        " \t\t/* searching for UTF-32 specific byte orders, so this will do */",
+        "-\t\tp += 4;",
+        "+\t\toffset = p - script + 4;",
+        " \t}",
+        " ",
+        " \t/* BE or LE? */",
+        "-\tp = script;",
+        "-\tassert(p >= script);",
+        "-\twhile ((size_t)(p-script) < script_size) {",
+        "+\toffset = 0;",
+        "+\twhile (script_size - offset >= (size_t) wchar_size) {",
+        "+\t\tp = script + offset;",
+        " \t\tif (*p == '\\0' && *(p+wchar_size-1) != '\\0') {",
+        " \t\t\t/* BE */",
+        " \t\t\tle = 0;",
+        "@@ -361,7 +360,7 @@",
+        " \t\t\tle = 1;",
+        " \t\t\tbreak;",
+        " \t\t}",
+        "-\t\tp += wchar_size;",
+        "+\t\toffset += wchar_size;",
+        " \t}",
+        " ",
+        " \tif (wchar_size == 2) {"
+      ]
+    },
+    {
+      "file": "Zend/zend_compile.c",
+      "pin_sha256": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225",
+      "release_sha256": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225",
+      "identical": true,
+      "diff_release_to_pin": []
+    },
+    {
+      "file": "Zend/zend_ast.c",
+      "pin_sha256": "2b957bba99379210a4205a8fdfe4cde40da6df4bfcd99f115ee188ecd5d275d5",
+      "release_sha256": "2b957bba99379210a4205a8fdfe4cde40da6df4bfcd99f115ee188ecd5d275d5",
+      "identical": true,
+      "diff_release_to_pin": []
+    },
+    {
+      "file": "Zend/zend_inheritance.c",
+      "pin_sha256": "69793711dc0a88c93545be87baa57e2fca26f2dc2e0701a8d956611980fee486",
+      "release_sha256": "69793711dc0a88c93545be87baa57e2fca26f2dc2e0701a8d956611980fee486",
+      "identical": true,
+      "diff_release_to_pin": []
+    },
+    {
+      "file": "Zend/zend_enum.c",
+      "pin_sha256": "baa6dfdb61df292e38a50d32f3c43fedac0ec0c5126a4e8284f37b67e48ad8fd",
+      "release_sha256": "baa6dfdb61df292e38a50d32f3c43fedac0ec0c5126a4e8284f37b67e48ad8fd",
+      "identical": true,
+      "diff_release_to_pin": []
+    },
+    {
+      "file": "Zend/zend_attributes.c",
+      "pin_sha256": "4939ec0253f7bdc3707d0c0310b7a0751b4798f47fc6d91340134a046761f852",
+      "release_sha256": "4939ec0253f7bdc3707d0c0310b7a0751b4798f47fc6d91340134a046761f852",
+      "identical": true,
+      "diff_release_to_pin": []
+    }
+  ]
+}

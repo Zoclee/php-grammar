@@ -221,6 +221,10 @@ Only create patch-specific distinctions when they are necessary for correctness 
 
 ## 9. Version Status
 
+Status labels must use the evidence definitions in
+[conformance-policy.md](conformance-policy.md). A stable grammar package does
+not imply a complete compiler validator or exhaustive equivalence.
+
 The repository may classify grammar versions by status where useful.
 
 Suggested statuses are:
@@ -293,3 +297,22 @@ The core versioning rule of this repository is:
 > A grammar version identifies a PHP major.minor language version, while repository releases identify revisions of this grammar project.
 
 This distinction must remain clear in directory names, documentation, changelogs, tooling, and releases.
+
+## 14. Evidence required for a mature new version
+
+New versions inherit the testing methodology, never a dependency on another
+grammar. Each version must independently supply a complete EBNF, matching
+Markdown specification, immutable upstream source mapping, lexer configuration,
+positive fixtures, structural and contextual negatives, scanner evidence,
+classified grammar coverage ledger, version-boundary fixtures and a conformance
+report. Use the final evidence schema's nine categories and individual blocker
+dispositions; adapt generators to that version's source and actual audit totals.
+Do not copy PHP 8.5's counts or certification conclusion.
+
+Register the package in `php-grammar.json`; preserve standalone loading and run
+repository consistency and version-boundary tests. The current single-version
+manifest remains valid: Phase 7 adds evidence alongside it without changing the
+manifest schema or inventing PHP 8.6/8.7 packages. Before another version is
+called mature, implement its release runner and certify its independent source
+pin, coverage classifications, boundary behavior and limitations under the
+[regression policy](conformance-policy.md).

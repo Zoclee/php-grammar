@@ -4,7 +4,23 @@
 
 Versioned EBNF grammars and human-readable specifications for the PHP language syntax.
 
-php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [Phase 6 evidence and four remaining blockers](docs/8.5/phase6-conformance-closure.md).
+php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation.
+
+**PHP 8.5 is grammar-complete, with documented external contextual constraints;
+conformance evidence is bounded and uses PHP 8.5.10.** Here, grammar-complete
+means all known syntax constructs are accounted for and no meaningful grammar
+coverage gap is unclassified. It does not mean the matcher validates every PHP
+file's compilation constraints. “Canonical” means the repository's authoritative
+EBNF artifact, not an official PHP specification or an equivalence proof.
+
+The EBNF covers source transitions, declarations, types, expressions, statements,
+classes, hooks, attributes and PHP 8.5 additions. Ordered compiler restrictions
+on surviving declarations, types, writes, calls and scopes remain external;
+the modifier validator checks supplied lists only. See the definitive
+[completeness report](docs/8.5/completeness.md),
+[machine-readable final evidence](docs/8.5/final-evidence.json), and
+[certification and regression policy](docs/conformance-policy.md) for the exact
+scope, four blocker dispositions, source comparison and release gates.
 
 The PHP 8.5 parser/compiler boundary audit reconciles common class-like members,
 enum types, trait aliases, hooks, attributes and try syntax. It covers 115
@@ -183,7 +199,20 @@ composer test
 composer grammar:coverage
 composer lexer:coverage
 composer conformance:phase6 # requires PHP 8.5
+composer conformance:interpolation # requires PHP 8.5 and ext-ast
+composer conformance:diagnostics # requires PHP 8.5
+composer certification:check # requires Python and cached pinned sources
+composer release:check # complete 23-gate validation; see prerequisites below
 ```
+
+The complete release gate requires PHP 8.5 with ext-ast and PHPUnit extensions,
+Python 3.10+, Composer, Git and RTK on PATH. Fetch source evidence once with
+`rtk proxy python tools/fetch-php85-sources.py .audit` and
+`rtk proxy python tools/php85-source-correspondence.py --fetch --check`.
+Use `rtk proxy python tools/grammar-release.py --php /path/to/php85
+--composer /path/to/composer.phar` to select binaries; `PHPRC` selects their ini.
+Commands log to `.audit/phase7-validation/` and return nonzero on any failed gate.
+Prefix shell commands with `rtk` as required by this repository's agent guidance.
 
 Phase 1 parses every `grammar/<version>/php.ebnf` file with the project's EBNF
 parser and validates grammar integrity, including malformed EBNF, duplicate

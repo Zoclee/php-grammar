@@ -12,7 +12,8 @@ implements the first two layers with a PHP lexer, token adapter, and Earley
 chart recognizer. PHP 8.5 also has a rule-level early modifier validator and
 an independent test-only derivation forest for precedence comparison. A complete
 whole-source contextual validator remains unimplemented. The current evidence
-and four concrete blockers are in [Phase 6](8.5/phase6-conformance-closure.md).
+and final blocker dispositions are in [the completeness report](8.5/completeness.md).
+Release claims and regression gates follow [the certification policy](conformance-policy.md).
 
 ## Reproducible checks
 

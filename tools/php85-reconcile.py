@@ -257,7 +257,7 @@ def main():
         if path.read_text() != output:
             raise SystemExit('Phase 6 reconciliation is stale')
     else:
-        path.write_text(output)
+        path.write_text(output, encoding='utf-8', newline='\r\n')
     print({'productions': len(rows), 'alternatives': report['parser_alternatives'], 'diagnostic_sites': len(sites)})
 
 

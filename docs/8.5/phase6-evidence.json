@@ -2893,8 +2893,8 @@
     }
   ],
   "hashes": {
-    "tools/php85-phase6-evidence.py": "7026870d54bddf39ea1d1362f31341173b82fe156100561c795fb5b4e2bfd161",
-    "docs/8.5/phase6-reconciliation.json": "c799bc67385954e59e17aa6cde6178e995ea65b13e0ecc203a6d3ba65618e843",
+    "tools/php85-phase6-evidence.py": "eebd68c2967e911f5cf18d57d6051010dfd1ba0b8c1f508b75b0251cf8cb20b6",
+    "docs/8.5/phase6-reconciliation.json": "5a00d83c91196b5ff1f34e776b4acc1f4d041cadbc937f0728e1d3a3a1d434de",
     "docs/8.5/phase6-matrices.json": "d5ec7a7367d334235cf0a5383cf0bf15b11f44687049e912d51593087fef8253",
     "docs/8.5/phase6-upstream-tests.json": "79b14518fdacf4d1cfad9c3028da8337535647a48636489bce9f863cf23a110e",
     "docs/8.5/phase5-lexical-evidence.json": "648537d742960767ddbb34de441dd503f992c7680252495ce7e297c9766ae6db",

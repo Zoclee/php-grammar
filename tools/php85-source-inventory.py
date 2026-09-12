@@ -29,6 +29,6 @@ for name in ['zend_language_parser.y', 'zend_language_scanner.l', 'zend_compile.
                    if (m := re.search(r'^(?:static )?(?:\w+\s+)+(zend_(?:compile|is_allowed|eval_const)[a-z_]+)\(', line))]
     inventory['files'][name] = {'sha256': hashlib.sha256(data).hexdigest(), 'entries': entries}
 inventory['ebnf_productions'] = re.findall(r'^([a-z][a-z0-9-]*) =', (root / 'grammar/8.5/php.ebnf').read_text(), re.M)
-(root / 'docs/8.5/source-inventory.json').write_text(json.dumps(inventory, indent=2) + '\n')
+(root / 'docs/8.5/source-inventory.json').write_text(json.dumps(inventory, indent=2) + '\n', encoding='utf-8', newline='\r\n')
 print({name: len(info['entries']) for name, info in inventory['files'].items()})
 print('EBNF productions:', len(inventory['ebnf_productions']))

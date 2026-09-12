@@ -1,0 +1,22 @@
+{
+  "compile:6922": {"negative": "declare(encoding=1+1);", "positive": "declare(encoding='UTF-8');", "diagnostic": "Encoding must be a literal"},
+  "compile:7816": {"negative": "function f(...$a, $b) {}", "positive": "function f($a, ...$b) {}", "diagnostic": "Only the last parameter can be variadic"},
+  "compile:7825": {"negative": "function f(...$a = []) {}", "positive": "function f(...$a) {}", "diagnostic": "Variadic parameter cannot have a default value"},
+  "compile:7870": {"negative": "function f(void $a) {}", "positive": "function f(int $a) {}", "diagnostic": "void cannot be used as a parameter type"},
+  "compile:7874": {"negative": "function f(never $a) {}", "positive": "function f(int $a) {}", "diagnostic": "never cannot be used as a parameter type"},
+  "compile:7928": {"negative": "class C { function f(public $a) {} }", "positive": "class C { function __construct(public $a) {} }", "diagnostic": "Cannot declare promoted property outside a constructor"},
+  "compile:7933": {"negative": "abstract class C { abstract function __construct(public $a); }", "positive": "abstract class C { function __construct(public $a) {} }", "diagnostic": "Cannot declare promoted property in an abstract constructor"},
+  "compile:7937": {"negative": "class C { function __construct(public ...$a) {} }", "positive": "class C { function __construct(public $a) {} }", "diagnostic": "Cannot declare variadic promoted property"},
+  "compile:8708": {"negative": "class C { public $p { other => 1; } }", "positive": "class C { public $p { get => 1; } }", "diagnostic": "Unknown hook"},
+  "compile:8791": {"negative": "class C { public $p { get => 1; get => 2; } }", "positive": "class C { public $p { get => 1; } }", "diagnostic": "Cannot redeclare property hook"},
+  "compile:8842": {"negative": "enum E { public $p; }", "positive": "class E { public $p; }", "diagnostic": "cannot include properties"},
+  "compile:9482": {"negative": "enum E: int { case A; }", "positive": "enum E: int { case A = 1; }", "diagnostic": "must have a value"},
+  "compile:9486": {"negative": "enum E { case A = 1; }", "positive": "enum E { case A; }", "diagnostic": "must not have a value"},
+  "compile:8996": {"negative": "trait T { function f() {} } class C { use T { f as static g; } }", "positive": "trait T { function f() {} } class C { use T { f as public g; } }", "diagnostic": "Cannot use \"static\" as method modifier in trait alias"},
+  "compile:8998": {"negative": "trait T { function f() {} } class C { use T { f as abstract g; } }", "positive": "trait T { function f() {} } class C { use T { f as public g; } }", "diagnostic": "Cannot use \"abstract\" as method modifier in trait alias"},
+  "compile:3744": {"negative": "f(a: 1, ...$b);", "positive": "f(...$b, a: 1);", "diagnostic": "Cannot use argument unpacking after named arguments"},
+  "compile:3790": {"negative": "f(...$b, 1);", "positive": "f(1, ...$b);", "diagnostic": "Cannot use positional argument after argument unpacking"},
+  "compile:3795": {"negative": "f(a: 1, 2);", "positive": "f(2, a: 1);", "diagnostic": "Cannot use positional argument after named argument"},
+  "compile:3963": {"negative": "new C(...);", "positive": "new C();", "diagnostic": "Cannot create Closure for new expression"},
+  "compile:5301": {"negative": "$a?->f(...);", "positive": "$a->f(...);", "diagnostic": "Cannot combine nullsafe operator with Closure creation"}
+}

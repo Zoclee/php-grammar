@@ -131,5 +131,5 @@ if args.check:
     if path.read_text(encoding='utf-8') != output:
         raise SystemExit('Phase 6 evidence index is stale')
 else:
-    path.write_text(output, encoding='utf-8')
+    path.write_text(output, encoding='utf-8', newline='\r\n')
 print({'areas': len(inventory), 'history_dispositions': len(history), 'blockers': len(blockers)})

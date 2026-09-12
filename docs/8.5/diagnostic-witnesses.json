@@ -1,0 +1,295 @@
+{
+    "php": "8.5.10",
+    "profile": "-n zend.multibyte=0",
+    "hashes": {
+        "tests/fixtures/php/8.5/diagnostic-predicates.json": "30e944f5f3fae4e52a2ca3f3dc27636593dd0e2efeae89288be4dfdebc41cd5d",
+        "tools/php85-diagnostic-witnesses.php": "0e17a140de5c5ab6a2199089c185391343e5155cd37b2d226a3a47db5bdea781",
+        "grammar/8.5/php.ebnf": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755"
+    },
+    "sites": 20,
+    "comparisons": 40,
+    "cases": [
+        {
+            "id": "compile:6922",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:6922",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:7816",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:7816",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:7825",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:7825",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:7870",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:7870",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:7874",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:7874",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:7928",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:7928",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:7933",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:7933",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:7937",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:7937",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:8708",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:8708",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:8791",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:8791",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:8842",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:8842",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:9482",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:9482",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:9486",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:9486",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:8996",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:8996",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:8998",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:8998",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:3744",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:3744",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:3790",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:3790",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:3795",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:3795",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:3963",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:3963",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        },
+        {
+            "id": "compile:5301",
+            "kind": "positive",
+            "accepted": true,
+            "matched": true,
+            "diagnostic": false
+        },
+        {
+            "id": "compile:5301",
+            "kind": "negative",
+            "accepted": false,
+            "matched": true,
+            "diagnostic": true
+        }
+    ],
+    "failures": [],
+    "scope": "Observed diagnostic text plus one repaired positive per site; not instrumented C branch coverage. All these contextual negatives remain structural matches."
+}
