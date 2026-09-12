@@ -116,7 +116,7 @@ final class LexerTest extends TestCase
         self::assertSame(TokenType::InlineHtml, $tokens[4]->type);
     }
 
-    public function testTokenizesCastAliasesButNotUnsetCast(): void
+    public function testTokenizesCastAliasesAndParserLevelUnsetCast(): void
     {
         $tokens = Lexer::forPhp85()->tokenize('<?php (integer) (double) (boolean) (binary) (unset)')->withoutTrivia()->all();
 
@@ -124,10 +124,8 @@ final class LexerTest extends TestCase
         self::assertSame(TokenType::Operator, $tokens[2]->type);
         self::assertSame(TokenType::Operator, $tokens[3]->type);
         self::assertSame(TokenType::Operator, $tokens[4]->type);
-        self::assertSame('(', $tokens[5]->lexeme);
-        self::assertSame(TokenType::Keyword, $tokens[6]->type);
-        self::assertSame('unset', $tokens[6]->lexeme);
-        self::assertSame(')', $tokens[7]->lexeme);
+        self::assertSame(TokenType::Operator, $tokens[5]->type);
+        self::assertSame('(unset)', $tokens[5]->lexeme);
     }
 
     public function testTokenizesRepresentativeStringForms(): void

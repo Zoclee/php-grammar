@@ -137,7 +137,6 @@ final class Php85LexicalAudit
                 'Delimiter nesting diagnostics and expression legality: EBNF/parser; compiler halt scope and return-only type placements: contextual.',
             ],
             'unproven' => [
-                'Known acceptance discrepancy: false && (unset) 1; is folded away by PHP 8.5.10. Preserve removed-cast grammar policy pending Phase 6 folding closure; see known-discrepancies/valid/phase5-discarded-unset.php.',
                 'All possible recursively nested interpolation/heredoc/state combinations; finite deterministic matrices and existing nested corpus are evidence, not a formal proof.',
                 'Exact Zend recovery token stream on malformed input; this lexer throws or aggregates invalid string contents for later primitive/EBNF rejection.',
                 'AST, contextual legality, constant folding and full language conformance remain Phases 6-7.',

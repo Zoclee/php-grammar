@@ -1,5 +1,7 @@
 # PHP 8.5 Grammar Completeness — Phase 5 of 7
 
+Current status: the [subsequent remediation audit](remediation-audit.md) resolves the discarded-unset, for-condition, assignment-prefix and instanceof-power defects, expands the boundary matrix to 114 families, and supplies systematic AST and scanner-product comparisons. Counts and unresolved findings below describe the historical stage unless explicitly updated.
+
 All 190 inventoried rules in the pinned PHP 8.5 scanner have explicit audit
 dispositions across 25 lexical families. Scanner behavior is no longer an
 unexplored completeness blocker. This is strong, finite source-backed evidence,

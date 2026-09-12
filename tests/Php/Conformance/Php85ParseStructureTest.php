@@ -87,6 +87,16 @@ final class Php85ParseStructureTest extends TestCase
         yield ['expression', '[1,]', []];
         yield ['expression', '[[]]', []];
         yield ['expression', '[, $a] = $x', []];
+        yield ['expression', '$a ?? $b = $c', [['conditional-prefix-context', 0, 2], ['assignment-prefix', 2, 4]]];
+        yield ['expression', '$a + $b *= $c', [['conditional-prefix-context', 0, 2], ['assignment-prefix', 2, 4]]];
+        yield ['expression', '$a + $b = &$c', []];
+        yield ['expression', '$a instanceof $b ** -$c', []];
+        yield ['expression', '$a instanceof $b ** print $c', []];
+        yield ['expression', '-$a instanceof $b ** -$c ** $d', []];
+        yield ['for-condition-expression-list', '', []];
+        yield ['for-condition-expression-list', '$a', []];
+        yield ['for-condition-expression-list', '$a, $b', []];
+        yield ['for-condition-expression-list', '(void) $a, $b', []];
         yield ['statement', 'if ($a) if ($b) foo(); else bar();', [['unmatched-if-statement', 0, 17], ['matched-if-statement', 4, 17]]];
         yield ['statement', 'if ($a) while ($b) if ($c) foo(); else bar();', [['matched-if-statement', 8, 21]]];
         yield ['statement', ';', [['empty-statement', 0, 1]]];

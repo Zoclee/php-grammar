@@ -1,5 +1,7 @@
 # PHP 8.5 parser/compiler boundary remediation
 
+Current status: the [subsequent remediation audit](remediation-audit.md) resolves the discarded-unset, for-condition, assignment-prefix and instanceof-power defects, expands the boundary matrix to 114 families, and supplies systematic AST and scanner-product comparisons. Counts and unresolved findings below describe the historical stage unless explicitly updated.
+
 Phase 5 update: the declaration and AST decisions below remain in force.
 The [scanner audit](phase5-lexer-audit.md) now adds direct evidence for all
 190 scanner rules and records one new folding discrepancy, `false && (unset) 1;`.

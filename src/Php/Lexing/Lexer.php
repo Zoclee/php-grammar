@@ -198,7 +198,7 @@ final class Lexer
             throw $state->error('The (real) cast has been removed; use (float).');
         }
 
-        if (preg_match('/^\([ \t]*(?:integer|double|boolean|binary|int|float|string|array|object|bool|void)[ \t]*\)/i', substr($state->source, $state->offset), $cast) === 1) {
+        if (preg_match('/^\([ \t]*(?:integer|double|boolean|binary|int|float|string|array|object|bool|void|unset)[ \t]*\)/i', substr($state->source, $state->offset), $cast) === 1) {
             return $state->consume(strlen($cast[0]), TokenType::Operator);
         }
 

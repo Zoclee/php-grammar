@@ -1,0 +1,274 @@
+{
+  "php": "8.5.10",
+  "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+  "evidence": "Pinned for_cond_exprs/non_empty_for_exprs, T_UNSET_CAST, zend_compile_cast, zend_compile_short_circuiting, zend_compile_conditional, zend_compile_coalesce, zend_eval_const_expr.",
+  "reproduction": "Run bin/php85-conformance.php; each row is tests/fixtures/php/8.5/<category>/remediation-<id>.php.",
+  "cases": [
+    {
+      "id": "for-empty",
+      "source": "for (;;) {}",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "for-one",
+      "source": "for (; $a; ) {}",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "for-two",
+      "source": "for (; $a, $b; ) {}",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "for-void-condition-prefix",
+      "source": "for (; (void) $a, $b; ) {}",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "for-void-lists",
+      "source": "for ((void) $a, $b, (void) $c; (void) $a, (void) $b, $c; (void) $a, $b, (void) $c) {}",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "for-leading-comma",
+      "source": "for (; , $a; ) {}",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: syntax error, unexpected token \",\", expecting \";\" in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "for-trailing-comma",
+      "source": "for (; $a,; ) {}",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: syntax error, unexpected token \";\" in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "for-final-void",
+      "source": "for (; $a, (void) $b; ) {}",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: syntax error, unexpected token \";\", expecting \",\" in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-live",
+      "source": "(unset) 1;",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-constant-live",
+      "source": "const X = ((unset) 1);",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-and",
+      "source": "false && (unset) 1;",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "unset-constant-and",
+      "source": "const X = (false && (unset) 1);",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-or",
+      "source": "true || (unset) 1;",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "unset-constant-or",
+      "source": "const X = (true || (unset) 1);",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-null-coalesce",
+      "source": "null ?? (unset) 1;",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-constant-null-coalesce",
+      "source": "const X = (null ?? (unset) 1);",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-coalesce",
+      "source": "1 ?? (unset) 1;",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-constant-coalesce",
+      "source": "const X = (1 ?? (unset) 1);",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "unset-true-ternary",
+      "source": "true ? 1 : (unset) 1;",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-constant-true-ternary",
+      "source": "const X = (true ? 1 : (unset) 1);",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "unset-false-ternary",
+      "source": "false ? (unset) 1 : 1;",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-constant-false-ternary",
+      "source": "const X = (false ? (unset) 1 : 1);",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "unset-word-and",
+      "source": "false and (unset) 1;",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "unset-constant-word-and",
+      "source": "const X = (false and (unset) 1);",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-word-or",
+      "source": "true or (unset) 1;",
+      "lint": true,
+      "category": "valid",
+      "diagnostic": "No syntax errors detected in <fixture>"
+    },
+    {
+      "id": "unset-constant-word-or",
+      "source": "const X = (true or (unset) 1);",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-xor",
+      "source": "true xor (unset) 1;",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "unset-constant-xor",
+      "source": "const X = (true xor (unset) 1);",
+      "lint": false,
+      "category": "contextual-invalid",
+      "diagnostic": "Fatal error: The (unset) cast is no longer supported in <fixture> on line 1\nStack trace:\n#0 {main}\nErrors parsing <fixture>"
+    },
+    {
+      "id": "real-live",
+      "source": "(real) 1;",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: The (real) cast has been removed, use (float) instead in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "real-and",
+      "source": "false && (real) 1;",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: The (real) cast has been removed, use (float) instead in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "real-or",
+      "source": "true || (real) 1;",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: The (real) cast has been removed, use (float) instead in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "real-null-coalesce",
+      "source": "null ?? (real) 1;",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: The (real) cast has been removed, use (float) instead in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "real-coalesce",
+      "source": "1 ?? (real) 1;",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: The (real) cast has been removed, use (float) instead in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "real-true-ternary",
+      "source": "true ? 1 : (real) 1;",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: The (real) cast has been removed, use (float) instead in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "real-false-ternary",
+      "source": "false ? (real) 1 : 1;",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: The (real) cast has been removed, use (float) instead in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "real-word-and",
+      "source": "false and (real) 1;",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: The (real) cast has been removed, use (float) instead in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "real-word-or",
+      "source": "true or (real) 1;",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: The (real) cast has been removed, use (float) instead in <fixture> on line 1\nErrors parsing <fixture>"
+    },
+    {
+      "id": "real-xor",
+      "source": "true xor (real) 1;",
+      "lint": false,
+      "category": "invalid",
+      "diagnostic": "Parse error: The (real) cast has been removed, use (float) instead in <fixture> on line 1\nErrors parsing <fixture>"
+    }
+  ]
+}

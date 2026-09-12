@@ -3,18 +3,18 @@
     "scanner_sha256": "8dfed84b0f6cabe73f004ea00c69614ea84542130a9b97e7699f801ef7ce7403",
     "method": "Source rule dispositions plus independent token/byte and primitive matrices. Status is scoped evidence, not an exhaustive equivalence percentage.",
     "input_hashes": {
-        "src/Php/Lexing/Lexer.php": "a932bf221e28ed918268fdb255321e09a023cf16eb5a2d2d8c8303501bdefe6d",
+        "src/Php/Lexing/Lexer.php": "d2da555fc5ec7fabecfa5719ca1f5cc08287886008b5cf6e62d825b65d4172c9",
         "src/Php/Lexing/LexerState.php": "6c598c54d813774bfa06b320142108b804bdc4796916876cae345fbce2b3012f",
         "src/Php/Lexing/PhpVersion.php": "8271b549f251bbb5a3e5d793877ea0359d92de421ed88a9dd06fafac12202498",
         "src/Php/Lexing/StringSyntax.php": "7b634e9aeafc6b1b1625e1c257577829e75cce78897f5a4c96d27a974ff1857a",
         "src/Php/Conformance/PhpGrammarMatcher.php": "1ea7d24e027d7e94eb0d6ee3a256b7247c0f47aa0ffc7aa027bf026f94e0c355",
         "src/Php/Conformance/PhpGrammarInput.php": "09c02bde1e0d3183bb0afe89969c6ac2cbfd9dd3311650e7352ff1231a786e8e",
-        "tests/Support/Php85LexicalCases.php": "2b5cf3fbc6e248b9f3c1eccbbaebbd7d15e14bd7b65aaebf751c697a15c4a68d",
-        "tests/Support/Php85LexicalAudit.php": "66d2a0ac6438c9fb2e970c2ce94033cecf640067c8e8bf8f63691ce8738aef06",
-        "tools/php85-lexer-differential.php": "9ec968a81bfef862d5a64e397f1e4d5d67ef4f08d202e0a70ba67bf9f10892e5",
+        "tests/Support/Php85LexicalCases.php": "99622eff32493ae9309a0c04a462725891ecd3e96d52c504d4937df258ab9485",
+        "tests/Support/Php85LexicalAudit.php": "5c3830e02e7a07051a0a74f8095f68991e13b6f4177b3f9742b1344538d771f0",
+        "tools/php85-lexer-differential.php": "f0cb97b1eb0197ab4fe29216d693b78272ade70855ef92c121b9d5e56394ed9e",
         "docs/8.5/source-inventory.json": "2ed2b6da0d5de6a9aca70b291278167a9d04de9a38cbf5b2ab153a2265c02992",
         "docs/8.5/phase3-coverage.json": "d86e289fbc3af533804359a6a9f30d401b65a411c25a96cb251f7350de51bec1",
-        "grammar/8.5/php.ebnf": "e6dc2cdc4e5d6c8d1783e980ab46f352fdb4e98954424c1a20aed79794330ffc"
+        "grammar/8.5/php.ebnf": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755"
     },
     "families": {
         "tags": {
@@ -7299,7 +7299,6 @@
         "Delimiter nesting diagnostics and expression legality: EBNF/parser; compiler halt scope and return-only type placements: contextual."
     ],
     "unproven": [
-        "Known acceptance discrepancy: false && (unset) 1; is folded away by PHP 8.5.10. Preserve removed-cast grammar policy pending Phase 6 folding closure; see known-discrepancies/valid/phase5-discarded-unset.php.",
         "All possible recursively nested interpolation/heredoc/state combinations; finite deterministic matrices and existing nested corpus are evidence, not a formal proof.",
         "Exact Zend recovery token stream on malformed input; this lexer throws or aggregates invalid string contents for later primitive/EBNF rejection.",
         "AST, contextual legality, constant folding and full language conformance remain Phases 6-7."

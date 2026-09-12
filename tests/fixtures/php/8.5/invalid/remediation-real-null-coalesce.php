@@ -1,0 +1,1 @@
+<?php null ?? (real) 1;

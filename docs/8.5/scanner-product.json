@@ -1,0 +1,17 @@
+{
+    "php": "8.5.10",
+    "grammar_sha256": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755",
+    "generator_sha256": "1de02a8ee6677ac3bbfeb68a93c6319b781263d41836d98056d79e3c2e9dfaf0",
+    "families": {
+        "function": 62,
+        "html": 62,
+        "short": 62,
+        "shebang": 62,
+        "alternative": 62,
+        "loop": 62,
+        "interpolation": 62,
+        "heredoc-eof": 48
+    },
+    "total": 482,
+    "failures": []
+}

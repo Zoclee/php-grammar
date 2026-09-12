@@ -67,7 +67,6 @@ final class Php85AuditRemediationTest extends TestCase
     public static function invalidSourceProvider(): iterable
     {
         yield 'old typed class constant placement' => ['<?php class A { const X: int = 1; }'];
-        yield 'removed unset cast' => ['<?php $x = (unset) 1;'];
         yield 'empty closure use list' => ['<?php $x = function () use () {};'];
         yield 'literal object dereference' => ['<?php 1->foo;'];
         yield 'literal call' => ['<?php 1();'];

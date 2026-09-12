@@ -1,5 +1,7 @@
 # PHP 8.5 Grammar Completeness — Phase 3 of 7
 
+Current status: the [subsequent remediation audit](remediation-audit.md) resolves the discarded-unset, for-condition, assignment-prefix and instanceof-power defects, expands the boundary matrix to 114 families, and supplies systematic AST and scanner-product comparisons. Counts and unresolved findings below describe the historical stage unless explicitly updated.
+
 Phase 5 update: [the scanner audit](phase5-lexer-audit.md) supersedes
 scanner-evidence gaps and current counts in this historical report. It maps
 all 190 scanner rules, preserves 52 primitive-bypassed and 11 removed-trivia

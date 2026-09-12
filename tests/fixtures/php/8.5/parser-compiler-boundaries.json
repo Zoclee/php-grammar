@@ -1020,6 +1020,325 @@
         "retained": "contextual-invalid/boundary-nested-class-retained.php",
         "discarded": "valid/boundary-nested-class-discarded.php"
       }
+    },
+    {
+      "id": "unset-cast",
+      "source": "(unset) 1;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_cast; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-unset-cast-live.php",
+        "retained": "contextual-invalid/boundary-unset-cast-retained.php",
+        "discarded": "valid/boundary-unset-cast-discarded.php"
+      }
+    },
+    {
+      "id": "list-unpack",
+      "source": "[...$a] = $b;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-list-unpack-live.php",
+        "retained": "contextual-invalid/boundary-list-unpack-retained.php",
+        "discarded": "valid/boundary-list-unpack-discarded.php"
+      }
+    },
+    {
+      "id": "list-empty",
+      "source": "list() = $a;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-list-empty-live.php",
+        "retained": "contextual-invalid/boundary-list-empty-retained.php",
+        "discarded": "valid/boundary-list-empty-discarded.php"
+      }
+    },
+    {
+      "id": "list-keyed-omission",
+      "source": "[0 => $a,,] = $b;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-list-keyed-omission-live.php",
+        "retained": "contextual-invalid/boundary-list-keyed-omission-retained.php",
+        "discarded": "valid/boundary-list-keyed-omission-discarded.php"
+      }
+    },
+    {
+      "id": "list-mixed-keys",
+      "source": "[0 => $a, $b] = $c;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-list-mixed-keys-live.php",
+        "retained": "contextual-invalid/boundary-list-mixed-keys-retained.php",
+        "discarded": "valid/boundary-list-mixed-keys-discarded.php"
+      }
+    },
+    {
+      "id": "list-mixed-syntax",
+      "source": "[list($a)] = $b;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_verify_list_assign_target; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-list-mixed-syntax-live.php",
+        "retained": "contextual-invalid/boundary-list-mixed-syntax-retained.php",
+        "discarded": "valid/boundary-list-mixed-syntax-discarded.php"
+      }
+    },
+    {
+      "id": "list-literal-target",
+      "source": "[1] = $a;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_verify_list_assign_target; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-list-literal-target-live.php",
+        "retained": "contextual-invalid/boundary-list-literal-target-retained.php",
+        "discarded": "valid/boundary-list-literal-target-discarded.php"
+      }
+    },
+    {
+      "id": "globals-write",
+      "source": "$GLOBALS = [];",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_ensure_writable_variable; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-globals-write-live.php",
+        "retained": "contextual-invalid/boundary-globals-write-retained.php",
+        "discarded": "valid/boundary-globals-write-discarded.php"
+      }
+    },
+    {
+      "id": "this-write",
+      "source": "$this = 1;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_assign; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-this-write-live.php",
+        "retained": "contextual-invalid/boundary-this-write-retained.php",
+        "discarded": "valid/boundary-this-write-discarded.php"
+      }
+    },
+    {
+      "id": "this-global",
+      "source": "global $this;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_global_var; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-this-global-live.php",
+        "retained": "contextual-invalid/boundary-this-global-retained.php",
+        "discarded": "valid/boundary-this-global-discarded.php"
+      }
+    },
+    {
+      "id": "this-static",
+      "source": "static $this;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_static_var; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-this-static-live.php",
+        "retained": "contextual-invalid/boundary-this-static-retained.php",
+        "discarded": "valid/boundary-this-static-discarded.php"
+      }
+    },
+    {
+      "id": "this-unset",
+      "source": "unset($this);",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_unset; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-this-unset-live.php",
+        "retained": "contextual-invalid/boundary-this-unset-retained.php",
+        "discarded": "valid/boundary-this-unset-discarded.php"
+      }
+    },
+    {
+      "id": "static-duplicate",
+      "source": "static $a, $a;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_static_var; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-static-duplicate-live.php",
+        "retained": "contextual-invalid/boundary-static-duplicate-retained.php",
+        "discarded": "valid/boundary-static-duplicate-discarded.php"
+      }
+    },
+    {
+      "id": "return-void-value",
+      "source": "function f(): void { return 1; }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_emit_return_type_check; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-return-void-value-live.php",
+        "retained": "contextual-invalid/boundary-return-void-value-retained.php",
+        "discarded": "valid/boundary-return-void-value-discarded.php"
+      }
+    },
+    {
+      "id": "return-never",
+      "source": "function f(): never { return; }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_emit_return_type_check; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-return-never-live.php",
+        "retained": "contextual-invalid/boundary-return-never-retained.php",
+        "discarded": "valid/boundary-return-never-discarded.php"
+      }
+    },
+    {
+      "id": "return-missing-value",
+      "source": "function f(): int { return; }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_emit_return_type_check; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-return-missing-value-live.php",
+        "retained": "contextual-invalid/boundary-return-missing-value-retained.php",
+        "discarded": "valid/boundary-return-missing-value-discarded.php"
+      }
+    },
+    {
+      "id": "yield-from-reference",
+      "source": "function &f() { yield from []; }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_yield_from; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-yield-from-reference-live.php",
+        "retained": "contextual-invalid/boundary-yield-from-reference-retained.php",
+        "discarded": "valid/boundary-yield-from-reference-discarded.php"
+      }
+    },
+    {
+      "id": "generator-return-type",
+      "source": "function f(): int { yield 1; }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_mark_function_as_generator; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-generator-return-type-live.php",
+        "retained": "contextual-invalid/boundary-generator-return-type-retained.php",
+        "discarded": "valid/boundary-generator-return-type-discarded.php"
+      }
+    },
+    {
+      "id": "nodiscard-void",
+      "source": "#[NoDiscard] function f(): void {}",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_func_decl_ex; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-nodiscard-void-live.php",
+        "retained": "contextual-invalid/boundary-nodiscard-void-retained.php",
+        "discarded": "valid/boundary-nodiscard-void-discarded.php"
+      }
+    },
+    {
+      "id": "autoload",
+      "source": "function __autoload($x) {}",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_begin_func_decl; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-autoload-live.php",
+        "retained": "contextual-invalid/boundary-autoload-retained.php",
+        "discarded": "valid/boundary-autoload-discarded.php"
+      }
+    },
+    {
+      "id": "custom-assert",
+      "source": "function assert($x) {}",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_begin_func_decl; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-custom-assert-live.php",
+        "retained": "contextual-invalid/boundary-custom-assert-retained.php",
+        "discarded": "valid/boundary-custom-assert-discarded.php"
+      }
+    },
+    {
+      "id": "method-duplicate",
+      "source": "class C { function f() {} function f() {} }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_begin_method_decl; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-method-duplicate-live.php",
+        "retained": "contextual-invalid/boundary-method-duplicate-retained.php",
+        "discarded": "valid/boundary-method-duplicate-discarded.php"
+      }
+    },
+    {
+      "id": "property-duplicate",
+      "source": "class C { public $a; public $a; }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_prop_decl; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-property-duplicate-live.php",
+        "retained": "contextual-invalid/boundary-property-duplicate-retained.php",
+        "discarded": "valid/boundary-property-duplicate-discarded.php"
+      }
+    },
+    {
+      "id": "switch-default-duplicate",
+      "source": "switch ($a) { default:; default:; }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_switch; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-switch-default-duplicate-live.php",
+        "retained": "contextual-invalid/boundary-switch-default-duplicate-retained.php",
+        "discarded": "valid/boundary-switch-default-duplicate-discarded.php"
+      }
+    },
+    {
+      "id": "match-default-duplicate",
+      "source": "match ($a) { default => 1, default => 2 };",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_match; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-match-default-duplicate-live.php",
+        "retained": "contextual-invalid/boundary-match-default-duplicate-retained.php",
+        "discarded": "valid/boundary-match-default-duplicate-discarded.php"
+      }
+    },
+    {
+      "id": "label-duplicate",
+      "source": "here:; here:;",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_label; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-label-duplicate-live.php",
+        "retained": "contextual-invalid/boundary-label-duplicate-retained.php",
+        "discarded": "valid/boundary-label-duplicate-discarded.php"
+      }
+    },
+    {
+      "id": "goto-loop",
+      "source": "goto here; while (false) { here:; }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_resolve_goto_label; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-goto-loop-live.php",
+        "retained": "contextual-invalid/boundary-goto-loop-retained.php",
+        "discarded": "valid/boundary-goto-loop-discarded.php"
+      }
+    },
+    {
+      "id": "break-depth",
+      "source": "while (false) { break 2; }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_break_continue; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-break-depth-live.php",
+        "retained": "contextual-invalid/boundary-break-depth-retained.php",
+        "discarded": "valid/boundary-break-depth-discarded.php"
+      }
+    },
+    {
+      "id": "parent-hook-outside",
+      "source": "class C extends B { function f() { parent::$x::get(); } }",
+      "live_valid": false,
+      "evidence": "Pinned zend_compile.c: zend_compile_parent_property_hook_call; parser accepts structurally before compilation.",
+      "fixtures": {
+        "live": "contextual-invalid/boundary-parent-hook-outside-live.php",
+        "retained": "contextual-invalid/boundary-parent-hook-outside-retained.php",
+        "discarded": "valid/boundary-parent-hook-outside-discarded.php"
+      }
     }
   ]
 }

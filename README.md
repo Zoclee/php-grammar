@@ -7,10 +7,10 @@ Versioned EBNF grammars and human-readable specifications for the PHP language s
 php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [Phase 5 findings and limits](docs/8.5/phase5-lexer-audit.md).
 
 The PHP 8.5 parser/compiler boundary audit reconciles common class-like members,
-enum types, trait aliases, hooks, attributes and try syntax. It adds 85
-live/retained/discarded declaration families and corrects an alternative-if
-binding error using Zend AST evidence. The corpus contains 602 valid, 349
-structural-negative and 276 contextual-negative files across both short-tag
+enum types, trait aliases, hooks, attributes and try syntax. It covers 114
+live/retained/discarded families and corrects an alternative-if
+binding error using Zend AST evidence. The corpus contains 646 valid, 362
+structural-negative and 348 contextual-negative files across both short-tag
 profiles. The previously recorded discarded-closure examples now pass.
 Full PHP 8.5 conformance is not established.
 
@@ -20,8 +20,10 @@ lexical primitives, and a [persistent evidence ledger](docs/8.5/phase5-lexical-e
 It preserves the 52 primitive-bypassed and 11 removed-trivia productions without
 inflating syntactic coverage. The audit fixes enum/yield lookahead, keyword
 adaptation, heredoc EOF handling, removed `(real)` recognition, and CRLF tracking.
-One newly recorded folding discrepancy, `false && (unset) 1;`, remains for
-Phase 6. See the [audit report](docs/8.5/phase5-lexer-audit.md) for reproduction
+The [remediation audit](docs/8.5/remediation-audit.md) resolves the discarded
+`(unset)` discrepancy and corrects for conditions, pending assignments and
+instanceof/power grouping. Its 11,294-case structure matrix compares Zend ASTs
+and checks unique derivations. See the [scanner audit](docs/8.5/phase5-lexer-audit.md) for reproduction
 commands, source-byte guarantees, scanner abstractions, and validation totals.
 
 Current positive evidence is recorded in the generated coverage report.

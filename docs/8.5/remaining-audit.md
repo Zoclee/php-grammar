@@ -1,5 +1,7 @@
 # PHP 8.5 remaining-audit corrections
 
+Current status: the [subsequent remediation audit](remediation-audit.md) resolves the discarded-unset, for-condition, assignment-prefix and instanceof-power defects, expands the boundary matrix to 114 families, and supplies systematic AST and scanner-product comparisons. Counts and unresolved findings below describe the historical stage unless explicitly updated.
+
 Historical audit snapshot. The [parser/compiler boundary remediation](parser-compiler-remediation.md) supersedes its outstanding-gap descriptions and counts.
 
 The audited expression/statement ambiguities, interface `var` properties,

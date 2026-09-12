@@ -84,7 +84,7 @@ function normalized(string $source): array
             continue;
         }
         // Recovery tokens for removed casts do not mean PHP 8.5 accepts a cast.
-        if ($id === T_UNSET_CAST || ($id === T_DOUBLE_CAST && preg_match('/real/i', $text))) {
+        if ($id === T_DOUBLE_CAST && preg_match('/real/i', $text)) {
             preg_match('/^(\()([ \t]*)(\w+)([ \t]*)(\))$/', $text, $m);
             $result[] = ['punctuation', '('];
             if ($m[2] !== '') $result[] = ['whitespace', $m[2]];

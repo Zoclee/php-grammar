@@ -4668,15 +4668,439 @@
       "restriction": "Multiple attributed global constants",
       "reason": "Parser reduces the full list; compilation enforces one constant per attributed declaration.",
       "evidence": "zend_language_parser.y: attributed_top_statement, const_list (398-406); zend_compile.c: zend_compile_const_decl (9718-9725). No closure counterpart: global const is not an inner_statement."
+    },
+    {
+      "fixture": "contextual-invalid/audit-casts-unset.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-coalesce.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-constant-and.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-constant-live.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-constant-null-coalesce.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-constant-or.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-constant-word-and.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-constant-word-or.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-constant-xor.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-false-ternary.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-live.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-null-coalesce.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-true-ternary.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/remediation-unset-xor.php",
+      "restriction": "Removed unset cast",
+      "reason": "Parser-level cast is valid structurally; visited folding or ordinary cast compilation rejects it.",
+      "evidence": "Pinned zend_language_parser.y:1368; zend_compile_cast and zend_eval_const_expr CAST case; remediation-folding-evidence.json."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-unset-cast-live.php",
+      "restriction": "unset-cast",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_cast; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-unset-cast-retained.php",
+      "restriction": "unset-cast",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_cast; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-unpack-live.php",
+      "restriction": "list-unpack",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-unpack-retained.php",
+      "restriction": "list-unpack",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-empty-live.php",
+      "restriction": "list-empty",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-empty-retained.php",
+      "restriction": "list-empty",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-keyed-omission-live.php",
+      "restriction": "list-keyed-omission",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-keyed-omission-retained.php",
+      "restriction": "list-keyed-omission",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-mixed-keys-live.php",
+      "restriction": "list-mixed-keys",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-mixed-keys-retained.php",
+      "restriction": "list-mixed-keys",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_list_assign; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-mixed-syntax-live.php",
+      "restriction": "list-mixed-syntax",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_verify_list_assign_target; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-mixed-syntax-retained.php",
+      "restriction": "list-mixed-syntax",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_verify_list_assign_target; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-literal-target-live.php",
+      "restriction": "list-literal-target",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_verify_list_assign_target; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-list-literal-target-retained.php",
+      "restriction": "list-literal-target",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_verify_list_assign_target; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-globals-write-live.php",
+      "restriction": "globals-write",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_ensure_writable_variable; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-globals-write-retained.php",
+      "restriction": "globals-write",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_ensure_writable_variable; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-this-write-live.php",
+      "restriction": "this-write",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_assign; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-this-write-retained.php",
+      "restriction": "this-write",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_assign; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-this-global-live.php",
+      "restriction": "this-global",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_global_var; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-this-global-retained.php",
+      "restriction": "this-global",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_global_var; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-this-static-live.php",
+      "restriction": "this-static",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_static_var; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-this-static-retained.php",
+      "restriction": "this-static",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_static_var; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-this-unset-live.php",
+      "restriction": "this-unset",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_unset; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-this-unset-retained.php",
+      "restriction": "this-unset",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_unset; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-static-duplicate-live.php",
+      "restriction": "static-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_static_var; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-static-duplicate-retained.php",
+      "restriction": "static-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_static_var; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-return-void-value-live.php",
+      "restriction": "return-void-value",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_emit_return_type_check; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-return-void-value-retained.php",
+      "restriction": "return-void-value",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_emit_return_type_check; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-return-never-live.php",
+      "restriction": "return-never",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_emit_return_type_check; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-return-never-retained.php",
+      "restriction": "return-never",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_emit_return_type_check; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-return-missing-value-live.php",
+      "restriction": "return-missing-value",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_emit_return_type_check; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-return-missing-value-retained.php",
+      "restriction": "return-missing-value",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_emit_return_type_check; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-yield-from-reference-live.php",
+      "restriction": "yield-from-reference",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_yield_from; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-yield-from-reference-retained.php",
+      "restriction": "yield-from-reference",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_yield_from; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-generator-return-type-live.php",
+      "restriction": "generator-return-type",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_mark_function_as_generator; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-generator-return-type-retained.php",
+      "restriction": "generator-return-type",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_mark_function_as_generator; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-nodiscard-void-live.php",
+      "restriction": "nodiscard-void",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_func_decl_ex; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-nodiscard-void-retained.php",
+      "restriction": "nodiscard-void",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_func_decl_ex; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-autoload-live.php",
+      "restriction": "autoload",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_begin_func_decl; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-autoload-retained.php",
+      "restriction": "autoload",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_begin_func_decl; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-custom-assert-live.php",
+      "restriction": "custom-assert",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_begin_func_decl; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-custom-assert-retained.php",
+      "restriction": "custom-assert",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_begin_func_decl; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-method-duplicate-live.php",
+      "restriction": "method-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_begin_method_decl; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-method-duplicate-retained.php",
+      "restriction": "method-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_begin_method_decl; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-duplicate-live.php",
+      "restriction": "property-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_prop_decl; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-duplicate-retained.php",
+      "restriction": "property-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_prop_decl; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-switch-default-duplicate-live.php",
+      "restriction": "switch-default-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_switch; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-switch-default-duplicate-retained.php",
+      "restriction": "switch-default-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_switch; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-match-default-duplicate-live.php",
+      "restriction": "match-default-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_match; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-match-default-duplicate-retained.php",
+      "restriction": "match-default-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_match; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-label-duplicate-live.php",
+      "restriction": "label-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_label; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-label-duplicate-retained.php",
+      "restriction": "label-duplicate",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_label; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-goto-loop-live.php",
+      "restriction": "goto-loop",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_resolve_goto_label; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-goto-loop-retained.php",
+      "restriction": "goto-loop",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_resolve_goto_label; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-break-depth-live.php",
+      "restriction": "break-depth",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_break_continue; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-break-depth-retained.php",
+      "restriction": "break-depth",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_break_continue; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parent-hook-outside-live.php",
+      "restriction": "parent-hook-outside",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_parent_property_hook_call; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parent-hook-outside-retained.php",
+      "restriction": "parent-hook-outside",
+      "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
+      "evidence": "Pinned zend_compile.c: zend_compile_parent_property_hook_call; boundary live/retained/discarded matrix."
     }
   ],
-  "known_discrepancies": [
-    {
-      "fixture": "known-discrepancies/valid/phase5-discarded-unset.php",
-      "restriction": "Removed unset cast discarded by short-circuit constant folding",
-      "disposition": "PHP 8.5.10 accepts false && (unset) 1; repository grammar rejects the removed cast. Phase 5 preserves the requested removed-cast syntax policy; Phase 6 must reconcile folding-dependent acceptance. This is not evidence that live unset casts are valid.",
-      "owner": "Phase 6 parser/contextual/folding closure",
-      "evidence": "Pinned zend_language_scanner.l:1708 emits T_UNSET_CAST; zend_language_parser.y:1368 creates a cast; zend_compile.c:10472/12366 reject surviving casts. PHP 8.5.10 lint confirms the discarded short-circuit witness."
-    }
-  ]
+  "known_discrepancies": []
 }

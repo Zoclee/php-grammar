@@ -647,5 +647,29 @@
         "if ($a) if ($b) foo(); elseif ($c) bar(); else baz();"
       ]
     ]
+  },
+  {
+    "root": "expression",
+    "source": "!$a = $b",
+    "expected": "!($a = $b)",
+    "spans": []
+  },
+  {
+    "root": "expression",
+    "source": "$a ?? $b = $c",
+    "expected": "$a ?? ($b = $c)",
+    "spans": [["conditional-prefix-context", "$a ??"], ["assignment-prefix", "$b ="]]
+  },
+  {
+    "root": "expression",
+    "source": "$a instanceof $b ** -$c",
+    "expected": "($a instanceof $b) ** (-$c)",
+    "spans": [["unary-expression", "-$c"]]
+  },
+  {
+    "root": "expression",
+    "source": "-$a instanceof $b ** -$c ** $d",
+    "expected": "((-$a) instanceof $b) ** (-($c ** $d))",
+    "spans": [["unary-expression", "-$a"], ["power-expression", "$c ** $d"]]
   }
 ]

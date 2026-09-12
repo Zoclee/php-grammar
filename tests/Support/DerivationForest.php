@@ -15,7 +15,7 @@ final class DerivationForest
     private array $tokens;
     private array $memo = [];
     private array $primitives = ['variable' => T_VARIABLE, 'identifier' => T_STRING,
-        'decimal-integer-literal' => T_LNUMBER];
+        'decimal-integer-literal' => T_LNUMBER, 'inline-html' => T_INLINE_HTML];
 
     public function __construct(Grammar $grammar, string $source)
     {
@@ -41,7 +41,9 @@ final class DerivationForest
             if (is_array($token) && in_array($token[0], [T_OPEN_TAG, T_WHITESPACE, T_COMMENT, T_DOC_COMMENT], true)) continue;
             if (is_array($token) && $token[0] === T_YIELD_FROM) {
                 $tokens[] = [T_YIELD, 'yield'];
-                $tokens[] = [T_STRING, 'from'];
+                $tokens[] = [T_YIELD_FROM, 'from'];
+            } elseif (is_array($token) && $token[0] === T_CLOSE_TAG) {
+                $tokens[] = ';';
             } else {
                 $tokens[] = $token;
             }

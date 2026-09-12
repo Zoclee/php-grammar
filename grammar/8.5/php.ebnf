@@ -304,8 +304,9 @@ logical-and-expression =
     print-expression , { "and" , print-expression } ;
 
 assignment-expression =
-    conditional-expression | assignment-prefix , assignment-expression
-    | variable-expression , "=" , "&" , variable-expression ;
+    conditional-expression
+    | [ conditional-prefix-context ] , assignment-prefix , assignment-expression
+    | [ conditional-prefix-context ] , variable-expression , "=" , "&" , variable-expression ;
 
 assignment-operator =
       "=" | "+=" | "-=" | "*=" | "/=" | ".=" | "%="
@@ -357,7 +358,7 @@ power-expression =
     clone-expression , [ "**" , power-expression ] ;
 
 instanceof-expression =
-    unary-expression , { "instanceof" , class-name-reference } ;
+    unary-expression , { "instanceof" , class-name-reference , [ "**" , unary-expression ] } ;
 
 unary-expression =
     power-expression
@@ -587,14 +588,17 @@ for-statement =
     matched-for-statement | unmatched-for-statement ;
 
 for-expression-list =
-    [ for-expression , { "," , for-expression } ] ;
+    [ nonempty-for-expression-list ] ;
+
+nonempty-for-expression-list =
+    for-expression , { "," , for-expression } ;
 
 for-expression =
       expression
     | "(void)" , expression ;
 
 for-condition-expression-list =
-    [ [ for-expression-list , "," ] , expression ] ;
+    [ expression | nonempty-for-expression-list , "," , expression ] ;
 
 foreach-statement =
     matched-foreach-statement | unmatched-foreach-statement ;
@@ -1197,7 +1201,8 @@ assignment-prefix =
 
 
 assignment-prefix-context =
-    conditional-prefix-context | assignment-prefix , { assignment-prefix } , [ conditional-prefix-context ] ;
+    conditional-prefix-context
+    | [ conditional-prefix-context ] , assignment-prefix , [ assignment-prefix-context ] ;
 
 
 conditional-prefix-context =
@@ -1262,7 +1267,8 @@ boolean-not-prefix-context =
 
 
 instanceof-prefix-context =
-    unary-prefix-context ;
+    unary-prefix-context
+    | instanceof-expression , "instanceof" , class-name-reference , "**" , [ unary-prefix-context ] ;
 
 
 unary-prefix-context =
@@ -1292,7 +1298,7 @@ unary-operator =
 
 cast-operator =
     "(int)" | "(integer)" | "(float)" | "(double)" | "(string)"
-    | "(binary)" | "(array)" | "(object)" | "(bool)" | "(boolean)" ;
+    | "(binary)" | "(array)" | "(object)" | "(bool)" | "(boolean)" | "(unset)" ;
 
 yield-key-expression =
     yield-from-expression

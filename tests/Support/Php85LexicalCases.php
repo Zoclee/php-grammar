@@ -150,7 +150,7 @@ final class Php85LexicalCases
             foreach (['', ' ', "\t", '  '] as $ws) $code('cast-' . $cast . '-' . bin2hex($ws), 'casts', [['operator', '(' . $ws . strtoupper($cast) . $ws . ')']]);
             $code('cast-newline-' . $cast, 'casts', [['punctuation', '('], ['whitespace', "\n"], [in_array($cast, ['array']) ? 'keyword' : 'identifier', $cast], ['punctuation', ')']], true);
         }
-        $code('cast-removed-unset', 'casts', [['punctuation', '('], ['keyword', 'unset'], ['punctuation', ')']], true);
+        $code('cast-removed-unset', 'casts', [['operator', '(unset)']], true);
         foreach (['(real)', '( REAL )', "(\treal\t)"] as $i => $s) $error('cast-removed-real-' . $i, 'casts', $s, 'The (real) cast has been removed');
 
         foreach (["'", '"', '`'] as $quote) {

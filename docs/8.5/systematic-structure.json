@@ -1,0 +1,40 @@
+{
+    "php": "8.5.10",
+    "ast": "1.1.3",
+    "schema": 120,
+    "grammar_sha256": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755",
+    "generator_sha256": "feeb6d9954d179b3711913662c2e1d4ed0ff19497a5dca87bcbd3afb3f154216",
+    "families": {
+        "binary-pair": 1936,
+        "prefix-binary": 1275,
+        "binary-prefix": 1276,
+        "pending-prefix": 1276,
+        "regression": 13,
+        "prefix-pair": 839,
+        "prefix-ternary-postfix": 116,
+        "ternary-middle": 29,
+        "ternary-right": 29,
+        "instanceof-power-prefix": 29,
+        "yield-key-prefix": 29,
+        "yield-value-prefix": 29,
+        "nested-yield-key": 29,
+        "reference-assignment-prefix": 29,
+        "reference-assignment-binary": 44,
+        "binary-chain": 44,
+        "ternary-postfix-binary": 176,
+        "binary-ternary-postfix": 176,
+        "statement-pair": 980,
+        "else-binding": 980,
+        "alternative-else": 980,
+        "alternative-elseif": 980
+    },
+    "total": 11294,
+    "outcomes": {
+        "zend_accepted": 10389,
+        "zend_rejected": 905,
+        "unique_derivations": 10389,
+        "ast_comparisons": 10389
+    },
+    "failures": [],
+    "limits": "Exhaustive within the generated finite pairwise/nested matrix; operand/body spans, implicit left folds and derivation counts. Not a formal proof for arbitrary nesting depth."
+}

@@ -21,9 +21,10 @@ coverage to the broader declaration category. Full conformance remains unproven.
 
 Grammar Completeness Phase 5 supplies a rule-by-rule scanner audit and direct
 byte/token evidence in the [Phase 5 report](../../docs/8.5/phase5-lexer-audit.md).
-The canonical EBNF is unchanged. The source contract below incorporates the
-confirmed lookahead and EOF corrections. One newly recorded discarded-unset
-folding discrepancy remains outside the current removed-cast grammar policy.
+The source contract incorporates the confirmed lookahead and EOF corrections.
+The subsequent [remediation audit](../../docs/8.5/remediation-audit.md) corrects
+the nullable for-condition prefix and reconciles the removed unset cast with
+the parser/compiler boundary.
 
 Sources are `php-src` branch `PHP-8.5`, pinned at
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`:
@@ -257,6 +258,19 @@ Binary repetition denotes a left fold; coalescing and exponentiation recurse
 on their right operand. Context nodes record pending operations, not additional
 PHP AST operations.
 
+Assignment has a variable/list left operand in Bison, rather than an arbitrary
+expression left operand. A pending higher-precedence operator can therefore
+precede that assignment: `$a + $b = $c` groups as `$a + ($b = $c)`.
+`assignment-expression` and its prefix context preserve that forced shift,
+including compound and reference assignments.
+
+`instanceof` has a restricted `class_name_reference` right operand. Once that
+reference is complete, a following exponentiation applies to the completed
+instanceof result: `$a instanceof $b ** $c` groups as
+`($a instanceof $b) ** $c`. The optional power suffix in
+`instanceof-expression` applies to the accumulated result; its prefix context
+also admits a pending exponentiation before a lower-precedence prefix operand.
+
 Yield's optional `=>` needs a further distinction: `closed-yield-*` productions
 exclude a trailing yield with an operand but without its own key separator.
 The separator therefore binds to the nearest such yield. This preserves
@@ -367,8 +381,8 @@ abstract/final modifiers in parser actions. These early constraints remain in
 the contextual layer of the three-layer model and cannot be bypassed by a
 discarded branch. The structural matcher does not enforce all parser actions.
 
-The boundary fixture matrix tests 85 live/retained/discarded families, including
-84 compiler-invalid families and the accepted set-reference exception. All six
+The boundary fixture matrix tests 114 live/retained/discarded families, including
+113 compiler-invalid families and the accepted set-reference exception. All six
 discarding operators are tested against every family. Separate parser-action
 controls require rejection even inside a discarded closure. This is systematic
 category coverage, not a claim that every diagnostic path or deferred validator
@@ -401,6 +415,8 @@ Apply the following order from `zend_const_expr_to_zval` (compiler lines
    condition and only the selected arm when the condition is literal. With a
    nonliteral condition, visit both arms. A folding-time error in a visited
    node is not suppressed merely because later validation could discard it.
+   In particular, visiting an unset-cast node immediately raises the removed-cast
+   error, before visiting its operand (`zend_eval_const_expr`, CAST case).
 4. Validate only the surviving AST. Allowed kinds are literal values, binary
    operations, greater/greater-equal, AND/OR, unary operations/plus/minus,
    casts, conditional, dimensions, arrays/elements/unpack, constants, class
@@ -447,17 +463,45 @@ validation algorithm.
 
 PHP 8.5 accepts `(integer)`, `(boolean)`, `(double)`, and `(binary)` with
 deprecations; casts are case insensitive and allow spaces/tabs inside their
-parentheses, not comments/newlines. `(real)` and `(unset)` are removed and
-excluded. `${...}` interpolation and backticks have applicable deprecations;
+parentheses, not comments/newlines. `(real)` and `(unset)` remain removed;
+their different validation phases are specified below. `${...}` interpolation and backticks have applicable deprecations;
 deprecation is not syntax rejection. Other deprecations unrelated to grammar
 do not remove accepted forms.
 
 The removed forms have different implementation boundaries: `(real)` raises a
 scanner parser-mode error, while Zend still emits `T_UNSET_CAST` and rejects
-surviving unset casts during compilation. PHP 8.5.10 accepts
-`false && (unset) 1;` after folding. That is a recorded implementation/grammar
-acceptance discrepancy for Phase 6; the canonical grammar continues excluding
-the removed cast. It must not be described as an equivalent lexical rejection.
+surviving unset casts during compilation. `cast-operator` therefore recognizes
+`(unset)` structurally, with ordinary cast precedence and scanner space/tab
+rules. This is a surviving parser representation, not a restored language cast.
+`zend_compile_cast` rejects it when reached; `zend_eval_const_expr` rejects it
+as soon as folding visits it, even if its parent could subsequently discard it.
+
+Ordinary expression compilation and constant-initializer folding use different
+traversals. `zend_compile_short_circuiting` skips a determined right operand;
+`zend_compile_conditional` compiles both arms and `zend_compile_coalesce`
+compiles the default. Constant initializers instead follow the procedure above.
+The exact PHP 8.5.10 outcomes are:
+
+| Expression | Ordinary expression statement | Parenthesized global constant initializer |
+|---|---|---|
+| `(unset) 1` | Reject | Reject |
+| `false && (unset) 1` / `false and (unset) 1` | Accept | Reject |
+| `true || (unset) 1` / `true or (unset) 1` | Accept | Reject |
+| `null ?? (unset) 1` | Reject | Reject |
+| `1 ?? (unset) 1` | Reject | Accept |
+| `true ? 1 : (unset) 1` | Reject | Accept |
+| `false ? (unset) 1 : 1` | Reject | Accept |
+| `true xor (unset) 1` | Reject | Reject |
+
+The [folding evidence](../../docs/8.5/remediation-folding-evidence.json) records
+separate fixtures. Substituting `(real)` rejects even in discarded branches,
+because its scanner parser-mode error precedes all folding.
+
+For-loop conditions use a nonempty comma-list prefix followed by an ordinary
+expression. Empty conditions are valid; leading/trailing commas are not.
+`(void)` is permitted on initializer/update elements and nonfinal condition
+elements, but never on the final condition element (parser `for_cond_exprs`
+and `non_empty_for_exprs`).
 
 ## Remaining discrepancies and deliberate abstractions
 
@@ -465,16 +509,16 @@ the removed cast. It must not be described as an equivalent lexical rejection.
   enum backing types, trait aliases, hooks, attributes, try and class-name lists.
   The two previously recorded discarded-closure examples now pass in the
   ordinary valid corpus. They were examples of a wider category, not its full
-  extent. The 85-family matrix and fatal-site inventory do not establish
+  extent. The 114-family matrix and fatal-site inventory do not establish
   complete equivalence for every parser production or compiler path.
-- Prefix-context and matched/unmatched equivalence remains a conformance
-  blocker at the exhaustive level. Targeted derivation-count/operand-span
-  regression tests pass and 59 explicit-grouping comparisons agree with the
-  PHP 8.5 Zend AST. A newly confirmed alternative-if boundary error is fixed:
-  before outer `else:`/`elseif:`, the preceding body cannot end in an unmatched
-  inner if, including through loop/declare bodies. Ten negative AST witnesses
-  cover that boundary. These results do not prove every prefix/operator or
-  statement combination equivalent; retain the regression category until then.
+- The generated 11,294-case operator/statement matrix now has no acceptance,
+  duplicate-derivation, operand-span, left-fold or statement-binding mismatch.
+  It exhausts the specified finite pairwise/nested templates and compares Zend
+  ASTs after forcing EBNF operand/body boundaries. Assignment-prefix and
+  instanceof-power defects discovered by that audit are fixed. The previous
+  targeted-only prefix/matched-unmatched blocker is resolved for this matrix.
+  This is strong differential evidence, not a formal proof for arbitrary
+  nesting depth; see the [audit methodology](../../docs/8.5/remediation-audit.md).
 - The lexical contract specifies the requested scanner states and the lexer
   now recurses through nested interpolation, comments and heredoc labels.
   Its token abstraction is not Zend's exact token stream. Source acceptance
@@ -482,6 +526,8 @@ the removed cast. It must not be described as an equivalent lexical rejection.
   Phase 5 now maps all 190 scanner rules to reviewed dispositions and direct
   evidence. Remaining uncertainty concerns exhaustive combinations and the
   documented abstractions, rather than silently unaudited scanner families.
+  An additional 482-case scanner/parser product matrix passes across both
+  short-tag profiles, including nested source transitions and exact heredoc EOF.
 - External lexical primitives require a stateful scanner; raw character-only
   expansion is not a PHP source validator. Numeric overflow token/value
   categorization is deliberately abstracted while preserving numeral spelling.
@@ -801,8 +847,9 @@ logical-and-expression =
     print-expression , { "and" , print-expression } ;
 
 assignment-expression =
-    conditional-expression | assignment-prefix , assignment-expression
-    | variable-expression , "=" , "&" , variable-expression ;
+    conditional-expression
+    | [ conditional-prefix-context ] , assignment-prefix , assignment-expression
+    | [ conditional-prefix-context ] , variable-expression , "=" , "&" , variable-expression ;
 
 assignment-operator =
       "=" | "+=" | "-=" | "*=" | "/=" | ".=" | "%="
@@ -854,7 +901,7 @@ power-expression =
     clone-expression , [ "**" , power-expression ] ;
 
 instanceof-expression =
-    unary-expression , { "instanceof" , class-name-reference } ;
+    unary-expression , { "instanceof" , class-name-reference , [ "**" , unary-expression ] } ;
 
 unary-expression =
     power-expression
@@ -1084,14 +1131,17 @@ for-statement =
     matched-for-statement | unmatched-for-statement ;
 
 for-expression-list =
-    [ for-expression , { "," , for-expression } ] ;
+    [ nonempty-for-expression-list ] ;
+
+nonempty-for-expression-list =
+    for-expression , { "," , for-expression } ;
 
 for-expression =
       expression
     | "(void)" , expression ;
 
 for-condition-expression-list =
-    [ [ for-expression-list , "," ] , expression ] ;
+    [ expression | nonempty-for-expression-list , "," , expression ] ;
 
 foreach-statement =
     matched-foreach-statement | unmatched-foreach-statement ;
@@ -1694,7 +1744,8 @@ assignment-prefix =
 
 
 assignment-prefix-context =
-    conditional-prefix-context | assignment-prefix , { assignment-prefix } , [ conditional-prefix-context ] ;
+    conditional-prefix-context
+    | [ conditional-prefix-context ] , assignment-prefix , [ assignment-prefix-context ] ;
 
 
 conditional-prefix-context =
@@ -1759,7 +1810,8 @@ boolean-not-prefix-context =
 
 
 instanceof-prefix-context =
-    unary-prefix-context ;
+    unary-prefix-context
+    | instanceof-expression , "instanceof" , class-name-reference , "**" , [ unary-prefix-context ] ;
 
 
 unary-prefix-context =
@@ -1789,7 +1841,7 @@ unary-operator =
 
 cast-operator =
     "(int)" | "(integer)" | "(float)" | "(double)" | "(string)"
-    | "(binary)" | "(array)" | "(object)" | "(bool)" | "(boolean)" ;
+    | "(binary)" | "(array)" | "(object)" | "(bool)" | "(boolean)" | "(unset)" ;
 
 yield-key-expression =
     yield-from-expression
