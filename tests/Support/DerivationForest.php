@@ -30,7 +30,31 @@ final class DerivationForest
     {
         $tokens = [];
         $hostTokens = token_get_all('<?php ' . $source);
+        $skipThrough = -1;
         foreach ($hostTokens as $index => $token) {
+            if ($index <= $skipThrough) continue;
+            // PHP < 8.5 emits punctuation/name tokens for the new void cast.
+            // Inspect raw trivia: only spaces/tabs may occur inside a cast.
+            if ($token === '(') {
+                $end = $index + 1;
+                $horizontal = static fn ($t): bool => is_array($t)
+                    && $t[0] === T_WHITESPACE && preg_match('/^[ \t]+$/D', $t[1]) === 1;
+                if ($horizontal($hostTokens[$end] ?? null)) $end++;
+                $name = $hostTokens[$end] ?? null;
+                if (is_array($name) && strtolower($name[1]) === 'void') {
+                    $end++;
+                    if ($horizontal($hostTokens[$end] ?? null)) $end++;
+                    if (($hostTokens[$end] ?? null) === ')') {
+                        $tokens[] = '(void)';
+                        $skipThrough = $end;
+                        continue;
+                    }
+                }
+            }
+            if (is_array($token) && defined('T_VOID_CAST') && $token[0] === constant('T_VOID_CAST')) {
+                $tokens[] = '(void)';
+                continue;
+            }
             // PHP < 8.5 has no pipe token. Merge before dropping trivia so
             // whitespace or comments between | and > cannot form an operator.
             if ($token === '|' && ($hostTokens[$index + 1] ?? null) === '>') {

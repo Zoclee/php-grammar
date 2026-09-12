@@ -11,6 +11,20 @@ use PHPUnit\Framework\TestCase;
 
 final class Php85ParseStructureTest extends TestCase
 {
+    public function testVoidCastTokenizationPreservesScannerBoundariesAcrossHostVersions(): void
+    {
+        $lexemes = static fn (string $source): array => array_map(
+            static fn ($token) => is_array($token) ? $token[1] : $token,
+            DerivationForest::tokens($source),
+        );
+        self::assertSame(['(void)', '$a'], $lexemes('(void) $a'));
+        self::assertSame(['(void)', '$a'], $lexemes("( \tVoId\t ) \$a"));
+        self::assertSame(['(', 'void', ')', '$a'], $lexemes("(\nvoid) \$a"));
+        self::assertSame(['(', 'void', ')', '$a'], $lexemes("(void\n) \$a"));
+        self::assertSame(['(', 'void', ')', '$a'], $lexemes('(void/* comment */) $a'));
+        self::assertSame(['(', 'void', ')', '$a'], $lexemes('(/* comment */void) $a'));
+    }
+
     public function testPipeTokenizationPreservesAdjacencyAcrossHostVersions(): void
     {
         $lexemes = static fn (string $source): array => array_map(
