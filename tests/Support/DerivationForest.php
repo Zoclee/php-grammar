@@ -25,11 +25,19 @@ final class DerivationForest
         }
     }
 
-    /** Normalize Zend's composite yield-from token to the EBNF adapter's two terminals. */
+    /** Adapt host tokens to the PHP 8.5 terminals used by these structure tests. */
     public static function tokens(string $source): array
     {
         $tokens = [];
-        foreach (token_get_all('<?php ' . $source) as $token) {
+        $hostTokens = token_get_all('<?php ' . $source);
+        foreach ($hostTokens as $index => $token) {
+            // PHP < 8.5 has no pipe token. Merge before dropping trivia so
+            // whitespace or comments between | and > cannot form an operator.
+            if ($token === '|' && ($hostTokens[$index + 1] ?? null) === '>') {
+                $tokens[] = '|>';
+                continue;
+            }
+            if ($token === '>' && ($hostTokens[$index - 1] ?? null) === '|') continue;
             if (is_array($token) && in_array($token[0], [T_OPEN_TAG, T_WHITESPACE, T_COMMENT, T_DOC_COMMENT], true)) continue;
             if (is_array($token) && $token[0] === T_YIELD_FROM) {
                 $tokens[] = [T_YIELD, 'yield'];

@@ -11,6 +11,17 @@ use PHPUnit\Framework\TestCase;
 
 final class Php85ParseStructureTest extends TestCase
 {
+    public function testPipeTokenizationPreservesAdjacencyAcrossHostVersions(): void
+    {
+        $lexemes = static fn (string $source): array => array_map(
+            static fn ($token) => is_array($token) ? $token[1] : $token,
+            DerivationForest::tokens($source),
+        );
+        self::assertSame(['$a', '|>', '$b'], $lexemes('$a |> $b'));
+        self::assertSame(['$a', '|', '>', '$b'], $lexemes('$a | > $b'));
+        self::assertSame(['$a', '|', '>', '$b'], $lexemes('$a |/* comment */> $b'));
+    }
+
     #[DataProvider('cases')]
     public function testUniqueDerivationAndOperandSpans(string $root, string $source, array $spans): void
     {
