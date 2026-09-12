@@ -22,6 +22,7 @@
     "scripts": {
         "test": "phpunit",
         "grammar:coverage": "php bin/grammar-coverage.php",
-        "lexer:coverage": "php bin/lexer-coverage.php"
+        "lexer:coverage": "php bin/lexer-coverage.php",
+        "conformance:phase6": "php tools/php85-phase6.php"
     }
 }

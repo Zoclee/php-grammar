@@ -95,7 +95,7 @@ final class Php85ScannerAuditTest extends TestCase
         self::assertSame(174, $counts['alternative:primitive-bypassed']);
         self::assertSame(11, $counts['production:trivia-removed']);
         self::assertSame(9, $counts['alternative:trivia-removed']);
-        self::assertCount(1, $data['contextual_only']);
+        self::assertCount(0, $data['contextual_only'], 'never parameters have a successful discarded-declaration witness');
         self::assertCount(1, $data['scanner_context_only']);
         foreach ($data['families'] as $family) {
             self::assertNotEmpty($family['positive']);

@@ -1,5 +1,11 @@
 # PHP 8.5 remaining-audit corrections
 
+Current Phase 6 status: [conformance closure](phase6-conformance-closure.md) and
+[the evidence/disposition index](phase6-evidence.json) supersede current-status
+claims below. The discarded enum/trait/unset defects are fixed; the never-type
+coverage classification is corrected. Earlier phase counts and findings are
+historical. Four concrete full-conformance blockers remain in the Phase 6 report.
+
 Current status: the [subsequent remediation audit](remediation-audit.md) resolves the discarded-unset, for-condition, assignment-prefix and instanceof-power defects, expands the boundary matrix to 114 families, and supplies systematic AST and scanner-product comparisons. Counts and unresolved findings below describe the historical stage unless explicitly updated.
 
 Historical audit snapshot. The [parser/compiler boundary remediation](parser-compiler-remediation.md) supersedes its outstanding-gap descriptions and counts.
@@ -124,24 +130,13 @@ rtk proxy python tools/php85-source-inventory.py .audit
 rtk git diff --check
 ```
 
-## Remaining discrepancies
+## Disposition of the historical discrepancies
 
-PHP accepts these after discarding the closure, but the EBNF rejects the
-declarations before folding:
-
-```php
-const X = true ? 1 : static function() { enum E: object {} };
-const X = true ? 1 : static function() {
-    class C { use T { foo as static bar; } }
-};
-```
-
-They live in `tests/fixtures/php/8.5/known-discrepancies/valid/`. The lint runner
-prints/counts them separately; zero unexpected mismatches does not hide them.
-Constant folding versus restricted nested declarations remains incompletely
-reconciled, so that discrepancy note is retained. Mandatory contextual
-validation is still documentation plus differential tests, not a complete
-repository-owned compiler.
+The two discarded-closure defects (enum object backing and static trait alias)
+are fixed. Their witnesses now live in the ordinary valid corpus and are also
+covered by live/retained/discarded families. The old known-discrepancies
+directory is no longer an active exception. Current contextual implementation
+and proof gaps are the finite C1–C4 blockers in the Phase 6 report.
 
 Final assessment: source-traceable corrections and unique targeted derivations;
 **full/canonical PHP 8.5 conformance is not established**.

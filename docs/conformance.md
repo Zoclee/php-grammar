@@ -9,8 +9,10 @@ The target is valid PHP 8.5 source, with three required layers:
 The normative contract and full EBNF appear in `grammar/8.5/php.md`.
 Structural acceptance alone is not a conformance verdict. The repository
 implements the first two layers with a PHP lexer, token adapter, and Earley
-chart recognizer. It does **not** yet implement a complete contextual validator
-or expose parse trees for precedence comparison.
+chart recognizer. PHP 8.5 also has a rule-level early modifier validator and
+an independent test-only derivation forest for precedence comparison. A complete
+whole-source contextual validator remains unimplemented. The current evidence
+and four concrete blockers are in [Phase 6](8.5/phase6-conformance-closure.md).
 
 ## Reproducible checks
 
@@ -37,9 +39,10 @@ The shared corpus is under `tests/fixtures/php/8.5/`:
 | `contextual-invalid` | Accept structurally | Reject during compilation |
 
 The third category measures the boundary of the missing contextual
-implementation; it is not counted as rejection by EBNF. Contextual constraints
-that are economical to encode, such as nonempty hook blocks, already have
-structural restrictions and regressions in `invalid`.
+implementation; it is not counted as rejection by EBNF. Empty hook blocks are
+parser-valid and fail only if their declarations survive compilation. Early
+modifier checks must run before folding, while later declaration checks must
+respect discarded branches.
 
 Lint does not resolve every autoloaded symbol, deferred constant value,
 attribute class, or inheritance relationship. Its successful result does not
@@ -76,7 +79,7 @@ Successful structural paths do not prove contextual validity or unique AST
 grouping. Lexical primitives are exercised through lexer and differential
 fixtures. Coverage has no minimum threshold.
 
-See `docs/8.5/audit-remediation.md` for remaining discrepancies. Source
+See [Phase 6](8.5/phase6-conformance-closure.md) for current blockers. Source
 inventory coverage is not an exhaustive production-by-production equivalence
 proof.
 
@@ -144,9 +147,10 @@ The [parser/compiler boundary remediation](8.5/parser-compiler-remediation.md)
 removes the earlier structural restrictions responsible for discarded nested
 declaration discrepancies. Parser-action constraints still precede folding.
 
-The current ordinary corpus is 602 valid, 349 structural-negative, and 276
-contextual-negative fixtures (1,227 total), with one separately recorded
-Phase 6 folding discrepancy (`false && (unset) 1;`). Both source-tag profiles run through PHP 8.5.10 using the existing
+The current ordinary corpus is 653 valid, 362 structural-negative, and 356
+contextual-negative fixtures (1,371 total), with no separately recorded
+acceptance discrepancies. The discarded-unset defect is fixed and has direct
+ordinary/constant folding regressions. Both source-tag profiles run through PHP 8.5.10 using the existing
 runner. The binary is a cross-check of expectations derived from pinned source;
 neither lint acceptance nor fixture agreement proves complete conformance.
 
@@ -201,4 +205,29 @@ for the ordinary valid corpus. Token values and internal string-token counts
 are intentionally abstracted. `token_get_all()` is used only by this optional
 tool, never by the lexer, primitives, coverage correctness, or normal PHPUnit
 recognition. See [Phase 5](8.5/phase5-lexer-audit.md) for the normalization
-rules, known folding discrepancy, and remaining proof limits.
+rules and historical findings. Phase 6 supersedes its folding discrepancy and
+adds bounded recursive combinations and explicit recovery/source-validity limits.
+
+## Contextual closure (Grammar Completeness Phase 6)
+
+The [reconciliation](8.5/phase6-reconciliation.json) maps 177 Zend productions
+and 623 alternatives/actions to canonical EBNF anchors and evidence. The
+[consolidated index](8.5/phase6-evidence.json) records restriction ownership,
+historical dispositions and finite blockers. These are evidence links, not
+branch-equivalence proofs.
+
+`Php85ModifierValidator::validate($target, $modifiers)` checks already identified
+modifier lists before folding. Its five stable error categories distinguish
+target legality, duplicates, visibility, set visibility and abstract/final
+conflicts. A null return certifies that rule only. It does not parse source and
+does not change `PhpGrammarMatcher`'s structural acceptance contract.
+
+`composer conformance:phase6` runs modifier, direct-folding, ambiguity, recursive
+and malformed-input matrices with PHP 8.5. `--check` verifies a fresh matrix
+report without rewriting it. The structure oracle separately compares EBNF
+operand/body spans with normalized Zend ASTs. Raw helper ambiguity is retained
+when it produces the same interpretation, as for builtin type literals/names.
+
+The former never-parameter contextual-only coverage alternative has a valid
+discarded-closure witness. The scanner-only enum alias alternative remains
+correctly classified. No grammar coverage percentage is a completion target.

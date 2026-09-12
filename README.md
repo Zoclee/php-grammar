@@ -4,13 +4,13 @@
 
 Versioned EBNF grammars and human-readable specifications for the PHP language syntax.
 
-php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [Phase 5 findings and limits](docs/8.5/phase5-lexer-audit.md).
+php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [Phase 6 evidence and four remaining blockers](docs/8.5/phase6-conformance-closure.md).
 
 The PHP 8.5 parser/compiler boundary audit reconciles common class-like members,
-enum types, trait aliases, hooks, attributes and try syntax. It covers 114
+enum types, trait aliases, hooks, attributes and try syntax. It covers 115
 live/retained/discarded families and corrects an alternative-if
-binding error using Zend AST evidence. The corpus contains 646 valid, 362
-structural-negative and 348 contextual-negative files across both short-tag
+binding error using Zend AST evidence. The corpus contains 653 valid, 362
+structural-negative and 356 contextual-negative files across both short-tag
 profiles. The previously recorded discarded-closure examples now pass.
 Full PHP 8.5 conformance is not established.
 
@@ -25,6 +25,15 @@ The [remediation audit](docs/8.5/remediation-audit.md) resolves the discarded
 instanceof/power grouping. Its 11,294-case structure matrix compares Zend ASTs
 and checks unique derivations. See the [scanner audit](docs/8.5/phase5-lexer-audit.md) for reproduction
 commands, source-byte guarantees, scanner abstractions, and validation totals.
+
+Grammar Completeness Phase 6 reconciles all 177 pinned parser productions and
+623 alternatives/actions, expands the binding matrix to 15,342 cases, and adds
+a PHP 8.5 modifier-list validator with stable error categories. It records
+1,840 declaration-folding comparisons, 70 direct-folding cases, 584 modifier
+cases, 34 ambiguity probes, 156 bounded recursive combinations and 16 malformed
+rejection checks. The [consolidated evidence](docs/8.5/phase6-evidence.json)
+tracks restriction ownership and historical dispositions. Whole-source contextual
+validation remains incomplete; the rule-level validator does not certify files.
 
 Current positive evidence is recorded in the generated coverage report.
 Rejection evidence has a separate [boundary ledger](docs/8.5/negative-boundaries.md),
@@ -173,6 +182,7 @@ composer install
 composer test
 composer grammar:coverage
 composer lexer:coverage
+composer conformance:phase6 # requires PHP 8.5
 ```
 
 Phase 1 parses every `grammar/<version>/php.ebnf` file with the project's EBNF

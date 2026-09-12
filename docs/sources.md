@@ -426,3 +426,18 @@ For example:
 The source policy of this repository is:
 
 > Canonical grammar must be derived from authoritative PHP language evidence, expressed independently using this repository's EBNF conventions, and remain traceable to the sources used to establish correctness.
+
+## Phase 6 parser/compiler closure evidence
+
+The source pin remains `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`.
+[The reconciliation ledger](8.5/phase6-reconciliation.json) records all 177
+parser productions, 623 alternatives/actions, canonical anchors and all 244
+direct compiler fatal sites. `tools/php85-reconcile.py` verifies the three
+pinned hashes before generating or checking the ledger.
+
+[Six reviewed PHPT regressions](8.5/phase6-upstream-tests.json) include pinned
+paths, URLs, SHA-256 hashes and minimized local negative/repair fixtures.
+They cover removed unset casts, duplicate asymmetric visibility, abstract/final
+hooks, nonstatic/capturing constant closures and empty coalesce dimensions.
+The test executable is still PHP 8.5.10 rather than a build of the exact pin;
+[Phase 6](8.5/phase6-conformance-closure.md) records this as blocker C4.

@@ -1,0 +1,76 @@
+{
+    "php": "PHP 8.5.10",
+    "families": 115,
+    "templates": {
+        "ternary": [
+            "true ? 1 : %s",
+            true
+        ],
+        "and": [
+            "false && %s",
+            true
+        ],
+        "or": [
+            "true || %s",
+            true
+        ],
+        "word-and": [
+            "false and %s",
+            true
+        ],
+        "word-or": [
+            "true or %s",
+            true
+        ],
+        "coalesce": [
+            "1 ?? %s",
+            true
+        ],
+        "retained-ternary": [
+            "false ? 1 : %s",
+            false
+        ],
+        "retained-and": [
+            "true && %s",
+            false
+        ],
+        "retained-or": [
+            "false || %s",
+            false
+        ],
+        "retained-word-and": [
+            "true and %s",
+            false
+        ],
+        "retained-word-or": [
+            "false or %s",
+            false
+        ],
+        "retained-coalesce": [
+            "null ?? %s",
+            false
+        ],
+        "xor-does-not-discard": [
+            "true xor %s",
+            false
+        ],
+        "false-middle": [
+            "false ? %s : 1",
+            true
+        ],
+        "true-middle": [
+            "true ? %s : 1",
+            false
+        ],
+        "nested-discard": [
+            "null ?? (false ? %s : 1)",
+            true
+        ]
+    },
+    "folding_cases": 1840,
+    "failures": [],
+    "hashes": {
+        "tools/php85-boundary-folding.php": "92c13646468bf2ab885a0efa85010e279750eb220055a767128ce52aee4e2418",
+        "tests/fixtures/php/8.5/parser-compiler-boundaries.json": "20a19b518308828b8e09e0356bbf92b68fa6dfc1c34e989d1071f52f36315633"
+    }
+}

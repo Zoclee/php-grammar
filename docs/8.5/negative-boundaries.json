@@ -5100,6 +5100,54 @@
       "restriction": "parent-hook-outside",
       "reason": "Compiler validation runs only when the enclosing declaration/body survives.",
       "evidence": "Pinned zend_compile.c: zend_compile_parent_property_hook_call; boundary live/retained/discarded matrix."
+    },
+    {
+      "fixture": "contextual-invalid/phase6-unset-cast.php",
+      "reason": "Parser-accepted source; zend_compile_cast; zend_compile_short_circuiting rejects it. See the Phase 6 upstream provenance and repaired positive.",
+      "evidence": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/unset/unset_cast_removed.phpt",
+      "restriction": "Phase 6 parser/compiler boundary"
+    },
+    {
+      "fixture": "contextual-invalid/phase6-set-visibility.php",
+      "reason": "Parser-accepted source; zend_add_member_modifier rejects it. See the Phase 6 upstream provenance and repaired positive.",
+      "evidence": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/asymmetric_visibility/duplicate_modifier.phpt",
+      "restriction": "Phase 6 parser/compiler boundary"
+    },
+    {
+      "fixture": "contextual-invalid/phase6-abstract-final-hook.php",
+      "reason": "Parser-accepted source; zend_compile_property_hooks rejects it. See the Phase 6 upstream provenance and repaired positive.",
+      "evidence": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/property_hooks/invalid_abstract_final.phpt",
+      "restriction": "Phase 6 parser/compiler boundary"
+    },
+    {
+      "fixture": "contextual-invalid/phase6-nonstatic-closure.php",
+      "reason": "Parser-accepted source; zend_compile_const_expr_closure rejects it. See the Phase 6 upstream provenance and repaired positive.",
+      "evidence": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/closures/closure_const_expr/disallows_non_static.phpt",
+      "restriction": "Phase 6 parser/compiler boundary"
+    },
+    {
+      "fixture": "contextual-invalid/phase6-closure-capture.php",
+      "reason": "Parser-accepted source; zend_compile_const_expr_closure rejects it. See the Phase 6 upstream provenance and repaired positive.",
+      "evidence": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/closures/closure_const_expr/disallows_using_variables.phpt",
+      "restriction": "Phase 6 parser/compiler boundary"
+    },
+    {
+      "fixture": "contextual-invalid/phase6-empty-dimension.php",
+      "reason": "Parser-accepted source; zend_eval_const_expr rejects it. See the Phase 6 upstream provenance and repaired positive.",
+      "evidence": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/constexpr/constant_expressions_coalesce_empty_dim.phpt",
+      "restriction": "Phase 6 parser/compiler boundary"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-never-live.php",
+      "restriction": "parameter-never",
+      "reason": "never is return-only when the declaration survives compilation; parser acceptance and discarded declaration evidence are separate.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: parameter, type_without_static; zend_compile.c: zend_compile_params (line 7874), zend_eval_const_expr, zend_compile_const_expr_closure"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-never-retained.php",
+      "restriction": "parameter-never",
+      "reason": "never is return-only when the declaration survives compilation; parser acceptance and discarded declaration evidence are separate.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: parameter, type_without_static; zend_compile.c: zend_compile_params (line 7874), zend_eval_const_expr, zend_compile_const_expr_closure"
     }
   ],
   "known_discrepancies": []

@@ -12,8 +12,8 @@
         "tests/Support/Php85LexicalCases.php": "99622eff32493ae9309a0c04a462725891ecd3e96d52c504d4937df258ab9485",
         "tests/Support/Php85LexicalAudit.php": "5c3830e02e7a07051a0a74f8095f68991e13b6f4177b3f9742b1344538d771f0",
         "tools/php85-lexer-differential.php": "f0cb97b1eb0197ab4fe29216d693b78272ade70855ef92c121b9d5e56394ed9e",
-        "docs/8.5/source-inventory.json": "2ed2b6da0d5de6a9aca70b291278167a9d04de9a38cbf5b2ab153a2265c02992",
-        "docs/8.5/phase3-coverage.json": "d86e289fbc3af533804359a6a9f30d401b65a411c25a96cb251f7350de51bec1",
+        "docs/8.5/source-inventory.json": "92b74ee4330cbec1039d15d49180daa6ff7dcd5ffd5755c5d7d0101360a898f3",
+        "docs/8.5/phase3-coverage.json": "c679f6423ba4f9a874ffe439b648343fd5c2c38d64c6a78469a6df9230464c4d",
         "grammar/8.5/php.ebnf": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755"
     },
     "families": {
@@ -7116,16 +7116,7 @@
             "evidence": "families/whitespace"
         }
     ],
-    "contextual_only": [
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:10",
-            "classification": "contextual-only",
-            "area": "types",
-            "reason": "never/void are return-only; this helper is used for parameters and properties. Positive type/return coverage exists, but this placement has no valid source witness.",
-            "evidence": "Php85CoverageCases type matrix; contextual-invalid/audit-types-parameter-void.php; docs/8.5/audit-remediation.md"
-        }
-    ],
+    "contextual_only": [],
     "scanner_context_only": [
         {
             "kind": "alternative",

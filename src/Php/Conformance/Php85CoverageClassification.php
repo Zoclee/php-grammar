@@ -13,7 +13,6 @@ final class Php85CoverageClassification
     private array $reachable = [];
     private array $trivia = [];
     private array $bypassed = [];
-    private array $contextualOnly = [];
     private array $scannerContextOnly = [];
 
     /** @param list<string> $primitives */
@@ -26,15 +25,6 @@ final class Php85CoverageClassification
             foreach ($reserved->alternatives as $index => $alternative) {
                 if ($alternative instanceof LiteralNode && $alternative->value === 'enum') {
                     $this->scannerContextOnly[$identities->alternativeId($reserved, $index)] = true;
-                }
-            }
-        }
-        $types = $map['simple-type-without-static']->expression ?? null;
-        if ($types instanceof AlternativeNode) {
-            $identities = CoverageIdentityMap::fromGrammar($grammar);
-            foreach ($types->alternatives as $index => $type) {
-                if ($type instanceof LiteralNode && in_array($type->value, ['void', 'never'], true)) {
-                    $this->contextualOnly[$identities->alternativeId($types, $index)] = true;
                 }
             }
         }
@@ -68,11 +58,6 @@ final class Php85CoverageClassification
             return ['classification' => 'primitive-bypassed', 'area' => 'source/lexical',
                 'reason' => 'Token primitive replaces this body or cuts every source-file path to this lexical helper.',
                 'evidence' => 'tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures'];
-        }
-        if (isset($this->contextualOnly[$identity])) {
-            return ['classification' => 'contextual-only', 'area' => 'types',
-                'reason' => 'never/void are return-only; this helper is used for parameters and properties. Positive type/return coverage exists, but this placement has no valid source witness.',
-                'evidence' => 'Php85CoverageCases type matrix; contextual-invalid/audit-types-parameter-void.php; docs/8.5/audit-remediation.md'];
         }
         if (isset($this->scannerContextOnly[$identity])) {
             return ['classification' => 'scanner-context-only', 'area' => 'source/lexical',

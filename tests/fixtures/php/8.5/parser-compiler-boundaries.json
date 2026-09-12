@@ -1339,6 +1339,18 @@
         "retained": "contextual-invalid/boundary-parent-hook-outside-retained.php",
         "discarded": "valid/boundary-parent-hook-outside-discarded.php"
       }
+    },
+    {
+      "id": "parameter-never",
+      "area": "properties-types-promotion",
+      "source": "function f(never $x) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: parameter, type_without_static; zend_compile.c: zend_compile_params (line 7874), zend_eval_const_expr, zend_compile_const_expr_closure",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-parameter-never-live.php",
+        "retained": "contextual-invalid/boundary-parameter-never-retained.php",
+        "discarded": "valid/boundary-parameter-never-discarded.php"
+      }
     }
   ]
 }

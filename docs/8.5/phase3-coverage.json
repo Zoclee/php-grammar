@@ -1,5 +1,5 @@
 {
-    "grammar_sha256": "e6dc2cdc4e5d6c8d1783e980ab46f352fdb4e98954424c1a20aed79794330ffc",
+    "grammar_sha256": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755",
     "method": "Completed chart items during accepted positive inputs, not unique successful derivations or AST equivalence. Primitive successes are separate. Invalid inputs affect attempted coverage only.",
     "baseline": {
         "productions": 236,
@@ -8,13 +8,13 @@
         "attempted_alternatives": 563
     },
     "current": {
-        "productions": 300,
-        "total_productions": 363,
-        "alternatives": 600,
-        "total_alternatives": 785,
-        "attempted_productions": 300,
-        "attempted_alternatives": 602,
-        "valid_fixtures_default_profile": 597,
+        "productions": 301,
+        "total_productions": 364,
+        "alternatives": 606,
+        "total_alternatives": 790,
+        "attempted_productions": 301,
+        "attempted_alternatives": 607,
+        "valid_fixtures_default_profile": 648,
         "rule_cases": 246
     },
     "remaining_counts": {
@@ -23,7 +23,6 @@
             "trivia-removed": 11
         },
         "alternative": {
-            "contextual-only": 1,
             "primitive-bypassed": 174,
             "scanner-context-only": 1,
             "trivia-removed": 9
@@ -1880,14 +1879,6 @@
         },
         {
             "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:10",
-            "classification": "contextual-only",
-            "area": "types",
-            "reason": "never/void are return-only; this helper is used for parameters and properties. Positive type/return coverage exists, but this placement has no valid source witness.",
-            "evidence": "Php85CoverageCases type matrix; contextual-invalid/audit-types-parameter-void.php; docs/8.5/audit-remediation.md"
-        },
-        {
-            "kind": "alternative",
             "identity": "single-quoted-string-content/alternative:1",
             "classification": "primitive-bypassed",
             "area": "source/lexical",
@@ -2590,14 +2581,6 @@
             "classification": "meaningful-valid-syntax",
             "area": "reserved-non-modifiers",
             "evidence": "fixture:phase3-trait-alias-forms.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "production",
-            "identity": "new-variable",
-            "classification": "meaningful-valid-syntax",
-            "area": "new-variable",
-            "evidence": "fixture:phase3-new-variable-offset.php",
             "reason": "Positive witness added in Phase 3."
         },
         {
@@ -4098,22 +4081,6 @@
         },
         {
             "kind": "alternative",
-            "identity": "simple-type/alternative:10",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "fixture:phase3-types-return-contexts.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:11",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "fixture:phase3-types-return-contexts.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
             "identity": "simple-type/alternative:12",
             "classification": "meaningful-valid-syntax",
             "area": "simple-type",
@@ -4195,10 +4162,10 @@
         {
             "kind": "alternative",
             "identity": "simple-type-without-static/alternative:10",
-            "classification": "contextual-only",
-            "area": "types",
-            "reason": "never/void are return-only; this helper is used for parameters and properties. Positive type/return coverage exists, but this placement has no valid source witness.",
-            "evidence": "Php85CoverageCases type matrix; contextual-invalid/audit-types-parameter-void.php; docs/8.5/audit-remediation.md"
+            "classification": "meaningful-gap",
+            "area": "simple-type-without-static",
+            "reason": "Needs positive evidence or explicit investigation; never automatically suppressed.",
+            "evidence": ""
         },
         {
             "kind": "alternative",
@@ -4242,14 +4209,6 @@
         },
         {
             "kind": "alternative",
-            "identity": "assignment-expression/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-expression",
-            "evidence": "fixture:phase3-assign-reference.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
             "identity": "assignment-operator/alternative:2",
             "classification": "meaningful-valid-syntax",
             "area": "assignment-operator",
@@ -4262,14 +4221,6 @@
             "classification": "meaningful-valid-syntax",
             "area": "assignment-operator",
             "evidence": "rule:expression #68",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #69",
             "reason": "Positive witness added in Phase 3."
         },
         {
@@ -4546,14 +4497,6 @@
         },
         {
             "kind": "alternative",
-            "identity": "class-name-reference/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "class-name-reference",
-            "evidence": "fixture:phase3-new-variable-offset.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
             "identity": "array-creation-expression/alternative:1",
             "classification": "meaningful-valid-syntax",
             "area": "array-creation-expression",
@@ -4574,14 +4517,6 @@
             "classification": "meaningful-valid-syntax",
             "area": "array-pair",
             "evidence": "fixture:phase3-arrays-reference.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "array-pair/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "array-pair",
-            "evidence": "fixture:phase3-destructure-nested-list.php",
             "reason": "Positive witness added in Phase 3."
         },
         {
@@ -5418,22 +5353,6 @@
         },
         {
             "kind": "alternative",
-            "identity": "clone-expression/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "clone-expression",
-            "evidence": "rule:expression #185",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "new-variable/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "new-variable",
-            "evidence": "fixture:phase3-new-variable-offset.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
             "identity": "new-variable/alternative:2",
             "classification": "meaningful-valid-syntax",
             "area": "new-variable",
@@ -5470,14 +5389,6 @@
             "classification": "meaningful-valid-syntax",
             "area": "new-variable",
             "evidence": "fixture:phase3-new-variable-static.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "new-variable/alternative:8",
-            "classification": "meaningful-valid-syntax",
-            "area": "new-variable",
-            "evidence": "fixture:phase3-new-variable-offset.php",
             "reason": "Positive witness added in Phase 3."
         },
         {
@@ -5550,14 +5461,6 @@
             "classification": "meaningful-valid-syntax",
             "area": "matched-declare-statement",
             "evidence": "fixture:phase3-declare-html.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "boolean-or-prefix-context/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "boolean-or-prefix-context",
-            "evidence": "rule:expression #18",
             "reason": "Positive witness added in Phase 3."
         },
         {
@@ -5868,8 +5771,8 @@
         "array-pair/alternative:2": "fixture:012-void-cast-clone.php",
         "array-pair/alternative:3": "fixture:phase3-arrays-reference.php",
         "array-pair/alternative:4": "fixture:phase3-arrays-reference.php",
-        "array-pair/alternative:5": "fixture:phase3-arrays-reference.php",
-        "array-pair/alternative:6": "fixture:phase3-destructure-nested-list.php",
+        "array-pair/alternative:5": "fixture:boundary-list-unpack-discarded.php",
+        "array-pair/alternative:6": "fixture:boundary-list-mixed-syntax-discarded.php",
         "array-pair/alternative:7": "fixture:phase3-destructure-keyed-list.php",
         "arrow-expression": "fixture:001-open-close.php",
         "arrow-expression/alternative:1": "fixture:001-open-close.php",
@@ -5892,7 +5795,7 @@
         "assignment-operator/alternative:14": "fixture:phase4-expressions-coalesce-assignment-duplicate.php",
         "assignment-operator/alternative:2": "rule:expression #67",
         "assignment-operator/alternative:3": "rule:expression #68",
-        "assignment-operator/alternative:4": "rule:expression #69",
+        "assignment-operator/alternative:4": "fixture:remediation-assignment-prefix.php",
         "assignment-operator/alternative:5": "rule:expression #70",
         "assignment-operator/alternative:6": "rule:expression #71",
         "assignment-operator/alternative:7": "rule:expression #72",
@@ -5900,10 +5803,10 @@
         "assignment-operator/alternative:9": "rule:expression #74",
         "assignment-prefix": "fixture:003-expressions-operators.php",
         "assignment-prefix-context": "fixture:003-expressions-operators.php",
-        "assignment-prefix-context/alternative:1": "fixture:005-control-flow.php",
+        "assignment-prefix-context/alternative:1": "fixture:003-expressions-operators.php",
         "assignment-prefix-context/alternative:2": "fixture:003-expressions-operators.php",
         "assignment-prefix/alternative:1": "fixture:003-expressions-operators.php",
-        "assignment-prefix/alternative:2": "fixture:phase3-destructure-keyed-list.php",
+        "assignment-prefix/alternative:2": "fixture:boundary-list-empty-discarded.php",
         "attribute": "fixture:008-classes-interfaces-traits-enums.php",
         "attribute-group": "fixture:008-classes-interfaces-traits-enums.php",
         "attribute-groups": "fixture:008-classes-interfaces-traits-enums.php",
@@ -5932,7 +5835,7 @@
         "boolean-and-expression": "fixture:001-open-close.php",
         "boolean-and-prefix-context": "fixture:003-expressions-operators.php",
         "boolean-and-prefix-context/alternative:1": "fixture:003-expressions-operators.php",
-        "boolean-and-prefix-context/alternative:2": "fixture:remaining-constant-dead-variable.php",
+        "boolean-and-prefix-context/alternative:2": "fixture:phase5-discarded-unset.php",
         "boolean-not-expression": "fixture:001-open-close.php",
         "boolean-not-expression/alternative:1": "fixture:001-open-close.php",
         "boolean-not-expression/alternative:2": "fixture:audit-precedence-mixed-prefix.php",
@@ -5942,7 +5845,7 @@
         "boolean-or-expression": "fixture:001-open-close.php",
         "boolean-or-prefix-context": "fixture:003-expressions-operators.php",
         "boolean-or-prefix-context/alternative:1": "fixture:003-expressions-operators.php",
-        "boolean-or-prefix-context/alternative:2": "rule:expression #18",
+        "boolean-or-prefix-context/alternative:2": "fixture:remediation-unset-or.php",
         "break-statement": "fixture:005-control-flow.php",
         "callable-expression": "fixture:003-expressions-operators.php",
         "callable-expression/alternative:1": "fixture:003-expressions-operators.php",
@@ -5960,6 +5863,7 @@
         "cast-operator": "fixture:007-functions-types.php",
         "cast-operator/alternative:1": "fixture:audit-casts-whitespace-case.php",
         "cast-operator/alternative:10": "rule:expression #98",
+        "cast-operator/alternative:11": "fixture:boundary-unset-cast-discarded.php",
         "cast-operator/alternative:2": "fixture:audit-constants-casts.php",
         "cast-operator/alternative:3": "rule:expression #84",
         "cast-operator/alternative:4": "rule:expression #86",
@@ -6012,7 +5916,7 @@
         "clone-argument-list/alternative:2": "fixture:012-void-cast-clone.php",
         "clone-argument-list/alternative:3": "fixture:audit-php85-clone-named.php",
         "clone-expression": "fixture:001-open-close.php",
-        "clone-expression/alternative:1": "rule:expression #185",
+        "clone-expression/alternative:1": "fixture:remediation-assignment-prefix.php",
         "clone-expression/alternative:2": "fixture:012-void-cast-clone.php",
         "clone-expression/alternative:3": "fixture:001-open-close.php",
         "clone-prefix-context": "fixture:012-void-cast-clone.php",
@@ -6120,6 +6024,8 @@
         "finally-clause": "fixture:006-switch-try-throw.php",
         "first-class-callable-arguments": "fixture:003-expressions-operators.php",
         "for-condition-expression-list": "fixture:005-control-flow.php",
+        "for-condition-expression-list/alternative:1": "fixture:005-control-flow.php",
+        "for-condition-expression-list/alternative:2": "fixture:audit-statements-for-void-prefix.php",
         "for-expression": "fixture:005-control-flow.php",
         "for-expression-list": "fixture:005-control-flow.php",
         "for-expression/alternative:1": "fixture:005-control-flow.php",
@@ -6191,6 +6097,8 @@
         "inner-statement/alternative:2": "fixture:boundary-abstract-method-body-discarded.php",
         "instanceof-expression": "fixture:001-open-close.php",
         "instanceof-prefix-context": "fixture:007-functions-types.php",
+        "instanceof-prefix-context/alternative:1": "fixture:007-functions-types.php",
+        "instanceof-prefix-context/alternative:2": "fixture:remediation-instanceof-power.php",
         "integer-literal": "fixture:001-open-close.php",
         "integer-literal/alternative:1": "fixture:001-open-close.php",
         "integer-literal/alternative:2": "fixture:audit-numbers-prefixes.php",
@@ -6216,7 +6124,7 @@
         "lexical-variable/alternative:1": "fixture:phase3-closures-captures.php",
         "lexical-variable/alternative:2": "fixture:phase3-closures-captures.php",
         "list-expression": "fixture:004-arrays-match.php",
-        "list-expression/alternative:1": "fixture:phase3-destructure-keyed-list.php",
+        "list-expression/alternative:1": "fixture:boundary-list-empty-discarded.php",
         "list-expression/alternative:2": "fixture:004-arrays-match.php",
         "literal": "fixture:001-open-close.php",
         "literal/alternative:1": "fixture:001-open-close.php",
@@ -6234,7 +6142,7 @@
         "logical-xor-prefix-context": "fixture:003-expressions-operators.php",
         "logical-xor-prefix-context/alternative:1": "fixture:003-expressions-operators.php",
         "logical-xor-prefix-context/alternative:2": "fixture:phase4-expressions-xor-prefix.php",
-        "long-list-expression": "fixture:phase3-destructure-keyed-list.php",
+        "long-list-expression": "fixture:boundary-list-empty-discarded.php",
         "magic-constant": "fixture:audit-names-magic-constant.php",
         "magic-constant/alternative:1": "fixture:audit-names-magic-constant.php",
         "magic-constant/alternative:2": "fixture:phase3-constant-magic.php",
@@ -6329,6 +6237,7 @@
         "new-variable/alternative:6": "fixture:phase3-new-variable-static.php",
         "new-variable/alternative:7": "fixture:audit-constants-attribute-new.php",
         "new-variable/alternative:8": "fixture:phase3-new-variable-offset.php",
+        "nonempty-for-expression-list": "fixture:005-control-flow.php",
         "nullable-type": "fixture:007-functions-types.php",
         "nullable-type-without-static": "fixture:boundary-type-nullable-mixed-discarded.php",
         "nullsafe-object-operator": "fixture:phase3-constant-constructed-chains.php",
@@ -6534,6 +6443,7 @@
         "simple-type": "fixture:007-functions-types.php",
         "simple-type-without-static": "fixture:007-functions-types.php",
         "simple-type-without-static/alternative:1": "fixture:phase3-hooks-reference-get.php",
+        "simple-type-without-static/alternative:10": "fixture:boundary-parameter-never-discarded.php",
         "simple-type-without-static/alternative:11": "fixture:boundary-parameter-void-discarded.php",
         "simple-type-without-static/alternative:12": "fixture:phase4-types-nullable-intersection.php",
         "simple-type-without-static/alternative:13": "rule:type-without-static #123",
@@ -6550,8 +6460,8 @@
         "simple-type-without-static/alternative:8": "rule:type-without-static #115",
         "simple-type-without-static/alternative:9": "fixture:boundary-type-nullable-mixed-discarded.php",
         "simple-type/alternative:1": "rule:type #100",
-        "simple-type/alternative:10": "fixture:phase3-types-return-contexts.php",
-        "simple-type/alternative:11": "fixture:phase3-types-return-contexts.php",
+        "simple-type/alternative:10": "fixture:boundary-return-never-discarded.php",
+        "simple-type/alternative:11": "fixture:boundary-nodiscard-void-discarded.php",
         "simple-type/alternative:12": "rule:type #120",
         "simple-type/alternative:13": "rule:type #122",
         "simple-type/alternative:14": "rule:type #124",

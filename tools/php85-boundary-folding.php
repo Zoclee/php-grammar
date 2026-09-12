@@ -42,9 +42,13 @@ $templates = [
     'retained-word-or' => ['false or %s', false],
     'retained-coalesce' => ['null ?? %s', false],
     'xor-does-not-discard' => ['true xor %s', false],
+    'false-middle' => ['false ? %s : 1', true],
+    'true-middle' => ['true ? %s : 1', false],
+    'nested-discard' => ['null ?? (false ? %s : 1)', true],
 ];
 $file = tempnam(sys_get_temp_dir(), 'php85-boundary-');
 $count = $failures = 0;
+$failedCases = [];
 try {
     foreach ($data['cases'] as $case) {
         foreach ($templates as $operator => [$template, $discards]) {
@@ -56,6 +60,7 @@ try {
             $expectedLint = $discards || $case['live_valid'];
             if (!$matched || ($status === 0) !== $expectedLint) {
                 $failures++;
+                $failedCases[] = $case['id'] . '/' . $operator;
                 echo $case['id'] . '/' . $operator . ': EBNF=' . (int)$matched . ', lint=' . $status . "\n" . $output;
             }
         }
@@ -63,5 +68,10 @@ try {
 } finally {
     unlink($file);
 }
+$report = ['php' => $versionMatch[0], 'families' => count($data['cases']), 'templates' => $templates,
+    'folding_cases' => $count, 'failures' => $failedCases,
+    'hashes' => ['tools/php85-boundary-folding.php' => hash_file('sha256', __FILE__),
+        'tests/fixtures/php/8.5/parser-compiler-boundaries.json' => hash_file('sha256', $root . '/tests/fixtures/php/8.5/parser-compiler-boundaries.json')]];
+file_put_contents($root . '/docs/8.5/phase6-boundary-folding.json', json_encode($report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");
 echo json_encode(['php' => $versionMatch[0], 'folding_cases' => $count, 'failures' => $failures], JSON_PRETTY_PRINT) . "\n";
 exit($failures ? 1 : 0);

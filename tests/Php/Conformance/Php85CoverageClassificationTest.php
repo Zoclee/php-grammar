@@ -22,13 +22,13 @@ final class Php85CoverageClassificationTest extends TestCase
         self::assertSame('meaningful-gap', $classifier->classify('new-unreviewed-rule')['classification']);
     }
 
-    public function testContextualClassificationFollowsTypeAlternativesWhenReordered(): void
+    public function testLiveTypeRestrictionsDoNotHidePossibleFoldingWitnesses(): void
     {
         $grammar = (new Parser())->parse('source-file = simple-type-without-static; simple-type-without-static = "void" | "int" | "never";');
         $classifier = new Php85CoverageClassification($grammar, []);
-        self::assertSame('contextual-only', $classifier->classify('simple-type-without-static/alternative:1')['classification']);
+        self::assertSame('meaningful-gap', $classifier->classify('simple-type-without-static/alternative:1')['classification']);
         self::assertSame('meaningful-gap', $classifier->classify('simple-type-without-static/alternative:2')['classification']);
-        self::assertSame('contextual-only', $classifier->classify('simple-type-without-static/alternative:3')['classification']);
+        self::assertSame('meaningful-gap', $classifier->classify('simple-type-without-static/alternative:3')['classification']);
     }
 
     public function testEnumAliasClassificationFollowsTheScannerSensitiveAlternative(): void

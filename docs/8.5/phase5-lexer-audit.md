@@ -1,5 +1,11 @@
 # PHP 8.5 Grammar Completeness — Phase 5 of 7
 
+Current Phase 6 status: [conformance closure](phase6-conformance-closure.md) and
+[the evidence/disposition index](phase6-evidence.json) supersede current-status
+claims below. The discarded enum/trait/unset defects are fixed; the never-type
+coverage classification is corrected. Earlier phase counts and findings are
+historical. Four concrete full-conformance blockers remain in the Phase 6 report.
+
 Current status: the [subsequent remediation audit](remediation-audit.md) resolves the discarded-unset, for-condition, assignment-prefix and instanceof-power defects, expands the boundary matrix to 114 families, and supplies systematic AST and scanner-product comparisons. Counts and unresolved findings below describe the historical stage unless explicitly updated.
 
 All 190 inventoried rules in the pinned PHP 8.5 scanner have explicit audit

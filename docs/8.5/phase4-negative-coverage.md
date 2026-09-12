@@ -1,5 +1,11 @@
 # PHP 8.5 Grammar Completeness — Phase 4 of 7
 
+Current Phase 6 status: [conformance closure](phase6-conformance-closure.md) and
+[the evidence/disposition index](phase6-evidence.json) supersede current-status
+claims below. The discarded enum/trait/unset defects are fixed; the never-type
+coverage classification is corrected. Earlier phase counts and findings are
+historical. Four concrete full-conformance blockers remain in the Phase 6 report.
+
 Current status: the [subsequent remediation audit](remediation-audit.md) resolves the discarded-unset, for-condition, assignment-prefix and instanceof-power defects, expands the boundary matrix to 114 families, and supplies systematic AST and scanner-product comparisons. Counts and unresolved findings below describe the historical stage unless explicitly updated.
 
 Phase 5 update: [the scanner audit](phase5-lexer-audit.md) supersedes
@@ -7,16 +13,16 @@ scanner-evidence gaps and current counts in this historical report. It maps
 all 190 scanner rules, preserves 52 primitive-bypassed and 11 removed-trivia
 productions, and removes one false reserved-enum alternative hit (601 to 600).
 The original contextual-only alternative remains; one scanner-context-only
-alternative is now explicit. A newly recorded discarded-unset folding witness
-is assigned to Phase 6. Historical phase-specific results below are retained.
+alternative is now explicit. The discarded-unset folding witness
+was fixed by the remediation audit and is permanently tested in Phase 6. Historical phase-specific results below are retained.
 
 Historical audit snapshot. The [parser/compiler boundary remediation](parser-compiler-remediation.md) supersedes its outstanding-gap descriptions and counts.
 
 Phase 4 establishes systematic nearby-invalid evidence for every major PHP 8.5
 syntax area. It adds **250 structural-negative fixtures, 22 contextual-negative
 fixtures, and 272 corresponding positive repairs**. All 14 boundary categories
-are represented. The two known discarded-declaration discrepancies remain
-explicitly unresolved; this is not full PHP 8.5 conformance.
+are represented. The two discarded-declaration discrepancies were unresolved at Phase 4 and
+were subsequently fixed by the parser/compiler remediation; this is not full PHP 8.5 conformance.
 
 ## Results
 

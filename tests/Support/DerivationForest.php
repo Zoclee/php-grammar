@@ -63,6 +63,13 @@ final class DerivationForest
             }
             if ($token === '>' && ($hostTokens[$index - 1] ?? null) === '|') continue;
             if (is_array($token) && in_array($token[0], [T_OPEN_TAG, T_WHITESPACE, T_COMMENT, T_DOC_COMMENT], true)) continue;
+            if (is_array($token) && in_array($token[0], [T_NAME_QUALIFIED, T_NAME_FULLY_QUALIFIED, T_NAME_RELATIVE], true)) {
+                foreach (explode('\\', $token[1]) as $partIndex => $part) {
+                    if ($partIndex > 0) $tokens[] = '\\';
+                    if ($part !== '') $tokens[] = [$token[0] === T_NAME_RELATIVE && $partIndex === 0 ? T_NAMESPACE : T_STRING, $part];
+                }
+                continue;
+            }
             if (is_array($token) && $token[0] === T_YIELD_FROM) {
                 $tokens[] = [T_YIELD, 'yield'];
                 $tokens[] = [T_YIELD_FROM, 'from'];

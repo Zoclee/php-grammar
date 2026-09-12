@@ -2217,6 +2217,7 @@
     "do-statement",
     "for-statement",
     "for-expression-list",
+    "nonempty-for-expression-list",
     "for-expression",
     "for-condition-expression-list",
     "foreach-statement",

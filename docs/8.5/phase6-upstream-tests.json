@@ -1,0 +1,77 @@
+{
+  "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+  "cases": [
+    {
+      "id": "unset-cast",
+      "upstream": "Zend/tests/unset/unset_cast_removed.phpt",
+      "url": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/unset/unset_cast_removed.phpt",
+      "upstream_sha256": "88a8450122a09cd5d2200e9bbb9868b78b3e0eba4a871982d2fd85b9d47c3385",
+      "files": {
+        "contextual-invalid": "tests/fixtures/php/8.5/contextual-invalid/phase6-unset-cast.php",
+        "valid": "tests/fixtures/php/8.5/valid/phase6-unset-cast.php"
+      },
+      "compiler": "zend_compile_cast; zend_compile_short_circuiting",
+      "adaptation": "Reduced to the declaration/expression causing the compile error; removed execution and output assertions. Positive is a local repair/folding control."
+    },
+    {
+      "id": "set-visibility",
+      "upstream": "Zend/tests/asymmetric_visibility/duplicate_modifier.phpt",
+      "url": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/asymmetric_visibility/duplicate_modifier.phpt",
+      "upstream_sha256": "4ccac7f6a0384cfcdf8c806136d0fec46c4d8656bc618f45cb136eee35cd53a5",
+      "files": {
+        "contextual-invalid": "tests/fixtures/php/8.5/contextual-invalid/phase6-set-visibility.php",
+        "valid": "tests/fixtures/php/8.5/valid/phase6-set-visibility.php"
+      },
+      "compiler": "zend_add_member_modifier",
+      "adaptation": "Reduced to the declaration/expression causing the compile error; removed execution and output assertions. Positive is a local repair/folding control."
+    },
+    {
+      "id": "abstract-final-hook",
+      "upstream": "Zend/tests/property_hooks/invalid_abstract_final.phpt",
+      "url": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/property_hooks/invalid_abstract_final.phpt",
+      "upstream_sha256": "66e6f1a5a5de6f7a46fd416829d7819888545e82cff47eb57460f7b1357046de",
+      "files": {
+        "contextual-invalid": "tests/fixtures/php/8.5/contextual-invalid/phase6-abstract-final-hook.php",
+        "valid": "tests/fixtures/php/8.5/valid/phase6-abstract-final-hook.php"
+      },
+      "compiler": "zend_compile_property_hooks",
+      "adaptation": "Reduced to the declaration/expression causing the compile error; removed execution and output assertions. Positive is a local repair/folding control."
+    },
+    {
+      "id": "nonstatic-closure",
+      "upstream": "Zend/tests/closures/closure_const_expr/disallows_non_static.phpt",
+      "url": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/closures/closure_const_expr/disallows_non_static.phpt",
+      "upstream_sha256": "1c8d5462760ad970d1fb041a495467a05c43f1b5e30199134d8c5abd2217e96c",
+      "files": {
+        "contextual-invalid": "tests/fixtures/php/8.5/contextual-invalid/phase6-nonstatic-closure.php",
+        "valid": "tests/fixtures/php/8.5/valid/phase6-nonstatic-closure.php"
+      },
+      "compiler": "zend_compile_const_expr_closure",
+      "adaptation": "Reduced to the declaration/expression causing the compile error; removed execution and output assertions. Positive is a local repair/folding control."
+    },
+    {
+      "id": "closure-capture",
+      "upstream": "Zend/tests/closures/closure_const_expr/disallows_using_variables.phpt",
+      "url": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/closures/closure_const_expr/disallows_using_variables.phpt",
+      "upstream_sha256": "033c6f7f10b283e131bae86f8554109298c61302663b7cbab85378dd4d40b12c",
+      "files": {
+        "contextual-invalid": "tests/fixtures/php/8.5/contextual-invalid/phase6-closure-capture.php",
+        "valid": "tests/fixtures/php/8.5/valid/phase6-closure-capture.php"
+      },
+      "compiler": "zend_compile_const_expr_closure",
+      "adaptation": "Reduced to the declaration/expression causing the compile error; removed execution and output assertions. Positive is a local repair/folding control."
+    },
+    {
+      "id": "empty-dimension",
+      "upstream": "Zend/tests/constexpr/constant_expressions_coalesce_empty_dim.phpt",
+      "url": "https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/tests/constexpr/constant_expressions_coalesce_empty_dim.phpt",
+      "upstream_sha256": "843e25ac10abb1d358a209ada6d1c07b9d35d6af009a07e2b6377857574edbbf",
+      "files": {
+        "contextual-invalid": "tests/fixtures/php/8.5/contextual-invalid/phase6-empty-dimension.php",
+        "valid": "tests/fixtures/php/8.5/valid/phase6-empty-dimension.php"
+      },
+      "compiler": "zend_eval_const_expr",
+      "adaptation": "Reduced to the declaration/expression causing the compile error; removed execution and output assertions. Positive is a local repair/folding control."
+    }
+  ]
+}

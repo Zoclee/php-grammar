@@ -58,12 +58,23 @@ foreach ($binary as $b) {
     }
 }
 foreach (['!$x instanceof Foo', '-2 ** 2', '2 ** -2 ** 2', '$x = print $y = 1', 'throw $a ?? $b', 'yield yield 1 => 2', 'yield 1 => yield 2', 'yield yield 1 => 2 => 3', '[, $a] = $b', 'list($a,,$b) = $c', 'clone($a)', 'clone($a,)', 'clone($a, $b)'] as $source) $add($source, 'regression');
+foreach (['$a()', '$a->b()', '$a?->b()', '$a[0]', '($a)()', 'new C()', 'clone($a, $b)', 'static function() { return 1; }', 'fn() => $a'] as $operand) {
+    foreach ($binary as $operator) {
+        $add($operand . ' ' . $operator . ' $b', 'phase6-call-left');
+        $add('$b ' . $operator . ' ' . $operand, 'phase6-call-right');
+    }
+}
 $wrappers = [
     'if ($a) %s', 'if ($a) ; elseif ($b) %s', 'if ($a) ; else %s',
     'while ($a) %s', 'for (;;) %s', 'foreach ($a as $b) %s', 'declare(ticks=1) %s',
     'do %s while ($a);', '{ %s }', 'if ($a): %s endif;',
     'while ($a): %s endwhile;', 'for (;;): %s endfor;',
     'foreach ($a as $b): %s endforeach;', 'declare(ticks=1): %s enddeclare;',
+    'switch ($a) { case 1: %s default: ; }',
+    'switch ($a): case 1: %s endswitch;',
+    'try { %s } catch (E $e) {}',
+    'try {} catch (E $e) { %s } finally {}',
+    'try {} finally { %s }',
 ];
 foreach ($wrappers as $outer) foreach ($wrappers as $inner) {
     foreach ([';', 'if ($c) ;', 'if ($c) ; else ;', '{ function f() {} }', '{ ?>html<?php }'] as $body) {
@@ -148,6 +159,7 @@ foreach ($cases as [$source, $family, $entry]) {
 $report = ['php' => PHP_VERSION, 'ast' => phpversion('ast'), 'schema' => $schema,
     'grammar_sha256' => hash_file('sha256', $root . '/grammar/8.5/php.ebnf'),
     'generator_sha256' => hash_file('sha256', __FILE__),
+    'forest_sha256' => hash_file('sha256', $root . '/tests/Support/DerivationForest.php'),
     'families' => $counts, 'total' => array_sum($counts), 'outcomes' => $outcomes, 'failures' => $failures,
     'limits' => 'Exhaustive within the generated finite pairwise/nested matrix; operand/body spans, implicit left folds and derivation counts. Not a formal proof for arbitrary nesting depth.'];
 file_put_contents($root . '/docs/8.5/systematic-structure.json', json_encode($report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");

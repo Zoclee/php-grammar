@@ -1,5 +1,11 @@
 # PHP 8.5 audit and remediation
 
+Current Phase 6 status: [conformance closure](phase6-conformance-closure.md) and
+[the evidence/disposition index](phase6-evidence.json) supersede current-status
+claims below. The discarded enum/trait/unset defects are fixed; the never-type
+coverage classification is corrected. Earlier phase counts and findings are
+historical. Four concrete full-conformance blockers remain in the Phase 6 report.
+
 Current status: the [subsequent remediation audit](remediation-audit.md) resolves the discarded-unset, for-condition, assignment-prefix and instanceof-power defects, expands the boundary matrix to 114 families, and supplies systematic AST and scanner-product comparisons. Counts and unresolved findings below describe the historical stage unless explicitly updated.
 
 The [remaining-audit corrections](remaining-audit.md) supersede this
@@ -105,24 +111,19 @@ The earlier positive unit example `class A { public int $x { get; } }` was
 invalid concrete-class source. It now uses a hook body; the contextual-negative
 fixture `hooks-concrete-no-body` records the actual compiler behavior.
 
-## Remaining discrepancies
+## Current dispositions of historical gaps
 
-1. No unique AST comparison for precedence or dangling else. Low-precedence
-   prefix escape paths remain ambiguous. Mixed-prefix acceptance is covered,
-   but a passing lint fixture cannot prove
-   the EBNF groups an expression correctly.
-2. Constant folding and computed literal class/callable names require further
-   audit. Computed names and dead/folded subexpressions
-   are not proven equivalent to Zend validation modes.
-3. Nested interpolation/comment/heredoc scanner stacks are not fully implemented.
-   Numeric-string offsets, shebang handling, and object-property lookup now have
-   specific regressions, but their entire state space is not proven equivalent.
-4. The contextual validator remains documentation plus a differential corpus,
-   not a complete repository-owned implementation. Lint also defers some
-   symbol/value checks to later phases.
-5. The final exhaustive fresh production-by-production and scanner-rule
-   equivalence review remains incomplete. The inventory is explicit about this
-   limit rather than turning generated coverage into a conformance claim.
+1. The precedence/dangling-else ambiguity defects are fixed. Phase 6 provides
+   15,342 systematic structure cases; this is finite binding evidence.
+2. Constant folding now has declaration and direct-expression matrices. Exact
+   diagnostic predicates and delegated AST evaluation remain blocker C2.
+3. Recursive scanner stacks are implemented and bounded combinations pass.
+   Embedded binding fingerprints inside aggregate strings remain blocker C3.
+4. Early modifier-list validation is implemented. Whole-source contextual
+   traversal and additional rules remain blocker C1.
+5. All 177 parser productions/623 alternatives and 190 scanner rules have
+   persistent mappings. Those mappings are not mathematical equivalence proofs;
+   the exact source-pin executable correspondence remains blocker C4.
 
 ## Verification record
 

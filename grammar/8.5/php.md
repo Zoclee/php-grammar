@@ -26,6 +26,19 @@ The subsequent [remediation audit](../../docs/8.5/remediation-audit.md) corrects
 the nullable for-condition prefix and reconciles the removed unset cast with
 the parser/compiler boundary.
 
+Grammar Completeness Phase 6 adds production/action reconciliation, systematic
+binding evidence, early modifier-list validation and bounded recursive tests.
+Parser actions run before discarded-branch folding; surviving declaration,
+write and type checks run afterward. In particular, `never` parameters fail
+when their declaration survives, but may occur inside a discarded closure.
+That distinction does not change the EBNF below. Builtin type literal/name
+helper overlap does not change the interpreted type. The repository's modifier
+API checks only an identified list; it is not a whole-source validity verdict.
+The [Phase 6 report](../../docs/8.5/phase6-conformance-closure.md) indexes evidence
+and implementation limits; the lexical and contextual specification here
+remains standalone. Exact malformed-input recovery and runtime execution are
+outside the source-validity contract.
+
 Sources are `php-src` branch `PHP-8.5`, pinned at
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`:
 

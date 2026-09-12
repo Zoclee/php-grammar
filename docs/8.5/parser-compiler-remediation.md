@@ -1,10 +1,16 @@
 # PHP 8.5 parser/compiler boundary remediation
 
+Current Phase 6 status: [conformance closure](phase6-conformance-closure.md) and
+[the evidence/disposition index](phase6-evidence.json) supersede current-status
+claims below. The discarded enum/trait/unset defects are fixed; the never-type
+coverage classification is corrected. Earlier phase counts and findings are
+historical. Four concrete full-conformance blockers remain in the Phase 6 report.
+
 Current status: the [subsequent remediation audit](remediation-audit.md) resolves the discarded-unset, for-condition, assignment-prefix and instanceof-power defects, expands the boundary matrix to 114 families, and supplies systematic AST and scanner-product comparisons. Counts and unresolved findings below describe the historical stage unless explicitly updated.
 
 Phase 5 update: the declaration and AST decisions below remain in force.
-The [scanner audit](phase5-lexer-audit.md) now adds direct evidence for all
-190 scanner rules and records one new folding discrepancy, `false && (unset) 1;`.
+The [scanner audit](phase5-lexer-audit.md) adds direct evidence for all
+190 scanner rules. Its discarded-unset discrepancy is now fixed and tested.
 The historical statement below about zero recorded discrepancies describes this
 report's original validation, not the current corpus. Current counts and the
 corrected scanner-sensitive coverage classification are in the Phase 5 report.

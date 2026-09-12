@@ -1,5 +1,11 @@
 # PHP 8.5 remaining-defect remediation
 
+Current Phase 6 status: [conformance closure](phase6-conformance-closure.md) and
+[the evidence/disposition index](phase6-evidence.json) supersede current-status
+claims below. The discarded enum/trait/unset defects are fixed; the never-type
+coverage classification is corrected. Earlier phase counts and findings are
+historical. Four concrete full-conformance blockers remain in the Phase 6 report.
+
 The confirmed for-condition and discarded-unset defects are fixed. The systematic
 operator audit additionally found and fixed pending-assignment and
 instanceof/exponentiation acceptance defects. No confirmed source-acceptance or

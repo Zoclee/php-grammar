@@ -96,7 +96,7 @@ final class Php85NegativeBoundaryLedgerTest extends TestCase
         $path = dirname(__DIR__, 3) . '/docs/8.5/phase3-coverage.json';
         $data = json_decode(file_get_contents($path), true, flags: JSON_THROW_ON_ERROR);
         $phase4Witnesses = array_filter($data['baseline_backlog'],
-            static fn (array $row): bool => preg_match('/^fixture:phase[45]-/', $row['evidence'] ?? '') === 1);
+            static fn (array $row): bool => preg_match('/^fixture:(phase[456]-|boundary-parameter-never-)/', $row['evidence'] ?? '') === 1);
         self::assertSame([], $phase4Witnesses, 'Current repairs must not rewrite historical Phase 3 evidence.');
     }
 }
