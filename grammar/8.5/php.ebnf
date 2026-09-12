@@ -22,7 +22,7 @@ attributed-top-declaration =
     ( function-declaration | class-declaration | interface-declaration
     | trait-declaration | enum-declaration )
     | constant-declaration
-    | attribute-groups , "const" , constant-element , ";" ;
+    | attribute-groups , "const" , constant-list , ";" ;
 
 (* Lexical grammar. Whitespace and comments may appear between tokens unless
    a lexical production states otherwise. PHP keywords are case-insensitive. *)
@@ -502,8 +502,10 @@ inner-statement-list =
     { inner-statement } ;
 
 inner-statement =
-      statement
-    | [ attribute-groups ] ,
+    statement | inner-declaration ;
+
+inner-declaration =
+    [ attribute-groups ] ,
       ( function-declaration
       | class-declaration
       | interface-declaration
@@ -568,8 +570,9 @@ if-statement =
     matched-if-statement | unmatched-if-statement ;
 
 alt-elseif-list =
-    "elseif" , "(" , expression , ")" , ":" , inner-statement-list ,
-    { "elseif" , "(" , expression , ")" , ":" , inner-statement-list } ;
+    "elseif" , "(" , expression , ")" , ":" ,
+    ( inner-statement-list
+    | [ closed-inner-statement-list ] , ( alt-elseif-list | alt-else-clause ) ) ;
 
 alt-else-clause =
     "else" , ":" , inner-statement-list ;
@@ -631,8 +634,7 @@ declare-directive =
     identifier , "=" , constant-expression ;
 
 try-statement =
-    "try" , compound-statement ,
-    ( catch-clause , catch-list , [ finally-clause ] | finally-clause ) ;
+    "try" , compound-statement , catch-list , [ finally-clause ] ;
 
 catch-list =
     { catch-clause } ;
@@ -641,7 +643,7 @@ catch-clause =
     "catch" , "(" , catch-type-list , [ variable ] , ")" , compound-statement ;
 
 catch-type-list =
-    name , { "|" , name } ;
+    class-name , { "|" , class-name } ;
 
 finally-clause =
     "finally" , compound-statement ;
@@ -686,7 +688,7 @@ implements-clause =
     "implements" , name-list ;
 
 name-list =
-    name , { "," , name } ;
+    class-name , { "," , class-name } ;
 
 class-member-list =
     { class-member } ;
@@ -695,7 +697,8 @@ class-member =
       [ attribute-groups ] ,
       ( property-declaration
       | method-declaration
-      | class-constant-declaration )
+      | class-constant-declaration
+      | enum-case )
     | trait-use-declaration ;
 
 property-declaration =
@@ -719,12 +722,11 @@ property-hook-block =
     "{" , property-hook-list , "}" ;
 
 property-hook-list =
-    [ attribute-groups ] , property-hook , { [ attribute-groups ] , property-hook } ;
+    { [ attribute-groups ] , property-hook } ;
 
 property-hook =
-    property-hook-modifiers ,
-    ( [ "&" ] , "get" , property-hook-body
-    | "set" , [ "(" , parameter , [ "," ] , ")" ] , property-hook-body ) ;
+    property-hook-modifiers , [ "&" ] , identifier ,
+    [ "(" , parameter-list , ")" ] , property-hook-body ;
 
 property-hook-body =
       ";"
@@ -795,14 +797,7 @@ interface-member-list =
     { interface-member } ;
 
 interface-member =
-      [ attribute-groups ] ,
-      ( method-declaration | class-constant-declaration | interface-property-declaration ) ;
-
-interface-property-declaration =
-    ( interface-property-modifiers | "var" ) , optional-type-without-static , hooked-property ;
-
-interface-property-modifiers =
-    property-modifier , { property-modifier } ;
+    class-member ;
 
 trait-declaration =
     "trait" , identifier , "{" , class-member-list , "}" ;
@@ -833,14 +828,13 @@ enum-declaration =
     "{" , enum-member-list , "}" ;
 
 enum-backing-type =
-    ":" , ( "int" | "string" ) ;
+    ":" , type ;
 
 enum-member-list =
     { enum-member } ;
 
 enum-member =
-    [ attribute-groups ] , ( enum-case | method-declaration | class-constant-declaration )
-    | trait-use-declaration ;
+    class-member ;
 
 enum-case =
     "case" , semi-reserved-identifier , [ "=" , enum-case-initializer ] , ";" ;
@@ -896,7 +890,7 @@ attribute-list =
     attribute , { "," , attribute } ;
 
 attribute =
-    class-name , [ constant-argument-list ] ;
+    class-name , [ argument-list ] ;
 
 halt-compiler-statement =
     "__halt_compiler" , "(" , ")" , ";" , halt-compiler-data ;
@@ -968,12 +962,6 @@ non-ascii-byte =
 reserved-non-modifiers =
     "and" | "array" | "as" | "break" | "callable" | "case" | "catch" | "class" | "clone" | "const" | "continue" | "declare" | "default" | "do" | "echo" | "else" | "elseif" | "empty" | "enddeclare" | "endfor" | "endforeach" | "endif" | "endswitch" | "endwhile" | "enum" | "eval" | "exit" | "die" | "extends" | "finally" | "fn" | "for" | "foreach" | "function" | "global" | "goto" | "if" | "implements" | "include" | "include_once" | "instanceof" | "insteadof" | "interface" | "isset" | "list" | "match" | "namespace" | "new" | "or" | "print" | "require" | "require_once" | "return" | "switch" | "throw" | "trait" | "try" | "unset" | "use" | "var" | "while" | "xor" | "yield"
     | magic-constant ;
-
-constant-argument-list =
-    "(" , [ constant-argument , { "," , constant-argument } , [ "," ] ] , ")" ;
-
-constant-argument =
-    [ semi-reserved-identifier , ":" ] , attribute-or-constructor-argument ;
 
 boolean-not-expression =
     instanceof-expression
@@ -1049,12 +1037,8 @@ global-constant-initializer =
 enum-case-initializer =
     constant-expression ;
 
-attribute-or-constructor-argument =
-    constant-expression ;
-
-
 trait-alias-modifier =
-    "public" | "protected" | "private" | "final" ;
+    method-modifier ;
 
 
 ordinary-argument-list =
@@ -1125,8 +1109,12 @@ unmatched-if-statement =
 
 
 alternative-if-statement =
-    "if" , "(" , expression , ")" , ":" , inner-statement-list ,
-    [ alt-elseif-list ] , [ alt-else-clause ] , "endif" , ";" ;
+    "if" , "(" , expression , ")" , ":" ,
+    ( inner-statement-list
+    | [ closed-inner-statement-list ] , ( alt-elseif-list | alt-else-clause ) ) , "endif" , ";" ;
+
+closed-inner-statement-list =
+    { inner-statement } , ( matched-statement | inner-declaration ) ;
 
 
 matched-while-statement =

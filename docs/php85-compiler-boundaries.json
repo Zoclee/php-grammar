@@ -1,0 +1,1482 @@
+{
+  "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+  "sha256": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225",
+  "scope": "Every direct fatal diagnostic call in zend_compile.c; parser-reachable helpers classified before folding. Runtime/deferred helpers in other translation units and individual-path fixture completeness remain outside this inventory.",
+  "parser_reachable_functions": [
+    "zend_add_anonymous_class_modifier",
+    "zend_add_class_modifier",
+    "zend_add_member_modifier",
+    "zend_handle_encoding_declaration",
+    "zend_modifier_list_to_flags",
+    "zend_modifier_token_to_flag",
+    "zend_modifier_token_to_string",
+    "zend_negate_num_string",
+    "zend_stop_lexing"
+  ],
+  "sites": [
+    {
+      "line": 113,
+      "function": "zend_stack_limit_error",
+      "phase": "implementation-resource-limit",
+      "diagnostic": "Maximum call stack size of %zu bytes (zend.max_allowed_stack_size - zend.reserved_stack_size) reached during compilation. Try splitting expression"
+    },
+    {
+      "line": 247,
+      "function": "zend_assert_valid_class_name",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use \\\"%s\\\" as %s as it is reserved"
+    },
+    {
+      "line": 946,
+      "function": "zend_modifier_token_to_flag",
+      "phase": "parser-action",
+      "diagnostic": "Cannot use the %s modifier on a %s"
+    },
+    {
+      "line": 969,
+      "function": "zend_modifier_list_to_flags",
+      "phase": "parser-action",
+      "diagnostic": "Multiple %s modifiers are not allowed"
+    },
+    {
+      "line": 982,
+      "function": "zend_add_class_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Multiple abstract modifiers are not allowed"
+    },
+    {
+      "line": 987,
+      "function": "zend_add_class_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Multiple final modifiers are not allowed"
+    },
+    {
+      "line": 991,
+      "function": "zend_add_class_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Multiple readonly modifiers are not allowed"
+    },
+    {
+      "line": 995,
+      "function": "zend_add_class_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Cannot use the final modifier on an abstract class"
+    },
+    {
+      "line": 1007,
+      "function": "zend_add_anonymous_class_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Cannot use the abstract modifier on an anonymous class"
+    },
+    {
+      "line": 1012,
+      "function": "zend_add_anonymous_class_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Cannot use the final modifier on an anonymous class"
+    },
+    {
+      "line": 1016,
+      "function": "zend_add_anonymous_class_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Multiple readonly modifiers are not allowed"
+    },
+    {
+      "line": 1026,
+      "function": "zend_add_member_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Multiple access type modifiers are not allowed"
+    },
+    {
+      "line": 1032,
+      "function": "zend_add_member_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Cannot use the final modifier on an abstract method"
+    },
+    {
+      "line": 1037,
+      "function": "zend_add_member_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Cannot use the final modifier on an abstract property"
+    },
+    {
+      "line": 1044,
+      "function": "zend_add_member_modifier",
+      "phase": "parser-action",
+      "diagnostic": "Multiple access type modifiers are not allowed"
+    },
+    {
+      "line": 1149,
+      "function": "zend_resolve_class_name",
+      "phase": "contextual-compilation",
+      "diagnostic": "'\\\\%s' is an invalid class name"
+    },
+    {
+      "line": 1153,
+      "function": "zend_resolve_class_name",
+      "phase": "contextual-compilation",
+      "diagnostic": "'namespace\\\\%s' is an invalid class name"
+    },
+    {
+      "line": 1169,
+      "function": "zend_resolve_class_name",
+      "phase": "contextual-compilation",
+      "diagnostic": "'\\\\%s' is an invalid class name"
+    },
+    {
+      "line": 1210,
+      "function": "zend_resolve_class_name_ast",
+      "phase": "contextual-compilation",
+      "diagnostic": "Illegal class name"
+    },
+    {
+      "line": 1276,
+      "function": "do_bind_function_error",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot redeclare function %s() (previously declared in %s:%d)"
+    },
+    {
+      "line": 1281,
+      "function": "do_bind_function_error",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot redeclare function %s()"
+    },
+    {
+      "line": 1533,
+      "function": "zend_mark_function_as_generator",
+      "phase": "contextual-compilation",
+      "diagnostic": "The \\\"yield\\\" expression can only be used inside a function"
+    },
+    {
+      "line": 1553,
+      "function": "zend_mark_function_as_generator",
+      "phase": "contextual-compilation",
+      "diagnostic": "Generator return type must be a supertype of Generator, %s given"
+    },
+    {
+      "line": 1761,
+      "function": "zend_resolve_const_class_name_reference",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use \\\"%s\\\" as %s, as it is reserved"
+    },
+    {
+      "line": 1773,
+      "function": "zend_ensure_valid_class_fetch_type",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use \\\"%s\\\" when no class scope is active self parent static"
+    },
+    {
+      "line": 1777,
+      "function": "zend_ensure_valid_class_fetch_type",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use \\\"parent\\\" when current class scope has no parent"
+    },
+    {
+      "line": 1796,
+      "function": "zend_try_compile_const_expr_resolve_class_name",
+      "phase": "contextual-compilation",
+      "diagnostic": "Illegal class name"
+    },
+    {
+      "line": 2169,
+      "function": "zend_verify_namespace",
+      "phase": "contextual-compilation",
+      "diagnostic": "No code may exist outside of namespace {}"
+    },
+    {
+      "line": 2525,
+      "function": "zend_assert_not_short_circuited",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot take reference of a nullsafe chain"
+    },
+    {
+      "line": 2634,
+      "function": "zend_emit_return_type_check",
+      "phase": "contextual-compilation",
+      "diagnostic": "A void %s must not return a value "
+    },
+    {
+      "line": 2639,
+      "function": "zend_emit_return_type_check",
+      "phase": "contextual-compilation",
+      "diagnostic": "A void %s must not return a value method function"
+    },
+    {
+      "line": 2651,
+      "function": "zend_emit_return_type_check",
+      "phase": "contextual-compilation",
+      "diagnostic": "A never-returning %s must not return method function"
+    },
+    {
+      "line": 2658,
+      "function": "zend_emit_return_type_check",
+      "phase": "contextual-compilation",
+      "diagnostic": "A %s with return type must return a value "
+    },
+    {
+      "line": 2663,
+      "function": "zend_emit_return_type_check",
+      "phase": "contextual-compilation",
+      "diagnostic": "A %s with return type must return a value method function"
+    },
+    {
+      "line": 2832,
+      "function": "zend_compile_class_ref",
+      "phase": "contextual-compilation",
+      "diagnostic": "Illegal class name"
+    },
+    {
+      "line": 3035,
+      "function": "zend_separate_if_call_and_write",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use result of built-in function in write context"
+    },
+    {
+      "line": 3061,
+      "function": "zend_delayed_compile_dim",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot append to $GLOBALS"
+    },
+    {
+      "line": 3092,
+      "function": "zend_delayed_compile_dim",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use [] for reading"
+    },
+    {
+      "line": 3095,
+      "function": "zend_delayed_compile_dim",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use [] for unsetting"
+    },
+    {
+      "line": 3252,
+      "function": "zend_verify_list_assign_target",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot assign to array(), use [] instead"
+    },
+    {
+      "line": 3255,
+      "function": "zend_verify_list_assign_target",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot mix [] and list()"
+    },
+    {
+      "line": 3258,
+      "function": "zend_verify_list_assign_target",
+      "phase": "contextual-compilation",
+      "diagnostic": "Assignments can only happen to writable values"
+    },
+    {
+      "line": 3318,
+      "function": "zend_compile_list_assign",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use empty array entries in keyed array assignment"
+    },
+    {
+      "line": 3326,
+      "function": "zend_compile_list_assign",
+      "phase": "contextual-compilation",
+      "diagnostic": "Spread operator is not supported in assignments"
+    },
+    {
+      "line": 3336,
+      "function": "zend_compile_list_assign",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot mix keyed and unkeyed array entries in assignments"
+    },
+    {
+      "line": 3343,
+      "function": "zend_compile_list_assign",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot mix keyed and unkeyed array entries in assignments"
+    },
+    {
+      "line": 3377,
+      "function": "zend_compile_list_assign",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use empty list"
+    },
+    {
+      "line": 3391,
+      "function": "zend_ensure_writable_variable",
+      "phase": "contextual-compilation",
+      "diagnostic": "Can't use function return value in write context"
+    },
+    {
+      "line": 3398,
+      "function": "zend_ensure_writable_variable",
+      "phase": "contextual-compilation",
+      "diagnostic": "Can't use method return value in write context"
+    },
+    {
+      "line": 3401,
+      "function": "zend_ensure_writable_variable",
+      "phase": "contextual-compilation",
+      "diagnostic": "Can't use nullsafe operator in write context"
+    },
+    {
+      "line": 3404,
+      "function": "zend_ensure_writable_variable",
+      "phase": "contextual-compilation",
+      "diagnostic": "$GLOBALS can only be modified using the $GLOBALS[$name] = $value syntax"
+    },
+    {
+      "line": 3461,
+      "function": "zend_compile_assign",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot re-assign $this"
+    },
+    {
+      "line": 3517,
+      "function": "zend_compile_assign",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot assign reference to non referenceable value"
+    },
+    {
+      "line": 3559,
+      "function": "zend_compile_assign_ref",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot re-assign $this"
+    },
+    {
+      "line": 3564,
+      "function": "zend_compile_assign_ref",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot acquire reference to $GLOBALS"
+    },
+    {
+      "line": 3587,
+      "function": "zend_compile_assign_ref",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use result of built-in function in write context"
+    },
+    {
+      "line": 3744,
+      "function": "zend_compile_args",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use argument unpacking after named arguments"
+    },
+    {
+      "line": 3790,
+      "function": "zend_compile_args",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use positional argument after argument unpacking"
+    },
+    {
+      "line": 3795,
+      "function": "zend_compile_args",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use positional argument after named argument"
+    },
+    {
+      "line": 3963,
+      "function": "zend_compile_call_common",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot create Closure for new expression"
+    },
+    {
+      "line": 5119,
+      "function": "zend_compile_parent_property_hook_call",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use \\\"parent\\\" when no class scope is active"
+    },
+    {
+      "line": 5124,
+      "function": "zend_compile_parent_property_hook_call",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot create Closure for parent property hook call"
+    },
+    {
+      "line": 5135,
+      "function": "zend_compile_parent_property_hook_call",
+      "phase": "contextual-compilation",
+      "diagnostic": "Must not use parent::$%s::%s() outside a property hook"
+    },
+    {
+      "line": 5141,
+      "function": "zend_compile_parent_property_hook_call",
+      "phase": "contextual-compilation",
+      "diagnostic": "Must not use parent::$%s::%s() in a different property ($%s)"
+    },
+    {
+      "line": 5145,
+      "function": "zend_compile_parent_property_hook_call",
+      "phase": "contextual-compilation",
+      "diagnostic": "Must not use parent::$%s::%s() in a different property hook (%s)"
+    },
+    {
+      "line": 5275,
+      "function": "zend_compile_method_call",
+      "phase": "contextual-compilation",
+      "diagnostic": "Method name must be a string"
+    },
+    {
+      "line": 5301,
+      "function": "zend_compile_method_call",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot combine nullsafe operator with Closure creation"
+    },
+    {
+      "line": 5354,
+      "function": "zend_compile_static_call",
+      "phase": "contextual-compilation",
+      "diagnostic": "Method name must be a string"
+    },
+    {
+      "line": 5455,
+      "function": "zend_compile_global_var",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use $this as global variable"
+    },
+    {
+      "line": 5491,
+      "function": "zend_compile_static_var_common",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use $this as static variable"
+    },
+    {
+      "line": 5507,
+      "function": "zend_compile_static_var",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use $this as static variable"
+    },
+    {
+      "line": 5518,
+      "function": "zend_compile_static_var",
+      "phase": "contextual-compilation",
+      "diagnostic": "Duplicate declaration of static variable $%S"
+    },
+    {
+      "line": 5565,
+      "function": "zend_compile_unset",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use [] for unsetting"
+    },
+    {
+      "line": 5581,
+      "function": "zend_compile_unset",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot unset $this"
+    },
+    {
+      "line": 5824,
+      "function": "zend_compile_break_continue",
+      "phase": "contextual-compilation",
+      "diagnostic": "'%s' operator with non-integer operand  is no longer supported break continue"
+    },
+    {
+      "line": 5830,
+      "function": "zend_compile_break_continue",
+      "phase": "contextual-compilation",
+      "diagnostic": "'%s' operator accepts only positive integers break continue"
+    },
+    {
+      "line": 5840,
+      "function": "zend_compile_break_continue",
+      "phase": "contextual-compilation",
+      "diagnostic": "'%s' not in the 'loop' or 'switch' context break continue"
+    },
+    {
+      "line": 5844,
+      "function": "zend_compile_break_continue",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot '%s'   level%s break continue  s"
+    },
+    {
+      "line": 5903,
+      "function": "zend_resolve_goto_label",
+      "phase": "contextual-compilation",
+      "diagnostic": "'goto' to undefined label '%s'"
+    },
+    {
+      "line": 5915,
+      "function": "zend_resolve_goto_label",
+      "phase": "contextual-compilation",
+      "diagnostic": "'goto' into loop or switch statement is disallowed"
+    },
+    {
+      "line": 5981,
+      "function": "zend_compile_label",
+      "phase": "contextual-compilation",
+      "diagnostic": "Label '%s' already defined"
+    },
+    {
+      "line": 6109,
+      "function": "zend_compile_foreach",
+      "phase": "contextual-compilation",
+      "diagnostic": "Key element cannot be a reference"
+    },
+    {
+      "line": 6112,
+      "function": "zend_compile_foreach",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use list as key element"
+    },
+    {
+      "line": 6143,
+      "function": "zend_compile_foreach",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot re-assign $this"
+    },
+    {
+      "line": 6347,
+      "function": "zend_compile_switch",
+      "phase": "contextual-compilation",
+      "diagnostic": "Switch statements may only contain one default clause"
+    },
+    {
+      "line": 6497,
+      "function": "zend_compile_pipe",
+      "phase": "contextual-compilation",
+      "diagnostic": "Arrow functions on the right hand side of |> must be parenthesized"
+    },
+    {
+      "line": 6575,
+      "function": "zend_compile_match",
+      "phase": "contextual-compilation",
+      "diagnostic": "Match expressions may only contain one default arm"
+    },
+    {
+      "line": 6749,
+      "function": "zend_compile_try",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use try without catch or finally"
+    },
+    {
+      "line": 6806,
+      "function": "zend_compile_try",
+      "phase": "contextual-compilation",
+      "diagnostic": "Bad class name in the catch statement"
+    },
+    {
+      "line": 6822,
+      "function": "zend_compile_try",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot re-assign $this"
+    },
+    {
+      "line": 6922,
+      "function": "zend_handle_encoding_declaration",
+      "phase": "parser-action",
+      "diagnostic": "Encoding must be a literal"
+    },
+    {
+      "line": 6997,
+      "function": "zend_compile_declare",
+      "phase": "contextual-compilation",
+      "diagnostic": "declare(%s) value must be a literal"
+    },
+    {
+      "line": 7008,
+      "function": "zend_compile_declare",
+      "phase": "contextual-compilation",
+      "diagnostic": "Encoding declaration pragma must be  the very first statement in the script"
+    },
+    {
+      "line": 7015,
+      "function": "zend_compile_declare",
+      "phase": "contextual-compilation",
+      "diagnostic": "strict_types declaration must be  the very first statement in the script"
+    },
+    {
+      "line": 7020,
+      "function": "zend_compile_declare",
+      "phase": "contextual-compilation",
+      "diagnostic": "strict_types declaration must not  use block mode"
+    },
+    {
+      "line": 7027,
+      "function": "zend_compile_declare",
+      "phase": "contextual-compilation",
+      "diagnostic": "strict_types declaration must have 0 or 1 as its value"
+    },
+    {
+      "line": 7087,
+      "function": "zend_compile_single_typename",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use \\\"static\\\" when no class scope is active"
+    },
+    {
+      "line": 7098,
+      "function": "zend_compile_single_typename",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type declaration '%s' must be unqualified"
+    },
+    {
+      "line": 7212,
+      "function": "zend_are_intersection_types_redundant",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type %s is redundant with type %s"
+    },
+    {
+      "line": 7215,
+      "function": "zend_are_intersection_types_redundant",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type %s is redundant as it is more restrictive than type %s"
+    },
+    {
+      "line": 7231,
+      "function": "zend_is_intersection_type_redundant_by_single_type",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type %s is redundant as it is more restrictive than type %s"
+    },
+    {
+      "line": 7248,
+      "function": "zend_is_type_list_redundant_by_single_type",
+      "phase": "contextual-compilation",
+      "diagnostic": "Duplicate type %s is redundant"
+    },
+    {
+      "line": 7316,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type mixed can only be used as a standalone type"
+    },
+    {
+      "line": 7326,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "Duplicate type %s is redundant"
+    },
+    {
+      "line": 7332,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type contains both true and false, bool must be used instead"
+    },
+    {
+      "line": 7378,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type %s contains both object and a class type, which is redundant"
+    },
+    {
+      "line": 7401,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type %s cannot be part of an intersection type"
+    },
+    {
+      "line": 7408,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type %s cannot be part of an intersection type"
+    },
+    {
+      "line": 7417,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type %s cannot be part of an intersection type"
+    },
+    {
+      "line": 7457,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "Type mixed cannot be marked as nullable since mixed already includes null"
+    },
+    {
+      "line": 7461,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "null cannot be marked as nullable"
+    },
+    {
+      "line": 7474,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "Void can only be used as a standalone type"
+    },
+    {
+      "line": 7478,
+      "function": "zend_compile_typename_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "never can only be used as a standalone type"
+    },
+    {
+      "line": 7530,
+      "function": "zend_compile_attributes",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot create Closure as attribute argument"
+    },
+    {
+      "line": 7565,
+      "function": "zend_compile_attributes",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use unpacking in attribute argument list"
+    },
+    {
+      "line": 7577,
+      "function": "zend_compile_attributes",
+      "phase": "contextual-compilation",
+      "diagnostic": "Duplicate named parameter $%s"
+    },
+    {
+      "line": 7582,
+      "function": "zend_compile_attributes",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use positional argument after named argument"
+    },
+    {
+      "line": 7624,
+      "function": "zend_compile_attributes",
+      "phase": "contextual-compilation",
+      "diagnostic": "Attribute \\\"%s\\\" cannot target %s (allowed targets: %s)"
+    },
+    {
+      "line": 7633,
+      "function": "zend_compile_attributes",
+      "phase": "contextual-compilation",
+      "diagnostic": "Attribute \\\"%s\\\" must not be repeated"
+    },
+    {
+      "line": 7642,
+      "function": "zend_compile_attributes",
+      "phase": "contextual-compilation",
+      "diagnostic": "%s"
+    },
+    {
+      "line": 7799,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot re-assign auto-global variable %s"
+    },
+    {
+      "line": 7807,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Redefinition of parameter $%s"
+    },
+    {
+      "line": 7810,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use $this as parameter"
+    },
+    {
+      "line": 7816,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Only the last parameter can be variadic"
+    },
+    {
+      "line": 7825,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Variadic parameter cannot have a default value"
+    },
+    {
+      "line": 7870,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "void cannot be used as a parameter type"
+    },
+    {
+      "line": 7874,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "never cannot be used as a parameter type"
+    },
+    {
+      "line": 7880,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use %s as default value for parameter $%s of type %s"
+    },
+    {
+      "line": 7928,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot declare promoted property outside a constructor"
+    },
+    {
+      "line": 7933,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot declare promoted property in an abstract constructor"
+    },
+    {
+      "line": 7937,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot declare variadic promoted property"
+    },
+    {
+      "line": 7941,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot redeclare %s::$%s"
+    },
+    {
+      "line": 7946,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Property %s::$%s cannot have type %s"
+    },
+    {
+      "line": 7972,
+      "function": "zend_compile_params",
+      "phase": "contextual-compilation",
+      "diagnostic": "Readonly property %s::$%s must have type"
+    },
+    {
+      "line": 8060,
+      "function": "zend_compile_closure_binding",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use $this as lexical variable"
+    },
+    {
+      "line": 8064,
+      "function": "zend_compile_closure_binding",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use auto-global as lexical variable"
+    },
+    {
+      "line": 8069,
+      "function": "zend_compile_closure_binding",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use variable $%S twice"
+    },
+    {
+      "line": 8202,
+      "function": "zend_compile_closure_uses",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use lexical variable $%S as a parameter name"
+    },
+    {
+      "line": 8256,
+      "function": "zend_begin_method_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use 'readonly' as method modifier"
+    },
+    {
+      "line": 8268,
+      "function": "zend_begin_method_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Anonymous class method %s() must not be abstract"
+    },
+    {
+      "line": 8271,
+      "function": "zend_begin_method_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "%s method %s::%s() must not be abstract"
+    },
+    {
+      "line": 8274,
+      "function": "zend_begin_method_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Class %s declares abstract method %s() and must therefore be declared abstract"
+    },
+    {
+      "line": 8281,
+      "function": "zend_begin_method_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Access type for interface method  %s::%s() must be public"
+    },
+    {
+      "line": 8285,
+      "function": "zend_begin_method_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Interface method  %s::%s() must not be final"
+    },
+    {
+      "line": 8293,
+      "function": "zend_begin_method_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "%s function %s::%s() cannot be declared private Interface Abstract"
+    },
+    {
+      "line": 8298,
+      "function": "zend_begin_method_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "%s function %s::%s() cannot contain body Interface Abstract"
+    },
+    {
+      "line": 8304,
+      "function": "zend_begin_method_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Non-abstract method %s::%s() must contain body"
+    },
+    {
+      "line": 8315,
+      "function": "zend_begin_method_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot redeclare %s::%s()"
+    },
+    {
+      "line": 8397,
+      "function": "zend_begin_func_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot redeclare function %s() (previously declared as local import)"
+    },
+    {
+      "line": 8403,
+      "function": "zend_begin_func_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "__autoload() is no longer supported, use spl_autoload_register() instead"
+    },
+    {
+      "line": 8408,
+      "function": "zend_begin_func_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Defining a custom assert() function is not allowed,  as the function has special semantics"
+    },
+    {
+      "line": 8587,
+      "function": "zend_compile_func_decl_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "A void %s does not return a value, but #[\\\\NoDiscard] requires a return value method function"
+    },
+    {
+      "line": 8593,
+      "function": "zend_compile_func_decl_ex",
+      "phase": "contextual-compilation",
+      "diagnostic": "A never returning %s does not return a value, but #[\\\\NoDiscard] requires a return value method function"
+    },
+    {
+      "line": 8662,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Hooked properties cannot be readonly"
+    },
+    {
+      "line": 8666,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Property hook list must not be empty"
+    },
+    {
+      "line": 8683,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot declare hooks for static property"
+    },
+    {
+      "line": 8686,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Property hook cannot be both final and private"
+    },
+    {
+      "line": 8693,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Abstract property hook cannot have body"
+    },
+    {
+      "line": 8696,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Property hook cannot be both abstract and private"
+    },
+    {
+      "line": 8700,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Property hook cannot be both abstract and final"
+    },
+    {
+      "line": 8703,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Non-abstract property hook must have a body"
+    },
+    {
+      "line": 8708,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Unknown hook \\\"%s\\\" for property %s::$%s, expected \\\"get\\\" or \\\"set\\\""
+    },
+    {
+      "line": 8731,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "get hook of property %s::$%s must not have a parameter list"
+    },
+    {
+      "line": 8743,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "%s hook of property %s::$%s must accept exactly one parameters"
+    },
+    {
+      "line": 8748,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Parameter $%s of %s hook %s::$%s must not be pass-by-reference"
+    },
+    {
+      "line": 8752,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Parameter $%s of %s hook %s::$%s must not be variadic"
+    },
+    {
+      "line": 8756,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Parameter $%s of %s hook %s::$%s must not have a default value"
+    },
+    {
+      "line": 8791,
+      "function": "zend_compile_property_hooks",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot redeclare property hook \\\"%s\\\""
+    },
+    {
+      "line": 8842,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Enum %s cannot include properties"
+    },
+    {
+      "line": 8846,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Property cannot be both final and private"
+    },
+    {
+      "line": 8851,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Property in interface cannot be final"
+    },
+    {
+      "line": 8854,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Property in interface cannot be protected or private"
+    },
+    {
+      "line": 8857,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Property in interface cannot be explicitly abstract.  All interface members are implicitly abstract"
+    },
+    {
+      "line": 8882,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Interfaces may only include hooked properties"
+    },
+    {
+      "line": 8886,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Only hooked properties may be declared abstract"
+    },
+    {
+      "line": 8899,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Property %s::$%s cannot have type %s"
+    },
+    {
+      "line": 8911,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot redeclare %s::$%s"
+    },
+    {
+      "line": 8925,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Default value for property of type %s may not be null.  Use the nullable type %s to allow null default value"
+    },
+    {
+      "line": 8930,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use %s as default value for property %s::$%s of type %s"
+    },
+    {
+      "line": 8948,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Readonly property %s::$%s must have type"
+    },
+    {
+      "line": 8952,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Readonly property %s::$%s cannot have default value"
+    },
+    {
+      "line": 8957,
+      "function": "zend_compile_prop_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Static property %s::$%s cannot be readonly"
+    },
+    {
+      "line": 8996,
+      "function": "zend_check_trait_alias_modifiers",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use \\\"static\\\" as method modifier in trait alias"
+    },
+    {
+      "line": 8998,
+      "function": "zend_check_trait_alias_modifiers",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use \\\"abstract\\\" as method modifier in trait alias"
+    },
+    {
+      "line": 9028,
+      "function": "zend_compile_class_const_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Class constant %s::%s cannot have type %s"
+    },
+    {
+      "line": 9034,
+      "function": "zend_compile_class_const_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Private constant %s::%s cannot be final as it is not visible to other classes"
+    },
+    {
+      "line": 9045,
+      "function": "zend_compile_class_const_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use %s as value for class constant %s::%s of type %s"
+    },
+    {
+      "line": 9151,
+      "function": "zend_compile_use_trait",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use traits inside of interfaces.  %s is used in %s"
+    },
+    {
+      "line": 9228,
+      "function": "zend_compile_enum_backing_type",
+      "phase": "contextual-compilation",
+      "diagnostic": "Enum backing type must be int or string, %s given"
+    },
+    {
+      "line": 9258,
+      "function": "zend_compile_class_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Class declarations may not be nested"
+    },
+    {
+      "line": 9278,
+      "function": "zend_compile_class_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot redeclare class %s  (previously declared as local import)"
+    },
+    {
+      "line": 9424,
+      "function": "zend_compile_class_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Runtime definition key collision for %s. This is a bug"
+    },
+    {
+      "line": 9464,
+      "function": "zend_compile_enum_case",
+      "phase": "contextual-compilation",
+      "diagnostic": "Case can only be used in enums"
+    },
+    {
+      "line": 9482,
+      "function": "zend_compile_enum_case",
+      "phase": "contextual-compilation",
+      "diagnostic": "Case %s of backed enum %s must have a value"
+    },
+    {
+      "line": 9486,
+      "function": "zend_compile_enum_case",
+      "phase": "contextual-compilation",
+      "diagnostic": "Case %s of non-backed enum %s must not have a value"
+    },
+    {
+      "line": 9569,
+      "function": "zend_check_already_in_use",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use%s %s as %s because the name  is already in use"
+    },
+    {
+      "line": 9615,
+      "function": "zend_compile_use",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use %s as %s because '%s'  is a special class name"
+    },
+    {
+      "line": 9637,
+      "function": "zend_compile_use",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use%s %s as %s because the name  is already in use"
+    },
+    {
+      "line": 9693,
+      "function": "zend_compile_const_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot redeclare constant '%s'"
+    },
+    {
+      "line": 9703,
+      "function": "zend_compile_const_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot declare const %s because  the name is already in use"
+    },
+    {
+      "line": 9722,
+      "function": "zend_compile_const_decl",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot apply attributes to multiple constants at once"
+    },
+    {
+      "line": 9753,
+      "function": "zend_compile_namespace",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot mix bracketed namespace declarations  with unbracketed namespace declarations"
+    },
+    {
+      "line": 9760,
+      "function": "zend_compile_namespace",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot mix bracketed namespace declarations  with unbracketed namespace declarations"
+    },
+    {
+      "line": 9763,
+      "function": "zend_compile_namespace",
+      "phase": "contextual-compilation",
+      "diagnostic": "Namespace declarations cannot be nested"
+    },
+    {
+      "line": 9770,
+      "function": "zend_compile_namespace",
+      "phase": "contextual-compilation",
+      "diagnostic": "Namespace declaration statement has to be  the very first statement or after any declare call in the script"
+    },
+    {
+      "line": 9782,
+      "function": "zend_compile_namespace",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use '%s' as namespace name"
+    },
+    {
+      "line": 9813,
+      "function": "zend_compile_halt_compiler",
+      "phase": "contextual-compilation",
+      "diagnostic": "__HALT_COMPILER() can only be used from the outermost scope"
+    },
+    {
+      "line": 10093,
+      "function": "zend_try_ct_eval_array",
+      "phase": "constant-folding",
+      "diagnostic": "Cannot use list() as standalone expression"
+    },
+    {
+      "line": 10105,
+      "function": "zend_try_ct_eval_array",
+      "phase": "constant-folding",
+      "diagnostic": "Cannot use empty array elements in arrays"
+    },
+    {
+      "line": 10162,
+      "function": "zend_try_ct_eval_array",
+      "phase": "constant-folding",
+      "diagnostic": "Only arrays and Traversables can be unpacked, %s given"
+    },
+    {
+      "line": 10197,
+      "function": "zend_try_ct_eval_array",
+      "phase": "constant-folding",
+      "diagnostic": "Illegal offset type"
+    },
+    {
+      "line": 10472,
+      "function": "zend_compile_cast",
+      "phase": "contextual-compilation",
+      "diagnostic": "The (unset) cast is no longer supported"
+    },
+    {
+      "line": 10519,
+      "function": "zend_compile_conditional",
+      "phase": "contextual-compilation",
+      "diagnostic": "Unparenthesized `a ? b : c ? d : e` is not supported.  Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)`"
+    },
+    {
+      "line": 10523,
+      "function": "zend_compile_conditional",
+      "phase": "contextual-compilation",
+      "diagnostic": "Unparenthesized `a ? b : c ?: d` is not supported.  Use either `(a ? b : c) ?: d` or `a ? b : (c ?: d)`"
+    },
+    {
+      "line": 10529,
+      "function": "zend_compile_conditional",
+      "phase": "contextual-compilation",
+      "diagnostic": "Unparenthesized `a ?: b ? c : d` is not supported.  Use either `(a ?: b) ? c : d` or `a ?: (b ? c : d)`"
+    },
+    {
+      "line": 10614,
+      "function": "zend_compile_assign_coalesce",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot re-assign $this"
+    },
+    {
+      "line": 10759,
+      "function": "zend_compile_yield_from",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use \\\"yield from\\\" inside a by-reference generator"
+    },
+    {
+      "line": 10832,
+      "function": "zend_compile_isset_or_empty",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use isset() on the result of an expression  (you can use \\\"null !== expression\\\" instead)"
+    },
+    {
+      "line": 10846,
+      "function": "zend_compile_isset_or_empty",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use [] for reading"
+    },
+    {
+      "line": 10957,
+      "function": "zend_compile_array",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use empty array elements in arrays"
+    },
+    {
+      "line": 11123,
+      "function": "zend_compile_class_name",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use \\\"::class\\\" on %s"
+    },
+    {
+      "line": 11349,
+      "function": "zend_compile_const_expr_class_const",
+      "phase": "contextual-compilation",
+      "diagnostic": "Dynamic class names are not allowed in compile-time class constant references"
+    },
+    {
+      "line": 11360,
+      "function": "zend_compile_const_expr_class_const",
+      "phase": "contextual-compilation",
+      "diagnostic": "\\\"static::\\\" is not allowed in compile-time constants"
+    },
+    {
+      "line": 11384,
+      "function": "zend_compile_const_expr_class_name",
+      "phase": "contextual-compilation",
+      "diagnostic": "(expression)::class cannot be used in constant expressions"
+    },
+    {
+      "line": 11400,
+      "function": "zend_compile_const_expr_class_name",
+      "phase": "contextual-compilation",
+      "diagnostic": "static::class cannot be used for compile-time class name resolution"
+    },
+    {
+      "line": 11449,
+      "function": "zend_compile_const_expr_class_reference",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use anonymous class in constant expression"
+    },
+    {
+      "line": 11453,
+      "function": "zend_compile_const_expr_class_reference",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use dynamic class name in constant expression"
+    },
+    {
+      "line": 11460,
+      "function": "zend_compile_const_expr_class_reference",
+      "phase": "contextual-compilation",
+      "diagnostic": "\\\"static\\\" is not allowed in compile-time constants"
+    },
+    {
+      "line": 11477,
+      "function": "zend_compile_const_expr_new",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot create Closure for new expression"
+    },
+    {
+      "line": 11486,
+      "function": "zend_compile_const_expr_closure",
+      "phase": "contextual-compilation",
+      "diagnostic": "Closures in constant expressions must be static"
+    },
+    {
+      "line": 11490,
+      "function": "zend_compile_const_expr_closure",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use(...) variables in constant expression"
+    },
+    {
+      "line": 11514,
+      "function": "zend_compile_const_expr_fcc",
+      "phase": "contextual-compilation",
+      "diagnostic": "Constant expression contains invalid operations"
+    },
+    {
+      "line": 11521,
+      "function": "zend_compile_const_expr_fcc",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use dynamic function name in constant expression"
+    },
+    {
+      "line": 11525,
+      "function": "zend_compile_const_expr_fcc",
+      "phase": "contextual-compilation",
+      "diagnostic": "Illegal function name"
+    },
+    {
+      "line": 11541,
+      "function": "zend_compile_const_expr_fcc",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use dynamic method name in constant expression"
+    },
+    {
+      "line": 11544,
+      "function": "zend_compile_const_expr_fcc",
+      "phase": "contextual-compilation",
+      "diagnostic": "Illegal method name"
+    },
+    {
+      "line": 11559,
+      "function": "zend_compile_const_expr_args",
+      "phase": "contextual-compilation",
+      "diagnostic": "Argument unpacking in constant expressions is not supported"
+    },
+    {
+      "line": 11565,
+      "function": "zend_compile_const_expr_args",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use positional argument after named argument"
+    },
+    {
+      "line": 11588,
+      "function": "zend_compile_const_expr",
+      "phase": "contextual-compilation",
+      "diagnostic": "Constant expression contains invalid operations"
+    },
+    {
+      "line": 11606,
+      "function": "zend_compile_const_expr",
+      "phase": "contextual-compilation",
+      "diagnostic": "Object casts are not supported in this context"
+    },
+    {
+      "line": 11612,
+      "function": "zend_compile_const_expr",
+      "phase": "contextual-compilation",
+      "diagnostic": "New expressions are not supported in this context"
+    },
+    {
+      "line": 11999,
+      "function": "zend_compile_var_inner",
+      "phase": "contextual-compilation",
+      "diagnostic": "Cannot use temporary expression in write context"
+    },
+    {
+      "line": 12218,
+      "function": "zend_eval_const_expr",
+      "phase": "constant-folding",
+      "diagnostic": "Cannot use [] for reading"
+    },
+    {
+      "line": 12366,
+      "function": "zend_eval_const_expr",
+      "phase": "constant-folding",
+      "diagnostic": "The (unset) cast is no longer supported"
+    }
+  ]
+}

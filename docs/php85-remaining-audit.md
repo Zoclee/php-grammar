@@ -1,5 +1,7 @@
 # PHP 8.5 remaining-audit corrections
 
+Historical audit snapshot. The [parser/compiler boundary remediation](php85-parser-compiler-remediation.md) supersedes its outstanding-gap descriptions and counts.
+
 The audited expression/statement ambiguities, interface `var` properties,
 argument categories, constant-expression folding and scanner boundaries are
 corrected. **Full PHP 8.5 conformance is not established:** two confirmed

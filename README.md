@@ -4,17 +4,18 @@
 
 Versioned EBNF grammars and human-readable specifications for the PHP language syntax.
 
-php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [remaining discrepancies](docs/php85-audit-remediation.md).
+php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [remaining discrepancies](docs/php85-parser-compiler-remediation.md).
 
-PHP 8.5 Grammar Completeness Phase 4 adds systematic negative-boundary evidence:
-250 structural-negative and 22 contextual-negative fixtures, each paired with
-a nearby valid repair. The corpus contains 497 valid, 335 structural-negative,
-and 85 contextual-negative files across both short-tag profiles. PHP 8.5.10
-differential validation reports zero unexpected mismatches; two known
-discarded-closure discrepancies remain. Full PHP 8.5 conformance is not established.
+The PHP 8.5 parser/compiler boundary audit reconciles common class-like members,
+enum types, trait aliases, hooks, attributes and try syntax. It adds 85
+live/retained/discarded declaration families and corrects an alternative-if
+binding error using Zend AST evidence. The corpus contains 599 valid, 347
+structural-negative and 276 contextual-negative files across both short-tag
+profiles. The previously recorded discarded-closure examples now pass.
+Full PHP 8.5 conformance is not established.
 
-Positive coverage remains 303/366 productions (82.8%) and 609/794 alternatives
-(76.7%). Rejection evidence has a separate [boundary ledger](docs/php85-negative-boundaries.md),
+Current positive evidence is recorded in the generated coverage report.
+Rejection evidence has a separate [boundary ledger](docs/php85-negative-boundaries.md),
 with 14 boundary categories and no misleading rejection percentage. See the
 [Phase 4 report](docs/php85-phase4-negative-coverage.md),
 [Phase 3 evidence](docs/php85-phase3-coverage.md), and

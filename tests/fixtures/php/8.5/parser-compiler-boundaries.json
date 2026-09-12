@@ -1,0 +1,1025 @@
+{
+  "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+  "cases": [
+    {
+      "id": "enum-property",
+      "area": "members",
+      "source": "enum E { public int $x; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-enum-property-live.php",
+        "retained": "contextual-invalid/boundary-enum-property-retained.php",
+        "discarded": "valid/boundary-enum-property-discarded.php"
+      }
+    },
+    {
+      "id": "enum-hook",
+      "area": "members",
+      "source": "enum E { public int $x { get => 1; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-enum-hook-live.php",
+        "retained": "contextual-invalid/boundary-enum-hook-retained.php",
+        "discarded": "valid/boundary-enum-hook-discarded.php"
+      }
+    },
+    {
+      "id": "class-case",
+      "area": "members",
+      "source": "class C { case X; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-class-case-live.php",
+        "retained": "contextual-invalid/boundary-class-case-retained.php",
+        "discarded": "valid/boundary-class-case-discarded.php"
+      }
+    },
+    {
+      "id": "interface-case",
+      "area": "members",
+      "source": "interface I { case X; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-case-live.php",
+        "retained": "contextual-invalid/boundary-interface-case-retained.php",
+        "discarded": "valid/boundary-interface-case-discarded.php"
+      }
+    },
+    {
+      "id": "trait-case",
+      "area": "members",
+      "source": "trait T { case X; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-trait-case-live.php",
+        "retained": "contextual-invalid/boundary-trait-case-retained.php",
+        "discarded": "valid/boundary-trait-case-discarded.php"
+      }
+    },
+    {
+      "id": "interface-trait",
+      "area": "members",
+      "source": "interface I { use T; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-trait-live.php",
+        "retained": "contextual-invalid/boundary-interface-trait-retained.php",
+        "discarded": "valid/boundary-interface-trait-discarded.php"
+      }
+    },
+    {
+      "id": "interface-ordinary-property",
+      "area": "members",
+      "source": "interface I { public int $x; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-ordinary-property-live.php",
+        "retained": "contextual-invalid/boundary-interface-ordinary-property-retained.php",
+        "discarded": "valid/boundary-interface-ordinary-property-discarded.php"
+      }
+    },
+    {
+      "id": "interface-property-default",
+      "area": "members",
+      "source": "interface I { public int $x = 1 { get; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-property-default-live.php",
+        "retained": "contextual-invalid/boundary-interface-property-default-retained.php",
+        "discarded": "valid/boundary-interface-property-default-discarded.php"
+      }
+    },
+    {
+      "id": "interface-private-property",
+      "area": "members",
+      "source": "interface I { private int $x { get; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-private-property-live.php",
+        "retained": "contextual-invalid/boundary-interface-private-property-retained.php",
+        "discarded": "valid/boundary-interface-private-property-discarded.php"
+      }
+    },
+    {
+      "id": "interface-final-property",
+      "area": "members",
+      "source": "interface I { final public int $x { get; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-final-property-live.php",
+        "retained": "contextual-invalid/boundary-interface-final-property-retained.php",
+        "discarded": "valid/boundary-interface-final-property-discarded.php"
+      }
+    },
+    {
+      "id": "interface-abstract-property",
+      "area": "members",
+      "source": "interface I { abstract public int $x { get; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-abstract-property-live.php",
+        "retained": "contextual-invalid/boundary-interface-abstract-property-retained.php",
+        "discarded": "valid/boundary-interface-abstract-property-discarded.php"
+      }
+    },
+    {
+      "id": "interface-method-body",
+      "area": "members",
+      "source": "interface I { function f() {} }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-method-body-live.php",
+        "retained": "contextual-invalid/boundary-interface-method-body-retained.php",
+        "discarded": "valid/boundary-interface-method-body-discarded.php"
+      }
+    },
+    {
+      "id": "interface-private-method",
+      "area": "members",
+      "source": "interface I { private function f(); }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-private-method-live.php",
+        "retained": "contextual-invalid/boundary-interface-private-method-retained.php",
+        "discarded": "valid/boundary-interface-private-method-discarded.php"
+      }
+    },
+    {
+      "id": "interface-final-method",
+      "area": "members",
+      "source": "interface I { final function f(); }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-final-method-live.php",
+        "retained": "contextual-invalid/boundary-interface-final-method-retained.php",
+        "discarded": "valid/boundary-interface-final-method-discarded.php"
+      }
+    },
+    {
+      "id": "class-method-no-body",
+      "area": "members",
+      "source": "class C { function f(); }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-class-method-no-body-live.php",
+        "retained": "contextual-invalid/boundary-class-method-no-body-retained.php",
+        "discarded": "valid/boundary-class-method-no-body-discarded.php"
+      }
+    },
+    {
+      "id": "class-abstract-method",
+      "area": "members",
+      "source": "class C { abstract function f(); }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-class-abstract-method-live.php",
+        "retained": "contextual-invalid/boundary-class-abstract-method-retained.php",
+        "discarded": "valid/boundary-class-abstract-method-discarded.php"
+      }
+    },
+    {
+      "id": "trait-method-no-body",
+      "area": "members",
+      "source": "trait T { function f(); }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-trait-method-no-body-live.php",
+        "retained": "contextual-invalid/boundary-trait-method-no-body-retained.php",
+        "discarded": "valid/boundary-trait-method-no-body-discarded.php"
+      }
+    },
+    {
+      "id": "enum-abstract-method",
+      "area": "members",
+      "source": "enum E { abstract function f(); }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-enum-abstract-method-live.php",
+        "retained": "contextual-invalid/boundary-enum-abstract-method-retained.php",
+        "discarded": "valid/boundary-enum-abstract-method-discarded.php"
+      }
+    },
+    {
+      "id": "abstract-method-body",
+      "area": "members",
+      "source": "abstract class C { abstract function f() {} }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-abstract-method-body-live.php",
+        "retained": "contextual-invalid/boundary-abstract-method-body-retained.php",
+        "discarded": "valid/boundary-abstract-method-body-discarded.php"
+      }
+    },
+    {
+      "id": "abstract-private-method",
+      "area": "members",
+      "source": "abstract class C { abstract private function f(); }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-abstract-private-method-live.php",
+        "retained": "contextual-invalid/boundary-abstract-private-method-retained.php",
+        "discarded": "valid/boundary-abstract-private-method-discarded.php"
+      }
+    },
+    {
+      "id": "enum-object",
+      "area": "enums",
+      "source": "enum E: object {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-enum-object-live.php",
+        "retained": "contextual-invalid/boundary-enum-object-retained.php",
+        "discarded": "valid/boundary-enum-object-discarded.php"
+      }
+    },
+    {
+      "id": "enum-union",
+      "area": "enums",
+      "source": "enum E: int|string {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-enum-union-live.php",
+        "retained": "contextual-invalid/boundary-enum-union-retained.php",
+        "discarded": "valid/boundary-enum-union-discarded.php"
+      }
+    },
+    {
+      "id": "enum-nullable",
+      "area": "enums",
+      "source": "enum E: ?int {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-enum-nullable-live.php",
+        "retained": "contextual-invalid/boundary-enum-nullable-retained.php",
+        "discarded": "valid/boundary-enum-nullable-discarded.php"
+      }
+    },
+    {
+      "id": "enum-static",
+      "area": "enums",
+      "source": "enum E: static {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-enum-static-live.php",
+        "retained": "contextual-invalid/boundary-enum-static-retained.php",
+        "discarded": "valid/boundary-enum-static-discarded.php"
+      }
+    },
+    {
+      "id": "enum-backed-missing-value",
+      "area": "enums",
+      "source": "enum E: int { case X; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-enum-backed-missing-value-live.php",
+        "retained": "contextual-invalid/boundary-enum-backed-missing-value-retained.php",
+        "discarded": "valid/boundary-enum-backed-missing-value-discarded.php"
+      }
+    },
+    {
+      "id": "enum-unbacked-value",
+      "area": "enums",
+      "source": "enum E { case X = 1; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-enum-unbacked-value-live.php",
+        "retained": "contextual-invalid/boundary-enum-unbacked-value-retained.php",
+        "discarded": "valid/boundary-enum-unbacked-value-discarded.php"
+      }
+    },
+    {
+      "id": "alias-static",
+      "area": "traits",
+      "source": "class C { use T { foo as static bar; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-alias-static-live.php",
+        "retained": "contextual-invalid/boundary-alias-static-retained.php",
+        "discarded": "valid/boundary-alias-static-discarded.php"
+      }
+    },
+    {
+      "id": "alias-abstract",
+      "area": "traits",
+      "source": "class C { use T { foo as abstract bar; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-alias-abstract-live.php",
+        "retained": "contextual-invalid/boundary-alias-abstract-retained.php",
+        "discarded": "valid/boundary-alias-abstract-discarded.php"
+      }
+    },
+    {
+      "id": "alias-static-no-name",
+      "area": "traits",
+      "source": "class C { use T { foo as static; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-alias-static-no-name-live.php",
+        "retained": "contextual-invalid/boundary-alias-static-no-name-retained.php",
+        "discarded": "valid/boundary-alias-static-no-name-discarded.php"
+      }
+    },
+    {
+      "id": "alias-abstract-no-name",
+      "area": "traits",
+      "source": "class C { use T { foo as abstract; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-alias-abstract-no-name-live.php",
+        "retained": "contextual-invalid/boundary-alias-abstract-no-name-retained.php",
+        "discarded": "valid/boundary-alias-abstract-no-name-discarded.php"
+      }
+    },
+    {
+      "id": "hook-empty",
+      "area": "hooks",
+      "source": "class C { public int $x {} }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-empty-live.php",
+        "retained": "contextual-invalid/boundary-hook-empty-retained.php",
+        "discarded": "valid/boundary-hook-empty-discarded.php"
+      }
+    },
+    {
+      "id": "hook-name",
+      "area": "hooks",
+      "source": "class C { public int $x { frobnicate => 1; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-name-live.php",
+        "retained": "contextual-invalid/boundary-hook-name-retained.php",
+        "discarded": "valid/boundary-hook-name-discarded.php"
+      }
+    },
+    {
+      "id": "hook-get-empty-params",
+      "area": "hooks",
+      "source": "class C { public int $x { get() => 1; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-get-empty-params-live.php",
+        "retained": "contextual-invalid/boundary-hook-get-empty-params-retained.php",
+        "discarded": "valid/boundary-hook-get-empty-params-discarded.php"
+      }
+    },
+    {
+      "id": "hook-get-params",
+      "area": "hooks",
+      "source": "class C { public int $x { get($a, $b,) => 1; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-get-params-live.php",
+        "retained": "contextual-invalid/boundary-hook-get-params-retained.php",
+        "discarded": "valid/boundary-hook-get-params-discarded.php"
+      }
+    },
+    {
+      "id": "hook-set-empty-params",
+      "area": "hooks",
+      "source": "class C { public int $x { set() {} } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-set-empty-params-live.php",
+        "retained": "contextual-invalid/boundary-hook-set-empty-params-retained.php",
+        "discarded": "valid/boundary-hook-set-empty-params-discarded.php"
+      }
+    },
+    {
+      "id": "hook-set-two-params",
+      "area": "hooks",
+      "source": "class C { public int $x { set($a, $b,) {} } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-set-two-params-live.php",
+        "retained": "contextual-invalid/boundary-hook-set-two-params-retained.php",
+        "discarded": "valid/boundary-hook-set-two-params-discarded.php"
+      }
+    },
+    {
+      "id": "hook-set-reference",
+      "area": "hooks",
+      "source": "class C { public int $x { &set {} } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": true,
+      "fixtures": {
+        "live": "valid/boundary-hook-set-reference-live.php",
+        "retained": "valid/boundary-hook-set-reference-retained.php",
+        "discarded": "valid/boundary-hook-set-reference-discarded.php"
+      }
+    },
+    {
+      "id": "hook-param-reference",
+      "area": "hooks",
+      "source": "class C { public int $x { set(&$v) {} } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-param-reference-live.php",
+        "retained": "contextual-invalid/boundary-hook-param-reference-retained.php",
+        "discarded": "valid/boundary-hook-param-reference-discarded.php"
+      }
+    },
+    {
+      "id": "hook-param-variadic",
+      "area": "hooks",
+      "source": "class C { public int $x { set(...$v) {} } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-param-variadic-live.php",
+        "retained": "contextual-invalid/boundary-hook-param-variadic-retained.php",
+        "discarded": "valid/boundary-hook-param-variadic-discarded.php"
+      }
+    },
+    {
+      "id": "hook-param-default",
+      "area": "hooks",
+      "source": "class C { public int $x { set($v = 1) {} } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-param-default-live.php",
+        "retained": "contextual-invalid/boundary-hook-param-default-retained.php",
+        "discarded": "valid/boundary-hook-param-default-discarded.php"
+      }
+    },
+    {
+      "id": "hook-duplicate",
+      "area": "hooks",
+      "source": "class C { public int $x { get => 1; get => 2; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-duplicate-live.php",
+        "retained": "contextual-invalid/boundary-hook-duplicate-retained.php",
+        "discarded": "valid/boundary-hook-duplicate-discarded.php"
+      }
+    },
+    {
+      "id": "hook-static",
+      "area": "hooks",
+      "source": "class C { public static int $x { get => 1; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-static-live.php",
+        "retained": "contextual-invalid/boundary-hook-static-retained.php",
+        "discarded": "valid/boundary-hook-static-discarded.php"
+      }
+    },
+    {
+      "id": "hook-readonly",
+      "area": "hooks",
+      "source": "class C { public readonly int $x { get => 1; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-readonly-live.php",
+        "retained": "contextual-invalid/boundary-hook-readonly-retained.php",
+        "discarded": "valid/boundary-hook-readonly-discarded.php"
+      }
+    },
+    {
+      "id": "hook-no-body",
+      "area": "hooks",
+      "source": "class C { public int $x { get; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-no-body-live.php",
+        "retained": "contextual-invalid/boundary-hook-no-body-retained.php",
+        "discarded": "valid/boundary-hook-no-body-discarded.php"
+      }
+    },
+    {
+      "id": "hook-abstract-body",
+      "area": "hooks",
+      "source": "abstract class C { abstract public int $x { get => 1; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-abstract-body-live.php",
+        "retained": "contextual-invalid/boundary-hook-abstract-body-retained.php",
+        "discarded": "valid/boundary-hook-abstract-body-discarded.php"
+      }
+    },
+    {
+      "id": "hook-interface-body",
+      "area": "hooks",
+      "source": "interface I { public int $x { get => 1; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-interface-body-live.php",
+        "retained": "contextual-invalid/boundary-hook-interface-body-retained.php",
+        "discarded": "valid/boundary-hook-interface-body-discarded.php"
+      }
+    },
+    {
+      "id": "hook-private-final",
+      "area": "hooks",
+      "source": "class C { private int $x { final get => 1; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-private-final-live.php",
+        "retained": "contextual-invalid/boundary-hook-private-final-retained.php",
+        "discarded": "valid/boundary-hook-private-final-discarded.php"
+      }
+    },
+    {
+      "id": "hook-abstract-final",
+      "area": "hooks",
+      "source": "abstract class C { abstract public int $x { final get; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-hook-abstract-final-live.php",
+        "retained": "contextual-invalid/boundary-hook-abstract-final-retained.php",
+        "discarded": "valid/boundary-hook-abstract-final-discarded.php"
+      }
+    },
+    {
+      "id": "parameter-hook-unpromoted",
+      "area": "hooks",
+      "source": "function f(int $x { get => 1; }) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-parameter-hook-unpromoted-live.php",
+        "retained": "contextual-invalid/boundary-parameter-hook-unpromoted-retained.php",
+        "discarded": "valid/boundary-parameter-hook-unpromoted-discarded.php"
+      }
+    },
+    {
+      "id": "property-abstract-ordinary",
+      "area": "properties-types-promotion",
+      "source": "abstract class C { abstract public int $x; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-property-abstract-ordinary-live.php",
+        "retained": "contextual-invalid/boundary-property-abstract-ordinary-retained.php",
+        "discarded": "valid/boundary-property-abstract-ordinary-discarded.php"
+      }
+    },
+    {
+      "id": "property-readonly-untyped",
+      "area": "properties-types-promotion",
+      "source": "class C { public readonly $x; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-property-readonly-untyped-live.php",
+        "retained": "contextual-invalid/boundary-property-readonly-untyped-retained.php",
+        "discarded": "valid/boundary-property-readonly-untyped-discarded.php"
+      }
+    },
+    {
+      "id": "property-readonly-default",
+      "area": "properties-types-promotion",
+      "source": "class C { public readonly int $x = 1; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-property-readonly-default-live.php",
+        "retained": "contextual-invalid/boundary-property-readonly-default-retained.php",
+        "discarded": "valid/boundary-property-readonly-default-discarded.php"
+      }
+    },
+    {
+      "id": "property-readonly-static",
+      "area": "properties-types-promotion",
+      "source": "class C { public static readonly int $x; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-property-readonly-static-live.php",
+        "retained": "contextual-invalid/boundary-property-readonly-static-retained.php",
+        "discarded": "valid/boundary-property-readonly-static-discarded.php"
+      }
+    },
+    {
+      "id": "property-private-final",
+      "area": "properties-types-promotion",
+      "source": "class C { final private int $x; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-property-private-final-live.php",
+        "retained": "contextual-invalid/boundary-property-private-final-retained.php",
+        "discarded": "valid/boundary-property-private-final-discarded.php"
+      }
+    },
+    {
+      "id": "property-callable",
+      "area": "properties-types-promotion",
+      "source": "class C { public callable $x; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-property-callable-live.php",
+        "retained": "contextual-invalid/boundary-property-callable-retained.php",
+        "discarded": "valid/boundary-property-callable-discarded.php"
+      }
+    },
+    {
+      "id": "constant-callable",
+      "area": "properties-types-promotion",
+      "source": "class C { const callable X = 1; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-constant-callable-live.php",
+        "retained": "contextual-invalid/boundary-constant-callable-retained.php",
+        "discarded": "valid/boundary-constant-callable-discarded.php"
+      }
+    },
+    {
+      "id": "constant-private-final",
+      "area": "properties-types-promotion",
+      "source": "class C { final private const X = 1; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-constant-private-final-live.php",
+        "retained": "contextual-invalid/boundary-constant-private-final-retained.php",
+        "discarded": "valid/boundary-constant-private-final-discarded.php"
+      }
+    },
+    {
+      "id": "constant-type-value",
+      "area": "properties-types-promotion",
+      "source": "class C { const int X = \"x\"; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-constant-type-value-live.php",
+        "retained": "contextual-invalid/boundary-constant-type-value-retained.php",
+        "discarded": "valid/boundary-constant-type-value-discarded.php"
+      }
+    },
+    {
+      "id": "promotion-function",
+      "area": "properties-types-promotion",
+      "source": "function f(public int $x) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-promotion-function-live.php",
+        "retained": "contextual-invalid/boundary-promotion-function-retained.php",
+        "discarded": "valid/boundary-promotion-function-discarded.php"
+      }
+    },
+    {
+      "id": "promotion-nonconstructor",
+      "area": "properties-types-promotion",
+      "source": "class C { function f(public int $x) {} }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-promotion-nonconstructor-live.php",
+        "retained": "contextual-invalid/boundary-promotion-nonconstructor-retained.php",
+        "discarded": "valid/boundary-promotion-nonconstructor-discarded.php"
+      }
+    },
+    {
+      "id": "promotion-variadic",
+      "area": "properties-types-promotion",
+      "source": "class C { function __construct(public ...$x) {} }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-promotion-variadic-live.php",
+        "retained": "contextual-invalid/boundary-promotion-variadic-retained.php",
+        "discarded": "valid/boundary-promotion-variadic-discarded.php"
+      }
+    },
+    {
+      "id": "promotion-abstract",
+      "area": "properties-types-promotion",
+      "source": "abstract class C { abstract function __construct(public int $x); }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-promotion-abstract-live.php",
+        "retained": "contextual-invalid/boundary-promotion-abstract-retained.php",
+        "discarded": "valid/boundary-promotion-abstract-discarded.php"
+      }
+    },
+    {
+      "id": "parameter-void",
+      "area": "properties-types-promotion",
+      "source": "function f(void $x) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-parameter-void-live.php",
+        "retained": "contextual-invalid/boundary-parameter-void-retained.php",
+        "discarded": "valid/boundary-parameter-void-discarded.php"
+      }
+    },
+    {
+      "id": "parameter-duplicate",
+      "area": "properties-types-promotion",
+      "source": "function f($x, $x) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-parameter-duplicate-live.php",
+        "retained": "contextual-invalid/boundary-parameter-duplicate-retained.php",
+        "discarded": "valid/boundary-parameter-duplicate-discarded.php"
+      }
+    },
+    {
+      "id": "parameter-variadic-default",
+      "area": "properties-types-promotion",
+      "source": "function f(...$x = 1) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-parameter-variadic-default-live.php",
+        "retained": "contextual-invalid/boundary-parameter-variadic-default-retained.php",
+        "discarded": "valid/boundary-parameter-variadic-default-discarded.php"
+      }
+    },
+    {
+      "id": "parameter-variadic-order",
+      "area": "properties-types-promotion",
+      "source": "function f(...$x, $y) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-parameter-variadic-order-live.php",
+        "retained": "contextual-invalid/boundary-parameter-variadic-order-retained.php",
+        "discarded": "valid/boundary-parameter-variadic-order-discarded.php"
+      }
+    },
+    {
+      "id": "type-nullable-mixed",
+      "area": "properties-types-promotion",
+      "source": "function f(?mixed $x) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-type-nullable-mixed-live.php",
+        "retained": "contextual-invalid/boundary-type-nullable-mixed-retained.php",
+        "discarded": "valid/boundary-type-nullable-mixed-discarded.php"
+      }
+    },
+    {
+      "id": "type-redundant",
+      "area": "properties-types-promotion",
+      "source": "function f(int|int $x) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-type-redundant-live.php",
+        "retained": "contextual-invalid/boundary-type-redundant-retained.php",
+        "discarded": "valid/boundary-type-redundant-discarded.php"
+      }
+    },
+    {
+      "id": "type-intersection-builtin",
+      "area": "properties-types-promotion",
+      "source": "function f(int&Countable $x) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-type-intersection-builtin-live.php",
+        "retained": "contextual-invalid/boundary-type-intersection-builtin-retained.php",
+        "discarded": "valid/boundary-type-intersection-builtin-discarded.php"
+      }
+    },
+    {
+      "id": "attribute-unpack",
+      "area": "attributes",
+      "source": "#[A(...[])] function f() {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-attribute-unpack-live.php",
+        "retained": "contextual-invalid/boundary-attribute-unpack-retained.php",
+        "discarded": "valid/boundary-attribute-unpack-discarded.php"
+      }
+    },
+    {
+      "id": "attribute-conversion",
+      "area": "attributes",
+      "source": "#[A(...)] function f() {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-attribute-conversion-live.php",
+        "retained": "contextual-invalid/boundary-attribute-conversion-retained.php",
+        "discarded": "valid/boundary-attribute-conversion-discarded.php"
+      }
+    },
+    {
+      "id": "attribute-call",
+      "area": "attributes",
+      "source": "#[A(foo())] function f() {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-attribute-call-live.php",
+        "retained": "contextual-invalid/boundary-attribute-call-retained.php",
+        "discarded": "valid/boundary-attribute-call-discarded.php"
+      }
+    },
+    {
+      "id": "attribute-variable",
+      "area": "attributes",
+      "source": "#[A($x)] function f() {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-attribute-variable-live.php",
+        "retained": "contextual-invalid/boundary-attribute-variable-retained.php",
+        "discarded": "valid/boundary-attribute-variable-discarded.php"
+      }
+    },
+    {
+      "id": "attribute-order",
+      "area": "attributes",
+      "source": "#[A(x: 1, 2)] function f() {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-attribute-order-live.php",
+        "retained": "contextual-invalid/boundary-attribute-order-retained.php",
+        "discarded": "valid/boundary-attribute-order-discarded.php"
+      }
+    },
+    {
+      "id": "attribute-duplicate",
+      "area": "attributes",
+      "source": "#[A(x: 1, x: 2)] function f() {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-attribute-duplicate-live.php",
+        "retained": "contextual-invalid/boundary-attribute-duplicate-retained.php",
+        "discarded": "valid/boundary-attribute-duplicate-discarded.php"
+      }
+    },
+    {
+      "id": "try-bare",
+      "area": "control-and-class-names",
+      "source": "try {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-try-bare-live.php",
+        "retained": "contextual-invalid/boundary-try-bare-retained.php",
+        "discarded": "valid/boundary-try-bare-discarded.php"
+      }
+    },
+    {
+      "id": "catch-static",
+      "area": "control-and-class-names",
+      "source": "try {} catch (static $e) {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-catch-static-live.php",
+        "retained": "contextual-invalid/boundary-catch-static-retained.php",
+        "discarded": "valid/boundary-catch-static-discarded.php"
+      }
+    },
+    {
+      "id": "implements-static",
+      "area": "control-and-class-names",
+      "source": "class C implements static {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-implements-static-live.php",
+        "retained": "contextual-invalid/boundary-implements-static-retained.php",
+        "discarded": "valid/boundary-implements-static-discarded.php"
+      }
+    },
+    {
+      "id": "interface-extends-static",
+      "area": "control-and-class-names",
+      "source": "interface I extends static {}",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-interface-extends-static-live.php",
+        "retained": "contextual-invalid/boundary-interface-extends-static-retained.php",
+        "discarded": "valid/boundary-interface-extends-static-discarded.php"
+      }
+    },
+    {
+      "id": "use-static",
+      "area": "control-and-class-names",
+      "source": "class C { use static; }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-use-static-live.php",
+        "retained": "contextual-invalid/boundary-use-static-retained.php",
+        "discarded": "valid/boundary-use-static-discarded.php"
+      }
+    },
+    {
+      "id": "insteadof-static",
+      "area": "control-and-class-names",
+      "source": "class C { use T { T::foo insteadof static; } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-insteadof-static-live.php",
+        "retained": "contextual-invalid/boundary-insteadof-static-retained.php",
+        "discarded": "valid/boundary-insteadof-static-discarded.php"
+      }
+    },
+    {
+      "id": "pipe-arrow",
+      "area": "control-and-class-names",
+      "source": "1 |> fn($x) => $x;",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-pipe-arrow-live.php",
+        "retained": "contextual-invalid/boundary-pipe-arrow-retained.php",
+        "discarded": "valid/boundary-pipe-arrow-discarded.php"
+      }
+    },
+    {
+      "id": "break-outside",
+      "area": "control-and-class-names",
+      "source": "break;",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-break-outside-live.php",
+        "retained": "contextual-invalid/boundary-break-outside-retained.php",
+        "discarded": "valid/boundary-break-outside-discarded.php"
+      }
+    },
+    {
+      "id": "goto-missing",
+      "area": "control-and-class-names",
+      "source": "goto nowhere;",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-goto-missing-live.php",
+        "retained": "contextual-invalid/boundary-goto-missing-retained.php",
+        "discarded": "valid/boundary-goto-missing-discarded.php"
+      }
+    },
+    {
+      "id": "nested-class",
+      "area": "control-and-class-names",
+      "source": "class C { function f() { class D {} } }",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto",
+      "live_valid": false,
+      "fixtures": {
+        "live": "contextual-invalid/boundary-nested-class-live.php",
+        "retained": "contextual-invalid/boundary-nested-class-retained.php",
+        "discarded": "valid/boundary-nested-class-discarded.php"
+      }
+    }
+  ]
+}

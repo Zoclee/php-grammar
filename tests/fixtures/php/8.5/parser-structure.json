@@ -1,0 +1,651 @@
+[
+  {
+    "root": "expression",
+    "source": "!$x instanceof Foo",
+    "expected": "!($x instanceof Foo)",
+    "spans": [
+      [
+        "instanceof-expression",
+        "$x instanceof Foo"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "-2 ** 2",
+    "expected": "-(2 ** 2)",
+    "spans": [
+      [
+        "power-expression",
+        "2 ** 2"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "2 ** -2 ** 2",
+    "expected": "2 ** (-(2 ** 2))",
+    "spans": [
+      [
+        "power-expression",
+        "2 ** 2"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "$x = print $y = 1",
+    "expected": "$x = (print ($y = 1))",
+    "spans": [
+      [
+        "assignment-expression",
+        "$y = 1"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "yield yield 1 => 2",
+    "expected": "yield (yield 1 => 2)",
+    "spans": [
+      [
+        "yield-key-expression",
+        "yield 1 => 2"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "yield 1 => yield 2",
+    "expected": "yield 1 => (yield 2)",
+    "spans": [
+      [
+        "yield-key-prefix-context",
+        "yield 1 =>"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a ?? $b",
+    "expected": "throw ($a ?? $b)",
+    "spans": [
+      [
+        "coalesce-expression",
+        "$a ?? $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a or $b",
+    "expected": "throw ($a or $b)",
+    "spans": [
+      [
+        "logical-or-expression",
+        "$a or $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a xor $b",
+    "expected": "throw ($a xor $b)",
+    "spans": [
+      [
+        "logical-xor-expression",
+        "$a xor $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a and $b",
+    "expected": "throw ($a and $b)",
+    "spans": [
+      [
+        "logical-and-expression",
+        "$a and $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a ?? $b",
+    "expected": "throw ($a ?? $b)",
+    "spans": [
+      [
+        "coalesce-expression",
+        "$a ?? $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a || $b",
+    "expected": "throw ($a || $b)",
+    "spans": [
+      [
+        "boolean-or-expression",
+        "$a || $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a && $b",
+    "expected": "throw ($a && $b)",
+    "spans": [
+      [
+        "boolean-and-expression",
+        "$a && $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a | $b",
+    "expected": "throw ($a | $b)",
+    "spans": [
+      [
+        "bitwise-or-expression",
+        "$a | $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a ^ $b",
+    "expected": "throw ($a ^ $b)",
+    "spans": [
+      [
+        "bitwise-xor-expression",
+        "$a ^ $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a & $b",
+    "expected": "throw ($a & $b)",
+    "spans": [
+      [
+        "bitwise-and-expression",
+        "$a & $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a == $b",
+    "expected": "throw ($a == $b)",
+    "spans": [
+      [
+        "equality-expression",
+        "$a == $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a < $b",
+    "expected": "throw ($a < $b)",
+    "spans": [
+      [
+        "relational-expression",
+        "$a < $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a |> $b",
+    "expected": "throw ($a |> $b)",
+    "spans": [
+      [
+        "pipe-expression",
+        "$a |> $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a . $b",
+    "expected": "throw ($a . $b)",
+    "spans": [
+      [
+        "concatenation-expression",
+        "$a . $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a << $b",
+    "expected": "throw ($a << $b)",
+    "spans": [
+      [
+        "shift-expression",
+        "$a << $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a + $b",
+    "expected": "throw ($a + $b)",
+    "spans": [
+      [
+        "additive-expression",
+        "$a + $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a * $b",
+    "expected": "throw ($a * $b)",
+    "spans": [
+      [
+        "multiplicative-expression",
+        "$a * $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a ** $b",
+    "expected": "throw ($a ** $b)",
+    "spans": [
+      [
+        "power-expression",
+        "$a ** $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "throw $a ? $b : $c",
+    "expected": "throw ($a ? $b : $c)",
+    "spans": [
+      [
+        "conditional-expression",
+        "$a ? $b : $c"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "include $a or $b",
+    "expected": "include ($a or $b)",
+    "spans": [
+      [
+        "logical-or-expression",
+        "$a or $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "include_once $a or $b",
+    "expected": "include_once ($a or $b)",
+    "spans": [
+      [
+        "logical-or-expression",
+        "$a or $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "require $a or $b",
+    "expected": "require ($a or $b)",
+    "spans": [
+      [
+        "logical-or-expression",
+        "$a or $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "require_once $a or $b",
+    "expected": "require_once ($a or $b)",
+    "spans": [
+      [
+        "logical-or-expression",
+        "$a or $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "fn() => $a or $b",
+    "expected": "fn() => ($a or $b)",
+    "spans": [
+      [
+        "logical-or-expression",
+        "$a or $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "fn() => throw $a ?? $b",
+    "expected": "fn() => (throw ($a ?? $b))",
+    "spans": [
+      [
+        "coalesce-expression",
+        "$a ?? $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "print $a and $b",
+    "expected": "(print $a) and $b",
+    "spans": [
+      [
+        "print-expression",
+        "print $a"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "yield from $a = $b ?? $c",
+    "expected": "yield from ($a = ($b ?? $c))",
+    "spans": [
+      [
+        "assignment-expression",
+        "$a = $b ?? $c"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "yield $a = $b",
+    "expected": "yield ($a = $b)",
+    "spans": [
+      [
+        "assignment-expression",
+        "$a = $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "clone $a ** $b",
+    "expected": "(clone $a) ** $b",
+    "spans": [
+      [
+        "clone-expression",
+        "clone $a"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "+ $a ** $b",
+    "expected": "+ ($a ** $b)",
+    "spans": [
+      [
+        "power-expression",
+        "$a ** $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "- $a ** $b",
+    "expected": "- ($a ** $b)",
+    "spans": [
+      [
+        "power-expression",
+        "$a ** $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "~ $a ** $b",
+    "expected": "~ ($a ** $b)",
+    "spans": [
+      [
+        "power-expression",
+        "$a ** $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "@ $a ** $b",
+    "expected": "@ ($a ** $b)",
+    "spans": [
+      [
+        "power-expression",
+        "$a ** $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "(int) $a ** $b",
+    "expected": "(int) ($a ** $b)",
+    "spans": [
+      [
+        "power-expression",
+        "$a ** $b"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "$a + !$b instanceof Foo",
+    "expected": "$a + (!($b instanceof Foo))",
+    "spans": [
+      [
+        "instanceof-expression",
+        "$b instanceof Foo"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "$a = yield from $b ?? $c",
+    "expected": "$a = (yield from ($b ?? $c))",
+    "spans": [
+      [
+        "coalesce-expression",
+        "$b ?? $c"
+      ]
+    ]
+  },
+  {
+    "root": "expression",
+    "source": "yield $a => throw $b ?? $c",
+    "expected": "yield $a => (throw ($b ?? $c))",
+    "spans": [
+      [
+        "coalesce-expression",
+        "$b ?? $c"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) while ($b) if ($c) foo(); else bar();",
+    "expected": "if ($a) { while ($b) { if ($c) { foo(); } else { bar(); } } }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($c) foo(); else bar();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) while ($b) if ($c) foo(); elseif ($d) bar(); else baz();",
+    "expected": "if ($a) { while ($b) { if ($c) { foo(); } elseif ($d) { bar(); } else { baz(); } } }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($c) foo(); elseif ($d) bar(); else baz();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) for (;;) if ($c) foo(); else bar();",
+    "expected": "if ($a) { for (;;) { if ($c) { foo(); } else { bar(); } } }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($c) foo(); else bar();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) for (;;) if ($c) foo(); elseif ($d) bar(); else baz();",
+    "expected": "if ($a) { for (;;) { if ($c) { foo(); } elseif ($d) { bar(); } else { baz(); } } }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($c) foo(); elseif ($d) bar(); else baz();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) foreach ($xs as $v) if ($c) foo(); else bar();",
+    "expected": "if ($a) { foreach ($xs as $v) { if ($c) { foo(); } else { bar(); } } }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($c) foo(); else bar();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) foreach ($xs as $v) if ($c) foo(); elseif ($d) bar(); else baz();",
+    "expected": "if ($a) { foreach ($xs as $v) { if ($c) { foo(); } elseif ($d) { bar(); } else { baz(); } } }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($c) foo(); elseif ($d) bar(); else baz();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) declare(ticks=1) if ($c) foo(); else bar();",
+    "expected": "if ($a) { declare(ticks=1) { if ($c) { foo(); } else { bar(); } } }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($c) foo(); else bar();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) declare(ticks=1) if ($c) foo(); elseif ($d) bar(); else baz();",
+    "expected": "if ($a) { declare(ticks=1) { if ($c) { foo(); } elseif ($d) { bar(); } else { baz(); } } }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($c) foo(); elseif ($d) bar(); else baz();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) { if ($b) foo(); } else bar();",
+    "expected": "if ($a) { if ($b) { foo(); } } else { bar(); }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($a) { if ($b) foo(); } else bar();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) do if ($b) foo(); while ($c); else bar();",
+    "expected": "if ($a) { do { if ($b) { foo(); } } while ($c); } else { bar(); }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($a) do if ($b) foo(); while ($c); else bar();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) while ($b): if ($c) foo(); endwhile; else bar();",
+    "expected": "if ($a) { while ($b) { if ($c) { foo(); } } } else { bar(); }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($a) while ($b): if ($c) foo(); endwhile; else bar();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) for (;;): if ($c) foo(); endfor; else bar();",
+    "expected": "if ($a) { for (;;) { if ($c) { foo(); } } } else { bar(); }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($a) for (;;): if ($c) foo(); endfor; else bar();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) foreach ($xs as $v): if ($c) foo(); endforeach; else bar();",
+    "expected": "if ($a) { foreach ($xs as $v) { if ($c) { foo(); } } } else { bar(); }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($a) foreach ($xs as $v): if ($c) foo(); endforeach; else bar();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) declare(ticks=1): if ($c) foo(); enddeclare; else bar();",
+    "expected": "if ($a) { declare(ticks=1) { if ($c) { foo(); } } } else { bar(); }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($a) declare(ticks=1): if ($c) foo(); enddeclare; else bar();"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a): { if ($b) foo(); } elseif ($c): bar(); else: baz(); endif;",
+    "expected": "if ($a) { { if ($b) { foo(); } } } elseif ($c) { bar(); } else { baz(); }",
+    "spans": [
+      [
+        "matched-if-statement",
+        "if ($a): { if ($b) foo(); } elseif ($c): bar(); else: baz(); endif;"
+      ]
+    ]
+  },
+  {
+    "root": "statement",
+    "source": "if ($a) if ($b) foo(); elseif ($c) bar(); else baz();",
+    "expected": "if ($a) { if ($b) { foo(); } elseif ($c) { bar(); } else { baz(); } }",
+    "spans": [
+      [
+        "unmatched-if-statement",
+        "if ($a) if ($b) foo(); elseif ($c) bar(); else baz();"
+      ]
+    ]
+  }
+]

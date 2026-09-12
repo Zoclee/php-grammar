@@ -1,0 +1,2 @@
+<?php
+const X = true ? 1 : static function() { class C { use T { T::foo insteadof static; } } };

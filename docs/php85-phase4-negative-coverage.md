@@ -1,5 +1,7 @@
 # PHP 8.5 Grammar Completeness — Phase 4 of 7
 
+Historical audit snapshot. The [parser/compiler boundary remediation](php85-parser-compiler-remediation.md) supersedes its outstanding-gap descriptions and counts.
+
 Phase 4 establishes systematic nearby-invalid evidence for every major PHP 8.5
 syntax area. It adds **250 structural-negative fixtures, 22 contextual-negative
 fixtures, and 272 corresponding positive repairs**. All 14 boundary categories

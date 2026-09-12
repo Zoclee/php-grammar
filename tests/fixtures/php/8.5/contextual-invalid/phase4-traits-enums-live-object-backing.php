@@ -1,0 +1,2 @@
+<?php
+enum E: object {}

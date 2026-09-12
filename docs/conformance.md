@@ -140,12 +140,13 @@ PHP lint. Every positive repair must pass both. The ledger reviews all 85
 contextual-negative fixtures separately, including the 63 inherited fixtures;
 none count as EBNF rejection evidence. This classification describes repository
 behavior, not whether Zend diagnoses an error during parsing or compilation.
-Some earlier EBNF restrictions anticipate compilation checks, which explains
-the two documented discrepancies for discarded nested declarations.
+The [parser/compiler boundary remediation](php85-parser-compiler-remediation.md)
+removes the earlier structural restrictions responsible for discarded nested
+declaration discrepancies. Parser-action constraints still precede folding.
 
-The final ordinary corpus is 497 valid, 335 structural-negative, and 85
-contextual-negative fixtures (917 total), plus two separately reported known
-discrepancies. Both source-tag profiles run through PHP 8.5.10 using the existing
+The current ordinary corpus is 599 valid, 347 structural-negative, and 276
+contextual-negative fixtures (1,222 total), with no separately recorded
+acceptance discrepancy. Both source-tag profiles run through PHP 8.5.10 using the existing
 runner. The binary is a cross-check of expectations derived from pinned source;
 neither lint acceptance nor fixture agreement proves complete conformance.
 

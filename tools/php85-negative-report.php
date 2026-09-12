@@ -57,6 +57,9 @@ foreach ($data['contextual_review'] as $row) {
     $text .= "| [" . basename($row['fixture']) . "](../tests/fixtures/php/8.5/{$row['fixture']}) | {$row['restriction']} | {$row['reason']} | {$row['evidence']} |\n";
 }
 $text .= "\n## Known discrepancies\n\n";
+if ($data['known_discrepancies'] === []) {
+    $text .= "No confirmed acceptance differential is currently recorded. Exhaustive conformance remains unproven; see the parser/compiler remediation report.\n";
+}
 foreach ($data['known_discrepancies'] as $row) {
     $text .= "- [{$row['restriction']}](../tests/fixtures/php/8.5/{$row['fixture']}): {$row['disposition']} Owner: {$row['owner']}. Evidence: {$row['evidence']}.\n";
 }

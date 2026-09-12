@@ -14,8 +14,10 @@ fixtures parse structurally and reject during PHP compilation. All have nearby
 valid repairs. The [boundary ledger](../../docs/php85-negative-boundaries.md)
 records source evidence and the [Phase 4 report](../../docs/php85-phase4-negative-coverage.md)
 records methodology and validation. This evidence does not replace the
-standalone lexical or contextual rules in this specification. The two known
-discarded-closure discrepancies remain unresolved.
+standalone lexical or contextual rules in this specification. The
+[parser/compiler boundary remediation](../../docs/php85-parser-compiler-remediation.md)
+resolves the previously recorded discarded-closure witnesses and expands
+coverage to the broader declaration category. Full conformance remains unproven.
 
 Sources are `php-src` branch `PHP-8.5`, pinned at
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`:
@@ -239,7 +241,10 @@ duplicating their trees. Parentheses delimit a complete ordinary expression.
 
 Matched/unmatched statements propagate through the final bodies of `while`,
 `for`, `foreach`, and `declare`. Braces, alternative-syntax terminators, and
-the terminating `while` of `do` close that propagation. Both `else` and
+the terminating `while` of `do` close that propagation. Before an alternative
+`else:`/`elseif:`, `closed-inner-statement-list` requires a matched final
+statement or declaration; otherwise Zend shifts the keyword toward an inner
+unmatched if and rejects the colon. An `endif` terminator needs no such check. Both `else` and
 `elseif` attach to the nearest unmatched `if`. A semicolon, including the
 token emitted by `?>`, has only the `empty-statement` derivation when no
 expression precedes it. `throw $e;` is an expression statement.
@@ -257,21 +262,21 @@ The repository's structural matcher does not implement this entire layer.
 | Static locals | Initializers are runtime `expression`, not the constant-expression subset; PHP 8.3+ behavior is retained. |
 | Constant calls | Surviving calls must be function/static-method callable conversions. The function/class/method name must already be an appropriate literal AST when its compiler check runs; see folding order below. Object-method conversions are forbidden. `static` class references are forbidden. |
 | Arguments | No positional argument after named arguments/unpacking, no unpacking after named arguments, no duplicate named arguments. Attribute argument lists forbid unpacking and bare callable conversion. Built-in arity/name checks may reject clone/exit forms. |
-| Attributed constants | Only one **global** constant per attributed declaration. Class constants may share attributes in a multiple-constant declaration. |
+| Attributed constants | Parser structure permits a **global** constant list; compilation requires only one constant per attributed declaration. Class constants may share attributes in a multiple-constant declaration. |
 | Types | `mixed`, `void`, `never` must stand alone as applicable; `?mixed`, `?null`, duplicate/redundant unions, `true|false`, and built-in/scoped-name intersection members are invalid. `void`/`never` are return-only. Properties/promoted properties/class constants cannot use callable, void, or never. `static` is return-only with class scope. `self`/`parent` require the appropriate scope. |
 | Parameters and closures | Unique parameters, only final parameter variadic, no variadic defaults, no forbidden auto-global/`$this` parameter or capture names, no duplicate captures or capture/parameter collisions. Nonempty `use` is structural. |
 | Promotion | Only a concrete constructor in a legal class/trait context; no variadic promotion, duplicate property, invalid property type, or illegal modifiers. PHP 8.5 permits final promotion. Defaults initialize parameters, not property defaults. |
 | Modifiers and declarations | Reject duplicate/conflicting modifiers, abstract-final conflicts, reserved class names, redeclarations, illegal nested class declarations, and invalid anonymous-class modifiers. Interfaces cannot use traits. Method bodies/visibility must match abstract/interface/concrete context. |
 | Properties | Readonly properties need a type and cannot be static or have ordinary defaults. Only hooked properties may be abstract. Visibility/set visibility combinations and final/private combinations must be valid. |
-| Hooks | One or two distinct hook kinds; no duplicate get/set; no static/readonly hooked properties. Only final is an explicit hook modifier. A get hook has no parameter list; a set list has one non-reference, nonvariadic parameter without a default and compatible type. Only get may return by reference. Concrete hooks need bodies; abstract/interface hooks follow body restrictions. A final hook cannot be private or abstract. |
+| Hooks | One or two distinct hook kinds; no duplicate get/set; no static/readonly hooked properties. Only final is an explicit hook modifier. A get hook has no parameter list; a set list has one non-reference, nonvariadic parameter without a default and compatible type. Set parameters cannot be references. The parser accepts a reference-return marker on either hook; see the pinned-version note below. Concrete hooks need bodies; interface hooks and bodyless hooks on abstract properties are abstract. Abstract properties may mix concrete and abstract hooks, but must satisfy abstract-property validation. A final hook cannot be private or abstract. |
 | Interface properties | Public or historical `var` hooked properties only; no property default; no final, protected/private, or explicitly abstract property. Hooks have no implementation body. |
 | Class constants | One type precedes the entire list. Enforce type restrictions/value compatibility, modifier legality, and final/private restrictions. |
-| Enums | Only int/string backing types. Backed cases require constant values; unbacked cases forbid values. Case names/values must satisfy uniqueness and type rules; some value checks are deferred beyond lint. No properties; trait composition and forbidden magic/member declarations require further checks. |
+| Enums | Only int/string backing types. Backed cases require constant values; unbacked cases forbid values. Case names/values must satisfy uniqueness and type rules; some value checks are deferred beyond lint. No properties; cases are forbidden outside enums; trait composition and forbidden magic/member declarations require further checks. |
 | Callable conversion | Reject surviving `new Foo(...)` and anonymous-class constructor conversion (`zend_compile_new`, `zend_compile_const_expr_new`). Reject conversion on a nullsafe call or the same nullsafe short-circuit chain (`zend_compile_call_common`). Ordinary function, object-method and static-method conversions remain valid. Clone conversion follows its separate parser production. |
 | isset | `isset_variables` is a nonempty comma-separated list with optional trailing comma; pinned `isset_variable` is **expr**, not variable. At compilation, require `zend_is_variable`: VAR, DIM, PROP, NULLSAFE_PROP, STATIC_PROP. Direct calls and arithmetic fail, while `foo()[0]`, `foo()->p`, parenthesized variables, and nullsafe property reads can qualify. Reject empty read offsets and invalid read targets later in `zend_compile_isset_or_empty`. |
-| Trait aliases | Exactly one public/protected/private/final alias modifier, or an alias name alone. `zend_compile_trait_alias` rejects static and abstract; readonly is rejected by the parser's modifier-target conversion. Modifiers cannot be combined. |
+| Trait aliases | At most one method-target alias modifier, or an alias name alone; a compiled alias permits only public/protected/private/final. `zend_compile_trait_alias` rejects static and abstract; readonly is rejected by the parser's modifier-target conversion. Modifiers cannot be combined. |
 | Writable variables | Assignment, reference binding, increment, unset, isset, destructuring, and foreach need appropriate read/write targets. Calls can reduce as `variable` but cannot be unset; nullsafe access cannot be written. Foreach keys cannot be references or destructuring lists. Empty array elements are only valid in destructuring. A destructuring tree cannot mix `[]` and `list()` forms (pinned `zend_compile.c`, lines 3250–3255). |
-| Control flow | break/continue need a legal enclosing construct and positive literal level; goto targets/scope crossings must be legal; yield requires function scope; generator return types and return statements must be compatible. Match/switch permit only one default. |
+| Control flow | break/continue need a legal enclosing construct and positive literal level; goto targets/scope crossings must be legal; yield requires function scope; generator return types and return statements must be compatible. Match/switch permit only one default. A compiled try requires at least one catch or finally. A surviving pipe cannot take an unparenthesized arrow function as its right operand. |
 | declare and namespaces | Directives require their specific literal values and placement; strict_types is 0/1, first statement, and not block form. Namespace styles cannot mix and namespace/import placement/conflicts must be legal. |
 
 Authoritative compiler areas include `zend_compile_params`,
@@ -279,6 +284,71 @@ Authoritative compiler areas include `zend_compile_params`,
 `zend_compile_property_hooks`, `zend_compile_class_const_decl`,
 `zend_compile_enum_case`, `zend_compile_foreach`, `zend_compile_conditional`,
 `zend_compile_declare`, and `zend_compile_const_expr`.
+
+### Parser/compiler declaration boundary
+
+All class, interface, trait, enum, and anonymous-class bodies use the same
+`class-member` alternatives, corresponding to `class_statement_list` and
+`class_statement` (parser lines 973–1006). Optional attributes apply to ordinary
+and hooked properties, methods, class constants, and enum cases; they do not
+apply to trait-use statements. Declaration-kind legality is checked only when
+the declaration is compiled. In particular, enum properties, non-enum cases,
+interface trait use and ordinary interface properties must remain reducible.
+
+`enum-backing-type` uses the full `type` expression (parser 655–657), including
+nullable, union, intersection and static forms. `zend_compile_enum_backing_type`
+then requires exactly int/string. `name-list` and `catch-type-list` consume
+`class-name`, including static, as do Bison `class_name_list` and
+`catch_name_list`; class-name scope/target checks remain contextual.
+
+Hook syntax mirrors parser 1129–1177: an empty list is structurally possible;
+each hook has attributes, optional target-valid modifiers, optional `&`, a
+generic identifier, an optional complete parameter list, and either `;`, a
+compound body, or `=> expression ;`. `zend_compile_property_hooks` (8655–8835)
+enforces the live rules in the table. Explicit get parentheses, even `get()`,
+are invalid when compiled; a supplied set list must have exactly one parameter.
+Empty/unknown/duplicate hooks and invalid parameter/body combinations can be
+discarded along with their enclosing static closure. Parameter hook lists use
+the same grammar. A hook list itself triggers promotion, even without explicit
+visibility; compilation requires a concrete constructor in an allowed context.
+
+The pinned compiler does **not** reject the reference-return marker on a set
+hook. PHP 8.5.10 accepts and executes `class C { public int $x { &set {} } }`
+with a void-reference-return deprecation (`zend_compile_params`, 7752–7756).
+This differs from the previous specification's unconditional “only get” rule.
+It does not permit a reference **parameter** on set. Declaration/inheritance
+checks outside these pinned files must not be inferred from lint alone.
+
+Attributes consume ordinary `argument-list` (parser `attribute_decl`, 367–371).
+`zend_compile_attributes` rejects unpacking and a callable-conversion list
+before validating surviving argument expressions; those are not structural
+argument-list exclusions. Folding an argument cannot erase an unpack marker
+or invalid argument order on a surviving attribute declaration. Discarding the
+entire enclosing closure can avoid compiling that attribute declaration.
+
+### Checks that run during parser actions
+
+Execution phase matters even for helpers defined in `zend_compile.c`.
+`zend_modifier_token_to_flag`, `zend_modifier_list_to_flags`,
+`zend_add_member_modifier`, and class/anonymous-class modifier helpers are
+called by Bison actions. Target-invalid modifiers fail before folding:
+properties accept visibility/set visibility, static, abstract, final, readonly;
+methods accept visibility, static, abstract, final; constants accept visibility
+and final; parameters accept visibility/set visibility, readonly and final;
+hooks accept final only. Thus static/abstract **trait aliases** reach compilation,
+but readonly aliases and static/abstract hook modifiers do not. Repetition in
+the EBNF additionally requires pre-fold rejection of duplicates, conflicting
+visibility and abstract/final combinations. Anonymous classes reject explicit
+abstract/final modifiers in parser actions. These early constraints remain in
+the contextual layer of the three-layer model and cannot be bypassed by a
+discarded branch. The structural matcher does not enforce all parser actions.
+
+The boundary fixture matrix tests 85 live/retained/discarded families, including
+84 compiler-invalid families and the accepted set-reference exception. All six
+discarding operators are tested against every family. Separate parser-action
+controls require rejection even inside a discarded closure. This is systematic
+category coverage, not a claim that every diagnostic path or deferred validator
+has an independent witness.
 
 ### Constant-expression validation order
 
@@ -360,16 +430,20 @@ do not remove accepted forms.
 
 ## Remaining discrepancies and deliberate abstractions
 
-- Prefix contexts and matched/unmatched statements have derivation-count and
-  operand-span regressions. They are not an exhaustive equivalence proof for
-  every PHP expression/declaration. Two confirmed constant-folding gaps remain:
-  `const X = true ? 1 : static function() { enum E: object {} };` and
-  `const X = true ? 1 : static function() { class C { use T { foo as static bar; } } };`.
-  PHP discards these closure bodies before declaration compilation, while the
-  EBNF's enum-backing-type and trait-alias restrictions reject them structurally.
-  They are recorded separately as known discrepancies, not as passing valid
-  fixtures. Reconciliation of constant folding with restricted nested
-  declarations is therefore not complete.
+- Parser/compiler declaration boundaries have been broadened for common members,
+  enum backing types, trait aliases, hooks, attributes, try and class-name lists.
+  The two previously recorded discarded-closure examples now pass in the
+  ordinary valid corpus. They were examples of a wider category, not its full
+  extent. The 85-family matrix and fatal-site inventory do not establish
+  complete equivalence for every parser production or compiler path.
+- Prefix-context and matched/unmatched equivalence remains a conformance
+  blocker at the exhaustive level. Targeted derivation-count/operand-span
+  regression tests pass and 59 explicit-grouping comparisons agree with the
+  PHP 8.5 Zend AST. A newly confirmed alternative-if boundary error is fixed:
+  before outer `else:`/`elseif:`, the preceding body cannot end in an unmatched
+  inner if, including through loop/declare bodies. Ten negative AST witnesses
+  cover that boundary. These results do not prove every prefix/operator or
+  statement combination equivalent; retain the regression category until then.
 - The lexical contract specifies the requested scanner states and the lexer
   now recurses through nested interpolation, comments and heredoc labels.
   Its token abstraction is not Zend's exact token stream. Source acceptance
@@ -411,7 +485,7 @@ attributed-top-declaration =
     ( function-declaration | class-declaration | interface-declaration
     | trait-declaration | enum-declaration )
     | constant-declaration
-    | attribute-groups , "const" , constant-element , ";" ;
+    | attribute-groups , "const" , constant-list , ";" ;
 
 (* Lexical grammar. Whitespace and comments may appear between tokens unless
    a lexical production states otherwise. PHP keywords are case-insensitive. *)
@@ -891,8 +965,10 @@ inner-statement-list =
     { inner-statement } ;
 
 inner-statement =
-      statement
-    | [ attribute-groups ] ,
+    statement | inner-declaration ;
+
+inner-declaration =
+    [ attribute-groups ] ,
       ( function-declaration
       | class-declaration
       | interface-declaration
@@ -957,8 +1033,9 @@ if-statement =
     matched-if-statement | unmatched-if-statement ;
 
 alt-elseif-list =
-    "elseif" , "(" , expression , ")" , ":" , inner-statement-list ,
-    { "elseif" , "(" , expression , ")" , ":" , inner-statement-list } ;
+    "elseif" , "(" , expression , ")" , ":" ,
+    ( inner-statement-list
+    | [ closed-inner-statement-list ] , ( alt-elseif-list | alt-else-clause ) ) ;
 
 alt-else-clause =
     "else" , ":" , inner-statement-list ;
@@ -1020,8 +1097,7 @@ declare-directive =
     identifier , "=" , constant-expression ;
 
 try-statement =
-    "try" , compound-statement ,
-    ( catch-clause , catch-list , [ finally-clause ] | finally-clause ) ;
+    "try" , compound-statement , catch-list , [ finally-clause ] ;
 
 catch-list =
     { catch-clause } ;
@@ -1030,7 +1106,7 @@ catch-clause =
     "catch" , "(" , catch-type-list , [ variable ] , ")" , compound-statement ;
 
 catch-type-list =
-    name , { "|" , name } ;
+    class-name , { "|" , class-name } ;
 
 finally-clause =
     "finally" , compound-statement ;
@@ -1075,7 +1151,7 @@ implements-clause =
     "implements" , name-list ;
 
 name-list =
-    name , { "," , name } ;
+    class-name , { "," , class-name } ;
 
 class-member-list =
     { class-member } ;
@@ -1084,7 +1160,8 @@ class-member =
       [ attribute-groups ] ,
       ( property-declaration
       | method-declaration
-      | class-constant-declaration )
+      | class-constant-declaration
+      | enum-case )
     | trait-use-declaration ;
 
 property-declaration =
@@ -1108,12 +1185,11 @@ property-hook-block =
     "{" , property-hook-list , "}" ;
 
 property-hook-list =
-    [ attribute-groups ] , property-hook , { [ attribute-groups ] , property-hook } ;
+    { [ attribute-groups ] , property-hook } ;
 
 property-hook =
-    property-hook-modifiers ,
-    ( [ "&" ] , "get" , property-hook-body
-    | "set" , [ "(" , parameter , [ "," ] , ")" ] , property-hook-body ) ;
+    property-hook-modifiers , [ "&" ] , identifier ,
+    [ "(" , parameter-list , ")" ] , property-hook-body ;
 
 property-hook-body =
       ";"
@@ -1184,14 +1260,7 @@ interface-member-list =
     { interface-member } ;
 
 interface-member =
-      [ attribute-groups ] ,
-      ( method-declaration | class-constant-declaration | interface-property-declaration ) ;
-
-interface-property-declaration =
-    ( interface-property-modifiers | "var" ) , optional-type-without-static , hooked-property ;
-
-interface-property-modifiers =
-    property-modifier , { property-modifier } ;
+    class-member ;
 
 trait-declaration =
     "trait" , identifier , "{" , class-member-list , "}" ;
@@ -1222,14 +1291,13 @@ enum-declaration =
     "{" , enum-member-list , "}" ;
 
 enum-backing-type =
-    ":" , ( "int" | "string" ) ;
+    ":" , type ;
 
 enum-member-list =
     { enum-member } ;
 
 enum-member =
-    [ attribute-groups ] , ( enum-case | method-declaration | class-constant-declaration )
-    | trait-use-declaration ;
+    class-member ;
 
 enum-case =
     "case" , semi-reserved-identifier , [ "=" , enum-case-initializer ] , ";" ;
@@ -1285,7 +1353,7 @@ attribute-list =
     attribute , { "," , attribute } ;
 
 attribute =
-    class-name , [ constant-argument-list ] ;
+    class-name , [ argument-list ] ;
 
 halt-compiler-statement =
     "__halt_compiler" , "(" , ")" , ";" , halt-compiler-data ;
@@ -1357,12 +1425,6 @@ non-ascii-byte =
 reserved-non-modifiers =
     "and" | "array" | "as" | "break" | "callable" | "case" | "catch" | "class" | "clone" | "const" | "continue" | "declare" | "default" | "do" | "echo" | "else" | "elseif" | "empty" | "enddeclare" | "endfor" | "endforeach" | "endif" | "endswitch" | "endwhile" | "enum" | "eval" | "exit" | "die" | "extends" | "finally" | "fn" | "for" | "foreach" | "function" | "global" | "goto" | "if" | "implements" | "include" | "include_once" | "instanceof" | "insteadof" | "interface" | "isset" | "list" | "match" | "namespace" | "new" | "or" | "print" | "require" | "require_once" | "return" | "switch" | "throw" | "trait" | "try" | "unset" | "use" | "var" | "while" | "xor" | "yield"
     | magic-constant ;
-
-constant-argument-list =
-    "(" , [ constant-argument , { "," , constant-argument } , [ "," ] ] , ")" ;
-
-constant-argument =
-    [ semi-reserved-identifier , ":" ] , attribute-or-constructor-argument ;
 
 boolean-not-expression =
     instanceof-expression
@@ -1438,12 +1500,8 @@ global-constant-initializer =
 enum-case-initializer =
     constant-expression ;
 
-attribute-or-constructor-argument =
-    constant-expression ;
-
-
 trait-alias-modifier =
-    "public" | "protected" | "private" | "final" ;
+    method-modifier ;
 
 
 ordinary-argument-list =
@@ -1514,8 +1572,12 @@ unmatched-if-statement =
 
 
 alternative-if-statement =
-    "if" , "(" , expression , ")" , ":" , inner-statement-list ,
-    [ alt-elseif-list ] , [ alt-else-clause ] , "endif" , ";" ;
+    "if" , "(" , expression , ")" , ":" ,
+    ( inner-statement-list
+    | [ closed-inner-statement-list ] , ( alt-elseif-list | alt-else-clause ) ) , "endif" , ";" ;
+
+closed-inner-statement-list =
+    { inner-statement } , ( matched-statement | inner-declaration ) ;
 
 
 matched-while-statement =

@@ -28,6 +28,25 @@ final class Php85ParseStructureTest extends TestCase
 
     public static function cases(): iterable
     {
+        $cases = json_decode(file_get_contents(dirname(__DIR__, 3) . '/tests/fixtures/php/8.5/parser-structure.json'), true, flags: JSON_THROW_ON_ERROR);
+        $lexemes = static fn (string $source): array => array_map(static fn ($t) => is_array($t) ? $t[1] : $t, DerivationForest::tokens($source));
+        foreach ($cases as $i => $case) {
+            $tokens = $lexemes($case['source']);
+            $spans = [];
+            foreach ($case['spans'] as [$production, $fragment]) {
+                $needle = $lexemes($fragment);
+                $found = false;
+                for ($start = 0; $start <= count($tokens) - count($needle); $start++) {
+                    if (array_slice($tokens, $start, count($needle)) === $needle) {
+                        $spans[] = [$production, $start, $start + count($needle)];
+                        $found = true;
+                        break;
+                    }
+                }
+                if (!$found) throw new \LogicException('Operand not present: ' . $fragment);
+            }
+            yield 'Zend AST witness ' . $i => [$case['root'], $case['source'], $spans];
+        }
         yield ['expression', '-2 ** 2', [['power-expression', 1, 4]]];
         yield ['expression', '!$x instanceof Foo', [['instanceof-expression', 1, 4]]];
         yield ['expression', '$a ?? $b ?? $c', [['coalesce-expression', 2, 5]]];
@@ -69,6 +88,10 @@ final class Php85ParseStructureTest extends TestCase
         $grammar = (new Parser())->parse(file_get_contents(dirname(__DIR__, 3) . '/grammar/8.5/php.ebnf'));
         foreach (['$a < $b < $c', '$a == $b == $c'] as $source) {
             self::assertSame([], (new DerivationForest($grammar, $source))->trees('expression'));
+        }
+        $sources = json_decode(file_get_contents(dirname(__DIR__, 3) . '/tests/fixtures/php/8.5/parser-structure-invalid.json'), true, flags: JSON_THROW_ON_ERROR);
+        foreach ($sources as $source) {
+            self::assertSame([], (new DerivationForest($grammar, $source))->trees('statement'), $source);
         }
     }
 

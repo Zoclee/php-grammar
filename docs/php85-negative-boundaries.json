@@ -1111,7 +1111,7 @@
     {
       "id": "phase4-hooks-interface-semicolon",
       "area": "hooks",
-      "production": "interface-property-declaration",
+      "production": "property-declaration",
       "category": "illegal trailing token",
       "classification": "structural-negative",
       "negative": "invalid/phase4-hooks-interface-semicolon.php",
@@ -1133,7 +1133,7 @@
     {
       "id": "phase4-hooks-interface-var-public",
       "area": "hooks",
-      "production": "interface-property-declaration",
+      "production": "property-declaration",
       "category": "invalid alternative combination",
       "classification": "structural-negative",
       "negative": "invalid/phase4-hooks-interface-var-public.php",
@@ -2422,10 +2422,10 @@
       "area": "constants",
       "production": "constant-declaration",
       "category": "invalid alternative combination",
-      "classification": "structural-negative",
-      "negative": "invalid/phase4-constants-attributed-multiple.php",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-constants-attributed-multiple.php",
       "positive": "valid/phase4-constants-attributed-multiple.php",
-      "evidence": "zend_language_parser.y: top_statement, const_list, class_const_list, parameter, attribute",
+      "evidence": "zend_language_parser.y: attributed_top_statement, const_list (398-406); zend_compile.c: zend_compile_const_decl (9718-9725). No closure counterpart: global const is not an inner_statement.",
       "boundary": "attributed multiple"
     },
     {
@@ -2477,10 +2477,10 @@
       "area": "traits-enums",
       "production": "enum-backing-type",
       "category": "invalid alternative combination",
-      "classification": "structural-negative",
-      "negative": "invalid/phase4-traits-enums-live-object-backing.php",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-traits-enums-live-object-backing.php",
       "positive": "valid/phase4-traits-enums-live-object-backing.php",
-      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_compile_trait_alias; see retained discarded-closure discrepancies",
+      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_check_trait_alias_modifiers. Rejected only when compilation reaches declaration.",
       "boundary": "live object backing"
     },
     {
@@ -2488,10 +2488,10 @@
       "area": "traits-enums",
       "production": "enum-backing-type",
       "category": "invalid alternative combination",
-      "classification": "structural-negative",
-      "negative": "invalid/phase4-traits-enums-live-union-backing.php",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-traits-enums-live-union-backing.php",
       "positive": "valid/phase4-traits-enums-live-union-backing.php",
-      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_compile_trait_alias; see retained discarded-closure discrepancies",
+      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_check_trait_alias_modifiers. Rejected only when compilation reaches declaration.",
       "boundary": "live union backing"
     },
     {
@@ -2499,10 +2499,10 @@
       "area": "traits-enums",
       "production": "trait-alias",
       "category": "invalid alternative combination",
-      "classification": "structural-negative",
-      "negative": "invalid/phase4-traits-enums-live-static-alias.php",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-traits-enums-live-static-alias.php",
       "positive": "valid/phase4-traits-enums-live-static-alias.php",
-      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_compile_trait_alias; see retained discarded-closure discrepancies",
+      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_check_trait_alias_modifiers. Rejected only when compilation reaches declaration.",
       "boundary": "live static alias"
     },
     {
@@ -2510,10 +2510,10 @@
       "area": "traits-enums",
       "production": "trait-alias",
       "category": "invalid alternative combination",
-      "classification": "structural-negative",
-      "negative": "invalid/phase4-traits-enums-live-abstract-alias.php",
+      "classification": "contextual-negative",
+      "negative": "contextual-invalid/phase4-traits-enums-live-abstract-alias.php",
       "positive": "valid/phase4-traits-enums-live-abstract-alias.php",
-      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_compile_trait_alias; see retained discarded-closure discrepancies",
+      "evidence": "zend_language_parser.y: enum_backing_type, trait_alias; zend_compile.c: zend_compile_enum_backing_type, zend_check_trait_alias_modifiers. Rejected only when compilation reaches declaration.",
       "boundary": "live abstract alias"
     },
     {
@@ -3522,22 +3522,1153 @@
       "restriction": "isset",
       "reason": "isset_variable is expr in Zend; compilation checks surviving target shape and empty offsets.",
       "evidence": "zend_language_parser.y: isset_variable; zend_compile.c: zend_compile_isset_or_empty"
-    }
-  ],
-  "known_discrepancies": [
-    {
-      "fixture": "known-discrepancies/valid/discarded-enum-type.php",
-      "restriction": "enum backing type",
-      "owner": "contextual declaration compilation after constant folding",
-      "evidence": "zend_language_parser.y: enum_backing_type accepts type_expr; zend_compile.c: zend_compile_enum_backing_type validates int/string only",
-      "disposition": "Retained. EBNF rejects the nested enum before PHP discards its closure. Fixing the full live/dead distinction requires broader contextual declaration validation."
     },
     {
-      "fixture": "known-discrepancies/valid/discarded-trait-alias.php",
-      "restriction": "trait alias modifiers in discarded closures",
-      "owner": "contextual trait alias compilation after constant folding",
-      "evidence": "zend_language_parser.y: trait_alias accepts a method-target member_modifier; zend_compile.c: zend_compile_trait_alias calls zend_check_trait_alias_modifiers",
-      "disposition": "Retained. Static/abstract alias restrictions run at compilation; readonly is rejected during parser modifier conversion. EBNF remains stricter for discarded static/abstract aliases."
+      "fixture": "contextual-invalid/audit-attributes-unpacking.php",
+      "restriction": "audit-attributes-unpacking",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-empty.php",
+      "restriction": "audit-hooks-empty",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-get-parameters.php",
+      "restriction": "audit-hooks-get-parameters",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-set-empty-parameters.php",
+      "restriction": "audit-hooks-set-empty-parameters",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/audit-hooks-unknown.php",
+      "restriction": "audit-hooks-unknown",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/audit-statements-try-alone.php",
+      "restriction": "audit-statements-try-alone",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-abstract-method-body-live.php",
+      "restriction": "abstract-method-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-abstract-method-body-retained.php",
+      "restriction": "abstract-method-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-abstract-private-method-live.php",
+      "restriction": "abstract-private-method",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-abstract-private-method-retained.php",
+      "restriction": "abstract-private-method",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-alias-abstract-live.php",
+      "restriction": "alias-abstract",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-alias-abstract-no-name-live.php",
+      "restriction": "alias-abstract-no-name",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-alias-abstract-no-name-retained.php",
+      "restriction": "alias-abstract-no-name",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-alias-abstract-retained.php",
+      "restriction": "alias-abstract",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-alias-static-live.php",
+      "restriction": "alias-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-alias-static-no-name-live.php",
+      "restriction": "alias-static-no-name",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-alias-static-no-name-retained.php",
+      "restriction": "alias-static-no-name",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-alias-static-retained.php",
+      "restriction": "alias-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: trait_alias, member_modifier; zend_compile.c: zend_compile_trait_alias, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-call-live.php",
+      "restriction": "attribute-call",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-call-retained.php",
+      "restriction": "attribute-call",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-conversion-live.php",
+      "restriction": "attribute-conversion",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-conversion-retained.php",
+      "restriction": "attribute-conversion",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-duplicate-live.php",
+      "restriction": "attribute-duplicate",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-duplicate-retained.php",
+      "restriction": "attribute-duplicate",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-order-live.php",
+      "restriction": "attribute-order",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-order-retained.php",
+      "restriction": "attribute-order",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-unpack-live.php",
+      "restriction": "attribute-unpack",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-unpack-retained.php",
+      "restriction": "attribute-unpack",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-variable-live.php",
+      "restriction": "attribute-variable",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attribute-variable-retained.php",
+      "restriction": "attribute-variable",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attribute_decl, argument_list; zend_compile.c: zend_compile_attributes, zend_compile_const_expr"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-break-outside-live.php",
+      "restriction": "break-outside",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-break-outside-retained.php",
+      "restriction": "break-outside",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-catch-static-live.php",
+      "restriction": "catch-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-catch-static-retained.php",
+      "restriction": "catch-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-class-abstract-method-live.php",
+      "restriction": "class-abstract-method",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-class-abstract-method-retained.php",
+      "restriction": "class-abstract-method",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-class-case-live.php",
+      "restriction": "class-case",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-class-case-retained.php",
+      "restriction": "class-case",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-class-method-no-body-live.php",
+      "restriction": "class-method-no-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-class-method-no-body-retained.php",
+      "restriction": "class-method-no-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-constant-callable-live.php",
+      "restriction": "constant-callable",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-constant-callable-retained.php",
+      "restriction": "constant-callable",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-constant-private-final-live.php",
+      "restriction": "constant-private-final",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-constant-private-final-retained.php",
+      "restriction": "constant-private-final",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-constant-type-value-live.php",
+      "restriction": "constant-type-value",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-constant-type-value-retained.php",
+      "restriction": "constant-type-value",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-abstract-method-live.php",
+      "restriction": "enum-abstract-method",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-abstract-method-retained.php",
+      "restriction": "enum-abstract-method",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-backed-missing-value-live.php",
+      "restriction": "enum-backed-missing-value",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-backed-missing-value-retained.php",
+      "restriction": "enum-backed-missing-value",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-hook-live.php",
+      "restriction": "enum-hook",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-hook-retained.php",
+      "restriction": "enum-hook",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-nullable-live.php",
+      "restriction": "enum-nullable",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-nullable-retained.php",
+      "restriction": "enum-nullable",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-object-live.php",
+      "restriction": "enum-object",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-object-retained.php",
+      "restriction": "enum-object",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-property-live.php",
+      "restriction": "enum-property",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-property-retained.php",
+      "restriction": "enum-property",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-static-live.php",
+      "restriction": "enum-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-static-retained.php",
+      "restriction": "enum-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-unbacked-value-live.php",
+      "restriction": "enum-unbacked-value",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-unbacked-value-retained.php",
+      "restriction": "enum-unbacked-value",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-union-live.php",
+      "restriction": "enum-union",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-enum-union-retained.php",
+      "restriction": "enum-union",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: enum_backing_type, enum_case; zend_compile.c: zend_compile_enum_backing_type, zend_compile_enum_case"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-goto-missing-live.php",
+      "restriction": "goto-missing",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-goto-missing-retained.php",
+      "restriction": "goto-missing",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-abstract-body-live.php",
+      "restriction": "hook-abstract-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-abstract-body-retained.php",
+      "restriction": "hook-abstract-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-abstract-final-live.php",
+      "restriction": "hook-abstract-final",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-abstract-final-retained.php",
+      "restriction": "hook-abstract-final",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-duplicate-live.php",
+      "restriction": "hook-duplicate",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-duplicate-retained.php",
+      "restriction": "hook-duplicate",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-empty-live.php",
+      "restriction": "hook-empty",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-empty-retained.php",
+      "restriction": "hook-empty",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-get-empty-params-live.php",
+      "restriction": "hook-get-empty-params",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-get-empty-params-retained.php",
+      "restriction": "hook-get-empty-params",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-get-params-live.php",
+      "restriction": "hook-get-params",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-get-params-retained.php",
+      "restriction": "hook-get-params",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-interface-body-live.php",
+      "restriction": "hook-interface-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-interface-body-retained.php",
+      "restriction": "hook-interface-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-name-live.php",
+      "restriction": "hook-name",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-name-retained.php",
+      "restriction": "hook-name",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-no-body-live.php",
+      "restriction": "hook-no-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-no-body-retained.php",
+      "restriction": "hook-no-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-param-default-live.php",
+      "restriction": "hook-param-default",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-param-default-retained.php",
+      "restriction": "hook-param-default",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-param-reference-live.php",
+      "restriction": "hook-param-reference",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-param-reference-retained.php",
+      "restriction": "hook-param-reference",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-param-variadic-live.php",
+      "restriction": "hook-param-variadic",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-param-variadic-retained.php",
+      "restriction": "hook-param-variadic",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-private-final-live.php",
+      "restriction": "hook-private-final",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-private-final-retained.php",
+      "restriction": "hook-private-final",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-readonly-live.php",
+      "restriction": "hook-readonly",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-readonly-retained.php",
+      "restriction": "hook-readonly",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-set-empty-params-live.php",
+      "restriction": "hook-set-empty-params",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-set-empty-params-retained.php",
+      "restriction": "hook-set-empty-params",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-set-two-params-live.php",
+      "restriction": "hook-set-two-params",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-set-two-params-retained.php",
+      "restriction": "hook-set-two-params",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-static-live.php",
+      "restriction": "hook-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-hook-static-retained.php",
+      "restriction": "hook-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-implements-static-live.php",
+      "restriction": "implements-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-implements-static-retained.php",
+      "restriction": "implements-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-insteadof-static-live.php",
+      "restriction": "insteadof-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-insteadof-static-retained.php",
+      "restriction": "insteadof-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-abstract-property-live.php",
+      "restriction": "interface-abstract-property",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-abstract-property-retained.php",
+      "restriction": "interface-abstract-property",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-case-live.php",
+      "restriction": "interface-case",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-case-retained.php",
+      "restriction": "interface-case",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-extends-static-live.php",
+      "restriction": "interface-extends-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-extends-static-retained.php",
+      "restriction": "interface-extends-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-final-method-live.php",
+      "restriction": "interface-final-method",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-final-method-retained.php",
+      "restriction": "interface-final-method",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-final-property-live.php",
+      "restriction": "interface-final-property",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-final-property-retained.php",
+      "restriction": "interface-final-property",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-method-body-live.php",
+      "restriction": "interface-method-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-method-body-retained.php",
+      "restriction": "interface-method-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-ordinary-property-live.php",
+      "restriction": "interface-ordinary-property",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-ordinary-property-retained.php",
+      "restriction": "interface-ordinary-property",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-private-method-live.php",
+      "restriction": "interface-private-method",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-private-method-retained.php",
+      "restriction": "interface-private-method",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-private-property-live.php",
+      "restriction": "interface-private-property",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-private-property-retained.php",
+      "restriction": "interface-private-property",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-property-default-live.php",
+      "restriction": "interface-property-default",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-property-default-retained.php",
+      "restriction": "interface-property-default",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-trait-live.php",
+      "restriction": "interface-trait",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-interface-trait-retained.php",
+      "restriction": "interface-trait",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-nested-class-live.php",
+      "restriction": "nested-class",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-nested-class-retained.php",
+      "restriction": "nested-class",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-duplicate-live.php",
+      "restriction": "parameter-duplicate",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-duplicate-retained.php",
+      "restriction": "parameter-duplicate",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-hook-unpromoted-live.php",
+      "restriction": "parameter-hook-unpromoted",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-hook-unpromoted-retained.php",
+      "restriction": "parameter-hook-unpromoted",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-variadic-default-live.php",
+      "restriction": "parameter-variadic-default",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-variadic-default-retained.php",
+      "restriction": "parameter-variadic-default",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-variadic-order-live.php",
+      "restriction": "parameter-variadic-order",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-variadic-order-retained.php",
+      "restriction": "parameter-variadic-order",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-void-live.php",
+      "restriction": "parameter-void",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parameter-void-retained.php",
+      "restriction": "parameter-void",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-pipe-arrow-live.php",
+      "restriction": "pipe-arrow",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-pipe-arrow-retained.php",
+      "restriction": "pipe-arrow",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-promotion-abstract-live.php",
+      "restriction": "promotion-abstract",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-promotion-abstract-retained.php",
+      "restriction": "promotion-abstract",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-promotion-function-live.php",
+      "restriction": "promotion-function",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-promotion-function-retained.php",
+      "restriction": "promotion-function",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-promotion-nonconstructor-live.php",
+      "restriction": "promotion-nonconstructor",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-promotion-nonconstructor-retained.php",
+      "restriction": "promotion-nonconstructor",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-promotion-variadic-live.php",
+      "restriction": "promotion-variadic",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-promotion-variadic-retained.php",
+      "restriction": "promotion-variadic",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-abstract-ordinary-live.php",
+      "restriction": "property-abstract-ordinary",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-abstract-ordinary-retained.php",
+      "restriction": "property-abstract-ordinary",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-callable-live.php",
+      "restriction": "property-callable",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-callable-retained.php",
+      "restriction": "property-callable",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-private-final-live.php",
+      "restriction": "property-private-final",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-private-final-retained.php",
+      "restriction": "property-private-final",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-readonly-default-live.php",
+      "restriction": "property-readonly-default",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-readonly-default-retained.php",
+      "restriction": "property-readonly-default",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-readonly-static-live.php",
+      "restriction": "property-readonly-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-readonly-static-retained.php",
+      "restriction": "property-readonly-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-readonly-untyped-live.php",
+      "restriction": "property-readonly-untyped",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-property-readonly-untyped-retained.php",
+      "restriction": "property-readonly-untyped",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-trait-case-live.php",
+      "restriction": "trait-case",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-trait-case-retained.php",
+      "restriction": "trait-case",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-trait-method-no-body-live.php",
+      "restriction": "trait-method-no-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-trait-method-no-body-retained.php",
+      "restriction": "trait-method-no-body",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: class_statement_list, class_statement, attributed_class_statement; zend_compile.c: zend_compile_prop_decl, zend_compile_enum_case, zend_compile_use_trait, zend_begin_method_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-try-bare-live.php",
+      "restriction": "try-bare",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-try-bare-retained.php",
+      "restriction": "try-bare",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-type-intersection-builtin-live.php",
+      "restriction": "type-intersection-builtin",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-type-intersection-builtin-retained.php",
+      "restriction": "type-intersection-builtin",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-type-nullable-mixed-live.php",
+      "restriction": "type-nullable-mixed",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-type-nullable-mixed-retained.php",
+      "restriction": "type-nullable-mixed",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-type-redundant-live.php",
+      "restriction": "type-redundant",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-type-redundant-retained.php",
+      "restriction": "type-redundant",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: attributed_class_statement, parameter, type_expr, type_expr_without_static; zend_compile.c: zend_compile_prop_decl, zend_compile_params, zend_compile_typename_ex, zend_compile_class_const_decl"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-use-static-live.php",
+      "restriction": "use-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-use-static-retained.php",
+      "restriction": "use-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: statement, class_name_list, catch_name_list, trait_precedence, expr, inner_statement; zend_compile.c: zend_compile_try, zend_compile_class_decl, zend_compile_use_trait, zend_compile_pipe, zend_compile_break_continue, zend_compile_goto"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-traits-enums-live-abstract-alias.php",
+      "restriction": "phase4-traits-enums-live-abstract-alias",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-traits-enums-live-object-backing.php",
+      "restriction": "phase4-traits-enums-live-object-backing",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-traits-enums-live-static-alias.php",
+      "restriction": "phase4-traits-enums-live-static-alias",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/phase4-traits-enums-live-union-backing.php",
+      "restriction": "phase4-traits-enums-live-union-backing",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-trait-abstract.php",
+      "restriction": "remaining-trait-abstract",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/remaining-trait-static.php",
+      "restriction": "remaining-trait-static",
+      "reason": "Parser reduction is retained; compilation rejects the live or retained declaration. A discarded static closure bypasses this check.",
+      "evidence": "zend_language_parser.y: property_hook, attribute_decl, enum_backing_type, trait_alias, statement; zend_compile.c: zend_compile_property_hooks, zend_compile_attributes, zend_compile_try, zend_compile_enum_backing_type, zend_check_trait_alias_modifiers"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parser-action-duplicate-property-modifier-live.php",
+      "restriction": "duplicate-property-modifier",
+      "reason": "EARLY parser-action validation, not discardable body compilation. EBNF repetition is subject to this mandatory pre-fold check.",
+      "evidence": "zend_language_parser.y: method_modifiers, property_hook_modifiers, property_modifiers, anonymous_class_modifiers; zend_compile.c: zend_modifier_list_to_flags, zend_add_member_modifier, zend_add_anonymous_class_modifier"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parser-action-duplicate-property-modifier-discarded.php",
+      "restriction": "duplicate-property-modifier",
+      "reason": "EARLY parser-action validation, not discardable body compilation. EBNF repetition is subject to this mandatory pre-fold check.",
+      "evidence": "zend_language_parser.y: method_modifiers, property_hook_modifiers, property_modifiers, anonymous_class_modifiers; zend_compile.c: zend_modifier_list_to_flags, zend_add_member_modifier, zend_add_anonymous_class_modifier"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parser-action-duplicate-hook-final-live.php",
+      "restriction": "duplicate-hook-final",
+      "reason": "EARLY parser-action validation, not discardable body compilation. EBNF repetition is subject to this mandatory pre-fold check.",
+      "evidence": "zend_language_parser.y: method_modifiers, property_hook_modifiers, property_modifiers, anonymous_class_modifiers; zend_compile.c: zend_modifier_list_to_flags, zend_add_member_modifier, zend_add_anonymous_class_modifier"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parser-action-duplicate-hook-final-discarded.php",
+      "restriction": "duplicate-hook-final",
+      "reason": "EARLY parser-action validation, not discardable body compilation. EBNF repetition is subject to this mandatory pre-fold check.",
+      "evidence": "zend_language_parser.y: method_modifiers, property_hook_modifiers, property_modifiers, anonymous_class_modifiers; zend_compile.c: zend_modifier_list_to_flags, zend_add_member_modifier, zend_add_anonymous_class_modifier"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parser-action-abstract-final-method-live.php",
+      "restriction": "abstract-final-method",
+      "reason": "EARLY parser-action validation, not discardable body compilation. EBNF repetition is subject to this mandatory pre-fold check.",
+      "evidence": "zend_language_parser.y: method_modifiers, property_hook_modifiers, property_modifiers, anonymous_class_modifiers; zend_compile.c: zend_modifier_list_to_flags, zend_add_member_modifier, zend_add_anonymous_class_modifier"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parser-action-abstract-final-method-discarded.php",
+      "restriction": "abstract-final-method",
+      "reason": "EARLY parser-action validation, not discardable body compilation. EBNF repetition is subject to this mandatory pre-fold check.",
+      "evidence": "zend_language_parser.y: method_modifiers, property_hook_modifiers, property_modifiers, anonymous_class_modifiers; zend_compile.c: zend_modifier_list_to_flags, zend_add_member_modifier, zend_add_anonymous_class_modifier"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parser-action-anonymous-final-live.php",
+      "restriction": "anonymous-final",
+      "reason": "EARLY parser-action validation, not discardable body compilation. EBNF repetition is subject to this mandatory pre-fold check.",
+      "evidence": "zend_language_parser.y: method_modifiers, property_hook_modifiers, property_modifiers, anonymous_class_modifiers; zend_compile.c: zend_modifier_list_to_flags, zend_add_member_modifier, zend_add_anonymous_class_modifier"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-parser-action-anonymous-final-discarded.php",
+      "restriction": "anonymous-final",
+      "reason": "EARLY parser-action validation, not discardable body compilation. EBNF repetition is subject to this mandatory pre-fold check.",
+      "evidence": "zend_language_parser.y: method_modifiers, property_hook_modifiers, property_modifiers, anonymous_class_modifiers; zend_compile.c: zend_modifier_list_to_flags, zend_add_member_modifier, zend_add_anonymous_class_modifier"
+    },
+    {
+      "fixture": "contextual-invalid/boundary-attributed-constant-list.php",
+      "restriction": "Multiple attributed global constants",
+      "reason": "One-constant restriction is compile-time, not parser structure. No inner-statement form exists.",
+      "evidence": "zend_language_parser.y: attributed_top_statement, const_list; zend_compile.c: zend_compile_const_decl (9718-9725). Global const is not an inner_statement, so no discarded-closure counterpart exists."
+    },
+    {
+      "fixture": "contextual-invalid/audit-attributes-multiple-global.php",
+      "restriction": "Multiple attributed global constants",
+      "reason": "Parser reduces the full list; compilation enforces one constant per attributed declaration.",
+      "evidence": "zend_language_parser.y: attributed_top_statement, const_list (398-406); zend_compile.c: zend_compile_const_decl (9718-9725). No closure counterpart: global const is not an inner_statement."
+    },
+    {
+      "fixture": "contextual-invalid/phase4-constants-attributed-multiple.php",
+      "restriction": "Multiple attributed global constants",
+      "reason": "Parser reduces the full list; compilation enforces one constant per attributed declaration.",
+      "evidence": "zend_language_parser.y: attributed_top_statement, const_list (398-406); zend_compile.c: zend_compile_const_decl (9718-9725). No closure counterpart: global const is not an inner_statement."
     }
-  ]
+  ],
+  "known_discrepancies": []
 }

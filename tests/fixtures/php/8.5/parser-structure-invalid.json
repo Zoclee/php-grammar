@@ -1,0 +1,12 @@
+[
+  "if ($a): if ($c) foo(); else: bar(); endif;",
+  "if ($a): if ($c) foo(); elseif ($d): bar(); endif;",
+  "if ($a): while ($b) if ($c) foo(); else: bar(); endif;",
+  "if ($a): while ($b) if ($c) foo(); elseif ($d): bar(); endif;",
+  "if ($a): for (;;) if ($c) foo(); else: bar(); endif;",
+  "if ($a): for (;;) if ($c) foo(); elseif ($d): bar(); endif;",
+  "if ($a): foreach ($xs as $v) if ($c) foo(); else: bar(); endif;",
+  "if ($a): foreach ($xs as $v) if ($c) foo(); elseif ($d): bar(); endif;",
+  "if ($a): declare(ticks=1) if ($c) foo(); else: bar(); endif;",
+  "if ($a): declare(ticks=1) if ($c) foo(); elseif ($d): bar(); endif;"
+]

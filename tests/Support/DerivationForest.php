@@ -19,11 +19,26 @@ final class DerivationForest
 
     public function __construct(Grammar $grammar, string $source)
     {
-        $this->tokens = array_values(array_filter(token_get_all('<?php ' . $source),
-            static fn ($t) => !is_array($t) || !in_array($t[0], [T_OPEN_TAG, T_WHITESPACE, T_COMMENT, T_DOC_COMMENT], true)));
+        $this->tokens = self::tokens($source);
         foreach ($grammar->productions() as $production) {
             $this->expand($production->name, $production->expression);
         }
+    }
+
+    /** Normalize Zend's composite yield-from token to the EBNF adapter's two terminals. */
+    public static function tokens(string $source): array
+    {
+        $tokens = [];
+        foreach (token_get_all('<?php ' . $source) as $token) {
+            if (is_array($token) && in_array($token[0], [T_OPEN_TAG, T_WHITESPACE, T_COMMENT, T_DOC_COMMENT], true)) continue;
+            if (is_array($token) && $token[0] === T_YIELD_FROM) {
+                $tokens[] = [T_YIELD, 'yield'];
+                $tokens[] = [T_STRING, 'from'];
+            } else {
+                $tokens[] = $token;
+            }
+        }
+        return $tokens;
     }
 
     /** @return list<array> At most three trees; two already disprove uniqueness. */
