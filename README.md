@@ -115,6 +115,15 @@ tests/
       <version>/
         valid/
         invalid/
+
+tools/
+  grammar-release.py
+  8.5/
+    *.php
+    *.py
+    source-lock.json
+    fetch-sources.py
+    sync-documentation.php
 ```
 
 ## Versioning Model
@@ -207,8 +216,8 @@ composer release:check # complete 23-gate validation; see prerequisites below
 
 The complete release gate requires PHP 8.5 with ext-ast and PHPUnit extensions,
 Python 3.10+, Composer, Git and RTK on PATH. Fetch source evidence once with
-`rtk proxy python tools/fetch-php85-sources.py .audit` and
-`rtk proxy python tools/php85-source-correspondence.py --fetch --check`.
+`rtk proxy python tools/8.5/fetch-sources.py .audit` and
+`rtk proxy python tools/8.5/source-correspondence.py --fetch --check`.
 Use `rtk proxy python tools/grammar-release.py --php /path/to/php85
 --composer /path/to/composer.phar` to select binaries; `PHPRC` selects their ini.
 Commands log to `.audit/phase7-validation/` and return nonzero on any failed gate.
@@ -359,10 +368,10 @@ PHP can discard an invalid operation before checking it. Follow the
 [negative-boundary methodology](docs/8.5/phase4-negative-coverage.md).
 
 ```text
-php tools/php85-coverage-report.php
-php tools/php85-coverage-report.php --check
-php tools/php85-negative-report.php
-php tools/php85-negative-report.php --check
+php tools/8.5/coverage-report.php
+php tools/8.5/coverage-report.php --check
+php tools/8.5/negative-report.php
+php tools/8.5/negative-report.php --check
 ```
 
 The generated report links completed chart items to their first positive

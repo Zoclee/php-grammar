@@ -231,11 +231,11 @@ composer validate --strict
 composer test -- --no-progress
 composer grammar:coverage
 php bin/php85-conformance.php .audit/php85/php.exe
-php tools/php85-coverage-report.php
-php tools/php85-coverage-report.php --check
-php tools/php85-negative-report.php
-php tools/php85-negative-report.php --check
-python tools/php85-source-inventory.py .audit
+php tools/8.5/coverage-report.php
+php tools/8.5/coverage-report.php --check
+php tools/8.5/negative-report.php
+php tools/8.5/negative-report.php --check
+python tools/8.5/source-inventory.py .audit
 git diff --check
 ```
 
@@ -284,7 +284,7 @@ Added reporting and tests:
 - [docs/8.5/negative-boundaries.json](negative-boundaries.json)
 - [docs/8.5/negative-boundaries.md](negative-boundaries.md)
 - [docs/8.5/phase4-negative-coverage.md](phase4-negative-coverage.md)
-- [tools/php85-negative-report.php](../../tools/php85-negative-report.php)
+- [tools/8.5/negative-report.php](../../tools/8.5/negative-report.php)
 - [tests/Php/Conformance/Php85NegativeBoundaryLedgerTest.php](../../tests/Php/Conformance/Php85NegativeBoundaryLedgerTest.php)
 
 Changed files:
@@ -298,7 +298,7 @@ Changed files:
 - [docs/sources.md](../sources.md)
 - [grammar/8.5/php.md](../../grammar/8.5/php.md), informative evidence notes only.
 - [tests/Php/Lexing/RepositoryLexerSmokeTest.php](../../tests/Php/Lexing/RepositoryLexerSmokeTest.php)
-- [tools/php85-coverage-report.php](../../tools/php85-coverage-report.php)
+- [tools/8.5/coverage-report.php](../../tools/8.5/coverage-report.php)
 
 Total: **549 added, 10 changed, none removed**. The canonical EBNF and grammar
 conventions required no changes. Research inputs/scripts in ignored `.audit/`

@@ -3,7 +3,7 @@
     "ast": "1.1.3",
     "schema": 120,
     "grammar_sha256": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755",
-    "generator_sha256": "7adb206f25ad8a4aaefac44f16179f607c9f56836e51cc656a8e81364ed994d8",
+    "generator_sha256": "5bdc29ba0417bd0d974d1dcd9449e3a7eaddecdb6e48a196975ce239ed5864a6",
     "forest_sha256": "365824975335ef203920b1ba80989db2f28533028f380b11e40db3c3f3f9f77f",
     "families": {
         "binary-pair": 1936,

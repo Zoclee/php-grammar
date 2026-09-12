@@ -36,8 +36,8 @@ It provides locations and file hashes in `docs/8.5/source-inventory.json`.
 There are 177 parser productions and 190 scanner rule entries. Regenerate with:
 
 ```text
-python tools/fetch-php85-sources.py .audit
-python tools/php85-source-inventory.py .audit
+python tools/8.5/fetch-sources.py .audit
+python tools/8.5/source-inventory.py .audit
 ```
 
 This inventory prevents entire grammar areas from disappearing from view. It is

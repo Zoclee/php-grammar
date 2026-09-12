@@ -20,8 +20,8 @@ Release claims and regression gates follow [the certification policy](conformanc
 ```text
 composer test
 php bin/php85-conformance.php /path/to/php-8.5
-python tools/fetch-php85-sources.py .audit
-python tools/php85-source-inventory.py .audit
+python tools/8.5/fetch-sources.py .audit
+python tools/8.5/source-inventory.py .audit
 ```
 
 `PHP85_BINARY` can supply the binary when the lint command has no argument.
@@ -116,7 +116,7 @@ To add positive coverage:
    permit a void parameter. Constant fragments involving unresolved symbols
    establish structural shape, not constant folding or name resolution.
 5. Run PHPUnit, the PHP 8.5 differential runner, and coverage; regenerate
-   `php tools/php85-coverage-report.php` and verify with `--check`.
+   `php tools/8.5/coverage-report.php` and verify with `--check`.
 
 The generated report includes every remaining identity, classification, syntax
 area, reason, first positive witnesses for exercised items, actual primitive
@@ -164,7 +164,7 @@ promotion, enum consistency and write-context rules remain separately documented
 
 Contributor instructions, source evidence, gap dispositions and verification
 results are in [the Phase 4 report](8.5/phase4-negative-coverage.md). Regenerate
-the negative ledger with `php tools/php85-negative-report.php`; `--check` detects
+the negative ledger with `php tools/8.5/negative-report.php`; `--check` detects
 changes to ledger metadata, grammar, fixture content or corpus membership.
 PHPUnit checks fixture/ledger parity, production references, classifications,
 distinct repairs, contextual-review completeness and report freshness.
@@ -196,8 +196,8 @@ string tokenization have explicit dispositions in the report.
 The optional scanner oracle runs separately from correctness:
 
 ```text
-php-8.5 -d short_open_tag=1 tools/php85-lexer-differential.php
-php-8.5 -d short_open_tag=0 tools/php85-lexer-differential.php
+php-8.5 -d short_open_tag=1 tools/8.5/lexer-differential.php
+php-8.5 -d short_open_tag=0 tools/8.5/lexer-differential.php
 ```
 
 It compares independent expected tokens with normalized Zend tokens, checks

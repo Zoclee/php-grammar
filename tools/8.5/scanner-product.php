@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 use PhpGrammar\Php\Conformance\PhpGrammarMatcher;
 
 if (PHP_MAJOR_VERSION !== 8 || PHP_MINOR_VERSION !== 5) exit(2);
-$root = dirname(__DIR__);
+$root = dirname(__DIR__, 2);
 $matcher = PhpGrammarMatcher::forRepositoryRoot($root);
 // Each body is legal in a function when its scanner/parser structure is legal;
 // the matrix deliberately avoids unrelated compile-time declaration failures.

@@ -5,7 +5,7 @@
         "src/Php/Conformance/Php85ModifierValidator.php": "42f697a7fe1e8382772605d6c37d7a6a12cf647f69b5a39318f1b33c2e68b0a0",
         "tests/Support/Php85Phase6Cases.php": "f5eee9ec256477c8bb50ea08551f8d79408b2c44c77436b117aa743934b1c142",
         "tests/Support/DerivationForest.php": "365824975335ef203920b1ba80989db2f28533028f380b11e40db3c3f3f9f77f",
-        "tools/php85-phase6.php": "e78d26f2539eb4533a627bad736e2040882c8369c089522b6f68f09d070ebcbc"
+        "tools/8.5/phase6.php": "79c9ec75e03ee80c5d124be00261d70a41d1e83fb605766e1fc319fd78e6544e"
     },
     "counts": {
         "direct-folding": 70,

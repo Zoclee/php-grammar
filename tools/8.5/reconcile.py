@@ -9,7 +9,7 @@ import json
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 PIN = '7a4c62795365ed6a97a0184c96375b9fb4d53b1e'
 
 # Explicit renamed, inlined, or split productions. All other names must have
@@ -185,7 +185,7 @@ def main():
     parser.add_argument('source_directory', type=Path)
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
-    lock = json.loads((ROOT / 'tools/php85-source-lock.json').read_text())
+    lock = json.loads((ROOT / 'tools/8.5/source-lock.json').read_text())
     sources = {}
     for name, digest in lock.items():
         data = (args.source_directory / name).read_bytes()
@@ -245,7 +245,7 @@ def main():
                       'blocker': None if classification == 'contextual-validator-enforced' or site['phase'] == 'implementation-resource-limit' else 'C2'})
     hashes = {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in [
         'grammar/8.5/php.ebnf', 'docs/8.5/phase3-coverage.json', 'docs/8.5/negative-boundaries.json',
-        'tests/fixtures/php/8.5/parser-compiler-boundaries.json', 'docs/8.5/compiler-boundaries.json', 'tools/php85-reconcile.py']}
+        'tests/fixtures/php/8.5/parser-compiler-boundaries.json', 'docs/8.5/compiler-boundaries.json', 'tools/8.5/reconcile.py']}
     report = {'source_pin': PIN, 'source_hashes': lock, 'hashes': hashes,
               'method': 'Exact-name or explicit reviewed production anchors; every RHS and action call retained. Evidence links are indexed at production/function-family granularity, not proofs of branch coverage.',
               'parser_productions': len(rows), 'parser_alternatives': sum(len(r['alternatives']) for r in rows),

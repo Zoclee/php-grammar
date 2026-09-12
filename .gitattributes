@@ -616,4 +616,4 @@
 /tests/fixtures/php/8.5/valid/remediation-unset-or.php text eol=crlf
 /tests/fixtures/php/8.5/valid/remediation-unset-word-and.php text eol=crlf
 /tests/fixtures/php/8.5/valid/remediation-unset-word-or.php text eol=crlf
-/tools/php85-source-lock.json text eol=crlf
+/tools/8.5/source-lock.json text eol=crlf

@@ -110,7 +110,7 @@ final class Php85LexicalAudit
         }
         $inputs = ['src/Php/Lexing/Lexer.php', 'src/Php/Lexing/LexerState.php', 'src/Php/Lexing/PhpVersion.php',
             'src/Php/Lexing/StringSyntax.php', 'src/Php/Conformance/PhpGrammarMatcher.php', 'src/Php/Conformance/PhpGrammarInput.php', 'tests/Support/Php85LexicalCases.php',
-            'tests/Support/Php85LexicalAudit.php', 'tools/php85-lexer-differential.php', 'docs/8.5/source-inventory.json',
+            'tests/Support/Php85LexicalAudit.php', 'tools/8.5/lexer-differential.php', 'docs/8.5/source-inventory.json',
             'docs/8.5/phase3-coverage.json', 'grammar/8.5/php.ebnf'];
         $hashes = [];
         foreach ($inputs as $file) $hashes[$file] = hash_file('sha256', $root . '/' . $file);

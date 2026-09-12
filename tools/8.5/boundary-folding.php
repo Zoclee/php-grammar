@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 use PhpGrammar\Php\Conformance\PhpGrammarMatcher;
 
 $binary = $argv[1] ?? getenv('PHP85_BINARY');
 if (!$binary) {
-    fwrite(STDERR, "Usage: php tools/php85-boundary-folding.php /path/to/php-8.5\n");
+    fwrite(STDERR, "Usage: php tools/8.5/boundary-folding.php /path/to/php-8.5\n");
     exit(2);
 }
 function oracle(array $command): array {
@@ -25,7 +25,7 @@ if ($status !== 0 || !preg_match('/PHP 8\.5\.\d+/', $version, $versionMatch)) {
     fwrite(STDERR, "The oracle must be PHP 8.5.x.\n");
     exit(2);
 }
-$root = dirname(__DIR__);
+$root = dirname(__DIR__, 2);
 $data = json_decode(file_get_contents($root . '/tests/fixtures/php/8.5/parser-compiler-boundaries.json'), true, flags: JSON_THROW_ON_ERROR);
 $matcher = PhpGrammarMatcher::forRepositoryRoot($root);
 $templates = [
@@ -70,7 +70,7 @@ try {
 }
 $report = ['php' => $versionMatch[0], 'families' => count($data['cases']), 'templates' => $templates,
     'folding_cases' => $count, 'failures' => $failedCases,
-    'hashes' => ['tools/php85-boundary-folding.php' => hash_file('sha256', __FILE__),
+    'hashes' => ['tools/8.5/boundary-folding.php' => hash_file('sha256', __FILE__),
         'tests/fixtures/php/8.5/parser-compiler-boundaries.json' => hash_file('sha256', $root . '/tests/fixtures/php/8.5/parser-compiler-boundaries.json')]];
 file_put_contents($root . '/docs/8.5/phase6-boundary-folding.json', json_encode($report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");
 echo json_encode(['php' => $versionMatch[0], 'folding_cases' => $count, 'failures' => $failures], JSON_PRETTY_PRINT) . "\n";

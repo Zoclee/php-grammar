@@ -34,7 +34,7 @@ The source pin remains `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`:
 - [Scanner](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_language_scanner.l)
 - [Compiler](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_compile.c)
 
-All three SHA-256 hashes were verified against `tools/php85-source-lock.json`.
+All three SHA-256 hashes were verified against `tools/8.5/source-lock.json`.
 The [source inventory](source-inventory.json) contains 177 parser
 productions, 190 scanner rules, and 143 selected compiler functions.
 The new [fatal diagnostic inventory](compiler-boundaries.json) records
@@ -169,12 +169,12 @@ Reproduction, with PHP 8.5 and required PHPUnit extensions available:
 ```text
 rtk proxy php vendor/phpunit/phpunit/phpunit --no-progress
 rtk proxy php bin/php85-conformance.php /path/to/php-8.5
-rtk proxy php tools/php85-boundary-folding.php /path/to/php-8.5
-rtk proxy php -d extension=ast tools/php85-ast-conformance.php
-rtk proxy php tools/php85-coverage-report.php --check
-rtk proxy php tools/php85-negative-report.php --check
-rtk proxy python tools/php85-compiler-boundaries.py .audit --check
-rtk proxy python tools/php85-source-inventory.py .audit
+rtk proxy php tools/8.5/boundary-folding.php /path/to/php-8.5
+rtk proxy php -d extension=ast tools/8.5/ast-conformance.php
+rtk proxy php tools/8.5/coverage-report.php --check
+rtk proxy php tools/8.5/negative-report.php --check
+rtk proxy python tools/8.5/compiler-boundaries.py .audit --check
+rtk proxy python tools/8.5/source-inventory.py .audit
 rtk git diff --check
 ```
 

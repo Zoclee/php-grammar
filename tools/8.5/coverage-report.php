@@ -6,8 +6,8 @@ use PhpGrammar\Ebnf\Coverage\CoverageCollector;
 use PhpGrammar\Php\Conformance\{GrammarCoverageAnalyzer, GrammarRepository, Php85CoverageCases, Php85CoverageClassification, PhpGrammarMatcher};
 use PhpGrammar\Repository\RepositoryManifest;
 
-require dirname(__DIR__) . '/vendor/autoload.php';
-$root = dirname(__DIR__);
+require dirname(__DIR__, 2) . '/vendor/autoload.php';
+$root = dirname(__DIR__, 2);
 $manifest = RepositoryManifest::fromRepositoryRoot($root);
 $witnesses = $primitiveWitnesses = $phase3Witnesses = [];
 $baselineCoverage = new CoverageCollector();
@@ -66,7 +66,7 @@ $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THR
 $path = $root . '/docs/8.5/phase3-coverage.json';
 if (in_array('--check', $argv, true)) {
     if (!is_file($path) || file_get_contents($path) !== $json) {
-        fwrite(STDERR, "Phase 3 coverage report is stale. Run php tools/php85-coverage-report.php\n");
+        fwrite(STDERR, "Phase 3 coverage report is stale. Run php tools/8.5/coverage-report.php\n");
         exit(1);
     }
 } else {

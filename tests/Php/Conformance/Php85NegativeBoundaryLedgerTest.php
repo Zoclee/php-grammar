@@ -81,7 +81,7 @@ final class Php85NegativeBoundaryLedgerTest extends TestCase
     public function testGeneratedReportMatchesLedgerAndFixtureBytes(): void
     {
         $root = dirname(__DIR__, 3);
-        $process = proc_open([PHP_BINARY, $root . '/tools/php85-negative-report.php', '--check'],
+        $process = proc_open([PHP_BINARY, $root . '/tools/8.5/negative-report.php', '--check'],
             [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $pipes);
         self::assertIsResource($process);
         fclose($pipes[0]);

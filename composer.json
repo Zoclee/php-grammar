@@ -23,10 +23,10 @@
         "test": "phpunit",
         "grammar:coverage": "php bin/grammar-coverage.php",
         "lexer:coverage": "php bin/lexer-coverage.php",
-        "conformance:phase6": "php tools/php85-phase6.php",
-        "conformance:interpolation": "php tools/php85-interpolation-binding.php --check",
-        "conformance:diagnostics": "php tools/php85-diagnostic-witnesses.php --check",
-        "certification:check": "python tools/php85-certification.py --check",
+        "conformance:phase6": "php tools/8.5/phase6.php",
+        "conformance:interpolation": "php tools/8.5/interpolation-binding.php --check",
+        "conformance:diagnostics": "php tools/8.5/diagnostic-witnesses.php --check",
+        "certification:check": "python tools/8.5/certification.py --check",
         "release:check": "python tools/grammar-release.py"
     }
 }

@@ -70,7 +70,7 @@
     "folding_cases": 1840,
     "failures": [],
     "hashes": {
-        "tools/php85-boundary-folding.php": "92c13646468bf2ab885a0efa85010e279750eb220055a767128ce52aee4e2418",
+        "tools/8.5/boundary-folding.php": "7e4ce1db0eb022a158b530baa40b1801707bd2ee71dd5cb3a500ed96563e21ec",
         "tests/fixtures/php/8.5/parser-compiler-boundaries.json": "20a19b518308828b8e09e0356bbf92b68fa6dfc1c34e989d1071f52f36315633"
     }
 }

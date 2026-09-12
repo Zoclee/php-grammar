@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 // Optional oracle only. Production recognition never loads this file.
-require dirname(__DIR__) . '/vendor/autoload.php';
+require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 use PhpGrammar\Tests\Support\Php85LexicalCases;
 
@@ -153,7 +153,7 @@ if ($short) foreach (Php85LexicalCases::syntax() as $name => [$source, $expected
 }
 // Broader integration cross-check; unlike the matrix above, expected tokens here
 // come from the separately implemented Zend adapter and are not independent data.
-foreach (glob(dirname(__DIR__) . '/tests/fixtures/php/8.5/' . ($short ? '' : 'short-tags-disabled/') . 'valid/*.php') as $file) {
+foreach (glob(dirname(__DIR__, 2) . '/tests/fixtures/php/8.5/' . ($short ? '' : 'short-tags-disabled/') . 'valid/*.php') as $file) {
     $name = basename($file);
     try {
         $source = file_get_contents($file);

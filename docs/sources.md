@@ -37,7 +37,7 @@ clone-with, final promotion, and `(void)`. Library/API additions introduce no
 extra EBNF alternatives merely because their names are new.
 
 Grammar Completeness Phase 4 reverified the SHA-256 hashes of all three pinned
-source files against `tools/php85-source-lock.json`. Its
+source files against `tools/8.5/source-lock.json`. Its
 [negative-boundary ledger](8.5/negative-boundaries.md) records parser/scanner
 families or compiler functions for each pair and each contextual review.
 PHP 8.5.10 lint independently checks the fixtures without executing them.
@@ -432,7 +432,7 @@ The source policy of this repository is:
 The source pin remains `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`.
 [The reconciliation ledger](8.5/phase6-reconciliation.json) records all 177
 parser productions, 623 alternatives/actions, canonical anchors and all 244
-direct compiler fatal sites. `tools/php85-reconcile.py` verifies the three
+direct compiler fatal sites. `tools/8.5/reconcile.py` verifies the three
 pinned hashes before generating or checking the ledger.
 
 [Six reviewed PHPT regressions](8.5/phase6-upstream-tests.json) include pinned

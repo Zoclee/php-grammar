@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 use PhpGrammar\Php\Conformance\PhpGrammarMatcher;
 
 if (PHP_MAJOR_VERSION !== 8 || PHP_MINOR_VERSION !== 5) { fwrite(STDERR, "Run with PHP 8.5.\n"); exit(2); }
-$root = dirname(__DIR__);
+$root = dirname(__DIR__, 2);
 $path = 'tests/fixtures/php/8.5/diagnostic-predicates.json';
 $cases = json_decode(file_get_contents($root . '/' . $path), true, flags: JSON_THROW_ON_ERROR);
 $matcher = PhpGrammarMatcher::forRepositoryRoot($root);
@@ -36,7 +36,7 @@ try {
     }
 } finally { unlink($file); }
 $hashes = [];
-foreach ([$path, 'tools/php85-diagnostic-witnesses.php', 'grammar/8.5/php.ebnf'] as $name) $hashes[$name] = hash_file('sha256', $root . '/' . $name);
+foreach ([$path, 'tools/8.5/diagnostic-witnesses.php', 'grammar/8.5/php.ebnf'] as $name) $hashes[$name] = hash_file('sha256', $root . '/' . $name);
 $report = ['php' => PHP_VERSION, 'profile' => '-n zend.multibyte=0', 'hashes' => $hashes,
     'sites' => count($cases), 'comparisons' => count($rows), 'cases' => $rows, 'failures' => $failures,
     'scope' => 'Observed diagnostic text plus one repaired positive per site; not instrumented C branch coverage. All these contextual negatives remain structural matches.'];

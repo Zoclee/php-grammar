@@ -34,7 +34,7 @@ promise that executing a file succeeds.
 
 The authority is PHP-8.5 revision
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`, with parser, scanner and compiler
-SHA-256 hashes in [the source lock](../../tools/php85-source-lock.json).
+SHA-256 hashes in [the source lock](../../tools/8.5/source-lock.json).
 Executable evidence uses PHP 8.5.10 and ext-ast 1.1.3, schema 120. The binary
 does not establish identity with the exact source pin (blocker C4).
 
@@ -236,19 +236,19 @@ composer test
 composer grammar:coverage
 composer lexer:coverage
 composer conformance:phase6
-php tools/php85-phase6.php --check
+php tools/8.5/phase6.php --check
 php bin/php85-conformance.php /path/to/php85
-php tools/php85-boundary-folding.php /path/to/php85
-php -d extension=ast tools/php85-ast-conformance.php
-php -d extension=ast tools/php85-systematic-structure.php
-php tools/php85-scanner-product.php
-php -d short_open_tag=1 tools/php85-lexer-differential.php
-php -d short_open_tag=0 tools/php85-lexer-differential.php
-php tools/php85-coverage-report.php --check
-php tools/php85-negative-report.php --check
-python tools/php85-compiler-boundaries.py /path/to/pinned-sources --check
-python tools/php85-reconcile.py /path/to/pinned-sources --check
-python tools/php85-phase6-evidence.py --check
+php tools/8.5/boundary-folding.php /path/to/php85
+php -d extension=ast tools/8.5/ast-conformance.php
+php -d extension=ast tools/8.5/systematic-structure.php
+php tools/8.5/scanner-product.php
+php -d short_open_tag=1 tools/8.5/lexer-differential.php
+php -d short_open_tag=0 tools/8.5/lexer-differential.php
+php tools/8.5/coverage-report.php --check
+php tools/8.5/negative-report.php --check
+python tools/8.5/compiler-boundaries.py /path/to/pinned-sources --check
+python tools/8.5/reconcile.py /path/to/pinned-sources --check
+python tools/8.5/phase6-evidence.py --check
 git diff --check
 ```
 
@@ -338,9 +338,9 @@ Added (28):
 - tests/fixtures/php/8.5/valid/phase6-nonstatic-closure.php
 - tests/fixtures/php/8.5/valid/phase6-set-visibility.php
 - tests/fixtures/php/8.5/valid/phase6-unset-cast.php
-- tools/php85-phase6-evidence.py
-- tools/php85-phase6.php
-- tools/php85-reconcile.py
+- tools/8.5/phase6-evidence.py
+- tools/8.5/phase6.php
+- tools/8.5/reconcile.py
 
 Changed (27):
 
@@ -368,8 +368,8 @@ Changed (27):
 - tests/Php/Lexing/Php85ScannerAuditTest.php
 - tests/Support/DerivationForest.php
 - tests/fixtures/php/8.5/parser-compiler-boundaries.json
-- tools/php85-boundary-folding.php
-- tools/php85-coverage-report.php
-- tools/php85-systematic-structure.php
+- tools/8.5/boundary-folding.php
+- tools/8.5/coverage-report.php
+- tools/8.5/systematic-structure.php
 
 Removed: none. Ignored local PHP/source downloads and one-off audit scripts are not repository deliverables.

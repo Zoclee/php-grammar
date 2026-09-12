@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$root = dirname(__DIR__);
+$root = dirname(__DIR__, 2);
 $path = $root . '/grammar/8.5/php.md';
 $contents = file_get_contents($path);
 $marker = '<!-- BEGIN GENERATED EBNF -->';

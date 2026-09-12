@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 use PhpGrammar\Ebnf\Parser;
 use PhpGrammar\Tests\Support\DerivationForest;
@@ -11,7 +11,7 @@ if (PHP_MAJOR_VERSION !== 8 || PHP_MINOR_VERSION !== 5 || !extension_loaded('ast
     fwrite(STDERR, "Run with PHP 8.5 and ext-ast.\n");
     exit(2);
 }
-$root = dirname(__DIR__);
+$root = dirname(__DIR__, 2);
 $grammar = (new Parser())->parse(file_get_contents($root . '/grammar/8.5/php.ebnf'));
 $schema = max(ast\get_supported_versions());
 error_reporting(E_ALL & ~E_DEPRECATED);

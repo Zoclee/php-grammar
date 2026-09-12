@@ -7,7 +7,7 @@ if (PHP_MAJOR_VERSION !== 8 || PHP_MINOR_VERSION !== 5 || !extension_loaded('ast
     fwrite(STDERR, "Run with PHP 8.5 and ext-ast enabled.\n");
     exit(2);
 }
-$root = dirname(__DIR__);
+$root = dirname(__DIR__, 2);
 $cases = json_decode(file_get_contents($root . '/tests/fixtures/php/8.5/parser-structure.json'), true, flags: JSON_THROW_ON_ERROR);
 function normalize(mixed $node): mixed {
     if (!$node instanceof ast\Node) return $node;

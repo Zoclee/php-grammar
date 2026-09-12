@@ -40,7 +40,7 @@ filters, token values, allocation, event callbacks, and diagnostic delivery
 have explicit out-of-profile dispositions. The source-inventory generator now
 retains the SHEBANG rule's `{NEWLINE}` macro instead of truncating its display.
 
-The three source hashes are checked against `tools/php85-source-lock.json`.
+The three source hashes are checked against `tools/8.5/source-lock.json`.
 PHP 8.5.10 is an executable cross-check, not a build of the exact source pin.
 No third-party grammar or tokenizer replaces repository recognition.
 
@@ -138,7 +138,7 @@ radix digits and prefixes, underscores, exponent cases/signs, operator
 collisions, cast whitespace, line endings, and high-byte labels. There is no
 random fuzzing and no fabricated EBNF traversal.
 
-The optional `tools/php85-lexer-differential.php` requires PHP 8.5.x. It uses
+The optional `tools/8.5/lexer-differential.php` requires PHP 8.5.x. It uses
 `token_get_all()` without parser feedback for token boundaries, and TOKEN_PARSE
 for selected lexical rejection and whole-source integration expectations.
 Neither function is used by production recognition or normal correctness tests.
@@ -237,14 +237,14 @@ rtk composer test -- --no-progress
 rtk composer grammar:coverage
 rtk composer lexer:coverage
 rtk proxy php bin/php85-conformance.php /path/to/php-8.5
-rtk proxy php tools/php85-boundary-folding.php /path/to/php-8.5
-rtk proxy php -d extension=ast tools/php85-ast-conformance.php
-rtk proxy php-8.5 -d short_open_tag=1 tools/php85-lexer-differential.php
-rtk proxy php-8.5 -d short_open_tag=0 tools/php85-lexer-differential.php
-rtk proxy php tools/php85-coverage-report.php --check
-rtk proxy php tools/php85-negative-report.php --check
-rtk proxy python tools/php85-source-inventory.py .audit
-rtk proxy python tools/php85-compiler-boundaries.py .audit --check
+rtk proxy php tools/8.5/boundary-folding.php /path/to/php-8.5
+rtk proxy php -d extension=ast tools/8.5/ast-conformance.php
+rtk proxy php-8.5 -d short_open_tag=1 tools/8.5/lexer-differential.php
+rtk proxy php-8.5 -d short_open_tag=0 tools/8.5/lexer-differential.php
+rtk proxy php tools/8.5/coverage-report.php --check
+rtk proxy php tools/8.5/negative-report.php --check
+rtk proxy python tools/8.5/source-inventory.py .audit
+rtk proxy python tools/8.5/compiler-boundaries.py .audit --check
 rtk git diff --check
 ```
 
@@ -279,7 +279,7 @@ Validation on 2026-09-12:
 Added:
 
 - `bin/lexer-coverage.php`
-- `tools/php85-lexer-differential.php`
+- `tools/8.5/lexer-differential.php`
 - `tests/Support/Php85LexicalCases.php`
 - `tests/Support/Php85LexicalAudit.php`
 - `tests/Php/Lexing/Php85ScannerAuditTest.php`
@@ -294,7 +294,7 @@ Changed:
 - `src/Php/Lexing/{Lexer,LexerState}.php`
 - `src/Php/Conformance/{PhpGrammarInput,PhpGrammarMatcher,Php85CoverageClassification}.php`
 - `tests/Php/Conformance/{Php85CoverageClassificationTest,Php85NegativeBoundaryLedgerTest}.php`
-- `tools/{php85-source-inventory.py,php85-coverage-report.php}`
+- `tools/{source-inventory.py,coverage-report.php}`
 - `composer.json`, `README.md`, `grammar/8.5/php.md`
 - `docs/{conformance,grammar-conventions,sources}.md` and `docs/8.5/{phase3-coverage,phase4-negative-coverage,parser-compiler-remediation}.md`
 - Generated `docs/8.5/phase3-coverage.json`, `docs/8.5/source-inventory.json`,

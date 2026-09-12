@@ -10,8 +10,8 @@
         "src/Php/Conformance/PhpGrammarMatcher.php": "1ea7d24e027d7e94eb0d6ee3a256b7247c0f47aa0ffc7aa027bf026f94e0c355",
         "src/Php/Conformance/PhpGrammarInput.php": "09c02bde1e0d3183bb0afe89969c6ac2cbfd9dd3311650e7352ff1231a786e8e",
         "tests/Support/Php85LexicalCases.php": "99622eff32493ae9309a0c04a462725891ecd3e96d52c504d4937df258ab9485",
-        "tests/Support/Php85LexicalAudit.php": "5c3830e02e7a07051a0a74f8095f68991e13b6f4177b3f9742b1344538d771f0",
-        "tools/php85-lexer-differential.php": "f0cb97b1eb0197ab4fe29216d693b78272ade70855ef92c121b9d5e56394ed9e",
+        "tests/Support/Php85LexicalAudit.php": "5414f585fa3a57a6a2aa59c61dd731060bc165329f48db62e2d6336a38ddecb6",
+        "tools/8.5/lexer-differential.php": "df60d675d5de4ecead189ec83ba5959d49efc1f470611e13ab9a14a69311928c",
         "docs/8.5/source-inventory.json": "92b74ee4330cbec1039d15d49180daa6ff7dcd5ffd5755c5d7d0101360a898f3",
         "docs/8.5/phase3-coverage.json": "c679f6423ba4f9a874ffe439b648343fd5c2c38d64c6a78469a6df9230464c4d",
         "grammar/8.5/php.ebnf": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755"

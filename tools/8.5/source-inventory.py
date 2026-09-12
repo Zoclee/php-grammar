@@ -8,10 +8,10 @@ from pathlib import Path
 parser = argparse.ArgumentParser()
 parser.add_argument('source_directory', type=Path)
 args = parser.parse_args()
-root = Path(__file__).resolve().parents[1]
+root = Path(__file__).resolve().parents[2]
 revision = '7a4c62795365ed6a97a0184c96375b9fb4d53b1e'
 inventory = {'branch': 'PHP-8.5', 'revision': revision, 'files': {}}
-lock = json.loads((root / 'tools/php85-source-lock.json').read_text())
+lock = json.loads((root / 'tools/8.5/source-lock.json').read_text())
 for name in ['zend_language_parser.y', 'zend_language_scanner.l', 'zend_compile.c']:
     data = (args.source_directory / name).read_bytes()
     if hashlib.sha256(data).hexdigest() != lock[name]:

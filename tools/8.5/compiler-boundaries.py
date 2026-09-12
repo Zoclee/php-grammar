@@ -14,8 +14,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('source_directory', type=Path)
 parser.add_argument('--check', action='store_true')
 args = parser.parse_args()
-root = Path(__file__).resolve().parents[1]
-lock = json.loads((root / 'tools/php85-source-lock.json').read_text())
+root = Path(__file__).resolve().parents[2]
+lock = json.loads((root / 'tools/8.5/source-lock.json').read_text())
 sources = {}
 for name, digest in lock.items():
     data = (args.source_directory / name).read_bytes()

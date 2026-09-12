@@ -27,7 +27,7 @@ parser-valid forms that a surviving compilation check rejects.
 
 The normative source is PHP revision
 [`7a4c62795365ed6a97a0184c96375b9fb4d53b1e`](https://github.com/php/php-src/tree/7a4c62795365ed6a97a0184c96375b9fb4d53b1e).
-The [source lock](../../tools/php85-source-lock.json) pins parser, scanner and
+The [source lock](../../tools/8.5/source-lock.json) pins parser, scanner and
 compiler SHA-256 hashes. PHP 8.5.10 is the executable oracle, with ext-ast 1.1.3,
 schema 120. Both short-tag configurations are tested; `zend.multibyte=0`.
 Multibyte script transcoding, recovery ASTs/diagnostic wording, runtime execution,
@@ -241,23 +241,23 @@ every gate. No failing launch is counted as conformance evidence.
 | `composer grammar:coverage` | Pass: 301/364 productions, 606/790 alternatives; zero unclassified meaningful gaps |
 | `composer lexer:coverage` | Pass: 190 rules, 2,700 direct, 101 primitive, 144 syntax cases |
 | `php bin/php85-conformance.php /path/to/php85` | Pass: 1,371 comparisons; 653 valid, 362 structural-negative, 356 contextual-negative; zero mismatches/exceptions |
-| `php tools/php85-ast-conformance.php` | Pass: 63 positive, 10 negative |
-| `php tools/php85-systematic-structure.php` | Pass: 15,342 sources; 14,287 accepted unique derivations/AST comparisons, 1,055 parser rejections |
-| `php tools/php85-boundary-folding.php /path/to/php85` | Pass: 1,840 comparisons |
+| `php tools/8.5/ast-conformance.php` | Pass: 63 positive, 10 negative |
+| `php tools/8.5/systematic-structure.php` | Pass: 15,342 sources; 14,287 accepted unique derivations/AST comparisons, 1,055 parser rejections |
+| `php tools/8.5/boundary-folding.php /path/to/php85` | Pass: 1,840 comparisons |
 | `composer conformance:phase6` | Pass: 860 cases, including 584 modifiers, 70 folding, 34 ambiguity, 156 recursive and 16 malformed |
-| `php tools/php85-phase6.php --check` | Pass: matrix freshness |
-| `php tools/php85-scanner-product.php` | Pass: 482 comparisons |
-| `php -d short_open_tag=1 tools/php85-lexer-differential.php` | Pass: 2,342 token comparisons, 84 rejection checks, 144 syntax checks, 648 corpus streams |
-| `php -d short_open_tag=0 tools/php85-lexer-differential.php` | Pass: 273 token comparisons, five corpus streams |
-| `php tools/php85-coverage-report.php --check` | Pass |
-| `php tools/php85-negative-report.php --check` | Pass |
-| `python tools/php85-compiler-boundaries.py .audit --check` | Pass: three source hashes, 244 sites, 87 functions, 14 early sites |
-| `python tools/php85-reconcile.py .audit --check` | Pass: 177 productions, 623 alternatives |
-| `python tools/php85-phase6-evidence.py --check` | Pass |
-| `php tools/php85-interpolation-binding.php --check` | Pass: 44 positive, six malformed, 54 operand comparisons |
-| `php tools/php85-diagnostic-witnesses.php --check` | Pass: 20 sites, 40 comparisons |
-| `python tools/php85-source-correspondence.py --check` | Pass: seven files compared, six identical; exact binary remains unverified |
-| `python tools/php85-certification.py --check` | Pass: 14 areas, 73 restrictions, 79 historical dispositions, four final blocker records |
+| `php tools/8.5/phase6.php --check` | Pass: matrix freshness |
+| `php tools/8.5/scanner-product.php` | Pass: 482 comparisons |
+| `php -d short_open_tag=1 tools/8.5/lexer-differential.php` | Pass: 2,342 token comparisons, 84 rejection checks, 144 syntax checks, 648 corpus streams |
+| `php -d short_open_tag=0 tools/8.5/lexer-differential.php` | Pass: 273 token comparisons, five corpus streams |
+| `php tools/8.5/coverage-report.php --check` | Pass |
+| `php tools/8.5/negative-report.php --check` | Pass |
+| `python tools/8.5/compiler-boundaries.py .audit --check` | Pass: three source hashes, 244 sites, 87 functions, 14 early sites |
+| `python tools/8.5/reconcile.py .audit --check` | Pass: 177 productions, 623 alternatives |
+| `python tools/8.5/phase6-evidence.py --check` | Pass |
+| `php tools/8.5/interpolation-binding.php --check` | Pass: 44 positive, six malformed, 54 operand comparisons |
+| `php tools/8.5/diagnostic-witnesses.php --check` | Pass: 20 sites, 40 comparisons |
+| `python tools/8.5/source-correspondence.py --check` | Pass: seven files compared, six identical; exact binary remains unverified |
+| `python tools/8.5/certification.py --check` | Pass: 14 areas, 73 restrictions, 79 historical dispositions, four final blocker records |
 | `git diff --check` | Pass |
 
 The enabled lexical oracle retains one intentional tokenizer-recovery exception
@@ -287,15 +287,15 @@ Added 17 repository files:
   `source-correspondence.json`, `historical-dispositions.md`;
 - `tests/Php/InterpolationSegmentsTest.php`, `tests/Support/InterpolationSegments.php`,
   `tests/fixtures/php/8.5/diagnostic-predicates.json`;
-- `tools/grammar-release.py`, `tools/php85-certification.py`,
-  `tools/php85-diagnostic-witnesses.php`, `tools/php85-interpolation-binding.php`,
-  `tools/php85-source-correspondence.py`.
+- `tools/grammar-release.py`, `tools/8.5/certification.py`,
+  `tools/8.5/diagnostic-witnesses.php`, `tools/8.5/interpolation-binding.php`,
+  `tools/8.5/source-correspondence.py`.
 
 Changed 11 repository files: `README.md`, `composer.json`, `docs/conformance.md`,
 `docs/versioning.md`, `docs/8.5/phase6-conformance-closure.md`,
 `docs/8.5/phase6-evidence.json`, `docs/8.5/phase6-reconciliation.json`,
-`tools/php85-compiler-boundaries.py`, `tools/php85-phase6-evidence.py`,
-`tools/php85-reconcile.py`, and `tools/php85-source-inventory.py`.
+`tools/8.5/compiler-boundaries.py`, `tools/8.5/phase6-evidence.py`,
+`tools/8.5/reconcile.py`, and `tools/8.5/source-inventory.py`.
 The historical JSON changes refresh generator/dependency hashes only.
 No repository files were removed. Source downloads, oracle binaries, probe
 checkouts and command logs remain in ignored `.audit/`.

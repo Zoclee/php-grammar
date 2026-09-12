@@ -2885,7 +2885,7 @@
       "impact": "possible false accept/reject or structural disagreement if the pin differs in audited syntax paths",
       "why": "The three source hashes establish source identity, not executable identity.",
       "evidence": [
-        "tools/php85-source-lock.json",
+        "tools/8.5/source-lock.json",
         "all differential report PHP versions",
         "source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e"
       ],
@@ -2893,12 +2893,12 @@
     }
   ],
   "hashes": {
-    "tools/php85-phase6-evidence.py": "eebd68c2967e911f5cf18d57d6051010dfd1ba0b8c1f508b75b0251cf8cb20b6",
-    "docs/8.5/phase6-reconciliation.json": "5a00d83c91196b5ff1f34e776b4acc1f4d041cadbc937f0728e1d3a3a1d434de",
-    "docs/8.5/phase6-matrices.json": "d5ec7a7367d334235cf0a5383cf0bf15b11f44687049e912d51593087fef8253",
+    "tools/8.5/phase6-evidence.py": "65f6a2e12a4ce739b28d73d64676752420f1317ec8cf3c9ef1deb58e229d54e4",
+    "docs/8.5/phase6-reconciliation.json": "f834f31c79351bd491ef897f586a835566800c8a924d999fa4f1e78b4d7c9f56",
+    "docs/8.5/phase6-matrices.json": "d5105644c2a07415dd8622d3c88ef5ff0cc6d04b414809c4d8637945b319879b",
     "docs/8.5/phase6-upstream-tests.json": "79b14518fdacf4d1cfad9c3028da8337535647a48636489bce9f863cf23a110e",
-    "docs/8.5/phase5-lexical-evidence.json": "648537d742960767ddbb34de441dd503f992c7680252495ce7e297c9766ae6db",
-    "docs/8.5/systematic-structure.json": "c8ee4bb19cc176938a87d1c58576b15279462cce802806d02dc85cd727154acd",
-    "docs/8.5/audit-remediation.md": "4d964cf6eb92bd2d3609ab1970f825a5993d8e23274552e6224486991eba5270"
+    "docs/8.5/phase5-lexical-evidence.json": "14967ed7980aa0c1586b899b46d9cdc6d453fb2607e6a60ea97d1b419611de26",
+    "docs/8.5/systematic-structure.json": "886f292f33dc9defa7d6604d2f54550af1d9394e46dde8c5c7b8f5245321aa76",
+    "docs/8.5/audit-remediation.md": "10b173a8227ad193b32c25b6800e74e81117cd334b034bbe7c438ba9daae102b"
   }
 }

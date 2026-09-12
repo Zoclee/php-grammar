@@ -33,8 +33,8 @@ with `--php`, `--composer`, `--source-directory`, `--source-cache` and `--logs`.
 `PHPRC` selects the oracle ini. Download immutable sources before the offline run:
 
 ```text
-rtk proxy python tools/fetch-php85-sources.py .audit
-rtk proxy python tools/php85-source-correspondence.py --fetch --check
+rtk proxy python tools/8.5/fetch-sources.py .audit
+rtk proxy python tools/8.5/source-correspondence.py --fetch --check
 rtk composer release:check
 ```
 
@@ -73,7 +73,7 @@ Phase 6 evidence; source correspondence, diagnostic and interpolation reports;
 final certification. The last step is:
 
 ```text
-rtk proxy python tools/php85-certification.py
+rtk proxy python tools/8.5/certification.py
 rtk composer release:check
 ```
 

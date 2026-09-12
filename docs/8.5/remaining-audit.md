@@ -35,7 +35,7 @@ by adding an unconditional EBNF restriction.
 
 The source pin remains `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`.
 SHA-256 checks passed for `zend_language_parser.y`, `zend_language_scanner.l`
-and `zend_compile.c` against `tools/php85-source-lock.json`. The executable
+and `zend_compile.c` against `tools/8.5/source-lock.json`. The executable
 oracle is PHP 8.5.10, not a build of the exact pin. The regenerated inventory
 contains 177 parser productions, 190 scanner rule entries, 143 selected compiler
 functions and 366 canonical EBNF productions. Every version remains standalone.
@@ -125,8 +125,8 @@ Reproduction commands:
 ```text
 rtk proxy php vendor/phpunit/phpunit/phpunit --no-progress
 rtk proxy php bin/php85-conformance.php .audit/php85/php.exe
-rtk proxy php tools/php85-coverage-report.php
-rtk proxy python tools/php85-source-inventory.py .audit
+rtk proxy php tools/8.5/coverage-report.php
+rtk proxy python tools/8.5/source-inventory.py .audit
 rtk git diff --check
 ```
 

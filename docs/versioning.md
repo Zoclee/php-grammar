@@ -300,6 +300,9 @@ This distinction must remain clear in directory names, documentation, changelogs
 
 ## 14. Evidence required for a mature new version
 
+Keep version-specific tooling and source locks under `tools/<major.minor>/`,
+such as `tools/8.5/`. Shared release orchestration remains directly under `tools/`.
+
 New versions inherit the testing methodology, never a dependency on another
 grammar. Each version must independently supply a complete EBNF, matching
 Markdown specification, immutable upstream source mapping, lexer configuration,

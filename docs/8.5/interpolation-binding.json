@@ -8,7 +8,7 @@
         "src/Php/Lexing/Lexer.php": "d2da555fc5ec7fabecfa5719ca1f5cc08287886008b5cf6e62d825b65d4172c9",
         "tests/Support/DerivationForest.php": "365824975335ef203920b1ba80989db2f28533028f380b11e40db3c3f3f9f77f",
         "tests/Support/InterpolationSegments.php": "30f8ff0bc7aa668c576a04cb63c8c1377701235725ac65ba5314042581362395",
-        "tools/php85-interpolation-binding.php": "1beca42c23096742043e5b4eef7716b1b443d267c96f6b92392a2968d2e798c8"
+        "tools/8.5/interpolation-binding.php": "7f7adaf72ea39b637f7fe99d4dcc7d56c02d2dd49b5be3ef1336efc7182c11ba"
     },
     "positive": 44,
     "malformed": 6,

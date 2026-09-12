@@ -10,7 +10,7 @@ import json
 import urllib.request
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 PIN = '7a4c62795365ed6a97a0184c96375b9fb4d53b1e'
 RELEASE = '34308a6666b2d489c509541ea9befea9e2b42348'
 FILES = ['Zend/' + name for name in (
@@ -22,7 +22,7 @@ parser.add_argument('--fetch', action='store_true')
 parser.add_argument('--check', action='store_true')
 args = parser.parse_args()
 rows = []
-lock = json.loads((ROOT / 'tools/php85-source-lock.json').read_text())
+lock = json.loads((ROOT / 'tools/8.5/source-lock.json').read_text())
 for name in FILES:
     versions = []
     for revision in [PIN, RELEASE]:

@@ -3,7 +3,7 @@
     "profile": "-n zend.multibyte=0",
     "hashes": {
         "tests/fixtures/php/8.5/diagnostic-predicates.json": "30e944f5f3fae4e52a2ca3f3dc27636593dd0e2efeae89288be4dfdebc41cd5d",
-        "tools/php85-diagnostic-witnesses.php": "0e17a140de5c5ab6a2199089c185391343e5155cd37b2d226a3a47db5bdea781",
+        "tools/8.5/diagnostic-witnesses.php": "efaeadd0a495181d0ec26d1f7ec7666be9e0f9543d455bb8d34eb77667c982f8",
         "grammar/8.5/php.ebnf": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755"
     },
     "sites": 20,

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 use PhpGrammar\Ebnf\Parser;
 use PhpGrammar\Php\Conformance\{PhpGrammarMatcher, Php85ModifierValidator};
@@ -12,7 +12,7 @@ if (PHP_MAJOR_VERSION !== 8 || PHP_MINOR_VERSION !== 5) {
     fwrite(STDERR, "Run with PHP 8.5.\n");
     exit(2);
 }
-$root = dirname(__DIR__);
+$root = dirname(__DIR__, 2);
 $matcher = PhpGrammarMatcher::forRepositoryRoot($root);
 $grammar = (new Parser())->parse(file_get_contents($root . '/grammar/8.5/php.ebnf'));
 $validator = new Php85ModifierValidator();
@@ -82,7 +82,7 @@ try {
     }
 } finally { unlink($file); }
 $hashes = [];
-foreach (['grammar/8.5/php.ebnf', 'src/Php/Conformance/Php85ModifierValidator.php', 'tests/Support/Php85Phase6Cases.php', 'tests/Support/DerivationForest.php', 'tools/php85-phase6.php'] as $path) $hashes[$path] = hash_file('sha256', $root . '/' . $path);
+foreach (['grammar/8.5/php.ebnf', 'src/Php/Conformance/Php85ModifierValidator.php', 'tests/Support/Php85Phase6Cases.php', 'tests/Support/DerivationForest.php', 'tools/8.5/phase6.php'] as $path) $hashes[$path] = hash_file('sha256', $root . '/' . $path);
 $counts = array_count_values(array_column($rows, 'matrix'));
 $report = ['php' => PHP_VERSION, 'hashes' => $hashes, 'counts' => $counts, 'total' => count($rows), 'cases' => $rows, 'failures' => $failures];
 $path = $root . '/docs/8.5/phase6-matrices.json';

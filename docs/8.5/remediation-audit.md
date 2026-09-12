@@ -17,7 +17,7 @@ recursive scanner/parser equivalence or every contextual/deferred compiler path.
 
 The source authority remains PHP-8.5 revision
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`. The three source hashes were checked
-against `tools/php85-source-lock.json`. Executable evidence uses PHP 8.5.10 and
+against `tools/8.5/source-lock.json`. Executable evidence uses PHP 8.5.10 and
 ext-ast 1.1.3, schema 120; that release binary is not a build of the exact pin.
 The lexical/source contract, canonical EBNF and contextual validation remain
 separate. The repository matcher intentionally accepts contextual-negative
@@ -75,7 +75,7 @@ witness or cover deferred checks in other translation units.
 
 ## Systematic structure and ambiguity audit
 
-[The generator](../../tools/php85-systematic-structure.php) enumerates every
+[The generator](../../tools/8.5/systematic-structure.php) enumerates every
 ordered pair of 44 binary spellings, 29 prefix forms against binary operators in
 both positions, pending prefixes, prefix pairs, ternary/postfix interactions,
 reference assignments, repeated chains and nested keyed yields. It retains the
@@ -103,7 +103,7 @@ this matrix. Formal equivalence for arbitrary nesting depth remains unproven.
 
 ## Scanner/parser product
 
-[The product generator](../../tools/php85-scanner-product.php) crosses 31 scanner
+[The product generator](../../tools/8.5/scanner-product.php) crosses 31 scanner
 bodies with seven enclosing source contexts and two short-tag profiles, plus 48
 heredoc/nowdoc EOF boundaries: [482 comparisons](scanner-product.json).
 It covers HTML transitions, shebang, composite enum/yield lookahead, embedded close
@@ -138,15 +138,15 @@ Reproduction (prefix commands with `rtk` in this repository):
 ```text
 php vendor/phpunit/phpunit/phpunit --no-progress
 php bin/php85-conformance.php /path/to/php85
-php tools/php85-boundary-folding.php /path/to/php85
-php85 -d extension=ast tools/php85-ast-conformance.php
-php85 -d extension=ast tools/php85-systematic-structure.php
-php85 tools/php85-scanner-product.php
-php85 -d short_open_tag=1 tools/php85-lexer-differential.php
-php85 -d short_open_tag=0 tools/php85-lexer-differential.php
+php tools/8.5/boundary-folding.php /path/to/php85
+php85 -d extension=ast tools/8.5/ast-conformance.php
+php85 -d extension=ast tools/8.5/systematic-structure.php
+php85 tools/8.5/scanner-product.php
+php85 -d short_open_tag=1 tools/8.5/lexer-differential.php
+php85 -d short_open_tag=0 tools/8.5/lexer-differential.php
 php bin/lexer-coverage.php
 php bin/grammar-coverage.php
-python tools/php85-compiler-boundaries.py /path/to/pinned-sources --check
+python tools/8.5/compiler-boundaries.py /path/to/pinned-sources --check
 ```
 
 ## Files and remaining limits

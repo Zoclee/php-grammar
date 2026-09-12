@@ -203,8 +203,8 @@ composer validate --strict
 composer test
 composer grammar:coverage
 php bin/php85-conformance.php .audit/php85/php.exe
-php tools/php85-coverage-report.php
-php tools/php85-coverage-report.php --check
+php tools/8.5/coverage-report.php
+php tools/8.5/coverage-report.php --check
 ```
 
 Use an official PHP 8.5 binary as described in the audit; the suite's host PHP
@@ -240,7 +240,7 @@ Added implementation, tests, and reports:
 - [src/Php/Conformance/Php85CoverageClassification.php](../../src/Php/Conformance/Php85CoverageClassification.php)
 - [tests/Php/Conformance/Php85CoverageClassificationTest.php](../../tests/Php/Conformance/Php85CoverageClassificationTest.php)
 - [tests/Php/Conformance/Php85LexicalPrimitiveTest.php](../../tests/Php/Conformance/Php85LexicalPrimitiveTest.php)
-- [tools/php85-coverage-report.php](../../tools/php85-coverage-report.php)
+- [tools/8.5/coverage-report.php](../../tools/8.5/coverage-report.php)
 
 Added 65 fixtures under `tests/fixtures/php/8.5/valid/`:
 

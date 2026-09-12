@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 use PhpGrammar\Ebnf\Parser;
 use PhpGrammar\Php\Conformance\PhpGrammarMatcher;
@@ -12,7 +12,7 @@ if (PHP_MAJOR_VERSION !== 8 || PHP_MINOR_VERSION !== 5 || !extension_loaded('ast
     fwrite(STDERR, "Run with PHP 8.5 and ext-ast.\n"); exit(2);
 }
 error_reporting(E_ALL & ~E_DEPRECATED);
-$root = dirname(__DIR__);
+$root = dirname(__DIR__, 2);
 $grammar = (new Parser())->parse(file_get_contents($root . '/grammar/8.5/php.ebnf'));
 $matcher = PhpGrammarMatcher::forRepositoryRoot($root);
 $schema = max(ast\get_supported_versions());
@@ -94,7 +94,7 @@ foreach ($malformed as $source) {
     if ($zend || $matched) $failures[] = compact('source', 'zend', 'matched');
 }
 $hashes = [];
-foreach (['grammar/8.5/php.ebnf', 'src/Php/Lexing/StringSyntax.php', 'src/Php/Lexing/Lexer.php', 'tests/Support/DerivationForest.php', 'tests/Support/InterpolationSegments.php', 'tools/php85-interpolation-binding.php'] as $path) $hashes[$path] = hash_file('sha256', $root . '/' . $path);
+foreach (['grammar/8.5/php.ebnf', 'src/Php/Lexing/StringSyntax.php', 'src/Php/Lexing/Lexer.php', 'tests/Support/DerivationForest.php', 'tests/Support/InterpolationSegments.php', 'tools/8.5/interpolation-binding.php'] as $path) $hashes[$path] = hash_file('sha256', $root . '/' . $path);
 $report = ['php' => PHP_VERSION, 'ast' => phpversion('ast'), 'schema' => $schema, 'hashes' => $hashes,
     'positive' => count($bodies) * 2, 'malformed' => count($malformed), 'operand_comparisons' => $forestCount,
     'limits' => 'Unindented ASCII bodies without escapes; simple bare offset has boundary-only evidence. Nested aggregate strings, closures/classes in embedded expressions, dedent/escape-value normalization and arbitrary recursive binding remain unproven.',

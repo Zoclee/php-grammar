@@ -5,7 +5,7 @@ import json
 import re
 from pathlib import Path
 
-root = Path(__file__).resolve().parents[1]
+root = Path(__file__).resolve().parents[2]
 parser = argparse.ArgumentParser(__doc__)
 parser.add_argument('--check', action='store_true')
 args = parser.parse_args()
@@ -112,10 +112,10 @@ blockers = [
      'area': ['scanner/parser/compiler source-to-oracle correspondence'],
      'impact': 'possible false accept/reject or structural disagreement if the pin differs in audited syntax paths',
      'why': 'The three source hashes establish source identity, not executable identity.',
-     'evidence': ['tools/php85-source-lock.json', 'all differential report PHP versions', 'source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e'],
+     'evidence': ['tools/8.5/source-lock.json', 'all differential report PHP versions', 'source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e'],
      'closure': 'Build the exact pin with ext-ast and rerun the matrices, or document all parser/scanner/compiler changes between the release and pin with targeted evidence.'},
 ]
-hash_paths = ['tools/php85-phase6-evidence.py', 'docs/8.5/phase6-reconciliation.json', 'docs/8.5/phase6-matrices.json',
+hash_paths = ['tools/8.5/phase6-evidence.py', 'docs/8.5/phase6-reconciliation.json', 'docs/8.5/phase6-matrices.json',
               'docs/8.5/phase6-upstream-tests.json', 'docs/8.5/phase5-lexical-evidence.json', 'docs/8.5/systematic-structure.json',
               'docs/8.5/audit-remediation.md']
 report = {'source_pin': reconciliation['source_pin'],
