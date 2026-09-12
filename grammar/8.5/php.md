@@ -19,6 +19,12 @@ standalone lexical or contextual rules in this specification. The
 resolves the previously recorded discarded-closure witnesses and expands
 coverage to the broader declaration category. Full conformance remains unproven.
 
+Grammar Completeness Phase 5 supplies a rule-by-rule scanner audit and direct
+byte/token evidence in the [Phase 5 report](../../docs/php85-phase5-lexer-audit.md).
+The canonical EBNF is unchanged. The source contract below incorporates the
+confirmed lookahead and EOF corrections. One newly recorded discarded-unset
+folding discrepancy remains outside the current removed-cast grammar policy.
+
 Sources are `php-src` branch `PHP-8.5`, pinned at
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`:
 
@@ -66,6 +72,21 @@ whitespace. `/*` ends at the **first** `*/`; comments do not nest. `/**` followe
 by scanner whitespace starts a documentation comment; other `/**` forms remain
 ordinary block comments. `#[` starts an attribute, never a `#` comment.
 
+That attribute rule applies in normal scripting state. While looking for a
+property after `->` or `?->`, `#` still begins a line comment, including `#[`.
+Zend's composite yield-from lookahead also has its own comment boundaries:
+`yield // ?>` followed by a newline and `from` is one composite token when the
+complete lookahead matches. That embedded closing tag does not leave PHP mode.
+The lookahead comment macros exclude NUL, although ordinary comments can contain
+NUL. These distinctions apply inside braced interpolation as well.
+
+`enum` is a keyword only before scanner whitespace/comments and a label-start
+byte, except when the longer lookahead matches `extends` or `implements`.
+Those two exclusions have no identifier-end requirement: `enum extendsName`
+starts with an identifier token. `from` is a keyword terminal only as part of
+the composite yield-from form. The token adapter must preserve those categories
+when matching EBNF terminals; identifier primitives retain the original lexemes.
+
 ### Lexical primitives
 
 These external primitives are explicitly declared in `php-grammar.json`.
@@ -102,8 +123,11 @@ Heredoc/nowdoc require a header newline. Spaces/tabs may follow `<<<`; no
 trailing header whitespace follows the label or its quote. A heredoc label may
 be unquoted or double quoted; a nowdoc label is single quoted. The closing label
 must equal the opening label byte for byte, start at a line boundary after
-optional indentation, and not be followed by an identifier byte. It need not
-be followed by a semicolon or newline. All nonblank lines of text in the active heredoc/nowdoc state must have at least
+optional indentation, and be followed by a non-identifier source byte: a closing
+label ending at exact file EOF is not recognized. A standalone rule fragment
+is tested with a trailing newline boundary; complete files get no such boundary.
+The following byte need not be a semicolon or newline.
+All nonblank lines of text in the active heredoc/nowdoc state must have at least
 the closing indentation. Lines inside nested scripting or nested strings are
 not outer heredoc text and do not inherit its indentation requirement. Tabs and spaces must not be mixed in the indentation
 being stripped. Blank lines may have less indentation. The scanner enforces
@@ -428,6 +452,13 @@ excluded. `${...}` interpolation and backticks have applicable deprecations;
 deprecation is not syntax rejection. Other deprecations unrelated to grammar
 do not remove accepted forms.
 
+The removed forms have different implementation boundaries: `(real)` raises a
+scanner parser-mode error, while Zend still emits `T_UNSET_CAST` and rejects
+surviving unset casts during compilation. PHP 8.5.10 accepts
+`false && (unset) 1;` after folding. That is a recorded implementation/grammar
+acceptance discrepancy for Phase 6; the canonical grammar continues excluding
+the removed cast. It must not be described as an equivalent lexical rejection.
+
 ## Remaining discrepancies and deliberate abstractions
 
 - Parser/compiler declaration boundaries have been broadened for common members,
@@ -448,6 +479,9 @@ do not remove accepted forms.
   now recurses through nested interpolation, comments and heredoc labels.
   Its token abstraction is not Zend's exact token stream. Source acceptance
   across the complete scanner/parser product has not been proven equivalent.
+  Phase 5 now maps all 190 scanner rules to reviewed dispositions and direct
+  evidence. Remaining uncertainty concerns exhaustive combinations and the
+  documented abstractions, rather than silently unaudited scanner families.
 - External lexical primitives require a stateful scanner; raw character-only
   expansion is not a PHP source validator. Numeric overflow token/value
   categorization is deliberately abstracted while preserving numeral spelling.

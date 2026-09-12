@@ -24,6 +24,11 @@ final readonly class PhpGrammarInput implements Input
     public function valueAt(int $offset): string
     {
         $token = $this->tokenAt($offset);
+        if ($token->type === TokenType::Identifier && in_array(strtolower($token->lexeme), ['enum', 'from'], true)) {
+            // These spellings are keyword terminals only when scanner lookahead
+            // selected them. Identifier primitives still consume the original token.
+            return "\0identifier:" . $token->lexeme;
+        }
         if ($token->type === TokenType::Keyword && str_starts_with($token->lexeme, '__')
             && strtolower($token->lexeme) !== '__halt_compiler') {
             return strtoupper($token->lexeme);

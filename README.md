@@ -4,15 +4,25 @@
 
 Versioned EBNF grammars and human-readable specifications for the PHP language syntax.
 
-php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [remaining discrepancies](docs/php85-parser-compiler-remediation.md).
+php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation. PHP 8.5 is under active conformance audit; see [Phase 5 findings and limits](docs/php85-phase5-lexer-audit.md).
 
 The PHP 8.5 parser/compiler boundary audit reconciles common class-like members,
 enum types, trait aliases, hooks, attributes and try syntax. It adds 85
 live/retained/discarded declaration families and corrects an alternative-if
-binding error using Zend AST evidence. The corpus contains 599 valid, 347
+binding error using Zend AST evidence. The corpus contains 602 valid, 349
 structural-negative and 276 contextual-negative files across both short-tag
 profiles. The previously recorded discarded-closure examples now pass.
 Full PHP 8.5 conformance is not established.
+
+Grammar Completeness Phase 5 audits all 190 pinned scanner rules across 25
+families. `composer lexer:coverage` checks independent byte/token expectations,
+lexical primitives, and a [persistent evidence ledger](docs/php85-phase5-lexical-evidence.json).
+It preserves the 52 primitive-bypassed and 11 removed-trivia productions without
+inflating syntactic coverage. The audit fixes enum/yield lookahead, keyword
+adaptation, heredoc EOF handling, removed `(real)` recognition, and CRLF tracking.
+One newly recorded folding discrepancy, `false && (unset) 1;`, remains for
+Phase 6. See the [audit report](docs/php85-phase5-lexer-audit.md) for reproduction
+commands, source-byte guarantees, scanner abstractions, and validation totals.
 
 Current positive evidence is recorded in the generated coverage report.
 Rejection evidence has a separate [boundary ledger](docs/php85-negative-boundaries.md),
@@ -160,6 +170,7 @@ Install dependencies and run the PHPUnit suite:
 composer install
 composer test
 composer grammar:coverage
+composer lexer:coverage
 ```
 
 Phase 1 parses every `grammar/<version>/php.ebnf` file with the project's EBNF

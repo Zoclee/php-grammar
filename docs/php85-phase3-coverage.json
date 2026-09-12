@@ -10,11 +10,11 @@
     "current": {
         "productions": 300,
         "total_productions": 363,
-        "alternatives": 601,
+        "alternatives": 600,
         "total_alternatives": 785,
         "attempted_productions": 300,
         "attempted_alternatives": 602,
-        "valid_fixtures_default_profile": 594,
+        "valid_fixtures_default_profile": 597,
         "rule_cases": 246
     },
     "remaining_counts": {
@@ -25,6 +25,7 @@
         "alternative": {
             "contextual-only": 1,
             "primitive-bypassed": 174,
+            "scanner-context-only": 1,
             "trivia-removed": 9
         }
     },
@@ -1796,6 +1797,14 @@
             "area": "source/lexical",
             "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
             "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "alternative",
+            "identity": "reserved-non-modifiers/alternative:25",
+            "classification": "scanner-context-only",
+            "area": "source/lexical",
+            "reason": "The non-primitive path is an unmodified trait alias immediately before a semicolon. enum is then T_STRING, handled by identifier; the T_ENUM lookahead requires a following label-start byte. Earlier coverage incorrectly matched its identifier spelling as a keyword terminal.",
+            "evidence": "docs/php85-phase5-lexer-audit.md; scanner rules 1568/1572; trait_alias parser production; phase3 keyword-alias corpus"
         },
         {
             "kind": "alternative",
@@ -5090,10 +5099,10 @@
         {
             "kind": "alternative",
             "identity": "reserved-non-modifiers/alternative:25",
-            "classification": "meaningful-valid-syntax",
-            "area": "reserved-non-modifiers",
-            "evidence": "fixture:phase3-trait-keyword-aliases.php",
-            "reason": "Positive witness added in Phase 3."
+            "classification": "scanner-context-only",
+            "area": "source/lexical",
+            "reason": "The non-primitive path is an unmodified trait alias immediately before a semicolon. enum is then T_STRING, handled by identifier; the T_ENUM lookahead requires a following label-start byte. Earlier coverage incorrectly matched its identifier spelling as a keyword terminal.",
+            "evidence": "docs/php85-phase5-lexer-audit.md; scanner rules 1568/1572; trait_alias parser production; phase3 keyword-alias corpus"
         },
         {
             "kind": "alternative",
@@ -6444,7 +6453,6 @@
         "reserved-non-modifiers/alternative:22": "fixture:phase3-trait-keyword-aliases.php",
         "reserved-non-modifiers/alternative:23": "fixture:phase3-trait-keyword-aliases.php",
         "reserved-non-modifiers/alternative:24": "fixture:phase3-trait-keyword-aliases.php",
-        "reserved-non-modifiers/alternative:25": "fixture:phase3-trait-keyword-aliases.php",
         "reserved-non-modifiers/alternative:26": "fixture:phase3-trait-keyword-aliases.php",
         "reserved-non-modifiers/alternative:27": "fixture:phase3-trait-keyword-aliases.php",
         "reserved-non-modifiers/alternative:28": "fixture:phase3-trait-keyword-aliases.php",
@@ -6552,7 +6560,7 @@
         "simple-type/alternative:17": "fixture:audit-types-return-static.php",
         "simple-type/alternative:18": "fixture:007-functions-types.php",
         "simple-type/alternative:2": "fixture:boundary-constant-callable-discarded.php",
-        "simple-type/alternative:3": "rule:type #104",
+        "simple-type/alternative:3": "fixture:phase5-yield-comment-close.php",
         "simple-type/alternative:4": "rule:type #106",
         "simple-type/alternative:5": "fixture:009-anonymous-class-access.php",
         "simple-type/alternative:6": "rule:type #110",

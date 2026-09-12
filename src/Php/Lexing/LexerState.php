@@ -38,16 +38,15 @@ final class LexerState
         for ($index = 0; $index < $length; $index++) {
             $char = $this->source[$this->offset + $index];
             if ($char === "\r") {
-                if (($this->source[$this->offset + $index + 1] ?? null) === "\n") {
-                    $index++;
-                }
                 $this->line++;
                 $this->column = 1;
                 continue;
             }
 
             if ($char === "\n") {
-                $this->line++;
+                if ($this->offset + $index === 0 || $this->source[$this->offset + $index - 1] !== "\r") {
+                    $this->line++;
+                }
                 $this->column = 1;
                 continue;
             }

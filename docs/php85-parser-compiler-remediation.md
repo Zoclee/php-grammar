@@ -1,5 +1,12 @@
 # PHP 8.5 parser/compiler boundary remediation
 
+Phase 5 update: the declaration and AST decisions below remain in force.
+The [scanner audit](php85-phase5-lexer-audit.md) now adds direct evidence for all
+190 scanner rules and records one new folding discrepancy, `false && (unset) 1;`.
+The historical statement below about zero recorded discrepancies describes this
+report's original validation, not the current corpus. Current counts and the
+corrected scanner-sensitive coverage classification are in the Phase 5 report.
+
 The confirmed declaration-boundary mismatches are corrected. The ordinary
 fixture corpus now agrees with PHP 8.5.10, including the two formerly isolated
 discarded-closure witnesses. A newly discovered alternative-if binding error
@@ -34,7 +41,9 @@ captures, methods, hooks, properties, constants, enums, traits, declarations,
 namespaces/imports, constant folding and constant-expression validation.
 Defensive downstream checks do not imply parser acceptance: for example,
 readonly methods already fail target conversion in a parser action, and the
-scanner no longer supplies the removed unset-cast form. Direct diagnostic-site
+scanner rejects the removed real-cast form in parser mode. Correction from
+Phase 5: the scanner does still supply `T_UNSET_CAST`; the compiler rejects
+surviving unset casts, and short-circuit folding can discard one. Direct diagnostic-site
 enumeration is not a proof that all indirect, deferred or environment-dependent
 validation paths have been covered by fixtures.
 

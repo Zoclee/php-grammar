@@ -79,7 +79,9 @@ final readonly class PhpGrammarMatcher
     private function tokenizeForRule(Lexer $lexer, string $rule, string $source): TokenStream
     {
         $wholeSource = $rule === 'source-file' || str_starts_with($source, '<?');
-        $tokens = $lexer->tokenize($wholeSource ? $source : '<?php ' . $source)->withoutTrivia()->all();
+        // A fragment has a following source boundary; Zend requires a byte after
+        // an ending heredoc label. Whole files retain their exact EOF behavior.
+        $tokens = $lexer->tokenize($wholeSource ? $source : '<?php ' . $source . "\n")->withoutTrivia()->all();
         $result = [];
         foreach ($tokens as $token) {
             if ($token->type === TokenType::OpenTag) {

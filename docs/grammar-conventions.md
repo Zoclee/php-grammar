@@ -1,5 +1,13 @@
 # Grammar Conventions
 
+PHP 8.5's [Phase 5 scanner audit](php85-phase5-lexer-audit.md) defines the current
+byte-oriented source profile and lexical evidence policy. Token offsets,
+lengths, and columns count raw bytes; CRLF is one newline. Lexical primitives
+and removed trivia have direct evidence outside syntactic production coverage.
+Scanner-state requirements apply before EBNF matching, including contextual
+keyword categories and heredoc closing-label lookahead. Do not traverse
+bypassed character productions artificially to raise grammar percentages.
+
 This document defines the canonical EBNF notation and grammar-writing conventions used by the `php-grammar` repository.
 
 The purpose is to ensure that every PHP grammar version is written consistently, is understandable by humans, and can be consumed by general-purpose tooling without relying on parser-generator-specific syntax.

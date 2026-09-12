@@ -1,5 +1,21 @@
 # Sources
 
+The [Phase 5 scanner audit](php85-phase5-lexer-audit.md) and generated
+[lexical evidence ledger](php85-phase5-lexical-evidence.json) map every one of
+the 190 pinned scanner rules to states, implementation, positive/boundary
+evidence, and disposition. The same source pin and SHA-256 lock remain in use.
+Supporting review includes `zend_scan_escape_string`, indentation/newline and
+nesting helpers, parser identifier feedback, and the halt directive.
+
+New source-backed corrections concern enum prefix lookahead (scanner 1568–1574),
+atomic yield-from and NUL-sensitive comment macros (1388–1392, 1426–1429),
+removed real-cast parser-mode rejection (1664–1669), and heredoc/nowdoc labels
+requiring a following byte (2729, 3000, 3124). Zend still emits `T_UNSET_CAST`
+(1708–1709); surviving casts are rejected by the compiler (10472, 12366).
+The recorded `false && (unset) 1;` acceptance witness belongs to Phase 6 folding
+closure. Optional PHP 8.5.10 tokenizer/lint comparisons cross-check these
+findings without replacing the source definition or repository lexer.
+
 ## PHP 8.5 implementation pin
 
 The current remediation uses branch `PHP-8.5` at commit

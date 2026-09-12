@@ -14,11 +14,21 @@ final class Php85CoverageClassification
     private array $trivia = [];
     private array $bypassed = [];
     private array $contextualOnly = [];
+    private array $scannerContextOnly = [];
 
     /** @param list<string> $primitives */
     public function __construct(Grammar $grammar, array $primitives)
     {
         $map = $grammar->productionMap();
+        $reserved = $map['reserved-non-modifiers']->expression ?? null;
+        if ($reserved instanceof AlternativeNode) {
+            $identities = CoverageIdentityMap::fromGrammar($grammar);
+            foreach ($reserved->alternatives as $index => $alternative) {
+                if ($alternative instanceof LiteralNode && $alternative->value === 'enum') {
+                    $this->scannerContextOnly[$identities->alternativeId($reserved, $index)] = true;
+                }
+            }
+        }
         $types = $map['simple-type-without-static']->expression ?? null;
         if ($types instanceof AlternativeNode) {
             $identities = CoverageIdentityMap::fromGrammar($grammar);
@@ -63,6 +73,11 @@ final class Php85CoverageClassification
             return ['classification' => 'contextual-only', 'area' => 'types',
                 'reason' => 'never/void are return-only; this helper is used for parameters and properties. Positive type/return coverage exists, but this placement has no valid source witness.',
                 'evidence' => 'Php85CoverageCases type matrix; contextual-invalid/audit-types-parameter-void.php; docs/php85-audit-remediation.md'];
+        }
+        if (isset($this->scannerContextOnly[$identity])) {
+            return ['classification' => 'scanner-context-only', 'area' => 'source/lexical',
+                'reason' => 'The non-primitive path is an unmodified trait alias immediately before a semicolon. enum is then T_STRING, handled by identifier; the T_ENUM lookahead requires a following label-start byte. Earlier coverage incorrectly matched its identifier spelling as a keyword terminal.',
+                'evidence' => 'docs/php85-phase5-lexer-audit.md; scanner rules 1568/1572; trait_alias parser production; phase3 keyword-alias corpus'];
         }
         return ['classification' => 'meaningful-gap', 'area' => $production,
             'reason' => 'Needs positive evidence or explicit investigation; never automatically suppressed.', 'evidence' => ''];

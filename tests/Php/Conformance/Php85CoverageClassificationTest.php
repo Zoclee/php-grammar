@@ -30,4 +30,12 @@ final class Php85CoverageClassificationTest extends TestCase
         self::assertSame('meaningful-gap', $classifier->classify('simple-type-without-static/alternative:2')['classification']);
         self::assertSame('contextual-only', $classifier->classify('simple-type-without-static/alternative:3')['classification']);
     }
+
+    public function testEnumAliasClassificationFollowsTheScannerSensitiveAlternative(): void
+    {
+        $grammar = (new Parser())->parse('source-file = reserved-non-modifiers; reserved-non-modifiers = "match" | "enum";');
+        $classifier = new Php85CoverageClassification($grammar, []);
+        self::assertSame('meaningful-gap', $classifier->classify('reserved-non-modifiers/alternative:1')['classification']);
+        self::assertSame('scanner-context-only', $classifier->classify('reserved-non-modifiers/alternative:2')['classification']);
+    }
 }

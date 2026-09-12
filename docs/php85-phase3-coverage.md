@@ -1,5 +1,13 @@
 # PHP 8.5 Grammar Completeness — Phase 3 of 7
 
+Phase 5 update: [the scanner audit](php85-phase5-lexer-audit.md) supersedes
+scanner-evidence gaps and current counts in this historical report. It maps
+all 190 scanner rules, preserves 52 primitive-bypassed and 11 removed-trivia
+productions, and removes one false reserved-enum alternative hit (601 to 600).
+The original contextual-only alternative remains; one scanner-context-only
+alternative is now explicit. A newly recorded discarded-unset folding witness
+is assigned to Phase 6. Historical phase-specific results below are retained.
+
 Phase 3 establishes systematic positive evidence for the major PHP 8.5 syntax
 areas. Every remaining uncovered identity has an explicit classification.
 This completes the positive-coverage phase, not the full conformance audit.

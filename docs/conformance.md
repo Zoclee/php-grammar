@@ -144,9 +144,9 @@ The [parser/compiler boundary remediation](php85-parser-compiler-remediation.md)
 removes the earlier structural restrictions responsible for discarded nested
 declaration discrepancies. Parser-action constraints still precede folding.
 
-The current ordinary corpus is 599 valid, 347 structural-negative, and 276
-contextual-negative fixtures (1,222 total), with no separately recorded
-acceptance discrepancy. Both source-tag profiles run through PHP 8.5.10 using the existing
+The current ordinary corpus is 602 valid, 349 structural-negative, and 276
+contextual-negative fixtures (1,227 total), with one separately recorded
+Phase 6 folding discrepancy (`false && (unset) 1;`). Both source-tag profiles run through PHP 8.5.10 using the existing
 runner. The binary is a cross-check of expectations derived from pinned source;
 neither lint acceptance nor fixture agreement proves complete conformance.
 
@@ -163,3 +163,42 @@ the negative ledger with `php tools/php85-negative-report.php`; `--check` detect
 changes to ledger metadata, grammar, fixture content or corpus membership.
 PHPUnit checks fixture/ledger parity, production references, classifications,
 distinct repairs, contextual-review completeness and report freshness.
+
+## Scanner evidence (Grammar Completeness Phase 5)
+
+`composer lexer:coverage` executes independent source/token matrices, numeric
+and string primitives, and whole-source lexical integration cases. It checks
+the generated [lexical ledger](php85-phase5-lexical-evidence.json) for freshness;
+use `composer lexer:coverage -- --write` after reviewed changes. The ledger maps
+each of the 190 source rules and every remaining primitive/trivia grammar
+identity to implementation, states, evidence, and disposition. It measures
+reviewed families, not a synthetic traversal percentage.
+
+The source API accepts raw bytes under `zend.multibyte=0`, including invalid
+UTF-8. Offsets, lengths, and columns count bytes; CRLF counts as one newline.
+The lexer does not perform encoding conversion. Complete strings are aggregate
+tokens; `StringSyntax` and EBNF validate interpolated fragments. Whole-file EOF
+is exact. The non-root fragment API adds a trailing newline boundary so a
+standalone heredoc label has a following byte. This boundary is not payload.
+
+`enum` and `from` identifier tokens cannot match their keyword terminals;
+identifier primitives still see their original spellings. Zend's atomic
+yield-from is split into two keywords plus retained trivia, including comments
+whose tag-like text is inside that atomic token. Trivia remains removed before
+syntactic matching. Numeric overflow, malformed-input recovery, and composite
+string tokenization have explicit dispositions in the report.
+
+The optional scanner oracle runs separately from correctness:
+
+```text
+php-8.5 -d short_open_tag=1 tools/php85-lexer-differential.php
+php-8.5 -d short_open_tag=0 tools/php85-lexer-differential.php
+```
+
+It compares independent expected tokens with normalized Zend tokens, checks
+lexical rejection/integration cases in parser mode, and compares token streams
+for the ordinary valid corpus. Token values and internal string-token counts
+are intentionally abstracted. `token_get_all()` is used only by this optional
+tool, never by the lexer, primitives, coverage correctness, or normal PHPUnit
+recognition. See [Phase 5](php85-phase5-lexer-audit.md) for the normalization
+rules, known folding discrepancy, and remaining proof limits.

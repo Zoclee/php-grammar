@@ -1335,7 +1335,7 @@
           "line": 2283
         },
         {
-          "rule": "<SHEBANG>\"#!\" .*",
+          "rule": "<SHEBANG>\"#!\" .* {NEWLINE}",
           "line": 2287
         },
         {

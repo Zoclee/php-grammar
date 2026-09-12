@@ -22,7 +22,7 @@ for name in ['zend_language_parser.y', 'zend_language_scanner.l', 'zend_compile.
         entries = [{'name': m[1], 'line': i + 1} for i, line in enumerate(lines)
                    if (m := re.match(r'^([a-z][a-z_]*):', line))]
     elif name.endswith('.l'):
-        entries = [{'rule': line.split(' {')[0], 'line': i + 1} for i, line in enumerate(lines)
+        entries = [{'rule': line.rsplit(' {', 1)[0], 'line': i + 1} for i, line in enumerate(lines)
                    if re.match(r'^<[A-Z_,]+>', line)]
     else:
         entries = [{'name': m[1], 'line': i + 1} for i, line in enumerate(lines)

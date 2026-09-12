@@ -19,6 +19,9 @@ final class Lexer
 
     private const PUNCTUATION = [';', ':', ',', '(', ')', '[', ']', '{', '}', '\\', '$'];
 
+    // Zend's lookahead macros deliberately exclude NUL, unlike ordinary comments.
+    private const LOOKAHEAD_TRIVIA = '(?:[ \t\r\n]+|/\*[^*\x00]*\*+(?:[^*/\x00][^*\x00]*\*+)*/|//[^\x00\r\n]*[\r\n]|\#(?:[^\[\x00][^\x00\r\n]*[\r\n]|[\r\n]))';
+
     public function __construct(
         private readonly PhpVersion $version,
     ) {
@@ -92,21 +95,38 @@ final class Lexer
             }
 
             $token = $this->consumePhpToken($state, $lookingForProperty);
-            $previous = $last === [] ? null : $last[array_key_last($last)];
-            if ($token->type === TokenType::Identifier && strtolower($token->lexeme) === 'from'
-                && $previous?->type === TokenType::Keyword && strtolower($previous->lexeme) === 'yield') {
-                // The EBNF spells Zend's atomic T_YIELD_FROM as two terminals.
-                $token = new Token(TokenType::Keyword, $token->lexeme, $token->offset,
-                    $token->length, $token->line, $token->column);
-            }
             $tokens[] = $token;
             if (!$token->isTrivia()) {
                 $last = array_slice([...$last, $token], -4);
                 $lookingForProperty = in_array($token->lexeme, ['->', '?->'], true);
             }
+            if ($token->type === TokenType::Keyword && strtolower($token->lexeme) === 'yield') {
+                $tail = $this->consumeYieldFromTail($state);
+                array_push($tokens, ...$tail);
+                if ($tail !== []) $last = array_slice([...$last, $tail[array_key_last($tail)]], -4);
+            }
         }
 
         return new TokenStream($tokens);
+    }
+
+    /** @return list<Token> Zend's composite token, split for the EBNF terminals. */
+    private function consumeYieldFromTail(LexerState $state): array
+    {
+        if (preg_match('~^(' . self::LOOKAHEAD_TRIVIA . '+)from(?![a-zA-Z0-9_\x80-\xff])~i',
+            substr($state->source, $state->offset), $yieldFrom) !== 1) return [];
+        /* Atomic even with ?> inside a line comment, including nested scripting. */
+        $tokens = [];
+        $end = $state->offset + strlen($yieldFrom[1]);
+        while ($state->offset < $end) {
+            preg_match('~^' . self::LOOKAHEAD_TRIVIA . '~', substr($state->source, $state->offset), $trivia);
+            $text = $trivia[0];
+            $type = $this->isWhitespace($text[0]) ? TokenType::Whitespace
+                : (preg_match('~^/\*\*[ \t\r\n]~', $text) ? TokenType::DocComment : TokenType::Comment);
+            $tokens[] = $state->consume(strlen($text), $type);
+        }
+        $tokens[] = $state->consume(4, TokenType::Keyword);
+        return $tokens;
     }
 
     private function consumeOpenTag(LexerState $state): Token
@@ -172,6 +192,10 @@ final class Lexer
         }
         if (($char === 'b' || $char === 'B') && substr($state->source, $state->offset + 1, 3) === '<<<') {
             return $this->consumeHereString($state, 1);
+        }
+
+        if (preg_match('/^\([ \t]*real[ \t]*\)/i', substr($state->source, $state->offset)) === 1) {
+            throw $state->error('The (real) cast has been removed; use (float).');
         }
 
         if (preg_match('/^\([ \t]*(?:integer|double|boolean|binary|int|float|string|array|object|bool|void)[ \t]*\)/i', substr($state->source, $state->offset), $cast) === 1) {
@@ -293,6 +317,9 @@ final class Lexer
                 continue;
             }
             $token = $this->consumePhpToken($state, $lookingForProperty);
+            if ($token->type === TokenType::Keyword && strtolower($token->lexeme) === 'yield') {
+                $this->consumeYieldFromTail($state);
+            }
             if ($token->lexeme === '{') $depth++;
             if ($token->lexeme === '}' && --$depth === 0) return $token->offset;
             if (!$token->isTrivia()) $lookingForProperty = in_array($token->lexeme, ['->', '?->'], true);
@@ -325,7 +352,7 @@ final class Lexer
 
         $bodyStart = $this->lineBreakEnd($state->source, $lineEnd);
         $body = substr($state->source, $bodyStart);
-        $pattern = '/(?:\A|(?<=[\r\n]))([ \t]*)' . preg_quote($label, '/') . '(?![A-Za-z0-9_\x80-\xff])/';
+        $pattern = '/(?:\A|(?<=[\r\n]))([ \t]*)' . preg_quote($label, '/') . '(?=[^A-Za-z0-9_\x80-\xff])/';
         $searchOffset = 0;
         $found = false;
         while (preg_match($pattern, $body, $match, PREG_OFFSET_CAPTURE, $searchOffset) === 1) {
@@ -424,9 +451,10 @@ final class Lexer
         }
         if (strtolower($lexeme) === 'enum') {
             $tail = substr($state->source, $state->offset + $length);
-            $trivia = '(?:[ \t\r\n]+|/\*.*?\*/|//[^\r\n]*(?:\r\n|\r|\n)|\#(?!\[)[^\r\n]*(?:\r\n|\r|\n))+';
-            $enumKeyword = preg_match('~^' . $trivia . '([a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*)~s', $tail, $next) === 1
-                && !in_array(strtolower($next[1]), ['extends', 'implements'], true);
+            $trivia = self::LOOKAHEAD_TRIVIA . '+';
+            // The longer exclusion rule has no identifier-end assertion.
+            $enumKeyword = preg_match('~^' . $trivia . '[a-zA-Z_\x80-\xff]~', $tail) === 1
+                && preg_match('~^' . $trivia . '(?:extends|implements)~i', $tail) !== 1;
             return $state->consume($length, $enumKeyword ? TokenType::Keyword : TokenType::Identifier);
         }
         return $state->consume($length, $this->version->isKeyword($lexeme) ? TokenType::Keyword : TokenType::Identifier);
