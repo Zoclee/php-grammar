@@ -217,7 +217,7 @@ versions to inherit methodology and independent evidence, never grammar
 dependencies. The existing single-version manifest and boundary test framework
 remain compatible; no future version has been fabricated.
 
-`composer release:check` runs the complete 23-gate set: strict Composer validation,
+`composer release:check` runs the complete 24-gate set: strict Composer validation, expression-generation freshness,
 PHPUnit, grammar/lexer coverage, ordinary differential, explicit/systematic AST,
 declaration folding, Phase 6 matrices and freshness, scanner product, both lexical
 oracles, positive/negative report freshness, compiler source hashes, parser

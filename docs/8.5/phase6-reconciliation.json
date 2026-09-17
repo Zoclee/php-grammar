@@ -6,12 +6,12 @@
     "zend_compile.c": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225"
   },
   "hashes": {
-    "grammar/8.5/php.ebnf": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755",
-    "docs/8.5/phase3-coverage.json": "c679f6423ba4f9a874ffe439b648343fd5c2c38d64c6a78469a6df9230464c4d",
-    "docs/8.5/negative-boundaries.json": "852fea73afe110094dab954adcabab184d36c353613bfdf264cd010026522e8f",
+    "grammar/8.5/php.ebnf": "82807ea33d4d21239b3a400ab71a7776f07ec5b5eaa1aa013fe1257121564203",
+    "docs/8.5/phase3-coverage.json": "a87b6e18c47763726856d46711fbcd3b8a09c6f70d4a318b02462bd35d6e6513",
+    "docs/8.5/negative-boundaries.json": "84a21d08e0985c774f283b73dd6311495434f34849cbd5e8ac96b469ed4f3575",
     "tests/fixtures/php/8.5/parser-compiler-boundaries.json": "20a19b518308828b8e09e0356bbf92b68fa6dfc1c34e989d1071f52f36315633",
     "docs/8.5/compiler-boundaries.json": "66c2dfe1bfff7af8a403163266de9f949d090d6215b758fc8a39c50c528e4c60",
-    "tools/8.5/reconcile.py": "fbd818b2abdd8a480314087d37efd084878732b0d8aee0ec4bc1886c54010b27"
+    "tools/8.5/reconcile.py": "e95d6c4f116578ea1b42a2c1efce921b9b29fc6eada7cd1b43c564456f17d2ff"
   },
   "method": "Exact-name or explicit reviewed production anchors; every RHS and action call retained. Evidence links are indexed at production/function-family granularity, not proofs of branch coverage.",
   "parser_productions": 177,
@@ -5169,9 +5169,7 @@
       "zend": "class_statement_list",
       "line": 973,
       "ebnf": [
-        "class-member-list",
-        "interface-member-list",
-        "enum-member-list"
+        "class-member-list"
       ],
       "alternatives": [
         {
@@ -5182,9 +5180,7 @@
           ],
           "layer": "syntax/AST-construction",
           "ebnf": [
-            "class-member-list",
-            "interface-member-list",
-            "enum-member-list"
+            "class-member-list"
           ]
         },
         {
@@ -5195,17 +5191,13 @@
           ],
           "layer": "syntax/AST-construction",
           "ebnf": [
-            "class-member-list",
-            "interface-member-list",
-            "enum-member-list"
+            "class-member-list"
           ]
         }
       ],
       "abstraction": "All class-like declarations share member syntax; declaration-kind legality is checked only on surviving declarations.",
       "positive_witnesses": {
-        "class-member-list": "fixture:008-classes-interfaces-traits-enums.php",
-        "interface-member-list": "fixture:008-classes-interfaces-traits-enums.php",
-        "enum-member-list": "fixture:008-classes-interfaces-traits-enums.php"
+        "class-member-list": "fixture:008-classes-interfaces-traits-enums.php"
       },
       "lexical_evidence": {},
       "negative_boundaries": [
@@ -5400,9 +5392,7 @@
       "zend": "class_statement",
       "line": 1001,
       "ebnf": [
-        "class-member",
-        "interface-member",
-        "enum-member"
+        "class-member"
       ],
       "alternatives": [
         {
@@ -5411,9 +5401,7 @@
           "action_calls": [],
           "layer": "syntax/AST-construction",
           "ebnf": [
-            "class-member",
-            "interface-member",
-            "enum-member"
+            "class-member"
           ]
         },
         {
@@ -5424,9 +5412,7 @@
           ],
           "layer": "syntax/AST-construction",
           "ebnf": [
-            "class-member",
-            "interface-member",
-            "enum-member"
+            "class-member"
           ]
         },
         {
@@ -5437,17 +5423,13 @@
           ],
           "layer": "syntax/AST-construction",
           "ebnf": [
-            "class-member",
-            "interface-member",
-            "enum-member"
+            "class-member"
           ]
         }
       ],
       "abstraction": "List recursion/options are represented by EBNF repetition/options; AST allocation and source locations are not syntax constraints.",
       "positive_witnesses": {
-        "class-member": "fixture:008-classes-interfaces-traits-enums.php",
-        "interface-member": "fixture:008-classes-interfaces-traits-enums.php",
-        "enum-member": "fixture:008-classes-interfaces-traits-enums.php"
+        "class-member": "fixture:008-classes-interfaces-traits-enums.php"
       },
       "lexical_evidence": {},
       "negative_boundaries": [],

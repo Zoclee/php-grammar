@@ -78,9 +78,9 @@ global_var_list global-variable-list
 global_var global-variable
 static_var_list static-variable-list
 static_var static-variable
-class_statement_list class-member-list interface-member-list enum-member-list
+class_statement_list class-member-list
 attributed_class_statement property-declaration method-declaration class-constant-declaration enum-case
-class_statement class-member interface-member enum-member
+class_statement class-member
 class_name_list name-list
 trait_adaptations trait-adaptation-block
 trait_adaptation_list trait-adaptation-block

@@ -12,9 +12,9 @@
         "tests/Support/Php85LexicalCases.php": "99622eff32493ae9309a0c04a462725891ecd3e96d52c504d4937df258ab9485",
         "tests/Support/Php85LexicalAudit.php": "5414f585fa3a57a6a2aa59c61dd731060bc165329f48db62e2d6336a38ddecb6",
         "tools/8.5/lexer-differential.php": "df60d675d5de4ecead189ec83ba5959d49efc1f470611e13ab9a14a69311928c",
-        "docs/8.5/source-inventory.json": "92b74ee4330cbec1039d15d49180daa6ff7dcd5ffd5755c5d7d0101360a898f3",
-        "docs/8.5/phase3-coverage.json": "c679f6423ba4f9a874ffe439b648343fd5c2c38d64c6a78469a6df9230464c4d",
-        "grammar/8.5/php.ebnf": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755"
+        "docs/8.5/source-inventory.json": "936aa6ed5a533b500010723c2c8215b3d72db961c70f5b06b4f3e911ca3350e4",
+        "docs/8.5/phase3-coverage.json": "a87b6e18c47763726856d46711fbcd3b8a09c6f70d4a318b02462bd35d6e6513",
+        "grammar/8.5/php.ebnf": "82807ea33d4d21239b3a400ab71a7776f07ec5b5eaa1aa013fe1257121564203"
     },
     "families": {
         "tags": {

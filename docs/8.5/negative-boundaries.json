@@ -1430,7 +1430,7 @@
     {
       "id": "phase4-traits-enums-enum-bare-semicolon",
       "area": "traits-enums",
-      "production": "enum-member-list",
+      "production": "class-member-list",
       "category": "unexpected extra element",
       "classification": "structural-negative",
       "negative": "invalid/phase4-traits-enums-enum-bare-semicolon.php",

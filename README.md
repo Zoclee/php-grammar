@@ -211,8 +211,14 @@ composer conformance:phase6 # requires PHP 8.5
 composer conformance:interpolation # requires PHP 8.5 and ext-ast
 composer conformance:diagnostics # requires PHP 8.5
 composer certification:check # requires Python and cached pinned sources
-composer release:check # complete 23-gate validation; see prerequisites below
+composer release:check # complete 24-gate validation; see prerequisites below
 ```
+
+PHP 8.5 binary expression and prefix-context families are maintained with
+`php tools/8.5/generate-expressions.php`; use `--check` to verify freshness,
+then run `php tools/8.5/sync-documentation.php` after grammar edits. The
+[simplification audit](docs/8.5/grammar-simplification-audit.md) records all
+production decisions and validation evidence. Consumers use the standalone EBNF.
 
 The complete release gate requires PHP 8.5 with ext-ast and PHPUnit extensions,
 Python 3.10+, Composer, Git and RTK on PATH. Fetch source evidence once with

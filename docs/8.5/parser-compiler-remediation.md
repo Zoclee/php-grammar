@@ -59,7 +59,7 @@ validation paths have been covered by fixtures.
 
 | Productions | Parser evidence | Contextual validation |
 |---|---|---|
-| `class-member`, `interface-member`, `enum-member` | `class_statement_list`, `class_statement`, `attributed_class_statement`, lines 973-1006 | `zend_compile_prop_decl`, `zend_compile_enum_case`, `zend_compile_use_trait`, `zend_begin_method_decl`: declaration-kind restrictions on properties, cases, trait use, method visibility and bodies. |
+| `class-member-list`, `class-member` | `class_statement_list`, `class_statement`, `attributed_class_statement`, lines 973-1006 | `zend_compile_prop_decl`, `zend_compile_enum_case`, `zend_compile_use_trait`, `zend_begin_method_decl`: declaration-kind restrictions on properties, cases, trait use, method visibility and bodies. |
 | `enum-backing-type` | `enum_backing_type: ':' type_expr`, 655-657 | `zend_compile_enum_backing_type`: backing type must be int/string when compiled. |
 | `trait-alias-modifier` | `trait_alias`, 1036-1052, method-target modifier conversion | `zend_check_trait_alias_modifiers`: static/abstract aliases fail compilation. Readonly/set-visibility aliases still fail parser actions. |
 | `property-hook-list`, `property-hook` | `property_hook_list`, `property_hook`, `optional_parameter_list`, 1136-1177 | `zend_compile_property_hooks`: nonempty valid hook kinds, uniqueness, parameter shape, visibility, bodies and finality. |

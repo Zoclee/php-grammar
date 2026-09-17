@@ -1,7 +1,7 @@
 {
     "php": "8.5.10",
     "hashes": {
-        "grammar/8.5/php.ebnf": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755",
+        "grammar/8.5/php.ebnf": "82807ea33d4d21239b3a400ab71a7776f07ec5b5eaa1aa013fe1257121564203",
         "src/Php/Conformance/Php85ModifierValidator.php": "42f697a7fe1e8382772605d6c37d7a6a12cf647f69b5a39318f1b33c2e68b0a0",
         "tests/Support/Php85Phase6Cases.php": "f5eee9ec256477c8bb50ea08551f8d79408b2c44c77436b117aa743934b1c142",
         "tests/Support/DerivationForest.php": "365824975335ef203920b1ba80989db2f28533028f380b11e40db3c3f3f9f77f",

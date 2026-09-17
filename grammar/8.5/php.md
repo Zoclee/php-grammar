@@ -339,8 +339,9 @@ Authoritative compiler areas include `zend_compile_params`,
 ### Parser/compiler declaration boundary
 
 All class, interface, trait, enum, and anonymous-class bodies use the same
-`class-member` alternatives, corresponding to `class_statement_list` and
-`class_statement` (parser lines 973–1006). Optional attributes apply to ordinary
+`class-member-list` and `class-member` productions directly, corresponding to
+`class_statement_list` and `class_statement` (parser lines 973–1006).
+Optional attributes apply to ordinary
 and hooked properties, methods, class constants, and enum cases; they do not
 apply to trait-use statements. Declaration-kind legality is checked only when
 the declaration is compiled. In particular, enum properties, non-enum cases,
@@ -550,11 +551,18 @@ and `non_empty_for_exprs`).
 
 ## Syntactic productions
 
+Binary precedence and matching prefix-context families are maintained by
+`tools/8.5/generate-expressions.php`; its output remains explicit standalone EBNF.
+The [simplification audit](../../docs/8.5/grammar-simplification-audit.md) records
+all production decisions and equivalence checks. Declaration-kind legality
+remains contextual after removing the interface/enum member aliases.
+
 The following block is generated verbatim from `php.ebnf` and checked for parity.
 
 <!-- BEGIN GENERATED EBNF -->
 ```ebnf
 (* Standalone PHP 8.5 syntactic EBNF over the source-token stream.
+   Binary expression/prefix families: tools/8.5/generate-expressions.php.
    Apply the lexical-state contract and contextual constraints in php.md. *)
 
 source-file =
@@ -705,7 +713,7 @@ single-quoted-string =
     [ "b" | "B" ] , "'" , single-quoted-string-content , "'" ;
 
 double-quoted-string =
-    [ "b" | "B" ] , "\"" , [ encapsulated-string-part , { encapsulated-string-part } ] , "\"" ;
+    [ "b" | "B" ] , "\"" , { encapsulated-string-part } , "\"" ;
 
 heredoc-string =
     [ "b" | "B" ] , "<<<" , { " " | "\t" } ,
@@ -1348,16 +1356,10 @@ constant-element =
 
 interface-declaration =
     "interface" , identifier , [ interface-extends-clause ] ,
-    "{" , interface-member-list , "}" ;
+    "{" , class-member-list , "}" ;
 
 interface-extends-clause =
     "extends" , name-list ;
-
-interface-member-list =
-    { interface-member } ;
-
-interface-member =
-    class-member ;
 
 trait-declaration =
     "trait" , identifier , "{" , class-member-list , "}" ;
@@ -1385,16 +1387,10 @@ trait-method-reference =
 
 enum-declaration =
     "enum" , identifier , [ enum-backing-type ] , [ implements-clause ] ,
-    "{" , enum-member-list , "}" ;
+    "{" , class-member-list , "}" ;
 
 enum-backing-type =
     ":" , type ;
-
-enum-member-list =
-    { enum-member } ;
-
-enum-member =
-    class-member ;
 
 enum-case =
     "case" , semi-reserved-identifier , [ "=" , enum-case-initializer ] , ";" ;

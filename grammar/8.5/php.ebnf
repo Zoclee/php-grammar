@@ -1,4 +1,5 @@
 (* Standalone PHP 8.5 syntactic EBNF over the source-token stream.
+   Binary expression/prefix families: tools/8.5/generate-expressions.php.
    Apply the lexical-state contract and contextual constraints in php.md. *)
 
 source-file =
@@ -149,7 +150,7 @@ single-quoted-string =
     [ "b" | "B" ] , "'" , single-quoted-string-content , "'" ;
 
 double-quoted-string =
-    [ "b" | "B" ] , "\"" , [ encapsulated-string-part , { encapsulated-string-part } ] , "\"" ;
+    [ "b" | "B" ] , "\"" , { encapsulated-string-part } , "\"" ;
 
 heredoc-string =
     [ "b" | "B" ] , "<<<" , { " " | "\t" } ,
@@ -792,16 +793,10 @@ constant-element =
 
 interface-declaration =
     "interface" , identifier , [ interface-extends-clause ] ,
-    "{" , interface-member-list , "}" ;
+    "{" , class-member-list , "}" ;
 
 interface-extends-clause =
     "extends" , name-list ;
-
-interface-member-list =
-    { interface-member } ;
-
-interface-member =
-    class-member ;
 
 trait-declaration =
     "trait" , identifier , "{" , class-member-list , "}" ;
@@ -829,16 +824,10 @@ trait-method-reference =
 
 enum-declaration =
     "enum" , identifier , [ enum-backing-type ] , [ implements-clause ] ,
-    "{" , enum-member-list , "}" ;
+    "{" , class-member-list , "}" ;
 
 enum-backing-type =
     ":" , type ;
-
-enum-member-list =
-    { enum-member } ;
-
-enum-member =
-    class-member ;
 
 enum-case =
     "case" , semi-reserved-identifier , [ "=" , enum-case-initializer ] , ";" ;

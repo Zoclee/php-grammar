@@ -1,5 +1,5 @@
 {
-    "grammar_sha256": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755",
+    "grammar_sha256": "82807ea33d4d21239b3a400ab71a7776f07ec5b5eaa1aa013fe1257121564203",
     "method": "Completed chart items during accepted positive inputs, not unique successful derivations or AST equivalence. Primitive successes are separate. Invalid inputs affect attempted coverage only.",
     "baseline": {
         "productions": 236,
@@ -8,11 +8,11 @@
         "attempted_alternatives": 563
     },
     "current": {
-        "productions": 301,
-        "total_productions": 364,
+        "productions": 297,
+        "total_productions": 360,
         "alternatives": 606,
         "total_alternatives": 790,
-        "attempted_productions": 301,
+        "attempted_productions": 297,
         "attempted_alternatives": 607,
         "valid_fixtures_default_profile": 648,
         "rule_cases": 246
@@ -5999,8 +5999,6 @@
         "enum-case": "fixture:008-classes-interfaces-traits-enums.php",
         "enum-case-initializer": "fixture:008-classes-interfaces-traits-enums.php",
         "enum-declaration": "fixture:008-classes-interfaces-traits-enums.php",
-        "enum-member": "fixture:008-classes-interfaces-traits-enums.php",
-        "enum-member-list": "fixture:008-classes-interfaces-traits-enums.php",
         "equality-expression": "fixture:001-open-close.php",
         "equality-expression/alternative:1": "fixture:phase4-expressions-equality-chain.php",
         "equality-expression/alternative:2": "fixture:phase4-expressions-equality-chain.php",
@@ -6107,8 +6105,6 @@
         "integer-literal/alternative:5": "fixture:audit-numbers-prefixes.php",
         "interface-declaration": "fixture:008-classes-interfaces-traits-enums.php",
         "interface-extends-clause": "fixture:boundary-interface-extends-static-discarded.php",
-        "interface-member": "fixture:008-classes-interfaces-traits-enums.php",
-        "interface-member-list": "fixture:008-classes-interfaces-traits-enums.php",
         "intersection-type": "fixture:audit-types-dnf.php",
         "intersection-type-without-static": "fixture:007-functions-types.php",
         "isset-variable": "fixture:phase3-language-intrinsics.php",

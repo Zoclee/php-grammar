@@ -38,7 +38,7 @@ rtk proxy python tools/8.5/source-correspondence.py --fetch --check
 rtk composer release:check
 ```
 
-The runner is the durable CI/release entry point. It executes all 23 gates,
+The runner is the durable CI/release entry point. It executes all 24 gates,
 keeps per-command logs and machine-readable exit codes, and fails if any fails.
 A CI job must install those prerequisites, restore/fetch the immutable source
 cache, run this command and retain the logs. No raw coverage percentage gate is
@@ -55,7 +55,7 @@ permitted as a substitute for classified coverage.
 | Folding-sensitive validity | Declaration folding, Phase 6 direct folding, PHPUnit remediation cases |
 | Contextual evidence and honest enforcement status | Modifier matrix, diagnostic witnesses, diagnostic disposition ledger |
 | Source correspondence | Three normative hashes; seven-file pin/release comparison |
-| Generated artifacts | Matrix/report freshness and final evidence input hashes |
+| Generated artifacts | Expression-generation and matrix/report freshness; final evidence input hashes |
 
 The exact-pin executable is an additional prerequisite for any future
 exact-executable certification. Passing today's gates cannot silently promote

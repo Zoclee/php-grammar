@@ -2,7 +2,7 @@
     "php": "8.5.10",
     "ast": "1.1.3",
     "schema": 120,
-    "grammar_sha256": "6aef064684ab180f137c1bcc820b7e3ee98ce61e7a2577dffbfb3858ad068755",
+    "grammar_sha256": "82807ea33d4d21239b3a400ab71a7776f07ec5b5eaa1aa013fe1257121564203",
     "generator_sha256": "5bdc29ba0417bd0d974d1dcd9449e3a7eaddecdb6e48a196975ce239ed5864a6",
     "forest_sha256": "365824975335ef203920b1ba80989db2f28533028f380b11e40db3c3f3f9f77f",
     "families": {

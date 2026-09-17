@@ -27,6 +27,7 @@ p = [php, '-d', 'zend.multibyte=0']
 py = [sys.executable]
 commands = [
     ('composer-validate', composer + ['validate', '--strict']),
+    ('expression-generation', p + ['tools/8.5/generate-expressions.php', '--check']),
     ('phpunit', composer + ['test', '--', '--no-progress']),
     ('grammar-coverage', composer + ['grammar:coverage']),
     ('lexer-coverage', composer + ['lexer:coverage']),

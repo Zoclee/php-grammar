@@ -138,8 +138,6 @@ final class VersionPackageConsistencyTest extends TestCase
             'property-hook-modifiers',
             'method-modifiers',
             'class-constant-modifiers',
-            'interface-member-list',
-            'enum-member-list',
             'line-comment-text',
             'block-comment-text',
             'doc-comment-text',
