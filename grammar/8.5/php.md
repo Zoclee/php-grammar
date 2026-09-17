@@ -1,43 +1,16 @@
-# PHP 8.5 grammar and source contract
+# PHP 8.5 syntax specification
 
-This standalone specification has three parts: lexical/source rules, syntactic
-EBNF, and contextual syntax constraints. All three apply when deciding whether
-source is valid PHP 8.5. The EBNF is the repository's authoritative syntactic
-artifact; it is not by itself an implementation of all Zend compile-time checks.
-The implementation remains under audit. The verification limits below prevent
-a claim of full PHP 8.5 conformance.
+## Status and scope
 
-Grammar Completeness Phase 4 adds paired negative-boundary evidence without
-changing the canonical productions below. Its 250 new structural-negative
-fixtures reject during repository recognition; 22 new contextual-negative
-fixtures parse structurally and reject during PHP compilation. All have nearby
-valid repairs. The [boundary ledger](../../docs/8.5/negative-boundaries.md)
-records source evidence and the [Phase 4 report](../../docs/8.5/phase4-negative-coverage.md)
-records methodology and validation. This evidence does not replace the
-standalone lexical or contextual rules in this specification. The
-[parser/compiler boundary remediation](../../docs/8.5/parser-compiler-remediation.md)
-resolves the previously recorded discarded-closure witnesses and expands
-coverage to the broader declaration category. Full conformance remains unproven.
+This standalone specification describes PHP 8.5 source syntax: byte-level
+recognition, structural syntax, and contextual syntax constraints. It is a
+repository specification grounded in the pinned PHP implementation, not an
+official PHP language standard or a proof of full PHP conformance.
 
-Grammar Completeness Phase 5 supplies a rule-by-rule scanner audit and direct
-byte/token evidence in the [Phase 5 report](../../docs/8.5/phase5-lexer-audit.md).
-The source contract incorporates the confirmed lookahead and EOF corrections.
-The subsequent [remediation audit](../../docs/8.5/remediation-audit.md) corrects
-the nullable for-condition prefix and reconciles the removed unset cast with
-the parser/compiler boundary.
-
-Grammar Completeness Phase 6 adds production/action reconciliation, systematic
-binding evidence, early modifier-list validation and bounded recursive tests.
-Parser actions run before discarded-branch folding; surviving declaration,
-write and type checks run afterward. In particular, `never` parameters fail
-when their declaration survives, but may occur inside a discarded closure.
-That distinction does not change the EBNF below. Builtin type literal/name
-helper overlap does not change the interpreted type. The repository's modifier
-API checks only an identified list; it is not a whole-source validity verdict.
-The [Phase 6 report](../../docs/8.5/phase6-conformance-closure.md) indexes evidence
-and implementation limits; the lexical and contextual specification here
-remains standalone. Exact malformed-input recovery and runtime execution are
-outside the source-validity contract.
+[`php.ebnf`](php.ebnf) is authoritative for structural syntax. The source and
+lexical rules and contextual constraints in this document also apply when
+deciding whether source is valid. Runtime execution and exact malformed-input
+recovery are outside this source-validity contract.
 
 Sources are `php-src` branch `PHP-8.5`, pinned at
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`:
@@ -46,15 +19,89 @@ Sources are `php-src` branch `PHP-8.5`, pinned at
 - [Scanner](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_language_scanner.l)
 - [Compiler](https://github.com/php/php-src/blob/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_compile.c)
 
-PHP 8.5.10 CLI lint is the executable comparison used in this audit. It is a
+PHP 8.5.10 CLI lint is the executable comparison used for bounded differential evidence. It is a
 released patch build, not a build of the exact branch commit. Source references
 below use function/production names, which remain useful if line numbers move.
 
-## Lexical/source rules
+## Conformance model
+
+Source validity requires all three applicable layers:
+
+### Layer 1 — Source/lexical rules
+
+These rules define byte-level source recognition, scanner states and their
+stack, tokens, PHP/HTML transitions, comments, strings, heredoc/nowdoc behavior,
+and lexical primitives. A stateful scanner must apply them before structural
+matching; character-only expansion of the EBNF is insufficient.
+
+### Layer 2 — Syntactic EBNF
+
+The canonical EBNF defines structural syntax over the resulting token/source
+abstraction. It is complete and independently consumable for PHP 8.5.
+Structural acceptance alone does not establish source validity.
+
+### Layer 3 — Contextual syntax constraints
+
+These mandatory constraints describe parser-action and compiler restrictions
+that the context-free EBNF does not faithfully or usefully encode. Parser actions
+run before folding; later compiler checks apply in their actual compilation
+contexts, including whether an AST survives folding. This layer is not a claim
+that the repository implements every contextual validator.
+
+In normative prose, **must** and **must not** express requirements, **may**
+expresses permission, and **is** describes a required property. Examples and
+implementation explanations illustrate the rules; they do not override them.
+Verified rules remain normative within this source profile. Bounded tests do
+not establish exhaustive scanner, parser, or compiler equivalence; see
+[known abstractions and conformance limits](#known-abstractions-and-conformance-limits).
+
+### Reading guide
+
+- [Source and lexical model](#source-and-lexical-model),
+  [scanner states](#scanner-state-transitions), [names](#names-and-tokens), and
+  [literals](#literals-and-strings) define the input model.
+- [Types](#types), [expressions](#expressions-and-precedence),
+  [dereferencing](#variables-calls-and-dereferencing),
+  [arguments and arrays](#arguments-and-arrays), and
+  [statements](#statements-and-control-flow) explain structural distinctions.
+- [Functions](#functions-closures-and-parameters),
+  [classes](#classes-interfaces-traits-and-enums),
+  [namespaces](#namespaces-and-imports), and [attributes](#attributes)
+  identify declaration boundaries.
+- [Constant expressions](#constant-expressions),
+  [contextual constraints](#contextual-syntax-constraints), and
+  [parser/compiler boundaries](#parsercompiler-boundary-rules) specify validation.
+- [Deprecated and removed forms](#deprecated-but-accepted-syntax), the generated
+  [production index](#production-index), [canonical EBNF](#canonical-ebnf), and
+  [conformance evidence](#conformance-evidence) provide lookup and traceability.
+
+### Terminology
+
+| Term | Meaning in this specification |
+|---|---|
+| Source / byte stream | Input bytes under the source profile below. |
+| Token | A scanner-classified unit; token category and source spelling are distinct. |
+| Terminal | A quoted EBNF symbol matched through the token/source abstraction. |
+| Primitive | An external lexical byte rule with explicit state and delimiter constraints. |
+| Identifier / name | An identifier has a position-specific token category; a name may be qualified or namespace-relative. |
+| Expression | A structural expression; acceptance in an initializer or write position needs its contextual checks. |
+| `variable` / `variable-expression` | Respectively lexical `T_VARIABLE` and Zend's syntactic `variable` category. |
+| Callable / dereferenceable | Syntactic categories for calls/access; neither guarantees runtime callability or a valid write target. |
+| Structural / contextual | EBNF acceptance / additional mandatory parser-action or compiler constraints. |
+| Parser action | Validation executed during a Bison reduction, before discarded-branch folding. |
+| Compiler validation | Checks after parsing, in the relevant compilation context. |
+| Folding | Zend's specified compile-time AST traversal and simplification, not arbitrary user-code evaluation. |
+| Visited AST | A node reached by the folding traversal; folding-time errors still apply. |
+| Discarded branch / AST | A branch removed by folding; it still had to satisfy lexical validity and parser actions. |
+| Surviving AST | The tree remaining for constant-expression and subsequent compiler validation. |
+
+## Source and lexical model
 
 The input is a byte stream with `zend.multibyte=0`. PHP does not require Unicode
 normalization or valid UTF-8 in identifiers. A consumer using Zend's multibyte
 conversion must perform that configured conversion before this byte model.
+
+### Opening and closing tags
 
 The initial state is HTML. Only recognized opening tags enter PHP mode:
 
@@ -71,6 +118,8 @@ not a long opening tag. PHP scanner states for strings and block comments do
 not treat embedded tags as source transitions. Single-line comments stop at
 CR, LF, EOF, or `?>`. The closing tag itself is processed after the comment.
 
+### PHP/HTML transitions, terminators and EOF
+
 The syntactic root consumes **one token stream**, not independently complete
 PHP regions. Inline HTML emits a nonempty statement token (`T_INLINE_HTML`).
 Thus `<?php if ($x): ?>text<?php endif; ?>` is one conditional statement.
@@ -81,17 +130,22 @@ Once an opening tag is recognized, malformed PHP cannot be reclassified as HTML.
 `__halt_compiler();` ends parsing; subsequent bytes are uninterpreted payload.
 Its placement is subject to the outermost-scope contextual restriction.
 
+### Whitespace and comments
+
 Whitespace is one or more bytes from space, HT, LF, CR. FF and VT are not PHP
 whitespace. `/*` ends at the **first** `*/`; comments do not nest. `/**` followed
 by scanner whitespace starts a documentation comment; other `/**` forms remain
-ordinary block comments. `#[` starts an attribute, never a `#` comment.
+ordinary block comments. In normal scripting state, `#[` starts an attribute,
+never a `#` comment.
 
-That attribute rule applies in normal scripting state. While looking for a
-property after `->` or `?->`, `#` still begins a line comment, including `#[`.
+### State-sensitive comment and keyword lookahead
+
+While looking for a property after `->` or `?->`, `#` still begins a line
+comment, including `#[`.
 Zend's composite yield-from lookahead also has its own comment boundaries:
 `yield // ?>` followed by a newline and `from` is one composite token when the
 complete lookahead matches. That embedded closing tag does not leave PHP mode.
-The lookahead comment macros exclude NUL, although ordinary comments can contain
+The lookahead comment macros exclude NUL, although ordinary comments may contain
 NUL. These distinctions apply inside braced interpolation as well.
 
 `enum` is a keyword only before scanner whitespace/comments and a label-start
@@ -100,6 +154,9 @@ Those two exclusions have no identifier-end requirement: `enum extendsName`
 starts with an identifier token. `from` is a keyword terminal only as part of
 the composite yield-from form. The token adapter must preserve those categories
 when matching EBNF terminals; identifier primitives retain the original lexemes.
+
+Source: the pinned scanner’s `ST_IN_SCRIPTING`, `ST_LOOKING_FOR_PROPERTY`,
+opening-tag rules and composite `T_YIELD_FROM` recognition.
 
 ### Lexical primitives
 
@@ -118,71 +175,47 @@ groups those bytes into tokens. They are not unrestricted token wildcards.
 | `encapsed-code-unit` | Text byte within the active double-quote, backtick, or heredoc state, excluding its closing delimiter, backslash, and interpolation starts. |
 | `nowdoc-code-unit` | Uninterpreted body byte before the matching closing label at a line start, respecting indentation. |
 
-`escape-sequence` consumes a backslash and its following byte. Single quotes
-decode only `\\` and `\'`; other escapes preserve their backslash. Interpolating
-strings decode `\n`, `\r`, `\t`, `\v`, `\e`, `\f`, `\\`, `\$`, the applicable
-escaped quote, up to three octal digits, one or two hexadecimal digits after
-`\x`, and `\u{HEX}`. Unicode escapes require at least one hexadecimal digit,
-a closing brace, and a value no greater than 0x10FFFF. Unknown escapes remain
-text; they are not all syntax errors. Binary `b`/`B` prefixes are accepted.
-
-Complex `{$foo}` interpolation consumes `{` followed by the existing variable
-syntax; the dollar sign is not duplicated. Simple interpolated offsets have
-scanner-specific identifier, numeric-string, or variable forms, not arbitrary
-quoted expressions. Braced interpolation re-enters PHP scanning. `${...}`
-forms remain accepted but deprecated. Backticks are expressions, not constant
-string literals.
-
-Heredoc/nowdoc require a header newline. Spaces/tabs may follow `<<<`; no
-trailing header whitespace follows the label or its quote. A heredoc label may
-be unquoted or double quoted; a nowdoc label is single quoted. The closing label
-must equal the opening label byte for byte, start at a line boundary after
-optional indentation, and be followed by a non-identifier source byte: a closing
-label ending at exact file EOF is not recognized. A standalone rule fragment
-is tested with a trailing newline boundary; complete files get no such boundary.
-The following byte need not be a semicolon or newline.
-All nonblank lines of text in the active heredoc/nowdoc state must have at least
-the closing indentation. Lines inside nested scripting or nested strings are
-not outer heredoc text and do not inherit its indentation requirement. Tabs and spaces must not be mixed in the indentation
-being stripped. Blank lines may have less indentation. The scanner enforces
-label equality and indentation; these are lexical constraints beyond ordinary
-context-free EBNF. An empty body is valid.
-
-### Scanner state transitions
+## Scanner state transitions
 
 The scanner maintains a stack; a string is not terminated by a quote, brace or
 heredoc label that belongs to a nested state. The following transitions are
 normative, following the pinned scanner's named states:
 
-| Active state | Event and transition |
-|---|---|
-| SHEBANG | At executable-file entry with shebang skipping enabled, consume an initial `#!` line including its newline and enter INITIAL. Otherwise replay the input in INITIAL. `#!` in scripting is an ordinary hash comment. |
-| INITIAL | Emit HTML until a recognized enabled opening tag; enter ST_IN_SCRIPTING. Short-tag configuration applies at every re-entry, including nested interpolation. |
-| ST_IN_SCRIPTING | Quotes/backticks enter their string state. A valid heredoc header pushes its label and enters ST_HEREDOC or ST_NOWDOC. `{` pushes scripting; `}` pops its matching state. `?>` enters INITIAL and emits a semicolon. |
-| ST_DOUBLE_QUOTES / ST_BACKQUOTE / ST_HEREDOC | Escapes and text remain in this state. `{$` pushes scripting and leaves `$` for normal variable scanning; `${` pushes ST_LOOKING_FOR_VARNAME. A simple variable followed immediately by `[` enters ST_VAR_OFFSET; a following `->`/`?->` enters property lookup only when an identifier-start byte follows the operator immediately. |
-| ST_LOOKING_FOR_VARNAME | A label immediately followed by `[` or `}` emits T_STRING_VARNAME (including keyword spellings) and replaces this state with scripting. Otherwise replay the next byte in scripting. This distinguishes `${class[0]}` from `${name + 1}`. |
-| ST_LOOKING_FOR_PROPERTY | Whitespace and comments retain lookup state. `->`/`?->` retain it; a label emits an ordinary property identifier and pops it. Any other byte pops and is replayed in the enclosing state. In particular `#[` here starts a hash comment, unlike its attribute meaning in scripting. |
-| ST_VAR_OFFSET | Accept a label, variable, or T_NUM_STRING optionally preceded by `-`; `]` restores the string state. Quotes, comments, whitespace and floating-point spellings are not offset syntax. A following second offset is literal text unless a braced interpolation starts it. |
-| ST_HEREDOC / ST_NOWDOC | Recognize only the active label at a line boundary, with the indentation and identifier-boundary conditions above. A label inside a nested interpolation/string cannot close the outer heredoc. ST_NOWDOC performs no interpolation/escape decoding. ST_END_HEREDOC pops the label and restores scripting. |
+| Current state | Recognized event | Token or parser effect | Next state / stack action | Special rule |
+|---|---|---|---|---|
+| SHEBANG | Initial `#!` with executable-file shebang skipping enabled | Consume line including newline | INITIAL | Otherwise replay input in INITIAL; scripting `#!` is an ordinary hash comment. |
+| INITIAL | HTML or recognized enabled opening tag | Emit HTML; tag effect follows the opening-tag table | ST_IN_SCRIPTING on opening tag | Short-tag configuration applies at every re-entry, including nested interpolation. |
+| ST_IN_SCRIPTING | Quote or backtick | Begin string | Corresponding string state | Nested delimiters belong to their own state. |
+| ST_IN_SCRIPTING | Valid heredoc/nowdoc header | Begin labeled string | Push label; enter ST_HEREDOC / ST_NOWDOC | Header requires a newline. |
+| ST_IN_SCRIPTING | `{` / `}` | Braced scripting structure | Push scripting / pop matching state | HTML braces do not pop this stack. |
+| ST_IN_SCRIPTING | `?>` | Emit `;` | INITIAL | Consume one immediately following CRLF, CR or LF. |
+| ST_DOUBLE_QUOTES / ST_BACKQUOTE / ST_HEREDOC | Text or escape | String content | Remain | Delimiters in nested states do not close this string. |
+| Same interpolating states | `{$` | Begin braced interpolation; leave `$` for variable scanning | Push scripting | Normal PHP scanning resumes. |
+| Same interpolating states | `${` | Begin deprecated interpolation form | Push ST_LOOKING_FOR_VARNAME | Varnames use the following lookahead. |
+| Same interpolating states | Simple variable immediately followed by `[` | Begin simple offset | ST_VAR_OFFSET | A second offset is text unless braced interpolation begins it. |
+| Same interpolating states | Simple variable followed by `->` / `?->` | Begin simple property lookup | ST_LOOKING_FOR_PROPERTY | An identifier-start byte must immediately follow the operator. |
+| ST_LOOKING_FOR_VARNAME | Label immediately followed by `[` or `}` | Emit T_STRING_VARNAME, including keyword spellings | Replace with scripting | Distinguishes `${class[0]}` from `${name + 1}`. |
+| ST_LOOKING_FOR_VARNAME | Other input | Replay next byte | Scripting | No varname token from the failed lookahead. |
+| ST_LOOKING_FOR_PROPERTY | Whitespace, comment, `->` or `?->` | Retain property lookup | Remain | `#[` starts a hash comment here. |
+| ST_LOOKING_FOR_PROPERTY | Label | Emit ordinary property identifier | Pop lookup state | Keyword spelling is allowed. |
+| ST_LOOKING_FOR_PROPERTY | Other byte | Replay byte in enclosing state | Pop lookup state | Failed lookup does not consume the byte. |
+| ST_VAR_OFFSET | Label, variable, or T_NUM_STRING; closing `]` | Simple offset | `]` restores string state | Only T_NUM_STRING may have a leading `-`; quotes, comments, whitespace and floating-point spellings are excluded. |
+| ST_HEREDOC / ST_NOWDOC | Active closing label at line boundary | End labeled string | ST_END_HEREDOC pops label and restores scripting | Apply [closing-label and indentation rules](#heredoc-and-nowdoc); nested labels cannot close the outer string. ST_NOWDOC does not interpolate or decode escapes. |
 
 Comments have meaning in scripting and property lookup; their markers are text
 in the enclosing string states. Braced interpolation can itself contain a
 closure that exits PHP with `?>` and re-enters it: intervening HTML braces do
 not close the interpolation. Nested strings use the same rules recursively.
 
+### Interpolated offsets
+
 T_NUM_STRING spelling is decimal LNUM (including leading zeroes and separators),
 HNUM, BNUM or ONUM. Plain decimal values within the signed-long range may carry
 an integer token value; other spellings keep their source text as the offset
-string. Do not validate `08` as an octal PHP numeral in this state. The parser's
-leading minus is separate; it is not allowed before a label or variable.
+string. A scanner must not validate `08` as an octal PHP numeral in this state.
+The parser's leading minus is separate; it is not allowed before a label or variable.
 
-`yield` plus scanner whitespace/comments plus `from` with an identifier boundary
-is the case-insensitive T_YIELD_FROM token. This EBNF spells it as two terminals;
-the adapter must preserve that lexical decision. `&` lookahead selects Zend's
-two ampersand token categories across whitespace/comments; their identical
-spelling does not remove reference/type-position restrictions.
-
-### Names and literal tokens
+## Names and tokens
 
 Identifier byte spelling is `[A-Za-z_\x80-\xFF][A-Za-z0-9_\x80-\xFF]*`.
 That spelling does not imply every occurrence becomes `T_STRING`.
@@ -205,13 +238,75 @@ An unqualified reserved keyword does not become a callable name through a
 character-level production. Group imports have a separate trailing namespace
 separator before `{`; it is not part of the preceding name token.
 
+### Composite yield-from and ampersand categories
+
+`yield` plus scanner whitespace/comments plus `from` with an identifier boundary
+is the case-insensitive T_YIELD_FROM token. This EBNF spells it as two terminals;
+the adapter must preserve that lexical decision. `&` lookahead selects Zend's
+two ampersand token categories across whitespace/comments; their identical
+spelling does not remove reference/type-position restrictions.
+
+## Literals and strings
+
+### Numeric literals
+
 Numbers follow scanner `LNUM`, `DNUM`, `EXPONENT_DNUM`, `HNUM`, `BNUM`, `ONUM`.
 Separators occur only singly between digits of the relevant base. Legacy octal
 includes `0_7`. Prefixes accept upper/lower case. Integer overflow changes the
 Zend numeric token/value category, not whether that numeral is valid source.
 The repository retains a spelling-based integer category for overflowed forms.
 
-## Expressions and dereferencing
+### String escapes
+
+`escape-sequence` consumes a backslash and its following byte. Single quotes
+decode only `\\` and `\'`; other escapes preserve their backslash. Interpolating
+strings decode `\n`, `\r`, `\t`, `\v`, `\e`, `\f`, `\\`, `\$`, the applicable
+escaped quote, up to three octal digits, one or two hexadecimal digits after
+`\x`, and `\u{HEX}`. Unicode escapes require at least one hexadecimal digit,
+a closing brace, and a value no greater than 0x10FFFF. Unknown escapes remain
+text; they are not all syntax errors. Binary `b`/`B` prefixes are accepted.
+
+### Interpolation
+
+Complex `{$foo}` interpolation consumes `{` followed by the existing variable
+syntax; the dollar sign is not duplicated. Simple interpolated offsets have
+scanner-specific identifier, numeric-string, or variable forms, not arbitrary
+quoted expressions. Braced interpolation re-enters PHP scanning. `${...}`
+forms remain accepted but deprecated. Backticks are expressions, not constant
+string literals.
+
+### Heredoc and nowdoc
+
+Heredoc/nowdoc require a header newline. Spaces/tabs may follow `<<<`; no
+trailing header whitespace follows the label or its quote. A heredoc label may
+be unquoted or double quoted; a nowdoc label is single quoted. The closing label
+must equal the opening label byte for byte, start at a line boundary after
+optional indentation, and be followed by a non-identifier source byte: a closing
+label ending at exact file EOF is not recognized. The following byte need not
+be a semicolon or newline.
+
+All nonblank lines of text in the active heredoc/nowdoc state must have at least
+the closing indentation. Lines inside nested scripting or nested strings are
+not outer heredoc text and do not inherit its indentation requirement.
+
+Tabs and spaces must not be mixed in the indentation being stripped. Blank
+lines may have less indentation. The scanner enforces label equality and
+indentation; these are lexical constraints beyond ordinary context-free EBNF.
+An empty body is valid.
+
+## Types
+
+The EBNF distinguishes simple, nullable, union and intersection types,
+including parenthesized intersections in unions. The `*-without-static`
+family follows the pinned parser's `type_expr_without_static`: it separates
+type syntax from the `static` property modifier to avoid that parser conflict.
+It does not replace return-type or class-scope validation.
+
+Builtin type literal/name helper overlap does not change the interpreted type.
+The [type constraints](#type-constraints) specify stand-alone, return-only,
+scope, duplicate/redundant and property/class-constant restrictions.
+
+## Expressions and precedence
 
 Bison declares precedence from lowest to highest:
 
@@ -223,10 +318,10 @@ Bison declares precedence from lowest to highest:
 | 11 | Assignment and compound assignments | Nested right operands |
 | 12 | `? :` | Bison left; compile-time restrictions below |
 | 13 | `??` | Right |
-| 14–18 | `||`; `&&`; bitwise `|`; `^`; `&` | Left |
+| 14–18 | `\|\|`; `&&`; bitwise `\|`; `^`; `&` | Left |
 | 19 | `== != <> === !== <=>` | Non-associative |
 | 20 | `< <= > >=` | Non-associative |
-| 21–26 | `|>`; `.`; shifts; `+ -`; `* / %`; `!` | Binary left; `!` prefix |
+| 21–26 | `\|>`; `.`; shifts; `+ -`; `* / %`; `!` | Binary left; `!` prefix |
 | 27–30 | instanceof; unary `+ - ~`, casts, `@`; `**`; clone | `**` right; other forms follow parser categories |
 
 Increment/decrement take Zend `variable`, not arbitrary postfix results.
@@ -238,24 +333,6 @@ operand are accepted. Ternary chains are structurally left-associated; the
 mandatory restriction is applied during compilation, after constant folding
 where applicable. A constant initializer can therefore discard an otherwise
 forbidden chain before that check.
-
-The EBNF preserves Zend's `simple_variable`, `new_variable`, `variable`,
-`callable_variable`, `callable_expr`, `fully_dereferenceable`,
-`array_object_dereferenceable`, and `new_dereferenceable` distinctions.
-In this file the lexical `variable` is `T_VARIABLE`, and `variable-expression`
-is Zend's syntactic `variable`. There is no universal postfix production.
-`new Foo()` is directly dereferenceable; `new Foo` is not. Heredoc tokens are
-scalars but not direct dereferenceable scalars. Removed curly-brace offsets
-are excluded. Write-context restrictions remain contextual.
-
-`ordinary-argument-list` and `first-class-callable-arguments` are disjoint.
-Bare `...` is a complete callable-conversion list and cannot be mixed with
-ordinary arguments. `constructor-argument-list` retains both parser forms:
-Zend rejects constructor conversion during compilation, not parsing.
-There is no call-time `&` argument modifier.
-Clone-with permits named/unpacked lists and callable conversion. `clone($o)`
-is also unary clone applied to a parenthesized expression; the special clone
-argument production follows Zend's separate comma/named/unpacked alternatives.
 
 ### Unambiguous prefix and statement structure
 
@@ -290,95 +367,441 @@ The separator therefore binds to the nearest such yield. This preserves
 `yield yield 1 => 2`, `yield 1 => yield 2`, and nested keyed yields without
 duplicating their trees. Parentheses delimit a complete ordinary expression.
 
+The table and prefix families follow the pinned parser's precedence
+declarations and `expr` alternatives. Pipe (`|>`) is at the level shown;
+the restriction on a surviving unparenthesized arrow right operand is
+[contextual](#control-flow-constraints).
+
+## Variables, calls and dereferencing
+
+The EBNF preserves Zend's `simple_variable`, `new_variable`, `variable`,
+`callable_variable`, `callable_expr`, `fully_dereferenceable`,
+`array_object_dereferenceable`, and `new_dereferenceable` distinctions.
+In this file the lexical `variable` is `T_VARIABLE`, and `variable-expression`
+is Zend's syntactic `variable`. There is no universal postfix production.
+`new Foo()` is directly dereferenceable; `new Foo` is not. Heredoc tokens are
+scalars but not direct dereferenceable scalars. Removed curly-brace offsets
+are excluded. Write-context restrictions remain contextual.
+
+## Arguments and arrays
+
+`ordinary-argument-list` and `first-class-callable-arguments` are disjoint.
+Bare `...` is a complete callable-conversion list and cannot be mixed with
+ordinary arguments. `constructor-argument-list` retains both parser forms:
+Zend rejects constructor conversion during compilation, not parsing.
+There is no call-time `&` argument modifier.
+Clone-with permits named/unpacked lists and callable conversion. `clone($o)`
+is also unary clone applied to a parenthesized expression; the special clone
+argument production follows Zend's separate comma/named/unpacked alternatives.
+
+Array construction and destructuring share some structural forms but differ
+in their valid targets and empty elements. See [argument constraints](#argument-constraints),
+[callable conversion](#callable-conversion), and
+[writable variables and destructuring](#writable-variables-and-destructuring).
+The argument distinctions follow parser `argument_list` and `clone_argument_list`.
+
+## Statements and control flow
+
+### Dangling else and closed statement lists
+
+A matched statement has no exposed `if` waiting for a possible `else` or
+`elseif`; an unmatched statement has such an `if`. This distinction preserves
+attachment to the nearest unmatched `if` through enclosing statement bodies.
+
 Matched/unmatched statements propagate through the final bodies of `while`,
 `for`, `foreach`, and `declare`. Braces, alternative-syntax terminators, and
 the terminating `while` of `do` close that propagation. Before an alternative
 `else:`/`elseif:`, `closed-inner-statement-list` requires a matched final
 statement or declaration; otherwise Zend shifts the keyword toward an inner
-unmatched if and rejects the colon. An `endif` terminator needs no such check. Both `else` and
-`elseif` attach to the nearest unmatched `if`. A semicolon, including the
+unmatched if and rejects the colon. An `endif` terminator needs no such check.
+
+Both `else` and `elseif` attach to the nearest unmatched `if`. A semicolon, including the
 token emitted by `?>`, has only the `empty-statement` derivation when no
 expression precedes it. `throw $e;` is an expression statement.
+
+### For-loop expression lists
+
+For-loop conditions use a nonempty comma-list prefix followed by an ordinary
+expression. Empty conditions are valid; leading/trailing commas are not.
+`(void)` is permitted on initializer/update elements and nonfinal condition
+elements, but never on the final condition element (parser `for_cond_exprs`
+and `non_empty_for_exprs`).
+
+## Functions, closures and parameters
+
+Function declarations, closures and arrow functions have separate productions.
+An arrow body uses the expression precedence described above. A closure's
+nonempty `use` list is structural; capture legality and parameter restrictions
+are [contextual](#parameter-and-closure-constraints).
+
+In particular, a `never` parameter fails when its declaration survives
+compilation, but may occur inside a discarded closure. Surviving static
+noncapturing closures in constant expressions compile their bodies as function
+code, not through the constant-expression AST whitelist.
+
+## Classes, interfaces, traits and enums
+
+These declarations share `class-member-list` and `class-member` structure.
+The parser accepts member forms whose legality depends on the enclosing
+declaration kind. Source validity additionally requires
+[declaration and modifier](#declarations-and-modifiers), [property](#properties),
+[hook](#hooks), [class-constant](#class-constants), [enum](#enums), and
+[trait-alias](#trait-aliases) constraints.
+
+The [declaration boundary](#parsercompiler-declaration-boundary) explains why
+these forms remain structurally representable even when a surviving declaration
+would be rejected.
+
+## Namespaces and imports
+
+Qualified names are atomic tokens; group imports have a separate separator
+before `{`. The EBNF distinguishes namespace definitions, ordinary imports,
+group imports and mixed group imports. Namespace-style, placement and name
+conflicts require [contextual validation](#namespace-and-declare-constraints);
+token spelling alone does not establish their legality.
+
+## Attributes
+
+Attributes begin with `#[` in normal scripting state. Their argument lists use
+the ordinary parser argument-list structure; unpacking and callable conversion
+are rejected during attribute compilation. Optional attributes apply to
+properties, hooks, methods, class constants and enum cases as specified by their
+productions; they do not apply to trait-use statements.
+
+See [attribute arguments](#attribute-arguments) for validation before argument
+folding, and [attributed declarations](#declarations-and-modifiers) for the
+single-global-constant restriction.
+
+## Constant expressions
+
+The constant wrappers all derive `expression`. A source-level subset cannot
+faithfully specify Zend's acceptance: `const X = true ? 1 : foo();` is valid,
+as are discarded `new Foo(...)` and `isset(1 + 2)` branches. Their live
+companions are invalid. Consequently constructor/FCC and isset target checks
+are contextual, even though syntactic helper productions distinguish their
+lists. The pinned parser’s `isset_variable` production takes `expr`.
+
+### Constant-expression validation order
+
+A validator must apply the following order from the pinned compiler’s
+`zend_const_expr_to_zval`. A blanket recursive ban on source tokens does not
+implement these rules:
+
+1. **Lexical validity and parser actions.** Apply these checks first. A discarded branch must
+   still parse; folding cannot repair an unmatched delimiter or invalid token.
+2. **Constant-expression folding.** Run `zend_eval_const_expr`. Fold literal binary/comparison,
+   unary, supported cast, array and offset operations when the corresponding
+   `zend_try_ct_eval_*` helper succeeds. Resolve eligible ordinary/class/magic
+   constants and class names using Zend's compile-time environment. This is
+   not arbitrary evaluation of user code or resolution of every named constant.
+3. **Branch traversal and discarding.** For `&&`/`||` (including word forms), visit both children for folding, then
+   discard the irrelevant child when a literal left operand determines the
+   result.
+
+   For `??`, a literal non-null left operand discards the right without
+   visiting it; literal null selects the right. Ternary folding visits the
+   condition and only the selected arm when the condition is literal. With a
+   nonliteral condition, visit both arms.
+
+   A folding-time error in a visited
+   node is not suppressed merely because later validation could discard it.
+   In particular, visiting an unset-cast node immediately raises the removed-cast
+   error, before visiting its operand (`zend_eval_const_expr`, CAST case).
+4. **Surviving-AST whitelist.** Validate only the surviving AST. Allowed kinds are literal values, binary
+   operations, greater/greater-equal, AND/OR, unary operations/plus/minus,
+   casts, conditional, dimensions, arrays/elements/unpack, constants, class
+   constants/names, magic constants, coalesce, enum initialization, new,
+   argument lists/named arguments, property/nullsafe-property reads, closures,
+   function/static calls, and callable-conversion markers. Every other surviving
+   kind is invalid. Array unpacking is distinct from constructor-argument
+   unpacking; the latter is forbidden.
+5. **Dynamic-context flag.** Enforce `allow_dynamic` on surviving new/object-cast nodes. It is true for
+   parameter defaults, global constants, and attribute arguments (including
+   nested constructor arguments), and false for property defaults, class
+   constants and enum case values. Inherit it into surviving children. Scalar,
+   boolean and array casts remain allowed; object casts are not folded into
+   literal objects by `zend_try_ct_eval_cast`. Warning-sensitive operations may
+   remain ASTs for later evaluation rather than being compile-time literals.
+6. **New-expression restrictions.** New expressions require a literal resolved class reference, no anonymous
+   class or late-static reference, no callable conversion and no unpacked
+   arguments. Names/class references may become literal through the actual
+   folding traversal, as in `new ("std" . "Class")()`.
+7. **Callable-conversion restrictions.** Function/static-method callable conversion requires literal string names
+   at `zend_compile_const_expr_fcc`. Folding does not recursively traverse
+   CALL/STATIC_CALL in `zend_eval_const_expr`; parser-time literal concatenation
+   can nevertheless have produced a literal name already. Thus
+   `("str" . "len")(...)` is valid, while
+   `(true ? "strlen" : "foo")(...)` is not. The same distinction applies to
+   computed method names.
+
+   CLASS_CONST, NEW, properties, named arguments and
+   argument lists have their own explicit traversal cases; do not infer a
+   universal recursive folding rule. `static::`/`static::class` are forbidden;
+   `self`/`parent` still require the appropriate class scope.
+8. **Closure restrictions.** A surviving closure must be static and have no `use` captures. Compile its
+   body as function code; do not apply the constant AST whitelist to that body.
+   Compile parameter defaults and attributes using their own contexts. An
+   ordinary nonstatic closure or arrow can occur in a discarded branch only.
+9. **Remaining compiler checks.** Apply declared-type, declaration and argument-order
+   checks in their actual compiler contexts. Lint does not prove callable existence, enum value
+   uniqueness/type evaluation or all deferred constant resolution succeeds.
+
+The repository structural matcher does not execute this validation algorithm.
+Its acceptance of structurally valid contextual-negative cases is intentional.
 
 ## Contextual syntax constraints
 
 These constraints are mandatory even when structural EBNF accepts a construct.
 The repository's structural matcher does not implement this entire layer.
+Unless identified as a parser action, the restrictions below apply in their
+compiler contexts; folding may discard the enclosing AST before those checks.
+The [boundary rules](#parsercompiler-boundary-rules) identify checks that run
+before folding and those that depend on compilation of a surviving declaration.
 
-| Context | Required validation and source |
-|---|---|
-| Constant expressions | Parse `expression`, perform the folding procedure below, then validate the surviving AST with `zend_is_allowed_in_const_expr` and `zend_compile_const_expr`. Surviving arbitrary calls, variables, assignments, shell execution, interpolation, match, throw, and arrow functions are forbidden. Static noncapturing closures and named first-class callables are permitted in 8.5. |
-| Parameter defaults, global constants, attribute/constructor arguments | `allow_dynamic=true`: `new` with a statically determined class and object casts are allowed. No anonymous/dynamic class construction, `static`, unpacked constructor arguments, or constructor callable conversion. |
-| Property defaults, class constants, enum values | `allow_dynamic=false`: surviving `new` and object casts are forbidden recursively. Other supported casts, static closures, and named callable conversion remain subject to the declared type and context. |
-| Static locals | Initializers are runtime `expression`, not the constant-expression subset; PHP 8.3+ behavior is retained. |
-| Constant calls | Surviving calls must be function/static-method callable conversions. The function/class/method name must already be an appropriate literal AST when its compiler check runs; see folding order below. Object-method conversions are forbidden. `static` class references are forbidden. |
-| Arguments | No positional argument after named arguments/unpacking, no unpacking after named arguments, no duplicate named arguments. Attribute argument lists forbid unpacking and bare callable conversion. Built-in arity/name checks may reject clone/exit forms. |
-| Attributed constants | Parser structure permits a **global** constant list; compilation requires only one constant per attributed declaration. Class constants may share attributes in a multiple-constant declaration. |
-| Types | `mixed`, `void`, `never` must stand alone as applicable; `?mixed`, `?null`, duplicate/redundant unions, `true|false`, and built-in/scoped-name intersection members are invalid. `void`/`never` are return-only. Properties/promoted properties/class constants cannot use callable, void, or never. `static` is return-only with class scope. `self`/`parent` require the appropriate scope. |
-| Parameters and closures | Unique parameters, only final parameter variadic, no variadic defaults, no forbidden auto-global/`$this` parameter or capture names, no duplicate captures or capture/parameter collisions. Nonempty `use` is structural. |
-| Promotion | Only a concrete constructor in a legal class/trait context; no variadic promotion, duplicate property, invalid property type, or illegal modifiers. PHP 8.5 permits final promotion. Defaults initialize parameters, not property defaults. |
-| Modifiers and declarations | Reject duplicate/conflicting modifiers, abstract-final conflicts, reserved class names, redeclarations, illegal nested class declarations, and invalid anonymous-class modifiers. Interfaces cannot use traits. Method bodies/visibility must match abstract/interface/concrete context. |
-| Properties | Readonly properties need a type and cannot be static or have ordinary defaults. Only hooked properties may be abstract. Visibility/set visibility combinations and final/private combinations must be valid. |
-| Hooks | One or two distinct hook kinds; no duplicate get/set; no static/readonly hooked properties. Only final is an explicit hook modifier. A get hook has no parameter list; a set list has one non-reference, nonvariadic parameter without a default and compatible type. Set parameters cannot be references. The parser accepts a reference-return marker on either hook; see the pinned-version note below. Concrete hooks need bodies; interface hooks and bodyless hooks on abstract properties are abstract. Abstract properties may mix concrete and abstract hooks, but must satisfy abstract-property validation. A final hook cannot be private or abstract. |
-| Interface properties | Public or historical `var` hooked properties only; no property default; no final, protected/private, or explicitly abstract property. Hooks have no implementation body. |
-| Class constants | One type precedes the entire list. Enforce type restrictions/value compatibility, modifier legality, and final/private restrictions. |
-| Enums | Only int/string backing types. Backed cases require constant values; unbacked cases forbid values. Case names/values must satisfy uniqueness and type rules; some value checks are deferred beyond lint. No properties; cases are forbidden outside enums; trait composition and forbidden magic/member declarations require further checks. |
-| Callable conversion | Reject surviving `new Foo(...)` and anonymous-class constructor conversion (`zend_compile_new`, `zend_compile_const_expr_new`). Reject conversion on a nullsafe call or the same nullsafe short-circuit chain (`zend_compile_call_common`). Ordinary function, object-method and static-method conversions remain valid. Clone conversion follows its separate parser production. |
-| isset | `isset_variables` is a nonempty comma-separated list with optional trailing comma; pinned `isset_variable` is **expr**, not variable. At compilation, require `zend_is_variable`: VAR, DIM, PROP, NULLSAFE_PROP, STATIC_PROP. Direct calls and arithmetic fail, while `foo()[0]`, `foo()->p`, parenthesized variables, and nullsafe property reads can qualify. Reject empty read offsets and invalid read targets later in `zend_compile_isset_or_empty`. |
-| Trait aliases | At most one method-target alias modifier, or an alias name alone; a compiled alias permits only public/protected/private/final. `zend_compile_trait_alias` rejects static and abstract; readonly is rejected by the parser's modifier-target conversion. Modifiers cannot be combined. |
-| Writable variables | Assignment, reference binding, increment, unset, isset, destructuring, and foreach need appropriate read/write targets. Calls can reduce as `variable` but cannot be unset; nullsafe access cannot be written. Foreach keys cannot be references or destructuring lists. Empty array elements are only valid in destructuring. A destructuring tree cannot mix `[]` and `list()` forms (pinned `zend_compile.c`, lines 3250–3255). |
-| Control flow | break/continue need a legal enclosing construct and positive literal level; goto targets/scope crossings must be legal; yield requires function scope; generator return types and return statements must be compatible. Match/switch permit only one default. A compiled try requires at least one catch or finally. A surviving pipe cannot take an unparenthesized arrow function as its right operand. |
-| declare and namespaces | Directives require their specific literal values and placement; strict_types is 0/1, first statement, and not block form. Namespace styles cannot mix and namespace/import placement/conflicts must be legal. |
+### Constant-expression contexts
 
-Authoritative compiler areas include `zend_compile_params`,
-`zend_compile_typename_ex`, `zend_compile_attributes`, `zend_compile_prop_decl`,
-`zend_compile_property_hooks`, `zend_compile_class_const_decl`,
-`zend_compile_enum_case`, `zend_compile_foreach`, `zend_compile_conditional`,
-`zend_compile_declare`, and `zend_compile_const_expr`.
+**Constant expressions.**
 
-### Parser/compiler declaration boundary
+- Parse `expression`, perform the [folding procedure](#constant-expression-validation-order), then validate the surviving AST with `zend_is_allowed_in_const_expr` and `zend_compile_const_expr`.
 
-All class, interface, trait, enum, and anonymous-class bodies use the same
-`class-member-list` and `class-member` productions directly, corresponding to
-`class_statement_list` and `class_statement` (parser lines 973–1006).
-Optional attributes apply to ordinary
-and hooked properties, methods, class constants, and enum cases; they do not
-apply to trait-use statements. Declaration-kind legality is checked only when
-the declaration is compiled. In particular, enum properties, non-enum cases,
-interface trait use and ordinary interface properties must remain reducible.
+- Surviving arbitrary calls, variables, assignments, shell execution, interpolation, match, throw, and arrow functions are forbidden.
 
-`enum-backing-type` uses the full `type` expression (parser 655–657), including
-nullable, union, intersection and static forms. `zend_compile_enum_backing_type`
-then requires exactly int/string. `name-list` and `catch-type-list` consume
-`class-name`, including static, as do Bison `class_name_list` and
-`catch_name_list`; class-name scope/target checks remain contextual.
+- Static noncapturing closures and named first-class callables are permitted in 8.5.
 
-Hook syntax mirrors parser 1129–1177: an empty list is structurally possible;
-each hook has attributes, optional target-valid modifiers, optional `&`, a
-generic identifier, an optional complete parameter list, and either `;`, a
-compound body, or `=> expression ;`. `zend_compile_property_hooks` (8655–8835)
-enforces the live rules in the table. Explicit get parentheses, even `get()`,
-are invalid when compiled; a supplied set list must have exactly one parameter.
-Empty/unknown/duplicate hooks and invalid parameter/body combinations can be
-discarded along with their enclosing static closure. Parameter hook lists use
-the same grammar. A hook list itself triggers promotion, even without explicit
-visibility; compilation requires a concrete constructor in an allowed context.
+**Parameter defaults, global constants, attribute/constructor arguments.**
 
-The pinned compiler does **not** reject the reference-return marker on a set
-hook. PHP 8.5.10 accepts and executes `class C { public int $x { &set {} } }`
-with a void-reference-return deprecation (`zend_compile_params`, 7752–7756).
-This differs from the previous specification's unconditional “only get” rule.
-It does not permit a reference **parameter** on set. Declaration/inheritance
-checks outside these pinned files must not be inferred from lint alone.
+- `allow_dynamic=true`: `new` with a statically determined class and object casts are allowed.
 
-Attributes consume ordinary `argument-list` (parser `attribute_decl`, 367–371).
-`zend_compile_attributes` rejects unpacking and a callable-conversion list
-before validating surviving argument expressions; those are not structural
-argument-list exclusions. Folding an argument cannot erase an unpack marker
-or invalid argument order on a surviving attribute declaration. Discarding the
-entire enclosing closure can avoid compiling that attribute declaration.
+- No anonymous/dynamic class construction, `static`, unpacked constructor arguments, or constructor callable conversion.
 
-### Checks that run during parser actions
+**Property defaults, class constants, enum values.**
+
+- `allow_dynamic=false`: surviving `new` and object casts are forbidden recursively.
+
+- Other supported casts, static closures, and named callable conversion remain subject to the declared type and context.
+
+**Constant calls.**
+
+- Surviving calls must be function/static-method callable conversions.
+
+- The function/class/method name must already be an appropriate literal AST when its compiler check runs; see [constant-expression validation order](#constant-expression-validation-order).
+
+- Object-method conversions are forbidden.
+
+- `static` class references are forbidden.
+
+**Static locals.**
+
+- Initializers are runtime `expression`, not the constant-expression subset; PHP 8.3+ behavior is retained.
+
+### Type constraints
+
+- `mixed`, `void`, `never` must stand alone as applicable; `?mixed`, `?null`, duplicate/redundant unions, `true|false`, and built-in/scoped-name intersection members are invalid.
+
+- `void`/`never` are return-only.
+
+- Properties/promoted properties/class constants cannot use callable, void, or never.
+
+- `static` is return-only with class scope.
+
+- `self`/`parent` require the appropriate scope.
+
+Source: pinned compiler `zend_compile_typename_ex`.
+
+### Parameter and closure constraints
+
+**Parameters and closures.**
+
+- Parameter names must be unique.
+
+- Only the final parameter may be variadic; a variadic parameter must not have a default.
+
+- Parameter and capture names must not use forbidden auto-globals or `$this`.
+
+- Captures must not duplicate each other or collide with parameter names.
+
+- Nonempty `use` is structural.
+
+**Promotion.**
+
+- Only a concrete constructor in a legal class/trait context; no variadic promotion, duplicate property, invalid property type, or illegal modifiers.
+
+- PHP 8.5 permits final promotion.
+
+- Defaults initialize parameters, not property defaults.
+
+Source: pinned compiler `zend_compile_params`.
+
+### Argument constraints
+
+- A positional argument must not follow named arguments or unpacking.
+
+- Unpacking must not follow named arguments.
+
+- Named arguments must not be duplicated.
+
+- Attribute argument lists forbid unpacking and bare callable conversion.
+
+- Built-in arity/name checks may reject clone/exit forms.
+
+Source: pinned compiler `zend_compile_attributes` and call/argument compilation.
+
+### Declarations and modifiers
+
+**Modifiers and declarations.**
+
+- Reject duplicate/conflicting modifiers, abstract-final conflicts, reserved class names, redeclarations, illegal nested class declarations, and invalid anonymous-class modifiers.
+
+- Interfaces cannot use traits.
+
+- Method bodies/visibility must match abstract/interface/concrete context.
+
+**Attributed constants.**
+
+- Parser structure permits a **global** constant list; compilation requires only one constant per attributed declaration.
+
+- Class constants may share attributes in a multiple-constant declaration.
+
+### Properties
+
+**Properties.**
+
+- Readonly properties need a type and cannot be static or have ordinary defaults.
+
+- Only hooked properties may be abstract.
+
+- Visibility/set visibility combinations and final/private combinations must be valid.
+
+**Interface properties.**
+
+- Public or historical `var` hooked properties only; no property default; no final, protected/private, or explicitly abstract property.
+
+- Hooks have no implementation body.
+
+Source: pinned compiler `zend_compile_prop_decl`.
+
+### Hooks
+
+- A compiled hooked property must have one or two distinct hook kinds, without duplicate get/set hooks.
+
+- Hooked properties must not be static or readonly.
+
+- Only final is an explicit hook modifier.
+
+- A get hook must not have a parameter list.
+
+- A supplied set list must have exactly one non-reference, nonvariadic parameter with a compatible type and no default.
+
+- The parser accepts a reference-return marker on either hook; see [property hooks and promotion](#property-hooks-and-promotion).
+
+- Concrete hooks need bodies; interface hooks and bodyless hooks on abstract properties are abstract.
+
+- Abstract properties may mix concrete and abstract hooks, but must satisfy abstract-property validation.
+
+- A final hook cannot be private or abstract.
+
+Source: pinned compiler `zend_compile_property_hooks`.
+
+### Class constants
+
+- One type precedes the entire list.
+
+- Enforce type restrictions/value compatibility, modifier legality, and final/private restrictions.
+
+Source: pinned compiler `zend_compile_class_const_decl`.
+
+### Enums
+
+- Only int/string backing types.
+
+- Backed cases require constant values; unbacked cases forbid values.
+
+- Case names/values must satisfy uniqueness and type rules; some value checks are deferred beyond lint.
+
+- No properties; cases are forbidden outside enums; trait composition and forbidden magic/member declarations require further checks.
+
+Source: pinned compiler `zend_compile_enum_case`.
+
+### Callable conversion
+
+- Reject surviving `new Foo(...)` and anonymous-class constructor conversion (`zend_compile_new`, `zend_compile_const_expr_new`).
+
+- Reject conversion on a nullsafe call or the same nullsafe short-circuit chain (`zend_compile_call_common`).
+
+- Ordinary function, object-method and static-method conversions remain valid.
+
+- Clone conversion follows its separate parser production.
+
+### isset and unset
+
+- `isset_variables` is a nonempty comma-separated list with optional trailing comma; pinned `isset_variable` is **expr**, not variable.
+
+- At compilation, require `zend_is_variable`: VAR, DIM, PROP, NULLSAFE_PROP, STATIC_PROP.
+
+- Direct calls and arithmetic fail, while `foo()[0]`, `foo()->p`, parenthesized variables, and nullsafe property reads may qualify.
+
+- Reject empty read offsets and invalid read targets later in `zend_compile_isset_or_empty`.
+
+### Writable variables and destructuring
+
+- Assignment, reference binding, increment, unset, isset, destructuring, and foreach need appropriate read/write targets.
+
+- Calls may reduce as Zend's syntactic `variable` (`variable-expression` here), but must not be unset.
+
+- Nullsafe access must not be written.
+
+- Foreach keys cannot be references or destructuring lists.
+
+- Empty array elements are only valid in destructuring.
+
+- A destructuring tree must not mix `[]` and `list()` forms (`zend_verify_list_assign_target`).
+
+### Trait aliases
+
+- At most one method-target alias modifier, or an alias name alone; a compiled alias permits only public/protected/private/final.
+
+- `zend_compile_trait_alias` rejects static and abstract; readonly is rejected by the parser's modifier-target conversion.
+
+- Modifiers cannot be combined.
+
+### Control-flow constraints
+
+- `break` and `continue` require a legal enclosing construct and a positive literal level.
+
+- `goto` targets and scope crossings must be legal.
+
+- `yield` requires function scope.
+
+- Generator return types and return statements must be compatible.
+
+- Match/switch permit only one default.
+
+- A compiled try requires at least one catch or finally.
+
+- A surviving pipe cannot take an unparenthesized arrow function as its right operand.
+
+Source: pinned compiler `zend_compile_foreach`, `zend_compile_conditional` and `zend_compile_pipe`.
+
+### Namespace and declare constraints
+
+- Directives require their specific literal values and placement; strict_types is 0/1, first statement, and not block form.
+
+- Namespace styles cannot mix and namespace/import placement/conflicts must be legal.
+
+Source: pinned compiler `zend_compile_declare` and namespace compilation.
+
+## Parser/compiler boundary rules
+
+Validation phase is part of the source-validity contract. The location of a
+helper in `zend_compile.c` does not establish when it runs.
+
+### Structural parse acceptance
+
+The EBNF describes reductions over the token/source abstraction. It permits
+some forms that parser actions or later compilation reject. A structural match
+therefore must not be reported as a complete source-validity verdict.
+
+### Parser-action validation
 
 Execution phase matters even for helpers defined in `zend_compile.c`.
 `zend_modifier_token_to_flag`, `zend_modifier_list_to_flags`,
@@ -395,85 +818,77 @@ abstract/final modifiers in parser actions. These early constraints remain in
 the contextual layer of the three-layer model and cannot be bypassed by a
 discarded branch. The structural matcher does not enforce all parser actions.
 
-The boundary fixture matrix tests 114 live/retained/discarded families, including
-113 compiler-invalid families and the accepted set-reference exception. All six
-discarding operators are tested against every family. Separate parser-action
-controls require rejection even inside a discarded closure. This is systematic
-category coverage, not a claim that every diagnostic path or deferred validator
-has an independent witness.
+### Compiler validation
 
-### Constant-expression validation order
+After parsing, declaration, type, argument and read/write checks execute in
+their compiler contexts. The following declaration boundaries illustrate
+constraints that structural parsing must not enforce prematurely.
 
-The constant wrappers all derive `expression`. A source-level subset cannot
-faithfully specify Zend's acceptance: `const X = true ? 1 : foo();` is valid,
-as are discarded `new Foo(...)` and `isset(1 + 2)` branches. Their live
-companions are invalid. Consequently constructor/FCC and isset target checks
-are contextual, even though syntactic helper productions distinguish their
-lists. This is a necessary correction to the assumption that the pinned
-`isset_variable` parser production takes `variable`.
+### Constant-folding/discard behavior
 
-Apply the following order from `zend_const_expr_to_zval` (compiler lines
-11634–11649), not a blanket recursive ban on source tokens:
+Lexical errors and parser-action failures cannot be erased by folding.
+Later restrictions may be avoided if the relevant AST is discarded before
+compilation reaches it. A folding-time error in a visited node still fails.
+The [constant-expression algorithm](#constant-expression-validation-order)
+specifies traversal and surviving-AST validation; ordinary expression
+compilation has [different short-circuit behavior](#ordinary-compilation-versus-constant-folding).
 
-1. Apply parser actions and lexical validity first. A discarded branch must
-   still parse; folding cannot repair an unmatched delimiter or invalid token.
-2. Run `zend_eval_const_expr` (12079–12383). Fold literal binary/comparison,
-   unary, supported cast, array and offset operations when the corresponding
-   `zend_try_ct_eval_*` helper succeeds. Resolve eligible ordinary/class/magic
-   constants and class names using Zend's compile-time environment. This is
-   not arbitrary evaluation of user code or resolution of every named constant.
-3. For `&&`/`||` (including word forms), visit both children for folding, then
-   discard the irrelevant child when a literal left operand determines the
-   result. For `??`, a literal non-null left operand discards the right without
-   visiting it; literal null selects the right. Ternary folding visits the
-   condition and only the selected arm when the condition is literal. With a
-   nonliteral condition, visit both arms. A folding-time error in a visited
-   node is not suppressed merely because later validation could discard it.
-   In particular, visiting an unset-cast node immediately raises the removed-cast
-   error, before visiting its operand (`zend_eval_const_expr`, CAST case).
-4. Validate only the surviving AST. Allowed kinds are literal values, binary
-   operations, greater/greater-equal, AND/OR, unary operations/plus/minus,
-   casts, conditional, dimensions, arrays/elements/unpack, constants, class
-   constants/names, magic constants, coalesce, enum initialization, new,
-   argument lists/named arguments, property/nullsafe-property reads, closures,
-   function/static calls, and callable-conversion markers. Every other surviving
-   kind is invalid. Array unpacking is distinct from constructor-argument
-   unpacking; the latter is forbidden.
-5. Enforce `allow_dynamic` on surviving new/object-cast nodes. It is true for
-   parameter defaults, global constants, and attribute arguments (including
-   nested constructor arguments), and false for property defaults, class
-   constants and enum case values. Inherit it into surviving children. Scalar,
-   boolean and array casts remain allowed; object casts are not folded into
-   literal objects by `zend_try_ct_eval_cast`. Warning-sensitive operations may
-   remain ASTs for later evaluation rather than being compile-time literals.
-6. New expressions require a literal resolved class reference, no anonymous
-   class or late-static reference, no callable conversion and no unpacked
-   arguments. Names/class references may become literal through the actual
-   folding traversal, as in `new ("std" . "Class")()`.
-7. Function/static-method callable conversion requires literal string names
-   at `zend_compile_const_expr_fcc`. Folding does not recursively traverse
-   CALL/STATIC_CALL in `zend_eval_const_expr`; parser-time literal concatenation
-   can nevertheless have produced a literal name already. Thus
-   `("str" . "len")(...)` is valid, while
-   `(true ? "strlen" : "foo")(...)` is not. The same distinction applies to
-   computed method names. CLASS_CONST, NEW, properties, named arguments and
-   argument lists have their own explicit traversal cases; do not infer a
-   universal recursive folding rule. `static::`/`static::class` are forbidden;
-   `self`/`parent` still require the appropriate class scope.
-8. A surviving closure must be static and have no `use` captures. Compile its
-   body as function code; do not apply the constant AST whitelist to that body.
-   Compile parameter defaults and attributes using their own contexts. An
-   ordinary nonstatic closure or arrow can occur in a discarded branch only.
-9. Apply declared-type, declaration and argument-order checks in their actual
-   compiler contexts. Lint does not prove callable existence, enum value
-   uniqueness/type evaluation or all deferred constant resolution succeeds.
+### Parser/compiler declaration boundary
 
-This reconciles the previous restricted constant-expression hierarchy with
-folding and retains the three-layer architecture. The structural matcher
-intentionally accepts the contextual-negative corpus; it does not execute this
-validation algorithm.
+All class, interface, trait, enum, and anonymous-class bodies use the same
+`class-member-list` and `class-member` productions directly, corresponding to
+`class_statement_list` and `class_statement`.
+Optional attributes apply to ordinary
+and hooked properties, methods, class constants, and enum cases; they do not
+apply to trait-use statements. Declaration-kind legality is checked only when
+the declaration is compiled. In particular, enum properties, non-enum cases,
+interface trait use and ordinary interface properties must remain reducible.
+
+### Enum backing types and class-name lists
+
+`enum-backing-type` uses the full `type` expression (parser `enum_backing_type`), including
+nullable, union, intersection and static forms. `zend_compile_enum_backing_type`
+then requires exactly int/string. `name-list` and `catch-type-list` consume
+`class-name`, including static, as do Bison `class_name_list` and
+`catch_name_list`; class-name scope/target checks remain contextual.
+
+### Property hooks and promotion
+
+Hook syntax mirrors parser `property_hook_list`, `property_hook` and
+`property_hook_body`: an empty list is structurally possible;
+each hook has attributes, optional target-valid modifiers, optional `&`, a
+generic identifier, an optional complete parameter list, and either `;`, a
+compound body, or `=> expression ;`. `zend_compile_property_hooks`
+enforces the [hook constraints](#hooks) when compiled. Explicit get parentheses, even `get()`,
+are invalid when compiled; a supplied set list must have exactly one parameter.
+Empty/unknown/duplicate hooks and invalid parameter/body combinations can be
+discarded along with their enclosing static closure. Parameter hook lists use
+the same grammar. A hook list itself triggers promotion, even without explicit
+visibility; compilation requires a concrete constructor in an allowed context.
+
+The pinned compiler does **not** reject the reference-return marker on a set
+hook. PHP 8.5.10 accepts and executes `class C { public int $x { &set {} } }`
+with a void-reference-return deprecation (`zend_compile_params`).
+It does not permit a reference **parameter** on set. Declaration/inheritance
+checks outside these pinned files must not be inferred from lint alone.
+
+### Attribute arguments
+
+Attributes consume ordinary `argument-list` (parser `attribute_decl`).
+`zend_compile_attributes` rejects unpacking and a callable-conversion list
+before validating surviving argument expressions; those are not structural
+argument-list exclusions. Folding an argument cannot erase an unpack marker
+or invalid argument order on a surviving attribute declaration. Discarding the
+entire enclosing closure can avoid compiling that attribute declaration.
 
 ## Deprecated but accepted syntax
+
+| Forms | Status and validation boundary |
+|---|---|
+| `(integer)`, `(boolean)`, `(double)`, `(binary)` | Accepted with deprecation. |
+| `${...}`, backticks | Accepted with applicable interpolation/shell-expression deprecations. |
+| `(real)` | Removed; scanner parser-mode error before folding. |
+| `(unset)` | Removed cast, still structurally represented; rejected when compilation or folding reaches it. |
 
 PHP 8.5 accepts `(integer)`, `(boolean)`, `(double)`, and `(binary)` with
 deprecations; casts are case insensitive and allow spaces/tabs inside their
@@ -482,6 +897,8 @@ their different validation phases are specified below. `${...}` interpolation an
 deprecation is not syntax rejection. Other deprecations unrelated to grammar
 do not remove accepted forms.
 
+### Removed forms and validation phase
+
 The removed forms have different implementation boundaries: `(real)` raises a
 scanner parser-mode error, while Zend still emits `T_UNSET_CAST` and rejects
 surviving unset casts during compilation. `cast-operator` therefore recognizes
@@ -489,6 +906,8 @@ surviving unset casts during compilation. `cast-operator` therefore recognizes
 rules. This is a surviving parser representation, not a restored language cast.
 `zend_compile_cast` rejects it when reached; `zend_eval_const_expr` rejects it
 as soon as folding visits it, even if its parent could subsequently discard it.
+
+### Ordinary compilation versus constant folding
 
 Ordinary expression compilation and constant-initializer folding use different
 traversals. `zend_compile_short_circuiting` skips a determined right operand;
@@ -500,7 +919,7 @@ The exact PHP 8.5.10 outcomes are:
 |---|---|---|
 | `(unset) 1` | Reject | Reject |
 | `false && (unset) 1` / `false and (unset) 1` | Accept | Reject |
-| `true || (unset) 1` / `true or (unset) 1` | Accept | Reject |
+| `true \|\| (unset) 1` / `true or (unset) 1` | Accept | Reject |
 | `null ?? (unset) 1` | Reject | Reject |
 | `1 ?? (unset) 1` | Reject | Accept |
 | `true ? 1 : (unset) 1` | Reject | Accept |
@@ -511,62 +930,50 @@ The [folding evidence](../../docs/8.5/remediation-folding-evidence.json) records
 separate fixtures. Substituting `(real)` rejects even in discarded branches,
 because its scanner parser-mode error precedes all folding.
 
-For-loop conditions use a nonempty comma-list prefix followed by an ordinary
-expression. Empty conditions are valid; leading/trailing commas are not.
-`(void)` is permitted on initializer/update elements and nonfinal condition
-elements, but never on the final condition element (parser `for_cond_exprs`
-and `non_empty_for_exprs`).
+## Known abstractions and conformance limits
 
-## Remaining discrepancies and deliberate abstractions
+The repository implementation remains under audit. The rules in this
+specification and the evidence supporting the implementation have distinct scope:
 
-- Parser/compiler declaration boundaries have been broadened for common members,
-  enum backing types, trait aliases, hooks, attributes, try and class-name lists.
-  The two previously recorded discarded-closure examples now pass in the
-  ordinary valid corpus. They were examples of a wider category, not its full
-  extent. The 114-family matrix and fatal-site inventory do not establish
-  complete equivalence for every parser production or compiler path.
-- The generated 11,294-case operator/statement matrix now has no acceptance,
-  duplicate-derivation, operand-span, left-fold or statement-binding mismatch.
-  It exhausts the specified finite pairwise/nested templates and compares Zend
-  ASTs after forcing EBNF operand/body boundaries. Assignment-prefix and
-  instanceof-power defects discovered by that audit are fixed. The previous
-  targeted-only prefix/matched-unmatched blocker is resolved for this matrix.
-  This is strong differential evidence, not a formal proof for arbitrary
-  nesting depth; see the [audit methodology](../../docs/8.5/remediation-audit.md).
-- The lexical contract specifies the requested scanner states and the lexer
-  now recurses through nested interpolation, comments and heredoc labels.
-  Its token abstraction is not Zend's exact token stream. Source acceptance
-  across the complete scanner/parser product has not been proven equivalent.
-  Phase 5 now maps all 190 scanner rules to reviewed dispositions and direct
-  evidence. Remaining uncertainty concerns exhaustive combinations and the
-  documented abstractions, rather than silently unaudited scanner families.
-  An additional 482-case scanner/parser product matrix passes across both
-  short-tag profiles, including nested source transitions and exact heredoc EOF.
-- External lexical primitives require a stateful scanner; raw character-only
-  expansion is not a PHP source validator. Numeric overflow token/value
-  categorization is deliberately abstracted while preserving numeral spelling.
-- Contextual constraints, especially folding and deferred name/type checks,
-  remain normative rather than a complete repository-owned validator. PHP lint
-  is an independent compilation oracle, not a proof of later evaluation.
+- **Scanner abstraction.** The lexical contract specifies scanner states,
+  nested interpolation, comments and heredoc labels. The repository token
+  abstraction is not Zend's exact token stream. Complete scanner/parser source
+  acceptance equivalence has not been proven. Remaining uncertainty includes
+  exhaustive combinations and the documented abstractions.
+- **Lexical primitives.** External primitives require a stateful scanner;
+  character-only expansion is not a PHP source validator. Numeric overflow
+  token/value categorization is deliberately abstracted while retaining numeral
+  spelling. Standalone rule fragments are tested with a trailing newline boundary;
+  complete files receive no such boundary, including for heredoc closing labels.
+- **Binding.** Finite pairwise/nested operator and statement templates provide
+  differential evidence for acceptance, derivation uniqueness, operand spans,
+  left folds and statement binding. They are not a formal proof for arbitrary
+  nesting depth.
+- **Contextual coverage.** Declaration-family matrices and fatal-site inventories
+  do not establish equivalence for every parser production, diagnostic path,
+  deferred validator or compiler path. Contextual constraints, especially folding
+  and deferred name/type checks, remain normative without a complete
+  repository-owned validator. The modifier API validates only an identified list,
+  not whole-source validity.
+- **Executable comparison.** PHP 8.5.10 lint is an independent compilation oracle,
+  not the exact pinned build and not a proof of later evaluation. Callable
+  existence, deferred constant resolution, enum value checks, and declaration or
+  inheritance checks outside the pinned files must not be inferred from lint alone.
+
+The [evidence section](#conformance-evidence) records the bounded audits and
+historical corrections without extending these conformance claims.
 
 ## Syntactic productions
 
+The canonical EBNF below is generated verbatim from `php.ebnf` and checked
+for exact parity. The generated semantic index immediately precedes it and
+covers every production in canonical section order.
+
 Binary precedence and matching prefix-context families are maintained by
-`tools/8.5/generate-expressions.php`; its output remains explicit standalone EBNF.
-The [simplification audit](../../docs/8.5/grammar-simplification-audit.md) records
-all production decisions and equivalence checks. Declaration-kind legality
-remains contextual after removing the interface/enum member aliases.
-
-The canonical EBNF block below is generated verbatim from `php.ebnf` and checked for parity.
-
-The grammar now follows numbered syntax sections, followed by the parser-derived
-helper families. The [readability audit](../../docs/8.5/grammar-readability-audit.md)
-records the organization decisions and unchanged production ASTs. The semantic
-index below is generated from the EBNF section comments by
-`tools/8.5/sync-documentation.php`; use `--check` to verify both index and grammar.
-Generated binary rules have two marked regions so the closed-yield family stays
-together. Other section comments explain boundaries briefly; the detailed
-lexical, binding and contextual contracts above still apply.
+`tools/8.5/generate-expressions.php`. All generated output remains explicit,
+standalone EBNF. Two marked generated regions keep the closed-yield family
+together. `tools/8.5/sync-documentation.php --check` verifies the index and
+grammar block. The source, binding and contextual rules above also apply.
 
 <!-- BEGIN GENERATED PRODUCTION INDEX -->
 ## Production index
@@ -2174,3 +2581,87 @@ yield-key =
       | "print" , closed-yield-print-expression ) ;
 ```
 <!-- END GENERATED EBNF -->
+
+## Conformance evidence
+
+Evidence supports bounded claims about the repository implementation; it does
+not replace any normative layer. Detailed reports preserve their original case
+counts, methods, diagnostics and limitations.
+
+| Evidence | Scope |
+|---|---|
+| [Negative boundaries](../../docs/8.5/negative-boundaries.md) and [Phase 4 coverage](../../docs/8.5/phase4-negative-coverage.md) | Paired structural/contextual rejection and valid repairs. |
+| [Phase 5 scanner audit](../../docs/8.5/phase5-lexer-audit.md) | All 190 scanner rules mapped to dispositions and direct evidence; exhaustive combinations remain unproven. |
+| [Parser/compiler remediation](../../docs/8.5/parser-compiler-remediation.md) | Live, retained and discarded declaration families and parser-action controls. |
+| [Remediation audit](../../docs/8.5/remediation-audit.md) | Finite binding templates, scanner/parser products and folding corrections. |
+| [Phase 6 conformance](../../docs/8.5/phase6-conformance-closure.md) | Production/action reconciliation, modifier checks, recursive tests and implementation limits. |
+| [Current completeness claim](../../docs/8.5/completeness.md), [final evidence](../../docs/8.5/final-evidence.json), and [historical dispositions](../../docs/8.5/historical-dispositions.md) | Phase 7 certification, individual diagnostic dispositions, and remaining contextual, interpolation-binding and executable-provenance limits. |
+| [Simplification audit](../../docs/8.5/grammar-simplification-audit.md) | Production decisions and equivalence checks; declaration legality remains contextual. |
+| [Readability audit](../../docs/8.5/grammar-readability-audit.md) | Organization, unchanged production ASTs and its complete release results. |
+| [Specification polish audit](../../docs/8.5/specification-polish-audit.md) | Documentation classification, terminology review and before/after validation for this edition. |
+
+The boundary fixture matrix tests 114 live/retained/discarded families, including
+113 compiler-invalid families and the accepted set-reference exception. All six
+discarding operators are tested against every family. Separate parser-action
+controls require rejection even inside a discarded closure. This is systematic
+category coverage, not a claim that every diagnostic path or deferred validator
+has an independent witness.
+
+### Conformance history
+
+The following records describe historical validation stages, not additional
+language requirements. Their counts refer to those stages.
+
+Grammar Completeness Phase 4 adds paired negative-boundary evidence without
+changing the canonical productions below. Its 250 new structural-negative
+fixtures reject during repository recognition; 22 new contextual-negative
+fixtures parse structurally and reject during PHP compilation. All have nearby
+valid repairs. The [boundary ledger](../../docs/8.5/negative-boundaries.md)
+records source evidence and the [Phase 4 report](../../docs/8.5/phase4-negative-coverage.md)
+records methodology and validation. This evidence does not replace the
+standalone lexical or contextual rules in this specification. The
+[parser/compiler boundary remediation](../../docs/8.5/parser-compiler-remediation.md)
+resolves the previously recorded discarded-closure witnesses and expands
+coverage to the broader declaration category. Full conformance remains unproven.
+
+Grammar Completeness Phase 5 supplies a rule-by-rule scanner audit and direct
+byte/token evidence in the [Phase 5 report](../../docs/8.5/phase5-lexer-audit.md).
+The source contract incorporates the confirmed lookahead and EOF corrections.
+The subsequent [remediation audit](../../docs/8.5/remediation-audit.md) corrects
+the nullable for-condition prefix and reconciles the removed unset cast with
+the parser/compiler boundary.
+
+Grammar Completeness Phase 6 adds production/action reconciliation, systematic
+binding evidence, early modifier-list validation and bounded recursive tests.
+Parser actions run before discarded-branch folding; surviving declaration,
+write and type checks run afterward. In particular, `never` parameters fail
+when their declaration survives, but may occur inside a discarded closure.
+That distinction does not change the EBNF below. Builtin type literal/name
+helper overlap does not change the interpreted type. The repository's modifier
+API checks only an identified list; it is not a whole-source validity verdict.
+The [Phase 6 report](../../docs/8.5/phase6-conformance-closure.md) indexes evidence
+and implementation limits; the lexical and contextual specification here
+remains standalone. Exact malformed-input recovery and runtime execution are
+outside the source-validity contract.
+
+The declaration remediation broadened common members, enum backing types,
+trait aliases, hooks, attributes, try and class-name lists. The two formerly
+recorded discarded-closure witnesses pass in the ordinary valid corpus; they
+represented a wider category rather than its full extent. The pinned set-hook
+reference-return behavior also corrected an earlier unconditional “only get” rule.
+
+The remediation's 11,294-case operator/statement matrix had no acceptance,
+duplicate-derivation, operand-span, left-fold or statement-binding mismatch.
+It exhausted its finite pairwise/nested templates and compared Zend ASTs after
+forcing EBNF operand/body boundaries. It corrected assignment-prefix and
+instanceof-power defects and resolved the previous targeted-only binding
+blocker for that matrix, without proving arbitrary nesting equivalence.
+Later coverage and counts are recorded in the linked release reports.
+
+The scanner audit maps all 190 rules to reviewed dispositions and direct
+evidence; remaining uncertainty is not silently unaudited scanner families.
+A separate 482-case scanner/parser product matrix passes across both short-tag
+profiles, including nested source transitions and exact heredoc EOF.
+The former restricted constant-expression hierarchy was replaced with
+structural expressions and contextual folding validation; the pinned
+`isset_variable` production takes `expr`, not `variable`.

@@ -7952,7 +7952,7 @@
     "docs/conformance-policy.md": "97e0bcfe96e95d132d8b33d828af5b85d114e1236673ce640e228e2ad482c374",
     "docs/versioning.md": "741df4a83848a278b95a97755722d706fff0eb0e21ed044358821659e599a0fc",
     "grammar/8.5/php.ebnf": "7bede7421acf06152892210cc2a53c17628e88402057edf0a50a76cc11fb0a0c",
-    "grammar/8.5/php.md": "95ac04e938cf66524ee601ac21a54fdceb3ab208ca4155fdd587c2bcb66f4825",
+    "grammar/8.5/php.md": "9f8c381e406ebe41f19612de6dd0ff84d413c0b61b31333de475b5c9f11b092b",
     "php-grammar.json": "049f7abc15cb99d1c1abdf6404aeff74d90397ed960ed2ceab82029ce3352803",
     "src/Ebnf/AlternativeNode.php": "c2b7d47645c948aa5beb50d6926e6615bf7fdaf846d8386e69933f0dcbab4069",
     "src/Ebnf/Coverage/CoverageCollector.php": "e702f1dd07f679ea6faa47c8a496a555556d9070226599af707bf1cce4309477",
@@ -8031,6 +8031,7 @@
     "tests/Php/Conformance/Php85ReadabilityTest.php": "51b63d5e55e6674fd46c7a719e2a376003357ed38264ed27ba03a7597a2c4f58",
     "tests/Php/Conformance/Php85ShortTagTest.php": "23e1dee27ff75d0322db384853b1098c6c854f027efb104077826d3850508c08",
     "tests/Php/Conformance/Php85SimplificationTest.php": "d202071d1932aac66ab705b1d2d03ee6f8b8bc29c93b5aebd76c0cbe656401e1",
+    "tests/Php/Conformance/Php85SpecificationStructureTest.php": "6f27550866b5ee524fa2193bf3f0854766a47bc2e04cbdee976747f6db660843",
     "tests/Php/Conformance/PhpConformanceFixtureTest.php": "5ffa398332ce6a94f3f0dc09faedbdbff8cb046542e28cecd2608c9f0d82940d",
     "tests/Php/Conformance/PhpGrammarInputTest.php": "c4de109b46b01cd95818a5dd27b2126a3b6c705c6e5cea423867c6dbb54cfb45",
     "tests/Php/Conformance/RuleLevelConformanceTest.php": "85f065e524fe39e66e9c3069965e7d6291bd8190274b8ab50839dae3fdbce6a6",
@@ -9450,7 +9451,7 @@
     "tools/8.5/source-correspondence.py": "2490748dd878949b2afb9d02bdb55f7b89ca0c30250b81f7cfdf07a6ca74126b",
     "tools/8.5/source-inventory.py": "a67f610933203bbe9087aaafae5ef8bebf61e36dea033f48ef21c2e16c0bc7cb",
     "tools/8.5/source-lock.json": "195df8d9be0c2baf17ae615ac70a20dae0dace4da7f558236dd90cc74cb0d565",
-    "tools/8.5/sync-documentation.php": "aece668817bc7301fad971ceaa2554e88d2fe9e5857f23e6b80833ce8435dec5",
+    "tools/8.5/sync-documentation.php": "01534a7752fad293863f718b35c8f72424714e211007dea7efd27ba2d8c88f11",
     "tools/8.5/systematic-structure.php": "5bdc29ba0417bd0d974d1dcd9449e3a7eaddecdb6e48a196975ce239ed5864a6",
     "tools/grammar-release.py": "b5130a870a83382d18fbbb9724c194c50f4e6c1962130d110fc7e3f7cb96cf2d"
   }

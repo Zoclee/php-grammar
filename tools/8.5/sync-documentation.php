@@ -13,6 +13,13 @@ if ($start === false) {
     throw new RuntimeException('Missing generated EBNF marker.');
 }
 $prefix = substr($contents, 0, $start);
+$endMarker = '<!-- END GENERATED EBNF -->';
+$end = strpos($contents, $endMarker, $start);
+if ($end === false) {
+    throw new RuntimeException('Missing generated EBNF end marker.');
+}
+// Evidence and other hand-written appendices may follow the generated block.
+$suffix = substr($contents, $end + strlen($endMarker));
 $indexMarker = '<!-- BEGIN GENERATED PRODUCTION INDEX -->';
 $indexStart = strpos($prefix, $indexMarker);
 if ($indexStart !== false) {
@@ -27,7 +34,7 @@ if ($indexStart !== false) {
     $prefix .= Php85GrammarSections::index($source) . "\n\n## Canonical EBNF\n\n";
 }
 $output = $prefix . $marker . "\n```ebnf\n" . rtrim($source)
-    . "\n```\n<!-- END GENERATED EBNF -->\n";
+    . "\n```\n" . $endMarker . $suffix;
 if (in_array('--check', $argv, true)) {
     if (str_replace("\r\n", "\n", $contents) !== str_replace("\r\n", "\n", $output)) {
         fwrite(STDERR, "Documentation is stale. Run php tools/8.5/sync-documentation.php\n");
