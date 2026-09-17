@@ -1,5 +1,5 @@
 {
-    "grammar_sha256": "82807ea33d4d21239b3a400ab71a7776f07ec5b5eaa1aa013fe1257121564203",
+    "grammar_sha256": "7bede7421acf06152892210cc2a53c17628e88402057edf0a50a76cc11fb0a0c",
     "method": "Completed chart items during accepted positive inputs, not unique successful derivations or AST equivalence. Primitive successes are separate. Invalid inputs affect attempted coverage only.",
     "baseline": {
         "productions": 236,
@@ -2081,14 +2081,6 @@
         },
         {
             "kind": "production",
-            "identity": "variable",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "production",
             "identity": "semi-reserved-identifier",
             "classification": "primitive-bypassed",
             "area": "source/lexical",
@@ -2273,7 +2265,7 @@
         },
         {
             "kind": "production",
-            "identity": "binary-digit",
+            "identity": "backtick-string",
             "classification": "primitive-bypassed",
             "area": "source/lexical",
             "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
@@ -2281,7 +2273,7 @@
         },
         {
             "kind": "production",
-            "identity": "octal-digit",
+            "identity": "backtick-string-part-list",
             "classification": "primitive-bypassed",
             "area": "source/lexical",
             "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
@@ -2289,7 +2281,7 @@
         },
         {
             "kind": "production",
-            "identity": "decimal-digit",
+            "identity": "variable",
             "classification": "primitive-bypassed",
             "area": "source/lexical",
             "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
@@ -2297,35 +2289,11 @@
         },
         {
             "kind": "production",
-            "identity": "decimal-digit-nonzero",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "production",
-            "identity": "hexadecimal-digit",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "production",
-            "identity": "exponent-marker",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "production",
-            "identity": "ascii-letter",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+            "identity": "do-statement",
+            "classification": "meaningful-valid-syntax",
+            "area": "do-statement",
+            "evidence": "fixture:phase3-loop-do.php",
+            "reason": "Positive witness added in Phase 3."
         },
         {
             "kind": "production",
@@ -2341,22 +2309,6 @@
             "classification": "meaningful-valid-syntax",
             "area": "lexical-variable",
             "evidence": "fixture:phase3-closures-captures.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "production",
-            "identity": "backtick-string-part-list",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "production",
-            "identity": "do-statement",
-            "classification": "meaningful-valid-syntax",
-            "area": "do-statement",
-            "evidence": "fixture:phase3-loop-do.php",
             "reason": "Positive witness added in Phase 3."
         },
         {
@@ -2414,6 +2366,70 @@
             "area": "inline-use-declaration",
             "evidence": "fixture:phase3-imports-mixed-group.php",
             "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "production",
+            "identity": "halt-compiler-data",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "production",
+            "identity": "binary-digit",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "production",
+            "identity": "octal-digit",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "production",
+            "identity": "decimal-digit",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "production",
+            "identity": "decimal-digit-nonzero",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "production",
+            "identity": "hexadecimal-digit",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "production",
+            "identity": "exponent-marker",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "production",
+            "identity": "ascii-letter",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
         },
         {
             "kind": "production",
@@ -2482,14 +2498,6 @@
         {
             "kind": "production",
             "identity": "nowdoc-body",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "production",
-            "identity": "halt-compiler-data",
             "classification": "primitive-bypassed",
             "area": "source/lexical",
             "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
@@ -2577,27 +2585,19 @@
         },
         {
             "kind": "production",
-            "identity": "reserved-non-modifiers",
-            "classification": "meaningful-valid-syntax",
-            "area": "reserved-non-modifiers",
-            "evidence": "fixture:phase3-trait-alias-forms.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "production",
-            "identity": "backtick-string",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "production",
             "identity": "newline",
             "classification": "primitive-bypassed",
             "area": "source/lexical",
             "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
             "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "production",
+            "identity": "reserved-non-modifiers",
+            "classification": "meaningful-valid-syntax",
+            "area": "reserved-non-modifiers",
+            "evidence": "fixture:phase3-trait-alias-forms.php",
+            "reason": "Positive witness added in Phase 3."
         },
         {
             "kind": "alternative",
@@ -2694,14 +2694,6 @@
             "area": "source/lexical",
             "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
             "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "alternative",
-            "identity": "variable-variable/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "variable-variable",
-            "evidence": "rule:expression #184",
-            "reason": "Positive witness added in Phase 3."
         },
         {
             "kind": "alternative",
@@ -3261,6 +3253,670 @@
             "classification": "meaningful-valid-syntax",
             "area": "magic-constant",
             "evidence": "fixture:phase3-constant-magic.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "type/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "type",
+            "evidence": "rule:type #135",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type",
+            "evidence": "rule:type #100",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type",
+            "evidence": "rule:type #104",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type",
+            "evidence": "rule:type #106",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type/alternative:6",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type",
+            "evidence": "rule:type #110",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type/alternative:9",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type",
+            "evidence": "rule:type #116",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type/alternative:12",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type",
+            "evidence": "rule:type #120",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type/alternative:13",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type",
+            "evidence": "rule:type #122",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type/alternative:14",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type",
+            "evidence": "rule:type #124",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type/alternative:15",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type",
+            "evidence": "fixture:phase3-enum-members.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type/alternative:16",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type",
+            "evidence": "fixture:phase3-types-return-contexts.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type-without-static",
+            "evidence": "fixture:phase3-hooks-reference-get.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type-without-static",
+            "evidence": "rule:type-without-static #105",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type-without-static",
+            "evidence": "rule:type-without-static #107",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:6",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type-without-static",
+            "evidence": "rule:type-without-static #111",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:8",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type-without-static",
+            "evidence": "rule:type-without-static #115",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:10",
+            "classification": "meaningful-gap",
+            "area": "simple-type-without-static",
+            "reason": "Needs positive evidence or explicit investigation; never automatically suppressed.",
+            "evidence": ""
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:12",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type-without-static",
+            "evidence": "rule:type-without-static #121",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:13",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type-without-static",
+            "evidence": "rule:type-without-static #123",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:14",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type-without-static",
+            "evidence": "rule:type-without-static #125",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:15",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type-without-static",
+            "evidence": "fixture:phase3-constant-constructed-chains.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-type-without-static/alternative:16",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-type-without-static",
+            "evidence": "rule:type-without-static #129",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "primary-expression/alternative:11",
+            "classification": "meaningful-valid-syntax",
+            "area": "primary-expression",
+            "evidence": "fixture:phase3-language-intrinsics.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "primary-expression/alternative:12",
+            "classification": "meaningful-valid-syntax",
+            "area": "primary-expression",
+            "evidence": "fixture:phase3-language-intrinsics.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "primary-expression/alternative:13",
+            "classification": "meaningful-valid-syntax",
+            "area": "primary-expression",
+            "evidence": "fixture:phase3-constant-callable-builtins.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "primary-expression/alternative:14",
+            "classification": "meaningful-valid-syntax",
+            "area": "primary-expression",
+            "evidence": "fixture:phase3-constant-callable-builtins.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "postfix-expression/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "postfix-expression",
+            "evidence": "rule:expression #144",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "postfix-expression/alternative:7",
+            "classification": "meaningful-valid-syntax",
+            "area": "postfix-expression",
+            "evidence": "rule:expression #143",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #67",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #68",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:5",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #70",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:6",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #71",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:7",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #72",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:8",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #73",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:9",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #74",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:10",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #75",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:11",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #76",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:12",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #77",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:13",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #78",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "assignment-operator/alternative:14",
+            "classification": "meaningful-valid-syntax",
+            "area": "assignment-operator",
+            "evidence": "rule:expression #79",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "unary-expression/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "unary-expression",
+            "evidence": "rule:constant-expression #139",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "unary-expression/alternative:6",
+            "classification": "meaningful-valid-syntax",
+            "area": "unary-expression",
+            "evidence": "rule:constant-expression #142",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "unary-expression/alternative:7",
+            "classification": "meaningful-valid-syntax",
+            "area": "unary-expression",
+            "evidence": "rule:expression #145",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "variable-variable/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "variable-variable",
+            "evidence": "rule:expression #184",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "new-variable/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "new-variable",
+            "evidence": "fixture:phase3-new-variable-offset.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "new-variable/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "new-variable",
+            "evidence": "fixture:phase3-new-variable-property.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "new-variable/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "new-variable",
+            "evidence": "fixture:phase3-new-variable-property.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "new-variable/alternative:5",
+            "classification": "meaningful-valid-syntax",
+            "area": "new-variable",
+            "evidence": "fixture:phase3-new-variable-property.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "new-variable/alternative:6",
+            "classification": "meaningful-valid-syntax",
+            "area": "new-variable",
+            "evidence": "fixture:phase3-new-variable-static.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "property-name/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "property-name",
+            "evidence": "fixture:phase3-dereference-dynamic-property.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "array-creation-expression/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "array-creation-expression",
+            "evidence": "fixture:phase3-arrays-reference.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "array-pair/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "array-pair",
+            "evidence": "fixture:phase3-arrays-reference.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "array-pair/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "array-pair",
+            "evidence": "fixture:phase3-arrays-reference.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "array-pair/alternative:7",
+            "classification": "meaningful-valid-syntax",
+            "area": "array-pair",
+            "evidence": "fixture:phase3-destructure-keyed-list.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "foreach-variable/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "foreach-variable",
+            "evidence": "fixture:phase3-foreach-reference.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "foreach-variable/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "foreach-variable",
+            "evidence": "fixture:phase3-foreach-list.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "switch-statement/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "switch-statement",
+            "evidence": "fixture:phase3-switch-html.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "switch-case/alternative:6",
+            "classification": "meaningful-valid-syntax",
+            "area": "switch-case",
+            "evidence": "fixture:phase3-switch-html.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "lexical-variable/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "lexical-variable",
+            "evidence": "fixture:phase3-closures-captures.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "lexical-variable/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "lexical-variable",
+            "evidence": "fixture:phase3-closures-captures.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "parameter-modifier/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "parameter-modifier",
+            "evidence": "fixture:phase3-promotion-visibility.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "parameter-modifier/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "parameter-modifier",
+            "evidence": "fixture:phase3-promotion-visibility.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "parameter-modifier/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "parameter-modifier",
+            "evidence": "fixture:phase3-promotion-visibility.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "parameter-modifier/alternative:5",
+            "classification": "meaningful-valid-syntax",
+            "area": "parameter-modifier",
+            "evidence": "fixture:phase3-promotion-visibility.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "parameter-modifier/alternative:6",
+            "classification": "meaningful-valid-syntax",
+            "area": "parameter-modifier",
+            "evidence": "fixture:phase3-promotion-visibility.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "parameter-modifier/alternative:7",
+            "classification": "meaningful-valid-syntax",
+            "area": "parameter-modifier",
+            "evidence": "fixture:phase3-promotion-visibility.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "property-declaration/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "property-declaration",
+            "evidence": "rule:class-member #236",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "property-visibility-modifier/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "property-visibility-modifier",
+            "evidence": "fixture:phase3-constants-visibility.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "set-visibility-modifier/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "set-visibility-modifier",
+            "evidence": "fixture:phase3-properties-modifiers.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "set-visibility-modifier/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "set-visibility-modifier",
+            "evidence": "fixture:phase3-properties-modifiers.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "class-constant-modifier/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "class-constant-modifier",
+            "evidence": "fixture:phase3-constants-visibility.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "trait-alias/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "trait-alias",
+            "evidence": "fixture:phase3-trait-keyword-aliases.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "trait-alias/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "trait-alias",
+            "evidence": "fixture:phase3-trait-alias-forms.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "namespace-definition/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "namespace-definition",
+            "evidence": "fixture:phase3-namespaces-braced.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "namespace-definition/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "namespace-definition",
+            "evidence": "fixture:phase3-namespaces-braced.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "namespace-use-declaration/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "namespace-use-declaration",
+            "evidence": "fixture:phase3-imports-mixed-group.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "namespace-use-declaration/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "namespace-use-declaration",
+            "evidence": "fixture:phase3-imports-constant-group.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "use-type/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "use-type",
+            "evidence": "fixture:phase3-imports-function-group.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "use-type/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "use-type",
+            "evidence": "fixture:phase3-imports-constant-group.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "legacy-namespace-name/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "legacy-namespace-name",
+            "evidence": "fixture:phase3-imports-constant-group.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "legacy-namespace-name/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "legacy-namespace-name",
+            "evidence": "fixture:phase3-imports-simple-kinds.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "unprefixed-use-declaration/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "unprefixed-use-declaration",
+            "evidence": "fixture:phase3-imports-constant-group.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "unprefixed-use-declaration/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "unprefixed-use-declaration",
+            "evidence": "fixture:phase3-imports-constant-group.php",
             "reason": "Positive witness added in Phase 3."
         },
         {
@@ -4033,734 +4689,6 @@
         },
         {
             "kind": "alternative",
-            "identity": "type/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "type",
-            "evidence": "rule:type #135",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "rule:type #100",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "rule:type #104",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "rule:type #106",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "rule:type #110",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:9",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "rule:type #116",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:12",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "rule:type #120",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:13",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "rule:type #122",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:14",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "rule:type #124",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:15",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "fixture:phase3-enum-members.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type/alternative:16",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type",
-            "evidence": "fixture:phase3-types-return-contexts.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "fixture:phase3-hooks-reference-get.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "rule:type-without-static #105",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "rule:type-without-static #107",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "rule:type-without-static #111",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:8",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "rule:type-without-static #115",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:10",
-            "classification": "meaningful-gap",
-            "area": "simple-type-without-static",
-            "reason": "Needs positive evidence or explicit investigation; never automatically suppressed.",
-            "evidence": ""
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:12",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "rule:type-without-static #121",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:13",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "rule:type-without-static #123",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:14",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "rule:type-without-static #125",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:15",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "fixture:phase3-constant-constructed-chains.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:16",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "rule:type-without-static #129",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #67",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #68",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:5",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #70",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #71",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:7",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #72",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:8",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #73",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:9",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #74",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:10",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #75",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:11",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #76",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:12",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #77",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:13",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #78",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "assignment-operator/alternative:14",
-            "classification": "meaningful-valid-syntax",
-            "area": "assignment-operator",
-            "evidence": "rule:expression #79",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-expression/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-expression",
-            "evidence": "rule:expression #28",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-expression/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-expression",
-            "evidence": "rule:expression #30",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-expression/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-expression",
-            "evidence": "rule:expression #32",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-expression/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-expression",
-            "evidence": "rule:expression #34",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-expression/alternative:5",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-expression",
-            "evidence": "rule:expression #36",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-expression/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-expression",
-            "evidence": "rule:expression #38",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "relational-expression/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "relational-expression",
-            "evidence": "rule:expression #42",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "relational-expression/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "relational-expression",
-            "evidence": "rule:expression #44",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "relational-expression/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "relational-expression",
-            "evidence": "rule:expression #46",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "shift-expression/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "shift-expression",
-            "evidence": "rule:expression #50",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "shift-expression/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "shift-expression",
-            "evidence": "rule:expression #52",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "additive-expression/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "additive-expression",
-            "evidence": "rule:expression #56",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "multiplicative-expression/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "multiplicative-expression",
-            "evidence": "rule:expression #58",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "multiplicative-expression/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "multiplicative-expression",
-            "evidence": "rule:expression #60",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "multiplicative-expression/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "multiplicative-expression",
-            "evidence": "rule:expression #62",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "unary-expression/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "unary-expression",
-            "evidence": "rule:constant-expression #139",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "unary-expression/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "unary-expression",
-            "evidence": "rule:constant-expression #142",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "unary-expression/alternative:7",
-            "classification": "meaningful-valid-syntax",
-            "area": "unary-expression",
-            "evidence": "rule:expression #145",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "postfix-expression/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "postfix-expression",
-            "evidence": "rule:expression #144",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "postfix-expression/alternative:7",
-            "classification": "meaningful-valid-syntax",
-            "area": "postfix-expression",
-            "evidence": "rule:expression #143",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "primary-expression/alternative:11",
-            "classification": "meaningful-valid-syntax",
-            "area": "primary-expression",
-            "evidence": "fixture:phase3-language-intrinsics.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "primary-expression/alternative:12",
-            "classification": "meaningful-valid-syntax",
-            "area": "primary-expression",
-            "evidence": "fixture:phase3-language-intrinsics.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "primary-expression/alternative:13",
-            "classification": "meaningful-valid-syntax",
-            "area": "primary-expression",
-            "evidence": "fixture:phase3-constant-callable-builtins.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "primary-expression/alternative:14",
-            "classification": "meaningful-valid-syntax",
-            "area": "primary-expression",
-            "evidence": "fixture:phase3-constant-callable-builtins.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "array-creation-expression/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "array-creation-expression",
-            "evidence": "fixture:phase3-arrays-reference.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "array-pair/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "array-pair",
-            "evidence": "fixture:phase3-arrays-reference.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "array-pair/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "array-pair",
-            "evidence": "fixture:phase3-arrays-reference.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "array-pair/alternative:7",
-            "classification": "meaningful-valid-syntax",
-            "area": "array-pair",
-            "evidence": "fixture:phase3-destructure-keyed-list.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "lexical-variable/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "lexical-variable",
-            "evidence": "fixture:phase3-closures-captures.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "lexical-variable/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "lexical-variable",
-            "evidence": "fixture:phase3-closures-captures.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "foreach-variable/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "foreach-variable",
-            "evidence": "fixture:phase3-foreach-reference.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "foreach-variable/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "foreach-variable",
-            "evidence": "fixture:phase3-foreach-list.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "switch-statement/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "switch-statement",
-            "evidence": "fixture:phase3-switch-html.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "switch-case/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "switch-case",
-            "evidence": "fixture:phase3-switch-html.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "parameter-modifier/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "parameter-modifier",
-            "evidence": "fixture:phase3-promotion-visibility.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "parameter-modifier/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "parameter-modifier",
-            "evidence": "fixture:phase3-promotion-visibility.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "parameter-modifier/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "parameter-modifier",
-            "evidence": "fixture:phase3-promotion-visibility.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "parameter-modifier/alternative:5",
-            "classification": "meaningful-valid-syntax",
-            "area": "parameter-modifier",
-            "evidence": "fixture:phase3-promotion-visibility.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "parameter-modifier/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "parameter-modifier",
-            "evidence": "fixture:phase3-promotion-visibility.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "parameter-modifier/alternative:7",
-            "classification": "meaningful-valid-syntax",
-            "area": "parameter-modifier",
-            "evidence": "fixture:phase3-promotion-visibility.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "property-declaration/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "property-declaration",
-            "evidence": "rule:class-member #236",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "property-visibility-modifier/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "property-visibility-modifier",
-            "evidence": "fixture:phase3-constants-visibility.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "set-visibility-modifier/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "set-visibility-modifier",
-            "evidence": "fixture:phase3-properties-modifiers.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "set-visibility-modifier/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "set-visibility-modifier",
-            "evidence": "fixture:phase3-properties-modifiers.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "class-constant-modifier/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "class-constant-modifier",
-            "evidence": "fixture:phase3-constants-visibility.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "trait-alias/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "trait-alias",
-            "evidence": "fixture:phase3-trait-keyword-aliases.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "trait-alias/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "trait-alias",
-            "evidence": "fixture:phase3-trait-alias-forms.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "namespace-definition/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "namespace-definition",
-            "evidence": "fixture:phase3-namespaces-braced.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "namespace-definition/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "namespace-definition",
-            "evidence": "fixture:phase3-namespaces-braced.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "namespace-use-declaration/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "namespace-use-declaration",
-            "evidence": "fixture:phase3-imports-mixed-group.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "namespace-use-declaration/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "namespace-use-declaration",
-            "evidence": "fixture:phase3-imports-constant-group.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "use-type/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "use-type",
-            "evidence": "fixture:phase3-imports-function-group.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "use-type/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "use-type",
-            "evidence": "fixture:phase3-imports-constant-group.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "legacy-namespace-name/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "legacy-namespace-name",
-            "evidence": "fixture:phase3-imports-constant-group.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "legacy-namespace-name/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "legacy-namespace-name",
-            "evidence": "fixture:phase3-imports-simple-kinds.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "unprefixed-use-declaration/alternative:1",
-            "classification": "meaningful-valid-syntax",
-            "area": "unprefixed-use-declaration",
-            "evidence": "fixture:phase3-imports-constant-group.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "unprefixed-use-declaration/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "unprefixed-use-declaration",
-            "evidence": "fixture:phase3-imports-constant-group.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
             "identity": "single-quoted-string-content/alternative:1",
             "classification": "primitive-bypassed",
             "area": "source/lexical",
@@ -4838,6 +4766,30 @@
             "area": "source/lexical",
             "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition.",
             "evidence": "tests/Php/Lexing/LexerTest.php::testTokenizesWhitespaceCommentsAndDocComments"
+        },
+        {
+            "kind": "alternative",
+            "identity": "newline/alternative:1",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "alternative",
+            "identity": "newline/alternative:2",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
+        },
+        {
+            "kind": "alternative",
+            "identity": "newline/alternative:3",
+            "classification": "primitive-bypassed",
+            "area": "source/lexical",
+            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
+            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
         },
         {
             "kind": "alternative",
@@ -5353,286 +5305,6 @@
         },
         {
             "kind": "alternative",
-            "identity": "new-variable/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "new-variable",
-            "evidence": "fixture:phase3-new-variable-offset.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "new-variable/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "new-variable",
-            "evidence": "fixture:phase3-new-variable-property.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "new-variable/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "new-variable",
-            "evidence": "fixture:phase3-new-variable-property.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "new-variable/alternative:5",
-            "classification": "meaningful-valid-syntax",
-            "area": "new-variable",
-            "evidence": "fixture:phase3-new-variable-property.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "new-variable/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "new-variable",
-            "evidence": "fixture:phase3-new-variable-static.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "property-name/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "property-name",
-            "evidence": "fixture:phase3-dereference-dynamic-property.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "newline/alternative:1",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "alternative",
-            "identity": "newline/alternative:2",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "alternative",
-            "identity": "newline/alternative:3",
-            "classification": "primitive-bypassed",
-            "area": "source/lexical",
-            "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper.",
-            "evidence": "tests/Php/Lexing/LexerTest.php; tests/Php/Conformance/Php85AuditRemediationTest.php; audit-numbers-*, audit-strings-*, audit-names-*, audit-halt-data fixtures"
-        },
-        {
-            "kind": "alternative",
-            "identity": "simple-statement/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-statement",
-            "evidence": "fixture:phase3-loop-do.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "matched-while-statement/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "matched-while-statement",
-            "evidence": "fixture:phase3-while-html.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "matched-for-statement/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "matched-for-statement",
-            "evidence": "fixture:phase3-for-html.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "matched-foreach-statement/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "matched-foreach-statement",
-            "evidence": "fixture:phase3-foreach-html.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "matched-declare-statement/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "matched-declare-statement",
-            "evidence": "fixture:phase3-declare-html.php",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "bitwise-or-prefix-context/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "bitwise-or-prefix-context",
-            "evidence": "rule:expression #22",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "bitwise-xor-prefix-context/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "bitwise-xor-prefix-context",
-            "evidence": "rule:expression #24",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "bitwise-and-prefix-context/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "bitwise-and-prefix-context",
-            "evidence": "rule:expression #26",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-prefix-context/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-prefix-context",
-            "evidence": "rule:expression #28",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-prefix-context/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-prefix-context",
-            "evidence": "rule:expression #28",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-prefix-context/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-prefix-context",
-            "evidence": "rule:expression #30",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-prefix-context/alternative:5",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-prefix-context",
-            "evidence": "rule:expression #32",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-prefix-context/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-prefix-context",
-            "evidence": "rule:expression #34",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-prefix-context/alternative:7",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-prefix-context",
-            "evidence": "rule:expression #36",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "equality-prefix-context/alternative:8",
-            "classification": "meaningful-valid-syntax",
-            "area": "equality-prefix-context",
-            "evidence": "rule:expression #38",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "relational-prefix-context/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "relational-prefix-context",
-            "evidence": "rule:expression #42",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "relational-prefix-context/alternative:5",
-            "classification": "meaningful-valid-syntax",
-            "area": "relational-prefix-context",
-            "evidence": "rule:expression #44",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "relational-prefix-context/alternative:6",
-            "classification": "meaningful-valid-syntax",
-            "area": "relational-prefix-context",
-            "evidence": "rule:expression #46",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "shift-prefix-context/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "shift-prefix-context",
-            "evidence": "rule:expression #50",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "shift-prefix-context/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "shift-prefix-context",
-            "evidence": "rule:expression #50",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "shift-prefix-context/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "shift-prefix-context",
-            "evidence": "rule:expression #52",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "additive-prefix-context/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "additive-prefix-context",
-            "evidence": "rule:expression #56",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "multiplicative-prefix-context/alternative:2",
-            "classification": "meaningful-valid-syntax",
-            "area": "multiplicative-prefix-context",
-            "evidence": "rule:expression #58",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "multiplicative-prefix-context/alternative:3",
-            "classification": "meaningful-valid-syntax",
-            "area": "multiplicative-prefix-context",
-            "evidence": "rule:expression #58",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "multiplicative-prefix-context/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "multiplicative-prefix-context",
-            "evidence": "rule:expression #60",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
-            "identity": "multiplicative-prefix-context/alternative:5",
-            "classification": "meaningful-valid-syntax",
-            "area": "multiplicative-prefix-context",
-            "evidence": "rule:expression #62",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
             "identity": "include-operator/alternative:2",
             "classification": "meaningful-valid-syntax",
             "area": "include-operator",
@@ -5725,6 +5397,334 @@
             "classification": "meaningful-valid-syntax",
             "area": "cast-operator",
             "evidence": "rule:expression #98",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "simple-statement/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "simple-statement",
+            "evidence": "fixture:phase3-loop-do.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "matched-while-statement/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "matched-while-statement",
+            "evidence": "fixture:phase3-while-html.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "matched-for-statement/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "matched-for-statement",
+            "evidence": "fixture:phase3-for-html.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "matched-foreach-statement/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "matched-foreach-statement",
+            "evidence": "fixture:phase3-foreach-html.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "matched-declare-statement/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "matched-declare-statement",
+            "evidence": "fixture:phase3-declare-html.php",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "bitwise-or-prefix-context/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "bitwise-or-prefix-context",
+            "evidence": "rule:expression #22",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "bitwise-xor-prefix-context/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "bitwise-xor-prefix-context",
+            "evidence": "rule:expression #24",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "bitwise-and-prefix-context/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "bitwise-and-prefix-context",
+            "evidence": "rule:expression #26",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-expression/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-expression",
+            "evidence": "rule:expression #28",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-expression/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-expression",
+            "evidence": "rule:expression #30",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-expression/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-expression",
+            "evidence": "rule:expression #32",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-expression/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-expression",
+            "evidence": "rule:expression #34",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-expression/alternative:5",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-expression",
+            "evidence": "rule:expression #36",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-expression/alternative:6",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-expression",
+            "evidence": "rule:expression #38",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-prefix-context/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-prefix-context",
+            "evidence": "rule:expression #28",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-prefix-context/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-prefix-context",
+            "evidence": "rule:expression #28",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-prefix-context/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-prefix-context",
+            "evidence": "rule:expression #30",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-prefix-context/alternative:5",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-prefix-context",
+            "evidence": "rule:expression #32",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-prefix-context/alternative:6",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-prefix-context",
+            "evidence": "rule:expression #34",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-prefix-context/alternative:7",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-prefix-context",
+            "evidence": "rule:expression #36",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "equality-prefix-context/alternative:8",
+            "classification": "meaningful-valid-syntax",
+            "area": "equality-prefix-context",
+            "evidence": "rule:expression #38",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "relational-expression/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "relational-expression",
+            "evidence": "rule:expression #42",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "relational-expression/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "relational-expression",
+            "evidence": "rule:expression #44",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "relational-expression/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "relational-expression",
+            "evidence": "rule:expression #46",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "relational-prefix-context/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "relational-prefix-context",
+            "evidence": "rule:expression #42",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "relational-prefix-context/alternative:5",
+            "classification": "meaningful-valid-syntax",
+            "area": "relational-prefix-context",
+            "evidence": "rule:expression #44",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "relational-prefix-context/alternative:6",
+            "classification": "meaningful-valid-syntax",
+            "area": "relational-prefix-context",
+            "evidence": "rule:expression #46",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "shift-expression/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "shift-expression",
+            "evidence": "rule:expression #50",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "shift-expression/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "shift-expression",
+            "evidence": "rule:expression #52",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "shift-prefix-context/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "shift-prefix-context",
+            "evidence": "rule:expression #50",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "shift-prefix-context/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "shift-prefix-context",
+            "evidence": "rule:expression #50",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "shift-prefix-context/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "shift-prefix-context",
+            "evidence": "rule:expression #52",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "additive-expression/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "additive-expression",
+            "evidence": "rule:expression #56",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "additive-prefix-context/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "additive-prefix-context",
+            "evidence": "rule:expression #56",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "multiplicative-expression/alternative:1",
+            "classification": "meaningful-valid-syntax",
+            "area": "multiplicative-expression",
+            "evidence": "rule:expression #58",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "multiplicative-expression/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "multiplicative-expression",
+            "evidence": "rule:expression #60",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "multiplicative-expression/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "multiplicative-expression",
+            "evidence": "rule:expression #62",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "multiplicative-prefix-context/alternative:2",
+            "classification": "meaningful-valid-syntax",
+            "area": "multiplicative-prefix-context",
+            "evidence": "rule:expression #58",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "multiplicative-prefix-context/alternative:3",
+            "classification": "meaningful-valid-syntax",
+            "area": "multiplicative-prefix-context",
+            "evidence": "rule:expression #58",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "multiplicative-prefix-context/alternative:4",
+            "classification": "meaningful-valid-syntax",
+            "area": "multiplicative-prefix-context",
+            "evidence": "rule:expression #60",
+            "reason": "Positive witness added in Phase 3."
+        },
+        {
+            "kind": "alternative",
+            "identity": "multiplicative-prefix-context/alternative:5",
+            "classification": "meaningful-valid-syntax",
+            "area": "multiplicative-prefix-context",
+            "evidence": "rule:expression #62",
             "reason": "Positive witness added in Phase 3."
         }
     ],

@@ -1,6 +1,6 @@
 {
     "php": "8.5.10",
-    "grammar_sha256": "82807ea33d4d21239b3a400ab71a7776f07ec5b5eaa1aa013fe1257121564203",
+    "grammar_sha256": "7bede7421acf06152892210cc2a53c17628e88402057edf0a50a76cc11fb0a0c",
     "generator_sha256": "051711fd68241162b945a867757ee75ca802a1af34c037ab18fc9ec1d1dac0a5",
     "families": {
         "function": 62,

@@ -3,7 +3,7 @@
     "ast": "1.1.3",
     "schema": 120,
     "hashes": {
-        "grammar/8.5/php.ebnf": "82807ea33d4d21239b3a400ab71a7776f07ec5b5eaa1aa013fe1257121564203",
+        "grammar/8.5/php.ebnf": "7bede7421acf06152892210cc2a53c17628e88402057edf0a50a76cc11fb0a0c",
         "src/Php/Lexing/StringSyntax.php": "7b634e9aeafc6b1b1625e1c257577829e75cce78897f5a4c96d27a974ff1857a",
         "src/Php/Lexing/Lexer.php": "d2da555fc5ec7fabecfa5719ca1f5cc08287886008b5cf6e62d825b65d4172c9",
         "tests/Support/DerivationForest.php": "365824975335ef203920b1ba80989db2f28533028f380b11e40db3c3f3f9f77f",

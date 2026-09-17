@@ -2895,11 +2895,11 @@
   ],
   "hashes": {
     "tools/8.5/phase6-evidence.py": "65f6a2e12a4ce739b28d73d64676752420f1317ec8cf3c9ef1deb58e229d54e4",
-    "docs/8.5/phase6-reconciliation.json": "984a9ef9bafe78b2e1fcae51bd85d65733686d79d3d59e2887dd149a2abb9738",
-    "docs/8.5/phase6-matrices.json": "8c07fb352f0e3c9baaac2e9c63140a7d172c9733fc98e3cf23ce20fe6aa33b6d",
+    "docs/8.5/phase6-reconciliation.json": "71874c465605db60fad5e446be6f14294b4281911b90b47c94e061ba61d29a81",
+    "docs/8.5/phase6-matrices.json": "8add5c031a50a64bec6a1942d4b68bccb65fb3ed33d0c18887b4ab44366b8ee3",
     "docs/8.5/phase6-upstream-tests.json": "79b14518fdacf4d1cfad9c3028da8337535647a48636489bce9f863cf23a110e",
-    "docs/8.5/phase5-lexical-evidence.json": "5e6c4cad9a5753362e77b3e770a65b2035f7ccabae1417eb148d3a9e0e105eb2",
-    "docs/8.5/systematic-structure.json": "6b815e0f7ae511ef52b210d14d1eb1faea049e6d093f545492b6b5a64808277a",
+    "docs/8.5/phase5-lexical-evidence.json": "2952cd9f5d918618000f1117a6df24667c27862d200f23e5fa52e81e91950e6a",
+    "docs/8.5/systematic-structure.json": "190ba039ae85c46e82bf54132ed15d7c563b5e7a3f318753f020d30cf3b4e0a1",
     "docs/8.5/audit-remediation.md": "10b173a8227ad193b32c25b6800e74e81117cd334b034bbe7c438ba9daae102b"
   }
 }

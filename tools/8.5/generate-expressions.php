@@ -50,7 +50,7 @@ final class Php85ExpressionFamilies
                     'right' => "$operand , $operator , { $operand , $operator }",
                 };
                 $productions[$expression] = "$expression =\n    $operand , $tail ;";
-                $productions[$context] = "$context =\n    $childContext | $pending , [ $childContext ] ;";
+                $productions[$context] = "$context =\n      $childContext\n    | $pending , [ $childContext ] ;";
             }
         }
         return $productions;
