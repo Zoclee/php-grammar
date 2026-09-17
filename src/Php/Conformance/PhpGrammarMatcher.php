@@ -54,6 +54,14 @@ final readonly class PhpGrammarMatcher
     public function matchesRule(string $version, string $rule, string $source): MatchResult
     {
         $grammar = $this->grammars->load($version);
+        // Keep the existing failure-result contract; diagnose before lexing the source.
+        if (!$grammar->hasProduction($rule) && !in_array($rule, $this->lexicalPrimitiveNames(), true)) {
+            return new MatchResult(false, $rule, new StringInput($source), 0, [
+                in_array($rule, $this->grammars->manifest()->lexicalPrimitives(), true)
+                    ? sprintf('Lexical primitive "%s" for PHP %s requires a byte matcher with the documented scanner context; it is not a PHP token rule.', $rule, $version)
+                    : sprintf('Unknown production "%s" for PHP %s. Use productionNames() to discover productions.', $rule, $version),
+            ]);
+        }
         $lexer = $this->lexerFor($version);
         try {
             $tokens = $this->tokenizeForRule($lexer, $rule, $source);

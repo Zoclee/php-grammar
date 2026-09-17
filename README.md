@@ -6,6 +6,42 @@ Versioned EBNF grammars and human-readable specifications for the PHP language s
 
 php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation.
 
+## Quick start for tool developers
+
+Install with `composer require php-grammar/php-grammar` from your configured
+package repository (or use a local Composer path repository; see the
+[usage guide](docs/usage.md)). Runtime use requires PHP 8.2 or later.
+
+```php
+require __DIR__ . '/vendor/autoload.php';
+
+use Composer\InstalledVersions;
+use PhpGrammar\Repository\RepositoryManifest;
+use PhpGrammar\Php\Conformance\GrammarRepository;
+use PhpGrammar\Php\Conformance\PhpGrammarMatcher;
+
+$root = InstalledVersions::getInstallPath('php-grammar/php-grammar');
+$manifest = RepositoryManifest::fromRepositoryRoot($root);
+$versions = $manifest->versions(); // ['8.5']; each version is standalone
+$grammar = (new GrammarRepository($manifest))->load('8.5');
+$expression = $grammar->production('expression');
+$result = PhpGrammarMatcher::forManifest($manifest)
+    ->matchesRule('8.5', 'expression', '$a + 1');
+echo $result->matched ? 'structurally accepted' : 'rejected';
+```
+
+Structural acceptance includes lexical processing and EBNF recognition; it does
+not validate every contextual compiler constraint or runtime behavior. Read the
+[PHP 8.5 specification](grammar/8.5/php.md), [public API contract](docs/api.md),
+and [integration guide](docs/usage.md) for the three-layer conformance model,
+primitive responsibilities, metadata navigation, and compatibility guarantees.
+`vendor/bin/php-grammar versions` discovers packages; `rules`, `rule`, `refs`,
+`sections`, and `section` inspect them as JSON. The machine discovery entry point
+is [`php-grammar.json`](php-grammar.json), with a
+[versioned schema](schema/php-grammar.schema.json).
+
+## Conformance scope
+
 **PHP 8.5 is grammar-complete, with documented external contextual constraints;
 conformance evidence is bounded and uses PHP 8.5.10.** Here, grammar-complete
 means all known syntax constructs are accounted for and no meaningful grammar
@@ -211,7 +247,8 @@ composer conformance:phase6 # requires PHP 8.5
 composer conformance:interpolation # requires PHP 8.5 and ext-ast
 composer conformance:diagnostics # requires PHP 8.5
 composer certification:check # requires Python and cached pinned sources
-composer release:check # complete 24-gate validation; see prerequisites below
+composer manifest:check # JSON Schema and package path validation
+composer release:check # complete 27-gate validation; see prerequisites below
 ```
 
 PHP 8.5 binary expression and prefix-context families are maintained with
@@ -221,7 +258,8 @@ then run `php tools/8.5/sync-documentation.php` after grammar edits. The
 production decisions and validation evidence. Consumers use the standalone EBNF.
 
 The complete release gate requires PHP 8.5 with ext-ast and PHPUnit extensions,
-Python 3.10+, Composer, Git and RTK on PATH. Fetch source evidence once with
+Python 3.10+, Composer, Git and RTK on PATH. Install schema-validation dependencies
+with `python -m pip install -r tools/requirements.txt`. Fetch source evidence once with
 `rtk proxy python tools/8.5/fetch-sources.py .audit` and
 `rtk proxy python tools/8.5/source-correspondence.py --fetch --check`.
 Use `rtk proxy python tools/grammar-release.py --php /path/to/php85
@@ -245,9 +283,12 @@ use PhpGrammar\Ebnf\Parser;
 $grammar = (new Parser())->parse(file_get_contents('grammar/8.5/php.ebnf'));
 $matcher = Matcher::withDefaultPrimitives();
 
-$result = $matcher->matches($grammar, $input);
 $operator = $matcher->matchesRule($grammar, 'object-operator', '->');
 ```
+
+This low-level example is for lexical leaves. For PHP expressions and complete
+files use `PhpGrammarMatcher` from the quick start; raw byte matching does not
+configure PHP scanner states or resolve all left-recursive grammar families.
 
 Phase 3 refactors the matcher around a generic input abstraction. `StringInput`
 preserves the Phase 2 string behavior, and callers may still pass strings

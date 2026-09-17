@@ -7,7 +7,7 @@
         "src/Php/Lexing/LexerState.php": "6c598c54d813774bfa06b320142108b804bdc4796916876cae345fbce2b3012f",
         "src/Php/Lexing/PhpVersion.php": "8271b549f251bbb5a3e5d793877ea0359d92de421ed88a9dd06fafac12202498",
         "src/Php/Lexing/StringSyntax.php": "7b634e9aeafc6b1b1625e1c257577829e75cce78897f5a4c96d27a974ff1857a",
-        "src/Php/Conformance/PhpGrammarMatcher.php": "1ea7d24e027d7e94eb0d6ee3a256b7247c0f47aa0ffc7aa027bf026f94e0c355",
+        "src/Php/Conformance/PhpGrammarMatcher.php": "7b4906218b064690cdbc0eba35610bfa5c94fba893a0332d51e48671b4dc6457",
         "src/Php/Conformance/PhpGrammarInput.php": "09c02bde1e0d3183bb0afe89969c6ac2cbfd9dd3311650e7352ff1231a786e8e",
         "tests/Support/Php85LexicalCases.php": "99622eff32493ae9309a0c04a462725891ecd3e96d52c504d4937df258ab9485",
         "tests/Support/Php85LexicalAudit.php": "5414f585fa3a57a6a2aa59c61dd731060bc165329f48db62e2d6336a38ddecb6",

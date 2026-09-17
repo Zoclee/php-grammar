@@ -1,0 +1,50 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+$autoload = $GLOBALS['_composer_autoload_path'] ?? dirname(__DIR__) . '/vendor/autoload.php';
+require $autoload;
+
+use PhpGrammar\Php\Conformance\GrammarRepository;
+use PhpGrammar\Repository\RepositoryManifest;
+
+$usage = "Usage: php-grammar versions | rules VERSION | rule VERSION NAME | refs VERSION NAME | sections VERSION | section VERSION ID\nAll results are JSON. refs includes direct and reverse references.\n";
+try {
+    $command = $argv[1] ?? '--help';
+    if (in_array($command, ['--help', '-h'], true)) {
+        echo $usage;
+        exit(0);
+    }
+    $arity = ['versions' => 2, 'rules' => 3, 'rule' => 4, 'refs' => 4, 'sections' => 3, 'section' => 4];
+    if (!isset($arity[$command]) || count($argv) !== $arity[$command]) {
+        throw new InvalidArgumentException($usage);
+    }
+    $manifest = RepositoryManifest::fromRepositoryRoot(dirname(__DIR__));
+    $repository = new GrammarRepository($manifest);
+    if ($command === 'versions') {
+        $output = array_map(static fn ($package): array => [
+            'version' => $package->version, 'status' => $package->status,
+            'grammar' => $package->grammarPath, 'documentation' => $package->documentationPath,
+        ], $manifest->packages());
+    } else {
+        $grammar = $repository->load($argv[2]);
+        $output = match ($command) {
+            'rules' => $grammar->productionNames(),
+            'rule' => $grammar->production($argv[3]),
+            'refs' => [
+                'references' => $grammar->hasProduction($argv[3]) ? $grammar->production($argv[3])->references() : [],
+                'referencedBy' => $grammar->referencesTo($argv[3]),
+            ],
+            'sections' => $repository->productionIndex($argv[2])->sections(),
+            'section' => $repository->productionIndex($argv[2])->rulesInSection($argv[3]),
+        };
+        if ($command === 'refs' && !$grammar->hasProduction($argv[3]) && !in_array($argv[3], $manifest->lexicalPrimitives(), true)) {
+            $grammar->production($argv[3]);
+        }
+    }
+    echo json_encode($output, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
+} catch (Throwable $error) {
+    fwrite(STDERR, rtrim($error->getMessage()) . "\n");
+    exit(1);
+}

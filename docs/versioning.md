@@ -179,6 +179,15 @@ General guidance:
 
 While the project remains pre-1.0, breaking changes may occur more frequently, but they should still be documented clearly.
 
+The [public API contract](api.md) makes these rules concrete: production
+rename/removal, incompatible manifest schemas, and public signature changes are
+breaking changes and require migration guidance. Additive public APIs, optional
+manifest capabilities, and new PHP grammar versions are minor changes.
+Documentation/evidence corrections, non-breaking descriptive metadata updates,
+and internal performance improvements are patch changes. Schema identifiers are
+independent of package releases and PHP language versions; retain a published
+schema when introducing an incompatible successor.
+
 ## 7. Grammar Compatibility
 
 A grammar version represents the syntax of one PHP major.minor language version.

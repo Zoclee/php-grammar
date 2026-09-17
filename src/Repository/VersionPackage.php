@@ -13,6 +13,10 @@ final readonly class VersionPackage
         public string $documentationPath,
         public string $conformanceFixturePath,
         public string $lexerVersion,
+        public string $status = 'unspecified',
+        public ?string $sourceProfile = null,
+        public array $phpSource = [],
+        public array $metadata = [],
     ) {
     }
 }

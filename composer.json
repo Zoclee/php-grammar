@@ -1,7 +1,11 @@
 {
     "name": "php-grammar/php-grammar",
     "description": "Versioned EBNF grammars and human-readable specifications for PHP language syntax.",
-    "type": "project",
+    "type": "library",
+    "bin": ["bin/php-grammar"],
+    "archive": {
+        "exclude": ["/.audit", "/.phpunit.cache", "/vendor"]
+    },
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -21,6 +25,7 @@
     },
     "scripts": {
         "test": "phpunit",
+        "manifest:check": "python tools/validate-manifest.py",
         "grammar:coverage": "php bin/grammar-coverage.php",
         "lexer:coverage": "php bin/lexer-coverage.php",
         "conformance:phase6": "php tools/8.5/phase6.php",

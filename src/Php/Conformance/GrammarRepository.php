@@ -8,6 +8,7 @@ use PhpGrammar\Ebnf\Grammar;
 use PhpGrammar\Ebnf\Parser;
 use PhpGrammar\Ebnf\Validation\GrammarValidator;
 use PhpGrammar\Repository\RepositoryManifest;
+use PhpGrammar\Repository\ProductionIndex;
 
 final class GrammarRepository
 {
@@ -33,7 +34,7 @@ final class GrammarRepository
         $package = $this->manifest->package($version);
         $path = $this->manifest->absolutePath($package->grammarPath);
         if (!is_file($path)) {
-            throw new ConformanceException(sprintf('Unknown grammar version "%s".', $version));
+            throw new ConformanceException(sprintf('Missing grammar file "%s" for PHP %s.', $path, $version));
         }
 
         $source = file_get_contents($path);
@@ -62,6 +63,17 @@ final class GrammarRepository
     public function manifest(): RepositoryManifest
     {
         return $this->manifest;
+    }
+
+    public function productionIndex(string $version): ProductionIndex
+    {
+        $grammar = $this->load($version);
+        $path = $this->manifest->absolutePath($this->manifest->package($version)->grammarPath);
+        $source = file_get_contents($path);
+        if (!is_string($source)) {
+            throw new ConformanceException(sprintf('Failed to read grammar file "%s".', $path));
+        }
+        return ProductionIndex::fromSource($grammar, $source);
     }
 
     /**

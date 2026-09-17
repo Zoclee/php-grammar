@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "php-grammar manifest 1.0 (unversioned legacy manifests are also accepted)",
+  "type": "object",
+  "required": [
+    "versions"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "versions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/package"
+      }
+    },
+    "lexicalPrimitives": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    },
+    "lexicalPrimitiveDefinitions": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/primitive"
+      }
+    }
+  },
+  "$defs": {
+    "path": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*$"
+    },
+    "package": {
+      "type": "object",
+      "required": [
+        "version",
+        "rootProduction",
+        "grammar",
+        "documentation",
+        "conformanceFixtures",
+        "lexer"
+      ],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+$"
+        },
+        "rootProduction": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "grammar": {
+          "$ref": "#/$defs/path"
+        },
+        "documentation": {
+          "$ref": "#/$defs/path"
+        },
+        "conformanceFixtures": {
+          "$ref": "#/$defs/path"
+        },
+        "lexer": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+$"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "candidate",
+            "stable",
+            "historical",
+            "deprecated"
+          ]
+        },
+        "sourceProfile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phpSource": {
+          "type": "object",
+          "required": [
+            "branch",
+            "commit"
+          ],
+          "properties": {
+            "branch": {
+              "type": "string",
+              "minLength": 1
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/path"
+          }
+        }
+      }
+    },
+    "primitive": {
+      "type": "object",
+      "required": [
+        "meaning",
+        "scannerContext",
+        "independentMatcher"
+      ],
+      "properties": {
+        "meaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scannerContext": {
+          "type": "string",
+          "minLength": 1
+        },
+        "independentMatcher": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "schemaVersion"
+        ]
+      },
+      "then": {
+        "required": [
+          "lexicalPrimitives",
+          "lexicalPrimitiveDefinitions"
+        ],
+        "properties": {
+          "versions": {
+            "items": {
+              "required": [
+                "status",
+                "sourceProfile",
+                "phpSource"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

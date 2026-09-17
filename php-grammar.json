@@ -1,4 +1,6 @@
 {
+    "$schema": "schema/php-grammar.schema.json",
+    "schemaVersion": "1.0",
     "versions": [
         {
             "version": "8.5",
@@ -6,7 +8,21 @@
             "grammar": "grammar/8.5/php.ebnf",
             "documentation": "grammar/8.5/php.md",
             "conformanceFixtures": "tests/fixtures/php/8.5",
-            "lexer": "8.5"
+            "lexer": "8.5",
+            "status": "stable",
+            "sourceProfile": "Byte-oriented PHP source; zend.multibyte=0; short_open_tag enabled and disabled; lint acceptance, not runtime success.",
+            "phpSource": {
+                "branch": "PHP-8.5",
+                "commit": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e"
+            },
+            "metadata": {
+                "sourceCorrespondence": "docs/8.5/source-correspondence.json",
+                "sourceInventory": "docs/8.5/source-inventory.json",
+                "conformance": "docs/8.5/final-evidence.json",
+                "scanner": "docs/8.5/scanner-product.json",
+                "coverage": "docs/8.5/phase3-coverage.json",
+                "contextualConstraints": "docs/8.5/compiler-boundaries.json"
+            }
         }
     ],
     "lexicalPrimitives": [
@@ -18,5 +34,47 @@
         "single-quoted-code-unit",
         "encapsed-code-unit",
         "nowdoc-code-unit"
-    ]
+    ],
+    "lexicalPrimitiveDefinitions": {
+        "code-unit": {
+            "meaning": "One raw source byte, including NUL.",
+            "scannerContext": "None; uninterpreted bytes.",
+            "independentMatcher": true
+        },
+        "non-ascii-code-unit": {
+            "meaning": "One raw byte in the range 0x80 through 0xFF.",
+            "scannerContext": "None; bytes, not Unicode code points.",
+            "independentMatcher": true
+        },
+        "html-code-unit": {
+            "meaning": "Byte in HTML state, stopping before the next enabled recognized opening tag.",
+            "scannerContext": "HTML state and short_open_tag configuration.",
+            "independentMatcher": false
+        },
+        "line-comment-code-unit": {
+            "meaning": "Byte before CR, LF, EOF, or the first ?>.",
+            "scannerContext": "Line-comment state with lookahead for ?>.",
+            "independentMatcher": false
+        },
+        "block-comment-code-unit": {
+            "meaning": "Byte before the first */; never consume that terminator.",
+            "scannerContext": "Block-comment state with lookahead for */.",
+            "independentMatcher": false
+        },
+        "single-quoted-code-unit": {
+            "meaning": "Byte other than apostrophe or backslash inside a single-quoted string.",
+            "scannerContext": "Single-quoted string body.",
+            "independentMatcher": true
+        },
+        "encapsed-code-unit": {
+            "meaning": "Text byte excluding the closing delimiter, backslash, and interpolation starts.",
+            "scannerContext": "Active double-quote, backtick, or heredoc state and delimiter.",
+            "independentMatcher": false
+        },
+        "nowdoc-code-unit": {
+            "meaning": "Uninterpreted body byte before the matching closing label at a line start, respecting indentation.",
+            "scannerContext": "Nowdoc label, line position and indentation.",
+            "independentMatcher": false
+        }
+    }
 }
