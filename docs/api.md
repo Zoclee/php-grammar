@@ -42,11 +42,13 @@ runtime defaults remain `['code-unit']` for omitted lexical primitives and
 use Composer's package constraint and the schema version. The runtime requires
 PHP 8.2 or later; PHP 8.5 is needed for release conformance testing, not loading.
 
-Run `python tools/validate-manifest.py` for full JSON Schema and package-path
-validation (install `tools/requirements.txt`). It reports JSON field paths,
+Run `php tools/validate-manifest.php` for validation against the bundled JSON
+Schema and package paths, without an additional dependency. It reports field paths,
 checks version uniqueness and primitive-definition correspondence, and verifies
 referenced files/directories. `RepositoryManifest` performs defensive runtime
-checks without requiring Python; it is not a general JSON Schema engine.
+checks for consumers. The maintainer validator supports the bundled schema's
+vocabulary and rejects unsupported schema keywords; neither is a general-purpose
+JSON Schema engine.
 
 ## PHP interfaces
 

@@ -153,12 +153,12 @@ tests/
         invalid/
 
 tools/
-  grammar-release.py
+  grammar-release.php
   8.5/
     *.php
-    *.py
+    data/*.json
     source-lock.json
-    fetch-sources.py
+    fetch-sources.php
     sync-documentation.php
 ```
 
@@ -246,7 +246,7 @@ composer lexer:coverage
 composer conformance:phase6 # requires PHP 8.5
 composer conformance:interpolation # requires PHP 8.5 and ext-ast
 composer conformance:diagnostics # requires PHP 8.5
-composer certification:check # requires Python and cached pinned sources
+composer certification:check # requires cached pinned sources
 composer manifest:check # JSON Schema and package path validation
 composer release:check # complete 27-gate validation; see prerequisites below
 ```
@@ -258,14 +258,15 @@ then run `php tools/8.5/sync-documentation.php` after grammar edits. The
 production decisions and validation evidence. Consumers use the standalone EBNF.
 
 The complete release gate requires PHP 8.5 with ext-ast and PHPUnit extensions,
-Python 3.10+, Composer, Git and RTK on PATH. Install schema-validation dependencies
-with `python -m pip install -r tools/requirements.txt`. Fetch source evidence once with
-`rtk proxy python tools/8.5/fetch-sources.py .audit` and
-`rtk proxy python tools/8.5/source-correspondence.py --fetch --check`.
-Use `rtk proxy python tools/grammar-release.py --php /path/to/php85
+Composer and Git on PATH. Fetch source evidence once with
+`rtk proxy php tools/8.5/fetch-sources.php .audit` and
+`rtk proxy php tools/8.5/source-correspondence.php --fetch --check`.
+Use `rtk proxy php tools/grammar-release.php --php /path/to/php85
 --composer /path/to/composer.phar` to select binaries; `PHPRC` selects their ini.
 Commands log to `.audit/phase7-validation/` and return nonzero on any failed gate.
 Prefix shell commands with `rtk` as required by this repository's agent guidance.
+The tools themselves require no RTK installation. The optional consumer archive
+check (`php tools/check-consumer-package.php`) additionally requires ext-zip.
 
 Phase 1 parses every `grammar/<version>/php.ebnf` file with the project's EBNF
 parser and validates grammar integrity, including malformed EBNF, duplicate

@@ -15,6 +15,11 @@ Patch releases such as `8.4.1` or `8.4.2` do not normally receive separate gramm
 
 ## Core Principles
 
+Repository tooling, tests, validation, report generation, and maintenance logic
+must be implemented in PHP. Use `php tools/<name>.php` entry points and keep
+substantive logic out of shell wrappers. Composer/Git and platform launchers are
+infrastructure; do not introduce another language runtime for project workflows.
+
 1. **EBNF is canonical.**
    - The `.ebnf` definition is the authoritative grammar.
    - Markdown documentation must not introduce syntax that is absent from the canonical EBNF.

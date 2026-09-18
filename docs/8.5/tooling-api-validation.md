@@ -59,7 +59,7 @@ the four earlier interface/enum member selectors have explicit migration guidanc
 `bin/php-grammar` supplies JSON `versions`, `rules`, `rule`, `refs`, `sections`,
 and `section` commands. Composer now identifies the package as a library,
 installs the CLI, and excludes local scratch/cache/vendor directories from its
-archive. Python/jsonschema is a maintainer validation dependency only.
+archive. Manifest validation is implemented in PHP without additional dependencies.
 
 ## Executable integration checks
 
@@ -68,10 +68,10 @@ production enumeration/lookup, valid and invalid expression matching, complete
 source matching, primitive/section queries, reverse references, numeric version
 ordering, legacy manifests, and deterministic unknown selections/CLI exits.
 The focused run passed **12 tests / 812 assertions** on PHP 8.4.22 and PHP 8.5.10.
-The JSON Schema regression suite passed **3 Python tests**, including malformed
+The JSON Schema regression suite passed **3 original regression groups**, including malformed
 fields/paths, version/schema mismatches, duplicate entries and primitive metadata.
 
-`tools/check-consumer-package.py` created a Composer ZIP, checked required public
+`tools/check-consumer-package.php` created a Composer ZIP, checked required public
 artifacts, installed it through a local path repository into an isolated project,
 and ran loading/matching/section queries and the installed Composer CLI without
 development dependencies. All checks passed. The schema, EBNF, specification,
@@ -82,10 +82,9 @@ Reproduce the consumer checks in a development checkout:
 
 ```sh
 php vendor/phpunit/phpunit/phpunit --filter Consumer --no-progress
-python -m pip install -r tools/requirements.txt
-python tools/validate-manifest.py
-python tools/test-manifest.py
-python tools/check-consumer-package.py
+php tools/validate-manifest.php
+php tools/test-manifest.php
+php tools/check-consumer-package.php
 ```
 
 On Windows, the package check can take

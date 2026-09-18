@@ -263,7 +263,7 @@ all production fingerprints. No PHP fixture or expected parser outcome changes.
 
 ## Validation results
 
-Completed all 24 commands defined by `tools/grammar-release.py` using PHP
+Completed all 24 commands defined by `tools/grammar-release.php` using PHP
 8.5.10, ext-ast 1.1.3/schema 120, `.audit/phase5.ini`, and
 `COMPOSER_PROCESS_TIMEOUT=0`. Derived provenance reports were regenerated in
 dependency order before their freshness checks; PHPUnit ran after those updates.

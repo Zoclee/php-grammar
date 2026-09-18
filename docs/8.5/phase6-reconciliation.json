@@ -11,7 +11,10 @@
     "docs/8.5/negative-boundaries.json": "84a21d08e0985c774f283b73dd6311495434f34849cbd5e8ac96b469ed4f3575",
     "tests/fixtures/php/8.5/parser-compiler-boundaries.json": "20a19b518308828b8e09e0356bbf92b68fa6dfc1c34e989d1071f52f36315633",
     "docs/8.5/compiler-boundaries.json": "66c2dfe1bfff7af8a403163266de9f949d090d6215b758fc8a39c50c528e4c60",
-    "tools/8.5/reconcile.py": "e95d6c4f116578ea1b42a2c1efce921b9b29fc6eada7cd1b43c564456f17d2ff"
+    "tools/8.5/reconcile.php": "4c5695adaab8af6b9ee1e6510003ace6d8e1a42d546f21de7bda6630a9916097",
+    "tools/lib/ParserReconciliation.php": "8e36b2848b444af15ff89144c0cfa1482d5e4a1d042e4c07f0858abba7527e8d",
+    "tools/lib/Support.php": "ea6d1af5a577e7039261465052411c5a1c8ebaf1d1cdfa735d5e5c5e2e696181",
+    "tools/8.5/data/parser-anchors.json": "f6e26793a6d7bbce778fbe7f398fb209e2cd0588179536f2cbc40b718b6912ff"
   },
   "method": "Exact-name or explicit reviewed production anchors; every RHS and action call retained. Evidence links are indexed at production/function-family granularity, not proofs of branch coverage.",
   "parser_productions": 177,

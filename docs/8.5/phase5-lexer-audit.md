@@ -243,8 +243,8 @@ rtk proxy php-8.5 -d short_open_tag=1 tools/8.5/lexer-differential.php
 rtk proxy php-8.5 -d short_open_tag=0 tools/8.5/lexer-differential.php
 rtk proxy php tools/8.5/coverage-report.php --check
 rtk proxy php tools/8.5/negative-report.php --check
-rtk proxy python tools/8.5/source-inventory.py .audit
-rtk proxy python tools/8.5/compiler-boundaries.py .audit --check
+rtk proxy php tools/8.5/source-inventory.php .audit
+rtk proxy php tools/8.5/compiler-boundaries.php .audit --check
 rtk git diff --check
 ```
 
@@ -294,7 +294,7 @@ Changed:
 - `src/Php/Lexing/{Lexer,LexerState}.php`
 - `src/Php/Conformance/{PhpGrammarInput,PhpGrammarMatcher,Php85CoverageClassification}.php`
 - `tests/Php/Conformance/{Php85CoverageClassificationTest,Php85NegativeBoundaryLedgerTest}.php`
-- `tools/{source-inventory.py,coverage-report.php}`
+- `tools/{source-inventory.php,coverage-report.php}`
 - `composer.json`, `README.md`, `grammar/8.5/php.md`
 - `docs/{conformance,grammar-conventions,sources}.md` and `docs/8.5/{phase3-coverage,phase4-negative-coverage,parser-compiler-remediation}.md`
 - Generated `docs/8.5/phase3-coverage.json`, `docs/8.5/source-inventory.json`,

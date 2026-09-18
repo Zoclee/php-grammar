@@ -432,7 +432,7 @@ The source policy of this repository is:
 The source pin remains `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`.
 [The reconciliation ledger](8.5/phase6-reconciliation.json) records all 177
 parser productions, 623 alternatives/actions, canonical anchors and all 244
-direct compiler fatal sites. `tools/8.5/reconcile.py` verifies the three
+direct compiler fatal sites. `tools/8.5/reconcile.php` verifies the three
 pinned hashes before generating or checking the ledger.
 
 [Six reviewed PHPT regressions](8.5/phase6-upstream-tests.json) include pinned

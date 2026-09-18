@@ -246,9 +246,9 @@ php -d short_open_tag=1 tools/8.5/lexer-differential.php
 php -d short_open_tag=0 tools/8.5/lexer-differential.php
 php tools/8.5/coverage-report.php --check
 php tools/8.5/negative-report.php --check
-python tools/8.5/compiler-boundaries.py /path/to/pinned-sources --check
-python tools/8.5/reconcile.py /path/to/pinned-sources --check
-python tools/8.5/phase6-evidence.py --check
+php tools/8.5/compiler-boundaries.php /path/to/pinned-sources --check
+php tools/8.5/reconcile.php /path/to/pinned-sources --check
+php tools/8.5/phase6-evidence.php --check
 git diff --check
 ```
 
@@ -338,9 +338,9 @@ Added (28):
 - tests/fixtures/php/8.5/valid/phase6-nonstatic-closure.php
 - tests/fixtures/php/8.5/valid/phase6-set-visibility.php
 - tests/fixtures/php/8.5/valid/phase6-unset-cast.php
-- tools/8.5/phase6-evidence.py
+- tools/8.5/phase6-evidence.php
 - tools/8.5/phase6.php
-- tools/8.5/reconcile.py
+- tools/8.5/reconcile.php
 
 Changed (27):
 

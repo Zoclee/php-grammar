@@ -1070,7 +1070,7 @@ That shared anchor also indexes the same existing witness in the modifier
 evidence family. No fixture expectation or structural/contextual classification
 was changed to make validation pass.
 
-Final execution used every command from `tools/grammar-release.py`, with report
+Final execution used every command from `tools/grammar-release.php`, with report
 regeneration in dependency order and PHPUnit last so its evidence-hash checks
 see the refreshed reports. Initial freshness checks found stale lexical-ledger
 digests, first for the grammar and then for the subsequently regenerated source

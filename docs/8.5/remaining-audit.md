@@ -126,7 +126,7 @@ Reproduction commands:
 rtk proxy php vendor/phpunit/phpunit/phpunit --no-progress
 rtk proxy php bin/php85-conformance.php .audit/php85/php.exe
 rtk proxy php tools/8.5/coverage-report.php
-rtk proxy python tools/8.5/source-inventory.py .audit
+rtk proxy php tools/8.5/source-inventory.php .audit
 rtk git diff --check
 ```
 

@@ -173,8 +173,8 @@ rtk proxy php tools/8.5/boundary-folding.php /path/to/php-8.5
 rtk proxy php -d extension=ast tools/8.5/ast-conformance.php
 rtk proxy php tools/8.5/coverage-report.php --check
 rtk proxy php tools/8.5/negative-report.php --check
-rtk proxy python tools/8.5/compiler-boundaries.py .audit --check
-rtk proxy python tools/8.5/source-inventory.py .audit
+rtk proxy php tools/8.5/compiler-boundaries.php .audit --check
+rtk proxy php tools/8.5/source-inventory.php .audit
 rtk git diff --check
 ```
 

@@ -20,8 +20,8 @@ Release claims and regression gates follow [the certification policy](conformanc
 ```text
 composer test
 php bin/php85-conformance.php /path/to/php-8.5
-python tools/8.5/fetch-sources.py .audit
-python tools/8.5/source-inventory.py .audit
+php tools/8.5/fetch-sources.php .audit
+php tools/8.5/source-inventory.php .audit
 ```
 
 `PHP85_BINARY` can supply the binary when the lint command has no argument.

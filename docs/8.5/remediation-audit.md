@@ -146,7 +146,7 @@ php85 -d short_open_tag=1 tools/8.5/lexer-differential.php
 php85 -d short_open_tag=0 tools/8.5/lexer-differential.php
 php bin/lexer-coverage.php
 php bin/grammar-coverage.php
-python tools/8.5/compiler-boundaries.py /path/to/pinned-sources --check
+php tools/8.5/compiler-boundaries.php /path/to/pinned-sources --check
 ```
 
 ## Files and remaining limits

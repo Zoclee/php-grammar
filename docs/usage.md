@@ -12,7 +12,7 @@ checkout as a Composer `path` repository (URL is the checkout's absolute path)
 and require `php-grammar/php-grammar` at `@dev`. Pin a released package constraint
 in production. For a source checkout, `composer install` supplies the local
 autoload file and development tools. Runtime use requires PHP >=8.2, no PHP 8.5
-executable, ext-ast, Python or upstream source cache.
+executable, ext-ast or upstream source cache.
 
 ## Discover, load, and inspect
 
@@ -106,8 +106,7 @@ for the selected package contents. `refs` provides direct and reverse references
 To validate the package manifest as a maintainer:
 
 ```sh
-python -m pip install -r tools/requirements.txt
-python tools/validate-manifest.py
+php tools/validate-manifest.php
 ```
 
 The executable consumer examples are in

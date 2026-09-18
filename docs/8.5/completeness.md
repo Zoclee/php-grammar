@@ -38,7 +38,7 @@ equivalence unrelated to source validity are outside the contract.
 
 The canonical EBNF and its Markdown productions are unchanged in Phase 7.
 Checkout attributes preserve the audited LF/CRLF source and fixture bytes;
-Python report serialization now fixes its existing CRLF convention explicitly.
+Report serialization fixes its existing CRLF convention explicitly.
 This corrects a reproducibility hazard from automatic Git newline conversion
 without changing fixture contents or grammar productions.
 Coverage remains **301/364 productions (82.7%) and 606/790 alternatives (76.7%)**;
@@ -229,7 +229,7 @@ policy for prerequisites, source fetching and explicit binary selection.
 ## Final verification on 2026-09-12
 
 All 23 release gates passed on PHP 8.5.10/ext-ast 1.1.3. `php` below denotes that
-configured executable; Python source checks use the pinned cache. The initial
+configured executable; PHP source checks use the pinned cache. The initial
 runner launch lacked the intended ini because of shell argument expansion and
 was stopped; the corrected launch enabled the required extensions and completed
 every gate. No failing launch is counted as conformance evidence.
@@ -251,13 +251,13 @@ every gate. No failing launch is counted as conformance evidence.
 | `php -d short_open_tag=0 tools/8.5/lexer-differential.php` | Pass: 273 token comparisons, five corpus streams |
 | `php tools/8.5/coverage-report.php --check` | Pass |
 | `php tools/8.5/negative-report.php --check` | Pass |
-| `python tools/8.5/compiler-boundaries.py .audit --check` | Pass: three source hashes, 244 sites, 87 functions, 14 early sites |
-| `python tools/8.5/reconcile.py .audit --check` | Pass: 177 productions, 623 alternatives |
-| `python tools/8.5/phase6-evidence.py --check` | Pass |
+| `php tools/8.5/compiler-boundaries.php .audit --check` | Pass: three source hashes, 244 sites, 87 functions, 14 early sites |
+| `php tools/8.5/reconcile.php .audit --check` | Pass: 177 productions, 623 alternatives |
+| `php tools/8.5/phase6-evidence.php --check` | Pass |
 | `php tools/8.5/interpolation-binding.php --check` | Pass: 44 positive, six malformed, 54 operand comparisons |
 | `php tools/8.5/diagnostic-witnesses.php --check` | Pass: 20 sites, 40 comparisons |
-| `python tools/8.5/source-correspondence.py --check` | Pass: seven files compared, six identical; exact binary remains unverified |
-| `python tools/8.5/certification.py --check` | Pass: 14 areas, 73 restrictions, 79 historical dispositions, four final blocker records |
+| `php tools/8.5/source-correspondence.php --check` | Pass: seven files compared, six identical; exact binary remains unverified |
+| `php tools/8.5/certification.php --check` | Pass: 14 areas, 73 restrictions, 79 historical dispositions, four final blocker records |
 | `git diff --check` | Pass |
 
 The enabled lexical oracle retains one intentional tokenizer-recovery exception
@@ -287,15 +287,15 @@ Added 17 repository files:
   `source-correspondence.json`, `historical-dispositions.md`;
 - `tests/Php/InterpolationSegmentsTest.php`, `tests/Support/InterpolationSegments.php`,
   `tests/fixtures/php/8.5/diagnostic-predicates.json`;
-- `tools/grammar-release.py`, `tools/8.5/certification.py`,
+- `tools/grammar-release.php`, `tools/8.5/certification.php`,
   `tools/8.5/diagnostic-witnesses.php`, `tools/8.5/interpolation-binding.php`,
-  `tools/8.5/source-correspondence.py`.
+  `tools/8.5/source-correspondence.php`.
 
 Changed 11 repository files: `README.md`, `composer.json`, `docs/conformance.md`,
 `docs/versioning.md`, `docs/8.5/phase6-conformance-closure.md`,
 `docs/8.5/phase6-evidence.json`, `docs/8.5/phase6-reconciliation.json`,
-`tools/8.5/compiler-boundaries.py`, `tools/8.5/phase6-evidence.py`,
-`tools/8.5/reconcile.py`, and `tools/8.5/source-inventory.py`.
+`tools/8.5/compiler-boundaries.php`, `tools/8.5/phase6-evidence.php`,
+`tools/8.5/reconcile.php`, and `tools/8.5/source-inventory.php`.
 The historical JSON changes refresh generator/dependency hashes only.
 No repository files were removed. Source downloads, oracle binaries, probe
 checkouts and command logs remain in ignored `.audit/`.

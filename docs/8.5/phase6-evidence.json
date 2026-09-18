@@ -2894,12 +2894,14 @@
     }
   ],
   "hashes": {
-    "tools/8.5/phase6-evidence.py": "65f6a2e12a4ce739b28d73d64676752420f1317ec8cf3c9ef1deb58e229d54e4",
-    "docs/8.5/phase6-reconciliation.json": "71874c465605db60fad5e446be6f14294b4281911b90b47c94e061ba61d29a81",
+    "tools/8.5/phase6-evidence.php": "3e34287a81f8f22fec1bdf1a5ed61cee80392acb3265830de99c35d786de78f7",
+    "docs/8.5/phase6-reconciliation.json": "978553055f705e757c1980476348078c21a14f5744f121f4996e94f0ef9b36d3",
     "docs/8.5/phase6-matrices.json": "8add5c031a50a64bec6a1942d4b68bccb65fb3ed33d0c18887b4ab44366b8ee3",
     "docs/8.5/phase6-upstream-tests.json": "79b14518fdacf4d1cfad9c3028da8337535647a48636489bce9f863cf23a110e",
     "docs/8.5/phase5-lexical-evidence.json": "0b2e7d18b84aa4e7f5502e4ac74cf073f295d76b9d9823308a97f6b6dc98ad2d",
     "docs/8.5/systematic-structure.json": "190ba039ae85c46e82bf54132ed15d7c563b5e7a3f318753f020d30cf3b4e0a1",
-    "docs/8.5/audit-remediation.md": "10b173a8227ad193b32c25b6800e74e81117cd334b034bbe7c438ba9daae102b"
+    "docs/8.5/audit-remediation.md": "899f4d7c2d92e0bb65265add9747ec8b31449e87476bfde6e42e2d31f977b40d",
+    "tools/lib/Support.php": "ea6d1af5a577e7039261465052411c5a1c8ebaf1d1cdfa735d5e5c5e2e696181",
+    "tools/8.5/data/phase6-policy.json": "1c2c925420de49a5d3282a19343d3cab1de8353b6ed3f621e312b79003138d59"
   }
 }

@@ -250,7 +250,7 @@ sections; all body ASTs and public names have disposition `KEEP` throughout.
 
 ## Validation results
 
-Completed the 24 commands from `tools/grammar-release.py` using PHP 8.5.10,
+Completed the 24 commands from `tools/grammar-release.php` using PHP 8.5.10,
 ext-ast 1.1.3/schema 120, `.audit/phase5.ini`, and `COMPOSER_PROCESS_TIMEOUT=0`.
 Derived evidence was refreshed in dependency order; PHPUnit ran after freshness
 inputs were updated. Logs are retained locally in `.audit/readability-validation/`.

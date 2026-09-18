@@ -1,0 +1,401 @@
+{
+  "aliases": {
+    "start": [
+      "source-file"
+    ],
+    "semi_reserved": [
+      "semi-reserved-identifier"
+    ],
+    "ampersand": [
+      "variable-like",
+      "parameter",
+      "lexical-variable"
+    ],
+    "identifier": [
+      "semi-reserved-identifier"
+    ],
+    "namespace_name": [
+      "qualified-name"
+    ],
+    "attribute_decl": [
+      "attribute"
+    ],
+    "attribute_group": [
+      "attribute-list"
+    ],
+    "attribute": [
+      "attribute-group"
+    ],
+    "attributes": [
+      "attribute-groups"
+    ],
+    "attributed_statement": [
+      "inner-declaration"
+    ],
+    "attributed_top_statement": [
+      "attributed-top-declaration"
+    ],
+    "possible_comma": [
+      "argument-list",
+      "array-pair-list",
+      "attribute-group",
+      "parameter-list"
+    ],
+    "inline_use_declarations": [
+      "inline-use-declaration-list"
+    ],
+    "unprefixed_use_declarations": [
+      "unprefixed-use-declaration-list"
+    ],
+    "use_declarations": [
+      "use-declaration-list"
+    ],
+    "const_list": [
+      "constant-list",
+      "declare-directive-list"
+    ],
+    "catch_list": [
+      "catch-list"
+    ],
+    "catch_name_list": [
+      "catch-type-list"
+    ],
+    "optional_variable": [
+      "catch-clause"
+    ],
+    "finally_statement": [
+      "finally-clause"
+    ],
+    "unset_variables": [
+      "unset-variable-list"
+    ],
+    "function_name": [
+      "name-identifier"
+    ],
+    "function_declaration_statement": [
+      "function-declaration"
+    ],
+    "is_reference": [
+      "parameter"
+    ],
+    "is_variadic": [
+      "parameter"
+    ],
+    "class_declaration_statement": [
+      "class-declaration"
+    ],
+    "anonymous_class_modifiers": [
+      "anonymous-class",
+      "class-modifiers"
+    ],
+    "anonymous_class_modifiers_optional": [
+      "anonymous-class"
+    ],
+    "trait_declaration_statement": [
+      "trait-declaration"
+    ],
+    "interface_declaration_statement": [
+      "interface-declaration"
+    ],
+    "enum_declaration_statement": [
+      "enum-declaration"
+    ],
+    "enum_case_expr": [
+      "enum-case-initializer"
+    ],
+    "extends_from": [
+      "extends-clause"
+    ],
+    "interface_extends_list": [
+      "interface-extends-clause"
+    ],
+    "implements_list": [
+      "implements-clause"
+    ],
+    "for_statement": [
+      "matched-for-statement",
+      "unmatched-for-statement"
+    ],
+    "foreach_statement": [
+      "matched-foreach-statement",
+      "unmatched-foreach-statement"
+    ],
+    "declare_statement": [
+      "matched-declare-statement",
+      "unmatched-declare-statement"
+    ],
+    "switch_case_list": [
+      "switch-statement"
+    ],
+    "case_list": [
+      "switch-case-list"
+    ],
+    "match": [
+      "match-expression"
+    ],
+    "non_empty_match_arm_list": [
+      "match-arm-list"
+    ],
+    "match_arm_cond_list": [
+      "match-arm-condition-list"
+    ],
+    "while_statement": [
+      "matched-while-statement",
+      "unmatched-while-statement"
+    ],
+    "if_stmt_without_else": [
+      "matched-if-statement",
+      "unmatched-if-statement"
+    ],
+    "if_stmt": [
+      "matched-if-statement",
+      "unmatched-if-statement"
+    ],
+    "alt_if_stmt_without_else": [
+      "alternative-if-statement",
+      "alt-elseif-list"
+    ],
+    "alt_if_stmt": [
+      "alternative-if-statement"
+    ],
+    "non_empty_parameter_list": [
+      "parameter-list"
+    ],
+    "attributed_parameter": [
+      "parameter"
+    ],
+    "optional_cpp_modifiers": [
+      "parameter-modifiers"
+    ],
+    "type_expr": [
+      "type"
+    ],
+    "type": [
+      "simple-type"
+    ],
+    "type_without_static": [
+      "simple-type-without-static"
+    ],
+    "type_expr_without_static": [
+      "type-without-static"
+    ],
+    "union_type_without_static_element": [
+      "union-type-without-static-element"
+    ],
+    "non_empty_argument_list": [
+      "ordinary-argument-list"
+    ],
+    "non_empty_clone_argument_list": [
+      "clone-argument-list"
+    ],
+    "argument_no_expr": [
+      "argument-no-expression"
+    ],
+    "global_var_list": [
+      "global-variable-list"
+    ],
+    "global_var": [
+      "global-variable"
+    ],
+    "static_var_list": [
+      "static-variable-list"
+    ],
+    "static_var": [
+      "static-variable"
+    ],
+    "class_statement_list": [
+      "class-member-list"
+    ],
+    "attributed_class_statement": [
+      "property-declaration",
+      "method-declaration",
+      "class-constant-declaration",
+      "enum-case"
+    ],
+    "class_statement": [
+      "class-member"
+    ],
+    "class_name_list": [
+      "name-list"
+    ],
+    "trait_adaptations": [
+      "trait-adaptation-block"
+    ],
+    "trait_adaptation_list": [
+      "trait-adaptation-block"
+    ],
+    "absolute_trait_method_reference": [
+      "trait-method-reference",
+      "trait-precedence"
+    ],
+    "property_modifiers": [
+      "property-modifier-list"
+    ],
+    "class_const_modifiers": [
+      "class-constant-modifiers"
+    ],
+    "non_empty_member_modifiers": [
+      "property-modifier-list",
+      "method-modifiers",
+      "parameter-modifiers",
+      "class-constant-modifiers",
+      "property-hook-modifiers"
+    ],
+    "member_modifier": [
+      "property-modifier",
+      "method-modifier",
+      "parameter-modifier",
+      "class-constant-modifier",
+      "property-hook-modifier",
+      "trait-alias-modifier"
+    ],
+    "property": [
+      "property-element"
+    ],
+    "optional_property_hook_list": [
+      "parameter",
+      "property-hook-block"
+    ],
+    "optional_parameter_list": [
+      "property-hook"
+    ],
+    "class_const_list": [
+      "class-constant-list"
+    ],
+    "class_const_decl": [
+      "class-constant-element"
+    ],
+    "const_decl": [
+      "constant-element",
+      "declare-directive"
+    ],
+    "echo_expr_list": [
+      "expression-list"
+    ],
+    "echo_expr": [
+      "expression"
+    ],
+    "for_cond_exprs": [
+      "for-condition-expression-list"
+    ],
+    "for_exprs": [
+      "for-expression-list"
+    ],
+    "non_empty_for_exprs": [
+      "nonempty-for-expression-list"
+    ],
+    "new_non_dereferenceable": [
+      "primary-expression"
+    ],
+    "expr": [
+      "expression"
+    ],
+    "inline_function": [
+      "closure-expression",
+      "arrow-function"
+    ],
+    "fn": [
+      "arrow-function-header"
+    ],
+    "function": [
+      "function-declaration",
+      "closure-expression",
+      "method-declaration"
+    ],
+    "returns_ref": [
+      "function-declaration",
+      "closure-expression",
+      "arrow-function-header",
+      "method-declaration",
+      "property-hook"
+    ],
+    "lexical_vars": [
+      "closure-expression"
+    ],
+    "lexical_var_list": [
+      "lexical-variable-list"
+    ],
+    "lexical_var": [
+      "lexical-variable"
+    ],
+    "backticks_expr": [
+      "backtick-string-part-list"
+    ],
+    "ctor_arguments": [
+      "constructor-argument-list"
+    ],
+    "scalar": [
+      "literal",
+      "dereferenceable-scalar",
+      "constant",
+      "class-constant"
+    ],
+    "optional_expr": [
+      "expression",
+      "return-statement",
+      "break-statement",
+      "continue-statement"
+    ],
+    "variable_class_name": [
+      "fully-dereferenceable-expression"
+    ],
+    "fully_dereferenceable": [
+      "fully-dereferenceable-expression"
+    ],
+    "callable_expr": [
+      "callable-expression"
+    ],
+    "variable": [
+      "variable-expression"
+    ],
+    "simple_variable": [
+      "variable-like"
+    ],
+    "possible_array_pair": [
+      "array-pair-list"
+    ],
+    "non_empty_array_pair_list": [
+      "array-pair-list"
+    ],
+    "encaps_list": [
+      "encapsulated-string-part"
+    ],
+    "encaps_var": [
+      "encapsulated-variable"
+    ],
+    "encaps_var_offset": [
+      "encapsulated-offset"
+    ],
+    "internal_functions_in_yacc": [
+      "primary-expression",
+      "include-expression"
+    ],
+    "isset_variables": [
+      "isset-variable-list"
+    ]
+  },
+  "internal": [
+    "backup_doc_comment",
+    "backup_fn_flags",
+    "backup_lex_pos"
+  ],
+  "notes": {
+    "start": "Source tags, shebang and HTML are handled by the repository scanner/adapter before the statement list.",
+    "expr": "Bison precedence and associativity become explicit EBNF layers, pending-prefix contexts and closed yield-key contexts. See systematic-structure.json.",
+    "statement": "Bison dangling-else precedence becomes matched/unmatched productions; alternative-if boundaries use closed-inner-statement-list.",
+    "inner_statement": "Nested halt-compiler reduction always raises YYERROR; omitted from valid inner declarations. Malformed halt-inner regression rejects it.",
+    "type_without_static": "Builtin names other than array/callable are T_STRING/name in Zend. EBNF exposes builtin literals as informative helper alternatives as well as name.",
+    "type": "Zend type is an atomic type, while canonical type includes composites; canonical simple-type is the atomic equivalent.",
+    "clone_argument_list": "Single unnamed clone operand without comma is handled by unary clone, avoiding duplicate call/unary derivations.",
+    "array_pair_list": "Zend nullable entries and list trimming become optional EBNF entries. Surviving array/destructuring validity is contextual.",
+    "property_hook_modifiers": "Parser action filters general member modifiers to final-only; repeated final still needs early contextual rejection.",
+    "class_statement_list": "All class-like declarations share member syntax; declaration-kind legality is checked only on surviving declarations.",
+    "trait_alias": "Method-target conversion is early; static/abstract alias rejection is later and folding-sensitive. enum keyword branch is scanner-context-only.",
+    "ampersand": "Two scanner lookahead tokens have the same terminal spelling. Type/reference position disambiguates their use.",
+    "encaps_list": "Repository lexer aggregates strings and validates interpolation recursively; canonical lexical bodies are primitive-bypassed.",
+    "encaps_var": "Aggregated string token preserves bytes; StringSyntax validates embedded parser forms.",
+    "encaps_var_offset": "Numeric-string token and negative offset conversion are scanner/adapter concerns, not runtime numeric equivalence.",
+    "for_cond_exprs": "The entire condition list may be empty, but comma-separated elements may not be omitted. A nonempty prefix may contain void casts; the final condition must be an expression. See non_empty_for_exprs and the remediation for-loop fixtures.",
+    "function_name": "readonly is the additional permitted function-name keyword; method identifiers have the broader semi-reserved set. Positive audit-names-readonly-function fixture exercises the inlined name production."
+  }
+}

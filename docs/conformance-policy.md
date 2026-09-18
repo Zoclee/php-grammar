@@ -28,17 +28,17 @@ and external constraint inventory.
 ## Release gates
 
 Run `composer release:check` with PHP 8.5, ext-ast, the PHPUnit extensions,
-Python 3.10+, Composer, Git and RTK. Alternatively invoke `tools/grammar-release.py`
+Composer and Git. Alternatively invoke `tools/grammar-release.php`
 with `--php`, `--composer`, `--source-directory`, `--source-cache` and `--logs`.
 `PHPRC` selects the oracle ini. Download immutable sources before the offline run:
 
 ```text
-rtk proxy python tools/8.5/fetch-sources.py .audit
-rtk proxy python tools/8.5/source-correspondence.py --fetch --check
+rtk proxy php tools/8.5/fetch-sources.php .audit
+rtk proxy php tools/8.5/source-correspondence.php --fetch --check
 rtk composer release:check
 ```
 
-The runner is the durable CI/release entry point. It executes all 24 gates,
+The runner is the durable CI/release entry point. It executes all 27 gates,
 keeps per-command logs and machine-readable exit codes, and fails if any fails.
 A CI job must install those prerequisites, restore/fetch the immutable source
 cache, run this command and retain the logs. No raw coverage percentage gate is
@@ -73,7 +73,7 @@ Phase 6 evidence; source correspondence, diagnostic and interpolation reports;
 final certification. The last step is:
 
 ```text
-rtk proxy python tools/8.5/certification.py
+rtk proxy php tools/8.5/certification.php
 rtk composer release:check
 ```
 
@@ -85,8 +85,8 @@ their counts describe their original runs.
 
 Checkout bytes matter to these hashes and scanner fixtures. `.gitattributes`
 sets LF by default and explicitly preserves existing CRLF/mixed-byte exceptions.
-Python report generators require Python 3.10+ and explicitly retain their audited
-CRLF serialization on every platform; PHP-generated reports use LF. Do not
+Migrated report generators retain their audited CRLF serialization on every
+platform; other PHP reports retain LF. Do not
 normalize scanner fixtures or bypass attributes during checkout. When adding a
 fixture whose CRLF bytes matter, add its attribute alongside its evidence.
 

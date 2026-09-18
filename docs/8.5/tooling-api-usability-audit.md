@@ -27,8 +27,8 @@ classifications are intentionally changed. The supported contract now lives in
 | `Coverage*`, fixture repositories/runners, coverage cases/classification, modifier validator | INTERNAL | Audit and test architecture; unnecessary for consumer integration. |
 | `bin/php-grammar` | PUBLIC | Small JSON navigation CLI installed by Composer. |
 | `bin/grammar-coverage.php`, `lexer-coverage.php`, `php85-conformance.php` | SEMI-PUBLIC | Maintainer entry points remain usable; their report layouts are not stable consumer APIs. |
-| `tools/8.5/*.php`, `*.py`, `source-lock.json` | INTERNAL | Generators, source locks and audit procedures, not runtime dependencies. |
-| `tools/grammar-release.py`, Composer validation scripts | SEMI-PUBLIC | Maintainer workflows; new manifest/schema and API gates augment the 24 existing checks. |
+| `tools/8.5/*.php`, `data/*.json`, `source-lock.json` | INTERNAL | Generators, reviewed policy tables, source locks and audit procedures, not runtime dependencies. |
+| `tools/grammar-release.php`, Composer validation scripts | SEMI-PUBLIC | Maintainer workflows; new manifest/schema and API gates augment the 24 existing checks. |
 | Generated semantic production index inside `php.md` | PUBLIC | Human navigation already exists; machine sections now derived from comments plus parsed production locations. |
 | `docs/8.5/phase3-coverage.json`, other generated coverage metadata | SEMI-PUBLIC | Discoverable evidence, not stable IDs or a parser API. No copied nullable/coverage truth. |
 | `source-inventory.json`, `source-correspondence.json` | SEMI-PUBLIC | Pinned source evidence, exposed through optional manifest paths; internal fields remain report-specific. |

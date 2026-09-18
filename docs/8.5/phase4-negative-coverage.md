@@ -235,7 +235,7 @@ php tools/8.5/coverage-report.php
 php tools/8.5/coverage-report.php --check
 php tools/8.5/negative-report.php
 php tools/8.5/negative-report.php --check
-python tools/8.5/source-inventory.py .audit
+php tools/8.5/source-inventory.php .audit
 git diff --check
 ```
 
