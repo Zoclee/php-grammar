@@ -25,7 +25,7 @@ classifications are intentionally changed. The supported contract now lives in
 | `MatchContext`, `PhpGrammarInput`, `StringSyntax`, `LexerState`, EBNF lexer/token implementation | INTERNAL | Accidental visibility via PSR-4/public methods; explicitly not extension points, no classes removed. |
 | `GrammarValidator`, validation result/error helpers | SEMI-PUBLIC | Useful existing integrity tooling; retained, not a general PHP-validity contract. |
 | `Coverage*`, fixture repositories/runners, coverage cases/classification, modifier validator | INTERNAL | Audit and test architecture; unnecessary for consumer integration. |
-| `bin/php-grammar` | PUBLIC | Small JSON navigation CLI installed by Composer. |
+| `bin/php-grammar` | PUBLIC | Small JSON navigation CLI; run `php bin/php-grammar` from the checkout root. |
 | `bin/grammar-coverage.php`, `lexer-coverage.php`, `php85-conformance.php` | SEMI-PUBLIC | Maintainer entry points remain usable; their report layouts are not stable consumer APIs. |
 | `tools/8.5/*.php`, `data/*.json`, `source-lock.json` | INTERNAL | Generators, reviewed policy tables, source locks and audit procedures, not runtime dependencies. |
 | `tools/grammar-release.php`, Composer validation scripts | SEMI-PUBLIC | Maintainer workflows; new manifest/schema and API gates augment the 24 existing checks. |

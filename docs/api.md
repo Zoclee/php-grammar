@@ -14,7 +14,7 @@ the only advertised version. Every version is a complete standalone grammar.
 | `grammar/<version>/php.md` | Full language specification, including lexical and contextual constraints. |
 | `schema/php-grammar.schema.json` | JSON Schema draft 2020-12 for manifest schema `1.0`, also accepting legacy unversioned manifests. |
 | `docs/api.md`, `docs/usage.md`, `docs/grammar-conventions.md`, `docs/versioning.md` | Consumer contracts, examples, dialect and compatibility policy. |
-| `bin/php-grammar` | Composer-installed JSON navigation CLI. |
+| `bin/php-grammar` | JSON navigation CLI; run `php bin/php-grammar` from the checkout root. |
 
 Paths in the manifest are package-root-relative, use forward slashes, and exclude
 absolute paths and `.`/`..` segments. Resolve them relative to the manifest,
@@ -38,8 +38,8 @@ it does not make an entire string or source file independently recognizable.
 Readers should ignore unknown additive fields. An unsupported `schemaVersion`
 requires a reader upgrade. An absent version denotes the legacy manifest;
 runtime defaults remain `['code-unit']` for omitted lexical primitives and
-`unspecified` for omitted status. There is no fabricated minimum package release:
-use Composer's package constraint and the schema version. The runtime requires
+`unspecified` for omitted status. Pin a repository revision for reproducible use
+and check the schema version for compatibility. The runtime requires
 PHP 8.2 or later; PHP 8.5 is needed for release conformance testing, not loading.
 
 Run `php tools/validate-manifest.php` for validation against the bundled JSON
