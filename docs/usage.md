@@ -1,30 +1,32 @@
 # Using php-grammar
 
-Install the Composer package from the package repository/release used by your
-project, then load your application's `vendor/autoload.php`:
+The project is not yet published as a Composer package. Use a local checkout
+to access the [canonical EBNF](../grammar/8.5/php.ebnf) and
+[matching specification](../grammar/8.5/php.md) directly.
+
+To use the PHP APIs and command-line tools, run this command from the checkout
+root to install dependencies and generate the local autoloader:
 
 ```sh
-composer require php-grammar/php-grammar
+composer install
 ```
 
-If that package is not available in your configured Composer registry, add this
-checkout as a Composer `path` repository (URL is the checkout's absolute path)
-and require `php-grammar/php-grammar` at `@dev`. Pin a released package constraint
-in production. For a source checkout, `composer install` supplies the local
-autoload file and development tools. Runtime use requires PHP >=8.2, no PHP 8.5
-executable, ext-ast or upstream source cache.
+Composer is used here to set up the checkout, not to download a published
+php-grammar package. Runtime use requires PHP 8.2 or later; it does not require
+a PHP 8.5 executable, ext-ast, or an upstream source cache.
 
 ## Discover, load, and inspect
 
-```php
-require __DIR__ . '/vendor/autoload.php';
+In the example below, set `$root` to the absolute path of your local checkout.
 
-use Composer\InstalledVersions;
+```php
 use PhpGrammar\Repository\RepositoryManifest;
 use PhpGrammar\Php\Conformance\GrammarRepository;
 use PhpGrammar\Php\Conformance\PhpGrammarMatcher;
 
-$root = InstalledVersions::getInstallPath('php-grammar/php-grammar');
+$root = '/absolute/path/to/php-grammar';
+require $root . '/vendor/autoload.php';
+
 $manifest = RepositoryManifest::fromRepositoryRoot($root);
 $versions = $manifest->versions();                   // ['8.5']
 $latest = $manifest->latestVersion();                // highest advertised version
@@ -38,8 +40,7 @@ $direct = $expression->references();
 $users = $grammar->referencesTo('expression');
 ```
 
-In a checkout, `$root` may be the checkout directory instead of
-`InstalledVersions::getInstallPath()`. The specification is
+The specification is
 [`grammar/8.5/php.md`](../grammar/8.5/php.md). Read files using manifest paths;
 do not infer support from a directory name or from the host PHP version.
 
@@ -92,16 +93,18 @@ source bytes. See the [full API contract](api.md).
 
 ## Command line
 
+Run these commands from the checkout root:
+
 ```sh
-vendor/bin/php-grammar versions
-vendor/bin/php-grammar rules 8.5
-vendor/bin/php-grammar rule 8.5 expression
-vendor/bin/php-grammar refs 8.5 variable-expression
-vendor/bin/php-grammar sections 8.5
-vendor/bin/php-grammar section 8.5 expressions
+php bin/php-grammar versions
+php bin/php-grammar rules 8.5
+php bin/php-grammar rule 8.5 expression
+php bin/php-grammar refs 8.5 variable-expression
+php bin/php-grammar sections 8.5
+php bin/php-grammar section 8.5 expressions
 ```
 
-In a checkout use `php bin/php-grammar` instead. Outputs are deterministic JSON
+Outputs are deterministic JSON
 for the selected package contents. `refs` provides direct and reverse references.
 To validate the package manifest as a maintainer:
 
@@ -115,6 +118,6 @@ The executable consumer examples are in
 `php vendor/phpunit/phpunit/phpunit --filter Consumer` in a development checkout.
 They use the documented public interfaces without fixture-runner internals.
 
-Production identifiers are compatibility-sensitive. Pin package releases and
+Production identifiers are compatibility-sensitive. Pin a repository revision and
 explicit PHP versions, tolerate additive manifest fields, and follow the
 [alias migration and compatibility policy](api.md#compatibility-and-migration).
