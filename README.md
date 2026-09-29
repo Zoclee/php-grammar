@@ -6,39 +6,24 @@ Versioned EBNF grammars and human-readable specifications for the PHP language s
 
 php-grammar maintains standalone, source-backed grammars for PHP major/minor releases, accompanied by matching Markdown documentation.
 
-## Quick start for tool developers
+## Introduction for tool developers
 
-Install with `composer require php-grammar/php-grammar` from your configured
-package repository (or use a local Composer path repository; see the
-[usage guide](docs/usage.md)). Runtime use requires PHP 8.2 or later.
+If you build parsers, static analyzers, formatters, or editor tools, this project
+gives you a shared reference for PHP syntax. Each supported PHP version has a
+complete, standalone EBNF grammar and matching documentation, so you can focus
+on the language version your tool targets.
 
-```php
-require __DIR__ . '/vendor/autoload.php';
+Use the grammar to explore how PHP constructs fit together, guide your tool's
+syntax support, and identify cases to test. Source references and conformance
+evidence help you trace grammar decisions back to PHP's parser and documentation.
+The included APIs let you inspect productions and check source against grammar
+rules; these checks cover structural syntax, not every compiler constraint or
+runtime behavior.
 
-use Composer\InstalledVersions;
-use PhpGrammar\Repository\RepositoryManifest;
-use PhpGrammar\Php\Conformance\GrammarRepository;
-use PhpGrammar\Php\Conformance\PhpGrammarMatcher;
-
-$root = InstalledVersions::getInstallPath('php-grammar/php-grammar');
-$manifest = RepositoryManifest::fromRepositoryRoot($root);
-$versions = $manifest->versions(); // ['8.5']; each version is standalone
-$grammar = (new GrammarRepository($manifest))->load('8.5');
-$expression = $grammar->production('expression');
-$result = PhpGrammarMatcher::forManifest($manifest)
-    ->matchesRule('8.5', 'expression', '$a + 1');
-echo $result->matched ? 'structurally accepted' : 'rejected';
-```
-
-Structural acceptance includes lexical processing and EBNF recognition; it does
-not validate every contextual compiler constraint or runtime behavior. Read the
-[PHP 8.5 specification](grammar/8.5/php.md), [public API contract](docs/api.md),
-and [integration guide](docs/usage.md) for the three-layer conformance model,
-primitive responsibilities, metadata navigation, and compatibility guarantees.
-`vendor/bin/php-grammar versions` discovers packages; `rules`, `rule`, `refs`,
-`sections`, and `section` inspect them as JSON. The machine discovery entry point
-is [`php-grammar.json`](php-grammar.json), with a
-[versioned schema](schema/php-grammar.schema.json).
+Start with the [PHP 8.5 specification](grammar/8.5/php.md) for a readable overview,
+or explore the [canonical EBNF](grammar/8.5/php.ebnf) directly. When you are ready
+to integrate the grammar into your tooling, see the [integration guide](docs/usage.md)
+and [public API contract](docs/api.md).
 
 ## Conformance scope
 
