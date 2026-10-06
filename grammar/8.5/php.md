@@ -854,17 +854,41 @@ then requires exactly int/string. `name-list` and `catch-type-list` consume
 
 ### Property hooks and promotion
 
-Hook syntax mirrors parser `property_hook_list`, `property_hook` and
-`property_hook_body`: an empty list is structurally possible;
-each hook has attributes, optional target-valid modifiers, optional `&`, a
-generic identifier, an optional complete parameter list, and either `;`, a
-compound body, or `=> expression ;`. `zend_compile_property_hooks`
+Hook names are explicit in the canonical grammar:
+
+```ebnf
+hook-name = "get" | "set" ;
+```
+
+These terminals are case-insensitive: `GET`, `Set`, and other case variants
+are accepted. They do not reserve either name outside property hooks. Token
+adapters normalize these identifier spellings for terminal matching while
+preserving the original tokens for identifier productions.
+
+The surrounding syntax follows parser `property_hook_list`, `property_hook`
+and `property_hook_body`: an empty list is structurally possible; each hook has
+attributes, optional target-valid modifiers, optional `&`, a `hook-name`, an
+optional complete parameter list, and either `;`, a compound body, or
+`=> expression ;`. `zend_compile_property_hooks`
 enforces the [hook constraints](#hooks) when compiled. Explicit get parentheses, even `get()`,
 are invalid when compiled; a supplied set list must have exactly one parameter.
-Empty/unknown/duplicate hooks and invalid parameter/body combinations can be
+Empty/duplicate hooks and invalid parameter/body combinations can be
 discarded along with their enclosing static closure. Parameter hook lists use
 the same grammar. A hook list itself triggers promotion, even without explicit
 visibility; compilation requires a concrete constructor in an allowed context.
+
+**Compatibility change:** unknown hook names are now rejected by the EBNF,
+including inside discarded declarations. Zend's parser accepts an identifier
+and checks the hook name only when compiling the declaration; a discarded
+static closure can therefore contain an unknown hook without a PHP error.
+That deliberate difference is retained as a known-discrepancy fixture rather
+than accepted by the canonical grammar. Other hook constraints remain contextual.
+
+Evidence: PHP source pin `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`,
+`Zend/zend_compile.c`, `zend_get_property_hook_kind_from_name` (case-insensitive
+`get`/`set` comparisons) and `zend_compile_property_hooks` (unknown-name error);
+`Zend/zend_language_parser.y`, `property_hook` (identifier parsing).
+See also the [official property-hook manual](https://www.php.net/manual/en/language.oop5.property-hooks.php).
 
 The pinned compiler does **not** reject the reference-return marker on a set
 hook. PHP 8.5.10 accepts and executes `class C { public int $x { &set {} } }`
@@ -1062,7 +1086,7 @@ the same numbered section headings appear in `php.ebnf`.
 `implements-clause`, `class-member-list`, `class-member`, `property-declaration`,
 `property-modifier-list`, `property-modifier`, `property-visibility-modifier`,
 `set-visibility-modifier`, `property-list`, `property-element`, `hooked-property`,
-`property-hook-block`, `property-hook-list`, `property-hook`, `property-hook-body`,
+`property-hook-block`, `property-hook-list`, `property-hook`, `hook-name`, `property-hook-body`,
 `property-hook-modifiers`, `property-hook-modifier`, `method-declaration`, `method-modifiers`,
 `method-modifier`, `method-body`, `class-constant-declaration`, `class-constant-modifiers`,
 `class-constant-modifier`, `class-constant-list`, `class-constant-element`, `interface-declaration`,
@@ -1933,8 +1957,13 @@ property-hook-list =
     { [ attribute-groups ] , property-hook } ;
 
 property-hook =
-    property-hook-modifiers , [ "&" ] , identifier ,
+    property-hook-modifiers , [ "&" ] , hook-name ,
     [ "(" , parameter-list , ")" ] , property-hook-body ;
+
+(* Hook-name terminals are case-insensitive, without reserving these names
+   outside hooks. Unknown names are excluded even in discarded declarations. *)
+hook-name =
+    "get" | "set" ;
 
 property-hook-body =
       ";"

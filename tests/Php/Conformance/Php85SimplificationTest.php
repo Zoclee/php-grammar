@@ -25,10 +25,13 @@ final class Php85SimplificationTest extends TestCase
         return json_decode(file_get_contents(dirname(__DIR__, 3) . '/tests/fixtures/php/8.5/simplification-baseline.json'), true, flags: JSON_THROW_ON_ERROR);
     }
 
-    /** Undo only the three approved body edits and four alias removals. */
+    /** Undo approved simplifications and the later explicit hook-name restriction. */
     private static function restoredSource(): string
     {
         $source = self::source();
+        $source = str_replace('property-hook-modifiers , [ "&" ] , hook-name ,',
+            'property-hook-modifiers , [ "&" ] , identifier ,', $source);
+        $source = preg_replace('/^hook-name =\R[^;]*;\R/m', '', $source);
         foreach (['interface', 'enum'] as $kind) {
             $source = preg_replace_callback('/^' . $kind . '-declaration =\R.*?;/ms',
                 static fn ($match) => str_replace('class-member-list', $kind . '-member-list', $match[0]), $source);
@@ -51,7 +54,8 @@ final class Php85SimplificationTest extends TestCase
         }
         $current = (new Parser())->parse(self::source());
         self::assertSame(self::REMOVED, array_values(array_diff(array_keys($expected), array_keys($current->productionMap()))));
-        self::assertCount(360, $current->productions());
+        self::assertSame(['hook-name'], array_values(array_diff(array_keys($current->productionMap()), array_keys($expected))));
+        self::assertCount(361, $current->productions());
     }
 
     public function testNullabilityAndIntegrityArePreserved(): void

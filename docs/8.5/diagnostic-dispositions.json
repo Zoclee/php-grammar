@@ -5083,15 +5083,16 @@
       "source_context": "\t\t} else if (!stmt_ast) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Non-abstract property hook must have a body\");\n\t\t}\n\n\t\tzend_property_hook_kind hook_kind = zend_get_property_hook_kind_from_name(name);\n\t\tif (hook_kind == (zend_property_hook_kind)-1) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\t\"Unknown hook \\\"%s\\\" for property %s::$%s, expected \\\"get\\\" or \\\"set\\\"\",\n\t\t\t\tZSTR_VAL(name), ZSTR_VAL(ce->name), ZSTR_VAL(prop_name));\n\t\t}\n\n\t\tif (stmt_ast && stmt_ast->kind == ZEND_AST_PROPERTY_HOOK_SHORT_BODY) {",
       "syntax_relevance": "source-context rule or unresolved mixed predicate",
       "final_disposition": "proven by direct evidence",
-      "enforcement_layer": "explicit documented limitation",
+      "enforcement_layer": "EBNF",
       "isolated_witness": {
         "negative": "class C { public $p { other => 1; } }",
         "positive": "class C { public $p { get => 1; } }",
-        "diagnostic": "Unknown hook"
+        "diagnostic": "Unknown hook",
+        "negative_structural_match": false
       },
       "evidence": "diagnostic-witnesses.json/compile:8708",
       "reason": "Observed diagnostic and repaired positive; no instrumented branch proof.",
-      "final_blocker": "C1"
+      "final_blocker": null
     },
     {
       "id": "compile:8731",

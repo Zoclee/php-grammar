@@ -2,9 +2,9 @@
     "php": "8.5.10",
     "profile": "-n zend.multibyte=0",
     "hashes": {
-        "tests/fixtures/php/8.5/diagnostic-predicates.json": "30e944f5f3fae4e52a2ca3f3dc27636593dd0e2efeae89288be4dfdebc41cd5d",
-        "tools/8.5/diagnostic-witnesses.php": "efaeadd0a495181d0ec26d1f7ec7666be9e0f9543d455bb8d34eb77667c982f8",
-        "grammar/8.5/php.ebnf": "7bede7421acf06152892210cc2a53c17628e88402057edf0a50a76cc11fb0a0c"
+        "tests/fixtures/php/8.5/diagnostic-predicates.json": "9eadc4cea7cc57c3c16070f515e6ea280cdb94deeb27cb81081902e50fa9d8cf",
+        "tools/8.5/diagnostic-witnesses.php": "e5d5dfb319174234686646377e7c5cf91b528a9a74f05ae2b7e6880e8b4a550d",
+        "grammar/8.5/php.ebnf": "2acfcf904ba14cbdfab787854cee449205a805cdc8ac8c24bad1fd44983b4ceb"
     },
     "sites": 20,
     "comparisons": 40,
@@ -132,7 +132,7 @@
             "id": "compile:8708",
             "kind": "negative",
             "accepted": false,
-            "matched": true,
+            "matched": false,
             "diagnostic": true
         },
         {
@@ -291,5 +291,5 @@
         }
     ],
     "failures": [],
-    "scope": "Observed diagnostic text plus one repaired positive per site; not instrumented C branch coverage. All these contextual negatives remain structural matches."
+    "scope": "Observed diagnostic text plus one repaired positive per site; not instrumented C branch coverage. Negatives remain structural matches unless explicitly classified otherwise in diagnostic-predicates.json."
 }

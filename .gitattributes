@@ -112,8 +112,8 @@
 /tests/fixtures/php/8.5/contextual-invalid/boundary-hook-get-params-retained.php text eol=crlf
 /tests/fixtures/php/8.5/contextual-invalid/boundary-hook-interface-body-live.php text eol=crlf
 /tests/fixtures/php/8.5/contextual-invalid/boundary-hook-interface-body-retained.php text eol=crlf
-/tests/fixtures/php/8.5/contextual-invalid/boundary-hook-name-live.php text eol=crlf
-/tests/fixtures/php/8.5/contextual-invalid/boundary-hook-name-retained.php text eol=crlf
+/tests/fixtures/php/8.5/invalid/boundary-hook-name-live.php text eol=crlf
+/tests/fixtures/php/8.5/invalid/boundary-hook-name-retained.php text eol=crlf
 /tests/fixtures/php/8.5/contextual-invalid/boundary-hook-no-body-live.php text eol=crlf
 /tests/fixtures/php/8.5/contextual-invalid/boundary-hook-no-body-retained.php text eol=crlf
 /tests/fixtures/php/8.5/contextual-invalid/boundary-hook-param-default-live.php text eol=crlf
@@ -420,7 +420,7 @@
 /tests/fixtures/php/8.5/valid/boundary-hook-get-params-discarded.php text eol=crlf
 /tests/fixtures/php/8.5/valid/boundary-hook-implicit-promotion.php text eol=crlf
 /tests/fixtures/php/8.5/valid/boundary-hook-interface-body-discarded.php text eol=crlf
-/tests/fixtures/php/8.5/valid/boundary-hook-name-discarded.php text eol=crlf
+/tests/fixtures/php/8.5/known-discrepancies/valid/boundary-hook-name-discarded.php text eol=crlf
 /tests/fixtures/php/8.5/valid/boundary-hook-no-body-discarded.php text eol=crlf
 /tests/fixtures/php/8.5/valid/boundary-hook-param-default-discarded.php text eol=crlf
 /tests/fixtures/php/8.5/valid/boundary-hook-param-reference-discarded.php text eol=crlf

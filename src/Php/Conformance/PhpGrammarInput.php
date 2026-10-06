@@ -24,6 +24,11 @@ final readonly class PhpGrammarInput implements Input
     public function valueAt(int $offset): string
     {
         $token = $this->tokenAt($offset);
+        if ($token->type === TokenType::Identifier && in_array(strtolower($token->lexeme), ['get', 'set'], true)) {
+            // Hook-name terminals are case-insensitive. Identifier primitives
+            // still see the original token, including its category and spelling.
+            return strtolower($token->lexeme);
+        }
         if ($token->type === TokenType::Identifier && in_array(strtolower($token->lexeme), ['enum', 'from'], true)) {
             // These spellings are keyword terminals only when scanner lookahead
             // selected them. Identifier primitives still consume the original token.

@@ -7,7 +7,7 @@
   "compile:7928": {"negative": "class C { function f(public $a) {} }", "positive": "class C { function __construct(public $a) {} }", "diagnostic": "Cannot declare promoted property outside a constructor"},
   "compile:7933": {"negative": "abstract class C { abstract function __construct(public $a); }", "positive": "abstract class C { function __construct(public $a) {} }", "diagnostic": "Cannot declare promoted property in an abstract constructor"},
   "compile:7937": {"negative": "class C { function __construct(public ...$a) {} }", "positive": "class C { function __construct(public $a) {} }", "diagnostic": "Cannot declare variadic promoted property"},
-  "compile:8708": {"negative": "class C { public $p { other => 1; } }", "positive": "class C { public $p { get => 1; } }", "diagnostic": "Unknown hook"},
+  "compile:8708": {"negative": "class C { public $p { other => 1; } }", "positive": "class C { public $p { get => 1; } }", "diagnostic": "Unknown hook", "negative_structural_match": false},
   "compile:8791": {"negative": "class C { public $p { get => 1; get => 2; } }", "positive": "class C { public $p { get => 1; } }", "diagnostic": "Cannot redeclare property hook"},
   "compile:8842": {"negative": "enum E { public $p; }", "positive": "class E { public $p; }", "diagnostic": "cannot include properties"},
   "compile:9482": {"negative": "enum E: int { case A; }", "positive": "enum E: int { case A = 1; }", "diagnostic": "must have a value"},

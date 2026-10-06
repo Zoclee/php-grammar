@@ -23,6 +23,10 @@ final class Php85ParserCompilerBoundaryTest extends TestCase
                 'discarded' => "const X = true ? 1 : static function() { $source };"];
             foreach ($forms as $form => $expected) {
                 $category = $form === 'discarded' || $case['live_valid'] ? 'valid' : 'contextual-invalid';
+                if (($case['structural_match'] ?? true) === false) {
+                    self::assertNotEmpty($case['grammar_difference']);
+                    $category = $category === 'valid' ? 'known-discrepancies/valid' : 'invalid';
+                }
                 self::assertStringStartsWith($category . '/', $case['fixtures'][$form]);
                 self::assertSame("<?php\n$expected\n", str_replace("\r\n", "\n", file_get_contents($root . $case['fixtures'][$form])));
             }

@@ -32,7 +32,7 @@ final class ConsumerWorkflowTest extends TestCase
         self::assertFileExists($manifest->absolutePath($package->documentationPath));
         $repository = new GrammarRepository($manifest);
         $grammar = $repository->load('8.5');
-        self::assertCount(360, $grammar->productionNames());
+        self::assertCount(361, $grammar->productionNames());
         self::assertTrue($grammar->hasProduction('expression'));
         self::assertSame('expression', $grammar->production('expression')->name);
         $matcher = PhpGrammarMatcher::forManifest($manifest);

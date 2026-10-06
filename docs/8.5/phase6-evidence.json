@@ -158,6 +158,7 @@
         "contextual-invalid/boundary-goto-missing-live.php",
         "contextual-invalid/boundary-nested-class-live.php"
       ],
+      "known_discrepancies": [],
       "folding_families": [
         "enum-property",
         "enum-hook",
@@ -362,6 +363,7 @@
         "contextual-invalid/boundary-generator-return-type-live.php",
         "contextual-invalid/boundary-parameter-never-live.php"
       ],
+      "known_discrepancies": [],
       "folding_families": [
         "enum-object",
         "enum-union",
@@ -448,7 +450,6 @@
       "implementation": "Structural EBNF plus contextual documentation and PHP differential oracle; no complete repository rule implementation",
       "positive": [
         "valid/boundary-hook-empty-discarded.php",
-        "valid/boundary-hook-name-discarded.php",
         "valid/boundary-hook-get-empty-params-discarded.php",
         "valid/boundary-hook-get-params-discarded.php",
         "valid/boundary-hook-set-empty-params-discarded.php",
@@ -508,11 +509,11 @@
         "invalid/phase4-statements-return-comma.php",
         "invalid/phase4-constants-parameter-default-missing.php",
         "contextual-invalid/phase4-context-variadic-not-last.php",
-        "contextual-invalid/phase4-context-variadic-default.php"
+        "contextual-invalid/phase4-context-variadic-default.php",
+        "invalid/boundary-hook-name-live.php"
       ],
       "contextual": [
         "contextual-invalid/boundary-hook-empty-live.php",
-        "contextual-invalid/boundary-hook-name-live.php",
         "contextual-invalid/boundary-hook-get-empty-params-live.php",
         "contextual-invalid/boundary-hook-get-params-live.php",
         "contextual-invalid/boundary-hook-set-empty-params-live.php",
@@ -558,6 +559,9 @@
         "contextual-invalid/boundary-autoload-live.php",
         "contextual-invalid/boundary-custom-assert-live.php",
         "contextual-invalid/boundary-parameter-never-live.php"
+      ],
+      "known_discrepancies": [
+        "known-discrepancies/valid/boundary-hook-name-discarded.php"
       ],
       "folding_families": [
         "hook-empty",
@@ -689,7 +693,6 @@
         "valid/boundary-abstract-method-body-discarded.php",
         "valid/boundary-abstract-private-method-discarded.php",
         "valid/boundary-hook-empty-discarded.php",
-        "valid/boundary-hook-name-discarded.php",
         "valid/boundary-hook-get-empty-params-discarded.php",
         "valid/boundary-hook-get-params-discarded.php",
         "valid/boundary-hook-set-empty-params-discarded.php",
@@ -753,7 +756,8 @@
         "invalid/phase4-hooks-var-public.php",
         "invalid/phase4-hooks-interface-var-public.php",
         "invalid/phase4-constants-property-default-missing.php",
-        "contextual-invalid/phase4-context-hook-duplicate.php"
+        "contextual-invalid/phase4-context-hook-duplicate.php",
+        "invalid/boundary-hook-name-live.php"
       ],
       "contextual": [
         "contextual-invalid/boundary-enum-property-live.php",
@@ -777,7 +781,6 @@
         "contextual-invalid/boundary-abstract-method-body-live.php",
         "contextual-invalid/boundary-abstract-private-method-live.php",
         "contextual-invalid/boundary-hook-empty-live.php",
-        "contextual-invalid/boundary-hook-name-live.php",
         "contextual-invalid/boundary-hook-get-empty-params-live.php",
         "contextual-invalid/boundary-hook-get-params-live.php",
         "contextual-invalid/boundary-hook-set-empty-params-live.php",
@@ -816,6 +819,9 @@
         "contextual-invalid/boundary-type-intersection-builtin-live.php",
         "contextual-invalid/boundary-property-duplicate-live.php",
         "contextual-invalid/boundary-parent-hook-outside-live.php"
+      ],
+      "known_discrepancies": [
+        "known-discrepancies/valid/boundary-hook-name-discarded.php"
       ],
       "folding_families": [
         "enum-property",
@@ -1015,6 +1021,7 @@
         "contextual-invalid/boundary-enum-backed-missing-value-live.php",
         "contextual-invalid/boundary-enum-unbacked-value-live.php"
       ],
+      "known_discrepancies": [],
       "folding_families": [
         "enum-property",
         "enum-hook",
@@ -1166,6 +1173,7 @@
         "contextual-invalid/boundary-goto-missing-live.php",
         "contextual-invalid/boundary-nested-class-live.php"
       ],
+      "known_discrepancies": [],
       "folding_families": [
         "enum-property",
         "enum-hook",
@@ -1251,7 +1259,6 @@
         "valid/boundary-abstract-method-body-discarded.php",
         "valid/boundary-abstract-private-method-discarded.php",
         "valid/boundary-hook-empty-discarded.php",
-        "valid/boundary-hook-name-discarded.php",
         "valid/boundary-hook-get-empty-params-discarded.php",
         "valid/boundary-hook-get-params-discarded.php",
         "valid/boundary-hook-set-empty-params-discarded.php",
@@ -1342,7 +1349,8 @@
         "contextual-invalid/phase4-context-destructure-empty.php",
         "contextual-invalid/phase4-context-list-empty.php",
         "contextual-invalid/phase4-context-destructure-mixed-keys.php",
-        "contextual-invalid/phase4-context-nullsafe-assignment.php"
+        "contextual-invalid/phase4-context-nullsafe-assignment.php",
+        "invalid/boundary-hook-name-live.php"
       ],
       "contextual": [
         "contextual-invalid/boundary-enum-property-live.php",
@@ -1366,7 +1374,6 @@
         "contextual-invalid/boundary-abstract-method-body-live.php",
         "contextual-invalid/boundary-abstract-private-method-live.php",
         "contextual-invalid/boundary-hook-empty-live.php",
-        "contextual-invalid/boundary-hook-name-live.php",
         "contextual-invalid/boundary-hook-get-empty-params-live.php",
         "contextual-invalid/boundary-hook-get-params-live.php",
         "contextual-invalid/boundary-hook-set-empty-params-live.php",
@@ -1412,6 +1419,9 @@
         "contextual-invalid/boundary-this-static-live.php",
         "contextual-invalid/boundary-this-unset-live.php",
         "contextual-invalid/boundary-static-duplicate-live.php"
+      ],
+      "known_discrepancies": [
+        "known-discrepancies/valid/boundary-hook-name-discarded.php"
       ],
       "folding_families": [
         "enum-property",
@@ -1675,6 +1685,7 @@
         "contextual-invalid/boundary-nested-class-live.php",
         "contextual-invalid/boundary-parent-hook-outside-live.php"
       ],
+      "known_discrepancies": [],
       "folding_families": [
         "enum-property",
         "enum-hook",
@@ -1814,6 +1825,7 @@
         "contextual-invalid/boundary-unset-cast-live.php",
         "contextual-invalid/boundary-parameter-never-live.php"
       ],
+      "known_discrepancies": [],
       "folding_families": [
         "attribute-unpack",
         "attribute-conversion",
@@ -1987,6 +1999,7 @@
         "contextual-invalid/boundary-goto-loop-live.php",
         "contextual-invalid/boundary-break-depth-live.php"
       ],
+      "known_discrepancies": [],
       "folding_families": [
         "enum-property",
         "enum-hook",
@@ -2894,12 +2907,12 @@
     }
   ],
   "hashes": {
-    "tools/8.5/phase6-evidence.php": "3e34287a81f8f22fec1bdf1a5ed61cee80392acb3265830de99c35d786de78f7",
-    "docs/8.5/phase6-reconciliation.json": "978553055f705e757c1980476348078c21a14f5744f121f4996e94f0ef9b36d3",
-    "docs/8.5/phase6-matrices.json": "8add5c031a50a64bec6a1942d4b68bccb65fb3ed33d0c18887b4ab44366b8ee3",
+    "tools/8.5/phase6-evidence.php": "04fcd7073be2f47bbaf04ee266dbef6e718d37816fd3caec5a583b84956d9724",
+    "docs/8.5/phase6-reconciliation.json": "987757055d8e185e3a38fb18fe308fb4f90c92c62fbc48b35d7bb9b671fa5938",
+    "docs/8.5/phase6-matrices.json": "fa323e8b8d1d05eba194d02a2a27d69563b11a1656118b98f06e0eeb1793bfbc",
     "docs/8.5/phase6-upstream-tests.json": "79b14518fdacf4d1cfad9c3028da8337535647a48636489bce9f863cf23a110e",
-    "docs/8.5/phase5-lexical-evidence.json": "0b2e7d18b84aa4e7f5502e4ac74cf073f295d76b9d9823308a97f6b6dc98ad2d",
-    "docs/8.5/systematic-structure.json": "190ba039ae85c46e82bf54132ed15d7c563b5e7a3f318753f020d30cf3b4e0a1",
+    "docs/8.5/phase5-lexical-evidence.json": "aea94313d57be616127f9478c85a10ab45cefc78a383982f3b9e28e5130f19d9",
+    "docs/8.5/systematic-structure.json": "1a3f4b6ead78348213bba3b7a3e03aa5cc6db7e707b0d116643c3dfde4ad3ef1",
     "docs/8.5/audit-remediation.md": "899f4d7c2d92e0bb65265add9747ec8b31449e87476bfde6e42e2d31f977b40d",
     "tools/lib/Support.php": "ea6d1af5a577e7039261465052411c5a1c8ebaf1d1cdfa735d5e5c5e2e696181",
     "tools/8.5/data/phase6-policy.json": "1c2c925420de49a5d3282a19343d3cab1de8353b6ed3f621e312b79003138d59"

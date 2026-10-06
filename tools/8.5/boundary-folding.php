@@ -58,7 +58,7 @@ try {
             $matched = $matcher->matches('8.5', $source)->matched;
             $count++;
             $expectedLint = $discards || $case['live_valid'];
-            if (!$matched || ($status === 0) !== $expectedLint) {
+            if ($matched !== ($case['structural_match'] ?? true) || ($status === 0) !== $expectedLint) {
                 $failures++;
                 $failedCases[] = $case['id'] . '/' . $operator;
                 echo $case['id'] . '/' . $operator . ': EBNF=' . (int)$matched . ', lint=' . $status . "\n" . $output;

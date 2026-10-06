@@ -781,8 +781,13 @@ property-hook-list =
     { [ attribute-groups ] , property-hook } ;
 
 property-hook =
-    property-hook-modifiers , [ "&" ] , identifier ,
+    property-hook-modifiers , [ "&" ] , hook-name ,
     [ "(" , parameter-list , ")" ] , property-hook-body ;
+
+(* Hook-name terminals are case-insensitive, without reserving these names
+   outside hooks. Unknown names are excluded even in discarded declarations. *)
+hook-name =
+    "get" | "set" ;
 
 property-hook-body =
       ";"

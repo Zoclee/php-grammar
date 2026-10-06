@@ -2258,6 +2258,7 @@
     "property-hook-block",
     "property-hook-list",
     "property-hook",
+    "hook-name",
     "property-hook-body",
     "property-hook-modifiers",
     "property-hook-modifier",

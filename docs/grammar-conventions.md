@@ -96,6 +96,8 @@ Examples:
 ```
 
 Terminals are case-sensitive unless a production explicitly defines otherwise.
+In PHP 8.5, the `hook-name` terminals `"get"` and `"set"` are explicitly
+case-insensitive; this does not make them reserved words in other positions.
 
 Do not use single quotes for canonical terminals.
 

@@ -18,7 +18,11 @@ final class Php85ReadabilityTest extends TestCase
 
     public function testEveryProductionBodyMatchesThePreReadabilityBaseline(): void
     {
-        $grammar = (new Parser())->parse(self::source());
+        // Reverse the later hook-name policy change for this historical baseline.
+        $source = str_replace('property-hook-modifiers , [ "&" ] , hook-name ,',
+            'property-hook-modifiers , [ "&" ] , identifier ,', self::source());
+        $source = preg_replace('/^hook-name =\R[^;]*;\R/m', '', $source);
+        $grammar = (new Parser())->parse($source);
         $hashes = [];
         foreach ($grammar->productions() as $production) {
             $hashes[$production->name] = hash('sha256', serialize($production->expression));

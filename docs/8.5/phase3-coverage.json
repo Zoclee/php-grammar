@@ -1,5 +1,5 @@
 {
-    "grammar_sha256": "7bede7421acf06152892210cc2a53c17628e88402057edf0a50a76cc11fb0a0c",
+    "grammar_sha256": "2acfcf904ba14cbdfab787854cee449205a805cdc8ac8c24bad1fd44983b4ceb",
     "method": "Completed chart items during accepted positive inputs, not unique successful derivations or AST equivalence. Primitive successes are separate. Invalid inputs affect attempted coverage only.",
     "baseline": {
         "productions": 236,
@@ -8,12 +8,12 @@
         "attempted_alternatives": 563
     },
     "current": {
-        "productions": 297,
-        "total_productions": 360,
-        "alternatives": 606,
-        "total_alternatives": 790,
-        "attempted_productions": 297,
-        "attempted_alternatives": 607,
+        "productions": 298,
+        "total_productions": 361,
+        "alternatives": 608,
+        "total_alternatives": 792,
+        "attempted_productions": 298,
+        "attempted_alternatives": 609,
         "valid_fixtures_default_profile": 648,
         "rule_cases": 246
     },
@@ -3361,14 +3361,6 @@
         },
         {
             "kind": "alternative",
-            "identity": "simple-type-without-static/alternative:4",
-            "classification": "meaningful-valid-syntax",
-            "area": "simple-type-without-static",
-            "evidence": "rule:type-without-static #107",
-            "reason": "Positive witness added in Phase 3."
-        },
-        {
-            "kind": "alternative",
             "identity": "simple-type-without-static/alternative:6",
             "classification": "meaningful-valid-syntax",
             "area": "simple-type-without-static",
@@ -6064,6 +6056,9 @@
         "goto-statement": "fixture:010-generators-declare-goto-include.php",
         "group-use-declaration": "fixture:phase3-imports-constant-group.php",
         "halt-compiler-statement": "fixture:audit-halt-data.php",
+        "hook-name": "fixture:audit-hooks-abstract.php",
+        "hook-name/alternative:1": "fixture:audit-hooks-abstract.php",
+        "hook-name/alternative:2": "fixture:audit-hooks-interface.php",
         "hooked-property": "fixture:audit-hooks-abstract.php",
         "if-statement": "fixture:005-control-flow.php",
         "if-statement/alternative:1": "fixture:005-control-flow.php",
@@ -6449,7 +6444,7 @@
         "simple-type-without-static/alternative:17": "fixture:007-functions-types.php",
         "simple-type-without-static/alternative:2": "fixture:boundary-property-callable-discarded.php",
         "simple-type-without-static/alternative:3": "rule:type-without-static #105",
-        "simple-type-without-static/alternative:4": "rule:type-without-static #107",
+        "simple-type-without-static/alternative:4": "fixture:hooks-initialized-mixed-case.php",
         "simple-type-without-static/alternative:5": "fixture:007-functions-types.php",
         "simple-type-without-static/alternative:6": "rule:type-without-static #111",
         "simple-type-without-static/alternative:7": "fixture:007-functions-types.php",

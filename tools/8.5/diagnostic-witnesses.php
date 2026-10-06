@@ -29,7 +29,8 @@ try {
             $diagnostic = $kind === 'negative' && str_contains($message, $case['diagnostic']);
             $row = compact('id', 'kind', 'accepted', 'matched', 'diagnostic');
             $rows[] = $row;
-            if ($accepted !== ($kind === 'positive') || !$matched || ($kind === 'negative' && !$diagnostic)) {
+            $expectedMatch = $kind === 'positive' || ($case['negative_structural_match'] ?? true);
+            if ($accepted !== ($kind === 'positive') || $matched !== $expectedMatch || ($kind === 'negative' && !$diagnostic)) {
                 $failures[] = $row + ['message' => $message];
             }
         }
@@ -39,7 +40,7 @@ $hashes = [];
 foreach ([$path, 'tools/8.5/diagnostic-witnesses.php', 'grammar/8.5/php.ebnf'] as $name) $hashes[$name] = hash_file('sha256', $root . '/' . $name);
 $report = ['php' => PHP_VERSION, 'profile' => '-n zend.multibyte=0', 'hashes' => $hashes,
     'sites' => count($cases), 'comparisons' => count($rows), 'cases' => $rows, 'failures' => $failures,
-    'scope' => 'Observed diagnostic text plus one repaired positive per site; not instrumented C branch coverage. All these contextual negatives remain structural matches.'];
+    'scope' => 'Observed diagnostic text plus one repaired positive per site; not instrumented C branch coverage. Negatives remain structural matches unless explicitly classified otherwise in diagnostic-predicates.json.'];
 $json = json_encode($report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n";
 $output = $root . '/docs/8.5/diagnostic-witnesses.json';
 if (in_array('--check', $argv, true)) {

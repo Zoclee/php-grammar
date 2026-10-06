@@ -8,13 +8,13 @@
         "src/Php/Lexing/PhpVersion.php": "8271b549f251bbb5a3e5d793877ea0359d92de421ed88a9dd06fafac12202498",
         "src/Php/Lexing/StringSyntax.php": "7b634e9aeafc6b1b1625e1c257577829e75cce78897f5a4c96d27a974ff1857a",
         "src/Php/Conformance/PhpGrammarMatcher.php": "7b4906218b064690cdbc0eba35610bfa5c94fba893a0332d51e48671b4dc6457",
-        "src/Php/Conformance/PhpGrammarInput.php": "09c02bde1e0d3183bb0afe89969c6ac2cbfd9dd3311650e7352ff1231a786e8e",
+        "src/Php/Conformance/PhpGrammarInput.php": "56f72bb397385ea371ea35e57404dfc6431ab54164d9469ef5fad3be42d7b6de",
         "tests/Support/Php85LexicalCases.php": "99622eff32493ae9309a0c04a462725891ecd3e96d52c504d4937df258ab9485",
         "tests/Support/Php85LexicalAudit.php": "5414f585fa3a57a6a2aa59c61dd731060bc165329f48db62e2d6336a38ddecb6",
         "tools/8.5/lexer-differential.php": "df60d675d5de4ecead189ec83ba5959d49efc1f470611e13ab9a14a69311928c",
-        "docs/8.5/source-inventory.json": "fd1933691d8d277a40670c7716e7275cc4b4a8472d5379def80fe3ed0bfcb8f3",
-        "docs/8.5/phase3-coverage.json": "b3c84d5f81f790983595bfebe5a0eacc6e0b2e5fe968ff4ab51bba4fc4e9e9eb",
-        "grammar/8.5/php.ebnf": "7bede7421acf06152892210cc2a53c17628e88402057edf0a50a76cc11fb0a0c"
+        "docs/8.5/source-inventory.json": "e78552eee4e489d84412cb4ba8755aaf15dd5e1a58c8008779dd46da74f8b410",
+        "docs/8.5/phase3-coverage.json": "e8cb780c7a70a4b06d74e28f7dcfebba672f705487f270d67747383c621c9a7b",
+        "grammar/8.5/php.ebnf": "2acfcf904ba14cbdfab787854cee449205a805cdc8ac8c24bad1fd44983b4ceb"
     },
     "families": {
         "tags": {

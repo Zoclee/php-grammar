@@ -6,15 +6,15 @@
     "zend_compile.c": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225"
   },
   "hashes": {
-    "grammar/8.5/php.ebnf": "7bede7421acf06152892210cc2a53c17628e88402057edf0a50a76cc11fb0a0c",
-    "docs/8.5/phase3-coverage.json": "b3c84d5f81f790983595bfebe5a0eacc6e0b2e5fe968ff4ab51bba4fc4e9e9eb",
-    "docs/8.5/negative-boundaries.json": "84a21d08e0985c774f283b73dd6311495434f34849cbd5e8ac96b469ed4f3575",
-    "tests/fixtures/php/8.5/parser-compiler-boundaries.json": "20a19b518308828b8e09e0356bbf92b68fa6dfc1c34e989d1071f52f36315633",
+    "grammar/8.5/php.ebnf": "2acfcf904ba14cbdfab787854cee449205a805cdc8ac8c24bad1fd44983b4ceb",
+    "docs/8.5/phase3-coverage.json": "e8cb780c7a70a4b06d74e28f7dcfebba672f705487f270d67747383c621c9a7b",
+    "docs/8.5/negative-boundaries.json": "e6353997d841397317c61ad98488c00c734e7d8a492db1544f7d145e0cbb3d6c",
+    "tests/fixtures/php/8.5/parser-compiler-boundaries.json": "dd00890510df29689ca06575673be01124cbf8d06903143949a98062cddb16ae",
     "docs/8.5/compiler-boundaries.json": "66c2dfe1bfff7af8a403163266de9f949d090d6215b758fc8a39c50c528e4c60",
     "tools/8.5/reconcile.php": "4c5695adaab8af6b9ee1e6510003ace6d8e1a42d546f21de7bda6630a9916097",
     "tools/lib/ParserReconciliation.php": "8e36b2848b444af15ff89144c0cfa1482d5e4a1d042e4c07f0858abba7527e8d",
     "tools/lib/Support.php": "ea6d1af5a577e7039261465052411c5a1c8ebaf1d1cdfa735d5e5c5e2e696181",
-    "tools/8.5/data/parser-anchors.json": "f6e26793a6d7bbce778fbe7f398fb209e2cd0588179536f2cbc40b718b6912ff"
+    "tools/8.5/data/parser-anchors.json": "0d0280a00611fef4291f0d00ea6c77e475c3f55a234190cb948cf3e42ad3345f"
   },
   "method": "Exact-name or explicit reviewed production anchors; every RHS and action call retained. Evidence links are indexed at production/function-family granularity, not proofs of branch coverage.",
   "parser_productions": 177,
@@ -6499,7 +6499,7 @@
           ]
         }
       ],
-      "abstraction": "List recursion/options are represented by EBNF repetition/options; AST allocation and source locations are not syntax constraints.",
+      "abstraction": "Canonical hook-name explicitly permits case-insensitive get/set. Zend parses a generic identifier and defers name validation to compilation; discarded unknown hooks are an intentional documented grammar difference.",
       "positive_witnesses": {
         "property-hook": "fixture:audit-hooks-abstract.php"
       },

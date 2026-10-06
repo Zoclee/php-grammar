@@ -62,17 +62,18 @@ foreach ($reconciliation['contextual_diagnostic_sites'] as $site) {
     $early = $site['classification'] === 'contextual-validator-enforced';
     $excluded = isset($policy['excluded'][$line]);
     $witness = isset($witnesses[$site['id']]);
+    $structural = $witness && !($witnesses[$site['id']]['negative_structural_match'] ?? true);
     $status = $excluded ? 'out of scope with justification' : ($witness ? 'proven by direct evidence' : ($early ? 'systematically sampled' : 'unresolved'));
     $sites[] = [...$site, 'source' => 'https://github.com/php/php-src/blob/' . S::PIN . '/Zend/zend_compile.c#L' . $line,
         'trigger' => $site['diagnostic'], 'source_context_start' => max(1, $line - 6),
         'source_context' => implode("\n", array_slice($lines, max(0, $line - 7), $line + 5 - max(0, $line - 7))),
         'syntax_relevance' => $excluded ? 'out of scope' : 'source-context rule or unresolved mixed predicate',
         'final_disposition' => $status,
-        'enforcement_layer' => $excluded ? 'not applicable' : ($early ? 'contextual validator' : 'explicit documented limitation'),
+        'enforcement_layer' => $structural ? 'EBNF' : ($excluded ? 'not applicable' : ($early ? 'contextual validator' : 'explicit documented limitation')),
         'isolated_witness' => $witnesses[$site['id']] ?? null,
         'evidence' => $witness ? 'diagnostic-witnesses.json/' . $site['id'] : ($early ? 'phase6-matrices.json/modifiers' : 'phase6-reconciliation.json: function-family links only'),
         'reason' => $policy['excluded'][$line] ?? ($witness ? 'Observed diagnostic and repaired positive; no instrumented branch proof.' : ($early ? '584-case target/modifier matrix; rule API requires caller-supplied context.' : 'Exact guard/traversal is not isolated; this site is not enforced by the repository source matcher.')),
-        'final_blocker' => $excluded || $early ? null : ($witness ? 'C1' : 'C1/C2')];
+        'final_blocker' => $excluded || $early || $structural ? null : ($witness ? 'C1' : 'C1/C2')];
 }
 $delegated = [];
 foreach (['zend_ast.c', 'zend_inheritance.c', 'zend_enum.c', 'zend_attributes.c'] as $name) {
@@ -112,7 +113,7 @@ $diagnostics = ['source_pin' => S::PIN,
     'delegated_counts' => array_count_values(array_column($delegated, 'final_disposition')), 'direct_sites' => $sites, 'delegated_candidates' => $delegated];
 S::emit('docs/8.5/diagnostic-dispositions.json', $diagnostics, $args['check'], 'Stale certification artifact: docs/8.5/diagnostic-dispositions.json', true);
 $blockers = $policy['blockers'];
-$blockers[0]['affected_syntax'] = array_map(static fn(array $r): string => $r['area'] . ': ' . implode('; ', array_diff($r['restrictions'], $policy['outside_restrictions'])), $previous['inventory']);
+$blockers[0]['affected_syntax'] = array_map(static fn(array $r): string => $r['area'] . ': ' . implode('; ', array_diff($r['restrictions'], $policy['outside_restrictions'], ['get/set names'])), $previous['inventory']);
 $areas = [];
 foreach ($policy['families'] as $name => [$negativeArea, $lexicalFamily, $anchor]) {
     if (!isset($coverage['first_positive_witness'][$anchor])) {
@@ -145,9 +146,10 @@ $restrictions = [];
 foreach ($previous['inventory'] as $area) {
     foreach ($area['restrictions'] as $restriction) {
         $outside = in_array($restriction, $policy['outside_restrictions'], true);
+        $hookNames = $restriction === 'get/set names';
         $restrictions[] = ['area' => $area['area'], 'restriction' => $restriction,
-            'status' => $outside ? 'not applicable' : ($area['area'] === 'modifiers' ? 'systematically sampled' : 'known limitation'),
-            'enforcement_layer' => $outside ? 'out of scope: resolved symbol/value/type behavior' : ($area['area'] === 'modifiers' ? 'rule-level contextual validator; target identification external' : 'EBNF shape plus external ordered contextual constraints'),
+            'status' => $hookNames ? 'proven by direct evidence' : ($outside ? 'not applicable' : ($area['area'] === 'modifiers' ? 'systematically sampled' : 'known limitation')),
+            'enforcement_layer' => $hookNames ? 'EBNF hook-name; case-insensitive identifier terminal adapter; discarded unknown names intentionally excluded' : ($outside ? 'out of scope: resolved symbol/value/type behavior' : ($area['area'] === 'modifiers' ? 'rule-level contextual validator; target identification external' : 'EBNF shape plus external ordered contextual constraints')),
             'evidence' => ['source' => $area['source'], 'function_family_sites' => $area['compiler_sites'], 'folding_families' => $area['folding_families']],
             'scope' => 'Restriction-description inventory, not an assertion that every individual predicate has a witness.'];
     }
@@ -210,7 +212,8 @@ $report = ['schema' => 1, 'version' => '8.5', 'source_pin' => S::PIN,
     'grammar_coverage' => $coverage['current'], 'coverage_classifications' => $coverage['remaining_counts'], 'unclassified_meaningful_gaps' => 0,
     'scanner' => ['rules' => count($lexical['rules']), 'families' => count($lexical['families']), 'states' => $states, 'direct' => 2700, 'primitive' => 101, 'syntax' => 144],
     'parser' => ['productions' => $reconciliation['parser_productions'], 'alternatives' => $reconciliation['parser_alternatives']],
-    'fixtures' => $fixtures, 'diagnostics' => $diagnostics['direct_counts'], 'delegated_diagnostics' => $diagnostics['delegated_counts'],
+    'fixtures' => $fixtures, 'known_discrepancies' => $negative['known_discrepancies'],
+    'diagnostics' => $diagnostics['direct_counts'], 'delegated_diagnostics' => $diagnostics['delegated_counts'],
     'binding' => array_intersect_key($binding, array_flip(['positive', 'malformed', 'operand_comparisons', 'limits'])),
     'ambiguities' => array_values(array_filter($matrices['cases'], static fn(array $r): bool => $r['matrix'] === 'ambiguity' && $r['derivations'] > 1)),
     'areas' => $areas, 'restriction_inventory' => $restrictions, 'historical_dispositions' => $history, 'blockers' => $blockers,

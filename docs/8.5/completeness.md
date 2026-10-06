@@ -14,6 +14,21 @@ and [final-evidence.json](final-evidence.json) for the machine-readable decision
 14 major areas, nine evidence categories, 73 restrictions, historical issue
 table and individual blocker records.
 
+### Subsequent property-hook clarification
+
+The canonical grammar now names the two supported hooks explicitly through
+`hook-name = "get" | "set"`, with case-insensitive terminal matching. Unknown
+names are rejected structurally, including in discarded declarations. PHP can
+accept the discarded case; it is an intentional, tested grammar difference in
+the [negative-boundary ledger](negative-boundaries.md#known-discrepancies).
+See the [specification](../../grammar/8.5/php.md#property-hooks-and-promotion)
+for the source evidence and compatibility decision.
+
+Current generated evidence supersedes the historical Phase 7 totals below:
+298/361 productions and 608/792 alternatives have positive witnesses; the
+ordinary corpus has 653 valid, 365 structural-negative and 353 contextual-negative
+files, plus one known discrepancy. No unclassified meaningful coverage gap remains.
+
 ## Scope and source authority
 
 The package describes byte-oriented PHP 8.5 syntax: source/PHP/HTML transitions,

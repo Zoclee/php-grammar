@@ -380,6 +380,7 @@
     "backup_lex_pos"
   ],
   "notes": {
+    "property_hook": "Canonical hook-name explicitly permits case-insensitive get/set. Zend parses a generic identifier and defers name validation to compilation; discarded unknown hooks are an intentional documented grammar difference.",
     "start": "Source tags, shebang and HTML are handled by the repository scanner/adapter before the statement list.",
     "expr": "Bison precedence and associativity become explicit EBNF layers, pending-prefix contexts and closed yield-key contexts. See systematic-structure.json.",
     "statement": "Bison dangling-else precedence becomes matched/unmatched productions; alternative-if boundaries use closed-inner-statement-list.",

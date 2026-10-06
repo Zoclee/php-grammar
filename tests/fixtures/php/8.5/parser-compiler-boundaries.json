@@ -380,10 +380,12 @@
       "evidence": "PHP source pin 7a4c62795365ed6a97a0184c96375b9fb4d53b1e; zend_language_parser.y: property_hook_list, property_hook, optional_parameter_list, property_hook_body, parameter; zend_compile.c: zend_compile_property_hooks, zend_compile_prop_decl, zend_compile_params",
       "live_valid": false,
       "fixtures": {
-        "live": "contextual-invalid/boundary-hook-name-live.php",
-        "retained": "contextual-invalid/boundary-hook-name-retained.php",
-        "discarded": "valid/boundary-hook-name-discarded.php"
-      }
+        "live": "invalid/boundary-hook-name-live.php",
+        "retained": "invalid/boundary-hook-name-retained.php",
+        "discarded": "known-discrepancies/valid/boundary-hook-name-discarded.php"
+      },
+      "structural_match": false,
+      "grammar_difference": "Canonical hook-name explicitly permits only get/set, even in discarded declarations; PHP defers this check to compilation."
     },
     {
       "id": "hook-get-empty-params",

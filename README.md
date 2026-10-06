@@ -46,9 +46,12 @@ scope, four blocker dispositions, source comparison and release gates.
 The PHP 8.5 parser/compiler boundary audit reconciles common class-like members,
 enum types, trait aliases, hooks, attributes and try syntax. It covers 115
 live/retained/discarded families and corrects an alternative-if
-binding error using Zend AST evidence. The corpus contains 653 valid, 362
-structural-negative and 356 contextual-negative files across both short-tag
-profiles. The previously recorded discarded-closure examples now pass.
+binding error using Zend AST evidence. The corpus contains 653 valid, 365
+structural-negative and 353 contextual-negative files across both short-tag
+profiles. The canonical grammar explicitly permits only case-insensitive `get`
+and `set` hook names. An unknown hook in a discarded declaration is retained
+as an intentional [grammar difference](grammar/8.5/php.md#property-hooks-and-promotion)
+outside the ordinary corpus: PHP accepts that case, while the EBNF rejects it.
 Full PHP 8.5 conformance is not established.
 
 Grammar Completeness Phase 5 audits all 190 pinned scanner rules across 25
