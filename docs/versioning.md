@@ -82,7 +82,8 @@ grammar/<new-major.minor>/
 
 When adding a new version:
 
-1. use the previous version as a starting point where appropriate;
+1. record the repository baseline commit and begin with exact, byte-for-byte
+   copies of the immediately preceding supported version's `php.ebnf` and `php.md`;
 2. identify all syntax changes introduced by the new PHP version;
 3. verify those changes against authoritative sources;
 4. update the canonical `.ebnf` grammar;
@@ -90,7 +91,34 @@ When adding a new version:
 6. add or update conformance fixtures;
 7. add the version package to `php-grammar.json`;
 8. add version-boundary fixtures for syntax introduced or removed in the new version;
-9. document meaningful differences from the previous PHP version.
+9. document every material difference in `changes.md` using section 15.
+
+Preserve unchanged productions and documentation. Apply only incremental changes
+justified by the pinned PHP implementation; avoid unrelated restructuring,
+renaming, formatting, and simplification. Do not regenerate or rewrite a whole
+grammar to introduce incremental syntax. Synchronizing existing generated
+documentation sections after reviewed edits remains appropriate.
+
+Every new version after PHP 8.5 must provide three files:
+
+```text
+grammar/<major.minor>/php.ebnf
+grammar/<major.minor>/php.md
+grammar/<major.minor>/changes.md
+```
+
+This includes the future PHP 8.6 package; it does not register or create it now.
+PHP 8.5 is exempt from retroactive `changes.md` creation. Both grammar and
+specification remain complete and standalone; neither may depend on the preceding
+version or on `changes.md` to reconstruct its accepted syntax.
+
+For an upgrade, preserve the preceding version as an immutable historical
+baseline. Introducing PHP 8.6 must leave PHP 8.5's `php.ebnf`, `php.md`, fixtures,
+and conformance evidence unchanged. Compare them with the recorded repository
+baseline before completion. Document unrelated historical defects separately;
+section 4 permits evidenced corrections in a separate change, not silent repairs
+within an upgrade. Keep existing version-boundary tests passing and preserve all
+release gates.
 
 Do not assume that only headline language features affect the grammar.
 
@@ -328,3 +356,134 @@ manifest schema or inventing PHP 8.6/8.7 packages. Before another version is
 called mature, implement its release runner and certify its independent source
 pin, coverage classifications, boundary behavior and limitations under the
 [regression policy](conformance-policy.md).
+
+## 15. Required changes.md format
+
+Use the following headings, in order, in each new version's `changes.md`:
+
+```markdown
+# PHP <version> grammar changes
+## 1. Overview and comparison baseline
+## 2. Added syntax
+## 3. Modified syntax
+## 4. Removed syntax
+## 5. Lexical and tokenization changes
+## 6. Contextual and compiler-enforced restrictions
+## 7. Compatibility and unchanged syntax
+## 8. Authoritative source references
+## 9. Conformance and regression evidence
+## 10. Known limitations and outstanding uncertainties
+```
+
+Retain all sections. State when a category has no verified changes, and
+distinguish that finding from an area still awaiting review. The overview must
+identify the immediately preceding supported version, the repository baseline
+commit, both PHP source revisions, and the new grammar's development/release
+status and audited source profile.
+
+Give each material change a stable identifier and record:
+
+- affected production names or language constructs;
+- previous behavior and new behavior;
+- affected layers: `php.ebnf`, `php.md`, lexer/tokenization, or contextual
+  validation, including whether contextual enforcement is implemented;
+- authoritative source locations at the immutable PHP commit, with supporting
+  upstream tests and implemented RFC references where applicable;
+- corresponding local conformance/regression fixture paths, version-boundary
+  evidence, and validation results (or an explicit outstanding test obligation).
+
+Entries may cross-reference a shared source or evidence section without
+duplicating records. Cover contextual changes even when EBNF is unchanged.
+Classify cosmetic or representation-only differences separately from PHP language
+changes and justify any necessary production rename or structural rewrite.
+Compatibility claims must name the regression evidence, not assume inheritance.
+Record excluded proposals and changes without syntax implications with their
+dispositions. Unresolved discrepancies must identify evidence, affected syntax,
+risk, release impact, and remaining work under the conformance policy.
+
+`changes.md` is explanatory, non-canonical documentation. Put the complete new
+version's rules in its own `php.ebnf` and `php.md`.
+
+## 16. Prerelease and final-release review
+
+Use manifest schema 1.0's existing `status`, `phpSource.branch`,
+`phpSource.commit`, `sourceProfile`, and `metadata` fields. No new schema or
+status enumeration is needed. A future package may link `changes.md` through
+`metadata.changes`; the conventional path is still required by this policy.
+Registration occurs when the implementation supplies the required package,
+fixtures, and lexer configuration, not during governance or source discovery.
+
+For an unfinished version use `draft`; use `candidate` only when believed
+complete but awaiting validation. Record the PHP development or prerelease
+identifier explicitly in the specification and change document. Do not equate
+a grammar's candidate status with an official PHP release candidate.
+
+Record the actual upstream development/release branch and full immutable commit
+used for verification. Do not assume a `PHP-8.6` branch exists or use a moving
+branch tip as reproducible evidence. Keep source locks and hashes under
+`tools/<version>/` and evidence under `docs/<version>/`, following existing
+conventions. Record the interpreter version/build, configuration, and its
+correspondence to the pin; disclose any difference from an exact-pin executable.
+
+For each subsequent PHP release candidate, compare its immutable source revision
+with the last reviewed pin, including scanner, parser, relevant compiler code,
+and tests. Record the review even if no syntax changed. Incorporate verified
+changes incrementally into the new version only, update its change/source/test
+evidence and locks, and rerun applicable gates. Preserve prior review results
+and historical version evidence; do not rewrite the grammar wholesale.
+
+Before claiming compatibility with a final PHP release, record its exact release
+identifier and immutable source revision, reconcile differences from the last
+candidate, verify source/executable correspondence, and run the version's full
+release gates and differential tests against that release. All material changes
+must be accounted for, with remaining discrepancies explicitly disposed under
+[conformance-policy.md](conformance-policy.md). Promote to `stable` only when
+the evidence supports that policy's bounded claim. Neither prerelease results
+nor stable status establish exhaustive equivalence or exact-executable
+certification.
+
+## 17. Change traceability validation contract
+
+The following is a requirement for the implementation phase; comparison tooling
+is not implemented in PHP 8.6 Phase 1. Extend the existing PHP EBNF parser,
+validation, and reporting infrastructure through `php tools/<name>.php` entry
+points rather than introducing another framework or runtime.
+
+The comparison must take the recorded preceding-version baseline, the new
+standalone package, and its `changes.md` records. Compare parsed productions by
+name and structure to inventory additions, removals, and modifications, including
+alternatives, optionality, repetition, terminals, and non-terminal/token
+references. Review textual differences as well so documentation, lexical
+contracts, and contextual restrictions outside EBNF are not missed. Treat
+cosmetic differences separately; structural equivalence alone cannot prove
+language equivalence or completeness of prose review.
+
+Map every material difference to a change identifier, pinned source evidence,
+and regression evidence. Report unmapped differences, stale/nonexistent
+production or fixture references, missing required sections, and unresolved
+obligations explicitly. Renames must account for both old and new productions.
+Human review must reconcile non-EBNF changes and verify that entries describe
+actual implementation behavior. Unexplained material differences or missing
+required evidence fail completion; documented limitations remain subject to
+the existing release/blocker policy, not automatic acceptance.
+
+Before declaring implementation complete, retain command results and evidence
+for all of the following:
+
+1. EBNF structural validity, production references, and standalone loading.
+2. EBNF/Markdown production parity and consistency of normative prose.
+3. Correct manifest registration, package paths, and version discovery.
+4. Version-specific scanner/token contracts and parser compatibility.
+5. Focused positive, structural-negative, and contextual-negative fixtures.
+6. Differential checks with the appropriate PHP interpreter and declared profile.
+7. Version-boundary tests for introduced, removed, or restricted syntax.
+8. Previous-version regression tests and unchanged baseline artifacts/evidence.
+9. Complete `changes.md` sections and traceability reconciliation.
+10. Explicit unresolved discrepancy dispositions and bounded completion claims.
+
+Use `tests/fixtures/php/<version>/` and `tests/fixtures/version-boundaries/`.
+Preserve the current release runner, evidence categories, logs, freshness checks,
+and blocker dispositions described in [conformance-policy.md](conformance-policy.md).
+Future version runners must supply their own evidence without disabling or
+weakening existing gates. Coverage must be classified; do not invent percentage
+targets or copy PHP 8.5's totals or certification conclusions.

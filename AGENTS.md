@@ -223,11 +223,17 @@ Where practical, generate or validate Markdown grammar productions against the c
 
 For grammar work, prefer sources in roughly this order:
 
-1. PHP parser/source grammar used by the relevant PHP release;
-2. accepted PHP RFCs defining syntax changes;
-3. official PHP language documentation;
-4. official PHP migration and release documentation;
-5. PHP tests demonstrating parser behavior.
+1. official `php-src` lexer, parser, and relevant compiler implementation;
+2. official release-specific source commits and tests;
+3. accepted and implemented PHP RFCs;
+4. official migration guides, language documentation, and release notes.
+
+Verify every material version change against an immutable PHP source commit.
+Record the branch, commit, source locations, and regression evidence following
+[docs/sources.md](docs/sources.md). An RFC targeting a release is not evidence
+that its syntax was implemented. Classify implemented syntax, contextual
+restrictions, changes without grammar implications, unimplemented proposals,
+and unresolved discrepancies separately.
 
 When sources disagree, investigate the actual parser behavior and document the discrepancy.
 
@@ -237,14 +243,60 @@ Do not silently copy grammar from an unrelated third-party grammar implementatio
 
 When adding a new major/minor PHP version:
 
-1. copy the previous version as a working starting point when appropriate;
+1. begin with byte-for-byte copies of the immediately preceding supported
+   version's `php.ebnf` and `php.md`, recording the repository baseline commit;
 2. identify all accepted syntax changes for the new PHP version;
 3. verify changes against primary sources;
 4. update the canonical EBNF so the committed result is a complete independent grammar;
 5. update the corresponding Markdown so the committed result fully documents that version;
 6. add or update valid and invalid fixtures;
 7. verify existing syntax that should remain compatible;
-8. document important differences from the previous PHP version.
+8. document every material difference in `grammar/<version>/changes.md` using
+   the required format and traceability contract in
+   [docs/versioning.md](docs/versioning.md#15-required-changesmd-format).
+
+Every version introduced after the existing PHP 8.5 baseline must contain
+`php.ebnf`, `php.md`, and `changes.md`. PHP 8.5 does not require a retroactive
+`changes.md`. The change document is explanatory and must never be required to
+load or reconstruct either standalone specification artifact.
+
+Preserve unchanged productions and documentation; apply only incremental,
+implementation-backed changes. Do not rewrite or regenerate an entire grammar
+for an incremental language change, or introduce unrelated restructuring,
+renaming, formatting, or simplification. Existing generated sections may be
+synchronized from reviewed canonical changes without unrelated churn.
+
+The preceding version is an immutable baseline for the upgrade: keep PHP 8.5's
+grammar, specification, conformance fixtures, and evidence unchanged when adding
+PHP 8.6. Record unrelated historical defects separately and handle corrections
+under the Grammar Corrections policy in a separate change. Preserve existing
+version-boundary tests and release gates; do not disable or weaken them.
+
+Use existing manifest `status`, `phpSource`, and `metadata` conventions for
+development versions. Record the actual source branch and immutable commit;
+review successive release candidates incrementally. Do not claim final-release
+verification before satisfying the prerelease and final-release criteria in
+[docs/versioning.md](docs/versioning.md#16-prerelease-and-final-release-review).
+
+Before completing an implementation, demonstrate EBNF structural validity and
+reference integrity, EBNF/Markdown parity, manifest registration and discovery,
+version-specific lexer/parser compatibility, positive and negative fixtures,
+differential validation with the appropriate PHP interpreter, version-boundary
+conformance, historical regression protection, complete change traceability,
+and explicit unresolved discrepancy dispositions. Preserve the evidence and
+reporting requirements of [docs/conformance-policy.md](docs/conformance-policy.md).
+No arbitrary coverage target or unsupported completeness claim substitutes for
+that evidence.
+
+The implementation phase must account for added, removed, and modified
+productions, including alternatives, optionality, repetition, and token
+references, as well as lexical and contextual changes without EBNF edits.
+Extend existing PHP validation tooling according to the intended contract in
+[docs/versioning.md](docs/versioning.md#17-change-traceability-validation-contract).
+This contract is a future implementation requirement, not an existing automated
+gate. PHP 8.6 preparation establishes policy only: do not create its package,
+register it, change validation behavior, or implement comparison tooling during
+Phase 1.
 
 Do not assume that a new PHP version differs only by the published headline features.
 

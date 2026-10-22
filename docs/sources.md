@@ -76,13 +76,12 @@ This document defines:
 
 When determining PHP syntax, prefer sources in approximately this order:
 
-1. PHP parser grammar and relevant source code for the target PHP version;
-2. accepted PHP RFCs that define syntax changes;
-3. official PHP language documentation;
-4. official PHP migration guides and release documentation;
-5. official PHP parser, language, and conformance tests;
-6. PHP issue tracker discussions and implementation commits where needed to resolve ambiguity;
-7. secondary sources only as supporting evidence.
+1. official `php-src` lexer, parser, and relevant compiler implementation;
+2. official release-specific source commits and tests;
+3. accepted and implemented PHP RFCs;
+4. official migration guides, language documentation, and release notes;
+5. PHP issue tracker discussions and implementation commits where needed to resolve ambiguity;
+6. secondary sources only as supporting evidence.
 
 Primary sources should take precedence over tutorials, blog posts, generated references, or third-party parser grammars.
 
@@ -117,7 +116,7 @@ When using an RFC:
 
 - confirm that it was accepted and implemented;
 - confirm the PHP version in which it became effective;
-- verify the final implementation where practical;
+- verify the actual implementation at the recorded immutable source commit;
 - do not assume that early proposal syntax exactly matches the final shipped syntax.
 
 RFC examples are informative evidence, but the shipped parser behavior remains important when determining the exact grammar.
@@ -389,6 +388,29 @@ When adding a new PHP major.minor grammar version, review at least:
 6. syntax-affecting release notes.
 
 Compare the new grammar against the previous PHP version and account for every intentional syntax difference.
+
+For every material version change, implementation verification is required.
+Record the actual PHP branch and full immutable commit, source file and
+production/function or line location, supporting upstream tests, and local
+conformance/regression evidence. Preserve file hashes in the version's source
+lock and evidence inventory using the existing `tools/<version>/` and
+`docs/<version>/` conventions. A branch name, changelog description, or RFC
+targeting PHP 8.6 alone does not prove that syntax became part of PHP 8.6.
+
+Classify findings as implemented language changes, contextual restrictions,
+changes without grammar implications, rejected/withdrawn/postponed/unimplemented
+proposals, or unresolved discrepancies. Do not add syntax based solely on a
+feature description. Review compiler checks and their ordering where they affect
+source validity; distinguish them from runtime behavior and record enforcement
+limitations. Investigate conflicting evidence instead of silently selecting a
+rule.
+
+For versions after PHP 8.5, record material findings in the required
+`grammar/<version>/changes.md` format in
+[versioning.md](versioning.md#15-required-changesmd-format). That policy also
+defines prerelease source pins, release-candidate reviews, and final-release
+compatibility criteria. A released interpreter differing from the source pin
+must be disclosed and reconciled, not reported as an exact-pin validation.
 
 When a syntax difference is version-specific, add a version-boundary fixture
 where practical. Boundary metadata should identify the feature, first supported
