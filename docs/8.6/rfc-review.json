@@ -1,0 +1,906 @@
+{
+    "indexUrl": "https://wiki.php.net/rfc",
+    "indexSha256": "8751489795fb01dc0e697fa08faab12dc9e2733355705c8c5df92b01b5f6b191",
+    "records": [
+        {
+            "slug": "array_shorthand",
+            "url": "https://wiki.php.net/rfc/array_shorthand",
+            "retrieved": "2026-10-22",
+            "sha256": "c9f04137e5e496ca7516413f83f98415e9d0aaf877fbc3ceec74bf4b5a90bfba",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "PHP 8.7.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/24034",
+                "https://github.com/php/php-src/blob/179753061cb2268132310748fa8556b90cc4d52f/Zend/zend_language_scanner.l#L1409"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "case_sensitive_php",
+            "url": "https://wiki.php.net/rfc/case_sensitive_php",
+            "retrieved": "2026-10-22",
+            "sha256": "0471ffd8145cf00af14d4e947520d35442fd678b56eca03efb82ef21892353a5",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Withdrawn",
+            "targetExcerpt": "not extracted",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/22260",
+                "https://github.com/symfony/symfony",
+                "https://github.com/drupal/drupal",
+                "https://github.com/sebastianbergmann/phpunit",
+                "https://github.com/composer/composer",
+                "https://github.com/guzzle/guzzle",
+                "https://github.com/doctrine/orm",
+                "https://github.com/Seldaek/monolog",
+                "https://github.com/laravel/framework",
+                "https://github.com/WordPress/WordPress",
+                "https://github.com/briannesbitt/Carbon",
+                "https://github.com/phpstan/phpstan-strict-rules",
+                "https://github.com/vimeo/psalm/issues/1174",
+                "https://github.com/squizlabs/PHP_CodeSniffer/blob/master/src/Standards/Generic/Sniffs/PHP/LowerCaseKeywordSniff.php",
+                "https://github.com/php/php-src/pull/965",
+                "https://github.com/php/php-src/pull/3321",
+                "https://github.com/php/php-src/pull/3770",
+                "https://github.com/php/php-src/pull/3833",
+                "https://github.com/php/php-src/pull/3836",
+                "https://github.com/php/php-src/pull/9439",
+                "https://github.com/php/php-src/pull/9685",
+                "https://github.com/php/php-src/pull/17071"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "clamp_v2",
+            "url": "https://wiki.php.net/rfc/clamp_v2",
+            "retrieved": "2026-10-22",
+            "sha256": "4ec0f5581eeed7ebb81ec0f724af93e74a1f2257c2aada54470910ee6d9cee0e",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented in PHP 8.6",
+            "targetExcerpt": "* next PHP 8.x",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/19434",
+                "https://github.com/php/php-src/pull/7191",
+                "https://github.com/kylekatarnls/clamp-perf-test/actions/runs/17546601109/job/49829393835",
+                "https://github.com/php/php-src/issues/7191"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "closure-optimizations",
+            "url": "https://wiki.php.net/rfc/closure-optimizations",
+            "retrieved": "2026-10-22",
+            "sha256": "337bce7a6843996fb1a23dca0d3b87397d38ee5c8340a3761c1ba50364cb6037",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Partially implemented (see errata)",
+            "targetExcerpt": "not extracted",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/19941"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "const_object_property_write",
+            "url": "https://wiki.php.net/rfc/const_object_property_write",
+            "retrieved": "2026-10-22",
+            "sha256": "bf271d0550bbadda248b69cfc6caef781c7a85654a0b6069252ad918feb6d172",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented in PHP 8.6",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20903",
+                "https://github.com/php/php-src/commit/b16cab7da8e5748b173542da42fc8b602ae59dea",
+                "https://github.com/php/php-src/issues/10497"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "context-managers",
+            "url": "https://wiki.php.net/rfc/context-managers",
+            "retrieved": "2026-10-22",
+            "sha256": "1fb172f86763134d2aa2e5fde8cca91406046b5674141655af7f7c1a8f9ffcea",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: In Discussion",
+            "targetExcerpt": "PHP 8.6.",
+            "implementationLinks": [
+                "https://github.com/arnaud-lb/php-src/pull/26"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "dataclass",
+            "url": "https://wiki.php.net/rfc/dataclass",
+            "retrieved": "2026-10-22",
+            "sha256": "75d9de20ce1e377abf902185644296b25edcb912d3f386aa47de980eea5f1b99",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion (or Accepted or Declined)",
+            "targetExcerpt": "Next PHP 8.x or 9.0",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/16904"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "debugable-enums",
+            "url": "https://wiki.php.net/rfc/debugable-enums",
+            "retrieved": "2026-10-22",
+            "sha256": "41f0fdbbb5af708d178fbd54c005f0578cbbd66bb832cd410eb205e74f86f787",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented (in PHP 8.6)",
+            "targetExcerpt": "Next PHP version (PHP 8.6).",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/21425"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "deprecate-return-value-from-construct",
+            "url": "https://wiki.php.net/rfc/deprecate-return-value-from-construct",
+            "retrieved": "2026-10-22",
+            "sha256": "0c3d0332cb9f9a0b6410b33ad1df6ecc2d689ec0028f635cd49526aec47d90e0",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "Deprecation in the next PHP version (8.6). Removal in the first major after that.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/21982",
+                "https://github.com/php/php-src/commit/18d783719d58420fa7f333175830fcf40c916bea"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "deprecated_interfaces",
+            "url": "https://wiki.php.net/rfc/deprecated_interfaces",
+            "retrieved": "2026-10-22",
+            "sha256": "2699400d4c56c251032a826cdc6198ba6aa1324213fb13ef2cd87d1b13cd3b64",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Draft",
+            "targetExcerpt": "Next PHP (8.6)",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/21998"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "deprecations_php_8_6",
+            "url": "https://wiki.php.net/rfc/deprecations_php_8_6",
+            "retrieved": "2026-10-22",
+            "sha256": "fb74d6d036c8060dab0b948c8e1f0235a8bb7f343dcc8adfe9ea28d7545e7038",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Pending Implementation (for the accepted proposals)",
+            "targetExcerpt": "not extracted",
+            "implementationLinks": [
+                "https://github.com/php/php-src/commit/e721b3fdc35dc74121ed27ed43c2f9568f321bee",
+                "https://github.com/php/php-src/commit/c383b8cae02338f32d2fa460f003223003df1acb",
+                "https://github.com/php/php-src/commit/a9ba369abe43a4947e4015171f0111c4a816a630",
+                "https://github.com/php/php-src/commit/7e0d5c75e7e03f3a9abe488a3df0ab893e36c740",
+                "https://github.com/php/php-src/commit/f8c854e82faec850981a4a65e6c64a822ec580af",
+                "https://github.com/php/php-src/commit/3fda4e9c187929cb95d0eec90c7fcd82e4161600",
+                "https://github.com/php/php-src/commit/7cc143235d2be7b989348d37f465860835833a25",
+                "https://github.com/php/php-src/commit/a49acfa9a7aeaa44a0c49bea15058d97d9238960",
+                "https://github.com/php/php-src/commit/0b14af3b980ba5f4b3a027c9f8418f6eee092c13",
+                "https://github.com/php/php-src/commit/acd342d82dfaa6ebf65d073f23611c5656871016",
+                "https://github.com/php/php-src/commit/4923c6079e5b09d3e48e8499ff62348fd56e3a9d",
+                "https://github.com/php/php-src/commit/22217b3bbb5e4c1cafbb77ca7e3cbbf9861d937f",
+                "https://github.com/php/php-src/commit/4b26ff1698b96e00682a2afd063ff01dc915d478",
+                "https://github.com/php/php-src/commit/29f351d35542744c96837ae44e996785cc646b7e",
+                "https://github.com/php/php-src/commit/1b5de53960ab99b288bae2d92748a68a95bff99a",
+                "https://github.com/php/php-src/commit/d3f4eada1001627df6330e7606081e7ab42ca311",
+                "https://github.com/php/php-src/commit/e95647ce3619d13b7f59b792460a7d4d11be49d3",
+                "https://github.com/php/php-src/commit/6214a2165936af4c9d03f3ff083d0a2afd67a4d3",
+                "https://github.com/php/php-src/commit/2c1c61de07953f901d95fd93e3ce79b50032e65c",
+                "https://github.com/php/php-src/commit/ac3ff655ea806994b6856893f0042e270755e2e0",
+                "https://github.com/php/php-src/commit/fd8706c64e2975116aae0bef6f129755b6d27dc5",
+                "https://github.com/php/php-src/commit/d5ecbe1d93694497bd46483bdbb169f2ec8655b4",
+                "https://github.com/php/php-src/commit/6901c87aeabf28cbb08dadc2ac64d1dabfdfdd3c",
+                "https://github.com/rectorphp/rector",
+                "https://github.com/php/php-src/commit/76348f3378dbc0c92568380d23a8d75a777ae49c",
+                "https://github.com/php/php-src/commit/08b75395838b4b42a41e3c70684fa6c6b113eee0",
+                "https://github.com/php/php-src/issues/10229",
+                "https://github.com/php/php-src/pull/21889",
+                "https://github.com/symfony/symfony/blob/dce1b899ab0c0e4cef9159c083ef535387a8db12/src/Symfony/Component/HttpClient/HttpClientTrait.php#L514",
+                "https://github.com/php-http/message/blob/1.x/src/Encoding/ChunkStream.php#L19",
+                "https://github.com/php/php-src/pull/22396",
+                "https://github.com/php/php-src/pull/7010"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "display_error_function_args",
+            "url": "https://wiki.php.net/rfc/display_error_function_args",
+            "retrieved": "2026-10-22",
+            "sha256": "962b2a4f6d49488ab0cc46f256ec1dfc99116ee8b6543fc33082bc7b68bd99c7",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented (in PHP 8.6)",
+            "targetExcerpt": "Next PHP minor release.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/12276"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "duration_class",
+            "url": "https://wiki.php.net/rfc/duration_class",
+            "retrieved": "2026-10-22",
+            "sha256": "dfe3bab72fe9f03d3b537c0ff1aef3de1f63050ccdb6da3ea9fffcafa4691684",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "Next minor (8.6).",
+            "implementationLinks": [
+                "https://github.com/php/php-src/commit/1cf46237a56540c14d84d0f04b245a10d4ee5bc5",
+                "https://github.com/php/php-src/commit/ed2ffe6f70f6d7f8391f46b1fac88b60b97cdb6b",
+                "https://github.com/php/policies/blob/main/coding-standards-and-naming.rst#throwables",
+                "https://github.com/marc-mabe/php-timelib/blob/5092160dfae9c3bf9484a6c86c6809688f7341bd/polyfill/Duration.php#L21",
+                "https://github.com/jiripudil/php-ext-time-prototype/blob/06b97b9e0c8f4878d68aee3a7571fc079f3ebc17/polyfill/src/Duration.php#L16",
+                "https://github.com/php/php-src/pull/23073",
+                "https://github.com/php/php-src/pull/23092"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "eol-oniguruma",
+            "url": "https://wiki.php.net/rfc/eol-oniguruma",
+            "retrieved": "2026-10-22",
+            "sha256": "db006291cc5ab20eae84c73e87a2cdb715b64441e7dd85dfe845f2ffc1b44033",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "Deprecate for 8.6 and remove in 9.0.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/21490",
+                "https://github.com/kkos/oniguruma",
+                "https://github.com/php/php-src/issues/18467#issuecomment-3044192511",
+                "https://github.com/youkidearitai/mb_onig/",
+                "https://github.com/k-takata/Onigmo",
+                "https://github.com/k-takata/Onigmo/blob/master/README",
+                "https://github.com/php/php-src/issues/18467",
+                "https://github.com/php/php-src/pull/19258",
+                "https://github.com/youkidearitai/mb_onig"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "extension_methods",
+            "url": "https://wiki.php.net/rfc/extension_methods",
+            "retrieved": "2026-10-22",
+            "sha256": "6ed9adeb846426d94e75fb1ea0c0d6d52316abbf99253913d563a874ea0cdcc1",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Draft",
+            "targetExcerpt": "Next PHP 8.x.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/22635",
+                "https://github.com/php/policies/blob/main/feature-proposals.rst#voting-phase",
+                "https://github.com/hollyschilling/php-src/tree/extension-methods-phase1"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "friends",
+            "url": "https://wiki.php.net/rfc/friends",
+            "retrieved": "2026-10-22",
+            "sha256": "4d3c0978eb6dddb628aae908fb46e58a518efe6753f1031e7a7d8320010eb50a",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under discussion",
+            "targetExcerpt": "Next minor version (PHP 8.6).",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/21937",
+                "https://github.com/php/policies/blob/main/feature-proposals.rst#voting-phase"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "function-autoloading-five-oh",
+            "url": "https://wiki.php.net/rfc/function-autoloading-five-oh",
+            "retrieved": "2026-10-22",
+            "sha256": "001b87b8afc703fc9e5d78347f5aefc2c1c290529ce913e7d10deecccb5e5e17",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "Next PHP 8.x (targeting PHP 8.6).",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/22337",
+                "https://github.com/motophp/autoload"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "function-composition",
+            "url": "https://wiki.php.net/rfc/function-composition",
+            "retrieved": "2026-10-22",
+            "sha256": "1be6cefaaf950ebc2963d6fc202aee3f4eb3c700c4f6c77bd11c8cdc800099bc",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Draft",
+            "targetExcerpt": "8.5",
+            "implementationLinks": [
+                "https://github.com/illuminate/pipeline",
+                "https://github.com/azjezz/psl",
+                "https://github.com/azjezz/psl/blob/1.8.x/src/Psl/Fun/pipe.php",
+                "https://github.com/sebastiaanluca/php-pipe-operator",
+                "https://github.com/Toobo/PipePie",
+                "https://github.com/dynamik-dev/zenpipe-php",
+                "https://github.com/Crell/fp",
+                "https://github.com/php/php-src/pull/18800"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "getdisplaykeyword_and_getdisplaykeywordvalue",
+            "url": "https://wiki.php.net/rfc/getdisplaykeyword_and_getdisplaykeywordvalue",
+            "retrieved": "2026-10-22",
+            "sha256": "24c18e27a8eb4ab129cc73b4bc2474dab3d43ae869640cacdf216c6e2d063aa4",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/22264",
+                "https://github.com/php/php-src/issues/18345."
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "grapheme_strrev",
+            "url": "https://wiki.php.net/rfc/grapheme_strrev",
+            "retrieved": "2026-10-22",
+            "sha256": "0d0330ad6d9ff39aafec8c4580819753e3fc029a2d9f8980d91eddd3ec2de944",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented in PHP 8.6",
+            "targetExcerpt": "Next of PHP 8.5 (PHP 8.6 or PHP 9.0)",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20949",
+                "https://github.com/search?q=mb_strrev&type=code",
+                "https://github.com/php/policies/blob/main/feature-proposals.rst#voting-phase"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "immutable_collections",
+            "url": "https://wiki.php.net/rfc/immutable_collections",
+            "retrieved": "2026-10-22",
+            "sha256": "9276cca80c5e1f5da9a6cfab543ceb22c2f4ce45cdf452aa5d452d1eeb2dc323",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* **Status:** Draft",
+            "targetExcerpt": "not extracted",
+            "implementationLinks": [
+                "https://github.com/brzuchal/php-src/tree/first-class-collections"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "isreadable-iswriteable",
+            "url": "https://wiki.php.net/rfc/isreadable-iswriteable",
+            "retrieved": "2026-10-22",
+            "sha256": "730d78bda872e25ac8f1247109fdd23c018f532966dbe38808d78bc4b8c21b93",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented in PHP 8.6",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/16209",
+                "https://github.com/php/php-src/issues/15309",
+                "https://github.com/php/php-src/commit/e4f727d61eb0ad04d158ef0f67cdabbc7427d6ac"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "left-to-right-assignment-operator",
+            "url": "https://wiki.php.net/rfc/left-to-right-assignment-operator",
+            "retrieved": "2026-10-22",
+            "sha256": "14172aebcf699b72b9dd56d22a5667500026206f293fcaee270b5c40a3649be0",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "Next PHP 8.x",
+            "implementationLinks": [
+                "https://github.com/vadimonus/php-src/commits/ltr-assign/",
+                "https://github.com/vadimonus/php-src/commits/pipe-to-assign/",
+                "https://github.com/vadimonus/php-rfc/blob/main/pipe-to-throw.md",
+                "https://github.com/vadimonus/php-src/commits/pipe-to-return"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "limit-maximum-number-of-filter-chains",
+            "url": "https://wiki.php.net/rfc/limit-maximum-number-of-filter-chains",
+            "retrieved": "2026-10-22",
+            "sha256": "5c7696f4e86b2138e31b07f8ba3dc20758134c8eca1c4e238ba97223720d83b9",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented in PHP 8.6",
+            "targetExcerpt": "* PHP 8.6: deprecation warning when using more than 16 filters, error when stream context option ''filter.max_filter_count'' is set.\n  * PHP 8.7: error as described in [[stream_errors|PHP RFC: Stream Error Handling Improvements]]",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/22110",
+                "https://github.com/php/php-src/issues/10453",
+                "https://github.com/php/php-src/pull/16699",
+                "https://github.com/php/php-src/pull/16699#issuecomment-2462435265",
+                "https://github.com/php/php-src/commit/ed34ad446c99ba0019c402dc4ff121ca37182c54",
+                "https://github.com/php/php-src/pull/23344",
+                "https://github.com/DownUnderCTF/Challenges_2022_Public/blob/main/web/minimal-php/solve/solution.py",
+                "https://github.com/synacktiv/php_filter_chains_oracle_exploit/",
+                "https://github.com/ambionics/cnext-exploits/",
+                "https://github.com/rapid7/metasploit-framework/blob/master/lib/msf/core/exploit/remote/http/php_filter_chain.rb",
+                "https://github.com/ambionics/wrapwrap/blob/main/wrapwrap.py",
+                "https://github.com/php/php-src/issues/21983",
+                "https://github.com/php/php-src/pull/22036'"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "literal_scalar_types",
+            "url": "https://wiki.php.net/rfc/literal_scalar_types",
+            "retrieved": "2026-10-22",
+            "sha256": "f35fc9899c4db9a2dbfa76ca8fe54c4919b5fd35c7c79e321ba7e7cadd9a553f",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "PHP 8.6.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/22314"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "min_supported_versions_php_8_6",
+            "url": "https://wiki.php.net/rfc/min_supported_versions_php_8_6",
+            "retrieved": "2026-10-22",
+            "sha256": "2cbba56f07b0035d6017108c266e84f309e1c8afcaa0167e3b32edd243bd2547",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Accepted",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/php/php-src/commit/631bab42ddef8e90964558fe8b1df80157e12986",
+                "https://github.com/php/php-src/pull/21159#issuecomment-4111691063",
+                "https://github.com/php/php-src/pull/21857"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "mysqli_quote_string",
+            "url": "https://wiki.php.net/rfc/mysqli_quote_string",
+            "retrieved": "2026-10-22",
+            "sha256": "da19b883923a75049da681efe453a434b754a421a111b38da2f9ae3167282cf2",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20729",
+                "https://github.com/php/php-src/commit/fbf8bf84dbe3bed33a179a668e2c3d5d109d469a"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "namespace_visibility",
+            "url": "https://wiki.php.net/rfc/namespace_visibility",
+            "retrieved": "2026-10-22",
+            "sha256": "8ceeb165f3f7f1954843480264095736646460f508fdffddc45ba8ee8d6ca9ae",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "Next minor version (PHP 8.6 or 9.0)",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20421"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "native_markup_expressions",
+            "url": "https://wiki.php.net/rfc/native_markup_expressions",
+            "retrieved": "2026-10-22",
+            "sha256": "ea9761835f55409ac0fe4fe97e2191f048625996ee0a18ea72d6e96a734ece36",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "Next minor version of PHP 8.x.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/22661",
+                "https://github.com/imliam/php-src/tree/native-markup-expressions",
+                "https://github.com/facebookarchive/xhp-php5-extension",
+                "https://github.com/phplang/xhp",
+                "https://github.com/attitude/phpx",
+                "https://github.com/preprocess/pre-phpx"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "nullable-not-nullable-cast-operator",
+            "url": "https://wiki.php.net/rfc/nullable-not-nullable-cast-operator",
+            "retrieved": "2026-10-22",
+            "sha256": "3dc9743226d79bd6985806d5d3fc83f533e55c15d4cf4a7e196f5da97467fcaa",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under discussion",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20275",
+                "https://github.com/alexandre-daubois/symfony/pull/22"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "override_constants",
+            "url": "https://wiki.php.net/rfc/override_constants",
+            "retrieved": "2026-10-22",
+            "sha256": "7a7f54a75b3b089261ff44122b9c1b0a283af277eb90bb900f933adfc2aed1ad",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented (in PHP 8.6)",
+            "targetExcerpt": "Next minor version (PHP 8.6).",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20478"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "pack-unpack-endianness-signed-integers-support",
+            "url": "https://wiki.php.net/rfc/pack-unpack-endianness-signed-integers-support",
+            "retrieved": "2026-10-22",
+            "sha256": "1a417f52518f97ac2f4e5e6f7a5525ad75b464fbb00b94b91fdfda467c681322",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Accepted",
+            "targetExcerpt": "PHP 8.6 (next minor version)",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/21074",
+                "https://github.com/php/php-src/issues/17068"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "pack-unpack-float-endianness-modifier",
+            "url": "https://wiki.php.net/rfc/pack-unpack-float-endianness-modifier",
+            "retrieved": "2026-10-22",
+            "sha256": "b4b9ac620e7d67c6f761046f31ecef6223124043cf24cee7225e55329088e8de",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Accepted",
+            "targetExcerpt": "PHP 8.x (next minor)",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/21074"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "parameter-doccomments",
+            "url": "https://wiki.php.net/rfc/parameter-doccomments",
+            "retrieved": "2026-10-22",
+            "sha256": "688ecd32d779a49a21f0b17df2809541e94ff23a38397b85476e70c6e6e566a6",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "Next PHP 8.x (8.6).",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/21279"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "partial_function_application_optional_placeholder",
+            "url": "https://wiki.php.net/rfc/partial_function_application_optional_placeholder",
+            "retrieved": "2026-10-22",
+            "sha256": "a97ba5e99c6edb7bf152acaefee132d106e10a61c711a695882b4e452a0eb029",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Accepted",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/..."
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "partial_function_application_this",
+            "url": "https://wiki.php.net/rfc/partial_function_application_this",
+            "retrieved": "2026-10-22",
+            "sha256": "75b2e203957b09413a667a9f9fabe51a03d3aff02fed604faca7ac2b6da6a229",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "Next PHP 8.x (8.6).",
+            "implementationLinks": [
+                "https://github.com/arnaud-lb/php-src/pull/27",
+                "https://github.com/php/php-src/pull/20934"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "partial_function_application_v2",
+            "url": "https://wiki.php.net/rfc/partial_function_application_v2",
+            "retrieved": "2026-10-22",
+            "sha256": "b6985423614aa79ad56b250304763e01822b369052c226ded57ca9774e0b15da",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "8.6",
+            "implementationLinks": [
+                "https://github.com/php/php-src/commit/5472cac806a60f1c30cd473b3dabea3b205d5d1b",
+                "https://github.com/php/php-src/commit/b5fba859eaa72b14c7c8bc08e4a6d5ce9774e7fd"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "pattern-matching",
+            "url": "https://wiki.php.net/rfc/pattern-matching",
+            "retrieved": "2026-10-22",
+            "sha256": "110367cdd21957fe539c897846c06e6fe95c4e66382a09897790b5c80f28fd11",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: In Discussion",
+            "targetExcerpt": "PHP 8.6.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20574",
+                "https://github.com/Crell/php-rfcs/blob/master/pattern-matching/future.md"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "pipe_to_return",
+            "url": "https://wiki.php.net/rfc/pipe_to_return",
+            "retrieved": "2026-10-22",
+            "sha256": "6f03589a1b56270fb0b5929b5f5783052f871524ff88cda05e5ed2261194a79d",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "Next PHP 8.x",
+            "implementationLinks": [
+                "https://github.com/vadimonus/php-src/commits/pipe-to-return"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "poll_api",
+            "url": "https://wiki.php.net/rfc/poll_api",
+            "retrieved": "2026-10-22",
+            "sha256": "7198c04656d8570b345ff288d5d732df48221def68e2d728e0adfb6087bce855",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/plentymarkets/plugin-io.",
+                "https://github.com/php/php-src/pull/19572.",
+                "https://github.com/php/php-src/commit/6c6fb56fa6347ec372725adfa2864ba876b53632",
+                "https://github.com/php/php-src/commit/2d151087a7017c8d2c63b08aaf6912c53879f1cd"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "primary-constructors",
+            "url": "https://wiki.php.net/rfc/primary-constructors",
+            "retrieved": "2026-10-22",
+            "sha256": "dcb11ea406c8786f45002fa68ef84f83afa73644a38df3d45b782abeacdde30c",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "Next PHP 8.x.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/22510"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "readonly-variables",
+            "url": "https://wiki.php.net/rfc/readonly-variables",
+            "retrieved": "2026-10-22",
+            "sha256": "abd9d3c8ec638ec0952c3d749602fcdda1923dd0f95f496ecd6381ee9aadd333",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "Next PHP 8.x",
+            "implementationLinks": [
+                "https://github.com/joshuaruesweg/php-src/pull/1"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "readonly_property_defaults",
+            "url": "https://wiki.php.net/rfc/readonly_property_defaults",
+            "retrieved": "2026-10-22",
+            "sha256": "3471a1f954ed4642f8e14c950a1540577a61afa283f99b45ecac85ee42d9711b",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/php/php-src/commit/a2640aebc914b3c6fc997c379b1f91a2c4db8c55",
+                "https://github.com/php/php-src/pull/22588"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "scope-functions",
+            "url": "https://wiki.php.net/rfc/scope-functions",
+            "retrieved": "2026-10-22",
+            "sha256": "b992a9f2079cca134fe0be8f6cbec7990e7892388d04ed7044b1b6cc0bbf9b4a",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "PHP 8.6.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/21968"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "serializable_closures",
+            "url": "https://wiki.php.net/rfc/serializable_closures",
+            "retrieved": "2026-10-22",
+            "sha256": "4976b13fb869b0c8503c4f771355aed0851f170db0ca8dee5b64be5c8439d62a",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "Next minor version (PHP 8.6).",
+            "implementationLinks": [
+                "https://github.com/symfony/symfony/issues/63228",
+                "https://github.com/symfony/symfony/pull/61657",
+                "https://github.com/php/php-src/pull/22716"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "session_security_defaults",
+            "url": "https://wiki.php.net/rfc/session_security_defaults",
+            "retrieved": "2026-10-22",
+            "sha256": "810201e52422f2944b64caddc0e29866d97d5ccabd915fe2fc99d07140844ff7",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Accepted",
+            "targetExcerpt": "PHP 8.6.",
+            "implementationLinks": [
+                "https://github.com/rails/rails/blob/main/actionpack/lib/action_dispatch/middleware/cookies.rb#L188",
+                "https://github.com/rails/rails/blob/main/actionpack/lib/action_dispatch/middleware/cookies.rb#L190",
+                "https://github.com/expressjs/session",
+                "https://github.com/expressjs/session/blob/408229ea3373097732875315d6f63c45e39fd3b6/session/cookie.js#L28",
+                "https://github.com/expressjs/session/blob/master/index.js#L169",
+                "https://github.com/gin-contrib/sessions/blob/master/session_options_go1.11.go#L13-L26",
+                "https://github.com/laravel/laravel/blob/master/config/session.php#L185",
+                "https://github.com/laravel/laravel/blob/master/config/session.php#L202",
+                "https://github.com/symfony/symfony/blob/8.1/src/Symfony/Component/HttpKernel/EventListener/AbstractSessionListener.php#L147",
+                "https://github.com/symfony/symfony/blob/8.1/src/Symfony/Component/HttpKernel/EventListener/AbstractSessionListener.php#L148",
+                "https://github.com/php/php-src/pull/21938"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "snmp_improvements_2026",
+            "url": "https://wiki.php.net/rfc/snmp_improvements_2026",
+            "retrieved": "2026-10-22",
+            "sha256": "3c31c1b17a5d4eca5a27c826aa7342f665cf45dfc96f13993e79ed42b13624d5",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "Next stable release for all currently supported PHP versions.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/21451",
+                "https://github.com/php/php-src/pull/21452",
+                "https://github.com/php/php-src/pull/21502",
+                "https://github.com/net-snmp/net-snmp/pull/1073"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "sort_direction_enum",
+            "url": "https://wiki.php.net/rfc/sort_direction_enum",
+            "retrieved": "2026-10-22",
+            "sha256": "739f554a5d62a5ca6c63c1d86bf378eab4cb05cfd17e47dcdbf0d5a1fc89b8f3",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "Next PHP 8.x (PHP 8.6).",
+            "implementationLinks": [
+                "https://github.com/php/php-src/commit/32c1931f18109655bc074dd5cda3248b838de636",
+                "https://github.com/php/php-src/pull/21501",
+                "https://github.com/doctrine/collections/commit/a288ea7d0af7763e05fc77fcc0c766f4b6f00fee"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "static_constructor",
+            "url": "https://wiki.php.net/rfc/static_constructor",
+            "retrieved": "2026-10-22",
+            "sha256": "fd39a6323758691e681bb78d47d2ae000d226f051a2f88e4f38a9cfc103adfa9",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "not extracted",
+            "implementationLinks": [
+                "https://github.com/php/php-src/compare/master...erickcomp:php-src_static-constructor:master",
+                "https://github.com/composer/composer/blob/main/src/Composer/Autoload/ClassLoader.php"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "stream_errors",
+            "url": "https://wiki.php.net/rfc/stream_errors",
+            "retrieved": "2026-10-22",
+            "sha256": "47a85d9e980487d1c7b695423ffa029ea11bec413bc239cb9fc6ad026ed6f8a6",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20524"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "strict-namespace",
+            "url": "https://wiki.php.net/rfc/strict-namespace",
+            "retrieved": "2026-10-22",
+            "sha256": "cb7eac190f0c747e1c7485088eb12c6a5d2bf1c57b972cc1a4edb138f4d3bd1f",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Draft",
+            "targetExcerpt": "PHP 8.6.",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/22736"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "switch-case-fallthrough",
+            "url": "https://wiki.php.net/rfc/switch-case-fallthrough",
+            "retrieved": "2026-10-22",
+            "sha256": "c133e5664a6ed4be9227e1fd7cf281f1b432869e61aaa196b22e7437286b0a65",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Draft",
+            "targetExcerpt": "PHP 8.6.",
+            "implementationLinks": [
+                "https://github.com/squizlabs/PHP_CodeSniffer/blob/master/src/Standards/PSR2/Sniffs/ControlStructures/SwitchDeclarationSniff.php#L196",
+                "https://github.com/nikic/PHP-Fuzzer/blob/23e440d79d353d5f42c9e41a50f7b4f930b85c00/src/Mutation/Mutator.php#L290",
+                "https://github.com/wikimedia/mediawiki-extensions-InlineComments/blob/dd5d2e291cb5c20920b9ba61965ed594ce7f3ea3/src/AnnotationTreeHandler.php#L128",
+                "https://github.com/php/php-src/pull/21821"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "tls_session_resumption_api",
+            "url": "https://wiki.php.net/rfc/tls_session_resumption_api",
+            "retrieved": "2026-10-22",
+            "sha256": "47a5a60824917ca88148c6c9ca934158f269be5208a6b8b4f096c9a97a8a9eba",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Accepted",
+            "targetExcerpt": "Next PHP 8.5",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20296",
+                "https://github.com/php/policies/blob/main/coding-standards-and-naming.rst#throwables"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "trailing_boolean_operators",
+            "url": "https://wiki.php.net/rfc/trailing_boolean_operators",
+            "retrieved": "2026-10-22",
+            "sha256": "9f497fbb31b9b0612a623033e2fa3616ff9cc2251ce3074267ce7df8bb25356b",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "trim_form_feed",
+            "url": "https://wiki.php.net/rfc/trim_form_feed",
+            "retrieved": "2026-10-22",
+            "sha256": "859afc7641524d021c7f9f1620f0ab57109dd33835bd475f774f9d92cd7a6d37",
+            "listedUnderImplemented86": true,
+            "reportedStatus": "* Status: Implemented in PHP 8.6",
+            "targetExcerpt": "PHP 8.6",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20788",
+                "https://github.com/php/php-src/issues/20783",
+                "https://github.com/php/php-src/commit/da1e89fd3db0b9d2017976d774270ee7ce3b35a7"
+            ],
+            "disposition": "Release-index candidate; language findings individually reconciled in language-change-inventory.md; remaining library integration not certified."
+        },
+        {
+            "slug": "typed-aliases",
+            "url": "https://wiki.php.net/rfc/typed-aliases",
+            "retrieved": "2026-10-22",
+            "sha256": "fd403f92e4fd105af579623456967d05b0550883dd2f6b88aeb49b918e105b8f",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Under Discussion",
+            "targetExcerpt": "Next PHP 8.x (PHP 8.5 or later)",
+            "implementationLinks": [
+                "https://github.com/php/php-src/pull/20635"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "uri_followup",
+            "url": "https://wiki.php.net/rfc/uri_followup",
+            "retrieved": "2026-10-22",
+            "sha256": "86c9091fffc9e8559807bd6c291dab496fb9df2c377e8d906632cfbfb6133b15",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "* Status: Accepted",
+            "targetExcerpt": "Next minor version (PHP 8.6)",
+            "implementationLinks": [
+                "https://github.com/kocsismate/php-src/pull/9",
+                "https://github.com/php/php-src/commit/1bf64cee9387bec1fdee84e57ff74bea79311aad",
+                "https://github.com/php/php-src/commit/d8a5aec1cc93e0fd41e8641091c32aace2a73059",
+                "https://github.com/php/php-src/commit/3f285f41fcaa4eee6ecd1afccccf555232b3a906",
+                "https://github.com/php/php-src/commit/bce6e73122972cd54a0a8ce2abeb48de425764cf",
+                "https://github.com/php/php-src/commit/1273587b05ad44e917990ef8740e5fb8b610b6ce"
+            ],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        },
+        {
+            "slug": "void-as-null",
+            "url": "https://wiki.php.net/rfc/void-as-null",
+            "retrieved": "2026-10-22",
+            "sha256": "0259b512edc8d2842ba7ca625ff9c8a80e2c9aefd4032625d2d6a1853d14b4c0",
+            "listedUnderImplemented86": false,
+            "reportedStatus": "- Status: Under Discussion",
+            "targetExcerpt": "not extracted",
+            "implementationLinks": [],
+            "disposition": "Excluded from implemented syntax unless separately reconciled in language-change-inventory.md; page status is not implementation proof."
+        }
+    ]
+}

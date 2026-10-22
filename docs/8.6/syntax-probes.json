@@ -1,0 +1,758 @@
+[
+    {
+        "id": "pfa-positional",
+        "source": "<?php\nf(?, 1);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in <audit>/php86-probes/pfa-positional.php on line 2\nErrors parsing <audit>/php86-probes/pfa-positional.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/pfa-positional.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-named",
+        "source": "<?php\nf(a: ?, b: 1);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in <audit>/php86-probes/pfa-named.php on line 2\nErrors parsing <audit>/php86-probes/pfa-named.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/pfa-named.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-variadic",
+        "source": "<?php\nf(1, ...);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \")\" in <audit>/php86-probes/pfa-variadic.php on line 2\nErrors parsing <audit>/php86-probes/pfa-variadic.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/pfa-variadic.php"
+            }
+        }
+    },
+    {
+        "id": "fcc-trailing-comma",
+        "source": "<?php\nf(...,);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \",\" in <audit>/php86-probes/fcc-trailing-comma.php on line 2\nErrors parsing <audit>/php86-probes/fcc-trailing-comma.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/fcc-trailing-comma.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-duplicate-variadic",
+        "source": "<?php\nf(..., ...);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \",\" in <audit>/php86-probes/pfa-duplicate-variadic.php on line 2\nErrors parsing <audit>/php86-probes/pfa-duplicate-variadic.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Variadic placeholder may only appear once in <audit>/php86-probes/pfa-duplicate-variadic.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/pfa-duplicate-variadic.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-after-variadic",
+        "source": "<?php\nf(..., ?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \",\" in <audit>/php86-probes/pfa-after-variadic.php on line 2\nErrors parsing <audit>/php86-probes/pfa-after-variadic.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Variadic placeholder must be last in <audit>/php86-probes/pfa-after-variadic.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/pfa-after-variadic.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-named-then-positional",
+        "source": "<?php\nf(a: 1, ?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <audit>/php86-probes/pfa-named-then-positional.php on line 2\nErrors parsing <audit>/php86-probes/pfa-named-then-positional.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use positional argument after named argument in <audit>/php86-probes/pfa-named-then-positional.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/pfa-named-then-positional.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-unpack",
+        "source": "<?php\nf(...$a, ?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <audit>/php86-probes/pfa-unpack.php on line 2\nErrors parsing <audit>/php86-probes/pfa-unpack.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot combine partial application and unpacking in <audit>/php86-probes/pfa-unpack.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/pfa-unpack.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-constructor",
+        "source": "<?php\nnew C(?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in <audit>/php86-probes/pfa-constructor.php on line 2\nErrors parsing <audit>/php86-probes/pfa-constructor.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot create Closure for new expression in <audit>/php86-probes/pfa-constructor.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/pfa-constructor.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-nullsafe",
+        "source": "<?php\n$o?->f(?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in <audit>/php86-probes/pfa-nullsafe.php on line 2\nErrors parsing <audit>/php86-probes/pfa-nullsafe.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot combine nullsafe operator with Closure creation in <audit>/php86-probes/pfa-nullsafe.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/pfa-nullsafe.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-clone",
+        "source": "<?php\nclone(?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in <audit>/php86-probes/pfa-clone.php on line 2\nErrors parsing <audit>/php86-probes/pfa-clone.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/pfa-clone.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-attribute",
+        "source": "<?php\n#[A(?)] function f() {}\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in <audit>/php86-probes/pfa-attribute.php on line 2\nErrors parsing <audit>/php86-probes/pfa-attribute.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot create Closure as attribute argument in <audit>/php86-probes/pfa-attribute.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/pfa-attribute.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-constant",
+        "source": "<?php\nconst X = f(?, 1);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in <audit>/php86-probes/pfa-constant.php on line 2\nErrors parsing <audit>/php86-probes/pfa-constant.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/pfa-constant.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-constant-invalid",
+        "source": "<?php\nconst X = f(?, $x);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in <audit>/php86-probes/pfa-constant-invalid.php on line 2\nErrors parsing <audit>/php86-probes/pfa-constant-invalid.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Constant expression contains invalid operations in <audit>/php86-probes/pfa-constant-invalid.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/pfa-constant-invalid.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-constant-folded",
+        "source": "<?php\nconst X = f(?, false && (unset) 1);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in <audit>/php86-probes/pfa-constant-folded.php on line 2\nErrors parsing <audit>/php86-probes/pfa-constant-folded.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in <audit>/php86-probes/pfa-constant-folded.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/pfa-constant-folded.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-discarded-invalid-order",
+        "source": "<?php\nfalse && f(..., ?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \",\" in <audit>/php86-probes/pfa-discarded-invalid-order.php on line 2\nErrors parsing <audit>/php86-probes/pfa-discarded-invalid-order.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/pfa-discarded-invalid-order.php"
+            }
+        }
+    },
+    {
+        "id": "pfa-const-discarded-invalid-order",
+        "source": "<?php\nconst X = false && f(..., ?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \",\" in <audit>/php86-probes/pfa-const-discarded-invalid-order.php on line 2\nErrors parsing <audit>/php86-probes/pfa-const-discarded-invalid-order.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/pfa-const-discarded-invalid-order.php"
+            }
+        }
+    },
+    {
+        "id": "readonly-default",
+        "source": "<?php\nclass C { public readonly int $x = 1; }\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Readonly property C::$x cannot have default value in <audit>/php86-probes/readonly-default.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/readonly-default.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/readonly-default.php"
+            }
+        }
+    },
+    {
+        "id": "readonly-class-default",
+        "source": "<?php\nreadonly class C { public int $x = 1; }\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Readonly property C::$x cannot have default value in <audit>/php86-probes/readonly-class-default.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/readonly-class-default.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/readonly-class-default.php"
+            }
+        }
+    },
+    {
+        "id": "readonly-untyped",
+        "source": "<?php\nclass C { public readonly $x = 1; }\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Readonly property C::$x must have type in <audit>/php86-probes/readonly-untyped.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/readonly-untyped.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Readonly property C::$x must have type in <audit>/php86-probes/readonly-untyped.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/readonly-untyped.php"
+            }
+        }
+    },
+    {
+        "id": "readonly-static",
+        "source": "<?php\nclass C { public static readonly int $x = 1; }\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Readonly property C::$x cannot have default value in <audit>/php86-probes/readonly-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/readonly-static.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Static property C::$x cannot be readonly in <audit>/php86-probes/readonly-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/readonly-static.php"
+            }
+        }
+    },
+    {
+        "id": "readonly-discarded",
+        "source": "<?php\nfalse && function() { class C { public readonly int $x = 1; } };\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/readonly-discarded.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/readonly-discarded.php"
+            }
+        }
+    },
+    {
+        "id": "const-object-write",
+        "source": "<?php\nOBJ->p = 1;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/const-object-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/const-object-write.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/const-object-write.php"
+            }
+        }
+    },
+    {
+        "id": "const-array-write",
+        "source": "<?php\nARR[0] = 1;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/const-array-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/const-array-write.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/const-array-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/const-array-write.php"
+            }
+        }
+    },
+    {
+        "id": "const-object-dim-write",
+        "source": "<?php\nARR[0]->p = 1;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/const-object-dim-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/const-object-dim-write.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/const-object-dim-write.php"
+            }
+        }
+    },
+    {
+        "id": "const-object-unset",
+        "source": "<?php\nunset(OBJ->p);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/const-object-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/const-object-unset.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/const-object-unset.php"
+            }
+        }
+    },
+    {
+        "id": "const-object-reference",
+        "source": "<?php\n$x =& OBJ->p;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/const-object-reference.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/const-object-reference.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/const-object-reference.php"
+            }
+        }
+    },
+    {
+        "id": "enum-debug",
+        "source": "<?php\nenum E { case A; public function __debugInfo(): array { return []; } }\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/enum-debug.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/enum-debug.php"
+            }
+        }
+    },
+    {
+        "id": "enum-get",
+        "source": "<?php\nenum E { case A; public function __get($x) {} }\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/enum-get.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/enum-get.php"
+            }
+        }
+    },
+    {
+        "id": "override-constant",
+        "source": "<?php\nclass A { const X=1; } class B extends A { #[Override] const X=2; }\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <audit>/php86-probes/override-constant.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/override-constant.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/override-constant.php"
+            }
+        }
+    },
+    {
+        "id": "override-constant-unmatched",
+        "source": "<?php\nclass A { #[Override] const X=1; }\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <audit>/php86-probes/override-constant-unmatched.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/override-constant-unmatched.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: A::X has #[\\Override] attribute, but no matching parent constant exists in <audit>/php86-probes/override-constant-unmatched.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/override-constant-unmatched.php"
+            }
+        }
+    },
+    {
+        "id": "override-enum",
+        "source": "<?php\ninterface I { const X=1; } enum E implements I { #[Override] case X; }\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <audit>/php86-probes/override-enum.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/override-enum.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/override-enum.php"
+            }
+        }
+    },
+    {
+        "id": "relative-static-class",
+        "source": "<?php\nclass C { function f(): namespace\\static {} }\n",
+        "results": {
+            "8.5": {
+                "exit": -1073741819,
+                "output": ""
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Type declaration 'static' must be unqualified in <audit>/php86-probes/relative-static-class.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/relative-static-class.php"
+            }
+        }
+    },
+    {
+        "id": "relative-static-ns",
+        "source": "<?php\nnamespace N; class C { function f(): namespace\\static {} }\n",
+        "results": {
+            "8.5": {
+                "exit": -1073741819,
+                "output": ""
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Type declaration 'static' must be unqualified in <audit>/php86-probes/relative-static-ns.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/relative-static-ns.php"
+            }
+        }
+    },
+    {
+        "id": "byref-nullsafe-discarded",
+        "source": "<?php\nfalse && function &() { return $x?->f(); };\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/byref-nullsafe-discarded.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/byref-nullsafe-discarded.php"
+            }
+        }
+    },
+    {
+        "id": "byref-normal-return",
+        "source": "<?php\nfunction &f() { return $x->f(); }\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/byref-normal-return.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/byref-normal-return.php"
+            }
+        }
+    },
+    {
+        "id": "qualified-static",
+        "source": "<?php\nfunction f(): \\static {}\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: '\\static' is an invalid class name in <audit>/php86-probes/qualified-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/qualified-static.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Type declaration 'static' must be unqualified in <audit>/php86-probes/qualified-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/qualified-static.php"
+            }
+        }
+    },
+    {
+        "id": "relative-static",
+        "source": "<?php\nfunction f(): namespace\\static {}\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use \"static\" when no class scope is active in <audit>/php86-probes/relative-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/relative-static.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Type declaration 'static' must be unqualified in <audit>/php86-probes/relative-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/relative-static.php"
+            }
+        }
+    },
+    {
+        "id": "qualified-static-discarded",
+        "source": "<?php\nfalse && function(): \\static {};\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/qualified-static-discarded.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/qualified-static-discarded.php"
+            }
+        }
+    },
+    {
+        "id": "nested-arrow-constant",
+        "source": "<?php\nconst X = static fn() => static fn($x) => $x;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Constant expression contains invalid operations in <audit>/php86-probes/nested-arrow-constant.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/nested-arrow-constant.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Constant expression contains invalid operations in <audit>/php86-probes/nested-arrow-constant.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/nested-arrow-constant.php"
+            }
+        }
+    },
+    {
+        "id": "byref-nullsafe-return",
+        "source": "<?php\nfunction &f() { return $x?->f(); }\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/byref-nullsafe-return.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot take reference of a nullsafe chain in <audit>/php86-probes/byref-nullsafe-return.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/byref-nullsafe-return.php"
+            }
+        }
+    },
+    {
+        "id": "byref-nullsafe-yield",
+        "source": "<?php\nfunction &f() { yield $x?->f(); }\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/byref-nullsafe-yield.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot take reference of a nullsafe chain in <audit>/php86-probes/byref-nullsafe-yield.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/byref-nullsafe-yield.php"
+            }
+        }
+    },
+    {
+        "id": "deprecated-readonly",
+        "source": "<?php\nfunction readonly() {}\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/deprecated-readonly.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "Deprecated: Calling a function \"readonly\" is deprecated since 8.6 in <audit>/php86-probes/deprecated-readonly.php on line 2\nNo syntax errors detected in <audit>/php86-probes/deprecated-readonly.php"
+            }
+        }
+    },
+    {
+        "id": "deprecated-let",
+        "source": "<?php\nclass let {}\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/deprecated-let.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "Deprecated: Using \"let\" as a class name is deprecated since 8.6 in <audit>/php86-probes/deprecated-let.php on line 2\nNo syntax errors detected in <audit>/php86-probes/deprecated-let.php"
+            }
+        }
+    },
+    {
+        "id": "deprecated-is",
+        "source": "<?php\nfunction is() {}\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/deprecated-is.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "Deprecated: Calling a function \"is\" is deprecated since 8.6 in <audit>/php86-probes/deprecated-is.php on line 2\nNo syntax errors detected in <audit>/php86-probes/deprecated-is.php"
+            }
+        }
+    },
+    {
+        "id": "deprecated-namespace",
+        "source": "<?php\nclass C { const namespace=1; }\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/deprecated-namespace.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "Deprecated: Declaring class constant called 'namespace' is deprecated in <audit>/php86-probes/deprecated-namespace.php on line 2\nNo syntax errors detected in <audit>/php86-probes/deprecated-namespace.php"
+            }
+        }
+    },
+    {
+        "id": "deprecated-finally",
+        "source": "<?php\nfunction f() { try {} finally { return; } }\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/deprecated-finally.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "Deprecated: Returning from a finally block is deprecated in <audit>/php86-probes/deprecated-finally.php on line 2\nNo syntax errors detected in <audit>/php86-probes/deprecated-finally.php"
+            }
+        }
+    },
+    {
+        "id": "deprecated-constructor-return",
+        "source": "<?php\nclass C { function __construct() { return 1; } }\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/deprecated-constructor-return.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "Deprecated: Returning a value from a constructor is deprecated in <audit>/php86-probes/deprecated-constructor-return.php on line 2\nNo syntax errors detected in <audit>/php86-probes/deprecated-constructor-return.php"
+            }
+        }
+    },
+    {
+        "id": "deprecated-constructor-generator",
+        "source": "<?php\nclass C { function __construct() { yield 1; } }\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/deprecated-constructor-generator.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "Deprecated: Making a constructor a Generator is deprecated in <audit>/php86-probes/deprecated-constructor-generator.php on line 2\nNo syntax errors detected in <audit>/php86-probes/deprecated-constructor-generator.php"
+            }
+        }
+    },
+    {
+        "id": "deprecated-debug-nullable",
+        "source": "<?php\nclass C { function __debugInfo(): ?array { return null; } }\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/deprecated-debug-nullable.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "Deprecated: Returning null from C::__debugInfo() is deprecated, make the return type non-nullable and return an empty array instead in <audit>/php86-probes/deprecated-debug-nullable.php on line 2\nNo syntax errors detected in <audit>/php86-probes/deprecated-debug-nullable.php"
+            }
+        }
+    },
+    {
+        "id": "parameter-doccomment",
+        "source": "<?php\nfunction f(/** doc */ int $x = 1) {}\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/parameter-doccomment.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/parameter-doccomment.php"
+            }
+        }
+    },
+    {
+        "id": "unset-folded",
+        "source": "<?php\nfalse && (unset) 1;\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/unset-folded.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/unset-folded.php"
+            }
+        }
+    },
+    {
+        "id": "unset-live",
+        "source": "<?php\n(unset) 1;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in <audit>/php86-probes/unset-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/unset-live.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in <audit>/php86-probes/unset-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/unset-live.php"
+            }
+        }
+    },
+    {
+        "id": "discarded-hook",
+        "source": "<?php\nfalse && function() { class C { public $x { unknown {} } } };\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/discarded-hook.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/discarded-hook.php"
+            }
+        }
+    }
+]
