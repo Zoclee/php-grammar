@@ -1,0 +1,6 @@
+{
+    "name": "PHP86-001 basic",
+    "firstSupportedVersion": "8.6",
+    "fixture": "../../php/8.6/valid/pfa-basic.php",
+    "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y"
+}

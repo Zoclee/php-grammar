@@ -1,0 +1,1439 @@
+(* Provisional standalone PHP 8.6 syntactic EBNF over the source-token stream.
+   PHP86-001 only; other PHP 8.6 changes remain pending.
+   Binary expression/prefix families: tools/8.5/generate-expressions.php.
+   Apply the lexical-state contract and contextual constraints in php.md. *)
+
+(* SECTION 01 source: Source/root grammar *)
+
+source-file =
+    top-statement-list ;
+
+inline-html =
+    inline-html-text ;
+
+top-statement-list =
+    { top-statement } ;
+
+top-statement =
+      statement
+    | attributed-top-declaration
+    | namespace-definition
+    | namespace-use-declaration
+    | halt-compiler-statement ;
+
+attributed-top-declaration =
+    [ attribute-groups ] ,
+    ( function-declaration | class-declaration | interface-declaration
+    | trait-declaration | enum-declaration )
+    | constant-declaration
+    | attribute-groups , "const" , constant-list , ";" ;
+
+(* SECTION 02 lexical: Lexical and token-level grammar *)
+
+(* Whitespace and comments may occur between tokens under the scanner-state
+   contract in php.md. Keywords are case-insensitive; token categories are
+   resolved before syntactic matching, not by these character rules alone. *)
+
+whitespace =
+    whitespace-character , { whitespace-character } ;
+
+comment =
+      line-comment
+    | block-comment
+    | doc-comment ;
+
+line-comment =
+      "#" , line-comment-text
+    | "//" , line-comment-text ;
+
+block-comment =
+    "/*" , block-comment-text , "*/" ;
+
+doc-comment =
+    "/**" , doc-comment-text , "*/" ;
+
+(* SECTION 03 names: Names and identifiers *)
+
+identifier =
+    identifier-start , { identifier-part } ;
+
+identifier-start =
+      identifier-start-character
+    | non-ascii-byte ;
+
+identifier-part =
+      identifier-start-character
+    | decimal-digit
+    | non-ascii-byte ;
+
+identifier-start-character =
+      ascii-letter
+    | "_" ;
+
+label =
+    identifier ;
+
+semi-reserved-identifier =
+    identifier | reserved-non-modifiers | "static" | "abstract" | "final"
+    | "private" | "protected" | "public" | "readonly" ;
+
+name-identifier =
+    identifier-start , { identifier-part } ;
+
+namespace-declaration-name =
+    semi-reserved-identifier | qualified-name ;
+
+qualified-name =
+    name-identifier , "\\" , name-identifier , { "\\" , name-identifier } ;
+
+fully-qualified-name =
+    "\\" , name-identifier , { "\\" , name-identifier } ;
+
+namespace-relative-name =
+    "namespace" , "\\" , name-identifier , { "\\" , name-identifier } ;
+
+name =
+    identifier | qualified-name | fully-qualified-name | namespace-relative-name ;
+
+class-name =
+      name
+    | "static" ;
+
+name-list =
+    class-name , { "," , class-name } ;
+
+(* SECTION 04 literals: Literals and strings *)
+
+(* Interpolation crosses back into expression/variable syntax. Delimiter and
+   heredoc-label recognition still obey the scanner-state contract in php.md. *)
+
+integer-literal =
+      decimal-integer-literal
+    | binary-integer-literal
+    | octal-integer-literal
+    | explicit-octal-integer-literal
+    | hexadecimal-integer-literal ;
+
+decimal-integer-literal =
+      "0"
+    | decimal-digit-nonzero , { [ numeric-separator ] , decimal-digit } ;
+
+binary-integer-literal =
+    ( "0b" | "0B" ) , binary-digit , { [ numeric-separator ] , binary-digit } ;
+
+octal-integer-literal =
+    "0" , [ numeric-separator ] , octal-digit , { [ numeric-separator ] , octal-digit } ;
+
+explicit-octal-integer-literal =
+    ( "0o" | "0O" ) , octal-digit , { [ numeric-separator ] , octal-digit } ;
+
+hexadecimal-integer-literal =
+    ( "0x" | "0X" ) , hexadecimal-digit , { [ numeric-separator ] , hexadecimal-digit } ;
+
+floating-literal =
+      decimal-digits , "." , [ decimal-digits ] , [ exponent-part ]
+    | "." , decimal-digits , [ exponent-part ]
+    | decimal-digits , exponent-part ;
+
+exponent-part =
+    exponent-marker , [ "+" | "-" ] , decimal-digits ;
+
+decimal-digits =
+    decimal-digit , { [ numeric-separator ] , decimal-digit } ;
+
+numeric-separator =
+    "_" ;
+
+string-literal =
+      single-quoted-string
+    | double-quoted-string
+    | heredoc-string
+    | nowdoc-string ;
+
+single-quoted-string =
+    [ "b" | "B" ] , "'" , single-quoted-string-content , "'" ;
+
+double-quoted-string =
+    [ "b" | "B" ] , "\"" , { encapsulated-string-part } , "\"" ;
+
+heredoc-string =
+    [ "b" | "B" ] , "<<<" , { " " | "\t" } ,
+    ( heredoc-label | "\"" , heredoc-label , "\"" ) , newline ,
+    heredoc-body , { " " | "\t" } , heredoc-label ;
+
+nowdoc-string =
+    [ "b" | "B" ] , "<<<" , { " " | "\t" } ,
+    "'" , heredoc-label , "'" , newline , nowdoc-body , { " " | "\t" } , heredoc-label ;
+
+encapsulated-string-part =
+      string-text
+    | encapsulated-variable ;
+
+encapsulated-variable =
+      variable
+    | variable , "[" , encapsulated-offset , "]"
+    | variable , object-operator , identifier
+    | variable , nullsafe-object-operator , identifier
+    | "${" , expression , "}"
+    | "${" , identifier , "}"
+    | "${" , identifier , "[" , expression , "]" , "}"
+    | "{" , variable-expression , "}" ;
+
+encapsulated-offset =
+      identifier
+    | numeric-string
+    | "-" , numeric-string
+    | variable ;
+
+numeric-string =
+    decimal-digits | binary-integer-literal | explicit-octal-integer-literal | hexadecimal-integer-literal ;
+
+literal =
+      integer-literal
+    | floating-literal
+    | string-literal ;
+
+magic-constant =
+      "__LINE__"
+    | "__FILE__"
+    | "__DIR__"
+    | "__CLASS__"
+    | "__TRAIT__"
+    | "__METHOD__"
+    | "__FUNCTION__"
+    | "__PROPERTY__"
+    | "__NAMESPACE__" ;
+
+backtick-string =
+    "`" , backtick-string-part-list , "`" ;
+
+backtick-string-part-list =
+    { encapsulated-string-part } ;
+
+(* SECTION 05 types: Types *)
+
+(* Zend duplicates type syntax without static to avoid conflicts with the
+   static property modifier. The without-static hierarchy is a syntactic
+   distinction, not merely a contextual validation check. *)
+
+type =
+      union-type
+    | intersection-type
+    | nullable-type
+    | simple-type ;
+
+optional-type-without-static =
+    [ type-without-static ] ;
+
+type-without-static =
+      union-type-without-static
+    | intersection-type-without-static
+    | nullable-type-without-static
+    | simple-type-without-static ;
+
+simple-type =
+      "array" | "callable" | "iterable" | "bool" | "int" | "float"
+    | "string" | "object" | "mixed" | "never" | "void" | "null"
+    | "false" | "true" | "self" | "parent" | "static" | name ;
+
+simple-type-without-static =
+      "array" | "callable" | "iterable" | "bool" | "int" | "float"
+    | "string" | "object" | "mixed" | "never" | "void" | "null"
+    | "false" | "true" | "self" | "parent" | name ;
+
+nullable-type =
+    "?" , simple-type ;
+
+nullable-type-without-static =
+    "?" , simple-type-without-static ;
+
+union-type =
+    union-type-element , "|" , union-type-element , { "|" , union-type-element } ;
+
+union-type-element =
+      simple-type
+    | parenthesized-intersection-type ;
+
+union-type-without-static =
+    union-type-without-static-element , "|" , union-type-without-static-element ,
+    { "|" , union-type-without-static-element } ;
+
+union-type-without-static-element =
+      simple-type-without-static
+    | parenthesized-intersection-type-without-static ;
+
+intersection-type =
+    simple-type , "&" , simple-type , { "&" , simple-type } ;
+
+intersection-type-without-static =
+    simple-type-without-static , "&" , simple-type-without-static ,
+    { "&" , simple-type-without-static } ;
+
+parenthesized-intersection-type =
+    "(" , intersection-type , ")" ;
+
+parenthesized-intersection-type-without-static =
+    "(" , intersection-type-without-static , ")" ;
+
+return-type =
+    [ ":" , type ] ;
+
+(* SECTION 06 expressions: Expressions *)
+
+expression =
+    throw-expression ;
+
+primary-expression =
+    literal | array-creation-expression | constant | class-constant | magic-constant
+    | "(" , expression , ")" | new-dereferenceable | "new" , class-name-reference
+    | backtick-string
+    | "isset" , "(" , isset-variable-list , [ "," ] , ")"
+    | "empty" , "(" , expression , ")" | "eval" , "(" , expression , ")"
+    | "exit" , [ argument-list ] | "die" , [ argument-list ] ;
+
+postfix-expression =
+    variable-expression , [ "++" | "--" ] | primary-expression
+    | ( "++" | "--" ) , variable-expression | closure-expression | match-expression ;
+
+assignment-expression =
+    conditional-expression
+    | [ conditional-prefix-context ] , assignment-prefix , assignment-expression
+    | [ conditional-prefix-context ] , variable-expression , "=" , "&" , variable-expression ;
+
+assignment-operator =
+      "=" | "+=" | "-=" | "*=" | "/=" | ".=" | "%="
+    | "&=" | "|=" | "^=" | "<<=" | ">>=" | "**=" | "??=" ;
+
+conditional-expression =
+    coalesce-expression , { "?" , [ expression ] , ":" , coalesce-expression } ;
+
+instanceof-expression =
+    unary-expression , { "instanceof" , class-name-reference , [ "**" , unary-expression ] } ;
+
+unary-expression =
+    power-expression
+    | [ power-prefix-context ] , ( ( "+" | "-" | "~" | "@" ) , unary-expression | cast-expression ) ;
+
+cast-expression =
+    cast-operator , unary-expression ;
+
+boolean-not-expression =
+    instanceof-expression
+    | [ instanceof-prefix-context ] , "!" , boolean-not-expression ;
+
+clone-expression =
+    "clone" , clone-expression | "clone" , clone-argument-list | postfix-expression ;
+
+throw-expression =
+    arrow-expression
+    | [ arrow-prefix-context ] , "throw" , throw-expression ;
+
+arrow-expression =
+    include-expression | [ include-prefix-context ] , arrow-function ;
+
+include-expression =
+    logical-or-expression
+    | [ logical-or-prefix-context ] , include-operator , include-expression ;
+
+print-expression =
+    yield-expression
+    | [ yield-prefix-context ] , "print" , print-expression ;
+
+yield-expression =
+    yield-key-expression
+    | [ yield-key-prefix-context ] , "yield" , [ yield-expression ] ;
+
+yield-from-expression =
+    assignment-expression
+    | [ assignment-prefix-context ] , "yield" , "from" , yield-from-expression ;
+
+match-expression =
+    "match" , "(" , expression , ")" , "{" , [ match-arm-list ] , "}" ;
+
+match-arm-list =
+    match-arm , { "," , match-arm } , [ "," ] ;
+
+match-arm =
+      match-arm-condition-list , [ "," ] , "=>" , expression
+    | "default" , [ "," ] , "=>" , expression ;
+
+match-arm-condition-list =
+    expression , { "," , expression } ;
+
+(* SECTION 07 dereferencing: Variables, dereferencing and calls *)
+
+(* PHP distinguishes variable, callable and dereference categories rather
+   than permitting one universal postfix chain. Keep these mutually recursive
+   categories distinct; their entry points allow different continuations. *)
+
+variable =
+    "$" , identifier ;
+
+variable-variable =
+      "$" , variable-like
+    | "$" , "{" , expression , "}" ;
+
+variable-like =
+      variable
+    | variable-variable ;
+
+variable-expression =
+    callable-variable | static-member
+    | array-object-dereferenceable , ( object-operator | nullsafe-object-operator ) , property-name ;
+
+callable-variable =
+    variable-like
+    | array-object-dereferenceable , "[" , [ expression ] , "]"
+    | array-object-dereferenceable , ( object-operator | nullsafe-object-operator ) , property-name , argument-list
+    | function-call ;
+
+new-variable =
+    variable-like
+    | new-variable , "[" , [ expression ] , "]"
+    | new-variable , ( object-operator | nullsafe-object-operator ) , property-name
+    | ( class-name | new-variable ) , "::" , variable-like ;
+
+static-member =
+    ( class-name | fully-dereferenceable-expression ) , "::" , variable-like ;
+
+fully-dereferenceable-expression =
+    variable-expression | "(" , expression , ")" | dereferenceable-scalar
+    | class-constant | new-dereferenceable ;
+
+array-object-dereferenceable =
+    fully-dereferenceable-expression | constant | magic-constant ;
+
+callable-expression =
+    callable-variable | "(" , expression , ")" | dereferenceable-scalar | new-dereferenceable ;
+
+new-dereferenceable =
+    "new" , class-name-reference , constructor-argument-list | "new" , anonymous-class ;
+
+dereferenceable-scalar =
+    array-creation-expression | single-quoted-string | double-quoted-string ;
+
+property-name =
+    identifier | "{" , expression , "}" | variable-like ;
+
+member-name =
+    semi-reserved-identifier | "{" , expression , "}" | variable-like ;
+
+object-operator =
+    "->" ;
+
+nullsafe-object-operator =
+    "?->" ;
+
+constant =
+    name ;
+
+class-constant =
+    ( class-name | fully-dereferenceable-expression ) , "::" ,
+    ( semi-reserved-identifier | "{" , expression , "}" ) ;
+
+class-name-reference =
+    class-name | new-variable | "(" , expression , ")" ;
+
+function-call =
+    name , argument-list | "readonly" , argument-list
+    | ( class-name | fully-dereferenceable-expression ) , "::" , member-name , argument-list
+    | callable-expression , argument-list ;
+
+isset-variable-list =
+    isset-variable , { "," , isset-variable } ;
+
+isset-variable =
+    expression ;
+
+(* SECTION 08 arguments: Arguments and arrays *)
+
+(* The sole variadic placeholder (...) or (...,) remains a separate form.
+   Other lists may contain placeholders; ordering and context are checked by
+   the compiler. Constructor and clone retain their own entry points. *)
+
+argument-list =
+    ordinary-argument-list | first-class-callable-arguments ;
+
+ordinary-argument-list =
+    "(" , [ ( expression | argument-no-expression ) , { "," , argument } , [ "," ]
+    | "..." , "," , argument , { "," , argument } , [ "," ] ] , ")" ;
+
+first-class-callable-arguments =
+    "(" , "..." , [ "," ] , ")" ;
+
+constructor-argument-list =
+    ordinary-argument-list | first-class-callable-arguments ;
+
+(* A first unnamed expression needs a comma here so clone($expr) continues
+   to use the unary construct rather than an ambiguous argument-list parse. *)
+
+clone-argument-list =
+    "(" , [ "..." , [ "," , [ argument , { "," , argument } , [ "," ] ] ]
+    | expression , "," , [ argument , { "," , argument } , [ "," ] ]
+    | argument-no-expression , { "," , argument } , [ "," ] ] , ")" ;
+
+argument =
+      expression
+    | argument-no-expression
+    | "..." ;
+
+argument-no-expression =
+    semi-reserved-identifier , ":" , ( expression | "?" )
+    | "..." , expression | "?" ;
+
+expression-list =
+    expression , { "," , expression } ;
+
+array-creation-expression =
+      "array" , "(" , array-pair-list , ")"
+    | "[" , array-pair-list , "]" ;
+
+array-pair-list =
+    [ array-pair ] , { "," , [ array-pair ] } ;
+
+array-pair =
+      expression
+    | expression , "=>" , expression
+    | "&" , variable-expression
+    | expression , "=>" , "&" , variable-expression
+    | "..." , expression
+    | long-list-expression
+    | expression , "=>" , long-list-expression ;
+
+list-expression =
+      long-list-expression
+    | "[" , array-pair-list , "]" ;
+
+long-list-expression =
+    "list" , "(" , array-pair-list , ")" ;
+
+(* SECTION 09 statements: Statements *)
+
+statement =
+    simple-statement | if-statement | while-statement | for-statement
+    | foreach-statement | declare-statement ;
+
+compound-statement =
+    "{" , inner-statement-list , "}" ;
+
+inner-statement-list =
+    { inner-statement } ;
+
+inner-statement =
+    statement | inner-declaration ;
+
+inner-declaration =
+    [ attribute-groups ] ,
+      ( function-declaration
+      | class-declaration
+      | interface-declaration
+      | trait-declaration
+      | enum-declaration ) ;
+
+expression-statement =
+    expression , statement-terminator ;
+
+echo-statement =
+    "echo" , expression-list , statement-terminator ;
+
+statement-terminator =
+    ";" ;
+
+global-statement =
+    "global" , global-variable-list , ";" ;
+
+global-variable-list =
+    global-variable , { "," , global-variable } ;
+
+global-variable =
+    variable-like ;
+
+static-statement =
+    "static" , static-variable-list , ";" ;
+
+static-variable-list =
+    static-variable , { "," , static-variable } ;
+
+static-variable =
+    variable , [ "=" , expression ] ;
+
+unset-statement =
+    "unset" , "(" , unset-variable-list , [ "," ] , ")" , ";" ;
+
+unset-variable-list =
+    unset-variable , { "," , unset-variable } ;
+
+unset-variable =
+    variable-expression ;
+
+return-statement =
+    "return" , [ expression ] , ";" ;
+
+break-statement =
+    "break" , [ expression ] , ";" ;
+
+continue-statement =
+    "continue" , [ expression ] , ";" ;
+
+goto-statement =
+    "goto" , label , ";" ;
+
+label-statement =
+    label , ":" ;
+
+empty-statement =
+    ";" ;
+
+if-statement =
+    matched-if-statement | unmatched-if-statement ;
+
+while-statement =
+    matched-while-statement | unmatched-while-statement ;
+
+do-statement =
+    "do" , statement , "while" , "(" , expression , ")" , ";" ;
+
+for-statement =
+    matched-for-statement | unmatched-for-statement ;
+
+for-expression-list =
+    [ nonempty-for-expression-list ] ;
+
+nonempty-for-expression-list =
+    for-expression , { "," , for-expression } ;
+
+for-expression =
+      expression
+    | "(void)" , expression ;
+
+for-condition-expression-list =
+    [ expression | nonempty-for-expression-list , "," , expression ] ;
+
+foreach-statement =
+    matched-foreach-statement | unmatched-foreach-statement ;
+
+foreach-target =
+    [ foreach-key , "=>" ] , foreach-value ;
+
+foreach-key =
+    foreach-variable ;
+
+foreach-value =
+    foreach-variable ;
+
+foreach-variable =
+      variable-expression
+    | "&" , variable-expression
+    | list-expression ;
+
+switch-statement =
+      "switch" , "(" , expression , ")" , "{" , switch-case-list , "}"
+    | "switch" , "(" , expression , ")" , ":" , switch-case-list ,
+      "endswitch" , ";" ;
+
+switch-case-list =
+    [ ";" ] , { switch-case } ;
+
+switch-case =
+      "case" , expression , ( ":" | ";" ) , inner-statement-list
+    | "default" , ( ":" | ";" ) , inner-statement-list ;
+
+declare-statement =
+    matched-declare-statement | unmatched-declare-statement ;
+
+declare-directive-list =
+    declare-directive , { "," , declare-directive } ;
+
+declare-directive =
+    identifier , "=" , constant-expression ;
+
+try-statement =
+    "try" , compound-statement , catch-list , [ finally-clause ] ;
+
+catch-list =
+    { catch-clause } ;
+
+catch-clause =
+    "catch" , "(" , catch-type-list , [ variable ] , ")" , compound-statement ;
+
+catch-type-list =
+    class-name , { "|" , class-name } ;
+
+finally-clause =
+    "finally" , compound-statement ;
+
+void-cast-statement =
+    "(void)" , expression , ";" ;
+
+(* SECTION 10 functions: Functions, closures and parameters *)
+
+function-declaration =
+    "function" , [ "&" ] , ( identifier | "readonly" ) , "(" , parameter-list , ")" ,
+    return-type , compound-statement ;
+
+closure-expression =
+    [ attribute-groups ] , [ "static" ] , "function" , [ "&" ] ,
+    "(" , parameter-list , ")" , [ lexical-variable-list ] , return-type ,
+    compound-statement ;
+
+arrow-function =
+    arrow-function-header , arrow-expression ;
+
+arrow-function-header =
+    [ attribute-groups ] , [ "static" ] , "fn" , [ "&" ] ,
+    "(" , parameter-list , ")" , return-type , "=>" ;
+
+lexical-variable-list =
+    "use" , "(" , lexical-variable , { "," , lexical-variable } , [ "," ] , ")" ;
+
+lexical-variable =
+      variable
+    | "&" , variable ;
+
+parameter-list =
+    [ parameter , { "," , parameter } , [ "," ] ] ;
+
+parameter =
+    [ attribute-groups ] , parameter-modifiers , optional-type-without-static ,
+    [ "&" ] , [ "..." ] , variable , [ "=" , parameter-default ] ,
+    [ property-hook-block ] ;
+
+parameter-modifiers =
+    { parameter-modifier } ;
+
+parameter-modifier =
+      "public" | "protected" | "private" | "public(set)" | "protected(set)"
+    | "private(set)" | "readonly" | "final" ;
+
+constant-declaration =
+    "const" , constant-list , ";" ;
+
+constant-list =
+    constant-element , { "," , constant-element } ;
+
+constant-element =
+    identifier , "=" , global-constant-initializer ;
+
+(* SECTION 11 classes: Classes, interfaces, traits and enums *)
+
+class-declaration =
+    class-modifiers , "class" , identifier , [ extends-clause ] ,
+    [ implements-clause ] , "{" , class-member-list , "}" ;
+
+anonymous-class =
+    [ attribute-groups ] , class-modifiers , "class" , [ constructor-argument-list ] , [ extends-clause ] ,
+    [ implements-clause ] , "{" , class-member-list , "}" ;
+
+class-modifiers =
+    { class-modifier } ;
+
+class-modifier =
+      "abstract" | "final" | "readonly" ;
+
+extends-clause =
+    "extends" , class-name ;
+
+implements-clause =
+    "implements" , name-list ;
+
+(* Class, interface, trait and enum bodies share this structural member list.
+   Declaration-kind legality remains contextual/compiler validation. *)
+
+class-member-list =
+    { class-member } ;
+
+class-member =
+      [ attribute-groups ] ,
+      ( property-declaration
+      | method-declaration
+      | class-constant-declaration
+      | enum-case )
+    | trait-use-declaration ;
+
+property-declaration =
+      property-modifier-list , optional-type-without-static , property-list , ";"
+    | "var" , optional-type-without-static , ( property-list , ";" | hooked-property )
+    | property-modifier-list , optional-type-without-static , hooked-property ;
+
+(* Target-specific modifier families remain separate. This property list is
+   nonempty; other modifier families can have different multiplicities. *)
+
+property-modifier-list =
+    property-modifier , { property-modifier } ;
+
+property-modifier =
+    property-visibility-modifier | set-visibility-modifier | "static" | "readonly" | "final" | "abstract" ;
+
+property-visibility-modifier =
+      "public" | "protected" | "private" ;
+
+set-visibility-modifier =
+      "public(set)" | "protected(set)" | "private(set)" ;
+
+property-list =
+    property-element , { "," , property-element } ;
+
+property-element =
+    variable , [ "=" , property-default ] ;
+
+hooked-property =
+    variable , [ "=" , property-default ] , property-hook-block ;
+
+property-hook-block =
+    "{" , property-hook-list , "}" ;
+
+property-hook-list =
+    { [ attribute-groups ] , property-hook } ;
+
+property-hook =
+    property-hook-modifiers , [ "&" ] , hook-name ,
+    [ "(" , parameter-list , ")" ] , property-hook-body ;
+
+(* Hook-name terminals are case-insensitive, without reserving these names
+   outside hooks. Unknown names are excluded even in discarded declarations. *)
+hook-name =
+    "get" | "set" ;
+
+property-hook-body =
+      ";"
+    | compound-statement
+    | "=>" , expression , ";" ;
+
+property-hook-modifiers =
+    { property-hook-modifier } ;
+
+property-hook-modifier =
+    "final" ;
+
+method-declaration =
+    method-modifiers , "function" , [ "&" ] , semi-reserved-identifier ,
+    "(" , parameter-list , ")" , return-type , method-body ;
+
+method-modifiers =
+    { method-modifier } ;
+
+method-modifier =
+      "public" | "protected" | "private" | "abstract" | "final" | "static" ;
+
+method-body =
+      compound-statement
+    | ";" ;
+
+class-constant-declaration =
+    class-constant-modifiers , "const" , [ type ] , class-constant-list , ";" ;
+
+class-constant-modifiers =
+    { class-constant-modifier } ;
+
+class-constant-modifier =
+      "public" | "protected" | "private" | "final" ;
+
+class-constant-list =
+    class-constant-element , { "," , class-constant-element } ;
+
+class-constant-element =
+    semi-reserved-identifier , "=" , class-constant-initializer ;
+
+interface-declaration =
+    "interface" , identifier , [ interface-extends-clause ] ,
+    "{" , class-member-list , "}" ;
+
+interface-extends-clause =
+    "extends" , name-list ;
+
+trait-declaration =
+    "trait" , identifier , "{" , class-member-list , "}" ;
+
+trait-use-declaration =
+      "use" , name-list , ";"
+    | "use" , name-list , trait-adaptation-block ;
+
+trait-adaptation-block =
+    "{" , { trait-adaptation } , "}" ;
+
+trait-adaptation =
+      trait-precedence
+    | trait-alias ;
+
+trait-precedence =
+    class-name , "::" , semi-reserved-identifier , "insteadof" , name-list , ";" ;
+
+trait-alias =
+    trait-method-reference , "as" ,
+    ( identifier | reserved-non-modifiers | trait-alias-modifier , [ semi-reserved-identifier ] ) , ";" ;
+
+trait-method-reference =
+    semi-reserved-identifier | class-name , "::" , semi-reserved-identifier ;
+
+trait-alias-modifier =
+    method-modifier ;
+
+enum-declaration =
+    "enum" , identifier , [ enum-backing-type ] , [ implements-clause ] ,
+    "{" , class-member-list , "}" ;
+
+enum-backing-type =
+    ":" , type ;
+
+enum-case =
+    "case" , semi-reserved-identifier , [ "=" , enum-case-initializer ] , ";" ;
+
+(* SECTION 12 namespaces: Namespaces and imports *)
+
+namespace-definition =
+      "namespace" , namespace-declaration-name , ";"
+    | "namespace" , namespace-declaration-name , "{" , top-statement-list , "}"
+    | "namespace" , "{" , top-statement-list , "}" ;
+
+namespace-use-declaration =
+      "use" , [ use-type ] , use-declaration-list , ";"
+    | "use" , mixed-group-use-declaration , ";"
+    | "use" , use-type , group-use-declaration , ";" ;
+
+use-type =
+      "function"
+    | "const" ;
+
+use-declaration-list =
+    use-declaration , { "," , use-declaration } ;
+
+use-declaration =
+    legacy-namespace-name , [ "as" , identifier ] ;
+
+legacy-namespace-name =
+    identifier | qualified-name | fully-qualified-name ;
+
+group-use-declaration =
+    legacy-namespace-name , "\\" , "{" , unprefixed-use-declaration-list , [ "," ] , "}" ;
+
+mixed-group-use-declaration =
+    legacy-namespace-name , "\\" , "{" , inline-use-declaration-list , [ "," ] , "}" ;
+
+unprefixed-use-declaration-list =
+    unprefixed-use-declaration , { "," , unprefixed-use-declaration } ;
+
+unprefixed-use-declaration =
+    ( identifier | qualified-name ) , [ "as" , identifier ] ;
+
+inline-use-declaration-list =
+    inline-use-declaration , { "," , inline-use-declaration } ;
+
+inline-use-declaration =
+    [ use-type ] , unprefixed-use-declaration ;
+
+(* SECTION 13 attributes: Attributes *)
+
+attribute-groups =
+    attribute-group , { attribute-group } ;
+
+attribute-group =
+    "#[" , attribute-list , [ "," ] , "]" ;
+
+attribute-list =
+    attribute , { "," , attribute } ;
+
+attribute =
+    class-name , [ argument-list ] ;
+
+(* SECTION 14 termination: Source termination / __halt_compiler *)
+
+halt-compiler-statement =
+    "__halt_compiler" , "(" , ")" , ";" , halt-compiler-data ;
+
+halt-compiler-data =
+    { source-character } ;
+
+(* SECTION 15 primitives: Lexical primitive adapters *)
+
+(* Named byte-category adapters retain the lexical/source contract in php.md.
+   External primitives are declared in php-grammar.json; these rules do not
+   turn scanner-state boundaries into unrestricted character matching. *)
+
+binary-digit =
+      "0" | "1" ;
+
+octal-digit =
+      "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" ;
+
+decimal-digit =
+      "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+
+decimal-digit-nonzero =
+      "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+
+hexadecimal-digit =
+      decimal-digit | "a" | "b" | "c" | "d" | "e" | "f"
+    | "A" | "B" | "C" | "D" | "E" | "F" ;
+
+exponent-marker =
+      "e" | "E" ;
+
+ascii-letter =
+      "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+    | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r"
+    | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+    | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I"
+    | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R"
+    | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+
+inline-html-text =
+    inline-html-character , { inline-html-character } ;
+
+line-comment-text =
+    { line-comment-character } ;
+
+block-comment-text =
+    { block-comment-character } ;
+
+doc-comment-text =
+    { block-comment-character } ;
+
+single-quoted-string-content =
+    { single-quoted-string-character | escape-sequence } ;
+
+string-text =
+    ( string-character | escape-sequence ) , { string-character | escape-sequence } ;
+
+heredoc-label =
+    name-identifier ;
+
+heredoc-body =
+    { encapsulated-string-part } ;
+
+nowdoc-body =
+    { nowdoc-character } ;
+
+source-character =
+    code-unit ;
+
+inline-html-character =
+    html-code-unit ;
+
+line-comment-character =
+    line-comment-code-unit ;
+
+block-comment-character =
+    block-comment-code-unit ;
+
+single-quoted-string-character =
+    single-quoted-code-unit ;
+
+string-character =
+    encapsed-code-unit ;
+
+nowdoc-character =
+    nowdoc-code-unit ;
+
+escape-sequence =
+    "\\" , source-character ;
+
+whitespace-character =
+    " " | "\t" | "\n" | "\r" ;
+
+non-ascii-byte =
+    non-ascii-code-unit ;
+
+newline =
+    "\r\n" | "\n" | "\r" ;
+
+(* SECTION 16 reserved: Reserved identifiers / token categories *)
+
+reserved-non-modifiers =
+    "and" | "array" | "as" | "break" | "callable" | "case" | "catch" | "class" | "clone"
+    | "const" | "continue" | "declare" | "default" | "do" | "echo" | "else" | "elseif" | "empty"
+    | "enddeclare" | "endfor" | "endforeach" | "endif" | "endswitch" | "endwhile" | "enum"
+    | "eval" | "exit" | "die" | "extends" | "finally" | "fn" | "for" | "foreach" | "function"
+    | "global" | "goto" | "if" | "implements" | "include" | "include_once" | "instanceof"
+    | "insteadof" | "interface" | "isset" | "list" | "match" | "namespace" | "new" | "or"
+    | "print" | "require" | "require_once" | "return" | "switch" | "throw" | "trait" | "try"
+    | "unset" | "use" | "var" | "while" | "xor" | "yield"
+    | magic-constant ;
+
+(* SECTION 17 prefix: Parser-derived expression helper machinery *)
+
+(* A *-prefix-context is a nonempty expression prefix with its final operand
+   missing. These helpers encode Bison shift/precedence behavior beyond ordinary
+   precedence layers: $a + $b = $c; $x = print $y = 1; 2 ** -2 ** 2;
+   Generated binary pairs follow in the precedence section; yield-key helpers
+   remain with the closed-yield family. *)
+
+arrow-prefix-context =
+    include-prefix-context | [ include-prefix-context ] , arrow-function-header , [ arrow-prefix-context ] ;
+
+include-prefix-context =
+    logical-or-prefix-context | [ logical-or-prefix-context ] , include-operator , [ include-prefix-context ] ;
+
+print-prefix-context =
+    yield-prefix-context | [ yield-prefix-context ] , "print" , [ print-prefix-context ] ;
+
+yield-prefix-context =
+    yield-key-prefix-context
+    | [ yield-key-prefix-context ] , "yield" , [ yield-prefix-context ] ;
+
+yield-from-prefix-context =
+    assignment-prefix-context | [ assignment-prefix-context ] , "yield" , "from" , [ yield-from-prefix-context ] ;
+
+assignment-prefix =
+    variable-expression , assignment-operator | list-expression , "=" ;
+
+assignment-prefix-context =
+    conditional-prefix-context
+    | [ conditional-prefix-context ] , assignment-prefix , [ assignment-prefix-context ] ;
+
+conditional-prefix-context =
+    coalesce-prefix-context
+    | conditional-expression , "?" , [ expression ] , ":" , [ coalesce-prefix-context ] ;
+
+boolean-not-prefix-context =
+    instanceof-prefix-context | [ instanceof-prefix-context ] , "!" , [ boolean-not-prefix-context ] ;
+
+instanceof-prefix-context =
+    unary-prefix-context
+    | instanceof-expression , "instanceof" , class-name-reference , "**" , [ unary-prefix-context ] ;
+
+unary-prefix-context =
+    power-prefix-context | [ power-prefix-context ] , unary-operator , [ unary-prefix-context ] ;
+
+clone-prefix-context =
+    "clone" , { "clone" } ;
+
+include-operator =
+    "include" | "include_once" | "require" | "require_once" ;
+
+unary-operator =
+    "+" | "-" | "~" | "@" | cast-operator ;
+
+cast-operator =
+    "(int)" | "(integer)" | "(float)" | "(double)" | "(string)"
+    | "(binary)" | "(array)" | "(object)" | "(bool)" | "(boolean)" | "(unset)" ;
+
+(* SECTION 18 initializers: Constant-expression attachment aliases *)
+
+(* These attachment aliases intentionally share structural syntax while
+   retaining distinct compiler contexts. Identical bodies do not imply
+   identical constant-expression validation; see php.md. *)
+
+constant-expression =
+    expression ;
+
+parameter-default =
+    constant-expression ;
+
+property-default =
+    constant-expression ;
+
+class-constant-initializer =
+    constant-expression ;
+
+global-constant-initializer =
+    constant-expression ;
+
+enum-case-initializer =
+    constant-expression ;
+
+(* SECTION 19 matched: Matched/unmatched statement machinery *)
+
+(* Ordinary EBNF encodes PHP/Bison dangling-else behavior with matched and
+   unmatched statements. The nearest unmatched if propagates through while,
+   for, foreach and declare bodies, including elseif continuations. Alternative
+   syntax keeps its closed-inner-statement boundary in this same family. *)
+
+matched-statement =
+    simple-statement | matched-if-statement
+    | matched-while-statement | matched-for-statement
+    | matched-foreach-statement | matched-declare-statement ;
+
+simple-statement =
+    inline-html
+    | compound-statement
+    | do-statement
+    | switch-statement
+    | try-statement
+    | expression-statement
+    | void-cast-statement
+    | echo-statement
+    | global-statement
+    | static-statement
+    | unset-statement
+    | return-statement
+    | break-statement
+    | continue-statement
+    | goto-statement
+    | label-statement
+    | empty-statement ;
+
+unmatched-statement =
+    unmatched-if-statement | unmatched-while-statement
+    | unmatched-for-statement | unmatched-foreach-statement | unmatched-declare-statement ;
+
+matched-if-statement =
+    "if" , "(" , expression , ")" , matched-statement ,
+    { "elseif" , "(" , expression , ")" , matched-statement } , "else" , matched-statement
+    | alternative-if-statement ;
+
+unmatched-if-statement =
+    "if" , "(" , expression , ")" ,
+    ( statement
+    | matched-statement , { "elseif" , "(" , expression , ")" , matched-statement } ,
+      ( "elseif" , "(" , expression , ")" , unmatched-statement
+      | "else" , unmatched-statement )
+    | matched-statement , "elseif" , "(" , expression , ")" , matched-statement ,
+      { "elseif" , "(" , expression , ")" , matched-statement } ) ;
+
+alternative-if-statement =
+    "if" , "(" , expression , ")" , ":" ,
+    ( inner-statement-list
+    | [ closed-inner-statement-list ] , ( alt-elseif-list | alt-else-clause ) ) , "endif" , ";" ;
+
+closed-inner-statement-list =
+    { inner-statement } , ( matched-statement | inner-declaration ) ;
+
+matched-while-statement =
+    "while" , "(" , expression , ")" , matched-statement
+    | "while" , "(" , expression , ")" , ":" , inner-statement-list ,
+      "endwhile" , ";" ;
+
+unmatched-while-statement =
+    "while" , "(" , expression , ")" , unmatched-statement ;
+
+matched-for-statement =
+    "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
+      for-expression-list , ")" , matched-statement
+    | "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
+      for-expression-list , ")" , ":" , inner-statement-list , "endfor" , ";" ;
+
+unmatched-for-statement =
+    "for" , "(" , for-expression-list , ";" , for-condition-expression-list , ";" ,
+      for-expression-list , ")" , unmatched-statement ;
+
+matched-foreach-statement =
+    "foreach" , "(" , expression , "as" , foreach-target , ")" , matched-statement
+    | "foreach" , "(" , expression , "as" , foreach-target , ")" , ":" ,
+      inner-statement-list , "endforeach" , ";" ;
+
+unmatched-foreach-statement =
+    "foreach" , "(" , expression , "as" , foreach-target , ")" , unmatched-statement ;
+
+matched-declare-statement =
+    "declare" , "(" , declare-directive-list , ")" , matched-statement
+    | "declare" , "(" , declare-directive-list , ")" , ":" ,
+      inner-statement-list , "enddeclare" , ";" ;
+
+unmatched-declare-statement =
+    "declare" , "(" , declare-directive-list , ")" , unmatched-statement ;
+
+alt-elseif-list =
+    "elseif" , "(" , expression , ")" , ":" ,
+    ( inner-statement-list
+    | [ closed-inner-statement-list ] , ( alt-elseif-list | alt-else-clause ) ) ;
+
+alt-else-clause =
+    "else" , ":" , inner-statement-list ;
+
+(* SECTION 20 precedence: Generated precedence/prefix families *)
+
+(* Each complete expression is followed by its pending-prefix counterpart.
+   Operator order and optional/repeated tails preserve precedence and binding.
+   Owned by tools/8.5/generate-expressions.php; do not edit generated rules.
+   Consumers use this standalone EBNF without running the generator. *)
+
+(* BEGIN GENERATED EXPRESSION PRECEDENCE RULES *)
+
+logical-or-expression =
+    logical-xor-expression , { "or" , logical-xor-expression } ;
+
+logical-or-prefix-context =
+      logical-xor-prefix-context
+    | logical-or-expression , "or" , [ logical-xor-prefix-context ] ;
+
+logical-xor-expression =
+    logical-and-expression , { "xor" , logical-and-expression } ;
+
+logical-xor-prefix-context =
+      logical-and-prefix-context
+    | logical-xor-expression , "xor" , [ logical-and-prefix-context ] ;
+
+logical-and-expression =
+    print-expression , { "and" , print-expression } ;
+
+logical-and-prefix-context =
+      print-prefix-context
+    | logical-and-expression , "and" , [ print-prefix-context ] ;
+
+coalesce-expression =
+    boolean-or-expression , [ "??" , coalesce-expression ] ;
+
+coalesce-prefix-context =
+      boolean-or-prefix-context
+    | boolean-or-expression , "??" , { boolean-or-expression , "??" } , [ boolean-or-prefix-context ] ;
+
+boolean-or-expression =
+    boolean-and-expression , { "||" , boolean-and-expression } ;
+
+boolean-or-prefix-context =
+      boolean-and-prefix-context
+    | boolean-or-expression , "||" , [ boolean-and-prefix-context ] ;
+
+boolean-and-expression =
+    bitwise-or-expression , { "&&" , bitwise-or-expression } ;
+
+boolean-and-prefix-context =
+      bitwise-or-prefix-context
+    | boolean-and-expression , "&&" , [ bitwise-or-prefix-context ] ;
+
+bitwise-or-expression =
+    bitwise-xor-expression , { "|" , bitwise-xor-expression } ;
+
+bitwise-or-prefix-context =
+      bitwise-xor-prefix-context
+    | bitwise-or-expression , "|" , [ bitwise-xor-prefix-context ] ;
+
+bitwise-xor-expression =
+    bitwise-and-expression , { "^" , bitwise-and-expression } ;
+
+bitwise-xor-prefix-context =
+      bitwise-and-prefix-context
+    | bitwise-xor-expression , "^" , [ bitwise-and-prefix-context ] ;
+
+bitwise-and-expression =
+    equality-expression , { "&" , equality-expression } ;
+
+bitwise-and-prefix-context =
+      equality-prefix-context
+    | bitwise-and-expression , "&" , [ equality-prefix-context ] ;
+
+equality-expression =
+    relational-expression , [ ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , relational-expression ] ;
+
+equality-prefix-context =
+      relational-prefix-context
+    | relational-expression , ( "==" | "!=" | "===" | "!==" | "<=>" | "<>" ) , [ relational-prefix-context ] ;
+
+relational-expression =
+    pipe-expression , [ ( "<" | "<=" | ">" | ">=" ) , pipe-expression ] ;
+
+relational-prefix-context =
+      pipe-prefix-context
+    | pipe-expression , ( "<" | "<=" | ">" | ">=" ) , [ pipe-prefix-context ] ;
+
+pipe-expression =
+    concatenation-expression , { "|>" , concatenation-expression } ;
+
+pipe-prefix-context =
+      concatenation-prefix-context
+    | pipe-expression , "|>" , [ concatenation-prefix-context ] ;
+
+concatenation-expression =
+    shift-expression , { "." , shift-expression } ;
+
+concatenation-prefix-context =
+      shift-prefix-context
+    | concatenation-expression , "." , [ shift-prefix-context ] ;
+
+shift-expression =
+    additive-expression , { ( "<<" | ">>" ) , additive-expression } ;
+
+shift-prefix-context =
+      additive-prefix-context
+    | shift-expression , ( "<<" | ">>" ) , [ additive-prefix-context ] ;
+
+additive-expression =
+    multiplicative-expression , { ( "+" | "-" ) , multiplicative-expression } ;
+
+additive-prefix-context =
+      multiplicative-prefix-context
+    | additive-expression , ( "+" | "-" ) , [ multiplicative-prefix-context ] ;
+
+multiplicative-expression =
+    boolean-not-expression , { ( "*" | "/" | "%" ) , boolean-not-expression } ;
+
+multiplicative-prefix-context =
+      boolean-not-prefix-context
+    | multiplicative-expression , ( "*" | "/" | "%" ) , [ boolean-not-prefix-context ] ;
+
+power-expression =
+    clone-expression , [ "**" , power-expression ] ;
+
+power-prefix-context =
+      clone-prefix-context
+    | clone-expression , "**" , { clone-expression , "**" } , [ clone-prefix-context ] ;
+
+(* END GENERATED EXPRESSION PRECEDENCE RULES *)
+
+(* SECTION 21 yield: Yield-key / closed-yield machinery *)
+
+(* The closed-yield family prevents the wrong yield from capturing a following
+   =>. Keep complete and pending-prefix forms together: this preserves key
+   operand spans, not just accepted token sequences. The marked binary subset
+   is owned by tools/8.5/generate-expressions.php; do not edit it manually. *)
+
+yield-key-expression =
+    yield-from-expression
+    | [ yield-from-prefix-context ] , "yield" , yield-key , "=>" , yield-key-expression ;
+
+yield-key-prefix-context =
+    yield-from-prefix-context
+    | [ yield-from-prefix-context ] , "yield" , yield-key , "=>" , [ yield-key-prefix-context ] ;
+
+closed-yield-throw-expression =
+    closed-yield-arrow-expression
+    | [ closed-yield-arrow-prefix-context ] , "throw" , closed-yield-throw-expression ;
+
+closed-yield-arrow-expression =
+    closed-yield-include-expression | [ closed-yield-include-prefix-context ] , arrow-function-header , closed-yield-arrow-expression ;
+
+closed-yield-arrow-prefix-context =
+    closed-yield-include-prefix-context | [ closed-yield-include-prefix-context ] , arrow-function-header , [ closed-yield-arrow-prefix-context ] ;
+
+closed-yield-include-expression =
+    closed-yield-logical-or-expression
+    | [ closed-yield-logical-or-prefix-context ] , include-operator , closed-yield-include-expression ;
+
+closed-yield-include-prefix-context =
+    closed-yield-logical-or-prefix-context | [ closed-yield-logical-or-prefix-context ] , include-operator , [ closed-yield-include-prefix-context ] ;
+
+(* BEGIN GENERATED CLOSED-YIELD RULES *)
+
+closed-yield-logical-or-expression =
+    closed-yield-logical-xor-expression , { "or" , closed-yield-logical-xor-expression } ;
+
+closed-yield-logical-or-prefix-context =
+      closed-yield-logical-xor-prefix-context
+    | closed-yield-logical-or-expression , "or" , [ closed-yield-logical-xor-prefix-context ] ;
+
+closed-yield-logical-xor-expression =
+    closed-yield-logical-and-expression , { "xor" , closed-yield-logical-and-expression } ;
+
+closed-yield-logical-xor-prefix-context =
+      closed-yield-logical-and-prefix-context
+    | closed-yield-logical-xor-expression , "xor" , [ closed-yield-logical-and-prefix-context ] ;
+
+closed-yield-logical-and-expression =
+    closed-yield-print-expression , { "and" , closed-yield-print-expression } ;
+
+closed-yield-logical-and-prefix-context =
+      closed-yield-print-prefix-context
+    | closed-yield-logical-and-expression , "and" , [ closed-yield-print-prefix-context ] ;
+
+(* END GENERATED CLOSED-YIELD RULES *)
+
+closed-yield-print-expression =
+    closed-yield-yield-expression
+    | [ closed-yield-yield-prefix-context ] , "print" , closed-yield-print-expression ;
+
+closed-yield-print-prefix-context =
+    closed-yield-yield-prefix-context | [ closed-yield-yield-prefix-context ] , "print" , [ closed-yield-print-prefix-context ] ;
+
+closed-yield-yield-expression =
+    yield-key-expression | [ yield-key-prefix-context ] , "yield" ;
+
+closed-yield-yield-prefix-context =
+    yield-key-prefix-context ;
+
+yield-key =
+    closed-yield-yield-expression
+    | [ yield-key-prefix-context ] ,
+      ( "throw" , closed-yield-throw-expression
+      | arrow-function-header , closed-yield-arrow-expression
+      | include-operator , closed-yield-include-expression
+      | "print" , closed-yield-print-expression ) ;

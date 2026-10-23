@@ -1,0 +1,6 @@
+{
+    "name": "PHP86-001 clone",
+    "firstSupportedVersion": "8.6",
+    "fixture": "../../php/8.6/valid/pfa-clone.php",
+    "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y"
+}

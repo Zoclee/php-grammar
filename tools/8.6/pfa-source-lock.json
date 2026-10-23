@@ -1,0 +1,53 @@
+{
+    "finding": "PHP86-001",
+    "phpSource": {
+        "branch": "PHP-8.6",
+        "tag": "php-8.6.0RC4",
+        "tagObject": "2363aac87f03893686ee28db710ed2ca11cf701e",
+        "commit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "commitDate": "2026-10-21T14:39:23Z"
+    },
+    "baseline": {
+        "repositoryCommit": "d4cd2c5446a9de7fa783533ef8d9e8f8f0fad3ee",
+        "phpSource": {
+            "branch": "PHP-8.5",
+            "commit": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+            "lock": "tools/8.5/source-lock.json"
+        },
+        "ebnf": "2acfcf904ba14cbdfab787854cee449205a805cdc8ac8c24bad1fd44983b4ceb",
+        "markdown": "bbb81cbda09da80a6e326c5153ccfb4bc436ba9e306a3e1fa419b1ff002f6d7f"
+    },
+    "modifiedProductions": [
+        "ordinary-argument-list",
+        "first-class-callable-arguments",
+        "clone-argument-list",
+        "argument",
+        "argument-no-expression"
+    ],
+    "files": {
+        "Zend/zend_language_parser.y": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+        "Zend/zend_language_scanner.l": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+        "Zend/zend_compile.c": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+        "Zend/zend_ast.c": "e6e793245e60d377f109b3d1e154665e84ab9a5cc60736576c4ff89d99eee5a9",
+        "Zend/zend_partial.c": "149db16c425a107c1d969e0bf7704eff1bfb5b1dee626f76bb7bacd99d64ecff",
+        "Zend/tests/partial_application/rfc_examples_overview.phpt": "96f8a83bac718695a5bde39b39107e5ada3be19e69308b12ede1e22b598bcade",
+        "Zend/tests/partial_application/rfc_examples_const_expr.phpt": "a472adcc416e7013013e94bbcc1ae830a165063cbebcd7fff82750b8cc512947",
+        "Zend/tests/partial_application/named_placeholders.phpt": "20a8bc9708277436af082cef456c00b6359146e28d2fcd0237bf37968ae33f94",
+        "Zend/tests/partial_application/clone.phpt": "2fc00f119fd47e3a897440f7a4d3c6b85dd5109f7ed801dc53724cfb19e22c68",
+        "Zend/tests/partial_application/optional_placeholder.phpt": "35e01e4187408b47d56db98d63fb60c9bc9d898f118515ab7790311eb4ab06e5",
+        "Zend/tests/partial_application/compile_errors_001.phpt": "edec00ff601d5fe160adcfbe21e1e4ad0067bb30da41526e36f7123f7220b979",
+        "Zend/tests/partial_application/compile_errors_002.phpt": "c0d2a439a35e8dc88e262a32bbaaeb1aa882fef27e5596032c826fc0b18a87d6",
+        "Zend/tests/partial_application/compile_errors_003.phpt": "e8bde981b21cabf7bbe528c21b3e9cc1f7c98b07541874835f988171bf608390",
+        "Zend/tests/partial_application/compile_errors_004.phpt": "e9ae78ffb2085295d6cc2108c8e6fff769bd67dac8b812a9d5a6bd94be5719e3",
+        "Zend/tests/partial_application/compile_errors_005.phpt": "2604219436b1e9245fb39203ecaf511cf3ce4d0e36a59a01e2740172a279830b",
+        "Zend/tests/partial_application/compile_errors_006.phpt": "bdbcd72e7cbb962c02b83b3b1981a98c61d32d88850fdc91c82ddc9271183b77",
+        "Zend/tests/partial_application/constexpr_001.phpt": "a6aaa6bca716959dbb1deefbc0a21c759f59a0c33d1d851e233da1d4bbc93f97",
+        "Zend/tests/partial_application/constexpr_002.phpt": "8de890bcba8c0c90cc6aae998c77694636152c1e397317f6fa2b2c48ff88608a",
+        "Zend/tests/partial_application/constexpr_003.phpt": "1769eaed6a680c739cc5e6b146c2f01fbfa670c13ad77de3fbaa31614061b604",
+        "Zend/tests/partial_application/constexpr_004.phpt": "1c03f4e96d4441573c5f9e9216028640ceb7368713600c429613628038548a1e",
+        "Zend/tests/partial_application/constexpr_005.phpt": "745f7c091bf2a366cea866ebd60c443cfb754d7e3e02029009eb45e909196adb",
+        "Zend/tests/partial_application/constexpr_006.phpt": "860c673653274738feb788f8f64ddddaefeb9a53b4e3924dd0369c09d9732217",
+        "Zend/tests/partial_application/constexpr_007.phpt": "3791f691cfb5c225d1e81c971d5a637c45bab84ceb937ad5b5fe27268b7fd161",
+        "Zend/tests/partial_application/constexpr_008.phpt": "96bc0053ee9aa0ff7e90e3e1d9e1be9f8f0b0b1283d9f6e3ea9d4684973ec6af"
+    }
+}
