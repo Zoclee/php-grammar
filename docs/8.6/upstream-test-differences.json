@@ -11247,5 +11247,14 @@
             },
             "review": "discovery index; not an assertion of individual semantic review"
         }
-    ]
+    ],
+    "phase21": {
+        "reconciliation": "upstream-test-reconciliation.json",
+        "note": "Original Zend-only discovery records preserved. Expanded ledger explicitly distinguishes indexed, examined-unresolved, and resolved."
+    },
+    "phase22": {
+        "riskLedger": "upstream-test-reconciliation.json",
+        "riskEvidence": "discovery-risk-assessment.json",
+        "originalZendRecordsPreserved": true
+    }
 }

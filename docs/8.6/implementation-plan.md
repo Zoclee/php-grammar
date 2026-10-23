@@ -1,10 +1,23 @@
 # Proposed minimal PHP 8.6 implementation plan
 
 This document proposes future work. It neither starts Phase 3 nor creates a
-grammar package. [PHP86-013](language-change-inventory.md#php86-013--remaining-exhaustive-audit-work)
-must be resolved and this research reviewed before baseline copying proceeds.
+grammar package. Material discovery gaps in
+[PHP86-013](language-change-inventory.md#php86-013--remaining-exhaustive-audit-work)
+must be resolved or adequately bounded and this research reviewed before
+baseline copying proceeds. Final-certification obligations can remain open
+without automatically blocking an unchanged baseline.
+
+The current [Phase 2.2 risk assessment](discovery-risk-assessment.md) retains
+**NOT READY** for baseline creation, complete syntax implementation and final
+certification for separate reasons. Its phase-specific blocker matrix supersedes
+the earlier blanket treatment of library/API integration and raw ledger totals.
 
 ## Research completion gate
+
+Apply these steps by source risk, not by requiring individual inspection of
+every library test. Evidence-backed grouped exclusions are allowed; filenames,
+expected-output changes and absence of a headline RFC are insufficient.
+Full unrelated API integration/runtime certification is not a copying gate.
 
 1. Disposition every changed upstream test family, including relevant opcache
    tests outside the Zend-only index. Separate source changes from diagnostic,
@@ -77,3 +90,58 @@ observations here are evidence, not package registration or conformance fixtures
 Known 8.5 discarded-declaration, contextual-adapter and qualified-static issues
 remain separate historical correction work. No requirement to make 8.6
 standalone authorizes changes to the preceding version.
+
+## Phase 2.1 readiness decision and revised obligations
+
+**NOT READY.** The [closure assessment](discovery-closure.md) and machine-readable
+ledgers preserve unfinished work; PHP86-013 remains open. No baseline copy,
+grammar directory, manifest registration, fixture change, or release-gate change
+is authorized by this report.
+
+Resolve PHP86-014 before deciding whether assignment-based write contexts need
+new contextual acceptance rules. RC4 lint accepts ordinary/list assignment
+dimension writes that fail controlled execution with an invalid-opcode error;
+the reference-assignment control succeeds. Preserve these as distinct cases,
+including negative read/write and destructuring controls. Reconcile the intended
+language boundary and exact-pin implementation before changing
+`assignment-expression`, `variable-expression`, or dereference documentation.
+
+Continue the research gate using the ledgers: disposition 5,862 indexed tests
+and 87 examined records with unresolved external inputs as relevant or excluded
+with evidence, review 555 indexed compiler hunks and remaining source paths,
+and complete each RFC's selected-pin component review. Primary implementation
+ancestry for 28 candidates does not prove that all optional parts survived at
+RC4. Stream-errors and optional-placeholder commit checks remain unresolved;
+preserve existing source evidence instead of treating an unmerged PR or
+placeholder URL as implementation proof.
+
+The 41 new probes strengthen PHP86-001/003/004/005/006/007/011 evidence. Use their
+explicit lint, declaration-link, and controlled-runtime stages for future
+conformance work. Dead statements and folded-away declarations require separate
+expectations. The PHP 8.5 package and historical certification remain untouched.
+
+## Phase 2.2 implementation boundaries
+
+Keep PHP86-014 blocked specifically for assignment-based writable-target edits.
+The pinned compiler/VM operand mismatch explains the invalid-opcode observation
+but does not settle intended syntax. A successful reference-assignment write
+must not authorize ordinary/list assignment writes. This bounded discrepancy
+alone need not block an unchanged baseline after discovery is adequate.
+
+Add PHP86-015 to the future contextual-validation work: printf specialization
+changes whether discarded unset casts are visited, in both acceptance
+directions. Map `function-call`, `cast-expression`, `conditional-expression`,
+`coalesce-expression`, `boolean-and-expression` and their specification
+constraints. No terminal or EBNF change follows from the current evidence.
+Use direct/dynamic/fully qualified calls, live/dead/discarded controls and
+one/two-argument boundaries. The new probes are research observations, not
+registered conformance fixtures.
+
+Prioritize the remaining source queue by checks and traversal: optimized calls
+and fallback paths, constant/declaration traversal, interface inheritance order,
+and reference/writable contexts. Associate their relevant PHPTs before disposing
+of unrelated groups. The 255 mechanical C hunks, 82 Windows test deltas and 20
+API-only RFC scopes now have explicit bounded exclusions; do not re-expand
+these into a requirement for full runtime certification. Other records retain
+their unresolved status. PHP86-013 remains open because material discovery is
+unfinished, not because a numerical coverage target has not been met.

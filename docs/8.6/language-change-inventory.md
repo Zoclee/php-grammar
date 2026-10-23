@@ -1,5 +1,9 @@
 # PHP 8.6 language-change inventory
 
+Current assessment: [Phase 2.2 risk review](discovery-risk-assessment.md).
+PHP86-013 remains open; PHP86-014 is bounded to writable-target implementation,
+and PHP86-015 records a further optimized-call traversal difference.
+
 Stable IDs refer to the [selected pins](source-discovery.md), not moving master.
 In every record, an upstream path is relative to this immutable
 [RC4 source tree](https://github.com/php/php-src/tree/f23b4c222cebe33be93ee8ecaaa14390c5507a08).
@@ -8,6 +12,50 @@ The [source hashes](source-evidence.json), [PHPT hashes](upstream-test-differenc
 and [paired observations](syntax-probes.json) supplement these references.
 Unless explicitly stated, lexical impact is **none identified**, and local test
 obligations below are future work, not permanent fixtures created in this phase.
+
+## Phase 2.2 blocker matrix
+
+These assignments separate source-evidence readiness from required future
+implementation validation. “Validation” means evidence still required for final
+certification, not a newly discovered syntax uncertainty. Existing per-ID
+production, source and test contracts below remain applicable.
+
+| ID | Phase 3 baseline | Phase 4 implementation | Final certification |
+|---|---|---|---|
+| PHP86-001 | No independent blocker | Verified PFA list/context edits; optimized traversal interactions must be separated | PFA structural/contextual, initializer and boundary validation |
+| PHP86-002 | No | No extra production; preserve required versus optional distinction | Optionality evidence; unresolved independent ancestry visible |
+| PHP86-003 | No | Verified readonly-default contextual relaxation only | Declaration/linking and negative-boundary validation |
+| PHP86-004 | No | Verified constant-object paths only; do not absorb PHP86-014 | Write/reference/unset and direct-constant negative validation |
+| PHP86-005 | No | Verified Override flag/linking changes only | Parent/interface/private/missing and delayed-linking validation |
+| PHP86-006 | No | Permit debugInfo; preserve other enum constraints | Linking and magic-method validation |
+| PHP86-007 | No | Return/yield restriction; do not generalize to foreach | Live/dead/discarded and boundary validation |
+| PHP86-008 | No | No speculative type removal or historical repair | Exact-pin oracle discrepancy disposition |
+| PHP86-009 | No | No EBNF edit for metadata | Parameter/comment compatibility validation |
+| PHP86-010 | No | Warnings only; no token reservation or syntax removal | Accepted-deprecated forms and contextual-stage validation |
+| PHP86-011 | Through PHP86-013 | Blocks blanket optimizer no-impact treatment; see PHP86-014/015 | Reference, closure and optimized-call reconciliation |
+| PHP86-012 | Unrelated API integration does not block | Exclude unimplemented proposals and API-only scopes | Current proposal-index review; unrelated API runtime certification is out of scope |
+| PHP86-013 | **Yes: material discovery gaps** | **Yes: unisolated contextual/linking/optimizer scope** | **Yes: remains open** |
+| PHP86-014 | No independent blocker once discovery is adequate | **Blocks assignment-based writable-target changes** | Intended behavior and exact-pin source/binary reconciliation |
+| PHP86-015 | Through PHP86-013 optimizer-discovery gap | **Blocks unverified traversal rules; no EBNF addition** | Both directions of acceptance change, call dispatch and discarded-context boundaries |
+
+## PHP86-015 — Optimized printf and discarded-expression validation
+
+| Field | Finding |
+|---|---|
+| Classification / confidence | Material contextual traversal difference; pinned implementation and paired lint observations support the mechanism; intended language boundary remains unresolved |
+| PHP 8.5 → RC4 | `printf(false && (unset)$x)` passes → rejects; `printf(true ? "ok" : (unset)$x)` and `printf("ok" ?? (unset)$x)` reject → pass on the tested executables |
+| Productions / documentation | Existing `function-call`, `cast-expression`, `conditional-expression`, `coalesce-expression`, boolean-expression families; Constant-expression validation order and Ordinary compilation versus constant folding |
+| Source evidence | `Zend/zend_compile.c`: new `zend_compile_func_printf` at RC4 line 5264, dispatch at 5586 in `zend_try_compile_special_func_ex`, existing `zend_compile_func_sprintf` fallback and `zend_eval_const_expr`; raw hunks old/new 4960/5260 and 5042/5582 |
+| Mechanism | Specialized printf invokes constant evaluation before ordinary compilation; AND/OR evaluation visits both children, whereas known ternary/coalesce choices can discard an unvisited branch |
+| Controls | Dynamic printf and discarded enclosing closure pass both; live unset cast fails both; sprintf already rejects discarded AND form in both; fully qualified printf and unreachable statement retain the new RC4 rejection |
+| Probe evidence | `phase22-printf-*`, `phase22-sprintf-discarded-unset` in syntax-probes.json; lint only; no new executable-provenance claim |
+| Upstream test status | No exact upstream PHPT for these minimized forms established; relevant optimization tests remain part of the source/test association queue |
+| Implementation | No new terminal or structural cast rule. Reconcile call-dispatch-dependent contextual traversal before documenting a universal restriction or broad optimizer exclusion |
+| Test obligations | Direct, fully qualified and dynamic calls; one/two arguments; AND/OR versus conditional/coalesce; live, unreachable and folded-away declaration pairs; positive/negative version boundaries; appropriate source-corresponding interpreter |
+| Remaining uncertainty | Intended compatibility boundary, exact normative 8.5 pin execution, complete optimized-call interactions and final-release behavior |
+
+PHP86-011's earlier provisional no-impact language does not cover this finding.
+PHP 8.5's historical specification and certification remain unchanged.
 
 ## PHP86-001 — Partial function application and callable argument lists
 
@@ -187,9 +235,37 @@ an explicit final cross-check.
 | Field | Finding |
 |---|---|
 | Classification / confidence | Unresolved research completeness, not a proposed language feature |
-| 8.5 / 8.6 behavior | No blanket equivalence conclusion; 1,124 changed Zend PHPTs indexed, not individually semantically reconciled |
+| 8.5 / 8.6 behavior | No blanket equivalence conclusion; Phase 2.1 indexes 5,989 changed PHPTs, with 40 resolved, 87 examined but unresolved, and 5,862 only indexed |
 | Productions / context | Reference/list/pipe interactions; constant folding and delayed declarations; possible compiler/optimizer interactions outside identified findings |
 | Source evidence | Full-tree hashes, core-file inventory, raw local diffs, compiler commit history and changed test index; absence of durable per-hunk disposition prevents exhaustive certification |
 | RFC evidence | Per-library selected-pin verification and recent rejected/withdrawn index reconciliation incomplete; captured metadata is not full implementation verification |
 | Upstream/local obligation | Triage all changed test families including relevant ext/opcache tests; attach each acceptance difference to source and minimal paired probe; add precise per-finding PHPT anchors where currently only a family is recorded |
 | Action / disposition | Finish research before Phase 3 readiness; do not invent productions, silently waive coverage, or repair historical 8.5 defects |
+
+Phase 2.1 adds [test](upstream-test-reconciliation.json) and
+[compiler](compiler-change-reconciliation.json) ledgers, refreshes all 58 RFC
+snapshots, verifies 28 primary candidate implementation ancestries, and adds 41
+paired probes. This is progress, not closure. External-input review, 555 indexed
+compiler hunks, remaining source paths, per-component RFC integration, and
+excluded-index reconciliation remain substantive obligations. See the
+[closure assessment](discovery-closure.md).
+
+## PHP86-014 — Assignment-based write contexts and invalid-opcode discrepancy
+
+| Field | Finding |
+|---|---|
+| Classification / confidence | Newly discovered contextual/compiler difference; partially unresolved source-validity discrepancy, not an authorized syntax addition |
+| PHP 8.5 | Ordinary, reference, and list assignment used as dimension-write bases fail the paired lint probes with `Cannot use temporary expression in write context` |
+| PHP 8.6 | Those probes pass lint; reference assignment `($v = &$w)[0] = 2` executes and mutates both aliases; ordinary `($v = [1])[0] = 2` and list `([$v] = $w)[0] = 2` fail controlled execution with `Invalid opcode 23/2/1` |
+| Productions | `assignment-expression`, `variable-expression`, `array-object-dereferenceable`; existing postfix/dimension forms and contextual writable-target rules require review; no EBNF edit is justified yet |
+| Immutable source | [RC4 `Zend/zend_compile.c`, `zend_compile_var_inner`](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L12763): new ASSIGN/ASSIGN_REF dispatch; `zend_compile_assign`, `zend_compile_assign_ref`, `zend_compile_list_assign`, and result-context handling; paired source hashes remain in `source-evidence.json` |
+| Upstream regression | `Zend/tests/gh20628_005.phpt` covers the neighboring dimension-read case; `gh20628_003.phpt` covers nested reference assignments. Neither is an exact upstream regression for the new write failure |
+| Observations | `phase21-assignment-dimension-*`, `phase21-reference-assignment-dimension-*`, `phase21-list-assignment-dimension-*`, and `phase21-temporary-array-write-control` in `syntax-probes.json` |
+| Boundaries | Increment, unset, coalesce-assignment, and reference-to-dimension probes show lint differences. Destructuring-target and literal-array-write controls fail both versions. Lint alone does not establish runtime validity |
+| Remaining uncertainty | Determine intended language behavior and exact-pin executable behavior; distinguish compiler dispatch changes, invalid opcode generation, and legitimate writable reference results. The RC4 binary is not a reproducibly verified exact-pin build |
+| Future obligations | Separate compile/link/runtime boundary evidence for ordinary/reference/list assignments, read versus write contexts, live versus discarded expressions, and optimizer profiles after resolving the discrepancy |
+| Action | Blocks closure of PHP86-013. Do not blanket-relax writable-target restrictions, add speculative productions, or repair PHP 8.5 in this change |
+
+This refines PHP86-011's provisional treatment of reference-flow optimization:
+some neighboring changes have observable compiler acceptance consequences.
+PHP86-004 remains the separate, source-backed constant-object-write finding.

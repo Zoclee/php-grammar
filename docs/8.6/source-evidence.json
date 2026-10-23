@@ -705,5 +705,29 @@
             "old": "e04edc382c28ba2a9a5d609c915359687417607f6b6bcc9f1e7b5dbe01fbaa92",
             "new": "cc3e658f7877f0cbca187467d70aa9d80a136814c985843a41f035a25a6fc7ef"
         }
+    },
+    "phase21": {
+        "date": "2026-10-23",
+        "hashChecks": 341,
+        "hashFailures": 0,
+        "preservationFiles": 1565,
+        "schedule": {
+            "url": "https://wiki.php.net/todo/php86",
+            "sha256": "1bd82bfb4fd874984c3c3f03f18f45029c20b36bbc205fe1fe494f4049ed14ba",
+            "observation": "RC4 announced October 21; RC5 scheduled November 5. Baselines unchanged."
+        },
+        "testLedger": "upstream-test-reconciliation.json",
+        "compilerLedger": "compiler-change-reconciliation.json",
+        "closureReport": "discovery-closure.md",
+        "readiness": "NOT READY"
+    },
+    "phase22": {
+        "date": "2026-10-23",
+        "riskEvidence": "discovery-risk-assessment.json",
+        "sourcePinsChanged": false,
+        "newProbeSources": 20,
+        "totalProbeSources": 115,
+        "newMaterialFinding": "PHP86-015",
+        "exactPinBuildProduced": false
     }
 }

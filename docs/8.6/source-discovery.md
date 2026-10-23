@@ -1,5 +1,9 @@
 # PHP 8.6 Phase 2 source discovery
 
+For the current assessment, see the
+[Phase 2.2 risk review](discovery-risk-assessment.md). Original and Phase 2.1
+evidence below remains historical; the source baselines are unchanged.
+
 Research date: October 22, 2026. This is a prerelease research record, not a
 grammar package, release certification, or authorization to begin Phase 3.
 The repository baseline is `796da52c86a742dd82227d312df22452aefdec42`.
@@ -50,7 +54,7 @@ built October 21 at 15:12:05. Its reported release matches the selected tag;
 the binary was not independently rebuilt from the pin. Hashes identify both
 downloaded archive and executable, without claiming reproducible-build proof.
 
-[Syntax probes](syntax-probes.json) preserve 54 temporary sources and both
+[Syntax probes](syntax-probes.json) initially preserved 54 temporary sources and both
 observations (108 lint invocations), including exit codes and diagnostics.
 The command for each interpreter and file was:
 
@@ -116,3 +120,53 @@ Initial PHPUnit attempts lacked `mbstring`. Re-running with
 `-d extension_dir=.audit/php85/ext -d extension=mbstring` succeeded; no installed
 configuration was edited. These checks validate repository integrity and the
 existing package, not PHP 8.6 conformance. No certification report was refreshed.
+
+## Phase 2.1 follow-up (October 23, 2026)
+
+The [closure assessment](discovery-closure.md) records an **incomplete audit and
+NOT READY** decision. PHP86-013 remains open. All 341 recorded artifact and
+selected-file hash checks passed before comparison; neither source pin changed.
+The refreshed official schedule still announces RC4 on October 21 and schedules
+RC5 for November 5. Its snapshot hash is recorded in `source-evidence.json`.
+
+The expanded [PHPT ledger](upstream-test-reconciliation.json) indexes 5,989
+changed tests, including 1,124 Zend and 198 opcache tests. Only 127 records have
+received the documented focused or homogeneous-delta examination: 40 are
+resolved, 87 retain external/generated-input obligations, and 5,862 remain
+merely indexed. These are not passing-test or completeness counts.
+
+Forty-one additional paired probes bring the evidence to 95 sources and 190
+observations. New records distinguish lint, declaration linking, and controlled
+runtime checks. Only the short sources preserved in those records were executed;
+no upstream PHPT suite was executed. PHP86-014 records a newly observed
+lint/runtime disagreement for assignment-based dimension writes. The executable
+provenance limitations above still apply.
+
+All 58 RFC snapshots were refreshed without content changes. Primary candidate
+implementation ancestry was verified for 28 of 30 accepted/implemented
+candidates; this does not finish per-component integration or exclusion review.
+The raw compiler ledger inventories 578 hunks in eight files, with 23 examined
+hunks linked to focused review groups. Remaining hunks and other source paths
+are not silently classified as irrelevant.
+
+## Phase 2.2 follow-up (October 23, 2026)
+
+The risk report and machine-readable companion preserve bounded exclusions
+and independent baseline/implementation/certification decisions. PHP86-013
+remains open. PHP86-014 is bounded to assignment-based writable contexts;
+PHP86-015 adds the printf traversal discrepancy. Material source/test
+association, compiler/linking interactions and RFC index review remain
+unfinished, so this is not discovery closure.
+
+Twenty additional lint-only sources bring the probe ledger to 115 sources and
+230 paired observations. Their command uses the same explicit executables,
+`-n -d error_reporting=-1 -l`; no new runtime probes or upstream PHPTs were
+executed. Source-level VM evidence explains PHP86-014 but does not establish
+an exact-pin executable or intended syntax. The official GH20628 PR metadata
+was fetched and hashed; no new baseline or final-release claim was introduced.
+
+Current JSON `phase22` counts distinguish individual review from grouped
+exclusion. Low-risk test exclusions have runner/helper/generated-input evidence;
+mechanical C exclusions use restricted token equivalence. API-only proposal
+scope exclusions do not require full library implementation certification.
+Historical status/count fields remain intact for comparison.

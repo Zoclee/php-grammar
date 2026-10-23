@@ -754,5 +754,960 @@
                 "output": "No syntax errors detected in <audit>/php86-probes/discarded-hook.php"
             }
         }
+    },
+    {
+        "id": "phase21-list-reference-argument",
+        "stage": "lint",
+        "source": "<?php\nfunction take(&$x) {} take([&$a] = $b);\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-list-reference-argument.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-list-reference-argument.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-list-reference-nested",
+        "stage": "lint",
+        "source": "<?php\nfunction take(&$x) {} take([[&$a]] = $b);\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-list-reference-nested.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-list-reference-nested.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-list-value-argument",
+        "stage": "lint",
+        "source": "<?php\nfunction take(&$x) {} take([$a] = $b);\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-list-value-argument.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-list-value-argument.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-list-temporary-reference",
+        "stage": "lint",
+        "source": "<?php\n[&$a] = [1];\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot assign reference to non referenceable value in <audit>/php86-probes/phase21-list-temporary-reference.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-list-temporary-reference.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot assign reference to non referenceable value in <audit>/php86-probes/phase21-list-temporary-reference.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-list-temporary-reference.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-nested-reference-assignment",
+        "stage": "lint",
+        "source": "<?php\n$a[] = $b[] = &$a;\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-nested-reference-assignment.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-nested-reference-assignment.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-assignment-dimension-read",
+        "stage": "lint",
+        "source": "<?php\nfunction f(){return [1];} ($v = f())[0];\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-assignment-dimension-read.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-assignment-dimension-read.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-assignment-dimension-write",
+        "stage": "lint",
+        "source": "<?php\n($v = [1])[0] = 2;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-assignment-dimension-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-assignment-dimension-write.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-assignment-dimension-write.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-reference-assignment-dimension-write",
+        "stage": "lint",
+        "source": "<?php\n($v = &$w)[0] = 2;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-reference-assignment-dimension-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-reference-assignment-dimension-write.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-reference-assignment-dimension-write.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-list-assignment-dimension-write",
+        "stage": "lint",
+        "source": "<?php\n([$v] = $w)[0] = 2;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-list-assignment-dimension-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-list-assignment-dimension-write.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-list-assignment-dimension-write.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-pipe-reference-return",
+        "stage": "lint",
+        "source": "<?php\nfunction &f(){global $x; return $x;} function &g(){return 42 |> f(...);}\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-pipe-reference-return.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-pipe-reference-return.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-nullsafe-reference-return",
+        "stage": "lint",
+        "source": "<?php\nfunction &f($x){return $x?->f();}\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-nullsafe-reference-return.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot take reference of a nullsafe chain in <audit>/php86-probes/phase21-nullsafe-reference-return.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-nullsafe-reference-return.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-nullsafe-reference-yield",
+        "stage": "lint",
+        "source": "<?php\nfunction &f($x){yield $x?->f();}\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-nullsafe-reference-yield.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot take reference of a nullsafe chain in <audit>/php86-probes/phase21-nullsafe-reference-yield.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-nullsafe-reference-yield.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-nullsafe-reference-discarded-closure",
+        "stage": "lint",
+        "source": "<?php\nfalse && function &($x){return $x?->f();};\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-nullsafe-reference-discarded-closure.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-nullsafe-reference-discarded-closure.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-nullsafe-reference-unreachable-statement",
+        "stage": "lint",
+        "source": "<?php\nfunction &f($x){return; return $x?->f();}\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-nullsafe-reference-unreachable-statement.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot take reference of a nullsafe chain in <audit>/php86-probes/phase21-nullsafe-reference-unreachable-statement.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-nullsafe-reference-unreachable-statement.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-nullsafe-reference-dead-if",
+        "stage": "lint",
+        "source": "<?php\nfunction &f($x){if(false){return $x?->f();}}\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-nullsafe-reference-dead-if.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot take reference of a nullsafe chain in <audit>/php86-probes/phase21-nullsafe-reference-dead-if.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-nullsafe-reference-dead-if.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-ordinary-reference-return",
+        "stage": "lint",
+        "source": "<?php\nfunction &f($x){return $x->f();}\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-ordinary-reference-return.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-ordinary-reference-return.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-pfa-discarded-order",
+        "stage": "lint",
+        "source": "<?php\nfalse && f(..., ?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \",\" in <audit>/php86-probes/phase21-pfa-discarded-order.php on line 2\nErrors parsing <audit>/php86-probes/phase21-pfa-discarded-order.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-pfa-discarded-order.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-pfa-live-order",
+        "stage": "lint",
+        "source": "<?php\nf(..., ?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \",\" in <audit>/php86-probes/phase21-pfa-live-order.php on line 2\nErrors parsing <audit>/php86-probes/phase21-pfa-live-order.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Variadic placeholder must be last in <audit>/php86-probes/phase21-pfa-live-order.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-pfa-live-order.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-pfa-initializer-discarded-unset",
+        "stage": "lint",
+        "source": "<?php\nconst X = false && f((unset) 1, ?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <audit>/php86-probes/phase21-pfa-initializer-discarded-unset.php on line 2\nErrors parsing <audit>/php86-probes/phase21-pfa-initializer-discarded-unset.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in <audit>/php86-probes/phase21-pfa-initializer-discarded-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-pfa-initializer-discarded-unset.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-pfa-ordinary-discarded-unset",
+        "stage": "lint",
+        "source": "<?php\nfalse && f((unset) 1, ?);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <audit>/php86-probes/phase21-pfa-ordinary-discarded-unset.php on line 2\nErrors parsing <audit>/php86-probes/phase21-pfa-ordinary-discarded-unset.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-pfa-ordinary-discarded-unset.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-constant-nonstatic-closure",
+        "stage": "lint",
+        "source": "<?php\nconst X = function() {};\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Closures in constant expressions must be static in <audit>/php86-probes/phase21-constant-nonstatic-closure.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-constant-nonstatic-closure.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Closures in constant expressions must be static in <audit>/php86-probes/phase21-constant-nonstatic-closure.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-constant-nonstatic-closure.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-constant-static-closure",
+        "stage": "lint",
+        "source": "<?php\nconst X = static function() {};\n",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-constant-static-closure.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-constant-static-closure.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-constant-object-reference-list",
+        "stage": "lint",
+        "source": "<?php\n[&OBJ->p] = $a;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Assignments can only happen to writable values in <audit>/php86-probes/phase21-constant-object-reference-list.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-constant-object-reference-list.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-constant-object-reference-list.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-constant-array-write",
+        "stage": "lint",
+        "source": "<?php\nARR[0] = 1;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-constant-array-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-constant-array-write.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-constant-array-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-constant-array-write.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-enum-debug-link",
+        "stage": "declaration-link",
+        "source": "<?php\nenum E { case A; public function __debugInfo(): array {return [];} }\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Enum E cannot include magic method __debugInfo in <audit>/php86-probes/phase21-enum-debug-link.php on line 2\nStack trace:\n#0 {main}"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": ""
+            }
+        }
+    },
+    {
+        "id": "phase21-enum-get-link",
+        "stage": "declaration-link",
+        "source": "<?php\nenum E { case A; public function __get(string $name): mixed {return null;} }\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Enum E cannot include magic method __get in <audit>/php86-probes/phase21-enum-get-link.php on line 2\nStack trace:\n#0 {main}"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Enum E cannot include magic method __get in <audit>/php86-probes/phase21-enum-get-link.php on line 2\nStack trace:\n#0 {main}"
+            }
+        }
+    },
+    {
+        "id": "phase21-override-constant-parent-link",
+        "stage": "declaration-link",
+        "source": "<?php\nclass A {const X=1;} class B extends A {#[\\Override] const X=2;}\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <audit>/php86-probes/phase21-override-constant-parent-link.php on line 2\nStack trace:\n#0 {main}"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": ""
+            }
+        }
+    },
+    {
+        "id": "phase21-override-constant-missing-link",
+        "stage": "declaration-link",
+        "source": "<?php\nclass B {#[\\Override] const X=2;}\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <audit>/php86-probes/phase21-override-constant-missing-link.php on line 2\nStack trace:\n#0 {main}"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: B::X has #[/Override] attribute, but no matching parent constant exists in <audit>/php86-probes/phase21-override-constant-missing-link.php on line 2\nStack trace:\n#0 {main}"
+            }
+        }
+    },
+    {
+        "id": "phase21-override-enum-interface-link",
+        "stage": "declaration-link",
+        "source": "<?php\ninterface A {const X=1;} enum E implements A {#[\\Override] case X;}\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <audit>/php86-probes/phase21-override-enum-interface-link.php on line 2\nStack trace:\n#0 {main}"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": ""
+            }
+        }
+    },
+    {
+        "id": "phase21-override-private-link",
+        "stage": "declaration-link",
+        "source": "<?php\nclass A {private const X=1;} class B extends A {#[\\Override] const X=2;}\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <audit>/php86-probes/phase21-override-private-link.php on line 2\nStack trace:\n#0 {main}"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: B::X has #[/Override] attribute, but no matching parent constant exists in <audit>/php86-probes/phase21-override-private-link.php on line 2\nStack trace:\n#0 {main}"
+            }
+        }
+    },
+    {
+        "id": "phase21-readonly-default-link",
+        "stage": "declaration-link",
+        "source": "<?php\nclass A {public readonly int $x=1;}\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Readonly property A::$x cannot have default value in <audit>/php86-probes/phase21-readonly-default-link.php on line 2\nStack trace:\n#0 {main}"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": ""
+            }
+        }
+    },
+    {
+        "id": "phase21-assignment-property-write",
+        "stage": "lint",
+        "source": "<?php\n($v = new stdClass)->p = 2;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-assignment-property-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-assignment-property-write.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-assignment-property-write.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-assignment-dimension-increment",
+        "stage": "lint",
+        "source": "<?php\n++($v = [1])[0];\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-assignment-dimension-increment.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-assignment-dimension-increment.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-assignment-dimension-increment.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-assignment-dimension-unset",
+        "stage": "lint",
+        "source": "<?php\nunset(($v = [1])[0]);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-assignment-dimension-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-assignment-dimension-unset.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-assignment-dimension-unset.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-assignment-dimension-coalesce",
+        "stage": "lint",
+        "source": "<?php\n($v = [1])[0] ??= 2;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-assignment-dimension-coalesce.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-assignment-dimension-coalesce.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-assignment-dimension-coalesce.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-assignment-dimension-destructuring",
+        "stage": "lint",
+        "source": "<?php\n[($v = [1])[0]] = [2];\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Assignments can only happen to writable values in <audit>/php86-probes/phase21-assignment-dimension-destructuring.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-assignment-dimension-destructuring.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Assignments can only happen to writable values in <audit>/php86-probes/phase21-assignment-dimension-destructuring.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-assignment-dimension-destructuring.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-assignment-dimension-reference",
+        "stage": "lint",
+        "source": "<?php\n$r = &($v = [1])[0];\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-assignment-dimension-reference.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-assignment-dimension-reference.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in <audit>/php86-probes/phase21-assignment-dimension-reference.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-temporary-array-write-control",
+        "stage": "lint",
+        "source": "<?php\n[1][0] = 2;\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-temporary-array-write-control.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-temporary-array-write-control.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-temporary-array-write-control.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <audit>/php86-probes/phase21-temporary-array-write-control.php"
+            }
+        }
+    },
+    {
+        "id": "phase21-assignment-dimension-runtime",
+        "stage": "controlled-runtime",
+        "source": "<?php\n($v = [1])[0] = 2; echo json_encode($v);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-assignment-dimension-runtime.php on line 2\nStack trace:\n#0 {main}"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Invalid opcode 23/2/1. in <audit>/php86-probes/phase21-assignment-dimension-runtime.php on line 2\nStack trace:\n#0 {main}"
+            }
+        }
+    },
+    {
+        "id": "phase21-reference-assignment-dimension-runtime",
+        "stage": "controlled-runtime",
+        "source": "<?php\n$w=[1]; ($v = &$w)[0] = 2; echo json_encode([$v,$w]);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-reference-assignment-dimension-runtime.php on line 2\nStack trace:\n#0 {main}"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "[[2],[2]]"
+            }
+        }
+    },
+    {
+        "id": "phase21-list-assignment-dimension-runtime",
+        "stage": "controlled-runtime",
+        "source": "<?php\n$w=[1]; ([$v] = $w)[0] = 2; echo json_encode([$v,$w]);\n",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: Cannot use temporary expression in write context in <audit>/php86-probes/phase21-list-assignment-dimension-runtime.php on line 2\nStack trace:\n#0 {main}"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Invalid opcode 23/2/1. in <audit>/php86-probes/phase21-list-assignment-dimension-runtime.php on line 2\nStack trace:\n#0 {main}"
+            }
+        }
+    },
+    {
+        "id": "phase22-printf-dynamic-discarded",
+        "stage": "lint",
+        "source": "<?php\n$f=\"printf\"; $f(false && (unset)$x);\n",
+        "sourceSha256": "908695cfb8f42e4f4a29fbdfaa775d7bbec8035ba25195818c6ce4eb041b1386",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-dynamic-discarded.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-dynamic-discarded.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-sprintf-discarded-unset",
+        "stage": "lint",
+        "source": "<?php\nsprintf(false && (unset)$x);\n",
+        "sourceSha256": "83d6930bf45e36d228f041ce23c3a49aad43565c22cf983ed93b402b1d14d38c",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in .audit/php86-probes/phase22-sprintf-discarded-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-sprintf-discarded-unset.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in .audit/php86-probes/phase22-sprintf-discarded-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-sprintf-discarded-unset.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-printf-two-args-discarded",
+        "stage": "lint",
+        "source": "<?php\nprintf(false && (unset)$x, 1);\n",
+        "sourceSha256": "e2c4f84080f95c787592f09ed2b33518f54d99602e337dbb50d3f4e858434ffb",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-two-args-discarded.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in .audit/php86-probes/phase22-printf-two-args-discarded.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-printf-two-args-discarded.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-printf-ternary-discarded",
+        "stage": "lint",
+        "source": "<?php\nprintf(true ? \"ok\" : (unset)$x);\n",
+        "sourceSha256": "4b2a326aafcff1e2d38b7e1868dd0ac7eb02f60d24c80965183cf735c3e076e3",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in .audit/php86-probes/phase22-printf-ternary-discarded.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-printf-ternary-discarded.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-ternary-discarded.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-printf-coalesce-discarded",
+        "stage": "lint",
+        "source": "<?php\nprintf(\"ok\" ?? (unset)$x);\n",
+        "sourceSha256": "d81668acd7ffa3824e776004d0cc6902d7ecb3babbf16ec5d1f3178ff50f5979",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in .audit/php86-probes/phase22-printf-coalesce-discarded.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-printf-coalesce-discarded.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-coalesce-discarded.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-printf-fq-discarded",
+        "stage": "lint",
+        "source": "<?php\n\\printf(false && (unset)$x);\n",
+        "sourceSha256": "2a017fc0ff8e7a805792f2d2623536be54f847be50f4cac7f9a91eb2d9af6b18",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-fq-discarded.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in .audit/php86-probes/phase22-printf-fq-discarded.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-printf-fq-discarded.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-printf-dead-statement",
+        "stage": "lint",
+        "source": "<?php\nif(false){printf(false && (unset)$x);}\n",
+        "sourceSha256": "14e5f317195c834e0dc764c3916f174a63fde700f003a8dd403a6330dd8d3e74",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-dead-statement.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in .audit/php86-probes/phase22-printf-dead-statement.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-printf-dead-statement.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-printf-discarded-closure",
+        "stage": "lint",
+        "source": "<?php\nfalse && function(){printf(false && (unset)$x);};\n",
+        "sourceSha256": "4974d11b5099597e60a11dca333546499fd7267533ac19c83c39d52c724252ae",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-discarded-closure.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-discarded-closure.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-printf-unset-control",
+        "stage": "lint",
+        "source": "<?php\nfalse && (unset)$x;\n",
+        "sourceSha256": "52460f103d928c38a1efea30a3072cdd363edbae6bbaef940b34dc0d28f08704",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-unset-control.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-unset-control.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-foreach-nullsafe-reference",
+        "stage": "lint",
+        "source": "<?php\nforeach ($x?->items() as &$v) {}\n",
+        "sourceSha256": "0f1feb784200eaffff893f89ea2dff1b61012903909c3924f508bcd91982c29d",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-foreach-nullsafe-reference.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-foreach-nullsafe-reference.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-foreach-nullsafe-value",
+        "stage": "lint",
+        "source": "<?php\nforeach ($x?->items() as $v) {}\n",
+        "sourceSha256": "d5f11e46da311269dfbeb4c6e57590a87b0bc8f66f6938c85a51c646aeea7235",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-foreach-nullsafe-value.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-foreach-nullsafe-value.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-foreach-method-reference",
+        "stage": "lint",
+        "source": "<?php\nforeach ($x->items() as &$v) {}\n",
+        "sourceSha256": "521e72a1f3f2467a3a846d5f10cb1aacab33cbfe0e45d89c0ecbf5e47072547c",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-foreach-method-reference.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-foreach-method-reference.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-foreach-nullsafe-dead",
+        "stage": "lint",
+        "source": "<?php\nif(false){foreach ($x?->items() as &$v) {}}\n",
+        "sourceSha256": "cfe8e4872b2e1288eb2eb5b9aaf97a9d7860bf1fa750139da04b1e012c3beed6",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-foreach-nullsafe-dead.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-foreach-nullsafe-dead.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-foreach-nullsafe-discarded",
+        "stage": "lint",
+        "source": "<?php\nfalse && function($x){foreach ($x?->items() as &$v) {}};\n",
+        "sourceSha256": "b578d39657acd921f115564a864cac828404dc7caa418ef59c5847593ed73d62",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-foreach-nullsafe-discarded.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-foreach-nullsafe-discarded.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-array-map-pfa-order",
+        "stage": "lint",
+        "source": "<?php\narray_map(strlen(..., ?), []);\n",
+        "sourceSha256": "dbb29b0af0938f29bd27343772d1fbf92267fb8bb7ffa0a4194209f88fff59ad",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \",\" in .audit/php86-probes/phase22-array-map-pfa-order.php on line 2\nErrors parsing .audit/php86-probes/phase22-array-map-pfa-order.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Variadic placeholder must be last in .audit/php86-probes/phase22-array-map-pfa-order.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-array-map-pfa-order.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-pipe-pfa-order",
+        "stage": "lint",
+        "source": "<?php\n1 |> strlen(..., ?);\n",
+        "sourceSha256": "1dca32618ad3c4d593ef300f417e0b23100a33a9c5203ab775aa1b662ce95820",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \",\" in .audit/php86-probes/phase22-pipe-pfa-order.php on line 2\nErrors parsing .audit/php86-probes/phase22-pipe-pfa-order.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: Variadic placeholder must be last in .audit/php86-probes/phase22-pipe-pfa-order.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-pipe-pfa-order.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-array-map-pfa-named",
+        "stage": "lint",
+        "source": "<?php\narray_map(strlen(string: ?), []);\n",
+        "sourceSha256": "bf2f6a1d1912990920ba0aecce9fef655447e1358df173f486baaa29d18d9bce",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in .audit/php86-probes/phase22-array-map-pfa-named.php on line 2\nErrors parsing .audit/php86-probes/phase22-array-map-pfa-named.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-array-map-pfa-named.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-array-map-pfa-duplicate",
+        "stage": "lint",
+        "source": "<?php\narray_map(strlen(string: ?, string: 1), []);\n",
+        "sourceSha256": "5123c051beec133085858ebc4108445a078010d84cd9828a936d2793e7ce19e4",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Parse error: syntax error, unexpected token \"?\" in .audit/php86-probes/phase22-array-map-pfa-duplicate.php on line 2\nErrors parsing .audit/php86-probes/phase22-array-map-pfa-duplicate.php"
+            },
+            "8.6": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-array-map-pfa-duplicate.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-printf-discarded-unset",
+        "stage": "lint",
+        "source": "<?php\nprintf(false && (unset)$x);\n",
+        "sourceSha256": "eb75f79298eb829be6a6c187b30aed180950c6cba5e89c5b752a687898eddf00",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 0,
+                "output": "No syntax errors detected in .audit/php86-probes/phase22-printf-discarded-unset.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in .audit/php86-probes/phase22-printf-discarded-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-printf-discarded-unset.php"
+            }
+        }
+    },
+    {
+        "id": "phase22-printf-live-unset",
+        "stage": "lint",
+        "source": "<?php\nprintf((unset)$x);\n",
+        "sourceSha256": "91066e8da6a616a2ec4234c75eb9fbda91d4bea3a9d3a119a158201d829fb5ee",
+        "scope": "Focused compiler-risk review; lint only, no application execution.",
+        "results": {
+            "8.5": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in .audit/php86-probes/phase22-printf-live-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-printf-live-unset.php"
+            },
+            "8.6": {
+                "exit": 255,
+                "output": "Fatal error: The (unset) cast is no longer supported in .audit/php86-probes/phase22-printf-live-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/php86-probes/phase22-printf-live-unset.php"
+            }
+        }
     }
 ]

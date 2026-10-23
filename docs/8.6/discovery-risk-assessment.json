@@ -1,0 +1,213 @@
+{
+    "date": "2026-10-23",
+    "pins": {
+        "old": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "new": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "scope": "Risk assessment, not exhaustive discovery closure; previous phase fields remain historical.",
+    "rules": {
+        "critical": "Parser/scanner/token/precedence changes or compiler checks, writable/reference contexts, declarations and constant-expression traversal capable of changing source acceptance. Requires direct review.",
+        "elevated": "AST, linking, inheritance, attributes, enum and optimizer changes, plus unassociated test deltas pending source association. No automatic exclusion.",
+        "low": "Demonstrably mechanical C edits or reviewed harness/runtime/API deltas without a source-acceptance mechanism. Exclusion is limited to the documented delta, not whole-file correctness."
+    },
+    "sourceEvidence": {
+        "run-tests.php": {
+            "old": "dacb8590091b147ffeda04d69a129c5f87ca3d301ab76e93a5c670dc09a9fe33",
+            "new": "8bc2a35f7f9ad8daccb6cb9c1507d23c19e5d3f9dabb6da78fe6856be512bb97"
+        },
+        "ext/standard/tests/file/windows_mb_path/util.inc": {
+            "old": "29c37322b7cf84463978996d72954fecdb87edd82b1e8bfde3eb8c47ff8d206d",
+            "new": "f560f010cde2e5cb520cd0d27dbf631c95ff2a2a9486b085cdbaa9c1a7cb9176"
+        },
+        "ext/standard/tests/file/windows_mb_path/util_utf8.inc": {
+            "old": "16e7cf442bd328b8dff4d41341590f7b37ce4c45f226397126c39b0f49506f6e",
+            "new": "16e7cf442bd328b8dff4d41341590f7b37ce4c45f226397126c39b0f49506f6e"
+        },
+        "Zend/zend_compile.c": {
+            "old": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225",
+            "new": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd"
+        },
+        "Zend/zend_vm_def.h": {
+            "old": "87f6d73c31a0c2865fc841efba911d512c14d672f31be25d140b10fb43451a41",
+            "new": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e"
+        },
+        "Zend/zend_vm_execute.h": {
+            "old": "a56271d648ec65e34cbb55f7db89f46f17fb17492725ac3e9af34d09b0aadf4e",
+            "new": "6fa16a0a120f0596b5d0b213657236a5478b352f0230672c4ce4f71411c4ac15"
+        },
+        "Zend/zend_compile.h": {
+            "old": "9f6b0fc3cb3398810c5ba17eb8b993e7d856b304f5dff43901d80dcbec1c7f61",
+            "new": "3a43384f3c49a629ddc11de2e2303d4cd710b8ec699cdfcf9d5092353831e02d"
+        },
+        "Zend/zend_ast.c": {
+            "old": "2b957bba99379210a4205a8fdfe4cde40da6df4bfcd99f115ee188ecd5d275d5",
+            "new": "e6e793245e60d377f109b3d1e154665e84ab9a5cc60736576c4ff89d99eee5a9"
+        },
+        "Zend/zend_inheritance.c": {
+            "old": "69793711dc0a88c93545be87baa57e2fca26f2dc2e0701a8d956611980fee486",
+            "new": "d3f0f10319e7ffe0490ee85fd4b42f5dca9efa7804bc8e72b1b23d8df7dccf46"
+        },
+        "Zend/zend_enum.c": {
+            "old": "baa6dfdb61df292e38a50d32f3c43fedac0ec0c5126a4e8284f37b67e48ad8fd",
+            "new": "edd67c50fc77a9bff98845272d9ac06c9867f0410b5aa8fe1c7e942dc71f53f8"
+        },
+        "Zend/zend_language_parser.y": {
+            "old": "f108f2c2ff4c98c68b6478e7fbdebc16d8afb8bbbc3ae6079e5b285b448dac0c",
+            "new": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235"
+        },
+        "Zend/zend_language_scanner.l": {
+            "old": "8dfed84b0f6cabe73f004ea00c69614ea84542130a9b97e7699f801ef7ce7403",
+            "new": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39"
+        },
+        "Zend/zend_partial.c": {
+            "old": null,
+            "new": "149db16c425a107c1d969e0bf7704eff1bfb5b1dee626f76bb7bacd99d64ecff"
+        }
+    },
+    "php86014": {
+        "status": "bounded-unresolved",
+        "upstream": {
+            "url": "https://github.com/php/php-src/pull/20628",
+            "snapshotSha256": "8b51c79f34b3cf64d95d1651c3b0faad8c6855c7dc79d31762498457df5b1268",
+            "merged": true,
+            "mergeCommit": "6173a9a10989fa887240590a34c2b0eec50f003e",
+            "purpose": "Reduce similar TMP/VAR handlers and dereference overhead; preserve references in write contexts. PR description does not authorize new assignment-based writable targets."
+        },
+        "sourceAnchors": [
+            "Zend/zend_compile.c:3558 (ordinary assignment emits TMP)",
+            "Zend/zend_compile.c:3658 (reference assignment; dereference only R/IS)",
+            "Zend/zend_compile.c:12763 (ASSIGN/ASSIGN_REF dispatch)",
+            "Zend/zend_vm_def.h:2680 (opcode 23 accepts VAR|CV op1)",
+            "Zend/zend_compile.h:866 (TMP=2, VAR=4)",
+            "Zend/zend_vm_execute.h:53702 (invalid opcode handler)"
+        ],
+        "determination": "Source-level operand mismatch accounts for observed invalid opcode 23/2/1. This is evidence of a compiler/VM inconsistency, not proof of intended syntax. Reference assignment uses a distinct supported operand path; successful execution does not prove language intent.",
+        "provenance": "No exact-pin build was produced. Existing Windows RC4 and PHP 8.5.10 limitations remain.",
+        "blockers": {
+            "phase3": "Not independently blocking an unchanged baseline once discovery is adequate.",
+            "phase4": "Blocks assignment-based writable-target/contextual changes.",
+            "final": "Blocks certification of this area until intended behavior and exact-pin observations reconcile."
+        }
+    },
+    "php86015": {
+        "status": "verified-observation-contextual-traversal; intended-language scope unresolved",
+        "sourceAnchors": [
+            "Zend/zend_compile.c:5264 zend_compile_func_printf",
+            "Zend/zend_compile.c:5586 printf dispatch",
+            "Zend/zend_compile.c:12956 AND/OR recursive constant evaluation",
+            "Zend/zend_compile.c:13005 coalesce and conditional evaluation"
+        ],
+        "grammarAnchors": [
+            "function-call",
+            "conditional-expression",
+            "coalesce-expression",
+            "boolean-and-expression",
+            "cast-expression",
+            "Constant-expression validation order",
+            "Ordinary compilation versus constant folding"
+        ],
+        "finding": "New printf specialization evaluates argument ASTs before ordinary expression compilation. Both newly rejected and newly accepted discarded unset-cast forms observed; no new terminal or EBNF edit justified.",
+        "blockers": {
+            "phase3": "Contributes to unresolved optimizer-discovery coverage (PHP86-013).",
+            "phase4": "Blocks blanket optimizer no-impact disposition and unverified traversal rules.",
+            "final": "Requires appropriate interpreter/source correspondence and version-boundary evidence."
+        }
+    },
+    "phptWindowsEvidence": {
+        "members": 82,
+        "groups": [
+            "ee5068b1922c4533de0e339d1cb287aa5a777d58986f20fddb0551e25d8a3390",
+            "01a6d558c528ecb353402286505a03c3b78f76e2fbd51abbfc3b334939191b50",
+            "a6246b610cd34280c4f9939b67c0f744b12405895c6362f6817456edab2cbf4f",
+            "afb9775e93cb2ad03f2b97e5e48e86a66a16e67710af54fb913292cf837a50bf",
+            "607593341706514003e642aa08b5e8f55928b47c878bd5fa1c485c9420f1b809",
+            "abcb2278e3fe87d45bc6c5bf8674a33653d0300a410e7aad25c84adecf4496ac",
+            "ee3cd291cf99623cb20faac04faf0ecd8f696293a125b43faa181dd506990612",
+            "007ec41823e2457775063d5ec8c51b5f3bc6010bde0bd2b0e6f7fd87ca97758d",
+            "e648a66c2a38c16db315510a744c309cc8825d2c56b9b38db847ee985479b7ae"
+        ],
+        "representatives": [
+            "ext/standard/tests/file/windows_mb_path/bug54028.phpt",
+            "ext/standard/tests/file/windows_mb_path/test_cp1251_to_utf8_0.phpt",
+            "ext/standard/tests/file/windows_mb_path/bug75063_cp1251.phpt",
+            "ext/standard/tests/file/windows_mb_path/bug75063_utf8.phpt"
+        ],
+        "sourceReason": "run-tests.php:2331-2414 executes SKIPIF separately and interprets skip output as eligibility. util.inc old helpers gate Windows/iconv/codepage; new helpers call sapi_windows_cp_get/set directly and extract basename formatting. util_utf8.inc is byte-identical, generates filenames/data and one fixed echo include. bug75063 generated bodies are unchanged filesystem loops, not generated new syntax. FILE/INI/EXPECT deltas are absent from these exact groups.",
+        "dependencyReview": "Scanned dependency/generation references in both sides of all 82 members; reviewed util.inc on both sides, full unchanged util_utf8.inc, and both bug75063 generated-code representatives. No upstream programs executed.",
+        "limitation": "This does not exclude other Windows filesystem changes or certify scanner encoding behavior. Existing scanner/state conformance obligations remain."
+    },
+    "phptCounts": {
+        "individuallyReviewedResolved": 5,
+        "groupedEvidenceExcluded": 82,
+        "examinedUnresolved": 40,
+        "indexedOnly": 5862
+    },
+    "compilerCounts": {
+        "risk": {
+            "critical": 164,
+            "elevated": 159,
+            "low": 255
+        },
+        "dispositions": {
+            "pending-direct-review": 276,
+            "grouped-evidence-excluded": 255,
+            "prior-focused-review": 15,
+            "examined-unresolved": 16,
+            "reviewed": 16
+        }
+    },
+    "probes": {
+        "new": 20,
+        "total": 115,
+        "newStage": "lint",
+        "command": [
+            ".audit/php85/php.exe or .audit/php86/php.exe",
+            "-n",
+            "-d",
+            "error_reporting=-1",
+            "-l",
+            "<temporary-file>"
+        ]
+    },
+    "readiness": {
+        "phase3": {
+            "decision": "NOT READY",
+            "reason": "Material compiler/optimizer/linking discovery gaps remain; PHP86-014 alone is bounded and API certification is not a prerequisite."
+        },
+        "phase4": {
+            "decision": "NOT READY",
+            "reason": "Complete implementation not ready; verified edits retain evidence, but assignment-based write rules and contextual traversal interactions remain blocked."
+        },
+        "finalCertification": {
+            "decision": "NOT READY",
+            "reason": "RC4 only; no 8.6 package/validation, exact-pin executable limitations and unresolved discovery/contextual discrepancies."
+        }
+    },
+    "materialFindings": {
+        "retained": [
+            "PHP86-001",
+            "PHP86-002",
+            "PHP86-003",
+            "PHP86-004",
+            "PHP86-005",
+            "PHP86-006",
+            "PHP86-007",
+            "PHP86-008",
+            "PHP86-009",
+            "PHP86-010",
+            "PHP86-011",
+            "PHP86-012",
+            "PHP86-013",
+            "PHP86-014"
+        ],
+        "added": [
+            "PHP86-015"
+        ],
+        "discoveryGap": "PHP86-013 remains open"
+    },
+    "sourceCoverage": {
+        "parserScanner": "Prior full diff review retained; state/error regression and final-release review remain.",
+        "compilerLedger": "578 raw hunks in eight files; phase22 classifications are not complete direct review.",
+        "outsideLedger": "Core/optimizer source association incomplete; no blanket low-risk exclusion."
+    }
+}

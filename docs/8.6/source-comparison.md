@@ -1,5 +1,9 @@
 # PHP 8.5 to PHP 8.6 RC4 source comparison
 
+Current dispositions and separate phase decisions are in the
+[Phase 2.2 risk assessment](discovery-risk-assessment.md). Earlier counts below
+are preserved historical snapshots; JSON `phase22` fields hold current triage.
+
 Both immutable pins and hashes are in [source discovery](source-discovery.md).
 All new-source references below resolve against
 [`f23b4c222cebe33be93ee8ecaaa14390c5507a08`](https://github.com/php/php-src/tree/f23b4c222cebe33be93ee8ecaaa14390c5507a08).
@@ -125,3 +129,72 @@ historical boundary issues; do not repair 8.5 during this upgrade.
 
 Unresolved areas and their required follow-up are PHP86-013. No absence of a
 headline RFC is treated as evidence that contextual acceptance is unchanged.
+
+## Phase 2.1 focused reconciliation
+
+The [compiler ledger](compiler-change-reconciliation.json) preserves 578 raw
+unified-diff hunks in eight core files. Twenty-three examined hunks have explicit
+review-group links; 555 are still indexed. The earlier 150-hunk filtered view
+is not used as a completeness denominator. Every hunk names its old/new line
+range at the unchanged pins and a diff hash. Required source areas are listed
+with their actual review status, including incomplete optimized-call work.
+
+Reference/list result handling changes are not uniformly grammar-neutral.
+The new ASSIGN and ASSIGN_REF paths in
+[`zend_compile_var_inner`](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L12763)
+allow some assignment-based write paths past compilation. PHP86-014 records
+both a successful reference-assignment write and ordinary/list assignment
+writes that lint but fail with an invalid-opcode diagnostic. Successful linting
+does not resolve that discrepancy.
+
+Specific examined PHPTs are `Zend/tests/gh20628_001.phpt` through
+`gh20628_005.phpt`. The fourth test's external `gh20628_004.inc` was read and
+hashed separately. The fifth is a dimension-read regression, not evidence that
+dimension-write contexts work. The expanded ledger preserves every changed
+section, including FILEEOF, FILE_EXTERNAL, setup, configuration, and expectations.
+Records with unreviewed external/generated inputs remain unresolved even when
+their PHPT delta has a diagnostic or infrastructure classification.
+
+Additional paired probes establish these bounded observations:
+
+- Reference-list arguments, nested reference assignment, and pipe reference
+  returns retain lint acceptance; temporary list-reference targets fail.
+- RC4 rejects nullsafe reference returns/yields in a dead `if` and after an
+  unconditional return, but a folded-away enclosing closure passes lint.
+- Initializer traversal rejects an unset cast inside a discarded PFA argument;
+  ordinary expression folding can discard it. Nonstatic constant closures remain
+  rejected and explicitly static controls pass.
+- Declaration-only execution confirms enum `__debugInfo` and valid Override
+  constant/enum-case changes. Forbidden enum `__get`, missing override targets,
+  and private parent targets remain negative controls.
+
+These probes supplement outstanding source/test review. The
+[closure assessment](discovery-closure.md) retains **NOT READY**.
+
+## Phase 2.2 risk reconciliation
+
+The raw 578-hunk universe now has 255 narrowly verified mechanical exclusions,
+164 critical and 159 elevated hunks. Six new semantic groups review printf,
+call/reference contexts, PFA AST paths, interface order, Override and enum
+debugInfo. The complete source audit is unfinished; risk classification is not
+an automatic resolution. The pending interface inheritance-order change is
+specifically retained as elevated because it precedes subtype/member checks.
+
+PHP86-014's ordinary/list TMP container is unsupported by the pinned
+ZEND_ASSIGN_DIM VM handler, whereas the reference-assignment write retains VAR.
+This explains the observed execution discrepancy without deciding intended
+language acceptance. No exact-pin build was produced.
+
+PHP86-015 identifies a previously unrecorded acceptance change in the new
+printf specialization. Early constant evaluation visits discarded AND operands
+but can remove ternary/coalesce branches that ordinary compilation visits.
+Twenty new paired lint controls are preserved in `syntax-probes.json`.
+The call-optimization work cannot be excluded as performance-only.
+
+The PHPT ledger separates five individual reviews, 82 source-backed Windows
+harness/helper exclusions, 40 examined-unresolved and 5,862 indexed-only
+records. Remaining expected-output-only groups are not silently excluded.
+The RFC ledger separates ten syntax/context candidates, 20 API-only proposal
+scopes and 28 unimplemented/deferred candidates, retaining ancestry and index
+review limitations. These exclusions do not certify arbitrary associated
+implementation changes or unrelated runtime behavior.
