@@ -1,5 +1,14 @@
 # PHP 8.6 Phase 2.1 discovery closure assessment
 
+Phase 2.3 governance note, October 23, 2026: [Gate A](../versioning.md#31-readiness-gates)
+now permits a protected, unregistered, unchanged working baseline before discovery
+closure. The Phase 3A block below was correct under the earlier policy and is
+retained as history; its copying prohibition is superseded only for Gate A.
+Discovery is still incomplete, and PHP86-013/014/015 remain unresolved with the
+implementation and certification impacts in the
+[current readiness decision](implementation-plan.md#phase-23-readiness-decision--october-23-2026).
+No Phase 3A work is performed by this governance clarification.
+
 Historical Phase 2.1 assessment. The current
 [Phase 2.2 risk assessment](discovery-risk-assessment.md) separates phase
 blockers, bounds PHP86-014, records PHP86-015, and provides revised disposition

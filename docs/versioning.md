@@ -29,7 +29,9 @@ php-grammar.json
 
 The manifest is the source of truth for version discovery, grammar loading,
 conformance fixture discovery, lexer configuration, and version-boundary tests.
-Adding a grammar directory without adding a manifest entry is incomplete.
+Adding a grammar directory without adding a manifest entry is incomplete as a
+supported package; an explicitly labeled Gate A working baseline is permitted
+under section 3.1 and must remain unregistered.
 Adding a manifest version without its required package files is invalid.
 
 For example, future repositories may contain packages such as:
@@ -121,6 +123,53 @@ within an upgrade. Keep existing version-boundary tests passing and preserve all
 release gates.
 
 Do not assume that only headline language features affect the grammar.
+
+## 3.1. Readiness gates
+
+Policy adjustment, October 23, 2026 (Phase 2.3): provisional baseline creation
+is distinct from verified implementation, discovery completion, and final
+certification. Earlier PHP 8.6 Phase 3A blocking decisions correctly applied
+the then-existing discovery-before-copying requirement; this adjustment changes
+that requirement prospectively, without resolving any research finding.
+
+**Gate A — Provisional baseline creation.** A future baseline step may copy the
+immediately preceding supported version's `php.ebnf` and `php.md` before discovery
+is complete, provided it:
+
+1. Records the repository baseline commit and verifies and records SHA-256 hashes
+   of both original files against that commit.
+2. Copies both files without modification and verifies byte-for-byte equality
+   and matching hashes, preserving every existing historical artifact.
+3. Labels both copies explicitly as an **unverified working baseline** in an
+   accompanying preparation record outside the copied files. The unchanged
+   version labels inside the copies describe their origin, not PHP 8.6 accuracy.
+4. Keeps the baseline unregistered in the manifest and unadvertised as supported;
+   it is not a complete PHP 8.6 package or conformance evidence.
+5. Makes no production, lexical behavior, or contextual restriction changes and
+   retains all unresolved findings and their implementation/release impacts.
+
+The preparation record must identify both destination paths, the commit, original
+and copy hashes, equality results, preservation checks, and outstanding findings.
+The three-file package requirement in section 3 applies to the later version
+package; Gate A copies alone do not satisfy it. Gate A does not require completed
+PHP 8.6 research because it makes no PHP 8.6 language-accuracy claim.
+
+**Gate B — Verified grammar implementation.** Each edit requires authoritative
+evidence at the immutable PHP source pin, traceability to a verified finding,
+identified affected productions or lexical/contextual constructs, and defined
+positive, negative, stage-specific, and version-boundary test obligations.
+Unresolved syntax questions must not be implemented speculatively. A finding
+may block an affected area without blocking an independently verified change;
+dependencies and interactions must be assessed before treating a change as
+independent. Gate A success does not establish Gate B readiness.
+
+Discovery completion still requires disposition of the material research gaps.
+Implementation completion and final certification still require all existing
+source-pinning, structural/reference, parity, differential-interpreter, lexer
+contextual-conformance, version-boundary, traceability, historical-preservation,
+and release evidence. Sections 14–17 and the conformance policy remain in force,
+including prerelease versus final-release distinctions. No release gate is waived.
+Phase 2.3 authorizes this policy clarification only, not execution of Phase 3A.
 
 ## 4. Historical Grammar Corrections
 

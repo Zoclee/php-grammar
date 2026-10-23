@@ -1,5 +1,32 @@
 # PHP 8.6 Phase 2.2 risk assessment
 
+## Phase 2.3 governance addendum — October 23, 2026
+
+[Gate A](../versioning.md#31-readiness-gates) now permits a protected,
+unregistered, byte-for-byte working baseline before discovery closure. The
+repository baseline commit, original hashes, copy equality, and historical
+preservation must be verified and recorded. An external preparation record must
+label both copies as unverified; no grammar/lexical/contextual edits or support
+claims are allowed. Phase 3A is permitted on these conditions, not begun here.
+
+Gate B remains finding-specific: authoritative pinned evidence, traceability,
+production mappings, and test/boundary obligations are required for each edit.
+PHP86-013 remains open for material discovery gaps and unisolated interactions;
+PHP86-014 still blocks assignment-based writable-target changes; PHP86-015 still
+blocks unverified optimized-call traversal rules. Independently verified changes
+may proceed only after their dependencies and interactions satisfy Gate B.
+Discovery completion, complete implementation, and final certification remain
+**NOT READY**. All correctness, validation, and release requirements are unchanged.
+
+The assessment below is the dated Phase 2.2 decision. The earlier Phase 3A attempt
+was correctly blocked by discovery-before-copying governance. This prospective
+policy adjustment supersedes only that copying restriction, including references
+below to closing discovery before baseline creation. It neither changes evidence
+nor retroactively reverses the historical assessment. JSON `phase22` readiness
+fields and the original blocker matrix remain historical evidence.
+
+## Historical assessment — October 23, 2026
+
 Assessment date: October 23, 2026. **Phase 3: NOT READY. Phase 4: NOT READY
 as a complete implementation. Final certification: NOT READY.** This review
 reduces unsupported closure obligations, bounds PHP86-014, and identifies a

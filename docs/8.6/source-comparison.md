@@ -1,5 +1,9 @@
 # PHP 8.5 to PHP 8.6 RC4 source comparison
 
+The [Phase 2.3 readiness decision](implementation-plan.md#phase-23-readiness-decision--october-23-2026)
+supersedes earlier baseline-copying restrictions only. Source dispositions and
+discovery, implementation, and certification obligations remain unchanged.
+
 Current dispositions and separate phase decisions are in the
 [Phase 2.2 risk assessment](discovery-risk-assessment.md). Earlier counts below
 are preserved historical snapshots; JSON `phase22` fields hold current triage.

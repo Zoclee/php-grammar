@@ -1,5 +1,9 @@
 # PHP 8.6 Phase 2 source discovery
 
+For the subsequent copying-policy adjustment, see the
+[Phase 2.3 readiness decision](implementation-plan.md#phase-23-readiness-decision--october-23-2026).
+Earlier baseline prohibitions below are historical; discovery remains open.
+
 For the current assessment, see the
 [Phase 2.2 risk review](discovery-risk-assessment.md). Original and Phase 2.1
 evidence below remains historical; the source baselines are unchanged.

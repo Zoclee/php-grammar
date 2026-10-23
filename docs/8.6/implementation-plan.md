@@ -1,5 +1,10 @@
 # Proposed minimal PHP 8.6 implementation plan
 
+## Historical Phase 2.2 planning decision — October 23, 2026
+
+The following two paragraphs record the earlier governance, superseded for
+provisional copying only by the Phase 2.3 decision below.
+
 This document proposes future work. It neither starts Phase 3 nor creates a
 grammar package. Material discovery gaps in
 [PHP86-013](language-change-inventory.md#php86-013--remaining-exhaustive-audit-work)
@@ -12,7 +17,33 @@ The current [Phase 2.2 risk assessment](discovery-risk-assessment.md) retains
 certification for separate reasons. Its phase-specific blocker matrix supersedes
 the earlier blanket treatment of library/API integration and raw ledger totals.
 
+## Phase 2.3 readiness decision — October 23, 2026
+
+[Gate A](../versioning.md#31-readiness-gates) now permits a future Phase 3A
+provisional baseline without discovery closure. Record the repository baseline
+commit, verify both original hashes against it, copy both files byte-for-byte,
+verify equality, and preserve all historical artifacts. Label both files in an
+external preparation record as an unverified working baseline; do not edit the
+copies to add a label. Keep it unregistered and unadvertised as supported, with
+no production, lexical, or contextual changes. Retain every unresolved finding.
+Phase 3A is permitted under these conditions but is not begun in Phase 2.3.
+
+**Gate B is assessed per finding.** Verified changes in the plan below require
+pinned authoritative evidence, traceability, affected productions, and defined
+test and version-boundary obligations. Assess interactions before proceeding
+independently. PHP86-013 remains open for discovery completeness and unisolated
+contextual/linking/optimizer work; PHP86-014 blocks assignment-based writable
+targets; PHP86-015 blocks unverified optimized-call traversal rules. None is
+resolved by Gate A, and none licenses speculative syntax.
+
+**Discovery completion, complete implementation, and final certification remain
+NOT READY.** All existing validation, source correspondence, prerelease/final
+review, and release requirements remain unchanged. The earlier Phase 3A block
+was correct under the earlier rules; this is a prospective governance change.
+
 ## Research completion gate
+
+This remains a discovery-completion gate, not a prerequisite for Gate A.
 
 Apply these steps by source risk, not by requiring individual inspection of
 every library test. Evidence-backed grouped exclusions are allowed; filenames,
@@ -36,7 +67,7 @@ Full unrelated API integration/runtime certification is not a copying gate.
 
 ## Later baseline preparation
 
-After approval and readiness, follow versioning policy: byte-for-byte copies of
+Under Gate A, follow versioning policy: byte-for-byte copies of
 the immediately preceding standalone 8.5 artifacts, recording repository commit
 `796da52c86a742dd82227d312df22452aefdec42` or the actual reviewed baseline if it
 changes. Preserve 8.5 fixtures, grammar, specification and evidence. Register a
@@ -85,13 +116,16 @@ Preserve existing release gates and report unresolved discrepancies explicitly.
 
 ## Historical preservation
 
-This phase adds only `docs/8.6/` research artifacts. The source hashes and lint
+The historical Phase 2 research added only `docs/8.6/` artifacts. The source hashes and lint
 observations here are evidence, not package registration or conformance fixtures.
 Known 8.5 discarded-declaration, contextual-adapter and qualified-static issues
 remain separate historical correction work. No requirement to make 8.6
 standalone authorizes changes to the preceding version.
 
 ## Phase 2.1 readiness decision and revised obligations
+
+Historical decision, October 23, 2026; its copying prohibition is superseded
+only by Gate A above. Its unresolved findings and research obligations remain.
 
 **NOT READY.** The [closure assessment](discovery-closure.md) and machine-readable
 ledgers preserve unfinished work; PHP86-013 remains open. No baseline copy,
@@ -121,6 +155,9 @@ conformance work. Dead statements and folded-away declarations require separate
 expectations. The PHP 8.5 package and historical certification remain untouched.
 
 ## Phase 2.2 implementation boundaries
+
+Historical assessment, October 23, 2026. Gate A above supersedes the discovery
+prerequisite for an unchanged baseline; implementation boundaries remain.
 
 Keep PHP86-014 blocked specifically for assignment-based writable-target edits.
 The pinned compiler/VM operand mismatch explains the invalid-opcode observation

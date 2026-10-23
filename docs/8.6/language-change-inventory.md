@@ -1,6 +1,7 @@
 # PHP 8.6 language-change inventory
 
-Current assessment: [Phase 2.2 risk review](discovery-risk-assessment.md).
+Current governance: [Phase 2.3 readiness decision](implementation-plan.md#phase-23-readiness-decision--october-23-2026).
+Source assessment: [Phase 2.2 risk review](discovery-risk-assessment.md).
 PHP86-013 remains open; PHP86-014 is bounded to writable-target implementation,
 and PHP86-015 records a further optimized-call traversal difference.
 
@@ -14,6 +15,15 @@ Unless explicitly stated, lexical impact is **none identified**, and local test
 obligations below are future work, not permanent fixtures created in this phase.
 
 ## Phase 2.2 blocker matrix
+
+Historical matrix, October 23, 2026. Under [Gate A](../versioning.md#31-readiness-gates),
+none of these findings blocks protected, unregistered, byte-for-byte copying.
+This supersedes only the baseline column and the historical PHP86-013 instruction
+to finish research before Phase 3. PHP86-013 remains open and blocks discovery
+completion and unisolated implementation areas; PHP86-014 retains its writable-target
+block; PHP86-015 retains its unverified-traversal block. The implementation and
+certification obligations below remain. Independently verified edits require
+Gate B evidence and dependency review; no unresolved finding is marked resolved.
 
 These assignments separate source-evidence readiness from required future
 implementation validation. “Validation” means evidence still required for final

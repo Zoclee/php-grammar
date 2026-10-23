@@ -241,6 +241,17 @@ Do not silently copy grammar from an unrelated third-party grammar implementatio
 
 ## Adding a New PHP Version
 
+Provisional baseline creation (Gate A) is a separate preparatory step under
+[docs/versioning.md](docs/versioning.md#31-readiness-gates). It permits only
+unregistered, byte-for-byte copies with recorded baseline commit, verified
+original hashes and copy equality, historical preservation, and an external
+unverified-working-baseline label. Discovery may remain open; no grammar,
+lexical, or contextual edit or support claim is permitted at this gate.
+Such copies are not a completed version package. Gate B requires verified,
+traceable findings, affected productions, and test/boundary obligations before
+implementation edits. All completion and certification requirements below
+remain in force. Phase 2.3 changes governance only; it does not begin Phase 3A.
+
 When adding a new major/minor PHP version:
 
 1. begin with byte-for-byte copies of the immediately preceding supported
