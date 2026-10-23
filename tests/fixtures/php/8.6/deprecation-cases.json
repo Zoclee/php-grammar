@@ -1,0 +1,1226 @@
+{
+    "finding": "PHP86-010",
+    "sourcePins": {
+        "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "sourceHashes": {
+        "8.5": {
+            "Zend/zend_compile.c": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225",
+            "Zend/zend_constants.c": "f4a908d79814ce82cb368cdd9d68e68901ae31e0a1e2398e4b18c3987d37266b",
+            "Zend/zend_API.c": "1aa5548cebd8f337bad00fe94917559d52db75566eb5d8674ef377a6369ef711",
+            "Zend/zend_object_handlers.c": "a2b4605a03081efa6b76802af07664d411d6737dd0d8dee434217278d816dcea",
+            "Zend/tests/deprecate_namespace_class_constant.phpt": null,
+            "Zend/tests/magic_methods/constructor_destructor_return.phpt": null,
+            "Zend/tests/try/finally_return_deprecation.phpt": null,
+            "Zend/tests/return_types/042.phpt": "2649dc46865398ac316be4a676290f99ded7483217e8a8ff35f2158df88a3be7",
+            "Zend/tests/debug_info/debug_info.phpt": "5256443f6f528f32a92d2c9290c92f381d493521463bd89fc2d5dfcaa6ef1459",
+            "Zend/tests/functions/readonly_as_method_name_is_ok.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/class_alias.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/class_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/class_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/constant_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/constant_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/function_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/function_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/class_alias.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/class_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/class_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/constant_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/constant_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/function_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/function_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/readonly/function_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/readonly/function_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated.phpt": null,
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_namespaced.phpt": null,
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_throw_handler.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/class_alias_underscore.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name_use.phpt": null
+        },
+        "8.6": {
+            "Zend/zend_compile.c": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+            "Zend/zend_constants.c": "6c5cd44f8d3def91202d199f4e05f3d81ebba6beafdbe24f894740b8817e6985",
+            "Zend/zend_API.c": "666d6f9c311bef02b50a5cfe09ddf66fac310834a88c94dac9be37a83ee238db",
+            "Zend/zend_object_handlers.c": "1a3b3708ab7e5f270ac0da6faf9d53bac3ebb5ac6395e38e695fb0e5638451d6",
+            "Zend/tests/deprecate_namespace_class_constant.phpt": "63af61d533a4fa5d4be081538d4c63ef9eb18b01bb311fc40587960a3fefe59d",
+            "Zend/tests/magic_methods/constructor_destructor_return.phpt": "180c1af24f8fd7e183e1f98b9edf71148a38335e8601abc30bbc5efe48c25f90",
+            "Zend/tests/try/finally_return_deprecation.phpt": "01449826d418c2c04d7672d2135ee8de16d7b5053f620dfce7e4ba8bb556fdd4",
+            "Zend/tests/return_types/042.phpt": "657396748b4cd43cf82d1f7d468e37eb4ac596c81349c9d021e10dc76c9fd026",
+            "Zend/tests/debug_info/debug_info.phpt": "b451b330809c2c48db0ea70c02ea6e9c4a190022d99f077fe3bb0e89953643f2",
+            "Zend/tests/functions/readonly_as_method_name_is_ok.phpt": "f5e0e6057b49aadecab4bcc4ce603582fa6843a2bd503333dad9b7df6c5e0f29",
+            "Zend/tests/deprecated_identifiers/is/class_alias.phpt": "91c7b3bf8c7a3b4b8832e4d59684b09996e3db42ee719a0f239f73aa3cd0bc43",
+            "Zend/tests/deprecated_identifiers/is/class_as_name.phpt": "8a3562756610e0e12aa034b11fc30e5c3b675ff3b6eb0372eaca849c1a9b0b79",
+            "Zend/tests/deprecated_identifiers/is/class_as_name_use.phpt": "b6ae14cf4122797e128d97dba6b77bd84e119a7ee790e97ceedf887bbdf6fbda",
+            "Zend/tests/deprecated_identifiers/is/constant_as_name.phpt": "7f7d08de858b16ad9cdf6861271254cab4fee29aa8a63ea93654292b09b0c25c",
+            "Zend/tests/deprecated_identifiers/is/constant_as_name_use.phpt": "640ad3839923c2894ea00778f79fd2ae8249a4cc344b08ae6e189cd330287325",
+            "Zend/tests/deprecated_identifiers/is/function_as_name.phpt": "219c1ae32eb167590d751ec6631653999d792bbc7f682897999dc47aa66e95e0",
+            "Zend/tests/deprecated_identifiers/is/function_as_name_use.phpt": "6fdd0cf729125930f0ad13d550cb2426d76f9e8d8f407e31e4ab7c4b0a930f03",
+            "Zend/tests/deprecated_identifiers/let/class_alias.phpt": "cfb930a673156aee518b01eb1ff9237aec1610b614660a4c2464b79590612b92",
+            "Zend/tests/deprecated_identifiers/let/class_as_name.phpt": "681f8b2c7d6113982ab25c871d694817f479e1d54a7c0e209e83794a4a003378",
+            "Zend/tests/deprecated_identifiers/let/class_as_name_use.phpt": "48789fd738595bd8ccc6af5525bf997777b0b77b28c80c234401f6dbcef0c25b",
+            "Zend/tests/deprecated_identifiers/let/constant_as_name.phpt": "aacd5c6b4046ff55d70350b314663f7d946eb7fe6a044abbf8a6ee8653dee8eb",
+            "Zend/tests/deprecated_identifiers/let/constant_as_name_use.phpt": "4a37e07654b809da165cfba89ced36fd947d0f336f1fbe8394c1374f815cd742",
+            "Zend/tests/deprecated_identifiers/let/function_as_name.phpt": "adf1d070b39a05614d37473acec452507f306e1e36972ec8a51a288b326bd341",
+            "Zend/tests/deprecated_identifiers/let/function_as_name_use.phpt": "6c417a6c5bc59dc07f196c245cbf3a60bc9fcdd40e81e42c0db53f35fc7944ab",
+            "Zend/tests/deprecated_identifiers/readonly/function_as_name.phpt": "02aed6e8f30db0772d32b23cf5363f42bf2e7a9000349e0841f02a9620bc2505",
+            "Zend/tests/deprecated_identifiers/readonly/function_as_name_use.phpt": "bab8f8c8bdd6ccb2383e56ff75190b801cbaf133b2981a53a8ef37f5edf3073c",
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated.phpt": "d89c6d4b3156b3d6bc4d367210d91a4801cb025d44dcd9b0b7caad0185d0b92e",
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_namespaced.phpt": "f32598edff01357b8727e4986481f2d4fcbd00f3348fd4effcb99ac36aedf045",
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_throw_handler.phpt": "61f2a26dbd5d8723fb53de1a67b94fa2f044507cdb30eba1f396247fc955978d",
+            "Zend/tests/deprecated_identifiers/underscore/class_alias_underscore.phpt": "4934365e7ebe996753af126cf8909370532cec073ec3a7160ff81ff5329c9a62",
+            "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name.phpt": "1d33a9224be39661c27a9aa9217d9fbfff35b6a5d8abaa36374851f98076f9ab",
+            "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name_use.phpt": "af348252c028f04309837ac9a597047adc25f20222d0bc6f92f584d8e8e0caf3",
+            "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name.phpt": "631e9ae9e9c8c9597734a24c3c6adf4e3ff252477b9e188f74a12d62c918e004",
+            "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name_use.phpt": "15021ed6ab675ab7f371804e07c4120f87ae829f279d6a23d5eca23ba2665ace",
+            "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name.phpt": "dcb0c11dcf6bd86b1c77756dfc5750f3d2c6cb6b5ceb825d5404945f2be932d1",
+            "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name_use.phpt": "94b7c52513691038e524c928c7b44a3d37231b3b236ec1d4cd84e173be4274ec"
+        }
+    },
+    "cases": [
+        {
+            "id": "let-class",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nclass let {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "class name",
+                    "execution": "class name"
+                }
+            }
+        },
+        {
+            "id": "let-interface",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\ninterface let {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "interface name",
+                    "execution": "interface name"
+                }
+            }
+        },
+        {
+            "id": "let-trait",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\ntrait let {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "trait name",
+                    "execution": "trait name"
+                }
+            }
+        },
+        {
+            "id": "let-enum",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nenum let {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "enum name",
+                    "execution": "enum name"
+                }
+            }
+        },
+        {
+            "id": "let-function",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nfunction let() {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Calling a function",
+                    "execution": "Calling a function"
+                }
+            }
+        },
+        {
+            "id": "let-method",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nclass C {function let(){}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "let-constant",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nconst let=1;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": "Calling a constant"
+                }
+            }
+        },
+        {
+            "id": "let-class-alias",
+            "finding": "PHP86-010",
+            "group": "imports",
+            "source": "<?php\nuse X as let;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a class name",
+                    "execution": "as a class name"
+                }
+            }
+        },
+        {
+            "id": "let-function-alias",
+            "finding": "PHP86-010",
+            "group": "imports",
+            "source": "<?php\nuse function X as let;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a function name",
+                    "execution": "as a function name"
+                }
+            }
+        },
+        {
+            "id": "let-constant-alias",
+            "finding": "PHP86-010",
+            "group": "imports",
+            "source": "<?php\nuse const X as let;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a constant name",
+                    "execution": "as a constant name"
+                }
+            }
+        },
+        {
+            "id": "is-class",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nclass is {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "class name",
+                    "execution": "class name"
+                }
+            }
+        },
+        {
+            "id": "is-interface",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\ninterface is {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "interface name",
+                    "execution": "interface name"
+                }
+            }
+        },
+        {
+            "id": "is-trait",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\ntrait is {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "trait name",
+                    "execution": "trait name"
+                }
+            }
+        },
+        {
+            "id": "is-enum",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nenum is {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "enum name",
+                    "execution": "enum name"
+                }
+            }
+        },
+        {
+            "id": "is-function",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nfunction is() {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Calling a function",
+                    "execution": "Calling a function"
+                }
+            }
+        },
+        {
+            "id": "is-method",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nclass C {function is(){}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "is-constant",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nconst is=1;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": "Calling a constant"
+                }
+            }
+        },
+        {
+            "id": "is-class-alias",
+            "finding": "PHP86-010",
+            "group": "imports",
+            "source": "<?php\nuse X as is;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a class name",
+                    "execution": "as a class name"
+                }
+            }
+        },
+        {
+            "id": "is-function-alias",
+            "finding": "PHP86-010",
+            "group": "imports",
+            "source": "<?php\nuse function X as is;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a function name",
+                    "execution": "as a function name"
+                }
+            }
+        },
+        {
+            "id": "is-constant-alias",
+            "finding": "PHP86-010",
+            "group": "imports",
+            "source": "<?php\nuse const X as is;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a constant name",
+                    "execution": "as a constant name"
+                }
+            }
+        },
+        {
+            "id": "readonly-function",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nfunction readonly() {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Calling a function",
+                    "execution": "Calling a function"
+                }
+            }
+        },
+        {
+            "id": "readonly-namespaced",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nnamespace N; function ReAdOnLy() {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Calling a function",
+                    "execution": "Calling a function"
+                }
+            }
+        },
+        {
+            "id": "readonly-method",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nclass C {function readonly(){}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "readonly-alias-invalid",
+            "finding": "PHP86-010",
+            "group": "imports",
+            "source": "<?php\nuse function strlen as readonly;\n",
+            "accepted": false,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "underscore-class",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nclass _ {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "as a class name",
+                    "execution": "as a class name"
+                },
+                "8.6": {
+                    "lint": "as a class name",
+                    "execution": "as a class name"
+                }
+            }
+        },
+        {
+            "id": "underscore-namespaced-class",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nnamespace N; class _ {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "as a class name",
+                    "execution": "as a class name"
+                },
+                "8.6": {
+                    "lint": "as a class name",
+                    "execution": "as a class name"
+                }
+            }
+        },
+        {
+            "id": "underscore-constant",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nconst _=1;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": "Calling a constant"
+                }
+            }
+        },
+        {
+            "id": "underscore-function",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nfunction _() {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "underscore-function-alias",
+            "finding": "PHP86-010",
+            "group": "imports",
+            "source": "<?php\nuse function strlen as _;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "underscore-class-alias",
+            "finding": "PHP86-010",
+            "group": "imports",
+            "source": "<?php\nuse stdClass as _;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a class name",
+                    "execution": "as a class name"
+                }
+            }
+        },
+        {
+            "id": "underscore-constant-alias",
+            "finding": "PHP86-010",
+            "group": "imports",
+            "source": "<?php\nuse const X as _;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a constant name",
+                    "execution": "as a constant name"
+                }
+            }
+        },
+        {
+            "id": "let-upper-bare",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nclass LET {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a class name",
+                    "execution": "as a class name"
+                }
+            }
+        },
+        {
+            "id": "let-lower-namespaced",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nnamespace N; class let {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a class name",
+                    "execution": "as a class name"
+                }
+            }
+        },
+        {
+            "id": "let-upper-namespaced",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nnamespace N; class LET {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a class name",
+                    "execution": "as a class name"
+                }
+            }
+        },
+        {
+            "id": "let-class-alias-runtime",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nclass C {} class_alias(C::class,\"N\\\\let\");\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": "as a class alias"
+                }
+            }
+        },
+        {
+            "id": "let-upper-class-alias",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nclass C {} class_alias(C::class,\"N\\\\LET\");\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": "as a class alias"
+                }
+            }
+        },
+        {
+            "id": "underscore-class-alias-runtime",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nclass C {} class_alias(C::class,\"N\\\\_\");\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": "as a class alias"
+                }
+            }
+        },
+        {
+            "id": "let-type",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nfunction f(\\N\\let $x) {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a type name",
+                    "execution": "as a type name"
+                }
+            }
+        },
+        {
+            "id": "let-upper-type",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nfunction f(\\N\\LET $x) {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "underscore-type",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nfunction f(\\N\\_ $x) {}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "as a type name",
+                    "execution": "as a type name"
+                }
+            }
+        },
+        {
+            "id": "is-namespaced-constant",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nnamespace N; const is=1;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": "Calling a constant"
+                }
+            }
+        },
+        {
+            "id": "is-upper-namespaced-constant",
+            "finding": "PHP86-010",
+            "group": "names",
+            "source": "<?php\nnamespace N; const IS=1;\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "namespace-class",
+            "finding": "PHP86-010",
+            "group": "namespace",
+            "source": "<?php\nclass C {const NaMeSpAcE=1;}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "constant called",
+                    "execution": "constant called"
+                }
+            }
+        },
+        {
+            "id": "namespace-interface",
+            "finding": "PHP86-010",
+            "group": "namespace",
+            "source": "<?php\ninterface C {const NaMeSpAcE=1;}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "constant called",
+                    "execution": "constant called"
+                }
+            }
+        },
+        {
+            "id": "namespace-trait",
+            "finding": "PHP86-010",
+            "group": "namespace",
+            "source": "<?php\ntrait C {const NaMeSpAcE=1;}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "constant called",
+                    "execution": "constant called"
+                }
+            }
+        },
+        {
+            "id": "namespace-enum",
+            "finding": "PHP86-010",
+            "group": "namespace",
+            "source": "<?php\nenum C {const NaMeSpAcE=1;}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "constant called",
+                    "execution": "constant called"
+                }
+            }
+        },
+        {
+            "id": "namespace-case",
+            "finding": "PHP86-010",
+            "group": "namespace",
+            "source": "<?php\nenum C {case namespace;}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "constant called",
+                    "execution": "constant called"
+                }
+            }
+        },
+        {
+            "id": "namespace-controls",
+            "finding": "PHP86-010",
+            "group": "namespace",
+            "source": "<?php\ndefine(\"namespace\",1); class C {public $namespace; function namespace(){}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "finally-bare",
+            "finding": "PHP86-010",
+            "group": "finally",
+            "source": "<?php\nfunction f(){try{}finally{return;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Returning from a finally",
+                    "execution": "Returning from a finally"
+                }
+            }
+        },
+        {
+            "id": "finally-value",
+            "finding": "PHP86-010",
+            "group": "finally",
+            "source": "<?php\nfunction f(){try{}finally{return 1;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Returning from a finally",
+                    "execution": "Returning from a finally"
+                }
+            }
+        },
+        {
+            "id": "finally-nested-try",
+            "finding": "PHP86-010",
+            "group": "finally",
+            "source": "<?php\nfunction f(){try{}finally{try{return;}finally{}}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Returning from a finally",
+                    "execution": "Returning from a finally"
+                }
+            }
+        },
+        {
+            "id": "finally-closure",
+            "finding": "PHP86-010",
+            "group": "finally",
+            "source": "<?php\nfunction f(){try{}finally{$f=function(){return;};}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "finally-try-control",
+            "finding": "PHP86-010",
+            "group": "finally",
+            "source": "<?php\nfunction f(){try{return;}finally{}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "finally-discarded",
+            "finding": "PHP86-010",
+            "group": "finally",
+            "source": "<?php\nfalse && function(){try{}finally{return;}};\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "constructor-value",
+            "finding": "PHP86-010",
+            "group": "returns",
+            "source": "<?php\nclass C {function __construct(){return null;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Returning a value from a constructor",
+                    "execution": "Returning a value from a constructor"
+                }
+            }
+        },
+        {
+            "id": "constructor-generator",
+            "finding": "PHP86-010",
+            "group": "returns",
+            "source": "<?php\nclass C {function __construct(){yield 1;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Making a constructor a Generator",
+                    "execution": "Making a constructor a Generator"
+                }
+            }
+        },
+        {
+            "id": "constructor-bare",
+            "finding": "PHP86-010",
+            "group": "returns",
+            "source": "<?php\nclass C {function __construct(){return;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "destructor-value",
+            "finding": "PHP86-010",
+            "group": "returns",
+            "source": "<?php\nclass C {function __destruct(){return null;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Returning a value from a destructor",
+                    "execution": "Returning a value from a destructor"
+                }
+            }
+        },
+        {
+            "id": "destructor-generator",
+            "finding": "PHP86-010",
+            "group": "returns",
+            "source": "<?php\nclass C {function __destruct(){yield 1;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "Making a destructor a Generator",
+                    "execution": "Making a destructor a Generator"
+                }
+            }
+        },
+        {
+            "id": "destructor-bare",
+            "finding": "PHP86-010",
+            "group": "returns",
+            "source": "<?php\nclass C {function __destruct(){return;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "debug-nullable",
+            "finding": "PHP86-010",
+            "group": "debug",
+            "source": "<?php\nclass C {function __debugInfo():?array{return null;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "make the return type non-nullable",
+                    "execution": "make the return type non-nullable"
+                }
+            }
+        },
+        {
+            "id": "debug-union",
+            "finding": "PHP86-010",
+            "group": "debug",
+            "source": "<?php\nclass C {function __debugInfo():array|null{return null;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "make the return type non-nullable",
+                    "execution": "make the return type non-nullable"
+                }
+            }
+        },
+        {
+            "id": "debug-null",
+            "finding": "PHP86-010",
+            "group": "debug",
+            "source": "<?php\nclass C {function __debugInfo():null{return null;}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "make the return type non-nullable",
+                    "execution": "make the return type non-nullable"
+                }
+            }
+        },
+        {
+            "id": "debug-array",
+            "finding": "PHP86-010",
+            "group": "debug",
+            "source": "<?php\nclass C {function __debugInfo():array{return [];}} var_dump(new C);\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "debug-null-runtime",
+            "finding": "PHP86-010",
+            "group": "debug",
+            "source": "<?php\nclass C {function __debugInfo(){return null;}} var_dump(new C);\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": "return an empty array instead"
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": "return an empty array instead"
+                }
+            }
+        },
+        {
+            "id": "debug-null-direct",
+            "finding": "PHP86-010",
+            "group": "debug",
+            "source": "<?php\nclass C {function __debugInfo(){return null;}} (new C)->__debugInfo();\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        },
+        {
+            "id": "sleep-wakeup-control",
+            "finding": "PHP86-010",
+            "group": "debug",
+            "source": "<?php\nclass C {function __sleep(){return [];} function __wakeup(){}}\n",
+            "accepted": true,
+            "expected": {
+                "8.5": {
+                    "lint": "",
+                    "execution": ""
+                },
+                "8.6": {
+                    "lint": "",
+                    "execution": ""
+                }
+            }
+        }
+    ]
+}

@@ -1,5 +1,10 @@
 # PHP 8.6 Phase 2.2 risk assessment
 
+Latest follow-up: [Phase 3D discovery review](discovery-final-review.md), with
+additive `phase3d` evidence. PHP86-013 remains open; PHP86-014 and PHP86-015
+retain their bounded implementation blocks. The dated assessments below remain
+historical evidence.
+
 ## Phase 2.3 governance addendum — October 23, 2026
 
 [Gate A](../versioning.md#31-readiness-gates) now permits a protected,

@@ -209,5 +209,109 @@
         "parserScanner": "Prior full diff review retained; state/error regression and final-release review remain.",
         "compilerLedger": "578 raw hunks in eight files; phase22 classifications are not complete direct review.",
         "outsideLedger": "Core/optimizer source association incomplete; no blanket low-risk exclusion."
+    },
+    "phase3d": {
+        "date": "2026-10-23",
+        "discoveryComplete": false,
+        "findings": {
+            "PHP86-008": {
+                "classification": "Upstream implementation defect",
+                "disposition": "Qualified-static correction; no valid-language removal established; exact-pin historical class-scope crash unresolved.",
+                "gateB": "No grammar change authorized",
+                "anchors": [
+                    "type",
+                    "zend_compile_single_typename",
+                    "builtin_types"
+                ]
+            },
+            "PHP86-009": {
+                "classification": "Implementation change without language implications",
+                "disposition": "Parameter documentation metadata; comments remain trivia. Three precise ReflectionParameter PHPTs now associated.",
+                "gateB": "No production change needed",
+                "anchors": [
+                    "parameter",
+                    "parameter-list",
+                    "zend_compile_params",
+                    "backup_doc_comment"
+                ]
+            },
+            "PHP86-010": {
+                "classification": "Documentation-only change",
+                "disposition": "Accepted-deprecated forms need informative specification update; retain negative readonly alias and nondeprecated method/underscore-function controls.",
+                "gateB": "READY WITH BOUNDED LIMITATIONS: warning-only prose; permanent fixtures and broader case/context coverage required with implementation",
+                "anchors": [
+                    "identifier",
+                    "function-declaration",
+                    "class-constant-declaration",
+                    "use-declaration",
+                    "return-statement",
+                    "yield-expression",
+                    "Deprecated but accepted syntax"
+                ]
+            },
+            "PHP86-011": {
+                "classification": "Implementation change without language implications; broader optimization interactions unresolved",
+                "disposition": "Stateless caching does not authorize static inference. Passing new expressions to reference parameters is a confirmed runtime boundary, not a new structural rejection. array_map fallback controls retain PFA diagnostics.",
+                "gateB": "No blanket optimizer exclusion or new grammar rule",
+                "anchors": [
+                    "function-call",
+                    "argument",
+                    "new-dereferenceable",
+                    "closure-expression"
+                ]
+            },
+            "PHP86-012": {
+                "classification": "Excluded or unimplemented proposal; implemented runtime-only scope",
+                "disposition": "Newly reconciled direction-aware property RFC has selected-pin cache/VM effects only. Original 58 identities and ancestry limitations retained.",
+                "gateB": "No syntax implementation authorized",
+                "anchors": [
+                    "property-declaration",
+                    "Zend/Optimizer/compact_literals.c"
+                ]
+            },
+            "PHP86-013": {
+                "classification": "Discovery completeness obligation",
+                "disposition": "OPEN: credible compiler/AST/optimizer queues, reentrant linking and source/test associations remain; current-index review progressed but not exhaustive component/reversion review.",
+                "gateB": "Blocks complete implementation and unisolated changes"
+            },
+            "PHP86-014": {
+                "classification": "Unresolved language discrepancy with compiler/VM defect evidence",
+                "disposition": "Ordinary/list TMP dimension-write opcode inconsistency reproduced; reference result remains VAR and mutates aliases. Neither success nor failure establishes intended syntax.",
+                "gateB": "BLOCKED: assignment-based writable-target changes",
+                "anchors": [
+                    "assignment-expression",
+                    "variable-expression",
+                    "array-object-dereferenceable",
+                    "zend_compile_var_inner",
+                    "ZEND_ASSIGN_DIM"
+                ]
+            },
+            "PHP86-015": {
+                "classification": "Unresolved language discrepancy: contextual compiler validation order",
+                "disposition": "Direct/imported/qualified printf differs from namespace fallback/dynamic calls. AND/OR versus ternary/coalesce and discarded declarations demonstrate phase-dependent checks. No intentional normative rule established.",
+                "gateB": "BLOCKED: universal traversal rule; no builtin-specific EBNF",
+                "anchors": [
+                    "function-call",
+                    "cast-expression",
+                    "conditional-expression",
+                    "coalesce-expression",
+                    "zend_compile_func_printf",
+                    "zend_eval_const_expr"
+                ]
+            }
+        },
+        "sourceReviewHunks": 54,
+        "individuallySourceReviewedTests": 32,
+        "probeCounts": {
+            "sources": 60,
+            "stages": {
+                "lint": 33,
+                "controlled-runtime": 8,
+                "declaration-link": 19
+            },
+            "observations": 174
+        },
+        "evidence": "discovery-final-review.json",
+        "historicalFieldsPreserved": true
     }
 }

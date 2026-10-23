@@ -256,6 +256,12 @@
                 "risk": "critical",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "type-metadata-warning-sites",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "Maps PHP86-007/008/009/010; mixed hunks are not blanket mechanical exclusions."
             }
         },
         {
@@ -273,6 +279,12 @@
                 "risk": "critical",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "type-metadata-warning-sites",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "Maps PHP86-007/008/009/010; mixed hunks are not blanket mechanical exclusions."
             }
         },
         {
@@ -2851,6 +2863,12 @@
                 "risk": "critical",
                 "disposition": "prior-focused-review",
                 "group": "phase21:reference-return-yield"
+            },
+            "phase3d": {
+                "group": "type-metadata-warning-sites",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "Maps PHP86-007/008/009/010; mixed hunks are not blanket mechanical exclusions."
             }
         },
         {
@@ -3585,6 +3603,12 @@
                 "risk": "critical",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "type-metadata-warning-sites",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "Maps PHP86-007/008/009/010; mixed hunks are not blanket mechanical exclusions."
             }
         },
         {
@@ -3874,6 +3898,12 @@
                 "risk": "critical",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "type-metadata-warning-sites",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "Maps PHP86-007/008/009/010; mixed hunks are not blanket mechanical exclusions."
             }
         },
         {
@@ -3891,6 +3921,12 @@
                 "risk": "critical",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "type-metadata-warning-sites",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "Maps PHP86-007/008/009/010; mixed hunks are not blanket mechanical exclusions."
             }
         },
         {
@@ -4129,6 +4165,12 @@
                 "risk": "critical",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "type-metadata-warning-sites",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "Maps PHP86-007/008/009/010; mixed hunks are not blanket mechanical exclusions."
             }
         },
         {
@@ -4214,6 +4256,12 @@
                 "risk": "critical",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "type-metadata-warning-sites",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "Maps PHP86-007/008/009/010; mixed hunks are not blanket mechanical exclusions."
             }
         },
         {
@@ -4776,6 +4824,12 @@
                 "risk": "critical",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "type-metadata-warning-sites",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "Maps PHP86-007/008/009/010; mixed hunks are not blanket mechanical exclusions."
             }
         },
         {
@@ -6875,6 +6929,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -6892,6 +6952,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -6909,6 +6975,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -6926,6 +6998,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -6943,6 +7021,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -6960,6 +7044,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -6977,6 +7067,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -6994,6 +7090,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7011,6 +7113,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7028,6 +7136,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7045,6 +7159,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7062,6 +7182,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7079,6 +7205,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7096,6 +7228,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7113,6 +7251,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7130,6 +7274,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7147,6 +7297,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7164,6 +7320,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7181,6 +7343,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7198,6 +7366,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7215,6 +7389,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7232,6 +7412,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7249,6 +7435,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7266,6 +7458,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7283,6 +7481,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7300,6 +7504,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7317,6 +7527,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7334,6 +7550,12 @@
                 "risk": "critical",
                 "disposition": "reviewed",
                 "group": "override-constants"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7351,6 +7573,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7368,6 +7596,12 @@
                 "risk": "elevated",
                 "disposition": "examined-unresolved",
                 "group": "inheritance-order"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7385,6 +7619,12 @@
                 "risk": "low",
                 "disposition": "grouped-evidence-excluded",
                 "group": "mechanical"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7402,6 +7642,12 @@
                 "risk": "elevated",
                 "disposition": "examined-unresolved",
                 "group": "inheritance-order"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7419,6 +7665,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7436,6 +7688,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7453,6 +7711,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7470,6 +7734,12 @@
                 "risk": "critical",
                 "disposition": "reviewed",
                 "group": "override-constants"
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7487,6 +7757,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7504,6 +7780,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7521,6 +7803,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7538,6 +7826,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7555,6 +7849,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7572,6 +7872,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7589,6 +7895,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7606,6 +7918,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -7623,6 +7941,12 @@
                 "risk": "elevated",
                 "disposition": "pending-direct-review",
                 "group": null
+            },
+            "phase3d": {
+                "group": "inheritance-source-review",
+                "disposition": "source-reviewed",
+                "evidence": "discovery-final-review.json",
+                "limitation": "No new language rule identified beyond PHP86-005; interface-order/autoload interactions remain unresolved under PHP86-013."
             }
         },
         {
@@ -10105,5 +10429,67 @@
             }
         },
         "scopeLimit": "Eight-file raw ledger only. Risk defaults are conservative triage, not semantic conclusions. Optimizer/core files outside this ledger retain PHP86-013 review obligations. Phase 2.1 fields preserved."
+    },
+    "phase3d": {
+        "date": "2026-10-23",
+        "sourceReviewedHunks": 54,
+        "hunkIds": [
+            "Zend/zend_compile.c:246:251",
+            "Zend/zend_compile.c:271:280",
+            "Zend/zend_compile.c:5701:6261",
+            "Zend/zend_compile.c:7099:7756",
+            "Zend/zend_compile.c:7745:8401",
+            "Zend/zend_compile.c:7842:8499",
+            "Zend/zend_compile.c:8403:9073",
+            "Zend/zend_compile.c:8548:9226",
+            "Zend/zend_compile.c:9615:10338",
+            "Zend/zend_inheritance.c:1:1",
+            "Zend/zend_inheritance.c:59:58",
+            "Zend/zend_inheritance.c:99:98",
+            "Zend/zend_inheritance.c:188:187",
+            "Zend/zend_inheritance.c:264:263",
+            "Zend/zend_inheritance.c:311:306",
+            "Zend/zend_inheritance.c:330:325",
+            "Zend/zend_inheritance.c:341:336",
+            "Zend/zend_inheritance.c:351:346",
+            "Zend/zend_inheritance.c:375:370",
+            "Zend/zend_inheritance.c:474:469",
+            "Zend/zend_inheritance.c:494:489",
+            "Zend/zend_inheritance.c:505:500",
+            "Zend/zend_inheritance.c:529:524",
+            "Zend/zend_inheritance.c:561:556",
+            "Zend/zend_inheritance.c:670:665",
+            "Zend/zend_inheritance.c:762:757",
+            "Zend/zend_inheritance.c:896:891",
+            "Zend/zend_inheritance.c:910:905",
+            "Zend/zend_inheritance.c:941:936",
+            "Zend/zend_inheritance.c:952:947",
+            "Zend/zend_inheritance.c:1040:1031",
+            "Zend/zend_inheritance.c:1057:1048",
+            "Zend/zend_inheritance.c:1599:1590",
+            "Zend/zend_inheritance.c:1672:1659",
+            "Zend/zend_inheritance.c:1784:1771",
+            "Zend/zend_inheritance.c:2036:2023",
+            "Zend/zend_inheritance.c:2127:2114",
+            "Zend/zend_inheritance.c:2154:2147",
+            "Zend/zend_inheritance.c:2171:2164",
+            "Zend/zend_inheritance.c:2189:2186",
+            "Zend/zend_inheritance.c:2202:2199",
+            "Zend/zend_inheritance.c:2237:2231",
+            "Zend/zend_inheritance.c:2266:2256",
+            "Zend/zend_inheritance.c:2276:2265",
+            "Zend/zend_inheritance.c:2334:2322",
+            "Zend/zend_inheritance.c:2405:2402",
+            "Zend/zend_inheritance.c:2527:2528",
+            "Zend/zend_inheritance.c:2560:2558",
+            "Zend/zend_inheritance.c:2589:2585",
+            "Zend/zend_inheritance.c:2634:2628",
+            "Zend/zend_inheritance.c:2844:2836",
+            "Zend/zend_inheritance.c:3023:3019",
+            "Zend/zend_inheritance.c:3332:3371",
+            "Zend/zend_inheritance.c:3627:3666"
+        ],
+        "note": "Additive review overlay; phase22 risk/disposition counts remain historical. Review is not automatic resolution.",
+        "evidence": "discovery-final-review.json"
     }
 }

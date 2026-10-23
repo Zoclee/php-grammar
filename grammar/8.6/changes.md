@@ -3,8 +3,12 @@
 ## 1. Overview and comparison baseline
 
 **Provisional, incomplete working document and unregistered draft.** Phase 3B
-implements only PHP86-001 partial function application (PFA) and callable
-trailing commas. No complete PHP 8.6 compatibility or certification is claimed.
+implements PHP86-001 partial function application (PFA) and callable
+trailing commas. Phase 3C adds the contextual specification changes PHP86-003
+through PHP86-007 below, with no further EBNF change or new contextual validator.
+Phase 3E documents PHP86-010 accepted-but-deprecated forms and their diagnostic
+stages, also without EBNF changes.
+No complete PHP 8.6 compatibility or certification is claimed.
 The preceding supported version is PHP 8.5; the repository copying baseline is
 `d4cd2c5446a9de7fa783533ef8d9e8f8f0fad3ee`.
 The pre-edit EBNF SHA-256 is
@@ -59,7 +63,8 @@ unchanged. Header/status edits identify this draft and limit inherited audit cla
 
 ## 4. Removed syntax
 
-No syntax removal is implemented in PHP86-001. This is not a conclusion about
+No syntax removal is implemented in PHP86-001 or PHP86-010. Deprecation does not
+remove an accepted production. This is not a conclusion about
 all PHP 8.6 changes; other findings remain outside this phase.
 
 ## 5. Lexical and tokenization changes
@@ -109,6 +114,81 @@ PHP86-002 is explanatory: `?` creates a required parameter, whereas `...`
 preserves applicable optionality (`zend_partial.c`, `optional_placeholder.phpt`).
 It introduces no additional production. Runtime signature certification is deferred.
 
+### Phase 3C contextual specification changes
+
+Each finding independently meets Gate B for the stated specification and evidence
+scope. All changes below are contextual, with **zero EBNF or lexical edits**.
+The structural matcher does not enforce them. The
+[context case manifest](../../tests/fixtures/php/8.6/context-cases.json) maps every
+fixture to its finding, implementation/test evidence, validation stage, and paired
+expectations. Prefixes below refer to `context-<prefix>*.php` in the 8.6 valid,
+contextual-invalid, and runtime fixture directories. Structural acceptance remains true in
+both grammars, including all contextual-negative cases.
+
+| Finding | PHP 8.5 versus RC4; normative scope | Existing productions and local evidence |
+|---|---|---|
+| PHP86-003 | Ordinary readonly defaults prohibited -> eligible typed instance defaults permitted, including readonly classes. Type/constant-expression, nonstatic, unhooked, inheritance, and initialization constraints remain. Promotion defaults still initialize parameters. | `property-declaration`; Properties and Promotion prose. `readonly-*` fixtures cover defaults, implicit readonly, types, inheritance, promotion, discarded closure, and controlled reassignment. |
+| PHP86-004 | Constant-derived property write paths rejected -> property mutation through global/class constant objects and intervening dimensions permitted. Dimension-only constant array writes remain invalid. No assignment-based writable-target relaxation. | `variable-expression`, `assignment-expression`, `unset-statement`, `foreach-statement`; Writable variables and destructuring prose. `object-*` fixtures cover references, unset, increment, compound writes, dimensions, destructuring, nonobject failure, and mutation execution. Existing foreach lint acceptance is a control, not a new acceptance boundary. |
+| PHP86-005 | Override target excludes constants -> qualifying class/interface constants and enum cases supported. A nonprivate inherited constant must match; finality/type/visibility constraints remain. | `attribute`, `class-constant-declaration`, `enum-case`; Class constants prose. `override-*` declaration-link cases cover parents/interfaces/enums, protected/private/missing/final/type cases, and delayed parent declaration. |
+| PHP86-006 | Enum `__debugInfo` forbidden at linking -> permitted with ordinary magic-method checks. No arguments, nonstatic, return type compatible with `?array` when declared; nonpublic visibility warns. Other enum magic prohibitions remain, especially `__get`. | `enum-declaration`, `method-declaration`; Enums prose. `enum-*` cases separate lint from linking and test backed/unbacked, signatures, visibility, and forbidden-method controls. |
+| PHP86-007 | Nullsafe method-call reference returns/yields pass tested 8.5 lint -> rejected when compiled in RC4. Existing nullsafe property/binding restrictions remain. No blanket value-return, yield, or foreach restriction. | `return-statement`, `yield-expression`, `function-declaration`; Control-flow constraints prose. `nullsafe-*` cases distinguish by-reference/value contexts, ordinary calls, property binding, discarded closure, unreachable/dead statements, and foreach controls. |
+
+Immutable implementation evidence at
+`f23b4c222cebe33be93ee8ecaaa14390c5507a08`:
+
+- PHP86-003: [compiler](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c), `zend_compile_prop_decl`; [inheritance](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_inheritance.c) property checks. Upstream `readonly_props/readonly_with_default.phpt` and `readonly_with_default_inheritance.phpt`.
+- PHP86-004: compiler `zend_can_write_to_variable`, `zend_mark_const_object_fetch` and constant/property fetch compilation. Upstream `gh10497_write_targets.phpt`, `gh10497_write_targets_guardrail.phpt`, `gh10497_dim_arr.phpt`, `gh10497_func_arg.phpt`, `gh10497_non_object.phpt`.
+- PHP86-005: compiler `zend_compile_class_const_decl`, `zend_compile_enum_case`; inheritance constant matching and unresolved Override checks; [attribute target definition](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_attributes.stub.php) and generated arginfo. Upstream `attributes/override/constants/basic.phpt`, `failure.phpt`, `visibility_01.phpt`, `visibility_03.phpt`.
+- PHP86-006: [enum checks](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_enum.c), `zend_verify_enum_magic_methods`; [magic-method checks](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_API.c), `zend_check_magic_method_implementation`. Upstream `enum/debugInfo/` magic method, backed value, parameter, return, and visibility PHPTs. Nullable-return deprecation is diagnostic, not a new structural rejection.
+- PHP86-007: compiler `zend_compile_return`, `zend_compile_yield`, `zend_is_variable_or_call`, and `zend_assert_not_short_circuited`; upstream `gh20628_001.phpt` plus recorded ordinary/discarded research probes.
+
+The [context source lock](../../tools/8.6/context-source-lock.json) preserves both
+source pins, hashes, pre-edit artifact hashes, and interpreter distribution hashes.
+The [Phase 3C report](../../docs/8.6/context-implementation.md) records exact
+commands and limitations. Seven [contextual boundary records](../../tests/fixtures/version-boundaries/contextual-8.6)
+declare their stage explicitly; they must not be interpreted as structural
+acceptance boundaries by the generic structural runner. The
+[paired results](../../docs/8.6/context-validation.json) record lint separately
+from declaration linking and the three controlled-runtime witnesses.
+
+### Phase 3E diagnostic-only specification changes
+
+**PHP86-010:** all deprecated forms below remain accepted subject to existing
+contextual restrictions. There are **zero EBNF, token, or lexical edits**.
+Warnings are separate from source rejection. The existing `readonly` import
+alias rejection is a negative control, not a new deprecation or removal.
+
+| Construct / unchanged productions | PHP 8.5 versus RC4 | Source and local case group |
+|---|---|---|
+| Names, `identifier`, `type`, class-like declarations | `let`/`is` declaration and type-name diagnostics added; qualified `_` type/alias checks broadened. `_` class declarations already warned, including namespaced declarations. Qualified suffix matching differs from unqualified matching; runtime class aliases lowercase first. | Compiler `zend_assert_valid_class_name`, `zend_compile_typename_ex`, `zend_compile_class_decl`; API `zend_register_class_alias_ex`; `names` cases. |
+| `function-declaration`, `method-declaration` | Functions named `readonly`, `let`, `is` now warn during compilation; methods and `_` functions retain warning-free controls. | Compiler `zend_begin_func_decl`; `names` cases. |
+| Global constants, `constant-declaration` | `_`, `let`, `is` names newly warn at runtime registration; lint alone does not produce this diagnostic. | Constants `zend_register_constant`; `names` cases. |
+| `namespace-use-declaration`, `use-declaration` | Class/constant aliases `_`, `let`, `is` and function aliases `let`, `is` now warn during compilation. `_` function aliases remain warning-free. `readonly` function aliases are rejected by both parsers. | Compiler `zend_compile_use`; `imports` cases. |
+| `class-constant-declaration`, `enum-case` | Case-insensitive `namespace` names now warn during compilation; same-named property/method and `define` controls do not. | API `zend_declare_typed_class_constant`; `namespace` cases. |
+| `return-statement` in finally | Bare/value returns newly warn during compilation, including a nested try inside finally; nested closure context is independent. | Compiler `zend_compile_return`; `finally` cases. |
+| `method-declaration`, `return-statement`, `yield-expression` | Constructor/destructor value returns and generator declarations newly warn during compilation; bare returns do not. | Compiler `zend_compile_return`, `zend_compile_func_decl_ex`; `returns` cases. |
+| `method-declaration`, `type` for `__debugInfo` | Nullable return declarations newly warn during compilation. Null received by the debug handler already warned at runtime in PHP 8.5; an ordinary direct call is distinct. | API `zend_check_magic_method_implementation`; object handlers `zend_std_get_debug_info`; `debug` cases. |
+
+Immutable implementation sources at the RC4 pin:
+[compiler](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c),
+[constants](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_constants.c),
+[API](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_API.c),
+[object handlers](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_object_handlers.c).
+Upstream evidence includes
+[deprecated identifiers](https://github.com/php/php-src/tree/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/tests/deprecated_identifiers),
+`functions/readonly_as_method_name_is_ok.phpt`,
+`deprecate_namespace_class_constant.phpt`,
+`try/finally_return_deprecation.phpt`,
+`magic_methods/constructor_destructor_return.phpt`, `return_types/042.phpt`,
+and `debug_info/debug_info.phpt` under that tree's `Zend/tests` directory.
+Both-side source/test hashes and 67 isolated sources with explicit paired
+lint/execution expectations are in the
+[deprecation case manifest](../../tests/fixtures/php/8.6/deprecation-cases.json).
+The [Phase 3E report](../../docs/8.6/deprecation-implementation.md) and
+[paired results](../../docs/8.6/deprecation-validation.json) record validation
+and limits. `__sleep`/`__wakeup` deprecation was reverted and is not introduced
+here. No warning-only version-boundary acceptance record is added.
+
 ## 7. Compatibility and unchanged syntax
 
 PHP 8.5 grammar, Markdown, fixtures, evidence, and tooling remain unchanged.
@@ -154,15 +234,31 @@ Actual command results and limitations are recorded in the
 [Phase 3B report](../../docs/8.6/pfa-implementation.md) and
 [lint results](../../docs/8.6/pfa-validation.json).
 
+For PHP86-010, run `php tools/8.6/deprecation-check.php --php85=<executable>
+--php86=<executable> --sources85=<8.5-tree> --sources86=<RC4-tree>
+--report=<output.json>`. This checks source hashes, acceptance, warning presence,
+and diagnostic stage in isolated processes. The focused PHPUnit test verifies
+both structural grammars and recorded evidence; neither changes version discovery.
+
 ## 10. Known limitations and outstanding uncertainties
+
+The [Phase 3D discovery review](../../docs/8.6/discovery-final-review.md) records
+the discovery dispositions and prioritized backlog. That review added no canonical
+or normative change. Phase 3E now implements PHP86-010 warning-only documentation;
+PHP86-013/014/015 remain open. Parameter metadata and the newly reconciled
+property-cache optimization require no additional production. Phase 3B/C rules
+and their historical validation evidence remain unchanged.
 
 PHP86-013 (discovery gaps), PHP86-014 (assignment-based writable targets), and
 PHP86-015 (optimized-call traversal) remain open with unchanged dispositions.
-PHP86-003 through PHP86-007 and PHP86-010 are not implemented here;
+PHP86-003 through PHP86-007 have the bounded Phase 3C specification and evidence
+scope above; their contextual validator integration remains unimplemented.
+PHP86-010 is documented with the bounded diagnostic evidence above;
 PHP86-008/009/011 retain correction, metadata, and optimization dispositions;
 PHP86-012 proposals/API-only scopes remain excluded. PHP86-002 is explanatory
-only. This phase does not close any research finding outside PHP86-001's tested
-structural scope.
+only. Phase 3C does not close broader compiler/discovery uncertainty. Its scope
+does not alter the earlier PHP86-001 structural evidence or certify all contextual
+combinations, delayed inheritance graphs, or optimizer profiles.
 
 Exact-pin executable provenance, runtime callable/signature behavior, all
 optimizer profiles and interactions, parent-hook-specific regression fixtures,

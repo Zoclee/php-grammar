@@ -729,5 +729,149 @@
         "totalProbeSources": 115,
         "newMaterialFinding": "PHP86-015",
         "exactPinBuildProduced": false
+    },
+    "phase3d": {
+        "date": "2026-10-23",
+        "verifiedOriginalChecks": 341,
+        "additionalSourceEvidence": {
+            "Zend/zend_language_parser.y": {
+                "old": "f108f2c2ff4c98c68b6478e7fbdebc16d8afb8bbbc3ae6079e5b285b448dac0c",
+                "new": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235"
+            },
+            "Zend/zend_language_scanner.l": {
+                "old": "8dfed84b0f6cabe73f004ea00c69614ea84542130a9b97e7699f801ef7ce7403",
+                "new": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39"
+            },
+            "Zend/zend_compile.c": {
+                "old": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225",
+                "new": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd"
+            },
+            "Zend/zend_ast.c": {
+                "old": "2b957bba99379210a4205a8fdfe4cde40da6df4bfcd99f115ee188ecd5d275d5",
+                "new": "e6e793245e60d377f109b3d1e154665e84ab9a5cc60736576c4ff89d99eee5a9"
+            },
+            "Zend/zend_inheritance.c": {
+                "old": "69793711dc0a88c93545be87baa57e2fca26f2dc2e0701a8d956611980fee486",
+                "new": "d3f0f10319e7ffe0490ee85fd4b42f5dca9efa7804bc8e72b1b23d8df7dccf46"
+            },
+            "Zend/zend_constants.c": {
+                "old": "f4a908d79814ce82cb368cdd9d68e68901ae31e0a1e2398e4b18c3987d37266b",
+                "new": "6c5cd44f8d3def91202d199f4e05f3d81ebba6beafdbe24f894740b8817e6985"
+            },
+            "Zend/zend_API.c": {
+                "old": "1aa5548cebd8f337bad00fe94917559d52db75566eb5d8674ef377a6369ef711",
+                "new": "666d6f9c311bef02b50a5cfe09ddf66fac310834a88c94dac9be37a83ee238db"
+            },
+            "Zend/zend_object_handlers.c": {
+                "old": "a2b4605a03081efa6b76802af07664d411d6737dd0d8dee434217278d816dcea",
+                "new": "1a3b3708ab7e5f270ac0da6faf9d53bac3ebb5ac6395e38e695fb0e5638451d6"
+            },
+            "Zend/zend_execute.c": {
+                "old": "5479cd6fd4025f013713cee297028c93c8c6a70bbf10481a8374da6e207773c8",
+                "new": "14d16d4923caae8ff3432b236890429bc61914f6c926465e89a06e6e830f518c"
+            },
+            "Zend/zend_vm_def.h": {
+                "old": "87f6d73c31a0c2865fc841efba911d512c14d672f31be25d140b10fb43451a41",
+                "new": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e"
+            },
+            "Zend/Optimizer/compact_literals.c": {
+                "old": "b34e7b28c1617dbdfd622a3757136e9b4178c90024866baa723370d99862ef41",
+                "new": "7d4039a39a825839a8f908cdb047e63c119f27de2959aad726665d6f9f3e1539"
+            }
+        },
+        "upstreamReferences": [
+            {
+                "url": "https://api.github.com/repos/php/php-src/commits?path=Zend/zend_inheritance.c&sha=f23b4c222cebe33be93ee8ecaaa14390c5507a08&per_page=30",
+                "snapshot": "phase3d-inheritance-history.json",
+                "review": "f93b17076a25e2a06af50a6d177ae4badc5e44c3 moves interface inheritance early; intended preparation for a generic-types proof of concept is not implemented generic syntax."
+            },
+            {
+                "url": "https://api.github.com/repos/php/php-src/pulls/18622",
+                "snapshot": "phase3d-pr18622.json",
+                "review": "No intended accepted-language change asserted. Finite subtype controls do not certify all autoload/reentrant linking graphs."
+            },
+            {
+                "url": "https://api.github.com/repos/php/php-src/issues/20628/comments?per_page=100",
+                "snapshot": "phase3d-pr20628-comments.json",
+                "review": "Issue comments discuss faulty assertions and intentionally changed runtime passing of new expressions by reference. They do not decide assignment-based dimension-write validity."
+            },
+            {
+                "url": "https://api.github.com/repos/php/php-src/pulls/20628/comments?per_page=100",
+                "snapshot": "phase3d-pr20628-review.json",
+                "review": "Review comments concern VM/reference and yield-from optimization; no exact writable-target disposition found. This is one fetched page, not a global issue-search claim."
+            },
+            {
+                "url": "https://api.github.com/repos/php/php-src/pulls/19658",
+                "snapshot": "phase3d-pr19658.json",
+                "review": "printf performance optimization; no normative discarded-unset-cast rule established."
+            },
+            {
+                "url": "https://api.github.com/repos/php/php-src/commits?path=Zend/zend_compile.c&sha=f23b4c222cebe33be93ee8ecaaa14390c5507a08&per_page=100",
+                "snapshot": "phase3d-compiler-history.json",
+                "review": "Reviewed relevant history: printf 26c96d38f440a5b6476a97527e1748f9bf187541 and fix 09c39a8fd9e944a1c0e85cdaf542f838440f4d63; array_map follow-ups; explicit-static closure cache; __sleep/__wakeup deprecation revert. History page is not complete ancestry coverage."
+            },
+            {
+                "url": "https://wiki.php.net/rfc?do=export_raw",
+                "snapshot": "phase3d-rfc-index.txt",
+                "review": "Index comparison adds direction-aware-property candidate to implemented section and moves existing proposal statuses. Not evidence of source integration alone."
+            },
+            {
+                "url": "https://wiki.php.net/rfc/direction_aware_property_resolution?do=export_raw",
+                "snapshot": "phase3d-rfc-direction.txt",
+                "review": "Stale Draft metadata and original write_access design; selected implementation must be read separately."
+            },
+            {
+                "url": "https://api.github.com/repos/php/php-src/pulls/22709",
+                "snapshot": "phase3d-pr22709.json",
+                "review": "Merged 94136cf9bfbab89e072e3f04992c1e16c3a981a1; narrowed fast-path cache optimization."
+            },
+            {
+                "url": "https://api.github.com/repos/php/php-src/commits?path=Zend/zend_object_handlers.c&sha=f23b4c222cebe33be93ee8ecaaa14390c5507a08&per_page=50",
+                "snapshot": "phase3d-property-history.json",
+                "review": "Selected-pin history identifies narrower merged design, not the RFC draft signature."
+            },
+            {
+                "url": "https://api.github.com/repos/php/php-src/compare/94136cf9bfbab89e072e3f04992c1e16c3a981a1...f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+                "snapshot": "phase3d-property-ancestry.json",
+                "review": "Primary merge ancestry verified separately from selected-pin implementation."
+            }
+        ],
+        "externalEvidence": {
+            "phase3d-compiler-history.json": {
+                "sha256": "42f368dc447d6b50d0563c7ce1ae9ed239c5e7347fa71aab6c30193422bd91f7"
+            },
+            "phase3d-inheritance-history.json": {
+                "sha256": "6a7fac763d9d2184e4abf873363db081ce3935792382a520e5921bfb771e434c"
+            },
+            "phase3d-pr18622.json": {
+                "sha256": "3a6cc2bde0219769329daabfb2c0643a0daea5199654b4ef8d09c55d8ab37a5b"
+            },
+            "phase3d-pr19658.json": {
+                "sha256": "ac76e021ee0e8b0c15f0ad9d4fb8f11b8a8e359404d66796fda5dcc6d48d1431"
+            },
+            "phase3d-pr20628-comments.json": {
+                "sha256": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd"
+            },
+            "phase3d-pr20628-review.json": {
+                "sha256": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe"
+            },
+            "phase3d-pr22709.json": {
+                "sha256": "a5c96530dc54c3417776e43d2401867f2f6ec307f23c0a11ae447e9ec514cfdb"
+            },
+            "phase3d-property-ancestry.json": {
+                "sha256": "d09f8197ed192accc353231571d21819f92d3688fd75815f3cfefa064d9874f5"
+            },
+            "phase3d-property-history.json": {
+                "sha256": "64ac5ca2a5ebc093280539b3717101f3633b3f681ed888a2a3a239fa580168bf"
+            },
+            "phase3d-rfc-index.txt": {
+                "sha256": "dfb40fdd4a24f51aed93c55095fc7a1a5cb6bbd7121d568112afbf466332ec84"
+            },
+            "phase3d-rfc-direction.txt": {
+                "sha256": "08e4945acd2f58c1558da61fc29d56fd538f68f657ec343168f26f78d33972e3"
+            }
+        },
+        "probeLedger": "discovery-final-review.json",
+        "exactPinExecutable": false
     }
 }

@@ -96,7 +96,7 @@
                         "echo STATUS::ACTIVE; // Deprecated: Using STATUS as a class name with incorrect case",
                         "===== Proposed PHP version(s) =====",
                         "([[https://wiki.php.net/rfc/case-sensitivity|wiki.php.net/rfc/case-sensitivity]]) The only RFC draft ever written on this topic, other than the present one. Proposed making namespaces, classes, interfaces, traits, functions, and non-magic methods all case-sensitive. Left incomplete, never voted on, status: Inactive.",
-                        "  * Levi Morrison stated PHP 9.0 is the right enforcement target: \"This isn't some minor thing squirreled away in a library — this is the core language.\""
+                        "  * Levi Morrison stated PHP 9.0 is the right enforcement target: \"This isn't some minor thing squirreled away in a library \u2014 this is the core language.\""
                     ],
                     "implementationLinks": [
                         "https://github.com/php/php-src/pull/22260",
@@ -3696,5 +3696,53 @@
             "stream_errors"
         ],
         "scope": "Grammar-impact reconciliation of the existing 58 candidates. No claim of complete current-index discovery or full library integration."
+    },
+    "phase3d": {
+        "date": "2026-10-23",
+        "indexSha256": "dfb40fdd4a24f51aed93c55095fc7a1a5cb6bbd7121d568112afbf466332ec84",
+        "historicalRecordsRetained": 58,
+        "additionalCandidates": [
+            {
+                "slug": "direction_aware_property_resolution",
+                "finding": "PHP86-012",
+                "url": "https://wiki.php.net/rfc/direction_aware_property_resolution",
+                "snapshotSha256": "08e4945acd2f58c1558da61fc29d56fd538f68f657ec343168f26f78d33972e3",
+                "reportedStatus": "Draft",
+                "indexStatus": "Implemented in PHP 8.6",
+                "primaryCommit": "94136cf9bfbab89e072e3f04992c1e16c3a981a1",
+                "ancestry": {
+                    "commit": "94136cf9bfbab89e072e3f04992c1e16c3a981a1",
+                    "mergeBase": "94136cf9bfbab89e072e3f04992c1e16c3a981a1",
+                    "comparisonStatus": "ahead"
+                },
+                "disposition": "Selected-pin runtime-only cache optimization; no grammar change",
+                "sourceAnchors": [
+                    "Zend/zend_object_handlers.c:zend_std_write_property",
+                    "Zend/zend_vm_def.h:ZEND_ASSIGN_OBJ",
+                    "Zend/zend_execute.c:zend_assign_to_typed_prop",
+                    "Zend/Optimizer/compact_literals.c:ZEND_ASSIGN_OBJ"
+                ],
+                "reason": "Denied asymmetric writes clear cache; assignment uses separate cache pool; slow path retains visibility/readonly behavior. Merged design does not add the RFC draft write_access parameter.",
+                "tests": [
+                    "Zend/tests/asymmetric_visibility/optimizer_shared_cache_slot.phpt",
+                    "Zend/tests/asymmetric_visibility/scope_rebinding.phpt",
+                    "Zend/tests/asymmetric_visibility/unshared_rw_cache_slot.phpt"
+                ]
+            }
+        ],
+        "statusMoves": {
+            "function-autoloading-five-oh": "Declined",
+            "case_sensitive_php": "Withdrawn",
+            "typed-aliases": "Inactive",
+            "void-as-null": "Inactive",
+            "dataclass": "Inactive",
+            "static_constructor": "Inactive"
+        },
+        "limitations": [
+            "Optional-placeholder independent ancestry remains unresolved; selected-pin source evidence retained.",
+            "Stream-errors ancestry remains unresolved and API scope stays excluded.",
+            "Index status is not implementation evidence; complete component/follow-up/reversion audit remains open."
+        ],
+        "evidence": "discovery-final-review.json"
     }
 }

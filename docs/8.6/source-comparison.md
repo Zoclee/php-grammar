@@ -1,5 +1,10 @@
 # PHP 8.5 to PHP 8.6 RC4 source comparison
 
+The [Phase 3D review](discovery-final-review.md) rereads the complete parser/scanner
+and inheritance diffs, adds precise source/test associations and upstream history,
+and reconciles the previously omitted property-cache RFC under PHP86-012.
+Its additive ledger fields preserve the earlier counts below. Discovery is open.
+
 The [Phase 2.3 readiness decision](implementation-plan.md#phase-23-readiness-decision--october-23-2026)
 supersedes earlier baseline-copying restrictions only. Source dispositions and
 discovery, implementation, and certification obligations remain unchanged.

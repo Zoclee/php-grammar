@@ -1,5 +1,12 @@
 # PHP 8.6 language-change inventory
 
+Latest assessment: [Phase 3D discovery review](discovery-final-review.md).
+PHP86-001–007 retain their Phase 3B/C implementation scope. PHP86-008–015
+have additive dispositions in [the review evidence](discovery-final-review.json).
+PHP86-010 remains warning-only documentation work; PHP86-013/014/015 remain
+open. The newly reconciled property-cache RFC is associated with PHP86-012,
+without a new syntax finding. The historical matrix below is unchanged.
+
 Current governance: [Phase 2.3 readiness decision](implementation-plan.md#phase-23-readiness-decision--october-23-2026).
 Source assessment: [Phase 2.2 risk review](discovery-risk-assessment.md).
 PHP86-013 remains open; PHP86-014 is bounded to writable-target implementation,

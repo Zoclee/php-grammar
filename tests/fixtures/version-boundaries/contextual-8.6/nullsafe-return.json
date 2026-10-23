@@ -1,0 +1,9 @@
+{
+    "name": "PHP86-007 nullsafe-return",
+    "firstSupportedVersion": "8.5",
+    "lastSupportedVersion": "8.5",
+    "fixture": "../../php/8.6/contextual-invalid/context-nullsafe-return.php",
+    "reference": "https://github.com/php/php-src/tree/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend",
+    "validationStage": "lint",
+    "finding": "PHP86-007"
+}

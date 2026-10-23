@@ -1,5 +1,9 @@
 # PHP 8.6 Phase 2.1 discovery closure assessment
 
+Latest follow-up: [Phase 3D discovery review](discovery-final-review.md).
+PHP86-013 remains open. This Phase 2.1 decision and its historical counts are
+preserved; later implementation and research do not retroactively change it.
+
 Phase 2.3 governance note, October 23, 2026: [Gate A](../versioning.md#31-readiness-gates)
 now permits a protected, unregistered, unchanged working baseline before discovery
 closure. The Phase 3A block below was correct under the earlier policy and is

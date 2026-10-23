@@ -1,0 +1,2161 @@
+{
+    "date": "2026-10-23",
+    "phase": "3D",
+    "repositoryBaseline": "0730c0867f2de5f80b83d21bb3b3b2206e9ce483",
+    "startingState": "Phase 3C working-tree changes present and preserved",
+    "pins": {
+        "old": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "new": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "discoveryComplete": false,
+    "report": "discovery-final-review.md",
+    "profile": {
+        "php85": "8.5.10 Windows CLI",
+        "php86": "8.6.0RC4 Windows CLI",
+        "flags": [
+            "-n",
+            "-d display_errors=1",
+            "-d error_reporting=-1"
+        ],
+        "exactPinExecutables": false,
+        "opcacheJit": "not enabled",
+        "upstreamSuiteExecuted": false
+    },
+    "externalEvidence": {
+        "phase3d-compiler-history.json": {
+            "sha256": "42f368dc447d6b50d0563c7ce1ae9ed239c5e7347fa71aab6c30193422bd91f7"
+        },
+        "phase3d-inheritance-history.json": {
+            "sha256": "6a7fac763d9d2184e4abf873363db081ce3935792382a520e5921bfb771e434c"
+        },
+        "phase3d-pr18622.json": {
+            "sha256": "3a6cc2bde0219769329daabfb2c0643a0daea5199654b4ef8d09c55d8ab37a5b"
+        },
+        "phase3d-pr19658.json": {
+            "sha256": "ac76e021ee0e8b0c15f0ad9d4fb8f11b8a8e359404d66796fda5dcc6d48d1431"
+        },
+        "phase3d-pr20628-comments.json": {
+            "sha256": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd"
+        },
+        "phase3d-pr20628-review.json": {
+            "sha256": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe"
+        },
+        "phase3d-pr22709.json": {
+            "sha256": "a5c96530dc54c3417776e43d2401867f2f6ec307f23c0a11ae447e9ec514cfdb"
+        },
+        "phase3d-property-ancestry.json": {
+            "sha256": "d09f8197ed192accc353231571d21819f92d3688fd75815f3cfefa064d9874f5"
+        },
+        "phase3d-property-history.json": {
+            "sha256": "64ac5ca2a5ebc093280539b3717101f3633b3f681ed888a2a3a239fa580168bf"
+        },
+        "phase3d-rfc-index.txt": {
+            "sha256": "dfb40fdd4a24f51aed93c55095fc7a1a5cb6bbd7121d568112afbf466332ec84"
+        },
+        "phase3d-rfc-direction.txt": {
+            "sha256": "08e4945acd2f58c1558da61fc29d56fd538f68f657ec343168f26f78d33972e3"
+        }
+    },
+    "upstreamReferences": [
+        {
+            "url": "https://api.github.com/repos/php/php-src/commits?path=Zend/zend_inheritance.c&sha=f23b4c222cebe33be93ee8ecaaa14390c5507a08&per_page=30",
+            "snapshot": "phase3d-inheritance-history.json",
+            "review": "f93b17076a25e2a06af50a6d177ae4badc5e44c3 moves interface inheritance early; intended preparation for a generic-types proof of concept is not implemented generic syntax."
+        },
+        {
+            "url": "https://api.github.com/repos/php/php-src/pulls/18622",
+            "snapshot": "phase3d-pr18622.json",
+            "review": "No intended accepted-language change asserted. Finite subtype controls do not certify all autoload/reentrant linking graphs."
+        },
+        {
+            "url": "https://api.github.com/repos/php/php-src/issues/20628/comments?per_page=100",
+            "snapshot": "phase3d-pr20628-comments.json",
+            "review": "Issue comments discuss faulty assertions and intentionally changed runtime passing of new expressions by reference. They do not decide assignment-based dimension-write validity."
+        },
+        {
+            "url": "https://api.github.com/repos/php/php-src/pulls/20628/comments?per_page=100",
+            "snapshot": "phase3d-pr20628-review.json",
+            "review": "Review comments concern VM/reference and yield-from optimization; no exact writable-target disposition found. This is one fetched page, not a global issue-search claim."
+        },
+        {
+            "url": "https://api.github.com/repos/php/php-src/pulls/19658",
+            "snapshot": "phase3d-pr19658.json",
+            "review": "printf performance optimization; no normative discarded-unset-cast rule established."
+        },
+        {
+            "url": "https://api.github.com/repos/php/php-src/commits?path=Zend/zend_compile.c&sha=f23b4c222cebe33be93ee8ecaaa14390c5507a08&per_page=100",
+            "snapshot": "phase3d-compiler-history.json",
+            "review": "Reviewed relevant history: printf 26c96d38f440a5b6476a97527e1748f9bf187541 and fix 09c39a8fd9e944a1c0e85cdaf542f838440f4d63; array_map follow-ups; explicit-static closure cache; __sleep/__wakeup deprecation revert. History page is not complete ancestry coverage."
+        },
+        {
+            "url": "https://wiki.php.net/rfc?do=export_raw",
+            "snapshot": "phase3d-rfc-index.txt",
+            "review": "Index comparison adds direction-aware-property candidate to implemented section and moves existing proposal statuses. Not evidence of source integration alone."
+        },
+        {
+            "url": "https://wiki.php.net/rfc/direction_aware_property_resolution?do=export_raw",
+            "snapshot": "phase3d-rfc-direction.txt",
+            "review": "Stale Draft metadata and original write_access design; selected implementation must be read separately."
+        },
+        {
+            "url": "https://api.github.com/repos/php/php-src/pulls/22709",
+            "snapshot": "phase3d-pr22709.json",
+            "review": "Merged 94136cf9bfbab89e072e3f04992c1e16c3a981a1; narrowed fast-path cache optimization."
+        },
+        {
+            "url": "https://api.github.com/repos/php/php-src/commits?path=Zend/zend_object_handlers.c&sha=f23b4c222cebe33be93ee8ecaaa14390c5507a08&per_page=50",
+            "snapshot": "phase3d-property-history.json",
+            "review": "Selected-pin history identifies narrower merged design, not the RFC draft signature."
+        },
+        {
+            "url": "https://api.github.com/repos/php/php-src/compare/94136cf9bfbab89e072e3f04992c1e16c3a981a1...f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+            "snapshot": "phase3d-property-ancestry.json",
+            "review": "Primary merge ancestry verified separately from selected-pin implementation."
+        }
+    ],
+    "propertyAncestry": {
+        "commit": "94136cf9bfbab89e072e3f04992c1e16c3a981a1",
+        "mergeBase": "94136cf9bfbab89e072e3f04992c1e16c3a981a1",
+        "comparisonStatus": "ahead"
+    },
+    "sourceEvidence": {
+        "Zend/zend_language_parser.y": {
+            "old": "f108f2c2ff4c98c68b6478e7fbdebc16d8afb8bbbc3ae6079e5b285b448dac0c",
+            "new": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235"
+        },
+        "Zend/zend_language_scanner.l": {
+            "old": "8dfed84b0f6cabe73f004ea00c69614ea84542130a9b97e7699f801ef7ce7403",
+            "new": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39"
+        },
+        "Zend/zend_compile.c": {
+            "old": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225",
+            "new": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd"
+        },
+        "Zend/zend_ast.c": {
+            "old": "2b957bba99379210a4205a8fdfe4cde40da6df4bfcd99f115ee188ecd5d275d5",
+            "new": "e6e793245e60d377f109b3d1e154665e84ab9a5cc60736576c4ff89d99eee5a9"
+        },
+        "Zend/zend_inheritance.c": {
+            "old": "69793711dc0a88c93545be87baa57e2fca26f2dc2e0701a8d956611980fee486",
+            "new": "d3f0f10319e7ffe0490ee85fd4b42f5dca9efa7804bc8e72b1b23d8df7dccf46"
+        },
+        "Zend/zend_constants.c": {
+            "old": "f4a908d79814ce82cb368cdd9d68e68901ae31e0a1e2398e4b18c3987d37266b",
+            "new": "6c5cd44f8d3def91202d199f4e05f3d81ebba6beafdbe24f894740b8817e6985"
+        },
+        "Zend/zend_API.c": {
+            "old": "1aa5548cebd8f337bad00fe94917559d52db75566eb5d8674ef377a6369ef711",
+            "new": "666d6f9c311bef02b50a5cfe09ddf66fac310834a88c94dac9be37a83ee238db"
+        },
+        "Zend/zend_object_handlers.c": {
+            "old": "a2b4605a03081efa6b76802af07664d411d6737dd0d8dee434217278d816dcea",
+            "new": "1a3b3708ab7e5f270ac0da6faf9d53bac3ebb5ac6395e38e695fb0e5638451d6"
+        },
+        "Zend/zend_execute.c": {
+            "old": "5479cd6fd4025f013713cee297028c93c8c6a70bbf10481a8374da6e207773c8",
+            "new": "14d16d4923caae8ff3432b236890429bc61914f6c926465e89a06e6e830f518c"
+        },
+        "Zend/zend_vm_def.h": {
+            "old": "87f6d73c31a0c2865fc841efba911d512c14d672f31be25d140b10fb43451a41",
+            "new": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e"
+        },
+        "Zend/Optimizer/compact_literals.c": {
+            "old": "b34e7b28c1617dbdfd622a3757136e9b4178c90024866baa723370d99862ef41",
+            "new": "7d4039a39a825839a8f908cdb047e63c119f27de2959aad726665d6f9f3e1539"
+        }
+    },
+    "findings": {
+        "PHP86-008": {
+            "classification": "Upstream implementation defect",
+            "disposition": "Qualified-static correction; no valid-language removal established; exact-pin historical class-scope crash unresolved.",
+            "gateB": "No grammar change authorized",
+            "anchors": [
+                "type",
+                "zend_compile_single_typename",
+                "builtin_types"
+            ]
+        },
+        "PHP86-009": {
+            "classification": "Implementation change without language implications",
+            "disposition": "Parameter documentation metadata; comments remain trivia. Three precise ReflectionParameter PHPTs now associated.",
+            "gateB": "No production change needed",
+            "anchors": [
+                "parameter",
+                "parameter-list",
+                "zend_compile_params",
+                "backup_doc_comment"
+            ]
+        },
+        "PHP86-010": {
+            "classification": "Documentation-only change",
+            "disposition": "Accepted-deprecated forms need informative specification update; retain negative readonly alias and nondeprecated method/underscore-function controls.",
+            "gateB": "READY WITH BOUNDED LIMITATIONS: warning-only prose; permanent fixtures and broader case/context coverage required with implementation",
+            "anchors": [
+                "identifier",
+                "function-declaration",
+                "class-constant-declaration",
+                "use-declaration",
+                "return-statement",
+                "yield-expression",
+                "Deprecated but accepted syntax"
+            ]
+        },
+        "PHP86-011": {
+            "classification": "Implementation change without language implications; broader optimization interactions unresolved",
+            "disposition": "Stateless caching does not authorize static inference. Passing new expressions to reference parameters is a confirmed runtime boundary, not a new structural rejection. array_map fallback controls retain PFA diagnostics.",
+            "gateB": "No blanket optimizer exclusion or new grammar rule",
+            "anchors": [
+                "function-call",
+                "argument",
+                "new-dereferenceable",
+                "closure-expression"
+            ]
+        },
+        "PHP86-012": {
+            "classification": "Excluded or unimplemented proposal; implemented runtime-only scope",
+            "disposition": "Newly reconciled direction-aware property RFC has selected-pin cache/VM effects only. Original 58 identities and ancestry limitations retained.",
+            "gateB": "No syntax implementation authorized",
+            "anchors": [
+                "property-declaration",
+                "Zend/Optimizer/compact_literals.c"
+            ]
+        },
+        "PHP86-013": {
+            "classification": "Discovery completeness obligation",
+            "disposition": "OPEN: credible compiler/AST/optimizer queues, reentrant linking and source/test associations remain; current-index review progressed but not exhaustive component/reversion review.",
+            "gateB": "Blocks complete implementation and unisolated changes"
+        },
+        "PHP86-014": {
+            "classification": "Unresolved language discrepancy with compiler/VM defect evidence",
+            "disposition": "Ordinary/list TMP dimension-write opcode inconsistency reproduced; reference result remains VAR and mutates aliases. Neither success nor failure establishes intended syntax.",
+            "gateB": "BLOCKED: assignment-based writable-target changes",
+            "anchors": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "zend_compile_var_inner",
+                "ZEND_ASSIGN_DIM"
+            ]
+        },
+        "PHP86-015": {
+            "classification": "Unresolved language discrepancy: contextual compiler validation order",
+            "disposition": "Direct/imported/qualified printf differs from namespace fallback/dynamic calls. AND/OR versus ternary/coalesce and discarded declarations demonstrate phase-dependent checks. No intentional normative rule established.",
+            "gateB": "BLOCKED: universal traversal rule; no builtin-specific EBNF",
+            "anchors": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression",
+                "zend_compile_func_printf",
+                "zend_eval_const_expr"
+            ]
+        }
+    },
+    "probes": [
+        {
+            "id": "phase3d-printf-and",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nprintf(false && (unset)$x);\n",
+            "sourceSha256": "eb75f79298eb829be6a6c187b30aed180950c6cba5e89c5b752a687898eddf00",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-and.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-printf-and.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-printf-and.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-dynamic-and",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\n$f=\"printf\"; $f(false && (unset)$x);\n",
+            "sourceSha256": "908695cfb8f42e4f4a29fbdfaa775d7bbec8035ba25195818c6ce4eb041b1386",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-dynamic-and.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-dynamic-and.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-sprintf-and",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nsprintf(false && (unset)$x);\n",
+            "sourceSha256": "83d6930bf45e36d228f041ce23c3a49aad43565c22cf983ed93b402b1d14d38c",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-sprintf-and.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-sprintf-and.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-sprintf-and.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-sprintf-and.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-or",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nprintf(true || (unset)$x);\n",
+            "sourceSha256": "8d456ffa6b7698e523ef122c4a54ed5cd2d6086c8befcea258f9b228f87c0b16",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-or.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-printf-or.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-printf-or.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-dynamic-or",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\n$f=\"printf\"; $f(true || (unset)$x);\n",
+            "sourceSha256": "0c7646f695f8e0d149b4db71ae5c1046515da74b238ed067208c654ed7a3ac62",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-dynamic-or.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-dynamic-or.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-sprintf-or",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nsprintf(true || (unset)$x);\n",
+            "sourceSha256": "59883cae1de591b0339dbd05da6bad1dc47897eaac73fc391b63ff5a9ad1407f",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-sprintf-or.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-sprintf-or.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-sprintf-or.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-sprintf-or.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-ternary",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nprintf(true ? \"ok\" : (unset)$x);\n",
+            "sourceSha256": "4b2a326aafcff1e2d38b7e1868dd0ac7eb02f60d24c80965183cf735c3e076e3",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-printf-ternary.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-printf-ternary.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-ternary.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-dynamic-ternary",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\n$f=\"printf\"; $f(true ? \"ok\" : (unset)$x);\n",
+            "sourceSha256": "b2cc12e085f44fecd1e4d655d260b5eb52b879be8e173fa548823a79e0bbe031",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-dynamic-ternary.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-dynamic-ternary.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-dynamic-ternary.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-dynamic-ternary.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-sprintf-ternary",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nsprintf(true ? \"ok\" : (unset)$x);\n",
+            "sourceSha256": "fc72c75ea6faefac27bbc7889e36e6306c7a62c37afa5e2b87a36a0e4ed26431",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-sprintf-ternary.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-sprintf-ternary.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-coalesce",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nprintf(\"ok\" ?? (unset)$x);\n",
+            "sourceSha256": "d81668acd7ffa3824e776004d0cc6902d7ecb3babbf16ec5d1f3178ff50f5979",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-printf-coalesce.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-printf-coalesce.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-coalesce.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-dynamic-coalesce",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\n$f=\"printf\"; $f(\"ok\" ?? (unset)$x);\n",
+            "sourceSha256": "09a37fa2a1cd7cf0a3b308d683aff5ab2581d1eae4c6f38b839c9555b829d567",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-dynamic-coalesce.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-dynamic-coalesce.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-dynamic-coalesce.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-dynamic-coalesce.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-sprintf-coalesce",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nsprintf(\"ok\" ?? (unset)$x);\n",
+            "sourceSha256": "e710df5f0cecd178a5a1473beb0b817bccda0c235face3602631b5da0427ff92",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-sprintf-coalesce.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-sprintf-coalesce.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-live",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nprintf((unset)$x);\n",
+            "sourceSha256": "91066e8da6a616a2ec4234c75eb9fbda91d4bea3a9d3a119a158201d829fb5ee",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-printf-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-printf-live.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-printf-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-printf-live.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-dynamic-live",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\n$f=\"printf\"; $f((unset)$x);\n",
+            "sourceSha256": "7a6436b8a5bd889dfb980b3916abb89ff91bc3f60eac189c24a4c59ffb25e184",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-dynamic-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-dynamic-live.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-dynamic-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-dynamic-live.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-sprintf-live",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nsprintf((unset)$x);\n",
+            "sourceSha256": "f408aa2ba7afc848deceb5613715a4c4917bc4641fae4d0fe961ca98113ea8c5",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-sprintf-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-sprintf-live.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-sprintf-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-sprintf-live.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-namespaced",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nnamespace N; printf(false && (unset)$x);\n",
+            "sourceSha256": "8e3e5508dd261b6bcc9d0f6e23cf6e4c9396a8056c6d9fa9053735a7551b09a7",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-namespaced.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-namespaced.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-imported",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nnamespace N; use function printf as p; p(false && (unset)$x);\n",
+            "sourceSha256": "2b3447c901367adb6a6f5bde9ecd7267cbcd2f1d1af89506cd728b8a11d776e0",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-imported.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-printf-imported.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-printf-imported.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-qualified",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nnamespace N; \\printf(false && (unset)$x);\n",
+            "sourceSha256": "26bfc9de199c21dad4ca732937e3acfe13f9367f7a60f78d2f436dcd49ad0e53",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-qualified.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-printf-qualified.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-printf-qualified.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-unreachable",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nfunction f(){return; printf(false && (unset)$x);}\n",
+            "sourceSha256": "2bd014d0c84b111e916e8eaea2b1943a06db149f163f70aa87183018f7070072",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-unreachable.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-printf-unreachable.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-printf-unreachable.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-discarded-closure",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nfalse && function(){printf(false && (unset)$x);};\n",
+            "sourceSha256": "4974d11b5099597e60a11dca333546499fd7267533ac19c83c39d52c724252ae",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-discarded-closure.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-discarded-closure.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-discarded-declaration",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nfalse && new class {function f(){printf(false && (unset)$x);}};\n",
+            "sourceSha256": "1c6e0c7c3715204c4949e7b3afe707b629f82365fbe18ffb8fec00537405207c",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-discarded-declaration.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-discarded-declaration.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-format-second",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nprintf(\"%s\", false && (unset)$x);\n",
+            "sourceSha256": "921bab3858738b4574af63eddeb6fb1ade61cdd5ff5d4b134139fd827928b1f3",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-format-second.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-format-second.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-printf-two-args",
+            "finding": "PHP86-015",
+            "stage": "lint",
+            "source": "<?php\nprintf(false && (unset)$x, 1);\n",
+            "sourceSha256": "e2c4f84080f95c787592f09ed2b33518f54d99602e337dbb50d3f4e858434ffb",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-printf-two-args.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: The (unset) cast is no longer supported in .audit/phase3d-probes/phase3d-printf-two-args.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-printf-two-args.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-array-map-fcc",
+            "finding": "PHP86-011",
+            "stage": "lint",
+            "source": "<?php\narray_map(strlen(...), []);\n",
+            "sourceSha256": "1736be729a24a7cc2be7ebd38ff45532f90b6848d385a3fa130480ffcb7703a4",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-array-map-fcc.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-array-map-fcc.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-array-map-pfa-bad",
+            "finding": "PHP86-011",
+            "stage": "lint",
+            "source": "<?php\narray_map(f(..., ?), []);\n",
+            "sourceSha256": "2d4b489f367256c78ec215019286dc771ab3740fe30440485fb7fa3465ce6aa9",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nParse error: syntax error, unexpected token \",\" in .audit/phase3d-probes/phase3d-array-map-pfa-bad.php on line 2\nErrors parsing .audit/phase3d-probes/phase3d-array-map-pfa-bad.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Variadic placeholder must be last in .audit/phase3d-probes/phase3d-array-map-pfa-bad.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-array-map-pfa-bad.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-array-map-strict-pfa-bad",
+            "finding": "PHP86-011",
+            "stage": "lint",
+            "source": "<?php\ndeclare(strict_types=1); array_map(f(..., ?), []);\n",
+            "sourceSha256": "fe559abd73c2db58c63d1d21877ba62b658a6d7da14f1025937a7b9dc72d0248",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nParse error: syntax error, unexpected token \",\" in .audit/phase3d-probes/phase3d-array-map-strict-pfa-bad.php on line 2\nErrors parsing .audit/phase3d-probes/phase3d-array-map-strict-pfa-bad.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Variadic placeholder must be last in .audit/phase3d-probes/phase3d-array-map-strict-pfa-bad.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-array-map-strict-pfa-bad.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-write-ordinary",
+            "finding": "PHP86-014",
+            "stage": "controlled-runtime",
+            "source": "<?php\n($v=[1])[0]=2;\n",
+            "sourceSha256": "34da0b939611d26a7aa9bd7c294550f1b2bc9cd2535eb5ca7a95016ac5682a96",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use temporary expression in write context in .audit/phase3d-probes/phase3d-write-ordinary.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-write-ordinary.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-write-ordinary.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-write-ordinary.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Invalid opcode 23/2/1. in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-write-ordinary.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-write-list",
+            "finding": "PHP86-014",
+            "stage": "controlled-runtime",
+            "source": "<?php\n$w=[1]; ([$v]=$w)[0]=2;\n",
+            "sourceSha256": "4b8503765e8b88db79f2ec2c53391890b7531776e0abd3869794d957b6f2d693",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use temporary expression in write context in .audit/phase3d-probes/phase3d-write-list.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-write-list.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-write-list.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-write-list.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Invalid opcode 23/2/1. in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-write-list.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-write-reference",
+            "finding": "PHP86-014",
+            "stage": "controlled-runtime",
+            "source": "<?php\n$w=[1]; ($v=&$w)[0]=2; echo json_encode([$v,$w]);\n",
+            "sourceSha256": "f337764d81bbf3555e6353b183b366bcbb026330eea34d39c7364032371bb6f8",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use temporary expression in write context in .audit/phase3d-probes/phase3d-write-reference.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-write-reference.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-write-reference.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-write-reference.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "[[2],[2]]"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-write-read",
+            "finding": "PHP86-014",
+            "stage": "controlled-runtime",
+            "source": "<?php\necho ($v=[1])[0];\n",
+            "sourceSha256": "2befc1774b980e4786090be4bab6094e016eed8507cd09e1c13adf5c0f5eef56",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-write-read.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "1"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-write-read.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "1"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-write-ref-read",
+            "finding": "PHP86-014",
+            "stage": "controlled-runtime",
+            "source": "<?php\n$w=[1]; echo ($v=&$w)[0];\n",
+            "sourceSha256": "929d4566c70c74071d322e9803feadf8fbc8a15b8bd3e9bb147f83a59af1296c",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-write-ref-read.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "1"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-write-ref-read.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "1"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-write-literal",
+            "finding": "PHP86-014",
+            "stage": "controlled-runtime",
+            "source": "<?php\n[1][0]=2;\n",
+            "sourceSha256": "f5652b98f66c3e537861b62357e2b1a7b59a5e76c832c7374482a683fcd46fd8",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use temporary expression in write context in .audit/phase3d-probes/phase3d-write-literal.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-write-literal.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-write-literal.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use temporary expression in write context in .audit/phase3d-probes/phase3d-write-literal.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-write-literal.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-write-literal.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-write-discarded",
+            "finding": "PHP86-014",
+            "stage": "controlled-runtime",
+            "source": "<?php\nfalse && (($v=[1])[0]=2);\n",
+            "sourceSha256": "750b7ae7908fef0ce85fa25c5ace6f72e7d6786a7e7a3f5716eb04f2fa4121c2",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-write-discarded.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-write-discarded.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-new-reference",
+            "finding": "PHP86-011",
+            "stage": "controlled-runtime",
+            "source": "<?php\nfunction f(&$v){} f(new stdClass);\n",
+            "sourceSha256": "c35cdb4b89cca209548f482a88d6432308a37e050d916d1a24458282c9b876a5",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-new-reference.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "\nNotice: Only variables should be passed by reference in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-new-reference.php on line 2\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-new-reference.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Uncaught Error: f(): Argument #1 ($v) could not be passed by reference in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-new-reference.php:2\nStack trace:\n#0 {main}\n  thrown in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-new-reference.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-interface-covariant",
+            "finding": "PHP86-013",
+            "stage": "declaration-link",
+            "source": "<?php\ninterface A {function f(): A;} interface B extends A {} class C implements B {function f(): C{return $this;}}\n",
+            "sourceSha256": "71e4960103697c57a3458f1ac8c199ad7ea3aaacd20ddaf6fb99d40ee53402b4",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-interface-covariant.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-interface-covariant.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-interface-covariant-negative",
+            "finding": "PHP86-013",
+            "stage": "declaration-link",
+            "source": "<?php\ninterface A {function f(): A;} interface B extends A {} class C implements B {function f(): stdClass{return new stdClass;}}\n",
+            "sourceSha256": "11e9eaf17b004b7bcdc8099a1d4472da27bd586393c937ac88db1103cbd1449a",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-interface-covariant-negative.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Declaration of C::f(): stdClass must be compatible with A::f(): A in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-interface-covariant-negative.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-interface-covariant-negative.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Declaration of C::f(): stdClass must be compatible with A::f(): A in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-interface-covariant-negative.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-interface-property",
+            "finding": "PHP86-013",
+            "stage": "declaration-link",
+            "source": "<?php\ninterface A {public A $p {get;}} interface B extends A {} class C implements B {public C $p {get => $this;}}\n",
+            "sourceSha256": "88c2d6d8f7fc8bac64409cd076f851893a29df3e25f94f162b412341f1f1b763",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-interface-property.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-interface-property.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-interface-override",
+            "finding": "PHP86-005",
+            "stage": "declaration-link",
+            "source": "<?php\ninterface A {const int X=1;} interface B extends A {} class C implements B {#[Override] const int X=2;}\n",
+            "sourceSha256": "2e223c08de879891891649d3eed4ddb42496bc9acc6550d69274769103423d36",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in .audit/phase3d-probes/phase3d-interface-override.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-interface-override.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-interface-override.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-interface-override.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-interface-enum-negative",
+            "finding": "PHP86-013",
+            "stage": "declaration-link",
+            "source": "<?php\ninterface I extends UnitEnum {} class C implements I {public static function cases():array{return [];}}\n",
+            "sourceSha256": "8ece8980d26f85cb616bacd04cb6b48093c76c9f8d0337eb47d8b31e883a7afc",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-interface-enum-negative.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Non-enum class C cannot implement interface UnitEnum in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-interface-enum-negative.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-interface-enum-negative.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nFatal error: Non-enum class C cannot implement interface UnitEnum in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-interface-enum-negative.php on line 2\nStack trace:\n#0 {main}\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-doc-default",
+            "finding": "PHP86-009",
+            "stage": "lint",
+            "source": "<?php\nfunction f(/** before */ $a = 1 /** after */, $b = 2) {}\n",
+            "sourceSha256": "979fd69a6af13e1ff156c343e565d10395ad297efd8dcaeadfb557f125ec5f58",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-doc-default.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-doc-default.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-doc-arrow",
+            "finding": "PHP86-009",
+            "stage": "lint",
+            "source": "<?php\n$f=fn(/** before */ $a = 1 /** after */)=>$a;\n",
+            "sourceSha256": "b1ab1a5d6cda69ee1ffb61e0a0022dba167f2de27b3958a57075d860bf04f207",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-doc-arrow.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-doc-arrow.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-let",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nclass let {}\n",
+            "sourceSha256": "59efbc1065cf39b7dc8c5ff84f05a4644a0dc3f27a578cf4fdf1ff04c3f30aed",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-let.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Using \"let\" as a class name is deprecated since 8.6 in .audit/phase3d-probes/phase3d-deprecated-let.php on line 2\nNo syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-let.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Using \"let\" as a class name is deprecated since 8.6 in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-let.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-is",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nfunction is() {}\n",
+            "sourceSha256": "ce3c2009458e806651e8f0852296a5dc370566748ff541304ce9450028d95783",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-is.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Calling a function \"is\" is deprecated since 8.6 in .audit/phase3d-probes/phase3d-deprecated-is.php on line 2\nNo syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-is.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Calling a function \"is\" is deprecated since 8.6 in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-is.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-underscore",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nconst _=1;\n",
+            "sourceSha256": "f954b0e277fee596ca3247c74767843ca83129aeb0b14ee51ec52fb5c4333a1c",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-underscore.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-underscore.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Calling a constant \"_\" is deprecated since 8.6 in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-underscore.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-underscore-function",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nfunction _() {}\n",
+            "sourceSha256": "d4ea376826dff976b3899537b215d73cb3e279efc7ff28cfea2b4f7178cce563",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-underscore-function.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-underscore-function.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-readonly",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nfunction readonly() {}\n",
+            "sourceSha256": "35bdc13cc57f2d9b94da5ad3145a99f5e85f3f54cf2f2df04055d81ce855da6a",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-readonly.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Calling a function \"readonly\" is deprecated since 8.6 in .audit/phase3d-probes/phase3d-deprecated-readonly.php on line 2\nNo syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-readonly.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Calling a function \"readonly\" is deprecated since 8.6 in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-readonly.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-readonly-method",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nclass C {function readonly(){}}\n",
+            "sourceSha256": "b06ec83e6cd34403036954be922e062fc75a8da5fc341eaa579f47c23f5fdfc0",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-readonly-method.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-readonly-method.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-readonly-alias",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nuse function strlen as readonly;\n",
+            "sourceSha256": "3ab6300d856878ecf0e57007e1fea20a3a6a5a70c1fb7f99c22f8829fa8bf8ad",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nParse error: syntax error, unexpected token \"readonly\", expecting identifier in .audit/phase3d-probes/phase3d-deprecated-readonly-alias.php on line 2\nErrors parsing .audit/phase3d-probes/phase3d-deprecated-readonly-alias.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nParse error: syntax error, unexpected token \"readonly\", expecting identifier in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-readonly-alias.php on line 2\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nParse error: syntax error, unexpected token \"readonly\", expecting identifier in .audit/phase3d-probes/phase3d-deprecated-readonly-alias.php on line 2\nErrors parsing .audit/phase3d-probes/phase3d-deprecated-readonly-alias.php\n"
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "output": "\nParse error: syntax error, unexpected token \"readonly\", expecting identifier in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-readonly-alias.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-namespace-constant",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nclass C {const namespace=1;}\n",
+            "sourceSha256": "119a74780439d3c72d65d55b06214738b8a232b757664d9442fb3f63dde9d09f",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-namespace-constant.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Declaring class constant called 'namespace' is deprecated in .audit/phase3d-probes/phase3d-deprecated-namespace-constant.php on line 2\nNo syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-namespace-constant.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Declaring class constant called 'namespace' is deprecated in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-namespace-constant.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-finally",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nfunction f(){try{}finally{return;}}\n",
+            "sourceSha256": "c7c6ea67fb81b704681588076dc747f17e860000cd299292c1b60c877e7e6845",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-finally.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Returning from a finally block is deprecated in .audit/phase3d-probes/phase3d-deprecated-finally.php on line 2\nNo syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-finally.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Returning from a finally block is deprecated in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-finally.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-finally-closure",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nfunction f(){try{}finally{$f=function(){return;};}}\n",
+            "sourceSha256": "3c7de83a912ac360c13c4aae04b472fa2c190fa0af95510831e99c007e1f1f9c",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-finally-closure.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-finally-closure.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-constructor-return",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nclass C {function __construct(){return 1;}}\n",
+            "sourceSha256": "a5cd0973dfa09fa746c03d4f49643eaa9bd257a21f1ebe6ef6383af185e33388",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-constructor-return.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Returning a value from a constructor is deprecated in .audit/phase3d-probes/phase3d-deprecated-constructor-return.php on line 2\nNo syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-constructor-return.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Returning a value from a constructor is deprecated in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-constructor-return.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-constructor-yield",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nclass C {function __construct(){yield 1;}}\n",
+            "sourceSha256": "d83011b02738772d34a05e31f4aa76682b43c6c387c1bc63f39d76e53680447f",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-constructor-yield.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Making a constructor a Generator is deprecated in .audit/phase3d-probes/phase3d-deprecated-constructor-yield.php on line 2\nNo syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-constructor-yield.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Making a constructor a Generator is deprecated in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-constructor-yield.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-debug-nullable",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nclass C {function __debugInfo():?array{return [];}}\n",
+            "sourceSha256": "f9a1c0844c93590d64c90d4514d7008014a5484b8354edb4a8aafd583dd1e000",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-debug-nullable.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Returning null from C::__debugInfo() is deprecated, make the return type non-nullable and return an empty array instead in .audit/phase3d-probes/phase3d-deprecated-debug-nullable.php on line 2\nNo syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-debug-nullable.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": "\nDeprecated: Returning null from C::__debugInfo() is deprecated, make the return type non-nullable and return an empty array instead in C:\\Data\\GitHub\\php-grammar\\.audit\\phase3d-probes\\phase3d-deprecated-debug-nullable.php on line 2\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-deprecated-sleep-control",
+            "finding": "PHP86-010",
+            "stage": "declaration-link",
+            "source": "<?php\nclass C {function __sleep(){return [];}}\n",
+            "sourceSha256": "3717a26be50cdff1eb51fa4332b5a13fea1b00f15d9dc5d008a2b0a1dde672cd",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-sleep-control.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-deprecated-sleep-control.php\n"
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "output": ""
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-qualified-static",
+            "finding": "PHP86-008",
+            "stage": "lint",
+            "source": "<?php\nfunction f():\\static {}\n",
+            "sourceSha256": "86b341f638e2497849c261ee7d1067200bfbc3fb141d16c3ba2bbd632b31b192",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: '\\static' is an invalid class name in .audit/phase3d-probes/phase3d-qualified-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-qualified-static.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Type declaration 'static' must be unqualified in .audit/phase3d-probes/phase3d-qualified-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-qualified-static.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-relative-static",
+            "finding": "PHP86-008",
+            "stage": "lint",
+            "source": "<?php\nfunction f():namespace\\static {}\n",
+            "sourceSha256": "2717c9147c62c2f30d935734182f89c71352c22c44f0bd5d90538df884f3621a",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Cannot use \"static\" when no class scope is active in .audit/phase3d-probes/phase3d-relative-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-relative-static.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nFatal error: Type declaration 'static' must be unqualified in .audit/phase3d-probes/phase3d-relative-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase3d-probes/phase3d-relative-static.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-heredoc",
+            "finding": "PHP86-013",
+            "stage": "lint",
+            "source": "<?php\n$s=<<<TXT\n  hello\n  TXT;\n",
+            "sourceSha256": "8a4e72b9dd9bd35133214794d2017b3e7bcf3c8d833a0fb1b82c5d1e348738b4",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-heredoc.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 0,
+                        "output": "No syntax errors detected in .audit/phase3d-probes/phase3d-heredoc.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-heredoc-indent",
+            "finding": "PHP86-013",
+            "stage": "lint",
+            "source": "<?php\n$s=<<<TXT\n x\n  TXT;\n",
+            "sourceSha256": "c1f23c015e8384cc1279d8c658505c2f862d129ec5e6138b476af81a4e8faec1",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nParse error: Invalid body indentation level (expecting an indentation level of at least 2) in .audit/phase3d-probes/phase3d-heredoc-indent.php on line 3\nErrors parsing .audit/phase3d-probes/phase3d-heredoc-indent.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nParse error: Invalid body indentation level (expecting an indentation level of at least 2) in .audit/phase3d-probes/phase3d-heredoc-indent.php on line 3\nErrors parsing .audit/phase3d-probes/phase3d-heredoc-indent.php\n"
+                    }
+                }
+            }
+        },
+        {
+            "id": "phase3d-unterminated-comment",
+            "finding": "PHP86-013",
+            "stage": "lint",
+            "source": "<?php\n/* missing end\n",
+            "sourceSha256": "4cc991feb84f3f556f3726e432a58f64e9f713fda368b4c74eba0d99d8b20528",
+            "results": {
+                "8.5": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nParse error: Unterminated comment starting line 2 in .audit/phase3d-probes/phase3d-unterminated-comment.php on line 2\nErrors parsing .audit/phase3d-probes/phase3d-unterminated-comment.php\n"
+                    }
+                },
+                "8.6": {
+                    "lint": {
+                        "exit": 255,
+                        "output": "\nParse error: Unterminated comment starting line 2 in .audit/phase3d-probes/phase3d-unterminated-comment.php on line 2\nErrors parsing .audit/phase3d-probes/phase3d-unterminated-comment.php\n"
+                    }
+                }
+            }
+        }
+    ],
+    "probeCounts": {
+        "sources": 60,
+        "stages": {
+            "lint": 33,
+            "controlled-runtime": 8,
+            "declaration-link": 19
+        },
+        "observations": 174
+    },
+    "buildFeasibility": {
+        "exactPinBuildProduced": false,
+        "windows": "cl, nmake, bison and re2c were not found on PATH; cmake alone is insufficient. No system SDK/toolchain installed.",
+        "wsl": "wsl --list --quiet required read-only escalation and returned no distributions.",
+        "limitation": "This establishes no ready local build environment, not impossibility of a future exact-pin build."
+    },
+    "reviewedTests": [
+        {
+            "path": "Zend/tests/asymmetric_visibility/optimizer_shared_cache_slot.phpt",
+            "finding": "PHP86-012",
+            "sha256": {
+                "old": null,
+                "new": "39d5f37d1794f3a40b949b1e5353052dfa3983b8ea0073eceedb4c678122cdad"
+            }
+        },
+        {
+            "path": "Zend/tests/asymmetric_visibility/scope_rebinding.phpt",
+            "finding": "PHP86-012",
+            "sha256": {
+                "old": "11186e8d4e821eb176d19145efc0098e3d3be3512811cd420867d7fdedc7f1d2",
+                "new": "f44f20421095829b23bf409a5642381b06b0e21b174153000b545990bd26fe2b"
+            }
+        },
+        {
+            "path": "Zend/tests/asymmetric_visibility/unshared_rw_cache_slot.phpt",
+            "finding": "PHP86-012",
+            "sha256": {
+                "old": "4fa8126879a0071290f30ebe99036f35cbbad59ea6e8cb442d1e80104f9215e7",
+                "new": "42c9661401867a9abfc04d5ac4b2e55fedfea91acec9d3ac7b874057d7722101"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecate_namespace_class_constant.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "63af61d533a4fa5d4be081538d4c63ef9eb18b01bb311fc40587960a3fefe59d"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/is/class_alias.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "91c7b3bf8c7a3b4b8832e4d59684b09996e3db42ee719a0f239f73aa3cd0bc43"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/is/class_as_name.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "8a3562756610e0e12aa034b11fc30e5c3b675ff3b6eb0372eaca849c1a9b0b79"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/is/class_as_name_use.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "b6ae14cf4122797e128d97dba6b77bd84e119a7ee790e97ceedf887bbdf6fbda"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/is/constant_as_name.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "7f7d08de858b16ad9cdf6861271254cab4fee29aa8a63ea93654292b09b0c25c"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/is/constant_as_name_use.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "640ad3839923c2894ea00778f79fd2ae8249a4cc344b08ae6e189cd330287325"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/is/function_as_name.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "219c1ae32eb167590d751ec6631653999d792bbc7f682897999dc47aa66e95e0"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/is/function_as_name_use.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "6fdd0cf729125930f0ad13d550cb2426d76f9e8d8f407e31e4ab7c4b0a930f03"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/let/class_alias.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "cfb930a673156aee518b01eb1ff9237aec1610b614660a4c2464b79590612b92"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/let/class_as_name.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "681f8b2c7d6113982ab25c871d694817f479e1d54a7c0e209e83794a4a003378"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/let/class_as_name_use.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "48789fd738595bd8ccc6af5525bf997777b0b77b28c80c234401f6dbcef0c25b"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/let/constant_as_name.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "aacd5c6b4046ff55d70350b314663f7d946eb7fe6a044abbf8a6ee8653dee8eb"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/let/constant_as_name_use.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "4a37e07654b809da165cfba89ced36fd947d0f336f1fbe8394c1374f815cd742"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/let/function_as_name.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "adf1d070b39a05614d37473acec452507f306e1e36972ec8a51a288b326bd341"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/let/function_as_name_use.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "6c417a6c5bc59dc07f196c245cbf3a60bc9fcdd40e81e42c0db53f35fc7944ab"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/readonly/function_as_name.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "02aed6e8f30db0772d32b23cf5363f42bf2e7a9000349e0841f02a9620bc2505"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/readonly/function_as_name_use.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "bab8f8c8bdd6ccb2383e56ff75190b801cbaf133b2981a53a8ef37f5edf3073c"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "d89c6d4b3156b3d6bc4d367210d91a4801cb025d44dcd9b0b7caad0185d0b92e"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "dcb0c11dcf6bd86b1c77756dfc5750f3d2c6cb6b5ceb825d5404945f2be932d1"
+            }
+        },
+        {
+            "path": "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name_use.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "94b7c52513691038e524c928c7b44a3d37231b3b236ec1d4cd84e173be4274ec"
+            }
+        },
+        {
+            "path": "Zend/tests/functions/readonly_as_method_name_is_ok.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "f5e0e6057b49aadecab4bcc4ce603582fa6843a2bd503333dad9b7df6c5e0f29"
+            }
+        },
+        {
+            "path": "Zend/tests/inheritance/enum_only_interfaces_error_via_indirect_interface.phpt",
+            "finding": "PHP86-013",
+            "sha256": {
+                "old": null,
+                "new": "82227595f0c40d2fee40f940877b66ffbe4ed199570307948b8a6f9f090bb1a0"
+            }
+        },
+        {
+            "path": "Zend/tests/magic_methods/constructor_destructor_return.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "180c1af24f8fd7e183e1f98b9edf71148a38335e8601abc30bbc5efe48c25f90"
+            }
+        },
+        {
+            "path": "Zend/tests/try/finally_return_deprecation.phpt",
+            "finding": "PHP86-010",
+            "sha256": {
+                "old": null,
+                "new": "01449826d418c2c04d7672d2135ee8de16d7b5053f620dfce7e4ba8bb556fdd4"
+            }
+        },
+        {
+            "path": "Zend/tests/type_declarations/relative_types/static/fully_qualified_static.phpt",
+            "finding": "PHP86-008",
+            "sha256": {
+                "old": null,
+                "new": "a63dc70c994162da2aa02eafd1ebeb8e6a6805fd9f12009f257e99e1c734d4bd"
+            }
+        },
+        {
+            "path": "Zend/tests/type_declarations/relative_types/static/namespace_relative_static.phpt",
+            "finding": "PHP86-008",
+            "sha256": {
+                "old": null,
+                "new": "b63a212169d8c92865c8d21c1772579d2becc7ecf217dce63df6b31dedae22ce"
+            }
+        },
+        {
+            "path": "ext/reflection/tests/ReflectionParameter_getDocComment_basic.phpt",
+            "finding": "PHP86-009",
+            "sha256": {
+                "old": null,
+                "new": "f9dc5b79d72a7ad6362840bac89cd124c99465bd8a521ce60139d7efaac43a11"
+            }
+        },
+        {
+            "path": "ext/reflection/tests/ReflectionParameter_getDocComment_indented.phpt",
+            "finding": "PHP86-009",
+            "sha256": {
+                "old": null,
+                "new": "b2eed1d9da3515ac10cbc7c3d0d9c0913bebdaab9117792415bbe8016f3dcddf"
+            }
+        },
+        {
+            "path": "ext/reflection/tests/ReflectionParameter_getDocComment_property_hooks.phpt",
+            "finding": "PHP86-009",
+            "sha256": {
+                "old": null,
+                "new": "eb8f143ed4ec386c2897b2626b62002c259b8688927fdd755cdf10771f27267c"
+            }
+        }
+    ],
+    "compilerReview": {
+        "date": "2026-10-23",
+        "sourceReviewedHunks": 54,
+        "hunkIds": [
+            "Zend/zend_compile.c:246:251",
+            "Zend/zend_compile.c:271:280",
+            "Zend/zend_compile.c:5701:6261",
+            "Zend/zend_compile.c:7099:7756",
+            "Zend/zend_compile.c:7745:8401",
+            "Zend/zend_compile.c:7842:8499",
+            "Zend/zend_compile.c:8403:9073",
+            "Zend/zend_compile.c:8548:9226",
+            "Zend/zend_compile.c:9615:10338",
+            "Zend/zend_inheritance.c:1:1",
+            "Zend/zend_inheritance.c:59:58",
+            "Zend/zend_inheritance.c:99:98",
+            "Zend/zend_inheritance.c:188:187",
+            "Zend/zend_inheritance.c:264:263",
+            "Zend/zend_inheritance.c:311:306",
+            "Zend/zend_inheritance.c:330:325",
+            "Zend/zend_inheritance.c:341:336",
+            "Zend/zend_inheritance.c:351:346",
+            "Zend/zend_inheritance.c:375:370",
+            "Zend/zend_inheritance.c:474:469",
+            "Zend/zend_inheritance.c:494:489",
+            "Zend/zend_inheritance.c:505:500",
+            "Zend/zend_inheritance.c:529:524",
+            "Zend/zend_inheritance.c:561:556",
+            "Zend/zend_inheritance.c:670:665",
+            "Zend/zend_inheritance.c:762:757",
+            "Zend/zend_inheritance.c:896:891",
+            "Zend/zend_inheritance.c:910:905",
+            "Zend/zend_inheritance.c:941:936",
+            "Zend/zend_inheritance.c:952:947",
+            "Zend/zend_inheritance.c:1040:1031",
+            "Zend/zend_inheritance.c:1057:1048",
+            "Zend/zend_inheritance.c:1599:1590",
+            "Zend/zend_inheritance.c:1672:1659",
+            "Zend/zend_inheritance.c:1784:1771",
+            "Zend/zend_inheritance.c:2036:2023",
+            "Zend/zend_inheritance.c:2127:2114",
+            "Zend/zend_inheritance.c:2154:2147",
+            "Zend/zend_inheritance.c:2171:2164",
+            "Zend/zend_inheritance.c:2189:2186",
+            "Zend/zend_inheritance.c:2202:2199",
+            "Zend/zend_inheritance.c:2237:2231",
+            "Zend/zend_inheritance.c:2266:2256",
+            "Zend/zend_inheritance.c:2276:2265",
+            "Zend/zend_inheritance.c:2334:2322",
+            "Zend/zend_inheritance.c:2405:2402",
+            "Zend/zend_inheritance.c:2527:2528",
+            "Zend/zend_inheritance.c:2560:2558",
+            "Zend/zend_inheritance.c:2589:2585",
+            "Zend/zend_inheritance.c:2634:2628",
+            "Zend/zend_inheritance.c:2844:2836",
+            "Zend/zend_inheritance.c:3023:3019",
+            "Zend/zend_inheritance.c:3332:3371",
+            "Zend/zend_inheritance.c:3627:3666"
+        ],
+        "note": "Additive review overlay; phase22 risk/disposition counts remain historical. Review is not automatic resolution.",
+        "evidence": "discovery-final-review.json"
+    },
+    "readiness": {
+        "remainingGrammarImplementation": "READY WITH BOUNDED LIMITATIONS: PHP86-010 warning-only documentation; complete implementation NOT READY",
+        "manifestAndToolingIntegration": "NOT READY",
+        "releaseCertification": "NOT READY"
+    },
+    "validation": [
+        {
+            "command": "rtk .audit/php85/php.exe -n .audit/phase3d.php hashes",
+            "result": "PASS",
+            "checks": 341
+        },
+        {
+            "command": "rtk .audit/php85/php.exe -n -d extension=.audit/php85/ext/php_mbstring.dll vendor/phpunit/phpunit/phpunit --do-not-cache-result tests/Ebnf",
+            "result": "PASS",
+            "tests": 74,
+            "assertions": 155
+        },
+        {
+            "command": "rtk .audit/php85/php.exe -n -d extension=.audit/php85/ext/php_mbstring.dll vendor/phpunit/phpunit/phpunit --do-not-cache-result tests/Php/Conformance/Php86PartialApplicationTest.php",
+            "result": "PASS",
+            "tests": 61,
+            "assertions": 151
+        },
+        {
+            "command": "rtk .audit/php85/php.exe -n -d extension=.audit/php85/ext/php_mbstring.dll vendor/phpunit/phpunit/phpunit --do-not-cache-result tests/Php/Conformance/Php86ContextualChangesTest.php",
+            "result": "PASS",
+            "tests": 128,
+            "assertions": 725
+        },
+        {
+            "command": "rtk .audit/php85/php.exe -n -d extension=.audit/php85/ext/php_mbstring.dll vendor/phpunit/phpunit/phpunit --do-not-cache-result tests/Repository",
+            "result": "FAIL",
+            "tests": 21,
+            "assertions": 888,
+            "failures": [
+                "testGrammarDirectoriesExactlyMatchManifestVersions",
+                "testDocumentationReferencesPointToExistingVersionPaths"
+            ]
+        },
+        {
+            "command": "rtk .audit/php85/php.exe -n -d extension=.audit/php85/ext/php_mbstring.dll vendor/phpunit/phpunit/phpunit --do-not-cache-result --filter 'Php85DocumentationParityTest|Php85SpecificationStructureTest|PhpConformanceFixtureTest|Php85ContextualFixtureTest|VersionBoundaryTest'",
+            "result": "FAIL",
+            "tests": 1373,
+            "assertions": 2452,
+            "failures": [
+                "testBoundaryFixtureRepositoryAllowsEmptyDirectory"
+            ]
+        },
+        {
+            "command": "rtk .audit/php85/php.exe -n tools/validate-manifest.php",
+            "result": "PASS"
+        },
+        {
+            "command": "rtk .audit/php85/php.exe -n tools/8.6/pfa-check.php --php85=.audit/php85/php.exe --php86=.audit/php86/php.exe --sources=.audit/php-php-src-f23b4c2 --report=.audit/pfa-phase3d.json",
+            "result": "PASS",
+            "checks": 225,
+            "observations": 114,
+            "failures": 0
+        },
+        {
+            "command": "rtk .audit/php85/php.exe -n tools/8.6/context-check.php --php85=.audit/php85/php.exe --php86=.audit/php86/php.exe --sources85=.audit/php-php-src-7a4c627 --sources86=.audit/php-php-src-f23b4c2 --report=.audit/context-phase3d.json",
+            "result": "PASS",
+            "checks": 278,
+            "observations": 126,
+            "failures": 0
+        },
+        {
+            "command": "rtk .audit/php85/php.exe -n .audit/probe-phase3d.php",
+            "result": "OBSERVED: exits and diagnostics retained per source; negative outcomes are expected research evidence",
+            "sources": 60,
+            "observations": 174
+        },
+        {
+            "command": "rtk .audit/php85/php.exe -n .audit/verify-phase3d.php",
+            "result": "PASS",
+            "details": {
+                "preservationFiles": 1733,
+                "allowedExistingChanges": 11,
+                "historicalJsonLedgersUnchanged": 5,
+                "additionalHashChecks": 97,
+                "reviewedTests": 32,
+                "reviewedHunks": 54,
+                "probeSources": 60,
+                "probeObservations": 174,
+                "localLinksAndAnchors": 61,
+                "whitespace": "PASS",
+                "grammarAndSpecification": "unchanged from Phase 3C"
+            }
+        },
+        {
+            "command": "rtk git diff --check",
+            "result": "PASS"
+        }
+    ]
+}

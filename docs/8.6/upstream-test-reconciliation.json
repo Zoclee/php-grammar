@@ -1974,6 +1974,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-012",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -2136,6 +2142,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-012",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -2217,6 +2229,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-012",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7050,6 +7068,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7081,6 +7105,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7112,6 +7142,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7143,6 +7179,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7174,6 +7216,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7205,6 +7253,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7236,6 +7290,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7267,6 +7327,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7298,6 +7364,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7329,6 +7401,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7360,6 +7438,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7391,6 +7475,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7422,6 +7512,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7453,6 +7549,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7484,6 +7586,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7515,6 +7623,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7546,6 +7660,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7577,6 +7697,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7829,6 +7955,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -7860,6 +7992,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -11214,6 +11352,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -13920,6 +14064,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-013",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -14782,6 +14932,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -27820,6 +27976,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-010",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -28988,6 +29150,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-008",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -29023,6 +29191,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-008",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -33348,7 +33522,7 @@
             },
             "status": "indexed",
             "classification": "unresolved",
-            "title": "bcdiv — Divide two arbitrary precision numbers",
+            "title": "bcdiv \u2014 Divide two arbitrary precision numbers",
             "change": "modified",
             "changeGroup": "40f27b75f82316c74db7cb5d55689d2f434e373f2584d66deada12f372ef2bbd",
             "phase22": {
@@ -33780,7 +33954,7 @@
             },
             "status": "indexed",
             "classification": "unresolved",
-            "title": "bcsqrt — Get the square root of an arbitrary precision number",
+            "title": "bcsqrt \u2014 Get the square root of an arbitrary precision number",
             "change": "modified",
             "changeGroup": "f15d7ed77418cf69a03a36ac396785a7a18027d4108c4418f7405877dc2a8304",
             "phase22": {
@@ -60847,7 +61021,7 @@
             },
             "status": "indexed",
             "classification": "unresolved",
-            "title": "GH-22527: Unterminated JSON strings are misleadingly reported as “Control character error”",
+            "title": "GH-22527: Unterminated JSON strings are misleadingly reported as \u201cControl character error\u201d",
             "change": "added",
             "changeGroup": "5deebeebf5c987b0cb69264311325443fc042f2c51ef6499feb2e9b20f995683",
             "phase22": {
@@ -93015,6 +93189,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-009",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -93050,6 +93230,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-009",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -93085,6 +93271,12 @@
                 "risk": "elevated",
                 "disposition": "indexed-only",
                 "reason": "Conservative queue pending implementation association; neither path nor section names establish irrelevance."
+            },
+            "phase3d": {
+                "finding": "PHP86-009",
+                "disposition": "individually-source-reviewed",
+                "scope": "Full available PHPT sides, all sections, and inline input inspected; no external/generated PHP dependency found. Not an upstream execution result.",
+                "evidence": "discovery-final-review.json"
             }
         },
         {
@@ -127202,7 +127394,7 @@
             },
             "status": "examined-unresolved",
             "classification": "test-infrastructure-or-environment",
-            "title": "Bug #70903 scandir wrongly interprets the Turkish \"ı\" character",
+            "title": "Bug #70903 scandir wrongly interprets the Turkish \"\u0131\" character",
             "change": "modified",
             "changeGroup": "ee5068b1922c4533de0e339d1cb287aa5a777d58986f20fddb0551e25d8a3390",
             "reviewGroup": "ee5068b1922c4533de0e339d1cb287aa5a777d58986f20fddb0551e25d8a3390",
@@ -136117,7 +136309,7 @@
             },
             "status": "indexed",
             "classification": "unresolved",
-            "title": "exec, system, passthru  — Basic command execution functions",
+            "title": "exec, system, passthru  \u2014 Basic command execution functions",
             "change": "modified",
             "changeGroup": "56d1b96673a4c68a2aa4540bb2e8eb940e4a45d3afaf9aa56e1c143448f5029e",
             "phase22": {
@@ -176242,5 +176434,11 @@
         },
         "riskMeaning": "Unassociated tests are conservatively elevated pending triage, not a claim that every library test requires manual language review.",
         "historicalFields": "Top-level counts/status retain Phase 2.1; per-record phase22 and these counts are current."
+    },
+    "phase3d": {
+        "date": "2026-10-23",
+        "individuallySourceReviewedThisPhase": 32,
+        "note": "Additive review overlay only. Historical counts/status/phase22 fields unchanged. Other records retain prior dispositions.",
+        "evidence": "discovery-final-review.json"
     }
 }

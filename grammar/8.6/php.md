@@ -3,8 +3,11 @@
 ## Status and scope
 
 **Provisional, incomplete, unregistered PHP 8.6 working specification.** Phase
-3B implements PHP86-001 only, against branch `PHP-8.6`, RC4 commit
-`f23b4c222cebe33be93ee8ecaaa14390c5507a08`. All other PHP 8.6 changes remain
+3B implements PHP86-001 structure; Phase 3C specifies PHP86-003 through PHP86-007
+contextual changes, against branch `PHP-8.6`, RC4 commit
+`f23b4c222cebe33be93ee8ecaaa14390c5507a08`. No contextual validator for these
+new rules is implemented here. Phase 3E documents PHP86-010 deprecations without
+changing accepted structure. Other PHP 8.6 changes remain
 pending or unresolved. The retained rules and historical audit discussion below
 originate in the PHP 8.5 baseline; they do not certify PHP 8.6 accuracy.
 PHP86-013, PHP86-014, and PHP86-015 remain open. See [changes](changes.md).
@@ -250,6 +253,32 @@ An unqualified reserved keyword does not become a callable name through a
 character-level production. Group imports have a separate trailing namespace
 separator before `{`; it is not part of the preceding name token.
 
+PHP86-010 does not reserve `let` or `is`. Declaring a class, interface, trait,
+or enum with either name remains accepted, with a compilation deprecation;
+the unqualified declaration name is checked case-insensitively, including in
+a namespace. `_` class-like declaration names already produced a deprecation
+in PHP 8.5, including namespaced declarations.
+
+Class-type names also pass through the pinned class-name check. Bare `let`/`is`
+are checked case-insensitively; resolved qualified names ending in literal
+`\let`, `\is`, or `\_` warn. The qualified suffix comparisons are case-sensitive
+at this pin: `\N\let` warns while `\N\LET` does not. These diagnostics do not
+change tokenization or reject an otherwise valid type. Runtime `class_alias`
+lowercases its alias before applying the same name check when executed, so
+qualified uppercase `LET`/`IS` aliases also warn. Its warning is not a lint
+rejection. Qualified `_` aliases now warn too.
+
+Global or namespace constants named `_`, `let`, or `is` remain accepted.
+Their deprecation occurs at constant registration during execution, not merely
+when linting a `const` declaration. Bare `let`/`is` are matched case-insensitively;
+qualified constant names use the same literal suffix comparisons described
+above. This does not deprecate `_` function names.
+
+Source: RC4 `zend_assert_valid_class_name`, `zend_compile_typename_ex`,
+`zend_compile_class_decl`, and `zend_register_constant` in `zend_constants.c`;
+paired diagnostic evidence is recorded in the
+[Phase 3E report](../../docs/8.6/deprecation-implementation.md).
+
 ### Composite yield-from and ampersand categories
 
 `yield` plus scanner whitespace/comments plus `from` with an identifier boundary
@@ -464,6 +493,12 @@ compilation, but may occur inside a discarded closure. Surviving static
 noncapturing closures in constant expressions compile their bodies as function
 code, not through the constant-expression AST whitelist.
 
+Function declarations named `readonly`, `let`, or `is` remain accepted but
+produce a compilation deprecation (PHP86-010). The check uses the unqualified
+function name case-insensitively, including in a namespace. It does not require
+calling the function, despite the diagnostic's wording. Method names and the
+function name `_` do not receive this warning. Source: RC4 `zend_begin_func_decl`.
+
 ## Classes, interfaces, traits and enums
 
 These declarations share `class-member-list` and `class-member` structure.
@@ -477,6 +512,23 @@ The [declaration boundary](#parsercompiler-declaration-boundary) explains why
 these forms remain structurally representable even when a surviving declaration
 would be rejected.
 
+Returning an expression from `__construct` or `__destruct`, including
+`return null;`, remains accepted with a compilation deprecation (PHP86-010).
+Declaring either method as a generator also produces a compilation deprecation;
+invocation is not required. A bare `return;` is not deprecated by this rule.
+Existing contextual constraints still apply. Source: RC4 `zend_compile_return`
+and `zend_compile_func_decl_ex`.
+
+For class `__debugInfo`, an otherwise permitted return type containing `null`
+(`?array`, `array|null`, or `null`) produces a deprecation during declaration
+compilation, even if the body returns an array. The declaration remains accepted.
+An omitted return type does not itself warn. Separately, when the debug-info
+handler invokes the method and receives `null`, it emits a runtime deprecation
+and uses an empty array; that behavior already existed in PHP 8.5. A direct
+ordinary call is not this handler invocation. Returning an array avoids that
+runtime diagnostic. Source: RC4 `zend_check_magic_method_implementation` in
+`zend_API.c` and `zend_std_get_debug_info` in `zend_object_handlers.c`.
+
 ## Namespaces and imports
 
 Qualified names are atomic tokens; group imports have a separate separator
@@ -484,6 +536,15 @@ before `{`. The EBNF distinguishes namespace definitions, ordinary imports,
 group imports and mixed group imports. Namespace-style, placement and name
 conflicts require [contextual validation](#namespace-and-declare-constraints);
 token spelling alone does not establish their legality.
+
+PHP86-010 deprecates class and constant import aliases named `_`, `let`, or
+`is`, and function import aliases named `let` or `is`, during compilation.
+The `let`/`is` alias comparisons are case-insensitive. These imports remain
+accepted subject to existing import constraints. Function aliases named `_`
+remain accepted without this deprecation. `readonly` is still not a legal
+function import alias: `use function strlen as readonly;` is a parser error
+in both versions, unlike a function declaration named `readonly`.
+Source: RC4 `zend_compile_use` and parser import-name productions.
 
 ## Attributes
 
@@ -704,7 +765,17 @@ Source: pinned compiler `zend_compile_attributes` and call/argument compilation.
 
 **Properties.**
 
-- Readonly properties need a type and cannot be static or have ordinary defaults.
+- A typed readonly instance property may have a default value (PHP86-003),
+  whether explicitly readonly or implicitly readonly in a readonly class.
+  It still cannot be static, untyped, or hooked. The default must satisfy the
+  property's type and constant-expression constraints; the relaxation does not
+  permit a surviving `new` expression in a property initializer.
+
+- A default initializes the property; it does not permit subsequent ordinary
+  reassignment. Inheritance may retain a default or redeclare a compatible
+  readonly property with a different default, subject to existing type,
+  visibility, finality, and readonly compatibility rules. Promoted parameter
+  defaults remain parameter defaults, not declaration-time property defaults.
 
 - Only hooked properties may be abstract.
 
@@ -716,7 +787,9 @@ Source: pinned compiler `zend_compile_attributes` and call/argument compilation.
 
 - Hooks have no implementation body.
 
-Source: pinned compiler `zend_compile_prop_decl`.
+Source: RC4 `zend_compile_prop_decl` and `zend_inheritance.c` property checks;
+`readonly_props/readonly_with_default*.phpt`. Initialization/reassignment checks
+are separate from structural parsing and may require evaluation.
 
 ### Hooks
 
@@ -746,7 +819,24 @@ Source: pinned compiler `zend_compile_property_hooks`.
 
 - Enforce type restrictions/value compatibility, modifier legality, and final/private restrictions.
 
-Source: pinned compiler `zend_compile_class_const_decl`.
+`#[\Override]` may target class/interface constants and enum cases (PHP86-005).
+A marked declaration must override a matching nonprivate inherited constant
+from a parent or implemented/extended interface. A private parent constant or
+an unrelated same-name declaration does not satisfy it. Missing matches are
+rejected during declaration linking, not by attribute grammar. Existing final
+constant, visibility, and type-compatibility restrictions still apply; the
+attribute does not authorize an otherwise illegal override. Global constants
+do not acquire this target permission.
+
+Source: RC4 `zend_compile_class_const_decl`, `zend_compile_enum_case`, Override
+target flags in `zend_attributes.stub.php`/`zend_attributes_arginfo.h`, and
+`zend_inheritance.c` constant inheritance and unresolved-Override checks.
+
+Class, interface, trait, and enum constants named `namespace` (case-insensitive)
+remain accepted with a compilation deprecation (PHP86-010); this also applies
+to enum cases. It does not apply to a property or method with that name, or
+a global constant created with `define('namespace', ...)`.
+Source: RC4 `zend_declare_typed_class_constant` in `zend_API.c`.
 
 ### Enums
 
@@ -758,7 +848,23 @@ Source: pinned compiler `zend_compile_class_const_decl`.
 
 - No properties; cases are forbidden outside enums; trait composition and forbidden magic/member declarations require further checks.
 
-Source: pinned compiler `zend_compile_enum_case`.
+Enums may declare `__debugInfo()` (PHP86-006). It must take no parameters and
+be nonstatic. If a return type is declared, it must be compatible with `?array`
+(including `array`); omitted return types remain allowed. The method should be
+public: nonpublic visibility emits a warning, not a fatal declaration rejection.
+The PHP86-010 nullable-declaration and debug-handler null-result deprecations
+described under [classes](#classes-interfaces-traits-and-enums) also apply;
+neither makes these declarations structurally invalid. Runtime return-value
+validation is distinct from declaration acceptance.
+
+Other enum magic-method prohibitions remain: `__construct`, `__destruct`,
+`__clone`, `__get`, `__set`, `__unset`, `__isset`, `__toString`, `__serialize`,
+`__unserialize`, `__sleep`, `__wakeup`, and `__set_state`. In particular, allowing
+`__debugInfo()` does not allow `__get`. Forbidden-method checks may occur during
+linking even when lint succeeds.
+
+Source: RC4 `zend_compile_enum_case`, `zend_verify_enum_magic_methods` in
+`zend_enum.c`, and `zend_check_magic_method_implementation` in `zend_API.c`.
 
 ### Callable conversion
 
@@ -787,6 +893,26 @@ nullsafe conversion, or attribute declaration. Lexical/parser errors remain erro
 
 ### Writable variables and destructuring
 
+PHP86-004 permits property mutation through objects fetched from a global or
+class constant, including dimensions leading to an object: `OBJ->p = 1`,
+`C::OBJ->p = 1`, and `ARR[0]->p = 1`. A property may then be followed by an
+array dimension, as in `OBJ->items[0] = 1`. The permitted path traverses a
+property fetch; a constant itself or a dimension-only constant array path
+remains nonwritable. `ARR[0] = 1` and `[ARR[0]] = [1]` remain invalid.
+
+Within these paths, assignment, compound assignment, increment/decrement,
+unset, reference binding/passing, destructuring, and by-reference iteration of
+an object's property follow their usual contextual rules. Object identity and
+mutable properties are required at evaluation; compile acceptance does not
+make a scalar an object or relax readonly/type restrictions. This does not
+authorize nullsafe writes or assignment-expression-based dimension targets;
+the latter remain the separate unresolved PHP86-014 question.
+
+Source: RC4 `zend_can_write_to_variable` (`via_prop`),
+`zend_mark_const_object_fetch`, and delayed property/constant fetch compilation;
+upstream `gh10497*.phpt`. Existing foreach acceptance is not by itself proof
+of a new compilation boundary.
+
 - Assignment, reference binding, increment, unset, isset, destructuring, and foreach need appropriate read/write targets.
 
 - Calls may reduce as Zend's syntactic `variable` (`variable-expression` here), but must not be unset.
@@ -808,6 +934,30 @@ nullsafe conversion, or attribute declaration. Lexical/parser errors remain erro
 - Modifiers cannot be combined.
 
 ### Control-flow constraints
+
+Returning from a `finally` block, with or without a value, remains accepted
+with a compilation deprecation (PHP86-010). A return in a nested try inside
+that finally is included. A nested function/closure has its own context: its
+ordinary return does not inherit the outer finally warning. Returns in a
+try/catch outside a finally do not receive this diagnostic. The check occurs
+when compiling the return; a folded-away enclosing closure can avoid it.
+This does not waive existing return-type or control-flow restrictions.
+Source: RC4 `zend_compile_return` and function compilation context handling.
+
+When compiling a function that returns by reference, returning a nullsafe
+method call is rejected, as is yielding that value in a by-reference generator
+(PHP86-007). The existing nullsafe-property reference restriction remains.
+`zend_compile_return` and `zend_compile_yield` now test variable-or-call nodes
+and reject short-circuited chains before compiling them as reference targets.
+
+Ordinary value returns/yields and ordinary method reference returns are not
+prohibited by this rule. It does not impose a blanket nullsafe-iteration ban:
+the tested value and by-reference foreach method-result controls remain
+accepted. Existing reference-binding/write checks still apply in their own
+contexts. Unreachable statements and `if (false)` bodies can still be compiled
+and rejected; a folded-away enclosing function closure can avoid the check.
+These are contextual compilation rules, not unconditional EBNF exclusions or
+general claims about optimizer traversal (PHP86-015 remains open).
 
 - `break` and `continue` require a legal enclosing construct and a positive literal level.
 
@@ -2662,7 +2812,7 @@ yield-key =
 ## Conformance evidence
 
 The audit records below are inherited PHP 8.5 history, not PHP 8.6 certification.
-Phase 3B evidence and remaining integration obligations are in [changes](changes.md).
+Phase 3B/3C/3E evidence and remaining integration obligations are in [changes](changes.md).
 
 Evidence supports bounded claims about the repository implementation; it does
 not replace any normative layer. Detailed reports preserve their original case

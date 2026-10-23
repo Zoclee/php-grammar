@@ -1,5 +1,11 @@
 # Proposed minimal PHP 8.6 implementation plan
 
+The [Phase 3D backlog](discovery-final-review.md#implementation-consistency-and-prioritized-backlog)
+records the current remaining work after the bounded Phase 3B/C implementation.
+Only warning-only PHP86-010 prose is newly assessed ready with bounded limitations;
+complete implementation, integration, and certification remain not ready.
+The earlier planning decisions below remain historical evidence.
+
 ## Historical Phase 2.2 planning decision — October 23, 2026
 
 The following two paragraphs record the earlier governance, superseded for
