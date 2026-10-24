@@ -1,0 +1,140 @@
+{
+    "date": "2026-10-24",
+    "commands": {
+        "coverage": {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/8.6/final-coverage-expansion.php",
+                "--php85=.audit/php85/php.exe",
+                "--php86=.audit/php86/php.exe",
+                "--sources85=.audit/php-php-src-7a4c627",
+                "--sources86=.audit/php-php-src-f23b4c2",
+                "--report=docs/8.6/source-audit-oracles.json",
+                "--coverage=docs/8.6/source-audit-coverage.json"
+            ],
+            "exit": 0,
+            "output": "{\n    \"coverage\": {\n        \"productions\": 297,\n        \"totalProductions\": 361,\n        \"productionPercent\": 82.27146814404432,\n        \"alternatives\": 482,\n        \"totalAlternatives\": 800,\n        \"alternativePercent\": 60.25\n    },\n    \"checks\": 1131,\n    \"observations\": 156,\n    \"errors\": []\n}\n"
+        },
+        "integration": {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/8.6/integration-check.php",
+                "--php85=.audit/php85/php.exe",
+                "--php86=.audit/php86/php.exe",
+                "--sources85=.audit/php-php-src-7a4c627",
+                "--sources86=.audit/php-php-src-f23b4c2",
+                "--report=docs/8.6/source-audit-integration.json"
+            ],
+            "exit": 0,
+            "output": "526 checks; 172 observations; 0 failures\n"
+        },
+        "pfa": {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/8.6/pfa-check.php",
+                "--php85=.audit/php85/php.exe",
+                "--php86=.audit/php86/php.exe",
+                "--sources=.audit/php-php-src-f23b4c2",
+                "--report=docs/8.6/source-audit-pfa.json"
+            ],
+            "exit": 0,
+            "output": "PHP86-001: 225 checks; 114 paired-version observations; 0 failures\n"
+        },
+        "context": {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/8.6/context-check.php",
+                "--php85=.audit/php85/php.exe",
+                "--php86=.audit/php86/php.exe",
+                "--sources85=.audit/php-php-src-7a4c627",
+                "--sources86=.audit/php-php-src-f23b4c2",
+                "--report=docs/8.6/source-audit-context.json"
+            ],
+            "exit": 0,
+            "output": "278 checks; 126 paired-version stage observations; 0 failures\n"
+        },
+        "deprecation": {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/8.6/deprecation-check.php",
+                "--php85=.audit/php85/php.exe",
+                "--php86=.audit/php86/php.exe",
+                "--sources85=.audit/php-php-src-7a4c627",
+                "--sources86=.audit/php-php-src-f23b4c2",
+                "--report=docs/8.6/source-audit-deprecation.json"
+            ],
+            "exit": 0,
+            "output": "712 checks; 268 observations; 0 failures\n"
+        },
+        "discrepancies": {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/8.6/compiler-contextual-check.php",
+                "--php85=.audit/php85/php.exe",
+                "--php86=.audit/php86/php.exe",
+                "--sources85=.audit/php-php-src-7a4c627",
+                "--sources86=.audit/php-php-src-f23b4c2",
+                "--cache=.audit",
+                "--report=docs/8.6/source-audit-probes.json"
+            ],
+            "exit": 0,
+            "output": "{\n    \"checks\": 1708,\n    \"hashChecks\": 501,\n    \"caseVersionObservations\": 162,\n    \"invocations\": {\n        \"lint\": 162,\n        \"execution\": 37\n    },\n    \"errors\": []\n}\n"
+        },
+        "traceability": {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/8.6/change-traceability.php",
+                "--report=docs/8.6/source-audit-traceability.json"
+            ],
+            "exit": 0,
+            "output": "{\n    \"differences\": {\n        \"added\": [],\n        \"removed\": [],\n        \"modified\": [\n            \"ordinary-argument-list\",\n            \"first-class-callable-arguments\",\n            \"clone-argument-list\",\n            \"argument\",\n            \"argument-no-expression\"\n        ]\n    },\n    \"documentarySections\": 14,\n    \"openFindings\": [\n        \"PHP86-013\",\n        \"PHP86-014\",\n        \"PHP86-015\"\n    ],\n    \"errors\": []\n}\n"
+        },
+        "manifest": {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/validate-manifest.php"
+            ],
+            "exit": 0,
+            "output": "Manifest schema 1.0 and package paths: PASS\n"
+        },
+        "suite": {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "-d",
+                "extension=.audit/php85/ext/php_mbstring.dll",
+                "vendor/phpunit/phpunit/phpunit",
+                "--do-not-cache-result",
+                "--no-progress"
+            ],
+            "exit": 0,
+            "output": "PHPUnit 11.5.56 by Sebastian Bergmann and contributors.\r\n\r\nRuntime:       PHP 8.5.10\nConfiguration: C:\\Data\\GitHub\\php-grammar\\phpunit.xml.dist\n\r\nTime: 03:12.166, Memory: 102.00 MB\r\n\r\nOK (6147 tests, 58021 assertions)\r\n"
+        }
+    }
+}

@@ -1,0 +1,2628 @@
+{
+    "scope": "Phase 5E finite evidence, not completeness/certification or contextual enforcement.",
+    "sourcePins": {
+        "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "inputHashes": {
+        "tools/8.6/final-coverage-expansion.php": "9c4ebe77c56b16c398ff7ec6d4cc654f4a9d82d88725cb71cfc1ed5039848a9f",
+        "tests/fixtures/php/8.6/final-coverage-cases.json": "7dcfebdc0cc9f151b784897b4168ea93ecb6c80a889a5bf7290b92f6770284c3",
+        "tests/fixtures/php/8.6/final-coverage-lexical.json": "85a34ce36a9cfa55da0f56ecf2c5872bb5b3c946636897328f212da3105e35c9",
+        "tools/8.6/final-coverage-source-lock.json": "562cf18a70585514afbf9fb64f473c93fb290e5be0da7159e37bda9305806134"
+    },
+    "fixtureHashes": {
+        "tests/fixtures/php/8.6/valid/final-yield-print-key.php": "7183a37a8ac41116a63a61fd26b3da4e94107d3e36f4e9531a9a9778fc9333ee",
+        "tests/fixtures/php/8.6/valid/final-yield-include-key.php": "57b9f77f4f478198326b08928a56e8662b8e918a6b8241172f562aa383fb8b8d",
+        "tests/fixtures/php/8.6/valid/final-yield-arrow-key.php": "4525c2cabfdd2bcada27187ede6c9089718fda79b9d64541424f01d541556317",
+        "tests/fixtures/php/8.6/valid/final-yield-throw-key.php": "74a7d8dad204ed4babc2b27d6424632ccfe0d521f9575e8ef479042a30b8bc53",
+        "tests/fixtures/php/8.6/valid/final-yield-throw-coalesce.php": "bd8955e4dd03ba17227c5bf884b9ec0d3d26c5c0a95cdb8047c96b7430fc6477",
+        "tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php": "41122e626a986f1d9dc3836e849af1e38f484cae1f5f663dd034978c0562da5e",
+        "tests/fixtures/php/8.6/valid/final-yield-nested-prefix.php": "bf97790f943f183154b54a87fe47e435b1f11b47eae24a16de9878c6fb513941",
+        "tests/fixtures/php/8.6/valid/final-yield-from-assignment.php": "acb2ed86d834f5da6f3bd3d8e68cad475a63983eb49fc5343d631c5e1368d30b",
+        "tests/fixtures/php/8.6/valid/final-yield-reference-control.php": "062c9c5a1192847e1114cb0e732188d6bd9a699273267e1c70178e4d1ea83f9b",
+        "tests/fixtures/php/8.6/valid/final-unary-power.php": "92c00efedbf3d8fe8eb1af1e57ad9018b263d455794bb30ce8ddc4482e38a644",
+        "tests/fixtures/php/8.6/valid/final-prefix-property.php": "f4a7d6811c11d6b3de061ea32f9a97ab81daf43dd6ac07de7c91be9bd85dfe2f",
+        "tests/fixtures/php/8.6/valid/final-cast-aliases.php": "cd6854259efd1d04afd5965b9d4e0b2f6fe9197fa73909cfdd365e59502b34db",
+        "tests/fixtures/php/8.6/valid/final-clone-callable.php": "0ac6ea7042109b77e10198a3f1aac2d7ba39317bc65bcd2a77eea6d254af4a23",
+        "tests/fixtures/php/8.6/invalid/final-yield-missing-key.php": "09e9eefc3013fa28d7eeeaaef6723e2bd95f61d52aaa274df7d4b79a143b3cb9",
+        "tests/fixtures/php/8.6/invalid/final-yield-from-missing.php": "16f996394de3f14450ea5e8271834644589fe4962316231f540f52c91074a573",
+        "tests/fixtures/php/8.6/invalid/final-prefix-missing.php": "b50b77b6fa062ac976a539a748798756e9ff2bf8fe195149fa2c0e147130b23c",
+        "tests/fixtures/php/8.6/contextual-invalid/final-yield-constant.php": "598cf6f8512c09b59f4fc350af1f78f4269f4d976e1664eca6b90e02721c047d",
+        "tests/fixtures/php/8.6/contextual-invalid/final-yield-from-reference.php": "98ac73a74e73cbac866795cde9de4c40b67e7dfb3cdd6b3ecbfd408c563e0c46",
+        "tests/fixtures/php/8.6/contextual-invalid/final-prefix-nullsafe.php": "c8497aa0f909d33289f639ef81a5fe42cf23b9d09678fd63177fa53c8efbb544",
+        "tests/fixtures/php/8.6/valid/final-yield-pfa.php": "ef49a01c2b70c191938b24315db4c4678db6df47c709198410cb549c73dce8a6",
+        "tests/fixtures/php/8.6/valid/final-unmatched-for.php": "88f82d2f68812e7bea081f31c8965dbfa184f1303420878c3f9f11d9771abe25",
+        "tests/fixtures/php/8.6/valid/final-unmatched-foreach.php": "005842802cd4a4068c071efb50ea8f9407bad233f10261b7428bc6b6d5750cf6",
+        "tests/fixtures/php/8.6/valid/final-unmatched-declare.php": "c82132f08e0eedb070287f8e9f9bad8c2eacd32c463a3627bf7586c6a8b0be27",
+        "tests/fixtures/php/8.6/valid/final-elseif-unmatched.php": "19aa85078a1dbfed102a48228ee9fadc195fe76947f062dc9aaff8890a678b6c",
+        "tests/fixtures/php/8.6/valid/final-switch-semicolons.php": "be099f42f75cdc0400dc0bd7a5219cabb34773115dcd159ffd30191176cd147a",
+        "tests/fixtures/php/8.6/valid/final-match-default-comma.php": "0b75dafb79383ecb9c029e3e3ec72c791cba9ce7819b371d8c12d0e241519da8",
+        "tests/fixtures/php/8.6/valid/final-finally-throw.php": "1a3b5cefadb7b0558f90ce6127e115aa22ded98f38816c1610260b1adb77f97f",
+        "tests/fixtures/php/8.6/valid/final-foreach-key-reference.php": "ceec80a66fda23ef21b16fc67a6334aecba0e29f66c63cbeae8abd17a32d0158",
+        "tests/fixtures/php/8.6/valid/final-for-void-prefix.php": "71aaadc7b3052ec0b8fbaf2703845574ebc0ccf3c05d9ab7e5b42fbc98de1a7e",
+        "tests/fixtures/php/8.6/valid/final-nested-list.php": "5cac4f83556585ceb1845c6a9d75060200d8811cbd02dc58d1566a92bd20a900",
+        "tests/fixtures/php/8.6/valid/final-var-hook.php": "283cf590aa5cb4d610e2236997378e8c379b6617b5d1fb47e7f467842de8fbb0",
+        "tests/fixtures/php/8.6/valid/final-reference-get-hook.php": "f0d6a6e6f1d8239e6a9660d014c6f035d8dbbea73855ea6dc019ef62c9a318aa",
+        "tests/fixtures/php/8.6/valid/final-promoted-hook.php": "7cb06e4cb87dbe6d7ce7689826d376c16337f525edb10ca2a35f35bbdd83bf19",
+        "tests/fixtures/php/8.6/valid/final-trait-visibility.php": "deb53e5133af4a7e1a9321686666786cc445ef889b6f239a4b0078b52e7639a8",
+        "tests/fixtures/php/8.6/valid/final-type-return-variants.php": "818a44b254283073d145182f8255644d49c232774a0c946142dd9c9eba82e61e",
+        "tests/fixtures/php/8.6/valid/final-parameter-type-variants.php": "b8cabc8eeadb47244446d0e69678333e020c6d34eb24464a171ae16d0b1951a1",
+        "tests/fixtures/php/8.6/valid/final-attribute-closure.php": "7e546d2cf7deb91e6bf3063e5504e26c275bbabd2d10005e4b5d2e538b505c56",
+        "tests/fixtures/php/8.6/valid/final-inner-declarations.php": "18e4b6f1332c83f49d5c7ea1d5105f0540e999cc431af22bb6172663c6037e1c",
+        "tests/fixtures/php/8.6/valid/final-namespace-imports.php": "28c395351b86cbbe27024c4f7c0981a12789661b541467587bf72ad395b24eb0",
+        "tests/fixtures/php/8.6/invalid/final-for-missing-separator.php": "b36afa49a59d0a82af4deba7c4a644e0fe880a65bb47c0aa3b2d595fcf3d7556",
+        "tests/fixtures/php/8.6/invalid/final-match-missing-result.php": "3171dc90688fd06603b350d61cf9b317d1683344d15e25ad03b8d7aab91c9de9",
+        "tests/fixtures/php/8.6/invalid/final-hook-missing-semicolon.php": "63ffd25388bc31b21f2e794570c8ea669aad512831f63cf6c888e630cebd4f59",
+        "tests/fixtures/php/8.6/invalid/final-type-missing-union.php": "9749c64c6aadd0f046479a0e4504e2286cf96174833fe61aa1a364da6ca26cd8",
+        "tests/fixtures/php/8.6/invalid/final-enum-missing-case-name.php": "500f948a509ba58312fb4fb5639c5e95b0f94d4d73384644fcc1bc134086034f",
+        "tests/fixtures/php/8.6/contextual-invalid/final-pfa-parent-get.php": "077ea2b359f233555c51754cbd03fca5576798f709420ddc7e78e879fc0ad4b0",
+        "tests/fixtures/php/8.6/valid/final-pfa-parent-get-repair.php": "b3a7381e0c89d45c51e989e60d264dd2d3c21a7f45be626ca69340543b8abf0c",
+        "tests/fixtures/php/8.6/valid/final-readonly-private-default.php": "b120c76a00ad2ed6de929639831bd41c79ac9bb9cf141172edd15ad1fe1c38c4",
+        "tests/fixtures/php/8.6/contextual-invalid/final-readonly-untyped-default.php": "70e4bcf34fc09a2d520e9afdac0f44010e8d456a22064dc3d53557b8444bf7bf",
+        "tests/fixtures/php/8.6/valid/final-constant-object-unset.php": "252a7f511874a767c275fd750f41310be79a7ef202e0af7827428dab9800247b",
+        "tests/fixtures/php/8.6/contextual-invalid/final-constant-array-unset.php": "34d51d8d25b4484455055155cd9fb4410db126f7040b64e6385c7dc1b10e15da",
+        "tests/fixtures/php/8.6/valid/final-override-trait.php": "d6836aaa56335e194df2a32bb96241ddeca9fc285130e09564d549898a07dbfe",
+        "tests/fixtures/php/8.6/contextual-invalid/final-override-trait-missing.php": "dd413adf277224679e22325dcd6070181f66bfe6731730e7722f4d7d655cf43f",
+        "tests/fixtures/php/8.6/contextual-invalid/final-enum-debug-static.php": "743b935bec605c98355368ec2f780380769cd88a3901a2a87c4df22500a779ca",
+        "tests/fixtures/php/8.6/valid/final-enum-debug-untyped.php": "f4e4ca7c44e1ba6f2e4dbb8ca2d30b1a32e832c12ee735fc8355f80c7c2099d9",
+        "tests/fixtures/php/8.6/contextual-invalid/final-nullsafe-reference-method.php": "007643c1eb952891e210d7d88c8f17f0ada32eaca6b93b921edb27f82e60e4e7",
+        "tests/fixtures/php/8.6/valid/final-nullsafe-yield-value.php": "fab71ed77bff8300b6f454039cc430e716958e867a4e72587e61e337492a3dfd",
+        "tests/fixtures/php/8.6/valid/final-deprecated-let-reference.php": "b4772ecf9ee857af4f2bba2f2d0d2201c6ec5185093cad8f915b6785b7384283",
+        "tests/fixtures/php/8.6/valid/final-deprecated-finally-return.php": "a2a1ab63651cfa3cedc65f3030f542c9fa091c4168f43e5e8579ffe3829f35f4"
+    },
+    "sourceHashes": {
+        "8.5": {
+            "Zend/zend_language_scanner.l": "8dfed84b0f6cabe73f004ea00c69614ea84542130a9b97e7699f801ef7ce7403",
+            "Zend/zend_compile.c": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225",
+            "Zend/zend_inheritance.c": "69793711dc0a88c93545be87baa57e2fca26f2dc2e0701a8d956611980fee486",
+            "Zend/zend_enum.c": "baa6dfdb61df292e38a50d32f3c43fedac0ec0c5126a4e8284f37b67e48ad8fd",
+            "Zend/zend_attributes.stub.php": "c404716e107cdb2a42098a0301223a1a50c804f0250420b3e5e316f02882075c",
+            "Zend/zend_attributes_arginfo.h": "ef87b52f9b8b42ccbb24f79d71156c187a74c39ff2601b9c1aae35dff2887826",
+            "Zend/zend_API.c": "1aa5548cebd8f337bad00fe94917559d52db75566eb5d8674ef377a6369ef711",
+            "Zend/zend_object_handlers.c": "a2b4605a03081efa6b76802af07664d411d6737dd0d8dee434217278d816dcea",
+            "Zend/zend_language_parser.y": "f108f2c2ff4c98c68b6478e7fbdebc16d8afb8bbbc3ae6079e5b285b448dac0c",
+            "Zend/zend_constants.c": "f4a908d79814ce82cb368cdd9d68e68901ae31e0a1e2398e4b18c3987d37266b",
+            "Zend/tests/deprecate_namespace_class_constant.phpt": null,
+            "Zend/tests/magic_methods/constructor_destructor_return.phpt": null,
+            "Zend/tests/try/finally_return_deprecation.phpt": null,
+            "Zend/tests/return_types/042.phpt": "2649dc46865398ac316be4a676290f99ded7483217e8a8ff35f2158df88a3be7",
+            "Zend/tests/debug_info/debug_info.phpt": "5256443f6f528f32a92d2c9290c92f381d493521463bd89fc2d5dfcaa6ef1459",
+            "Zend/tests/functions/readonly_as_method_name_is_ok.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/class_alias.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/class_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/class_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/constant_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/constant_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/function_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/is/function_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/class_alias.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/class_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/class_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/constant_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/constant_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/function_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/let/function_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/readonly/function_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/readonly/function_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated.phpt": null,
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_namespaced.phpt": null,
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_throw_handler.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/class_alias_underscore.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name_use.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name.phpt": null,
+            "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name_use.phpt": null
+        },
+        "8.6": {
+            "Zend/zend_compile.c": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+            "Zend/zend_inheritance.c": "d3f0f10319e7ffe0490ee85fd4b42f5dca9efa7804bc8e72b1b23d8df7dccf46",
+            "Zend/zend_enum.c": "edd67c50fc77a9bff98845272d9ac06c9867f0410b5aa8fe1c7e942dc71f53f8",
+            "Zend/zend_attributes.stub.php": "bb3078146b4bda3f188953065e4dfaeda688d85d39871bcd57c4c14b810e5749",
+            "Zend/zend_attributes_arginfo.h": "a003d88c6bb6cebc083703b1c23957770d63f0dd2c02ad26bca55519f94f3c3a",
+            "Zend/zend_API.c": "666d6f9c311bef02b50a5cfe09ddf66fac310834a88c94dac9be37a83ee238db",
+            "Zend/zend_object_handlers.c": "1a3b3708ab7e5f270ac0da6faf9d53bac3ebb5ac6395e38e695fb0e5638451d6",
+            "Zend/zend_language_parser.y": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "Zend/tests/readonly_props/readonly_with_default.phpt": "e07257a5b03c3a6324939cab330174f7791b9f04055260ba26784115fcae16ed",
+            "Zend/tests/readonly_props/readonly_with_default_inheritance.phpt": "50e2febce4e3d9b3e416a8e569e91f070dd8182f42ef40fa6f680dfb3abd417a",
+            "Zend/tests/gh10497_write_targets.phpt": "009d4e7ac76f872b898fec357d1292df057b193aaff5daf2e25905caf2714232",
+            "Zend/tests/gh10497_write_targets_guardrail.phpt": "0d5d10093dea351116871d675a3a4123e16ebfa71115e27b1932eb18219e5544",
+            "Zend/tests/gh10497_dim_arr.phpt": "2d1d2cd168d79e38a63408e0766e8d00dc3da6869752d42dc74b21b564eff52f",
+            "Zend/tests/gh10497_func_arg.phpt": "5f846be583a1963c628f8d9cd28b042af80b03dde728ec4202e16690c20188cd",
+            "Zend/tests/gh10497_non_object.phpt": "0d65bd4505718a11fd8a27fa4f80aebc6040c82cade4cc978e9846d1977a2fa5",
+            "Zend/tests/attributes/override/constants/basic.phpt": "3a7030bf866e13224f076d5e66d6f1056cd75c955fd8a50a5c019e6a49d47214",
+            "Zend/tests/attributes/override/constants/visibility_01.phpt": "a71552fe5562fabb68e79c80bc76b6174714989f2c3eaecfc28405212f427753",
+            "Zend/tests/attributes/override/constants/visibility_03.phpt": "68e1801363114ceb57c67cb81851958ec8123b9f305bb156f6678f8a1a5930bc",
+            "Zend/tests/attributes/override/constants/failure.phpt": "94728fe50715e906129022ddbc40a93f26927d08b7e17da2326b777024c3ab9a",
+            "Zend/tests/enum/debugInfo/magic_method.phpt": "bc3b052a4db8a9cb4d9edf34ba37ab50a0f3c264bad3d41b5691b3b4da48c278",
+            "Zend/tests/enum/debugInfo/backed_enum_value.phpt": "469cd8410788eb5333bf44fe1187fc5a12aae15b5b69ebb8efaa35a82db5e609",
+            "Zend/tests/enum/debugInfo/param_validation.phpt": "82d5d1772b84bf0fbd972934a8b5f213e9dea3aa386e53a8c70749077823fd0b",
+            "Zend/tests/enum/debugInfo/return_validation.phpt": "fe8cd69410c37aa325c3f15df1614a16902556620f397e011601a87f1790f587",
+            "Zend/tests/enum/debugInfo/visibility_validation.phpt": "4ff36126a522128d922632e5336ef48605310dfd1b4e0d4f2dda81499229a7f4",
+            "Zend/tests/gh20628_001.phpt": "29ed8fb245de9ceff22098cb13fef4307513c665cf05b2fc9ed2f82ecb4f2ef5",
+            "Zend/zend_language_scanner.l": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "Zend/zend_ast.c": "e6e793245e60d377f109b3d1e154665e84ab9a5cc60736576c4ff89d99eee5a9",
+            "Zend/zend_partial.c": "149db16c425a107c1d969e0bf7704eff1bfb5b1dee626f76bb7bacd99d64ecff",
+            "Zend/tests/partial_application/rfc_examples_overview.phpt": "96f8a83bac718695a5bde39b39107e5ada3be19e69308b12ede1e22b598bcade",
+            "Zend/tests/partial_application/rfc_examples_const_expr.phpt": "a472adcc416e7013013e94bbcc1ae830a165063cbebcd7fff82750b8cc512947",
+            "Zend/tests/partial_application/named_placeholders.phpt": "20a8bc9708277436af082cef456c00b6359146e28d2fcd0237bf37968ae33f94",
+            "Zend/tests/partial_application/clone.phpt": "2fc00f119fd47e3a897440f7a4d3c6b85dd5109f7ed801dc53724cfb19e22c68",
+            "Zend/tests/partial_application/optional_placeholder.phpt": "35e01e4187408b47d56db98d63fb60c9bc9d898f118515ab7790311eb4ab06e5",
+            "Zend/tests/partial_application/compile_errors_001.phpt": "edec00ff601d5fe160adcfbe21e1e4ad0067bb30da41526e36f7123f7220b979",
+            "Zend/tests/partial_application/compile_errors_002.phpt": "c0d2a439a35e8dc88e262a32bbaaeb1aa882fef27e5596032c826fc0b18a87d6",
+            "Zend/tests/partial_application/compile_errors_003.phpt": "e8bde981b21cabf7bbe528c21b3e9cc1f7c98b07541874835f988171bf608390",
+            "Zend/tests/partial_application/compile_errors_004.phpt": "e9ae78ffb2085295d6cc2108c8e6fff769bd67dac8b812a9d5a6bd94be5719e3",
+            "Zend/tests/partial_application/compile_errors_005.phpt": "2604219436b1e9245fb39203ecaf511cf3ce4d0e36a59a01e2740172a279830b",
+            "Zend/tests/partial_application/compile_errors_006.phpt": "bdbcd72e7cbb962c02b83b3b1981a98c61d32d88850fdc91c82ddc9271183b77",
+            "Zend/tests/partial_application/constexpr_001.phpt": "a6aaa6bca716959dbb1deefbc0a21c759f59a0c33d1d851e233da1d4bbc93f97",
+            "Zend/tests/partial_application/constexpr_002.phpt": "8de890bcba8c0c90cc6aae998c77694636152c1e397317f6fa2b2c48ff88608a",
+            "Zend/tests/partial_application/constexpr_003.phpt": "1769eaed6a680c739cc5e6b146c2f01fbfa670c13ad77de3fbaa31614061b604",
+            "Zend/tests/partial_application/constexpr_004.phpt": "1c03f4e96d4441573c5f9e9216028640ceb7368713600c429613628038548a1e",
+            "Zend/tests/partial_application/constexpr_005.phpt": "745f7c091bf2a366cea866ebd60c443cfb754d7e3e02029009eb45e909196adb",
+            "Zend/tests/partial_application/constexpr_006.phpt": "860c673653274738feb788f8f64ddddaefeb9a53b4e3924dd0369c09d9732217",
+            "Zend/tests/partial_application/constexpr_007.phpt": "3791f691cfb5c225d1e81c971d5a637c45bab84ceb937ad5b5fe27268b7fd161",
+            "Zend/tests/partial_application/constexpr_008.phpt": "96bc0053ee9aa0ff7e90e3e1d9e1be9f8f0b0b1283d9f6e3ea9d4684973ec6af",
+            "Zend/zend_constants.c": "6c5cd44f8d3def91202d199f4e05f3d81ebba6beafdbe24f894740b8817e6985",
+            "Zend/tests/deprecate_namespace_class_constant.phpt": "63af61d533a4fa5d4be081538d4c63ef9eb18b01bb311fc40587960a3fefe59d",
+            "Zend/tests/magic_methods/constructor_destructor_return.phpt": "180c1af24f8fd7e183e1f98b9edf71148a38335e8601abc30bbc5efe48c25f90",
+            "Zend/tests/try/finally_return_deprecation.phpt": "01449826d418c2c04d7672d2135ee8de16d7b5053f620dfce7e4ba8bb556fdd4",
+            "Zend/tests/return_types/042.phpt": "657396748b4cd43cf82d1f7d468e37eb4ac596c81349c9d021e10dc76c9fd026",
+            "Zend/tests/debug_info/debug_info.phpt": "b451b330809c2c48db0ea70c02ea6e9c4a190022d99f077fe3bb0e89953643f2",
+            "Zend/tests/functions/readonly_as_method_name_is_ok.phpt": "f5e0e6057b49aadecab4bcc4ce603582fa6843a2bd503333dad9b7df6c5e0f29",
+            "Zend/tests/deprecated_identifiers/is/class_alias.phpt": "91c7b3bf8c7a3b4b8832e4d59684b09996e3db42ee719a0f239f73aa3cd0bc43",
+            "Zend/tests/deprecated_identifiers/is/class_as_name.phpt": "8a3562756610e0e12aa034b11fc30e5c3b675ff3b6eb0372eaca849c1a9b0b79",
+            "Zend/tests/deprecated_identifiers/is/class_as_name_use.phpt": "b6ae14cf4122797e128d97dba6b77bd84e119a7ee790e97ceedf887bbdf6fbda",
+            "Zend/tests/deprecated_identifiers/is/constant_as_name.phpt": "7f7d08de858b16ad9cdf6861271254cab4fee29aa8a63ea93654292b09b0c25c",
+            "Zend/tests/deprecated_identifiers/is/constant_as_name_use.phpt": "640ad3839923c2894ea00778f79fd2ae8249a4cc344b08ae6e189cd330287325",
+            "Zend/tests/deprecated_identifiers/is/function_as_name.phpt": "219c1ae32eb167590d751ec6631653999d792bbc7f682897999dc47aa66e95e0",
+            "Zend/tests/deprecated_identifiers/is/function_as_name_use.phpt": "6fdd0cf729125930f0ad13d550cb2426d76f9e8d8f407e31e4ab7c4b0a930f03",
+            "Zend/tests/deprecated_identifiers/let/class_alias.phpt": "cfb930a673156aee518b01eb1ff9237aec1610b614660a4c2464b79590612b92",
+            "Zend/tests/deprecated_identifiers/let/class_as_name.phpt": "681f8b2c7d6113982ab25c871d694817f479e1d54a7c0e209e83794a4a003378",
+            "Zend/tests/deprecated_identifiers/let/class_as_name_use.phpt": "48789fd738595bd8ccc6af5525bf997777b0b77b28c80c234401f6dbcef0c25b",
+            "Zend/tests/deprecated_identifiers/let/constant_as_name.phpt": "aacd5c6b4046ff55d70350b314663f7d946eb7fe6a044abbf8a6ee8653dee8eb",
+            "Zend/tests/deprecated_identifiers/let/constant_as_name_use.phpt": "4a37e07654b809da165cfba89ced36fd947d0f336f1fbe8394c1374f815cd742",
+            "Zend/tests/deprecated_identifiers/let/function_as_name.phpt": "adf1d070b39a05614d37473acec452507f306e1e36972ec8a51a288b326bd341",
+            "Zend/tests/deprecated_identifiers/let/function_as_name_use.phpt": "6c417a6c5bc59dc07f196c245cbf3a60bc9fcdd40e81e42c0db53f35fc7944ab",
+            "Zend/tests/deprecated_identifiers/readonly/function_as_name.phpt": "02aed6e8f30db0772d32b23cf5363f42bf2e7a9000349e0841f02a9620bc2505",
+            "Zend/tests/deprecated_identifiers/readonly/function_as_name_use.phpt": "bab8f8c8bdd6ccb2383e56ff75190b801cbaf133b2981a53a8ef37f5edf3073c",
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated.phpt": "d89c6d4b3156b3d6bc4d367210d91a4801cb025d44dcd9b0b7caad0185d0b92e",
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_namespaced.phpt": "f32598edff01357b8727e4986481f2d4fcbd00f3348fd4effcb99ac36aedf045",
+            "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_throw_handler.phpt": "61f2a26dbd5d8723fb53de1a67b94fa2f044507cdb30eba1f396247fc955978d",
+            "Zend/tests/deprecated_identifiers/underscore/class_alias_underscore.phpt": "4934365e7ebe996753af126cf8909370532cec073ec3a7160ff81ff5329c9a62",
+            "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name.phpt": "1d33a9224be39661c27a9aa9217d9fbfff35b6a5d8abaa36374851f98076f9ab",
+            "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name_use.phpt": "af348252c028f04309837ac9a597047adc25f20222d0bc6f92f584d8e8e0caf3",
+            "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name.phpt": "631e9ae9e9c8c9597734a24c3c6adf4e3ff252477b9e188f74a12d62c918e004",
+            "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name_use.phpt": "15021ed6ab675ab7f371804e07c4120f87ae829f279d6a23d5eca23ba2665ace",
+            "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name.phpt": "dcb0c11dcf6bd86b1c77756dfc5750f3d2c6cb6b5ceb825d5404945f2be932d1",
+            "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name_use.phpt": "94b7c52513691038e524c928c7b44a3d37231b3b236ec1d4cd84e173be4274ec",
+            "Zend/tests/partial_application/hook.phpt": "d538300a69f081c867e357e30282848881c76c478a6054dfed9055aefa29df0e",
+            "Zend/tests/property_hooks/unknown_hook.phpt": "a83246ac7959aba409f9b7b985dbca4c878a46de35a231efce66b9157e86843a",
+            "Zend/tests/property_hooks/parent_set.phpt": "22c3c0a0c558c709f313a78d6a1b7bc4037bb40fad7e2033b46ac87c706b87d7"
+        }
+    },
+    "interpreters": {
+        "8.5": {
+            "sha256": "32da1562c56dfe511a621627e3bbd9721058e855a6f14225c5803bc19ba623e9",
+            "version": {
+                "exit": 0,
+                "stdout": "PHP 8.5.10 (cli) (built: Aug 25 2026 21:23:48) (NTS Visual C++ 2022 x64)\nCopyright (c) The PHP Group\nBuilt by The PHP Group\nZend Engine v4.5.10, Copyright (c) Zend Technologies\n    with Zend OPcache v8.5.10, Copyright (c), by Zend Technologies\n",
+                "stderr": ""
+            },
+            "exactPinVerified": false
+        },
+        "8.6": {
+            "sha256": "c545e69850c3d8af1cd2edef4d1682ad07232a231b7f49a06657538ccdf1db0a",
+            "version": {
+                "exit": 0,
+                "stdout": "PHP 8.6.0RC4 (cli) (built: Oct 21 2026 15:12:05) (NTS Visual C++ 2026 x64)\nCopyright \u00a9 The PHP Group and Contributors\nBuilt by The PHP Group\nZend Engine v4.6.0RC4, Copyright \u00a9 Zend by Perforce\n    with Zend OPcache v8.6.0RC4, Copyright \u00a9, by Zend by Perforce\n",
+                "stderr": ""
+            },
+            "exactPinVerified": false
+        }
+    },
+    "checks": 1131,
+    "observations": [
+        {
+            "id": "yield-print-key",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-print-key.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-print-key.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-include-key",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-include-key.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-include-key.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-arrow-key",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-arrow-key.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-arrow-key.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-throw-key",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-throw-key.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-throw-key.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-throw-coalesce",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-throw-coalesce.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-throw-coalesce.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-key-prefix",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"=>\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"=>\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-nested-prefix",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-nested-prefix.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-nested-prefix.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-from-assignment",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-from-assignment.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-from-assignment.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-reference-control",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-reference-control.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-reference-control.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "unary-power",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unary-power.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unary-power.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "prefix-property",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-prefix-property.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-prefix-property.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "cast-aliases",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Non-canonical cast (integer) is deprecated, use the (int) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (double) is deprecated, use the (float) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (binary) is deprecated, use the (string) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Non-canonical cast (integer) is deprecated, use the (int) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (double) is deprecated, use the (float) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (binary) is deprecated, use the (string) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "clone-callable",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-clone-callable.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-clone-callable.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-missing-key",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"=>\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-missing-key.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-missing-key.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"=>\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-missing-key.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-missing-key.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-from-missing",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-from-missing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-from-missing.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-from-missing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-from-missing.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "prefix-missing",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-prefix-missing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-prefix-missing.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-prefix-missing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-prefix-missing.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-constant",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Constant expression contains invalid operations in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-constant.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-constant.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Constant expression contains invalid operations in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-constant.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-constant.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-from-reference",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot use \"yield from\" inside a by-reference generator in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-from-reference.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-from-reference.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot use \"yield from\" inside a by-reference generator in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-from-reference.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-from-reference.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "prefix-nullsafe",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Can't use nullsafe operator in write context in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-prefix-nullsafe.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-prefix-nullsafe.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Can't use nullsafe operator in write context in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-prefix-nullsafe.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-prefix-nullsafe.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-pfa",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/final-yield-pfa.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/final-yield-pfa.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/final-yield-pfa.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/final-yield-pfa.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "unmatched-for",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-for.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-for.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "unmatched-foreach",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-foreach.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-foreach.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "unmatched-declare",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-declare.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-declare.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "elseif-unmatched",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-elseif-unmatched.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-elseif-unmatched.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "switch-semicolons",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Case statements followed by a semicolon (;) are deprecated, use a colon (:) instead in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php on line 2\n\nDeprecated: Case statements followed by a semicolon (;) are deprecated, use a colon (:) instead in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Case statements followed by a semicolon (;) are deprecated, use a colon (:) instead in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php on line 2\n\nDeprecated: Case statements followed by a semicolon (;) are deprecated, use a colon (:) instead in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "match-default-comma",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-match-default-comma.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-match-default-comma.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "finally-throw",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-finally-throw.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-finally-throw.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "foreach-key-reference",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-foreach-key-reference.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-foreach-key-reference.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "for-void-prefix",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-for-void-prefix.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-for-void-prefix.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "nested-list",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-nested-list.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-nested-list.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "var-hook",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-var-hook.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-var-hook.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "reference-get-hook",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-reference-get-hook.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-reference-get-hook.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "promoted-hook",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-promoted-hook.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-promoted-hook.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "trait-visibility",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-trait-visibility.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-trait-visibility.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "type-return-variants",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-type-return-variants.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-type-return-variants.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "parameter-type-variants",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-parameter-type-variants.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-parameter-type-variants.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "attribute-closure",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-attribute-closure.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-attribute-closure.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "inner-declarations",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-inner-declarations.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-inner-declarations.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "namespace-imports",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-namespace-imports.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-namespace-imports.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "for-missing-separator",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected variable \"$i\", expecting \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-for-missing-separator.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-for-missing-separator.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected variable \"$i\", expecting \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-for-missing-separator.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-for-missing-separator.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "match-missing-result",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"}\" in <repository>/tests/fixtures/php/8.6/invalid/final-match-missing-result.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-match-missing-result.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"}\" in <repository>/tests/fixtures/php/8.6/invalid/final-match-missing-result.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-match-missing-result.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "hook-missing-semicolon",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"}\" in <repository>/tests/fixtures/php/8.6/invalid/final-hook-missing-semicolon.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-hook-missing-semicolon.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"}\" in <repository>/tests/fixtures/php/8.6/invalid/final-hook-missing-semicolon.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-hook-missing-semicolon.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "type-missing-union",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected variable \"$x\" in <repository>/tests/fixtures/php/8.6/invalid/final-type-missing-union.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-type-missing-union.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected variable \"$x\" in <repository>/tests/fixtures/php/8.6/invalid/final-type-missing-union.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-type-missing-union.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "enum-missing-case-name",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-enum-missing-case-name.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-enum-missing-case-name.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-enum-missing-case-name.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-enum-missing-case-name.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "pfa-parent-get",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \",\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-pfa-parent-get.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-pfa-parent-get.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \",\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-pfa-parent-get.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-pfa-parent-get.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "pfa-parent-get-repair",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-pfa-parent-get-repair.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-pfa-parent-get-repair.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "readonly-private-default",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Readonly property C::$p cannot have default value in <repository>/tests/fixtures/php/8.6/valid/final-readonly-private-default.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/final-readonly-private-default.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Readonly property C::$p cannot have default value in <repository>/tests/fixtures/php/8.6/valid/final-readonly-private-default.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/final-readonly-private-default.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "readonly-untyped-default",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Readonly property C::$p must have type in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-readonly-untyped-default.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-readonly-untyped-default.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Readonly property C::$p must have type in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-readonly-untyped-default.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-readonly-untyped-default.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "constant-object-unset",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot use temporary expression in write context in <repository>/tests/fixtures/php/8.6/valid/final-constant-object-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/final-constant-object-unset.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot use temporary expression in write context in <repository>/tests/fixtures/php/8.6/valid/final-constant-object-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/final-constant-object-unset.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "constant-array-unset",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot use temporary expression in write context in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-constant-array-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-constant-array-unset.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot use temporary expression in write context in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-constant-array-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-constant-array-unset.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "override-trait",
+            "version": "8.5",
+            "stage": "declaration-link",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <repository>/tests/fixtures/php/8.6/valid/final-override-trait.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/final-override-trait.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <repository>\\tests\\fixtures\\php\\8.6\\valid\\final-override-trait.php on line 2\nStack trace:\n#0 {main}\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "override-trait-missing",
+            "version": "8.5",
+            "stage": "declaration-link",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-override-trait-missing.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-override-trait-missing.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Attribute \"Override\" cannot target class constant (allowed targets: method, property) in <repository>\\tests\\fixtures\\php\\8.6\\contextual-invalid\\final-override-trait-missing.php on line 2\nStack trace:\n#0 {main}\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "enum-debug-static",
+            "version": "8.5",
+            "stage": "declaration-link",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Method E::__debugInfo() cannot be static in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-enum-debug-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-enum-debug-static.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Method E::__debugInfo() cannot be static in <repository>\\tests\\fixtures\\php\\8.6\\contextual-invalid\\final-enum-debug-static.php on line 2\nStack trace:\n#0 {main}\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "enum-debug-untyped",
+            "version": "8.5",
+            "stage": "declaration-link",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-enum-debug-untyped.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Enum E cannot include magic method __debugInfo in <repository>\\tests\\fixtures\\php\\8.6\\valid\\final-enum-debug-untyped.php on line 2\nStack trace:\n#0 {main}\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "nullsafe-reference-method",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-nullsafe-reference-method.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-nullsafe-reference-method.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "nullsafe-yield-value",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-nullsafe-yield-value.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-nullsafe-yield-value.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "deprecated-let-reference",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-let-reference.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-let-reference.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "deprecated-finally-return",
+            "version": "8.5",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-finally-return.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-finally-return.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:legacy-varname-state",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Using ${var} in strings is deprecated, use {$var} instead in <probe> on line 1\nNo syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:backtick-state-return",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "\nDeprecated: The backtick (`) operator is deprecated, use shell_exec() instead in <probe> on line 1\nNo syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:comment-close-transition",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"?>\",\"HTML\",\"<?=\",\"1\",\"?>\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:hash-attribute-transition",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"#[\",\"A\",\"]\",\"function\",\"f\",\"(\",\")\",\"{\",\"}\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:block-tag-is-text",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"echo\",\"1\",\";\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:interpolation-offset",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:interpolation-variable-variable",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:nested-string-interpolation",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:heredoc-state-return",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:nowdoc-literal-markers",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:heredoc-label-suffix",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:nowdoc-label-at-eof",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": "Unterminated heredoc or nowdoc body. At offset 11, line 2, column 6.",
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected end of file, expecting variable or heredoc end or \"${\" or \"{$\" in <probe> on line 4\nErrors parsing <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:heredoc-mixed-indent",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": "Heredoc closing indentation mixes spaces and tabs. At offset 11, line 2, column 6.",
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: Invalid indentation - tabs and spaces cannot be mixed in <probe> on line 3\nErrors parsing <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:unicode-escape-limit",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:unicode-escape-overflow",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: Invalid UTF-8 codepoint escape sequence: Codepoint too large in <probe> on line 1\nErrors parsing <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:pfa-comment-boundaries",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"?\" in <probe> on line 1\nErrors parsing <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"f\",\"(\",\"?\",\",\",\"...\",\")\",\";\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:yield-from-trivia",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"function\",\"g\",\"(\",\")\",\"{\",\"yield\",\"from\",\"[\",\"1\",\"]\",\";\",\"}\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:numeric-dot-boundary",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"$n\",\"=\",\"1_000\",\".\",\"0xCA_FE\",\".\",\"0o7_7\",\".\",\"0b1_0\",\".\",\"1.2e+3\",\";\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:short-tag-disabled",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"before<? echo 1; ?>after\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:short-tag-enabled",
+            "version": "8.5",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"before\",\"<?\",\"echo\",\"1\",\";\",\"?>\",\"after\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-print-key",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-print-key.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-print-key.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-include-key",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-include-key.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-include-key.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-arrow-key",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-arrow-key.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-arrow-key.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-throw-key",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-throw-key.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-throw-key.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-throw-coalesce",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-throw-coalesce.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-throw-coalesce.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-key-prefix",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"=>\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"=>\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-nested-prefix",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-nested-prefix.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-nested-prefix.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-from-assignment",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-from-assignment.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-from-assignment.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-reference-control",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-reference-control.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-reference-control.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "unary-power",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unary-power.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unary-power.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "prefix-property",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-prefix-property.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-prefix-property.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "cast-aliases",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Non-canonical cast (integer) is deprecated, use the (int) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (double) is deprecated, use the (float) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (binary) is deprecated, use the (string) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Non-canonical cast (integer) is deprecated, use the (int) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (double) is deprecated, use the (float) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (binary) is deprecated, use the (string) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\n\nDeprecated: Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-cast-aliases.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "clone-callable",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-clone-callable.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-clone-callable.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-missing-key",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"=>\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-missing-key.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-missing-key.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"=>\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-missing-key.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-missing-key.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-from-missing",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-from-missing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-from-missing.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-yield-from-missing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-yield-from-missing.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "prefix-missing",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-prefix-missing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-prefix-missing.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-prefix-missing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-prefix-missing.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-constant",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Constant expression contains invalid operations in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-constant.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-constant.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Constant expression contains invalid operations in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-constant.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-constant.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-from-reference",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot use \"yield from\" inside a by-reference generator in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-from-reference.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-from-reference.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot use \"yield from\" inside a by-reference generator in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-from-reference.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-yield-from-reference.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "prefix-nullsafe",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Can't use nullsafe operator in write context in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-prefix-nullsafe.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-prefix-nullsafe.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Can't use nullsafe operator in write context in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-prefix-nullsafe.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-prefix-nullsafe.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "yield-pfa",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-pfa.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-yield-pfa.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "unmatched-for",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-for.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-for.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "unmatched-foreach",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-foreach.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-foreach.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "unmatched-declare",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-declare.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-unmatched-declare.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "elseif-unmatched",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-elseif-unmatched.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-elseif-unmatched.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "switch-semicolons",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Case statements followed by a semicolon (;) are deprecated, use a colon (:) instead in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php on line 2\n\nDeprecated: Case statements followed by a semicolon (;) are deprecated, use a colon (:) instead in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Case statements followed by a semicolon (;) are deprecated, use a colon (:) instead in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php on line 2\n\nDeprecated: Case statements followed by a semicolon (;) are deprecated, use a colon (:) instead in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-switch-semicolons.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "match-default-comma",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-match-default-comma.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-match-default-comma.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "finally-throw",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-finally-throw.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-finally-throw.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "foreach-key-reference",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-foreach-key-reference.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-foreach-key-reference.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "for-void-prefix",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-for-void-prefix.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-for-void-prefix.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "nested-list",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-nested-list.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-nested-list.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "var-hook",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-var-hook.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-var-hook.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "reference-get-hook",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-reference-get-hook.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-reference-get-hook.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "promoted-hook",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-promoted-hook.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-promoted-hook.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "trait-visibility",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-trait-visibility.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-trait-visibility.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "type-return-variants",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-type-return-variants.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-type-return-variants.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "parameter-type-variants",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-parameter-type-variants.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-parameter-type-variants.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "attribute-closure",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-attribute-closure.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-attribute-closure.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "inner-declarations",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-inner-declarations.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-inner-declarations.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "namespace-imports",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-namespace-imports.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-namespace-imports.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "for-missing-separator",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected variable \"$i\", expecting \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-for-missing-separator.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-for-missing-separator.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected variable \"$i\", expecting \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-for-missing-separator.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-for-missing-separator.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "match-missing-result",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"}\" in <repository>/tests/fixtures/php/8.6/invalid/final-match-missing-result.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-match-missing-result.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"}\" in <repository>/tests/fixtures/php/8.6/invalid/final-match-missing-result.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-match-missing-result.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "hook-missing-semicolon",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"}\" in <repository>/tests/fixtures/php/8.6/invalid/final-hook-missing-semicolon.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-hook-missing-semicolon.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \"}\" in <repository>/tests/fixtures/php/8.6/invalid/final-hook-missing-semicolon.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-hook-missing-semicolon.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "type-missing-union",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected variable \"$x\" in <repository>/tests/fixtures/php/8.6/invalid/final-type-missing-union.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-type-missing-union.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected variable \"$x\" in <repository>/tests/fixtures/php/8.6/invalid/final-type-missing-union.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-type-missing-union.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "enum-missing-case-name",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": false,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-enum-missing-case-name.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-enum-missing-case-name.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected token \";\" in <repository>/tests/fixtures/php/8.6/invalid/final-enum-missing-case-name.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/final-enum-missing-case-name.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "pfa-parent-get",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot create Closure for parent property hook call in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-pfa-parent-get.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-pfa-parent-get.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot create Closure for parent property hook call in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-pfa-parent-get.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-pfa-parent-get.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "pfa-parent-get-repair",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-pfa-parent-get-repair.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-pfa-parent-get-repair.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "readonly-private-default",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-readonly-private-default.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-readonly-private-default.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "readonly-untyped-default",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Readonly property C::$p must have type in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-readonly-untyped-default.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-readonly-untyped-default.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Readonly property C::$p must have type in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-readonly-untyped-default.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-readonly-untyped-default.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "constant-object-unset",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-constant-object-unset.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-constant-object-unset.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "constant-array-unset",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot use temporary expression in write context in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-constant-array-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-constant-array-unset.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot use temporary expression in write context in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-constant-array-unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-constant-array-unset.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "override-trait",
+            "version": "8.6",
+            "stage": "declaration-link",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-override-trait.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "override-trait-missing",
+            "version": "8.6",
+            "stage": "declaration-link",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-override-trait-missing.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: C::X has #[\\Override] attribute, but no matching parent constant exists in <repository>\\tests\\fixtures\\php\\8.6\\contextual-invalid\\final-override-trait-missing.php on line 2\nStack trace:\n#0 {main}\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "enum-debug-static",
+            "version": "8.6",
+            "stage": "declaration-link",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Method E::__debugInfo() cannot be static in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-enum-debug-static.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-enum-debug-static.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Method E::__debugInfo() cannot be static in <repository>\\tests\\fixtures\\php\\8.6\\contextual-invalid\\final-enum-debug-static.php on line 2\nStack trace:\n#0 {main}\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "enum-debug-untyped",
+            "version": "8.6",
+            "stage": "declaration-link",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-enum-debug-untyped.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "nullsafe-reference-method",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot take reference of a nullsafe chain in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-nullsafe-reference-method.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-nullsafe-reference-method.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 255,
+                "stdout": "\nFatal error: Cannot take reference of a nullsafe chain in <repository>/tests/fixtures/php/8.6/contextual-invalid/final-nullsafe-reference-method.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/final-nullsafe-reference-method.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "nullsafe-yield-value",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-nullsafe-yield-value.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-nullsafe-yield-value.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "deprecated-let-reference",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Calling a function \"LeT\" is deprecated since 8.6 in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-let-reference.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-let-reference.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Calling a function \"LeT\" is deprecated since 8.6 in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-let-reference.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-let-reference.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "deprecated-finally-return",
+            "version": "8.6",
+            "stage": "lint",
+            "structural": true,
+            "lint": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Returning from a finally block is deprecated in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-finally-return.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-finally-return.php\n",
+                "stderr": ""
+            },
+            "result": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Returning from a finally block is deprecated in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-finally-return.php on line 2\nNo syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/final-deprecated-finally-return.php\n",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:legacy-varname-state",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "\nDeprecated: Using ${var} in strings is deprecated, use {$var} instead in <probe> on line 1\nNo syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:backtick-state-return",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "\nDeprecated: The backtick (`) operator is deprecated, use shell_exec() instead in <probe> on line 1\nNo syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:comment-close-transition",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"?>\",\"HTML\",\"<?=\",\"1\",\"?>\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:hash-attribute-transition",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"#[\",\"A\",\"]\",\"function\",\"f\",\"(\",\")\",\"{\",\"}\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:block-tag-is-text",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"echo\",\"1\",\";\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:interpolation-offset",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:interpolation-variable-variable",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:nested-string-interpolation",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:heredoc-state-return",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:nowdoc-literal-markers",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:heredoc-label-suffix",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:nowdoc-label-at-eof",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": "Unterminated heredoc or nowdoc body. At offset 11, line 2, column 6.",
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: syntax error, unexpected end of file, expecting variable or heredoc end or \"${\" or \"{$\" in <probe> on line 4\nErrors parsing <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:heredoc-mixed-indent",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": "Heredoc closing indentation mixes spaces and tabs. At offset 11, line 2, column 6.",
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: Invalid indentation - tabs and spaces cannot be mixed in <probe> on line 3\nErrors parsing <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:unicode-escape-limit",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:unicode-escape-overflow",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 255,
+                "stdout": "\nParse error: Invalid UTF-8 codepoint escape sequence: Codepoint too large in <probe> on line 1\nErrors parsing <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": null
+        },
+        {
+            "id": "lexical:pfa-comment-boundaries",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"f\",\"(\",\"?\",\",\",\"...\",\")\",\";\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:yield-from-trivia",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"function\",\"g\",\"(\",\")\",\"{\",\"yield\",\"from\",\"[\",\"1\",\"]\",\";\",\"}\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:numeric-dot-boundary",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"<?php\",\"$n\",\"=\",\"1_000\",\".\",\"0xCA_FE\",\".\",\"0o7_7\",\".\",\"0b1_0\",\".\",\"1.2e+3\",\";\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:short-tag-disabled",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"before<? echo 1; ?>after\"]",
+                "stderr": ""
+            }
+        },
+        {
+            "id": "lexical:short-tag-enabled",
+            "version": "8.6",
+            "stage": "lexical",
+            "lexerError": null,
+            "lint": {
+                "exit": 0,
+                "stdout": "No syntax errors detected in <probe>\n",
+                "stderr": ""
+            },
+            "nativeTokenBoundaries": {
+                "exit": 0,
+                "stdout": "[\"before\",\"<?\",\"echo\",\"1\",\";\",\"?>\",\"after\"]",
+                "stderr": ""
+            }
+        }
+    ],
+    "errors": []
+}

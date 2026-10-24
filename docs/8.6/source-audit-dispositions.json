@@ -1,0 +1,113 @@
+{
+    "phase": 6,
+    "date": "2026-10-24",
+    "claim": "Audit dispositions, not permission to waive release gates",
+    "blockers": [
+        {
+            "id": "PHP86-013",
+            "classification": "unresolved discovery blocker",
+            "construct": "Compiler/AST/optimizer, declaration linking, contextual traversal and unassociated upstream test changes",
+            "evidence": ["source-completeness-ledger.json#/discovery", "compiler-contextual-groups.json", "discovery-final-review.json", "upstream-test-reconciliation.json"],
+            "missingEvidence": "230 effective pending-direct-review hunk records and 14 examined-unresolved records remain, plus bounded-group uncertainties, outside-ledger implementation paths and PHPT/component associations. These are not counts of language changes.",
+            "risk": "An unrepresented validity change may remain; broad discovery cannot close.",
+            "draftImpact": "Continue independently justified work with explicit incomplete status.",
+            "candidateImpact": "Blocks belief-of-completeness promotion.",
+            "stableImpact": "Blocks certification.",
+            "remediation": "Review the exact hunk IDs and source functions in the ledger; associate relevant tests, inspect transitive validation and optimizer/linking paths, and record evidence-backed exclusions or Gate B changes.",
+            "priority": "P0",
+            "blocksCertification": true
+        },
+        {
+            "id": "PHP86-014",
+            "classification": "unresolved intended validity; source-explained compiler/VM implementation defect",
+            "construct": "Assignment/reference/list-derived dimension and property writes, compound/inc/unset/reference operations",
+            "evidence": ["compiler-contextual-groups.json#/groups/0", "source-audit-probes.json", "source-audit-upstream.json"],
+            "missingEvidence": "Authoritative intended-validity decision for exact write forms, coherent compiler/VM fix and source-corresponding execution. Refreshed PR 20628 comments do not decide those forms.",
+            "risk": "Runtime invalid opcode cannot establish a structural rejection; successful reference-result execution cannot establish a new permission.",
+            "draftImpact": "Retain current explicit uncertainty and separate PHP86-004 constant-object rules.",
+            "candidateImpact": "Blocks affected-area correctness and promotion.",
+            "stableImpact": "Blocks certification.",
+            "remediation": "Obtain intended-validity evidence before proposing the smallest contextual correction. Gate B must cover ordinary/reference/list bases, result kinds, operations, discarded/live forms and VM profiles.",
+            "priority": "P1",
+            "blocksCertification": true
+        },
+        {
+            "id": "PHP86-015",
+            "classification": "unresolved intended compatibility; verified contextual traversal observation",
+            "construct": "Optimized printf/sprintf, arrays and constant-expression traversal versus ordinary calls",
+            "evidence": ["compiler-contextual-groups.json#/groups/1", "compiler-contextual-groups.json#/groups/2", "source-audit-probes.json", "source-audit-upstream.json", "correctness-remediation.md"],
+            "missingEvidence": "General intended language boundary and complete dispatch/visited-AST correspondence. PR 19658 discussion addresses optimization and constant collection, not a universal discarded-cast validity rule.",
+            "risk": "An unconditional argument-traversal rule would wrongly accept or reject source.",
+            "draftImpact": "Phase 5D informative scope remains accurate; preserve bounded observations.",
+            "candidateImpact": "Blocks complete traversal claim and promotion.",
+            "stableImpact": "Blocks certification.",
+            "remediation": "Resolve intent and dispatch semantics; retain direct/imported/qualified/namespace/dynamic/named/unpack/PFA controls and logical/ternary/coalesce/array/live/discarded cases. No function-specific EBNF without structural evidence.",
+            "priority": "P1",
+            "blocksCertification": true
+        },
+        {
+            "id": "CA86-001",
+            "classification": "known inherited policy discrepancy",
+            "construct": "Unknown property-hook name in a discarded declaration",
+            "evidence": ["compiler-contextual-reconciliation.json", "source-audit-probes.json", "../../grammar/8.6/php.md#property-hooks-and-promotion", "../8.5/final-evidence.json#/known_discrepancies"],
+            "missingEvidence": "Separate policy disposition and authorization before changing the intentional get/set-only structural restriction.",
+            "risk": "EBNF rejects an unknown hook that Zend can accept after discarding its declaration; blanket parser-equivalence claim is false.",
+            "draftImpact": "Retain documented divergence without modifying either version.",
+            "candidateImpact": "Independent PHP 8.6 certification must explicitly adjudicate the narrowed claim; historical acceptance is not automatically inherited.",
+            "stableImpact": "Cannot silently treat it as exact parser equivalence.",
+            "remediation": "If policy authorizes equivalence correction, consider identifier in hook-name with compilation-time get/set validation. Gate B needs live/discarded controls, canonical/parity changes and a separate PHP 8.5 correction review.",
+            "priority": "P2",
+            "blocksCertification": true
+        },
+        {
+            "id": "C6-CONTEXT",
+            "classification": "documented enforcement limitation plus unresolved predicate evidence",
+            "construct": "73 inherited contextual restriction descriptions and changed-rule interactions",
+            "evidence": ["source-completeness-ledger.json#/contextual", "source-audit-context.json", "source-audit-boundaries.json"],
+            "missingEvidence": "Individual RC4 predicates, upstream PHPT and positive/negative stage isolation wherever family-level references remain. No native complete contextual validator exists.",
+            "risk": "Structural matches may violate parser actions, compiler checks or deferred linking; historical readonly-default restriction labels must not be copied as current rules.",
+            "draftImpact": "Document external enforcement and current normative clauses.",
+            "candidateImpact": "Requires independent evidence and claim adjudication; not an automatic permissible release limitation.",
+            "stableImpact": "Blocks whole-source-validator claims; bounded grammar certification requires policy disposition.",
+            "remediation": "Prioritize retained/discarded declarations, type/member constraints, writable/reference forms, attributes, enum and constant-expression paths. Reuse hashed finding fixtures and add only missing isolating evidence in an authorized phase.",
+            "priority": "P1",
+            "blocksCertification": true
+        },
+        {
+            "id": "C6-COVERAGE",
+            "classification": "bounded coverage and correspondence gap",
+            "construct": "64 unexercised productions, 318 alternatives; scanner state/helper products; family-only parser correspondence",
+            "evidence": ["source-audit-coverage.json", "source-completeness-ledger.json#/canonical", "source-completeness-ledger.json#/scanner", "final-coverage-remaining.json"],
+            "missingEvidence": "Alternative-specific correspondence/AST binding, scanner state products and individual witnesses. The 51 source/profile entries are not 51 verified scanner rules.",
+            "risk": "Coverage or name/section association can conceal a validity/binding mismatch; no defect follows solely from low coverage.",
+            "draftImpact": "Retain every identity and justified obligation without deleting alternatives.",
+            "candidateImpact": "Requires independent gap disposition under the conformance policy.",
+            "stableImpact": "Not an automatic exemption from scanner, binding and classified-coverage gates.",
+            "remediation": "Prioritize reserved token categories (including context-only from), namespace/type/declaration alternatives, dereference/constructor forms and closed-yield/prefix/dangling-else binding. Test lexical bodies through scanner primitives, not invented chart coverage.",
+            "priority": "P1",
+            "blocksCertification": true
+        },
+        {
+            "id": "C6-PROVENANCE",
+            "classification": "exact-executable and release evidence missing",
+            "construct": "RC4 distributions, configuration profiles and final-release correspondence",
+            "evidence": ["source-audit-upstream.json", "source-audit-probes.json#/interpreters", "source-audit-validation.json"],
+            "missingEvidence": "Proven exact-pin build, independent PHP 8.6 prerelease release-runner evidence, subsequent RC/final-source review and final release gates. Upstream PHPT suite was not run.",
+            "risk": "Matching immutable source hashes do not prove executable ancestry; RC4 cannot certify a final release.",
+            "draftImpact": "Report source-backed and executable-backed evidence separately.",
+            "candidateImpact": "Preparation is possible; current evidence does not authorize promotion.",
+            "stableImpact": "Blocks final-release and exact-executable certification.",
+            "remediation": "Prepare build provenance and independent gate inputs, then seek authorization for the separate certification phase; compare subsequent releases incrementally.",
+            "priority": "P1",
+            "blocksCertification": true
+        }
+    ],
+    "newVerifiedNormativeDefects": [],
+    "phase7Readiness": {
+        "grammarSpecificationRemediation": "READY WITH BOUNDED LIMITATIONS",
+        "independentPrereleaseCertificationPreparation": "READY WITH BOUNDED LIMITATIONS",
+        "candidateStatusPromotion": "NOT READY",
+        "stableReleaseCertification": "NOT READY"
+    },
+    "readinessScope": "Preparation and evidence-backed proposals only. No speculative writable/traversal rule, historical hook correction, certification execution or status promotion is authorized or performed."
+}

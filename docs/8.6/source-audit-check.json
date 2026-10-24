@@ -1,0 +1,131 @@
+{
+    "date": "2026-10-24",
+    "checks": 3124,
+    "errors": [],
+    "preservedFiles": 2130,
+    "preserved85PathFiles": 1437,
+    "localLinks": 12,
+    "jsonFiles": 15,
+    "artifactHashes": {
+        "docs/8.6/source-audit-baseline.json": "45adabc6d0890584e546a7c480dcd855a9049c556f14e94deca495e1277621d0",
+        "docs/8.6/source-audit-boundaries.json": "262e9549c65c36d8e75930bd6c14e9c8b7dbbdfe50f98a8c62e732f9a59e0f04",
+        "docs/8.6/source-audit-context.json": "8ee2b856d0df535eeb0dd07f8f49e92cb48aebca4b90de8682df0a64a1146eed",
+        "docs/8.6/source-audit-coverage.json": "b9a1ebbeeff8b111eb855aff432b2fc298282896838bd1a3ae6bf25e68cccd88",
+        "docs/8.6/source-audit-deprecation.json": "e6996b597e414605e1d47adcb4c7a906c24cf782b404148f944a06a9dcc1353c",
+        "docs/8.6/source-audit-dispositions.json": "a61b605afb5d6e5a1942f46b4acf66643f72678b4d6e516867731b334503e8f8",
+        "docs/8.6/source-audit-integration.json": "bd99d5d3907f212e72a641f1241a7258d74223066dbcc7601e66e3ef21ac9082",
+        "docs/8.6/source-audit-oracles.json": "7d0e6dba82d1f43e623283dcc87a310716e211daad982dc89342d82211115634",
+        "docs/8.6/source-audit-pfa.json": "d80b0695d0d35b10bbb54ad21460d440e294317575b70d47d847d2713f33438a",
+        "docs/8.6/source-audit-probes.json": "c9618823346494c4c8eada5ff8718356d3599daa6aa2666cf398eb47e2ab58bc",
+        "docs/8.6/source-audit-traceability.json": "fabbe5dcf4f3b78adefa0d4037d156136992505bc4b223434ad525ad0c0f3c84",
+        "docs/8.6/source-audit-upstream.json": "11129bb41fc904e1fb9500d4512aa5b06339b98243f210bb7c8274f9e39da279",
+        "docs/8.6/source-audit-validation.json": "f3c3f62fe52c8e98cdf41059dae7b4ec42a5426bcfac25a73fb37ff47f4f8d22",
+        "docs/8.6/source-completeness-ledger.json": "c5b0d2e2e56f0bcbcfe2423b291072feca0c7b2ddebf124b5076fc01f2b4d827",
+        "docs/8.6/source-completeness-audit.md": "57f81ad8c0e2dc363830176802960a271f679fc56a214c14cbd78c586ff8270c",
+        "tools/8.6/source-audit-boundaries.php": "4fe05a015d7e10736d571372826e38767b13bb93a3f12a4725e1d4fad6ec456a",
+        "tools/8.6/source-audit-check.php": "30ae96975c443e175b185e47ee2a331d85b099c6dae57398db37255e84fc90ef",
+        "tools/8.6/source-audit-upstream.php": "afeb10588deb357b1e39f0efbea34d8f2b2319fc36bfdf0c3b07414f4bc94fef",
+        "tools/8.6/source-audit-validation.php": "39dd9865d60c3fae3e53172d174b9f04412b73339435ed1ad1b0845461cc1c86",
+        "tools/8.6/source-completeness-audit.php": "f116052ac71fda9fc784ee49123f4617af363efab9d693e2a3efb913833c4238"
+    },
+    "commands": [
+        {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "-l",
+                "tools/8.6/source-audit-boundaries.php"
+            ],
+            "exit": 0,
+            "output": "No syntax errors detected in tools/8.6/source-audit-boundaries.php\n"
+        },
+        {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "-l",
+                "tools/8.6/source-audit-check.php"
+            ],
+            "exit": 0,
+            "output": "No syntax errors detected in tools/8.6/source-audit-check.php\n"
+        },
+        {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "-l",
+                "tools/8.6/source-audit-upstream.php"
+            ],
+            "exit": 0,
+            "output": "No syntax errors detected in tools/8.6/source-audit-upstream.php\n"
+        },
+        {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "-l",
+                "tools/8.6/source-audit-validation.php"
+            ],
+            "exit": 0,
+            "output": "No syntax errors detected in tools/8.6/source-audit-validation.php\n"
+        },
+        {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "-l",
+                "tools/8.6/source-completeness-audit.php"
+            ],
+            "exit": 0,
+            "output": "No syntax errors detected in tools/8.6/source-completeness-audit.php\n"
+        },
+        {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/8.6/source-completeness-audit.php",
+                "--check"
+            ],
+            "exit": 0,
+            "output": "{\n    \"checks\": 2247,\n    \"errors\": [],\n    \"parser\": 176,\n    \"scanner\": 190,\n    \"canonical\": 1161,\n    \"classifications\": {\n        \"production\": {\n            \"source-corroborated-and-covered\": 160,\n            \"covered-with-family-correspondence-only\": 137,\n            \"context-dependent-lexical-abstraction\": 63,\n            \"source-corroborated-but-unexercised\": 1\n        },\n        \"alternative\": {\n            \"source-corroborated-and-covered\": 232,\n            \"source-corroborated-but-unexercised\": 109,\n            \"context-dependent-lexical-abstraction\": 183,\n            \"covered-with-family-correspondence-only\": 250,\n            \"unexercised-with-family-correspondence-only\": 25,\n            \"unresolved\": 1\n        }\n    },\n    \"hunks\": {\n        \"pending-direct-review\": 230,\n        \"grouped-evidence-excluded\": 237,\n        \"source-reviewed-phase3d; retain-record-limitations\": 52,\n        \"see-bounded-semantic-group\": 28,\n        \"prior-focused-review\": 7,\n        \"examined-unresolved\": 14,\n        \"reviewed\": 10\n    }\n}\n"
+        },
+        {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/8.6/source-completeness-audit.php",
+                "--report=C:\\Users\\alwyn\\AppData\\Local\\Temp\\aud5D3C.tmp"
+            ],
+            "exit": 0,
+            "output": "{\n    \"checks\": 2246,\n    \"errors\": [],\n    \"parser\": 176,\n    \"scanner\": 190,\n    \"canonical\": 1161,\n    \"classifications\": {\n        \"production\": {\n            \"source-corroborated-and-covered\": 160,\n            \"covered-with-family-correspondence-only\": 137,\n            \"context-dependent-lexical-abstraction\": 63,\n            \"source-corroborated-but-unexercised\": 1\n        },\n        \"alternative\": {\n            \"source-corroborated-and-covered\": 232,\n            \"source-corroborated-but-unexercised\": 109,\n            \"context-dependent-lexical-abstraction\": 183,\n            \"covered-with-family-correspondence-only\": 250,\n            \"unexercised-with-family-correspondence-only\": 25,\n            \"unresolved\": 1\n        }\n    },\n    \"hunks\": {\n        \"pending-direct-review\": 230,\n        \"grouped-evidence-excluded\": 237,\n        \"source-reviewed-phase3d; retain-record-limitations\": 52,\n        \"see-bounded-semantic-group\": 28,\n        \"prior-focused-review\": 7,\n        \"examined-unresolved\": 14,\n        \"reviewed\": 10\n    }\n}\n"
+        },
+        {
+            "command": [
+                "rtk",
+                "proxy",
+                ".audit/php85/php.exe",
+                "-n",
+                "tools/8.6/source-completeness-audit.php",
+                "--report=C:\\Users\\alwyn\\AppData\\Local\\Temp\\aud5D3C.tmp",
+                "--check"
+            ],
+            "exit": 1,
+            "output": "{\n    \"checks\": 2247,\n    \"errors\": [\n        \"Audit ledger freshness\"\n    ],\n    \"parser\": 176,\n    \"scanner\": 190,\n    \"canonical\": 1161,\n    \"classifications\": {\n        \"production\": {\n            \"source-corroborated-and-covered\": 160,\n            \"covered-with-family-correspondence-only\": 137,\n            \"context-dependent-lexical-abstraction\": 63,\n            \"source-corroborated-but-unexercised\": 1\n        },\n        \"alternative\": {\n            \"source-corroborated-and-covered\": 232,\n            \"source-corroborated-but-unexercised\": 109,\n            \"context-dependent-lexical-abstraction\": 183,\n            \"covered-with-family-correspondence-only\": 250,\n            \"unexercised-with-family-correspondence-only\": 25,\n            \"unresolved\": 1\n        }\n    },\n    \"hunks\": {\n        \"pending-direct-review\": 230,\n        \"grouped-evidence-excluded\": 237,\n        \"source-reviewed-phase3d; retain-record-limitations\": 52,\n        \"see-bounded-semantic-group\": 28,\n        \"prior-focused-review\": 7,\n        \"examined-unresolved\": 14,\n        \"reviewed\": 10\n    }\n}\n"
+        }
+    ],
+    "negativeTest": "Only temporary output mutated; original evidence unchanged."
+}
