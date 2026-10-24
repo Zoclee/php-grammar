@@ -1,0 +1,57 @@
+{
+    "scope": "Accepted in both versions; warnings are not acceptance boundaries.",
+    "cases": [
+        {
+            "id": "deprecated-namespace-method",
+            "batch": "diagnostic",
+            "targets": [
+                "function-declaration"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-010",
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "warning85": false,
+            "warning86": true,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-deprecated-namespace-method.php",
+            "sha256": "49d94b043d240a1af7598cbb12e41770630ca37fb5c3cd7edd22431718be3412",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:function_declaration_statement",
+                "Zend/zend_language_parser.y:function",
+                "Zend/zend_language_parser.y:returns_ref",
+                "Zend/zend_compile.c:zend_begin_func_decl",
+                "Zend/zend_compile.c:zend_compile_return"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "deprecated-finally-closure",
+            "batch": "diagnostic",
+            "targets": [
+                "return-statement"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-010",
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "warning85": false,
+            "warning86": false,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-deprecated-finally-closure.php",
+            "sha256": "bdbdecec574b4c2f629222ebbee152b501f8a5c0afc1b5a0c0f4a99d25fca4de",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:optional_expr",
+                "Zend/zend_compile.c:zend_begin_func_decl",
+                "Zend/zend_compile.c:zend_compile_return"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        }
+    ]
+}

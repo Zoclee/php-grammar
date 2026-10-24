@@ -908,6 +908,17 @@ make a scalar an object or relax readonly/type restrictions. This does not
 authorize nullsafe writes or assignment-expression-based dimension targets;
 the latter remain the separate unresolved PHP86-014 question.
 
+**PHP86-014 evidence limitation (informative).** The unresolved area also includes
+assignment-derived property writes, compound assignment, increment, unset and
+reference binding. Parser acceptance, contextual compilation, opcode generation
+and execution are distinct: `php -l` combines parsing and compilation and does
+not independently certify each stage. In the tested RC4 distribution, some
+ordinary/list-assignment-derived targets pass lint but fail at execution with
+invalid opcodes; some reference-result targets execute successfully. Neither
+result establishes intended language validity. These observations impose no
+additional source restriction or permission. See the
+[bounded compiler/VM evidence](../../docs/8.6/compiler-contextual-reconciliation.md#2-php86-014-writable-target-disposition).
+
 Source: RC4 `zend_can_write_to_variable` (`via_prop`),
 `zend_mark_const_object_fetch`, and delayed property/constant fetch compilation;
 upstream `gh10497*.phpt`. Existing foreach acceptance is not by itself proof
@@ -1146,6 +1157,20 @@ The exact PHP 8.5.10 outcomes are:
 The [folding evidence](../../docs/8.5/remediation-folding-evidence.json) records
 separate fixtures. Substituting `(real)` rejects even in discarded branches,
 because its scanner parser-mode error precedes all folding.
+
+**PHP86-015 scope clarification (informative).** The table describes ordinary
+expression statements and constant initializers; it is not a universal algorithm
+for call arguments. A builtin specialization can enter constant evaluation
+before deciding whether to optimize the call. In the reviewed RC4 paths, direct
+`printf` format arguments can therefore visit or discard nodes differently from
+ordinary calls. Dynamic and namespace-fallback calls, named/unpacked arguments,
+and PFA contexts have separate eligibility and traversal paths. Array literals
+can independently enter constant evaluation even when a call bypasses builtin
+specialization. These observations do not establish one rule for all builtins
+or restore the unset cast. Intended compatibility implications remain unresolved
+under PHP86-015. The repository's structural matcher does not implement this
+compiler traversal model. See the
+[paired dispatch controls and source mappings](../../docs/8.6/compiler-contextual-reconciliation.md#3-php86-015-optimized-call-validation-order).
 
 ## Known abstractions and conformance limits
 

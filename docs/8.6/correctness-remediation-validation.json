@@ -1,0 +1,72 @@
+{
+    "phase": "5D",
+    "baselineCommit": "11496fba8ae706b05bc500d99b8c0326a41054fc",
+    "pins": {
+        "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "preservation": {
+        "baselineFiles": 2036,
+        "unchangedFiles": 2031,
+        "changedExistingFiles": [
+            "grammar/8.6/changes.md",
+            "grammar/8.6/php.md",
+            "tests/Php/Conformance/Php86CompilerContextualTest.php",
+            "tests/Php/Conformance/Php86TraceabilityTest.php",
+            "tools/8.6/change-map.json"
+        ],
+        "unchangedPhp85PathFiles": 1437,
+        "specificationInformativeParagraphsAdded": 2,
+        "changesDocumentParagraphsAdded": 1,
+        "ebnfUnchanged": true,
+        "historicalEvidenceUnchanged": true
+    },
+    "validation": {
+        "suite": {
+            "tests": 6019,
+            "assertions": 56847,
+            "failures": 0
+        },
+        "focused": {
+            "tests": 99,
+            "assertions": 1313,
+            "failures": 0
+        },
+        "localLinks": 58,
+        "jsonFiles": 8,
+        "logs": {
+            "suite": "PHPUnit 11.5.56 by Sebastian Bergmann and contributors.\r\n\r\nRuntime:       PHP 8.5.10\r\nConfiguration: C:\\Data\\GitHub\\php-grammar\\phpunit.xml.dist\r\n\r\nTime: 02:37.890, Memory: 100.00 MB\r\n\r\nOK (6019 tests, 56847 assertions)\r\n",
+            "focused": "PHPUnit 11.5.56 by Sebastian Bergmann and contributors.\r\n\r\nRuntime:       PHP 8.5.10\r\nConfiguration: C:\\Data\\GitHub\\php-grammar\\phpunit.xml.dist\r\n\r\nTime: 00:05.222, Memory: 44.00 MB\r\n\r\nOK (99 tests, 1313 assertions)\r\n",
+            "pfa": "PHP86-001: 225 checks; 114 paired-version observations; 0 failures\r\n",
+            "context": "278 checks; 126 paired-version stage observations; 0 failures\r\n",
+            "deprecation": "712 checks; 268 observations; 0 failures\r\n",
+            "integration": "498 checks; 160 observations; 0 failures\r\n",
+            "manifest": "Manifest schema 1.0 and package paths: PASS\r\n",
+            "probes": "{\r\n    \"checks\": 1708,\r\n    \"hashChecks\": 501,\r\n    \"caseVersionObservations\": 162,\r\n    \"invocations\": {\r\n        \"lint\": 162,\r\n        \"execution\": 37\r\n    },\r\n    \"errors\": []\r\n}\r\n",
+            "traceability": "{\r\n    \"differences\": {\r\n        \"added\": [],\r\n        \"removed\": [],\r\n        \"modified\": [\r\n            \"ordinary-argument-list\",\r\n            \"first-class-callable-arguments\",\r\n            \"clone-argument-list\",\r\n            \"argument\",\r\n            \"argument-no-expression\"\r\n        ]\r\n    },\r\n    \"documentarySections\": 14,\r\n    \"openFindings\": [\r\n        \"PHP86-013\",\r\n        \"PHP86-014\",\r\n        \"PHP86-015\"\r\n    ],\r\n    \"errors\": []\r\n}\r\n",
+            "diff-check": ""
+        }
+    },
+    "currentSha256": {
+        "docs/8.6/correctness-remediation-baseline.json": "fb33963d364f21bc4160cfb10d3031960911f736924af18426b9817d4e90baaf",
+        "docs/8.6/correctness-remediation-context.json": "8ee2b856d0df535eeb0dd07f8f49e92cb48aebca4b90de8682df0a64a1146eed",
+        "docs/8.6/correctness-remediation-deprecation.json": "e6996b597e414605e1d47adcb4c7a906c24cf782b404148f944a06a9dcc1353c",
+        "docs/8.6/correctness-remediation-integration.json": "e6e989f1518bc97a871deebcaf587676c0bf9df795ea710c2ad7da9adccd25a2",
+        "docs/8.6/correctness-remediation-pfa.json": "d80b0695d0d35b10bbb54ad21460d440e294317575b70d47d847d2713f33438a",
+        "docs/8.6/correctness-remediation-probes.json": "c9618823346494c4c8eada5ff8718356d3599daa6aa2666cf398eb47e2ab58bc",
+        "docs/8.6/correctness-remediation-traceability.json": "fabbe5dcf4f3b78adefa0d4037d156136992505bc4b223434ad525ad0c0f3c84",
+        "docs/8.6/correctness-remediation.md": "0cfa6c4e9c994b6b142ddcf3985df4379e9e8b935dbd64ccf196156ef98245cf",
+        "grammar/8.6/php.md": "45688b7d36ff16d823360f9072f43aa8e52c4dbd9189c890a6fdeef592bca521",
+        "grammar/8.6/changes.md": "3da360e5184eb0b36b5c8251f15436bf972942af1290191cb01d8de328172737",
+        "tools/8.6/change-map.json": "a7825977d0914ab68f5504d022a30d33556da2083a5e2198fa0be63e394c09bc",
+        "tests/Php/Conformance/Php86CompilerContextualTest.php": "e3a9a8f01ff94250e272db888ce71e3ed8deb5a3cc790af81e3185da035b1a89",
+        "tests/Php/Conformance/Php86TraceabilityTest.php": "22bf6ff6c246ff8d438c42f65eff87550c50d6b23c332ad34705e22d6e0305e6"
+    },
+    "limitations": [
+        "Distribution interpreters are not proven exact-pin builds.",
+        "PHP86-013/014/015 remain open; draft status retained.",
+        "No whole-compiler conformance or certification claim."
+    ],
+    "reviewDriver": "<?php\ndeclare(strict_types=1);\nchdir(dirname(__DIR__));\n$errors=[];\nfunction check(bool $ok,string $message):void {global $errors;if(!$ok)$errors[]=$message;}\nfunction readLog(string $path):string {$s=file_get_contents($path);return str_starts_with($s,\"\\xff\\xfe\")?mb_convert_encoding(substr($s,2),'UTF-8','UTF-16LE'):$s;}\n$baseline=json_decode(file_get_contents('docs/8.6/correctness-remediation-baseline.json'),true,512,JSON_THROW_ON_ERROR);\n$allow=['grammar/8.6/php.md','grammar/8.6/changes.md','tools/8.6/change-map.json','tests/Php/Conformance/Php86CompilerContextualTest.php','tests/Php/Conformance/Php86TraceabilityTest.php'];\n$changed=[];$unchanged=0;$historical85=0;\nforeach($baseline['files'] as $p=>$hash){if(!is_file($p)||hash_file('sha256',$p)!==$hash){$changed[]=$p;check(in_array($p,$allow,true),'Unexpected change: '.$p);}else{$unchanged++;if(str_contains('/'.$p,'/8.5/'))$historical85++;}}\n$expected=$allow;sort($expected);sort($changed);check($changed===$expected,'Changed file allowlist mismatch');\n$before=file_get_contents('.audit/phase5d-before-php.md');$after=file_get_contents('grammar/8.6/php.md');\n$stripped=preg_replace('/\\*\\*PHP86-01[45] (?:evidence limitation|scope clarification) \\(informative\\)\\.\\*\\*.*?\\r?\\n\\r?\\n/s','',$after,-1,$blocks);\ncheck($blocks===2&&$stripped===$before,'Specification changes exceed two informative paragraphs');\n$beforeChanges=file_get_contents('.audit/phase5d-before-changes.md');$afterChanges=file_get_contents('grammar/8.6/changes.md');\n$strippedChanges=preg_replace('/Phase 5D adds informative scope clarifications.*?\\r?\\n\\r?\\n/s','',$afterChanges,-1,$changeBlocks);\ncheck($changeBlocks===1&&$strippedChanges===$beforeChanges,'changes.md changes exceed Phase 5D paragraph');\npreg_match_all('/^## /m',$afterChanges,$heads);check(count($heads[0])===10,'changes.md ten sections');\ncheck(hash_file('sha256','grammar/8.6/php.ebnf')==='12cfcfa3a0122eeac769862a7644740eb20a533048267f23c8ea984e261dbaf4','EBNF preservation');\n$logs=[];$patterns=['suite'=>'OK (6019 tests, 56847 assertions)','focused'=>'OK (99 tests, 1313 assertions)','pfa'=>'225 checks; 114 paired-version observations; 0 failures','context'=>'278 checks; 126 paired-version stage observations; 0 failures','deprecation'=>'712 checks; 268 observations; 0 failures','integration'=>'498 checks; 160 observations; 0 failures','manifest'=>'Manifest schema 1.0 and package paths: PASS'];\nforeach($patterns as $name=>$pattern){$logs[$name]=readLog('.audit/phase5d-'.$name.'.log');check(str_contains($logs[$name],$pattern),'Validation log: '.$name);}\nforeach(['probes','traceability'] as $name){$logs[$name]=readLog('.audit/phase5d-'.$name.'.log');$data=json_decode($logs[$name],true,512,JSON_THROW_ON_ERROR);check($data['errors']===[],'Validation errors: '.$name);if($name==='probes')check($data['checks']===1708&&$data['hashChecks']===501&&$data['caseVersionObservations']===162,'Probe counts');else check(count($data['differences']['modified'])===5&&$data['differences']['added']===[]&&$data['differences']['removed']===[]&&$data['documentarySections']===14,'Traceability counts');}\n$logs['diff-check']=readLog('.audit/phase5d-diff-check.log');check(trim($logs['diff-check'])==='','Git diff whitespace');\n$files=glob('docs/8.6/correctness-remediation*');$files=array_values(array_filter($files,fn($p)=>!str_ends_with($p,'-validation.json')));$files=array_values(array_unique(array_merge($files,$allow)));\n$hashes=[];$links=0;$jsonCount=0;\nforeach($files as $p){$s=file_get_contents($p);$hashes[$p]=hash('sha256',$s);if(str_ends_with($p,'.json')){json_decode($s,true,512,JSON_THROW_ON_ERROR);$jsonCount++;}if(str_ends_with($p,'.md')){check(!preg_match('/[\\t ]+$/m',$s),'Trailing whitespace: '.$p);preg_match_all('/\\[[^\\]]*\\]\\(([^)]+)\\)/',$s,$m);foreach($m[1] as $target){if(preg_match('/^(?:https?:|mailto:)/',$target))continue;$target=explode('#',$target,2)[0];if($target==='')continue;$resolved=dirname($p).'/'.$target;check(file_exists($resolved),'Missing local link: '.$p.' -> '.$target);$links++;}}}\n$report=['phase'=>'5D','baselineCommit'=>$baseline['commit'],'pins'=>$baseline['pins'],'preservation'=>['baselineFiles'=>count($baseline['files']),'unchangedFiles'=>$unchanged,'changedExistingFiles'=>$changed,'unchangedPhp85PathFiles'=>$historical85,'specificationInformativeParagraphsAdded'=>$blocks,'changesDocumentParagraphsAdded'=>$changeBlocks,'ebnfUnchanged'=>true,'historicalEvidenceUnchanged'=>true],'validation'=>['suite'=>['tests'=>6019,'assertions'=>56847,'failures'=>0],'focused'=>['tests'=>99,'assertions'=>1313,'failures'=>0],'localLinks'=>$links,'jsonFiles'=>$jsonCount,'logs'=>$logs],'currentSha256'=>$hashes,'limitations'=>['Distribution interpreters are not proven exact-pin builds.','PHP86-013/014/015 remain open; draft status retained.','No whole-compiler conformance or certification claim.'],'reviewDriver'=>file_get_contents(__FILE__),'errors'=>$errors];\nfile_put_contents('docs/8.6/correctness-remediation-validation.json',json_encode($report,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_THROW_ON_ERROR).\"\\n\");\necho json_encode(['preservation'=>$report['preservation'],'links'=>$links,'errors'=>$errors],JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES).\"\\n\";exit($errors===[]?0:1);\n",
+    "errors": []
+}

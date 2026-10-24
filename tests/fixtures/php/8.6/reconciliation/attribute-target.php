@@ -1,0 +1,2 @@
+<?php
+#[Override] class C {}

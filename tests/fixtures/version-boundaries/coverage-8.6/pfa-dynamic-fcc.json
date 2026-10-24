@@ -1,0 +1,15 @@
+{
+    "name": "PHP86-001 coverage pfa-dynamic-fcc",
+    "firstSupportedVersion": "8.6",
+    "lastSupportedVersion": null,
+    "fixture": "../../php/8.6/valid/coverage-pfa-dynamic-fcc.php",
+    "validationStage": "structural",
+    "finding": "PHP86-001",
+    "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+    "expectations": {
+        "8.5": false,
+        "8.6": true
+    },
+    "observedEvidence": "docs/8.6/coverage-expansion-validation.json",
+    "limitations": "Distribution oracle, not an exact-pin build; structural matching is not contextual enforcement."
+}

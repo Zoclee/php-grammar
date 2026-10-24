@@ -1,0 +1,631 @@
+{
+    "scope": "Reviewed structural and documentary differences; no completeness certification",
+    "differences": {
+        "added": [],
+        "removed": [],
+        "modified": [
+            "ordinary-argument-list",
+            "first-class-callable-arguments",
+            "clone-argument-list",
+            "argument",
+            "argument-no-expression"
+        ]
+    },
+    "structures": {
+        "ordinary-argument-list": {
+            "kind": "modified",
+            "before": {
+                "kind": "SequenceNode",
+                "elements": [
+                    {
+                        "kind": "LiteralNode",
+                        "value": "("
+                    },
+                    {
+                        "kind": "OptionalNode",
+                        "expression": {
+                            "kind": "SequenceNode",
+                            "elements": [
+                                {
+                                    "kind": "ReferenceNode",
+                                    "name": "argument"
+                                },
+                                {
+                                    "kind": "RepetitionNode",
+                                    "expression": {
+                                        "kind": "SequenceNode",
+                                        "elements": [
+                                            {
+                                                "kind": "LiteralNode",
+                                                "value": ","
+                                            },
+                                            {
+                                                "kind": "ReferenceNode",
+                                                "name": "argument"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "kind": "OptionalNode",
+                                    "expression": {
+                                        "kind": "LiteralNode",
+                                        "value": ","
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "kind": "LiteralNode",
+                        "value": ")"
+                    }
+                ]
+            },
+            "after": {
+                "kind": "SequenceNode",
+                "elements": [
+                    {
+                        "kind": "LiteralNode",
+                        "value": "("
+                    },
+                    {
+                        "kind": "OptionalNode",
+                        "expression": {
+                            "kind": "AlternativeNode",
+                            "alternatives": [
+                                {
+                                    "kind": "SequenceNode",
+                                    "elements": [
+                                        {
+                                            "kind": "GroupNode",
+                                            "expression": {
+                                                "kind": "AlternativeNode",
+                                                "alternatives": [
+                                                    {
+                                                        "kind": "ReferenceNode",
+                                                        "name": "expression"
+                                                    },
+                                                    {
+                                                        "kind": "ReferenceNode",
+                                                        "name": "argument-no-expression"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "kind": "RepetitionNode",
+                                            "expression": {
+                                                "kind": "SequenceNode",
+                                                "elements": [
+                                                    {
+                                                        "kind": "LiteralNode",
+                                                        "value": ","
+                                                    },
+                                                    {
+                                                        "kind": "ReferenceNode",
+                                                        "name": "argument"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "kind": "OptionalNode",
+                                            "expression": {
+                                                "kind": "LiteralNode",
+                                                "value": ","
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "SequenceNode",
+                                    "elements": [
+                                        {
+                                            "kind": "LiteralNode",
+                                            "value": "..."
+                                        },
+                                        {
+                                            "kind": "LiteralNode",
+                                            "value": ","
+                                        },
+                                        {
+                                            "kind": "ReferenceNode",
+                                            "name": "argument"
+                                        },
+                                        {
+                                            "kind": "RepetitionNode",
+                                            "expression": {
+                                                "kind": "SequenceNode",
+                                                "elements": [
+                                                    {
+                                                        "kind": "LiteralNode",
+                                                        "value": ","
+                                                    },
+                                                    {
+                                                        "kind": "ReferenceNode",
+                                                        "name": "argument"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "kind": "OptionalNode",
+                                            "expression": {
+                                                "kind": "LiteralNode",
+                                                "value": ","
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "kind": "LiteralNode",
+                        "value": ")"
+                    }
+                ]
+            }
+        },
+        "first-class-callable-arguments": {
+            "kind": "modified",
+            "before": {
+                "kind": "SequenceNode",
+                "elements": [
+                    {
+                        "kind": "LiteralNode",
+                        "value": "("
+                    },
+                    {
+                        "kind": "LiteralNode",
+                        "value": "..."
+                    },
+                    {
+                        "kind": "LiteralNode",
+                        "value": ")"
+                    }
+                ]
+            },
+            "after": {
+                "kind": "SequenceNode",
+                "elements": [
+                    {
+                        "kind": "LiteralNode",
+                        "value": "("
+                    },
+                    {
+                        "kind": "LiteralNode",
+                        "value": "..."
+                    },
+                    {
+                        "kind": "OptionalNode",
+                        "expression": {
+                            "kind": "LiteralNode",
+                            "value": ","
+                        }
+                    },
+                    {
+                        "kind": "LiteralNode",
+                        "value": ")"
+                    }
+                ]
+            }
+        },
+        "clone-argument-list": {
+            "kind": "modified",
+            "before": {
+                "kind": "SequenceNode",
+                "elements": [
+                    {
+                        "kind": "LiteralNode",
+                        "value": "("
+                    },
+                    {
+                        "kind": "OptionalNode",
+                        "expression": {
+                            "kind": "AlternativeNode",
+                            "alternatives": [
+                                {
+                                    "kind": "LiteralNode",
+                                    "value": "..."
+                                },
+                                {
+                                    "kind": "SequenceNode",
+                                    "elements": [
+                                        {
+                                            "kind": "ReferenceNode",
+                                            "name": "expression"
+                                        },
+                                        {
+                                            "kind": "LiteralNode",
+                                            "value": ","
+                                        },
+                                        {
+                                            "kind": "OptionalNode",
+                                            "expression": {
+                                                "kind": "SequenceNode",
+                                                "elements": [
+                                                    {
+                                                        "kind": "ReferenceNode",
+                                                        "name": "argument"
+                                                    },
+                                                    {
+                                                        "kind": "RepetitionNode",
+                                                        "expression": {
+                                                            "kind": "SequenceNode",
+                                                            "elements": [
+                                                                {
+                                                                    "kind": "LiteralNode",
+                                                                    "value": ","
+                                                                },
+                                                                {
+                                                                    "kind": "ReferenceNode",
+                                                                    "name": "argument"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "kind": "OptionalNode",
+                                                        "expression": {
+                                                            "kind": "LiteralNode",
+                                                            "value": ","
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "SequenceNode",
+                                    "elements": [
+                                        {
+                                            "kind": "ReferenceNode",
+                                            "name": "argument-no-expression"
+                                        },
+                                        {
+                                            "kind": "RepetitionNode",
+                                            "expression": {
+                                                "kind": "SequenceNode",
+                                                "elements": [
+                                                    {
+                                                        "kind": "LiteralNode",
+                                                        "value": ","
+                                                    },
+                                                    {
+                                                        "kind": "ReferenceNode",
+                                                        "name": "argument"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "kind": "OptionalNode",
+                                            "expression": {
+                                                "kind": "LiteralNode",
+                                                "value": ","
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "kind": "LiteralNode",
+                        "value": ")"
+                    }
+                ]
+            },
+            "after": {
+                "kind": "SequenceNode",
+                "elements": [
+                    {
+                        "kind": "LiteralNode",
+                        "value": "("
+                    },
+                    {
+                        "kind": "OptionalNode",
+                        "expression": {
+                            "kind": "AlternativeNode",
+                            "alternatives": [
+                                {
+                                    "kind": "SequenceNode",
+                                    "elements": [
+                                        {
+                                            "kind": "LiteralNode",
+                                            "value": "..."
+                                        },
+                                        {
+                                            "kind": "OptionalNode",
+                                            "expression": {
+                                                "kind": "SequenceNode",
+                                                "elements": [
+                                                    {
+                                                        "kind": "LiteralNode",
+                                                        "value": ","
+                                                    },
+                                                    {
+                                                        "kind": "OptionalNode",
+                                                        "expression": {
+                                                            "kind": "SequenceNode",
+                                                            "elements": [
+                                                                {
+                                                                    "kind": "ReferenceNode",
+                                                                    "name": "argument"
+                                                                },
+                                                                {
+                                                                    "kind": "RepetitionNode",
+                                                                    "expression": {
+                                                                        "kind": "SequenceNode",
+                                                                        "elements": [
+                                                                            {
+                                                                                "kind": "LiteralNode",
+                                                                                "value": ","
+                                                                            },
+                                                                            {
+                                                                                "kind": "ReferenceNode",
+                                                                                "name": "argument"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "kind": "OptionalNode",
+                                                                    "expression": {
+                                                                        "kind": "LiteralNode",
+                                                                        "value": ","
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "SequenceNode",
+                                    "elements": [
+                                        {
+                                            "kind": "ReferenceNode",
+                                            "name": "expression"
+                                        },
+                                        {
+                                            "kind": "LiteralNode",
+                                            "value": ","
+                                        },
+                                        {
+                                            "kind": "OptionalNode",
+                                            "expression": {
+                                                "kind": "SequenceNode",
+                                                "elements": [
+                                                    {
+                                                        "kind": "ReferenceNode",
+                                                        "name": "argument"
+                                                    },
+                                                    {
+                                                        "kind": "RepetitionNode",
+                                                        "expression": {
+                                                            "kind": "SequenceNode",
+                                                            "elements": [
+                                                                {
+                                                                    "kind": "LiteralNode",
+                                                                    "value": ","
+                                                                },
+                                                                {
+                                                                    "kind": "ReferenceNode",
+                                                                    "name": "argument"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "kind": "OptionalNode",
+                                                        "expression": {
+                                                            "kind": "LiteralNode",
+                                                            "value": ","
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "SequenceNode",
+                                    "elements": [
+                                        {
+                                            "kind": "ReferenceNode",
+                                            "name": "argument-no-expression"
+                                        },
+                                        {
+                                            "kind": "RepetitionNode",
+                                            "expression": {
+                                                "kind": "SequenceNode",
+                                                "elements": [
+                                                    {
+                                                        "kind": "LiteralNode",
+                                                        "value": ","
+                                                    },
+                                                    {
+                                                        "kind": "ReferenceNode",
+                                                        "name": "argument"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "kind": "OptionalNode",
+                                            "expression": {
+                                                "kind": "LiteralNode",
+                                                "value": ","
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "kind": "LiteralNode",
+                        "value": ")"
+                    }
+                ]
+            }
+        },
+        "argument": {
+            "kind": "modified",
+            "before": {
+                "kind": "AlternativeNode",
+                "alternatives": [
+                    {
+                        "kind": "ReferenceNode",
+                        "name": "expression"
+                    },
+                    {
+                        "kind": "ReferenceNode",
+                        "name": "argument-no-expression"
+                    }
+                ]
+            },
+            "after": {
+                "kind": "AlternativeNode",
+                "alternatives": [
+                    {
+                        "kind": "ReferenceNode",
+                        "name": "expression"
+                    },
+                    {
+                        "kind": "ReferenceNode",
+                        "name": "argument-no-expression"
+                    },
+                    {
+                        "kind": "LiteralNode",
+                        "value": "..."
+                    }
+                ]
+            }
+        },
+        "argument-no-expression": {
+            "kind": "modified",
+            "before": {
+                "kind": "AlternativeNode",
+                "alternatives": [
+                    {
+                        "kind": "SequenceNode",
+                        "elements": [
+                            {
+                                "kind": "ReferenceNode",
+                                "name": "semi-reserved-identifier"
+                            },
+                            {
+                                "kind": "LiteralNode",
+                                "value": ":"
+                            },
+                            {
+                                "kind": "ReferenceNode",
+                                "name": "expression"
+                            }
+                        ]
+                    },
+                    {
+                        "kind": "SequenceNode",
+                        "elements": [
+                            {
+                                "kind": "LiteralNode",
+                                "value": "..."
+                            },
+                            {
+                                "kind": "ReferenceNode",
+                                "name": "expression"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "after": {
+                "kind": "AlternativeNode",
+                "alternatives": [
+                    {
+                        "kind": "SequenceNode",
+                        "elements": [
+                            {
+                                "kind": "ReferenceNode",
+                                "name": "semi-reserved-identifier"
+                            },
+                            {
+                                "kind": "LiteralNode",
+                                "value": ":"
+                            },
+                            {
+                                "kind": "GroupNode",
+                                "expression": {
+                                    "kind": "AlternativeNode",
+                                    "alternatives": [
+                                        {
+                                            "kind": "ReferenceNode",
+                                            "name": "expression"
+                                        },
+                                        {
+                                            "kind": "LiteralNode",
+                                            "value": "?"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "kind": "SequenceNode",
+                        "elements": [
+                            {
+                                "kind": "LiteralNode",
+                                "value": "..."
+                            },
+                            {
+                                "kind": "ReferenceNode",
+                                "name": "expression"
+                            }
+                        ]
+                    },
+                    {
+                        "kind": "LiteralNode",
+                        "value": "?"
+                    }
+                ]
+            }
+        }
+    },
+    "documentationSections": [
+        "preamble",
+        "## Status and scope",
+        "## Conformance model",
+        "## Names and tokens",
+        "## Arguments and arrays",
+        "## Functions, closures and parameters",
+        "## Classes, interfaces, traits and enums",
+        "## Namespaces and imports",
+        "## Attributes",
+        "## Constant expressions",
+        "## Contextual syntax constraints",
+        "## Parser/compiler boundary rules",
+        "## Conformance evidence"
+    ],
+    "openFindings": [
+        "PHP86-013",
+        "PHP86-014",
+        "PHP86-015"
+    ],
+    "obligations": [
+        "Discovery remains incomplete (PHP86-013).",
+        "No intended writable-target expansion is verified (PHP86-014).",
+        "Optimized-call traversal rules remain unresolved (PHP86-015).",
+        "Parent-get-hook variants, wider initializer and optimizer interactions remain deferred; bounded parent-set-hook evidence added in Phase 5B.",
+        "No whole-source contextual validator or exact-pin executable certification."
+    ],
+    "errors": []
+}

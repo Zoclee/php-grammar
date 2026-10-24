@@ -1,0 +1,472 @@
+{
+    "sourcePin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+    "cases": [
+        {
+            "id": "short-on",
+            "family": "tags",
+            "source": "<? echo 1; ?>text",
+            "sha256": "30eb4195af6d2fb18eb549afcb2fe4af61e54eea067ee18bcb73bdd0782240d8",
+            "requiredTokenTypes": [
+                "open-tag",
+                "close-tag",
+                "inline-html"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "short-off",
+            "family": "tags",
+            "source": "<? echo 1; ?>text",
+            "sha256": "30eb4195af6d2fb18eb549afcb2fe4af61e54eea067ee18bcb73bdd0782240d8",
+            "requiredTokenTypes": [
+                "inline-html"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": false,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "echo-tag",
+            "family": "tags",
+            "source": "<?=1?>",
+            "sha256": "694c6fd103718dee4256cedc79666f64c4798ade5202a8ae7b56856c14944daa",
+            "requiredTokenTypes": [
+                "echo-open-tag",
+                "close-tag"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": false,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "long-eof",
+            "family": "tags",
+            "source": "<?php",
+            "sha256": "fe5bcb54c56e0b9f456a060364dd28b2248f3a0e21c168d4ce9d009b73e83e3c",
+            "requiredTokenTypes": [
+                "open-tag"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "long-boundary",
+            "family": "tags",
+            "source": "<?phpX",
+            "sha256": "fc1ae9b6603276e145c224ddaa6660da95a70e3781f411369084c477fbf79f61",
+            "requiredTokenTypes": [
+                "inline-html"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": false,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "names",
+            "family": "identifiers",
+            "source": "<?php $x=\\N\\f(); $y=namespace\\f(); $z=N\\f();",
+            "sha256": "cbc82415093cb7c3791ff0d50aa87507c6830d525a71ab67df1ef3776dbbc4a5",
+            "requiredTokenTypes": [
+                "fully-qualified-name",
+                "relative-name",
+                "qualified-name"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "high-byte",
+            "family": "identifiers",
+            "source": "<?php $\u00e9=1;",
+            "sha256": "e41ceca9de1d799b330ae70238fdaeb730e76f09cb18872a3372bf843210e3e8",
+            "requiredTokenTypes": [
+                "variable"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "enum-lookahead",
+            "family": "keywords",
+            "source": "<?php function enum() {} enum E { case X; }",
+            "sha256": "1dbc93557ce2c3332f99856d2a9effb3e472718e625035713ad5dd5f0a4c5bf5",
+            "requiredTokenTypes": [
+                "identifier",
+                "keyword"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "property-keyword",
+            "family": "property",
+            "source": "<?php $o->readonly; $o?->class;",
+            "sha256": "6d8c729eddd72fa7a9bfb786a5d15cfd681b2cad3e0eb23b8830069cae2d2112",
+            "requiredTokenTypes": [
+                "identifier"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "yield-comment",
+            "family": "yield-from",
+            "source": "<?php function f(){yield /* c */ from g();}",
+            "sha256": "bcc0df0d062f495702160e125d5f0976b2fa80ac83c49760abb7a7860b01e644",
+            "requiredTokenTypes": [
+                "keyword"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "hex-binary",
+            "family": "integers",
+            "source": "<?php $v=[0xCA_FE,0b10_01];",
+            "sha256": "82a7dd9704d051118ae9ad72ea5ceb3800f0f0ab40807ce12b3ea07a9cd79be8",
+            "requiredTokenTypes": [
+                "integer-literal"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "octal",
+            "family": "integers",
+            "source": "<?php $v=[0_7,0o17,0O7];",
+            "sha256": "032165bd045e0922b8a0e9d3bf01ef745ee0ec43a5d37bc33ad7aebddf383f01",
+            "requiredTokenTypes": [
+                "integer-literal"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "floats",
+            "family": "floats",
+            "source": "<?php $v=[.5,2.,1e+2,1_0.2_5e-2];",
+            "sha256": "8b99b1a31a580b5ad9d4d5723a00ec0022fbbff491341fef9e64598681e9bff4",
+            "requiredTokenTypes": [
+                "floating-literal"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "overflow",
+            "family": "integers",
+            "source": "<?php $v=99999999999999999999999999999;",
+            "sha256": "632a4c5e4e31ba5eda08a605f1cdca73d1148967983f26c1c62670162450e7d6",
+            "requiredTokenTypes": [
+                "integer-literal"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "single-escape",
+            "family": "single-strings",
+            "source": "<?php $v='a\\'b';",
+            "sha256": "e299de54235c2bafb8f3475bd67ebdd92ca7ea32ca8fb76c05c93c337d2398b6",
+            "requiredTokenTypes": [
+                "string-literal"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "unicode-escape",
+            "family": "escapes",
+            "source": "<?php $v=\"\\u{1F600}\\x41\\101\";",
+            "sha256": "d141b85f70eb7be37ff9d135a65c171c6ea16d03e90d5e79dd777afac8b8f671",
+            "requiredTokenTypes": [
+                "string-literal"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "complex-interpolation",
+            "family": "interpolation",
+            "source": "<?php $v=\"{$a[0]} {$o->name}\";",
+            "sha256": "f75467380aa527add3a54fdc1e07813d6adda143a671950df681f34d506fcde9",
+            "requiredTokenTypes": [
+                "string-literal"
+            ],
+            "compareNativeBoundaries": false,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "nested-interpolation",
+            "family": "interpolation",
+            "source": "<?php $v=\"{$a[\"key\"]}\";",
+            "sha256": "ecb412b85b848e6981038881211f2e1e8cb551c2380b1bc6604a15a31c1cf7f8",
+            "requiredTokenTypes": [
+                "string-literal"
+            ],
+            "compareNativeBoundaries": false,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "backticks",
+            "family": "backticks",
+            "source": "<?php $s=`echo $name`;",
+            "sha256": "450382bb0755d35a74b0d9dc2b055e103860288d69190c4d0cfb93f74a8eee93",
+            "requiredTokenTypes": [
+                "backtick-string"
+            ],
+            "compareNativeBoundaries": false,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "heredoc-indent",
+            "family": "heredoc",
+            "source": "<?php\n$s=<<<TXT\n  hello {$a[0]}\n  TXT;\n",
+            "sha256": "c145a957acc081078f47c6596105935bcd8b0fcecdb588f1d3501c09875d318f",
+            "requiredTokenTypes": [
+                "heredoc-string"
+            ],
+            "compareNativeBoundaries": false,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "nowdoc-literal",
+            "family": "nowdoc",
+            "source": "<?php\n$s=<<<'TXT'\n  $literal\n  TXT;\n",
+            "sha256": "2a9fc7d516a36f137bf8cf36be4bb343e7b0f0b7a815dedbb04688a09d85f63b",
+            "requiredTokenTypes": [
+                "nowdoc-string"
+            ],
+            "compareNativeBoundaries": false,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "doc-comment",
+            "family": "comments",
+            "source": "<?php /** doc */ function f() {}",
+            "sha256": "dfd3e79bb5db09561ded25c7681433ce5f28959bdb2621465462edf45cb74afd",
+            "requiredTokenTypes": [
+                "doc-comment"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "line-close-tag",
+            "family": "comments",
+            "source": "<?php // comment ?>text",
+            "sha256": "5439e0b0bc0a20a61e2e348428d94677a0ad8a122d570942827154bae9f6cc5b",
+            "requiredTokenTypes": [
+                "comment",
+                "close-tag",
+                "inline-html"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "attribute",
+            "family": "attributes",
+            "source": "<?php #[A] function f() {}",
+            "sha256": "fdd29d28eafc4d9e8f9a8835bcd77e00d8e7d3b510eeb3f6a6d9a0e296d7d62b",
+            "requiredTokenTypes": [
+                "punctuation"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "pfa",
+            "family": "placeholders",
+            "source": "<?php f(? /* gap */, x: ?, ...);",
+            "sha256": "288b1d47a503411bf632583464d6503bbd9d234bba650376b16aa92610915061",
+            "requiredTokenTypes": [
+                "operator"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "whitespace",
+            "family": "whitespace",
+            "source": "<?php\r\n\t $a=1;",
+            "sha256": "e72c3854d0220b9c6e19e93d32b72240ad52a0b0d6042efbc4704940cbc416bd",
+            "requiredTokenTypes": [
+                "whitespace"
+            ],
+            "compareNativeBoundaries": true,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "halt",
+            "family": "halt",
+            "source": "<?php __halt_compiler();payload",
+            "sha256": "7b5c5a2ae89f1edd32c2b9f193911cf0ef5ac9d0e238bd006f1e4bf3f99b0654",
+            "requiredTokenTypes": [
+                "halt-compiler-data"
+            ],
+            "compareNativeBoundaries": false,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "bad-unicode",
+            "family": "escapes",
+            "source": "<?php $s=\"\\u{110000}\";",
+            "sha256": "a08fcb9beb3271940733613cdaa84cf9bbd4503b8079ea3f860f3c987b6c6032",
+            "requiredTokenTypes": [
+                "string-literal"
+            ],
+            "compareNativeBoundaries": false,
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "lintAccepted": false,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "bad-comment",
+            "family": "comments",
+            "source": "<?php /* unfinished",
+            "sha256": "f14b76139b272b1f2d450b320cbca3a3a14cdc9b8199e41c08c33a7ea4b28950",
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "shortOpenTag": true,
+            "lexerAccepted": false,
+            "lintAccepted": false,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "bad-heredoc",
+            "family": "heredoc",
+            "source": "<?php\n$s=<<<TXT\n x\n  TXT;\n",
+            "sha256": "c1f23c015e8384cc1279d8c658505c2f862d129ec5e6138b476af81a4e8faec1",
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "shortOpenTag": true,
+            "lexerAccepted": false,
+            "lintAccepted": false,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        },
+        {
+            "id": "bad-string",
+            "family": "double-strings",
+            "source": "<?php $s=\"unfinished",
+            "sha256": "97f12d2e95b14130f506ba074fea887cf7d27d6ce20dfe30595bea3229b16b08",
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "shortOpenTag": true,
+            "lexerAccepted": false,
+            "lintAccepted": false,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l",
+            "scope": "Named finite scanner witness, not full scanner-rule or state-product certification."
+        }
+    ]
+}

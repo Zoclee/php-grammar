@@ -1,0 +1,278 @@
+{
+    "pins": {
+        "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "baseLockSha256": "d6a380de7254663b07325079035380c9fa53d5824b2249b228e6d215b78908be",
+    "originalEvidenceSha256": "1d85bca6edba10e1a36f39ba55fa9788daa922cba3a8f60f3a4263a3f72b6e2d",
+    "sourceFiles": {
+        "8.5": {
+            "Zend/zend_compile.c": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225",
+            "Zend/zend_compile.h": "9f6b0fc3cb3398810c5ba17eb8b993e7d856b304f5dff43901d80dcbec1c7f61",
+            "Zend/zend_ast.c": "2b957bba99379210a4205a8fdfe4cde40da6df4bfcd99f115ee188ecd5d275d5",
+            "Zend/zend_ast.h": "e5739d70a49328d30f6ff905e44a9a30642ff4d6229b470cc5c2aaa669f49d4c",
+            "Zend/zend_enum.c": "baa6dfdb61df292e38a50d32f3c43fedac0ec0c5126a4e8284f37b67e48ad8fd",
+            "Zend/zend_inheritance.c": "69793711dc0a88c93545be87baa57e2fca26f2dc2e0701a8d956611980fee486",
+            "Zend/zend_vm_def.h": "87f6d73c31a0c2865fc841efba911d512c14d672f31be25d140b10fb43451a41",
+            "Zend/zend_portability.h": "70e79e53b27e03cb4fb1dab3e873d453bfa1de78c5fc86292364e371a59c844b",
+            "Zend/zend_hash.h": "9ce2315a2f2a8b08223c43615ed2cf4c6c302cc6a71faeb9c226617944663904",
+            "Zend/zend_language_parser.y": "f108f2c2ff4c98c68b6478e7fbdebc16d8afb8bbbc3ae6079e5b285b448dac0c",
+            "Zend/tests/gh20628_003.phpt": null,
+            "Zend/tests/gh20628_005.phpt": null,
+            "ext/opcache/tests/array_map_foreach_optimization_001.phpt": null,
+            "Zend/tests/partial_application/rfc_examples_const_expr.phpt": null,
+            "Zend/tests/attributes/override/constants/enum_failure_case.phpt": null,
+            "Zend/tests/attributes/override/constants/anon_interface.phpt": null,
+            "Zend/tests/enum/backed-int-const-expr.phpt": "1548b7be4d98abc3b9dd197f75e62018980270e14a63b2ae40886c70a88efd00",
+            "Zend/tests/enum/backed-mismatch.phpt": "a3862ab305b4b8204bfefb83235c4f216f110a8a0c66ac55fe7bdad8196a4923",
+            "Zend/tests/property_hooks/unknown_hook.phpt": "a83246ac7959aba409f9b7b985dbca4c878a46de35a231efce66b9157e86843a"
+        },
+        "8.6": {
+            "Zend/zend_compile.c": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+            "Zend/zend_compile.h": "3a43384f3c49a629ddc11de2e2303d4cd710b8ec699cdfcf9d5092353831e02d",
+            "Zend/zend_ast.c": "e6e793245e60d377f109b3d1e154665e84ab9a5cc60736576c4ff89d99eee5a9",
+            "Zend/zend_ast.h": "b207e9873e492ca95b13b580ce8683258d5a6b4f1e5b5034ed2eb16a38e4a3f2",
+            "Zend/zend_enum.c": "edd67c50fc77a9bff98845272d9ac06c9867f0410b5aa8fe1c7e942dc71f53f8",
+            "Zend/zend_inheritance.c": "d3f0f10319e7ffe0490ee85fd4b42f5dca9efa7804bc8e72b1b23d8df7dccf46",
+            "Zend/zend_vm_def.h": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e",
+            "Zend/zend_portability.h": "283db9d160edd04a1302e4c3ace6902e60a3abf71a0f92d39a3e631c9e31f8dc",
+            "Zend/zend_hash.h": "f32a845ffcc5b68aa6f29d98bb9e284072aca7d018a5fb547fe9337cad3fa2ab",
+            "Zend/zend_language_parser.y": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "Zend/tests/gh20628_003.phpt": "b8ce1f0a2243a407cbd537e6aa66ae7d82e2dd772062a982a5863536c205fa25",
+            "Zend/tests/gh20628_005.phpt": "95ecc664197a41969d0b9a7770d1fe4e57b8fac21f106e7064a3ab019a10653b",
+            "ext/opcache/tests/array_map_foreach_optimization_001.phpt": "fa8ffdfe44ba55a532b2a390f450840c2d96e69de1f01b9528362abb6cc129d5",
+            "Zend/tests/partial_application/rfc_examples_const_expr.phpt": "a472adcc416e7013013e94bbcc1ae830a165063cbebcd7fff82750b8cc512947",
+            "Zend/tests/attributes/override/constants/enum_failure_case.phpt": "b2177b24d2e51584bb3e769563e256b12c8d20bd9ca196a3a528ed870f72d091",
+            "Zend/tests/attributes/override/constants/anon_interface.phpt": "ed60f57bea9f6f7bf3c2a6af990f536e01d7d193b33cfad165c3beac4c9bb182",
+            "Zend/tests/enum/backed-int-const-expr.phpt": "1548b7be4d98abc3b9dd197f75e62018980270e14a63b2ae40886c70a88efd00",
+            "Zend/tests/enum/backed-mismatch.phpt": "ea970a712096f96a9194bb1c63c72e4bc82c8e73f8b1f755877f78587781e4d6",
+            "Zend/tests/property_hooks/unknown_hook.phpt": "a83246ac7959aba409f9b7b985dbca4c878a46de35a231efce66b9157e86843a"
+        }
+    },
+    "sourceSlices": [
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 2821,
+            "end": 2865,
+            "anchor": "zend_can_write_to_variable",
+            "sha256": "39e7f427b3850f81b027dfc706d3526af18f64807fbc07b7f2a276721862b636",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L2821"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 3098,
+            "end": 3185,
+            "anchor": "zend_delayed_compile_dim",
+            "sha256": "5dfe004ef7a68ae9cbbdcedbfca4a8b99404936134480ba292fb00a9c4fe3ea9",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L3098"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 3197,
+            "end": 3275,
+            "anchor": "zend_delayed_compile_prop",
+            "sha256": "86c83adbd5a3b1df2ab06170cb5482c724776c087cd15d68e79b3879e7427c58",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L3197"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 3380,
+            "end": 3475,
+            "anchor": "zend_compile_list_assign",
+            "sha256": "caa787f35f83bcaa3f8af4db355f09c2b5521da694fa1f79410e7c0e984b9948",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L3380"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 3543,
+            "end": 3715,
+            "anchor": "zend_compile_assign",
+            "sha256": "50adf5076aa7dfb3297e7fcd0bc27ca07490f43fe86f9cde0013c360fe79874b",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L3543"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 5096,
+            "end": 5106,
+            "anchor": "zend_compile_func_sprintf",
+            "sha256": "39f758cd34bf63106ea53600de5b16b128631368b8a0b1fe006b928c639b853e",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L5096"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 5264,
+            "end": 5317,
+            "anchor": "zend_compile_func_printf",
+            "sha256": "a37163c24a314f980f2035d4d3f1a1a11d3044d381f72b79db08ea36a97f9f90",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L5264"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 5333,
+            "end": 5375,
+            "anchor": "zend_compile_func_array_map",
+            "sha256": "39bd595bc9c6a8c870feba5f8834fad91fb6781ed6b8ab4672b660997c085a05",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L5333"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 5597,
+            "end": 5617,
+            "anchor": "zend_try_compile_special_func",
+            "sha256": "b7ca3233be671cc35d5792edb47e235b0e0bd1f31a49aacabba82046549f5e9b",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L5597"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 9286,
+            "end": 9303,
+            "anchor": "zend_compile_stmt",
+            "sha256": "fbf07af4456380d9aa2ad9a3d72002eb533410bc3fa1a7171baeb3373a11e830",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L9286"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 9348,
+            "end": 9420,
+            "anchor": "zend_get_property_hook_kind_from_name",
+            "sha256": "a1d1a9b7fa1a0c2de178b6a28b38fe1fd7a3fcedf27d84e5176aecad8b1fcb55",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L9348"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 10155,
+            "end": 10240,
+            "anchor": "zend_compile_enum_case",
+            "sha256": "6780b9884f6ce18c11a3d1a15c0d1deac06cbf08159c1ae7f95e042388008ae0",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L10155"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 10829,
+            "end": 10875,
+            "anchor": "zend_try_ct_eval_array",
+            "sha256": "7d4b889ebc0a47083b2e5c02b20819d35a37f54822b6ca6d94b886257ecb5c61",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L10829"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 12243,
+            "end": 12364,
+            "anchor": "zend_compile_const_expr_closure",
+            "sha256": "fffe47a8970c08093c43ea4b2f06505acbff1cf9fb6a560e3036545d759cb8ca",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L12243"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 12774,
+            "end": 12814,
+            "anchor": "ZEND_AST_ASSIGN_REF",
+            "sha256": "e4c6d7c0e20eeb0726065db5b55ac3e99d608bb90337ba3f71314850c45f336e",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L12774"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 12920,
+            "end": 13051,
+            "anchor": "zend_eval_const_expr",
+            "sha256": "68f9848fbb4fdf8a486d37576334df9b50de24334f4fac64ac0041ce6bce5bfe",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L12920"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.c",
+            "start": 13180,
+            "end": 13215,
+            "anchor": "ZEND_AST_CONST_ENUM_INIT",
+            "sha256": "5a06b2cfffb974390fe09a6e88aed631217c4f62d866c971070c84f9b1e162ea",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L13180"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_ast.c",
+            "start": 673,
+            "end": 761,
+            "anchor": "zend_ast_evaluate_arg_list",
+            "sha256": "8a4f69146fcf66aac62ddbe9ad183e1d423971fdd64de3a2dc4122086589e01d",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_ast.c#L673"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_ast.c",
+            "start": 1079,
+            "end": 1106,
+            "anchor": "case_id",
+            "sha256": "35097feb09f2aa8323b489cc203c34fa81277d919266294cb8eed494e79aa1b6",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_ast.c#L1079"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_vm_def.h",
+            "start": 2489,
+            "end": 2495,
+            "anchor": "ZEND_ASSIGN_OBJ",
+            "sha256": "788325102d112f5ef87749189577948854ab598cbdf150271304281b39c6ec96",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_vm_def.h#L2489"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_vm_def.h",
+            "start": 2680,
+            "end": 2686,
+            "anchor": "ZEND_ASSIGN_DIM",
+            "sha256": "7fd7c58bb43110ea4c710e1193d855629386f65dcbd12c40226a200de6117250",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_vm_def.h#L2680"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_compile.h",
+            "start": 865,
+            "end": 868,
+            "anchor": "IS_TMP_VAR",
+            "sha256": "baafeac6899343b55e7bd7e5e2373a8fdd25f2f188256cdb4e74f2aa8ec06b82",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.h#L865"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_language_parser.y",
+            "start": 1155,
+            "end": 1178,
+            "anchor": "property_hook",
+            "sha256": "fe00b8f6024930695dbd98bb7585455ecd6861fb788dd71b930d50a6457ffa8f",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y#L1155"
+        },
+        {
+            "version": "8.6",
+            "file": "Zend/zend_inheritance.c",
+            "start": 2160,
+            "end": 2210,
+            "anchor": "do_interface_implementation",
+            "sha256": "6f0bbbb43f524e6852552b059ff44653a4848f68ebff8a65e9912ac0d205bda3",
+            "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_inheritance.c#L2160"
+        }
+    ],
+    "cachedUpstreamSnapshots": {
+        "phase22-pr20628.json": "8b51c79f34b3cf64d95d1651c3b0faad8c6855c7dc79d31762498457df5b1268",
+        "phase3d-pr20628-comments.json": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd",
+        "phase3d-pr20628-review.json": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe",
+        "phase3d-pr19658.json": "ac76e021ee0e8b0c15f0ad9d4fb8f11b8a8e359404d66796fda5dcc6d48d1431",
+        "phase3d-pr18622.json": "3a6cc2bde0219769329daabfb2c0643a0daea5199654b4ef8d09c55d8ab37a5b"
+    },
+    "exactPinExecutableVerified": false
+}

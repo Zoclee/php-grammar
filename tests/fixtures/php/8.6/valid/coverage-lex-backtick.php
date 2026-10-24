@@ -1,0 +1,2 @@
+<?php
+$s=`echo $name`;

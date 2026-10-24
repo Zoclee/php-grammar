@@ -1,5 +1,5 @@
 {
-    "scope": "Six structural and seven lint/declaration-link boundaries; metadata paths are repository-relative.",
+    "scope": "36 acceptance boundaries: 16 structural, 11 lint, nine declaration-link. Diagnostic-only cases remain separate.",
     "files": {
         "tests/fixtures/version-boundaries/8.6/pfa-basic.json": "f35147344f71ee9c9b25fb97a56eda01679867938e901077708b5085f6d48667",
         "tests/fixtures/version-boundaries/8.6/pfa-clone.json": "38c97daf91064b6e09c72ccae76ae98ea75a8f322692d2c161f022fcd6016db2",
@@ -13,6 +13,29 @@
         "tests/fixtures/version-boundaries/contextual-8.6/object-property.json": "cf35480dc94a261aaa42e2d560c8134ad1b52fb5230ac9fce4c12c15c868aafc",
         "tests/fixtures/version-boundaries/contextual-8.6/override-enum.json": "ad123e759f93db398cfc7d4405634ccfd7894b3295e635f194f290a50bd70983",
         "tests/fixtures/version-boundaries/contextual-8.6/override-parent.json": "7350a2adc8baac53d6ddb963a0763530571ed7882ba6fab73d353804a3cb1a11",
-        "tests/fixtures/version-boundaries/contextual-8.6/readonly-default.json": "989ea2bf0be5366154c54b8eb59e767beb5eb69a23edd972a9b81811b0d68ea5"
+        "tests/fixtures/version-boundaries/contextual-8.6/readonly-default.json": "989ea2bf0be5366154c54b8eb59e767beb5eb69a23edd972a9b81811b0d68ea5",
+        "tests/fixtures/version-boundaries/coverage-8.6/pfa-method.json": "4488aa23ff0cef550666efa4ee1221681897267d9aa1656e6011a2a76189b4b9",
+        "tests/fixtures/version-boundaries/coverage-8.6/pfa-static.json": "980ae50cd9205850702cc639ceabb76e3f15c8e1dd0476946d4701709598a4c6",
+        "tests/fixtures/version-boundaries/coverage-8.6/pfa-dynamic.json": "c341f67a05054b441a039f96ed3ab9db7629adc381c5f331652b34815dbdaf87",
+        "tests/fixtures/version-boundaries/coverage-8.6/pfa-method-fcc.json": "4c56270495d8b27a962417db3e83179a4a718fd3c8730bccbb08a0031301ae8c",
+        "tests/fixtures/version-boundaries/coverage-8.6/pfa-static-fcc.json": "5ce9f6ffd90808b0c7518d74a508c4abf4b83ea0c0aa6aa45f8b49c1281b886b",
+        "tests/fixtures/version-boundaries/coverage-8.6/pfa-dynamic-fcc.json": "23ca5f33e06771b45836c85e1c57d64293e0eccc3c9ff4e121f63a315517e6b3",
+        "tests/fixtures/version-boundaries/coverage-8.6/pfa-clone-fcc.json": "9ded20ceb83ae92c85e5d2d2b837350bb72803157352340aba7c113d838d2668",
+        "tests/fixtures/version-boundaries/coverage-8.6/pfa-constant-class.json": "da50de48161a6a8221f1f1edd30838cdaec03a730eed4128e4b3048e4ab15140",
+        "tests/fixtures/version-boundaries/coverage-8.6/pfa-constant-enum.json": "2a19c6cf8f684d76bbdbcc4ebb7f30faa150e4f8f5e243680c102c5bfd728d40",
+        "tests/fixtures/version-boundaries/coverage-8.6/readonly-inherit-default.json": "f3d4fb29949c93045e4dc211af299febac59f0881d711812c5f88dcfba92a67e",
+        "tests/fixtures/version-boundaries/coverage-8.6/object-reference-element.json": "d98f4c1c6154827c1cf4009382ef259af70f4dff2d34dccbbbfc365437154559",
+        "tests/fixtures/version-boundaries/coverage-8.6/object-compound-dimension.json": "a4417f0273d1acc19263b943a814f09b2d1260c9213d27e3abe86e620bfe5440",
+        "tests/fixtures/version-boundaries/coverage-8.6/override-interface-chain.json": "aabe418e065a5ef1e67c657961acf93d4fd1466349ef148cd536e781e7fd2284",
+        "tests/fixtures/version-boundaries/coverage-8.6/override-enum-case.json": "95f8a5b8d9ffb27e2125046ea5cc7e38c600fd729c74c6bf00e0e04a87f327f9",
+        "tests/fixtures/version-boundaries/coverage-8.6/enum-debug-nullable.json": "0d7a428d598ecf43e538a163a9fc41e4c021f3e6c227857a3cc5037500d7b0b2",
+        "tests/fixtures/version-boundaries/coverage-8.6/nullsafe-chain-return.json": "81f18d935759a4712ad23ee557aeb89ee40975805490e2b7674aa6d0a79f25d0",
+        "tests/fixtures/version-boundaries/coverage-8.6/nullsafe-chain-yield.json": "ef2284751f22a1c61fa786581c9e214548b86fa7b9c4761744b588fde7d29559",
+        "tests/fixtures/version-boundaries/final-8.6/final-yield-pfa.json": "a9c92052405a002ea2f4d2e183c32a04c8102271a6fb9a692f2a950a42e5f5fc",
+        "tests/fixtures/version-boundaries/final-8.6/final-readonly-private-default.json": "9188c61849c647de79effb7fe9372c9ca4db0900a7f9ee8a2a7136c53d3f151c",
+        "tests/fixtures/version-boundaries/final-8.6/final-constant-object-unset.json": "5fd331f8d9cdab18749930c1be28743e3eff06610ac0bcf8802a75a0f15eb5ac",
+        "tests/fixtures/version-boundaries/final-8.6/final-override-trait.json": "86db9a2c20b5050838e3de971430629007b258a4a8e61647c997718c1b93aab6",
+        "tests/fixtures/version-boundaries/final-8.6/final-enum-debug-untyped.json": "b4c546183484f6c0b88a10fb29976688df86897dd5a7186605cd67c0c4fb8c30",
+        "tests/fixtures/version-boundaries/final-8.6/final-nullsafe-reference-method.json": "2866f582afec57bca32314f94756e16840e4d6b24b4a35e1da374f8b823be6e8"
     }
 }

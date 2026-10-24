@@ -1,0 +1,15 @@
+{
+    "name": "PHP86-007 coverage nullsafe-chain-return",
+    "firstSupportedVersion": "8.5",
+    "lastSupportedVersion": "8.5",
+    "fixture": "../../php/8.6/contextual-invalid/coverage-nullsafe-chain-return.php",
+    "validationStage": "lint",
+    "finding": "PHP86-007",
+    "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+    "expectations": {
+        "8.5": true,
+        "8.6": false
+    },
+    "observedEvidence": "docs/8.6/coverage-expansion-validation.json",
+    "limitations": "Distribution oracle, not an exact-pin build; structural matching is not contextual enforcement."
+}

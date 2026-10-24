@@ -1,0 +1,102 @@
+{
+    "phase": "5C",
+    "pins": {
+        "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "dispositions": {
+        "PHP86-014": {
+            "disposition": "UNRESOLVED \u2014 BOUNDED",
+            "area": "Assignment/reference/list-derived dimension and property writes, read-modify-write, unset and reference fetch; nested and discarded contexts.",
+            "mechanismDisposition": "UPSTREAM IMPLEMENTATION DEFECT",
+            "mechanismEvidence": "Ordinary assignment emits TMP; nonreference list RHS is TMP or CONST. RC4 var dispatch admits those into write consumers whose VM operand declarations exclude TMP/CONST. Ten executed probes report matching invalid opcode tuples. No opcode dump or exact-pin build was used.",
+            "known": "Assignment reads and existing call-result writes succeed. PHP86-004 constant-object property mutation is independently supported. Literal temporary/constant-array-only/nullsafe writes reject. RC4 reference-result writes and reference-bearing list writes succeed in the tested processes, without establishing language intent.",
+            "unknown": "Whether assignment-derived write forms should be rejected or supported, including successful reference-result forms; final upstream repair and all VM profiles.",
+            "grammarRisk": "No missing structural form established; both grammars already accept the affected dereference structure. A premature contextual rule could wrongly accept or reject; runtime invalid opcode must not be encoded as syntax rejection.",
+            "certificationImpact": "Blocks affected-area correctness and candidate/stable certification. Does not block independent evidence work.",
+            "closureEvidence": "Authoritative exact-form intended-validity disposition, coherent compiler/VM implementation, exact-pin and final-release execution, operation/result-kind and live/discarded regressions.",
+            "canClose": false,
+            "requiredSpecificationChange": "No normative change established; C5C-D02 proposes research-scope clarification only.",
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ]
+        },
+        "PHP86-015": {
+            "disposition": "UNRESOLVED \u2014 BOUNDED",
+            "area": "Optimized printf/sprintf format traversal, ordinary/dynamic/namespace/named/unpack calls, arrays, constant closures and related PFA eligibility.",
+            "known": "Specialization attempts constant evaluation before checking format eligibility. AND/OR visit both children; known ternary/coalesce discard untaken nodes. Named/unpack gates bypass specialization; literal arrays may independently enter constant evaluation. Ordinary PFA and constant PFA bound arguments use different traversals.",
+            "unknown": "Intended compatibility boundary and comprehensive dispatch/optimization interactions; whether upstream regards exact discarded-cast differences as defects.",
+            "grammarRisk": "No structural change; function-specific EBNF would misrepresent the mechanism. Universal argument-traversal prose is unsupported.",
+            "certificationImpact": "Blocks complete contextual-traversal correctness and candidate/stable claims.",
+            "closureEvidence": "Authoritative compatibility disposition, stage-aware source-corresponding regression tests and complete reviewed dispatch scope.",
+            "canClose": false,
+            "requiredSpecificationChange": "C5C-D01 documentation clarification proposed; no new normative generalization authorized. Existing visited-AST clauses and historical statement table remain accurate within scope.",
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression",
+                "constant-expression"
+            ]
+        },
+        "CA86-001": {
+            "disposition": "RESOLVED \u2014 DOCUMENTATION IMPACT",
+            "area": "Inherited hook-name EBNF restriction in discarded declarations.",
+            "known": "8.5 and RC4 parser accepts identifier; compiler rejects unknown hook only when declaration visited. Both repository grammars intentionally restrict hook-name to get/set even when discarded; historical specification states this explicitly.",
+            "unknown": "No unanswered mechanism question for tested live/retained/discarded/get controls; future policy choice is separate.",
+            "grammarRisk": "Known intentional false rejection relative to unrestricted Zend-acceptance equivalence, not new RC4 syntax.",
+            "certificationImpact": "Must retain explicit narrowed claim; unrestricted acceptance-equivalence cannot be certified with this difference.",
+            "closureEvidence": "Classification complete; a policy reversal requires separate historical-correction governance and Gate B implementation evidence.",
+            "canCloseMechanismInvestigation": true,
+            "correctionApplied": false,
+            "proposal": "C5C-D03"
+        },
+        "PHP86-013": {
+            "disposition": "UNRESOLVED \u2014 BLOCKING",
+            "area": "Material compiler/contextual source association beyond the reviewed exact hunks.",
+            "known": "Eleven groups reviewed, seven resolved within scope and four bounded. Twenty-eight raw hunks selected; fifteen resolved, thirteen bounded. Thirteen of the historical 276 pending entries discharged; 263 not discharged by this phase. Historical Phase 3D annotations retained.",
+            "unknown": "Partially linked/reentrant class graphs, remaining constant/PFA/reference interactions, optimizer paths and source groups outside the eight-file ledger.",
+            "grammarRisk": "No additional structural defect established in this finite review; remaining syntax-relevant changes could still invalidate normative claims.",
+            "certificationImpact": "Blocks discovery completeness, candidate promotion and stable certification.",
+            "closureEvidence": "Source-backed dispositions for remaining material groups with exact IDs, tests and authoritative correspondence; no arbitrary outstanding-count threshold.",
+            "canClose": false
+        }
+    },
+    "groupLedger": "compiler-contextual-groups.json",
+    "probeLedger": "compiler-contextual-probes.json",
+    "materialNewFindings": [],
+    "proposals": [
+        {
+            "id": "C5C-D01",
+            "classification": "Documentation clarification",
+            "change": "Clarify optimization and array entry into constant evaluation; retain historical statement-table scope.",
+            "applied": false,
+            "gateB": "Mechanism/source/test evidence available for bounded clarification only; intended universal validity remains unresolved."
+        },
+        {
+            "id": "C5C-D02",
+            "classification": "Documentation clarification",
+            "change": "Describe extended PHP86-014 operation scope without changing intended-validity claims.",
+            "applied": false,
+            "gateB": "Source/VM and paired evidence sufficient for scope wording, not normative writable-target correction."
+        },
+        {
+            "id": "C5C-D03",
+            "classification": "Conditional structural/contextual correction proposal",
+            "change": "Only if acceptance contract changes: use identifier-shaped hook syntax with visited-declaration get/set checking.",
+            "applied": false,
+            "gateB": "Mechanism known; separate policy/implementation authorization and historical correction governance required."
+        }
+    ],
+    "readiness": {
+        "targetedCorrectnessRemediation": "READY WITH BOUNDED LIMITATIONS",
+        "independentCertificationPreparation": "READY WITH BOUNDED LIMITATIONS",
+        "candidatePromotion": "NOT READY",
+        "stableReleaseCertification": "NOT READY"
+    },
+    "readinessLimits": "Preparation means inventory/build-provenance and evidence planning only. No unresolved normative edits, certification execution or status promotion.",
+    "nextPhaseBegun": false
+}

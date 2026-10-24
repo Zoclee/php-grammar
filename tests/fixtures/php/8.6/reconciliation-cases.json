@@ -1,0 +1,3035 @@
+{
+    "phase": "5C",
+    "scope": "Research probes excluded from ordinary positive/negative coverage. Expected results describe tested distributions, not intended language validity.",
+    "sourcePins": {
+        "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "cases": [
+        {
+            "id": "assign-read",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/assign-read.php",
+            "sha256": "410b9810a4ba7569cc409c28647a6c6d3f80a593ca1a54e0f1cf93a99eae5e03",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "[[1],1]"
+                    }
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "[[1],1]"
+                    }
+                }
+            }
+        },
+        {
+            "id": "assign-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/assign-write.php",
+            "sha256": "3c8d6a370e48cbf661fdb9cde3d120854c38c0620af5e1ef64d73cb300ebc03f",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Invalid opcode 23/2/1."
+                    }
+                }
+            }
+        },
+        {
+            "id": "reference-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/reference-write.php",
+            "sha256": "2f1b548b4df329bb8f00a39b4a8a96afb27a39d42d64dc8e26b91dcde0010acd",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "[[2],[2]]"
+                    }
+                }
+            }
+        },
+        {
+            "id": "list-variable-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/list-variable-write.php",
+            "sha256": "32d20224fc58bb63abc4b99efb483ffe67ce08830dff6f9b2c41f6a6428576c7",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Invalid opcode 23/2/1."
+                    }
+                }
+            }
+        },
+        {
+            "id": "list-literal-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/list-literal-write.php",
+            "sha256": "e665c782d1cc8a54054de4034d22d0f99f57ba1b12b4e24630ed0cb3898216ac",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Invalid opcode 23/1/1."
+                    }
+                }
+            }
+        },
+        {
+            "id": "list-reference-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/list-reference-write.php",
+            "sha256": "44edad7efaf385db4937cc739a53c82c49785aa9f53cfbcd0723eb2f530f5426",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "[2,[2]]"
+                    }
+                }
+            }
+        },
+        {
+            "id": "assign-property",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/assign-property.php",
+            "sha256": "dfed857150cbf2a00dde329bfed364fb820c436fc3377b249a7c39d7933b2bf4",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Invalid opcode 24/2/1."
+                    }
+                }
+            }
+        },
+        {
+            "id": "reference-property",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/reference-property.php",
+            "sha256": "574015c6bef73bb15a8e967cf616b8bbfa235eb7c46dae7167140bf79b258122",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "[{\"p\":2},{\"p\":2}]"
+                    }
+                }
+            }
+        },
+        {
+            "id": "nested-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/nested-write.php",
+            "sha256": "18b0769ab75c00c713a328e6d0f626329b8e53e3d1a19a5568e90d3c837c93e0",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Invalid opcode 23/2/1."
+                    }
+                }
+            }
+        },
+        {
+            "id": "nested-reference-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/nested-reference-write.php",
+            "sha256": "5e062a07341817a9c031848b250546e817c06327e0b93b68f004311cf90af5a6",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "syntax error, unexpected token \")\", expecting \"->\" or \"?->\" or \"[\""
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "syntax error, unexpected token \")\", expecting \"->\" or \"?->\" or \"[\""
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "assign-compound",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/assign-compound.php",
+            "sha256": "9cc918fbfe7d2df53d69b91eb96aec892602a8280fe36d65dc3bc83fc94397f2",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Invalid opcode 27/2/1."
+                    }
+                }
+            }
+        },
+        {
+            "id": "assign-increment",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/assign-increment.php",
+            "sha256": "4110db1c978ecfc12492dd1655481e761dcd16b7e3fc5714ba1e6265a29226f8",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Invalid opcode 87/2/1."
+                    }
+                }
+            }
+        },
+        {
+            "id": "assign-unset",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/assign-unset.php",
+            "sha256": "64e3fe313ee7ccb7ff081fdf09484b3c3b829d8c876f6d25e0f9fc99edb95e9a",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Invalid opcode 75/2/1."
+                    }
+                }
+            }
+        },
+        {
+            "id": "assign-reference-bind",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/assign-reference-bind.php",
+            "sha256": "8a60c693b48fd43cf65b5d28bfc27d239b5f8df1b32c70ed3b94c335fa87699b",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Invalid opcode 84/2/1."
+                    }
+                }
+            }
+        },
+        {
+            "id": "reference-unset",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/reference-unset.php",
+            "sha256": "cc27aca892acea078c394b196e587c55836b9fb065ce1301bcdcbe5456f81b2d",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "[[],[]]"
+                    }
+                }
+            }
+        },
+        {
+            "id": "reference-coalesce",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/reference-coalesce.php",
+            "sha256": "e78a83ce152e24f1b51a69c7daf1509dec4bdfc8dea2ef1f5fd100c3c5157ec4",
+            "groups": [
+                "C5C-G04"
+            ],
+            "productions": [
+                "class-name",
+                "class-constant-initializer",
+                "assignment-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "[[2],[2]]"
+                    }
+                }
+            }
+        },
+        {
+            "id": "assign-coalesce",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/assign-coalesce.php",
+            "sha256": "1178ac5f3f9bde290194db423eea7f715a9006fd4624e528b88a852cc5d6b362",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Invalid opcode 23/2/1."
+                    }
+                }
+            }
+        },
+        {
+            "id": "literal-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/literal-write.php",
+            "sha256": "f5652b98f66c3e537861b62357e2b1a7b59a5e76c832c7374482a683fcd46fd8",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "temporary-property",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/temporary-property.php",
+            "sha256": "1b07d100ffbd72f4d82f4696e231fa8d7390fabba4fc5463c3403d825d06eecb",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "call-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/call-write.php",
+            "sha256": "8f1a35cf4b15128abce8cac1a79854597e5fcd7a75e99bb2b829f00b0663cf26",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "ok"
+                    }
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "ok"
+                    }
+                }
+            }
+        },
+        {
+            "id": "constant-object",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/constant-object.php",
+            "sha256": "4a7f55f9309b300f99fe13ade8be8c26da1c8dd7a1bb81146548fb04fee0c519",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "2"
+                    }
+                }
+            }
+        },
+        {
+            "id": "constant-array",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/constant-array.php",
+            "sha256": "57ab2792e9d1d15763618911474ee5a6d3f1b84d0aaf75a1c5e082fd4d661935",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "nullsafe-property",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/nullsafe-property.php",
+            "sha256": "fa11fd0728d4cf102f2643de93d559870db7c8e412d6dff308b6a5678871a669",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Can't use nullsafe operator in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Can't use nullsafe operator in write context"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "nullsafe-assignment",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/nullsafe-assignment.php",
+            "sha256": "bbd918213f0e7e9e649114005a86c8f2462476ad4d5dca9638072bf479a09e65",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable",
+                "unset-statement"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Can't use nullsafe operator in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Can't use nullsafe operator in write context"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "discarded-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/discarded-write.php",
+            "sha256": "2cdbf3b2fdbfda0c9be99fb9f35d62b06691741a0bd4b829a79765c1f59a51b6",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "ok"
+                    }
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "ok"
+                    }
+                }
+            }
+        },
+        {
+            "id": "dead-write",
+            "family": "writable",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/dead-write.php",
+            "sha256": "16694e0a3a9ccc9ec79775896b1263dbe6395a54a575225225369b86ed619204",
+            "groups": [
+                "C5C-G01"
+            ],
+            "productions": [
+                "assignment-expression",
+                "variable-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use temporary expression in write context"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "ok"
+                    }
+                }
+            }
+        },
+        {
+            "id": "printf-or",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-or.php",
+            "sha256": "8d456ffa6b7698e523ef122c4a54ed5cd2d6086c8befcea258f9b228f87c0b16",
+            "groups": [
+                "C5C-G02"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-and",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-and.php",
+            "sha256": "eb75f79298eb829be6a6c187b30aed180950c6cba5e89c5b752a687898eddf00",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "dynamic-or",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/dynamic-or.php",
+            "sha256": "0c7646f695f8e0d149b4db71ae5c1046515da74b238ed067208c654ed7a3ac62",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-ternary",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-ternary.php",
+            "sha256": "336bb062e228013a1d527237b9b85cb7f1cd06a5c263316a8ca75f0f04e05364",
+            "groups": [
+                "C5C-G02"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "dynamic-ternary",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/dynamic-ternary.php",
+            "sha256": "4f593063da1ab464a9bd76bc35fbf0887fb6dec9be37bb0f9e8830cef297a759",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-coalesce",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-coalesce.php",
+            "sha256": "d81668acd7ffa3824e776004d0cc6902d7ecb3babbf16ec5d1f3178ff50f5979",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-null-coalesce",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-null-coalesce.php",
+            "sha256": "b4dfc8c202c583a963cd33ab32662b1b39741d0693802e3bf9d9687ac7d70370",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-live",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-live.php",
+            "sha256": "91066e8da6a616a2ec4234c75eb9fbda91d4bea3a9d3a119a158201d829fb5ee",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-format-second",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-format-second.php",
+            "sha256": "10bd5750e9dedc6da57be3d643f52b16a6821a078934ab0b020e96e0b1f9bcac",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-named",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-named.php",
+            "sha256": "89cce9dd9c4f57f6ab8f9d20e802b2cf2cc295e013451f668c0f9360ecd9a54d",
+            "groups": [
+                "C5C-G02"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-named-ternary",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-named-ternary.php",
+            "sha256": "d54a2a9306d041e6a056a85892f899f60438bdd9f900d1472ef650582230f5c0",
+            "groups": [
+                "C5C-G02"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-unpack",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-unpack.php",
+            "sha256": "61af6e69316e2d19a6661ce8bde5ee7ff60155a5df765f863b1d6f4f6637497b",
+            "groups": [
+                "C5C-G02"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-qualified",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-qualified.php",
+            "sha256": "1ff13115cb131647b2fe5b362e02d8f54e6527de2e74b0824cbed5867a4fc0d7",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-import",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-import.php",
+            "sha256": "31dd2e30578ce0df98e4e505a571b6720495cc320aae0e36a6326653d376a166",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-namespace",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-namespace.php",
+            "sha256": "e1cea0086857c874cae914cf9c94c10f04b1675d7d98dec04d34add0c97f11ac",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "sprintf-or",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/sprintf-or.php",
+            "sha256": "59883cae1de591b0339dbd05da6bad1dc47897eaac73fc391b63ff5a9ad1407f",
+            "groups": [
+                "C5C-G02"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "sprintf-ternary",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/sprintf-ternary.php",
+            "sha256": "fc72c75ea6faefac27bbc7889e36e6306c7a62c37afa5e2b87a36a0e4ed26431",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "strlen-or",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/strlen-or.php",
+            "sha256": "efcf49652be322a819d6c4c5c3845349218957a05b5cd6a08dd347151eaa2e79",
+            "groups": [
+                "C5C-G02"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "strlen-ternary",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/strlen-ternary.php",
+            "sha256": "ed57dd351f527bf766b98dfa1a1f7c67ff127d082237b964381372835a32f510",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-dead",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-dead.php",
+            "sha256": "4d3340c034a88712a1a2f256673f6ea527f03e7d13d2ef45de6552efec1c58ea",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-discarded",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-discarded.php",
+            "sha256": "10b4d70789a8c221459177fc426ad37d41d23ce61cf4e7a3128ca40112a15543",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-constant-closure",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-constant-closure.php",
+            "sha256": "ee682418280f54ef00b563fd3f2ce5f5fe8e89c0033914399a82482c40f13c1f",
+            "groups": [
+                "C5C-G02"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-discarded-constant-closure",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-discarded-constant-closure.php",
+            "sha256": "356160bab1c294f238bd8206eadd7a332b5915bb4e72041878c35d344773e225",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-pfa",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-pfa.php",
+            "sha256": "3a934360b265e5cfd1f9f792e35dd6f48747088f5b17c3fc99679b11d3206848",
+            "groups": [
+                "C5C-G03"
+            ],
+            "productions": [
+                "first-class-callable-arguments",
+                "argument",
+                "constant-expression",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "syntax error, unexpected token \"?\", expecting \")\""
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-constant-pfa",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-constant-pfa.php",
+            "sha256": "1769b1fcef5e68235d208a093dfc165d124d706e1a07e920c4893266d4fea10d",
+            "groups": [
+                "C5C-G03"
+            ],
+            "productions": [
+                "first-class-callable-arguments",
+                "argument",
+                "constant-expression",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "syntax error, unexpected token \"?\", expecting \")\""
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-pfa-ternary",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-pfa-ternary.php",
+            "sha256": "0f741f3e9b49ace577ce60aba60d44b86059776bf9106e8102b1b41e4ae62b01",
+            "groups": [
+                "C5C-G03"
+            ],
+            "productions": [
+                "first-class-callable-arguments",
+                "argument",
+                "constant-expression",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "syntax error, unexpected token \"?\", expecting \")\""
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "array-map-constant-closure",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/array-map-constant-closure.php",
+            "sha256": "5fe355bb75c6de7627303a3f32b795efdf3e9b015aaa84231c9c629414395d21",
+            "groups": [
+                "C5C-G02",
+                "C5C-G03"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "The (unset) cast is no longer supported"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "pfa-constant-discard",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/pfa-constant-discard.php",
+            "sha256": "32a32c4efdfa253cef1195b2ac8725c3e3a510a136739585512b6c2d91326b90",
+            "groups": [
+                "C5C-G03"
+            ],
+            "productions": [
+                "first-class-callable-arguments",
+                "argument",
+                "constant-expression",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "syntax error, unexpected token \"?\", expecting \")\""
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "hook-live",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/hook-live.php",
+            "sha256": "29448c72c108ac7be43bcf0317e6e57b71d0b3663997c8039c4362ad680da0c2",
+            "groups": [
+                "C5C-G11"
+            ],
+            "productions": [
+                "hook-name",
+                "property-hook",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Unknown hook \"unknown\" for property C::$x, expected \"get\" or \"set\""
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Unknown hook \"unknown\" for property C::$x, expected \"get\" or \"set\""
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "hook-retained",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/hook-retained.php",
+            "sha256": "a33c67d3ffc9bc91bfec583c16dd47be932697d8aaa10a1689c8b41c0e2d4e91",
+            "groups": [
+                "C5C-G11"
+            ],
+            "productions": [
+                "hook-name",
+                "property-hook",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Unknown hook \"unknown\" for property class@anonymous::$x, expected \"get\" or \"set\""
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Unknown hook \"unknown\" for property class@anonymous::$x, expected \"get\" or \"set\""
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "hook-discarded",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/hook-discarded.php",
+            "sha256": "bcaf8bba8d2c705c8added05cf1e8e2f93889079479c65609d20b7d1dd3ddd76",
+            "groups": [
+                "C5C-G11"
+            ],
+            "productions": [
+                "hook-name",
+                "property-hook",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "hook-constant-discarded",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php",
+            "sha256": "3d080c726c263fc00fcbea95105af9af2ac280d2e1aac87d96a76754a89863a5",
+            "groups": [
+                "C5C-G11"
+            ],
+            "productions": [
+                "hook-name",
+                "property-hook",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "hook-get-repair",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/hook-get-repair.php",
+            "sha256": "afdac1044ee3e1745054f81b4e80ed35f40751707ad8ea012031a9f2d399e2de",
+            "groups": [
+                "C5C-G11"
+            ],
+            "productions": [
+                "hook-name",
+                "property-hook",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "capture-duplicate",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/capture-duplicate.php",
+            "sha256": "69281c8a290cadcaf555916fb5b8160011c6cdcdb5e3eb985df67ee123d89d45",
+            "groups": [
+                "C5C-G06"
+            ],
+            "productions": [
+                "closure-expression",
+                "arrow-function"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use variable $x twice"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use variable $x twice"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "capture-discarded",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/capture-discarded.php",
+            "sha256": "621009dd097c55f5ab080fd2c580c741f02b6f7c4e84a8909a4e8fb6d683a4f6",
+            "groups": [
+                "C5C-G06"
+            ],
+            "productions": [
+                "closure-expression",
+                "arrow-function"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "constant-static-class",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/constant-static-class.php",
+            "sha256": "b8e39a6ea0a6c90c92ef5f63d302444a8e7c5a66454eae688ec0aea8efccb043",
+            "groups": [
+                "C5C-G04"
+            ],
+            "productions": [
+                "class-name",
+                "class-constant-initializer",
+                "assignment-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "static::class cannot be used for compile-time class name resolution"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "static::class cannot be used for compile-time class name resolution"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "constant-self-repair",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/constant-self-repair.php",
+            "sha256": "e494a2c43cce2508b974ea6919071d15524142f1cee358718c7a39cf55facff0",
+            "groups": [
+                "C5C-G04"
+            ],
+            "productions": [
+                "class-name",
+                "class-constant-initializer",
+                "assignment-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "attribute-target",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/attribute-target.php",
+            "sha256": "de694be7844fb0ca510e2283bce072a45c60440b375b99fc9052e4f99be617b3",
+            "groups": [
+                "C5C-G05"
+            ],
+            "productions": [
+                "attribute"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Attribute \"Override\" cannot target class (allowed targets: method, property)"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Attribute \"Override\" cannot target class (allowed targets: method, property, class constant)"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "attribute-discarded",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/attribute-discarded.php",
+            "sha256": "57d146fa5b9e1f144a94e5c1432ea053786635936b5aea8996bc1f501a334a7f",
+            "groups": [
+                "C5C-G05"
+            ],
+            "productions": [
+                "attribute"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "closure-static-constant",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/closure-static-constant.php",
+            "sha256": "8cec1a546e1c16cc99f1b66db0a89d7e7f83b5f9e8ab7825133ef67e2a1c61cc",
+            "groups": [
+                "C5C-G10"
+            ],
+            "productions": [
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "closure-nonstatic-constant",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/closure-nonstatic-constant.php",
+            "sha256": "7f3dd96a29011a8fa7327c3fe0fce5c2ec5aad540297dfbe4677b36ecd2abd66",
+            "groups": [
+                "C5C-G10"
+            ],
+            "productions": [
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Closures in constant expressions must be static"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Closures in constant expressions must be static"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "autoload-covariance",
+            "family": "linking",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/autoload-covariance.php",
+            "sha256": "4fe271286c9406fe4ac5b3d124b34776c9d950840141d7d3ea03e25d6a8cb7ff",
+            "groups": [
+                "C5C-G07"
+            ],
+            "productions": [
+                "interface-declaration",
+                "class-declaration",
+                "class-constant-declaration"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Fixed inline declarations through an autoload callback; no filesystem/network/process access.",
+            "executionStage": "declaration-link",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "linked"
+                    }
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "linked"
+                    }
+                }
+            }
+        },
+        {
+            "id": "autoload-invalid",
+            "family": "linking",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/autoload-invalid.php",
+            "sha256": "73e6a671e79869074eff2c3b54c3d1365882767b8cf121984effb9b0f3dbe6ce",
+            "groups": [
+                "C5C-G07"
+            ],
+            "productions": [
+                "interface-declaration",
+                "class-declaration",
+                "class-constant-declaration"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Fixed inline declarations through an autoload callback; no filesystem/network/process access.",
+            "executionStage": "declaration-link",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Declaration of Base::get(): Root must be compatible with Maker::get(): Child"
+                    }
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Declaration of Base::get(): Root must be compatible with Maker::get(): Child"
+                    }
+                }
+            }
+        },
+        {
+            "id": "autoload-override",
+            "family": "linking",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/autoload-override.php",
+            "sha256": "c3960c48112d3c7f58ae6aa2783e3dbe0cec7f767e3e0e84a5600624d2ee086c",
+            "groups": [
+                "C5C-G07"
+            ],
+            "productions": [
+                "interface-declaration",
+                "class-declaration",
+                "class-constant-declaration"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Fixed inline declarations through an autoload callback; no filesystem/network/process access.",
+            "executionStage": "declaration-link",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Attribute \"Override\" cannot target class constant (allowed targets: method, property)"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "linked"
+                    }
+                }
+            }
+        },
+        {
+            "id": "autoload-override-missing",
+            "family": "linking",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/autoload-override-missing.php",
+            "sha256": "72336edb07aa1401f5dde678e30668ba12d693e16e58d3f52352fffa67784533",
+            "groups": [
+                "C5C-G07"
+            ],
+            "productions": [
+                "interface-declaration",
+                "class-declaration",
+                "class-constant-declaration"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Fixed inline declarations through an autoload callback; no filesystem/network/process access.",
+            "executionStage": "declaration-link",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Attribute \"Override\" cannot target class constant (allowed targets: method, property)"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "C::X has #[\\Override] attribute, but no matching parent constant exists"
+                    }
+                }
+            }
+        },
+        {
+            "id": "enum-layout",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/enum-layout.php",
+            "sha256": "7d003c4596fbeb0be18193dff149b512096158c12cf4e88d761c13ab582258bb",
+            "groups": [
+                "C5C-G08"
+            ],
+            "productions": [
+                "enum-case",
+                "enum-declaration",
+                "constant-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "[[\"A\",1],[\"B\",2]]"
+                    }
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "[[\"A\",1],[\"B\",2]]"
+                    }
+                }
+            }
+        },
+        {
+            "id": "enum-invalid-value",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/enum-invalid-value.php",
+            "sha256": "1dafa81954ffdb5da4aad95ea1b1226d66146ab377f40d5e5dbc57995737ebca",
+            "groups": [
+                "C5C-G08"
+            ],
+            "productions": [
+                "enum-case",
+                "enum-declaration",
+                "constant-expression"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Uncaught TypeError: Enum case type string does not match enum backing type int"
+                    }
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "Uncaught TypeError: Enum case type string does not match enum backing type int"
+                    }
+                }
+            }
+        },
+        {
+            "id": "enum-override",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/enum-override.php",
+            "sha256": "6fc96e0c11810408c3d6554aa56f7fc44cbf296a54e22966a1d401fb5637bfe3",
+            "groups": [
+                "C5C-G09"
+            ],
+            "productions": [
+                "enum-case",
+                "attribute"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Attribute \"Override\" cannot target class constant (allowed targets: method, property)"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "2"
+                    }
+                }
+            }
+        },
+        {
+            "id": "enum-override-missing",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/enum-override-missing.php",
+            "sha256": "e6d80eb9de4c1b189adb4ad32655a9b9a04462ec5e199e59e67f6504f8cb9051",
+            "groups": [
+                "C5C-G09"
+            ],
+            "productions": [
+                "enum-case",
+                "attribute"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Attribute \"Override\" cannot target class constant (allowed targets: method, property)"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 255,
+                        "contains": "E::A has #[\\Override] attribute, but no matching parent constant exists"
+                    }
+                }
+            }
+        },
+        {
+            "id": "cache-live-invalid",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/cache-live-invalid.php",
+            "sha256": "d4b019c1ca09d4ad9927310b5b007768cd15e20bb386fecc3202eb665e917aed",
+            "groups": [
+                "C5C-G10"
+            ],
+            "productions": [
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use variable $x twice"
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "Cannot use variable $x twice"
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "cache-discarded-invalid",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/cache-discarded-invalid.php",
+            "sha256": "2bc587e8b59cac0628404cc2ab923891a6d71570d1b24b3181cdadf61c123d54",
+            "groups": [
+                "C5C-G10"
+            ],
+            "productions": [
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "implicit-capture",
+            "family": "predicates",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/implicit-capture.php",
+            "sha256": "4d807893fca516e80b51c2841d89ce031336b31028465d8c7733bdc09032fd06",
+            "groups": [
+                "C5C-G06"
+            ],
+            "productions": [
+                "closure-expression",
+                "arrow-function"
+            ],
+            "executeReviewed": true,
+            "executionReview": "Local arrays/objects/constants only; bounded operations and stdout. Invalid-opcode exits are expected evidence, not source rejection.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "3"
+                    }
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": {
+                        "exit": 0,
+                        "stdout": "3"
+                    }
+                }
+            }
+        },
+        {
+            "id": "array-map-pfa-or",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/array-map-pfa-or.php",
+            "sha256": "03321d2718b84f5f20cd6caaaa749212b1a6319624275a9000dd49af55105e7f",
+            "groups": [
+                "C5C-G03"
+            ],
+            "productions": [
+                "first-class-callable-arguments",
+                "argument",
+                "constant-expression",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "syntax error, unexpected token \"?\", expecting \")\""
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "array-map-strict-pfa-or",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/array-map-strict-pfa-or.php",
+            "sha256": "16bbf639282382d3d20dd99ec7a5a0dd6a519cdd32d10763c53d4a6823d392ff",
+            "groups": [
+                "C5C-G03"
+            ],
+            "productions": [
+                "first-class-callable-arguments",
+                "argument",
+                "constant-expression",
+                "closure-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": false,
+                    "lint": {
+                        "exit": 255,
+                        "contains": "syntax error, unexpected token \"?\", expecting \")\""
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        },
+        {
+            "id": "printf-unpack-variable",
+            "family": "traversal",
+            "fixture": "tests/fixtures/php/8.6/reconciliation/printf-unpack-variable.php",
+            "sha256": "287a0464f293322d451a89ed1f3a94446b56bfc1834e0c5e11ef177617a71ca7",
+            "groups": [
+                "C5C-G02"
+            ],
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression"
+            ],
+            "executeReviewed": false,
+            "executionReview": "Lint only; no execution authorized by this case.",
+            "executionStage": "runtime",
+            "expect": {
+                "8.5": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                },
+                "8.6": {
+                    "lexerAccepted": true,
+                    "structural": true,
+                    "lint": {
+                        "exit": 0
+                    },
+                    "execution": null
+                }
+            }
+        }
+    ]
+}

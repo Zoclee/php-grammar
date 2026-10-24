@@ -1,0 +1,14 @@
+{
+    "name": "PHP86-007 final-nullsafe-reference-method",
+    "firstSupportedVersion": "8.5",
+    "lastSupportedVersion": "8.5",
+    "fixture": "../../php/8.6/contextual-invalid/final-nullsafe-reference-method.php",
+    "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c",
+    "validationStage": "lint",
+    "finding": "PHP86-007",
+    "expected85": true,
+    "expected86": false,
+    "observationReport": "docs/8.6/final-coverage-validation.json",
+    "observationId": "nullsafe-reference-method",
+    "provenance": "Pinned source; distribution interpreters, not proven exact-pin builds"
+}

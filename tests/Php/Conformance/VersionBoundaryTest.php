@@ -60,7 +60,7 @@ final class VersionBoundaryTest extends TestCase
         $manifest = RepositoryManifest::fromRepositoryRoot($root);
         $runner = new VersionBoundaryRunner($manifest, PhpGrammarMatcher::forManifest($manifest));
         $cases = (new VersionBoundaryFixtureRepository($root . '/tests/fixtures/version-boundaries'))->load();
-        self::assertCount(13, $cases);
+        self::assertCount(36, $cases);
         $stages = [];
         foreach ($cases as $case) {
             $stages[$case->validationStage] = ($stages[$case->validationStage] ?? 0) + 1;
@@ -77,7 +77,8 @@ final class VersionBoundaryTest extends TestCase
                 }
             }
         }
-        self::assertSame(['structural' => 6, 'lint' => 4, 'declaration-link' => 3], $stages);
+        ksort($stages);
+        self::assertSame(['declaration-link' => 9, 'lint' => 11, 'structural' => 16], $stages);
     }
 
     public function testUnknownStageIsRejected(): void

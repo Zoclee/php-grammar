@@ -10,7 +10,7 @@
         "markdown": "bbb81cbda09da80a6e326c5153ccfb4bc436ba9e306a3e1fa419b1ff002f6d7f"
     },
     "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
-    "changesSha256": "8b4ae4e05224c1f4ad9c88d937e7c94e898f005c6c64b676588817999f8c5f48",
+    "changesSha256": "27754b1eb2f9806753e94243e1c25bba6c1039aed0c43943d13f5c0655643d9d",
     "productions": {
         "ordinary-argument-list": {
             "kind": "modified",
@@ -113,7 +113,22 @@
                 "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-order.php": "08dd4f8ea2f003e2abc4f14b94537afd311507802592a3b2f7e718e4177d7e20",
                 "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-method.php": "9bd6f63beaa106a51484c83f623f6f8bc6abc07a35df493de6b00df9175e2fac",
                 "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-name.php": "b903e4662cb855085d6cdfdc2a02160084f9a510991ea7a949af5192cfad739a",
-                "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-traversal.php": "f1b53658890670f2b3910f566dee875833e3e332d6d8a40de4d6be22f68ca9e6"
+                "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-traversal.php": "f1b53658890670f2b3910f566dee875833e3e332d6d8a40de4d6be22f68ca9e6",
+                "tests/fixtures/php/8.6/valid/coverage-pfa-method.php": "de6e42b995dd655c97cf19ad1264ab2a6ed421f613ab9dc696872b451c83d718",
+                "tests/fixtures/php/8.6/valid/coverage-pfa-static.php": "601c188580f08f52c393c01fa1d88bad9724dc8a8fce82605380defa5268c368",
+                "tests/fixtures/php/8.6/valid/coverage-pfa-dynamic.php": "1280cd261ca9276014d925ed0dcef86e4e6994fae7b16066cc0701910f7c07e7",
+                "tests/fixtures/php/8.6/valid/coverage-pfa-method-fcc.php": "151c994901bf56047d3be6cd255ab2858766276dad0ecb183bebb684cc82ed59",
+                "tests/fixtures/php/8.6/valid/coverage-pfa-static-fcc.php": "f84a0448820a75a36a0dd20173e41d56b0503c41e9a58544c0be6b39f6e8853d",
+                "tests/fixtures/php/8.6/valid/coverage-pfa-dynamic-fcc.php": "57c88edfcb4bccbbebbf1254d41648e8d0d4238dffc7dfcbf422c41d05b54ba3",
+                "tests/fixtures/php/8.6/valid/coverage-pfa-clone-fcc.php": "2ef7f596ea9ec121f405456576b07c91ed0f6e7c7064be5f8c090d696d76dff9",
+                "tests/fixtures/php/8.6/valid/coverage-pfa-constant-class.php": "e8cb818617d8a36400ec0ef044e3b9538b172297dd3d1b80970e04a451035a01",
+                "tests/fixtures/php/8.6/valid/coverage-pfa-constant-enum.php": "c5d783ecfb3b4d1dab9b6e0041994513ecc41deb900b4a4443f0e3c3e6ca050c",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-pfa-nullsafe-fcc.php": "fdaa2de9b9cce4f23e4f2e429ca16ff62f22008dd0d40670bb8435a5c8640587",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-pfa-constructor-fcc.php": "7686f9c154b69fabf0c481f02310fae1487067eaf968cf0a08ab624834448fe1",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-pfa-named-after-unpack.php": "19de2e9c313b1840cdc6ae40d913b75bba047d504da805313e5ac101a186bd2a",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-parent-hook-pfa.php": "f1a861bb3579167b2b3270a67b43b597f5b0492719c0760dc7948f75b3159477",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-parent-hook-fcc.php": "04133600a6106c64e23d54eeec71814140e64a881770b7b3d92182d0688daa9d",
+                "tests/fixtures/php/8.6/valid/coverage-parent-hook-discarded.php": "60021b3781e07e212d55c5fb665f389d68f0f94be4ae3ef1dbcac6ee77b08f0b"
             },
             "enforcement": "Structural grammar plus external contextual constraints",
             "evidence": "grammar/8.6/changes.md"
@@ -140,7 +155,11 @@
                 "tests/fixtures/php/8.6/contextual-invalid/context-readonly-hook.php": "66a40465460d70397b8ec71891464d96eb68620443d8b7d8c27ca3069115e946",
                 "tests/fixtures/php/8.6/contextual-invalid/context-readonly-change-flag.php": "0caf9472db254c8ab4d8c13d9618aec07fb99bea63039624c66745894ee1f6f3",
                 "tests/fixtures/php/8.6/valid/context-readonly-discarded.php": "4e876a98bee732c8a29a17104104aa930885817b1a4a77eb0e20d6186fb2a78e",
-                "tests/fixtures/php/8.6/valid/context-readonly-initialized.php": "73c726116f381287dc697244c030b29ca871f06a9907acaa1869b0f1e0e4606d"
+                "tests/fixtures/php/8.6/valid/context-readonly-initialized.php": "73c726116f381287dc697244c030b29ca871f06a9907acaa1869b0f1e0e4606d",
+                "tests/fixtures/php/8.6/valid/coverage-readonly-inherit-default.php": "eaa1ab30e9d0caa34f3c49654a3b25e3ee2fcb7613673e87cc13b43c7843f3de",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-readonly-class-static.php": "9f4b9d0dd94a07ad7df026d3b64e47e13c949fb63311410f8d8a1a940776ab23",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-readonly-class-untyped.php": "beef0475ea65cff0847faa3bd9b426fb3a10d58b5e54e9f15dba333b60dabae7",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-readonly-inherit-type.php": "bfbf82287895c356950d38d7954968b201861dec79da5d69d560e1a8cb2179a2"
             },
             "enforcement": "Documented contextual constraints; not a compiler validator",
             "evidence": "grammar/8.6/changes.md"
@@ -172,7 +191,11 @@
                 "tests/fixtures/php/8.6/contextual-invalid/context-object-nullsafe.php": "f9b80eef767bbefc25f46109cefa023b3e9f33e211b0c51b6c757dbbc87cce86",
                 "tests/fixtures/php/8.6/valid/context-object-read.php": "6058f19a23a924269e75f6e65ed22c0cac7f59f185915a7117f60e90b3b809ec",
                 "tests/fixtures/php/8.6/valid/context-object-runtime.php": "764e3568a02f7f699855a7cebb9543a175fb1b9392cf64bc563509cafd83108f",
-                "tests/fixtures/php/8.6/runtime/context-object-nonobject.php": "1b36dba182f617c72a29b823ac6c7f7dbea67690bcfdffc507ce88d1e26b172f"
+                "tests/fixtures/php/8.6/runtime/context-object-nonobject.php": "1b36dba182f617c72a29b823ac6c7f7dbea67690bcfdffc507ce88d1e26b172f",
+                "tests/fixtures/php/8.6/valid/coverage-object-reference-element.php": "9f1c4db213d6999ac3327fde3c57077d09a678e4a764d856db549bf925f2c49b",
+                "tests/fixtures/php/8.6/valid/coverage-object-compound-dimension.php": "72f729f708fb9da75bdf4fbbd20aff8e77eba3d99c1b31c0917e9ed53f878a2a",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-constant-array-reference.php": "05d6051eb954e0c723299e64513d1fa15a7c6beb0b1c07d302650e435234b094",
+                "tests/fixtures/php/8.6/invalid/coverage-constant-reassign.php": "c50569349be2cefb8f114a82010d8ce74081ea621a89aaf32a058c7296de30a5"
             },
             "enforcement": "Documented contextual constraints; not a compiler validator",
             "evidence": "grammar/8.6/changes.md"
@@ -199,7 +222,10 @@
                 "tests/fixtures/php/8.6/contextual-invalid/context-override-final.php": "0ccff4c03fc50b7844a33724e35afd0106863310e8fb19832d6b8096da21ab0c",
                 "tests/fixtures/php/8.6/contextual-invalid/context-override-type.php": "bf8c749b6ecf81ff8cb6390492b87f3aeda358d56c66cf415940c00855e29cfb",
                 "tests/fixtures/php/8.6/valid/context-override-delayed.php": "8798ee2a2e96711d0f81f9c7350cc56526a5a30812880ed2d4d2b66ed8bce67e",
-                "tests/fixtures/php/8.6/valid/context-override-control.php": "1e79abedccbcf908791aba3216ff46719c2955343c75a9ae9ccced058cd71540"
+                "tests/fixtures/php/8.6/valid/context-override-control.php": "1e79abedccbcf908791aba3216ff46719c2955343c75a9ae9ccced058cd71540",
+                "tests/fixtures/php/8.6/valid/coverage-override-interface-chain.php": "225ca9c84ef4d815bb988700ed393829383539db58d429ee12d5659bd1cc1984",
+                "tests/fixtures/php/8.6/valid/coverage-override-enum-case.php": "e3c48bb460d3e367dfa8c578e60b7ba97e8f5f7131459295a3050e872f9af5fd",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-override-enum-missing.php": "279f9684a303fab00da82f55ba62858463641887edef6fcc19638e8e4499a0f5"
             },
             "enforcement": "Documented contextual constraints; not a compiler validator",
             "evidence": "grammar/8.6/changes.md"
@@ -222,7 +248,10 @@
                 "tests/fixtures/php/8.6/contextual-invalid/context-enum-return.php": "e49b0259df55d31072ca46dc62484f3164d31cb48996d49ac92685934fd27853",
                 "tests/fixtures/php/8.6/contextual-invalid/context-enum-static.php": "50acfcba725a5416b2d2ae2d379330828a0c9f7682f95a30689b11e0df52037d",
                 "tests/fixtures/php/8.6/valid/context-enum-visibility-warning.php": "54615dab5aaaa0dd3b1637e6b4fc244a5bc2f929f27e63df162e1dd879ed78e0",
-                "tests/fixtures/php/8.6/valid/context-enum-lint-limit.php": "77e1eaf20a006bb6d54b7a9a25f7a6bc55b7d50826252d86077758978ff72e49"
+                "tests/fixtures/php/8.6/valid/context-enum-lint-limit.php": "77e1eaf20a006bb6d54b7a9a25f7a6bc55b7d50826252d86077758978ff72e49",
+                "tests/fixtures/php/8.6/valid/coverage-enum-debug-nullable.php": "962c8ba6a04abab13b7a213833ab02ea1337779f07577f043f168b511aa20aed",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-enum-debug-required.php": "434d83884e44a95654a7440b513081612e17fb976ef145a82b3786b091a79b38",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-enum-forbidden-clone.php": "28aaa927499a47c5279b5c03bf39a5ad10f4b4e2bfbfb8ba8cf695d56d9cf0e8"
             },
             "enforcement": "Documented contextual constraints; not a compiler validator",
             "evidence": "grammar/8.6/changes.md"
@@ -249,7 +278,11 @@
                 "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-unreachable.php": "14cea402b3234869ebb051e2233a990f3dbd2023f4a2f16469904a9e0aea328b",
                 "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-dead-if.php": "1b5eaf8417269ac486ab0061144e91b90a3a0bf63eb6466974317a55aacef335",
                 "tests/fixtures/php/8.6/valid/context-nullsafe-foreach.php": "e36f5f1e00eadf473ee36ea9a004dff1e353e9c12b93674d12b94be7627b26d4",
-                "tests/fixtures/php/8.6/valid/context-nullsafe-foreach-ref.php": "d969b6c2e45c768a7a186816def5b55e67457feb8ee8014b07c6b06e125a931d"
+                "tests/fixtures/php/8.6/valid/context-nullsafe-foreach-ref.php": "d969b6c2e45c768a7a186816def5b55e67457feb8ee8014b07c6b06e125a931d",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-nullsafe-chain-return.php": "4e3a791b972e780930d14abe49e2cad186d9b1f156a2e5684081e3a24ed68b0a",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-nullsafe-chain-yield.php": "55bf9407559a330c7eea739dc026981985ff3758c44f43f478514931eb14d705",
+                "tests/fixtures/php/8.6/valid/coverage-nullsafe-chain-discarded.php": "5fb8bea0b69b7148c140d6169abbf2293692d566245076d941ebcbad63fa4d08",
+                "tests/fixtures/php/8.6/contextual-invalid/coverage-nullsafe-chain-dead.php": "cbb74d72578728905f3eb172020b38e71749a4718dee114f0f790557a52d5bb5"
             },
             "enforcement": "Documented contextual constraints; not a compiler validator",
             "evidence": "grammar/8.6/changes.md"
@@ -268,10 +301,48 @@
                 "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y"
             ],
             "fixtures": {
-                "tests/fixtures/php/8.6/deprecation-cases.json": "b1708a9404aefe66a3a98cd193ade2ee1cd12a6308a417895fb5def22d521e16"
+                "tests/fixtures/php/8.6/deprecation-cases.json": "b1708a9404aefe66a3a98cd193ade2ee1cd12a6308a417895fb5def22d521e16",
+                "tests/fixtures/php/8.6/valid/coverage-deprecated-namespace-method.php": "49d94b043d240a1af7598cbb12e41770630ca37fb5c3cd7edd22431718be3412",
+                "tests/fixtures/php/8.6/valid/coverage-deprecated-finally-closure.php": "bdbdecec574b4c2f629222ebbee152b501f8a5c0afc1b5a0c0f4a99d25fca4de"
             },
             "enforcement": "Diagnostic-only; accepted structure retained",
             "evidence": "grammar/8.6/changes.md"
+        },
+        "PHP86-014": {
+            "scope": "Informative evidence limitation only; unresolved finding, not implemented language correction.",
+            "productions": [
+                "assignment-expression",
+                "variable-expression",
+                "array-object-dereferenceable"
+            ],
+            "sources": [
+                "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c",
+                "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_vm_def.h"
+            ],
+            "fixtures": {
+                "tests/fixtures/php/8.6/reconciliation/assign-write.php": "3c8d6a370e48cbf661fdb9cde3d120854c38c0620af5e1ef64d73cb300ebc03f",
+                "tests/fixtures/php/8.6/reconciliation/assign-property.php": "dfed857150cbf2a00dde329bfed364fb820c436fc3377b249a7c39d7933b2bf4",
+                "tests/fixtures/php/8.6/reconciliation/reference-write.php": "2f1b548b4df329bb8f00a39b4a8a96afb27a39d42d64dc8e26b91dcde0010acd"
+            }
+        },
+        "PHP86-015": {
+            "scope": "Informative evidence limitation only; unresolved finding, not implemented language correction.",
+            "productions": [
+                "function-call",
+                "cast-expression",
+                "conditional-expression",
+                "coalesce-expression"
+            ],
+            "sources": [
+                "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c",
+                "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_ast.c"
+            ],
+            "fixtures": {
+                "tests/fixtures/php/8.6/reconciliation/printf-or.php": "8d456ffa6b7698e523ef122c4a54ed5cd2d6086c8befcea258f9b228f87c0b16",
+                "tests/fixtures/php/8.6/reconciliation/printf-named.php": "89cce9dd9c4f57f6ab8f9d20e802b2cf2cc295e013451f668c0f9360ecd9a54d",
+                "tests/fixtures/php/8.6/reconciliation/printf-ternary.php": "336bb062e228013a1d527237b9b85cb7f1cd06a5c263316a8ca75f0f04e05364",
+                "tests/fixtures/php/8.6/reconciliation/printf-pfa.php": "3a934360b265e5cfd1f9f792e35dd6f48747088f5b17c3fc99679b11d3206848"
+            }
         }
     },
     "documentation": {
@@ -362,7 +433,7 @@
         },
         "## Contextual syntax constraints": {
             "before": "682766a96634e1382fc0229dccce4d272f3f599f19f3a62a41dd4825ed935e96",
-            "after": "dcd7d757e75933dc06e5c2b33c66eae5342549a42f94398b93a65229ee050041",
+            "after": "b809b022ccab3e5aa364173631f02ae0f420028d6cef1f059467d90d5bc9803f",
             "findings": [
                 "PHP86-001",
                 "PHP86-003",
@@ -370,9 +441,10 @@
                 "PHP86-005",
                 "PHP86-006",
                 "PHP86-007",
-                "PHP86-010"
+                "PHP86-010",
+                "PHP86-014"
             ],
-            "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+            "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification. Phase 5D: informative PHP86-014 scope clarification only; no normative acceptance change. Phase 5C source/probe evidence and docs/8.6/correctness-remediation.md record reviewed boundaries."
         },
         "## Parser/compiler boundary rules": {
             "before": "e0bd5975ae9df1435215189116e6fa449232eca6455a046ba4166639abcf1f5a",
@@ -389,6 +461,14 @@
                 "inherited-evidence-label"
             ],
             "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+        },
+        "## Deprecated but accepted syntax": {
+            "before": "4e8e8a049bdfdb5aa2501a2e3a4d9297108bd8a255f4202e9c452fe83376f237",
+            "findings": [
+                "PHP86-015"
+            ],
+            "reason": "Phase 5D: informative PHP86-015 scope clarification only; no normative acceptance change. Phase 5C source/probe evidence and docs/8.6/correctness-remediation.md record reviewed boundaries.",
+            "after": "9c4f415108c211f4375168538a8b516d190e74843f1beee451696ac841f11d9c"
         }
     },
     "openFindings": [
@@ -400,7 +480,7 @@
         "Discovery remains incomplete (PHP86-013).",
         "No intended writable-target expansion is verified (PHP86-014).",
         "Optimized-call traversal rules remain unresolved (PHP86-015).",
-        "Parent-hook PFA, wider initializer and optimizer interactions remain deferred.",
+        "Parent-get-hook variants, wider initializer and optimizer interactions remain deferred; bounded parent-set-hook evidence added in Phase 5B.",
         "No whole-source contextual validator or exact-pin executable certification."
     ],
     "ebnfSha256": "12cfcfa3a0122eeac769862a7644740eb20a533048267f23c8ea984e261dbaf4",

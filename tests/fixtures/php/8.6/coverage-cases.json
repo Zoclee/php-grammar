@@ -1,0 +1,3118 @@
+{
+    "sourcePins": {
+        "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "cases": [
+        {
+            "id": "if-alternative",
+            "batch": "syntax",
+            "targets": [
+                "alternative-if-statement",
+                "alt-elseif-list"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-if-alternative.php",
+            "sha256": "86034dd9ceaa16065a2e2d79e478c7e66fa0b71c5d8230bbcbd17000495a613e",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:alt_if_stmt_without_else",
+                "Zend/zend_language_parser.y:alt_if_stmt"
+            ],
+            "selectedAlternatives": [
+                "alt-elseif-list/alternative:1",
+                "alt-elseif-list/alternative:2",
+                "alt-elseif-list/alternative:4",
+                "alternative-if-statement/alternative:1",
+                "alternative-if-statement/alternative:2",
+                "alternative-if-statement/alternative:3",
+                "closed-inner-statement-list/alternative:1",
+                "if-statement/alternative:1",
+                "matched-if-statement/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "while",
+            "batch": "syntax",
+            "targets": [
+                "while-statement",
+                "break-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-while.php",
+            "sha256": "05dc02cfd2c101df65d88ee06793c23b6399f8420b38886f00426b6668fdbf8b",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:optional_expr"
+            ],
+            "selectedAlternatives": [
+                "matched-while-statement/alternative:1",
+                "simple-statement/alternative:13",
+                "statement/alternative:3",
+                "while-statement/alternative:1"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "while-alternative",
+            "batch": "syntax",
+            "targets": [
+                "while-statement",
+                "continue-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-while-alternative.php",
+            "sha256": "8fae3094355a04bc351a67405e257972af0af5019e06757cbcb8a76db6cea8a9",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:optional_expr"
+            ],
+            "selectedAlternatives": [
+                "matched-while-statement/alternative:2",
+                "simple-statement/alternative:14",
+                "statement/alternative:3",
+                "while-statement/alternative:1"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "do",
+            "batch": "syntax",
+            "targets": [
+                "do-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-do.php",
+            "sha256": "ea6143ea012ca2c8ef785a98c7c677da38dea0d62a316af379fb25409366ef39",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [
+                "relational-expression/alternative:1",
+                "relational-prefix-context/alternative:2",
+                "relational-prefix-context/alternative:3",
+                "simple-statement/alternative:3"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "for",
+            "batch": "syntax",
+            "targets": [
+                "for-statement",
+                "for-expression-list"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-for.php",
+            "sha256": "7101540633dde1bc110d9f224847e3ed3e2c55ed58afe9ce056fa1dd6d692f7d",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:for_exprs"
+            ],
+            "selectedAlternatives": [
+                "for-condition-expression-list/alternative:1",
+                "for-condition-expression-list/alternative:2",
+                "for-expression/alternative:1",
+                "for-statement/alternative:1",
+                "matched-for-statement/alternative:1",
+                "relational-expression/alternative:1",
+                "relational-prefix-context/alternative:2",
+                "relational-prefix-context/alternative:3",
+                "statement/alternative:4"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "for-alternative",
+            "batch": "syntax",
+            "targets": [
+                "for-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-for-alternative.php",
+            "sha256": "ee09e10f029079490ec34c7bdad12f70456038cd192f25c07e13b61a31da5959",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [
+                "for-statement/alternative:1",
+                "matched-for-statement/alternative:2",
+                "simple-statement/alternative:13",
+                "statement/alternative:4"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "foreach-alternative",
+            "batch": "syntax",
+            "targets": [
+                "foreach-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-foreach-alternative.php",
+            "sha256": "471f0c402c8cad41e2cc770b098d6ead9c55a4dedd00434bd2bbcf6202f18327",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [
+                "matched-foreach-statement/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "switch",
+            "batch": "syntax",
+            "targets": [
+                "switch-statement",
+                "switch-case"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-switch.php",
+            "sha256": "abc34f99d2d78b83e5a83277cc1a22b33695610d53cbaf0df2b465fceea477ae",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:switch_case_list"
+            ],
+            "selectedAlternatives": [
+                "simple-statement/alternative:13",
+                "simple-statement/alternative:4",
+                "switch-case/alternative:1",
+                "switch-case/alternative:2",
+                "switch-case/alternative:3",
+                "switch-case/alternative:4",
+                "switch-case/alternative:5",
+                "switch-statement/alternative:1"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "switch-alternative",
+            "batch": "syntax",
+            "targets": [
+                "switch-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-switch-alternative.php",
+            "sha256": "fd2816aa3d8d5536046e5243ed341f3b37094d1224fe6b3f64ddc966e5fa7a25",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:switch_case_list"
+            ],
+            "selectedAlternatives": [
+                "simple-statement/alternative:13",
+                "simple-statement/alternative:4",
+                "switch-case/alternative:1",
+                "switch-case/alternative:2",
+                "switch-case/alternative:4",
+                "switch-case/alternative:5",
+                "switch-statement/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "try-finally",
+            "batch": "syntax",
+            "targets": [
+                "try-statement",
+                "finally-clause"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-try-finally.php",
+            "sha256": "41b64ec77e3c2639edbb14b75bd8ed3985d88b522f5004df750a52dbec077912",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:finally_statement"
+            ],
+            "selectedAlternatives": [
+                "throw-expression/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "catch-without-variable",
+            "batch": "syntax",
+            "targets": [
+                "catch-clause"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-catch-without-variable.php",
+            "sha256": "83e1f30507931f4ad286179db0ba3f76d6bb32c1b557d4cf023f10bf8fe96a2c",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:optional_variable"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "declare",
+            "batch": "syntax",
+            "targets": [
+                "declare-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-declare.php",
+            "sha256": "ac5a28f4befd8826966b4425c9238369ecc652145c9411500eecdd65303bdd01",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [
+                "declare-statement/alternative:1",
+                "matched-declare-statement/alternative:1",
+                "matched-declare-statement/alternative:2",
+                "statement/alternative:6"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "global-static",
+            "batch": "syntax",
+            "targets": [
+                "global-statement",
+                "static-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-global-static.php",
+            "sha256": "d9be686bab872aeeeb61bb237d9b8e9fe13c6c7e7ab3034ce31932b475e49525",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [
+                "simple-statement/alternative:10",
+                "simple-statement/alternative:9",
+                "variable-like/alternative:2",
+                "variable-variable/alternative:1"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "goto",
+            "batch": "syntax",
+            "targets": [
+                "goto-statement",
+                "label-statement",
+                "empty-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-goto.php",
+            "sha256": "e08e66dcd4581ed5f47ec1983f39c565fd2ae30d0bc0f74017896bb90bab5522",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [
+                "simple-statement/alternative:15",
+                "simple-statement/alternative:16",
+                "simple-statement/alternative:17"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "dangling-else",
+            "batch": "syntax",
+            "targets": [
+                "unmatched-statement",
+                "matched-if-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-dangling-else.php",
+            "sha256": "e341015af9b376a99ff0ab9cb72e07947810b02ad07e4203eab08021e8710dd8",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:if_stmt_without_else",
+                "Zend/zend_language_parser.y:if_stmt"
+            ],
+            "selectedAlternatives": [
+                "matched-if-statement/alternative:1",
+                "matched-statement/alternative:2",
+                "matched-statement/alternative:3",
+                "matched-while-statement/alternative:1",
+                "statement/alternative:3",
+                "unmatched-statement/alternative:1",
+                "while-statement/alternative:1",
+                "while-statement/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "match",
+            "batch": "syntax",
+            "targets": [
+                "match-expression",
+                "match-arm"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-match.php",
+            "sha256": "1438cd1fdda1f3b1fa2d11c77e9e10e7bfaeb8242780f7d4120c3444aa4d3ce0",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:match",
+                "Zend/zend_language_parser.y:match_arm"
+            ],
+            "selectedAlternatives": [
+                "match-arm/alternative:1",
+                "match-arm/alternative:2",
+                "postfix-expression/alternative:9"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "arrows",
+            "batch": "syntax",
+            "targets": [
+                "arrow-function"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-arrows.php",
+            "sha256": "107ab018864af0e6c6bfd025e235d9f0eae05480f2d74b4e0f8f50f03b4844e3",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:inline_function"
+            ],
+            "selectedAlternatives": [
+                "arrow-expression/alternative:2",
+                "arrow-prefix-context/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "captures",
+            "batch": "syntax",
+            "targets": [
+                "lexical-variable-list"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-captures.php",
+            "sha256": "39cae3343fb7123a760b10c9192a8aba054ab564c4e43ebe6c5ab9e4e3538b5e",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:lexical_var_list"
+            ],
+            "selectedAlternatives": [
+                "lexical-variable/alternative:1",
+                "lexical-variable/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "anonymous-class",
+            "batch": "syntax",
+            "targets": [
+                "anonymous-class"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-anonymous-class.php",
+            "sha256": "97a071ec2e648d40982d6c587a5bd0b2768b4c1b7ad28143e2e65081bfb0f130",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:anonymous_class_modifiers",
+                "Zend/zend_language_parser.y:anonymous_class_modifiers_optional",
+                "Zend/zend_language_parser.y:anonymous_class"
+            ],
+            "selectedAlternatives": [
+                "new-dereferenceable/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "list-destructure",
+            "batch": "syntax",
+            "targets": [
+                "long-list-expression"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-list-destructure.php",
+            "sha256": "f801dc71517a35d7fa0a3793e76e1832dd3e99bd5d4a3f8ac11601876c17429e",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:expr"
+            ],
+            "selectedAlternatives": [
+                "array-pair/alternative:6",
+                "list-expression/alternative:1"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "variable-variables",
+            "batch": "syntax",
+            "targets": [
+                "variable-variable"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-variable-variables.php",
+            "sha256": "a396234e03898b7f081cae09e9e453c67b6599f2ba91573bc9fe2de3dd5e8e58",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:simple_variable"
+            ],
+            "selectedAlternatives": [
+                "variable-like/alternative:2",
+                "variable-variable/alternative:1",
+                "variable-variable/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "include",
+            "batch": "syntax",
+            "targets": [
+                "include-operator"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-include.php",
+            "sha256": "09b57013492e4e68bc848f50aa68d69b461177a7716aa0fbf91713735b702eba",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:internal_functions_in_yacc"
+            ],
+            "selectedAlternatives": [
+                "include-expression/alternative:2",
+                "include-operator/alternative:1",
+                "include-operator/alternative:2",
+                "include-operator/alternative:3",
+                "include-operator/alternative:4",
+                "include-prefix-context/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "isset-empty",
+            "batch": "syntax",
+            "targets": [
+                "isset-variable-list",
+                "unset-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-isset-empty.php",
+            "sha256": "27417e9007ab99762b14987096c1111b195bf2c0865845aad24abac53ff13098",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:isset_variables"
+            ],
+            "selectedAlternatives": [
+                "primary-expression/alternative:10",
+                "primary-expression/alternative:11"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "void-cast",
+            "batch": "syntax",
+            "targets": [
+                "void-cast-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-void-cast.php",
+            "sha256": "fe6875042e2ad1350a1e94b48ceeb776f59c444f21dffd0dab9f73fc4363f7a9",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [
+                "simple-statement/alternative:7"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "operators-arithmetic",
+            "batch": "syntax",
+            "targets": [
+                "multiplicative-expression",
+                "additive-expression"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-operators-arithmetic.php",
+            "sha256": "2dbbccfb764a5f0bfd806a207458011804f14241bf620507f7c63aed08e30b44",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:expr"
+            ],
+            "selectedAlternatives": [
+                "additive-expression/alternative:2",
+                "additive-prefix-context/alternative:4",
+                "multiplicative-expression/alternative:2",
+                "multiplicative-expression/alternative:3",
+                "multiplicative-prefix-context/alternative:4",
+                "multiplicative-prefix-context/alternative:5"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "operators-bits",
+            "batch": "syntax",
+            "targets": [
+                "shift-expression",
+                "unary-expression"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-operators-bits.php",
+            "sha256": "e55cd71bae4aeb3abf6d6e3dc1551015e85018cb7e6b41b87237ae61219c905a",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:expr"
+            ],
+            "selectedAlternatives": [
+                "bitwise-and-prefix-context/alternative:2",
+                "bitwise-or-prefix-context/alternative:2",
+                "bitwise-xor-prefix-context/alternative:2",
+                "shift-expression/alternative:1",
+                "shift-expression/alternative:2",
+                "shift-prefix-context/alternative:2",
+                "shift-prefix-context/alternative:3",
+                "shift-prefix-context/alternative:4",
+                "unary-expression/alternative:3",
+                "unary-expression/alternative:6",
+                "unary-operator/alternative:3"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "operators-logic",
+            "batch": "syntax",
+            "targets": [
+                "boolean-or-expression",
+                "logical-xor-expression"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-operators-logic.php",
+            "sha256": "08096fbe18dd05cdf9f17d1ce4d4949ae9c6ba1a58f2a735b724f8b58cdb11d0",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:expr"
+            ],
+            "selectedAlternatives": [
+                "boolean-not-expression/alternative:2",
+                "boolean-not-prefix-context/alternative:2",
+                "boolean-or-prefix-context/alternative:2",
+                "logical-and-prefix-context/alternative:2",
+                "logical-or-prefix-context/alternative:2",
+                "logical-xor-prefix-context/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "operators-relational",
+            "batch": "syntax",
+            "targets": [
+                "relational-expression",
+                "equality-expression"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-operators-relational.php",
+            "sha256": "2b7381a221afea372910a36a70645d2592dc68bfc90d602b8c4ce2e92bc6789e",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:expr"
+            ],
+            "selectedAlternatives": [
+                "equality-expression/alternative:1",
+                "equality-expression/alternative:2",
+                "equality-expression/alternative:3",
+                "equality-expression/alternative:4",
+                "equality-expression/alternative:5",
+                "equality-prefix-context/alternative:2",
+                "equality-prefix-context/alternative:3",
+                "equality-prefix-context/alternative:4",
+                "equality-prefix-context/alternative:5",
+                "equality-prefix-context/alternative:6",
+                "equality-prefix-context/alternative:7",
+                "relational-expression/alternative:1",
+                "relational-expression/alternative:2",
+                "relational-expression/alternative:3",
+                "relational-expression/alternative:4",
+                "relational-prefix-context/alternative:2",
+                "relational-prefix-context/alternative:3",
+                "relational-prefix-context/alternative:4",
+                "relational-prefix-context/alternative:5",
+                "relational-prefix-context/alternative:6"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "operators-assignment",
+            "batch": "syntax",
+            "targets": [
+                "assignment-operator"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-operators-assignment.php",
+            "sha256": "f8df8cc77ebb5ce4c46821b87b6068108e7ad24f0d404e7e98536bc49c300e5e",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:expr"
+            ],
+            "selectedAlternatives": [
+                "assignment-operator/alternative:10",
+                "assignment-operator/alternative:11",
+                "assignment-operator/alternative:12",
+                "assignment-operator/alternative:13",
+                "assignment-operator/alternative:14",
+                "assignment-operator/alternative:3",
+                "assignment-operator/alternative:4",
+                "assignment-operator/alternative:5",
+                "assignment-operator/alternative:6",
+                "assignment-operator/alternative:7",
+                "assignment-operator/alternative:8",
+                "assignment-operator/alternative:9"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "unary-casts",
+            "batch": "syntax",
+            "targets": [
+                "unary-operator",
+                "cast-operator"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-unary-casts.php",
+            "sha256": "563e9ae2991656677922b518198e5d37daf0fdf67e4b6d534caad54295bcd6a5",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:expr"
+            ],
+            "selectedAlternatives": [
+                "cast-operator/alternative:1",
+                "cast-operator/alternative:3",
+                "cast-operator/alternative:5",
+                "cast-operator/alternative:7",
+                "cast-operator/alternative:8",
+                "cast-operator/alternative:9",
+                "unary-expression/alternative:3",
+                "unary-expression/alternative:4",
+                "unary-expression/alternative:5",
+                "unary-expression/alternative:7",
+                "unary-operator/alternative:1",
+                "unary-operator/alternative:2",
+                "unary-operator/alternative:4"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "yield-forms",
+            "batch": "syntax",
+            "targets": [
+                "yield-expression",
+                "yield-from-expression"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-yield-forms.php",
+            "sha256": "a28668d0a6875c68a65cb7658ccef78580793c07f3dd70bfa697fd50d1d5b5d1",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:expr"
+            ],
+            "selectedAlternatives": [
+                "yield-from-expression/alternative:2",
+                "yield-from-prefix-context/alternative:2",
+                "yield-key-expression/alternative:2",
+                "yield-key-prefix-context/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "array-forms",
+            "batch": "syntax",
+            "targets": [
+                "array-pair"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-array-forms.php",
+            "sha256": "d934480737961535298b9299bb7ebb4a33441a43aa6d2107505991898214ca92",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:array_pair"
+            ],
+            "selectedAlternatives": [
+                "array-creation-expression/alternative:1",
+                "array-pair/alternative:2",
+                "array-pair/alternative:3",
+                "array-pair/alternative:4",
+                "array-pair/alternative:5"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "access-forms",
+            "batch": "syntax",
+            "targets": [
+                "property-name",
+                "static-member"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-access-forms.php",
+            "sha256": "42ad2f7ee2939a7d77fc8af1223c8269e2d0764215274854e11174c4f46e862c",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:static_member",
+                "Zend/zend_language_parser.y:property_name"
+            ],
+            "selectedAlternatives": [
+                "member-name/alternative:3",
+                "property-name/alternative:2",
+                "property-name/alternative:3",
+                "variable-expression/alternative:2",
+                "variable-like/alternative:2",
+                "variable-variable/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "new-variable",
+            "batch": "syntax",
+            "targets": [
+                "new-variable"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-new-variable.php",
+            "sha256": "2b6239312a4acef9405abb11abb81d7df0f0fce5e590d6eb4fcb5561b83a33af",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:new_variable"
+            ],
+            "selectedAlternatives": [
+                "class-name-reference/alternative:2",
+                "new-variable/alternative:1",
+                "new-variable/alternative:2",
+                "new-variable/alternative:3",
+                "new-variable/alternative:4",
+                "new-variable/alternative:8"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "trait-adaptations",
+            "batch": "syntax",
+            "targets": [
+                "trait-declaration",
+                "trait-precedence",
+                "trait-alias"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-trait-adaptations.php",
+            "sha256": "5260330e6f21cabd83400fd875fc73ede1f502679c4d28ba050075848eb63777",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:trait_declaration_statement",
+                "Zend/zend_language_parser.y:trait_precedence",
+                "Zend/zend_language_parser.y:trait_alias",
+                "Zend/zend_language_parser.y:absolute_trait_method_reference"
+            ],
+            "selectedAlternatives": [
+                "attributed-top-declaration/alternative:5",
+                "class-member/alternative:6",
+                "trait-adaptation/alternative:1",
+                "trait-adaptation/alternative:2",
+                "trait-alias/alternative:3",
+                "trait-method-reference/alternative:1",
+                "trait-method-reference/alternative:2",
+                "trait-use-declaration/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "trait-alias-only",
+            "batch": "syntax",
+            "targets": [
+                "trait-method-reference",
+                "trait-alias-modifier"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-trait-alias-only.php",
+            "sha256": "e73bd64507f37523215f8442edb30faeb085fb3fab3b8cc1db2ba98b57e41a1b",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:trait_method_reference",
+                "Zend/zend_language_parser.y:absolute_trait_method_reference",
+                "Zend/zend_language_parser.y:member_modifier"
+            ],
+            "selectedAlternatives": [
+                "attributed-top-declaration/alternative:5",
+                "class-member/alternative:6",
+                "trait-adaptation/alternative:2",
+                "trait-alias/alternative:1",
+                "trait-alias/alternative:3",
+                "trait-method-reference/alternative:1",
+                "trait-use-declaration/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "group-imports",
+            "batch": "syntax",
+            "targets": [
+                "group-use-declaration"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-group-imports.php",
+            "sha256": "1700a56c45ae5a9842f49f73e12a784e2a3555db06e319d94d5b89c33248283c",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:group_use_declaration"
+            ],
+            "selectedAlternatives": [
+                "legacy-namespace-name/alternative:1",
+                "namespace-use-declaration/alternative:2",
+                "namespace-use-declaration/alternative:3",
+                "unprefixed-use-declaration/alternative:1"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "mixed-imports",
+            "batch": "syntax",
+            "targets": [
+                "mixed-group-use-declaration"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-mixed-imports.php",
+            "sha256": "50be7aec4c4b1a494119e9619dbf4e1d087350560e71f2afc45d0f21bb5e5ffd",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:mixed_group_use_declaration"
+            ],
+            "selectedAlternatives": [
+                "legacy-namespace-name/alternative:1",
+                "namespace-definition/alternative:2",
+                "namespace-use-declaration/alternative:2",
+                "unprefixed-use-declaration/alternative:1"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "names",
+            "batch": "syntax",
+            "targets": [
+                "fully-qualified-name",
+                "namespace-relative-name"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-names.php",
+            "sha256": "fb5586d78f76bedc50d2962ad4a4a8e5b579d2a808714aae5a837291fcfee58f",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:name"
+            ],
+            "selectedAlternatives": [
+                "name/alternative:2",
+                "name/alternative:4"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "interface-hook",
+            "batch": "syntax",
+            "targets": [
+                "property-hook-body"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-interface-hook.php",
+            "sha256": "6000a4d96582c0d31e782442eac396c01249b6f315e9b72cf3409d2609ebaa4e",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:property_hook_body"
+            ],
+            "selectedAlternatives": [
+                "hook-name/alternative:2",
+                "property-hook-body/alternative:1",
+                "simple-type-without-static/alternative:7"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "hook-modifiers",
+            "batch": "syntax",
+            "targets": [
+                "property-hook-modifier"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-hook-modifiers.php",
+            "sha256": "7c724a75810088e991527265ba78cec3c5e0eb1973d1d00c894334e8214a8ec7",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:member_modifier"
+            ],
+            "selectedAlternatives": [
+                "class-modifier/alternative:1",
+                "hook-name/alternative:2",
+                "method-modifier/alternative:4",
+                "property-hook-body/alternative:1",
+                "property-modifier/alternative:6"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "visibility",
+            "batch": "syntax",
+            "targets": [
+                "set-visibility-modifier"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-visibility.php",
+            "sha256": "63238b44503ae0e4cee6e6195079461e2da59adcd3e1119b8874a50fa50949de",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:member_modifier"
+            ],
+            "selectedAlternatives": [
+                "property-modifier/alternative:2",
+                "set-visibility-modifier/alternative:2",
+                "set-visibility-modifier/alternative:3"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "types",
+            "batch": "syntax",
+            "targets": [
+                "type",
+                "type-without-static"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-types.php",
+            "sha256": "3c08ddd94586757ec7420babaa8e1cb6e36f81b5fe9480a3e29a3503fb478f15",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:type_expr",
+                "Zend/zend_language_parser.y:type_expr_without_static"
+            ],
+            "selectedAlternatives": [
+                "simple-type-without-static/alternative:2",
+                "type/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "enum",
+            "batch": "syntax",
+            "targets": [
+                "enum-case",
+                "enum-declaration"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-enum.php",
+            "sha256": "c5fcaaeff06050863331ac70db9320de65aedd74ca75077b71cc512b1b3b2cb7",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:enum_declaration_statement",
+                "Zend/zend_language_parser.y:enum_case",
+                "Zend/zend_language_parser.y:attributed_class_statement"
+            ],
+            "selectedAlternatives": [
+                "simple-type/alternative:7"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "attributes",
+            "batch": "syntax",
+            "targets": [
+                "attribute-group",
+                "parameter"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-attributes.php",
+            "sha256": "cf7fed6e943c69f786c125c82070dad96e2e51456b62121f96f413180a47ab1b",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:ampersand",
+                "Zend/zend_language_parser.y:attribute",
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:is_reference",
+                "Zend/zend_language_parser.y:is_variadic",
+                "Zend/zend_language_parser.y:attributed_parameter",
+                "Zend/zend_language_parser.y:parameter",
+                "Zend/zend_language_parser.y:optional_property_hook_list"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "magic",
+            "batch": "syntax",
+            "targets": [
+                "magic-constant"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-magic.php",
+            "sha256": "dc960f9877ace344a69682cb9bd813827a96bab5aefdcaaa06eba81ed3b027a2",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:constant"
+            ],
+            "selectedAlternatives": [
+                "array-object-dereferenceable/alternative:3",
+                "magic-constant/alternative:1",
+                "magic-constant/alternative:2",
+                "magic-constant/alternative:3",
+                "magic-constant/alternative:4",
+                "magic-constant/alternative:5",
+                "magic-constant/alternative:6",
+                "magic-constant/alternative:7",
+                "magic-constant/alternative:9",
+                "primary-expression/alternative:5"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "halt",
+            "batch": "syntax",
+            "targets": [
+                "halt-compiler-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-halt.php",
+            "sha256": "04fd74c87c5621a9b3d7d2ff21e472deedea4e6a76b367e5f982da33fbfe287e",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:top_statement"
+            ],
+            "selectedAlternatives": [
+                "top-statement/alternative:5"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "if-terminator",
+            "batch": "syntax",
+            "targets": [
+                "alternative-if-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-if-terminator.php",
+            "sha256": "373e172b0ce5f9d1853214f673dacfe1168342453695c2270a7b4546b44cab76",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:alt_if_stmt_without_else",
+                "Zend/zend_language_parser.y:alt_if_stmt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "while-condition",
+            "batch": "syntax",
+            "targets": [
+                "while-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-while-condition.php",
+            "sha256": "4c77ca482e9e4d5a5f5e331bfcc10565591ced7b745f7f2b2adfd3151a844e8d",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "do-semicolon",
+            "batch": "syntax",
+            "targets": [
+                "do-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-do-semicolon.php",
+            "sha256": "395cd2dde478a44f955d217765e6c832dde8d3e4a4fc7e556a68b0b8309b26a8",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "for-separator",
+            "batch": "syntax",
+            "targets": [
+                "for-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-for-separator.php",
+            "sha256": "c017dac424c9d6290cdb8c46a25de1215d452614c6bbdf652202e161a25b3c57",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "foreach-value",
+            "batch": "syntax",
+            "targets": [
+                "foreach-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-foreach-value.php",
+            "sha256": "db93803b47ccd062af63043b263f170be23a3d05228f6f08bc827f2a6364960a",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "switch-case-value",
+            "batch": "syntax",
+            "targets": [
+                "switch-case"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-switch-case-value.php",
+            "sha256": "6edf002a3ea63b24522ecb14a2eefc615918d88275e4897deb22ce08282f07f6",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:switch_case_list"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "catch-type",
+            "batch": "syntax",
+            "targets": [
+                "catch-clause"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-catch-type.php",
+            "sha256": "66375af2d61e94551b81aa4c5a3ac3d211774578e9cd73767076a49a5ef22c6d",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:optional_variable"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "finally-body",
+            "batch": "syntax",
+            "targets": [
+                "finally-clause"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-finally-body.php",
+            "sha256": "dffe59fc866b11a3e134ba3bea16202260ba9e2212a0a0214e6496c17d81f151",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:finally_statement"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "declare-value",
+            "batch": "syntax",
+            "targets": [
+                "declare-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-declare-value.php",
+            "sha256": "d4b0ac88fe13d5869a188ed142b20ed19f57296eb820597594d22423106ce857",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "global-empty",
+            "batch": "syntax",
+            "targets": [
+                "global-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-global-empty.php",
+            "sha256": "238f97094e6b226f1d10697f3870096a2068d3e794aad168eea7d1fcfa5f593f",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "goto-variable",
+            "batch": "syntax",
+            "targets": [
+                "goto-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-goto-variable.php",
+            "sha256": "4543a2bd108e6d1c02541d127dccb412a8d8ab5aa1761b1daf5c22bc0006533a",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:statement"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "match-arrow",
+            "batch": "syntax",
+            "targets": [
+                "match-expression"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-match-arrow.php",
+            "sha256": "cba2343f54676aa12fdad1bc82903f0a6a9e28d72cd3b9333472813088ed52c9",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:match"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "arrow-body",
+            "batch": "syntax",
+            "targets": [
+                "arrow-function"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-arrow-body.php",
+            "sha256": "8a38ca557ae95e038c61183497e3bdbe620a20c7c2f9e5ff7cf26217feaecf09",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:inline_function"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "capture-empty",
+            "batch": "syntax",
+            "targets": [
+                "lexical-variable-list"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-capture-empty.php",
+            "sha256": "29e20e250ed2c18dfa4048a1227afe4f8e859839abe5e1b3963fc13c744d8ea7",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:lexical_var_list"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "trait-precedence-target",
+            "batch": "syntax",
+            "targets": [
+                "trait-precedence"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-trait-precedence-target.php",
+            "sha256": "3fb31a9c7a9544f41a09e4aa0caf73310008b1e13fb7b06703d82f39f926bb82",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:trait_precedence",
+                "Zend/zend_language_parser.y:absolute_trait_method_reference"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "group-import-empty",
+            "batch": "syntax",
+            "targets": [
+                "group-use-declaration"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-group-import-empty.php",
+            "sha256": "7e272963f7aea8ab71d4908791f9ffb084fe2d6c5d99d521f9bfa507ded0128a",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:group_use_declaration"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "dnf-group",
+            "batch": "syntax",
+            "targets": [
+                "type"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-dnf-group.php",
+            "sha256": "284a926dbca89073b94de3b0b5dd1aaa93d96d3be0d7004a1c4451f2e4f9e4b4",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:type_expr"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "hook-body",
+            "batch": "syntax",
+            "targets": [
+                "property-hook-body"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-hook-body.php",
+            "sha256": "a6223728d4904b4b2ae3bb2f385be96db80dac9d3ebbd497d159ad09ebda9380",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:property_hook_body"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "enum-value",
+            "batch": "syntax",
+            "targets": [
+                "enum-case"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-enum-value.php",
+            "sha256": "6fd2af30df80c67bf81905e4293850299292ce7f7660a047071bb01ae59ac008",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:enum_case",
+                "Zend/zend_language_parser.y:attributed_class_statement"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "array-separator",
+            "batch": "syntax",
+            "targets": [
+                "array-pair"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-array-separator.php",
+            "sha256": "1203210d321fe2074212b90b6734fbdc3aebfd942cf2b2aa450d1a0247177588",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:array_pair"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "shift-rhs",
+            "batch": "syntax",
+            "targets": [
+                "shift-expression"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-shift-rhs.php",
+            "sha256": "0a86bbe64c08ff1a954c1124a3d56d9325625c2e2439726c67d9e135a9f4194f",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:expr"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "named-value",
+            "batch": "syntax",
+            "targets": [
+                "argument-no-expression"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-named-value.php",
+            "sha256": "af90ab81d553ec9f491acb4c788ac180c9ea08f6afef336f882379a95d3aa08b",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:argument_no_expr"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-method",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-pfa-method.php",
+            "sha256": "de6e42b995dd655c97cf19ad1264ab2a6ed421f613ab9dc696872b451c83d718",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-static",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-pfa-static.php",
+            "sha256": "601c188580f08f52c393c01fa1d88bad9724dc8a8fce82605380defa5268c368",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-dynamic",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-pfa-dynamic.php",
+            "sha256": "1280cd261ca9276014d925ed0dcef86e4e6994fae7b16066cc0701910f7c07e7",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-method-fcc",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-pfa-method-fcc.php",
+            "sha256": "151c994901bf56047d3be6cd255ab2858766276dad0ecb183bebb684cc82ed59",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-static-fcc",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-pfa-static-fcc.php",
+            "sha256": "f84a0448820a75a36a0dd20173e41d56b0503c41e9a58544c0be6b39f6e8853d",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-dynamic-fcc",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-pfa-dynamic-fcc.php",
+            "sha256": "57c88edfcb4bccbbebbf1254d41648e8d0d4238dffc7dfcbf422c41d05b54ba3",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-clone-fcc",
+            "batch": "pfa",
+            "targets": [
+                "clone-argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-pfa-clone-fcc.php",
+            "sha256": "2ef7f596ea9ec121f405456576b07c91ed0f6e7c7064be5f8c090d696d76dff9",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:clone_argument_list",
+                "Zend/zend_language_parser.y:non_empty_clone_argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-constant-class",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-pfa-constant-class.php",
+            "sha256": "e8cb818617d8a36400ec0ef044e3b9538b172297dd3d1b80970e04a451035a01",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-constant-enum",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-pfa-constant-enum.php",
+            "sha256": "c5d783ecfb3b4d1dab9b6e0041994513ecc41deb900b4a4443f0e3c3e6ca050c",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-nullsafe-fcc",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "Cannot combine nullsafe",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-pfa-nullsafe-fcc.php",
+            "sha256": "fdaa2de9b9cce4f23e4f2e429ca16ff62f22008dd0d40670bb8435a5c8640587",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-constructor-fcc",
+            "batch": "pfa",
+            "targets": [
+                "constructor-argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "Cannot create Closure",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-pfa-constructor-fcc.php",
+            "sha256": "7686f9c154b69fabf0c481f02310fae1487067eaf968cf0a08ab624834448fe1",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:ctor_arguments",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "pfa-named-after-unpack",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "partial application and unpacking",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-pfa-named-after-unpack.php",
+            "sha256": "19de2e9c313b1840cdc6ae40d913b75bba047d504da805313e5ac101a186bd2a",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "parent-hook-pfa",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "Cannot create Closure for parent property hook call",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-parent-hook-pfa.php",
+            "sha256": "f1a861bb3579167b2b3270a67b43b597f5b0492719c0760dc7948f75b3159477",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "parent-hook-fcc",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "Cannot create Closure for parent property hook call",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-parent-hook-fcc.php",
+            "sha256": "04133600a6106c64e23d54eeec71814140e64a881770b7b3d92182d0688daa9d",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "parent-hook-repair",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-parent-hook-repair.php",
+            "sha256": "38a576083f5b700d4c5ff60bdd3f229a52e9fab70e4b2893913eced2abf8b212",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list"
+            ],
+            "selectedAlternatives": [
+                "hook-name/alternative:2",
+                "member-name/alternative:3",
+                "property-hook-body/alternative:2",
+                "variable-expression/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "parent-hook-discarded",
+            "batch": "pfa",
+            "targets": [
+                "argument-list"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-001",
+            "structural85": false,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-parent-hook-discarded.php",
+            "sha256": "60021b3781e07e212d55c5fb665f389d68f0f94be4ae3ef1dbcac6ee77b08f0b",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:possible_comma",
+                "Zend/zend_language_parser.y:argument_list",
+                "Zend/zend_compile.c:zend_compile_args_ex",
+                "Zend/zend_compile.c:zend_compile_call_common",
+                "Zend/zend_compile.c:zend_compile_parent_property_hook_call",
+                "Zend/tests/partial_application/hook.phpt"
+            ],
+            "selectedAlternatives": [
+                "hook-name/alternative:2",
+                "member-name/alternative:3",
+                "property-hook-body/alternative:2",
+                "variable-expression/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "readonly-inherit-default",
+            "batch": "context",
+            "targets": [
+                "property-declaration"
+            ],
+            "stage": "declaration-link",
+            "finding": "PHP86-003",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-readonly-inherit-default.php",
+            "sha256": "eaa1ab30e9d0caa34f3c49654a3b25e3ee2fcb7613673e87cc13b43c7843f3de",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:attributed_class_statement",
+                "Zend/zend_compile.c:zend_compile_prop_decl",
+                "Zend/zend_inheritance.c:do_inherit_property",
+                "Zend/tests/readonly_props/readonly_with_default_inheritance.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "readonly-class-static",
+            "batch": "context",
+            "targets": [
+                "property-declaration"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-003",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "cannot be readonly",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-readonly-class-static.php",
+            "sha256": "9f4b9d0dd94a07ad7df026d3b64e47e13c949fb63311410f8d8a1a940776ab23",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:attributed_class_statement",
+                "Zend/zend_compile.c:zend_compile_prop_decl",
+                "Zend/zend_inheritance.c:do_inherit_property",
+                "Zend/tests/readonly_props/readonly_with_default_inheritance.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "readonly-class-untyped",
+            "batch": "context",
+            "targets": [
+                "property-declaration"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-003",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "must have type",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-readonly-class-untyped.php",
+            "sha256": "beef0475ea65cff0847faa3bd9b426fb3a10d58b5e54e9f15dba333b60dabae7",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:attributed_class_statement",
+                "Zend/zend_compile.c:zend_compile_prop_decl",
+                "Zend/zend_inheritance.c:do_inherit_property",
+                "Zend/tests/readonly_props/readonly_with_default_inheritance.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "readonly-inherit-type",
+            "batch": "context",
+            "targets": [
+                "property-declaration"
+            ],
+            "stage": "declaration-link",
+            "finding": "PHP86-003",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "must be int",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-readonly-inherit-type.php",
+            "sha256": "bfbf82287895c356950d38d7954968b201861dec79da5d69d560e1a8cb2179a2",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:attributed_class_statement",
+                "Zend/zend_compile.c:zend_compile_prop_decl",
+                "Zend/zend_inheritance.c:do_inherit_property",
+                "Zend/tests/readonly_props/readonly_with_default_inheritance.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "object-reference-element",
+            "batch": "context",
+            "targets": [
+                "assignment-expression"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-004",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-object-reference-element.php",
+            "sha256": "9f1c4db213d6999ac3327fde3c57077d09a678e4a764d856db549bf925f2c49b",
+            "sourceReferences": [
+                "Zend/zend_compile.c:zend_can_write_to_variable",
+                "Zend/tests/gh10497_write_targets_guardrail.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "object-compound-dimension",
+            "batch": "context",
+            "targets": [
+                "assignment-expression"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-004",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-object-compound-dimension.php",
+            "sha256": "72f729f708fb9da75bdf4fbbd20aff8e77eba3d99c1b31c0917e9ed53f878a2a",
+            "sourceReferences": [
+                "Zend/zend_compile.c:zend_can_write_to_variable",
+                "Zend/tests/gh10497_write_targets_guardrail.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "constant-array-reference",
+            "batch": "context",
+            "targets": [
+                "assignment-expression"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-004",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "Cannot use",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-constant-array-reference.php",
+            "sha256": "05d6051eb954e0c723299e64513d1fa15a7c6beb0b1c07d302650e435234b094",
+            "sourceReferences": [
+                "Zend/zend_compile.c:zend_can_write_to_variable",
+                "Zend/tests/gh10497_write_targets_guardrail.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "constant-reassign",
+            "batch": "context",
+            "targets": [
+                "assignment-expression"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-004",
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-constant-reassign.php",
+            "sha256": "c50569349be2cefb8f114a82010d8ce74081ea621a89aaf32a058c7296de30a5",
+            "sourceReferences": [
+                "Zend/zend_compile.c:zend_can_write_to_variable",
+                "Zend/tests/gh10497_write_targets_guardrail.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "override-interface-chain",
+            "batch": "context",
+            "targets": [
+                "class-constant-declaration"
+            ],
+            "stage": "declaration-link",
+            "finding": "PHP86-005",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-override-interface-chain.php",
+            "sha256": "225ca9c84ef4d815bb988700ed393829383539db58d429ee12d5659bd1cc1984",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:attributed_class_statement",
+                "Zend/zend_inheritance.c:do_inherit_class_constant",
+                "Zend/tests/attributes/override/constants/basic.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "override-enum-case",
+            "batch": "context",
+            "targets": [
+                "enum-case"
+            ],
+            "stage": "declaration-link",
+            "finding": "PHP86-005",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-override-enum-case.php",
+            "sha256": "e3c48bb460d3e367dfa8c578e60b7ba97e8f5f7131459295a3050e872f9af5fd",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:enum_case",
+                "Zend/zend_language_parser.y:attributed_class_statement",
+                "Zend/zend_inheritance.c:do_inherit_class_constant",
+                "Zend/tests/attributes/override/constants/basic.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "override-enum-missing",
+            "batch": "context",
+            "targets": [
+                "enum-case"
+            ],
+            "stage": "declaration-link",
+            "finding": "PHP86-005",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "no matching parent constant",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-override-enum-missing.php",
+            "sha256": "279f9684a303fab00da82f55ba62858463641887edef6fcc19638e8e4499a0f5",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:enum_case",
+                "Zend/zend_language_parser.y:attributed_class_statement",
+                "Zend/zend_inheritance.c:do_inherit_class_constant",
+                "Zend/tests/attributes/override/constants/basic.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "enum-debug-nullable",
+            "batch": "context",
+            "targets": [
+                "method-declaration"
+            ],
+            "stage": "declaration-link",
+            "finding": "PHP86-006",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-enum-debug-nullable.php",
+            "sha256": "962c8ba6a04abab13b7a213833ab02ea1337779f07577f043f168b511aa20aed",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:attributed_class_statement",
+                "Zend/zend_language_parser.y:function",
+                "Zend/zend_language_parser.y:returns_ref",
+                "Zend/zend_enum.c:zend_verify_enum_magic_methods",
+                "Zend/zend_API.c:zend_check_magic_method_implementation",
+                "Zend/tests/enum/debugInfo/param_validation.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "enum-debug-required",
+            "batch": "context",
+            "targets": [
+                "method-declaration"
+            ],
+            "stage": "declaration-link",
+            "finding": "PHP86-006",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "cannot take arguments",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-enum-debug-required.php",
+            "sha256": "434d83884e44a95654a7440b513081612e17fb976ef145a82b3786b091a79b38",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:attributed_class_statement",
+                "Zend/zend_language_parser.y:function",
+                "Zend/zend_language_parser.y:returns_ref",
+                "Zend/zend_enum.c:zend_verify_enum_magic_methods",
+                "Zend/zend_API.c:zend_check_magic_method_implementation",
+                "Zend/tests/enum/debugInfo/param_validation.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "enum-forbidden-clone",
+            "batch": "context",
+            "targets": [
+                "method-declaration"
+            ],
+            "stage": "declaration-link",
+            "finding": "PHP86-006",
+            "structural85": true,
+            "structural86": true,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": "cannot include magic method __clone",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-enum-forbidden-clone.php",
+            "sha256": "28aaa927499a47c5279b5c03bf39a5ad10f4b4e2bfbfb8ba8cf695d56d9cf0e8",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:attributed_class_statement",
+                "Zend/zend_language_parser.y:function",
+                "Zend/zend_language_parser.y:returns_ref",
+                "Zend/zend_enum.c:zend_verify_enum_magic_methods",
+                "Zend/zend_API.c:zend_check_magic_method_implementation",
+                "Zend/tests/enum/debugInfo/param_validation.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "nullsafe-chain-return",
+            "batch": "context",
+            "targets": [
+                "return-statement"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-007",
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": false,
+            "diagnostic86": "Cannot take reference",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-nullsafe-chain-return.php",
+            "sha256": "4e3a791b972e780930d14abe49e2cad186d9b1f156a2e5684081e3a24ed68b0a",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:optional_expr",
+                "Zend/zend_compile.c:zend_compile_return",
+                "Zend/zend_compile.c:zend_compile_yield",
+                "Zend/zend_compile.c:zend_assert_not_short_circuited"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "nullsafe-chain-yield",
+            "batch": "context",
+            "targets": [
+                "yield-expression"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-007",
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": false,
+            "diagnostic86": "Cannot take reference",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-nullsafe-chain-yield.php",
+            "sha256": "55bf9407559a330c7eea739dc026981985ff3758c44f43f478514931eb14d705",
+            "sourceReferences": [
+                "Zend/zend_compile.c:zend_compile_return",
+                "Zend/zend_compile.c:zend_compile_yield",
+                "Zend/zend_compile.c:zend_assert_not_short_circuited"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "nullsafe-chain-value",
+            "batch": "context",
+            "targets": [
+                "return-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-nullsafe-chain-value.php",
+            "sha256": "6489f36a1422a94fcd6fbeb42d29563b09c2739b052f23c7fe104ccea9caa283",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:optional_expr"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "nullsafe-chain-discarded",
+            "batch": "context",
+            "targets": [
+                "return-statement"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-007",
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-nullsafe-chain-discarded.php",
+            "sha256": "5fb8bea0b69b7148c140d6169abbf2293692d566245076d941ebcbad63fa4d08",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:optional_expr",
+                "Zend/zend_compile.c:zend_compile_return",
+                "Zend/zend_compile.c:zend_compile_yield",
+                "Zend/zend_compile.c:zend_assert_not_short_circuited"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "nullsafe-chain-dead",
+            "batch": "context",
+            "targets": [
+                "return-statement"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-007",
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": false,
+            "diagnostic86": "Cannot take reference",
+            "fixture": "tests/fixtures/php/8.6/contextual-invalid/coverage-nullsafe-chain-dead.php",
+            "sha256": "cbb74d72578728905f3eb172020b38e71749a4718dee114f0f790557a52d5bb5",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:optional_expr",
+                "Zend/zend_compile.c:zend_compile_return",
+                "Zend/zend_compile.c:zend_compile_yield",
+                "Zend/zend_compile.c:zend_assert_not_short_circuited"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "deprecated-namespace-method",
+            "batch": "diagnostic",
+            "targets": [
+                "function-declaration"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-010",
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "warning85": false,
+            "warning86": true,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-deprecated-namespace-method.php",
+            "sha256": "49d94b043d240a1af7598cbb12e41770630ca37fb5c3cd7edd22431718be3412",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:function_declaration_statement",
+                "Zend/zend_language_parser.y:function",
+                "Zend/zend_language_parser.y:returns_ref",
+                "Zend/zend_compile.c:zend_begin_func_decl",
+                "Zend/zend_compile.c:zend_compile_return"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "deprecated-finally-closure",
+            "batch": "diagnostic",
+            "targets": [
+                "return-statement"
+            ],
+            "stage": "lint",
+            "finding": "PHP86-010",
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "warning85": false,
+            "warning86": false,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-deprecated-finally-closure.php",
+            "sha256": "bdbdecec574b4c2f629222ebbee152b501f8a5c0afc1b5a0c0f4a99d25fca4de",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:optional_expr",
+                "Zend/zend_compile.c:zend_begin_func_decl",
+                "Zend/zend_compile.c:zend_compile_return"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-numbers",
+            "batch": "lexical",
+            "targets": [
+                "integer-literal",
+                "floating-literal"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-lex-numbers.php",
+            "sha256": "46e5a4927a18ec84a2527edd51d3de261fe77b8d67bf13345c869a0ce66de98d",
+            "sourceReferences": [
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [
+                "integer-literal/alternative:2",
+                "integer-literal/alternative:3",
+                "integer-literal/alternative:4",
+                "integer-literal/alternative:5",
+                "literal/alternative:2"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-strings",
+            "batch": "lexical",
+            "targets": [
+                "string-literal"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-lex-strings.php",
+            "sha256": "f1dcda89a4c38b919f4dc2a020a0b12673613aad81b6c1a2dacc645321d1cf5b",
+            "sourceReferences": [
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-backtick",
+            "batch": "lexical",
+            "targets": [
+                "backtick-string"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-lex-backtick.php",
+            "sha256": "06dece0ffc4399cabd38894b201b0c7abc70169542399b21a97627591b75dec3",
+            "sourceReferences": [
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [
+                "primary-expression/alternative:9"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-heredoc",
+            "batch": "lexical",
+            "targets": [
+                "string-literal"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "scannerTarget": "heredoc-string",
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-lex-heredoc.php",
+            "sha256": "e137170a8ea1014e954dad9aeac4ad8fc97841155021c482a0e175ceb930ac85",
+            "sourceReferences": [
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-nowdoc",
+            "batch": "lexical",
+            "targets": [
+                "string-literal"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "scannerTarget": "nowdoc-string",
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-lex-nowdoc.php",
+            "sha256": "4ec3b03919a80cb11aa30cee6aa34ad2e7043d3ccf7687eef0bdea5d539825b1",
+            "sourceReferences": [
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-comments",
+            "batch": "lexical",
+            "targets": [
+                "function-declaration"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-lex-comments.php",
+            "sha256": "ea9ef14ae4fb5c5d807a4ba9872251015e7cf384dafca4d111b910e35969f73d",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:function_declaration_statement",
+                "Zend/zend_language_parser.y:function",
+                "Zend/zend_language_parser.y:returns_ref",
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-enum-identifier",
+            "batch": "lexical",
+            "targets": [
+                "function-declaration",
+                "enum-declaration"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-lex-enum-identifier.php",
+            "sha256": "38eb3a8b151bc5795cfbb58a760f804d708212f4d96e1dfb4840009e8589f7ab",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:function_declaration_statement",
+                "Zend/zend_language_parser.y:enum_declaration_statement",
+                "Zend/zend_language_parser.y:function",
+                "Zend/zend_language_parser.y:returns_ref",
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-property-keyword",
+            "batch": "lexical",
+            "targets": [
+                "property-name"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-lex-property-keyword.php",
+            "sha256": "6c68c27eb1f599128463cab8165fa3059ce840feb07bc8557660b2db201cfb9f",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:property_name",
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-html-control",
+            "batch": "lexical",
+            "targets": [
+                "alternative-if-statement"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/valid/coverage-lex-html-control.php",
+            "sha256": "1a09d08aaff5470c01b883ac200b5b070f5536a385de9e88ab87e3ce7c5e8a31",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:alt_if_stmt_without_else",
+                "Zend/zend_language_parser.y:alt_if_stmt",
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [
+                "alternative-if-statement/alternative:1",
+                "closed-inner-statement-list/alternative:1",
+                "if-statement/alternative:1",
+                "matched-if-statement/alternative:2",
+                "simple-statement/alternative:1",
+                "simple-statement/alternative:17"
+            ],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-numeric-separator",
+            "batch": "lexical",
+            "targets": [],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-lex-numeric-separator.php",
+            "sha256": "f28efe57255b1e466e004be07c41529cc9627e018961748ca4ba017c3ae81de0",
+            "sourceReferences": [
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-unicode-escape",
+            "batch": "lexical",
+            "targets": [],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-lex-unicode-escape.php",
+            "sha256": "ffdb96e43e2e83346115dc0aad1b772191a6e99ef595dd05e88d98f0c987202e",
+            "sourceReferences": [
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-unterminated-comment",
+            "batch": "lexical",
+            "targets": [],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-lex-unterminated-comment.php",
+            "sha256": "ca333f4b015422411ecddffd5d49b75e2187bf9c789137b0f4b1c7e99063bfd6",
+            "sourceReferences": [
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-heredoc-indent",
+            "batch": "lexical",
+            "targets": [],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-lex-heredoc-indent.php",
+            "sha256": "c1f23c015e8384cc1279d8c658505c2f862d129ec5e6138b476af81a4e8faec1",
+            "sourceReferences": [
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "lex-nowdoc-label",
+            "batch": "lexical",
+            "targets": [],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/invalid/coverage-lex-nowdoc-label.php",
+            "sha256": "5997ba8a9f20c02f8a6372d694b9704f89cd733a6d656e6298492d8ac2603b44",
+            "sourceReferences": [
+                "Zend/zend_language_scanner.l"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "hook-live",
+            "batch": "discrepancy",
+            "targets": [
+                "hook-name"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/known-discrepancies/coverage-hook-live.php",
+            "sha256": "eb8dde60cb41fa464e7f9aa9c03c1109c7002c91b1cd993d972e8170f5f544bd",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:property_hook",
+                "Zend/zend_compile.c:zend_get_property_hook_kind_from_name",
+                "Zend/zend_compile.c:zend_compile_property_hooks",
+                "Zend/zend_compile.c:zend_eval_const_expr",
+                "Zend/tests/property_hooks/unknown_hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "hook-retained",
+            "batch": "discrepancy",
+            "targets": [
+                "hook-name"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": false,
+            "accept86": false,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/known-discrepancies/coverage-hook-retained.php",
+            "sha256": "8307b737622d83cb8501d2ad80145654500eee77b4212e72daebae432e3904a8",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:property_hook",
+                "Zend/zend_compile.c:zend_get_property_hook_kind_from_name",
+                "Zend/zend_compile.c:zend_compile_property_hooks",
+                "Zend/zend_compile.c:zend_eval_const_expr",
+                "Zend/tests/property_hooks/unknown_hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "hook-discarded",
+            "batch": "discrepancy",
+            "targets": [
+                "hook-name"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": false,
+            "structural86": false,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/known-discrepancies/coverage-hook-discarded.php",
+            "sha256": "24e1d27312b189364bcb85ce7e75bc417471dccfff50f1dc5c77f3802270b533",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:property_hook",
+                "Zend/zend_compile.c:zend_get_property_hook_kind_from_name",
+                "Zend/zend_compile.c:zend_compile_property_hooks",
+                "Zend/zend_compile.c:zend_eval_const_expr",
+                "Zend/tests/property_hooks/unknown_hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        },
+        {
+            "id": "hook-repair",
+            "batch": "discrepancy",
+            "targets": [
+                "hook-name"
+            ],
+            "stage": "lint",
+            "finding": null,
+            "structural85": true,
+            "structural86": true,
+            "accept85": true,
+            "accept86": true,
+            "diagnostic86": null,
+            "fixture": "tests/fixtures/php/8.6/known-discrepancies/coverage-hook-repair.php",
+            "sha256": "6b087cae169f90da24db56222c8d4fd850d8b7b7adad44c0ede60efa77f006fb",
+            "sourceReferences": [
+                "Zend/zend_language_parser.y:property_hook",
+                "Zend/zend_compile.c:zend_get_property_hook_kind_from_name",
+                "Zend/zend_compile.c:zend_compile_property_hooks",
+                "Zend/zend_compile.c:zend_eval_const_expr",
+                "Zend/tests/property_hooks/unknown_hook.phpt"
+            ],
+            "selectedAlternatives": [],
+            "coverageMeaning": "Completed chart items in accepted whole source; primitive successes separate; not unique successful derivations or semantic isolation of every branch."
+        }
+    ]
+}

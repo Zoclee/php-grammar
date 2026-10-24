@@ -15,7 +15,7 @@ final class Php86TraceabilityTest extends TestCase
     public function testReviewedDifferences():void {
         $r=$this->validate();self::assertSame([],$r['errors']);
         self::assertSame([],$r['differences']['added']);self::assertSame([],$r['differences']['removed']);
-        self::assertCount(5,$r['differences']['modified']);self::assertCount(13,$r['documentationSections']);
+        self::assertCount(5,$r['differences']['modified']);self::assertCount(14,$r['documentationSections']);
     }
     public function testUnreviewedAlternativeFails():void {
         $p='grammar/8.6/php.ebnf';$s=file_get_contents(dirname(__DIR__,3).'/'.$p);

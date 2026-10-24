@@ -25,6 +25,12 @@ try {
     $matcher=PhpGrammarMatcher::forRepositoryRoot($root);
     $boundaries=(new VersionBoundaryFixtureRepository($root.'/tests/fixtures/version-boundaries'))->load();
     $context=json_decode(file_get_contents($root.'/tests/fixtures/php/8.6/context-cases.json'),true,512,JSON_THROW_ON_ERROR);
+    // Additional reviewed Phase 5B stage fixtures; original case manifests remain immutable.
+    $expansion=json_decode(file_get_contents($root.'/tests/fixtures/php/8.6/coverage-cases.json'),true,512,JSON_THROW_ON_ERROR);
+    $context=array_merge($context,$expansion['cases']);
+    // Additional reviewed Phase 5E declaration-link/lint fixtures.
+    $finalExpansion=json_decode(file_get_contents($root.'/tests/fixtures/php/8.6/final-coverage-cases.json'),true,512,JSON_THROW_ON_ERROR);
+    $context=array_merge($context,$finalExpansion['cases']);
     $index=json_decode(file_get_contents($root.'/tests/fixtures/php/8.6/boundary-cases.json'),true,512,JSON_THROW_ON_ERROR);
     $check(count($index['files'])===count($boundaries),'Complete boundary index');
     foreach($index['files']as $path=>$hash)$check(is_file($root.'/'.$path)&&hash_file('sha256',$root.'/'.$path)===$hash,'Boundary metadata hash '.$path);

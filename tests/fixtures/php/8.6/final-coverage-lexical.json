@@ -1,0 +1,394 @@
+{
+    "scope": "Additional PHP 8.6 scanner transition witnesses; no complete rule/state coverage claim",
+    "cases": [
+        {
+            "id": "legacy-varname-state",
+            "source": "<?php \"${name}\";",
+            "sha256": "b1d0ec9256861f9559083b6d9fe1edecdf0304d695086904e941f539972f4d21",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [
+                "string-literal"
+            ],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2010,
+                "endLine": 2038,
+                "sha256": "6b303f5ca90801b774c1b72fa157a6670cece502f2539eb2a052721cbe78806f",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2010"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "backtick-state-return",
+            "source": "<?php `echo $name`; echo 1;",
+            "sha256": "c0d50c9d55c7ea7b2578abfeb07128c8ccc2ec0044af566d9a7e209d2279d3ef",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [
+                "backtick-string"
+            ],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2855,
+                "endLine": 2892,
+                "sha256": "456dc42b0d011ff69141a792e8b3b1eb05258f9af9f8b078e83fe4e3b39cd2fc",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2855"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "comment-close-transition",
+            "source": "<?php // comment ?>HTML<?= 1 ?>",
+            "sha256": "eaa6ee63383c5c0e6996afcb6f582ed2f8b9cc5f4d4bf40668bbd6cb16d4d32a",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [
+                "open-tag",
+                "inline-html"
+            ],
+            "compareNativeBoundaries": true,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2489,
+                "endLine": 2565,
+                "sha256": "375d3f2d58d803b777e01f3ab12391b2aff42888b18de3d86a47a39d0e16444f",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2489"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "hash-attribute-transition",
+            "source": "<?php # comment\n#[A] function f(){}",
+            "sha256": "ec128965d946b65aa6e4f7045a27913d90944b6e8f4efb706d890fa5ed50b483",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [
+                "punctuation"
+            ],
+            "compareNativeBoundaries": true,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 1452,
+                "endLine": 1456,
+                "sha256": "b616d68755f54ea96ea74568946a5d949eb9d7567e3cd44be7572044d17c51b3",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L1452"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "block-tag-is-text",
+            "source": "<?php /* ?> stays comment */ echo 1;",
+            "sha256": "dc645ee400bec8af82531d013de93f94b1d1b198ba293874745f074f4ac1781f",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": true,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2513,
+                "endLine": 2548,
+                "sha256": "95fe7d21671cbdba1fcf8744268e7679ac444c22b8d140b3999e7ee5a81f4ffb",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2513"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "interpolation-offset",
+            "source": "<?php \"$a[0] $a[key] {$a['key']} {$o->p}\";",
+            "sha256": "93d8b7defb08a9ca5886bbe666c1138043a863cbacea20a778dc00af6badd93e",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2237,
+                "endLine": 2261,
+                "sha256": "76678b4447c7ef707d0f72f2298ca06505941da1b84f95bb0348f2ef38ae9920",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2237"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "interpolation-variable-variable",
+            "source": "<?php \"{${$name}}\";",
+            "sha256": "70dc8bccfe8c985d58fe1fbf6b8f6329ee061c3f24c1b6c0f407049d2bb06715",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2875,
+                "endLine": 2882,
+                "sha256": "87dffa5e9c6206495f9e0c7dc0a8aa83446b1d57e02b252ee9b1d7b50ed45d08",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2875"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "nested-string-interpolation",
+            "source": "<?php \"{$a[\"key\"]}\";",
+            "sha256": "ad8484bacb54cbb6b7e14e3eb32d6234c882f7ee447947d7afaa4f465c3c6a9f",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2661,
+                "endLine": 2705,
+                "sha256": "787ff5a895706139d93d306ee9d3d67b9d1421fd4013c3c8d3d87837d2bbab05",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2661"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "heredoc-state-return",
+            "source": "<?php\n$s = <<<TXT\n    value {$o->p}\n    TXT;\necho 1;",
+            "sha256": "4b040d18b0584e25fc5ccdfed905d37b59b79babf75f0b3f875b581aaaa7201b",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2707,
+                "endLine": 2873,
+                "sha256": "26a5bbe2156ae08e76a5ce037bdac69719eb80631133999f482823031332d6de",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2707"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "nowdoc-literal-markers",
+            "source": "<?php\n$s = <<<'TXT'\n    {$x} \\n ?>\n    TXT;\necho 1;",
+            "sha256": "70350ccb9e198b2151952ad2ec69eb18babb86baef9bf2b38ab40b286b734bf9",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 3118,
+                "endLine": 3207,
+                "sha256": "1913f0f12b68dc80d9b70169566ec4d69e0e7ac153ecad89ea69a8c20a5461f5",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L3118"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "heredoc-label-suffix",
+            "source": "<?php\n$s = <<<TXT\nTXT_suffix\nTXT;\n",
+            "sha256": "1f82295315524643d54b66584c9f9016d490c3030de2deaabd69ad640107fa38",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2994,
+                "endLine": 3116,
+                "sha256": "58aad010255eaaff91e97e3f0f8f762e2576e0cf1ab235330399b4d304108019",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2994"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "nowdoc-label-at-eof",
+            "source": "<?php\n$s = <<<'TXT'\nx\nTXT",
+            "sha256": "65b0302bf9b909e54ae8566e04c4aa2f12e9268312511af516d64983507894da",
+            "shortOpenTag": true,
+            "lexerAccepted": false,
+            "accept85": false,
+            "accept86": false,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 3118,
+                "endLine": 3207,
+                "sha256": "1913f0f12b68dc80d9b70169566ec4d69e0e7ac153ecad89ea69a8c20a5461f5",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L3118"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "heredoc-mixed-indent",
+            "source": "<?php\n$s = <<<TXT\n \tx\n \tTXT;\n",
+            "sha256": "c01882d1f13efeb5be5704891c1c1b20ec08a69cb1376a8bb4e52ce90016b228",
+            "shortOpenTag": true,
+            "lexerAccepted": false,
+            "accept85": false,
+            "accept86": false,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2707,
+                "endLine": 2853,
+                "sha256": "6594f17de884e296a4262cdd547c4d0238073bbd5d0b6c63f73760ce831ac197",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2707"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "unicode-escape-limit",
+            "source": "<?php \"\\u{10FFFF}\\x41\\101\";",
+            "sha256": "9d170d79cf894f5ddb57e466eecdbbfe666a446a51970425805bb36b32f80bb6",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 950,
+                "endLine": 1120,
+                "sha256": "e28b9d7b9f3f20a7f0d32576ecb7a57f4ca0f938052086250d7c4e26dcc57aec",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L950"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "unicode-escape-overflow",
+            "source": "<?php \"\\u{110000}\";",
+            "sha256": "69dfaa9b4ccb8e9e2c3e4cd0ab54684dcc7810903626b05d9e1a0d872f00b54c",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": false,
+            "accept86": false,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": false,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 950,
+                "endLine": 1120,
+                "sha256": "e28b9d7b9f3f20a7f0d32576ecb7a57f4ca0f938052086250d7c4e26dcc57aec",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L950"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "pfa-comment-boundaries",
+            "source": "<?php f(/* bound */ ?, /* tail */ ...);",
+            "sha256": "c65f53154365ad6115e3bcbf276b689c1fb980878c1a483f061eb974f919a205",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": false,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": true,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 1647,
+                "endLine": 1650,
+                "sha256": "9704a807d7e5212a387c41bb8887b76675835d692ebb59be5fb37fe2e4399518",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L1647"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "yield-from-trivia",
+            "source": "<?php function g(){ yield\tfrom [1]; }",
+            "sha256": "199da961717b07a4072d58a9112692a5a6d1fea3fd6790635a93351709c85d5a",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": true,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 1457,
+                "endLine": 1462,
+                "sha256": "57689322469af0370146f98b7e4da45585287cc96899f823f7a3ed95232ab6dd",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L1457"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "numeric-dot-boundary",
+            "source": "<?php $n=1_000 . 0xCA_FE . 0o7_7 . 0b1_0 . 1.2e+3;",
+            "sha256": "1a8ee64a9d12e871ab76777d00b9670bb57bf1d16cf1fb40b622fc5efd8957d3",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": true,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2040,
+                "endLine": 2280,
+                "sha256": "8f396c1d1b6063d44d1e73e900c3e53b21d381ad67cc2f4c70197f7fb301e476",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2040"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "short-tag-disabled",
+            "source": "before<? echo 1; ?>after",
+            "sha256": "07c6e29e223acacf4b1201f3dd5880dcbc9b9686b768fe648be7c6070cd2e9da",
+            "shortOpenTag": false,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": true,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2320,
+                "endLine": 2424,
+                "sha256": "60c2007aa39a21475cd1e92a1fa2d3c9443f124606cc36ff2ea31e4c959f32ef",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2320"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        },
+        {
+            "id": "short-tag-enabled",
+            "source": "before<? echo 1; ?>after",
+            "sha256": "07c6e29e223acacf4b1201f3dd5880dcbc9b9686b768fe648be7c6070cd2e9da",
+            "shortOpenTag": true,
+            "lexerAccepted": true,
+            "accept85": true,
+            "accept86": true,
+            "requiredTokenTypes": [],
+            "compareNativeBoundaries": true,
+            "sourceEvidence": {
+                "path": "Zend/zend_language_scanner.l",
+                "startLine": 2320,
+                "endLine": 2424,
+                "sha256": "60c2007aa39a21475cd1e92a1fa2d3c9443f124606cc36ff2ea31e4c959f32ef",
+                "reference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_scanner.l#L2320"
+            },
+            "limitation": "Source-backed finite witness; no instrumented upstream rule-hit or exhaustive state-product claim."
+        }
+    ]
+}

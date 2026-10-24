@@ -1,0 +1,2689 @@
+{
+    "method": "Every uncovered identity retained; grouping adds no exclusion.",
+    "families": {
+        "Lexical/scanner and token categories": [
+            {
+                "kind": "production",
+                "identity": "ascii-letter",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "backtick-string",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "backtick-string-part-list",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "binary-digit",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "binary-integer-literal",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "block-comment",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "production",
+                "identity": "block-comment-character",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "production",
+                "identity": "block-comment-text",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "production",
+                "identity": "comment",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "production",
+                "identity": "decimal-digit",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "decimal-digit-nonzero",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "decimal-digits",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "decimal-integer-literal",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "doc-comment",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "production",
+                "identity": "doc-comment-text",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "production",
+                "identity": "double-quoted-string",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "encapsulated-offset",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "encapsulated-string-part",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "encapsulated-variable",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "escape-sequence",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "explicit-octal-integer-literal",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "exponent-marker",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "exponent-part",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "floating-literal",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "fully-qualified-name",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "halt-compiler-data",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "heredoc-body",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "heredoc-label",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "heredoc-string",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "hexadecimal-digit",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "hexadecimal-integer-literal",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "identifier",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "identifier-part",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "identifier-start",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "identifier-start-character",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "inline-html-character",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "inline-html-text",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "line-comment",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "production",
+                "identity": "line-comment-character",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "production",
+                "identity": "line-comment-text",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "production",
+                "identity": "name-identifier",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "namespace-relative-name",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "newline",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "non-ascii-byte",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "nowdoc-body",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "nowdoc-character",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "nowdoc-string",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "numeric-separator",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "numeric-string",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "octal-digit",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "octal-integer-literal",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "qualified-name",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "reserved-non-modifiers",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "production",
+                "identity": "semi-reserved-identifier",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "single-quoted-string",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "single-quoted-string-character",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "single-quoted-string-content",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "source-character",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "string-character",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "string-literal",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "string-text",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "variable",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "production",
+                "identity": "whitespace",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "production",
+                "identity": "whitespace-character",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:10",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:11",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:12",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:13",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:14",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:15",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:16",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:17",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:18",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:19",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:20",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:21",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:22",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:23",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:24",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:25",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:26",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:27",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:28",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:29",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:30",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:31",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:32",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:33",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:34",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:35",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:36",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:37",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:38",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:39",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:40",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:41",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:42",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:43",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:44",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:45",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:46",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:47",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:48",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:49",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:5",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:50",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:51",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:52",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:6",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:7",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:8",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "ascii-letter/alternative:9",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "binary-digit/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "binary-digit/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "binary-integer-literal/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "binary-integer-literal/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "comment/alternative:1",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "alternative",
+                "identity": "comment/alternative:2",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "alternative",
+                "identity": "comment/alternative:3",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit-nonzero/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit-nonzero/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit-nonzero/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit-nonzero/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit-nonzero/alternative:5",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit-nonzero/alternative:6",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit-nonzero/alternative:7",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit-nonzero/alternative:8",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit-nonzero/alternative:9",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit/alternative:10",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit/alternative:5",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit/alternative:6",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit/alternative:7",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit/alternative:8",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-digit/alternative:9",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-integer-literal/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "decimal-integer-literal/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "double-quoted-string/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "double-quoted-string/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-offset/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-offset/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-offset/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-offset/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-string-part/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-string-part/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-variable/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-variable/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-variable/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-variable/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-variable/alternative:5",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-variable/alternative:6",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-variable/alternative:7",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "encapsulated-variable/alternative:8",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "explicit-octal-integer-literal/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "explicit-octal-integer-literal/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "exponent-marker/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "exponent-marker/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "exponent-part/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "exponent-part/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "floating-literal/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "floating-literal/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "floating-literal/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "heredoc-string/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "heredoc-string/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "heredoc-string/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "heredoc-string/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "heredoc-string/alternative:5",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "heredoc-string/alternative:6",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "heredoc-string/alternative:7",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "heredoc-string/alternative:8",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:10",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:11",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:12",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:13",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:5",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:6",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:7",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:8",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-digit/alternative:9",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-integer-literal/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "hexadecimal-integer-literal/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "identifier-part/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "identifier-part/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "identifier-part/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "identifier-start-character/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "identifier-start-character/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "identifier-start/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "identifier-start/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "line-comment/alternative:1",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "alternative",
+                "identity": "line-comment/alternative:2",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "alternative",
+                "identity": "newline/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "newline/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "newline/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "nowdoc-string/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "nowdoc-string/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "nowdoc-string/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "nowdoc-string/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "nowdoc-string/alternative:5",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "nowdoc-string/alternative:6",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "numeric-string/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "numeric-string/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "numeric-string/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "numeric-string/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "octal-digit/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "octal-digit/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "octal-digit/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "octal-digit/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "octal-digit/alternative:5",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "octal-digit/alternative:6",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "octal-digit/alternative:7",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "octal-digit/alternative:8",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:1",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:10",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:11",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:12",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:13",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:14",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:15",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:16",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:17",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:18",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:19",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:20",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:21",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:22",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:23",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:24",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:25",
+                "classification": "unresolved",
+                "area": "source/lexical",
+                "reason": "The non-primitive path is an unmodified trait alias immediately before a semicolon. enum is then T_STRING, handled by identifier; the T_ENUM lookahead requires a following label-start byte. Earlier coverage incorrectly matched its identifier spelling as a keyword terminal."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:26",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:27",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:28",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:29",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:30",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:31",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:32",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:33",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:34",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:35",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:36",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:37",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:38",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:39",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:4",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:40",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:41",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:42",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:43",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:44",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:45",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:46",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:47",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:48",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:49",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:5",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:50",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:51",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:52",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:53",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:54",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:55",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:56",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:57",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:58",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:59",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:6",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:60",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:61",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:62",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:63",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:64",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:7",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:8",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "reserved-non-modifiers/alternative:9",
+                "classification": "meaningful-gap",
+                "area": "reserved-non-modifiers",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "semi-reserved-identifier/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "semi-reserved-identifier/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "semi-reserved-identifier/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "semi-reserved-identifier/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "semi-reserved-identifier/alternative:5",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "semi-reserved-identifier/alternative:6",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "semi-reserved-identifier/alternative:7",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "semi-reserved-identifier/alternative:8",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "semi-reserved-identifier/alternative:9",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "single-quoted-string-content/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "single-quoted-string-content/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "single-quoted-string/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "single-quoted-string/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "string-literal/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "string-literal/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "string-literal/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "string-literal/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "string-text/alternative:1",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "string-text/alternative:2",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "string-text/alternative:3",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "string-text/alternative:4",
+                "classification": "primitive-bypassed",
+                "area": "source/lexical",
+                "reason": "Token primitive replaces this body or cuts every source-file path to this lexical helper."
+            },
+            {
+                "kind": "alternative",
+                "identity": "whitespace-character/alternative:1",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "alternative",
+                "identity": "whitespace-character/alternative:2",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "alternative",
+                "identity": "whitespace-character/alternative:3",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            },
+            {
+                "kind": "alternative",
+                "identity": "whitespace-character/alternative:4",
+                "classification": "trivia-removed",
+                "area": "source/lexical",
+                "reason": "Lexer recognizes trivia; withoutTrivia() removes it before chart recognition."
+            }
+        ],
+        "Other source structure and names": [
+            {
+                "kind": "alternative",
+                "identity": "alt-elseif-list/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "alt-elseif-list",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "function-call/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "function-call",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "legacy-namespace-name/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "legacy-namespace-name",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "magic-constant/alternative:8",
+                "classification": "meaningful-gap",
+                "area": "magic-constant",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "namespace-definition/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "namespace-definition",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "new-variable/alternative:5",
+                "classification": "meaningful-gap",
+                "area": "new-variable",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "new-variable/alternative:6",
+                "classification": "meaningful-gap",
+                "area": "new-variable",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            }
+        ],
+        "Statements and control flow": [
+            {
+                "kind": "alternative",
+                "identity": "alternative-if-statement/alternative:4",
+                "classification": "meaningful-gap",
+                "area": "alternative-if-statement",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "closed-inner-statement-list/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "closed-inner-statement-list",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "foreach-variable/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "foreach-variable",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "matched-statement/alternative:4",
+                "classification": "meaningful-gap",
+                "area": "matched-statement",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "matched-statement/alternative:5",
+                "classification": "meaningful-gap",
+                "area": "matched-statement",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "matched-statement/alternative:6",
+                "classification": "meaningful-gap",
+                "area": "matched-statement",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "unmatched-if-statement/alternative:4",
+                "classification": "meaningful-gap",
+                "area": "unmatched-if-statement",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "unmatched-if-statement/alternative:5",
+                "classification": "meaningful-gap",
+                "area": "unmatched-if-statement",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "unmatched-statement/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "unmatched-statement",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "unmatched-statement/alternative:4",
+                "classification": "meaningful-gap",
+                "area": "unmatched-statement",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "unmatched-statement/alternative:5",
+                "classification": "meaningful-gap",
+                "area": "unmatched-statement",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            }
+        ],
+        "Declarations, types, members and attributes": [
+            {
+                "kind": "alternative",
+                "identity": "attributed-top-declaration/alternative:8",
+                "classification": "meaningful-gap",
+                "area": "attributed-top-declaration",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "class-constant-modifier/alternative:4",
+                "classification": "meaningful-gap",
+                "area": "class-constant-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "class-constant/alternative:4",
+                "classification": "meaningful-gap",
+                "area": "class-constant",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "class-modifier/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "class-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "class-name-reference/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "class-name-reference",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "function-declaration/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "function-declaration",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "inner-declaration/alternative:1",
+                "classification": "meaningful-gap",
+                "area": "inner-declaration",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "member-name/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "member-name",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "method-modifier/alternative:5",
+                "classification": "meaningful-gap",
+                "area": "method-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "method-modifier/alternative:6",
+                "classification": "meaningful-gap",
+                "area": "method-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "namespace-declaration-name/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "namespace-declaration-name",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "parameter-modifier/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "parameter-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "parameter-modifier/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "parameter-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "parameter-modifier/alternative:4",
+                "classification": "meaningful-gap",
+                "area": "parameter-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "parameter-modifier/alternative:5",
+                "classification": "meaningful-gap",
+                "area": "parameter-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "parameter-modifier/alternative:6",
+                "classification": "meaningful-gap",
+                "area": "parameter-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "parameter-modifier/alternative:8",
+                "classification": "meaningful-gap",
+                "area": "parameter-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "property-declaration/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "property-declaration",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "property-modifier/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "property-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "property-modifier/alternative:5",
+                "classification": "meaningful-gap",
+                "area": "property-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "set-visibility-modifier/alternative:1",
+                "classification": "meaningful-gap",
+                "area": "set-visibility-modifier",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "simple-type-without-static/alternative:10",
+                "classification": "meaningful-gap",
+                "area": "simple-type-without-static",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "simple-type-without-static/alternative:11",
+                "classification": "meaningful-gap",
+                "area": "simple-type-without-static",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "simple-type-without-static/alternative:15",
+                "classification": "meaningful-gap",
+                "area": "simple-type-without-static",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "simple-type-without-static/alternative:16",
+                "classification": "meaningful-gap",
+                "area": "simple-type-without-static",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "simple-type/alternative:11",
+                "classification": "meaningful-gap",
+                "area": "simple-type",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "simple-type/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "simple-type",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "simple-type/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "simple-type",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "simple-type/alternative:4",
+                "classification": "meaningful-gap",
+                "area": "simple-type",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "simple-type/alternative:6",
+                "classification": "meaningful-gap",
+                "area": "simple-type",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "simple-type/alternative:8",
+                "classification": "meaningful-gap",
+                "area": "simple-type",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "trait-alias/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "trait-alias",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "type-without-static/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "type-without-static",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            }
+        ],
+        "Expressions, prefix helpers and arguments": [
+            {
+                "kind": "alternative",
+                "identity": "closed-yield-arrow-expression/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "closed-yield-arrow-expression",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "closed-yield-arrow-prefix-context/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "closed-yield-arrow-prefix-context",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "closed-yield-include-expression/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "closed-yield-include-expression",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "closed-yield-include-prefix-context/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "closed-yield-include-prefix-context",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "closed-yield-logical-and-prefix-context/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "closed-yield-logical-and-prefix-context",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "closed-yield-logical-or-prefix-context/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "closed-yield-logical-or-prefix-context",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "closed-yield-logical-xor-prefix-context/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "closed-yield-logical-xor-prefix-context",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "closed-yield-print-prefix-context/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "closed-yield-print-prefix-context",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "closed-yield-yield-expression/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "closed-yield-yield-expression",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "concatenation-prefix-context/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "concatenation-prefix-context",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "constructor-argument-list/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "constructor-argument-list",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "equality-expression/alternative:6",
+                "classification": "meaningful-gap",
+                "area": "equality-expression",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "equality-prefix-context/alternative:8",
+                "classification": "meaningful-gap",
+                "area": "equality-prefix-context",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "instanceof-prefix-context/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "instanceof-prefix-context",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "pipe-prefix-context/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "pipe-prefix-context",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "postfix-expression/alternative:3",
+                "classification": "meaningful-gap",
+                "area": "postfix-expression",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "primary-expression/alternative:12",
+                "classification": "meaningful-gap",
+                "area": "primary-expression",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "primary-expression/alternative:13",
+                "classification": "meaningful-gap",
+                "area": "primary-expression",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "primary-expression/alternative:14",
+                "classification": "meaningful-gap",
+                "area": "primary-expression",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            },
+            {
+                "kind": "alternative",
+                "identity": "unprefixed-use-declaration/alternative:2",
+                "classification": "meaningful-gap",
+                "area": "unprefixed-use-declaration",
+                "reason": "Needs positive evidence or explicit investigation; never automatically suppressed."
+            }
+        ]
+    }
+}

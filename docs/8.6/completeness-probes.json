@@ -1,0 +1,66 @@
+{
+    "scope": "Lint only; no programs executed; inherited intentional restriction assessed without correction.",
+    "baselineFixture": "tests/fixtures/php/8.5/known-discrepancies/valid/boundary-hook-name-discarded.php",
+    "rows": [
+        {
+            "id": "inherited-discarded-hook",
+            "source": "<?php\r\nconst X = true ? 1 : static function() { class C { public int $x { frobnicate => 1; } } };\r\n",
+            "sha256": "fc462d3b26b3cb66bb4a87c6a6a23ef5ca7946627f4b04e79d7fbc17b7e8c1cc",
+            "versions": {
+                "8.5": {
+                    "structural": false,
+                    "lintExit": 0,
+                    "stdout": "No syntax errors detected in C:\\Data\\GitHub\\php-grammar/.audit/phase5a-probe-input.php\n",
+                    "stderr": ""
+                },
+                "8.6": {
+                    "structural": false,
+                    "lintExit": 0,
+                    "stdout": "No syntax errors detected in C:\\Data\\GitHub\\php-grammar/.audit/phase5a-probe-input.php\n",
+                    "stderr": ""
+                }
+            }
+        },
+        {
+            "id": "live-unknown-hook",
+            "source": "<?php class C { public int $p { unknown => 1; } }",
+            "sha256": "fa07e3c7595b097739de1d3174bf2110de600beaf21c635ec0012d8e28b60e70",
+            "versions": {
+                "8.5": {
+                    "structural": false,
+                    "lintExit": 255,
+                    "stdout": "\nFatal error: Unknown hook \"unknown\" for property C::$p, expected \"get\" or \"set\" in C:\\Data\\GitHub\\php-grammar/.audit/phase5a-probe-input.php on line 1\nStack trace:\n#0 {main}\nErrors parsing C:\\Data\\GitHub\\php-grammar/.audit/phase5a-probe-input.php\n",
+                    "stderr": ""
+                },
+                "8.6": {
+                    "structural": false,
+                    "lintExit": 255,
+                    "stdout": "\nFatal error: Unknown hook \"unknown\" for property C::$p, expected \"get\" or \"set\" in C:\\Data\\GitHub\\php-grammar/.audit/phase5a-probe-input.php on line 1\nStack trace:\n#0 {main}\nErrors parsing C:\\Data\\GitHub\\php-grammar/.audit/phase5a-probe-input.php\n",
+                    "stderr": ""
+                }
+            }
+        },
+        {
+            "id": "valid-hook",
+            "source": "<?php class C { public int $p { get => 1; } }",
+            "sha256": "9f687c4825100842f1da0fc7ca6591135955c54ce24b5657486e2c5c03f98d18",
+            "versions": {
+                "8.5": {
+                    "structural": true,
+                    "lintExit": 0,
+                    "stdout": "No syntax errors detected in C:\\Data\\GitHub\\php-grammar/.audit/phase5a-probe-input.php\n",
+                    "stderr": ""
+                },
+                "8.6": {
+                    "structural": true,
+                    "lintExit": 0,
+                    "stdout": "No syntax errors detected in C:\\Data\\GitHub\\php-grammar/.audit/phase5a-probe-input.php\n",
+                    "stderr": ""
+                }
+            }
+        }
+    ],
+    "reproduction": {
+        "driverSource": "<?php\ndeclare(strict_types=1);\nrequire getcwd().'/vendor/autoload.php';\n$m=PhpGrammar\\Php\\Conformance\\PhpGrammarMatcher::forRepositoryRoot(getcwd());\n$path='tests/fixtures/php/8.5/known-discrepancies/valid/boundary-hook-name-discarded.php';\n$sources=['inherited-discarded-hook'=>file_get_contents($path),'live-unknown-hook'=>'<?php class C { public int $p { unknown => 1; } }','valid-hook'=>'<?php class C { public int $p { get => 1; } }'];\n$rows=[];\nforeach($sources as$id=>$source){$temp='.audit/phase5a-probe-input.php';file_put_contents($temp,$source);$row=['id'=>$id,'source'=>$source,'sha256'=>hash('sha256',$source)];foreach(['8.5'=>'php85','8.6'=>'php86']as$v=>$dir){$pipes=[];$proc=proc_open([getcwd().\"/.audit/$dir/php.exe\",'-n','-d','short_open_tag=1','-l',getcwd().'/'.$temp],[0=>['pipe','r'],1=>['pipe','w'],2=>['pipe','w']],$pipes);fclose($pipes[0]);$out=stream_get_contents($pipes[1]);$err=stream_get_contents($pipes[2]);fclose($pipes[1]);fclose($pipes[2]);$exit=proc_close($proc);$row['versions'][$v]=['structural'=>$m->matches($v,$source)->matched,'lintExit'=>$exit,'stdout'=>$out,'stderr'=>$err];}$rows[]=$row;}unlink($temp);\n$e=['scope'=>'Lint only; no programs executed; inherited intentional restriction assessed without correction.','baselineFixture'=>$path,'rows'=>$rows,'reproduction'=>['driverSource'=>file_get_contents(__FILE__)]];\nfile_put_contents('docs/8.6/completeness-probes.json',json_encode($e,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_THROW_ON_ERROR).\"\\n\");echo json_encode($rows,JSON_PRETTY_PRINT).\"\\n\";\n"
+    }
+}

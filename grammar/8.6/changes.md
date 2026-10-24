@@ -108,9 +108,10 @@ Evidence: `compile_errors_001.phpt` through `compile_errors_006.phpt`,
 `constexpr_001.phpt` through `constexpr_008.phpt`, and the named compiler functions.
 Local [contextual negatives](../../tests/fixtures/php/8.6/contextual-invalid)
 cover ordering, unpacking, constructors, nullsafe, attributes, names, variables,
-and constant traversal; discarded repairs are in the valid corpus. Parent-hook
-specific fixtures and broader optimization/constant-evaluation interaction
-coverage remain explicit obligations beyond the tested matrix.
+and constant traversal; discarded repairs are in the valid corpus. Phase 5B
+adds parent-set-hook PFA/FCC rejection, an ordinary-call repair, and a
+discarded-closure control. Parent-get-hook variants and broader optimization/
+constant-evaluation interactions remain obligations beyond that bounded matrix.
 
 PHP86-002 is explanatory: `?` creates a required parameter, whereas `...`
 preserves applicable optionality (`zend_partial.c`, `optional_placeholder.phpt`).
@@ -221,6 +222,42 @@ evidence, not retroactive conformance results.
 
 ## 9. Conformance and regression evidence
 
+Phase 5D adds informative scope clarifications in the specification's Writable
+variables and destructuring and Ordinary compilation versus constant folding
+sections. PHP86-014 includes assignment-derived property, compound, increment,
+unset and reference-binding contexts; lint success and execution failure or
+success do not settle intended validity. PHP86-015's statement/initializer
+examples do not define universal call-argument traversal. Builtin specialization,
+array evaluation and PFA contexts retain their documented boundaries. These are
+explanatory limitations, not new syntax or normative permissions/prohibitions.
+See [correctness remediation](../../docs/8.6/correctness-remediation.md) and the
+historical [Phase 5C evidence](../../docs/8.6/compiler-contextual-reconciliation.md).
+The inherited get/set-only hook restriction and its explicit discarded-declaration
+divergence remain unchanged. PHP86-013/014/015 remain unresolved; the five existing
+PHP86-001 production changes, fixtures and source pins are preserved.
+
+Phase 5E adds source-backed yield/prefix, statement/declaration, scanner,
+contextual and version-boundary evidence without changing EBNF or normative
+specification clauses. The [final coverage expansion report](../../docs/8.6/final-coverage-expansion.md)
+records exact alternative witnesses, parent-get-hook callable rejection and
+ordinary-call control, 20 additional scanner entries, and six added acceptance
+boundaries. Increased coverage is not a new language change or certification;
+PHP86-013/014/015 remain open and PHP 8.6 remains draft.
+
+Phase 5B expands finite conformance evidence without changing EBNF productions,
+lexer behavior, or normative specification clauses. The
+[coverage expansion report](../../docs/8.6/coverage-expansion.md) records common
+syntax positive/negative pairs, additional PHP86-001/003–007 combinations,
+scanner witnesses, and stage-specific boundaries. The
+[case map](../../tests/fixtures/php/8.6/coverage-cases.json) identifies exact
+source families, fixture hashes, selected chart alternatives, paired expectations,
+and validation stages. Parent-set-hook PFA and trailing-comma conversion remain
+compiler rejections; their discarded-closure control is accepted by RC4.
+Diagnostic boundaries remain accepted in both versions and are recorded
+separately from acceptance/removal metadata. The inherited discarded unknown-hook
+restriction remains unchanged and explicitly tested as a known discrepancy.
+PHP86-013/014/015 remain open; this evidence is not certification.
+
 Phase 4B integrates explicit version selection, shared scanner logic with an
 independent 8.6 configuration, stage-aware boundary evidence, and PHP change
 traceability. See [draft integration](../../docs/8.6/draft-integration.md) and
@@ -272,7 +309,7 @@ does not alter the earlier PHP86-001 structural evidence or certify all contextu
 combinations, delayed inheritance graphs, or optimizer profiles.
 
 Exact-pin executable provenance, runtime callable/signature behavior, all
-optimizer profiles and interactions, parent-hook-specific regression fixtures,
+optimizer profiles and interactions, remaining parent-hook runtime combinations,
 complete initializer-context combinations, complete contextual enforcement, and
 final-release reconciliation remain outstanding. Phase 4B supplies explicit
 lexer configuration, public manifest integration, bounded change traceability,
