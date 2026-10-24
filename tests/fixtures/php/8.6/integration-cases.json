@@ -1,0 +1,190 @@
+{
+    "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+    "cases": [
+        {
+            "id": "declarations",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-declarations.php",
+            "sha256": "823947718a2180180d93c7ad41800016e681f4f0227c10a5967cf5de06890f1c",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "precedence",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-precedence.php",
+            "sha256": "55ed7b4107bb5e2b2d517d0ea0c5fca436a90a3f315ce1e5a56861f1010159fd",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "types",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-types.php",
+            "sha256": "9667e89b9cb05f8b2491ce3fd852f8969f7667f7d95bc34745d83695e7a710c0",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "hooks",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-hooks.php",
+            "sha256": "1e2b88caa662162b55e7d17aaaa87f01c7744875b751a834d219edbe4b533f9a",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "namespaces",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-namespaces.php",
+            "sha256": "0608b4e6f87fab9ea69f9b4987a6287be0942208c7ff2708a94caa846581cc9a",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "attributes",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-attributes.php",
+            "sha256": "bf81cb9be0ee80f67b477b4f2b6ceedb51d3efb2528dd14c63443d39a67d107d",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "strings",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-strings.php",
+            "sha256": "078edfb4397ea0244c4faac81eda6cfeab88332525818e8bd8afd997e4d3cd86",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "heredoc",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-heredoc.php",
+            "sha256": "a44528f5d20f21e09aae207863ee675a89ee4177d94d227d7bcb365f592f8544",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "nowdoc",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-nowdoc.php",
+            "sha256": "5eb9e531bbab893365e03bd2f0d131583130943528eadbc86a5df067d45aad13",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "callable",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-callable.php",
+            "sha256": "c06d8decbdc62fa323676aa3b70a0064450225dbe69ba382ea832972da4b5db3",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "folding",
+            "fixture": "tests/fixtures/php/8.6/valid/integration-folding.php",
+            "sha256": "842bba05c41d2f4385edffd08bae808fe598d66f5324eed9d7d6f346af0beb9a",
+            "accepted": true,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "type-missing",
+            "fixture": "tests/fixtures/php/8.6/invalid/integration-type-missing.php",
+            "sha256": "b729bc2b09922a010eb08cae6031e23aeab4018cb7cd826661efe33194668440",
+            "accepted": false,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "argument-missing",
+            "fixture": "tests/fixtures/php/8.6/invalid/integration-argument-missing.php",
+            "sha256": "3caebba9461e93fddf6cf24840121710b2ba359efdbfc9a48aaed69b1d490cdd",
+            "accepted": false,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "delimiter",
+            "fixture": "tests/fixtures/php/8.6/invalid/integration-delimiter.php",
+            "sha256": "261e7c188a067c145f3b5c5e6566552f57658a5d5da4c52e05666be3213e2cc3",
+            "accepted": false,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "attribute-empty",
+            "fixture": "tests/fixtures/php/8.6/invalid/integration-attribute-empty.php",
+            "sha256": "70dc355173765abf5693e9c38d7a7d2b0c1d0c66750142b61c1e137482141963",
+            "accepted": false,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        },
+        {
+            "id": "expression-missing",
+            "fixture": "tests/fixtures/php/8.6/invalid/integration-expression-missing.php",
+            "sha256": "689623a5e4e99c41692e6ee8742f0191c51608b651251ca454a475215e47c014",
+            "accepted": false,
+            "sourceReference": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y",
+            "purpose": "Unchanged syntax compatibility; paired matcher/lint, not binding or whole-language proof."
+        }
+    ],
+    "lexical": [
+        {
+            "id": "pfa",
+            "source": "<?php f(? /* gap */, name: ?, ...);",
+            "shortOpenTag": true
+        },
+        {
+            "id": "operators",
+            "source": "<?php $a ?? $b; $o?->m();",
+            "shortOpenTag": true
+        },
+        {
+            "id": "names",
+            "source": "<?php function let() {} function is() {} function readonly() {}",
+            "shortOpenTag": true
+        },
+        {
+            "id": "property",
+            "source": "<?php $o->readonly; $o->let; $o->is;",
+            "shortOpenTag": true
+        },
+        {
+            "id": "short-on",
+            "source": "<? echo 1; ?>html",
+            "shortOpenTag": true
+        },
+        {
+            "id": "short-off",
+            "source": "<? echo 1; ?>html",
+            "shortOpenTag": false
+        },
+        {
+            "id": "echo-tag",
+            "source": "<?= 1 ?>",
+            "shortOpenTag": false
+        },
+        {
+            "id": "heredoc",
+            "source": "<?php\n$a=<<<TXT\n  hello\n  TXT;\n",
+            "shortOpenTag": true
+        },
+        {
+            "id": "nowdoc",
+            "source": "<?php\n$a=<<<'TXT'\n  hello\n  TXT;\n",
+            "shortOpenTag": true
+        },
+        {
+            "id": "interpolation",
+            "source": "<?php $s = \"{$a[0]}\";",
+            "shortOpenTag": true
+        },
+        {
+            "id": "comment",
+            "source": "<?php /* x */ echo 1; // end\n",
+            "shortOpenTag": true
+        }
+    ]
+}

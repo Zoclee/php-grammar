@@ -2,7 +2,7 @@
 
 ## 1. Overview and comparison baseline
 
-**Provisional, incomplete working document and unregistered draft.** Phase 3B
+**Registered draft; provisional and incomplete working document.** Phase 3B
 implements PHP86-001 partial function application (PFA) and callable
 trailing commas. Phase 3C adds the contextual specification changes PHP86-003
 through PHP86-007 below, with no further EBNF change or new contextual validator.
@@ -73,9 +73,11 @@ No new token, keyword, or scanner state is required. Existing `?` and
 `T_ELLIPSIS` spellings distinguish placeholders from `??` and from unpacking
 `...expression`. Scanner source is pinned in the
 [PFA source lock](../../tools/8.6/pfa-source-lock.json).
-The focused tests use the existing PHP 8.5 repository lexer through an in-memory
-test manifest, with comments between tokens and a `??` negative. This is bounded
-token compatibility, not a registered or independently certified 8.6 lexer.
+The original Phase 3B tests used the PHP 8.5 lexer through an in-memory test
+manifest, with comments between tokens and a `??` negative. Phase 4B uses the
+registered 8.6 configuration and verifies both tag profiles and token boundaries.
+Shared scanner logic retains the reviewed token rules; this is bounded lexical
+evidence, not independent whole-scanner certification.
 
 ## 6. Contextual and compiler-enforced restrictions
 
@@ -196,8 +198,9 @@ The focused matrix checks both grammars, including existing calls, unpacking,
 `(...)`, unary clone, and comma clone controls. Six
 [version-boundary records](../../tests/fixtures/version-boundaries/8.6) cover
 basic, named, mixed, clone, constant, and callable-trailing-comma introductions.
-Full PHP 8.6 historical-syntax conformance and public discovery integration are
-deferred; the manifest and default version remain unchanged.
+Full PHP 8.6 historical-syntax conformance remains deferred. Phase 4B registers
+the draft; PHP 8.5 remains the recommended stable version. The numeric
+`latestVersion()` API includes drafts and therefore returns 8.6.
 
 ## 8. Authoritative source references
 
@@ -218,13 +221,21 @@ evidence, not retroactive conformance results.
 
 ## 9. Conformance and regression evidence
 
+Phase 4B integrates explicit version selection, shared scanner logic with an
+independent 8.6 configuration, stage-aware boundary evidence, and PHP change
+traceability. See [draft integration](../../docs/8.6/draft-integration.md) and
+[the reviewed change map](../../tools/8.6/change-map.json). These checks establish
+functional draft integration, not discovery closure or release certification.
+The Phase 3 test-local configuration descriptions below record their original
+runs; the current focused tests use the registered package and its 8.6 lexer.
+
 The [case manifest](../../tests/fixtures/php/8.6/pfa-cases.json) maps 57 focused
 fixtures to parser/compiler or PHPT evidence, separate structural expectations
 for both versions, lint expectations, and RC4 diagnostics where applicable.
 [Focused PHPUnit tests](../../tests/Php/Conformance/Php86PartialApplicationTest.php)
 exercise the production changes, both grammar versions, list disjointness, clone
-ambiguity, tokens, parity, and boundary metadata. The test-local manifest uses
-the existing public configuration API and never alters public version discovery.
+ambiguity, tokens, parity, and boundary metadata. Phase 3B used a test-local
+manifest; Phase 4B exercises the registered package through the public API.
 
 Run `php tools/8.6/pfa-check.php --php85=<executable> --php86=<executable>
 --sources=<RC4-tree> --report=<output.json>` for traceability, source hashes, and
@@ -262,11 +273,11 @@ combinations, delayed inheritance graphs, or optimizer profiles.
 
 Exact-pin executable provenance, runtime callable/signature behavior, all
 optimizer profiles and interactions, parent-hook-specific regression fixtures,
-complete initializer-context combinations, independent lexer/contextual adapter,
-public manifest integration, full change-traceability contract, and final-release
-reconciliation remain outstanding. The existing directory/manifest consistency
-test rejects an unregistered grammar directory. The existing empty-boundary
-repository assumption also fails once the new required boundary records exist;
-neither test is weakened. Inherited certification evidence is not refreshed.
+complete initializer-context combinations, complete contextual enforcement, and
+final-release reconciliation remain outstanding. Phase 4B supplies explicit
+lexer configuration, public manifest integration, bounded change traceability,
+and stage-aware boundary evidence. It resolves the prior directory/manifest and
+empty-boundary test failures while retaining their intended invariants.
+Inherited certification evidence is not refreshed.
 The draft is available for further independently verified Gate B work, not for
-release certification. No subsequent phase is started.
+release certification. No completeness or release-certification phase is started.

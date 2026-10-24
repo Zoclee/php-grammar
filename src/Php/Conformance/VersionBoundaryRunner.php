@@ -19,6 +19,9 @@ final readonly class VersionBoundaryRunner
      */
     public function evaluate(VersionBoundaryCase $case): array
     {
+        if ($case->validationStage !== 'structural') {
+            throw new ConformanceException('Boundary requires ' . $case->validationStage . ' evidence; structural matching is insufficient.');
+        }
         $results = [];
         foreach ($this->manifest->versions() as $version) {
             $results[$version] = $this->matcher->matches($version, $case->source)->matched;

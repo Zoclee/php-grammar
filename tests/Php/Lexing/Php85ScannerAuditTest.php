@@ -82,8 +82,21 @@ final class Php85ScannerAuditTest extends TestCase
     {
         $root = dirname(__DIR__, 3);
         $data = Php85LexicalAudit::report($root);
-        self::assertSame(json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n",
-            file_get_contents($root . '/docs/8.5/phase5-lexical-evidence.json'));
+        $historical = file_get_contents($root . '/docs/8.5/phase5-lexical-evidence.json');
+        $current = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
+        // Preserve the historical ledger; lock the exact reviewed shared-code delta.
+        // Every other input, mapping, family and disposition must remain identical.
+        $review = json_decode(file_get_contents($root . '/docs/8.6/shared-lexer-regression.json'), true, flags: JSON_THROW_ON_ERROR);
+        self::assertSame($review['historicalLedgerSha256'], hash('sha256', $historical));
+        self::assertSame($review['currentLedgerSha256'], hash('sha256', $current));
+        $expected = json_decode($historical, true, flags: JSON_THROW_ON_ERROR);
+        self::assertSame(['src/Php/Lexing/PhpVersion.php'], array_keys($review['inputChanges']));
+        foreach ($review['inputChanges'] as $path => $change) {
+            self::assertSame($change['before'], $expected['input_hashes'][$path]);
+            self::assertSame($change['after'], hash_file('sha256', $root . '/' . $path));
+            $expected['input_hashes'][$path] = $change['after'];
+        }
+        self::assertSame($expected, $data);
         self::assertCount(190, $data['rules']);
         $counts = [];
         foreach ($data['grammar_bypasses'] as $entry) {

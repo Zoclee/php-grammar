@@ -1,0 +1,18 @@
+{
+    "scope": "Six structural and seven lint/declaration-link boundaries; metadata paths are repository-relative.",
+    "files": {
+        "tests/fixtures/version-boundaries/8.6/pfa-basic.json": "f35147344f71ee9c9b25fb97a56eda01679867938e901077708b5085f6d48667",
+        "tests/fixtures/version-boundaries/8.6/pfa-clone.json": "38c97daf91064b6e09c72ccae76ae98ea75a8f322692d2c161f022fcd6016db2",
+        "tests/fixtures/version-boundaries/8.6/pfa-constant.json": "f657c6cf817ed0b175c3e14cb1155ea07f081ef681177e5dad4e75a89f053561",
+        "tests/fixtures/version-boundaries/8.6/pfa-fcc-trailing.json": "9ff43c54c35fdb9253913cf10e0cfd6021165c96a855360ab39df6ff545f71ea",
+        "tests/fixtures/version-boundaries/8.6/pfa-mixed.json": "16787fe876f846bf0bf40fb2208a8b72c9ec3686b612f9adc281266a5ad61294",
+        "tests/fixtures/version-boundaries/8.6/pfa-named.json": "4b9e0f58b85971d1a540e08e32bebae152d71be1d9ece513daba4b7ba4157a41",
+        "tests/fixtures/version-boundaries/contextual-8.6/enum-debug.json": "6b7c4ff42edca5de83a33e0af357fae861c205177d11692321d0cd183414ff20",
+        "tests/fixtures/version-boundaries/contextual-8.6/nullsafe-return.json": "f1bf370e31739dda400b628da628b669997087d316669894335b5baf3cfbe939",
+        "tests/fixtures/version-boundaries/contextual-8.6/nullsafe-yield.json": "300a63585f4233c198ba75801fcc8db22efea36e82ed6a23ae6c04c7057a6082",
+        "tests/fixtures/version-boundaries/contextual-8.6/object-property.json": "cf35480dc94a261aaa42e2d560c8134ad1b52fb5230ac9fce4c12c15c868aafc",
+        "tests/fixtures/version-boundaries/contextual-8.6/override-enum.json": "ad123e759f93db398cfc7d4405634ccfd7894b3295e635f194f290a50bd70983",
+        "tests/fixtures/version-boundaries/contextual-8.6/override-parent.json": "7350a2adc8baac53d6ddb963a0763530571ed7882ba6fab73d353804a3cb1a11",
+        "tests/fixtures/version-boundaries/contextual-8.6/readonly-default.json": "989ea2bf0be5366154c54b8eb59e767beb5eb69a23edd972a9b81811b0d68ea5"
+    }
+}

@@ -18,6 +18,18 @@ final readonly class PhpVersion
 
     public static function php85(): self
     {
+        return new self('8.5', self::keywords());
+    }
+
+    /** RC4 retains the keyword/token contract; deprecations do not reserve names. */
+    public static function php86(): self
+    {
+        return new self('8.6', self::keywords());
+    }
+
+    /** @return array<string, true> Shared spellings, independent version identities. */
+    private static function keywords(): array
+    {
         $keywords = [
             '__halt_compiler', 'abstract', 'and', 'array', 'as', 'break',
             'callable', 'case', 'catch', 'class', 'clone', 'const',
@@ -36,13 +48,14 @@ final readonly class PhpVersion
             '__function__', '__property__', '__namespace__',
         ];
 
-        return new self('8.5', array_fill_keys($keywords, true));
+        return array_fill_keys($keywords, true);
     }
 
     public static function forVersion(string $version): self
     {
         return match ($version) {
             '8.5' => self::php85(),
+            '8.6' => self::php86(),
             default => throw new LexerException(sprintf('No PHP lexical configuration exists for version "%s".', $version)),
         };
     }

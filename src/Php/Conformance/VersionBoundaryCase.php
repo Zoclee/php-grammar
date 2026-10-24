@@ -12,7 +12,12 @@ final readonly class VersionBoundaryCase
         public ?string $lastSupportedVersion,
         public string $source,
         public ?string $reference = null,
+        public string $validationStage = 'structural',
+        public ?string $finding = null,
     ) {
+        if (!in_array($validationStage, ['structural', 'lint', 'declaration-link'], true)) {
+            throw new ConformanceException('Unsupported boundary validation stage: ' . $validationStage);
+        }
     }
 
     public function shouldAccept(string $version): bool
@@ -62,6 +67,11 @@ final readonly class VersionBoundaryCase
             throw new ConformanceException('Boundary fixture reference must be a string when present.');
         }
 
-        return new self($data['name'], $data['firstSupportedVersion'], $lastSupportedVersion, $source, $reference);
+        $stage = $data['validationStage'] ?? 'structural';
+        $finding = $data['finding'] ?? null;
+        if (!is_string($stage) || ($finding !== null && !is_string($finding))) {
+            throw new ConformanceException('Boundary validationStage and finding must be strings.');
+        }
+        return new self($data['name'], $data['firstSupportedVersion'], $lastSupportedVersion, $source, $reference, $stage, $finding);
     }
 }

@@ -2,8 +2,11 @@
 
 This contract covers the packaged artifacts and interfaces below. PHP language
 versions and package releases are independent; see [versioning](versioning.md).
-Select an explicit language version for reproducible results. PHP 8.5 is currently
-the only advertised version. Every version is a complete standalone grammar.
+Select an explicit language version for reproducible results. PHP 8.5 remains
+the recommended stable version; PHP 8.6 is an incomplete RC4 draft. Both artifacts
+load standalone. Draft structural matching does not certify contextual validity;
+PHP86-013/014/015 remain open. Consult the version's `metadata.changes` and
+`metadata.integration` for scope, provenance, and results.
 
 ## Artifacts and discovery
 
@@ -151,6 +154,11 @@ or loading failures emit a diagnostic to stderr and exit 1. `versions`, `rules`,
 serializes the current `Production` tree for inspection; generic JSON AST node
 serialization is semi-public, so durable tooling should use the PHP node API or
 canonical EBNF. Rule lookup also parses/validates the selected grammar.
+
+`versions` also returns additive `sourceProfile`, `phpSource`, and `metadata`
+fields alongside version/status/artifact paths. PHP 8.6 is explicitly `draft`.
+Use `metadata.changes` for its change document and `metadata.integration` for
+bounded validation results; evidence is descriptive, not a runtime dependency.
 
 Maintainer commands remain separate: `composer manifest:check`,
 `php tools/8.5/generate-expressions.php --check`,

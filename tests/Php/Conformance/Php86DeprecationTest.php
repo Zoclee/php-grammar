@@ -19,14 +19,7 @@ final class Php86DeprecationTest extends TestCase
     }
     #[DataProvider('cases')]
     public function testDeprecationDoesNotRemoveAcceptedStructure(array $case): void {
-        $data = self::json('php-grammar.json');
-        $data['versions'][] = [
-            'version'=>'8.6', 'rootProduction'=>'source-file', 'grammar'=>'grammar/8.6/php.ebnf',
-            'documentation'=>'grammar/8.6/php.md', 'conformanceFixtures'=>'tests/fixtures/php/8.6',
-            'lexer'=>'8.5', 'status'=>'draft', 'sourceProfile'=>'Test-local structural matching only.',
-            'phpSource'=>['branch'=>'PHP-8.6', 'commit'=>'f23b4c222cebe33be93ee8ecaaa14390c5507a08'],
-        ];
-        $matcher = PhpGrammarMatcher::forManifest(RepositoryManifest::fromArray(self::root(), $data));
+        $matcher = PhpGrammarMatcher::forRepositoryRoot(self::root());
         foreach (['8.5', '8.6'] as $version) {
             self::assertSame($case['accepted'], $matcher->matches($version, $case['source'])->matched, $case['id'].' '.$version);
         }

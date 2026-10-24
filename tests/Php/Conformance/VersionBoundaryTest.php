@@ -28,7 +28,10 @@ final class VersionBoundaryTest extends TestCase
 
     public function testBoundaryRunnerHandlesSingleVersionRepository(): void
     {
-        $manifest = RepositoryManifest::fromRepositoryRoot(dirname(__DIR__, 3));
+        $root = dirname(__DIR__, 3);
+        $data = json_decode(file_get_contents($root . '/php-grammar.json'), true);
+        $data['versions'] = array_values(array_filter($data['versions'], static fn ($p) => $p['version'] === '8.5'));
+        $manifest = RepositoryManifest::fromArray($root, $data);
         $runner = new VersionBoundaryRunner($manifest, PhpGrammarMatcher::forManifest($manifest));
         $case = new VersionBoundaryCase('current-valid-source', '8.5', null, '<?php echo 1;');
 
@@ -38,11 +41,49 @@ final class VersionBoundaryTest extends TestCase
 
     public function testBoundaryFixtureRepositoryAllowsEmptyDirectory(): void
     {
-        $cases = (new VersionBoundaryFixtureRepository(
-            dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'fixtures' . DIRECTORY_SEPARATOR . 'version-boundaries',
-        ))->load();
+        $directory = $this->temporaryDirectory();
+        try {
+            self::assertSame([], (new VersionBoundaryFixtureRepository($directory))->load());
+        } finally {
+            rmdir($directory);
+        }
+    }
 
-        self::assertSame([], $cases);
+    public function testAbsentBoundaryDirectoryIsEmpty(): void
+    {
+        self::assertSame([], (new VersionBoundaryFixtureRepository(sys_get_temp_dir() . '/missing-' . bin2hex(random_bytes(8))))->load());
+    }
+
+    public function testRepositoryBoundariesRetainStagesAndStructuralExpectations(): void
+    {
+        $root = dirname(__DIR__, 3);
+        $manifest = RepositoryManifest::fromRepositoryRoot($root);
+        $runner = new VersionBoundaryRunner($manifest, PhpGrammarMatcher::forManifest($manifest));
+        $cases = (new VersionBoundaryFixtureRepository($root . '/tests/fixtures/version-boundaries'))->load();
+        self::assertCount(13, $cases);
+        $stages = [];
+        foreach ($cases as $case) {
+            $stages[$case->validationStage] = ($stages[$case->validationStage] ?? 0) + 1;
+            self::assertStringContainsString('f23b4c222cebe33be93ee8ecaaa14390c5507a08', $case->reference);
+            if ($case->validationStage === 'structural') {
+                self::assertSame($runner->expected($case), $runner->evaluate($case));
+            } else {
+                self::assertNotNull($case->finding);
+                try {
+                    $runner->evaluate($case);
+                    self::fail('Contextual boundary must not use structural verdicts');
+                } catch (ConformanceException $error) {
+                    self::assertStringContainsString($case->validationStage, $error->getMessage());
+                }
+            }
+        }
+        self::assertSame(['structural' => 6, 'lint' => 4, 'declaration-link' => 3], $stages);
+    }
+
+    public function testUnknownStageIsRejected(): void
+    {
+        $this->expectException(ConformanceException::class);
+        VersionBoundaryCase::fromArray(['name'=>'bad', 'firstSupportedVersion'=>'8.6', 'source'=>'', 'validationStage'=>'runtime'], '');
     }
 
     public function testBoundaryFixtureCanLoadInlineSourceMetadata(): void

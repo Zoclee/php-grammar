@@ -15,15 +15,9 @@ final class Php86ContextualChangesTest extends TestCase
     private static function json(string $path): array {
         return json_decode(file_get_contents(self::root().'/'.$path),true,512,JSON_THROW_ON_ERROR);
     }
-    private static function matcher(): PhpGrammarMatcher {
-        $data=self::json('php-grammar.json');
-        $data['versions'][]=[
-            'version'=>'8.6','rootProduction'=>'source-file','grammar'=>'grammar/8.6/php.ebnf',
-            'documentation'=>'grammar/8.6/php.md','conformanceFixtures'=>'tests/fixtures/php/8.6',
-            'lexer'=>'8.5','status'=>'draft','sourceProfile'=>'Test-local shared token profile; structural matching only.',
-            'phpSource'=>['branch'=>'PHP-8.6','commit'=>'f23b4c222cebe33be93ee8ecaaa14390c5507a08'],
-        ];
-        return PhpGrammarMatcher::forManifest(RepositoryManifest::fromArray(self::root(),$data));
+    private static function matcher(): PhpGrammarMatcher
+    {
+        return PhpGrammarMatcher::forRepositoryRoot(self::root());
     }
     public static function cases(): iterable {
         foreach(self::json('tests/fixtures/php/8.6/context-cases.json')as $case)yield $case['id']=>[$case];

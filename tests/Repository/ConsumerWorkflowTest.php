@@ -22,10 +22,11 @@ final class ConsumerWorkflowTest extends TestCase
     public function testDiscoverLoadInspectAndMatch(): void
     {
         $manifest = $this->manifest();
-        self::assertSame(['8.5'], $manifest->versions());
+        self::assertSame(['8.5', '8.6'], $manifest->versions());
         self::assertTrue($manifest->hasVersion('8.5'));
-        self::assertFalse($manifest->hasVersion('8.6'));
-        self::assertSame('8.5', $manifest->latestVersion());
+        self::assertTrue($manifest->hasVersion('8.6'));
+        self::assertSame('draft', $manifest->package('8.6')->status);
+        self::assertSame('8.6', $manifest->latestVersion());
         $package = $manifest->package('8.5');
         self::assertSame('stable', $package->status);
         self::assertFileExists($manifest->absolutePath($package->grammarPath));
@@ -67,7 +68,7 @@ final class ConsumerWorkflowTest extends TestCase
     public function testUnknownVersionDiagnostic(): void
     {
         $this->expectException(RepositoryManifestException::class);
-        $this->expectExceptionMessage('Unsupported grammar version "9.9". Available versions: 8.5. Use versions() to discover packages.');
+        $this->expectExceptionMessage('Unsupported grammar version "9.9". Available versions: 8.5, 8.6. Use versions() to discover packages.');
         (new GrammarRepository($this->manifest()))->load('9.9');
     }
 

@@ -16,20 +16,9 @@ final class Php86PartialApplicationTest extends TestCase
 {
     private static function root(): string { return dirname(__DIR__, 3); }
 
-    /** Test-local configuration only: no public 8.6 discovery or lexer registration.
-     * The unchanged 8.5 token adapter is used for this bounded PFA corpus.
-     */
     private static function matcher(): PhpGrammarMatcher
     {
-        $data = json_decode(file_get_contents(self::root() . '/php-grammar.json'), true, 512, JSON_THROW_ON_ERROR);
-        $data['versions'][] = [
-            'version' => '8.6', 'rootProduction' => 'source-file',
-            'grammar' => 'grammar/8.6/php.ebnf', 'documentation' => 'grammar/8.6/php.md',
-            'conformanceFixtures' => 'tests/fixtures/php/8.6', 'lexer' => '8.5',
-            'status' => 'draft', 'sourceProfile' => 'PFA structural test corpus only; shared token adapter.',
-            'phpSource' => ['branch' => 'PHP-8.6', 'commit' => 'f23b4c222cebe33be93ee8ecaaa14390c5507a08'],
-        ];
-        return PhpGrammarMatcher::forManifest(RepositoryManifest::fromArray(self::root(), $data));
+        return PhpGrammarMatcher::forRepositoryRoot(self::root());
     }
 
     #[DataProvider('cases')]
@@ -86,10 +75,10 @@ final class Php86PartialApplicationTest extends TestCase
 
     public function testExistingTokensDistinguishPlaceholderAndUnpacking(): void
     {
-        $tokens = Lexer::forVersion('8.5')->tokenize('<?php f(? /* boundary */, ..., ...$args, a: ?);')->withoutTrivia()->all();
+        $tokens = Lexer::forVersion('8.6')->tokenize('<?php f(? /* boundary */, ..., ...$args, a: ?);')->withoutTrivia()->all();
         $lexemes = array_map(static fn($token) => $token->lexeme, $tokens);
         self::assertSame(['<?php', 'f', '(', '?', ',', '...', ',', '...', '$args', ',', 'a', ':', '?', ')', ';'], $lexemes);
-        $coalesce = Lexer::forVersion('8.5')->tokenize('<?php f(??);')->withoutTrivia()->all();
+        $coalesce = Lexer::forVersion('8.6')->tokenize('<?php f(??);')->withoutTrivia()->all();
         self::assertContains('??', array_map(static fn($token) => $token->lexeme, $coalesce));
     }
 

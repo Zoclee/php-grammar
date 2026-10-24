@@ -14,7 +14,7 @@ final class RepositoryManifestTest extends TestCase
     {
         $manifest = RepositoryManifest::fromRepositoryRoot(dirname(__DIR__, 2));
 
-        self::assertSame(['8.5'], $manifest->versions());
+        self::assertSame(['8.5', '8.6'], $manifest->versions());
         self::assertSame([
             'code-unit', 'non-ascii-code-unit', 'html-code-unit', 'line-comment-code-unit',
             'block-comment-code-unit', 'single-quoted-code-unit', 'encapsed-code-unit', 'nowdoc-code-unit',

@@ -39,4 +39,21 @@ final class ConsumerCliTest extends TestCase
             self::assertNotSame('', $stderr);
         }
     }
+
+    public function testDraftNavigationAndMetadata(): void
+    {
+        [$exit, $stdout, $stderr] = $this->runCli(['versions']);
+        self::assertSame(0, $exit, $stderr);
+        $versions = json_decode($stdout, true, flags: JSON_THROW_ON_ERROR);
+        self::assertSame(['stable','draft'], array_column($versions, 'status'));
+        self::assertSame('f23b4c222cebe33be93ee8ecaaa14390c5507a08', $versions[1]['phpSource']['commit']);
+        self::assertSame('grammar/8.6/changes.md', $versions[1]['metadata']['changes']);
+        foreach ([['rules','8.6'],['rule','8.6','argument'],['refs','8.6','argument'],['sections','8.6'],['section','8.6','arguments']] as $args) {
+            [$exit,$stdout,$stderr] = $this->runCli($args);
+            self::assertSame(0,$exit,$stderr);
+            self::assertIsArray(json_decode($stdout,true,flags: JSON_THROW_ON_ERROR));
+        }
+        [$exit,$stdout,$stderr] = $this->runCli(['rule','8.6','missing']);
+        self::assertSame(1,$exit); self::assertSame('',$stdout); self::assertNotSame('',$stderr);
+    }
 }

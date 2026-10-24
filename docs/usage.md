@@ -4,6 +4,14 @@ The project is not yet published as a Composer package. Use a local checkout
 to access the [canonical EBNF](../grammar/8.5/php.ebnf) and
 [matching specification](../grammar/8.5/php.md) directly.
 
+PHP 8.5 remains the recommended stable selection. PHP 8.6 is an incomplete RC4
+draft, available through `load('8.6')`, `matches('8.6', $source)`, and
+`Lexer::forVersion('8.6')`. Structural acceptance does not certify compiler
+constraints; PHP86-013/014/015 remain open. The version's `status`, `phpSource`,
+and `metadata` expose these limits through the manifest and `php-grammar versions`.
+There is no implicit stable alias: `latestVersion()` includes drafts and returns
+8.6. Use explicit 8.5 selection to retain stable behavior.
+
 To use the PHP APIs and command-line tools, run this command from the checkout
 root to install dependencies and generate the local autoloader:
 
@@ -28,9 +36,9 @@ $root = '/absolute/path/to/php-grammar';
 require $root . '/vendor/autoload.php';
 
 $manifest = RepositoryManifest::fromRepositoryRoot($root);
-$versions = $manifest->versions();                   // ['8.5']
-$latest = $manifest->latestVersion();                // highest advertised version
-$package = $manifest->package('8.5');                // explicit reproducible selection
+$versions = $manifest->versions();                   // ['8.5', '8.6']
+$latest = $manifest->latestVersion();                // '8.6': includes drafts
+$package = $manifest->package('8.5');                // recommended stable selection
 $specification = $manifest->absolutePath($package->documentationPath);
 $repository = new GrammarRepository($manifest);
 $grammar = $repository->load('8.5');
@@ -102,6 +110,8 @@ php bin/php-grammar rule 8.5 expression
 php bin/php-grammar refs 8.5 variable-expression
 php bin/php-grammar sections 8.5
 php bin/php-grammar section 8.5 expressions
+php bin/php-grammar rules 8.6
+php bin/php-grammar rule 8.6 argument
 ```
 
 Outputs are deterministic JSON

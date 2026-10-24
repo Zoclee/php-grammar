@@ -23,6 +23,32 @@
                 "coverage": "docs/8.5/phase3-coverage.json",
                 "contextualConstraints": "docs/8.5/compiler-boundaries.json"
             }
+        },
+        {
+            "version": "8.6",
+            "rootProduction": "source-file",
+            "grammar": "grammar/8.6/php.ebnf",
+            "documentation": "grammar/8.6/php.md",
+            "conformanceFixtures": "tests/fixtures/php/8.6",
+            "lexer": "8.6",
+            "status": "draft",
+            "sourceProfile": "Provisional PHP 8.6.0RC4 structural grammar; byte-oriented source; zend.multibyte=0; short tags enabled and disabled in the focused integration matrix. Contextual constraints are incompletely enforced. Distribution builds are not exact-pin verified. PHP86-013/014/015 remain open.",
+            "phpSource": {
+                "branch": "PHP-8.6",
+                "commit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+            },
+            "metadata": {
+                "changes": "grammar/8.6/changes.md",
+                "sourceLock": "tools/8.6/source-lock.json",
+                "sourceEvidence": "docs/8.6/source-evidence.json",
+                "changeTraceability": "tools/8.6/change-map.json",
+                "boundaryCases": "tests/fixtures/php/8.6/boundary-cases.json",
+                "integration": "docs/8.6/draft-integration.md",
+                "pfaValidation": "docs/8.6/pfa-validation.json",
+                "contextValidation": "docs/8.6/context-validation.json",
+                "deprecationValidation": "docs/8.6/deprecation-validation.json",
+                "discoveryReview": "docs/8.6/discovery-final-review.md"
+            }
         }
     ],
     "lexicalPrimitives": [

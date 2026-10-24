@@ -26,6 +26,8 @@ try {
         $output = array_map(static fn ($package): array => [
             'version' => $package->version, 'status' => $package->status,
             'grammar' => $package->grammarPath, 'documentation' => $package->documentationPath,
+            'sourceProfile' => $package->sourceProfile, 'phpSource' => $package->phpSource,
+            'metadata' => $package->metadata,
         ], $manifest->packages());
     } else {
         $grammar = $repository->load($argv[2]);

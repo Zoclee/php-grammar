@@ -2,7 +2,7 @@
 
 ## Status and scope
 
-**Provisional, incomplete, unregistered PHP 8.6 working specification.** Phase
+**Registered draft: provisional, incomplete PHP 8.6 working specification.** Phase
 3B implements PHP86-001 structure; Phase 3C specifies PHP86-003 through PHP86-007
 contextual changes, against branch `PHP-8.6`, RC4 commit
 `f23b4c222cebe33be93ee8ecaaa14390c5507a08`. No contextual validator for these

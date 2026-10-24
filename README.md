@@ -20,6 +20,14 @@ The included APIs let you inspect productions and check source against grammar
 rules; these checks cover structural syntax, not every compiler constraint or
 runtime behavior.
 
+PHP 8.5 remains the recommended stable version and the default for existing
+maintainer commands. PHP 8.6 is available by explicit selection as an incomplete
+RC4 draft; see [draft integration](docs/8.6/draft-integration.md) and its
+[change document](grammar/8.6/changes.md). `latestVersion()` returns the highest
+advertised number, including drafts (currently 8.6); it is not a stable alias.
+PHP86-013/014/015 remain unresolved, and structural matches do not certify
+compiler-context validity.
+
 Start with the [PHP 8.5 specification](grammar/8.5/php.md) for a readable overview,
 or explore the [canonical EBNF](grammar/8.5/php.ebnf) directly. When you are ready
 to integrate the grammar into your tooling, see the [integration guide](docs/usage.md)
@@ -456,11 +464,12 @@ tests/fixtures/version-boundaries/
 
 Boundary metadata can describe a syntax feature, its first supported version,
 an optional last supported version, the source snippet or fixture path, and an
-authoritative reference. With only PHP 8.5 currently present, no real
-cross-version boundary fixtures are required; the framework handles a
-single-version repository cleanly. When another grammar version is added,
-boundary fixtures should verify introduced or removed syntax across the
-manifest versions.
+authoritative reference. Six PHP 8.6 PFA boundaries use structural matching;
+seven contextual boundaries retain their lint or declaration-link stage.
+The structural runner rejects contextual records rather than reporting a
+compiler verdict. `tools/8.6/integration-check.php` checks all thirteen with
+the selected interpreters and pinned sources. Empty-directory and isolated
+single-version behavior remain covered by tests.
 
 When adding a new PHP grammar version:
 
