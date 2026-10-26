@@ -1,0 +1,22 @@
+{
+  "obligation": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/certification-boundaries.php",
+    "--php86",
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+    "--report",
+    "docs/8.6/certification/boundaries.json"
+  ],
+  "log": "docs/8.6/certification/logs/ordinary-differential.log",
+  "logSha256": "1e858e2ec9a0260e8fc52fd1b2cb4ec93401e6ea55725a00a54cff9e4e68cc50"
+}

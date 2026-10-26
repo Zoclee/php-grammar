@@ -1,0 +1,714 @@
+{
+  "originalLedger": "docs/8.6/compiler-contextual-groups.json",
+  "originalSha256": "95f7828af370ec0c101dd44b772426ec6a1ddc742b1b093a5ac70aa12b28219c",
+  "groups": [
+    {
+      "id": "C5C-G01",
+      "historicalHunkIds": [
+        "Zend/zend_compile.c:3529:3620",
+        "Zend/zend_compile.c:3592:3686",
+        "Zend/zend_compile.c:11961:12763"
+      ],
+      "previousDisposition": "UNRESOLVED \u2014 BOUNDED",
+      "currentDisposition": "UNRESOLVED \u2014 BOUNDED",
+      "sourceLocations": [
+        {
+          "group": "C5C-G01",
+          "path": "Zend/zend_compile.c",
+          "startLine": 3126,
+          "endLine": 3260,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "474030fb2bd66b708f1bd16574030bbfc5ecb8c34deb7c86c4e051fcd2554269",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L3126",
+          "text": "static zend_op *zend_delayed_compile_dim(znode *result, zend_ast *ast, uint32_t type, bool by_ref)\n{\n\tzend_ast *var_ast = ast->child[0];\n\tzend_ast *dim_ast = ast->child[1];\n\tzend_op *opline;\n\n\tznode var_node, dim_node;\n\n\tif (is_globals_fetch(var_ast)) {\n\t\tif (dim_ast == NULL) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot append to $GLOBALS\");\n\t\t}\n\n\t\tzend_compile_expr(&dim_node, dim_ast);\n\t\tif (dim_node.op_type == IS_CONST) {\n\t\t\tconvert_to_string(&dim_node.u.constant);\n\t\t}\n\n\t\topline = zend_delayed_emit_op(result, ZEND_FETCH_R, &dim_node, NULL);\n\t\topline->extended_value = ZEND_FETCH_GLOBAL;\n\t\tzend_adjust_for_fetch_type(opline, result, type);\n\t\treturn opline;\n\t} else {\n\t\tzend_short_circuiting_mark_inner(var_ast);\n\t\topline = zend_delayed_compile_var(&var_node, var_ast, type, false);\n\t\tif (opline) {\n\t\t\tif (type == BP_VAR_W && (opline->opcode == ZEND_FETCH_STATIC_PROP_W || opline->opcode == ZEND_FETCH_OBJ_W)) {\n\t\t\t\topline->extended_value |= ZEND_FETCH_DIM_WRITE;\n\t\t\t} else if (opline->opcode == ZEND_FETCH_DIM_W\n\t\t\t\t\t|| opline->opcode == ZEND_FETCH_DIM_RW\n\t\t\t\t\t|| opline->opcode == ZEND_FETCH_DIM_FUNC_ARG\n\t\t\t\t\t|| opline->opcode == ZEND_FETCH_DIM_UNSET) {\n\t\t\t\topline->extended_value = ZEND_FETCH_DIM_DIM;\n\t\t\t}\n\t\t}\n\t}\n\n\tzend_separate_if_call_and_write(&var_node, var_ast, type);\n\n\tif (dim_ast == NULL) {\n\t\tif (type == BP_VAR_R || type == BP_VAR_IS) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot use [] for reading\");\n\t\t}\n\t\tif (type == BP_VAR_UNSET) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot use [] for unsetting\");\n\t\t}\n\t\tdim_node.op_type = IS_UNUSED;\n\t} else {\n\t\tzend_compile_expr(&dim_node, dim_ast);\n\t}\n\n\topline = zend_delayed_emit_op(result, ZEND_FETCH_DIM_R, &var_node, &dim_node);\n\tzend_adjust_for_fetch_type(opline, result, type);\n\tif (by_ref) {\n\t\topline->extended_value = ZEND_FETCH_DIM_REF;\n\t}\n\n\tif (dim_node.op_type == IS_CONST) {\n\t\tzend_handle_numeric_dim(opline, &dim_node);\n\t}\n\treturn opline;\n}\n\nstatic zend_op *zend_compile_dim(znode *result, zend_ast *ast, uint32_t type, bool by_ref) /* {{{ */\n{\n\tuint32_t offset = zend_delayed_compile_begin();\n\tzend_delayed_compile_dim(result, ast, type, by_ref);\n\treturn zend_delayed_compile_end(offset);\n}\n/* }}} */\n\nstatic zend_op *zend_delayed_compile_prop(znode *result, zend_ast *ast, uint32_t type) /* {{{ */\n{\n\tzend_ast *obj_ast = ast->child[0];\n\tzend_ast *prop_ast = ast->child[1];\n\n\tznode obj_node, prop_node;\n\tzend_op *opline;\n\tbool nullsafe = ast->kind == ZEND_AST_NULLSAFE_PROP;\n\n\tif (is_this_fetch(obj_ast)) {\n\t\tif (this_guaranteed_exists()) {\n\t\t\tobj_node.op_type = IS_UNUSED;\n\t\t} else {\n\t\t\topline = zend_emit_op(&obj_node, ZEND_FETCH_THIS, NULL, NULL);\n\t\t\tif ((type == BP_VAR_R) || (type == BP_VAR_IS)) {\n\t\t\t\topline->result_type = IS_TMP_VAR;\n\t\t\t\tobj_node.op_type = IS_TMP_VAR;\n\t\t\t}\n\t\t}\n\t\tCG(active_op_array)->fn_flags |= ZEND_ACC_USES_THIS;\n\n\t\t/* We will throw if $this doesn't exist, so there's no need to emit a JMP_NULL\n\t\t * check for a nullsafe access. */\n\t} else {\n\t\tuint32_t offset = zend_delayed_oplines_stack_size();\n\t\tzend_short_circuiting_mark_inner(obj_ast);\n\t\tzend_mark_const_object_fetch(obj_ast);\n\t\topline = zend_delayed_compile_var(&obj_node, obj_ast, type, false);\n\t\tif (opline && (opline->opcode == ZEND_FETCH_DIM_W\n\t\t\t\t|| opline->opcode == ZEND_FETCH_DIM_RW\n\t\t\t\t|| opline->opcode == ZEND_FETCH_DIM_FUNC_ARG\n\t\t\t\t|| opline->opcode == ZEND_FETCH_DIM_UNSET)) {\n\t\t\topline->extended_value = ZEND_FETCH_DIM_OBJ;\n\t\t}\n\n\t\tzend_separate_if_call_and_write(&obj_node, obj_ast, type);\n\t\tif (nullsafe) {\n\t\t\tif (obj_node.op_type == IS_TMP_VAR) {\n\t\t\t\t/* Flush delayed oplines */\n\t\t\t\tzend_op *opline = NULL, *oplines = zend_stack_base(&CG(delayed_oplines_stack));\n\t\t\t\tuint32_t var = obj_node.u.op.var;\n\t\t\t\tuint32_t count = zend_delayed_oplines_stack_size();\n\t\t\t\tuint32_t i = count;\n\n\t\t\t\t/* Only consider the oplines delayed while compiling obj_ast. */\n\t\t\t\twhile (i > offset && oplines[i-1].result_type == IS_TMP_VAR && oplines[i-1].result.var == var) {\n\t\t\t\t\ti--;\n\t\t\t\t\tif (oplines[i].op1_type == IS_TMP_VAR) {\n\t\t\t\t\t\tvar = oplines[i].op1.var;\n\t\t\t\t\t} else {\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tfor (; i < count; ++i) {\n\t\t\t\t\tif (oplines[i].opcode != ZEND_NOP) {\n\t\t\t\t\t\topline = get_next_op();\n\t\t\t\t\t\tmemcpy(opline, &oplines[i], sizeof(zend_op));\n\t\t\t\t\t\toplines[i].opcode = ZEND_NOP;\n\t\t\t\t\t\toplines[i].extended_value = opline - CG(active_op_array)->opcodes;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tzend_emit_jmp_null(&obj_node, type);\n\t\t}\n"
+        },
+        {
+          "group": "C5C-G01",
+          "path": "Zend/zend_compile.c",
+          "startLine": 3543,
+          "endLine": 3729,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "884aa5153eaba65ee7c3a5a5f0ae1a26f91222e88b52affa7a8cf6e980345ef4",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L3543",
+          "text": "static void zend_compile_assign(znode *result, zend_ast *ast, bool stmt, uint32_t type) /* {{{ */\n{\n\tzend_ast *var_ast = ast->child[0];\n\tzend_ast *expr_ast = ast->child[1];\n\n\tznode var_node, expr_node;\n\tzend_op *opline;\n\tuint32_t offset;\n\tif (is_this_fetch(var_ast)) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot re-assign $this\");\n\t}\n\n\tzend_ensure_writable_variable(var_ast);\n\n\t/* Treat $GLOBALS['x'] assignment like assignment to variable. */\n\tzend_ast_kind kind = is_global_var_fetch(var_ast) ? ZEND_AST_VAR : var_ast->kind;\n\tswitch (kind) {\n\t\tcase ZEND_AST_VAR:\n\t\t\toffset = zend_delayed_compile_begin();\n\t\t\tzend_delayed_compile_var(&var_node, var_ast, BP_VAR_W, false);\n\t\t\tzend_compile_expr(&expr_node, expr_ast);\n\t\t\tzend_delayed_compile_end(offset);\n\t\t\tCG(zend_lineno) = zend_ast_get_lineno(var_ast);\n\t\t\tzend_emit_op_tmp(result, ZEND_ASSIGN, &var_node, &expr_node);\n\t\t\treturn;\n\t\tcase ZEND_AST_STATIC_PROP:\n\t\t\toffset = zend_delayed_compile_begin();\n\t\t\tzend_delayed_compile_var(result, var_ast, BP_VAR_W, false);\n\t\t\tzend_compile_expr(&expr_node, expr_ast);\n\n\t\t\topline = zend_delayed_compile_end(offset);\n\t\t\topline->opcode = ZEND_ASSIGN_STATIC_PROP;\n\t\t\topline->result_type = IS_TMP_VAR;\n\t\t\tresult->op_type = IS_TMP_VAR;\n\n\t\t\tzend_emit_op_data(&expr_node);\n\t\t\treturn;\n\t\tcase ZEND_AST_DIM:\n\t\t\toffset = zend_delayed_compile_begin();\n\t\t\tzend_delayed_compile_dim(result, var_ast, BP_VAR_W, /* by_ref */ false);\n\t\t\tzend_compile_expr_with_potential_assign_to_self(&expr_node, expr_ast, var_ast);\n\n\t\t\topline = zend_delayed_compile_end(offset);\n\t\t\topline->opcode = ZEND_ASSIGN_DIM;\n\t\t\topline->result_type = IS_TMP_VAR;\n\t\t\tresult->op_type = IS_TMP_VAR;\n\n\t\t\topline = zend_emit_op_data(&expr_node);\n\t\t\treturn;\n\t\tcase ZEND_AST_PROP:\n\t\tcase ZEND_AST_NULLSAFE_PROP:\n\t\t\toffset = zend_delayed_compile_begin();\n\t\t\tzend_delayed_compile_prop(result, var_ast, BP_VAR_W);\n\t\t\tzend_compile_expr(&expr_node, expr_ast);\n\n\t\t\topline = zend_delayed_compile_end(offset);\n\t\t\topline->opcode = ZEND_ASSIGN_OBJ;\n\t\t\topline->result_type = IS_TMP_VAR;\n\t\t\tresult->op_type = IS_TMP_VAR;\n\n\t\t\tzend_emit_op_data(&expr_node);\n\t\t\treturn;\n\t\tcase ZEND_AST_ARRAY:\n\t\t\tif (zend_propagate_list_refs(var_ast)) {\n\t\t\t\tif (!zend_is_variable_or_call(expr_ast)) {\n\t\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\t\t\t\"Cannot assign reference to non referenceable value\");\n\t\t\t\t} else {\n\t\t\t\t\tzend_assert_not_short_circuited(expr_ast);\n\t\t\t\t}\n\n\t\t\t\tzend_compile_var(&expr_node, expr_ast, BP_VAR_W, true);\n\t\t\t\t/* MAKE_REF is usually not necessary for CVs. However, if there are\n\t\t\t\t * self-assignments, this forces the RHS to evaluate first. */\n\t\t\t\tzend_emit_op(&expr_node, ZEND_MAKE_REF, &expr_node, NULL);\n\t\t\t} else {\n\t\t\t\tif (expr_ast->kind == ZEND_AST_VAR) {\n\t\t\t\t\t/* list($a, $b) = $a should evaluate the right $a first */\n\t\t\t\t\tznode cv_node;\n\n\t\t\t\t\tif (zend_try_compile_cv(&cv_node, expr_ast, BP_VAR_R) == FAILURE) {\n\t\t\t\t\t\tzend_compile_simple_var_no_cv(&expr_node, expr_ast, BP_VAR_R, false);\n\t\t\t\t\t} else {\n\t\t\t\t\t\tzend_emit_op_tmp(&expr_node, ZEND_QM_ASSIGN, &cv_node, NULL);\n\t\t\t\t\t}\n\t\t\t\t} else {\n\t\t\t\t\tzend_compile_expr(&expr_node, expr_ast);\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tzend_compile_list_assign(!stmt ? result : NULL, var_ast, &expr_node, var_ast->attr, type);\n\t\t\tif (stmt) {\n\t\t\t\tresult->op_type = IS_UNUSED;\n\t\t\t}\n\t\t\treturn;\n\t\tdefault: ZEND_UNREACHABLE();\n\t}\n}\n/* }}} */\n\nstatic void zend_compile_assign_ref(znode *result, zend_ast *ast, uint32_t type) /* {{{ */\n{\n\tzend_ast *target_ast = ast->child[0];\n\tzend_ast *source_ast = ast->child[1];\n\n\tznode target_node, source_node;\n\tzend_op *opline;\n\tuint32_t offset, flags;\n\n\tif (is_this_fetch(target_ast)) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot re-assign $this\");\n\t}\n\tzend_ensure_writable_variable(target_ast);\n\tzend_assert_not_short_circuited(source_ast);\n\tif (is_globals_fetch(source_ast)) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot acquire reference to $GLOBALS\");\n\t}\n\n\toffset = zend_delayed_compile_begin();\n\tzend_delayed_compile_var(&target_node, target_ast, BP_VAR_W, true);\n\tzend_compile_var(&source_node, source_ast, BP_VAR_W, true);\n\n\tif ((target_ast->kind != ZEND_AST_VAR\n\t  || target_ast->child[0]->kind != ZEND_AST_ZVAL)\n\t && source_ast->kind != ZEND_AST_ZNODE\n\t && source_node.op_type != IS_CV) {\n\t\t/* Both LHS and RHS expressions may modify the same data structure,\n\t\t * and the modification during RHS evaluation may dangle the pointer\n\t\t * to the result of the LHS evaluation.\n\t\t * Use MAKE_REF instruction to replace direct pointer with REFERENCE.\n\t\t * See: Bug #71539\n\t\t */\n\t\tzend_emit_op(&source_node, ZEND_MAKE_REF, &source_node, NULL);\n\t}\n\n\topline = zend_delayed_compile_end(offset);\n\n\tif (source_node.op_type != IS_VAR && zend_is_call(source_ast)) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot use result of built-in function in write context\");\n\t}\n\n\tflags = zend_is_call(source_ast) ? ZEND_RETURNS_FUNCTION : 0;\n\n\tif (opline && opline->opcode == ZEND_FETCH_OBJ_W) {\n\t\topline->opcode = ZEND_ASSIGN_OBJ_REF;\n\t\topline->extended_value &= ~ZEND_FETCH_REF;\n\t\topline->extended_value |= flags;\n\t\tif (result) {\n\t\t\t*result = target_node;\n\t\t} else {\n\t\t\tSET_UNUSED(opline->result);\n\t\t}\n\t\tzend_emit_op_data(&source_node);\n\t} else if (opline && opline->opcode == ZEND_FETCH_STATIC_PROP_W) {\n\t\topline->opcode = ZEND_ASSIGN_STATIC_PROP_REF;\n\t\topline->extended_value &= ~ZEND_FETCH_REF;\n\t\topline->extended_value |= flags;\n\t\tif (result) {\n\t\t\t*result = target_node;\n\t\t} else {\n\t\t\tSET_UNUSED(opline->result);\n\t\t}\n\t\tzend_emit_op_data(&source_node);\n\t} else {\n\t\topline = zend_emit_op(result, ZEND_ASSIGN_REF, &target_node, &source_node);\n\t\topline->extended_value = flags;\n\t}\n\n\tif (result && (type == BP_VAR_R || type == BP_VAR_IS)) {\n\t\t/* Deref. */\n\t\tznode tmp_result = *result;\n\t\tzend_emit_op_tmp(result, ZEND_QM_ASSIGN, &tmp_result, NULL);\n\t}\n}\n/* }}} */\n\nstatic inline void zend_emit_assign_ref_znode(zend_ast *var_ast, const znode *value_node) /* {{{ */\n{\n\tzend_ast *assign_ast = zend_ast_create(ZEND_AST_ASSIGN_REF, var_ast,\n\t\tzend_ast_create_znode(value_node));\n\tzend_compile_stmt(assign_ast);\n}\n/* }}} */\n\nstatic void zend_compile_compound_assign(znode *result, zend_ast *ast) /* {{{ */\n{\n\tzend_ast *var_ast = ast->child[0];\n"
+        },
+        {
+          "group": "C5C-G01",
+          "path": "Zend/zend_compile.c",
+          "startLine": 12760,
+          "endLine": 12836,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "3fd46fa48e26a481359fe73d873eb8cf6679082f97dce7c50b9f97985afe3e42",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L12760",
+          "text": "\n\tif (CG(memoize_mode) != ZEND_MEMOIZE_NONE) {\n\t\tswitch (ast->kind) {\n\t\t\tcase ZEND_AST_CALL:\n\t\t\tcase ZEND_AST_METHOD_CALL:\n\t\t\tcase ZEND_AST_NULLSAFE_METHOD_CALL:\n\t\t\tcase ZEND_AST_STATIC_CALL:\n\t\t\tcase ZEND_AST_PIPE:\n\t\t\t\tzend_compile_memoized_expr(result, ast, BP_VAR_W);\n\t\t\t\t/* This might not actually produce an opcode, e.g. for expressions evaluated at comptime. */\n\t\t\t\treturn NULL;\n\t\t}\n\t}\n\n\tswitch (ast->kind) {\n\t\tcase ZEND_AST_VAR:\n\t\t\treturn zend_compile_simple_var(result, ast, type, false);\n\t\tcase ZEND_AST_DIM:\n\t\t\treturn zend_compile_dim(result, ast, type, by_ref);\n\t\tcase ZEND_AST_PROP:\n\t\tcase ZEND_AST_NULLSAFE_PROP:\n\t\t\treturn zend_compile_prop(result, ast, type, by_ref);\n\t\tcase ZEND_AST_STATIC_PROP:\n\t\t\treturn zend_compile_static_prop(result, ast, type, by_ref, false);\n\t\tcase ZEND_AST_CALL:\n\t\t\tzend_compile_call(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_METHOD_CALL:\n\t\tcase ZEND_AST_NULLSAFE_METHOD_CALL:\n\t\t\tzend_compile_method_call(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_STATIC_CALL:\n\t\t\tzend_compile_static_call(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_PIPE:\n\t\t\tzend_compile_pipe(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_ZNODE:\n\t\t\t*result = *zend_ast_get_znode(ast);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_ASSIGN_REF:\n\t\t\tzend_compile_assign_ref(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_ASSIGN:\n\t\t\tzend_compile_assign(result, ast, false, type);\n\t\t\treturn NULL;\n\t\tdefault:\n\t\t\tif (type == BP_VAR_W || type == BP_VAR_RW || type == BP_VAR_UNSET) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\t\t\"Cannot use temporary expression in write context\");\n\t\t\t}\n\n\t\t\tzend_compile_expr(result, ast);\n\t\t\treturn NULL;\n\t}\n}\n\nstatic zend_op *zend_compile_var(znode *result, zend_ast *ast, uint32_t type, bool by_ref) /* {{{ */\n{\n\tzend_check_stack_limit();\n\n\tuint32_t checkpoint = zend_short_circuiting_checkpoint();\n\tzend_op *opcode = zend_compile_var_inner(result, ast, type, by_ref);\n\tzend_short_circuiting_commit(checkpoint, result, ast);\n#if ZEND_DEBUG\n\tif (result\n\t && (type == BP_VAR_R || type == BP_VAR_IS)\n\t /* Don't check memoized result, as it will force BP_VAR_W even for BP_VAR_IS. */\n\t && CG(memoize_mode) == ZEND_MEMOIZE_NONE\n\t) {\n\t\t/* BP_VAR_{R,IS} is not allowed to produce IS_VAR. */\n\t\tZEND_ASSERT(result->op_type != IS_VAR);\n\t}\n#endif\n\treturn opcode;\n}\n\n"
+        },
+        {
+          "group": "C5C-G01",
+          "path": "Zend/zend_vm_def.h",
+          "startLine": 1155,
+          "endLine": 1155,
+          "fileSha256": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e",
+          "sliceSha256": "3b53a62f7623fe6523e915435c7265058dffb5bda5a2e288197843e79262b4a9",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_vm_def.h#L1155",
+          "text": "ZEND_VM_HANDLER(27, ZEND_ASSIGN_DIM_OP, VAR|CV, CONST|TMP|UNUSED|NEXT|CV, OP)\n"
+        },
+        {
+          "group": "C5C-G01",
+          "path": "Zend/zend_vm_def.h",
+          "startLine": 1971,
+          "endLine": 1971,
+          "fileSha256": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e",
+          "sliceSha256": "a8cc0c7fe363cb516d03472fd21085c578d229d7f77fce33aa6627c94efae802",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_vm_def.h#L1971",
+          "text": "ZEND_VM_HANDLER(84, ZEND_FETCH_DIM_W, VAR|CV, CONST|TMP|UNUSED|NEXT|CV)\n"
+        },
+        {
+          "group": "C5C-G01",
+          "path": "Zend/zend_vm_def.h",
+          "startLine": 1986,
+          "endLine": 1986,
+          "fileSha256": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e",
+          "sliceSha256": "8dafcceee67a572ebe1f971796aa04089b73579745ecdb66fa374d4168c484b9",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_vm_def.h#L1986",
+          "text": "ZEND_VM_HANDLER(87, ZEND_FETCH_DIM_RW, VAR|CV, CONST|TMP|UNUSED|NEXT|CV)\n"
+        },
+        {
+          "group": "C5C-G01",
+          "path": "Zend/zend_vm_def.h",
+          "startLine": 2489,
+          "endLine": 2489,
+          "fileSha256": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e",
+          "sliceSha256": "4ea13a4ff393dfa2e64b255f40ca40323401355d799a1ded0f0b6d9fb6444eae",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_vm_def.h#L2489",
+          "text": "ZEND_VM_HANDLER(24, ZEND_ASSIGN_OBJ, VAR|UNUSED|THIS|CV, CONST|TMP|CV, CACHE_SLOT, SPEC(OP_DATA=CONST|TMP|CV))\n"
+        },
+        {
+          "group": "C5C-G01",
+          "path": "Zend/zend_vm_def.h",
+          "startLine": 2680,
+          "endLine": 2680,
+          "fileSha256": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e",
+          "sliceSha256": "36d7d3d852cc920c70b99209e016ea7b403d77e899512a369902cb2fea48d3a5",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_vm_def.h#L2680",
+          "text": "ZEND_VM_HANDLER(23, ZEND_ASSIGN_DIM, VAR|CV, CONST|TMP|UNUSED|NEXT|CV, SPEC(OP_DATA=CONST|TMP|CV))\n"
+        },
+        {
+          "group": "C5C-G01",
+          "path": "Zend/zend_vm_def.h",
+          "startLine": 6801,
+          "endLine": 6801,
+          "fileSha256": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e",
+          "sliceSha256": "3da2cdd0320d61dba0a22cb905ffd4c0c0f742d84aff02374e1bdc716fabdba8",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_vm_def.h#L6801",
+          "text": "ZEND_VM_HANDLER(75, ZEND_UNSET_DIM, VAR|CV, CONST|TMP|CV)\n"
+        }
+      ],
+      "grammarRules": [
+        "assignment-expression",
+        "variable-expression",
+        "array-object-dereferenceable",
+        "unset-statement"
+      ],
+      "probeIds": [
+        "assign-write",
+        "reference-write",
+        "list-variable-write",
+        "list-literal-write",
+        "list-reference-write",
+        "assign-property",
+        "nested-write",
+        "assign-compound",
+        "assign-increment",
+        "assign-unset",
+        "assign-reference-bind",
+        "assign-coalesce",
+        "constant-object",
+        "nullsafe-assignment"
+      ],
+      "upstreamTests": [
+        "Zend/tests/gh20628_003.phpt",
+        "Zend/tests/gh20628_005.phpt"
+      ],
+      "progress": "Direct dumps corroborate TMP/CONST write operands and VAR reference results; intended write validity remains unresolved.",
+      "remainingRisk": "Authoritative intended-validity decision/coherent repair for assignment-derived targets; optimized/JIT/debug profiles and generality remain untested. Exact-source execution and pre-optimizer dumps now exist.",
+      "certificationConsequence": "Still blocks discovery closure; only the named sub-observations are strengthened.",
+      "originalRemainingRisk": "Authoritative intended-validity decision and exact-pin execution for each operation/result kind; opcache/JIT/debug-build profiles remain untested. Do not generalize successful reference results.",
+      "originalSourceLocations": [
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 3620,
+          "anchor": "static void zend_compile_assign(znode *result, zend_ast *ast) /* {{{ */"
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 3686,
+          "anchor": "static void zend_compile_assign_ref(znode *result, zend_ast *ast) /* {{{ */"
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 12763,
+          "anchor": "static zend_op *zend_compile_var_inner(znode *result, zend_ast *ast, uint32_t ty"
+        }
+      ]
+    },
+    {
+      "id": "C5C-G02",
+      "historicalHunkIds": [
+        "Zend/zend_compile.c:4926:5226",
+        "Zend/zend_compile.c:4960:5260",
+        "Zend/zend_compile.c:5042:5582"
+      ],
+      "previousDisposition": "UNRESOLVED \u2014 BOUNDED",
+      "currentDisposition": "UNRESOLVED \u2014 BOUNDED",
+      "sourceLocations": [
+        {
+          "group": "C5C-G02",
+          "path": "Zend/zend_compile.c",
+          "startLine": 5096,
+          "endLine": 5130,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "6af0c32e4ca612b267c1a0d136487c684d831484b0b7277a0b0a2ccca9fc1dea",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L5096",
+          "text": "static zend_result zend_compile_func_sprintf(znode *result, zend_ast_list *args) /* {{{ */\n{\n\t/* Bail out if we do not have a format string. */\n\tif (args->children < 1) {\n\t\treturn FAILURE;\n\t}\n\n\tzend_eval_const_expr(&args->child[0]);\n\t/* Bail out if the format string is not constant. */\n\tif (args->child[0]->kind != ZEND_AST_ZVAL) {\n\t\treturn FAILURE;\n\t}\n\n\tzval *format_string = zend_ast_get_zval(args->child[0]);\n\tif (Z_TYPE_P(format_string) != IS_STRING) {\n\t\treturn FAILURE;\n\t}\n\tif (Z_STRLEN_P(format_string) >= 256) {\n\t\treturn FAILURE;\n\t}\n\n\tchar *p;\n\tchar *end;\n\tuint32_t placeholder_count;\n\n\tplaceholder_count = 0;\n\tp = Z_STRVAL_P(format_string);\n\tend = p + Z_STRLEN_P(format_string);\n\n\tfor (;;) {\n\t\tp = memchr(p, '%', end - p);\n\t\tif (!p) {\n\t\t\tbreak;\n\t\t}\n\n"
+        },
+        {
+          "group": "C5C-G02",
+          "path": "Zend/zend_compile.c",
+          "startLine": 5264,
+          "endLine": 5317,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "a37163c24a314f980f2035d4d3f1a1a11d3044d381f72b79db08ea36a97f9f90",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L5264",
+          "text": "static zend_result zend_compile_func_printf(znode *result, zend_ast_list *args) /* {{{ */\n{\n\t/* Special case: printf with a single constant string argument and no format specifiers.\n\t * In this case, just emit ECHO and return the string length if needed. */\n\tif (args->children == 1) {\n\t\tzend_eval_const_expr(&args->child[0]);\n\t\tif (args->child[0]->kind != ZEND_AST_ZVAL) {\n\t\t\treturn FAILURE;\n\t\t}\n\t\tzval *format_string = zend_ast_get_zval(args->child[0]);\n\t\tif (Z_TYPE_P(format_string) != IS_STRING) {\n\t\t\treturn FAILURE;\n\t\t}\n\t\t/* Check if there are any format specifiers */\n\t\tif (!memchr(Z_STRVAL_P(format_string), '%', Z_STRLEN_P(format_string))) {\n\t\t\t/* No format specifiers - just emit ECHO and return string length */\n\t\t\tznode format_node;\n\t\t\tzend_compile_expr(&format_node, args->child[0]);\n\t\t\tzend_emit_op(NULL, ZEND_ECHO, &format_node, NULL);\n\n\t\t\t/* Return the string length as a constant if the result is used */\n\t\t\tresult->op_type = IS_CONST;\n\t\t\tZVAL_LONG(&result->u.constant, Z_STRLEN_P(format_string));\n\t\t\treturn SUCCESS;\n\t\t}\n\t}\n\n\t/* Fall back to sprintf optimization for format strings with specifiers */\n\tznode rope_result;\n\tif (zend_compile_func_sprintf(&rope_result, args) != SUCCESS) {\n\t\treturn FAILURE;\n\t}\n\n\t/* printf() returns the amount of bytes written, so just an ECHO of the\n\t * resulting sprintf() optimisation might not be enough. At this early\n\t * stage we can't detect if the result is actually used, so we just emit\n\t * the opcodes and let them be cleaned up by the dead code elimination\n\t * pass in the Zend Optimizer if the result of the printf() is in fact\n\t * unused */\n\tznode copy;\n\tif (rope_result.op_type != IS_CONST) {\n\t\t/* Note: ZEND_COPY_TMP is only valid for TMPVAR. */\n\t\tZEND_ASSERT(rope_result.op_type == IS_TMP_VAR);\n\t\tzend_emit_op_tmp(&copy, ZEND_COPY_TMP, &rope_result, NULL);\n\t\tzend_emit_op(NULL, ZEND_ECHO, &rope_result, NULL);\n\t\tzend_emit_op_tmp(result, ZEND_STRLEN, &copy, NULL);\n\t} else {\n\t\tzend_emit_op(NULL, ZEND_ECHO, &rope_result, NULL);\n\t\tresult->op_type = IS_CONST;\n\t\tZVAL_LONG(&result->u.constant, Z_STRLEN(rope_result.u.constant));\n\t}\n\n\treturn SUCCESS;\n}\n"
+        },
+        {
+          "group": "C5C-G02",
+          "path": "Zend/zend_compile.c",
+          "startLine": 5525,
+          "endLine": 5623,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "56563445a13774d5e4abf05fe3402f7a9b9ee9c4174204cf756394fc58a80111",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L5525",
+          "text": "static zend_result zend_try_compile_special_func_ex(znode *result, zend_string *lcname, zend_ast_list *args, uint32_t type, uint32_t lineno) /* {{{ */\n{\n\tif (zend_string_equals_literal(lcname, \"strlen\")) {\n\t\treturn zend_compile_func_strlen(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"is_null\")) {\n\t\treturn zend_compile_func_typecheck(result, args, IS_NULL);\n\t} else if (zend_string_equals_literal(lcname, \"is_bool\")) {\n\t\treturn zend_compile_func_typecheck(result, args, _IS_BOOL);\n\t} else if (zend_string_equals_literal(lcname, \"is_int\")) {\n\t\treturn zend_compile_func_typecheck(result, args, IS_LONG);\n\t} else if (zend_string_equals_literal(lcname, \"is_float\")) {\n\t\treturn zend_compile_func_typecheck(result, args, IS_DOUBLE);\n\t} else if (zend_string_equals_literal(lcname, \"is_string\")) {\n\t\treturn zend_compile_func_typecheck(result, args, IS_STRING);\n\t} else if (zend_string_equals_literal(lcname, \"is_array\")) {\n\t\treturn zend_compile_func_typecheck(result, args, IS_ARRAY);\n\t} else if (zend_string_equals_literal(lcname, \"is_object\")) {\n\t\treturn zend_compile_func_typecheck(result, args, IS_OBJECT);\n\t} else if (zend_string_equals_literal(lcname, \"is_resource\")) {\n\t\treturn zend_compile_func_typecheck(result, args, IS_RESOURCE);\n\t} else if (zend_string_equals_literal(lcname, \"is_scalar\")) {\n\t\treturn zend_compile_func_is_scalar(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"boolval\")) {\n\t\treturn zend_compile_func_cast(result, args, _IS_BOOL);\n\t} else if (zend_string_equals_literal(lcname, \"intval\")) {\n\t\treturn zend_compile_func_cast(result, args, IS_LONG);\n\t} else if (zend_string_equals_literal(lcname, \"floatval\")) {\n\t\treturn zend_compile_func_cast(result, args, IS_DOUBLE);\n\t} else if (zend_string_equals_literal(lcname, \"strval\")) {\n\t\treturn zend_compile_func_cast(result, args, IS_STRING);\n\t} else if (zend_string_equals_literal(lcname, \"defined\")) {\n\t\treturn zend_compile_func_defined(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"chr\") && type == BP_VAR_R) {\n\t\treturn zend_compile_func_chr(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"ord\") && type == BP_VAR_R) {\n\t\treturn zend_compile_func_ord(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"call_user_func_array\")) {\n\t\treturn zend_compile_func_cufa(result, args, lcname, type);\n\t} else if (zend_string_equals_literal(lcname, \"call_user_func\")) {\n\t\treturn zend_compile_func_cuf(result, args, lcname, type);\n\t} else if (zend_string_equals_literal(lcname, \"in_array\")) {\n\t\treturn zend_compile_func_in_array(result, args);\n\t} else if (zend_string_equals(lcname, ZSTR_KNOWN(ZEND_STR_COUNT))\n\t\t\t|| zend_string_equals_literal(lcname, \"sizeof\")) {\n\t\treturn zend_compile_func_count(result, args, lcname);\n\t} else if (zend_string_equals_literal(lcname, \"get_class\")) {\n\t\treturn zend_compile_func_get_class(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"get_called_class\")) {\n\t\treturn zend_compile_func_get_called_class(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"gettype\")) {\n\t\treturn zend_compile_func_gettype(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"func_num_args\")) {\n\t\treturn zend_compile_func_num_args(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"func_get_args\")) {\n\t\treturn zend_compile_func_get_args(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"array_slice\")) {\n\t\treturn zend_compile_func_array_slice(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"array_key_exists\")) {\n\t\treturn zend_compile_func_array_key_exists(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"sprintf\")) {\n\t\treturn zend_compile_func_sprintf(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"printf\")) {\n\t\treturn zend_compile_func_printf(result, args);\n\t} else if (zend_string_equals(lcname, ZSTR_KNOWN(ZEND_STR_CLONE))) {\n\t\treturn zend_compile_func_clone(result, args);\n\t} else if (zend_string_equals_literal(lcname, \"array_map\")) {\n\t\treturn zend_compile_func_array_map(result, args, lcname, lineno);\n\t} else {\n\t\treturn FAILURE;\n\t}\n}\n\nstatic zend_result zend_try_compile_special_func(znode *result, zend_string *lcname, zend_ast_list *args, const zend_function *fbc, uint32_t type, uint32_t lineno) /* {{{ */\n{\n\tif (CG(compiler_options) & ZEND_COMPILE_NO_BUILTINS) {\n\t\treturn FAILURE;\n\t}\n\n\tif (fbc->type != ZEND_INTERNAL_FUNCTION) {\n\t\t/* If the function is part of disabled_functions, it may be redeclared as a userland\n\t\t * function with a different implementation. Don't use the VM builtin in that case. */\n\t\treturn FAILURE;\n\t}\n\n\tif (zend_args_contain_unpack_or_named(args)) {\n\t\treturn FAILURE;\n\t}\n\n\tif (zend_try_compile_special_func_ex(result, lcname, args, type, lineno) == SUCCESS) {\n\t\treturn SUCCESS;\n\t}\n\n\treturn zend_compile_frameless_icall(result, args, fbc, type) != (uint32_t)-1 ? SUCCESS : FAILURE;\n}\n\nstatic const char *zend_get_cstring_from_property_hook_kind(zend_property_hook_kind kind) {\n\tswitch (kind) {\n\t\tcase ZEND_PROPERTY_HOOK_GET:\n\t\t\treturn \"get\";\n"
+        },
+        {
+          "group": "C5C-G02",
+          "path": "Zend/zend_compile.c",
+          "startLine": 11093,
+          "endLine": 11162,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "0850d58aae5bfec73d99df2ee9c1becadfbdfe6978b646beeeccb66784391276",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L11093",
+          "text": "static void zend_compile_short_circuiting(znode *result, zend_ast *ast) /* {{{ */\n{\n\tzend_ast *left_ast = ast->child[0];\n\tzend_ast *right_ast = ast->child[1];\n\n\tznode left_node, right_node;\n\tzend_op *opline_jmpz, *opline_bool;\n\tuint32_t opnum_jmpz;\n\n\tZEND_ASSERT(ast->kind == ZEND_AST_AND || ast->kind == ZEND_AST_OR);\n\n\tzend_compile_expr(&left_node, left_ast);\n\n\tif (left_node.op_type == IS_CONST) {\n\t\tif ((ast->kind == ZEND_AST_AND && !zend_is_true(&left_node.u.constant))\n\t\t || (ast->kind == ZEND_AST_OR && zend_is_true(&left_node.u.constant))) {\n\t\t\tresult->op_type = IS_CONST;\n\t\t\tZVAL_BOOL(&result->u.constant, zend_is_true(&left_node.u.constant));\n\t\t} else {\n\t\t\tzend_compile_expr(&right_node, right_ast);\n\n\t\t\tif (right_node.op_type == IS_CONST) {\n\t\t\t\tresult->op_type = IS_CONST;\n\t\t\t\tZVAL_BOOL(&result->u.constant, zend_is_true(&right_node.u.constant));\n\n\t\t\t\tzval_ptr_dtor(&right_node.u.constant);\n\t\t\t} else {\n\t\t\t\tzend_emit_op_tmp(result, ZEND_BOOL, &right_node, NULL);\n\t\t\t}\n\t\t}\n\n\t\tzval_ptr_dtor(&left_node.u.constant);\n\t\treturn;\n\t}\n\n\topnum_jmpz = get_next_op_number();\n\topline_jmpz = zend_emit_op(NULL, ast->kind == ZEND_AST_AND ? ZEND_JMPZ_EX : ZEND_JMPNZ_EX,\n\t\t&left_node, NULL);\n\n\tif (left_node.op_type == IS_TMP_VAR) {\n\t\tSET_NODE(opline_jmpz->result, &left_node);\n\t\tGET_NODE(result, opline_jmpz->result);\n\t} else {\n\t\tzend_make_tmp_result(result, opline_jmpz);\n\t}\n\n\tzend_compile_expr(&right_node, right_ast);\n\n\topline_bool = zend_emit_op(NULL, ZEND_BOOL, &right_node, NULL);\n\tSET_NODE(opline_bool->result, result);\n\n\tzend_update_jump_target_to_next(opnum_jmpz);\n}\n/* }}} */\n\nstatic void zend_compile_post_incdec(znode *result, const zend_ast *ast) /* {{{ */\n{\n\tzend_ast *var_ast = ast->child[0];\n\tZEND_ASSERT(ast->kind == ZEND_AST_POST_INC || ast->kind == ZEND_AST_POST_DEC);\n\n\tzend_ensure_writable_variable(var_ast);\n\n\tif (var_ast->kind == ZEND_AST_PROP || var_ast->kind == ZEND_AST_NULLSAFE_PROP) {\n\t\tzend_op *opline = zend_compile_prop(NULL, var_ast, BP_VAR_RW, false);\n\t\topline->opcode = ast->kind == ZEND_AST_POST_INC ? ZEND_POST_INC_OBJ : ZEND_POST_DEC_OBJ;\n\t\tzend_make_tmp_result(result, opline);\n\t} else if (var_ast->kind == ZEND_AST_STATIC_PROP) {\n\t\tzend_op *opline = zend_compile_static_prop(NULL, var_ast, BP_VAR_RW, false, false);\n\t\topline->opcode = ast->kind == ZEND_AST_POST_INC ? ZEND_POST_INC_STATIC_PROP : ZEND_POST_DEC_STATIC_PROP;\n\t\tzend_make_tmp_result(result, opline);\n"
+        },
+        {
+          "group": "C5C-G02",
+          "path": "Zend/zend_compile.c",
+          "startLine": 11204,
+          "endLine": 11354,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "7ea7d6e6344d2957bb88ce17148e94c7d8b5595e68c2895c6e98be4b6475131b",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L11204",
+          "text": "static void zend_compile_cast(znode *result, const zend_ast *ast) /* {{{ */\n{\n\tzend_ast *expr_ast = ast->child[0];\n\tznode expr_node;\n\tzend_op *opline;\n\n\tzend_compile_expr(&expr_node, expr_ast);\n\n\tif (ast->attr == _IS_BOOL) {\n\t\topline = zend_emit_op_tmp(result, ZEND_BOOL, &expr_node, NULL);\n\t} else if (ast->attr == IS_NULL) {\n\t\tzend_error(E_COMPILE_ERROR, \"The (unset) cast is no longer supported\");\n\t} else {\n\t\topline = zend_emit_op_tmp(result, ZEND_CAST, &expr_node, NULL);\n\t\topline->extended_value = ast->attr;\n\t}\n}\n/* }}} */\n\nstatic void zend_compile_shorthand_conditional(znode *result, zend_ast *ast) /* {{{ */\n{\n\tzend_ast *cond_ast = ast->child[0];\n\tzend_ast *false_ast = ast->child[2];\n\n\tznode cond_node, false_node;\n\tzend_op *opline_qm_assign;\n\tuint32_t opnum_jmp_set;\n\n\tZEND_ASSERT(ast->child[1] == NULL);\n\n\tzend_compile_expr(&cond_node, cond_ast);\n\n\topnum_jmp_set = get_next_op_number();\n\tzend_emit_op_tmp(result, ZEND_JMP_SET, &cond_node, NULL);\n\n\tzend_compile_expr(&false_node, false_ast);\n\n\topline_qm_assign = zend_emit_op_tmp(NULL, ZEND_QM_ASSIGN, &false_node, NULL);\n\tSET_NODE(opline_qm_assign->result, result);\n\n\tzend_update_jump_target_to_next(opnum_jmp_set);\n}\n/* }}} */\n\nstatic void zend_compile_conditional(znode *result, zend_ast *ast) /* {{{ */\n{\n\tzend_ast *cond_ast = ast->child[0];\n\tzend_ast *true_ast = ast->child[1];\n\tzend_ast *false_ast = ast->child[2];\n\n\tznode cond_node, true_node, false_node;\n\tzend_op *opline_qm_assign2;\n\tuint32_t opnum_jmpz, opnum_jmp;\n\n\tif (cond_ast->kind == ZEND_AST_CONDITIONAL\n\t\t\t&& cond_ast->attr != ZEND_PARENTHESIZED_CONDITIONAL) {\n\t\tif (cond_ast->child[1]) {\n\t\t\tif (true_ast) {\n\t\t\t\tzend_error(E_COMPILE_ERROR,\n\t\t\t\t\t\"Unparenthesized `a ? b : c ? d : e` is not supported. \"\n\t\t\t\t\t\"Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)`\");\n\t\t\t} else {\n\t\t\t\tzend_error(E_COMPILE_ERROR,\n\t\t\t\t\t\"Unparenthesized `a ? b : c ?: d` is not supported. \"\n\t\t\t\t\t\"Use either `(a ? b : c) ?: d` or `a ? b : (c ?: d)`\");\n\t\t\t}\n\t\t} else {\n\t\t\tif (true_ast) {\n\t\t\t\tzend_error(E_COMPILE_ERROR,\n\t\t\t\t\t\"Unparenthesized `a ?: b ? c : d` is not supported. \"\n\t\t\t\t\t\"Use either `(a ?: b) ? c : d` or `a ?: (b ? c : d)`\");\n\t\t\t} else {\n\t\t\t\t/* This case is harmless:  (a ?: b) ?: c always produces the same result\n\t\t\t\t * as a ?: (b ?: c). */\n\t\t\t}\n\t\t}\n\t}\n\n\tif (!true_ast) {\n\t\tzend_compile_shorthand_conditional(result, ast);\n\t\treturn;\n\t}\n\n\tzend_compile_expr(&cond_node, cond_ast);\n\n\topnum_jmpz = zend_emit_cond_jump(ZEND_JMPZ, &cond_node, 0);\n\n\tzend_compile_expr(&true_node, true_ast);\n\n\tzend_emit_op_tmp(result, ZEND_QM_ASSIGN, &true_node, NULL);\n\n\topnum_jmp = zend_emit_jump(0);\n\n\tzend_update_jump_target_to_next(opnum_jmpz);\n\n\tzend_compile_expr(&false_node, false_ast);\n\n\topline_qm_assign2 = zend_emit_op_tmp(NULL, ZEND_QM_ASSIGN, &false_node, NULL);\n\tSET_NODE(opline_qm_assign2->result, result);\n\n\tzend_update_jump_target_to_next(opnum_jmp);\n}\n/* }}} */\n\nstatic void zend_compile_coalesce(znode *result, zend_ast *ast) /* {{{ */\n{\n\tzend_ast *expr_ast = ast->child[0];\n\tzend_ast *default_ast = ast->child[1];\n\n\tznode expr_node, default_node;\n\tzend_op *opline;\n\tuint32_t opnum;\n\n\tzend_compile_var(&expr_node, expr_ast, BP_VAR_IS, false);\n\n\topnum = get_next_op_number();\n\tzend_emit_op_tmp(result, ZEND_COALESCE, &expr_node, NULL);\n\n\tzend_compile_expr(&default_node, default_ast);\n\n\topline = zend_emit_op_tmp(NULL, ZEND_QM_ASSIGN, &default_node, NULL);\n\tSET_NODE(opline->result, result);\n\n\topline = &CG(active_op_array)->opcodes[opnum];\n\topline->op2.opline_num = get_next_op_number();\n}\n/* }}} */\n\nstatic void znode_dtor(zval *zv) {\n\tznode *node = Z_PTR_P(zv);\n\tif (node->op_type == IS_CONST) {\n\t\tzval_ptr_dtor_nogc(&node->u.constant);\n\t}\n\tefree(node);\n}\n\nstatic void zend_compile_assign_coalesce(znode *result, zend_ast *ast) /* {{{ */\n{\n\tzend_ast *var_ast = ast->child[0];\n\tzend_ast *default_ast = ast->child[1];\n\n\tznode var_node_is, var_node_w, default_node, assign_node, *node;\n\tzend_op *opline;\n\tuint32_t coalesce_opnum;\n\tbool need_frees = false;\n\n\t/* Remember expressions compiled during the initial BP_VAR_IS lookup,\n\t * to avoid double-evaluation when we compile again with BP_VAR_W. */\n\tHashTable *orig_memoized_exprs = CG(memoized_exprs);\n\tconst zend_memoize_mode orig_memoize_mode = CG(memoize_mode);\n\n"
+        },
+        {
+          "group": "C5C-G02",
+          "path": "Zend/zend_compile.c",
+          "startLine": 12920,
+          "endLine": 13054,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "ff5ff11621a32421f6ce58b8bdf66f551f3ad87263c9a4617516f53ac1ece964",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L12920",
+          "text": "static void zend_eval_const_expr(zend_ast **ast_ptr) /* {{{ */\n{\n\tzend_ast *ast = *ast_ptr;\n\tzval result;\n\n\tif (!ast) {\n\t\treturn;\n\t}\n\n\tzend_check_stack_limit();\n\n\tswitch (ast->kind) {\n\t\tcase ZEND_AST_BINARY_OP:\n\t\t\tzend_eval_const_expr(&ast->child[0]);\n\t\t\tzend_eval_const_expr(&ast->child[1]);\n\t\t\tif (ast->child[0]->kind != ZEND_AST_ZVAL || ast->child[1]->kind != ZEND_AST_ZVAL) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tif (!zend_try_ct_eval_binary_op(&result, ast->attr,\n\t\t\t\t\tzend_ast_get_zval(ast->child[0]), zend_ast_get_zval(ast->child[1]))\n\t\t\t) {\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tbreak;\n\t\tcase ZEND_AST_GREATER:\n\t\tcase ZEND_AST_GREATER_EQUAL:\n\t\t\tzend_eval_const_expr(&ast->child[0]);\n\t\t\tzend_eval_const_expr(&ast->child[1]);\n\t\t\tif (ast->child[0]->kind != ZEND_AST_ZVAL || ast->child[1]->kind != ZEND_AST_ZVAL) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tzend_ct_eval_greater(&result, ast->kind,\n\t\t\t\tzend_ast_get_zval(ast->child[0]), zend_ast_get_zval(ast->child[1]));\n\t\t\tbreak;\n\t\tcase ZEND_AST_AND:\n\t\tcase ZEND_AST_OR:\n\t\t{\n\t\t\tbool child0_is_true, child1_is_true;\n\t\t\tzend_eval_const_expr(&ast->child[0]);\n\t\t\tzend_eval_const_expr(&ast->child[1]);\n\t\t\tif (ast->child[0]->kind != ZEND_AST_ZVAL) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tchild0_is_true = zend_is_true(zend_ast_get_zval(ast->child[0]));\n\t\t\tif (child0_is_true == (ast->kind == ZEND_AST_OR)) {\n\t\t\t\tZVAL_BOOL(&result, ast->kind == ZEND_AST_OR);\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tif (ast->child[1]->kind != ZEND_AST_ZVAL) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tchild1_is_true = zend_is_true(zend_ast_get_zval(ast->child[1]));\n\t\t\tif (ast->kind == ZEND_AST_OR) {\n\t\t\t\tZVAL_BOOL(&result, child0_is_true || child1_is_true);\n\t\t\t} else {\n\t\t\t\tZVAL_BOOL(&result, child0_is_true && child1_is_true);\n\t\t\t}\n\t\t\tbreak;\n\t\t}\n\t\tcase ZEND_AST_UNARY_OP:\n\t\t\tzend_eval_const_expr(&ast->child[0]);\n\t\t\tif (ast->child[0]->kind != ZEND_AST_ZVAL) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tif (!zend_try_ct_eval_unary_op(&result, ast->attr, zend_ast_get_zval(ast->child[0]))) {\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tbreak;\n\t\tcase ZEND_AST_UNARY_PLUS:\n\t\tcase ZEND_AST_UNARY_MINUS:\n\t\t\tzend_eval_const_expr(&ast->child[0]);\n\t\t\tif (ast->child[0]->kind != ZEND_AST_ZVAL) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tif (!zend_try_ct_eval_unary_pm(&result, ast->kind, zend_ast_get_zval(ast->child[0]))) {\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tbreak;\n\t\tcase ZEND_AST_COALESCE:\n\t\t\t/* Set isset fetch indicator here, opcache disallows runtime altering of the AST */\n\t\t\tif (ast->child[0]->kind == ZEND_AST_DIM) {\n\t\t\t\tast->child[0]->attr |= ZEND_DIM_IS;\n\t\t\t}\n\t\t\tzend_eval_const_expr(&ast->child[0]);\n\n\t\t\tif (ast->child[0]->kind != ZEND_AST_ZVAL) {\n\t\t\t\t/* ensure everything was compile-time evaluated at least once */\n\t\t\t\tzend_eval_const_expr(&ast->child[1]);\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tif (Z_TYPE_P(zend_ast_get_zval(ast->child[0])) == IS_NULL) {\n\t\t\t\tzend_eval_const_expr(&ast->child[1]);\n\t\t\t\t*ast_ptr = ast->child[1];\n\t\t\t\tast->child[1] = NULL;\n\t\t\t\tzend_ast_destroy(ast);\n\t\t\t} else {\n\t\t\t\t*ast_ptr = ast->child[0];\n\t\t\t\tast->child[0] = NULL;\n\t\t\t\tzend_ast_destroy(ast);\n\t\t\t}\n\t\t\treturn;\n\t\tcase ZEND_AST_CONDITIONAL:\n\t\t{\n\t\t\tzend_ast **child, *child_ast;\n\t\t\tzend_eval_const_expr(&ast->child[0]);\n\t\t\tif (ast->child[0]->kind != ZEND_AST_ZVAL) {\n\t\t\t\t/* ensure everything was compile-time evaluated at least once */\n\t\t\t\tif (ast->child[1]) {\n\t\t\t\t\tzend_eval_const_expr(&ast->child[1]);\n\t\t\t\t}\n\t\t\t\tzend_eval_const_expr(&ast->child[2]);\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tchild = &ast->child[2 - zend_is_true(zend_ast_get_zval(ast->child[0]))];\n\t\t\tif (*child == NULL) {\n\t\t\t\tchild--;\n\t\t\t}\n\t\t\tchild_ast = *child;\n\t\t\t*child = NULL;\n\t\t\tzend_ast_destroy(ast);\n\t\t\t*ast_ptr = child_ast;\n\t\t\tzend_eval_const_expr(ast_ptr);\n\t\t\treturn;\n\t\t}\n\t\tcase ZEND_AST_DIM:\n\t\t{\n"
+        }
+      ],
+      "grammarRules": [
+        "function-call",
+        "cast-expression",
+        "conditional-expression",
+        "coalesce-expression"
+      ],
+      "probeIds": [
+        "printf-or",
+        "printf-ternary",
+        "printf-named",
+        "printf-named-ternary",
+        "printf-unpack",
+        "printf-unpack-variable",
+        "sprintf-or",
+        "strlen-or",
+        "printf-constant-closure"
+      ],
+      "upstreamTests": [
+        "ext/opcache/tests/array_map_foreach_optimization_001.phpt"
+      ],
+      "progress": "Dispatch-sensitive rejection and eliminated branches reproduced; no universal intended boundary established.",
+      "remainingRisk": "General intended compatibility policy, complete dispatch coverage and optimized-call interactions remain unresolved. Exact-source traversal is corroborated.",
+      "certificationConsequence": "Still blocks discovery closure; only the named sub-observations are strengthened.",
+      "originalRemainingRisk": "No exact upstream PHPT for discarded casts identified. The listed array_map test supports adjacent dispatch only. Intended compatibility policy and full optimized-call interactions remain open under PHP86-015.",
+      "originalSourceLocations": [
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 5226,
+          "anchor": "static zend_result zend_compile_func_sprintf(znode *result, zend_ast_list *args)"
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 5260,
+          "anchor": "static zend_result zend_compile_func_sprintf(znode *result, zend_ast_list *args)"
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 5582,
+          "anchor": "static zend_result zend_try_compile_special_func_ex(znode *result, zend_string *"
+        }
+      ]
+    },
+    {
+      "id": "C5C-G03",
+      "historicalHunkIds": [
+        "Zend/zend_compile.c:11499:12261",
+        "Zend/zend_compile.c:11544:12308",
+        "Zend/zend_compile.c:12349:13190",
+        "Zend/zend_ast.c:588:673",
+        "Zend/zend_ast.c:1151:1327"
+      ],
+      "previousDisposition": "UNRESOLVED \u2014 BOUNDED",
+      "currentDisposition": "UNRESOLVED \u2014 BOUNDED",
+      "sourceLocations": [
+        {
+          "group": "C5C-G03",
+          "path": "Zend/zend_compile.c",
+          "startLine": 12243,
+          "endLine": 12368,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "8880dd36f555cc284a4f146c325fe8992370292c4e5d7cdf36b8df2b8bb1fcd9",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L12243",
+          "text": "static void zend_compile_const_expr_closure(zend_ast **ast_ptr)\n{\n\tzend_ast_decl *closure_ast = (zend_ast_decl *) *ast_ptr;\n\tconst zend_ast *uses_ast = closure_ast->child[1];\n\tif (!(closure_ast->flags & ZEND_ACC_STATIC)) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\"Closures in constant expressions must be static\");\n\t}\n\tif (uses_ast) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\"Cannot use(...) variables in constant expression\");\n\t}\n\n\tznode node;\n\tzend_op_array *op = zend_compile_func_decl(&node, (zend_ast*)closure_ast, FUNC_DECL_LEVEL_CONSTEXPR);\n\n\tzend_ast_destroy(*ast_ptr);\n\t*ast_ptr = zend_ast_create_op_array(op);\n}\n\nstatic void zend_compile_const_expr_fcc(zend_ast **ast_ptr)\n{\n\tzend_ast *args_ast = zend_ast_call_get_args(*ast_ptr);\n\n\tif (args_ast->kind != ZEND_AST_CALLABLE_CONVERT) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Constant expression contains invalid operations\");\n\t}\n\n\tzend_ast_fcc *fcc = (zend_ast_fcc*)args_ast;\n\n\tzend_ast_list *args = zend_ast_get_list(fcc->args);\n\tbool is_fcc = args->children == 1 && args->child[0]->attr == ZEND_PLACEHOLDER_VARIADIC;\n\n\tif (!is_fcc) {\n\t\tfcc->filename = zend_string_copy(CG(active_op_array)->filename);\n\t\tfcc->name = zend_compile_partial_name(CG(active_op_array), fcc->lineno);\n\t}\n\n\tswitch ((*ast_ptr)->kind) {\n\t\tcase ZEND_AST_CALL: {\n\t\t\tzend_ast *name_ast = (*ast_ptr)->child[0];\n\t\t\tif (name_ast->kind != ZEND_AST_ZVAL) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot use dynamic function name in constant expression\");\n\t\t\t}\n\t\t\tzval *name_ast_zv = zend_ast_get_zval(name_ast);\n\t\t\tif (Z_TYPE_P(name_ast_zv) != IS_STRING) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Illegal function name\");\n\t\t\t}\n\t\t\tbool is_fully_qualified;\n\t\t\tzend_string *name = zend_resolve_function_name(Z_STR_P(name_ast_zv), name_ast->attr, &is_fully_qualified);\n\t\t\tzval_ptr_dtor_nogc(name_ast_zv);\n\t\t\tZVAL_STR(name_ast_zv, name);\n\t\t\tif (is_fully_qualified) {\n\t\t\t\tname_ast->attr = ZEND_NAME_FQ;\n\t\t\t}\n\t\t\tbreak;\n\t\t}\n\t\tcase ZEND_AST_STATIC_CALL: {\n\t\t\tzend_ast *class_ast = (*ast_ptr)->child[0];\n\t\t\tzend_compile_const_expr_class_reference(class_ast);\n\t\t\tzend_ast *method_ast = (*ast_ptr)->child[1];\n\t\t\tif (method_ast->kind != ZEND_AST_ZVAL) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot use dynamic method name in constant expression\");\n\t\t\t}\n\t\t\tif (Z_TYPE_P(zend_ast_get_zval(method_ast)) != IS_STRING) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Illegal method name\");\n\t\t\t}\n\t\t\tbreak;\n\t\t}\n\t\tdefault: ZEND_UNREACHABLE();\n\t}\n}\n\nstatic void zend_compile_const_expr_args(zend_ast **ast_ptr)\n{\n\tzend_ast_list *list = zend_ast_get_list(*ast_ptr);\n\tbool uses_named_args = false;\n\tbool uses_variadic_placeholder = false;\n\tfor (uint32_t i = 0; i < list->children; i++) {\n\t\tconst zend_ast *arg = list->child[i];\n\t\tif (arg->kind == ZEND_AST_UNPACK) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\t\"Argument unpacking in constant expressions is not supported\");\n\t\t}\n\t\tif (arg->kind == ZEND_AST_NAMED_ARG) {\n\t\t\tuses_named_args = true;\n\t\t\tif (uses_variadic_placeholder) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Variadic placeholder must be last\");\n\t\t\t}\n\t\t} else {\n\t\t\tbool is_variadic_placeholder = arg->kind == ZEND_AST_PLACEHOLDER_ARG\n\t\t\t\t&& arg->attr == ZEND_PLACEHOLDER_VARIADIC;\n\n\t\t\tif (uses_named_args && !is_variadic_placeholder) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot use positional argument after named argument\");\n\t\t\t}\n\n\t\t\tif (uses_variadic_placeholder) {\n\t\t\t\tif (is_variadic_placeholder) {\n\t\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Variadic placeholder may only appear once\");\n\t\t\t\t} else {\n\t\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Variadic placeholder must be last\");\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tif (is_variadic_placeholder) {\n\t\t\t\tuses_variadic_placeholder = true;\n\t\t\t}\n\t\t}\n\t}\n\n\tif (uses_named_args) {\n\t\tlist->attr = 1;\n\t}\n}\n\ntypedef struct {\n\t/* Whether the value of this expression may differ on each evaluation. */\n\tbool allow_dynamic;\n} const_expr_context;\n\nstatic void zend_compile_const_expr(zend_ast **ast_ptr, void *context) /* {{{ */\n{\n\tconst const_expr_context *ctx = context;\n\tzend_ast *ast = *ast_ptr;\n\tif (ast == NULL || ast->kind == ZEND_AST_ZVAL) {\n"
+        },
+        {
+          "group": "C5C-G03",
+          "path": "Zend/zend_ast.c",
+          "startLine": 677,
+          "endLine": 759,
+          "fileSha256": "e6e793245e60d377f109b3d1e154665e84ab9a5cc60736576c4ff89d99eee5a9",
+          "sliceSha256": "310fe09797711dc311eb665b582bedf73ca9334e467bb827306beba9044bc209",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_ast.c#L677",
+          "text": "static zend_execute_data *zend_ast_evaluate_arg_list(\n\tzend_function *func,\n\tzend_ast_list *args_ast,\n\tzend_class_entry *scope,\n\tvoid *object_or_called_scope,\n\tbool *short_circuited_ptr,\n\tzend_ast_evaluate_ctx *ctx,\n\tzend_array **named_positions_ptr,\n\tbool *uses_variadic_placeholder\n) {\n\tzend_execute_data *frame = zend_vm_stack_push_call_frame_ex(\n\t\t\tzend_vm_calc_used_stack(args_ast->children, func),\n\t\t\t0, func, 0, object_or_called_scope);\n\n\tfor (uint32_t i = 0; i < args_ast->children; i++) {\n\t\tzend_ast *arg_ast = args_ast->child[i];\n\t\tuint32_t arg_num = i + 1;\n\t\tzval *arg;\n\t\tzend_string *arg_name = NULL;\n\n\t\tif (arg_ast->kind == ZEND_AST_NAMED_ARG) {\n\t\t\tvoid *cache_slot[2] = {0};\n\t\t\targ_name = zend_ast_get_str(arg_ast->child[0]);\n\t\t\targ = zend_handle_named_arg(&frame, arg_name, &arg_num, (void**)&cache_slot);\n\t\t\tif (!arg) {\n\t\t\t\tgoto fail;\n\t\t\t}\n\t\t\tif (named_positions_ptr) {\n\t\t\t\tif (!*named_positions_ptr) {\n\t\t\t\t\t*named_positions_ptr = zend_new_array(0);\n\t\t\t\t}\n\t\t\t\tzval tmp;\n\t\t\t\tZVAL_LONG(&tmp, zend_hash_num_elements(*named_positions_ptr));\n\t\t\t\tzend_hash_add(*named_positions_ptr, arg_name, &tmp);\n\t\t\t}\n\t\t\targ_ast = arg_ast->child[1];\n\t\t} else {\n\t\t\targ = ZEND_CALL_VAR_NUM(frame, ZEND_CALL_NUM_ARGS(frame));\n\t\t}\n\n\t\tbool is_placeholder = arg_ast->kind == ZEND_AST_PLACEHOLDER_ARG;\n\t\tif (is_placeholder) {\n\t\t\tif (arg_ast->attr == ZEND_PLACEHOLDER_VARIADIC) {\n\t\t\t\tif (uses_variadic_placeholder) {\n\t\t\t\t\t*uses_variadic_placeholder = true;\n\t\t\t\t}\n\t\t\t\tcontinue;\n\t\t\t} else {\n\t\t\t\tZ_TYPE_INFO_P(arg) = _IS_PLACEHOLDER;\n\t\t\t}\n\t\t} else {\n\t\t\tif (zend_ast_evaluate_ex(arg, arg_ast, scope, short_circuited_ptr, ctx) == FAILURE) {\n\t\t\t\tZVAL_UNDEF(arg);\n\t\t\t\tgoto fail;\n\t\t\t}\n\t\t}\n\t\tif (!arg_name) {\n\t\t\tZEND_CALL_NUM_ARGS(frame)++;\n\t\t}\n\n\t\t/* A constant expression can't be bound to a reference because it ain't a CV. */\n\t\tif (!is_placeholder && UNEXPECTED(ARG_MUST_BE_SENT_BY_REF(func, arg_num))) {\n\t\t\tzend_cannot_pass_by_reference_ex(func, arg_num);\n\t\t\tgoto fail;\n\t\t}\n\t}\n\n\treturn frame;\n\nfail:\n\tfor (uint32_t i = 0, num_args = ZEND_CALL_NUM_ARGS(frame); i < num_args; i++) {\n\t\tzval_ptr_dtor(ZEND_CALL_VAR_NUM(frame, i));\n\t}\n\tif (ZEND_CALL_INFO(frame) & ZEND_CALL_HAS_EXTRA_NAMED_PARAMS) {\n\t\tzend_array_destroy(frame->extra_named_params);\n\t}\n\tzend_vm_stack_free_call_frame(frame);\n\tif (named_positions_ptr && *named_positions_ptr) {\n\t\tzend_array_destroy(*named_positions_ptr);\n\t}\n\treturn NULL;\n}\n\n"
+        }
+      ],
+      "grammarRules": [
+        "first-class-callable-arguments",
+        "argument",
+        "constant-expression",
+        "closure-expression"
+      ],
+      "probeIds": [
+        "printf-pfa",
+        "printf-constant-pfa",
+        "printf-pfa-ternary",
+        "pfa-constant-discard",
+        "array-map-pfa-or",
+        "array-map-strict-pfa-or",
+        "constant-pfa-reference-placeholder",
+        "constant-pfa-reference-bound",
+        "constant-pfa-reference-named",
+        "constant-pfa-reference-variadic"
+      ],
+      "upstreamTests": [
+        "Zend/tests/partial_application/rfc_examples_const_expr.phpt",
+        "Zend/tests/partial_application/constexpr_016.phpt"
+      ],
+      "progress": "Bounded required-reference default-evaluation subfinding corroborated by constexpr_016: placeholders preserve reference passing; bound constant values throw when the default is evaluated. Named/variadic controls agree. General runtime signature/evaluation closure remains open.",
+      "remainingRisk": "Four required-reference default controls are now source/test-correspondent. Other named/reference bindings, signature construction, evaluation timing and optimized PFA interactions remain open.",
+      "certificationConsequence": "Still blocks discovery closure; only the named sub-observations are strengthened.",
+      "originalRemainingRisk": "Existing PHP86-001 constraints remain supported. Full named/reference binding, evaluation timing and optimized partial-application interaction coverage is not established by lint; runtime signatures remain open.",
+      "originalSourceLocations": [
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 12261,
+          "anchor": "static void zend_compile_const_expr_closure(zend_ast **ast_ptr)"
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 12308,
+          "anchor": "static void zend_compile_const_expr_fcc(zend_ast **ast_ptr)"
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 13190,
+          "anchor": "static void zend_eval_const_expr(zend_ast **ast_ptr) /* {{{ */"
+        },
+        {
+          "path": "Zend/zend_ast.c",
+          "line": 673,
+          "anchor": "ZEND_API zend_result ZEND_FASTCALL zend_ast_evaluate_ex("
+        },
+        {
+          "path": "Zend/zend_ast.c",
+          "line": 1327,
+          "anchor": "ZEND_API zend_result ZEND_FASTCALL zend_ast_evaluate_inner("
+        }
+      ]
+    },
+    {
+      "id": "C5C-G04",
+      "historicalHunkIds": [
+        "Zend/zend_compile.c:1802:1834",
+        "Zend/zend_compile.c:10662:11405",
+        "Zend/zend_compile.c:11398:12161"
+      ],
+      "previousDisposition": "RESOLVED \u2014 NO GRAMMAR IMPACT",
+      "currentDisposition": "RESOLVED \u2014 NO GRAMMAR IMPACT",
+      "sourceLocations": [],
+      "grammarRules": [
+        "class-name",
+        "class-constant-initializer",
+        "assignment-expression"
+      ],
+      "probeIds": [
+        "constant-static-class",
+        "constant-self-repair",
+        "reference-coalesce"
+      ],
+      "upstreamTests": [],
+      "progress": "Previously resolved source scope retained; exact-pin stage controls corroborate it without reopening or expanding the exclusion.",
+      "remainingRisk": "None for the reviewed source edits. No claim about unrelated coalesce/reference optimizations.",
+      "certificationConsequence": "No new normative action for this already-reviewed scope; no blanket compiler exclusion.",
+      "originalRemainingRisk": "None for the reviewed source edits. No claim about unrelated coalesce/reference optimizations.",
+      "originalSourceLocations": [
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 1834,
+          "anchor": "static bool zend_try_compile_const_expr_resolve_class_name(zval *zv, zend_ast *c"
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 11405,
+          "anchor": "static void zend_compile_assign_coalesce(znode *result, zend_ast *ast) /* {{{ */"
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 12161,
+          "anchor": "static void zend_compile_const_expr_class_name(zend_ast **ast_ptr) /* {{{ */"
+        }
+      ]
+    },
+    {
+      "id": "C5C-G05",
+      "historicalHunkIds": [
+        "Zend/zend_compile.c:7639:8296"
+      ],
+      "previousDisposition": "RESOLVED \u2014 NO GRAMMAR IMPACT",
+      "currentDisposition": "RESOLVED \u2014 NO GRAMMAR IMPACT",
+      "sourceLocations": [],
+      "grammarRules": [
+        "attribute"
+      ],
+      "probeIds": [
+        "attribute-target",
+        "attribute-discarded"
+      ],
+      "upstreamTests": [
+        "Zend/tests/attributes/override/constants/enum_failure_case.phpt"
+      ],
+      "progress": "Previously resolved source scope retained; exact-pin stage controls corroborate it without reopening or expanding the exclusion.",
+      "remainingRisk": "None for this unreachable cleanup. No blanket exclusion of attribute predicates.",
+      "certificationConsequence": "No new normative action for this already-reviewed scope; no blanket compiler exclusion.",
+      "originalRemainingRisk": "None for this unreachable cleanup. No blanket exclusion of attribute predicates.",
+      "originalSourceLocations": [
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 8296,
+          "anchor": "static void zend_compile_attributes("
+        }
+      ]
+    },
+    {
+      "id": "C5C-G06",
+      "historicalHunkIds": [
+        "Zend/zend_compile.c:8065:8724",
+        "Zend/zend_compile.c:8169:8839",
+        "Zend/zend_compile.c:8215:8885"
+      ],
+      "previousDisposition": "RESOLVED \u2014 NO GRAMMAR IMPACT",
+      "currentDisposition": "RESOLVED \u2014 NO GRAMMAR IMPACT",
+      "sourceLocations": [],
+      "grammarRules": [
+        "closure-expression",
+        "arrow-function"
+      ],
+      "probeIds": [
+        "capture-duplicate",
+        "capture-discarded",
+        "implicit-capture"
+      ],
+      "upstreamTests": [],
+      "progress": "Previously resolved source scope retained; exact-pin stage controls corroborate it without reopening or expanding the exclusion.",
+      "remainingRisk": "None for these exact changes. Diagnostic byte rendering is not certified.",
+      "certificationConsequence": "No new normative action for this already-reviewed scope; no blanket compiler exclusion.",
+      "originalRemainingRisk": "None for these exact changes. Diagnostic byte rendering is not certified.",
+      "originalSourceLocations": [
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 8724,
+          "anchor": "static void zend_compile_closure_binding(znode *closure, zend_op_array *op_array"
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 8839,
+          "anchor": "static void compile_implicit_lexical_binds("
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 8885,
+          "anchor": "static void zend_compile_closure_uses(zend_ast *ast) /* {{{ */"
+        }
+      ]
+    },
+    {
+      "id": "C5C-G07",
+      "historicalHunkIds": [
+        "Zend/zend_inheritance.c:2171:2164",
+        "Zend/zend_inheritance.c:2202:2199"
+      ],
+      "previousDisposition": "UNRESOLVED \u2014 BOUNDED",
+      "currentDisposition": "UNRESOLVED \u2014 BOUNDED",
+      "sourceLocations": [
+        {
+          "group": "C5C-G07",
+          "path": "Zend/zend_inheritance.c",
+          "startLine": 2161,
+          "endLine": 2204,
+          "fileSha256": "d3f0f10319e7ffe0490ee85fd4b42f5dca9efa7804bc8e72b1b23d8df7dccf46",
+          "sliceSha256": "c0554d64496876f371050613767d4362ec2f9cc4be07f63dd505ed8308cb52e7",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_inheritance.c#L2161",
+          "text": "static void do_interface_implementation(zend_class_entry *ce, zend_class_entry *iface) /* {{{ */\n{\n\tzend_function *func;\n\tzend_string *key;\n\tzend_class_constant *c;\n\tuint32_t flags = ZEND_INHERITANCE_CHECK_PROTO | ZEND_INHERITANCE_CHECK_VISIBILITY;\n\n\tif (iface->num_interfaces) {\n\t\tzend_do_inherit_interfaces(ce, iface);\n\t}\n\n\tif (!(ce->ce_flags & ZEND_ACC_INTERFACE)) {\n\t\t/* We are not setting the prototype of overridden interface methods because of abstract\n\t\t * constructors. See Zend/tests/interface_constructor_prototype_001.phpt. */\n\t\tflags |=\n\t\t\tZEND_INHERITANCE_LAZY_CHILD_CLONE |\n\t\t\tZEND_INHERITANCE_SET_CHILD_PROTO |\n\t\t\tZEND_INHERITANCE_RESET_CHILD_OVERRIDE;\n\t} else {\n\t\tflags |=\n\t\t\tZEND_INHERITANCE_LAZY_CHILD_CLONE |\n\t\t\tZEND_INHERITANCE_RESET_CHILD_OVERRIDE;\n\t}\n\n\tZEND_HASH_MAP_FOREACH_STR_KEY_PTR(&iface->constants_table, key, c) {\n\t\tdo_inherit_iface_constant(key, c, ce, iface);\n\t} ZEND_HASH_FOREACH_END();\n\n\tZEND_HASH_MAP_FOREACH_STR_KEY_PTR(&iface->function_table, key, func) {\n\t\tdo_inherit_method(key, func, ce, true, flags);\n\t} ZEND_HASH_FOREACH_END();\n\n\tzend_hash_extend(&ce->properties_info,\n\t\tzend_hash_num_elements(&ce->properties_info) +\n\t\tzend_hash_num_elements(&iface->properties_info), 0);\n\n\tzend_property_info *prop;\n\tZEND_HASH_FOREACH_STR_KEY_PTR(&iface->properties_info, key, prop) {\n\t\tdo_inherit_property(prop, key, ce);\n\t} ZEND_HASH_FOREACH_END();\n\n\tdo_implement_interface(ce, iface);\n}\n/* }}} */\n"
+        }
+      ],
+      "grammarRules": [
+        "interface-declaration",
+        "class-declaration",
+        "class-constant-declaration"
+      ],
+      "probeIds": [
+        "autoload-covariance",
+        "autoload-invalid",
+        "autoload-override",
+        "autoload-override-missing",
+        "reentrant-interface-lookup"
+      ],
+      "upstreamTests": [
+        "Zend/tests/attributes/override/constants/anon_interface.phpt"
+      ],
+      "progress": "One guarded class_exists request from a variance-triggered autoloader observes an in-progress implementation as hidden, then links in both versions. Reentrant cycles, partially installed member graphs, failure recovery and other orderings remain unproved.",
+      "remainingRisk": "One guarded class lookup during variance-triggered autoload is observed. Cycles, partially installed interface/member graphs, other callback orderings and failure recovery remain unproved.",
+      "certificationConsequence": "Still blocks discovery closure; only the named sub-observations are strengthened.",
+      "originalRemainingRisk": "Reentrant callbacks that request a partially linked class, cycles and failure recovery remain unisolated. Four programs reduce the simple autoload gap, not all reentrant linking.",
+      "originalSourceLocations": [
+        {
+          "path": "Zend/zend_inheritance.c",
+          "line": 2164,
+          "anchor": "static void do_interface_implementation(zend_class_entry *ce, zend_class_entry *"
+        },
+        {
+          "path": "Zend/zend_inheritance.c",
+          "line": 2199,
+          "anchor": "static void do_interface_implementation(zend_class_entry *ce, zend_class_entry *"
+        }
+      ]
+    },
+    {
+      "id": "C5C-G08",
+      "historicalHunkIds": [
+        "Zend/zend_compile.c:9470:10177",
+        "Zend/zend_compile.c:9487:10199",
+        "Zend/zend_ast.c:911:1079",
+        "Zend/zend_ast.c:925:1096",
+        "Zend/zend_ast.h:166:165",
+        "Zend/zend_enum.c:558:570"
+      ],
+      "previousDisposition": "RESOLVED \u2014 NO GRAMMAR IMPACT",
+      "currentDisposition": "RESOLVED \u2014 NO GRAMMAR IMPACT",
+      "sourceLocations": [],
+      "grammarRules": [
+        "enum-case",
+        "enum-declaration",
+        "constant-expression"
+      ],
+      "probeIds": [
+        "enum-layout",
+        "enum-invalid-value"
+      ],
+      "upstreamTests": [
+        "Zend/tests/enum/backed-int-const-expr.phpt",
+        "Zend/tests/enum/backed-mismatch.phpt"
+      ],
+      "progress": "Previously resolved source scope retained; exact-pin stage controls corroborate it without reopening or expanding the exclusion.",
+      "remainingRisk": "No additional syntax impact for this representation change. Not a certification of enum object storage, internal C APIs or all optimizer consumers.",
+      "certificationConsequence": "No new normative action for this already-reviewed scope; no blanket compiler exclusion.",
+      "originalRemainingRisk": "No additional syntax impact for this representation change. Not a certification of enum object storage, internal C APIs or all optimizer consumers.",
+      "originalSourceLocations": [
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 10177,
+          "anchor": "static void zend_compile_enum_case(zend_ast *ast)"
+        },
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 10199,
+          "anchor": "static void zend_compile_enum_case(zend_ast *ast)"
+        },
+        {
+          "path": "Zend/zend_ast.c",
+          "line": 1079,
+          "anchor": "ZEND_API zend_result ZEND_FASTCALL zend_ast_evaluate_inner("
+        },
+        {
+          "path": "Zend/zend_ast.c",
+          "line": 1096,
+          "anchor": "ZEND_API zend_result ZEND_FASTCALL zend_ast_evaluate_inner("
+        },
+        {
+          "path": "Zend/zend_ast.h",
+          "line": 165,
+          "anchor": "enum _zend_ast_kind {"
+        },
+        {
+          "path": "Zend/zend_enum.c",
+          "line": 570,
+          "anchor": "static zend_ast_ref *create_enum_case_ast("
+        }
+      ]
+    },
+    {
+      "id": "C5C-G09",
+      "historicalHunkIds": [
+        "Zend/zend_compile.c:9512:10225"
+      ],
+      "previousDisposition": "RESOLVED \u2014 CONTEXTUAL VALIDATION IMPACT",
+      "currentDisposition": "RESOLVED \u2014 CONTEXTUAL VALIDATION IMPACT",
+      "sourceLocations": [],
+      "grammarRules": [
+        "enum-case",
+        "attribute"
+      ],
+      "probeIds": [
+        "enum-override",
+        "enum-override-missing"
+      ],
+      "upstreamTests": [
+        "Zend/tests/attributes/override/constants/enum_failure_case.phpt"
+      ],
+      "progress": "Previously resolved source scope retained; exact-pin stage controls corroborate it without reopening or expanding the exclusion.",
+      "remainingRisk": "Implementation identification is resolved; comprehensive declaration/link validation remains a separate outstanding project capability.",
+      "certificationConsequence": "No new normative action for this already-reviewed scope; no blanket compiler exclusion.",
+      "originalRemainingRisk": "Implementation identification is resolved; comprehensive declaration/link validation remains a separate outstanding project capability.",
+      "originalSourceLocations": [
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 10225,
+          "anchor": "static void zend_compile_enum_case(zend_ast *ast)"
+        }
+      ]
+    },
+    {
+      "id": "C5C-G10",
+      "historicalHunkIds": [
+        "Zend/zend_compile.c:8598:9284"
+      ],
+      "previousDisposition": "RESOLVED \u2014 NO GRAMMAR IMPACT",
+      "currentDisposition": "RESOLVED \u2014 NO GRAMMAR IMPACT",
+      "sourceLocations": [],
+      "grammarRules": [
+        "closure-expression"
+      ],
+      "probeIds": [
+        "cache-live-invalid",
+        "cache-discarded-invalid",
+        "closure-static-constant",
+        "closure-nonstatic-constant"
+      ],
+      "upstreamTests": [],
+      "progress": "Previously resolved source scope retained; exact-pin stage controls corroborate it without reopening or expanding the exclusion.",
+      "remainingRisk": "No source-acceptance impact from this cache-slot block. Object identity, cache lifetime and optimizer runtime behavior remain outside this exclusion.",
+      "certificationConsequence": "No new normative action for this already-reviewed scope; no blanket compiler exclusion.",
+      "originalRemainingRisk": "No source-acceptance impact from this cache-slot block. Object identity, cache lifetime and optimizer runtime behavior remain outside this exclusion.",
+      "originalSourceLocations": [
+        {
+          "path": "Zend/zend_compile.c",
+          "line": 9284,
+          "anchor": "static zend_op_array *zend_compile_func_decl_ex("
+        }
+      ]
+    },
+    {
+      "id": "C5C-G11",
+      "historicalHunkIds": [],
+      "previousDisposition": "RESOLVED \u2014 DOCUMENTATION IMPACT",
+      "currentDisposition": "RESOLVED \u2014 DOCUMENTATION IMPACT",
+      "sourceLocations": [
+        {
+          "group": "C5C-G11",
+          "path": "Zend/zend_language_parser.y",
+          "startLine": 1160,
+          "endLine": 1180,
+          "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+          "sliceSha256": "cd4b0a9f1a2f7f577ecf3e77a8f627e343f741a39c659d5a79906b0c5791867d",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y#L1160",
+          "text": "property_hook:\n\t\tproperty_hook_modifiers returns_ref T_STRING\n\t\tbackup_doc_comment { $<num>$ = CG(zend_lineno); }\n\t\toptional_parameter_list backup_fn_flags property_hook_body backup_fn_flags {\n\t\t\t$$ = zend_ast_create_decl(\n\t\t\t\tZEND_AST_PROPERTY_HOOK, $1 | $2 | $9, $<num>5, $4, zend_ast_get_str($3),\n\t\t\t\t$6, NULL, $8, NULL, NULL);\n\t\t\tCG(extra_fn_flags) = $7;\n\t\t}\n;\n\nproperty_hook_body:\n\t\t';' { $$ = NULL; }\n\t|\t'{' inner_statement_list '}' { $$ = $2; }\n\t|\tT_DOUBLE_ARROW expr ';'\n\t\t\t{ $$ = zend_ast_create(ZEND_AST_PROPERTY_HOOK_SHORT_BODY, $2); }\n;\n\noptional_parameter_list:\n\t\t%empty { $$ = NULL; }\n\t|\t'(' parameter_list ')' { $$ = $2; }\n"
+        },
+        {
+          "group": "C5C-G11",
+          "path": "Zend/zend_compile.c",
+          "startLine": 9348,
+          "endLine": 9427,
+          "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+          "sliceSha256": "743e7010a664bc82bd016bba9bcddf829c50e610ffea62917e9f0fdda8742dbf",
+          "url": "https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c#L9348",
+          "text": "zend_property_hook_kind zend_get_property_hook_kind_from_name(const zend_string *name) {\n\tif (zend_string_equals_literal_ci(name, \"get\")) {\n\t\treturn ZEND_PROPERTY_HOOK_GET;\n\t} else if (zend_string_equals_literal_ci(name, \"set\")) {\n\t\treturn ZEND_PROPERTY_HOOK_SET;\n\t} else {\n\t\treturn (zend_property_hook_kind)-1;\n\t}\n}\n\nstatic void zend_compile_property_hooks(\n\t\tzend_property_info *prop_info, zend_string *prop_name,\n\t\tzend_ast *prop_type_ast, const zend_ast_list *hooks)\n{\n\tzend_class_entry *ce = CG(active_class_entry);\n\n\tif (prop_info->flags & ZEND_ACC_READONLY) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Hooked properties cannot be readonly\");\n\t}\n\n\tif (hooks->children == 0) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Property hook list must not be empty\");\n\t}\n\n\tfor (uint32_t i = 0; i < hooks->children; i++) {\n\t\tzend_ast_decl *hook = (zend_ast_decl *) hooks->child[i];\n\t\tzend_string *name = hook->name;\n\t\tzend_ast *stmt_ast = hook->child[2];\n\t\tzend_ast **return_type_ast_ptr = NULL;\n\t\tzend_ast **value_type_ast_ptr = NULL;\n\t\tCG(zend_lineno) = hook->start_lineno;\n\n\t\t/* Non-private hooks are always public. This avoids having to copy the hook when inheriting\n\t\t * hooks from protected properties to public ones. */\n\t\tuint32_t hook_visibility = (prop_info->flags & ZEND_ACC_PPP_MASK) != ZEND_ACC_PRIVATE ? ZEND_ACC_PUBLIC : ZEND_ACC_PRIVATE;\n\t\thook->flags |= hook_visibility;\n\n\t\tif (prop_info->flags & ZEND_ACC_STATIC) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot declare hooks for static property\");\n\t\t}\n\t\tif ((hook->flags & ZEND_ACC_FINAL) && (hook->flags & ZEND_ACC_PRIVATE)) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Property hook cannot be both final and private\");\n\t\t}\n\t\tif ((ce->ce_flags & ZEND_ACC_INTERFACE)\n\t\t || ((prop_info->flags & ZEND_ACC_ABSTRACT) && !stmt_ast)) {\n\t\t\thook->flags |= ZEND_ACC_ABSTRACT;\n\n\t\t\tif (stmt_ast) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Abstract property hook cannot have body\");\n\t\t\t}\n\t\t\tif (hook->flags & ZEND_ACC_PRIVATE) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\t\t\"Property hook cannot be both abstract and private\");\n\t\t\t}\n\t\t\tif (hook->flags & ZEND_ACC_FINAL) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Property hook cannot be both abstract and final\");\n\t\t\t}\n\t\t} else if (!stmt_ast) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Non-abstract property hook must have a body\");\n\t\t}\n\n\t\tzend_property_hook_kind hook_kind = zend_get_property_hook_kind_from_name(name);\n\t\tif (hook_kind == (zend_property_hook_kind)-1) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\t\"Unknown hook \\\"%s\\\" for property %s::$%s, expected \\\"get\\\" or \\\"set\\\"\",\n\t\t\t\tZSTR_VAL(name), ZSTR_VAL(ce->name), ZSTR_VAL(prop_name));\n\t\t}\n\n\t\tif (stmt_ast && stmt_ast->kind == ZEND_AST_PROPERTY_HOOK_SHORT_BODY) {\n\t\t\tstmt_ast = stmt_ast->child[0];\n\t\t\tif (hook_kind == ZEND_PROPERTY_HOOK_GET) {\n\t\t\t\tstmt_ast = zend_ast_create(ZEND_AST_RETURN, stmt_ast);\n\t\t\t} else {\n\t\t\t\tZEND_ASSERT(hook_kind == ZEND_PROPERTY_HOOK_SET);\n\t\t\t\tstmt_ast = zend_ast_create(ZEND_AST_ASSIGN,\n\t\t\t\t\tzend_ast_create(ZEND_AST_PROP,\n\t\t\t\t\t\tzend_ast_create(ZEND_AST_VAR, zend_ast_create_zval_from_str(ZSTR_KNOWN(ZEND_STR_THIS))),\n\t\t\t\t\t\tzend_ast_create_zval_from_str(zend_copy_unmangled_prop_name(prop_info->name))),\n\t\t\t\t\tstmt_ast);\n\t\t\t}\n"
+        }
+      ],
+      "grammarRules": [
+        "hook-name",
+        "property-hook",
+        "closure-expression"
+      ],
+      "probeIds": [
+        "hook-live",
+        "hook-retained",
+        "hook-discarded",
+        "hook-constant-discarded",
+        "hook-get-repair"
+      ],
+      "upstreamTests": [
+        "Zend/tests/property_hooks/unknown_hook.phpt"
+      ],
+      "progress": "Previously resolved source scope retained; exact-pin stage controls corroborate it without reopening or expanding the exclusion.",
+      "remainingRisk": "No correction in this phase. Any change to literal compiler-acceptance equivalence requires separate historical-correction governance and explicit implementation authorization.",
+      "certificationConsequence": "No new normative action for this already-reviewed scope; no blanket compiler exclusion.",
+      "originalRemainingRisk": "No correction in this phase. Any change to literal compiler-acceptance equivalence requires separate historical-correction governance and explicit implementation authorization.",
+      "originalSourceLocations": []
+    }
+  ],
+  "effectivePhase6PendingDirectReview": 230,
+  "effectivePhase6ExaminedUnresolved": 14,
+  "newRawHunksDischarged": 0,
+  "reviewedGroupCount": 11,
+  "unresolvedGroupIds": [
+    "C5C-G01",
+    "C5C-G02",
+    "C5C-G03",
+    "C5C-G07"
+  ],
+  "retainedExclusionGroupIds": [
+    "C5C-G04",
+    "C5C-G05",
+    "C5C-G06",
+    "C5C-G08",
+    "C5C-G10"
+  ],
+  "retainedContextAssociation": "C5C-G09",
+  "retainedPolicyClassification": "C5C-G11",
+  "outsideLedgerScope": "Unassociated PHPTs, transitive compiler/AST/optimizer and linking paths remain open; no new exhaustive audit."
+}

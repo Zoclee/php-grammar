@@ -1,0 +1,21 @@
+{
+  "obligation": "Recompute all RFC candidate dispositions at the selected source pin; no RFC-only permission.",
+  "status": "failed",
+  "exit_code": 1,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/source-completeness-audit.php",
+    "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+    "--sources86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+    "--check"
+  ],
+  "log": "docs/8.6/certification/logs/rfc-implementation-traceability.log",
+  "logSha256": "9f84ce59ec8df4d16e07e118d4d909c8144d3ebf7e2299486612b3f5cac2c373"
+}

@@ -1,0 +1,10 @@
+{
+  "errors": [],
+  "preservedFiles": 2227,
+  "gateCounts": {
+    "passed": 25,
+    "failed": 1,
+    "blocked": 10
+  },
+  "certificationGranted": false
+}

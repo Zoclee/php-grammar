@@ -1,0 +1,42 @@
+{
+  "commit": "7d8b6e5fa92f82e7e8c122a9a989a22727f61c3e",
+  "snapshot": "C:/Data/GitHub/php-grammar/.audit/phase7c1-historical/",
+  "inputCount": 1545,
+  "differences": {
+    "src/Ebnf/Validation/GrammarValidator.php": {
+      "expected": "bdf4560238826406bce9077b239ed4ade0b54faf3802820de95cce83f3453cf6",
+      "checkout": "b3a4b12d7d7d5e3988c5d98c15678792185a6b830dbaabdc067f8ee12223cc31"
+    },
+    "tests/fixtures/php/8.5/parser-structure.json": {
+      "expected": "c19f354fb06ce0b8c37ed289b79414cb0da52ed70a918f0a4f2b1d4d3ae9c98a",
+      "checkout": "23640e797100028d668ea1ef531516a08011f81bdc22c03b924b039bd8407eed"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-closed-declaration.php": {
+      "expected": "771b1bea1d51c5aea9ac58af634924a64af9f22e0cc2bc2feba5faeac05808d9",
+      "checkout": "731c44de2be601b0d629131b61939dfa59f2302092b8700caf253f90d3664e16"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-destructure-keyed-list.php": {
+      "expected": "590cb3c8bb848ae92eee92f1dbac83308ae53f7db0d0dfe8db2bb674996e5afb",
+      "checkout": "018b33aee05dbee6200a539467f401c6ddb5bbc65a67a2986ee1310ff82e097a"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-dangling-loop-bodies.php": {
+      "expected": "03303182eeef6f8d73e8fdab97d01b8fe840fc5fdde1a3b82dd552623ab60240",
+      "checkout": "b120a44f8dfab916dad784c9a5c18cb6c4ec1ff724df98c30d983dac15655982"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-nested-nowdoc.php": {
+      "expected": "47ac12c85425f3c288e75ac2ed254a0ad8dfd8829a6f284123dfa5b3a143cb37",
+      "checkout": "517e82a37d02bb7b7ff9e43dc6cb06ce7c9c9bfb634679e3ec38d00f7c9fdaa3"
+    },
+    "tools/8.5/data/certification-policy.json": {
+      "expected": "23f4a1281b8f6353c3ab6cc7604c807ca856db72a7c5a642f73f751e37f1d476",
+      "checkout": "8d35da154ceb83a302447f1389b63ddacfbdc4cb3c153bc5796ec1d06229d918"
+    },
+    "tools/8.5/data/phase6-policy.json": {
+      "expected": "1c2c925420de49a5d3282a19343d3cab1de8353b6ed3f621e312b79003138d59",
+      "checkout": "b6e21ef854e93a525facf314a152fd5b570e7261af991066388dbf5733cdad97"
+    }
+  },
+  "ledgerSha256": "cce919d8b848a9892c33d62b09d5b4d87d6f6a50bf551746cefce634fd47ac9c",
+  "workspaceLedgerSha256": "cce919d8b848a9892c33d62b09d5b4d87d6f6a50bf551746cefce634fd47ac9c",
+  "method": "Temporary GIT_INDEX_FILE, read-tree and checkout-index; primary index untouched; repository attributes applied. No generator invoked."
+}

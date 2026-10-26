@@ -1,0 +1,1 @@
+<?php A\B(); \A\B(); namespace\f();

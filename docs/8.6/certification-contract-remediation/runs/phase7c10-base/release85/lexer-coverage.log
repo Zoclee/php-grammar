@@ -1,0 +1,29 @@
+tags               represented-differently  positive=15 boundary=3
+inline-html        verified                 positive=1 boundary=9
+shebang            represented-differently  positive=3 boundary=2
+whitespace         fixed                    positive=1 boundary=2
+comments           represented-differently  positive=6 boundary=23
+identifiers        verified                 positive=181 boundary=201
+keywords           represented-differently  positive=149 boundary=333
+enum               fixed                    positive=1 boundary=10
+yield-from         fixed                    positive=1 boundary=8
+variables          verified                 positive=181 boundary=11
+property           represented-differently  positive=2 boundary=83
+names              verified                 positive=7 boundary=3
+integers           represented-differently  positive=136 boundary=45
+floats             verified                 positive=30 boundary=8
+operators          represented-differently  positive=65 boundary=65
+casts              fixed                    positive=44 boundary=15
+single-strings     represented-differently  positive=16 boundary=2
+double-strings     represented-differently  positive=16 boundary=2
+backticks          represented-differently  positive=14 boundary=2
+escapes            represented-differently  positive=46 boundary=5
+interpolation      represented-differently  positive=4 boundary=39
+heredoc            fixed                    positive=140 boundary=41
+nowdoc             fixed                    positive=139 boundary=36
+halt               represented-differently  positive=3 boundary=4
+bytes              represented-differently  positive=512 boundary=35
+Scanner rules: 190; direct cases: 2700; primitive cases: 101; syntax cases: 144; grammar bypass entries: 246; unexpected failures: 1
+Unproven: exhaustive recursive state combinations and exact malformed-input recovery; see Phase 5 report.
+Ledger stale: run composer lexer:coverage -- --write
+Script php bin/lexer-coverage.php handling the lexer:coverage event returned with error code 1

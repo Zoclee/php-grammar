@@ -1,0 +1,8 @@
+{
+  "mode": "check",
+  "errors": [
+    "Stale evidence input set/digest; review changes and rerun --prepare"
+  ],
+  "certificationGranted": false,
+  "note": "A valid preparation ledger is not certification."
+}

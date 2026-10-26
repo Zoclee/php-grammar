@@ -1,0 +1,274 @@
+{
+  "commands": {
+    "historical-profile-check": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/context-profile.php",
+        "--check",
+        "--profile",
+        "historical-rc4",
+        "--report",
+        "docs/8.6/exact-pin-context-integration/historical.json"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-historical-profile-check.log",
+      "sha256": "f959f45e24409279fb1f67fe3a7a7487b546cf8280bec8239fbde23bb9759392"
+    },
+    "exact-profile-check": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/context-profile.php",
+        "--check",
+        "--profile",
+        "exact-pin-rc4",
+        "--report",
+        "docs/8.6/exact-pin-context-integration/exact.json"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-exact-profile-check.log",
+      "sha256": "1ae83d1f5f0f67d1ae95fa1e1ddf8f3a4c929bb205df439c30b0865e1f009f77"
+    },
+    "runner-context": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification.php",
+        "--context-evidence",
+        "--context-profile",
+        "exact-pin-rc4",
+        "--context-report",
+        "docs/8.6/exact-pin-context-integration/exact.json"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-runner-context.log",
+      "sha256": "a23c99c57c2bc9f19ae49a85a9066ff672d99c2e18ce5a6c126b7b1ef4e5aab0"
+    },
+    "provenance": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/exact-pin-check.php",
+        "--php86",
+        "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-provenance.log",
+      "sha256": "d11ff3a6df40d51ad8714965a947dff1454ab5ebb7d7ddc709babc6648d22726"
+    },
+    "legacy-context": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/context-check.php",
+        "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "--php86=C:/Data/GitHub/php-grammar/.audit/php86/php.exe",
+        "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+        "--sources86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+        "--report=docs/8.6/exact-pin-context-integration/legacy-context.json"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-legacy-context.log",
+      "sha256": "4c14401a51ee0d72efa6e56bc0f85f52a28d6e9d0f87f5ca5736179627e8424f"
+    },
+    "profile-negatives": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "-d",
+        "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress",
+        "--filter",
+        "ContextEvidenceTest|ExactPinProvenanceTest"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-profile-negatives.log",
+      "sha256": "c471decc173907aea213b73dda69e3e39915c10b4e2ee0166491f5e414ba53a0"
+    },
+    "source": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "source",
+        "--sources86",
+        "C:/Data/GitHub/php-grammar/.audit/php86-exact/source"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-source.log",
+      "sha256": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37"
+    },
+    "manifest": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/validate-manifest.php"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-manifest.log",
+      "sha256": "e2b231fd276610052d6d579479dd352de5ab52944b36d2c95e6db7de0a9f6da3"
+    },
+    "blockers": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "blockers"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-blockers.log",
+      "sha256": "d6950dc49f486121a863878a43b6497dc8fe41915bd64eaf47c02bd715a8a0ba"
+    },
+    "historical-integrity": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/evidence/historical-check.php"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-historical-integrity.log",
+      "sha256": "16842a9853c6d7f76d1ddf6f279578951e9c6e696a9af948a93a9150636e2747"
+    },
+    "boundary-tests": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "-d",
+        "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress",
+        "--filter",
+        "VersionBoundaryTest"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-boundary-tests.log",
+      "sha256": "5f633cb90b768d129ee31b77e4f594ca502b2c597d10a318ae201a0823bddaf1"
+    },
+    "integration": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/integration-check.php",
+        "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "--php86=C:/Data/GitHub/php-grammar/.audit/php86/php.exe",
+        "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+        "--sources86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+        "--report=docs/8.6/exact-pin-context-integration/integration.json"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-integration.log",
+      "sha256": "90c92a8d896be6a42a85477c0dac0a6a12fe010994b96bb4eadf1a800420e29a"
+    },
+    "full-suite": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "-d",
+        "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-full-suite.log",
+      "sha256": "68deef128030a15a1a076b17f94aa2473324c919f309276d6ec6e4def66b3b74"
+    },
+    "infrastructure": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "-d",
+        "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress",
+        "--filter",
+        "Certification86Test|HistoricalEvidenceContractTest|CompatibilityEvidenceTest"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-infrastructure.log",
+      "sha256": "6d0bf092ab78c4335c8aaebc44d011df4bda874fe9d070b3b7b1b3d5b60e7e94"
+    },
+    "traceability": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/change-traceability.php",
+        "--report=docs/8.6/exact-pin-context-integration/traceability.json"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-traceability.log",
+      "sha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+    },
+    "legacy85": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.5/certification.php",
+        "--check"
+      ],
+      "exit_code": 1,
+      "expectedExit": 1,
+      "log": "docs/8.6/exact-pin-context-integration/validation-legacy85.log",
+      "sha256": "e053a6cc40e83dd5b936eaf693f4e69d650ad738842af86fcf039e06e36590cd"
+    },
+    "legacy86": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification.php",
+        "--check"
+      ],
+      "exit_code": 1,
+      "expectedExit": 1,
+      "log": "docs/8.6/exact-pin-context-integration/validation-legacy86.log",
+      "sha256": "e92847a213c786fb01c0c681cb7c95c83de700d7624eb15c256e30ad93b2542f"
+    },
+    "claims": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification.php",
+        "--claims"
+      ],
+      "exit_code": 1,
+      "expectedExit": 1,
+      "log": "docs/8.6/exact-pin-context-integration/validation-claims.log",
+      "sha256": "4385002185b317ffb33d7a3c962a47d80720c2e9354912c115cef246657f2e66"
+    },
+    "whitespace": {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=C:/Data/GitHub/php-grammar",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expectedExit": 0,
+      "log": "docs/8.6/exact-pin-context-integration/validation-whitespace.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -1,0 +1,1814 @@
+{
+  "schema": 1,
+  "phase": "7B",
+  "gates": {
+    "manifest-schema": {
+      "purpose": "Validate schema, metadata paths, RC4 pin and draft/stable status.",
+      "actualResult": {
+        "obligation": "Validate schema, metadata paths, RC4 pin and draft/stable status.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "manifest",
+          "--sources86",
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/manifest-schema.log",
+        "logSha256": "8d33e37fb7cfebb7e8ec69251ee37a3d55e642abd218ab930ec9e6998106be5e"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "manifest",
+        "--sources86",
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/manifest-schema"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/manifest-schema.log": "8d33e37fb7cfebb7e8ec69251ee37a3d55e642abd218ab930ec9e6998106be5e"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "manifest-regressions": {
+      "purpose": "Exercise valid and invalid manifest contracts.",
+      "actualResult": {
+        "obligation": "Exercise valid and invalid manifest contracts.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "ToolManifestTest"
+        ],
+        "log": "docs/8.6/certification/logs/manifest-regressions.log",
+        "logSha256": "0bfccd05a6dc926a6c501b18e026d18fe5791ffa7191aeb4f4965363635fb6df"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "-d",
+        "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress",
+        "--filter",
+        "ToolManifestTest"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/manifest-regressions"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/manifest-regressions.log": "0bfccd05a6dc926a6c501b18e026d18fe5791ffa7191aeb4f4965363635fb6df"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "standalone-structure-parity": {
+      "purpose": "Load only 8.6; check EBNF structure/references, parity, version selection and CLI.",
+      "actualResult": {
+        "obligation": "Load only 8.6; check EBNF structure/references, parity, version selection and CLI.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "Php86IntegrationTest|VersionPackageConsistencyTest|RepositoryManifestTest"
+        ],
+        "log": "docs/8.6/certification/logs/standalone-structure-parity.log",
+        "logSha256": "4b63c70c2066a9bc6d268acbe244e221aa16a672303de267a5691f939fa1e4a7"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "-d",
+        "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress",
+        "--filter",
+        "Php86IntegrationTest|VersionPackageConsistencyTest|RepositoryManifestTest"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/standalone-structure-parity"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/standalone-structure-parity.log": "4b63c70c2066a9bc6d268acbe244e221aa16a672303de267a5691f939fa1e4a7"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "positive-negative-fixtures": {
+      "purpose": "Run registered positive and structural-negative fixture providers.",
+      "actualResult": {
+        "obligation": "Run registered positive and structural-negative fixture providers.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "PhpConformanceFixtureTest"
+        ],
+        "log": "docs/8.6/certification/logs/positive-negative-fixtures.log",
+        "logSha256": "1d9c7b153624c5a92142b68e899b87cf2f0466e45c9953db70990831367bb413"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "-d",
+        "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress",
+        "--filter",
+        "PhpConformanceFixtureTest"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/positive-negative-fixtures"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/positive-negative-fixtures.log": "1d9c7b153624c5a92142b68e899b87cf2f0466e45c9953db70990831367bb413"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "ordinary-differential": {
+      "purpose": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+      "actualResult": {
+        "obligation": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-boundaries.php",
+          "--php86",
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--report",
+          "docs/8.6/certification/boundaries.json"
+        ],
+        "log": "docs/8.6/certification/logs/ordinary-differential.log",
+        "logSha256": "1e858e2ec9a0260e8fc52fd1b2cb4ec93401e6ea55725a00a54cff9e4e68cc50"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/certification-boundaries.php",
+        "--php86",
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+        "--report",
+        "docs/8.6/certification/boundaries.json"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/ordinary-differential"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/ordinary-differential.log": "1e858e2ec9a0260e8fc52fd1b2cb4ec93401e6ea55725a00a54cff9e4e68cc50"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "lexer-profiles": {
+      "purpose": "Compare version-specific token boundaries and both short-tag profiles with both distributions.",
+      "actualResult": {
+        "obligation": "Compare version-specific token boundaries and both short-tag profiles with both distributions.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/integration-check.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+          "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/integration.json"
+        ],
+        "log": "docs/8.6/certification/logs/lexer-profiles.log",
+        "logSha256": "90c92a8d896be6a42a85477c0dac0a6a12fe010994b96bb4eadf1a800420e29a"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/integration-check.php",
+        "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+        "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+        "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+        "--report=docs/8.6/certification/integration.json"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/lexer-profiles"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/lexer-profiles.log": "90c92a8d896be6a42a85477c0dac0a6a12fe010994b96bb4eadf1a800420e29a"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "pfa-differential": {
+      "purpose": "Validate PFA positives, structural/contextual negatives and paired lint with pinned hashes.",
+      "actualResult": {
+        "obligation": "Validate PFA positives, structural/contextual negatives and paired lint with pinned hashes.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/pfa-check.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/pfa.json"
+        ],
+        "log": "docs/8.6/certification/logs/pfa-differential.log",
+        "logSha256": "7bd9a30c14871ab1be125157aa997320e374ade167a0b7f23216c11fbe263fdd"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/pfa-check.php",
+        "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+        "--sources=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+        "--report=docs/8.6/certification/pfa.json"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/pfa-differential"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/pfa-differential.log": "7bd9a30c14871ab1be125157aa997320e374ade167a0b7f23216c11fbe263fdd"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "contextual-differential": {
+      "purpose": "Check compiler, declaration-link and controlled-runtime expectations at their declared stage.",
+      "actualResult": {
+        "obligation": "Check compiler, declaration-link and controlled-runtime expectations at their declared stage.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/context-check.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+          "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/context.json"
+        ],
+        "log": "docs/8.6/certification/logs/contextual-differential.log",
+        "logSha256": "4c14401a51ee0d72efa6e56bc0f85f52a28d6e9d0f87f5ca5736179627e8424f"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/context-check.php",
+        "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+        "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+        "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+        "--report=docs/8.6/certification/context.json"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/contextual-differential"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/contextual-differential.log": "4c14401a51ee0d72efa6e56bc0f85f52a28d6e9d0f87f5ca5736179627e8424f"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "diagnostic-differential": {
+      "purpose": "Separate warning presence/stage from rejection in both distributions.",
+      "actualResult": {
+        "obligation": "Separate warning presence/stage from rejection in both distributions.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/deprecation-check.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+          "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/deprecation.json"
+        ],
+        "log": "docs/8.6/certification/logs/diagnostic-differential.log",
+        "logSha256": "ad1c7ab8e7e36ba0abd7e95f1d97678561689cff76ac219270ab41da61a1192f"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/deprecation-check.php",
+        "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+        "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+        "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+        "--report=docs/8.6/certification/deprecation.json"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/diagnostic-differential"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/diagnostic-differential.log": "ad1c7ab8e7e36ba0abd7e95f1d97678561689cff76ac219270ab41da61a1192f"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "version-boundaries": {
+      "purpose": "Discover structural/lint/link boundaries and verify paired outcomes and finding identity.",
+      "actualResult": {
+        "obligation": "Discover structural/lint/link boundaries and verify paired outcomes and finding identity.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/integration-check.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+          "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/integration.json"
+        ],
+        "log": "docs/8.6/certification/logs/version-boundaries.log",
+        "logSha256": "90c92a8d896be6a42a85477c0dac0a6a12fe010994b96bb4eadf1a800420e29a"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/integration-check.php",
+        "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+        "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+        "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+        "--report=docs/8.6/certification/integration.json"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/version-boundaries"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/version-boundaries.log": "90c92a8d896be6a42a85477c0dac0a6a12fe010994b96bb4eadf1a800420e29a"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "coverage-measurement": {
+      "purpose": "Measure actual 8.6 production/alternative witnesses and compare source-backed lexical cases.",
+      "actualResult": {
+        "obligation": "Measure actual 8.6 production/alternative witnesses and compare source-backed lexical cases.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/final-coverage-expansion.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+          "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/coverage-oracles.json",
+          "--coverage=docs/8.6/certification/coverage.json"
+        ],
+        "log": "docs/8.6/certification/logs/coverage-measurement.log",
+        "logSha256": "cab22ac107cc3080c397333ac111f1647f886775313e8734bc30844f360f0d51"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/final-coverage-expansion.php",
+        "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+        "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+        "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+        "--report=docs/8.6/certification/coverage-oracles.json",
+        "--coverage=docs/8.6/certification/coverage.json"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/coverage-measurement"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/coverage-measurement.log": "cab22ac107cc3080c397333ac111f1647f886775313e8734bc30844f360f0d51"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "parser-scanner-correspondence": {
+      "purpose": "Recompute the 176-production/623-alternative and 190-header inventories, source locks and mappings.",
+      "actualResult": {
+        "obligation": "Recompute the 176-production/623-alternative and 190-header inventories, source locks and mappings.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/source-completeness-audit.php",
+          "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+          "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+          "--check"
+        ],
+        "log": "docs/8.6/certification/logs/parser-scanner-correspondence.log",
+        "logSha256": "8a58f3618dcff126f1dac69a18b78c972e87f15d440ae219543bd78a074344f0"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/source-completeness-audit.php",
+        "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+        "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+        "--check"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/parser-scanner-correspondence"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/parser-scanner-correspondence.log": "8a58f3618dcff126f1dac69a18b78c972e87f15d440ae219543bd78a074344f0"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "compiler-contextual-reconciliation": {
+      "purpose": "Verify bounded semantic groups, inventories, source references and preserved uncertainties.",
+      "actualResult": {
+        "obligation": "Verify bounded semantic groups, inventories, source references and preserved uncertainties.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "Php86CompilerContextualTest"
+        ],
+        "log": "docs/8.6/certification/logs/compiler-contextual-reconciliation.log",
+        "logSha256": "bca06f0c745393c2ce5efad7eec269d12ae02a2c5c66d4c74ba7524af0fd1d89"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "-d",
+        "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress",
+        "--filter",
+        "Php86CompilerContextualTest"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/compiler-contextual-reconciliation"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/compiler-contextual-reconciliation.log": "bca06f0c745393c2ce5efad7eec269d12ae02a2c5c66d4c74ba7524af0fd1d89"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "rfc-implementation-traceability": {
+      "purpose": "Recompute all RFC candidate dispositions at the selected source pin; no RFC-only permission.",
+      "actualResult": {
+        "obligation": "Recompute all RFC candidate dispositions at the selected source pin; no RFC-only permission.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/source-completeness-audit.php",
+          "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+          "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+          "--check"
+        ],
+        "log": "docs/8.6/certification/logs/rfc-implementation-traceability.log",
+        "logSha256": "8a58f3618dcff126f1dac69a18b78c972e87f15d440ae219543bd78a074344f0"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/source-completeness-audit.php",
+        "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+        "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+        "--check"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/rfc-implementation-traceability"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/rfc-implementation-traceability.log": "8a58f3618dcff126f1dac69a18b78c972e87f15d440ae219543bd78a074344f0"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "production-change-traceability": {
+      "purpose": "Reject unexplained added/removed/modified productions, lexical/prose drift and stale witnesses.",
+      "actualResult": {
+        "obligation": "Reject unexplained added/removed/modified productions, lexical/prose drift and stale witnesses.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/change-traceability.php",
+          "--report=docs/8.6/certification/traceability.json"
+        ],
+        "log": "docs/8.6/certification/logs/production-change-traceability.log",
+        "logSha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/change-traceability.php",
+        "--report=docs/8.6/certification/traceability.json"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/production-change-traceability"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/production-change-traceability.log": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "changes-document-completeness": {
+      "purpose": "Verify all ten sections, finding IDs, source pins and regression references.",
+      "actualResult": {
+        "obligation": "Verify all ten sections, finding IDs, source pins and regression references.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/change-traceability.php",
+          "--report=docs/8.6/certification/traceability.json"
+        ],
+        "log": "docs/8.6/certification/logs/changes-document-completeness.log",
+        "logSha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/change-traceability.php",
+        "--report=docs/8.6/certification/traceability.json"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/changes-document-completeness"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/changes-document-completeness.log": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "historical-preservation": {
+      "purpose": "Compare every pre-7A project file, including all 8.5 evidence/fixtures/locks and both 8.6 specifications.",
+      "actualResult": {
+        "obligation": "Compare every pre-7A project file, including all 8.5 evidence/fixtures/locks and both 8.6 specifications.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "preservation",
+          "--sources86",
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/historical-preservation.log",
+        "logSha256": "d7dbdba14e62d40d32069ddce95242935aa49ab63060a282d5976f16f078ad51"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "preservation",
+        "--sources86",
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/historical-preservation"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/historical-preservation.log": "d7dbdba14e62d40d32069ddce95242935aa49ab63060a282d5976f16f078ad51"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "public-api-cli": {
+      "purpose": "Run consumer workflow, package contract and navigation CLI regressions.",
+      "actualResult": {
+        "obligation": "Run consumer workflow, package contract and navigation CLI regressions.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "Consumer|ConformanceVersionSupportTest"
+        ],
+        "log": "docs/8.6/certification/logs/public-api-cli.log",
+        "logSha256": "2f44e15429773f03661041c5f2b2f4209f10db74953431f2d4e17f9c967b4c6a"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "-d",
+        "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress",
+        "--filter",
+        "Consumer|ConformanceVersionSupportTest"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/public-api-cli"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/public-api-cli.log": "2f44e15429773f03661041c5f2b2f4209f10db74953431f2d4e17f9c967b4c6a"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "source-lock-integrity": {
+      "purpose": "Verify independent RC4 lock completeness and every required source SHA-256.",
+      "actualResult": {
+        "obligation": "Verify independent RC4 lock completeness and every required source SHA-256.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "source",
+          "--sources86",
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/source-lock-integrity.log",
+        "logSha256": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "source",
+        "--sources86",
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/source-lock-integrity"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/source-lock-integrity.log": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "evidence-freshness": {
+      "purpose": "Verify historical audit inputs; final --check also compares complete current input/output sets.",
+      "actualResult": {
+        "obligation": "Verify historical audit inputs; final --check also compares complete current input/output sets.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "freshness",
+          "--sources86",
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/evidence-freshness.log",
+        "logSha256": "61086d86a645f8ff1c51984771d55d193cbff6134d670afdbfc72142863d9306"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "freshness",
+        "--sources86",
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/evidence-freshness"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/evidence-freshness.log": "61086d86a645f8ff1c51984771d55d193cbff6134d670afdbfc72142863d9306"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "blocker-dispositions": {
+      "purpose": "Require all seven complete, unchanged Phase 6 blocking dispositions.",
+      "actualResult": {
+        "obligation": "Require all seven complete, unchanged Phase 6 blocking dispositions.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "blockers",
+          "--sources86",
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/blocker-dispositions.log",
+        "logSha256": "d6950dc49f486121a863878a43b6497dc8fe41915bd64eaf47c02bd715a8a0ba"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "blockers",
+        "--sources86",
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/blocker-dispositions"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/blocker-dispositions.log": "d6950dc49f486121a863878a43b6497dc8fe41915bd64eaf47c02bd715a8a0ba"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "documentation-json": {
+      "purpose": "Validate new JSON, local documentation links, status wording and whitespace.",
+      "actualResult": {
+        "obligation": "Validate new JSON, local documentation links, status wording and whitespace.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "documentation",
+          "--sources86",
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/documentation-json.log",
+        "logSha256": "aea523efbb6df7a3123f9ad42bec5d2d0c2b8551d38c044fa4c5df6f935638d7"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "documentation",
+        "--sources86",
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/documentation-json"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/documentation-json.log": "aea523efbb6df7a3123f9ad42bec5d2d0c2b8551d38c044fa4c5df6f935638d7"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "full-regression": {
+      "purpose": "Run the entire repository PHPUnit suite without cached results.",
+      "actualResult": {
+        "obligation": "Run the entire repository PHPUnit suite without cached results.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress"
+        ],
+        "log": "docs/8.6/certification/logs/full-regression.log",
+        "logSha256": "d620a8c6da5e9efb83f9c852e61d7ff1fa5e88857e974f8ede6dc0dd1fcec332"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "-d",
+        "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/full-regression"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/full-regression.log": "d620a8c6da5e9efb83f9c852e61d7ff1fa5e88857e974f8ede6dc0dd1fcec332"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "infrastructure-negatives": {
+      "purpose": "Exercise isolated missing/stale/invalid inputs, failed gates and false certification claims.",
+      "actualResult": {
+        "obligation": "Exercise isolated missing/stale/invalid inputs, failed gates and false certification claims.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "Certification86Test"
+        ],
+        "log": "docs/8.6/certification/logs/infrastructure-negatives.log",
+        "logSha256": "adefa99b8d1a7d44ee4e51760ab03433bf6d026caeb823d7b3d985d131ee3e79"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "-d",
+        "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress",
+        "--filter",
+        "Certification86Test"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/infrastructure-negatives"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/infrastructure-negatives.log": "adefa99b8d1a7d44ee4e51760ab03433bf6d026caeb823d7b3d985d131ee3e79"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "historical-certification-check": {
+      "purpose": "Run unmodified 8.5 certification --check; record pre-existing freshness failures, never rewrite history.",
+      "actualResult": {
+        "obligation": "Run unmodified 8.5 certification --check; record pre-existing freshness failures, never rewrite history.",
+        "status": "failed",
+        "exit_code": 1,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.5/certification.php",
+          "--source-cache",
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\phase7-sources",
+          "--check"
+        ],
+        "log": "docs/8.6/certification/logs/historical-certification-check.log",
+        "logSha256": "e053a6cc40e83dd5b936eaf693f4e69d650ad738842af86fcf039e06e36590cd"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.5/certification.php",
+        "--source-cache",
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\phase7-sources",
+        "--check"
+      ],
+      "requiredEvidence": [
+        "certification-execution/historical-freshness.json",
+        "tools/8.5/certification.php:197-220",
+        "docs/conformance-policy.md:67-91",
+        "docs/8.6/shared-lexer-regression.json"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/historical-certification-check.log": "e053a6cc40e83dd5b936eaf693f4e69d650ad738842af86fcf039e06e36590cd"
+      },
+      "classification": "stale historical artifact; cross-version dependency design limitation",
+      "reason": "The unchanged PHP 8.5 generator hashes whole src/tests/grammar/bin/tools trees plus explicit policy inputs. Its 1545-input historical ledger differs from the 2030-input Phase 7B baseline: 12 changed paths and 485 additions, no missing old paths. All 1437 protected 8.5 files remain unchanged.",
+      "remediationDependency": [
+        "Review the twelve shared/governance changes",
+        "Audit all legacy release freshness gates",
+        "Authorize an evidence-format/dependency change or historical refresh separately"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/historical-certification-check"
+    },
+    "composer-validation": {
+      "purpose": "Validate Composer metadata strictly.",
+      "actualResult": {
+        "obligation": "Validate Composer metadata strictly.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_openssl.dll",
+          "C:\\ProgramData\\ComposerSetup\\bin/composer.phar",
+          "validate",
+          "--strict"
+        ],
+        "log": "docs/8.6/certification/logs/composer-validation.log",
+        "logSha256": "61bf3b29b703b2668e943b6a4b7e114e7d10c479b987ee0bb6de7d2ac1c2594f"
+      },
+      "executed": true,
+      "commandExecuted": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "-d",
+        "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_openssl.dll",
+        "C:\\ProgramData\\ComposerSetup\\bin/composer.phar",
+        "validate",
+        "--strict"
+      ],
+      "requiredEvidence": [
+        "run/docs/8.6/final-evidence.json#/inputs (complete executed input set)",
+        "run/docs/8.6/final-evidence.json#/artifacts (generated evidence and per-command outcomes)",
+        "docs/8.6/certification-gates.json#/gates/composer-validation"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4",
+        "run/docs/8.6/certification/logs/composer-validation.log": "61bf3b29b703b2668e943b6a4b7e114e7d10c479b987ee0bb6de7d2ac1c2594f"
+      },
+      "classification": "executable validation passed within its stated scope",
+      "reason": "Recorded command exited zero; this does not discharge separate closure gates.",
+      "remediationDependency": [],
+      "rerunRequired": false,
+      "rerunPolicy": "Rerun when an input, source pin, interpreter, profile, or dependent remediation changes.",
+      "plan": null
+    },
+    "production-coverage-closure": {
+      "purpose": "Disposition every uncovered production with independent evidence; unresolved meaningful gaps block.",
+      "actualResult": {
+        "obligation": "Disposition every uncovered production with independent evidence; unresolved meaningful gaps block.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "commandExecuted": null,
+      "requiredEvidence": [
+        "docs/8.6/source-audit-coverage.json#/remaining",
+        "docs/8.6/source-completeness-ledger.json#/canonical",
+        "docs/8.6/final-coverage-remaining.json"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4"
+      },
+      "classification": "missing independently justified conformance evidence",
+      "reason": "64 of 361 canonical productions remain unexercised: 52 primitive-bypassed, 11 trivia-removed, and reserved-non-modifiers. Classification is not proof of every source/scanner abstraction.",
+      "remediationDependency": [
+        "C6-COVERAGE scanner evidence",
+        "PHP86-013 for newly implicated source paths"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/production-coverage-closure"
+    },
+    "alternative-coverage-closure": {
+      "purpose": "Disposition every uncovered alternative, including context-only from; percentages do not waive gaps.",
+      "actualResult": {
+        "obligation": "Disposition every uncovered alternative, including context-only from; percentages do not waive gaps.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "commandExecuted": null,
+      "requiredEvidence": [
+        "docs/8.6/source-audit-coverage.json#/remaining",
+        "docs/8.6/source-completeness-ledger.json#/canonical/elements"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4"
+      },
+      "classification": "missing alternative-specific evidence and unresolved lexical identity",
+      "reason": "318 of 800 alternatives are unexercised: 174 primitive-bypassed, 9 trivia-removed, 134 meaningful gaps and one unresolved context-only from identity.",
+      "remediationDependency": [
+        "production-coverage-closure",
+        "ast-binding",
+        "scanner-state-closure"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/alternative-coverage-closure"
+    },
+    "scanner-state-closure": {
+      "purpose": "Supply independent RC4 scanner state/helper/error products; header equality is insufficient.",
+      "actualResult": {
+        "obligation": "Supply independent RC4 scanner state/helper/error products; header equality is insufficient.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "commandExecuted": null,
+      "requiredEvidence": [
+        "docs/8.6/source-completeness-ledger.json#/scanner",
+        "tests/fixtures/php/8.6/coverage-lexical.json",
+        "tests/fixtures/php/8.6/final-coverage-lexical.json"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4"
+      },
+      "classification": "missing RC4 scanner state/helper evidence",
+      "reason": "190 headers and eleven states are inventoried, but only 34 rule ranges associate with the 51 later lexical entries; 156 have family-level evidence. Range overlap is not an instrumented rule hit.",
+      "remediationDependency": [
+        "exact-pin-executable for exact executable claims",
+        "PHP86-013 for unreviewed helper paths"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/scanner-state-closure"
+    },
+    "ast-binding": {
+      "purpose": "Supply independent RC4 operand/AST and interpolation binding evidence, including retained ambiguities.",
+      "actualResult": {
+        "obligation": "Supply independent RC4 operand/AST and interpolation binding evidence, including retained ambiguities.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "commandExecuted": null,
+      "requiredEvidence": [
+        "docs/8.6/source-completeness-ledger.json#/parser",
+        "docs/8.6/source-completeness-ledger.json#/canonical",
+        "docs/8.6/final-coverage-expansion.md"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4"
+      },
+      "classification": "missing independent RC4 binding evidence",
+      "reason": "Parser-family mapping and finite acceptance do not prove operand spans, AST construction, aggregate interpolation binding or individual upstream-alternative equivalence.",
+      "remediationDependency": [
+        "Independent RC4 derivation/AST adapter and oracle provenance",
+        "alternative-coverage-closure",
+        "PHP86-015 for folding-sensitive comparisons"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/ast-binding"
+    },
+    "folding-order": {
+      "purpose": "Resolve optimized-call traversal and independently reconcile live/retained/discarded validation order.",
+      "actualResult": {
+        "obligation": "Resolve optimized-call traversal and independently reconcile live/retained/discarded validation order.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "PHP86-015: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "commandExecuted": null,
+      "requiredEvidence": [
+        "docs/8.6/compiler-contextual-groups.json#/groups/1",
+        "docs/8.6/compiler-contextual-groups.json#/groups/2",
+        "docs/8.6/source-audit-probes.json",
+        "docs/8.6/source-audit-upstream.json"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4"
+      },
+      "classification": "unresolved language/compatibility discrepancy and incomplete traversal evidence",
+      "reason": "Optimized printf/sprintf and array/constant traversal differ from ordinary calls; current observations do not define a universal intended discarded-expression validity rule.",
+      "remediationDependency": [
+        "PHP86-013 transitive discovery",
+        "exact-pin-executable",
+        "Upstream intended-boundary clarification"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/folding-order"
+    },
+    "discovery-closure": {
+      "purpose": "Resolve outstanding syntax-relevant compiler/AST/linking/optimizer discovery records.",
+      "actualResult": {
+        "obligation": "Resolve outstanding syntax-relevant compiler/AST/linking/optimizer discovery records.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "PHP86-013: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "commandExecuted": null,
+      "requiredEvidence": [
+        "docs/8.6/source-completeness-ledger.json#/discovery",
+        "docs/8.6/compiler-contextual-groups.json",
+        "docs/8.6/upstream-test-reconciliation.json",
+        "docs/8.6/rfc-review.json"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4"
+      },
+      "classification": "incomplete syntax-relevant source discovery",
+      "reason": "The 578-hunk inventory retains 230 pending-direct-review and 14 examined-unresolved records, plus bounded semantic groups, unassociated PHPTs and transitive/outside-ledger paths.",
+      "remediationDependency": [
+        "PHP86-014 and PHP86-015 for affected semantic groups",
+        "Independent review of unassociated source/test paths"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/discovery-closure"
+    },
+    "writable-target-validity": {
+      "purpose": "Establish intended writable-target validity and compiler/VM consistency.",
+      "actualResult": {
+        "obligation": "Establish intended writable-target validity and compiler/VM consistency.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "PHP86-014: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "commandExecuted": null,
+      "requiredEvidence": [
+        "docs/8.6/compiler-contextual-groups.json#/groups/0",
+        "docs/8.6/source-audit-probes.json",
+        "docs/8.6/source-audit-upstream.json"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4"
+      },
+      "classification": "unresolved intended validity with compiler/VM inconsistencies",
+      "reason": "Assignment/reference/list-derived property and dimension writes can lint successfully but reach inconsistent compiler/VM paths. Neither runtime failure nor successful reference-result execution defines intended structural validity.",
+      "remediationDependency": [
+        "Upstream intended-validity clarification and possibly a fix at a subsequently reviewed pin",
+        "exact-pin-executable",
+        "PHP86-013 source path review"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/writable-target-validity"
+    },
+    "contextual-enforcement-scope": {
+      "purpose": "Adjudicate incomplete contextual enforcement and predicate-level evidence for the bounded claim.",
+      "actualResult": {
+        "obligation": "Adjudicate incomplete contextual enforcement and predicate-level evidence for the bounded claim.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-CONTEXT: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "commandExecuted": null,
+      "requiredEvidence": [
+        "docs/8.6/source-completeness-ledger.json#/contextual",
+        "docs/8.6/compiler-contextual-reconciliation.json",
+        "docs/8.6/source-audit-context.json"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4"
+      },
+      "classification": "incomplete contextual predicate evidence and unadjudicated claim scope",
+      "reason": "73 restriction descriptions have family mappings, not 73 isolated RC4 predicates; the matcher is not a complete contextual validator.",
+      "remediationDependency": [
+        "PHP86-013",
+        "PHP86-014",
+        "PHP86-015",
+        "CA86-001"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/contextual-enforcement-scope"
+    },
+    "discarded-hook-disposition": {
+      "purpose": "Independently adjudicate the inherited get/set-only discrepancy; do not inherit an 8.5 conclusion.",
+      "actualResult": {
+        "obligation": "Independently adjudicate the inherited get/set-only discrepancy; do not inherit an 8.5 conclusion.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "CA86-001: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "commandExecuted": null,
+      "requiredEvidence": [
+        "docs/8.6/compiler-contextual-reconciliation.json",
+        "docs/8.6/source-audit-probes.json",
+        "grammar/8.6/php.md#property-hooks-and-promotion"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4"
+      },
+      "classification": "known inherited structural discrepancy requiring independent policy disposition",
+      "reason": "The get/set-only grammar rejects an unknown hook name that Zend can accept when its declaration is discarded.",
+      "remediationDependency": [
+        "Explicit policy/claim authorization",
+        "C6-CONTEXT predicate ordering"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/discarded-hook-disposition"
+    },
+    "exact-pin-executable": {
+      "purpose": "Require reviewed source/build/generated-file/configuration/binary provenance; a version string is insufficient.",
+      "actualResult": {
+        "obligation": "Require reviewed source/build/generated-file/configuration/binary provenance; a version string is insufficient.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-PROVENANCE: Interpreter/source provenance mismatch: source commit; Exact-pin build attestation has not been independently verified"
+      },
+      "executed": false,
+      "commandExecuted": null,
+      "requiredEvidence": [
+        "certification-execution/environment.json",
+        "certification-execution/run/docs/8.6/certification/interpreters.json",
+        "docs/8.6/certification-build.md",
+        "tools/lib/Certification86.php:233-243"
+      ],
+      "evidenceHashes": {
+        "run/docs/8.6/final-evidence.json": "d4c41631747ea5f7a41c4152dcbac1b7577a80f0b812146358f0f8c7ba43c734",
+        "../certification-execution-baseline.json": "bd7c2f04c4948d68bf9c643286b1d8c3397be0813661f415d86b43328d8c9ef4"
+      },
+      "classification": "source-provenance limitation; unavailable build prerequisites; attestation tooling gap",
+      "reason": "Distribution hashes/version strings do not attest source ancestry. VS 2022 C++ is installed but unconfigured; PHP SDK/dependency tools and bison/re2c are unavailable in the checked environment. No Docker/Podman or WSL distribution is available. The existing provenance validator also rejects every attestation by construction.",
+      "remediationDependency": [
+        "Supported PHP SDK and dependency bundle",
+        "Bison/re2c generators",
+        "T7B-RUNNER attestation-validation proposal",
+        "Independent review of build-to-binary linkage"
+      ],
+      "rerunRequired": true,
+      "rerunPolicy": "Required after legitimate remediation and any separately authorized runner correction.",
+      "plan": "docs/8.6/certification-remediation.json#/gates/exact-pin-executable"
+    }
+  },
+  "executedGateCommands": 26,
+  "blockedObligationsEvaluatedWithoutExecution": 10,
+  "certificationGranted": false
+}

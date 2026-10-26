@@ -1,0 +1,1021 @@
+{
+  "observations": [
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/63",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-default",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-readonly-default.php",
+      "fixtureSha256": "11d0b4178d80910d090200732ac42e64afca5c7924d6f980c5a120729a629edf",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/64",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-class",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-readonly-class.php",
+      "fixtureSha256": "060b59a269a5357fe0df574fb692c05b5d673ed795f124e6b83395d1bf9ace12",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/65",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-nullable",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-readonly-nullable.php",
+      "fixtureSha256": "981a2f08ddf1f4ccda6b9d83edc40754bfaace32b759cf5da64903a9c6c409d0",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/66",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-array",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-readonly-array.php",
+      "fixtureSha256": "699cc6e4f8a8885cf09a8d6dec334b0e30d33a6e0e47083cbd87a52b3c3e893b",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/67",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-inherit",
+      "finding": "PHP86-003",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-readonly-inherit.php",
+      "fixtureSha256": "97a6536f39ff75ee6f497f5f33a3674ac1761402673d3c429942f760cc03d051",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/68",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-promotion",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-readonly-promotion.php",
+      "fixtureSha256": "179f53686311ca9f7c95e66a7c7e129066931da0c10ea17906300f7d6b7c3ef3",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/69",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-untyped",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-untyped.php",
+      "fixtureSha256": "13f35741dfb246a82de3b5ef2f1746a2d2d3f363a8f21e22acb60c4ce0d9cfa7",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/70",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-static",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-static.php",
+      "fixtureSha256": "e33ba2be4ec27a80a078f0a20d6dae99deb774d4173f07750702a7b1caab440b",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/71",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-type",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-type.php",
+      "fixtureSha256": "46f7e371c4b71550d7d172bc89fd2c06b52561329b08f11edf5695d575cb7037",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/72",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-new",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-new.php",
+      "fixtureSha256": "ac769846d62cdd4cb2c547eac960197e7a3b097d303f498ca3dedfe77672369b",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/73",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-hook",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-hook.php",
+      "fixtureSha256": "66a40465460d70397b8ec71891464d96eb68620443d8b7d8c27ca3069115e946",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/74",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-change-flag",
+      "finding": "PHP86-003",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-change-flag.php",
+      "fixtureSha256": "0caf9472db254c8ab4d8c13d9618aec07fb99bea63039624c66745894ee1f6f3",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/75",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-discarded",
+      "finding": "PHP86-003",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-readonly-discarded.php",
+      "fixtureSha256": "4e876a98bee732c8a29a17104104aa930885817b1a4a77eb0e20d6186fb2a78e",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/76",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "readonly-initialized",
+      "finding": "PHP86-003",
+      "stage": "controlled-runtime",
+      "fixture": "tests/fixtures/php/8.6/valid/context-readonly-initialized.php",
+      "fixtureSha256": "73c726116f381287dc697244c030b29ca871f06a9907acaa1869b0f1e0e4606d",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/77",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-property",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-property.php",
+      "fixtureSha256": "3ce84fd129d62edeed1bfa664a6cfd71bae9caa0dc8d022690fc93f947a7fd4f",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/78",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-class-property",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-class-property.php",
+      "fixtureSha256": "f6e869d0e5503093ae68d03551bdeaf305f4b9d3f96f24c535adb9b8f92e8191",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/79",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-dimension-before",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-dimension-before.php",
+      "fixtureSha256": "0343bea9ec2e019684aaa6e953d0732bb00fea327e66237c78a3a8995287fb1c",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/80",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-dimension-after",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-dimension-after.php",
+      "fixtureSha256": "13d5be249b7156110e85872342c2a0e5ef81d5f3b3b045251c23f454520ae8f0",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/81",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-reference",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-reference.php",
+      "fixtureSha256": "512d9fc2c1ea7bf0b5c877b88a6f0f5b5892817fbf7eb03065c641160c2bbd1f",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/82",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-unset",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-unset.php",
+      "fixtureSha256": "ac0119f616095b56961e4b5ee87c03cc4873b024784687c77cdb28b4b61aa772",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/83",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-increment",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-increment.php",
+      "fixtureSha256": "08c580b879f2a53a05c0dc09e40cab5571c81ffc89046daf49699c0c4e0cbeb3",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/84",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-compound",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-compound.php",
+      "fixtureSha256": "0f56e21733ef99ed3419d277e20a64b3749ee302738630ade237439856add438",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/85",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-destructure",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-destructure.php",
+      "fixtureSha256": "bdb8b72bb8e05c4f319a402b9f4e9288b1dc9b4278f74ec17ce5a36411e0c85d",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/86",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-foreach",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-foreach.php",
+      "fixtureSha256": "882601a31538127e2af802ac18c781435fc40ef02806198ed683109574ae28b1",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/87",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-direct-array",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-object-direct-array.php",
+      "fixtureSha256": "5ef930cfd8433b1fa61ee597bf973285cc0ef9d5e975e3bb9e66b19cc513dad9",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/88",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-array-destructure",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-object-array-destructure.php",
+      "fixtureSha256": "363cc9429dd9e68910d2a0b6dfb7a059658f953ff54a519da7d380bf03228f7b",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/89",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-nullsafe",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-object-nullsafe.php",
+      "fixtureSha256": "f9b80eef767bbefc25f46109cefa023b3e9f33e211b0c51b6c757dbbc87cce86",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/90",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-read",
+      "finding": "PHP86-004",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-read.php",
+      "fixtureSha256": "6058f19a23a924269e75f6e65ed22c0cac7f59f185915a7117f60e90b3b809ec",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/91",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-runtime",
+      "finding": "PHP86-004",
+      "stage": "controlled-runtime",
+      "fixture": "tests/fixtures/php/8.6/valid/context-object-runtime.php",
+      "fixtureSha256": "764e3568a02f7f699855a7cebb9543a175fb1b9392cf64bc563509cafd83108f",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/92",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "object-nonobject",
+      "finding": "PHP86-004",
+      "stage": "controlled-runtime",
+      "fixture": "tests/fixtures/php/8.6/runtime/context-object-nonobject.php",
+      "fixtureSha256": "1b36dba182f617c72a29b823ac6c7f7dbea67690bcfdffc507ce88d1e26b172f",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/93",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-parent",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-override-parent.php",
+      "fixtureSha256": "03b12424bbccd837ce65ab0fb3ba1923d0e8f2904870c6c84f1229e8fc259d95",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/94",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-interface",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-override-interface.php",
+      "fixtureSha256": "48aa83ae112f286dc92d71a2389151197fdb7b674180d2162754eb02fd60607f",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/95",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-implementation",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-override-implementation.php",
+      "fixtureSha256": "f654a4e6cf2e46c0abea7f84aa6cb0e171bb7e1d1fa8ad33b2e5b008f5083415",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/96",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-enum",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-override-enum.php",
+      "fixtureSha256": "b3f062479d7aa26cb2f49a8507f1532ab02b8ab9f02eab5b23787cd13524b72b",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/97",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-enum-constant",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-override-enum-constant.php",
+      "fixtureSha256": "799300019a8dac9fae28aa9ead2734e16014016b20508e80055d68a987bdea20",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/98",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-protected",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-override-protected.php",
+      "fixtureSha256": "97376cb80564a8027b22577029abbac838d830ef08b5206b319f27397d15b1d2",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/99",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-missing",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-override-missing.php",
+      "fixtureSha256": "53f1900952bb1f86a074cf6101587170655c5bbe528954153d3509f4f0ef93fe",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/100",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-private",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-override-private.php",
+      "fixtureSha256": "4c1b5c26549a294458b0ad45724be53164879c0f12791a5512c847fbacb71214",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/101",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-final",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-override-final.php",
+      "fixtureSha256": "0ccff4c03fc50b7844a33724e35afd0106863310e8fb19832d6b8096da21ab0c",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/102",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-type",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-override-type.php",
+      "fixtureSha256": "bf8c749b6ecf81ff8cb6390492b87f3aeda358d56c66cf415940c00855e29cfb",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/103",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-delayed",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-override-delayed.php",
+      "fixtureSha256": "8798ee2a2e96711d0f81f9c7350cc56526a5a30812880ed2d4d2b66ed8bce67e",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/104",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "override-control",
+      "finding": "PHP86-005",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-override-control.php",
+      "fixtureSha256": "1e79abedccbcf908791aba3216ff46719c2955343c75a9ae9ccced058cd71540",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/105",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "enum-debug",
+      "finding": "PHP86-006",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-enum-debug.php",
+      "fixtureSha256": "250a741befc260a67833ad0da96bd3ebabe3b8c1b2aee06d5378389a6e1a66c9",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/106",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "enum-backed",
+      "finding": "PHP86-006",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-enum-backed.php",
+      "fixtureSha256": "1f7ab398550498f466c04cfc150ab85514173c6e295825a64773d5ddbba99e45",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/107",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "enum-untyped-return",
+      "finding": "PHP86-006",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-enum-untyped-return.php",
+      "fixtureSha256": "056e5a3d8c9e2ac9e55f63c32b4bce6bc2665c93f8113794001bb284714cb6fb",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/108",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "enum-get",
+      "finding": "PHP86-006",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-enum-get.php",
+      "fixtureSha256": "2d5336c51156f829e8e0454c8d3c46911d78bd5e3997eec0028f029b90837a9b",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/109",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "enum-parameters",
+      "finding": "PHP86-006",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-enum-parameters.php",
+      "fixtureSha256": "534aa6d8fbbd764021b7588a4117849acd096960b6ac300154930c26e0b0a04c",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/110",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "enum-return",
+      "finding": "PHP86-006",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-enum-return.php",
+      "fixtureSha256": "e49b0259df55d31072ca46dc62484f3164d31cb48996d49ac92685934fd27853",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/111",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "enum-static",
+      "finding": "PHP86-006",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-enum-static.php",
+      "fixtureSha256": "50acfcba725a5416b2d2ae2d379330828a0c9f7682f95a30689b11e0df52037d",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/112",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "enum-visibility-warning",
+      "finding": "PHP86-006",
+      "stage": "declaration-link",
+      "fixture": "tests/fixtures/php/8.6/valid/context-enum-visibility-warning.php",
+      "fixtureSha256": "54615dab5aaaa0dd3b1637e6b4fc244a5bc2f929f27e63df162e1dd879ed78e0",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/113",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "enum-lint-limit",
+      "finding": "PHP86-006",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-enum-lint-limit.php",
+      "fixtureSha256": "77e1eaf20a006bb6d54b7a9a25f7a6bc55b7d50826252d86077758978ff72e49",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/114",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-return",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-return.php",
+      "fixtureSha256": "d36610132e3c9580333489e837743f234a4d062782512a47c4fafc5aa733f228",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/115",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-yield",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-yield.php",
+      "fixtureSha256": "8237534094c53d9e08ec7367396ee4143650452af86834360455a6529b2cd24a",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/116",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-property",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-property.php",
+      "fixtureSha256": "29c178d5b1a6685c576153e346a2b55a8b59bbb2024644c1265de724918cfddd",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/117",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-reference-bind",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-reference-bind.php",
+      "fixtureSha256": "3fd49c3a3348494df150d8dc28b06b1a7f7fe8762950922501a6234bdcd75f8d",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/118",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-value",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-nullsafe-value.php",
+      "fixtureSha256": "39b92c80e08334d62919fe85781820449513a54beb0d98c167c4d6e3b5ebcc04",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/119",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-value-yield",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-nullsafe-value-yield.php",
+      "fixtureSha256": "ca59a02c31326a1129418b87975d972ea81aa56a05014d3e8b7978f906483f5b",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/120",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "ordinary-reference",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-ordinary-reference.php",
+      "fixtureSha256": "8ae5c6486b80ae8c0ba592114f22b66ef5603396775ae0dbbb9210f91403a55b",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/121",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-discarded",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-nullsafe-discarded.php",
+      "fixtureSha256": "a16f4c190bfc32c97f2ec3edafdf51ca95418c0e3349988097818a783defbfea",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/122",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-unreachable",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-unreachable.php",
+      "fixtureSha256": "14cea402b3234869ebb051e2233a990f3dbd2023f4a2f16469904a9e0aea328b",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/123",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-dead-if",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-dead-if.php",
+      "fixtureSha256": "1b5eaf8417269ac486ab0061144e91b90a3a0bf63eb6466974317a55aacef335",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/124",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-foreach",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-nullsafe-foreach.php",
+      "fixtureSha256": "e36f5f1e00eadf473ee36ea9a004dff1e353e9c12b93674d12b94be7627b26d4",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/differential-inventory-reconciliation/context.json#/observations/125",
+      "reportSha256": "fdd4e216bddc66c50e31fd4fc616559052f05055aae3a86089ee09fd658e4a48",
+      "id": "nullsafe-foreach-ref",
+      "finding": "PHP86-007",
+      "stage": "lint",
+      "fixture": "tests/fixtures/php/8.6/valid/context-nullsafe-foreach-ref.php",
+      "fixtureSha256": "d969b6c2e45c768a7a186816def5b55e67457feb8ee8014b07c6b06e125a931d",
+      "role": "Retained exact-profile observation; not newly executed in Phase 7E. Readonly defaults use PHP86-003 relaxation; Override linking is not an attribute-syntax verdict."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/143",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "enum-layout",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/enum-layout.php",
+      "fixtureSha256": "7d003c4596fbeb0be18193dff149b512096158c12cf4e88d761c13ab582258bb",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": true,
+        "executionSucceeded": true,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/145",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "enum-invalid-value",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/enum-invalid-value.php",
+      "fixtureSha256": "1dafa81954ffdb5da4aad95ea1b1226d66146ab377f40d5e5dbc57995737ebca",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": true,
+        "executionSucceeded": false,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/147",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "enum-override",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/enum-override.php",
+      "fixtureSha256": "6fc96e0c11810408c3d6554aa56f7fc44cbf296a54e22966a1d401fb5637bfe3",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": true,
+        "executionSucceeded": true,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/149",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "enum-override-missing",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/enum-override-missing.php",
+      "fixtureSha256": "e6d80eb9de4c1b189adb4ad32655a9b9a04462ec5e199e59e67f6504f8cb9051",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": true,
+        "executionSucceeded": false,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/157",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "array-map-pfa-or",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/array-map-pfa-or.php",
+      "fixtureSha256": "03321d2718b84f5f20cd6caaaa749212b1a6319624275a9000dd49af55105e7f",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": false,
+        "executionSucceeded": null,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/159",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "array-map-strict-pfa-or",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/array-map-strict-pfa-or.php",
+      "fixtureSha256": "16bbf639282382d3d20dd99ec7a5a0dd6a519cdd32d10763c53d4a6823d392ff",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": false,
+        "executionSucceeded": null,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/163",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "constant-pfa-reference-bound",
+      "fixture": "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-bound.php",
+      "fixtureSha256": "377f8824e5baf2d8a4286a1699064fa0eed4f1bc3af9a6a00f3714ede82d24d6",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": true,
+        "executionSucceeded": true,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/165",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "constant-pfa-reference-named",
+      "fixture": "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-named.php",
+      "fixtureSha256": "a65aea4379425ea4353785d00f07c8d461bcc27e651364910652e2668e3a63c9",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": true,
+        "executionSucceeded": true,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/167",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "constant-pfa-reference-variadic",
+      "fixture": "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-variadic.php",
+      "fixtureSha256": "aebaa510e340fa45bb99bef0e0b634ff40135281b2faeb7fbc18efeff92d9eca",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": true,
+        "executionSucceeded": true,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/169",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "constant-pfa-reference-placeholder",
+      "fixture": "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-placeholder.php",
+      "fixtureSha256": "152fa943514ab5f1a09c1d6944e1fc765c3a32cd67f613de9e9e7835a8f64de0",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": true,
+        "executionSucceeded": true,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/171",
+      "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+      "id": "reentrant-interface-lookup",
+      "fixture": "tests/fixtures/php/8.6/exact-pin-reconciliation/reentrant-interface-lookup.php",
+      "fixtureSha256": "39503ebe5d444f9bb0f74cceeace37b87d9c638d297c7330b60ee81f5a726be4",
+      "stage": {
+        "lintAccepted": true,
+        "executionObserved": true,
+        "executionSucceeded": true,
+        "opcodeDumpObserved": true,
+        "independentZendParserVerdict": false,
+        "intendedLanguageValidityEstablished": false
+      },
+      "role": "Reused finite source-correspondent control; does not discharge untested dispatch/graph/value combinations."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/0",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "variadic-default-repair",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/1",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "variadic-default-live",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/2",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "variadic-default-retained",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/3",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "variadic-default-discarded",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/4",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "variadic-default-unreachable",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/5",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "duplicate-parameter-repair",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/6",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "duplicate-parameter-live",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/7",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "duplicate-parameter-retained",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/8",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "duplicate-parameter-discarded",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/9",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "duplicate-parameter-unreachable",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/10",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "empty-hooks-repair",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/11",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "empty-hooks-live",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/12",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "empty-hooks-retained",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/13",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "empty-hooks-discarded",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/14",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "empty-hooks-unreachable",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/15",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "duplicate-hooks-repair",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/16",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "duplicate-hooks-live",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/17",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "duplicate-hooks-retained",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/18",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "duplicate-hooks-discarded",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/19",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "duplicate-hooks-unreachable",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/20",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "get-parentheses-repair",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/21",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "get-parentheses-live",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/22",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "get-parentheses-retained",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/23",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "get-parentheses-discarded",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/24",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "get-parentheses-unreachable",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/25",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "enum-backing-repair",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/26",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "enum-backing-live",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/27",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "enum-backing-retained",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/28",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "enum-backing-discarded",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/29",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "enum-backing-unreachable",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/30",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "bare-try-repair",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/31",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "bare-try-live",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/32",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "bare-try-retained",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/33",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "bare-try-discarded",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    },
+    {
+      "pointer": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/34",
+      "reportSha256": "267bf3fd1fbd04173f8a0c37a0b650ef445cb45a46a9c346bc60904b646c462e",
+      "id": "bare-try-unreachable",
+      "role": "Retained prior isolated predicate/stage evidence, including C018/C019/C028/C029/C034/C069; no duplicate execution."
+    }
+  ],
+  "boundary": "Pointers authenticate retained record membership; original verifiers authenticate source/executable/input correspondence. No new full-matrix execution claimed."
+}

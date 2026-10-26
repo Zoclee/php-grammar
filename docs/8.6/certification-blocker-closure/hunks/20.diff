@@ -1,0 +1,34 @@
+@@ -9050,22 +9748,31 @@ static void zend_compile_class_const_decl(zend_ast *ast, uint32_t flags, zend_as
+ 
+ 		if (attr_ast) {
+ 			zend_compile_attributes(&c->attributes, attr_ast, 0, ZEND_ATTRIBUTE_TARGET_CLASS_CONST, 0);
+ 
+-			zend_attribute *deprecated = zend_get_attribute_str(c->attributes, "deprecated", sizeof("deprecated")-1);
++			const zend_attribute *deprecated = zend_get_attribute_str(c->attributes, "deprecated", sizeof("deprecated")-1);
+ 
+ 			if (deprecated) {
+ 				ZEND_CLASS_CONST_FLAGS(c) |= ZEND_ACC_DEPRECATED;
+ 				/* For deprecated constants, we need to flag the zval for recursion
+ 				 * detection. Make sure the zval is separated out of shm. */
+ 				ce->ce_flags |= ZEND_ACC_HAS_AST_CONSTANTS;
+ 				ce->ce_flags &= ~ZEND_ACC_CONSTANTS_UPDATED;
+ 			}
++
++			const zend_attribute *override = zend_get_attribute_str(c->attributes, "override", sizeof("override") - 1);
++			if (override) {
++				ZEND_CLASS_CONST_FLAGS(c) |= ZEND_ACC_OVERRIDE;
++				/* We need to be able to remove the flag once the override is
++				 * resolved. See ZEND_ACC_DEPRECATED above. */
++				ce->ce_flags |= ZEND_ACC_HAS_AST_CONSTANTS;
++				ce->ce_flags &= ~ZEND_ACC_CONSTANTS_UPDATED;
++			}
+ 		}
+ 	}
+ }
+ 
+-static void zend_compile_class_const_group(zend_ast *ast) /* {{{ */
++static void zend_compile_class_const_group(const zend_ast *ast) /* {{{ */
+ {
+ 	zend_ast *const_ast = ast->child[0];
+ 	zend_ast *attr_ast = ast->child[1];
+ 	zend_ast *type_ast = ast->child[2];

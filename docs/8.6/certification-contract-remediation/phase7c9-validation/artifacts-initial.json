@@ -1,0 +1,28 @@
+{
+    "jsonFiles": 88,
+    "localDocumentationLinks": 24,
+    "contextIdentities": 73,
+    "originalCoverageIdentities": 382,
+    "scannerHeaders": 190,
+    "scannerStates": 11,
+    "baselineFiles": 3545,
+    "syntax": {
+        "tools/lib/ContextCoverageEvidence.php": {
+            "exit_code": 0,
+            "output": "No syntax errors detected in tools/lib/ContextCoverageEvidence.php\n"
+        },
+        "tools/8.6/context-coverage.php": {
+            "exit_code": 0,
+            "output": "No syntax errors detected in tools/8.6/context-coverage.php\n"
+        },
+        "tests/ContextCoverageEvidenceTest.php": {
+            "exit_code": 0,
+            "output": "No syntax errors detected in tests/ContextCoverageEvidenceTest.php\n"
+        }
+    },
+    "errors": [
+        "Broken local link docs/8.6/context-coverage-closure.md: certification-contract-remediation/phase7c9-validation/evidence-files.json"
+    ],
+    "limits": "Checks target local links, JSON, new PHP tooling syntax, preserved identity rows and baseline bytes; no external website crawl.",
+    "assessment": "Initial local-link pass preceded creation of evidence-files.json, its own output index. The index is now present; retain this ordering failure and rerun artifact validation. No release-gate outcome is changed."
+}

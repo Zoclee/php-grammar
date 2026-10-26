@@ -1,0 +1,54 @@
+{
+  "current": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification-current.php",
+      "--contract",
+      "php86-certification-v2",
+      "--check",
+      "--report",
+      "docs/8.6/certification-contract-remediation/runs/phase7c9/evidence.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/differential-inventory-reconciliation/baseline-current.log",
+    "sha256": "4a7da349d5e6d07e18066c3f712bd543aac23326e79796f5b1b8b9483de61cf7"
+  },
+  "source": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification-gate.php",
+      "--gate",
+      "source",
+      "--sources86",
+      "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/differential-inventory-reconciliation/baseline-source.log",
+    "sha256": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37"
+  },
+  "historical": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/historical-check.php"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/differential-inventory-reconciliation/baseline-historical.log",
+    "sha256": "16842a9853c6d7f76d1ddf6f279578951e9c6e696a9af948a93a9150636e2747"
+  },
+  "compatibility": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/compatibility.php",
+      "--check",
+      "--report",
+      "docs/8.5/compatibility/phase7c9/evidence.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/differential-inventory-reconciliation/baseline-compatibility.log",
+    "sha256": "ff84316b88c850b2295f88b5f877fa91358436fb31773ed23e42034b6dfca6e1"
+  }
+}

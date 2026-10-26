@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "version": "8.6",
+  "categories": [
+    "grammar integrity",
+    "positive conformance",
+    "negative boundary",
+    "lexical/scanner",
+    "AST/binding",
+    "folding",
+    "contextual validation",
+    "upstream source mapping",
+    "differential executable"
+  ],
+  "gates": {
+    "manifest-schema": [
+      "manifest",
+      "Validate schema, metadata paths, RC4 pin and draft/stable status."
+    ],
+    "manifest-regressions": [
+      "test-manifest",
+      "Exercise valid and invalid manifest contracts."
+    ],
+    "standalone-structure-parity": [
+      "test-integration",
+      "Load only 8.6; check EBNF structure/references, parity, version selection and CLI."
+    ],
+    "positive-negative-fixtures": [
+      "test-fixtures",
+      "Run registered positive and structural-negative fixture providers."
+    ],
+    "ordinary-differential": [
+      "boundaries",
+      "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint."
+    ],
+    "lexer-profiles": [
+      "integration",
+      "Compare version-specific token boundaries and both short-tag profiles with both distributions."
+    ],
+    "pfa-differential": [
+      "pfa",
+      "Validate PFA positives, structural/contextual negatives and paired lint with pinned hashes."
+    ],
+    "contextual-differential": [
+      "context",
+      "Check compiler, declaration-link and controlled-runtime expectations at their declared stage."
+    ],
+    "diagnostic-differential": [
+      "deprecation",
+      "Separate warning presence/stage from rejection in both distributions."
+    ],
+    "version-boundaries": [
+      "integration",
+      "Discover structural/lint/link boundaries and verify paired outcomes and finding identity."
+    ],
+    "coverage-measurement": [
+      "coverage",
+      "Measure actual 8.6 production/alternative witnesses and compare source-backed lexical cases."
+    ],
+    "parser-scanner-correspondence": [
+      "audit",
+      "Recompute the 176-production/623-alternative and 190-header inventories, source locks and mappings."
+    ],
+    "compiler-contextual-reconciliation": [
+      "test-compiler",
+      "Verify bounded semantic groups, inventories, source references and preserved uncertainties."
+    ],
+    "rfc-implementation-traceability": [
+      "audit",
+      "Recompute all RFC candidate dispositions at the selected source pin; no RFC-only permission."
+    ],
+    "production-change-traceability": [
+      "traceability",
+      "Reject unexplained added/removed/modified productions, lexical/prose drift and stale witnesses."
+    ],
+    "changes-document-completeness": [
+      "traceability",
+      "Verify all ten sections, finding IDs, source pins and regression references."
+    ],
+    "historical-preservation": [
+      "preservation",
+      "Compare every pre-7A project file, including all 8.5 evidence/fixtures/locks and both 8.6 specifications."
+    ],
+    "public-api-cli": [
+      "test-consumer",
+      "Run consumer workflow, package contract and navigation CLI regressions."
+    ],
+    "source-lock-integrity": [
+      "source",
+      "Verify independent RC4 lock completeness and every required source SHA-256."
+    ],
+    "evidence-freshness": [
+      "freshness",
+      "Verify historical audit inputs; final --check also compares complete current input/output sets."
+    ],
+    "blocker-dispositions": [
+      "blockers",
+      "Require all seven complete, unchanged Phase 6 blocking dispositions."
+    ],
+    "documentation-json": [
+      "documentation",
+      "Validate new JSON, local documentation links, status wording and whitespace."
+    ],
+    "full-regression": [
+      "test-all",
+      "Run the entire repository PHPUnit suite without cached results."
+    ],
+    "infrastructure-negatives": [
+      "test-certification",
+      "Exercise isolated missing/stale/invalid inputs, failed gates and false certification claims."
+    ],
+    "historical-certification-check": [
+      "historical",
+      "Run unmodified 8.5 certification --check; record pre-existing freshness failures, never rewrite history."
+    ],
+    "composer-validation": [
+      "composer",
+      "Validate Composer metadata strictly."
+    ],
+    "production-coverage-closure": [
+      "blocked:C6-COVERAGE",
+      "Disposition every uncovered production with independent evidence; unresolved meaningful gaps block."
+    ],
+    "alternative-coverage-closure": [
+      "blocked:C6-COVERAGE",
+      "Disposition every uncovered alternative, including context-only from; percentages do not waive gaps."
+    ],
+    "scanner-state-closure": [
+      "blocked:C6-COVERAGE",
+      "Supply independent RC4 scanner state/helper/error products; header equality is insufficient."
+    ],
+    "ast-binding": [
+      "blocked:C6-COVERAGE",
+      "Supply independent RC4 operand/AST and interpolation binding evidence, including retained ambiguities."
+    ],
+    "folding-order": [
+      "blocked:PHP86-015",
+      "Resolve optimized-call traversal and independently reconcile live/retained/discarded validation order."
+    ],
+    "discovery-closure": [
+      "blocked:PHP86-013",
+      "Resolve outstanding syntax-relevant compiler/AST/linking/optimizer discovery records."
+    ],
+    "writable-target-validity": [
+      "blocked:PHP86-014",
+      "Establish intended writable-target validity and compiler/VM consistency."
+    ],
+    "contextual-enforcement-scope": [
+      "blocked:C6-CONTEXT",
+      "Adjudicate incomplete contextual enforcement and predicate-level evidence for the bounded claim."
+    ],
+    "discarded-hook-disposition": [
+      "blocked:CA86-001",
+      "Independently adjudicate the inherited get/set-only discrepancy; do not inherit an 8.5 conclusion."
+    ],
+    "exact-pin-executable": [
+      "provenance",
+      "Require reviewed source/build/generated-file/configuration/binary provenance; a version string is insufficient."
+    ]
+  }
+}

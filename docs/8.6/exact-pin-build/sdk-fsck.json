@@ -1,0 +1,23 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "safe.directory=C:/Data/GitHub/php-grammar/.audit/php86-exact/sdk",
+    "-C",
+    "C:/Data/GitHub/php-grammar/.audit/php86-exact/sdk",
+    "fsck",
+    "--full"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "started": "2026-10-25T10:43:06+00:00",
+  "finished": "2026-10-25T10:43:07+00:00",
+  "exit_code": 0,
+  "stdout": {
+    "path": "docs/8.6/exact-pin-build/sdk-fsck.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "docs/8.6/exact-pin-build/sdk-fsck.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

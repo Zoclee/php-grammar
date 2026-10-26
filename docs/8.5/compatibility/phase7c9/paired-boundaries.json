@@ -1,0 +1,23 @@
+{
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/integration-check.php",
+    "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "--php86=C:/Data/GitHub/php-grammar/.audit/php86/php.exe",
+    "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+    "--sources86=C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+    "--report=C:/Data/GitHub/php-grammar/docs/8.5/compatibility/phase7c9/boundaries.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "log": "paired-boundaries.log",
+  "logSha256": "90c92a8d896be6a42a85477c0dac0a6a12fe010994b96bb4eadf1a800420e29a",
+  "totals": null
+}

@@ -1,0 +1,465 @@
+{
+  "scope": "Bounded read-only official GitHub API refresh; first 100 comments and first 30 search results per query. Search absence does not settle intended validity.",
+  "requests": {
+    "pr-20628": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/20628",
+      "retrievedAt": "2026-10-25T11:49:36+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/pr-20628.json",
+      "sha256": "717e4dd09c16c7f0cc216f6e7fa16e706ff8942f71441edc15ebc1260dd707c1"
+    },
+    "issue-comments-20628": {
+      "url": "https://api.github.com/repos/php/php-src/issues/20628/comments?per_page=100",
+      "retrievedAt": "2026-10-25T11:49:37+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/issue-comments-20628.json",
+      "sha256": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd",
+      "count": 17
+    },
+    "review-comments-20628": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/20628/comments?per_page=100",
+      "retrievedAt": "2026-10-25T11:49:38+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/review-comments-20628.json",
+      "sha256": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe",
+      "count": 15
+    },
+    "pr-19658": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/19658",
+      "retrievedAt": "2026-10-25T11:49:39+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/pr-19658.json",
+      "sha256": "138ece1aec6bfe106b6bb5911a1b3fadc031c489e12c1829ebf09a95b4f9ca74"
+    },
+    "issue-comments-19658": {
+      "url": "https://api.github.com/repos/php/php-src/issues/19658/comments?per_page=100",
+      "retrievedAt": "2026-10-25T11:49:40+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/issue-comments-19658.json",
+      "sha256": "5c728bc485faa289b5a61bbb5f612e9932639f038aed9aef7e203e41aa7bb33c",
+      "count": 8
+    },
+    "review-comments-19658": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/19658/comments?per_page=100",
+      "retrievedAt": "2026-10-25T11:49:41+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/review-comments-19658.json",
+      "sha256": "f48ba1e8a44a4a647f8ca052bd84f9149352b61989eff38063cbb995b5b7e61c",
+      "count": 15
+    },
+    "search-assignment-invalid-opcode": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22Invalid%20opcode%22%20assignment&per_page=30",
+      "retrievedAt": "2026-10-25T11:49:42+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/search-assignment-invalid-opcode.json",
+      "sha256": "406a5bc06c2ffaa0f69f60c533f32fc0aba53393aa6b41b29b9ff36adde12e39",
+      "total_count": 2,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://github.com/php/php-src/pull/20903",
+          "title": "Fix GH-10497: Allow const obj->prop = value",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/1393",
+          "title": "Temporary cleaning",
+          "state": "closed"
+        }
+      ]
+    },
+    "search-temporary-write": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22temporary%20expression%22%20%22assignment%22&per_page=30",
+      "retrievedAt": "2026-10-25T11:49:42+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/search-temporary-write.json",
+      "sha256": "0871c8e835bdc85de683a45d74a9cc18d651af1a6f3a597dfbda8b6dd73bfd58",
+      "total_count": 4,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://github.com/php/php-src/pull/23546",
+          "title": "Fix zend_optimizer_replace_by_const() leaving stale OP2 uses behind",
+          "state": "open"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/20903",
+          "title": "Fix GH-10497: Allow const obj->prop = value",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/11781",
+          "title": "Error on writing const object property in 8.2",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/5371",
+          "title": "[RFC] Match expression",
+          "state": "closed"
+        }
+      ]
+    },
+    "search-printf-unset": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20printf%20%22unset%22&per_page=30",
+      "retrievedAt": "2026-10-25T11:49:44+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/search-printf-unset.json",
+      "sha256": "a1fcc026822a78b609bc57e8d63e09575ee4117e5e52bf813cbdd82eac38b8b8",
+      "total_count": 31,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://github.com/php/php-src/pull/24444",
+          "title": "ext/gd: keep the brush and tile images alive while the destination uses them",
+          "state": "open"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/23517",
+          "title": "PHP array_shift(): Optimize tail move on hole-free packed arrays",
+          "state": "open"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/7691",
+          "title": "Reduce memory usage when unserializing packed arrays of size 1",
+          "state": "open"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/9429",
+          "title": "array_key_exists on $GLOBALS takes linear time in PHP 8.1.0+",
+          "state": "open"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/24173",
+          "title": "Sockets from synchronous stream_socket_client() are left in non-blocking mode on Windows",
+          "state": "open"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/23886",
+          "title": "array_splice(): Presize the result when nothing is removed",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/23786",
+          "title": "ext/standard: Optimize array_column()",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/22709",
+          "title": "Make property resolution direction-aware; amortize asymmetric visibility set checks into the runtime cache",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/23418",
+          "title": "phar extension heap use after free",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/23210",
+          "title": "ext/pdo_pgsql: Add `Pdo\\Pgsql::ATTR_CHUNK_SIZE` for chunked result fetching",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/21516",
+          "title": "Fix Use-After-Free in RecursiveArrayIterator::getChildren()",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/5820",
+          "title": "Implementation for StackFrame class as an alternative to debug_backtrace()",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/21520",
+          "title": "Fix Use-After-Free in RecursiveArrayIterator::getChildren()",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/21480",
+          "title": "Fix GH-21478: Forward property operations to real instance for initialized lazy proxies",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/7500",
+          "title": "RFC: Add `final class Collections\\Deque` to PHP",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/21463",
+          "title": "Fix GH-20875: Propagate IN_GET guard in get_property_ptr_ptr for lazy proxies",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/21499",
+          "title": "Use-After-Free in RecursiveArrayIterator::getChildren()",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/20352",
+          "title": "UAF in php_output_handler_free via re-entrant ob_start() during error deactivation",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/19884",
+          "title": "curl api may erase cookie jar",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/17083",
+          "title": "handle apache DocumentRoot cyrillic encoding",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/8940",
+          "title": "Support hardened malloc",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/10323",
+          "title": "Fix substr_replace with slots in repl_ht being UNDEF",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/7488",
+          "title": "Proposal: Add `final class Vector` to PHP",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/6552",
+          "title": "Optimize SplFixedArray when magic methods aren't overridden",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/7672",
+          "title": "Optimize the destructor of WeakMap for large WeakMaps",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/7690",
+          "title": "Improve performance of WeakReference/WeakMap. Avoid hash collisions on pointers.",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/6489",
+          "title": "Implement enums",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/4753",
+          "title": "Reduce memory used by token_get_all()",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/2103",
+          "title": "Implement stream_vt100_support user function",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/2859",
+          "title": "Fix #74243: pdo_dblib option to get milliseconds",
+          "state": "closed"
+        }
+      ]
+    },
+    "search-printf-validation": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20printf%20%22constant%20expression%22&per_page=30",
+      "retrievedAt": "2026-10-25T11:49:44+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/search-printf-validation.json",
+      "sha256": "d8579658487039591e9065a818cde4903620648f83b8bf01f0f387b1340d722e",
+      "total_count": 6,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://github.com/php/php-src/issues/11018",
+          "title": "Allow class constants in strings",
+          "state": "open"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/20848",
+          "title": "[PFA 2/n] Support PFA functionality",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/17213",
+          "title": "Support first-class callables in const-expressions",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/8646",
+          "title": "Memory leak PHP FPM 8.1 with class entry instances",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/8159",
+          "title": "Apache / PHP segfaults (PHP 8.0 and 8.1, but also 7.4)",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/6489",
+          "title": "Implement enums",
+          "state": "closed"
+        }
+      ]
+    },
+    "pr-20903": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/20903",
+      "retrievedAt": "2026-10-25T11:58:30+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/pr-20903.json",
+      "sha256": "27975163f7d8dc71b4ef917c9193aa13aa376b57a0458b3f267ca878db248501"
+    },
+    "issue-comments-20903": {
+      "url": "https://api.github.com/repos/php/php-src/issues/20903/comments?per_page=100",
+      "retrievedAt": "2026-10-25T11:58:31+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/issue-comments-20903.json",
+      "sha256": "27a6ca1dc91b3153a511c205a3e27f57267f62f69d36fea929de59131e9eb36b",
+      "count": 18
+    },
+    "pr-23546": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/23546",
+      "retrievedAt": "2026-10-25T11:58:32+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/pr-23546.json",
+      "sha256": "b60241bc22452015b22141e83f720cc49207784acb20463adfaddd68712c5212"
+    },
+    "search-exact-opcode": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22Invalid%20opcode%2023%2F2%2F1%22&per_page=30",
+      "retrievedAt": "2026-10-25T11:58:32+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/search-exact-opcode.json",
+      "sha256": "c9938edecb99d754b2d039ac9eec320a94c769b6a6417921e2dcbef9e2fe01a0",
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    "search-assignment-result": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22assignment%20result%22&per_page=30",
+      "retrievedAt": "2026-10-25T11:58:33+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/search-assignment-result.json",
+      "sha256": "e36d0375f817506fee4c2f0498f108dc18ce8c2a82c7c46482d579a2d4d79eee",
+      "total_count": 14,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://github.com/php/php-src/pull/22690",
+          "title": "Fix keyed iterator value lifetime across reentrant key() calls",
+          "state": "open"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/23268",
+          "title": "Fix GH-17773: Array element initialised by reference returned from a function",
+          "state": "open"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/20848",
+          "title": "[PFA 2/n] Support PFA functionality",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/20554",
+          "title": "gcc and latest gibc compile errors",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/14903",
+          "title": "Fix GH-14873: PHP 8.4 min function fails on typed integer",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/12452",
+          "title": "Allow modifying readonly promoted properties in constructor",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/10546",
+          "title": "Fix another use-after-free with static properties/destructors",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/10500",
+          "title": "Fix GH-10168: heap-buffer-overflow at zval_undefined_cv ",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/10168",
+          "title": "heap-buffer-overflow at zval_undefined_cv",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/10556",
+          "title": "Zend/zend_execute: clear reference before calling dtor",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/4982",
+          "title": "Infer value is not undef within foreach",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/4464",
+          "title": "fix #78326 memory issues with stream_get_contents() fixed length buffer",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/2031",
+          "title": "Fix #37676 : Add E_WARNING when using array-index on non valid container",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/1761",
+          "title": "Fix bug 71572",
+          "state": "closed"
+        }
+      ]
+    },
+    "search-discarded-printf": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22discarded%22%20%22printf%22&per_page=30",
+      "retrievedAt": "2026-10-25T11:58:33+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/exact-pin-blocker-reconciliation/upstream/search-discarded-printf.json",
+      "sha256": "2b822e0b4d09d18e26f2ca95e0b441f5cf8ae88ed463839032ec10a785e9b5a3",
+      "total_count": 4,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://github.com/php/php-src/pull/20848",
+          "title": "[PFA 2/n] Support PFA functionality",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/15956",
+          "title": "ReflectionClass: show enums differently from classes, test output",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/pull/10422",
+          "title": "Fix bug #65106: PHP fails to compile ext/fileinfo",
+          "state": "closed"
+        },
+        {
+          "url": "https://github.com/php/php-src/issues/11139",
+          "title": "BUG: PHP-Embed: php_embed_module.php_ini_path_override not properly processed. ",
+          "state": "closed"
+        }
+      ]
+    }
+  }
+}

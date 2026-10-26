@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bounded current compatibility observations, version 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "evidenceKind", "contract", "version", "claim", "certificationGranted", "generatedAt", "repository", "historicalReference", "configuration", "environment", "dependencies", "inputsUnchanged", "commands", "boundarySha256", "missingPrerequisites", "limitations"],
+  "properties": {
+    "schemaVersion": {"type":"string", "const":"php-grammar/current-compatibility/1"},
+    "evidenceKind": {"type":"string", "const":"current-compatibility"},
+    "contract": {"type":"string", "const":"current-compatibility-v1"},
+    "version": {"type":"string", "const":"8.5"},
+    "claim": {"type":"string", "const":"Current PHP 8.5 regression compatibility within the executed matrices, including shared APIs and paired version boundaries; not certification renewal."},
+    "certificationGranted": {"type":"boolean", "const":false},
+    "generatedAt": {"type":"string"},
+    "repository": {"type":"object"},
+    "historicalReference": {"type":"object"},
+    "configuration": {"type":"object"},
+    "environment": {"type":"object"},
+    "dependencies": {"type":"object"},
+    "inputsUnchanged": {"type":"boolean", "const":true},
+    "commands": {"type":"object"},
+    "boundarySha256": {"type":"string"},
+    "missingPrerequisites": {"type":"array"},
+    "limitations": {"type":"array"}
+  }
+}

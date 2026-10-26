@@ -1,5 +1,15 @@
 # Versioning
 
+The opt-in hybrid evidence contract is documented in
+[conformance policy](conformance-policy.md#hybrid-historical-and-current-evidence-opt-in-contract-v1).
+It preserves immutable historical evidence and adds independently checked,
+revision-specific current compatibility observations. Evidence contract versions
+are independent of PHP grammar versions and manifest schema 1.0. Existing
+schema-1 evidence and default release commands are not upgraded or reinterpreted.
+Current compatibility does not renew a historical certification, change package
+status, or authorize a grammar correction. Existing Gate B and release rules
+below remain applicable.
+
 This document defines how the `php-grammar` repository versions PHP grammar specifications and how those versions relate to PHP releases and repository releases.
 
 ## 1. Grammar Versions

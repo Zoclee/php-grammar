@@ -1,0 +1,7 @@
+{
+  "contract": "php86-certification-v3",
+  "errors": [
+    "Stale or incomplete current dependency set"
+  ],
+  "certificationGranted": false
+}

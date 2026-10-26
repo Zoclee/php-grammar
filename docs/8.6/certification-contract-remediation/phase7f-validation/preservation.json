@@ -1,0 +1,11 @@
+{
+  "baseline": "docs/8.6/scanner-grammar-binding-closure/baseline-baseline.json",
+  "files": 4323,
+  "errors": [],
+  "php85Protected": true,
+  "php86NormativeArtifactsUnchanged": true,
+  "pinsUnchanged": true,
+  "publicApisUnchanged": true,
+  "existingGatesUnchanged": true,
+  "reverifiedAt": "2026-10-26T19:04:05+00:00"
+}

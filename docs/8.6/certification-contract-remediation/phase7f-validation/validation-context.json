@@ -1,0 +1,41 @@
+{
+  "context-current": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/context-coverage.php",
+      "--check",
+      "--report",
+      "docs/8.6/scanner-grammar-binding-closure/context-current.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7f-validation/context-current.log",
+    "sha256": "93fb45aa5e322fc40dca10fbaaee18f237b3f8560ee050389586eb131abfba6a"
+  },
+  "local-source-context": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/local-source-context.php",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7f-validation/local-source-context.log",
+    "sha256": "f9b986a36a37ff6d0055e5cf507175d274f8b99f5cfb58bb69d9cd6ddc011486"
+  },
+  "context-profile": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/context-profile.php",
+      "--check",
+      "--profile",
+      "exact-pin-rc4",
+      "--report",
+      "docs/8.6/differential-inventory-reconciliation/context.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7f-validation/context-profile.log",
+    "sha256": "1ae83d1f5f0f67d1ae95fa1e1ddf8f3a4c929bb205df439c30b0865e1f009f77"
+  }
+}

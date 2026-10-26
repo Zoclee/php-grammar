@@ -1,0 +1,29 @@
+{
+  "phase": "7G",
+  "authorization": "Planning only. Every normative correction requires separate Gate B authorization; no implementation or blocker closure occurs here.",
+  "responses": [
+    {
+      "workItem": "D-U01",
+      "finding": "PHP86-014",
+      "ifRejected": "Require authoritative exact-operation boundaries and coherent upstream compile-time rejection. Review contextual writable-target restrictions and discriminating positive/negative fixtures. Change EBNF only if a demonstrated syntactic boundary requires it; never encode a runtime invalid-opcode defect.",
+      "ifSupported": "Require an upstream operand/emission correction where execution fails, then authenticate its immutable source and executable and verify mutation/aliasing controls. Existing broad structural acceptance may need no EBNF change; contextual specification and fixture expectations must reflect the verified operation/result-kind boundary.",
+      "ifMixed": "Record an operation/result-kind table for ordinary assignment, reference assignment and destructuring across dimension/property writes, compound assignment, unset and reference binding. Review each boundary independently; do not infer blanket permission from reference controls.",
+      "ifUnanswered": "Remain unresolved. Preserve current grammar and fixtures, retain runtime defect evidence separately from intended validity."
+    },
+    {
+      "workItem": "D-U02",
+      "finding": "PHP86-015",
+      "ifUniformValidity": "Obtain which outcome is intended for each discarded form. Require upstream compiler/constant-evaluator correction where traversal disagrees, then source-corresponding direct/dynamic/qualified/named/unpack/PFA/initializer regressions. Usually contextual specification and fixture updates, not a function-specific EBNF rule.",
+      "ifDispatchDependent": "Require an authoritative exact dispatch and elimination boundary. Review bounded contextual wording, enforcement scope and stage expectations; an EBNF change is justified only by an independently established syntax difference. An informal optimization explanation is not sufficient permission.",
+      "ifUnanswered": "Remain unresolved with the existing informative wording and retained acceptance differences. Do not impose unconditional validation or unreachable runtime evaluation."
+    },
+    {
+      "workItem": "D-U03",
+      "finding": "CA86-001",
+      "ifUniformRejection": "Require upstream validation before elimination or an authoritative specified restriction with explicit implementation discrepancy. The get/set EBNF may remain unchanged. Review contextual specification, controlled live/retained/discarded fixtures and bounded conformance claims separately.",
+      "ifDiscardedAcceptance": "Require the precise short-circuit/constant-initializer/declaration boundary. Review whether a structural hook-name restriction needs a scoped EBNF and contextual revision, or an explicitly adjudicated bounded claim. Never permit unknown names in all live declarations. Any fixture change follows authorized source-backed review; PHP 8.5 corrections remain a separate change.",
+      "ifUnanswered": "Remain unresolved. Document the structural/compiler divergence without granting an accepted release limitation."
+    }
+  ],
+  "sharedRequirement": "A maintainer answer alone does not establish coherent source/executable behavior or satisfy all mixed certification requirements. Retain quoted intent, immutable corrective source, affected forms, regression evidence and release correspondence before proposing closure."
+}

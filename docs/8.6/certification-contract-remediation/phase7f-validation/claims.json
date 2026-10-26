@@ -1,0 +1,24 @@
+{
+  "assessment": "docs/8.6/certification-contract-remediation/runs/phase7f/evidence.json",
+  "sha256": "5d0df66a4c87d1d5f92d6e40d94129f24a7efe46b24e1590867a030365c7e0b8",
+  "method": "Readiness evaluation of independently verified v4 assessment; not another gate execution.",
+  "errors": [
+    "Mandatory obligation unmet: production-coverage-closure",
+    "Mandatory obligation unmet: alternative-coverage-closure",
+    "Mandatory obligation unmet: scanner-state-closure",
+    "Mandatory obligation unmet: ast-binding",
+    "Mandatory obligation unmet: folding-order",
+    "Mandatory obligation unmet: discovery-closure",
+    "Mandatory obligation unmet: writable-target-validity",
+    "Mandatory obligation unmet: contextual-enforcement-scope",
+    "Mandatory obligation unmet: discarded-hook-disposition",
+    "Unresolved blocker: PHP86-013",
+    "Unresolved blocker: PHP86-014",
+    "Unresolved blocker: PHP86-015",
+    "Unresolved blocker: CA86-001",
+    "Unresolved blocker: C6-CONTEXT",
+    "Unresolved blocker: C6-COVERAGE",
+    "Unresolved blocker: C6-PROVENANCE"
+  ],
+  "certificationGranted": false
+}

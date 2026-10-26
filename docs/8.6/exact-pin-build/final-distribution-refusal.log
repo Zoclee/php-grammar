@@ -1,0 +1,9 @@
+{
+  "mode": "provenance",
+  "exactSourceVerified": false,
+  "errors": [
+    "Modified or substituted executable"
+  ],
+  "certificationGranted": false,
+  "note": "Standalone build evidence only; mandatory gates and finding dispositions are unchanged."
+}

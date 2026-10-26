@@ -1,0 +1,22 @@
+@@ -7187,17 +7846,17 @@ static void zend_are_intersection_types_redundant(const zend_type left_type, con
+ 	}
+ 
+ 	unsigned int sum = 0;
+ 	const zend_type *outer_type;
+-	ZEND_TYPE_LIST_FOREACH(smaller_type_list, outer_type)
++	ZEND_TYPE_LIST_FOREACH(smaller_type_list, outer_type) {
+ 		const zend_type *inner_type;
+-		ZEND_TYPE_LIST_FOREACH(larger_type_list, inner_type)
++		ZEND_TYPE_LIST_FOREACH(larger_type_list, inner_type) {
+ 			if (zend_string_equals_ci(ZEND_TYPE_NAME(*inner_type), ZEND_TYPE_NAME(*outer_type))) {
+ 				sum++;
+ 				break;
+ 			}
+-		ZEND_TYPE_LIST_FOREACH_END();
+-	ZEND_TYPE_LIST_FOREACH_END();
++		} ZEND_TYPE_LIST_FOREACH_END();
++	} ZEND_TYPE_LIST_FOREACH_END();
+ 
+ 	if (sum == smaller_type_list->num_types) {
+ 		zend_string *smaller_type_str;
+ 		zend_string *larger_type_str;

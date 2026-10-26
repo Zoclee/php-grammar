@@ -1,0 +1,21 @@
+Copying legacy
+Copying audit
+Copying release85
+Running legacy-prepare
+legacy-prepare: 0
+Running legacy-check
+legacy-check: 0
+Running legacy-claims
+legacy-claims: 1
+Running legacy-run
+legacy-run: 1
+Running current-audit
+current-audit: 0
+Running release85
+release85: 1
+{
+  "report": "docs/8.6/certification-contract-remediation/runs/phase7f-base/evidence.json",
+  "independentlyVerified": false,
+  "certificationGranted": false,
+  "next": "Use --check separately"
+}

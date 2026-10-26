@@ -1,0 +1,26 @@
+{
+  "reviewPath": "docs/8.6/shared-lexer-regression.json",
+  "reviewSha256": "f5b003e9a56e185050fd603767bb8eaf6bc2d62aae85b77f3053cadff05ee61f",
+  "review": {
+    "scope": "PHP 8.5 scanner ledger regression under Phase 4B; not release certification",
+    "baselineCommit": "d63a9d206b389f5df41e49b1c7c41f5109638ee1",
+    "historicalLedgerSha256": "aea94313d57be616127f9478c85a10ab45cefc78a383982f3b9e28e5130f19d9",
+    "currentLedgerSha256": "3ef5032b62860aca3b832a265d93e18350aa62bfa195504a79ff6746ed81c4ff",
+    "inputChanges": {
+      "src/Php/Lexing/PhpVersion.php": {
+        "before": "8271b549f251bbb5a3e5d793877ea0359d92de421ed88a9dd06fafac12202498",
+        "after": "fd4c6cf9362a305cbb0c9586d3e6e9ad91c828cf6d43229ca0d789e5696b2a37",
+        "reason": "php85 retains its identical keyword list and defaults through a shared private factory; php86 obtains an explicit independent identity. All other scanner ledger inputs, rules, mappings, families and dispositions compare exactly unchanged."
+      }
+    }
+  },
+  "historicalSha256": "aea94313d57be616127f9478c85a10ab45cefc78a383982f3b9e28e5130f19d9",
+  "recomputedSha256": "3ef5032b62860aca3b832a265d93e18350aa62bfa195504a79ff6746ed81c4ff",
+  "changedSections": [
+    "input_hashes"
+  ],
+  "inputChanges": {
+    "src/Php/Lexing/PhpVersion.php": "fd4c6cf9362a305cbb0c9586d3e6e9ad91c828cf6d43229ca0d789e5696b2a37"
+  },
+  "note": "Read-only reconstruction; no historical ledger written. Existing scanner audit test already independently authenticates exactly this reviewed shared-version-selector change."
+}

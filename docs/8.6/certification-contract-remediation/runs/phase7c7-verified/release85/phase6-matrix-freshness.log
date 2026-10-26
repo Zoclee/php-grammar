@@ -1,0 +1,10 @@
+{
+    "counts": {
+        "direct-folding": 70,
+        "modifiers": 584,
+        "ambiguity": 34,
+        "recursive": 156,
+        "malformed": 16
+    },
+    "failures": []
+}

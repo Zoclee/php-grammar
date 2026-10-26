@@ -1,0 +1,23 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "safe.directory=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+    "-C",
+    "C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+    "rev-parse",
+    "HEAD^{tree}"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "started": "2026-10-25T10:36:16+00:00",
+  "finished": "2026-10-25T10:36:16+00:00",
+  "exit_code": 0,
+  "stdout": {
+    "path": "docs/8.6/exact-pin-build/source-tree.stdout.log",
+    "sha256": "b65180866a51b952b761d5ab58801c739a3ec54d1de527dd281c43bac8c755f0"
+  },
+  "stderr": {
+    "path": "docs/8.6/exact-pin-build/source-tree.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

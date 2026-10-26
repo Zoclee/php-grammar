@@ -1,0 +1,22 @@
+{
+  "files": {
+    "docs/8.5/compatibility/phase7c6-verified/evidence.json": "9641a17efdc34313fea445ceb5f3dc0b142214009e0ea0029d7de2d6cdd65000",
+    "docs/8.6/certification-blocker-closure/coverage-context-triage.json": "b633220bc04310c3144c021f68080530fdd2d41df3bf8d43e636e4d0b2d01e3a",
+    "docs/8.6/certification-blocker-closure/dispositions.json": "fa5e029e31f74e8a0a8115dc1e298e02254e2b498d207b7628a0ebf30ceefb87",
+    "docs/8.6/certification-blocker-closure/finding-associations.json": "e673054fc999f25444446c034d5f2b1f095007fd6942cca29f31e260f2e61d51",
+    "docs/8.6/certification-blocker-closure/remediation.json": "4d4acbf10e378d67e22252d92192603523e5a10ba0fa3184c71fbb40761a22d0",
+    "docs/8.6/certification-blocker-closure/source-review.json": "a17d062411057dcc01f1d4c31a00e205bd8d1bfa84213a68f117080a0d1d9b6b",
+    "docs/8.6/certification-remediation.json": "8bfd2e7bee25fc9f41b1270d15b29b02033bb98ae9f48a27da073d66beefd002",
+    "docs/8.6/exact-pin-build/build-receipt.json": "a31edcfbfc1858c08a69e40e96ce9f026e67044919f0304d8d60b8e51f071220",
+    "docs/8.6/exact-pin-build/build.json": "67bba1eb5fd3c49fb3330cb0cf28550cb51d8f03dbbf607009f17d95af9f9d0c",
+    "docs/8.6/exact-pin-context-integration/exact.json": "c0d888fa13731ed7cbb3f4acd7812e0aba29687aa3ba510ff3dea3c60597b779",
+    "docs/8.6/exact-pin-context-integration/exact.json.receipt.json": "8caf2f31369965a3814cd7143337aa108cd725e7997a22a827c8d012ffe76526",
+    "docs/8.6/source-audit-dispositions.json": "a61b605afb5d6e5a1942f46b4acf66643f72678b4d6e516867731b334503e8f8",
+    "grammar/8.5/php.ebnf": "2acfcf904ba14cbdfab787854cee449205a805cdc8ac8c24bad1fd44983b4ceb",
+    "grammar/8.5/php.md": "bbb81cbda09da80a6e326c5153ccfb4bc436ba9e306a3e1fa419b1ff002f6d7f",
+    "grammar/8.6/php.ebnf": "12cfcfa3a0122eeac769862a7644740eb20a533048267f23c8ea984e261dbaf4",
+    "grammar/8.6/php.md": "45688b7d36ff16d823360f9072f43aa8e52c4dbd9189c890a6fdeef592bca521"
+  },
+  "checked": 16,
+  "errors": []
+}

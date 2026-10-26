@@ -1,0 +1,105 @@
+[vcvarsall.bat] Environment initialized for: 'x64'
+Rebuilding configure.js
+Now run 'configure --help'
+PHP Version: 8.6.0RC4
+
+Saving configure options to config.nice.bat
+Checking for cl.exe ...  <in default path>
+  Detected compiler Visual C++ 2022
+  Detected x64 compiler
+Checking for link.exe ...  <in default path>
+Checking for nmake.exe ...  <in default path>
+Checking for lib.exe ...  <in default path>
+Checking for bison.exe ...  <in default path>
+  Detected bison version 3.3.2
+Checking for sed.exe ...  <in default path>
+Checking for re2c.exe ...  <in default path>
+  Detected re2c version 1.1.1
+Checking for zip.exe ...  <in default path>
+Checking for lemon.exe ...  <in default path>
+Checking for 7za.exe ...  <in default path>
+Checking for mc.exe ...  C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\\x64
+Checking for mt.exe ...  C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\\x64
+Enabling multi process build
+
+Build dir: C:\Data\GitHub\php-grammar\.audit\php86-exact\source\x64\Release
+PHP Core:  php8.dll and php8.lib
+Checking for ML64.exe ...  <in default path>
+
+Enabling IPv6 support
+Enabling SAPI sapi\cli
+Checking for library edit_a.lib;edit.lib ... <not found>
+Enabling extension ext\date
+Enabling extension ext\hash
+Checking for KeccakHash.h ...  ext/hash/sha3/generic64lc
+Enabling extension ext\json
+Enabling extension ext\lexbor
+Enabling extension ext\pcre
+Enabling extension ext\random
+Enabling extension ext\reflection
+Enabling extension ext\spl
+Checking for timelib_config.h ...  ext/date/lib
+Enabling extension ext\standard
+Enabling extension ext\tokenizer
+Enabling extension ext\opcache
+Enabling extension ext\uri
+
+Creating build dirs...
+Generating files...
+Generating Makefile
+Generating main/internal_functions.c
+Generating main/config.w32.h
+Generating phpize
+Done.
+
+
+
+Enabled extensions:
+-----------------------
+| Extension  | Mode   |
+-----------------------
+| date       | static |
+| hash       | static |
+| json       | static |
+| lexbor     | static |
+| pcre       | static |
+| random     | static |
+| reflection | static |
+| spl        | static |
+| standard   | static |
+| tokenizer  | static |
+| uri        | static |
+-----------------------
+
+
+Enabled Zend extensions:
+----------------------
+| Extension | Mode   |
+----------------------
+| opcache   | static |
+----------------------
+
+
+Enabled SAPI:
+-------------
+| Sapi Name |
+-------------
+| cli       |
+-------------
+
+
+-----------------------------------------
+|                     |                 |
+-----------------------------------------
+| Build type          | Release         |
+| Thread Safety       | No              |
+| Compiler            | Visual C++ 2022 |
+| Target Architecture | x64             |
+| Host Architecture   | x64             |
+| Optimization        | PGO disabled    |
+| Native intrinsics   | SSE2            |
+| Static analyzer     | disabled        |
+-----------------------------------------
+
+
+Type 'nmake' to build PHP

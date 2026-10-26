@@ -1,0 +1,2092 @@
+{
+    "predicates": {
+        "variadic-default": [
+            "C6-C018",
+            "function f(...$args = 123) {}",
+            "function f(...$args) {}",
+            "Variadic parameter cannot have a default value",
+            "zend_compile_params",
+            8473,
+            8485
+        ],
+        "duplicate-parameter": [
+            "C6-C019",
+            "function f($a, $a) {}",
+            "function f($a, $b) {}",
+            "Redefinition of parameter",
+            "zend_compile_params",
+            8458,
+            8468
+        ],
+        "empty-hooks": [
+            "C6-C028",
+            "class C { public int $p {} }",
+            "class C { public int $p {get=>1;} }",
+            "Property hook list must not be empty",
+            "zend_compile_property_hooks",
+            9358,
+            9371
+        ],
+        "duplicate-hooks": [
+            "C6-C028",
+            "class C { public int $p {get=>1; get=>2;} }",
+            "class C { public int $p {get=>1; set{}} }",
+            "Cannot redeclare property hook",
+            "zend_compile_property_hooks",
+            9487,
+            9498
+        ],
+        "get-parentheses": [
+            "C6-C029",
+            "class C { public int $p {get()=>1;} }",
+            "class C { public int $p {get=>1;} }",
+            "must not have a parameter list",
+            "zend_compile_property_hooks",
+            9431,
+            9441
+        ],
+        "enum-backing": [
+            "C6-C034",
+            "enum E: float {}",
+            "enum E: int {case A=1;}",
+            "Enum backing type must be int or string",
+            "zend_compile_enum_backing_type",
+            9924,
+            9941
+        ],
+        "bare-try": [
+            "C6-C069",
+            "function f(){try {}}",
+            "function f(){try {} finally {}}",
+            "Cannot use try without catch or finally",
+            "zend_compile_try",
+            7389,
+            7405
+        ]
+    },
+    "context": [
+        {
+            "id": "variadic-default-repair",
+            "predicate": "variadic-default",
+            "restriction": "C6-C018",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_params",
+            "sourceRange": [
+                8473,
+                8485
+            ],
+            "sourceIds": [
+                "variadic-default"
+            ],
+            "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-variadic-default-repair.php",
+            "sha256": "fb327361870507c40e09f0b6a19860b3ea15f2de78526ccdaa7588c74b93d66f"
+        },
+        {
+            "id": "variadic-default-live",
+            "predicate": "variadic-default",
+            "restriction": "C6-C018",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Variadic parameter cannot have a default value",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_params",
+            "sourceRange": [
+                8473,
+                8485
+            ],
+            "sourceIds": [
+                "variadic-default"
+            ],
+            "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-variadic-default-live.php",
+            "sha256": "94fc8741aa31c6406387247584bd6c0242072e78bc523ecccea12e4a12614b0b"
+        },
+        {
+            "id": "variadic-default-retained",
+            "predicate": "variadic-default",
+            "restriction": "C6-C018",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Variadic parameter cannot have a default value",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_params",
+            "sourceRange": [
+                8473,
+                8485
+            ],
+            "sourceIds": [
+                "variadic-default"
+            ],
+            "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-variadic-default-retained.php",
+            "sha256": "0a0cc4d9f9ec30495dc5a6b10f2e9cb0615d50be0bde4e18904e3c3484e9cb7c"
+        },
+        {
+            "id": "variadic-default-discarded",
+            "predicate": "variadic-default",
+            "restriction": "C6-C018",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_params",
+            "sourceRange": [
+                8473,
+                8485
+            ],
+            "sourceIds": [
+                "variadic-default"
+            ],
+            "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-variadic-default-discarded.php",
+            "sha256": "bf0f660140efce107971b75464ddd7c457095f865de4db2de376faf444458580"
+        },
+        {
+            "id": "variadic-default-unreachable",
+            "predicate": "variadic-default",
+            "restriction": "C6-C018",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Variadic parameter cannot have a default value",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_params",
+            "sourceRange": [
+                8473,
+                8485
+            ],
+            "sourceIds": [
+                "variadic-default"
+            ],
+            "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-variadic-default-unreachable.php",
+            "sha256": "d5b943e30b6f9edf2a562003c08d4d526975ded54a3a20f1b70f95bdd6ee5079"
+        },
+        {
+            "id": "duplicate-parameter-repair",
+            "predicate": "duplicate-parameter",
+            "restriction": "C6-C019",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_params",
+            "sourceRange": [
+                8458,
+                8468
+            ],
+            "sourceIds": [
+                "duplicate-parameter"
+            ],
+            "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-parameter-repair.php",
+            "sha256": "d00f28108ed60e694782c2a8a0fa0afeb6f9e0421f1c4679883dedd42065e714"
+        },
+        {
+            "id": "duplicate-parameter-live",
+            "predicate": "duplicate-parameter",
+            "restriction": "C6-C019",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Redefinition of parameter",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_params",
+            "sourceRange": [
+                8458,
+                8468
+            ],
+            "sourceIds": [
+                "duplicate-parameter"
+            ],
+            "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-parameter-live.php",
+            "sha256": "148814e40651017fca651b234a667851605a1a9d90d3b2f60be05c1d7e1aae7e"
+        },
+        {
+            "id": "duplicate-parameter-retained",
+            "predicate": "duplicate-parameter",
+            "restriction": "C6-C019",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Redefinition of parameter",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_params",
+            "sourceRange": [
+                8458,
+                8468
+            ],
+            "sourceIds": [
+                "duplicate-parameter"
+            ],
+            "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-parameter-retained.php",
+            "sha256": "6db2a932871e01dbb08016bf96ae631f83ba0cffbad083a7d6fb43f13160d298"
+        },
+        {
+            "id": "duplicate-parameter-discarded",
+            "predicate": "duplicate-parameter",
+            "restriction": "C6-C019",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_params",
+            "sourceRange": [
+                8458,
+                8468
+            ],
+            "sourceIds": [
+                "duplicate-parameter"
+            ],
+            "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-parameter-discarded.php",
+            "sha256": "f7d1a9a819ae72b10cf771871350c95e244fdbd8d9ff5d7018374b18c0f9bce9"
+        },
+        {
+            "id": "duplicate-parameter-unreachable",
+            "predicate": "duplicate-parameter",
+            "restriction": "C6-C019",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Redefinition of parameter",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_params",
+            "sourceRange": [
+                8458,
+                8468
+            ],
+            "sourceIds": [
+                "duplicate-parameter"
+            ],
+            "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-parameter-unreachable.php",
+            "sha256": "03ade5a3f256509cd340cb10fe2e4a683d27c83486b82dbbedd8496f731bf359"
+        },
+        {
+            "id": "empty-hooks-repair",
+            "predicate": "empty-hooks",
+            "restriction": "C6-C028",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9358,
+                9371
+            ],
+            "sourceIds": [
+                "empty-hooks"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-empty-hooks-repair.php",
+            "sha256": "553deb56255e045550fe8af7a9605994f5250bb8273a83e05e4945b2e1b7bf7b"
+        },
+        {
+            "id": "empty-hooks-live",
+            "predicate": "empty-hooks",
+            "restriction": "C6-C028",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Property hook list must not be empty",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9358,
+                9371
+            ],
+            "sourceIds": [
+                "empty-hooks"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-empty-hooks-live.php",
+            "sha256": "1eed1f258967ef8fb7a94e030fd6c06a61a52369cecfe8749f7fb195497188c7"
+        },
+        {
+            "id": "empty-hooks-retained",
+            "predicate": "empty-hooks",
+            "restriction": "C6-C028",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Property hook list must not be empty",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9358,
+                9371
+            ],
+            "sourceIds": [
+                "empty-hooks"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-empty-hooks-retained.php",
+            "sha256": "6dcb60d894e00f95378616b21f4cefea016d36bf0fbf899b1228d020a3edbea8"
+        },
+        {
+            "id": "empty-hooks-discarded",
+            "predicate": "empty-hooks",
+            "restriction": "C6-C028",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9358,
+                9371
+            ],
+            "sourceIds": [
+                "empty-hooks"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-empty-hooks-discarded.php",
+            "sha256": "5ad0cb41160509de744743fc8f0e72000bb9a86eb7b94980d361c21b5d7babf6"
+        },
+        {
+            "id": "empty-hooks-unreachable",
+            "predicate": "empty-hooks",
+            "restriction": "C6-C028",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Property hook list must not be empty",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9358,
+                9371
+            ],
+            "sourceIds": [
+                "empty-hooks"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-empty-hooks-unreachable.php",
+            "sha256": "9e697926046a0bb3bc79c26fb0e5e94347d1955aa6bc2cabd72817722b117020"
+        },
+        {
+            "id": "duplicate-hooks-repair",
+            "predicate": "duplicate-hooks",
+            "restriction": "C6-C028",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9487,
+                9498
+            ],
+            "sourceIds": [
+                "duplicate-hooks"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-hooks-repair.php",
+            "sha256": "ac432620c64db46f0edb36abebffccaa89850aab973265601e0266c6413667f3"
+        },
+        {
+            "id": "duplicate-hooks-live",
+            "predicate": "duplicate-hooks",
+            "restriction": "C6-C028",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Cannot redeclare property hook",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9487,
+                9498
+            ],
+            "sourceIds": [
+                "duplicate-hooks"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-hooks-live.php",
+            "sha256": "5eda587f1ed081c055ef5106b145367661ef30092f2d90d4f480d66331b429ce"
+        },
+        {
+            "id": "duplicate-hooks-retained",
+            "predicate": "duplicate-hooks",
+            "restriction": "C6-C028",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Cannot redeclare property hook",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9487,
+                9498
+            ],
+            "sourceIds": [
+                "duplicate-hooks"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-hooks-retained.php",
+            "sha256": "f8990ea16cf0313629c06ba522a70a86cf6bdd604cb043bba55819a5ed55962d"
+        },
+        {
+            "id": "duplicate-hooks-discarded",
+            "predicate": "duplicate-hooks",
+            "restriction": "C6-C028",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9487,
+                9498
+            ],
+            "sourceIds": [
+                "duplicate-hooks"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-hooks-discarded.php",
+            "sha256": "d71bf17636e6ace41e04ef2e0d984a6c738de0c8e20ee1a8de512bbb9443a588"
+        },
+        {
+            "id": "duplicate-hooks-unreachable",
+            "predicate": "duplicate-hooks",
+            "restriction": "C6-C028",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Cannot redeclare property hook",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9487,
+                9498
+            ],
+            "sourceIds": [
+                "duplicate-hooks"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-hooks-unreachable.php",
+            "sha256": "a665bea22b197d7274630c2487124d677b738a4b13800db3dad08503da88d5fb"
+        },
+        {
+            "id": "get-parentheses-repair",
+            "predicate": "get-parentheses",
+            "restriction": "C6-C029",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9431,
+                9441
+            ],
+            "sourceIds": [
+                "get-parentheses"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-get-parentheses-repair.php",
+            "sha256": "553deb56255e045550fe8af7a9605994f5250bb8273a83e05e4945b2e1b7bf7b"
+        },
+        {
+            "id": "get-parentheses-live",
+            "predicate": "get-parentheses",
+            "restriction": "C6-C029",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "must not have a parameter list",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9431,
+                9441
+            ],
+            "sourceIds": [
+                "get-parentheses"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-get-parentheses-live.php",
+            "sha256": "160e4946cbf9ac25a0a01d642db6ad77f8b2ab2866629c5b2c493a2d0e1c61d9"
+        },
+        {
+            "id": "get-parentheses-retained",
+            "predicate": "get-parentheses",
+            "restriction": "C6-C029",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "must not have a parameter list",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9431,
+                9441
+            ],
+            "sourceIds": [
+                "get-parentheses"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-get-parentheses-retained.php",
+            "sha256": "baa08ba7dbbc831297607f286edb4231e7a69fc3f0f88fc436d125d35d72934a"
+        },
+        {
+            "id": "get-parentheses-discarded",
+            "predicate": "get-parentheses",
+            "restriction": "C6-C029",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9431,
+                9441
+            ],
+            "sourceIds": [
+                "get-parentheses"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-get-parentheses-discarded.php",
+            "sha256": "9a167d6bafc7dba0c103691a4a2f75ba63cf54e41ca7c40f106b632bd0947142"
+        },
+        {
+            "id": "get-parentheses-unreachable",
+            "predicate": "get-parentheses",
+            "restriction": "C6-C029",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "must not have a parameter list",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_property_hooks",
+            "sourceRange": [
+                9431,
+                9441
+            ],
+            "sourceIds": [
+                "get-parentheses"
+            ],
+            "normativeClause": "grammar/8.6/php.md#hooks",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-get-parentheses-unreachable.php",
+            "sha256": "397c001fd60a168096d89981c904208cebb1a4d9c670c9e352827cc2117ea5e5"
+        },
+        {
+            "id": "enum-backing-repair",
+            "predicate": "enum-backing",
+            "restriction": "C6-C034",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_enum_backing_type",
+            "sourceRange": [
+                9924,
+                9941
+            ],
+            "sourceIds": [
+                "enum-backing"
+            ],
+            "normativeClause": "grammar/8.6/php.md#enum-backing-types-and-class-name-lists",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-enum-backing-repair.php",
+            "sha256": "4acc076e0634de240131fda14bc4e80d6269ef361609f165b43e1a38bed25d23"
+        },
+        {
+            "id": "enum-backing-live",
+            "predicate": "enum-backing",
+            "restriction": "C6-C034",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Enum backing type must be int or string",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_enum_backing_type",
+            "sourceRange": [
+                9924,
+                9941
+            ],
+            "sourceIds": [
+                "enum-backing"
+            ],
+            "normativeClause": "grammar/8.6/php.md#enum-backing-types-and-class-name-lists",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-enum-backing-live.php",
+            "sha256": "43df73dd6cc40f3076f93b32d54a7b6598d53bb10a19f28736ba1f4cdc0ead28"
+        },
+        {
+            "id": "enum-backing-retained",
+            "predicate": "enum-backing",
+            "restriction": "C6-C034",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Enum backing type must be int or string",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_enum_backing_type",
+            "sourceRange": [
+                9924,
+                9941
+            ],
+            "sourceIds": [
+                "enum-backing"
+            ],
+            "normativeClause": "grammar/8.6/php.md#enum-backing-types-and-class-name-lists",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-enum-backing-retained.php",
+            "sha256": "55ca9efadec93a6b7ee55c4374379b297d0e68c77c065e078e64d9a3cfd132ca"
+        },
+        {
+            "id": "enum-backing-discarded",
+            "predicate": "enum-backing",
+            "restriction": "C6-C034",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_enum_backing_type",
+            "sourceRange": [
+                9924,
+                9941
+            ],
+            "sourceIds": [
+                "enum-backing"
+            ],
+            "normativeClause": "grammar/8.6/php.md#enum-backing-types-and-class-name-lists",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-enum-backing-discarded.php",
+            "sha256": "ed93a6e7127cf780bdb07fe7ca2a5fe960157f987a4b0a7b0e954b4bbcefc21f"
+        },
+        {
+            "id": "enum-backing-unreachable",
+            "predicate": "enum-backing",
+            "restriction": "C6-C034",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Enum backing type must be int or string",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_enum_backing_type",
+            "sourceRange": [
+                9924,
+                9941
+            ],
+            "sourceIds": [
+                "enum-backing"
+            ],
+            "normativeClause": "grammar/8.6/php.md#enum-backing-types-and-class-name-lists",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-enum-backing-unreachable.php",
+            "sha256": "e73ba5ae9dc616e32b8e03b9af86763b57bed47862578a2fad7abea2635c9cb2"
+        },
+        {
+            "id": "bare-try-repair",
+            "predicate": "bare-try",
+            "restriction": "C6-C069",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_try",
+            "sourceRange": [
+                7389,
+                7405
+            ],
+            "sourceIds": [
+                "bare-try"
+            ],
+            "normativeClause": "grammar/8.6/php.md#control-flow-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-bare-try-repair.php",
+            "sha256": "6d03c27e4a0cf562e7ec80ec7c9e8f68dd7169fdf060938f24a26ae815006363"
+        },
+        {
+            "id": "bare-try-live",
+            "predicate": "bare-try",
+            "restriction": "C6-C069",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Cannot use try without catch or finally",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_try",
+            "sourceRange": [
+                7389,
+                7405
+            ],
+            "sourceIds": [
+                "bare-try"
+            ],
+            "normativeClause": "grammar/8.6/php.md#control-flow-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-bare-try-live.php",
+            "sha256": "b5618a527c7224a0ab2fa2c7301604db2a53a908667e68e40b303b7ef36a472e"
+        },
+        {
+            "id": "bare-try-retained",
+            "predicate": "bare-try",
+            "restriction": "C6-C069",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Cannot use try without catch or finally",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_try",
+            "sourceRange": [
+                7389,
+                7405
+            ],
+            "sourceIds": [
+                "bare-try"
+            ],
+            "normativeClause": "grammar/8.6/php.md#control-flow-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-bare-try-retained.php",
+            "sha256": "cd3116c6df039b0516b436d9f67e82a4916e8f09ff606acce8786526bd3a1bef"
+        },
+        {
+            "id": "bare-try-discarded",
+            "predicate": "bare-try",
+            "restriction": "C6-C069",
+            "structural": true,
+            "accepted": true,
+            "diagnostic": null,
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_try",
+            "sourceRange": [
+                7389,
+                7405
+            ],
+            "sourceIds": [
+                "bare-try"
+            ],
+            "normativeClause": "grammar/8.6/php.md#control-flow-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-bare-try-discarded.php",
+            "sha256": "157f5702422d416f8dcb26864d603e6b6e7db569800e25d638df9182864117a3"
+        },
+        {
+            "id": "bare-try-unreachable",
+            "predicate": "bare-try",
+            "restriction": "C6-C069",
+            "structural": true,
+            "accepted": false,
+            "diagnostic": "Cannot use try without catch or finally",
+            "stage": "lint",
+            "pathClassification": "Compiler predicate reached or enclosing closure discarded; lint combines parsing/compilation.",
+            "sourceFunction": "zend_compile_try",
+            "sourceRange": [
+                7389,
+                7405
+            ],
+            "sourceIds": [
+                "bare-try"
+            ],
+            "normativeClause": "grammar/8.6/php.md#control-flow-constraints",
+            "nativeWholeSourceContextEnforcement": false,
+            "remaining": "Finite predicate and stage witnesses; no transitive compiler completeness or whole-description closure.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-bare-try-unreachable.php",
+            "sha256": "6f9f17b82cedbcb1404d26a8c99d61bd814cb7ea4b911131521622a548adda34"
+        }
+    ],
+    "coverage": [
+        {
+            "id": "alias-return",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "reserved-non-modifiers",
+                "reserved-non-modifiers/alternative:53",
+                "trait-alias/alternative:2"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-aliases",
+                "parser-trait-alias"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-alias-return.php",
+            "sha256": "6894e30c2b95978d10315cb9a56e5127a94956790a962ec6a3d82fd8264bf6e6"
+        },
+        {
+            "id": "alias-keywords",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "reserved-non-modifiers",
+                "reserved-non-modifiers/alternative:15",
+                "reserved-non-modifiers/alternative:31",
+                "reserved-non-modifiers/alternative:44",
+                "reserved-non-modifiers/alternative:46",
+                "reserved-non-modifiers/alternative:58",
+                "reserved-non-modifiers/alternative:63",
+                "reserved-non-modifiers/alternative:9",
+                "trait-alias/alternative:2"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-aliases",
+                "parser-trait-alias"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-alias-keywords.php",
+            "sha256": "6e697d0db239b7690ef76ddd2a0b2449b3a0abf0bbfc49557e03b791b0359fa9"
+        },
+        {
+            "id": "types",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "simple-type/alternative:3"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-types"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-types.php",
+            "sha256": "9550ec1994303e6e763237be3af7508d9f5e069adc7420b693d6c8e1355d9d07"
+        },
+        {
+            "id": "return-types",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "simple-type/alternative:2",
+                "simple-type/alternative:4",
+                "simple-type/alternative:6",
+                "simple-type/alternative:8"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-types"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-return-types.php",
+            "sha256": "02d0dadfbe233f8aea4ab64e2ba032b1588f2f04d51838470c6f9fe72591f24e"
+        },
+        {
+            "id": "discarded-types",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "simple-type-without-static/alternative:10",
+                "simple-type-without-static/alternative:11",
+                "simple-type-without-static/alternative:15",
+                "simple-type-without-static/alternative:16"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-types"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-discarded-types.php",
+            "sha256": "b944a0a0627e857dac111eada72a9924ab2fe22d7e2144aecc47843d7670e641"
+        },
+        {
+            "id": "type-intersection",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "type-without-static/alternative:2"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-types"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-type-intersection.php",
+            "sha256": "d8134e95c733c25e0417a90cbb15e06f97431adf64ef358ebc0800b368148d89"
+        },
+        {
+            "id": "members",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "class-constant-modifier/alternative:4",
+                "method-modifier/alternative:5",
+                "property-modifier/alternative:5"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-members",
+                "parser-hooks"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-members.php",
+            "sha256": "c324bb5b856da53431a3342ac3e44a337527429e9f7ea2bdd539067d3ae67355"
+        },
+        {
+            "id": "promotions",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "parameter-modifier/alternative:2",
+                "parameter-modifier/alternative:3",
+                "parameter-modifier/alternative:4",
+                "parameter-modifier/alternative:5",
+                "parameter-modifier/alternative:6",
+                "parameter-modifier/alternative:8"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-types"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-promotions.php",
+            "sha256": "571b6f5f563e78811df3c8c737487b4fad565af4951c25477a1621c5ab674e23"
+        },
+        {
+            "id": "nested-attribute",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "inner-declaration/alternative:1"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-attributes"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-nested-attribute.php",
+            "sha256": "7306f8d780a28018a949547d34e9c4ef7b1c5b77b3fe59307857bc8d90bdd67f"
+        },
+        {
+            "id": "namespace",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "namespace-declaration-name/alternative:2"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-namespace"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-namespace.php",
+            "sha256": "96cfe8c7f06f605dfde2095c06e59c3199d57098ecd16e0b2152a337cca02c8c"
+        },
+        {
+            "id": "namespace-braces",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "namespace-definition/alternative:3"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-namespace"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-namespace-braces.php",
+            "sha256": "f20c0c7be5a512b61eb111c6fe9b22d02c95b008f85dda9500fd0437f3cd4061"
+        },
+        {
+            "id": "equality",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "equality-expression/alternative:6",
+                "equality-prefix-context/alternative:8"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-operators",
+                "parser-precedence"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-equality.php",
+            "sha256": "a3a0b5ef10a2fb0f4a448568ac7f63eded63ccf9d6e49988327853baa0971788"
+        },
+        {
+            "id": "magic-property",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "magic-constant/alternative:8"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-magic"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-magic-property.php",
+            "sha256": "329a8b6b04c33b416750686144cdf7c13985f693fd4e70d1a24c4a31e909016d"
+        },
+        {
+            "id": "matched-loops",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "matched-statement/alternative:4",
+                "matched-statement/alternative:5"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-statements",
+                "parser-if"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-matched-loops.php",
+            "sha256": "50e7a66e0232c146f112f0eb1845f1614828c489ea26d2c2edb7415cd8add8a9"
+        },
+        {
+            "id": "matched-declare",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "matched-statement/alternative:6"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-statements",
+                "parser-if"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-matched-declare.php",
+            "sha256": "23eee38eb91f6bbfea08100b9a6cc54fea05875a2987e41ea3b7b5f01c5beb42"
+        },
+        {
+            "id": "alternative-elseif",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "closed-inner-statement-list/alternative:2",
+                "inner-declaration/alternative:1"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-if"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-alternative-elseif.php",
+            "sha256": "6253049ebd60fb60273f0b7f9b6e1840b7915add4bbd79eb2fd680f0f346ce03"
+        },
+        {
+            "id": "yield-key",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "closed-yield-yield-expression/alternative:2"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-operators",
+                "parser-precedence"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-yield-key.php",
+            "sha256": "6a27d42e7b9f20bb5da1b33c362772103da412da5f9f258994cae7feaffd940d"
+        },
+        {
+            "id": "prefix-concat",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "concatenation-prefix-context/alternative:2"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-operators",
+                "parser-precedence"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-prefix-concat.php",
+            "sha256": "8add344166d5ff6ba5275f1df830a268731a4745e8de933f389c6c71273ea03a"
+        },
+        {
+            "id": "prefix-pipe",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "pipe-prefix-context/alternative:2"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-operators",
+                "parser-precedence"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-prefix-pipe.php",
+            "sha256": "9d94a5350584ba30d5e072586e3f571ff3ee2a3c43e441dac9dddf1eb580898c"
+        },
+        {
+            "id": "unmatched-nesting",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [
+                "unmatched-if-statement/alternative:5"
+            ],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-statements",
+                "parser-if"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-unmatched-nesting.php",
+            "sha256": "f1eacd5e82405f175c46879e2cfe6da082a83dc1024af76af3688d5a55d68402"
+        },
+        {
+            "id": "type-reference-control",
+            "structural": true,
+            "accepted": true,
+            "selectedIdentities": [],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-types"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-type-reference-control.php",
+            "sha256": "b8cafb396ac4d077a838b8f540f0608528c9c9691a7303daa810945a66b8f052"
+        },
+        {
+            "id": "alias-missing",
+            "structural": false,
+            "accepted": false,
+            "selectedIdentities": [],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-aliases",
+                "parser-trait-alias"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-alias-missing.php",
+            "sha256": "64e95c1ce58ab99d9dbd24dd211a6c7ee28678edc42322e03279172654894f59"
+        },
+        {
+            "id": "type-missing",
+            "structural": false,
+            "accepted": false,
+            "selectedIdentities": [],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-types"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-type-missing.php",
+            "sha256": "ecfa7d553b89c9d693605a9c09a987c9761732da785f57ab9fc8ea42d2b3a74e"
+        },
+        {
+            "id": "yield-missing",
+            "structural": false,
+            "accepted": false,
+            "selectedIdentities": [],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-operators",
+                "parser-precedence"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-yield-missing.php",
+            "sha256": "095ce64404b503b9968f8c3ac1c32c9039b30c6eade4362d59c371972577560d"
+        },
+        {
+            "id": "hook-terminator",
+            "structural": false,
+            "accepted": false,
+            "selectedIdentities": [],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-members",
+                "parser-hooks"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-hook-terminator.php",
+            "sha256": "d75f88f4c24958f1cb397914cfe7f9469c0a9687c41f29bcace609bb858332f0"
+        },
+        {
+            "id": "alternative-separator",
+            "structural": false,
+            "accepted": false,
+            "selectedIdentities": [],
+            "stage": "lint",
+            "sourceIds": [
+                "parser-if"
+            ],
+            "sourceCorrespondence": "Pinned parser productions and precedence declarations; completed canonical alternative items are not instrumented Zend branches.",
+            "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-alternative-separator.php",
+            "sha256": "e9989c37823822aed56b216410e69a467bcf46c628a60e00137447433fa8cf9e"
+        }
+    ],
+    "scanner": [
+        {
+            "id": "attribute-close",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": true,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-007",
+                "S86-174",
+                "S86-177"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-007",
+                "S86-174",
+                "S86-177"
+            ],
+            "sourceStates": [
+                "ST_IN_SCRIPTING",
+                "ST_LOOKING_FOR_PROPERTY"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-attribute-close.php",
+            "sha256": "976cf07330e9618e67b52f7d9c5868a127bacbf34661f467de3996cfc7b6c578"
+        },
+        {
+            "id": "property-keyword",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": true,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-049",
+                "S86-050",
+                "S86-051"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-049",
+                "S86-050",
+                "S86-051"
+            ],
+            "sourceStates": [
+                "ST_LOOKING_FOR_PROPERTY"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-property-keyword.php",
+            "sha256": "1b82e3c6e5c33392d7b3fdcf01ccd53f63eedb162ee6a2e24c75668771a5f5a2"
+        },
+        {
+            "id": "pfa-trivia",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": true,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-053"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-053"
+            ],
+            "sourceStates": [
+                "ST_IN_SCRIPTING"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-pfa-trivia.php",
+            "sha256": "f9a20a8b3faf63988fe5accf51be9d3456948b47166f4ae8c49b8bd07e7b5f19"
+        },
+        {
+            "id": "yield-comment",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": true,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-008"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-008"
+            ],
+            "sourceStates": [
+                "ST_IN_SCRIPTING"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-yield-comment.php",
+            "sha256": "5c1d18cb008229aa91d673d3fdf50af2bdffec2dd670d4f3e15a0fa85bee09f0"
+        },
+        {
+            "id": "numeric-boundaries",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": true,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-139",
+                "S86-145"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-139",
+                "S86-145"
+            ],
+            "sourceStates": [
+                "ST_IN_SCRIPTING"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-numeric-boundaries.php",
+            "sha256": "008820d66b6cda0866ffe9fc1266ad91861aa5038097da13b885d9546ef5c7d0"
+        },
+        {
+            "id": "offset-key",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": false,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-144",
+                "S86-183"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-144",
+                "S86-183"
+            ],
+            "sourceStates": [
+                "ST_VAR_OFFSET",
+                "ST_DOUBLE_QUOTES",
+                "ST_BACKQUOTE",
+                "ST_HEREDOC"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-offset-key.php",
+            "sha256": "d19e031eabd94cc6dc7f2ffbf2b78b66efed26bf6c1ef03134a577b1d4a40917"
+        },
+        {
+            "id": "legacy-name",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": false,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-135",
+                "S86-137"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-135",
+                "S86-137"
+            ],
+            "sourceStates": [
+                "ST_DOUBLE_QUOTES",
+                "ST_BACKQUOTE",
+                "ST_HEREDOC",
+                "ST_LOOKING_FOR_VARNAME"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-legacy-name.php",
+            "sha256": "b1d0ec9256861f9559083b6d9fe1edecdf0304d695086904e941f539972f4d21"
+        },
+        {
+            "id": "backtick-nesting",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": false,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-181",
+                "S86-183",
+                "S86-185"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-181",
+                "S86-183",
+                "S86-185"
+            ],
+            "sourceStates": [
+                "ST_IN_SCRIPTING",
+                "ST_DOUBLE_QUOTES",
+                "ST_BACKQUOTE",
+                "ST_HEREDOC"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-backtick-nesting.php",
+            "sha256": "b3b22162a03913c085176a683de38e351188d061d62a9078a9a6658695c4a703"
+        },
+        {
+            "id": "heredoc-return",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": false,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-180",
+                "S86-182",
+                "S86-183"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-180",
+                "S86-182",
+                "S86-183"
+            ],
+            "sourceStates": [
+                "ST_IN_SCRIPTING",
+                "ST_END_HEREDOC",
+                "ST_DOUBLE_QUOTES",
+                "ST_BACKQUOTE",
+                "ST_HEREDOC"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-heredoc-return.php",
+            "sha256": "1a72f5f6f39f7f0e14dd75e672e8d63b5d656e0d279677e89a1905a7f776bbf1"
+        },
+        {
+            "id": "nowdoc-literal",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": false,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-180",
+                "S86-182",
+                "S86-189"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-180",
+                "S86-182",
+                "S86-189"
+            ],
+            "sourceStates": [
+                "ST_IN_SCRIPTING",
+                "ST_END_HEREDOC",
+                "ST_NOWDOC"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-nowdoc-literal.php",
+            "sha256": "1823ef766d8d486babc9289b03a5ca7246ebebd69aa45267a58c53959434135f"
+        },
+        {
+            "id": "short-disabled",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": false,
+            "shortOpenTag": false,
+            "ruleIds": [
+                "S86-160",
+                "S86-161"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-160",
+                "S86-161"
+            ],
+            "sourceStates": [
+                "INITIAL"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-short-disabled.php",
+            "sha256": "1a9619b5d095b44530689abcef4287be63dedfad80a595820f199549520b1875"
+        },
+        {
+            "id": "bad-indent",
+            "lexerAccepted": false,
+            "accepted": false,
+            "compareTokenBoundaries": false,
+            "shortOpenTag": true,
+            "ruleIds": [
+                "S86-180"
+            ],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "S86-180"
+            ],
+            "sourceStates": [
+                "ST_IN_SCRIPTING"
+            ],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-bad-indent.php",
+            "sha256": "c1f23c015e8384cc1279d8c658505c2f862d129ec5e6138b476af81a4e8faec1"
+        },
+        {
+            "id": "unicode-max",
+            "lexerAccepted": true,
+            "accepted": true,
+            "compareTokenBoundaries": false,
+            "shortOpenTag": true,
+            "ruleIds": [],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "unicode-helper"
+            ],
+            "sourceStates": [],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-unicode-max.php",
+            "sha256": "30395ac6621b7c714ea4df92c6ae26ac994f88d396006043a5bc403079af53c0"
+        },
+        {
+            "id": "unicode-overflow",
+            "lexerAccepted": true,
+            "accepted": false,
+            "compareTokenBoundaries": false,
+            "shortOpenTag": true,
+            "ruleIds": [],
+            "stage": "lexical and lint",
+            "instrumentedRuleHit": false,
+            "sourceIds": [
+                "unicode-helper"
+            ],
+            "sourceStates": [],
+            "correspondence": "Behavioral scenario with source range association; no instrumented rule/state hit.",
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-unicode-overflow.php",
+            "sha256": "69dfaa9b4ccb8e9e2c3e4cd0ab54684dcc7810903626b05d9e1a0d872f00b54c"
+        }
+    ],
+    "binding": [
+        {
+            "id": "unary-power",
+            "expression": "-$a ** $b",
+            "stage": "native derivation and exact-source pre-optimizer opcode comparison",
+            "astEquivalenceClaim": false,
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-unary-power.php",
+            "forcedFixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-unary-power-forced.php",
+            "forcedSha256": "73dc7853b82ca3e32e0801af08c8d70521b47c31baefb3f5695cb7d30be14173",
+            "sourceIds": [
+                "parser-operators",
+                "parser-precedence",
+                "parser-arguments"
+            ],
+            "sha256": "6dc567f85da89e7ef0d907e4c96f2c662b7206afdd9ab77a7fb62453ec3999b7"
+        },
+        {
+            "id": "not-instanceof",
+            "expression": "!$a instanceof C",
+            "stage": "native derivation and exact-source pre-optimizer opcode comparison",
+            "astEquivalenceClaim": false,
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-not-instanceof.php",
+            "forcedFixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-not-instanceof-forced.php",
+            "forcedSha256": "3300c24250cd061faaaec72c36d6d914d9e6045f32b470aa17e413c1f3747739",
+            "sourceIds": [
+                "parser-operators",
+                "parser-precedence",
+                "parser-arguments"
+            ],
+            "sha256": "c7acb49e12a5b4b76d456ba600dda836cb38877616357e6ab4c514006984a758"
+        },
+        {
+            "id": "yield-key-value",
+            "expression": "yield $a + $b => $c * $d",
+            "stage": "native derivation and exact-source pre-optimizer opcode comparison",
+            "astEquivalenceClaim": false,
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-yield-key-value.php",
+            "forcedFixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-yield-key-value-forced.php",
+            "forcedSha256": "e68908af39bc2069a88969a54bd455bb0f91f87139184f528d31a6d30021b94e",
+            "sourceIds": [
+                "parser-operators",
+                "parser-precedence",
+                "parser-arguments"
+            ],
+            "sha256": "2299a72d5c7d6805ea7f19bb354517d1e49d6b589af93d39f02d2a8e551a29f5"
+        },
+        {
+            "id": "yield-from-assignment",
+            "expression": "yield from $a = $b",
+            "stage": "native derivation and exact-source pre-optimizer opcode comparison",
+            "astEquivalenceClaim": false,
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-yield-from-assignment.php",
+            "forcedFixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-yield-from-assignment-forced.php",
+            "forcedSha256": "fb1ccaeed42a76a7cb1ee302c24ae72aa76ee04a0f275268c1f26fbd7d31048a",
+            "sourceIds": [
+                "parser-operators",
+                "parser-precedence",
+                "parser-arguments"
+            ],
+            "sha256": "7ab5e50705bac6983c954e8f8f8a29fb84259833f63ffcc00cde972e0888cadc"
+        },
+        {
+            "id": "pfa-argument",
+            "expression": "f(?, $a + $b)",
+            "stage": "native derivation and exact-source pre-optimizer opcode comparison",
+            "astEquivalenceClaim": false,
+            "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-pfa-argument.php",
+            "forcedFixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-pfa-argument-forced.php",
+            "forcedSha256": "e54cc89f2f54eed7b50f1a988ad7d5638075e37ce042f0ae757194766aab906e",
+            "sourceIds": [
+                "parser-operators",
+                "parser-precedence",
+                "parser-arguments"
+            ],
+            "sha256": "8f4042f2085fab73741c6c0024a16a2c22f8be7f992705184603ccbf2eca162c"
+        }
+    ],
+    "sources": [
+        {
+            "id": "variadic-default",
+            "path": "Zend/zend_compile.c",
+            "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+            "start": 8473,
+            "end": 8485,
+            "sliceSha256": "9e9238d9b988a699cfdab85d7c22d46b4bce37d600cd5d1cf18b358073e182f1"
+        },
+        {
+            "id": "duplicate-parameter",
+            "path": "Zend/zend_compile.c",
+            "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+            "start": 8458,
+            "end": 8468,
+            "sliceSha256": "e36816c239eccb8cff2c6e3fba782c0d090e45ae1f973e8ad6439a3ae62d4ec9"
+        },
+        {
+            "id": "empty-hooks",
+            "path": "Zend/zend_compile.c",
+            "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+            "start": 9358,
+            "end": 9371,
+            "sliceSha256": "55ec1718da3f0ae004c9d3b9f9f1f173289b145cb2601d7026f292aada484fcd"
+        },
+        {
+            "id": "duplicate-hooks",
+            "path": "Zend/zend_compile.c",
+            "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+            "start": 9487,
+            "end": 9498,
+            "sliceSha256": "f9147e161b9b929519aa7554752ae8bcd53be499e15db7fb851d3d6978dad64e"
+        },
+        {
+            "id": "get-parentheses",
+            "path": "Zend/zend_compile.c",
+            "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+            "start": 9431,
+            "end": 9441,
+            "sliceSha256": "305c9c6a3e2719546b93f98d28f0e22e5248a72fedd9736a44f882f27a3cb893"
+        },
+        {
+            "id": "enum-backing",
+            "path": "Zend/zend_compile.c",
+            "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+            "start": 9924,
+            "end": 9941,
+            "sliceSha256": "5f0fdfe6ed701be08e94841cad55aa448892b8dd17c47abe7b039b2471308c1e"
+        },
+        {
+            "id": "bare-try",
+            "path": "Zend/zend_compile.c",
+            "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+            "start": 7389,
+            "end": 7405,
+            "sliceSha256": "0685833d8cfec62a161e067f1a39bab9ee91dd4d272e51341c18ee5fed9b912e"
+        },
+        {
+            "id": "PHPT:Zend/tests/variadic/no_default_error.phpt",
+            "path": "Zend/tests/variadic/no_default_error.phpt",
+            "fileSha256": "f960ae02b041d736c431a50a2ecbbadb1bb862911a85afe541ce1710c8618793"
+        },
+        {
+            "id": "PHPT:Zend/tests/bug54013.phpt",
+            "path": "Zend/tests/bug54013.phpt",
+            "fileSha256": "fc6facdfccc42ca836a2026a2a81c12f7b92521797d9fa78ec092f062aaed193"
+        },
+        {
+            "id": "PHPT:Zend/tests/bug64515.phpt",
+            "path": "Zend/tests/bug64515.phpt",
+            "fileSha256": "846e7a31aa19cbbdec6a87c5e6a3e8c69210c765277f15ca0d8036113bba6d30"
+        },
+        {
+            "id": "PHPT:Zend/tests/property_hooks/invalid_empty_hooks.phpt",
+            "path": "Zend/tests/property_hooks/invalid_empty_hooks.phpt",
+            "fileSha256": "8c0705d3193551fcb6d56ef79713b6f75047c6c55510aab5bb61126f3371e1d8"
+        },
+        {
+            "id": "PHPT:Zend/tests/property_hooks/duplicate_hook.phpt",
+            "path": "Zend/tests/property_hooks/duplicate_hook.phpt",
+            "fileSha256": "259532f41c99b867d0a687350f83009e52f2914d09979825e49250d232e0696a"
+        },
+        {
+            "id": "PHPT:Zend/tests/property_hooks/no_get_parameters.phpt",
+            "path": "Zend/tests/property_hooks/no_get_parameters.phpt",
+            "fileSha256": "a5e587924c26095a0eb5f281ff57933838d27b230359a320aa253d9666b83577"
+        },
+        {
+            "id": "PHPT:Zend/tests/enum/backed-invalid.phpt",
+            "path": "Zend/tests/enum/backed-invalid.phpt",
+            "fileSha256": "dbd35fe46b25bf9ea2edda5ab8ec68237033a7ac84b3206d6f4c4d6761f6a288"
+        },
+        {
+            "id": "PHPT:Zend/tests/enum/backed-type-no-union.phpt",
+            "path": "Zend/tests/enum/backed-type-no-union.phpt",
+            "fileSha256": "1ee918e8c462b4fb4d57f8d69a16f48cec3625e4e058996d50866038d86cb25c"
+        },
+        {
+            "id": "PHPT:Zend/tests/try/try_finally_004.phpt",
+            "path": "Zend/tests/try/try_finally_004.phpt",
+            "fileSha256": "994e0f6162160e6eede8466dc56aa242581974d1877ee70f4c3365a5560febda"
+        },
+        {
+            "id": "parser",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235"
+        },
+        {
+            "id": "parser-aliases",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 305,
+            "end": 325,
+            "sliceSha256": "1c6e0239dacf3d5aa27d832f7fc9692f5bca55d16bff4c01bbe79c00916ccd1d"
+        },
+        {
+            "id": "parser-trait-alias",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1039,
+            "end": 1055,
+            "sliceSha256": "18cbd202470ef8b02725e4e7a3d8fd64d05ae9a2682fc300e5c70856b4c79238"
+        },
+        {
+            "id": "parser-types",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 805,
+            "end": 899,
+            "sliceSha256": "67ea13fd2a56b4440eca7bf889bfc58e549c579d2d6d0564a4e4934d84ad9061"
+        },
+        {
+            "id": "parser-members",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 984,
+            "end": 1012,
+            "sliceSha256": "1c053fbfcb9c96829af0cad705b32baf3fb288ceed7559e311574dd119efaccb"
+        },
+        {
+            "id": "parser-hooks",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1139,
+            "end": 1220,
+            "sliceSha256": "75809307f9692d063d9cde24d208a11e0908b53b067e825a6bdd75c84fa4ec38"
+        },
+        {
+            "id": "parser-statements",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 507,
+            "end": 582,
+            "sliceSha256": "09e4feff9e98c90b66e32e61a2a1ee43a68485520807526e61c9d7ba522d81fb"
+        },
+        {
+            "id": "parser-if",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 759,
+            "end": 792,
+            "sliceSha256": "1d9759042b3b743c7cddca5c23d54aba196ebe6ab91b69572caf9caf5721e92d"
+        },
+        {
+            "id": "parser-namespace",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 401,
+            "end": 442,
+            "sliceSha256": "7f0215544d510e7f42142974563cce713f6c00fade2d2a3cef3c779adf4b53e8"
+        },
+        {
+            "id": "parser-attributes",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 359,
+            "end": 400,
+            "sliceSha256": "2f40b0c99e79a5027694c49cbb2acd35cda60d3097594c5b5e537d4377aee744"
+        },
+        {
+            "id": "parser-operators",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1300,
+            "end": 1387,
+            "sliceSha256": "c69c6e873d5ea323e8daac714a42e0fcaed8c5a07542e04e7f8fc554204ce045"
+        },
+        {
+            "id": "parser-magic",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1505,
+            "end": 1519,
+            "sliceSha256": "f464c8095d992576d16bb40e8258f8dd83c8bf566c4274c49c6fad2c8ceb907f"
+        },
+        {
+            "id": "parser-precedence",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 60,
+            "end": 85,
+            "sliceSha256": "e4b24c35e28d602314765122e8cc7c4af90483429cd5c5478581ae906792bcf9"
+        },
+        {
+            "id": "parser-arguments",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 901,
+            "end": 969,
+            "sliceSha256": "a70bdf443c16843517a0940fc6eaac4ee7f3a8311f0810f2e11689f27b5b6f8f"
+        },
+        {
+            "id": "S86-007",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 1452,
+            "end": 1456,
+            "sliceSha256": "b616d68755f54ea96ea74568946a5d949eb9d7567e3cd44be7572044d17c51b3"
+        },
+        {
+            "id": "S86-174",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2489,
+            "end": 2512,
+            "sliceSha256": "0508a627bfec6407ccbaa945f4bdad547a4c9abd7d7a60c2011d82d75492c9f8"
+        },
+        {
+            "id": "S86-177",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2555,
+            "end": 2566,
+            "sliceSha256": "706c827358cb630d171c876f48658e6de8d84568f17e2ac4f4f1f49bbb748ff7"
+        },
+        {
+            "id": "S86-049",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 1630,
+            "end": 1633,
+            "sliceSha256": "126133699e074ea557a1be8a367debe82178218055c5014f19a3aefe4ede9c0d"
+        },
+        {
+            "id": "S86-050",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 1634,
+            "end": 1637,
+            "sliceSha256": "a1ffb82f6bf06aa221a5894b750403d3b9a36b69d9c6231b5c1e37748751a1e4"
+        },
+        {
+            "id": "S86-051",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 1638,
+            "end": 1642,
+            "sliceSha256": "2008476b8ad17170ca4fd0f43d798009e75daea4fb596593ea12ecf4ce7e719b"
+        },
+        {
+            "id": "S86-053",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 1647,
+            "end": 1650,
+            "sliceSha256": "9704a807d7e5212a387c41bb8887b76675835d692ebb59be5fb37fe2e4399518"
+        },
+        {
+            "id": "S86-008",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 1457,
+            "end": 1462,
+            "sliceSha256": "57689322469af0370146f98b7e4da45585287cc96899f823f7a3ed95232ab6dd"
+        },
+        {
+            "id": "S86-139",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2040,
+            "end": 2081,
+            "sliceSha256": "d3b6cefc6851ee4b0fbcc48156167c8b0f21eb1922653d6dda3fe343e76b8172"
+        },
+        {
+            "id": "S86-145",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2262,
+            "end": 2281,
+            "sliceSha256": "11d4e638ecbde8258442bc130ad89acfa9457648a068e81cf7eb7b3ed4d4d43e"
+        },
+        {
+            "id": "S86-144",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2253,
+            "end": 2261,
+            "sliceSha256": "ee3e187190b6f2d4b8d17a121dc91b7bd7deb4478cd10a42ad5d6fc9aa6f253b"
+        },
+        {
+            "id": "S86-183",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2875,
+            "end": 2882,
+            "sliceSha256": "87dffa5e9c6206495f9e0c7dc0a8aa83446b1d57e02b252ee9b1d7b50ed45d08"
+        },
+        {
+            "id": "S86-135",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2010,
+            "end": 2015,
+            "sliceSha256": "636ac5e197fecab441506ece978c76f8837453d5dd3e1271a11188ce3103e785"
+        },
+        {
+            "id": "S86-137",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2025,
+            "end": 2032,
+            "sliceSha256": "9967a04ffd0a3ec15589bc5aebb229291585e7e632c8740c51d7d0128fc2a1bc"
+        },
+        {
+            "id": "S86-181",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2855,
+            "end": 2860,
+            "sliceSha256": "058dcc25fd3c54ac2899df9dd003878b114fc49cd136736729318a02a2b02c10"
+        },
+        {
+            "id": "S86-185",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2888,
+            "end": 2893,
+            "sliceSha256": "6647ea2f190e6a31b96385eca1a525188e7d349b0de338ea5a7caf05b7bc217e"
+        },
+        {
+            "id": "S86-180",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2707,
+            "end": 2854,
+            "sliceSha256": "ea403bbd3173259f292977be3925932a5103c1fb9db97446948e4180904c2330"
+        },
+        {
+            "id": "S86-182",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2861,
+            "end": 2874,
+            "sliceSha256": "5de7aaf9498ef636bf7c2822cadba9538379ca7974029f024bd7e3549a2ca91b"
+        },
+        {
+            "id": "S86-189",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 3118,
+            "end": 3208,
+            "sliceSha256": "8e354072efff53074568172aa77e7920cdf989c9d0e05f25dc4906246272b982"
+        },
+        {
+            "id": "S86-160",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2361,
+            "end": 2369,
+            "sliceSha256": "80e957484bb22975741061fca2a742ad64d9aeaab371f398b234eb3a6805a981"
+        },
+        {
+            "id": "S86-161",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 2370,
+            "end": 2425,
+            "sliceSha256": "a968e31f06b83c40fa9e14d1d783bb82197ae0e0e138061b05ea7d4543d0cad8"
+        },
+        {
+            "id": "unicode-helper",
+            "path": "Zend/zend_language_scanner.l",
+            "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+            "start": 950,
+            "end": 1120,
+            "sliceSha256": "e28b9d7b9f3f20a7f0d32576ecb7a57f4ca0f938052086250d7c4e26dcc57aec"
+        }
+    ],
+    "contract": "php86-context-coverage-evidence-1",
+    "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+}

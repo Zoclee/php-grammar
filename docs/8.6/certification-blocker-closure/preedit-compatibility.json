@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "tools/evidence/compatibility.php",
+    "--check",
+    "--report",
+    "docs/8.5/compatibility/phase7c5/evidence.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/certification-blocker-closure/preedit-compatibility.log",
+  "sha256": "ff84316b88c850b2295f88b5f877fa91358436fb31773ed23e42034b6dfca6e1"
+}

@@ -1,0 +1,28 @@
+{
+  "baselineFiles": 2336,
+  "unchangedBaselineFiles": 2332,
+  "protectedFiles": 1440,
+  "authorizedChanges": {
+    "tools/8.6/certification.php": {
+      "before": "688dba5aa57b64dd0db223c61f0b178c7033cc60d7724b618f2e8a486b759424",
+      "after": "b244bb2b165699c617f600f4a146f41fc280492157bf8870bd100b585dbd5e43"
+    },
+    "docs/api.md": {
+      "before": "6a3f837b52f626f6bf6844990846ffd830691ca527c496cb1fe32143e2d2b630",
+      "after": "251c58bafc4d8097c8f462d133b062bc0c390724af3312cc032a508d394eab15"
+    },
+    "docs/conformance-policy.md": {
+      "before": "4be4aa15365d1c2bc11936d479f9a10f138283da6be627ca47b94d83046297e8",
+      "after": "058d638b95c66cd5bd54fc8ea1f27a3dc59a50785e5a9d8047f9a0d719b4af2f"
+    },
+    "docs/versioning.md": {
+      "before": "60a5e6f3faf0fb49a857cace8c665eb94ff8f90e656925cf943d26936b51272a",
+      "after": "3a741eb85bc8c49e9453c75471912f083a429b61fb68742fdf6ae38402c3563e"
+    }
+  },
+  "jsonFiles": 62,
+  "localLinks": 18,
+  "phpLintFiles": 8,
+  "errors": [],
+  "certificationGranted": false
+}

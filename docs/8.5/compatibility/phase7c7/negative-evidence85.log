@@ -1,0 +1,58 @@
+{
+    "corpus": {
+        "valid": 653,
+        "invalid": 365,
+        "contextual-invalid": 353
+    },
+    "boundary_pairs": 272,
+    "production_anchors": 122,
+    "areas": {
+        "arguments": {
+            "structural-negative": 12
+        },
+        "constants": {
+            "contextual-negative": 12,
+            "structural-negative": 6
+        },
+        "context": {
+            "contextual-negative": 11
+        },
+        "declarations": {
+            "structural-negative": 16
+        },
+        "dereference": {
+            "structural-negative": 12
+        },
+        "expressions": {
+            "structural-negative": 32
+        },
+        "functions": {
+            "structural-negative": 16
+        },
+        "hooks": {
+            "structural-negative": 17
+        },
+        "imports": {
+            "structural-negative": 16
+        },
+        "lexical": {
+            "structural-negative": 21
+        },
+        "source": {
+            "structural-negative": 12
+        },
+        "statements": {
+            "structural-negative": 40
+        },
+        "traits-enums": {
+            "structural-negative": 16,
+            "contextual-negative": 4
+        },
+        "types": {
+            "structural-negative": 15
+        },
+        "variables": {
+            "structural-negative": 14
+        }
+    }
+}

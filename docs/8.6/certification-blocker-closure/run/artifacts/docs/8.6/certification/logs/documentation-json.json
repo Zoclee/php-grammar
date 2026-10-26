@@ -1,0 +1,22 @@
+{
+  "obligation": "Validate new JSON, local documentation links, status wording and whitespace.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/certification-gate.php",
+    "--gate",
+    "documentation",
+    "--sources86",
+    "C:/Data/GitHub/php-grammar/.audit/php86-exact/source"
+  ],
+  "log": "docs/8.6/certification/logs/documentation-json.log",
+  "logSha256": "aea523efbb6df7a3123f9ad42bec5d2d0c2b8551d38c044fa4c5df6f935638d7"
+}

@@ -1,0 +1,15 @@
+[vcvarsall.bat] Environment initialized for: 'x64'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64\cl.exe
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64\nmake.exe
+C:\Data\GitHub\php-grammar\.audit\php86-exact\sdk\msys2\usr\bin\bison.exe
+C:\Data\GitHub\php-grammar\.audit\php86-exact\sdk\msys2\usr\bin\re2c.exe
+usage: cl [ option... ] filename... [ /link linkoption... ]
+bison (GNU Bison) 3.3.2
+Written by Robert Corbett and Richard Stallman.
+
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+re2c 1.1.1
+WindowsSDKVersion=10.0.22621.0\
+VCToolsVersion=14.42.34433

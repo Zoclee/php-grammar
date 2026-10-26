@@ -1,0 +1,1 @@
+<?php function g(){ yield /* note */ from $a; }

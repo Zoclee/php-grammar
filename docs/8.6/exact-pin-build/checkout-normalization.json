@@ -1,0 +1,30 @@
+{
+  "ext/ext_skel.php": {
+    "before": "a90985309d9052ac7b0edcc3c2e24036c20093c4457ee8f87b12aa73dbd9ca85",
+    "after": "0724516e00bc3263036100615060de2cd7203c9995eeb50703a871264d7f93a6"
+  },
+  "ext/phar/phar/pharcommand.inc": {
+    "before": "521dfecb416c1bacba2f8f20342127084a78cfc3f0808658ce4223b4cab71b5b",
+    "after": "e3718744116ea15a1f4a679e7eacbc15962e14f8a68d2e38dfa4b348a19db9c4"
+  },
+  "ext/dba/libinifile/inifile.c": {
+    "before": "d5553462cc5d0c52bbbe40451052fee4fe30e56856864fdc9bc67b3a71985154",
+    "after": "288c4453024bc827d641e9110e731f611ef5008ffc360ae7f8fac4c186fe87b9"
+  },
+  "ext/dba/libflatfile/flatfile.c": {
+    "before": "b0fea2d0449a1dd7e7e6158bc0f24c614274ab4da3c8f6ec34d9756670e6d648",
+    "after": "36f2bdd5b2899ac7a268a2c04709c5b9269c5a0d578908cdddc74a68f33cf4b3"
+  },
+  "ext/dba/libcdb/cdb_make.c": {
+    "before": "2b6198c4e35d47c5b57d2ba8fadfb5a1d4e93c1b83f80dac4422198933b647f4",
+    "after": "86a525f317df485428b1d520e88ad48f6ff9bf0cdb147ae073bddecfce927421"
+  },
+  "ext/dba/libcdb/cdb.c": {
+    "before": "4357dd10de30863a065bf8418c3b6902199b26be58d647c59e4978f8163727d9",
+    "after": "6944a4cebbde3f8773d3469ae34675eb26527c007cef1a8efd0b59326daa8d89"
+  },
+  "run-tests.php": {
+    "before": "8bc2a35f7f9ad8daccb6cb9c1507d23c19e5d3f9dabb6da78fe6856be512bb97",
+    "after": "5b4189b112aad66332bb2382136f55714a4b88fa914898b1669430cc749693ed"
+  }
+}

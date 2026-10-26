@@ -1,0 +1,20 @@
+PHP Version => 8.5.10
+Build Date => Aug 25 2026 21:23:48
+Build System => Microsoft Windows Server 2022 Datacenter [10.0.20348]
+Build Provider => The PHP Group
+Compiler => Visual C++ 2022
+Architecture => x64
+Configure Command => cscript /nologo /e:jscript configure.js  "--enable-snapshot-build" "--enable-debug-pack" "--disable-zts" "--enable-object-out-dir=../obj/" "--enable-com-dotnet=shared" "--without-analyzer" "--with-pgo"
+Server API => Command Line Interface
+Loaded Configuration File => (none)
+Scan this dir for additional .ini files => (none)
+Additional .ini files parsed => (none)
+Zend Extension Build => API420250925,NTS,VS17
+PHP Extension Build => API20250925,NTS,VS17
+Debug Build => no
+Thread Safety => disabled
+PHP Version => 8.5.10
+short_open_tag => On => On
+zend.multibyte => Off => Off
+opcache.enable_cli => Off => Off
+opcache.jit => 0 => 0

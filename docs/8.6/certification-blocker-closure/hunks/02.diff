@@ -1,0 +1,19 @@
+@@ -7223,16 +7882,16 @@ static void zend_is_intersection_type_redundant_by_single_type(const zend_type i
+ 	ZEND_ASSERT(ZEND_TYPE_IS_INTERSECTION(intersection_type));
+ 	ZEND_ASSERT(!ZEND_TYPE_IS_INTERSECTION(single_type));
+ 
+ 	const zend_type *single_intersection_type = NULL;
+-	ZEND_TYPE_FOREACH(intersection_type, single_intersection_type)
++	ZEND_TYPE_FOREACH(intersection_type, single_intersection_type) {
+ 		if (zend_string_equals_ci(ZEND_TYPE_NAME(*single_intersection_type), ZEND_TYPE_NAME(single_type))) {
+ 			zend_string *single_type_str = zend_type_to_string(single_type);
+ 			zend_string *complete_type = zend_type_to_string(intersection_type);
+ 			zend_error_noreturn(E_COMPILE_ERROR, "Type %s is redundant as it is more restrictive than type %s",
+ 					ZSTR_VAL(complete_type), ZSTR_VAL(single_type_str));
+ 		}
+-	ZEND_TYPE_FOREACH_END();
++	} ZEND_TYPE_FOREACH_END();
+ }
+ 
+ /* Used by both intersection and union types prior to transforming the type list to a full zend_type */
+ static void zend_is_type_list_redundant_by_single_type(const zend_type_list *type_list, const zend_type type)

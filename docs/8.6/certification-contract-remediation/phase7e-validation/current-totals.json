@@ -1,0 +1,11 @@
+{
+  "gates": 36,
+  "additionalPrerequisites": 2,
+  "totals": {
+    "passed": 29,
+    "blocked": 9,
+    "failed": 0
+  },
+  "boundary": "Obligation accounting, not a count of newly executed commands.",
+  "certificationGranted": false
+}

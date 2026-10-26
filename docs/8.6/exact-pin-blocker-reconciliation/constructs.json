@@ -1,0 +1,820 @@
+{
+  "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "writable": [
+    {
+      "id": "assign-read",
+      "classification": "confirmed valid language syntax",
+      "structural": true,
+      "lint85": 0,
+      "lint86": 0,
+      "execution86": 0,
+      "opcodes": [
+        "0000 T2 = ASSIGN CV1($a) array(...)",
+        "0001 T3 = FETCH_DIM_R T2 int(0)",
+        "0002 ASSIGN CV0($r) T3",
+        "0003 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0004 T5 = INIT_ARRAY 2 (packed) CV1($a) NEXT",
+        "0005 T5 = ADD_ARRAY_ELEMENT CV0($r) NEXT",
+        "0006 SEND_VAL T5 1",
+        "0007 T6 = DO_ICALL",
+        "0008 ECHO T6",
+        "0009 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "assign-write",
+      "classification": "parser-accepted but runtime-defective",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 255,
+      "opcodes": [
+        "0000 T1 = ASSIGN CV0($a) array(...)",
+        "0001 ASSIGN_DIM T1 int(0)",
+        "0002 OP_DATA int(2)",
+        "0003 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0004 SEND_VAR CV0($a) 1",
+        "0005 T3 = DO_ICALL",
+        "0006 ECHO T3",
+        "0007 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "reference-write",
+      "classification": "unresolved intended validity",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 0,
+      "opcodes": [
+        "0000 ASSIGN CV0($b) array(...)",
+        "0001 V3 = ASSIGN_REF CV1($a) CV0($b)",
+        "0002 ASSIGN_DIM V3 int(0)",
+        "0003 OP_DATA int(2)",
+        "0004 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0005 T5 = INIT_ARRAY 2 (packed) CV1($a) NEXT",
+        "0006 T5 = ADD_ARRAY_ELEMENT CV0($b) NEXT",
+        "0007 SEND_VAL T5 1",
+        "0008 T6 = DO_ICALL",
+        "0009 ECHO T6",
+        "0010 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "list-variable-write",
+      "classification": "parser-accepted but runtime-defective",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 255,
+      "opcodes": [
+        "0000 ASSIGN CV0($b) array(...)",
+        "0001 T3 = QM_ASSIGN CV0($b)",
+        "0002 T4 = FETCH_LIST_R T3 int(0)",
+        "0003 ASSIGN CV1($a) T4",
+        "0004 ASSIGN_DIM T3 int(0)",
+        "0005 OP_DATA int(2)",
+        "0006 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0007 T7 = INIT_ARRAY 2 (packed) CV1($a) NEXT",
+        "0008 T7 = ADD_ARRAY_ELEMENT CV0($b) NEXT",
+        "0009 SEND_VAL T7 1",
+        "0010 T8 = DO_ICALL",
+        "0011 ECHO T8",
+        "0012 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "list-literal-write",
+      "classification": "parser-accepted but runtime-defective",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 255,
+      "opcodes": [
+        "0000 T1 = FETCH_LIST_R array(...) int(0)",
+        "0001 ASSIGN CV0($a) T1",
+        "0002 ASSIGN_DIM array(...) int(0)",
+        "0003 OP_DATA int(2)",
+        "0004 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0005 SEND_VAR CV0($a) 1",
+        "0006 T4 = DO_ICALL",
+        "0007 ECHO T4",
+        "0008 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "list-reference-write",
+      "classification": "unresolved intended validity",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 0,
+      "opcodes": [
+        "0000 ASSIGN CV0($b) array(...)",
+        "0001 V3 = MAKE_REF CV0($b)",
+        "0002 V4 = FETCH_LIST_W V3 int(0)",
+        "0003 V5 = MAKE_REF V4",
+        "0004 ASSIGN_REF CV1($a) V5",
+        "0005 ASSIGN_DIM V3 int(0)",
+        "0006 OP_DATA int(2)",
+        "0007 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0008 T7 = INIT_ARRAY 2 (packed) CV1($a) NEXT",
+        "0009 T7 = ADD_ARRAY_ELEMENT CV0($b) NEXT",
+        "0010 SEND_VAL T7 1",
+        "0011 T8 = DO_ICALL",
+        "0012 ECHO T8",
+        "0013 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "assign-property",
+      "classification": "parser-accepted but runtime-defective",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 255,
+      "opcodes": [
+        "0000 T1 = NEW 0 string(\"stdClass\")",
+        "0001 DO_FCALL",
+        "0002 T3 = ASSIGN CV0($a) T1",
+        "0003 ASSIGN_OBJ T3 string(\"p\")",
+        "0004 OP_DATA int(2)",
+        "0005 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0006 SEND_VAR CV0($a) 1",
+        "0007 T5 = DO_ICALL",
+        "0008 ECHO T5",
+        "0009 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "reference-property",
+      "classification": "unresolved intended validity",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 0,
+      "opcodes": [
+        "0000 T2 = NEW 0 string(\"stdClass\")",
+        "0001 DO_FCALL",
+        "0002 ASSIGN CV0($b) T2",
+        "0003 V5 = ASSIGN_REF CV1($a) CV0($b)",
+        "0004 ASSIGN_OBJ V5 string(\"p\")",
+        "0005 OP_DATA int(2)",
+        "0006 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0007 T7 = INIT_ARRAY 2 (packed) CV1($a) NEXT",
+        "0008 T7 = ADD_ARRAY_ELEMENT CV0($b) NEXT",
+        "0009 SEND_VAL T7 1",
+        "0010 T8 = DO_ICALL",
+        "0011 ECHO T8",
+        "0012 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "nested-write",
+      "classification": "parser-accepted but runtime-defective",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 255,
+      "opcodes": [
+        "0000 T2 = ASSIGN CV1($b) array(...)",
+        "0001 T3 = ASSIGN CV0($a) T2",
+        "0002 ASSIGN_DIM T3 int(0)",
+        "0003 OP_DATA int(2)",
+        "0004 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0005 T5 = INIT_ARRAY 2 (packed) CV0($a) NEXT",
+        "0006 T5 = ADD_ARRAY_ELEMENT CV1($b) NEXT",
+        "0007 SEND_VAL T5 1",
+        "0008 T6 = DO_ICALL",
+        "0009 ECHO T6",
+        "0010 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "nested-reference-write",
+      "classification": "confirmed invalid language syntax",
+      "structural": false,
+      "lint85": 255,
+      "lint86": 255,
+      "execution86": null,
+      "opcodes": [],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "assign-compound",
+      "classification": "parser-accepted but runtime-defective",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 255,
+      "opcodes": [
+        "0000 T1 = ASSIGN CV0($a) array(...)",
+        "0001 ASSIGN_DIM_OP (ADD) T1 int(0)",
+        "0002 OP_DATA int(2)",
+        "0003 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0004 SEND_VAR CV0($a) 1",
+        "0005 T3 = DO_ICALL",
+        "0006 ECHO T3",
+        "0007 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "assign-increment",
+      "classification": "parser-accepted but runtime-defective",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 255,
+      "opcodes": [
+        "0000 T1 = ASSIGN CV0($a) array(...)",
+        "0001 V2 = FETCH_DIM_RW T1 int(0)",
+        "0002 PRE_INC V2",
+        "0003 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0004 SEND_VAR CV0($a) 1",
+        "0005 T4 = DO_ICALL",
+        "0006 ECHO T4",
+        "0007 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "assign-unset",
+      "classification": "parser-accepted but runtime-defective",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 255,
+      "opcodes": [
+        "0000 T1 = ASSIGN CV0($a) array(...)",
+        "0001 UNSET_DIM T1 int(0)",
+        "0002 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0003 SEND_VAR CV0($a) 1",
+        "0004 T2 = DO_ICALL",
+        "0005 ECHO T2",
+        "0006 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "assign-reference-bind",
+      "classification": "parser-accepted but runtime-defective",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 255,
+      "opcodes": [
+        "0000 T2 = ASSIGN CV1($a) array(...)",
+        "0001 V3 = FETCH_DIM_W T2 int(0)",
+        "0002 ASSIGN_REF CV0($r) V3",
+        "0003 ASSIGN CV0($r) int(2)",
+        "0004 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0005 T5 = INIT_ARRAY 2 (packed) CV1($a) NEXT",
+        "0006 T5 = ADD_ARRAY_ELEMENT CV0($r) NEXT",
+        "0007 SEND_VAL T5 1",
+        "0008 T6 = DO_ICALL",
+        "0009 ECHO T6",
+        "0010 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "reference-unset",
+      "classification": "unresolved intended validity",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 0,
+      "opcodes": [
+        "0000 ASSIGN CV0($b) array(...)",
+        "0001 V3 = ASSIGN_REF CV1($a) CV0($b)",
+        "0002 UNSET_DIM V3 int(0)",
+        "0003 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0004 T4 = INIT_ARRAY 2 (packed) CV1($a) NEXT",
+        "0005 T4 = ADD_ARRAY_ELEMENT CV0($b) NEXT",
+        "0006 SEND_VAL T4 1",
+        "0007 T5 = DO_ICALL",
+        "0008 ECHO T5",
+        "0009 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "reference-coalesce",
+      "classification": "unresolved intended validity",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 0,
+      "opcodes": [
+        "0000 ASSIGN CV0($b) array(...)",
+        "0001 V3 = ASSIGN_REF CV1($a) CV0($b)",
+        "0002 T4 = QM_ASSIGN V3",
+        "0003 T5 = FETCH_DIM_IS T4 int(0)",
+        "0004 T6 = COALESCE T5 0009",
+        "0005 V7 = ASSIGN_REF CV1($a) CV0($b)",
+        "0006 T8 = ASSIGN_DIM V7 int(0)",
+        "0007 OP_DATA int(2)",
+        "0008 T6 = QM_ASSIGN T8",
+        "0009 FREE T6",
+        "0010 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0011 T9 = INIT_ARRAY 2 (packed) CV1($a) NEXT",
+        "0012 T9 = ADD_ARRAY_ELEMENT CV0($b) NEXT",
+        "0013 SEND_VAL T9 1",
+        "0014 T10 = DO_ICALL",
+        "0015 ECHO T10",
+        "0016 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "assign-coalesce",
+      "classification": "parser-accepted but runtime-defective",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 255,
+      "opcodes": [
+        "0000 T1 = ASSIGN CV0($a) array(...)",
+        "0001 T2 = FETCH_DIM_IS T1 int(0)",
+        "0002 T3 = COALESCE T2 0007",
+        "0003 T4 = ASSIGN CV0($a) array(...)",
+        "0004 T5 = ASSIGN_DIM T4 int(0)",
+        "0005 OP_DATA int(2)",
+        "0006 T3 = QM_ASSIGN T5",
+        "0007 FREE T3",
+        "0008 INIT_FCALL 1 96 string(\"json_encode\")",
+        "0009 SEND_VAR CV0($a) 1",
+        "0010 T6 = DO_ICALL",
+        "0011 ECHO T6",
+        "0012 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "literal-write",
+      "classification": "contextually restricted",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 255,
+      "execution86": null,
+      "opcodes": [],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "temporary-property",
+      "classification": "contextually restricted",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 255,
+      "execution86": null,
+      "opcodes": [],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "call-write",
+      "classification": "confirmed valid language syntax",
+      "structural": true,
+      "lint85": 0,
+      "lint86": 0,
+      "execution86": 0,
+      "opcodes": [
+        "0000 INIT_FCALL 0 80 string(\"make\")",
+        "0001 V0 = DO_UCALL",
+        "0002 V0 = SEPARATE V0",
+        "0003 ASSIGN_DIM V0 int(0)",
+        "0004 OP_DATA int(2)",
+        "0005 ECHO string(\"ok\")",
+        "0006 RETURN int(1)",
+        "0000 RETURN array(...)",
+        "0001 RETURN null"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "constant-object",
+      "classification": "confirmed valid language syntax",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 0,
+      "opcodes": [
+        "0000 DECLARE_CONST string(\"OBJ\") zval(type=11)",
+        "0001 V0 = FETCH_CONSTANT string(\"OBJ\")",
+        "0002 ASSIGN_OBJ V0 string(\"p\")",
+        "0003 OP_DATA int(2)",
+        "0004 T2 = FETCH_CONSTANT string(\"OBJ\")",
+        "0005 T3 = FETCH_OBJ_R T2 string(\"p\")",
+        "0006 ECHO T3",
+        "0007 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "constant-array",
+      "classification": "contextually restricted",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 255,
+      "execution86": null,
+      "opcodes": [],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "nullsafe-property",
+      "classification": "contextually restricted",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 255,
+      "execution86": null,
+      "opcodes": [],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "nullsafe-assignment",
+      "classification": "contextually restricted",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 255,
+      "execution86": null,
+      "opcodes": [],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "discarded-write",
+      "classification": "unresolved intended validity",
+      "structural": true,
+      "lint85": 0,
+      "lint86": 0,
+      "execution86": 0,
+      "opcodes": [
+        "0000 ECHO string(\"ok\")",
+        "0001 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    },
+    {
+      "id": "dead-write",
+      "classification": "unresolved intended validity",
+      "structural": true,
+      "lint85": 255,
+      "lint86": 0,
+      "execution86": 0,
+      "opcodes": [
+        "0000 JMPZ bool(false) 0004",
+        "0001 T1 = ASSIGN CV0($a) array(...)",
+        "0002 ASSIGN_DIM T1 int(0)",
+        "0003 OP_DATA int(2)",
+        "0004 ECHO string(\"ok\")",
+        "0005 RETURN int(1)"
+      ],
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+      "intendedAssignmentDerivedWriteValidity": "unresolved; observed success/failure is not authority for a new permission or prohibition"
+    }
+  ],
+  "writableClassificationCounts": {
+    "confirmed valid language syntax": 3,
+    "parser-accepted but runtime-defective": 10,
+    "unresolved intended validity": 7,
+    "confirmed invalid language syntax": 1,
+    "contextually restricted": 5
+  },
+  "traversal": [
+    {
+      "id": "printf-or",
+      "lint85": 0,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-and",
+      "lint85": 0,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "dynamic-or",
+      "lint85": 0,
+      "lint86": 0,
+      "observedOpcodeCount": 5,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-ternary",
+      "lint85": 255,
+      "lint86": 0,
+      "observedOpcodeCount": 2,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "dynamic-ternary",
+      "lint85": 255,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-coalesce",
+      "lint85": 255,
+      "lint86": 0,
+      "observedOpcodeCount": 2,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-null-coalesce",
+      "lint85": 255,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-live",
+      "lint85": 255,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-format-second",
+      "lint85": 0,
+      "lint86": 0,
+      "observedOpcodeCount": 3,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-named",
+      "lint85": 0,
+      "lint86": 0,
+      "observedOpcodeCount": 4,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-named-ternary",
+      "lint85": 255,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-unpack",
+      "lint85": 255,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-qualified",
+      "lint85": 0,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-import",
+      "lint85": 0,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-namespace",
+      "lint85": 0,
+      "lint86": 0,
+      "observedOpcodeCount": 4,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "sprintf-or",
+      "lint85": 255,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "sprintf-ternary",
+      "lint85": 0,
+      "lint86": 0,
+      "observedOpcodeCount": 2,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "strlen-or",
+      "lint85": 0,
+      "lint86": 0,
+      "observedOpcodeCount": 3,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "strlen-ternary",
+      "lint85": 255,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-dead",
+      "lint85": 0,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-discarded",
+      "lint85": 0,
+      "lint86": 0,
+      "observedOpcodeCount": 1,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-constant-closure",
+      "lint85": 0,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-discarded-constant-closure",
+      "lint85": 0,
+      "lint86": 0,
+      "observedOpcodeCount": 2,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-pfa",
+      "lint85": 255,
+      "lint86": 0,
+      "observedOpcodeCount": 6,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-constant-pfa",
+      "lint85": 255,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-pfa-ternary",
+      "lint85": 255,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "array-map-constant-closure",
+      "lint85": 0,
+      "lint86": 255,
+      "observedOpcodeCount": 0,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "pfa-constant-discard",
+      "lint85": 255,
+      "lint86": 0,
+      "observedOpcodeCount": 2,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "array-map-pfa-or",
+      "lint85": 255,
+      "lint86": 0,
+      "observedOpcodeCount": 9,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "array-map-strict-pfa-or",
+      "lint85": 255,
+      "lint86": 0,
+      "observedOpcodeCount": 9,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    },
+    {
+      "id": "printf-unpack-variable",
+      "lint85": 0,
+      "lint86": 0,
+      "observedOpcodeCount": 7,
+      "generalIntendedBoundary": "unresolved",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json"
+    }
+  ],
+  "hooks": [
+    {
+      "id": "hook-live",
+      "structural85": false,
+      "structural86": false,
+      "lint85": 255,
+      "lint86": 255,
+      "opcodes86": []
+    },
+    {
+      "id": "hook-retained",
+      "structural85": false,
+      "structural86": false,
+      "lint85": 255,
+      "lint86": 255,
+      "opcodes86": []
+    },
+    {
+      "id": "hook-discarded",
+      "structural85": false,
+      "structural86": false,
+      "lint85": 0,
+      "lint86": 0,
+      "opcodes86": [
+        "0000 RETURN int(1)"
+      ]
+    },
+    {
+      "id": "hook-constant-discarded",
+      "structural85": false,
+      "structural86": false,
+      "lint85": 0,
+      "lint86": 0,
+      "opcodes86": [
+        "0000 DECLARE_CONST string(\"F\") int(1)",
+        "0001 RETURN int(1)"
+      ]
+    },
+    {
+      "id": "hook-get-repair",
+      "structural85": true,
+      "structural86": true,
+      "lint85": 0,
+      "lint86": 0,
+      "opcodes86": [
+        "0000 DECLARE_CLASS_DELAYED string(\"c\") string(\"\")",
+        "0001 RETURN int(1)",
+        "0000 RETURN int(1)",
+        "0001 VERIFY_RETURN_TYPE",
+        "0002 RETURN null"
+      ]
+    }
+  ],
+  "limits": "Classifications are bounded reviewed dispositions, not an inference algorithm from exit codes. Zend lint is not a separately observed pure parse stage."
+}

@@ -1,0 +1,32 @@
+{
+  "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "sourceTree": "926e6c6294bf279376a5037be5d0cf5770607608",
+  "executable": "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+  "executableSha256": "445d2bde0998cd54e04b4be4401ae45b5e54df4ef677294a64cbcd1faf6d9fe6",
+  "coreDll": {
+    "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php8.dll": "1ffb38fee2a383dfc5095d4cad90c2309d90ec7285942f401707f3fe73caae3f"
+  },
+  "configuration": "--disable-all --enable-cli --enable-tokenizer --disable-zts --disable-cgi --disable-phpdbg",
+  "toolchainRecord": "docs/8.6/exact-pin-build/build.json#/toolchain",
+  "repositoryCommit": "4625873a6bac908b5cff4c677dba4ac10dd050e0",
+  "initialBlockerIds": [
+    "PHP86-013",
+    "PHP86-014",
+    "PHP86-015",
+    "CA86-001",
+    "C6-CONTEXT",
+    "C6-COVERAGE",
+    "C6-PROVENANCE"
+  ],
+  "hashes": {
+    "docs/8.6/exact-pin-build/build-receipt.json": "a31edcfbfc1858c08a69e40e96ce9f026e67044919f0304d8d60b8e51f071220",
+    "docs/8.6/exact-pin-build/build.json": "67bba1eb5fd3c49fb3330cb0cf28550cb51d8f03dbbf607009f17d95af9f9d0c",
+    "docs/8.6/exact-pin-build/differential-final.json": "687c7ac6fd0347f437a2010e8bfb996591391b928a2cb1d69dad0235ccf9ff2a",
+    "tools/8.6/certification-source-lock.json": "d0b233d91977bf4853cf6d116f4f173f77e7227fc1cf135c2ac4cb7ce323a6f8",
+    "tools/8.6/context-source-lock.json": "d792bd32971e11e89497e85cca455d7c657756f91704a611bd06d08f77625167",
+    "tools/8.6/pfa-source-lock.json": "33be171d2e647199abdf71327767a1be032264733996c6600ca031c5838166c0",
+    "tools/8.6/reconciliation-source-lock.json": "625f5f37a849e398746d26edb5d6f7232764634c4c697b1ea6c2456cb0047aad",
+    "tools/8.6/source-lock.json": "d6a380de7254663b07325079035380c9fa53d5824b2249b228e6d215b78908be"
+  },
+  "baselineVerification": "docs/8.6/exact-pin-blocker-reconciliation/baseline-checks.json"
+}

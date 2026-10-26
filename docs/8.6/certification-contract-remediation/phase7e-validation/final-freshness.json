@@ -1,0 +1,7 @@
+{
+  "assessment": "docs/8.6/certification-contract-remediation/runs/phase7e/evidence.json",
+  "inputCount": 4872,
+  "inputsUnchangedAfterArtifactPublication": true,
+  "boundary": "Membership/hash comparison after the independent full check; no replacement for that check.",
+  "certificationGranted": false
+}

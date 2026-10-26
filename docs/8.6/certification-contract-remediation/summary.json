@@ -1,0 +1,169 @@
+{
+  "original36": {
+    "total": 36,
+    "counts": {
+      "passed": 22,
+      "failed": 4,
+      "blocked": 10
+    },
+    "commandInvocations": 26,
+    "distinctCommandArrays": 23
+  },
+  "current36": {
+    "total": 36,
+    "counts": {
+      "passed": 27,
+      "blocked": 9
+    }
+  },
+  "current38": {
+    "total": 38,
+    "counts": {
+      "passed": 29,
+      "blocked": 9
+    }
+  },
+  "release85": {
+    "total": 27,
+    "passed": 25,
+    "failed": 2,
+    "outcomes": [
+      {
+        "gate": "composer-validate",
+        "exit_code": 0
+      },
+      {
+        "gate": "manifest-schema",
+        "exit_code": 0
+      },
+      {
+        "gate": "manifest-regressions",
+        "exit_code": 0
+      },
+      {
+        "gate": "consumer-contract",
+        "exit_code": 0
+      },
+      {
+        "gate": "expression-generation",
+        "exit_code": 0
+      },
+      {
+        "gate": "phpunit",
+        "exit_code": 0
+      },
+      {
+        "gate": "grammar-coverage",
+        "exit_code": 0
+      },
+      {
+        "gate": "lexer-coverage",
+        "exit_code": 1
+      },
+      {
+        "gate": "ordinary-differential",
+        "exit_code": 0
+      },
+      {
+        "gate": "explicit-ast",
+        "exit_code": 0
+      },
+      {
+        "gate": "systematic-structure",
+        "exit_code": 0
+      },
+      {
+        "gate": "declaration-folding",
+        "exit_code": 0
+      },
+      {
+        "gate": "phase6-matrices",
+        "exit_code": 0
+      },
+      {
+        "gate": "phase6-matrix-freshness",
+        "exit_code": 0
+      },
+      {
+        "gate": "scanner-product",
+        "exit_code": 0
+      },
+      {
+        "gate": "lexer-short-enabled",
+        "exit_code": 0
+      },
+      {
+        "gate": "lexer-short-disabled",
+        "exit_code": 0
+      },
+      {
+        "gate": "positive-report-freshness",
+        "exit_code": 0
+      },
+      {
+        "gate": "negative-report-freshness",
+        "exit_code": 0
+      },
+      {
+        "gate": "compiler-source-hashes",
+        "exit_code": 0
+      },
+      {
+        "gate": "parser-reconciliation",
+        "exit_code": 0
+      },
+      {
+        "gate": "phase6-evidence-freshness",
+        "exit_code": 0
+      },
+      {
+        "gate": "interpolation-binding",
+        "exit_code": 0
+      },
+      {
+        "gate": "diagnostic-predicates",
+        "exit_code": 0
+      },
+      {
+        "gate": "source-correspondence",
+        "exit_code": 0
+      },
+      {
+        "gate": "final-certification",
+        "exit_code": 1
+      },
+      {
+        "gate": "diff-whitespace",
+        "exit_code": 0
+      }
+    ],
+    "versionedLexerIdentity": "lexer-coverage-shared-selector@v2",
+    "historicalAggregateResultRetained": true
+  },
+  "fullRegression": {
+    "tests": 6221,
+    "assertions": 58338,
+    "exit_code": 0,
+    "log": "docs/8.6/certification/logs/full-regression.log"
+  },
+  "compatibility": {
+    "commands": 15,
+    "dependencies": 3934,
+    "inputsUnchanged": true
+  },
+  "negativeTests": 62,
+  "negativeAssertions": 285,
+  "runtimeFiles": 46,
+  "preexistingFilesPreserved": 3093,
+  "allOriginalBlockersActive": true,
+  "certificationGranted": false,
+  "sourcePins": {
+    "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+    "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+  },
+  "limitations": [
+    "Original historical failures remain failures under their original contracts.",
+    "Current gate assessment is not certification; all seven mixed blockers remain active.",
+    "No new full PHPT suite, independent second build, language remediation, source upgrade or final-release reconciliation."
+  ]
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "commit": "7d8b6e5fa92f82e7e8c122a9a989a22727f61c3e",
+    "subject": "Made property hook names \"get\" and \"set\" explicit.",
+    "schema": 1,
+    "inputCount": 1545,
+    "claim": "Grammar-complete, with documented external contextual constraints; conformance evidence is bounded and uses PHP 8.5.10.",
+    "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e"
+  },
+  {
+    "commit": "1a38d12cca068b56ac24d149facc7fa5e0fc8a1f",
+    "subject": "Replaced Python tools with PHP tools.",
+    "schema": 1,
+    "inputCount": 1543,
+    "claim": "Grammar-complete, with documented external contextual constraints; conformance evidence is bounded and uses PHP 8.5.10.",
+    "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e"
+  },
+  {
+    "commit": "b3e522fb6c175433eac29f63e4c2cc894a2c4a86",
+    "subject": "Implemented the consumer-facing API improvements, versioned manifest schema, JSON navigation CLI, compatibility policy, and integration documentation/tests.",
+    "schema": 1,
+    "inputCount": 1534,
+    "claim": "Grammar-complete, with documented external contextual constraints; conformance evidence is bounded and uses PHP 8.5.10.",
+    "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e"
+  },
+  {
+    "commit": "b9e1783511e41fd62be85a0d90f74731a182ca1d",
+    "subject": "Polished php.md into a language-first specification with explicit conformance layers, clearer scanner and contextual sections, and audit history at the end. Updated synchronization and added three documentation tests.",
+    "schema": 1,
+    "inputCount": 1526,
+    "claim": "Grammar-complete, with documented external contextual constraints; conformance evidence is bounded and uses PHP 8.5.10.",
+    "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e"
+  },
+  {
+    "commit": "522478da381fdeffae3f8bd776621cb298ed5420",
+    "subject": "Implemented the readability reorganization with grammar behavior unchanged.",
+    "schema": 1,
+    "inputCount": 1525,
+    "claim": "Grammar-complete, with documented external contextual constraints; conformance evidence is bounded and uses PHP 8.5.10.",
+    "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e"
+  },
+  {
+    "commit": "448473e6937f3598ea95eae29d00a5ee8c721687",
+    "subject": "Implemented: 364 \u2192 360 productions, with unchanged conformance results.",
+    "schema": 1,
+    "inputCount": 1523,
+    "claim": "Grammar-complete, with documented external contextual constraints; conformance evidence is bounded and uses PHP 8.5.10.",
+    "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e"
+  },
+  {
+    "commit": "ea4fc674bd61eaa3958d69bf2824091599233fb9",
+    "subject": "Structured tools folder.",
+    "schema": 1,
+    "inputCount": 1520,
+    "claim": "Grammar-complete, with documented external contextual constraints; conformance evidence is bounded and uses PHP 8.5.10.",
+    "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e"
+  },
+  {
+    "commit": "db06a494d6e958e065371ee27cc301227314fd59",
+    "subject": "PHP 8.5 grammar status: Grammar-complete with documented external contextual constraints and bounded conformance evidence.",
+    "schema": 1,
+    "inputCount": 1520,
+    "claim": "Grammar-complete, with documented external contextual constraints; conformance evidence is bounded and uses PHP 8.5.10.",
+    "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e"
+  }
+]

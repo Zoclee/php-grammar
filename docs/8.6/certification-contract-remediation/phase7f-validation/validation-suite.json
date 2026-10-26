@@ -1,0 +1,27 @@
+{
+  "ledgers": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/scanner-grammar-binding-ledger.php",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7f-validation/ledgers.log",
+    "sha256": "6b8a0eb5c9a8a9b0ca049f8114f228ddd908cee8897fbd47f7c9a9e5f97ea005"
+  },
+  "phpunit": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "-d",
+      "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+      "vendor/phpunit/phpunit/phpunit",
+      "--do-not-cache-result",
+      "--no-progress"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7f-validation/phpunit.log",
+    "sha256": "c1ab12a09aaaa061a3582a93e7995b3de1c754f9eef28e39667aeb75d5c83c85"
+  }
+}

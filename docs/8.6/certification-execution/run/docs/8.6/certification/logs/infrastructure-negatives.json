@@ -1,0 +1,24 @@
+{
+  "obligation": "Exercise isolated missing/stale/invalid inputs, failed gates and false certification claims.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "-d",
+    "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "Certification86Test"
+  ],
+  "log": "docs/8.6/certification/logs/infrastructure-negatives.log",
+  "logSha256": "adefa99b8d1a7d44ee4e51760ab03433bf6d026caeb823d7b3d985d131ee3e79"
+}

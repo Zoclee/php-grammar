@@ -1,0 +1,194 @@
+{
+  "scope": "Five new bounded research controls; not ordinary coverage witnesses or release closure.",
+  "sourcePin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "cases": [
+    {
+      "id": "constant-pfa-reference-bound",
+      "family": "constant-reference",
+      "fixture": "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-bound.php",
+      "sha256": "377f8824e5baf2d8a4286a1699064fa0eed4f1bc3af9a6a00f3714ede82d24d6",
+      "groups": [
+        "C5C-G03"
+      ],
+      "executeReviewed": true,
+      "executionReview": "Bounded local scalar/reference calls and caught Error only; no external effects.",
+      "executionStage": "constant-default-evaluation",
+      "upstreamTests": [
+        "Zend/tests/partial_application/constexpr_016.phpt"
+      ],
+      "upstreamCorrespondence": "Direct placeholder and required-reference parameter behavior; named/variadic default evaluation.",
+      "expect": {
+        "8.5": {
+          "lexerAccepted": true,
+          "structural": false,
+          "lint": {
+            "exit": 255
+          },
+          "execution": null
+        },
+        "8.6": {
+          "lexerAccepted": true,
+          "structural": true,
+          "lint": {
+            "exit": 0
+          },
+          "execution": {
+            "exit": 0,
+            "stdout": "declared;target(): Argument #1 ($value) could not be passed by reference"
+          }
+        }
+      }
+    },
+    {
+      "id": "constant-pfa-reference-named",
+      "family": "constant-reference",
+      "fixture": "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-named.php",
+      "sha256": "a65aea4379425ea4353785d00f07c8d461bcc27e651364910652e2668e3a63c9",
+      "groups": [
+        "C5C-G03"
+      ],
+      "executeReviewed": true,
+      "executionReview": "Bounded local scalar/reference calls and caught Error only; no external effects.",
+      "executionStage": "constant-default-evaluation",
+      "upstreamTests": [
+        "Zend/tests/partial_application/constexpr_016.phpt"
+      ],
+      "upstreamCorrespondence": "Direct placeholder and required-reference parameter behavior; named/variadic default evaluation.",
+      "expect": {
+        "8.5": {
+          "lexerAccepted": true,
+          "structural": false,
+          "lint": {
+            "exit": 255
+          },
+          "execution": null
+        },
+        "8.6": {
+          "lexerAccepted": true,
+          "structural": true,
+          "lint": {
+            "exit": 0
+          },
+          "execution": {
+            "exit": 0,
+            "stdout": "declared;target(): Argument #2 ($value) could not be passed by reference"
+          }
+        }
+      }
+    },
+    {
+      "id": "constant-pfa-reference-variadic",
+      "family": "constant-reference",
+      "fixture": "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-variadic.php",
+      "sha256": "aebaa510e340fa45bb99bef0e0b634ff40135281b2faeb7fbc18efeff92d9eca",
+      "groups": [
+        "C5C-G03"
+      ],
+      "executeReviewed": true,
+      "executionReview": "Bounded local scalar/reference calls and caught Error only; no external effects.",
+      "executionStage": "constant-default-evaluation",
+      "upstreamTests": [
+        "Zend/tests/partial_application/constexpr_016.phpt"
+      ],
+      "upstreamCorrespondence": "Direct placeholder and required-reference parameter behavior; named/variadic default evaluation.",
+      "expect": {
+        "8.5": {
+          "lexerAccepted": true,
+          "structural": false,
+          "lint": {
+            "exit": 255
+          },
+          "execution": null
+        },
+        "8.6": {
+          "lexerAccepted": true,
+          "structural": true,
+          "lint": {
+            "exit": 0
+          },
+          "execution": {
+            "exit": 0,
+            "stdout": "declared;target(): Argument #1 could not be passed by reference"
+          }
+        }
+      }
+    },
+    {
+      "id": "constant-pfa-reference-placeholder",
+      "family": "constant-reference",
+      "fixture": "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-placeholder.php",
+      "sha256": "152fa943514ab5f1a09c1d6944e1fc765c3a32cd67f613de9e9e7835a8f64de0",
+      "groups": [
+        "C5C-G03"
+      ],
+      "executeReviewed": true,
+      "executionReview": "Bounded local scalar/reference calls and caught Error only; no external effects.",
+      "executionStage": "constant-default-evaluation",
+      "upstreamTests": [
+        "Zend/tests/partial_application/constexpr_016.phpt"
+      ],
+      "upstreamCorrespondence": "Direct placeholder and required-reference parameter behavior; named/variadic default evaluation.",
+      "expect": {
+        "8.5": {
+          "lexerAccepted": true,
+          "structural": false,
+          "lint": {
+            "exit": 255
+          },
+          "execution": null
+        },
+        "8.6": {
+          "lexerAccepted": true,
+          "structural": true,
+          "lint": {
+            "exit": 0
+          },
+          "execution": {
+            "exit": 0,
+            "stdout": "2"
+          }
+        }
+      }
+    },
+    {
+      "id": "reentrant-interface-lookup",
+      "family": "reentrant-linking",
+      "fixture": "tests/fixtures/php/8.6/exact-pin-reconciliation/reentrant-interface-lookup.php",
+      "sha256": "39503ebe5d444f9bb0f74cceeace37b87d9c638d297c7330b60ee81f5a726be4",
+      "groups": [
+        "C5C-G07"
+      ],
+      "executeReviewed": true,
+      "executionReview": "Fixed inline declarations in autoload callbacks, depth guard 3, bounded class_exists reentry, no files or network.",
+      "executionStage": "autoload-declaration-link",
+      "upstreamTests": [
+        "Zend/tests/inheritance/interface_constructor_prototype_001.phpt"
+      ],
+      "upstreamCorrespondence": "Source-adjacent interface protocol control; not a direct upstream witness for this reentrant callback.",
+      "expect": {
+        "8.5": {
+          "lexerAccepted": true,
+          "structural": true,
+          "lint": {
+            "exit": 0
+          },
+          "execution": {
+            "exit": 0,
+            "stdout": "hidden;linked"
+          }
+        },
+        "8.6": {
+          "lexerAccepted": true,
+          "structural": true,
+          "lint": {
+            "exit": 0
+          },
+          "execution": {
+            "exit": 0,
+            "stdout": "hidden;linked"
+          }
+        }
+      }
+    }
+  ]
+}

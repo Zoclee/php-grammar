@@ -1,0 +1,120 @@
+{
+  "freshness85": {
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+      "-n",
+      "tools/8.5/certification.php",
+      "--check",
+      "--source-cache",
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\phase7-sources"
+    ],
+    "cwd": "C:\\Data\\GitHub\\php-grammar",
+    "exit_code": 1,
+    "log": "docs/8.6/historical-evidence-contract-review/freshness85.log",
+    "sha256": "e053a6cc40e83dd5b936eaf693f4e69d650ad738842af86fcf039e06e36590cd"
+  },
+  "freshness86-current": {
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+      "-n",
+      "tools/8.6/certification.php",
+      "--check"
+    ],
+    "cwd": "C:\\Data\\GitHub\\php-grammar",
+    "exit_code": 1,
+    "log": "docs/8.6/historical-evidence-contract-review/freshness86-current.log",
+    "sha256": "361c95ac4861f36a03531c826fb2c50835fe01b6f74c49081ac13e8b0ebbca56"
+  },
+  "phase7b-integrity": {
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+      "-n",
+      "tools/8.6/certification-assessment.php",
+      "--check"
+    ],
+    "cwd": "C:\\Data\\GitHub\\php-grammar",
+    "exit_code": 0,
+    "log": "docs/8.6/historical-evidence-contract-review/phase7b-integrity.log",
+    "sha256": "d863596ac278ff96b40f11feeedf9e59b8e38c2411209c5e39a9c351661d9bc6"
+  },
+  "source85": {
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+      "-n",
+      "tools/8.5/compiler-boundaries.php",
+      "C:\\Data\\GitHub\\php-grammar\\.audit",
+      "--check"
+    ],
+    "cwd": "C:\\Data\\GitHub\\php-grammar",
+    "exit_code": 0,
+    "log": "docs/8.6/historical-evidence-contract-review/source85.log",
+    "sha256": "7f173bd1f7ab7e1543b8370067b9374cc056057d6f39056ee1e2d6a415e3b192"
+  },
+  "source86": {
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+      "-n",
+      "tools/8.6/certification-gate.php",
+      "--gate",
+      "source"
+    ],
+    "cwd": "C:\\Data\\GitHub\\php-grammar",
+    "exit_code": 0,
+    "log": "docs/8.6/historical-evidence-contract-review/source86.log",
+    "sha256": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37"
+  },
+  "manifest": {
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+      "-n",
+      "tools/validate-manifest.php"
+    ],
+    "cwd": "C:\\Data\\GitHub\\php-grammar",
+    "exit_code": 0,
+    "log": "docs/8.6/historical-evidence-contract-review/manifest.log",
+    "sha256": "e2b231fd276610052d6d579479dd352de5ab52944b36d2c95e6db7de0a9f6da3"
+  },
+  "audit-freshness86": {
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+      "-n",
+      "tools/8.6/certification-gate.php",
+      "--gate",
+      "freshness"
+    ],
+    "cwd": "C:\\Data\\GitHub\\php-grammar",
+    "exit_code": 0,
+    "log": "docs/8.6/historical-evidence-contract-review/audit-freshness86.log",
+    "sha256": "61086d86a645f8ff1c51984771d55d193cbff6134d670afdbfc72142863d9306"
+  },
+  "preservation86": {
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+      "-n",
+      "tools/8.6/certification-gate.php",
+      "--gate",
+      "preservation"
+    ],
+    "cwd": "C:\\Data\\GitHub\\php-grammar",
+    "exit_code": 0,
+    "log": "docs/8.6/historical-evidence-contract-review/preservation86.log",
+    "sha256": "d7dbdba14e62d40d32069ddce95242935aa49ab63060a282d5976f16f078ad51"
+  },
+  "relevant-tests": {
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+      "-n",
+      "-d",
+      "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+      "vendor/phpunit/phpunit/phpunit",
+      "--do-not-cache-result",
+      "--no-progress",
+      "--filter",
+      "Certification86Test|ToolManifestTest|RepositoryManifestTest|Consumer|VersionBoundaryTest|Php85ScannerAuditTest|VersionPackageConsistencyTest"
+    ],
+    "cwd": "C:\\Data\\GitHub\\php-grammar",
+    "exit_code": 0,
+    "log": "docs/8.6/historical-evidence-contract-review/relevant-tests.log",
+    "sha256": "6388424a21f92efb70be1d346b317a8769fbc2ee16614c02dee8987c589f68c2"
+  }
+}

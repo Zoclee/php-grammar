@@ -1,0 +1,2444 @@
+{
+  "commit": "7d8b6e5fa92f82e7e8c122a9a989a22727f61c3e",
+  "ledgerSha256": "04bb3abfa0635036759ceb4698525f2ed015d77f6937be460a7e8e134bea2257",
+  "currentLedgerSha256": "cce919d8b848a9892c33d62b09d5b4d87d6f6a50bf551746cefce634fd47ac9c",
+  "schema": 1,
+  "source_pin": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+  "claim": "Grammar-complete, with documented external contextual constraints; conformance evidence is bounded and uses PHP 8.5.10.",
+  "inputCount": 1545,
+  "gitBlobDifferences": {
+    "docs/8.5/diagnostic-dispositions.json": {
+      "expected": "ce1a22b2f2559088641822b5954bc9f9173cc8197071c20913646dd6e01269e4",
+      "gitBlob": "ac6262c0d59d2c35dded38abff3708ab2b990eb1d5dda282c340fcce96c2a839"
+    },
+    "docs/8.5/historical-dispositions.md": {
+      "expected": "87eeb6cca58399aa16a76b2a8f35fbc6c33aec281fa00a805d6204d8e1a3c4d4",
+      "gitBlob": "d72cd76714add38690f56379a38cdda252390e91279d30247a1db365be1b0340"
+    },
+    "docs/8.5/negative-boundaries.json": {
+      "expected": "e6353997d841397317c61ad98488c00c734e7d8a492db1544f7d145e0cbb3d6c",
+      "gitBlob": "4d5c8db72aeeea092f1f05f693068b8141e16b717aac8efd6573762bc73f21f9"
+    },
+    "docs/8.5/phase6-evidence.json": {
+      "expected": "c9b614a8b0ec3f31bb38a2d6d34943843bb4eaa4b96079a0d18a8e3177a4ccf3",
+      "gitBlob": "f98c7d503c3ab82b357825cb001165ccb0bbfd8a7e347a5f33603ffd66f23cbb"
+    },
+    "docs/8.5/phase6-reconciliation.json": {
+      "expected": "987757055d8e185e3a38fb18fe308fb4f90c92c62fbc48b35d7bb9b671fa5938",
+      "gitBlob": "8b31eccfdfd0e487a1cc24e99436c2bc93feb7d560a1bd8835d3b536e7d87b6a"
+    },
+    "docs/8.5/source-correspondence.json": {
+      "expected": "dc129b20252a54e4aab847d9bda460e5722ff574f3eb8580c1ae77f761db7468",
+      "gitBlob": "ceacd045268cf4dd04d6fa95152e03ce3457e828ae3d95852d00cec4e6503f60"
+    },
+    "php-grammar.json": {
+      "expected": "0280ff2b531e0e5cdaa9db2b6265991c3b5d511f4905683a88c2bea5ce2ac373",
+      "gitBlob": "2658a36e12d23f24b3ed73699e371da3a95352f2652c1b78e20d6cba2f8b7ee1"
+    },
+    "src/Ebnf/Validation/GrammarValidator.php": {
+      "expected": "bdf4560238826406bce9077b239ed4ade0b54faf3802820de95cce83f3453cf6",
+      "gitBlob": "b3a4b12d7d7d5e3988c5d98c15678792185a6b830dbaabdc067f8ee12223cc31"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-abstract-method-body-live.php": {
+      "expected": "6f927ec06cbb143220277d9536b826b9ace5049d9b52162ada21f390b949ecb7",
+      "gitBlob": "7968e5b0fa63d6f5a9807bb1167ad9306312054714aa0d8e764dcac8ea1129f2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-abstract-method-body-retained.php": {
+      "expected": "b35adb71fb69c5809e31b9c94a8e386b08772377d846856fde5c8a42eb5931fd",
+      "gitBlob": "60e0ae317f3f67d08b4ff18983d7423b65a188ca099cafa98f6b24a2a1b38eed"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-abstract-private-method-live.php": {
+      "expected": "86e27ae12cd90dacb8b11ebda346e448e0b6a7fbe1bb6a6207c8b87b99157bec",
+      "gitBlob": "7fcc92893ed85a0ebced55093c2c2afd99492148e2916177f414b9a2181b7111"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-abstract-private-method-retained.php": {
+      "expected": "79e9b5ed05407e0b66218a3813f3b644b4ccf1057066cc7e0a452db45f8199a7",
+      "gitBlob": "dfbb7be0899694ec76e0b9185e384184b4387f0b28b45160dc6c26057267136f"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-alias-abstract-live.php": {
+      "expected": "53af44b6820c0499760b37a73efd4d9305faba7b7c6f5abc60546869596a91f3",
+      "gitBlob": "c6c6b140f23c78abe1882a30ad58f75b22352f9ff8f9e4a54232c933f4b95b00"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-alias-abstract-no-name-live.php": {
+      "expected": "d7b85355cdbb926f3ed390e821807214ddb2205c3d48d33ca45a9735baf1986a",
+      "gitBlob": "b304bd3918558786a43fc1f31f727916fbbd345e47cf379676f10ce5092b88d3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-alias-abstract-no-name-retained.php": {
+      "expected": "d9bfddb96f8c043282c251c0a23cb0afd25f9f338d4557e4239cb55521416ccc",
+      "gitBlob": "b6fa3a2cb033e10adeb59dfd2bea7df6969c654bedc9a44f81a289120e73b329"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-alias-abstract-retained.php": {
+      "expected": "3eb33532f54ecd221892826417082329c004dcac939e456d101de9f496d3fb0d",
+      "gitBlob": "9278ada658db6d20c45665c839f56e0361c000eecfd09f6ea57144716dc85e42"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-alias-static-live.php": {
+      "expected": "82a49757c4401163044c661c4907197bed72d7bbc63161dd3a438b72c1d073e1",
+      "gitBlob": "231e11685ddadf3eaf97724b5a1321164ea12fb84795718bdaed6e4c505799c9"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-alias-static-no-name-live.php": {
+      "expected": "8742fa4836a80bbd4d6d27f986d22ac86723f3d6b283cb8b22a646d14c86f927",
+      "gitBlob": "9b7639168569cb7bf70c0ee8b7dd3a0104384da20050a36c666daf0c8be0018a"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-alias-static-no-name-retained.php": {
+      "expected": "b85e5b6699c3769289c8ffa3375c4a1d6c94619676a720f707113df2838b9c98",
+      "gitBlob": "d22f4c8dbdf6624b6b2c2af0be98e5e9a8abaaa59217790a8d910b2a78593fa2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-alias-static-retained.php": {
+      "expected": "42a0d78bfc4b714dfeba920cfbfa6dd589e458cd104ac05513b340bf8762d6a0",
+      "gitBlob": "b7243a4b100bce6bcb8450cf09a244aa5e62d0281bf52d623656937abe247b0b"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-call-live.php": {
+      "expected": "b61dd6c59cf6afddb90cdd4b62d8b46abce64b77e31175ea29e2d3daa13d0af7",
+      "gitBlob": "f1d6782db4a7fb0dad05c0125fe171b867f65fa1a53b27efc0828707ed12c332"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-call-retained.php": {
+      "expected": "85cbca495e34d26266ab34f719684f8cb2d1450669387389aed2a2331c8c550e",
+      "gitBlob": "55ad2087c2b5595a8c4089cde2c804e8865cbcf8c33930d093321e7e799bca3e"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-conversion-live.php": {
+      "expected": "3d8d36325c12862177b73d2c37a1011b235ff2b23f4c9429827405f7a34abdb5",
+      "gitBlob": "9cef700eaa7ab0f7b603b1668fcd3dbc26d758ecec85f2e33b2bad88867623c5"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-conversion-retained.php": {
+      "expected": "4978a7174fc6de73ee4b202443e336bbf5640da1e58af4963bc1e8f29944d292",
+      "gitBlob": "c697494765ab4a85c311d1bf0a56fb823ccf2710edca47a825e0f1e2a5d13312"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-duplicate-live.php": {
+      "expected": "a1ab3aa831a0dd1a20080cf4917047ee1fdf906d724d6a4d6788683c5e782957",
+      "gitBlob": "c047231f1f35442de69b3874c7f90e64fe6598a69ccefee85ff74b7616e7c292"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-duplicate-retained.php": {
+      "expected": "f005895a906fd964c2eeab0d532329f6184d2a579049b6098ebaf64e8ce28a23",
+      "gitBlob": "f1c4fda61983d49b5275b6ca4975c0c8868dd6d53944074babf4352baafc2215"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-order-live.php": {
+      "expected": "3b11ac9c6010827a53f1dbce271f7cdbbecb1f127352e6437134c2960cf71486",
+      "gitBlob": "e99904bc08d49d71909d297edf422da3f53e599ce34ebd5cc166ba5c256cbad8"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-order-retained.php": {
+      "expected": "06edeaa4f225a58940e758253e38749f6466ad196fdd542980ee50cd17354f68",
+      "gitBlob": "c21d1831838fdef7606d2a87a26ea47b08bd001f4f254744236f6c26148c98db"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-unpack-live.php": {
+      "expected": "70d23f56c561bb62431449a0ee89beed611337438c38009ff832bc1e273168e8",
+      "gitBlob": "1554de14381f44c16f1c1b6cbd367522830a85042cfe5b963677824e8f02a3c2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-unpack-retained.php": {
+      "expected": "f5c90dec83e9bada3a7d66737ff60cf77b2874d91c8cf35ebb9ea07590985f6d",
+      "gitBlob": "b24d4b8f71a29dd196b4fb70e5d72a153eca4f24ce735e90c97109556fb16d12"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-variable-live.php": {
+      "expected": "cf70b4b64d0724a338085f0b0f7b5726b2bea09e4338955c567ae3d18f762601",
+      "gitBlob": "78f767932acde218c35bd9096766bd8924a76a060fb7e34641757688b5ce6142"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attribute-variable-retained.php": {
+      "expected": "2b0163873af8c177471dc712db344dd43452b5b140163f602dba40e80fb91e6a",
+      "gitBlob": "5d7bd99774db72d86434fffbafec7a4585d2509f5740098fc849d15cba594cf2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-attributed-constant-list.php": {
+      "expected": "a90d97d61fa82a1d9403da158c5969add3af7648730de1592c9a80261cdb8797",
+      "gitBlob": "bf87b66b21827e1b87142bb4219dd9eba561cba43d5e6f05c89c4ef78cceef25"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-autoload-live.php": {
+      "expected": "99a63792babe8fdf8814cbbe21255a341934f6a10e852f1faa90130aa8a11a62",
+      "gitBlob": "208cbf0a901f221f856df42183f7d33b18818e69033fd4c85dc362b362b880cf"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-autoload-retained.php": {
+      "expected": "7e7e0f18402942e6dbbafe715857e4908d32faaa75b851c6961d63f236040536",
+      "gitBlob": "4303349c25c1033c2fe3a41e46ef66c2033762f21a202ed6a98210891747d709"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-break-depth-live.php": {
+      "expected": "7adccc55e8327a9a1a12cc9bbabbb246d98bea7cc1c62303167eb7d9755d7586",
+      "gitBlob": "be0b94e263eb7d69f293896a325d0216832f0ec628c4701a3495560a6f733cc3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-break-depth-retained.php": {
+      "expected": "1a59883949e69b0c1795d9ad8b232495c85eecc27a85b37c5babb4bfd5c062a6",
+      "gitBlob": "abe1dd51e0cb9d86e951d615c72edc673424fe54eedf50d8f736737635db18de"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-break-outside-live.php": {
+      "expected": "3d7a7a6312f20857707c6d8af06b705a178e76e5d11b52a2752dbac26ebc0c0f",
+      "gitBlob": "1c3f72adf4079197704d50c07967ec22593cd18211f6073ea7f5341fbaab3145"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-break-outside-retained.php": {
+      "expected": "a417147445a6db74496084ae79c4da1f4c563ff460562c0d63d3d76c7f1ab43c",
+      "gitBlob": "23e2d440667bb845bc094bcceecca244769a0191f10c5df2596e727986e8270e"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-catch-static-live.php": {
+      "expected": "cce5f3092fdc7000f57ed3c7f6d0fd72d879616cb6bfe40ad7e5d9d7abb5e10c",
+      "gitBlob": "b8aacd47c11f3705950f0f2e9026ac8401843de0c72c8a7dfef1436fc635f68b"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-catch-static-retained.php": {
+      "expected": "bbd50076f023e4154b8fb23fba5b43f9ceaf9ef476dc8c04af19e309f8df00e8",
+      "gitBlob": "b1c1e7c94f3b21ff92dee928e6648e7bc8df4058dbc8a75e942447605ca97d5f"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-class-abstract-method-live.php": {
+      "expected": "ef20b9399e9945d7d7306cb4c8c89b3f56370060e12ef4e9fdad16a649d6a52f",
+      "gitBlob": "53d660cf41ba24aa1213bffc0093bf6cb438c571c57a77bfcbbc0969672e31d2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-class-abstract-method-retained.php": {
+      "expected": "e220f608ea50293340e4c278d4f4694247d8a911e4e2ed0f87f2dff4a119e547",
+      "gitBlob": "7881db99548a41ffcd0b9820c92530dccfd11a6d74e75c94435c0b636b4c7213"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-class-case-live.php": {
+      "expected": "4304faee2345341ab44f31b7dfbd0acde9cc75e7bb64aa97377aee85727339ea",
+      "gitBlob": "b46a82083e7bf22fa0bc0a61be3b9c71eb995fe123b694995cf7c5330deea8d3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-class-case-retained.php": {
+      "expected": "6c63c142eeb5358209025c5ce5c2535beeef65d18765ae612a0ea081f5f5b196",
+      "gitBlob": "ae0b6b03acf9137702a157c38e5ce7f70149c07fbf51137fa8de663b230c0cf4"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-class-method-no-body-live.php": {
+      "expected": "433df68d1a9373d99f61b1d3203b6ca724f843bb58ad089de80e674d73f02cdf",
+      "gitBlob": "4881c4e4aa61fe0f83044a817f8d6fb84ff45c9cab9e378f929c22e8d70fe7fb"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-class-method-no-body-retained.php": {
+      "expected": "7d3fe9d62139aa187aee9b04a433a5e0ffa7af961f3448460336ca86016e12b5",
+      "gitBlob": "10e8b72a0e94189d81168a8d106f23cede65ccf511ff30f204c785ecb09d128c"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-constant-callable-live.php": {
+      "expected": "1ca53d6849471a9ece01e2f45058f96c623cfc668fba4083d8a2f86af2cf19b3",
+      "gitBlob": "d41df969eedbd7fad8bc77919eba70a7452d286ef892c7392e54f439f63bdd71"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-constant-callable-retained.php": {
+      "expected": "90481713cd2a9d5b8ad90cd8bda0a8d5eaa5956e4c26e5a73692724473634d26",
+      "gitBlob": "396ed0c14cd164b8b396d016bf5d2d22a2a82217cc35c6042ab606cbece0e2bc"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-constant-private-final-live.php": {
+      "expected": "6acb339c71d3fe4d47dda808f138e16d6d23d2b9a9a69aa52a446f91ffe4d161",
+      "gitBlob": "e4cb3db0d7bf35c0054d2b04851a80a6c326268eeae2abfcaad964dd9793c0ee"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-constant-private-final-retained.php": {
+      "expected": "d5991665d9189345a177541ff5057aaca136c0e117f7c10daeffbe13785d37e1",
+      "gitBlob": "a18b0a5ab2cdf07df66c7d401a411c4b07f1edba05e3baf9619b92ddcbdcf3e4"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-constant-type-value-live.php": {
+      "expected": "51a83f49d1174c6f0d15be6f79724faf272f32dda8fa4449c1fe00a16767b57d",
+      "gitBlob": "7c9b78564abac8232156d718c40fdcb229b1066232eb0e7b1d1cfe8a9db4d67a"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-constant-type-value-retained.php": {
+      "expected": "50aff8060d8c08ea6beeb33d3ab7a21df56cb1889bd7a1cc199a5ffe0c35834c",
+      "gitBlob": "fda548798be265447b8298a4416da7926e1c96b264a79b1141151e0104f4bb60"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-custom-assert-live.php": {
+      "expected": "89bd8a8d03d5d34fe0ba9c9f5e7f33a53b508b9e9fce3a7032f11356c81b0a11",
+      "gitBlob": "181daa1bf156b02929d36ef5e3f082eb6b1c73e23d0cff90e95e5e3a26bb691d"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-custom-assert-retained.php": {
+      "expected": "9902c8cf6228635531bfd95e0bbf878536e0e5be20d6de8aa51b0d6629ec5fc9",
+      "gitBlob": "d64628c4893d6ec8f70f9191a182bb5193206cdf0f8366354147663ef02021e2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-abstract-method-live.php": {
+      "expected": "f12aa2972de3ad47ec7aebab86517a6ca990b926d17cf71471508028c7f9f45b",
+      "gitBlob": "9089962508bea156b427d7827e35079b09835dd4e69c2212b00ad2a7af27e088"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-abstract-method-retained.php": {
+      "expected": "e220868bbfdf4dd5fc3d80ae08c1a64403753c43b10722e6817eb16265a0cbc6",
+      "gitBlob": "589a5a99f0473a49e003dec36bb89c20a2e8a2a54a6100ed1f866444718dfdc2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-backed-missing-value-live.php": {
+      "expected": "b4823dcfcd43643de6005a43ba1c4291d7fbb636e68de3c5f5d08e6245f2d277",
+      "gitBlob": "cf8d76cfdb8f99769c2806cac511577e87af45d59377c0c6648977122b501f1d"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-backed-missing-value-retained.php": {
+      "expected": "a5be59d3da8de4cf33bc105acc079e225ccf304942c7db78ad2d4b48d0dbf872",
+      "gitBlob": "e43e87af1a7336707ffc7c7404f46e132113812be089649cd8064e541ec5a84f"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-hook-live.php": {
+      "expected": "ddae7a340ccf12af412c53b6f7080830183b5e6c69260fb77456fe7bcab3e39e",
+      "gitBlob": "aa1366294a047202ae00e07887d1cf282053b48535c5a764f82bc4cf069de682"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-hook-retained.php": {
+      "expected": "db3561b8cc9c82ae640a7565232357c132eb1aa7f12f1e3d227940ffbf86144b",
+      "gitBlob": "f429728ffc62dbbeb5f2e3b2bb47435d36c569d88b117a4f0517300ca29bd5af"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-nullable-live.php": {
+      "expected": "26f13c8135fe3cc186d2bfeec8a66ab2462c9bffeb877a22508de309fde639db",
+      "gitBlob": "c390adf1fa252f8829e3fd9d22e723f201ee15091d9e5810e838f59a3ab97736"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-nullable-retained.php": {
+      "expected": "802405326c8a900b33972e20c3d911b5160969cd5c963fa071faeaa74027911c",
+      "gitBlob": "908dffc7e94ab886701237494f43b5075d04896135fca33779e31782bcd06f23"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-object-live.php": {
+      "expected": "7039e2e52baf5929bf1dc2b1179c5ae16e6cd3fbe2eac5e65a74152bbc8baf1d",
+      "gitBlob": "ef1de29b5ace7278c7a9269eb90c4d9ac909839f65f5f7ef7d2cb36540fca2d3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-object-retained.php": {
+      "expected": "0d751c9c60c0c6b799e61bc3898d4ddea64e628a3111ed4ced17522b18ffc922",
+      "gitBlob": "ac9e8dbf74608b237ff06aaa21e3f5614390aeacbe9a344c25be9ba289b85824"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-property-live.php": {
+      "expected": "1b622b4ecfd2591d8479b7f66659730d12860936f2c016cdfc2c6ebe060f12b7",
+      "gitBlob": "2b46e10855b083a0dfe0e94b7a6d702727b3c1a8de33c9b08aca22acc2c3f63c"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-property-retained.php": {
+      "expected": "568a96634a41a8d3795900b04eb7d8d0f719266e2ba1c736766d2cffd3fed52a",
+      "gitBlob": "3afec7350ee85795f60f781f0ec159e51874e66adae2c07b545c9b7b0833bbd6"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-static-live.php": {
+      "expected": "f06bb86fffc30a7e29c1701c4828ed82898f46ae9c287e3ae12610f63dfd2ead",
+      "gitBlob": "b993b9c4391cf06499641593072cc842162b9a49f7f9967d3995596510809bc6"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-static-retained.php": {
+      "expected": "089247b7efda07e8c0103bd0789dd2e3230b236b82c8f46042f4b2f0ac107f1c",
+      "gitBlob": "b3c0607be54bb64d4c50c0482ce8494f529f5f4a431cfdbae78c616dbf1440b3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-unbacked-value-live.php": {
+      "expected": "6d93b1422c6a5bfaf31adb1abc6cceeb3503584c318a640af7bd66a4e87e5877",
+      "gitBlob": "56e25f6eccbde038c1f94bc239b3dafc3d6da8c6b451d3ba4c589f69a85dbfc0"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-unbacked-value-retained.php": {
+      "expected": "e3d1d378df693c263e7d6e5653c80441ae8ebaf439e6479887f55385a6c210fd",
+      "gitBlob": "a4907cb0a71eb9e193ffe9dcc006df155b9b5c314f44c9f9463120777ea3839d"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-union-live.php": {
+      "expected": "8feeb4cee7d2aeb97fcbe9f34784f7be61e179e1c9f604e3d6134ecdfc9b08cf",
+      "gitBlob": "74f113803d91f22bbaf22fafd20f5b4462edf52fec524311deee7cf4e8d3d1ff"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-enum-union-retained.php": {
+      "expected": "b67fa7f7968bae01af58e2f818d68f73a3ab13cdfb41ea9d0f36d09b8ee6471b",
+      "gitBlob": "4acd7be54ed83e2475db3559e0f649457b6fc3cd3c5184ef3f9cf02f9bda21a9"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-generator-return-type-live.php": {
+      "expected": "4581a9cf37eb94dc323b776f887cb6ff3690d07fa2cf2b8bc115a248a8b1ff76",
+      "gitBlob": "1013ca508217171d976ab2100e0bcb72839591ed54f3a7ce5565638ae14e04b4"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-generator-return-type-retained.php": {
+      "expected": "47081b42439f80204cfa442c03606c90e8c07fcfd38c91bb4a280d4b47071d39",
+      "gitBlob": "544a835cd844d0f46d98ec4df4c2262525d976ce4dde0140c9ff2f4cbc831cb2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-globals-write-live.php": {
+      "expected": "0942f8fb01e4b6072fbe90f3fd9a33552a2e5421cc3ff8f125d797776a9d3b0e",
+      "gitBlob": "46e95fe86abc09a6e1542978c0ad001f2ec6b5c171c5cda98425fe602ad3bfe6"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-globals-write-retained.php": {
+      "expected": "3dd7cbf56676831d07e126d496b19d95e3d9b2fd8049cba5cce8d071432325fb",
+      "gitBlob": "9c75f6edf3425539d1442a27551eb6e47a8e853bac9735a8cfd8e5f9dbe71b3d"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-goto-loop-live.php": {
+      "expected": "0e8dffa7c3fa90b6ba03773cc36a0591e61d88945f03240ff690377c61b95450",
+      "gitBlob": "2502d2467c5e09874bafad644e081b916cdc3f30963a3b697d03da1a2278c441"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-goto-loop-retained.php": {
+      "expected": "6909de579f1a81e015a9e492bd836c4d9a6299b5aba2b8b07c6c7c54bd348b01",
+      "gitBlob": "dfb62730f043cafc396e21456dbcb462047f9b3540851214006323f7d07e9ebf"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-goto-missing-live.php": {
+      "expected": "2c1f3be903f8c778b666e36f9f17d4244a389034b30816e566b38a7bb7430d05",
+      "gitBlob": "44162dbd2d66c1ebbed18eeee19fb14799b3d59913e64735f87868d583bf8cc9"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-goto-missing-retained.php": {
+      "expected": "94fe9a9eeec668e754244b9d0bb3a17eab537f872b24bce59b4a89032c185042",
+      "gitBlob": "916cdc2b73f639785f3f4f74729e73a8a506c673f6c466b3672400cc750fc54d"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-abstract-body-live.php": {
+      "expected": "5f2889a523c47172a97abea38365e22ec43e93c52488dedc2209d1d99d38216a",
+      "gitBlob": "ca899280142cb9587a892aadca6c7d219adbd9348668fca94ae22b0e4f7b4c84"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-abstract-body-retained.php": {
+      "expected": "6bf128b4a02f065a3f768d576ef634ebc10dcba749f95f31ce121ec02eeecf9f",
+      "gitBlob": "a717502fc503aa7fff67a58c7a0fce4a7c0306f0760356998d96afc908bd3be3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-abstract-final-live.php": {
+      "expected": "d3bd03f26a349b41dd4c1b738aa0131a7723deee3eaaeba606554195df735b66",
+      "gitBlob": "121401e5c1b02911f0777c3efcd145b4b58a5a04eedec1d1506932937089be85"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-abstract-final-retained.php": {
+      "expected": "63afe29ee4dce47032cf25d8b15eba24ef741b9a79ee30933ff1b60b98d2ae40",
+      "gitBlob": "de36bbf42d01acabff064f73733916230d6f455e060e48f8021a53d31b023f99"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-duplicate-live.php": {
+      "expected": "7e0c84160c3a8786ce55c01e64535448706d563dfb8856eef8d26baff980c704",
+      "gitBlob": "0937ab2e55b6a4709cfe61d216aa978735ab5b33bc7eceb8fe9648666fd28c48"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-duplicate-retained.php": {
+      "expected": "ef3dfe0bcc34bd4a9c47cf2e88f781c3b8ab47e12c42f6578ad581e3415bfdd3",
+      "gitBlob": "802a78eb56ba4f5c691fc63febbd5e7071ad2a8fc5ab6b789b668dba442243ea"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-empty-live.php": {
+      "expected": "ae0c4ec540190bb579c514295b561eb0e42f8c64586a6a50cdb83f642413f38e",
+      "gitBlob": "5500dd7ba7469d2203793cc366ca0ad0298cb720d454e0734dbbcb651b9babde"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-empty-retained.php": {
+      "expected": "8b1d3665af229829eb022ef3d6717d01ba2a81e25d0be4238bbbabd32c79362f",
+      "gitBlob": "bc9ba1493bb7f31f4aa4471461306165a9b3134c5cce6f8b48744839674f2d15"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-get-empty-params-live.php": {
+      "expected": "b2ed44ee834360dff78465926b3a3f40435d3a037b398ab4e77a230f327abccd",
+      "gitBlob": "ec142c058c88ef10e9a486ea9ffc678bab4734d5ae800a00f096d2f0969ca4f9"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-get-empty-params-retained.php": {
+      "expected": "99c8e216f557ae23d63b57fbb5e3ffe33c224dd2c779c7f80b79101808d563c2",
+      "gitBlob": "8bee6d175ef389b30ed5b46d1f31c3fe85625036ac0c33bf1763ba8693a14eaf"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-get-params-live.php": {
+      "expected": "2618b5cc956099587651b79d5fe844533d80cc4b4af1761ef50df17386301e4c",
+      "gitBlob": "71456e1e778825739581754f10cf66cc3e5fbe232a0a366ff590880b32e4d6f6"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-get-params-retained.php": {
+      "expected": "52e53f6deff8bb6ab5ab3c365afe9173ac0971554f48dae6fbea7d713c329add",
+      "gitBlob": "5960a56c88d60623b55f0a886b2bb2a25f4d791efc52a6ca68e1b04717ac086a"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-interface-body-live.php": {
+      "expected": "d7ec3f5f68ee66fc95c5c23e003711d580d8275730c06a4bfe6a3d9f6a92d4f8",
+      "gitBlob": "84288e503f8d6316c21aed5bd3839a4228a6f6add18f771435bd1d7969380819"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-interface-body-retained.php": {
+      "expected": "76abade4c8a53c84645dd1f2d57bb467b75041e1ecb3fb74b97b66595962ad26",
+      "gitBlob": "f6422c02422cfdc7dd2e201004ccae5839b0cdaa1a6da9058a4df9f642ae85b9"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-no-body-live.php": {
+      "expected": "afda6625e818c4c52dc01f51f1f49b6e47705494ea0d9731563229ad2d56eb1e",
+      "gitBlob": "bea413eb1a3eed074aafa1d7e6c7529f590500b5a8c949fbd2f294c5a1d7c7c6"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-no-body-retained.php": {
+      "expected": "972d3b604c62abd1e2997dd99d2be0499b11af18239c382d2411dfeb397675f2",
+      "gitBlob": "9f03f366d80d4c28f41d4951af8e5a2c22bf15a9af4d558e3594b3624faa50c5"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-param-default-live.php": {
+      "expected": "05766271c475d191ad9f39da169f4dbc9e3b67e8d20a191d4690a69a56a6eb9d",
+      "gitBlob": "483e2cfadc4959e1c4f8ffcf7cd650f9acccd0fca87a0d5e06e62af6fccfc82b"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-param-default-retained.php": {
+      "expected": "3e456529b0492af9b9bcca183f38ec99c2f57a425db107448b8f5220e4a1044a",
+      "gitBlob": "78aca68344d09973cd141de4b3c92dfab2717a560b55aa84845bec99806c82bc"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-param-reference-live.php": {
+      "expected": "ad857cb3efb93c4b890910b3da421304be00d114277025aaf42a031104f2539b",
+      "gitBlob": "b65245fd894f240624d51cc09bbd1d04e7edefbed9784e655dd5735958d9852d"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-param-reference-retained.php": {
+      "expected": "0b9d459d73f605f8f9d430959c545757cf00bb0831c7d640beb7f51bbff2c4b6",
+      "gitBlob": "608654cd362386c7f60bf0a9bc17771b4dbb08466eb0c84b35e78b85ff61a088"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-param-variadic-live.php": {
+      "expected": "6c9b7ee6375f2f1216141aac2761af2cdaba9981d3f2482dd75156b00dcf88a3",
+      "gitBlob": "8802702a89391e9a65ffde76ccb9cc418828f0b4ae65e79e774d31f6d09555a7"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-param-variadic-retained.php": {
+      "expected": "6f8ffc2f616039800aa88d438db2281a58b4ac936f71a707d734be55241c186c",
+      "gitBlob": "49dba2c5ebe272ce31cd271dea9a36aa7b8ec89736e1a348b56ff5e18f0c5edb"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-private-final-live.php": {
+      "expected": "e2b6adab5d73c89b6db63b3f08965f07918df17278d1614d1c1cf50e7df049cf",
+      "gitBlob": "534aca1ddd74537eeece09ea70805e64ba57f09af700c4be9d0f2f8da77d55da"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-private-final-retained.php": {
+      "expected": "886f1d151f488ee169f577eae62b7ecb4b0e0cdc8705fdc04af854d0206a4a8b",
+      "gitBlob": "a72e7f6b2f203fd7ee1b57bd0b9aefc649aa0a069f37cd6afc0484b7bc70ed26"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-readonly-live.php": {
+      "expected": "b20d2f50f9bcec5889574f149b58cccacb5b099d19d1933b71a60325864a69f0",
+      "gitBlob": "0d6df02ac73f656240b1060bdb60266773c8a5cd4bf00e40474192c1e804d8f1"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-readonly-retained.php": {
+      "expected": "a6f6ce47448af3d49271a7bbbbfc538e61bdc9a6af6af3cb92429f7466e7a91c",
+      "gitBlob": "87d982d5fb7ea1ccfda9780a39ea21b0a8e6b42056cbf445b440c9cab1032216"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-set-empty-params-live.php": {
+      "expected": "31ffbd85a614fd2104bb3cf3b31e4147d1f542c0d3b144653a210dd55fdf6d57",
+      "gitBlob": "dd6d637ac78f5a1e841f5e64510af038c2966eaae5fe81c0cafc77bcf9a62012"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-set-empty-params-retained.php": {
+      "expected": "6ef42ba4cf2e3b5076c773524b17bd51715ab689410e19076433d2cbdaa1d93d",
+      "gitBlob": "be4a55dd6be5af142a56abc4744e356b5a30009d5f4011a9c399a518906d541f"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-set-two-params-live.php": {
+      "expected": "9bb7dbe2815f563f31b4d77b69204dcaa4a4f1856074f84945834e268f01db42",
+      "gitBlob": "379f8c88aa885fb127b42349d2144fabb9a81f593f3901902f7067afc3199a60"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-set-two-params-retained.php": {
+      "expected": "fec0588630b7248111ec372a9fd64a7c532c2b26a957f81531f20afb78faf82f",
+      "gitBlob": "7efca80deefd2510ae8f4d60906f53f4b29e2e01d7b666e94cb23cf0aa294acc"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-static-live.php": {
+      "expected": "97a5e494c0ec268297792aebe306699fe9450a94b4559e71e69d3e1a8a54ccec",
+      "gitBlob": "04a99d44b4c2822d4be7f2aeca0ae6e5f9091fd3b642a5a22cecc8691f8323c2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-hook-static-retained.php": {
+      "expected": "dc8e6a32120cac5b61998a363e90b55dc161d538005259f823fd4de80d95f68e",
+      "gitBlob": "7e2e2b733c64377a99327135aeddd501eb6a7550147554ef231cc11d1cafa14f"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-implements-static-live.php": {
+      "expected": "3c2b0baa589aa04fa82fbd61475033a587f6d5a26dd7ab05828a83009121672e",
+      "gitBlob": "d1140b19f1237cb734996643a806e89e622498d663c535e9073d3846a8f34918"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-implements-static-retained.php": {
+      "expected": "e9c2ede0f3abdef3d34aef7c3c77a1759c134de2216e062fe5fe3d170bb436a5",
+      "gitBlob": "30e4c7a59998bebf2cf3d315ebef7d4c00611809f088945d3e4db2dca27d3614"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-insteadof-static-live.php": {
+      "expected": "3f1c86074eea3d9ecb1a5e06cb618377b22ba2da659e190cd6ed9570c71bb0fd",
+      "gitBlob": "4898413de458d66d3e7900e710e2ceca5ffe9738cd332e44f7267248a7773c90"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-insteadof-static-retained.php": {
+      "expected": "f8b430d1828fac081670c33eb0668c5ae8424c6e221bcb9e55a561670f2b97f2",
+      "gitBlob": "0c3085d63dd327dd28307ff924e93637129bd4c6a9ddcb1261cfd1014f74f631"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-abstract-property-live.php": {
+      "expected": "30851d598707898aab07e9733ec8c92d7706dee086e4480756d4df955e525586",
+      "gitBlob": "b657b7b713a06d781c73aae53951183028c184b205a8bd079682e1249327f856"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-abstract-property-retained.php": {
+      "expected": "2aa0c6249186383f9dc9cdba982eb45827e4cbe86279ed201d7219338a402f87",
+      "gitBlob": "04863d7da76ba6d43e77bd5aad2c03dfb3e292028ada2ec0fa3deb7a41d7e368"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-case-live.php": {
+      "expected": "0798085067bad12401e09dbc98a4e10bbc0998f9205bd5c4e6de0abff9ccc14d",
+      "gitBlob": "c05b5f6d77b599f011d5256b674fee28c990c8a0b0eec63d362f9875dc71fd4f"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-case-retained.php": {
+      "expected": "3e75e778c627e6bb58585ecc4fba5d26fd6eac68bf986fe5cda94195f8c41dc1",
+      "gitBlob": "9cbe8f6013e93166ab498400a7d113ca2caa7b4806b1f18dac9a15919f0f0c5c"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-extends-static-live.php": {
+      "expected": "4e0c5c2688c32104b2c585c29f986f4054910b1cc8d24a33e276faee673e55f8",
+      "gitBlob": "7d8196950d0455bcfed9de1d085bf72cff550e03061a9bd23ceea35a64f97105"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-extends-static-retained.php": {
+      "expected": "2dd2533e20fbd3659dfc4146268beee3250fb70c9c6c885bb37de38954d0c728",
+      "gitBlob": "c684f26180c3c8bf34cd613d1625550dc03d8c608ed974e78c0dfc2c5eb53140"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-final-method-live.php": {
+      "expected": "762c28b45d0f818844c765ad5175c76de3be23f73778da650197bcf5080931b1",
+      "gitBlob": "4a439e3f53ad05f10055f1a8fee5498cccc11ef43832b5d28d006ee7bdd29e41"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-final-method-retained.php": {
+      "expected": "c1c59dd7d5d533662627c575c6a8ae81f2f45efdad5ee5ff09c8078c0a3e1b6f",
+      "gitBlob": "f5a57946177832d08f01a71403ee727b89dd6c61315766e8de3669f4f100af19"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-final-property-live.php": {
+      "expected": "93e356fd96e42090a4630ebeed26bc3b1db014c79a12cd2f5d9ad02b04e08926",
+      "gitBlob": "0fa3588fe80da001b5a9066ed2689ac245bdb8d93e027036ab7f8dc371bfdfce"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-final-property-retained.php": {
+      "expected": "4d41ff804c3bbafe0b952a2e5079f07412f74ae13b3859e0e7ff689d86e98a0a",
+      "gitBlob": "71fa983a4305b27776101507d4fdfdee2d493dc9537feaba216c4a2828cc6933"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-method-body-live.php": {
+      "expected": "d6a94d45335c894ff8d6c664736e2c0a4551eb2d29ec410342fa459b02df6b81",
+      "gitBlob": "40bf5d75dc68a371941485204cbcb2073a0412f2477a811efd8335d9e5c3665b"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-method-body-retained.php": {
+      "expected": "985a75b1cdd941c2fae4f832c16e1096752bc279d8f56d0ac7359e38087f3880",
+      "gitBlob": "0e028b9156798bbbdb83910070cfa8d1305b1ae3b38b085ae871d9b2a19cad7d"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-ordinary-property-live.php": {
+      "expected": "e1f0a5f36fc80f90c8c500b616c17471e8ce533b2afb6f3846363191ca6b882a",
+      "gitBlob": "a947a894cb2778727b3e8a1916be5b7e26fb12bb0ca8972f27840c842c8e9b3c"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-ordinary-property-retained.php": {
+      "expected": "0b7ac9e4de9e36bacd1749beccc6cd570670ca981a8433d4745675507f118d2d",
+      "gitBlob": "7a18d77743f2c999f4ac5ed02ea10a9cd1b7afe2136ec61aa9444e3ec07b59e3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-private-method-live.php": {
+      "expected": "64a31eb5884b13dccbe1c7fab9e090584b9b4207f7a9d76639c1887ea113fd87",
+      "gitBlob": "7efa64dafdb83432b424f42441bd89dfc2582a92d29ad80332ed3000493e6980"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-private-method-retained.php": {
+      "expected": "1992759935209a584b09975ca6ff0b18f0004966ad1ada807d83292b2c7cd51b",
+      "gitBlob": "adbd4b0c08591e67465d22bf8c1c07a5f06dd17726ca59230ddcf82c7eba21ae"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-private-property-live.php": {
+      "expected": "17e253f57050ddbbe8d5c15f56adc8c369bc627f473fad9c64029caf73dbdce6",
+      "gitBlob": "de0fec163c14f4b26e02364c675574be23b8918ab943219f8f4441ecd54d9421"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-private-property-retained.php": {
+      "expected": "02a797b9a5a4c3c83bd8b2bf1f1cb45bc8f1719ce2c5c40a3a2568a3a305d69a",
+      "gitBlob": "12b28f4e66cf08dbd3e580c497bdc70fdb5d599cf11551ab10c0b19bab75d46e"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-property-default-live.php": {
+      "expected": "95f4b955b266e7cedcf8357eff1009f9bb340f95e4d2eae49b7cf9e4499d0244",
+      "gitBlob": "5d03ac088eab3863b75a3a655df36593e437aeb625962b7fef127a8fe5056c38"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-property-default-retained.php": {
+      "expected": "66dba70e6ac7d45822a30a2e21592a5cc8fb241b6bb01a27afdd6a0a2420a8dd",
+      "gitBlob": "40e60aa576382574883e92ef2cd45ba35f0031c7055b803c3e4a630dc02288e4"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-trait-live.php": {
+      "expected": "e9f947354cc399f4ebcc5e8c0eb994a9024d9321aa6958bfc2b0ff6b98c5bc15",
+      "gitBlob": "4018c86116055221478596ab214aa13ebb501f6e566e4465cbcb9e3d9ac5f341"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-interface-trait-retained.php": {
+      "expected": "1f6c8ff73caf84d038b9771da2ac6a3bffe64fd6f71f90dc4109a1b7f4fe76a1",
+      "gitBlob": "1c228cc729c296d72153bceea299a40d997c5c3841196bb0f94f4159966049ef"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-label-duplicate-live.php": {
+      "expected": "a95db077f5c2d809caf97e026120eeeae0421700c600b6a050b4f798eb9bcf2f",
+      "gitBlob": "f2524b4a32272488d0b642529fc75df60ed1035203621e0ef40f749c86e7d0b6"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-label-duplicate-retained.php": {
+      "expected": "1be26157104e3d1d1153ff92088aba040a87edd2d04f4d0794f8bc77a6edf4be",
+      "gitBlob": "b229a984a2b5a2702ebbd0ac530105a116091e2ff3eb4ef1af1d66b2f6f1bade"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-empty-live.php": {
+      "expected": "2f8b301ba6d4cf16bf3c564b4b5c6f997ac670f05c3fdd7c97a20a889ccf874e",
+      "gitBlob": "92b0abefc416a4eb49824e310ad298f85649585926e3684dbd15f3c82aa2c058"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-empty-retained.php": {
+      "expected": "6894d864c442ee1cae3d3c99c307e4ff03b4f8866a518fced6c72503bec2a907",
+      "gitBlob": "7c55fbfdabbe77d82a98fb396d57a0ec50f6c167d4495ee99c6ca295dfa3cf56"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-keyed-omission-live.php": {
+      "expected": "9415d822d030d7fe77654c9b36f1a045a9a39856704bba1a9433fde6ad9496fd",
+      "gitBlob": "70904a46d983f841cdc089d7da5ceb6800f0b68c722c2fd507dcdd47dbb5c5ea"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-keyed-omission-retained.php": {
+      "expected": "eb884772715b59a36aff42c23cf9105a4b38c65c6dfe27568598796b470bbea1",
+      "gitBlob": "aa36a6105266ca5d18de69eac202f450a477075ac3325f26476c69ac30734767"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-literal-target-live.php": {
+      "expected": "53998206b4930143246f3bf30ef3795edd353113bd8fe74fdcd3826166794d5f",
+      "gitBlob": "0ec7cdd6e7ae8fce39808a6dc716a1b511b107e656f9e4e1943aec0c4ed9cd35"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-literal-target-retained.php": {
+      "expected": "e58b1d0e49ace5a5668ea5318c931ccf1046cd4bb2789990e52002093e55b52e",
+      "gitBlob": "22541fc8a3073e3875e0b2e88d7180e6fcb6fb5e1acba515be967a3e02125d24"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-mixed-keys-live.php": {
+      "expected": "bc9603d08f752b6634ad5bcb9c26c9439a2b8ec24642ba17a40fa4f2b52b0bcc",
+      "gitBlob": "463bc61fc506b00b3be8fbfb7615c3b7f440d9a40d5f191a5543c7f21f4ded3c"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-mixed-keys-retained.php": {
+      "expected": "1e9b7f9d25a581a79d46fdc5e0d75fe568adc7a9b5ddcb7cd82879848760db63",
+      "gitBlob": "03049efe625576637877c75e09c193d5e0ce171e48b9ce6989f18348fd00c4cb"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-mixed-syntax-live.php": {
+      "expected": "5fe4429c38458fb609f78225236a59936570c42dab2c8e8bbdc29d82ec56b63c",
+      "gitBlob": "c42aadd2e475de43fead3f1c712e2c5e32fa0c6e776a2b92a7547872cf289b32"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-mixed-syntax-retained.php": {
+      "expected": "3f504925b262adbd411987b1919d27c0f1d94ffb276d3afe3afc80de2ee544b5",
+      "gitBlob": "1b1b126f2bd42fd883a3df12898225350b840baf2411fb6b29fcde0f478fd48d"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-unpack-live.php": {
+      "expected": "a0cb7effcf06e7e46aa51d1e620692cbb6ed0953d8a21ab67c4a98a309db4a2f",
+      "gitBlob": "45772a2974b413dbc3c9345a96a1e445a27d1b3327e5468a58274c46bf9b6e22"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-list-unpack-retained.php": {
+      "expected": "e5288b9a2102ff6f163b1ec8cb807a8e5cdc107dccd73bdab44f63d6d5467027",
+      "gitBlob": "458280c1c04f7d1518e7dac2d1a21f3b40b6d8e5c3db96ba08cf901d793dd76a"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-match-default-duplicate-live.php": {
+      "expected": "4a6c53558966a9682b4d7ae18a3f0bbbf5509b527b41830191ef417473ee3e16",
+      "gitBlob": "6312883fd1dc2493f4ca95e92be0fe4c6db905e22060eac9b6154ecef5a8671e"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-match-default-duplicate-retained.php": {
+      "expected": "3624e4b83cac4e91e7052103b122bb4430da2823305d115f4c39bf0f4915a89c",
+      "gitBlob": "b6803e99fa2a302739d544dc3b7e17691db86d3afea6b78e4cf09d121c23bcfb"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-method-duplicate-live.php": {
+      "expected": "92897c33a22e7c601aba99996ae3730c1c372c91727184eb8a2c01f08c9f65f3",
+      "gitBlob": "d66ff1a6fcebd747328dd3970bb042aa7f8416cc77ab8f7930815faeff9f9971"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-method-duplicate-retained.php": {
+      "expected": "39ff100a72c5e6ec77ddf4e584e0a49806083059c71a5f852fc3afdf9aad0705",
+      "gitBlob": "ca23f7549eed4eb6ada19979c7427625ed33dd8bc62234e16015d1190493769a"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-nested-class-live.php": {
+      "expected": "b259d8ebf34475e5bcbc519bddb406bc2bf4ea6a91009ae34750a3c91cdbae44",
+      "gitBlob": "8d1e1cc352dd8c1ac693bdf6c0b1ad4dd74f01662441344d9997699959af1874"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-nested-class-retained.php": {
+      "expected": "1a4ff87a29562000b3c00877e6cf02f4860beb8c723af651bea790e14c4054c2",
+      "gitBlob": "d528ec09edcb96eb001a39bf42618e95b8d3cbc954852dbf8f325d7ff6c580ac"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-nodiscard-void-live.php": {
+      "expected": "7a68461d5e099ba7396da1c2d5759729a273aae7dc130d14a370ef8e6320a230",
+      "gitBlob": "ea30271490c7c4e5daf40590bad2ae71ce02f185a94d8efb77b1fad79681e442"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-nodiscard-void-retained.php": {
+      "expected": "95cead47c0e98fadd2caa07cad8165d6b66b5da4b2e38bdac973256a87cdef67",
+      "gitBlob": "a942cbf0c67eb24ee4318c91ee5e0de1304ea1caf38e7f5883aedf385dca21d2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-duplicate-live.php": {
+      "expected": "22827861eb580cb769714e9daf62a55e7db258cba7e2b7730e81cc6ceebe3dbd",
+      "gitBlob": "fea756e92bd0d4ce8ff40fabee1b509612d42e9f84acc17dfc8e3b3fabba0617"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-duplicate-retained.php": {
+      "expected": "bb4f25aa58914f8a9fc9b1cf40fed74025b718d169078197bacf70dbac26c4bd",
+      "gitBlob": "6b3f06aeaaa8fad6f941a9800e292da46402dd557e373d301f61ee631471a7d1"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-hook-unpromoted-live.php": {
+      "expected": "d4e610b62d514662cb8c79e68b455958f2b99f205ec958ab14f54db2586bfc7c",
+      "gitBlob": "e8691d4217c3fca92dedf780ecee88b7e2b79ed3061599d07e2f4e6509947362"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-hook-unpromoted-retained.php": {
+      "expected": "8f399a195c1fa9cd924c38b1cdc76b51ffdf68a552dda3bfb982b569f0d72d87",
+      "gitBlob": "483668bb5dbbb09025d69e2e66cdcd53dee28adf06e0c97c5dc703b7e7008573"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-never-live.php": {
+      "expected": "0606b2eee798a2a3966d4e94e8eebe7a33197ca17d1b8fe987efc14f1268f386",
+      "gitBlob": "350d8f11a0d6b1c7b5e6604ff5e217bc3f9d7a496bb45fce56e547216197ae1b"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-never-retained.php": {
+      "expected": "d8673342dd0c5b62e779028086a58b2d3b3e88abecf4212058d0ea58e63d275c",
+      "gitBlob": "8a48e60fc0b392ab03c22751a0bc419780ed5215677cd28109580b03590e31ce"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-variadic-default-live.php": {
+      "expected": "d240eb39f4cc81b5776addef67e3c109a35fecd1159b7a7f1ba21740a6a725d5",
+      "gitBlob": "fab57716b733a25d061ba335f025ef487b175944b8443bf613b1610a30695b94"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-variadic-default-retained.php": {
+      "expected": "9ec3bc604fd4a627a7818678ad0f649771f1035ca354514657fb1c5d767e47d9",
+      "gitBlob": "6cf3e75e263a0147bd8b7555e1a999b7f2122cd1f179b8b2ef60ba497067d625"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-variadic-order-live.php": {
+      "expected": "1c1642ad3bf3b0c19a7f24d88d9639b887d0651115f34c2dfbccfc4ca07ab147",
+      "gitBlob": "3ba5a1b8c070e6a3f14a397abff171155389dddf542512a7a7c75b65bd3de16c"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-variadic-order-retained.php": {
+      "expected": "f05c35fb3c07a01ad972463981a1c721ac09bb8a899e6583bcab3a429c16484a",
+      "gitBlob": "1306c65de3de68609955172067e6f3afbf31a674432868861cfe54feef189902"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-void-live.php": {
+      "expected": "023bb526bb4bb8d239941675585fe9c23d8d3599e741d5bb96e63e6f8c959ecf",
+      "gitBlob": "f9b30a586d0c5a756fd64b253cc109cabd198d166140e2fd6a4bbc99aa6e3b53"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parameter-void-retained.php": {
+      "expected": "b2108f987caf88f7374413fe77f2ad497e8fb3228f1aa410d67e423f34911378",
+      "gitBlob": "7cc360d3d3c29a9187425794252b142a6400ea443ecf911cc771da485edc8561"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parent-hook-outside-live.php": {
+      "expected": "b56c4cb99a6d0890ca183345ecdc79fbe40fab8eb92f34367ca1a8641ce50ba2",
+      "gitBlob": "c6d1eac4b16d27c929debf9b45affcc75b993ac3ca73063e2ed52aaed3edc381"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parent-hook-outside-retained.php": {
+      "expected": "757198467132ff6c99fa8eac5da8f0be51ba960da1ed9a79eaed300e50af7612",
+      "gitBlob": "810223ed666283c8fc5bea6ac57201aa3a19f39dc5688594d4fec5bf312776ba"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parser-action-abstract-final-method-discarded.php": {
+      "expected": "6ba20504600b0abc7b65f02d7010ff44bd2bc0db0fcda705c3343d8f76dbf9cb",
+      "gitBlob": "ef9aea849e7846fec969c728ffe6592aba4ddf4d3b2d55d72946c266cff90bf9"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parser-action-abstract-final-method-live.php": {
+      "expected": "dc7f8ee0b80a4be8136861c51034a8b2c2893023a5d20e2c446f9a1e94d54a94",
+      "gitBlob": "19284c0772a4dd58eb28415bae6cb706a5a837a7457beb272b97ef9050dd79de"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parser-action-anonymous-final-discarded.php": {
+      "expected": "553c6d9aa03e321956978a1da371f6b2570b2d2eeed1e792ee40dc82abfe1812",
+      "gitBlob": "a9a788617c84f3401660a56a8a02e2ceb4c3e09fa8fc0547964e76d8f0a3f7af"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parser-action-anonymous-final-live.php": {
+      "expected": "a33f72966161f15cbc416843ce5c9796fe249597f844f060c54a6a1585d4b5f5",
+      "gitBlob": "f6bdd836bd12669a64781628225decb7c7c52f5003afa9a4b3ef2598174c7e86"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parser-action-duplicate-hook-final-discarded.php": {
+      "expected": "dae960a5a6d23e2708ec3fee1553f6b020cecf394e0c9d5dc48e490a231bc550",
+      "gitBlob": "ceafca17b8e920fa05632212dad1715dcf263c7bfaaeb81d275fa675b72e6fa2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parser-action-duplicate-hook-final-live.php": {
+      "expected": "da9b037e8923cfa700f2a18da067950ae6d257ff19d29bc7fc8b91fee5231198",
+      "gitBlob": "cac57e0bf8639aa21570864e8118c1258c25bb626fbf4eab4199eb986bdc75c5"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parser-action-duplicate-property-modifier-discarded.php": {
+      "expected": "6c918382e2622c8ce01413921091ac105661b5138241384802bc3dfa46dcc0c4",
+      "gitBlob": "a0e207f318f9e2e7ccfe3de921efbf40a07bf08aa723a63aa7f70c50f81286d4"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-parser-action-duplicate-property-modifier-live.php": {
+      "expected": "54d839d4524dd87de1d6c0fb36d06dfbd361d93dbe33ee547fa8eec9c8d325d8",
+      "gitBlob": "6401e405ca7f14af66fa225ef00f805ebd985660022582b39a076b361e2d07f0"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-pipe-arrow-live.php": {
+      "expected": "12070511ef7be1b707162700c7d74c81ae22f8aeb8fc105c195e705b1c8651c3",
+      "gitBlob": "f0b3cd95fb6cda3b111bb3d657b3b724ec3fa65256f239ae912b91952da8413e"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-pipe-arrow-retained.php": {
+      "expected": "819424d9d07ccffd188d751e39d8e911f51a1f7c256eb22b8fd4fea865e61db1",
+      "gitBlob": "eb5d9553a48bf0bda96ea48a0fcf4e3f89c40fefd0e8902e9da61ec721fe6078"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-promotion-abstract-live.php": {
+      "expected": "b08d5bd1abb220c5efe4bb55944c05bc26f14ae394d1a086322101aaa4daf33e",
+      "gitBlob": "b1cb277c0f5e597d89b1ee24ddf33519231a4ce5cca503842c0af473a95cfdb3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-promotion-abstract-retained.php": {
+      "expected": "4f68a22a345f71d4671065d6574fb4287a0910d42f79bb1001778d74190db410",
+      "gitBlob": "4342180cb83cecae59e0cdf283499eeb399d98f1283b15d37cb7899f31d4be62"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-promotion-function-live.php": {
+      "expected": "22444dd2fe61bb1077c2d01749ab9806d9a7c0cc860eb427807946c717907202",
+      "gitBlob": "8af2e8ddca2927046348e541faf2707a9a40d1f12046015837ddc31c38ec7033"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-promotion-function-retained.php": {
+      "expected": "342b1f8cfc1da5fd9190a4e3a93e724500790fd5220d32af9eb5106f937211b6",
+      "gitBlob": "316c1bd98da7f353901f41c0a5c6abb84b085485fb85d8bdd224e1278605e90a"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-promotion-nonconstructor-live.php": {
+      "expected": "8bd84ec2021d05e8ef87a752fbffc030d7fccc2a6a3895d2f4223ef3427b98bf",
+      "gitBlob": "2e0629cb4c52ccebdff6e81a681113938aa53f8b9524047c56190a495536c261"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-promotion-nonconstructor-retained.php": {
+      "expected": "fe65b9f69a9a9f3c201af6201d5b862c8ab2b479973a26445d25e3edd3e060d4",
+      "gitBlob": "42d28a8fe63cf2db5c1aed1241e6b4e6f7fa7f7a44f02b347b8b28356f562806"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-promotion-variadic-live.php": {
+      "expected": "7dc7f8886ead909894ef308c07248bbd5a585630c7fb027efaaa345d6ee2ce8e",
+      "gitBlob": "aa8a512814d64dd03abf861d5bfa3aad5d7b1d61c53a4d9f7961d2874250a6c0"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-promotion-variadic-retained.php": {
+      "expected": "bfb1a4d1af4cd7c4a686ab348de3fa4dd10fe97129754acc15a97385a72bca6d",
+      "gitBlob": "6dee2407b8d429598011e2584b691187e5b05300d96a167bd73c7751944abb04"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-abstract-ordinary-live.php": {
+      "expected": "48ffa8c83656b95a9407dfb779797b59e6417e536a01ebd99c0a3aa42306e76d",
+      "gitBlob": "6c0b6de09fd0861702210b20de78a093c58fdadd83b2b2fadf9077a966a240af"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-abstract-ordinary-retained.php": {
+      "expected": "83d6c1c88025a1f274dea1367c1a1e5cda7722dcac47d57cf252a4fd2388ea9d",
+      "gitBlob": "e66fa2f4d856566c0a9f31f5b16bf10c111bbc733c275179ed4363787416ddef"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-callable-live.php": {
+      "expected": "e3238eafa719829089edade4f38c2ec7d524864bed758cf9cd1e5160c476572c",
+      "gitBlob": "3a08a7c170a9a5e8fb14ca0f8db92e8965efe91ecc6646219bda2179091b8ffa"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-callable-retained.php": {
+      "expected": "0eeea3e7f49948022e30bf2d026f6ce4bb8482b24d93fcab1c07498910464da5",
+      "gitBlob": "3bdefda00e481ba716106ddea61cd52c028464613f8dd94a69bbdd092087cbe0"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-duplicate-live.php": {
+      "expected": "e88f32eec77a4eebaff6bf52298aa91f609b2cdfebf4e759fde3596a6f90ca69",
+      "gitBlob": "6cc287b49bcbef03589f2f60199cf7365fda20a5879ab19febd895ec84fa12bf"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-duplicate-retained.php": {
+      "expected": "7394d339a791521976411411f83d96f4570b56f6c0b345fdd682a76109bf14e7",
+      "gitBlob": "90ae055dccd59ae5eb0b9ead8b07d6ea97729ba38f6c1781ddf2f6f4b16a0614"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-private-final-live.php": {
+      "expected": "f919c63f08c949d61fffbc313aff45039afd6be63373461f1fffc3b887038d25",
+      "gitBlob": "d003a53a16d5440e6d1b046ef64576bef2ddf3112e9eec89d774d1f691e41ff0"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-private-final-retained.php": {
+      "expected": "8834639b528921ad2eca814b78c9cb3f5880367744916bcf2e577d550b31fe14",
+      "gitBlob": "4a1cdaf4034939f769d8e1fb0d0f681712f275faae1b215c7913b248d1471dab"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-readonly-default-live.php": {
+      "expected": "01565dfbf6802acc494ce97e473cbe9435b8df53de28fd1ae5960f25dcde14d7",
+      "gitBlob": "7c4a5234a47656412f52f0aeb33679d87c3ddf099198c6967beab51dccf442f0"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-readonly-default-retained.php": {
+      "expected": "d9501da199ee91193e14e113ea54e644288beee2aedc03a525267db959fd665b",
+      "gitBlob": "faf66ffd1f87ffc1a6b8962e3f82073479f8004242e8bcd2421d391d08087cf7"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-readonly-static-live.php": {
+      "expected": "3a1bc9ac588c15f8e2f755bb0633a38f9987ca649643e4d3793bc4951f432b5e",
+      "gitBlob": "d274fd3dee61466cd612e11b71f3c9650bb49262e3760400eacae890792a637b"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-readonly-static-retained.php": {
+      "expected": "b616adbb3090963b000cec15e3ec885ea64dd1022a1a31dd5931d5a312439a70",
+      "gitBlob": "1894bf7d13c6841d5398274abbfa37196c068a005738693d50043c7bde14bfec"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-readonly-untyped-live.php": {
+      "expected": "294ad9a22126a69f65ec54c7c3bb1bc6d3472ad747d6e9eed022b813f723a63b",
+      "gitBlob": "8d950a5f76e81feb39fe021dc26f4ec2a94cd77f57d18cd0388b8e7856d0c560"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-property-readonly-untyped-retained.php": {
+      "expected": "81d6d285d3ae77b40fd551ba42b77f42ebbe7cee35b8ea9534461122e580681e",
+      "gitBlob": "56a09885e4bf2fc1f5fc702daa68ae239838f36fd72ff829e29a5bbc2ccf9e36"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-return-missing-value-live.php": {
+      "expected": "e471b954057038daff99171972345dea0c4481abd37782e235ab401bb7055174",
+      "gitBlob": "490c6257eaf16c629de4ff9262f2d9cae42867142e21a7574e2fe979c893fb01"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-return-missing-value-retained.php": {
+      "expected": "a4f0a3cc1c4e2381210c4a3d2989c95f2cdb8f212a5d9442ff51c6c345711f18",
+      "gitBlob": "0d9f64a0e9a57a433189620a001aea9db052eb28742fa5b96e8662c1bbf34e3c"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-return-never-live.php": {
+      "expected": "e94b0aa5d491b4116c3e784939a203a18c18dc313d6f29ab9a947f8439af125d",
+      "gitBlob": "e8027fa0ff301fd6471025d12990c34a4fb4f3cffb7df5efceea593abd474bf5"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-return-never-retained.php": {
+      "expected": "e468526805b22b6432464c158154dc43182224f798bd2891cbb1bbb9976e6b56",
+      "gitBlob": "0fae307ab360090680b462b8b8f8eb9f6a6c2653641e2fbeb05a72a7716421b3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-return-void-value-live.php": {
+      "expected": "0fa7707ceda876ad3189052c86ff05096e42093e62e55d7cc79694ac7daaeaf2",
+      "gitBlob": "46615ee4cf66f9b5dcedf4f072cab913117f2ea2c0049307571f0000d9bf62bb"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-return-void-value-retained.php": {
+      "expected": "531fdac43e75670de550b173b5cdbfb6931cd2340dceb292dc4c1c3492ecda0c",
+      "gitBlob": "77ea5d3584d9e1376f44bee9a546c98209b058425a4afc7df52da0d0c3dc83b9"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-static-duplicate-live.php": {
+      "expected": "e7631743fac500827366cc1b85aea8dc2ac34d1f66c21447787df2bd3f7bb0c5",
+      "gitBlob": "b37f09b85ea6324ed22a2bb339cbf0fc050a649d25ab344f59bc87bf8c5fb073"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-static-duplicate-retained.php": {
+      "expected": "106d910b6ae149116d1bb771f47ebe0a69da406427a58cdedce10cc1f04a04a3",
+      "gitBlob": "39659582fd24571ade82d46ed43899a461773242b31c2a6a8a05b99c0395f6df"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-switch-default-duplicate-live.php": {
+      "expected": "6298abf7ebcc3559ff652396f154dce9f7f2fae46ab3f19509264cfe056ad33f",
+      "gitBlob": "32b8140a354c3c737aa09b9a52b04d730687ab748392762e21eb26b455ac26dd"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-switch-default-duplicate-retained.php": {
+      "expected": "9f1c56b93255fa404bdca3a6d3d634ff21fda26d0aa7df44473a1a222637c8c4",
+      "gitBlob": "e305bfb506aab754e1b37c1461b8c8dd39bfec4630ddd9d93cc9215497675c45"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-this-global-live.php": {
+      "expected": "a869e640c9179b22fbf1e13e0aad78492f8d69be94000afc6ae4f763228b61a5",
+      "gitBlob": "1c8f20b07d3395997c9509b3e00fc984e8f6f7988c2918781244ebfee38ec852"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-this-global-retained.php": {
+      "expected": "9c541352de02c2c0bbd6a221d46f76a05d304b10883cbf7c37cd5f2a9a02d3a1",
+      "gitBlob": "95ec8167fe9ab73ea76f7a91d494108ef16778d77b3212187af92ed773ebbe89"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-this-static-live.php": {
+      "expected": "52dc01897836d6b79ddae3c1cab6b577a0f6459bf948ba08d940b9628ab613bf",
+      "gitBlob": "b2718a811cf074bf1d712275aeb245c5a21be2b6259bee690460bd2841259df4"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-this-static-retained.php": {
+      "expected": "f3598168cf420ebcc8108a9bc0d845220718a9103aba424fc9b5b051fc74cb95",
+      "gitBlob": "94f3a289d5d771501683262e107ceda682d3b6061f335b6a99857a4d3fadeacc"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-this-unset-live.php": {
+      "expected": "00d1c476fd13db6c4e0dc05df72c2fdd599f5265ac108e94c4dde68d1168f5dc",
+      "gitBlob": "79803b5eecd6b056bad91cdc3adaaea5288be6bb205c50c6764d84b83328d0a4"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-this-unset-retained.php": {
+      "expected": "7418de4ef4cb1ef8b15a1156ebf67ed8a43fac7a76a6d104d49515a0f66ccd00",
+      "gitBlob": "1ce868c040a06ce6945184968ee261fd191e39a6f679565441d14b9dc81ebf64"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-this-write-live.php": {
+      "expected": "416f0d8b38f6f4b9bef8960aec7ed04f8d4d705091d953dd830ce6f9701974c2",
+      "gitBlob": "33475008df6620dbd0c6f06f889374017e002b3184468b18c527755fb4f1d2e2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-this-write-retained.php": {
+      "expected": "a2b304bfd70283c7603873a0a0c7823254d4b240cbecc1ff96b21aceb02726e2",
+      "gitBlob": "20500167dd3e99b077a7f2a5c8a1377cee2fdd1acf778164bfda042920d5b8b4"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-trait-case-live.php": {
+      "expected": "7d24469c7c2e7c41b3f6272df6d464080388c4dd0a142d1f124e8ef677ea72ec",
+      "gitBlob": "632efd919d8ac68cd5571913c4460d2edaa09988effd36d90e7d9c12f7afb148"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-trait-case-retained.php": {
+      "expected": "e131e26af15d1c1a09a704791fe096a676a0a87f7f1a40e89638d9db6e879411",
+      "gitBlob": "230d5a13832fe45b8ce7a3580b547ecaa5fe5de5a9bc4915e43a9e46f7dd13c6"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-trait-method-no-body-live.php": {
+      "expected": "9ac5cb0b15416d157ddce9d7b35fab379d3003f6ece0f53687cdd3f9fb975632",
+      "gitBlob": "4d8eef018f125377ef6d9d9fe864a794290fa665445622de89ca55d94afe12e1"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-trait-method-no-body-retained.php": {
+      "expected": "a8a697d34c7e35b19141d1193613a4d7df29905fafabffee11919e5d0078b2af",
+      "gitBlob": "ab4aa8aa6d9657a681c3744e99f52249997ec2fd5ad263551a0a32f74b61ea1c"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-try-bare-live.php": {
+      "expected": "0e2ae1957efcb08c63d1aa5b7ce1d1c21c14051947a6c61ba0ec29c4d726a436",
+      "gitBlob": "f53185e1094f8d1c27032e5364d4b79a73259716ebe16b9a2effaec795f82951"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-try-bare-retained.php": {
+      "expected": "1abe24fe23fb9fcdf8d846f40053632a062f8283d2cd48351659dae64862ab4c",
+      "gitBlob": "1534e2b699df076f796b77355cdf7670685acaf23e451cab7a9876820b2c6a02"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-type-intersection-builtin-live.php": {
+      "expected": "1eb54f7dbeead15cd54e77d1a1ec50da0b94a657d9020d1da9b9829b49ad221c",
+      "gitBlob": "d588b776d5d556d67ff689cc6d164aaa553db2debf83cf096a53afc6ec0571aa"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-type-intersection-builtin-retained.php": {
+      "expected": "7f383c27783317da71cf9beeb365f0d3c061eefd6bdc240802be92c46e3be8f4",
+      "gitBlob": "74bf206f37984b3f0bd06bb3082af6531dd541e1f005ecda4651c1026c658412"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-type-nullable-mixed-live.php": {
+      "expected": "d1a857319216d8561de551100e0d566bb3d8eb24d2de9234d3d9e98824f4f50f",
+      "gitBlob": "b2c10d65deef508bcb09ca6b9cfbbf79edb282c9011fb71d1982956cc9f5c310"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-type-nullable-mixed-retained.php": {
+      "expected": "58582ae6e656cf356943a11b42b702ee1199062617079ca46ea797d46e41187b",
+      "gitBlob": "8f2aeebbf6ea8789eef9097517ca795bd7a682319d0e3d5259dd070821b04013"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-type-redundant-live.php": {
+      "expected": "e70be2f5839692749773fcaf62f138e652339832e92fea252d93a4b6d54581d4",
+      "gitBlob": "270ed65ce24b90b3eb9aa6bf30c758bd30b6319f726af774b3e87c120e11d8d5"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-type-redundant-retained.php": {
+      "expected": "11d9a6cff7617e238a48804ae179d7c770d1a85dbb223660744e553da8c07b01",
+      "gitBlob": "4b7cc60732b95350e7b5faa455dfb56fd8d4c1ab2bb3dd53a8879a534b3251e8"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-unset-cast-live.php": {
+      "expected": "6cc7c01af37b03aea797eadb7eaebd120d50f62e950153ed25c7592f7102b8a9",
+      "gitBlob": "3c2225270b87a61942c9b789be29b91e6dc97dec22ddad297d599e4c09408e9f"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-unset-cast-retained.php": {
+      "expected": "981df317ae96ae366afccedbf41044884e05632fbcb7576b3cca2f8db52492cf",
+      "gitBlob": "26f13e96bffa9aa30a578f9ae0840116e5ca63e815fb3b40b576d2f48886dca3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-use-static-live.php": {
+      "expected": "e1d08642001f095ca0cd85e42e4956d318f93a4f41068faa7eec7c3271df195e",
+      "gitBlob": "6c35ab83151728cbeff33221a99557302c7e49cefe211ea1f77b8bc3b2edab38"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-use-static-retained.php": {
+      "expected": "ec77b2d33e4b73ee56058a905471e42b714d07e482d9e80ca1141b2c119e8d62",
+      "gitBlob": "7af8b9119bce6d8b09a1555bec42b35121008a60ae8285c617755f4a175ebe53"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-yield-from-reference-live.php": {
+      "expected": "79cd561bfb0800ad648db5484a34b6be257dd474861fd029edd7fd4ba4f461cf",
+      "gitBlob": "9712fe1120e716573997da3434b82bef5a22d61588d1d0a9146da645423fcc8a"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/boundary-yield-from-reference-retained.php": {
+      "expected": "c50e7b13ce2fd6703749e6fae1a30ddab21c40ade677b932d566d19543ea749d",
+      "gitBlob": "ef49fc5c3e02053a92af3cdc8425cc8c5d235e66c2275831c9abf883c10671ba"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/phase6-abstract-final-hook.php": {
+      "expected": "b454f4b317f8d19670bfeb595cf1cb9ca28de9991f75faf495f9c391a21b1efb",
+      "gitBlob": "c6af8e9bae7e2040994dff76cd4af951a9301e188753b6e0bb02b4b263dcf7f3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/phase6-closure-capture.php": {
+      "expected": "52febcc38e627692ca898a630e522a604cb2d3647dceb293097b6a2b27ac0eca",
+      "gitBlob": "ff77f4f76210067d55635c7e0143dc605420284f218f4175b337ca81109f7d3b"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/phase6-empty-dimension.php": {
+      "expected": "f8c03e43ef2ab89c2512c394524e96eee77f19f4e5e4b81c7ab6992c8a2779e1",
+      "gitBlob": "37e267b3881c9c525f17145bddd7cce4838a922c3636e7673174cf3f33b7ccde"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/phase6-nonstatic-closure.php": {
+      "expected": "d7afd4cf3d06c80ed3b0f860b017c12a1f4384320bada24d598ac59d6b451e59",
+      "gitBlob": "dd6bade82a5c6105beb80cb7a4686e9a6499921ed5cd9008789e583b3ef56755"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/phase6-set-visibility.php": {
+      "expected": "ba836cc1a86f55f26489e22b598bc7ad7094667d1175f66ff819f408f47d47e1",
+      "gitBlob": "d8d2b9009cce4c568fe9b607c29e69569295420ec11d32f48192accf43e911c7"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/phase6-unset-cast.php": {
+      "expected": "6cc7c01af37b03aea797eadb7eaebd120d50f62e950153ed25c7592f7102b8a9",
+      "gitBlob": "3c2225270b87a61942c9b789be29b91e6dc97dec22ddad297d599e4c09408e9f"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-capture-default.php": {
+      "expected": "5536fc72c656fcb4edb1c959cafb4e55165ff196bc0e1d383944c25aa44fd74f",
+      "gitBlob": "acbbe5310ae9772c7e651490b2ce57ac32a73f3e0559f34548b013715ffaea50"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-fcc-object.php": {
+      "expected": "eb9df018e4766db994ed622fda5e82f0ad1ebcd5dc40d4214a7fef814a539032",
+      "gitBlob": "3be6e9498c18361629f81e388c3051387eaf39bcb8259343f60d30961400c143"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-live-arrow.php": {
+      "expected": "b505b69edcba6487a96c893c740d89fe6bce26ca5f717f269896dbe971ed9c15",
+      "gitBlob": "d9bb271593d2b653c7fc44981f2fdd6083919bf9c5b9115bbdf84652eab2110b"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-live-attribute.php": {
+      "expected": "f1b0dec6512979f616f87f703e9af82ed7f686f60dfda0712201e3da2c07437c",
+      "gitBlob": "820be5f46eed51e15dd9327f85df3ab2c84c119dc23ac0052151a2066b275139"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-live-call.php": {
+      "expected": "b6e42db8f63b79327d02d858a435f0e0e4f909c0b32a7a779696d08a2ebcb5d1",
+      "gitBlob": "f919c5219f93d06363cf39b7bf439421cf386ee7472b5cf4ccd2624abdcba010"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-live-default.php": {
+      "expected": "8b2ff0ca77eeee51679c63dba6886c0b026abf8585ce4d8d15ed08506879629a",
+      "gitBlob": "7b14f936c4b617908f09ae25156d6e87dd35eba29552e16c152e92b0c948995b"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-live-enum.php": {
+      "expected": "6c6d9d5c04176fc82ac7984f58f1375795e976266460537c9e9caa5230a9b30a",
+      "gitBlob": "d2e821f1783fb0da1d6e2ec2b3e2bb067ee22b36b93dc7194bc1bdd19cd196c8"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-live-new-property.php": {
+      "expected": "da296963fcccfce49e138f4590a37c437fb38d83836fbb8deb6d417e0bd4b38c",
+      "gitBlob": "416a46ed1d639247ab50c311fdd40417a425b5e8cb7b37235542f3198f723dbb"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-live-object-class.php": {
+      "expected": "11a04574a5d26eb1c6c720c040fe4b7c630933b3958e3eca4ac178555c1a28e7",
+      "gitBlob": "96e8681706656ab703580f0d0c24be85330096ced6e55425221df900dfc54f2d"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-live-throw.php": {
+      "expected": "91dc4325c6185f916609e51daf688e0b50614f0584ad9790ec10eaf489b4410b",
+      "gitBlob": "b13cfba1c177392e3083c488173b1440ca297fc94185f68cd3374128e7626fcf"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-live-variable.php": {
+      "expected": "c054e55e111ae263501286770c7e38312246829846905fb83e0b01cb9fbd6e5b",
+      "gitBlob": "bef4da8ff01b7f643857ae1f672d60fea4424a70194043aac7b60a0c875eed22"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-new-anonymous.php": {
+      "expected": "94f974b3c9da125ec05c0192027f12fb76c658e3bcf3b0cb1cedc8f8d4ea3b5a",
+      "gitBlob": "b81fb782c05f9070590a162f5798807491ac081a746a2efa67ee7570ca7e2221"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-new-class.php": {
+      "expected": "e28eab36a8fdb286c011ede095aefb8e04453ce4094ee0419b50fd563cd5572d",
+      "gitBlob": "5f9eeba2ed0dfa2c004b8ca495a2fb36fd54f60556947c3e2ccefc158583e04e"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-new-static.php": {
+      "expected": "93e109a42b5fc03d5403c37f8fae5cd4dcb22e7e35165ee8e72ad66f352ac19b",
+      "gitBlob": "be4a3c5ff43346752d2bfacb61cdc6e7337791ebb4707c452b7d5caabe33b538"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-new-unpack.php": {
+      "expected": "7ac6f44b04ac6e5309df6ea1107b79e5ed1ce1723f733effe0f4114cf78d267b",
+      "gitBlob": "29cb6a22c1db771acef1fe37bb97a18208db38956d5d1d0de14e4e847e1e6204"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-nonstatic-property.php": {
+      "expected": "eb4c7cb2f42162ae2a9595b0c92ef5291c96c3f0eec664c3fe0439136703ea9c",
+      "gitBlob": "4ac0d069993a6972c471be2e9c0c671b0aaa0372a49305a26e7b7d21d631b569"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-object-enum.php": {
+      "expected": "4f34ff17e2605ce8cab93c0eb86acb186c2f9c0662cc36fe60440aa995e7079c",
+      "gitBlob": "c711b326acfaeca438cd2e7f59f3986e1bdd85a6549db7231828edc853770dee"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-object-property.php": {
+      "expected": "91856109a372b8ab8a706db66a81ff3ac269f8738cc0e6fd7be0d1ee7562e6d1",
+      "gitBlob": "7488413fe661a62943bcb228748bf2410e97698f4caf044d380134c72f484e62"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-unfolded-class.php": {
+      "expected": "bb028c8cd88133c7ddff2562f6ca896acb3dd0249a44725e819c802f30e5423c",
+      "gitBlob": "d0e3ac938031ddd6cb5d4549c6a3b98fdb4180161f3ff8e898a36b25ebb89e60"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constant-unfolded-new.php": {
+      "expected": "126e305d430aa3ac9bf8a4339756bd5cbe6df1459814db021ace0a79cc03fe0a",
+      "gitBlob": "647a6a6a79de141105ebeee37776f3b260a317b3d3a6a23df500d28590bcaa18"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-constructor-anonymous-fcc.php": {
+      "expected": "1aac12b05fbb0ae1c13a62a240714af3a25e1fac0ae9b6005ff33c12794f0261",
+      "gitBlob": "bc86996f0584af860e8dbc92b56b519552df6f8a0da02fa59a6c5d2c2b03b332"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-fcc-nullsafe-chain.php": {
+      "expected": "4b3da033ebeb925df0fad7573447157027bc0a818d16330f6b257bd0d3511730",
+      "gitBlob": "221edd47dbc71a39bcc1766e07aae6454bf69357f80c766d8861f14592ebc2df"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-fcc-nullsafe.php": {
+      "expected": "9bdc5fbafe19a6b36d435404b0dcfd3195aec1ed880f528047113b5d8fc7119c",
+      "gitBlob": "a6ecf29e81cefaf4b2347355c6ca5cb130c93980bfa18e3ad9d408b2bd6ce7de"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-interface-var-default.php": {
+      "expected": "4375e73fb17f1f3cc446bb932e6065240c3a4c66652891b62e562f9975e737cd",
+      "gitBlob": "86361e5f1938fa47d39f7b1fb6447e0433a871edd30da4da3609859580d60bbb"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-isset-call.php": {
+      "expected": "d7ca707bc89bccef982226fa3a1aa012e967827a71223edf8cbf21e1bb7cfff4",
+      "gitBlob": "2e87e4da92f1263ae2f6dddfa3e8cd9dec8dadebcd2a449834b5fd9251387072"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-isset-empty-offset.php": {
+      "expected": "8b84e0acff947163f2fce68c26dfc1d30df1e4beb8c94979c6f83f4787259cc7",
+      "gitBlob": "1281b87c926ac51281240c8b9f524405cb0fdb19a5a760fc3e62f40bd5c13357"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-isset-expression.php": {
+      "expected": "ae9d7c81a487865d0e956f3efc3b0afdbb0f9a923bc33062cf7521dfe7559996",
+      "gitBlob": "ff4a780b5fb90760fba9727e62190f70c804da41256d13b85c69a7d96c0482e4"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-trait-abstract.php": {
+      "expected": "4c3325096cbb72ae4bdf64360ad829cae9e82934d722156c99ab0b3f6fcc081e",
+      "gitBlob": "8ea7da519dacb75b39a9d93b607e8ed3528a9a4a361bfef39299cfb36396cb48"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remaining-trait-static.php": {
+      "expected": "377b33bca04819c20317e5dd1920b773887cbbf4d1b5bf990c5d49df2624e7a1",
+      "gitBlob": "8adfaa53f18bdebe1825292fcfc28dd3417714695bf11c0e1f0330d6cfd7210b"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-coalesce.php": {
+      "expected": "5fb22c2cf7e14b83ae2e8b7196f0b21e812e9d2d5d2cd79cb8823297aaa87d8d",
+      "gitBlob": "82210f0b4540732bf42137a7746cdd4b03708e2741d989bfcfa1920e3c229a65"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-constant-and.php": {
+      "expected": "bef60a302dccf6777f5b3676247974ccc53fae1b422d5ab0f066f18e72ab375d",
+      "gitBlob": "dc588568697398d4dbb7cc9656922ee314eb655568540ba90aa69d7bf85e69b4"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-constant-live.php": {
+      "expected": "618207016fc53906757bdfb8ce49b280bae9cf76093ef00ca925d8423197c9f6",
+      "gitBlob": "24aa71a1acf5babf4c9c87a1a9f3a16d1f62a02369f4a63613474156477e9bf3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-constant-null-coalesce.php": {
+      "expected": "c63e7f646d52c1e91f6f1e06f6ba2c007bc8d70d14dee81f6ab58ab59b2f213f",
+      "gitBlob": "53facd36bd980bde456b5bffd118f2cadca0d84fb59dd95149511dd7927775c3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-constant-or.php": {
+      "expected": "08557a218c9429d6b3dec4ece2cad89ec34de0c453eb056d2414e21833413d1b",
+      "gitBlob": "97f90f7d66d0f9d6b670b8bb0d6c4109362c6e5230387c8fba1215d3129602e8"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-constant-word-and.php": {
+      "expected": "cee4d2ab415d0379bdc77e00fe4a75df7ca09078d04c6de68051160bf16f8c8c",
+      "gitBlob": "ce1975a39ae35bdfd3e4565b69b950236c79afbf90ca6c519315f696637db415"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-constant-word-or.php": {
+      "expected": "de04e6a639ca7d851397a438b6b9f3d38127d4b8556c7e9dd7dc4dae1da7c17a",
+      "gitBlob": "72315f0d03cff9e5357d6fa986e9a10f1826209e2cea8eb82e49dddcf00f1bc2"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-constant-xor.php": {
+      "expected": "c4997e052329a3d00b37c527723357f6fb01d5f4bbfada88f0dc83fb60dbb1e3",
+      "gitBlob": "724122ca0b4a1124a39d043f95ac9a989f9f6cdf8d2b8c9d9ae5a2b726ef60a3"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-false-ternary.php": {
+      "expected": "ec045cd6aa80e6dc365b1467587032adbf8afe07655f18defdad8c19b0e74000",
+      "gitBlob": "c25890e778862e701e31aa73adb5630c478857e816ee74563fb36b6d0c668727"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-live.php": {
+      "expected": "e122b18dce022138480aa34b768a4903706cc647b13a78fd273e2c50191fb0df",
+      "gitBlob": "f2b31ecaa58191e55373ccb2d71a295c24c6054dd5e0f43a01477bb48852b66a"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-null-coalesce.php": {
+      "expected": "1899351e2e6c2319847aa2649b9ed2e6f92ac2c7cac95320ab322a9b19947d83",
+      "gitBlob": "1435933509c95c4f060e9c856a3ff7fcb88a22ee65227249d512f80b720fec98"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-true-ternary.php": {
+      "expected": "33abf9ae1325a3fc83a6cb36d3fef122c49c84d7acea262be949195882f2e068",
+      "gitBlob": "1f1bf8f1cde62e0c02847bfa7b450256ae9c58f03768b4a540243b35823f6bad"
+    },
+    "tests/fixtures/php/8.5/contextual-invalid/remediation-unset-xor.php": {
+      "expected": "353a0a6cb4aadd59ab90ae91c292815afd284757b5ee74057318e276532f6cb8",
+      "gitBlob": "6d8824dd4d4550957dbbfbd562fc10a3d53845ec0274dcad2e2011ca09c1709e"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-alt-dangling-1.php": {
+      "expected": "4495dc59e3bc4a882610eb6fd243719fd3f79c6999b40ea8df36f1c23d139774",
+      "gitBlob": "975b9b74d760bb92a8b34f68126e5e8d619e9f9d65d72cb63b7cfa3a9390e3b8"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-alt-dangling-10.php": {
+      "expected": "8b1d01a9fbcaa60273d4d9f356dc037ca1ebe97c5062c7132b78810acde0f1df",
+      "gitBlob": "d9819171399d85d2002d76dcb606825604718b85327a9f17e1003202cf9bd1de"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-alt-dangling-2.php": {
+      "expected": "f43263515e00a8b6f9dd961d06104b94f9c8b86c5f9450821237b2113d0db505",
+      "gitBlob": "f3b3ac3e053ac7081176699d8c30541e3ede13f286ab7e08a64bc76939d64378"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-alt-dangling-3.php": {
+      "expected": "466284bf4e2fd7587c4a5514cfac85d01c72b9a0a0cb9ca1dd926344fc2d9f7f",
+      "gitBlob": "0f29da68a665fcc6d5eac3d5a40714208a87f247c23993f99707d2047060a357"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-alt-dangling-4.php": {
+      "expected": "da70d02a43de8129bbd99a789f0ed819e0f0cecf4a3d64eba305e315690d080b",
+      "gitBlob": "864c05b0db2a149c3a014b497c8e4124efe3a0a23c2a5612abd6715eedaded28"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-alt-dangling-5.php": {
+      "expected": "6d0823ce209df3405ac7619712fd5be804c636afa3b4588a687b4d20e6070c7b",
+      "gitBlob": "ce76bbbca46501b9c9346a12c04e7c0f722ae91244eb40273747c0828e99ed32"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-alt-dangling-6.php": {
+      "expected": "af04a6d9ef65c69fa0c0acc2eb146a0ce091b23c3bb8fd62922d7c3f6ba9c704",
+      "gitBlob": "db0f883b127fccaf83d35cfadcaa377367a592befce6aeaa3233b9666dd87932"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-alt-dangling-7.php": {
+      "expected": "ce6f30fbed8b19f4024c1490776173280d08d141f2d70e67eebfbe0f32282049",
+      "gitBlob": "247ba6b8cee7bd581bc0467baecb7b8f448dd2e7b9d8c4fb2718056c6cf68463"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-alt-dangling-8.php": {
+      "expected": "fd35b0174cfb7c7efeb224221c90cb12124436b9f24930389e01c8aaa172f390",
+      "gitBlob": "08580bec1a730c5630e6d7b6579218e46b3ac4f120fea1212707612242bb1954"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-alt-dangling-9.php": {
+      "expected": "9df1faaa6e8677158931c6f615d2acb3851594b8b028a506ffe6e7990e6d7e05",
+      "gitBlob": "a748fe2484a167383a7843092e39ae6f61b63f770e3c1c9c9e649e0dcd50e6dd"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-hook-name-live.php": {
+      "expected": "97ccfbdcf01616cbe6d6a047121b43fc5682a102daafd7fc9f759891630304eb",
+      "gitBlob": "eb8dde60cb41fa464e7f9aa9c03c1109c7002c91b1cd993d972e8170f5f544bd"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-hook-name-retained.php": {
+      "expected": "ee30b0affd0dc7b7262b044ed9a638888f2ab57cacfaae1202efc83c422f24d2",
+      "gitBlob": "170252c5dd5a01d564b0104b69177ebabf242154168149854c239da3872a2f8f"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-alias-readonly-discarded.php": {
+      "expected": "980a9079378e4b71f43b305c274886807bbb1194ec4dc927eea3675aa7e7366a",
+      "gitBlob": "210352db9d826edc7b5dca1351db43418a17f3ef448d80132aded450f1ce1c1c"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-alias-readonly-live.php": {
+      "expected": "7f4de91cbcc6d03270e0ed9afc06a11527f54aae661cbf9f6bd9de3c1a1c0c68",
+      "gitBlob": "022199b0fe7bc43311523f9cd64368623d18d48760be120786e9f5021f5b0f3d"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-constant-abstract-discarded.php": {
+      "expected": "1447e57fff9e7cebb5747145c99e00a9a1eae07a8f8c8898ee9e5b66f5d4b437",
+      "gitBlob": "7f7f4eb14eea8d9d42a9a98da48329665e24ace9c59ca7a32707d93fb419c5a1"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-constant-abstract-live.php": {
+      "expected": "336cb6bf4d85b0fb9d57cedaa9874e3f47e310df6a8fb3efc25f947dfed7065b",
+      "gitBlob": "1d13a9fa76ff11eb3cedd0de45606b9a3f969edea57ee4e00d2b4112e880ee04"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-constant-static-discarded.php": {
+      "expected": "902c3d2ff4643247b1269369d5f7cecf94955ecef9eadb7726e32ac4f896cb21",
+      "gitBlob": "a4d5b969a5274557e6e0b7b142476bec44145687f335499d13540398a0ea9657"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-constant-static-live.php": {
+      "expected": "468bee3088d1a01eee07e14150e4496d9e639d0a95b1876cee078a1bf297627a",
+      "gitBlob": "a238386fd10f01374bdc0fe6b8d1b3e494ed6762b5b0f770f797935f86883fa9"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-hook-abstract-modifier-discarded.php": {
+      "expected": "b82597c98152abd4733972ded6f576e5a272a8bbdb866978c4d13a4458d8473a",
+      "gitBlob": "6e7b713116e491215dd41e8c264e6b7109530e0f457541edfff24179295dfe55"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-hook-abstract-modifier-live.php": {
+      "expected": "43644c86b7c0b3446d723c009d86f8f78cdb2faf2de5762b71880094987019ac",
+      "gitBlob": "8b793d4f264ad61f60ff0894f71d643c5a23340b05b80e4ee6fe608d185c38a4"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-hook-public-discarded.php": {
+      "expected": "c74239a417770e17ec9be88628e4d97ec95b3d6779528601a30c2c96582425cb",
+      "gitBlob": "d257036df57d76f6bf1bfa892726e1b6e75f0ccd9742b825e8bd1055e37a9b7d"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-hook-public-live.php": {
+      "expected": "280ff90f3d24163580eda5d888087ec7279b788855542931a5b88977c01b3e62",
+      "gitBlob": "7e94cca8e01adb6d5b111eca7f14d8b24f1459e1b533659532252fe05071e3ab"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-hook-static-modifier-discarded.php": {
+      "expected": "baeec4cde6fa2acf9f44d592a2fce1e9ee4baadc6b124e44187421f1b8fdbdb0",
+      "gitBlob": "68a6671faded3efd7235d8bc7b69556be0e5e9b1aee6fc6a078ea49a125de7da"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-hook-static-modifier-live.php": {
+      "expected": "48806f25457c9f30f5d536dd696b1c42628e6f0b9fc9404854881ef4bf556254",
+      "gitBlob": "ab53e050b70efa248cf96f76171ef61d084e6b8cbcfe5707f66789310b978829"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-method-readonly-discarded.php": {
+      "expected": "73181a0965f10b4c853ce464b243750c2e8257a5169cac789bee48caf61e9d27",
+      "gitBlob": "42a1c7fbe9f6aa0a1aad56feccd44e4e46f4a6b6372c482e4bfe75fae4b271ca"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-method-readonly-live.php": {
+      "expected": "a9a47c426815ca0e8dc63cff9e3210f10d9f8d78b84ca53840bc1d2a06614ea3",
+      "gitBlob": "2e787685babf4e4c42a8dc54f7f04c732eb96141cd9f9c84ffb3a1c7a3e57c2c"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-promotion-static-discarded.php": {
+      "expected": "98261c70765838ad66db7d87042bbe351ad6e87d24be46c7e88ce6bb4a319a2c",
+      "gitBlob": "67eb03499ef21632fbc213cd762f3797ac682918d76b4bf2370b327f4f89404c"
+    },
+    "tests/fixtures/php/8.5/invalid/boundary-parser-action-promotion-static-live.php": {
+      "expected": "9206a32214f2f5913e5dd156a56204dfd9c27272005ae348666ce16e4c238ce1",
+      "gitBlob": "af0a90f1d09dcc271f0f42d34e5642f7be7fa93ef6061fcab5b098c58c13fcaa"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-else-orphan.php": {
+      "expected": "977163d32acb16ef5e098f377665c99c40574fe6f2c58b367cf6a741ff4dbd6a",
+      "gitBlob": "3219be67495ab4125a453a112bd66cf5d67dfb80c57255cd341025e4bdd79d7d"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-elseif-after-else.php": {
+      "expected": "06526a1a9b75935bcc254a432b8e723c551fb434e36bf74a8ae3a321c2518619",
+      "gitBlob": "6693f498e76dfc685c6627cef055cda50587be18257fb294b180ec2f5ff5fc2e"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-isset-empty.php": {
+      "expected": "c58b1bc53b7e39d6698f3c094173b57e46b364663b300a24e7ef4acccfaa0d3d",
+      "gitBlob": "7d3fd519ed235365a300039d367917daa9abe683e7da9cd43266669a8f0f5b38"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-print-empty.php": {
+      "expected": "c36565b084ca0edf414b1c4f6fb78bee2206547efb441f1846da9afa7d7b241e",
+      "gitBlob": "2ad93d2bbee71f281581d673b0b8425ffdc74040728fd02030498a5aa00a919a"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-scanner-heredoc-inner-missing.php": {
+      "expected": "cd62652fde878b8c122e5a231d40ab55b3a834bc183f4ab1a9143e6428569d5b",
+      "gitBlob": "9edb5f908a13b19e5d7bf49902cc63893ab324c0aeb3ad2f7133586d3910082b"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-scanner-nested-unclosed.php": {
+      "expected": "b31b6f7b42f88e65dd7ec713d936bc8decaa37402e99165a7bef47c6ef06c5ff",
+      "gitBlob": "a754108433964ca2dd1fe06edfaaeb5337bb079405c102d497b1c208d905e973"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-scanner-offset-comment.php": {
+      "expected": "17afb081b0aa707061a81a790b31109a0e75aa9beab511edcdc6ba905687d3e7",
+      "gitBlob": "a0f2f6e75f178662e9cdb0e1f6daa64b13034578b25acaeaf898be8eea71e4b9"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-scanner-offset-float.php": {
+      "expected": "6c22619244abc7b79f288467b0bb1d0f6ee6e0ef5a1916fd40cffbecaf79fd64",
+      "gitBlob": "7b80437f7f12cb5ce676e49f0fd841a9f09ece40800849cfdcda8f282d3e6fce"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-scanner-offset-space.php": {
+      "expected": "6f220d865351fbdaaaf2909824f155820d5125b1b179eb58ed0102a86962698a",
+      "gitBlob": "f1e9aaa093ab79de1d1ab99028162181df6a45a78f5319241525eb85a0dbe81f"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-scanner-qualified-space.php": {
+      "expected": "74178f74974679415eadf5dba7e6ba02bd80b348791fea49221b3f577d27e0b2",
+      "gitBlob": "8e94a043f839740f77c3bbc69ccb6c7f54c16a273197d8a1e7c9fb92f1464db8"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-throw-empty.php": {
+      "expected": "29fa5cf07db42c47b318ace2889aff7d2b24197126ba942b405ea15d34062266",
+      "gitBlob": "2c4dc14fd8bd10ce107e2090b6dbd911e65f3a88316de7d2988dc01096e99ad2"
+    },
+    "tests/fixtures/php/8.5/invalid/remaining-trait-modifiers.php": {
+      "expected": "23246470c6d79d3ce93e0d37b892fe6575db6cf6295a54b98dc7c3171d9c15be",
+      "gitBlob": "bab9d8888f37365c4076742533a638f949ca47fb11120e1276a6aaad85490450"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-for-final-void.php": {
+      "expected": "d3cfec11a64257d4d5452c37e511423dd3f0a3c7156de2625c97ee92901fd9a8",
+      "gitBlob": "40d05550b1d0fe2ff741772fe1a1faf4224d7172855706452a27edc3fecb5de2"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-for-leading-comma.php": {
+      "expected": "43bfa6480bd26806cf081729538c858f958f713330d5145f289ffa015ea63ad2",
+      "gitBlob": "c5185c0725a0cb84241a309a247dde27a00e22767d810bb09f27606713db108c"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-for-trailing-comma.php": {
+      "expected": "3255724beb6c4a04210ccd4dfbb3101f433f31b1af097e0434ec342a9f3ab4c2",
+      "gitBlob": "05a8ba97bb7b27cda9da14d6b4b85032f4874e4ca5b5e51b15829ab9caef88e0"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-real-and.php": {
+      "expected": "33a46db8c0cc90515dbc88051e75099d4adb8287cc63c145411f2e6be12beac8",
+      "gitBlob": "dd7e826dc310c3882d06614db1c32aaf2597621f999e8cd9b0e071cff3c68905"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-real-coalesce.php": {
+      "expected": "06a92015e194d12819c28ab40af1b0537ff3a9706186ea7335981ac7cf8b413b",
+      "gitBlob": "b4abf3f22d19eda344d003e9d3efe0acc97fdcceb42f8aec5fd7a3cd63b6823d"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-real-false-ternary.php": {
+      "expected": "77d3450aac50dfff910780f4dc230939397c7a4212a1b6ed5256d510e7cb442c",
+      "gitBlob": "3f5925658d35223aac0b3d8e4761c050b38fd69f9c8a7e2b42f44a536356c8d7"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-real-live.php": {
+      "expected": "dc6347ae5387d8af934f3729c53ee24083cd76cbaff422b114e6f08fc48e0fd1",
+      "gitBlob": "2859b3e080e78b9806e934a8a00738b009ed3aecb821ad13b4395e3cb44f19cd"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-real-null-coalesce.php": {
+      "expected": "e078c56567198bc7dd44d7bd3281b02a4141983fd4db0be34bded163625e2f74",
+      "gitBlob": "9d9c996a9a661c985ef50523cbb17454ee1f36c06855c10c281d48cf0193b68b"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-real-or.php": {
+      "expected": "00c8b34af852c7f547d4e76b9b35e2b704e9374ab729798b3809878867a67611",
+      "gitBlob": "d1a52e832bc29e420efa64630b09ff0551eefb4b558d81f57a90fb78208d6ada"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-real-true-ternary.php": {
+      "expected": "0538536a6dbad941032f60d5673f55553d2a2aefb72c39c373e617afc11c3774",
+      "gitBlob": "7054815b077023dac9c76ee339f06584128808ed83a8602a1c66dc707a79ae43"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-real-word-and.php": {
+      "expected": "9b17cd5c422e484504086c1882a6ddf7c0f954cbd8fc3e5f9a6b2bbbb7033162",
+      "gitBlob": "cafd1480979bcdffedf187891d4f33974afe3aa2d419f9e228e61c5b4286685e"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-real-word-or.php": {
+      "expected": "fc874ca64863e1caf49ba2171c00aa8381ef51a06f7f71b8ccf9e269729e5f72",
+      "gitBlob": "e4a029b8ced923418e71c3c8cdcc33388934434fca3909609190b10524ae83ea"
+    },
+    "tests/fixtures/php/8.5/invalid/remediation-real-xor.php": {
+      "expected": "9948b2b477314accfef4c80bfbf2e6901becdd5a86e91426d9a2ae57943767f2",
+      "gitBlob": "abed6d14930636e6ad965f27ab1df9a16c036ce3136edc4cb1c53d034d2049fb"
+    },
+    "tests/fixtures/php/8.5/known-discrepancies/valid/boundary-hook-name-discarded.php": {
+      "expected": "fc462d3b26b3cb66bb4a87c6a6a23ef5ca7946627f4b04e79d7fbc17b7e8c1cc",
+      "gitBlob": "2f1f7af80c5f3a7d19ce0575f0b51aeb99c33a217171c766b67f80f41774ce14"
+    },
+    "tests/fixtures/php/8.5/parser-compiler-boundaries.json": {
+      "expected": "dd00890510df29689ca06575673be01124cbf8d06903143949a98062cddb16ae",
+      "gitBlob": "10ceb6b43a2e473afccac2045c642008906acf729a5b7deb4e15d20a156563b3"
+    },
+    "tests/fixtures/php/8.5/parser-structure-invalid.json": {
+      "expected": "a8659561a4d59e0efaf48809285ca29f1341c6e8247d4a2e05ac7a82c32af3b3",
+      "gitBlob": "f75e1d6000ae9a50342a9e50cb832be2d43e56b658c680849c7495c8d51b9273"
+    },
+    "tests/fixtures/php/8.5/parser-structure.json": {
+      "expected": "c19f354fb06ce0b8c37ed289b79414cb0da52ed70a918f0a4f2b1d4d3ae9c98a",
+      "gitBlob": "23640e797100028d668ea1ef531516a08011f81bdc22c03b924b039bd8407eed"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-abstract-method-body-discarded.php": {
+      "expected": "42cfda8e0321f05ab737e65fd8601aaa7e7c823890280aea302bfb5cce2aba24",
+      "gitBlob": "1486366106ab9542648a7bcd41177f6288bcc4336514de96701e2071248cfb54"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-abstract-private-method-discarded.php": {
+      "expected": "18fb4a3edbff3bd708432fcc2a93002eded3e49954b9b2c86803f39edbd8645a",
+      "gitBlob": "a3376a934dd594fe1e7b49afd3ad1c8725c14cc4a58ae30934ec2089bb1411fa"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alias-abstract-discarded.php": {
+      "expected": "74807400ff1e780cdbab8482d3a274acedadf758806a93e6129f0571c7f0ce6c",
+      "gitBlob": "9171fd55204297d1f6e7c34d65718fb433f1fbd95c129c38537cb8a130bc1974"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alias-abstract-no-name-discarded.php": {
+      "expected": "ff381d481a94e727cf01a9a05beb521225bcc93a849e9296fd3d658a280d90f1",
+      "gitBlob": "0b97e4a046337bcc347dcb23eab273c8bad4f2aa28490c45943e4d99d0c1336c"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alias-static-discarded.php": {
+      "expected": "76ee408b736764749ee255ad7bd5b313e8f047ca56eec6a0015300548b13d388",
+      "gitBlob": "5af8ebc9965cd6e1c14962ca6f669d1feafb0c09598203f2bf98aa402a237c92"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alias-static-no-name-discarded.php": {
+      "expected": "f4ab81d8a5d4b1468353b15645e0cc76ce21ff215e3599bc68477ae2d2fd3798",
+      "gitBlob": "c3fa4aa91c65fe810730c9787896ab773d99c5837fc52315cab059e277753453"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-closed-declaration.php": {
+      "expected": "771b1bea1d51c5aea9ac58af634924a64af9f22e0cc2bc2feba5faeac05808d9",
+      "gitBlob": "731c44de2be601b0d629131b61939dfa59f2302092b8700caf253f90d3664e16"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-dangling-1.php": {
+      "expected": "dcdce99245e2246ed59bd86786e618665c9703759b1c78c024dca15a714d3e65",
+      "gitBlob": "113778e773cfb342a107c0d16f01210d3daddaa090cd6dafa0cd320357a819c2"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-dangling-10.php": {
+      "expected": "00f5fdac96e3170c7709ac330b911d5958842624a48e257ba132fe9f3d2b299f",
+      "gitBlob": "e5bcd76e758b2a58bf9e7d7dc4b8ef7eb8e07c1dd5235285d74553ff698cded0"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-dangling-2.php": {
+      "expected": "b9b5de4f27df9535d56e97784c5d7049b372d7b7eed7540f1702e344573075bd",
+      "gitBlob": "fe6295c10bd0a90532cdda076cdacd3087de0249e5c9dac1769f2edbd376c097"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-dangling-3.php": {
+      "expected": "8c354f52ce3c7cda4223557b24f049c4846b230b6c235ac87e7baa89e649e5ef",
+      "gitBlob": "dd810539e0dfc642052da8867bc60b2a1f2bd0ab0dbc2a11a959246e47a06bef"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-dangling-4.php": {
+      "expected": "3754ed34eec621569635ec8883d4cd4cc802b6862013337161147de19f965ddf",
+      "gitBlob": "783b0bd3e63932322a017431f70b8c166f1304398391332fd2fa4c8b0b9e8e07"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-dangling-5.php": {
+      "expected": "15cf506a0e46de3e6b222b872a732ad1136747fda31f942c43ee067bd7fce50b",
+      "gitBlob": "b4fcb3994e53fe010f57d0d8f9784175ee0358d7e364e16fa4fec7d39e67274b"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-dangling-6.php": {
+      "expected": "afd3343578b4d20c117542a5b2940e65c2af562e9a96e3835e62029e08b865b4",
+      "gitBlob": "7a061cc21c46053ad3d4ad4bf9b3de8f4f15a83a0598f780b603de3ea80831ef"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-dangling-7.php": {
+      "expected": "e8ee0a92306ae50367f66f67c34cfcfb399bf048f8fd5fbad92a9462bd562eed",
+      "gitBlob": "f8088eaa8b6fb1f9b7a2accc6ce451e61c7b6065f44e7d2dd8ef804bcaf48789"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-dangling-8.php": {
+      "expected": "f09ba1b61fda93b9cd2b3e5a5bcbad169f7d6b1bbba0ea4a37aaff38a21973f6",
+      "gitBlob": "21fd5390fb6507178adde607a792692f29cca205a531ed915ffcb2cd27ee81ad"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-alt-dangling-9.php": {
+      "expected": "81e8780611482c9d1e5504ab909ec2986c0263dc91f5285acab9b06be26721a2",
+      "gitBlob": "297adfb88818b0b08d0144ee6a83a02bb8cde8519c72c913c73e8872a104d4ab"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-attribute-call-discarded.php": {
+      "expected": "3a63ac1e70794d39e70c537e5ff65a2346aa120607276ad7e52be1e6708a5107",
+      "gitBlob": "be1cdf3f38b03cf536a3db76deca78802044b255f22e29732d90dcd57820dd4c"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-attribute-conversion-discarded.php": {
+      "expected": "a8def648725d1ca72c777fb077fed3cd4f35be9e4bb61223ba985a7eb33804a2",
+      "gitBlob": "7b592fe3bd679063eaf3203a276443581a4f5e840d7d604b77e0488980b28502"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-attribute-duplicate-discarded.php": {
+      "expected": "f6589bf5038de7531964ec8c4c99d7ab36bc2da449ca21c0caf2cc4af1412a10",
+      "gitBlob": "8af6c6851dc136d5673d5b7060d90a662150180f125cd024fade98be4928c2fe"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-attribute-order-discarded.php": {
+      "expected": "74349d4efdadad63ae18407f94ebee7b73d84064782f9b1cb7aa72a5db515e96",
+      "gitBlob": "a3db8980f64177e8faad9d097057d9dcd278fa0440ebbd6615e37403a6525ffa"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-attribute-unpack-discarded.php": {
+      "expected": "522afb609555c48697b557eb79ee899d13e6a34056cc57d5063c3f7b9706c99e",
+      "gitBlob": "365cc418cb4b5fc208040d42f3689039e09627892ca256e55d58811e1e142f71"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-attribute-variable-discarded.php": {
+      "expected": "826197312b1ab3a685a663cce3dc63fa12a39347850221e98caada39130a991f",
+      "gitBlob": "f75761ce500069f849cf695e135a1b2d33b131d148407d1a68fd16aaa1d66618"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-attributed-constant-list.php": {
+      "expected": "6fb19019000d9887b76aa43ce3f9bd07b983c18a867ea5c07536c831e0bad585",
+      "gitBlob": "a25f6042a312c1d490b73e459ea6c1d0b271cd2fba60366104b59ae12e5dbc6a"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-autoload-discarded.php": {
+      "expected": "ce70da06431f0bbb6eeb87cbaecc9dd7a1ddcb806093a47c0849eb09b12e39dc",
+      "gitBlob": "2fce8d829e5d9bb2cad428e1ed3be60aa422ba24097ef7c89bf6ad032b201fc0"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-break-depth-discarded.php": {
+      "expected": "7de09f2fcb532457862d8888e1470095b22f722952ce5d0420b3cff467f40111",
+      "gitBlob": "fa509b38fd24f9e41e2766ff2871f561ea23b36e8f5851801c3478d4300eab02"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-break-outside-discarded.php": {
+      "expected": "866944719e6a2c636885f1c7306bf53e01f1dc53f7b8b1d3db62ddc1b828300a",
+      "gitBlob": "5152f1615b5bd5a33cd620824582ebd548d3ff9d83a319f11897b5a1ab0d9d97"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-catch-static-discarded.php": {
+      "expected": "473b7cb32050010edf9022303d2f91047ad0a54cc155cd4aab37f4fa835b7147",
+      "gitBlob": "717fd6dff9b1599593848b7225d855b6dee6c202467e45f4a2010c0542b98379"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-class-abstract-method-discarded.php": {
+      "expected": "04edb2843c25aaa9dd39d66bc2c797f4a3d07005e62deb84914fd7d857942c50",
+      "gitBlob": "27db4b1b187d0bfc1e381029ad9eaad90caf0b9fb3c6353c9933a595027b6bda"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-class-case-discarded.php": {
+      "expected": "47a8656f92b6830261271de3d9e22e32d9fc565a9374194967f155c0e14d455e",
+      "gitBlob": "e508b1f80bc19177650786c527949828828547e033a3f7203954d99b672e308b"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-class-method-no-body-discarded.php": {
+      "expected": "c979733954e22ccefc2eb489418699aad3da2a5805ab4dc0b7e9fc0468ee857e",
+      "gitBlob": "9a2cade454ccdd3249ffaf04d2e0a9f2aa622a02ee1570bfab787269ab340634"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-constant-callable-discarded.php": {
+      "expected": "1b73cb5f1a0f7e901969bb011b95a93623b80f54797a8455b8218de1921637b0",
+      "gitBlob": "dfbcf8adc7290ea9d6f1c93b82c81709c07f13bfc6a49639e724fb9283981f4d"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-constant-private-final-discarded.php": {
+      "expected": "0df0ca1437ad371cdfb1afb2191e5d4a025d819b87dda7d3cbe1acada367bcb5",
+      "gitBlob": "ab68ab165b7c990dfdeeaa47fe0ecbe46a8cf2ef123295b1310b999592bfc299"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-constant-type-value-discarded.php": {
+      "expected": "823be5272c52f2087cf14c14b657d3856d00a5f58f33cdfd45c1e6bc57c26724",
+      "gitBlob": "234628457654894c9a97490ce8137fc5b62024d8da6668282dd1e486d0fb417d"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-custom-assert-discarded.php": {
+      "expected": "27b33b882bccbe6ce9ecb7f04bc18cae013c3b1c6df983c70accbf7ffd47fce2",
+      "gitBlob": "4e5b8c660bfb14683fcb5bd5d55d545d3bc5a49df3c037ae9e4fcaed194c89b9"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-enum-abstract-method-discarded.php": {
+      "expected": "cb6df2fb20c810482c096dc138e262ca3b95eb2af1ac90feb0a21b01e65fbeda",
+      "gitBlob": "04d5ed9108165e6974b130757df0486cd718c6ac3c50cff8525c4e111cc719d9"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-enum-backed-missing-value-discarded.php": {
+      "expected": "11763d381f4c7bc57474105c98a04185d7f190d995b9a9d263b519369990bd5f",
+      "gitBlob": "5b151bf06e81265dc211fd718bfb3722c546f95d16328ed76aa5d56a3029259a"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-enum-hook-discarded.php": {
+      "expected": "274b7d83bae807c3f698e26ab88446a30e4078f9289246bb7e5cbd809db4589c",
+      "gitBlob": "96760a80add22efa99017d8567938c1c19e16153d6e8c461c59b4a3b9ac8c6ec"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-enum-nullable-discarded.php": {
+      "expected": "84a9991dd7b25f8715541b458a4b788857cb25fa2edc21d651eedee93b1804c4",
+      "gitBlob": "a64fd1381f561b3d315e08639b83f8d232b66b0d5de4e9c710e8869442173594"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-enum-object-discarded.php": {
+      "expected": "c0995aea11e784a91afee78c1c9c4c4e6fe441cb28d4adb970d239b722ca435a",
+      "gitBlob": "fa5016b571d5d2d3dc60825917bd87a9ccd197cedfe74c8d4654a1e5e50f039a"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-enum-property-discarded.php": {
+      "expected": "c385eff9969ccb3b1f722f1fd55b09ea399ba7d62f02e3b9696b6b4c513005f5",
+      "gitBlob": "25e0d604cf03abdfb77465131197b203520fb1f963196cb59ce18bdb2c2111de"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-enum-static-discarded.php": {
+      "expected": "8b68a8408e2dc47bcb4faf69bfe7a80724c8d31483c749586a48e9228c3a20ee",
+      "gitBlob": "4beb6f9b389c3aa94b58cf6bd853f66605e3301cb2d6bfc9e85095044ea18722"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-enum-unbacked-value-discarded.php": {
+      "expected": "854546434116be2c0c2991f3dc37ec3ff03df1b057283afb7442ea688109df6d",
+      "gitBlob": "9b38e631f4639925a86e120da0f07ca5d1ccb8ebddb1e8a664e41e792768ed29"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-enum-union-discarded.php": {
+      "expected": "afced2c1ba71a6615042240b1bc8df2b58f6af8acfe2e6253139e9fb122a3de8",
+      "gitBlob": "11383c5863d4aa9e9e5264bb1a46993cb428ce5059419391c3c9ea5590cf1ee8"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-generator-return-type-discarded.php": {
+      "expected": "18f09789740b533d20279437af2b3242a7c4aa113b8417a48adbd48ddb0e623b",
+      "gitBlob": "b070598587f1ec4b561238c2b0186bebe7143f781af865a69473b074ece30c88"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-globals-write-discarded.php": {
+      "expected": "680798c47fd4a05050a98bf93c013a03c2e535d49fa0c84f1ce8c2c289a28163",
+      "gitBlob": "ea281d3c603d94335fc6b347a83ff9f4f49bb933430d64e8657a39e48aee6c2c"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-goto-loop-discarded.php": {
+      "expected": "f7b39416171d46816a3d75efe82d1e6dafdfbe3dbf0ec90f920cda7541e126e4",
+      "gitBlob": "7099ac5b8f870c05e7072144a4992dfd1b1a213a93569686f1d276901fe8cf17"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-goto-missing-discarded.php": {
+      "expected": "65e5bf7ab67e4a6a0d023546dfb7c26641afc059041af50beb0a467fac638416",
+      "gitBlob": "43bc642fdb4ca191f6e80e5838bc12c344f71453c27a9685d502573a1580a610"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-abstract-body-discarded.php": {
+      "expected": "e1f39b5337e03d563a1fac926306239f0456c8a30b42f98353eb195a81697b82",
+      "gitBlob": "d1235e72b8c974710f8116fd1d5d16e054581b181d340cb82846501fd6af754b"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-abstract-final-discarded.php": {
+      "expected": "e5d311bedd07000528c080e38b6bc24ab2ec1d5a20932dabcaa24d87e1aba5dd",
+      "gitBlob": "4a1ac55c654a877a46bb5fb9cb951d5753b1ccc5e1d36449edc1b5c848214cd6"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-duplicate-discarded.php": {
+      "expected": "9ad112a43f4c28b1b051a26873d0717c173333172fea3ad45fca2f1a54eb3354",
+      "gitBlob": "5d841a66d752a48ec0eb2982995a40fb365c8060ddbd538716cca50a4fdb9bc0"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-empty-discarded.php": {
+      "expected": "31b6346b2f417600982f2e89b210fc079903c794b8aeb568177ea6091143bdf6",
+      "gitBlob": "d3abbb3f70b3463a74e4c0f493ce61d7da8b2aa0e52d1792de39dc798f13cb63"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-get-empty-params-discarded.php": {
+      "expected": "faee9a81dc5c12d178384e02830c1927fd63fa9224cc6253dbe86da30fa4fbd5",
+      "gitBlob": "c4946f4c21e27b50995ee2c2c9b3d7249fd9e1a75462893c0c5d8d5dff8eb641"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-get-params-discarded.php": {
+      "expected": "1d56fd436f4ffbadf0237792d13d0dbf04abb75d9f509402f2102d126584cb7b",
+      "gitBlob": "a6e81f785e74bb3e3717901b9684846e48b1dcf8e967e08a231d333716d775a7"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-implicit-promotion.php": {
+      "expected": "3b0fd80f48c7ea22a0b4f53a9e287c6baef8a6b75bb017c377046c346ad6ccb2",
+      "gitBlob": "9c821c96034eecaca82398399a3c9466d23d608a821d0602fa690c1858c5e1a2"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-interface-body-discarded.php": {
+      "expected": "8be7cae2632a88bd7348b61377f76f9926f3978665c64a78310fee50fbea7229",
+      "gitBlob": "bde072005dab5f707b023aa93064ae79e7d8a8725696bb183ef241d827d18d20"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-no-body-discarded.php": {
+      "expected": "f820124f88fe1e75221a57af16bfd4745f60e3e5e15c6c791957a64d637d00e7",
+      "gitBlob": "557decfe2af9314932de9a0c2b3bc1750ac3595bccaaea1191b4198f7e74a215"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-param-default-discarded.php": {
+      "expected": "394c466e8ef5f26ff7ea91423c3de78a9f68d6a778086b72c9dac645f6c588d3",
+      "gitBlob": "62c0820cf585b97510569df8125f8c4ffe3155b45b4fc03d7acc106f64b63289"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-param-reference-discarded.php": {
+      "expected": "fc9f077b0591e5a9dd0ff77be414867845a25a7f70b4a480012a02846250bf77",
+      "gitBlob": "fbc969defc8f6f70e521b5ad4124b024c8f036b523eb8103d872dd809cef33ed"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-param-variadic-discarded.php": {
+      "expected": "9c8f0f9c73cadc460a3f2f605c88f2f9353d48f8a5f7fadd22edee5216fce4e0",
+      "gitBlob": "0e06300ae28065f481743615d5a110cb5886a41fb519e16a246984a43bb27c5c"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-private-final-discarded.php": {
+      "expected": "8facc30d4d8de3ea26e90428a5cedbda6c42ff4bddc07a399614961cfac8dd90",
+      "gitBlob": "e2ba986545d10a4515f8c268fa43d5f7d526ac201953709cd644b96455148a31"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-readonly-discarded.php": {
+      "expected": "8b76a2e7d4257401df2579783926b4cce9a9481d0e206bf670d3604187a86632",
+      "gitBlob": "094c6146650cf2fbad90736cb7cf56c9e0bec154fef679873984445f1a933c0f"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-set-empty-params-discarded.php": {
+      "expected": "c054ed2d394c84e6465d4b7aed983a61910b6342029b72af24afe4b3778ef290",
+      "gitBlob": "f6a9e7cc8597fb55fc1655e01d7641baef1db478bcb6f502997a7fa859e8a083"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-set-reference-discarded.php": {
+      "expected": "b203cf7bcbd60ce0d6ba5ff205d90a7105f545baf9a9c5e20d535579de659013",
+      "gitBlob": "6eccbe070299a2fe51496deb4ee7ebced4e41f3409ac72d6297a7c4b50147ed2"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-set-reference-live.php": {
+      "expected": "e3a4c25cb115b820ad273fcf7ff1ce0da0d8058f8513db164bc77498c2726c58",
+      "gitBlob": "3f5bff431d1ea449176366a62151b14946eba5115e68cc47b8497a1b20f179ec"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-set-reference-retained.php": {
+      "expected": "11ed25622896a510ce50f245885b2f5f6438e8eb4e39b9423c5d5cbb0c60fbca",
+      "gitBlob": "757bf2882635b12e8fc0c0a176cbc08327fefa7c5e626717db63557856d10ea4"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-set-two-params-discarded.php": {
+      "expected": "ec46d8307f898c8f69b00992e4be3c17b0313a8fdfe77b1e361eb51acf5110bc",
+      "gitBlob": "aa47f02a72f222477541c01d704e386eb1f1be988688dc0c42705de3ffdc2aaf"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-hook-static-discarded.php": {
+      "expected": "ed77824dacfba1d4d6c30c3a1b08c009d97eb9aee31edafb44fe254959e5e82a",
+      "gitBlob": "b658bcf6132f893e878103313406778f3d9c313d2481e14bc7456e30341e6b04"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-implements-static-discarded.php": {
+      "expected": "6691bace078b099205048ab2bf1ab16441895b1171a7339c5a25dc499f1c5556",
+      "gitBlob": "a18a6825ffd60a780d5513643dd5a99267572c18d9a710aa1b0b706cd3a8619d"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-insteadof-static-discarded.php": {
+      "expected": "0da153cb3a8c4908c7aab0834d71d04f57cd718149ea8dea70dfbc372f807993",
+      "gitBlob": "9fe8eab839d50408a70a19eaa1ed6637173d8d55fcb56f4e68dbf5930e95b41d"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-abstract-property-discarded.php": {
+      "expected": "74c41159f727ea4c95a806787459fda098cc0414227de431b447c609b1b6f8d7",
+      "gitBlob": "0aa0c83a27a95187e7d6d80b7a3798f73d0cf53dfb4a61d205aa0fd5334ac6bd"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-case-discarded.php": {
+      "expected": "184d292f2380a27c4a71932afdc480d007f143c909de2ea44912f4480de35d00",
+      "gitBlob": "4174656e98c53938bc579bc4f0460377e41b62727f10a3b7b6d6ecf59313e93b"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-extends-static-discarded.php": {
+      "expected": "fb2340fc635807bee9cb6d6b8901fc35655d1c1753aa259e28081021d24d0669",
+      "gitBlob": "7568614a07e699e4244d795358a011237d38dba2337e15672826c051968f2bdd"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-final-method-discarded.php": {
+      "expected": "831a83f22b7d207eb09321af4c4c417c3548cd81e67db29c9db40ce738b836cb",
+      "gitBlob": "d638b1461b00cf1632f4661a1741ca04741c816fd2d069adc32e198bd3ba93b6"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-final-property-discarded.php": {
+      "expected": "ed82829b0c6b3a1777dc57b6c24ddb95e0d9f5cb45df16bc30a63fbc1bd6bc93",
+      "gitBlob": "3d53b531216fac83b2d4291b6f7667744a4f690b5570e3212b9117c128f0a44e"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-method-body-discarded.php": {
+      "expected": "eafbd86fb2499765424ad80b7e8e9e2f8a430eeb7e36b348d4c51f4b42a82835",
+      "gitBlob": "440fb02578131ff9d4eba3e50b2a71ad7d99feb8575dc6a5e204e111ffdc4b95"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-ordinary-property-discarded.php": {
+      "expected": "8d14a39ed2aff37ead7d7913cc4ab8c29f7d399e735acd458591e7c1ff2eaeae",
+      "gitBlob": "d7a06e16cf0116d6150144d454257790ddd1c4c7ee97d6d078522cdbfd043b91"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-private-method-discarded.php": {
+      "expected": "49137f63e9fdee4ade362d630c6df70d3d7ac20bd552a5257b7115d863155765",
+      "gitBlob": "2f7f74ff8d9bd170fd77654f083e1ebf33b03f5fd0af8392499a6219e8a97b5d"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-private-property-discarded.php": {
+      "expected": "c3fff17267a5aa63ac6b2767e6bfaffea240f2f24177c9139c2ba78c40988b70",
+      "gitBlob": "b816e04807d50f4b9dae1175d7275e0bed9a12c6a78b30aa4fc643a2ad04f4e8"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-property-default-discarded.php": {
+      "expected": "ea12b1be8e6fd70c93c36f6d548bd4365aa259da98107014583c1c7d95786b3b",
+      "gitBlob": "102011a81e550bc70d578bb9c4e6e107e0cfa3996490a1a807462fb7f35c8caf"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-interface-trait-discarded.php": {
+      "expected": "c968f3a746d6b0060bb9946757df64810cb7c9b6af0b4c1c0b7cea32f40e4bd4",
+      "gitBlob": "35dcab1b961b4dd7c8e8882b3f760c7c2a1842b891e8d1be672ea49305bf9248"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-label-duplicate-discarded.php": {
+      "expected": "f9e5ae619725f026d8391e7543248ba1c13e9b33c3e8f6e395de26157b5b81e7",
+      "gitBlob": "053469db72f3e8755892ac9cd3438a21cb3bbdcd8800d0862d0d7ab57cbf1711"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-list-empty-discarded.php": {
+      "expected": "7f19f564da70fac0a577c6d83910b01207fd99aac18b5fe1b1845a8e2a1c896a",
+      "gitBlob": "46437ceac22e3e84c8277511334e5e4202ec2cfda9880ac332e704b8b9f66279"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-list-keyed-omission-discarded.php": {
+      "expected": "db26b39c81607e96406494e4e0492ad888ac136799b3660890f3245e7256a5f6",
+      "gitBlob": "9232b21a54f09eb0006f2722eff314cbe764994188558422cb53d2ebc50eaf3f"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-list-literal-target-discarded.php": {
+      "expected": "c4cdb64f15df869807aa36b3288869881f38d9cd0b1f94c58ce3c7b7b8284f0f",
+      "gitBlob": "e06ab10cb3578ff44478e0306011123364d023d57725d6bd201a0fc016a43612"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-list-mixed-keys-discarded.php": {
+      "expected": "02ee45655e88804c4ee2a61357300481f0cd7f6730e3272e1eb5554b7b2eef4b",
+      "gitBlob": "5e3e99867d4168caffff2de055212746e5bd1483ef197cdcfd9dfc3540ecd462"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-list-mixed-syntax-discarded.php": {
+      "expected": "44ab69edcb653d1e06d2a765cee761fdc42d78ccd31f803d847d51c22d1f5922",
+      "gitBlob": "510ccb9a5d9fa55480217268cebd742fa9fd7d3bfcbb8df36a0bf4f0b78a287f"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-list-unpack-discarded.php": {
+      "expected": "6d144f591e79618d9be447db1d2f3121f99ca3760e25736d0eb51a1b217e88f3",
+      "gitBlob": "cdf238e664e3353c4dcb95823eea6de4e1d80cca2c819db162064965c415b96a"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-match-default-duplicate-discarded.php": {
+      "expected": "63bffc53069a3ff382bfc97e3041aea9e07bb5e6afc4062aa1f99bebc9e67fc3",
+      "gitBlob": "95cabd373c7d03b36e2b6571436f7b6057b3e91a669b86360ce41cc70847f768"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-method-duplicate-discarded.php": {
+      "expected": "4fce4a75dabf4004a38f8650ae59abf9569f4c6b12bda75ad4a45d2d1cadca65",
+      "gitBlob": "bd977013b6a64f21574cf8dc20eb8130ad4d5f4d1ca4b95f2be78205201b526e"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-nested-class-discarded.php": {
+      "expected": "2a205309e738204186bdf8969daab1cd23a0916e93d7064615456622aa979837",
+      "gitBlob": "860085f8dd9f7afc3a07715e08d55ab636705c09d40b7cde1102786ae22d2578"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-nodiscard-void-discarded.php": {
+      "expected": "86023557a47d1104347268796c9902f167510bdf5d5917c159ad27ab41254400",
+      "gitBlob": "67ca90c096b9700ef4550584a334e03c2f361bd3ba5acf7e345d00668e927fac"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-parameter-duplicate-discarded.php": {
+      "expected": "47228711caa0e46e12a2b1a77ff6bbd584f11280efd6915cb9c976ebec2777ac",
+      "gitBlob": "0531e3252295b6780ee9af255ab492ebb5ecbabf63c353bc4aa6a6f392794755"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-parameter-hook-unpromoted-discarded.php": {
+      "expected": "4bdd2d0ca13e40d3ebe1a684308727edf688fc0686ee5aa0ea4f604ba58757b0",
+      "gitBlob": "6652cf195cf3c2e045de9ec00e90c9ecb2add32b42d0f50e8b8507f34b9b3f72"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-parameter-never-discarded.php": {
+      "expected": "8d6f7f50aa4c268f6d03481786a1c4ea347ed002331c062cc146473a19a9e587",
+      "gitBlob": "cfb462b89e0bdb937bba01e0d155af43761664f667b7aacadc25bded8b731a61"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-parameter-variadic-default-discarded.php": {
+      "expected": "8b34c00c38a67591e87024d651022a12be9daf5dd76f2085c4bfb1f445b342bc",
+      "gitBlob": "bfb3fe0f9fa400cac447fd55e33869745587e456c03fe1c08b87be858e9605e6"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-parameter-variadic-order-discarded.php": {
+      "expected": "598ad2d51ac6ab3cd6d3689ab353dfbb190a37c6547b47c17766ec6096a111a0",
+      "gitBlob": "333d8a3997bfbe97524ff3f52736ff536212997d1c2d77e447460f5b6700c88c"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-parameter-void-discarded.php": {
+      "expected": "f7b86982e78a3b2909267a9729025451e3a771524564fa5343d5db9e5338f12c",
+      "gitBlob": "edc9c5ecbdee25ff3abda0fbf441d2ad8e74296b2be9b02278991b0873d0cc85"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-parent-hook-outside-discarded.php": {
+      "expected": "dc6705c1aa1a94c23147be690ab48f52502b60774c263bc4136244b5555ebd19",
+      "gitBlob": "cab2ab250e1e3500217284cbd130f48faafa266d394f043d927ced956434afb4"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-pipe-arrow-discarded.php": {
+      "expected": "613a71ab2ead1a5e3d5e6b70d00937bc6dc68f7ab865705f37b6f9c5d6527c8a",
+      "gitBlob": "38e66dda0754f78590ac9c0895879e2f5b9f15723125d296830f61df1ad03203"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-promotion-abstract-discarded.php": {
+      "expected": "5da6c131400bd6e0dbf581201153be6a67c4a3fc51057b6b02d79b127ee9b7ea",
+      "gitBlob": "6965d92d223c3303b98c4b82672138df727381b8f398e88325980003820c7331"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-promotion-function-discarded.php": {
+      "expected": "3f2ec8ebab3316b2e3775eb69757c65c6f7b9343989732b745df1757abb6d717",
+      "gitBlob": "21d3a39df6d8a74ce584cf49680e21e66ce6fab96eb123af826180e351a8e37f"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-promotion-nonconstructor-discarded.php": {
+      "expected": "28a4e69c8259a1ad91bdf9ad4d8367257b045b248f65581e828b95ee4fec72ed",
+      "gitBlob": "5a1c11319bfb616a9c9b9e42d8b2f1e3279b772280ad16d54632ca6752adaf4f"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-promotion-variadic-discarded.php": {
+      "expected": "db081b1eaea252ed2ff91651841a63b65154c68c570eef3b77ade9ccfe616e20",
+      "gitBlob": "2d0e7458678a8cd8da414e92893eae1ac6a2dd5cc81c8bcb6f4ef8e7601903cd"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-property-abstract-ordinary-discarded.php": {
+      "expected": "c7872dd26918da70ce7d411c0f9ffa633848edcd39586ec8cf74a643e0525f92",
+      "gitBlob": "a59026f5eaf0fa21b69eea2bbe7495cb82ab4ceffc417c6706053e97daf041bd"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-property-callable-discarded.php": {
+      "expected": "0e69b0b447eaa4ebc89e6b806df261afa490a76edc68f010cfe6ee124ace6448",
+      "gitBlob": "10c3d95b12d6507bd3b7e277996a04a24b7dde96e5f19189b66ccc6156cae821"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-property-duplicate-discarded.php": {
+      "expected": "4edf04b6a0df95ad0df264fc97fb788a6d3d34a6d025fba2dc92ab69013c95ab",
+      "gitBlob": "da280cab8b9231b6d9cffece5a940cfdc4d3aa16d391a95f96e5f810817aa4e2"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-property-private-final-discarded.php": {
+      "expected": "0802968d8ff86005ef32b2ca4028488487c5e35f2ee2f1b2898fde753e42f49a",
+      "gitBlob": "3132ac76abf74202e56cfbfc6507c025111bb0d5e719148fcdee4473ee159cb9"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-property-readonly-default-discarded.php": {
+      "expected": "1ec6dc05cd67bbd69403bb4ec14feb10db592252f8e22369ab9ac68d3c59ede3",
+      "gitBlob": "7dadbb26731071fccfdaf68ba0948b218013f0c42d2204c95d4bbbb9822a602b"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-property-readonly-static-discarded.php": {
+      "expected": "6c993ba11a9d322e6f8095fc506f6527765c04eb45091e3f628eb7b0d50dc958",
+      "gitBlob": "c92a3e26fcb768b6b2ceed6f6a9a16458e4714f598fbf93a07af26a92acc6639"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-property-readonly-untyped-discarded.php": {
+      "expected": "ff0dfdf4b605f05b13175ac2cd7f215d903dddef3c53ce368b639e03e17e4374",
+      "gitBlob": "98563d61e7450ab742373384b5af2ba578e264932672c2cb1ecbe2000aa60643"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-return-missing-value-discarded.php": {
+      "expected": "9303267885fc88badc5a654f8d18ff32acc591fa4b7dc3bfdad806c9b159ccdc",
+      "gitBlob": "493933ffc60a4fe9da7a1b5918920ba77c6feeb452d3b1cb742490fac7a88659"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-return-never-discarded.php": {
+      "expected": "a57bab7fb05691cba40af122124d44d362d6797ad7c8cf358dc3a93eb125b5e4",
+      "gitBlob": "49ba44172d550f263632eaa32229cdb6a5a69f64839c95ad7cf18a7007d3ec4d"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-return-void-value-discarded.php": {
+      "expected": "f967e95cb35bdecfa631b360f089a5d793b57020491c5373739f1048af508fb7",
+      "gitBlob": "3992e97a45234693714252eae58f635c1551b828a555290a72d518a8fd8e5409"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-static-duplicate-discarded.php": {
+      "expected": "10d435f4d8e2932b7206de5a59a31c575c58e9973e0b6d3eb21b8051267af85c",
+      "gitBlob": "f64abe27fc8036e9d31637ab3b499e1468a146f20ec878f8d2906e53c3347b4f"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-switch-default-duplicate-discarded.php": {
+      "expected": "46a1fa182dea6dc2b7af198eea6aef140dd468470f7ac2c8c356e141f9ea8cad",
+      "gitBlob": "02a4638dfed803999ad3e027b9aca1d07a8ff3729b52fb09fb51406ae18d5d45"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-this-global-discarded.php": {
+      "expected": "8afec2782c453870a343a5007d0ef28379a9f1bdf870a62371bbb64318b94dd0",
+      "gitBlob": "e90d389d0d171fd88c5312b65ce39bf24c2ae2cfaacac208bf90bfabbc2cee7a"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-this-static-discarded.php": {
+      "expected": "0bbdc85c01110649c7f7c8e20f030ca53c3706462bf71bf6f4a01ccb592c1872",
+      "gitBlob": "a3c1a7933da7374cbe70e5016193a432dd2a057f32fe493e81c809a88a1e0dd1"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-this-unset-discarded.php": {
+      "expected": "7d0c1631d8a70a3bd6b9a655da1a4d2eada0f8d478b9f7096888b056229530e9",
+      "gitBlob": "7d2330d80eeb4aa9bf245249db9a74e8794b29d2bda86ed18c874a5581baac5f"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-this-write-discarded.php": {
+      "expected": "5f695a4cc42f33dda0855f5b1932f7ad2fc657799bf603f8324df1b696e5598c",
+      "gitBlob": "33023e0795f66153599e604f6a23cdd74c5fa5c214882047394ba9c83da9f6eb"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-trait-case-discarded.php": {
+      "expected": "3cdea47bb181464b8fcdb04084fbc6656f109c1dc8e99856afb56cfc23c78b04",
+      "gitBlob": "ea542eadc9a640d22e445806d6c7c6a806d912e7fd7ebe24e9f4d15709893a5e"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-trait-method-no-body-discarded.php": {
+      "expected": "d2be6d67bcc34f0335ed10a9908b81d87c650d4e38bc02ab2d687bf94826a340",
+      "gitBlob": "1e42c5d17397cf42d171c63be740c1f9276234942ef64ea37cb9eb1e2c51d617"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-try-bare-discarded.php": {
+      "expected": "be70c775eaca4c4dadb03c65cda3bf9631d63549d453dcf54206bf48d4eeb8b9",
+      "gitBlob": "1af69ac816f9286658b455e9da118ffb384978542eb473a7f118967349213bd8"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-type-intersection-builtin-discarded.php": {
+      "expected": "36aff95934c53ace7bd6ad971f40c05c7dabb778561d4da6683d71907c81ef28",
+      "gitBlob": "8889e5ca28331c28d7b14a304a322cae411ee34edec11a1bb183d39ea6f70801"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-type-nullable-mixed-discarded.php": {
+      "expected": "42e2540254085c316406b0526d585d6f2335fb9ad9c425f9464cce315f9d3d14",
+      "gitBlob": "d64d34739365ab3af9f3360046d2094701d1cce44dca99c2a41ec241cf933eca"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-type-redundant-discarded.php": {
+      "expected": "7a258cf8b4038cafae366404f04a028e30c39026e68b0d77e43d0efd39694abe",
+      "gitBlob": "10e6ffeb7a7e41adf9b9110ac7e590a08df37e807fad2c168b9418d29c2b07ae"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-unset-cast-discarded.php": {
+      "expected": "8e92fea1aed5b1f9378a73fb4d880169b3a26e6ea3412854fdc0750b7dd04347",
+      "gitBlob": "5988a96651e44c06eacf5d50611b9eb298d6641592ec2d677eef279a6fd65997"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-use-static-discarded.php": {
+      "expected": "1c016b9071bbdbade97a388829f3f7cd7ce9cfd2d140d495f86573a993241f10",
+      "gitBlob": "5deaaf41ca109036bd2ae5e79c0010dadd00bb97b198020f6d2542235003452a"
+    },
+    "tests/fixtures/php/8.5/valid/boundary-yield-from-reference-discarded.php": {
+      "expected": "d3e4e091c917ec0208102084aa89c37a8d943a1005bb7f38d0fa324b70b12c0e",
+      "gitBlob": "abd961afd5a29e6225bb4119984f7e1b57b3bcf142c7b085bc10bff9235009c6"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-arrays-reference.php": {
+      "expected": "73bd41500cd49bdd0bda2a6be68bfe2a4610307d0f04c5a87d654ba0269f1ae9",
+      "gitBlob": "8b5fb35efd22a568f648b80b5783da1def42505ae667ea0f8cb0701928ac81b5"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-arrow-static-reference.php": {
+      "expected": "1cd46ffae77c87d58b9021add3ef602175687db9df9cd9939d4b7f368c119783",
+      "gitBlob": "e5c60e7c73e5c8899eca5518b4214bebaf7b5d82bb03ed3122fe1fb0c0e75633"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-assign-reference.php": {
+      "expected": "c5dbce6e03d71c1d9b38668e12a94433f27d4cd1d91a4969ced3ef1fafa8d166",
+      "gitBlob": "ef7f1d7acd87224fd4ca14dae9225434f63b97000fdd553ccb139d5e1dccdafa"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-closures-attributed-reference.php": {
+      "expected": "d712933afab106b3684966dc776dff7b38467b1f6e687b2bd0b1f7512d9d6e01",
+      "gitBlob": "0aab740dfed9171ea159a5bffb47dcb2fe96885bb9afbf220516f025402999b7"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-closures-captures.php": {
+      "expected": "78b69b5d6de6b72b2fa459039f6041acbc26c63882e270a3f12650921c455e05",
+      "gitBlob": "1e93e70fbd32aff5259143dd1162c97bf6e4a89cbabaf57e9fc20fd7069aad6f"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-constant-array-long.php": {
+      "expected": "99f0d237115caabc3deb71fdd2e3dbb48a088cdbe036e773bf6ab87ff8ad168e",
+      "gitBlob": "e18c46392b1889292369492fe9754cc2a07fc4154d11bbf1317b8689e1263d8c"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-constant-callable-builtins.php": {
+      "expected": "12006eb68676e88e5c6b27e95276f0ed6916536fd40ab018d6a1dec584b71861",
+      "gitBlob": "3184fcff1ae0a780cfaf19e3a340f0e7c994de6725bc220703f6a751a7bee0a8"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-constant-callable-readonly.php": {
+      "expected": "7c7c0d1ca90045b1230322111560052e1b82f9ffc18d06fd4f2390f48e38a7f0",
+      "gitBlob": "7d8e532b3cf86b32bffc5aedca5f3dffe1dfc6e9d527037a3f58747f7a1a999b"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-constant-dynamic-member.php": {
+      "expected": "778171d208ea46094f89e431b9d22804c539531bcebf5244a36f5e458875f191",
+      "gitBlob": "f32349a3d6b3f86b74890091a6dc17df76b08b51aa95e845a4e1ec5d3c20071b"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-constant-magic.php": {
+      "expected": "8c4e8921341e04b0906b29717094932d4790314cb7fa8eed9aef1eb6330efa65",
+      "gitBlob": "2f0522379935437a8e4e92b2e181b573d9c15b9062bcff19c7c5f48b4162d202"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-constant-new-property.php": {
+      "expected": "45c25e833180eed7b59c3965020e8d1a715d45029abb9517b9fa85de5dcabb48",
+      "gitBlob": "436f13edcbb3cb6b1c6ec4ba643a67d56b64d60bd47629742212028d0ded4d9b"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-constant-property-chain.php": {
+      "expected": "560194890b70c93c143557cebbfaebcc65a162365cd8d8c3bb15b29647c2bc5e",
+      "gitBlob": "1326d84a2ecc5b914a2477c5867b04c14e14228bcfce3ffb7f5a05ca8422a8f6"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-constant-ternaries.php": {
+      "expected": "6f612d19c1fbf935b654d192c9a4fc46f0e3d16638688cdfc8766c41ed3c80aa",
+      "gitBlob": "5b168cc4ca44ce1e35cb6837d7d2e855fbbe37785f142812c01246ae376560ea"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-constants-visibility.php": {
+      "expected": "4ff0fb96d439f639742a626770a7037019ed6147351bcfc379ba1f9a84102f91",
+      "gitBlob": "895cb1a9f1d0cf23d8057318be24e462f7c515f3b1137a591c85d79abddc6dda"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-declare-html.php": {
+      "expected": "1a4e113db3880f3ff38354b6f4c6d8e5ed4c0ac6ac84bb973f94a0950330c92a",
+      "gitBlob": "4007b0703728e926b35acacd7c20e4d66e87c4c136cfc7ac196f4cf81d866ab7"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-dereference-dynamic-property.php": {
+      "expected": "f4f71c786c2bca2a5d80c3a91bdc73c0783a9227d4cf2743d7e23795595fe162",
+      "gitBlob": "5e4eefe57739db6c882698f167f7a151c818806dd17ed04d8292fee520afcb4e"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-dereference-nullsafe.php": {
+      "expected": "5646965a21922c523221586c16bbd71294b27be0da995f8f25673ee2d9fde496",
+      "gitBlob": "fb124d3bd86acec9b4004c6d29c5e76b0c0beb6fbca24ccd7aa75fde98d4b3eb"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-destructure-keyed-list.php": {
+      "expected": "590cb3c8bb848ae92eee92f1dbac83308ae53f7db0d0dfe8db2bb674996e5afb",
+      "gitBlob": "018b33aee05dbee6200a539467f401c6ddb5bbc65a67a2986ee1310ff82e097a"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-destructure-nested-list.php": {
+      "expected": "6b41b7cf0303eb185ab42935dcb4dc3f3cc366fcde95125fba7a641429caef0b",
+      "gitBlob": "58ead0c0041d1f4c229c0800dc003cd4b34b68f150272ed5c8a951a41440626c"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-enum-members.php": {
+      "expected": "9a8bb6d834aa45a10262d22f6f928c0196caf96790ac5aa6492bd75dcc28f446",
+      "gitBlob": "b879781fe03318baa43df186d0ad012f04cc32f588dfc9723de42b6f620893ff"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-for-html.php": {
+      "expected": "ca77e97d64de12b99d6b18530fe1442c83b0c20b4d59b95114863565b8075ec2",
+      "gitBlob": "8950115114e449e0de94ce8ba56609e7e223005e7573f14caf29341177768c1a"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-foreach-html.php": {
+      "expected": "be6733fc78028cf4575253276f6840abf6a2edb5413863e5d6521582acce74cf",
+      "gitBlob": "99fd51aa4fee8c1dd289a4b1fbe69e4261b721ca25f069e046911b12ec4afca6"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-foreach-list.php": {
+      "expected": "7eb6e1fe3035e0a189ab83f4f01a4e2fc3f9024659aa9bdb7da5457588180038",
+      "gitBlob": "e96b1819add76d95e0ccdc6ac32b7398a0c7973a316b579f540b54b3b0983187"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-foreach-reference.php": {
+      "expected": "42bc7672caaf618b8d6d733ff1d12c6d9743c3aeded7ccd3f4744a685827f21b",
+      "gitBlob": "25f009751fc7abb572c33f02222b2f97aeac548c3e421cc7e795801bac89a00e"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-foreach-short.php": {
+      "expected": "41568dbb277ec071ba2d0bcf6c828ec20a3bad56851db807bbf9d1e76135e31d",
+      "gitBlob": "82d8d03df35d45a221bf340147ec54755db35971acb46a1009e5309a7721b661"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-generators-forms.php": {
+      "expected": "73a18f6c6700e1ca3d1db35bc415c2a854465b9609508196ff426ca1c953055d",
+      "gitBlob": "3fc324644e801234c202354748d3a19543d86b64c4762a6ff7112d53c749fbae"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-hooks-asymmetric.php": {
+      "expected": "93527d73030a2930da8dce45310df828a4b07efb05b80465639e9c65891adb89",
+      "gitBlob": "43557990db8ee82f33faaf661b0d1d82c62db6c58d79309bd3b92036288b92fd"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-hooks-attributes.php": {
+      "expected": "22fe1b1bcf084311b05c3c93fb772915a85c2fe5fcf973f19c309fb44611859d",
+      "gitBlob": "94c18cc7ccc5ed9e1893f9223a546fea22bef5341d3f568da8ff304d7adcd5ab"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-hooks-blocks.php": {
+      "expected": "a0ce4032e4b518ee7ae797760a2548b88fb7d85b6a38d58ee87342b4f0e6ec09",
+      "gitBlob": "4d552707bd721cc4cfa3e31fecdb706c088ea39cfd3cc3bf930ecadd873f629a"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-hooks-interface-both.php": {
+      "expected": "3f9100535b105cf144c67e88fa2b00dd26ed5880b58c25281101ee63b26ee5de",
+      "gitBlob": "6000a4d96582c0d31e782442eac396c01249b6f315e9b72cf3409d2609ebaa4e"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-hooks-interface-get.php": {
+      "expected": "b4d003a47b804cb70c5829956db15ad2388f50862f4125295733527d7db7385e",
+      "gitBlob": "363cbfc6e020590489db41c4c2ac9c3d6c91359daef98f92ff51f19b73b3a6ee"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-hooks-interface-set.php": {
+      "expected": "cb76e5bc3e6a0d1692dfdfa7328d7c1dea2b2473ee044e923429fa1b0d25f44a",
+      "gitBlob": "ab2d3b43f9c1f6a0c255600fcb7c7f5288fd28027f7a0537af874078300ddf98"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-hooks-promoted.php": {
+      "expected": "6e3cf8d67cca701f56ee4c4d846a8f57af71f8a2e3da04ae744a5f1df89fbf4d",
+      "gitBlob": "782b3e6ce0c2d2e308e795ac1c8d145b3b2dccf3eb376b1dd0aa953a76f7838f"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-hooks-reference-get.php": {
+      "expected": "9e26165c9d94402cf292f6f9cfdaf00f4488b6d5b6fb84ff31e69a6c7bce38a4",
+      "gitBlob": "dc200932521cf181b2227683635db71d7edf28d110a976b0f00bac0bd6457ced"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-if-html.php": {
+      "expected": "b3a1e5e28357fb83745384f8278c732c3a19b33b2078d1a8bddb90284d29b0a3",
+      "gitBlob": "3a77853c3daf207feb1571de285fdbf059633bf8cca54da000009845b628cafd"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-imports-constant-group.php": {
+      "expected": "fb30fc9d5b26a58e93d4995e02b109efa47aef0068d617f0fe59659c1ba72707",
+      "gitBlob": "d528fa9c8529ace1b649333848b7ecf9a89c272ab44aa41b69e74ee22e314ffb"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-imports-function-group.php": {
+      "expected": "61ca045fb0a61e772f2c66605db8cfe26d3cfde82504b3b2806d1ac24b723c03",
+      "gitBlob": "824daf825d0d06f72ead96e91b3f37a6fff137f73090beca909a6b792ea42d42"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-imports-mixed-group.php": {
+      "expected": "7da873aec94055c2cf7c4165f8df458404c979a679e2cde0e56ae5f1f9dcdc72",
+      "gitBlob": "a39a71c0eb687dd5d5412cfbc471ee59721bcb65eee0f2307c9005b3141b987b"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-imports-simple-kinds.php": {
+      "expected": "4ba15d423e2e7a7783152315815c0c6c479e257e177500b3a593a2bb0678b351",
+      "gitBlob": "6170bf6952ccb47a1dde00ed62b08077875c32f090c074cfdfbc6469289e98e2"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-include-forms.php": {
+      "expected": "b831c73a113e05af64cdadc0e18671db9116dd72b0eed4a091d921b81acd08ae",
+      "gitBlob": "f352ff98cf29554c7e5f1250d7283709c9a66672ddef09041f56f920807fff89"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-interface-inheritance.php": {
+      "expected": "56a7d27c12d57894d13c7c4733e5ed0dfb4092ad69d05a97af2927fad48d98b1",
+      "gitBlob": "6a690fd60fb2165feddfacccaf49d128073920ee6d0d8e1d296fff52032523b6"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-language-intrinsics.php": {
+      "expected": "59848bc924a60705e0533c2179cf48433838b8bd539abe71b2fd9ee3f14b7787",
+      "gitBlob": "9eb3f265cf281f4090da50b68bde9311e2626ddabc4c5da4d033eb44ee570b83"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-loop-do.php": {
+      "expected": "50b8d3f22d08f06062bd8c62f874674fefc84a4067b4afd7881b50c713b491ed",
+      "gitBlob": "de6274dc0980ec42c6290b595f7659daab1a7d7d6321df583024bf40034ba19c"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-methods-modifiers.php": {
+      "expected": "244c4293224123578f485fd73935b34fba02a18f76202a1dbbe455896551d633",
+      "gitBlob": "1bece5b0264e30eadc93f0d69fb3b9a302f421e530ba71666dee6c6ac6acc461"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-names-relative.php": {
+      "expected": "4a7469d2aa1f0d3d28736cf4adb5cece2a51ad98b53e70255fe53a74a8ce6c1d",
+      "gitBlob": "7750d474fc51166f06c13c2c05fda4d048d4e6689580e4f8dfc6d299dc2274e6"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-namespaces-braced.php": {
+      "expected": "17a54053fbebd41084c1f041ba1e218487043cf1df100c430293d40b2c9551be",
+      "gitBlob": "8f3c21f7260f06f744965c773aa825b7853d65ed00525fcadbab5acc28be8d07"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-nested-declarations.php": {
+      "expected": "b1ad4380aa0e0ec2e59b4d980a4a2d9e6d84bea2cdfb4b5e46e01d6ba12103cf",
+      "gitBlob": "9158f3cbbfe2ba06793554d20f3f159d966333412bf84047e84711840e2a8694"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-new-variable-offset.php": {
+      "expected": "10dec5909b121d088bbea1ebf6e253723a77e589d4ef43ab936bd48f1d986d5b",
+      "gitBlob": "42cd9807a593ce5e13686d3104a4ff55d7b80b6e86116b8367f7d78812c85481"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-new-variable-property.php": {
+      "expected": "17ae73be93a5354ac31b2050a04ef2920140cf4790c9ae4a3ab9510ce190c0aa",
+      "gitBlob": "f971911141e0a554acb5690676fa7f5eaa3516512a3872f15c97abe7f85abb48"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-new-variable-static.php": {
+      "expected": "433a14867affb1861577ae632f9883aff8287922709831274e06c6593ed7f197",
+      "gitBlob": "6f841a2432b24e79000c4c09febbc25f2f00abdd597f9cb8ea090576dbcda0b6"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-new-variable.php": {
+      "expected": "106a5867521f8da8baa7500172f4b2f39ee0a809d56e627afb736e053bee723c",
+      "gitBlob": "e6123ac25afe31b0161e0306fd9ab03bc64c666fa076652d2084e6845b619fac"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-parameters-variants.php": {
+      "expected": "7d5672a204cc48e48323feed09f21f223dbc7cdd72473776e4843f5c2c844199",
+      "gitBlob": "e95e3837838aff0cf87e5abaac0a9fee5ce1d479114fa29d53a5896e0bc853e8"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-promotion-visibility.php": {
+      "expected": "119e4b78e17983b4ccfdc37b0d39af2e5ce6643c3450e93b7e88f5e0de9883ec",
+      "gitBlob": "6e066409d9369b7dc14b226d861681b31d7dd1cf52fe7658d14faa1c3d3bcb15"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-properties-modifiers.php": {
+      "expected": "8ea50fe9dcbe02f08ae5786b56bbf52febbd16a9c4fbbf685420b0d085fd8482",
+      "gitBlob": "426cb94ff42f066c9370ba5c0843594328a8260697cd1e593c3cd0240fba6bb0"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-switch-html.php": {
+      "expected": "642ce21808809f7651bda1ba2af2ecec0cbce6849597aa078aa1d74c591ca9c0",
+      "gitBlob": "604c997dec09207dffbd27213ac752da4cbed863febac3154c6074bd07b3d8f1"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-trait-alias-forms.php": {
+      "expected": "57d2358b1cf0886e3fd3d062fdd498d6a0f0314a512c8bedc60db9d58c1c22ce",
+      "gitBlob": "2d001ad64141521da276b0c8ff83fcd0b2e2a10c7b988113f533d5a4fc55ce28"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-trait-empty-adaptations.php": {
+      "expected": "af52de683bebd946a4934a625dbf23c48e20c00dfbaacfef5cf0a8488d932e98",
+      "gitBlob": "7659504389b602cefadf96130e82b5920ea72015ca4ddb9afbdb8fe3378b8b7c"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-trait-keyword-aliases.php": {
+      "expected": "2413ae659a5990d86c3d7a7cce8018b0dc5706c6e6062ff237d779d662261243",
+      "gitBlob": "951bec2480a3b7dae73dc4e27d81cc11c9738ca8f03db7dfd23d47adbb6f927e"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-trait-precedence.php": {
+      "expected": "03d93b704008f8d244f175835ea2793a5594b36385a705d1b5cb3cb8863474f5",
+      "gitBlob": "402ffe5423a24fda360adbc1d7067a5a28ae2451e2e171833c5bb34763c46ef4"
+    },
+    "tests/fixtures/php/8.5/valid/phase3-while-html.php": {
+      "expected": "52326755c036986dc6e43e799aa47167cc28ca7a44c22e9255ca62403d118a3f",
+      "gitBlob": "32a5acaf39eb53facf42d87f9eda6b48ebee5f5341b817bcf2f6cf4ea6b14937"
+    },
+    "tests/fixtures/php/8.5/valid/phase6-abstract-final-hook.php": {
+      "expected": "ebf02c28a3550c307f8a3c6090d813680a70effe438b98c18c5f45908579c289",
+      "gitBlob": "ea549112da13bf194a6b094d81a5566eb1e039341bd859dea37b3d897bc05f59"
+    },
+    "tests/fixtures/php/8.5/valid/phase6-closure-capture.php": {
+      "expected": "7bfd6671fdc4730b186154ecf1bd5baef58769a947f2f0b3f30d42659edca97a",
+      "gitBlob": "a233be58d717490f0c415016937d093ae35669bfb3cf80637757fd65acba23e8"
+    },
+    "tests/fixtures/php/8.5/valid/phase6-empty-dimension.php": {
+      "expected": "818b935de1d5b7e49e6794575b74a88e30518d59e5571a95b5f224cf260104d4",
+      "gitBlob": "0bbeb9af45f85e2446b50d3835c6f9f0193b450212ce6ffae8500f0976dae36a"
+    },
+    "tests/fixtures/php/8.5/valid/phase6-nonstatic-closure.php": {
+      "expected": "f22a3c9ab82c8265024018bb0ee33674761e9cff5e4b4bbe0eb2bb5f38edf894",
+      "gitBlob": "9eaf020ec2c9914a724f9a3429b1b23bef7afb4306aa93e631b170ae31ce69c3"
+    },
+    "tests/fixtures/php/8.5/valid/phase6-set-visibility.php": {
+      "expected": "cc3aecc8f839f7954b3d83176b301b7cb42f5899d8f5ae61b6aa6742790c2136",
+      "gitBlob": "3ba18730758a5a8a3753500c9ddaf59c569019ece76b1310163b8a532e1a6eab"
+    },
+    "tests/fixtures/php/8.5/valid/phase6-unset-cast.php": {
+      "expected": "26287536d2c3488c203d935ef0d8ca6d9d9f7e92e3623b043f28be9447c859db",
+      "gitBlob": "4bc73a7c915bfc3128d73e3a56d42438cbb7361fe1ddcc62ff6a20baaed292aa"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-closure-contexts.php": {
+      "expected": "07638188d7457358616a0c9e2b10070e39def07d8eeded65bef8e389c8f6b4b6",
+      "gitBlob": "bd5593ad382d9a9b122f3e791c6030274dd7c6fb87a5456c43f7efb97d37fcc3"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-dead-arrow.php": {
+      "expected": "6acd9a1ddd52ad02df774ec306bd961119f063bf7c8de1b9a74fea71d8e0ddef",
+      "gitBlob": "d86adb75ccce55f20bbff76e334da5113358c520897df378e64183415348bd41"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-dead-call.php": {
+      "expected": "2aec599dc3b56fe579fe139d864ddcc4b3b179d65574f5cf46eefec4d98e92b2",
+      "gitBlob": "714889ff95d9ca02f9c1a1b944a6e3f6d2284cf51146cc63a65488aabaa8466d"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-dead-isset-call.php": {
+      "expected": "38615b8974bc08a2bb137c74c451247bd2b757e29e4d747cc2f311f2a6ea2c72",
+      "gitBlob": "d3550af8039762d879bbb5e5f775d5a1d6738cb5d48df59df0431b30009eddac"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-dead-isset-expression.php": {
+      "expected": "c453c1bac29ff2f265f2ae29d572c0c27ac278a7c47c2cc54af62933080be269",
+      "gitBlob": "cc458b264a22b5cc3d04fa1def47a47b28b91fd44ab8ee86d480a3d404781bb6"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-dead-new-fcc.php": {
+      "expected": "b39a10f36568111cc8d0ed6109dd3ecee891e458c86d03ef64797b1677ad511f",
+      "gitBlob": "a5596562dd1c9ca96f41f2012527898fcbf39164422566f5d152cb6a6d434e82"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-dead-new-property.php": {
+      "expected": "2c0ed10201742f9d74c923fb01f14ca0c9617c69bb871629a2794695f4475921",
+      "gitBlob": "0ad44a66ee38e5d5d122c4ff33b75821cb63d8d5f99c9b7a1a86ee1e69124137"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-dead-object-class.php": {
+      "expected": "f9b91a1b9cff942a29f7c4ea31f02bc71ece31f04b8f661652f7bc1775d99b0c",
+      "gitBlob": "2f53c542c7c2b44216d5a70be4780b29ae1329b10515a9a8861d2a34b13307ba"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-dead-throw.php": {
+      "expected": "448a4b79217f67303d6527709021c442e51e6946fa4cdff100d602db5024d246",
+      "gitBlob": "0c94546c84bcec9791ba56d81ae331ed78ada3f4902ab64111e7b4a7db1b0e96"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-dead-variable.php": {
+      "expected": "12349ec3b9de0031eb31b529cb86a5c3b3cacc559dc55732c9b3abc253b8fa92",
+      "gitBlob": "d97945e34bbaada320e51a7c15ecf14eb95d73c96df7e8fdc78d4b4123080471"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-fcc-computed-method.php": {
+      "expected": "2d46bd15d578b7c520478a4e9142e5ce2899f014730f204aa0d05adf558d695a",
+      "gitBlob": "e16c4b6adf795358e16f26299554bf0f32d5b230060eced588e432d0f5b62cec"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-fcc-computed-name.php": {
+      "expected": "7d6bfa946f4254d093d435b2f3627769634962ebc04d7ee17df2f1068d9c709e",
+      "gitBlob": "021448ced219e0c24ea9c47a3d3d3f5ac2bda65ef72c13ce89d314275b6f6c1e"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-fcc-contexts.php": {
+      "expected": "d5ed3ffdd281f14a79e253f6d48ab935edf5b6671d9dad1374da561fbe943a0d",
+      "gitBlob": "8c9a611a927c64cefb48792d7e832b4d2941ad18988db2b25f80533e7cd9c95f"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-folded-attribute.php": {
+      "expected": "a72c968ea8992db6ebf959b7cdcca0d9b9cc026ea5ae24f922bcf02c90340238",
+      "gitBlob": "3630e0d32219d9882bf695c43ccecfe9c4ed1f4405051d950675b2d81255b140"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-folded-class.php": {
+      "expected": "dfca3e388058f45d59bf9b11d2aa03381be256006b77652e9584d6c2757b5465",
+      "gitBlob": "bcbcace295d7d948b50655f6c7a62b87e084aee4abcc02432aa77623d13ed9a1"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-folded-default.php": {
+      "expected": "9a7970317527f2a8a6836f1198db90e54d9a9debcabbd014f74c7722f2c40f31",
+      "gitBlob": "19227a461d026b19cc9283550629cb569bbaad263d57d828b2166d5031ff848b"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-folded-enum.php": {
+      "expected": "29039128cea705d6c49ac9fe2cae54bc5ed9dcf7352772dfc6677df7acf771b9",
+      "gitBlob": "cf7ec6328a7e0712c16816e4b0b63e9543dd08899d136cf2bbf2d447a49cf396"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-folded-new.php": {
+      "expected": "86a7a765cf5dc0795e9d58471e472727e5fbe03b411e4570c74649cca890b590",
+      "gitBlob": "86442cac919e22a5cf0ffef57c83691f40c292b13f6c1edb83bb113d21bd221d"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constant-object-dynamic.php": {
+      "expected": "dce4dc81a0802417c339bc365f3ed7dfb15b2ae7da81acc18f88994c4cd17e16",
+      "gitBlob": "a4b98b819ee771e856b819c7d12ae2f547d5c12a67c445f51f7971eaf7552670"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-constructor-arguments.php": {
+      "expected": "a9628bfd8043c51941256186244b44f2bd12bce94427232bf670684a45723460",
+      "gitBlob": "61a1b426d30ec9bbcbd962edbe7fe637896440d01c689cad0492dbeeff7b00aa"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-dangling-else.php": {
+      "expected": "d7c91f925a51db0c4aff21cd8af19ec0378e7aa503940c637a8c78d1419b7cf2",
+      "gitBlob": "e3485735414d3f80e746528e4cd5a4a027f1944e044cdb831832e8f0e52029f6"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-dangling-loop-bodies.php": {
+      "expected": "03303182eeef6f8d73e8fdab97d01b8fe840fc5fdde1a3b82dd552623ab60240",
+      "gitBlob": "b120a44f8dfab916dad784c9a5c18cb6c4ec1ff724df98c30d983dac15655982"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-elseif.php": {
+      "expected": "a7858174b1728c6859d7bdef4bdb94c6a73c92d20ec8b74b88b34a87a4afd914",
+      "gitBlob": "1a902f1819460aa4a6ed7829f147a85dcfd16c02f7312b23b2d9f671ab1c71a6"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-empty-close.php": {
+      "expected": "611a4385870973627e5e94cf5cd5306e2b51dda31cc3f5f7c0647a4982ffc38d",
+      "gitBlob": "23dadc0ccf4a9cfc753b6d08a03de8512ace6174b583e9dd973e3e0fdea0b8a9"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-fcc.php": {
+      "expected": "401b88e331538db4a962007a96185c14fec97beae8eaa34faf31841edad90c82",
+      "gitBlob": "e70b089795e986a5d5d2ca40f3ba7f5634b0c276b132c957b827d35e81a7c035"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-folded-ternary-chain.php": {
+      "expected": "3834b2da776d507acb670c23d4223000b2e03689d90544c0127585cb52d92d84",
+      "gitBlob": "3341e745efc6f5baf2f1236505f883b52bb8e5688be61abd831b0bb37ce989b4"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-interface-var.php": {
+      "expected": "c24a7b6bce3053ae4f85c50b23853e6e8d3ed5bc43b354539952fb5889851ea1",
+      "gitBlob": "ae9c119c3a996dd4cebdf6ba625a4c0a06dcabb23046896fcb2b8c157e23b892"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-isset-targets.php": {
+      "expected": "3ba0314ce22be7f51b149151b8f6c344f133c4400dc315e8251f9560370a7eb1",
+      "gitBlob": "bbb6749777b940200a1a6b147104845df2e1c56762fed71f897872591d9a551c"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-nested-yield.php": {
+      "expected": "4fc34ccc2bfa5366b2d3eb98a3b85a1dc777509692cfcf795ddd8ef015ecd8e2",
+      "gitBlob": "600c2892335ff26ea30ecdad0d18a1ef516f31bd327d188eb0e5c61e3959404d"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-prefix-assignment.php": {
+      "expected": "563d4809fa237103cf6a14381c0312ffc7e75512fa63478ff33ca7905d9f9f9e",
+      "gitBlob": "71c64dd321e02e6c4cce6fc66959ea683ced952b0afe9255282c3dc019a55778"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-heredoc-inner-label.php": {
+      "expected": "486be7d3fa17d6ac769de155b85ec78a7517a40a5198ff2f1ac10a8126378aec",
+      "gitBlob": "b8e7715c0a9f76fb337878cba73464362668ff085dcfe102836213f06e69780b"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-nested-comment.php": {
+      "expected": "ea96ee2de7a269f19a010b50fcebea540a6e40eee048dae57b12952d5e1c0248",
+      "gitBlob": "6c438f0adecc918ae461d3a3e6def2646aeff94431da5f096c220d37d932b9c9"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-nested-heredoc.php": {
+      "expected": "988d475ebb3821a062c58e711896554c704f40b15a28a84924a8b0ccd0cc0807",
+      "gitBlob": "48d683c0bef9ab082ec693e9c7990629f1f137f72b9675a04670bc35d6b7add8"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-nested-interpolation.php": {
+      "expected": "2e5c3f73d58f89b1871dff1f5ca27caa6ed0b7dbb45a8808a2ef589e5d5ccd0c",
+      "gitBlob": "f3810fe362c118198fb2d02c19935b93540898b7f23b8610b1a390ffb5241cdd"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-nested-nowdoc.php": {
+      "expected": "47ac12c85425f3c288e75ac2ed254a0ad8dfd8829a6f284123dfa5b3a143cb37",
+      "gitBlob": "517e82a37d02bb7b7ff9e43dc6cb06ce7c9c9bfb634679e3ec38d00f7c9fdaa3"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-offset-spellings.php": {
+      "expected": "6b83f0381759637f3678de51ca65935e9069cab8d110c30a0755040031b640d0",
+      "gitBlob": "e7bf2954d38ae22d51caf2788af6e80ab2ea962f122cb1818b779a8a71c835b6"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-property-comment.php": {
+      "expected": "f69b3c02d9deb067e4e40ad80420765f3b7e20bdef5f35b447d5966522c23678",
+      "gitBlob": "5274991b5ebfdedff1b19d38b80cae16b37db7b7b4b3af6b49845caa97be249a"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-property-hash.php": {
+      "expected": "471aa261fb4a82c04cb1bb0324ba881472ada8c74cf7954bb418eacf2745cc67",
+      "gitBlob": "cf7e8605375690cc3d53036cbb4e8907c4249c455b8d9ab3dadf6f29273b1c38"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-qualified.php": {
+      "expected": "7d8e5a1285d691c33f60561a0ba0808072c454acf857c2cf633dbd50dd7e5a39",
+      "gitBlob": "ef5696d4f4d9e8767004f1702f371576e5ce70b1dc3e4668aefe2055d637686c"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-shebang-php.php": {
+      "expected": "8357c74e7549c03e82e1a1eb05706974c8c12565042db9ed9635c83042874da5",
+      "gitBlob": "155b8e1306a87225484531ebdd65d360a49f2cb151c2093272ec97bc995ef9bf"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-scanner-tags-string.php": {
+      "expected": "8b0af712e0689533324db139e63daf0155cf6656fac80a7519fef074c5f671b4",
+      "gitBlob": "aea90f4c52d00d82b79a16d3f6a397167fdc2db55fc9078c27f0ac4cddaf1de8"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-throw.php": {
+      "expected": "70529b2983c2cf7070d818015203b4a442091e870e98a19705b587afd79c5930",
+      "gitBlob": "2e7d576e7f991cfd6dfff7cbb9dcf37b5b277dc9e26dbed564db7ba4b67dc90a"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-trait-alias.php": {
+      "expected": "762475022bd4a4999b4453f1e2d1e7b7e181db17ee85e97aef6553b2fb1bd315",
+      "gitBlob": "1abd4acbb593820a6e38b4a4e3a2989dd2db085268cd865ac942660b6f58e196"
+    },
+    "tests/fixtures/php/8.5/valid/remaining-yield-key-prefixes.php": {
+      "expected": "2eab9dd59a8d8c8a78e3b4019f10391c638bc5bde38fb74cab818da246c9245b",
+      "gitBlob": "1fb7fdae46f39273b63a23899e7c1ae7386bf945cb693f669c196c9320ebb243"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-for-empty.php": {
+      "expected": "8c2bfc761b9fc8765fba7bb0d386ccc1602dd48063d2f8adc83cb6e0cc5048e7",
+      "gitBlob": "308812285da8809910bffeec031179e20d6e316a858a50140586067891d263ea"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-for-one.php": {
+      "expected": "543195b6120c6af53f452c63ec716497965de90ef3429ebb0a4f75972894e1c1",
+      "gitBlob": "66abc4ce15ce799968740d26dab6f85fe11e1fc87591742a5e17c84f4752acc0"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-for-two.php": {
+      "expected": "aa41ee7dcb5a1cd4c7f51b273344640bf7fed7b6f6d9f6f840bad632519acc99",
+      "gitBlob": "11619a90e3a0400c494c2e9dd7bcf8705d2d3d043337b58aea2995c7afdfcf27"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-for-void-condition-prefix.php": {
+      "expected": "43b8de9c7a66660484aa13bbe5d10565f8e18f39bd0f4733dd3940b2da81b2df",
+      "gitBlob": "85025c42204ea3f78214f508024d521c4be03d52b88d01cf5779441cbd3b4d98"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-for-void-lists.php": {
+      "expected": "bab9bfb0a1d66b4d2061f63d6ae4c982d260a1119ae6ffe5c793035ab0d12a68",
+      "gitBlob": "11dfff110e8b8570be716f447c9d3ffc28ec1f8b9f7b3af1c2953d52c4eebc19"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-unset-and.php": {
+      "expected": "55d47e081e5f3e1a85f7ecb70212e75e9e34593c6eb35d5804ab0f55b83d5c53",
+      "gitBlob": "12075957afd4eeb76bcffafa3031b7923e0c18554a8e951b580e8794d9155992"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-unset-constant-coalesce.php": {
+      "expected": "ef16b920f14bb3b3741f8846edb7eac00b089c4f4e00df740d6ca6607561c142",
+      "gitBlob": "96c1961a99e0c92bc8ff95e38d2cd3b8ead72971cfbc55bfaebff7ac5da54248"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-unset-constant-false-ternary.php": {
+      "expected": "9239e0dc4f25b9e0fd7962410a634755f8f48d59ca14ceff3795c27207618ba3",
+      "gitBlob": "88a91d72b9541725b47b708b06d9a359f5df460e76c3b1bc6ab1222919fec0cd"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-unset-constant-true-ternary.php": {
+      "expected": "4407e6d711b7bcb9f072437cc2e9aeed111ef7d15764f1b7f234b7839bbddc35",
+      "gitBlob": "362df6a56a7a749f6f5b06f7fed7c19ab328569aa9713e87c23e94b6bacad84d"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-unset-or.php": {
+      "expected": "0d4774dd9aab0630dc2210196253be380fdc02b6d130f16690e0f8c813719265",
+      "gitBlob": "4184e4bd4684688c5c825977fb1cc73bc91fc53bd4d39195db55c81705536c8d"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-unset-word-and.php": {
+      "expected": "e80137c2c1398632f264fc769f84447560eb85d9a4f8e92ad4df07072fff8712",
+      "gitBlob": "f9f12de398cfe528d0561f595628661e81b416758c6873fb73aee19f23a4aa1b"
+    },
+    "tests/fixtures/php/8.5/valid/remediation-unset-word-or.php": {
+      "expected": "f4797b6091d74346cd5f36dc0d9fecae53877783e42af9c77d1919cb8e41b3e3",
+      "gitBlob": "c1a9330d8bd85481f62ae1f132b2317c3fcb028cc6c543220c754e5d46c4eba4"
+    },
+    "tools/8.5/data/certification-policy.json": {
+      "expected": "23f4a1281b8f6353c3ab6cc7604c807ca856db72a7c5a642f73f751e37f1d476",
+      "gitBlob": "8d35da154ceb83a302447f1389b63ddacfbdc4cb3c153bc5796ec1d06229d918"
+    },
+    "tools/8.5/data/phase6-policy.json": {
+      "expected": "1c2c925420de49a5d3282a19343d3cab1de8353b6ed3f621e312b79003138d59",
+      "gitBlob": "b6e21ef854e93a525facf314a152fd5b570e7261af991066388dbf5733cdad97"
+    },
+    "tools/8.5/source-lock.json": {
+      "expected": "195df8d9be0c2baf17ae615ac70a20dae0dace4da7f558236dd90cc74cb0d565",
+      "gitBlob": "1e2339abf2dd9573b279fde746859f806f08e4a1e123c7ae1b66b0b75e6ee2c0"
+    }
+  },
+  "gitBatchExit": 0,
+  "sourceLock": {
+    "zend_language_parser.y": "f108f2c2ff4c98c68b6478e7fbdebc16d8afb8bbbc3ae6079e5b285b448dac0c",
+    "zend_language_scanner.l": "8dfed84b0f6cabe73f004ea00c69614ea84542130a9b97e7699f801ef7ce7403",
+    "zend_compile.c": "25190ee20f2660aa66577f5da71b43be63268e90fa7c0ecb2e3cf8f1e621b225"
+  },
+  "evidenceInputs": {
+    "docs/8.5/completeness.md": "a11fd2524e1ab889246b675b1d7541e5fe00768cd252d8483e1e526da460511d",
+    "docs/8.5/diagnostic-dispositions.json": "ce1a22b2f2559088641822b5954bc9f9173cc8197071c20913646dd6e01269e4",
+    "docs/8.5/diagnostic-witnesses.json": "5a4d688b1d35372207652e8bdfeb4d3351dbce9c6b8d1635f7aa509a4d7cf105",
+    "docs/8.5/historical-dispositions.md": "87eeb6cca58399aa16a76b2a8f35fbc6c33aec281fa00a805d6204d8e1a3c4d4",
+    "docs/8.5/interpolation-binding.json": "72edfc59fbf123a25d80b931f96fdd3cff6f4021267f7349bcad3ee7c976aeb5",
+    "docs/8.5/negative-boundaries.json": "e6353997d841397317c61ad98488c00c734e7d8a492db1544f7d145e0cbb3d6c",
+    "docs/8.5/phase3-coverage.json": "e8cb780c7a70a4b06d74e28f7dcfebba672f705487f270d67747383c621c9a7b",
+    "docs/8.5/phase5-lexical-evidence.json": "aea94313d57be616127f9478c85a10ab45cefc78a383982f3b9e28e5130f19d9",
+    "docs/8.5/phase6-boundary-folding.json": "a512d4fd75288ecf1ced0bb15a670fc15dfb4c55786a36d68d38d40258d22167",
+    "docs/8.5/phase6-evidence.json": "c9b614a8b0ec3f31bb38a2d6d34943843bb4eaa4b96079a0d18a8e3177a4ccf3",
+    "docs/8.5/phase6-matrices.json": "fa323e8b8d1d05eba194d02a2a27d69563b11a1656118b98f06e0eeb1793bfbc",
+    "docs/8.5/phase6-reconciliation.json": "987757055d8e185e3a38fb18fe308fb4f90c92c62fbc48b35d7bb9b671fa5938",
+    "docs/8.5/scanner-product.json": "78767bce246b59a63002de8cebf58e2f078c93748d10f74976562124b09d2dc9",
+    "docs/8.5/source-correspondence.json": "dc129b20252a54e4aab847d9bda460e5722ff574f3eb8580c1ae77f761db7468",
+    "docs/8.5/systematic-structure.json": "1a3f4b6ead78348213bba3b7a3e03aa5cc6db7e707b0d116643c3dfde4ad3ef1",
+    "docs/conformance-policy.md": "4be4aa15365d1c2bc11936d479f9a10f138283da6be627ca47b94d83046297e8",
+    "docs/versioning.md": "ecc1c125a74e1cde1a0ddabc7aa474e28263d8c72899011bd8ccce5574b6d0d5"
+  }
+}

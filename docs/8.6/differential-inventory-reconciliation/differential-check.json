@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "tools/8.6/differential-inventory.php",
+    "--check",
+    "--profile",
+    "exact-pin-rc4",
+    "--report",
+    "docs/8.6/differential-inventory-reconciliation/differential.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/differential-inventory-reconciliation/differential-check.log",
+  "sha256": "e8dba6da74f3c35c7f2ed06abef89600e703d5fe8234f8df0dfbb2f532dad765"
+}

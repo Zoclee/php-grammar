@@ -1,0 +1,24 @@
+{
+  "obligation": "Run consumer workflow, package contract and navigation CLI regressions.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "-d",
+    "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "Consumer|ConformanceVersionSupportTest"
+  ],
+  "log": "docs/8.6/certification/logs/public-api-cli.log",
+  "logSha256": "9bd8634abb1a3545f1ee88278158c0e087aec3c299115ea27dfe6417c41d9cd2"
+}

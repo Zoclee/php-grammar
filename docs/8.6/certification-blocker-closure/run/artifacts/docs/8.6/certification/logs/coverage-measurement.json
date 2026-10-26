@@ -1,0 +1,24 @@
+{
+  "obligation": "Measure actual 8.6 production/alternative witnesses and compare source-backed lexical cases.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/final-coverage-expansion.php",
+    "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+    "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+    "--sources86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+    "--report=docs/8.6/certification/coverage-oracles.json",
+    "--coverage=docs/8.6/certification/coverage.json"
+  ],
+  "log": "docs/8.6/certification/logs/coverage-measurement.log",
+  "logSha256": "cab22ac107cc3080c397333ac111f1647f886775313e8734bc30844f360f0d51"
+}

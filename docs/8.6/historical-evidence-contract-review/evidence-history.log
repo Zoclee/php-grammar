@@ -1,0 +1,8 @@
+7d8b6e5fa92f82e7e8c122a9a989a22727f61c3e Made property hook names "get" and "set" explicit.
+1a38d12cca068b56ac24d149facc7fa5e0fc8a1f Replaced Python tools with PHP tools.
+b3e522fb6c175433eac29f63e4c2cc894a2c4a86 Implemented the consumer-facing API improvements, versioned manifest schema, JSON navigation CLI, compatibility policy, and integration documentation/tests.
+b9e1783511e41fd62be85a0d90f74731a182ca1d Polished php.md into a language-first specification with explicit conformance layers, clearer scanner and contextual sections, and audit history at the end. Updated synchronization and added three documentation tests.
+522478da381fdeffae3f8bd776621cb298ed5420 Implemented the readability reorganization with grammar behavior unchanged.
+448473e6937f3598ea95eae29d00a5ee8c721687 Implemented: 364 → 360 productions, with unchanged conformance results.
+ea4fc674bd61eaa3958d69bf2824091599233fb9 Structured tools folder.
+db06a494d6e958e065371ee27cc301227314fd59 PHP 8.5 grammar status: Grammar-complete with documented external contextual constraints and bounded conformance evidence.

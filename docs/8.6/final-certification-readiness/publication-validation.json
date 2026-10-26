@@ -1,0 +1,71 @@
+{
+  "phase": "7D",
+  "baselineFiles": 4002,
+  "baselinePreservationErrors": [],
+  "onlyAdditiveAssessmentFiles": true,
+  "publicationFreshness": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification-differential.php",
+      "--contract",
+      "php86-certification-v3",
+      "--check",
+      "--report",
+      "docs/8.6/certification-contract-remediation/runs/phase7c10/evidence.json"
+    ],
+    "exit_code": 1,
+    "errors": [
+      "Stale or incomplete current dependency set"
+    ],
+    "log": "docs/8.6/final-certification-readiness/postpublication-current.log",
+    "sha256": "3ff56fd10b3c07ea4bd42287c0054ba6292e987826b62649424399e8c3d71b63",
+    "interpretation": "Expected global membership refusal after documentation-only additions; baseline assessment was independently verified before publication."
+  },
+  "newPathsBeforeFinalReceipts": [
+    "docs/8.6/final-certification-readiness.md",
+    "docs/8.6/final-certification-readiness/CA86-001-draft.md",
+    "docs/8.6/final-certification-readiness/PHP86-014-draft.md",
+    "docs/8.6/final-certification-readiness/PHP86-015-draft.md",
+    "docs/8.6/final-certification-readiness/baseline.json",
+    "docs/8.6/final-certification-readiness/blockers.log",
+    "docs/8.6/final-certification-readiness/claims.log",
+    "docs/8.6/final-certification-readiness/compatibility.log",
+    "docs/8.6/final-certification-readiness/context.log",
+    "docs/8.6/final-certification-readiness/coverage.log",
+    "docs/8.6/final-certification-readiness/current.log",
+    "docs/8.6/final-certification-readiness/differential.log",
+    "docs/8.6/final-certification-readiness/full-phpunit.log",
+    "docs/8.6/final-certification-readiness/historical.log",
+    "docs/8.6/final-certification-readiness/inventory.log",
+    "docs/8.6/final-certification-readiness/manifest.log",
+    "docs/8.6/final-certification-readiness/postpublication-current.log",
+    "docs/8.6/final-certification-readiness/prepublication-preservation.json",
+    "docs/8.6/final-certification-readiness/publication-validation.json",
+    "docs/8.6/final-certification-readiness/remaining-work.json",
+    "docs/8.6/final-certification-readiness/source.log",
+    "docs/8.6/final-certification-readiness/traceability.log",
+    "docs/8.6/final-certification-readiness/upstream-draft-evidence.json",
+    "docs/8.6/final-certification-readiness/validation.json",
+    "docs/8.6/final-certification-readiness/whitespace.log",
+    "docs/8.6/final-certification-readiness/final-whitespace.log"
+  ],
+  "jsonFilesChecked": 6,
+  "localLinksChecked": 44,
+  "originalGateRows": 9,
+  "originalBlockerRows": 7,
+  "draftObservationsCompared": 36,
+  "whitespace": {
+    "command": [
+      "git",
+      "-c",
+      "safe.directory=C:/Data/GitHub/php-grammar",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/final-certification-readiness/final-whitespace.log"
+  },
+  "errors": [],
+  "certificationGranted": false
+}

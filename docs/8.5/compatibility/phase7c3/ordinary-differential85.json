@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "bin/php85-conformance.php",
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "log": "ordinary-differential85.log",
+  "logSha256": "a7dec830a4652e6e9d5d7bc13078a8c3a01f1a6c4f160ba981066e99e2bd5c33",
+  "totals": null
+}

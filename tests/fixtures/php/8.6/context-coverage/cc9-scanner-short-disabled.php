@@ -1,0 +1,1 @@
+before<? echo 1;?>after

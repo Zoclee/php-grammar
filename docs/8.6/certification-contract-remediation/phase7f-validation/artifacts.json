@@ -1,0 +1,45 @@
+{
+  "jsonFiles": 28,
+  "phpSyntax": {
+    "tools/lib/ScannerGrammarBindingEvidence.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tools/lib/ScannerGrammarBindingEvidence.php\n"
+    },
+    "tools/lib/ScannerDifferentialInventory.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tools/lib/ScannerDifferentialInventory.php\n"
+    },
+    "tools/lib/ScannerDifferentialCertification.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tools/lib/ScannerDifferentialCertification.php\n"
+    },
+    "tools/8.6/scanner-grammar-binding.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tools/8.6/scanner-grammar-binding.php\n"
+    },
+    "tools/8.6/scanner-grammar-binding-ledger.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tools/8.6/scanner-grammar-binding-ledger.php\n"
+    },
+    "tools/8.6/scanner-differential-inventory.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tools/8.6/scanner-differential-inventory.php\n"
+    },
+    "tools/8.6/certification-scanner-differential.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tools/8.6/certification-scanner-differential.php\n"
+    },
+    "tests/ScannerGrammarBindingEvidenceTest.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/ScannerGrammarBindingEvidenceTest.php\n"
+    },
+    "tests/ScannerDifferentialCertificationTest.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/ScannerDifferentialCertificationTest.php\n"
+    }
+  },
+  "researchFixtureSyntax": "Reviewed accept/reject outcomes are checked by the exact-source manifest; negative research cases are not unconditional lint-pass requirements.",
+  "links": 17,
+  "filesHashed": 82,
+  "errors": []
+}

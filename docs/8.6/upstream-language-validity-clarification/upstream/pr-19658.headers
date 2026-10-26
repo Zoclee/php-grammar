@@ -1,0 +1,28 @@
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning
+Cache-Control: public, max-age=60, s-maxage=60
+Content-Length: 19933
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Mon, 26 Oct 2026 19:12:54 GMT
+ETag: "7bba4594107ce7661b80079d5cf1ea2005b1bf0d45a3b69c0ebe0232261faca9"
+Last-Modified: Mon, 19 Oct 2026 10:23:35 GMT
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept, Accept-Encoding, Accept, X-Requested-With
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+x-github-api-version-selected: 2022-11-28
+X-GitHub-Media-Type: github.v3; format=json
+X-XSS-Protection: 0
+Server: github.com
+Accept-Ranges: bytes
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 56
+X-RateLimit-Used: 4
+X-RateLimit-Resource: core
+X-RateLimit-Reset: 1793045571
+X-GitHub-Request-Id: CB85:30094E:1D118BE:320F350:6ADFA635
+x-github-edge-region: southafricanorth
+

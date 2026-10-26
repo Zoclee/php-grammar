@@ -1,0 +1,2979 @@
+{
+    "finding": "PHP86-010",
+    "sourcePins": {
+        "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "caseManifestSha256": "b1708a9404aefe66a3a98cd193ade2ee1cd12a6308a417895fb5def22d521e16",
+    "profile": "-n; display_errors=1; log_errors=0; error_reporting=-1; lint and isolated execution; no custom error handler or opcache",
+    "interpreters": {
+        "8.5": {
+            "sha256": "32da1562c56dfe511a621627e3bbd9721058e855a6f14225c5803bc19ba623e9",
+            "version": {
+                "exit": 0,
+                "output": "PHP 8.5.10 (cli) (built: Aug 25 2026 21:23:48) (NTS Visual C++ 2022 x64)\nCopyright (c) The PHP Group\nBuilt by The PHP Group\nZend Engine v4.5.10, Copyright (c) Zend Technologies\n    with Zend OPcache v8.5.10, Copyright (c), by Zend Technologies\n"
+            },
+            "exactPinBuildVerified": false
+        },
+        "8.6": {
+            "sha256": "445d2bde0998cd54e04b4be4401ae45b5e54df4ef677294a64cbcd1faf6d9fe6",
+            "version": {
+                "exit": 0,
+                "output": "PHP 8.6.0RC4 (cli) (built: Oct 25 2026 12:45:36) (NTS Visual C++ 2022 x64)\nCopyright \u00a9 The PHP Group and Contributors\nZend Engine v4.6.0RC4, Copyright \u00a9 Zend by Perforce\n    with Zend OPcache v8.6.0RC4, Copyright \u00a9, by Zend by Perforce\n"
+            },
+            "exactPinBuildVerified": false
+        }
+    },
+    "checks": 712,
+    "failures": [],
+    "observations": [
+        {
+            "id": "let-class",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "59efbc1065cf39b7dc8c5ff84f05a4644a0dc3f27a578cf4fdf1ff04c3f30aed",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-class",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "59efbc1065cf39b7dc8c5ff84f05a4644a0dc3f27a578cf4fdf1ff04c3f30aed",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-interface",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "19f9fae514b79c4d7910ef4c7a1f6643dc2047d617e2adc210ebb9b4de263634",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-interface",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "19f9fae514b79c4d7910ef4c7a1f6643dc2047d617e2adc210ebb9b4de263634",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-trait",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "d8e243d7f59bd3dcdede2dc99683faf886ea74ee81380f7b18844632b03b30f1",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-trait",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "d8e243d7f59bd3dcdede2dc99683faf886ea74ee81380f7b18844632b03b30f1",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-enum",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "6748dfefbea6c5d04e711cee90bc477bcbdc1e4bb2d57831001e2f63eb145542",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-enum",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "6748dfefbea6c5d04e711cee90bc477bcbdc1e4bb2d57831001e2f63eb145542",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-function",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "9e30db38224d66a133b9ca482cfdf7db5cb417b5bdcc91443d76836f5cac6374",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-function",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "9e30db38224d66a133b9ca482cfdf7db5cb417b5bdcc91443d76836f5cac6374",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-method",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "29833219cd267a225e489a4d46d5873ed7e19b0bff7db3bff4eaa1fa8e6dc2a1",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-method",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "29833219cd267a225e489a4d46d5873ed7e19b0bff7db3bff4eaa1fa8e6dc2a1",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-constant",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "9624c5329dc49e2f7a06e2178aefdf0fb66835fe496930c7ec441b7adf7b84ae",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-constant",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "9624c5329dc49e2f7a06e2178aefdf0fb66835fe496930c7ec441b7adf7b84ae",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "ac8717c3e2a8eba0f838dc971e1ac60e7ff0f2802d964c0022ea22d5c1a1f6eb",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "ac8717c3e2a8eba0f838dc971e1ac60e7ff0f2802d964c0022ea22d5c1a1f6eb",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "d30496ac8e0a569ba20e093c03e27f1467401b8f02b4899c2b7b9b55816c4c8a",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "d30496ac8e0a569ba20e093c03e27f1467401b8f02b4899c2b7b9b55816c4c8a",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "fadf2f9f4083f7802422c7276ff77ed40f2418b659b91045c8e0feef7ff98949",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "fadf2f9f4083f7802422c7276ff77ed40f2418b659b91045c8e0feef7ff98949",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-class",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "65a24487866480036fb11a2de1b3df5ad26edd0b1ae0235e4a1419e51bfea81d",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-class",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "65a24487866480036fb11a2de1b3df5ad26edd0b1ae0235e4a1419e51bfea81d",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-interface",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "f8f4aba91387abcc8ea1a16790cd889626186c33c0bc61c954f3ac783fb10e95",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-interface",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "f8f4aba91387abcc8ea1a16790cd889626186c33c0bc61c954f3ac783fb10e95",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-trait",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "3d733f03659e61f85d9b5dd5de418f3b25c0fa7c5a69fabad3170ac1287ac4ca",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-trait",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "3d733f03659e61f85d9b5dd5de418f3b25c0fa7c5a69fabad3170ac1287ac4ca",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-enum",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "ee00e8f7524f05cf035a205e4dc98c3e227fdfe2e153361039d1d068ae23dffe",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-enum",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "ee00e8f7524f05cf035a205e4dc98c3e227fdfe2e153361039d1d068ae23dffe",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-function",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "ce3c2009458e806651e8f0852296a5dc370566748ff541304ce9450028d95783",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-function",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "ce3c2009458e806651e8f0852296a5dc370566748ff541304ce9450028d95783",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-method",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "a45e3afbd2b4b63c97ff8762542b9017fc134d0fec3a88220bec4e9e897e9a7f",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-method",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "a45e3afbd2b4b63c97ff8762542b9017fc134d0fec3a88220bec4e9e897e9a7f",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-constant",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "fca2dfcf8709a2bbc3f624ff824cffc6355737e03617e7605355cfbf36a35fe3",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-constant",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "fca2dfcf8709a2bbc3f624ff824cffc6355737e03617e7605355cfbf36a35fe3",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "7a6fa3686cb61dbd0a080b978496526de0020dc8ba9e0f0ad62211108f6820ef",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "7a6fa3686cb61dbd0a080b978496526de0020dc8ba9e0f0ad62211108f6820ef",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "f970c67269c2ec1263a1bf505c8060253040c340cf06cb608188c7ecabe04cd5",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "f970c67269c2ec1263a1bf505c8060253040c340cf06cb608188c7ecabe04cd5",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "11928b6b2d9a16f2cf8322af7cf80f81bdca1ea293b42bbafa966d8324aa6d94",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "11928b6b2d9a16f2cf8322af7cf80f81bdca1ea293b42bbafa966d8324aa6d94",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "readonly-function",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "35bdc13cc57f2d9b94da5ad3145a99f5e85f3f54cf2f2df04055d81ce855da6a",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "readonly-function",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "35bdc13cc57f2d9b94da5ad3145a99f5e85f3f54cf2f2df04055d81ce855da6a",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "readonly-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "82449d15a2972ffac88bac800e0c99ac7de9721ca401ff0ab60d62163c0384f8",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "readonly-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "82449d15a2972ffac88bac800e0c99ac7de9721ca401ff0ab60d62163c0384f8",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "readonly-method",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "b06ec83e6cd34403036954be922e062fc75a8da5fc341eaa579f47c23f5fdfc0",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "readonly-method",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "b06ec83e6cd34403036954be922e062fc75a8da5fc341eaa579f47c23f5fdfc0",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "readonly-alias-invalid",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "3ab6300d856878ecf0e57007e1fea20a3a6a5a70c1fb7f99c22f8829fa8bf8ad",
+            "result": {
+                "exit": 255,
+                "output": "\nParse error: syntax error, unexpected token \"readonly\", expecting identifier in <probe> on line 2\nErrors parsing <probe>\n"
+            }
+        },
+        {
+            "id": "readonly-alias-invalid",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "3ab6300d856878ecf0e57007e1fea20a3a6a5a70c1fb7f99c22f8829fa8bf8ad",
+            "result": {
+                "exit": 255,
+                "output": "\nParse error: syntax error, unexpected token \"readonly\", expecting identifier in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "underscore-class",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "36fc5227087ae03a59c278870cb7ff2cc1917ead1d8d89210569f604075965f7",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class name is deprecated since 8.4 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-class",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "36fc5227087ae03a59c278870cb7ff2cc1917ead1d8d89210569f604075965f7",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class name is deprecated since 8.4 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "underscore-namespaced-class",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "5d25a818d9cd7a4f8f1547ea930a981e3dd7f56a241143e7b975c1613b7b3967",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class name is deprecated since 8.4 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-namespaced-class",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "5d25a818d9cd7a4f8f1547ea930a981e3dd7f56a241143e7b975c1613b7b3967",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class name is deprecated since 8.4 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "underscore-constant",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "f954b0e277fee596ca3247c74767843ca83129aeb0b14ee51ec52fb5c4333a1c",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-constant",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "f954b0e277fee596ca3247c74767843ca83129aeb0b14ee51ec52fb5c4333a1c",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "underscore-function",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "d4ea376826dff976b3899537b215d73cb3e279efc7ff28cfea2b4f7178cce563",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-function",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "d4ea376826dff976b3899537b215d73cb3e279efc7ff28cfea2b4f7178cce563",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "underscore-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "f81682066562b64e6e6c85d8db3c6d79f923882a913d995d4560a6966c257907",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "f81682066562b64e6e6c85d8db3c6d79f923882a913d995d4560a6966c257907",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "underscore-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "22e6e7ea3fa45915a0260b0301311e09fee2465bed6d7db7a2cfd771542474ec",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "22e6e7ea3fa45915a0260b0301311e09fee2465bed6d7db7a2cfd771542474ec",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "underscore-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "0758bb6e69dce1b0dadc90c314e1d0b59686aca7427df5ae674658aa8c388029",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "0758bb6e69dce1b0dadc90c314e1d0b59686aca7427df5ae674658aa8c388029",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-upper-bare",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "4b010ab1074fde9069874e04743d75049e9123a5f96745d51c930e03bff6f4f5",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-upper-bare",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "4b010ab1074fde9069874e04743d75049e9123a5f96745d51c930e03bff6f4f5",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-lower-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "68452f217a770abd4e67936ff05fa37a37d6b4484b0aca503f17e9fba7555712",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-lower-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "68452f217a770abd4e67936ff05fa37a37d6b4484b0aca503f17e9fba7555712",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-upper-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "ecd49c737e33f565ee78c7cc976c1c5d3033ba98e257e9240043c0122e7bc842",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-upper-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "ecd49c737e33f565ee78c7cc976c1c5d3033ba98e257e9240043c0122e7bc842",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-class-alias-runtime",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "5f040193a2ddf1ed5bd81522c413b2bff33d0e4da03bd7fdc65de44f93d3fe3d",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-class-alias-runtime",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "5f040193a2ddf1ed5bd81522c413b2bff33d0e4da03bd7fdc65de44f93d3fe3d",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-upper-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "9f51b827175c05fd8bc9e2c87f03a13d8ba0df3359539ee57b6a2c177874e328",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-upper-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "9f51b827175c05fd8bc9e2c87f03a13d8ba0df3359539ee57b6a2c177874e328",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "underscore-class-alias-runtime",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "1247c216957198eccec354447d3d38496ed26a9029d9b5dfc068b413bdd12f08",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-class-alias-runtime",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "1247c216957198eccec354447d3d38496ed26a9029d9b5dfc068b413bdd12f08",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-type",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "dfb746c090a24cbda4caa8fe9a0ad6c132f859e8766f273486b01b4f047de8cf",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-type",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "dfb746c090a24cbda4caa8fe9a0ad6c132f859e8766f273486b01b4f047de8cf",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-upper-type",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "b15e4d8ab4d6142b27775a81e5fb9a6cb48c881d38a5b05ed45db2d59461744d",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-upper-type",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "b15e4d8ab4d6142b27775a81e5fb9a6cb48c881d38a5b05ed45db2d59461744d",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "underscore-type",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "2fdd94acb6b0adb400fb67160d5e6137373cb18d3e5f9b6307551b7d84b86c63",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-type",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "2fdd94acb6b0adb400fb67160d5e6137373cb18d3e5f9b6307551b7d84b86c63",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-namespaced-constant",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "c2e4fbe2582bb212b08bc3ca3899ba53bcdf5d89941ca9dfb9d11fc9bd298e16",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-namespaced-constant",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "c2e4fbe2582bb212b08bc3ca3899ba53bcdf5d89941ca9dfb9d11fc9bd298e16",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-upper-namespaced-constant",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "56824f35fe6300abc6abf7b3c858cd758a537fa554c762dea5b79b946d1e9407",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-upper-namespaced-constant",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "56824f35fe6300abc6abf7b3c858cd758a537fa554c762dea5b79b946d1e9407",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "namespace-class",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "eea59c717ba38fccd97278fe9a2428d02f737d2d008ef8a355fb2548eea78a92",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-class",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "eea59c717ba38fccd97278fe9a2428d02f737d2d008ef8a355fb2548eea78a92",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "namespace-interface",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "c778ab0604c39c6be29fbb5941add2f9c48f0ae52f72d5e0ecf595cd51d918ae",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-interface",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "c778ab0604c39c6be29fbb5941add2f9c48f0ae52f72d5e0ecf595cd51d918ae",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "namespace-trait",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "d1d5e98b52954f83715a7433eb45b07d3e7445b1766becc5864b7db04d9a730a",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-trait",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "d1d5e98b52954f83715a7433eb45b07d3e7445b1766becc5864b7db04d9a730a",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "namespace-enum",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "2f7e24d498ecf1671ac93d31d09900f15ae2a7fa6673fd562e398eaa1d56003a",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-enum",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "2f7e24d498ecf1671ac93d31d09900f15ae2a7fa6673fd562e398eaa1d56003a",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "namespace-case",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "5de1270b5b7fe4831beb240fa6c18726af7dd867df5dfa88ce3dabe8e1cf0963",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-case",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "5de1270b5b7fe4831beb240fa6c18726af7dd867df5dfa88ce3dabe8e1cf0963",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "namespace-controls",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "11d88ff6a9b76115274eceab09e47b0e609b27a232be8d256b6781618d6868ef",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-controls",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "11d88ff6a9b76115274eceab09e47b0e609b27a232be8d256b6781618d6868ef",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "finally-bare",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "c7c6ea67fb81b704681588076dc747f17e860000cd299292c1b60c877e7e6845",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-bare",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "c7c6ea67fb81b704681588076dc747f17e860000cd299292c1b60c877e7e6845",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "finally-value",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "ab591bc2ed663b002d14ec9e4e41b80965bdded84180cd7ebeba0c0367582d59",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-value",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "ab591bc2ed663b002d14ec9e4e41b80965bdded84180cd7ebeba0c0367582d59",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "finally-nested-try",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "3442ab6c1bd02e99f4451a5ffd9ab40a90ed20d304a4241c2efa3a6079501d03",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-nested-try",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "3442ab6c1bd02e99f4451a5ffd9ab40a90ed20d304a4241c2efa3a6079501d03",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "finally-closure",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "3c7de83a912ac360c13c4aae04b472fa2c190fa0af95510831e99c007e1f1f9c",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-closure",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "3c7de83a912ac360c13c4aae04b472fa2c190fa0af95510831e99c007e1f1f9c",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "finally-try-control",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "5c866e332273dc68864f5ac064ec72cf48cca8fee5710d26de8fd64e28ad693f",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-try-control",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "5c866e332273dc68864f5ac064ec72cf48cca8fee5710d26de8fd64e28ad693f",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "finally-discarded",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "6e019f4e5449be86ceb407620e1595d3ead67a2a7b05616ddc289dc8cf58acd8",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-discarded",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "6e019f4e5449be86ceb407620e1595d3ead67a2a7b05616ddc289dc8cf58acd8",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "constructor-value",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "0f8d74b8385cdee672c2515834667de4cf378dc2ba6603d1efc9e91671becb19",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "constructor-value",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "0f8d74b8385cdee672c2515834667de4cf378dc2ba6603d1efc9e91671becb19",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "constructor-generator",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "d83011b02738772d34a05e31f4aa76682b43c6c387c1bc63f39d76e53680447f",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "constructor-generator",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "d83011b02738772d34a05e31f4aa76682b43c6c387c1bc63f39d76e53680447f",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "constructor-bare",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "cbbf0b6dd8ed69c14a4dea6251fba0c8768c3cbd0c28c093aced95a6d93da4d4",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "constructor-bare",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "cbbf0b6dd8ed69c14a4dea6251fba0c8768c3cbd0c28c093aced95a6d93da4d4",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "destructor-value",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "d5f0f2ff2723fd94f1517dc06b9e23650701d709ca572722924e4d893429555f",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "destructor-value",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "d5f0f2ff2723fd94f1517dc06b9e23650701d709ca572722924e4d893429555f",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "destructor-generator",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "466f6ffcc0dfac4bb233c1a3a1ea4941f8b5d2d9114e22081f521d3ee85474ae",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "destructor-generator",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "466f6ffcc0dfac4bb233c1a3a1ea4941f8b5d2d9114e22081f521d3ee85474ae",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "destructor-bare",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "6b6e31a5edb0190f3f41b5e594290ea4454a532c6bde06468836ea035a9c4424",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "destructor-bare",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "6b6e31a5edb0190f3f41b5e594290ea4454a532c6bde06468836ea035a9c4424",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "debug-nullable",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "7dcd41a2247499940f86bd877117675384a09c42c46eabea88951451fb7924c3",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-nullable",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "7dcd41a2247499940f86bd877117675384a09c42c46eabea88951451fb7924c3",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "debug-union",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "caa9ca4ea0d931f0c01258d1dc93eb3a45e52a80e09cb1442c611a66f1e09326",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-union",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "caa9ca4ea0d931f0c01258d1dc93eb3a45e52a80e09cb1442c611a66f1e09326",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "debug-null",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "bad1a19c2e7e37bfb153c373ced99e3e2b6fe4ff9b9fc49932efad7e735c26e0",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-null",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "bad1a19c2e7e37bfb153c373ced99e3e2b6fe4ff9b9fc49932efad7e735c26e0",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "debug-array",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "38c3957137953bce01153f707d03f279138959287308df68c32c8f49619ae2ad",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-array",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "38c3957137953bce01153f707d03f279138959287308df68c32c8f49619ae2ad",
+            "result": {
+                "exit": 0,
+                "output": "object(C)#1 (0) {\n}\n"
+            }
+        },
+        {
+            "id": "debug-null-runtime",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "e016eea69cd4f73994173f79fc205b34e2592d20e1f76228837e17993d5ff859",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-null-runtime",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "e016eea69cd4f73994173f79fc205b34e2592d20e1f76228837e17993d5ff859",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning null from C::__debugInfo() is deprecated, return an empty array instead in <probe> on line 2\nobject(C)#1 (0) {\n}\n"
+            }
+        },
+        {
+            "id": "debug-null-direct",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "7f4d817721588904b1cdc8935bbd93d2a52b26ccf3425935e3f32cf8469552d5",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-null-direct",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "7f4d817721588904b1cdc8935bbd93d2a52b26ccf3425935e3f32cf8469552d5",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "sleep-wakeup-control",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "lint",
+            "sourceSha256": "681ec67574d135508023d0645f0de7e1bd94997595896e8168f756d9b89dbadd",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "sleep-wakeup-control",
+            "finding": "PHP86-010",
+            "version": "8.5",
+            "stage": "execution",
+            "sourceSha256": "681ec67574d135508023d0645f0de7e1bd94997595896e8168f756d9b89dbadd",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-class",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "59efbc1065cf39b7dc8c5ff84f05a4644a0dc3f27a578cf4fdf1ff04c3f30aed",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-class",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "59efbc1065cf39b7dc8c5ff84f05a4644a0dc3f27a578cf4fdf1ff04c3f30aed",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-interface",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "19f9fae514b79c4d7910ef4c7a1f6643dc2047d617e2adc210ebb9b4de263634",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as an interface name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-interface",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "19f9fae514b79c4d7910ef4c7a1f6643dc2047d617e2adc210ebb9b4de263634",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as an interface name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-trait",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "d8e243d7f59bd3dcdede2dc99683faf886ea74ee81380f7b18844632b03b30f1",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a trait name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-trait",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "d8e243d7f59bd3dcdede2dc99683faf886ea74ee81380f7b18844632b03b30f1",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a trait name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-enum",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "6748dfefbea6c5d04e711cee90bc477bcbdc1e4bb2d57831001e2f63eb145542",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as an enum name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-enum",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "6748dfefbea6c5d04e711cee90bc477bcbdc1e4bb2d57831001e2f63eb145542",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as an enum name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-function",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "9e30db38224d66a133b9ca482cfdf7db5cb417b5bdcc91443d76836f5cac6374",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a function \"let\" is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-function",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "9e30db38224d66a133b9ca482cfdf7db5cb417b5bdcc91443d76836f5cac6374",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a function \"let\" is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-method",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "29833219cd267a225e489a4d46d5873ed7e19b0bff7db3bff4eaa1fa8e6dc2a1",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-method",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "29833219cd267a225e489a4d46d5873ed7e19b0bff7db3bff4eaa1fa8e6dc2a1",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "let-constant",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "9624c5329dc49e2f7a06e2178aefdf0fb66835fe496930c7ec441b7adf7b84ae",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-constant",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "9624c5329dc49e2f7a06e2178aefdf0fb66835fe496930c7ec441b7adf7b84ae",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a constant \"let\" is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "ac8717c3e2a8eba0f838dc971e1ac60e7ff0f2802d964c0022ea22d5c1a1f6eb",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class name is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "ac8717c3e2a8eba0f838dc971e1ac60e7ff0f2802d964c0022ea22d5c1a1f6eb",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class name is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "d30496ac8e0a569ba20e093c03e27f1467401b8f02b4899c2b7b9b55816c4c8a",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a function name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "d30496ac8e0a569ba20e093c03e27f1467401b8f02b4899c2b7b9b55816c4c8a",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a function name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "fadf2f9f4083f7802422c7276ff77ed40f2418b659b91045c8e0feef7ff98949",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a constant name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "fadf2f9f4083f7802422c7276ff77ed40f2418b659b91045c8e0feef7ff98949",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a constant name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-class",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "65a24487866480036fb11a2de1b3df5ad26edd0b1ae0235e4a1419e51bfea81d",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as a class name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-class",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "65a24487866480036fb11a2de1b3df5ad26edd0b1ae0235e4a1419e51bfea81d",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as a class name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-interface",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "f8f4aba91387abcc8ea1a16790cd889626186c33c0bc61c954f3ac783fb10e95",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as an interface name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-interface",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "f8f4aba91387abcc8ea1a16790cd889626186c33c0bc61c954f3ac783fb10e95",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as an interface name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-trait",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "3d733f03659e61f85d9b5dd5de418f3b25c0fa7c5a69fabad3170ac1287ac4ca",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as a trait name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-trait",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "3d733f03659e61f85d9b5dd5de418f3b25c0fa7c5a69fabad3170ac1287ac4ca",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as a trait name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-enum",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "ee00e8f7524f05cf035a205e4dc98c3e227fdfe2e153361039d1d068ae23dffe",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as an enum name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-enum",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "ee00e8f7524f05cf035a205e4dc98c3e227fdfe2e153361039d1d068ae23dffe",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as an enum name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-function",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "ce3c2009458e806651e8f0852296a5dc370566748ff541304ce9450028d95783",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a function \"is\" is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-function",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "ce3c2009458e806651e8f0852296a5dc370566748ff541304ce9450028d95783",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a function \"is\" is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-method",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "a45e3afbd2b4b63c97ff8762542b9017fc134d0fec3a88220bec4e9e897e9a7f",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-method",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "a45e3afbd2b4b63c97ff8762542b9017fc134d0fec3a88220bec4e9e897e9a7f",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "is-constant",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "fca2dfcf8709a2bbc3f624ff824cffc6355737e03617e7605355cfbf36a35fe3",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-constant",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "fca2dfcf8709a2bbc3f624ff824cffc6355737e03617e7605355cfbf36a35fe3",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a constant \"is\" is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "7a6fa3686cb61dbd0a080b978496526de0020dc8ba9e0f0ad62211108f6820ef",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as a class name is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "7a6fa3686cb61dbd0a080b978496526de0020dc8ba9e0f0ad62211108f6820ef",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as a class name is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "f970c67269c2ec1263a1bf505c8060253040c340cf06cb608188c7ecabe04cd5",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as a function name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "f970c67269c2ec1263a1bf505c8060253040c340cf06cb608188c7ecabe04cd5",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as a function name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "11928b6b2d9a16f2cf8322af7cf80f81bdca1ea293b42bbafa966d8324aa6d94",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as a constant name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "11928b6b2d9a16f2cf8322af7cf80f81bdca1ea293b42bbafa966d8324aa6d94",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"is\" as a constant name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "readonly-function",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "35bdc13cc57f2d9b94da5ad3145a99f5e85f3f54cf2f2df04055d81ce855da6a",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a function \"readonly\" is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "readonly-function",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "35bdc13cc57f2d9b94da5ad3145a99f5e85f3f54cf2f2df04055d81ce855da6a",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a function \"readonly\" is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "readonly-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "82449d15a2972ffac88bac800e0c99ac7de9721ca401ff0ab60d62163c0384f8",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a function \"ReAdOnLy\" is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "readonly-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "82449d15a2972ffac88bac800e0c99ac7de9721ca401ff0ab60d62163c0384f8",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a function \"ReAdOnLy\" is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "readonly-method",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "b06ec83e6cd34403036954be922e062fc75a8da5fc341eaa579f47c23f5fdfc0",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "readonly-method",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "b06ec83e6cd34403036954be922e062fc75a8da5fc341eaa579f47c23f5fdfc0",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "readonly-alias-invalid",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "3ab6300d856878ecf0e57007e1fea20a3a6a5a70c1fb7f99c22f8829fa8bf8ad",
+            "result": {
+                "exit": 255,
+                "output": "\nParse error: syntax error, unexpected token \"readonly\", expecting identifier in <probe> on line 2\nErrors parsing <probe>\n"
+            }
+        },
+        {
+            "id": "readonly-alias-invalid",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "3ab6300d856878ecf0e57007e1fea20a3a6a5a70c1fb7f99c22f8829fa8bf8ad",
+            "result": {
+                "exit": 255,
+                "output": "\nParse error: syntax error, unexpected token \"readonly\", expecting identifier in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "underscore-class",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "36fc5227087ae03a59c278870cb7ff2cc1917ead1d8d89210569f604075965f7",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class name is deprecated since 8.4 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-class",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "36fc5227087ae03a59c278870cb7ff2cc1917ead1d8d89210569f604075965f7",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class name is deprecated since 8.4 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "underscore-namespaced-class",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "5d25a818d9cd7a4f8f1547ea930a981e3dd7f56a241143e7b975c1613b7b3967",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class name is deprecated since 8.4 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-namespaced-class",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "5d25a818d9cd7a4f8f1547ea930a981e3dd7f56a241143e7b975c1613b7b3967",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class name is deprecated since 8.4 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "underscore-constant",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "f954b0e277fee596ca3247c74767843ca83129aeb0b14ee51ec52fb5c4333a1c",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-constant",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "f954b0e277fee596ca3247c74767843ca83129aeb0b14ee51ec52fb5c4333a1c",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a constant \"_\" is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "underscore-function",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "d4ea376826dff976b3899537b215d73cb3e279efc7ff28cfea2b4f7178cce563",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-function",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "d4ea376826dff976b3899537b215d73cb3e279efc7ff28cfea2b4f7178cce563",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "underscore-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "f81682066562b64e6e6c85d8db3c6d79f923882a913d995d4560a6966c257907",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-function-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "f81682066562b64e6e6c85d8db3c6d79f923882a913d995d4560a6966c257907",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "underscore-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "22e6e7ea3fa45915a0260b0301311e09fee2465bed6d7db7a2cfd771542474ec",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class name is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "22e6e7ea3fa45915a0260b0301311e09fee2465bed6d7db7a2cfd771542474ec",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class name is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "underscore-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "0758bb6e69dce1b0dadc90c314e1d0b59686aca7427df5ae674658aa8c388029",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a constant name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-constant-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "0758bb6e69dce1b0dadc90c314e1d0b59686aca7427df5ae674658aa8c388029",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a constant name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-upper-bare",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "4b010ab1074fde9069874e04743d75049e9123a5f96745d51c930e03bff6f4f5",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-upper-bare",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "4b010ab1074fde9069874e04743d75049e9123a5f96745d51c930e03bff6f4f5",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-lower-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "68452f217a770abd4e67936ff05fa37a37d6b4484b0aca503f17e9fba7555712",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-lower-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "68452f217a770abd4e67936ff05fa37a37d6b4484b0aca503f17e9fba7555712",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-upper-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "ecd49c737e33f565ee78c7cc976c1c5d3033ba98e257e9240043c0122e7bc842",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-upper-namespaced",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "ecd49c737e33f565ee78c7cc976c1c5d3033ba98e257e9240043c0122e7bc842",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-class-alias-runtime",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "5f040193a2ddf1ed5bd81522c413b2bff33d0e4da03bd7fdc65de44f93d3fe3d",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-class-alias-runtime",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "5f040193a2ddf1ed5bd81522c413b2bff33d0e4da03bd7fdc65de44f93d3fe3d",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class alias is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-upper-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "9f51b827175c05fd8bc9e2c87f03a13d8ba0df3359539ee57b6a2c177874e328",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-upper-class-alias",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "9f51b827175c05fd8bc9e2c87f03a13d8ba0df3359539ee57b6a2c177874e328",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a class alias is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "underscore-class-alias-runtime",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "1247c216957198eccec354447d3d38496ed26a9029d9b5dfc068b413bdd12f08",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-class-alias-runtime",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "1247c216957198eccec354447d3d38496ed26a9029d9b5dfc068b413bdd12f08",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a class alias is deprecated since 8.4 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-type",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "dfb746c090a24cbda4caa8fe9a0ad6c132f859e8766f273486b01b4f047de8cf",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a type name is deprecated since 8.6 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-type",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "dfb746c090a24cbda4caa8fe9a0ad6c132f859e8766f273486b01b4f047de8cf",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"let\" as a type name is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "let-upper-type",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "b15e4d8ab4d6142b27775a81e5fb9a6cb48c881d38a5b05ed45db2d59461744d",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "let-upper-type",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "b15e4d8ab4d6142b27775a81e5fb9a6cb48c881d38a5b05ed45db2d59461744d",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "underscore-type",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "2fdd94acb6b0adb400fb67160d5e6137373cb18d3e5f9b6307551b7d84b86c63",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a type name is deprecated since 8.4 in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "underscore-type",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "2fdd94acb6b0adb400fb67160d5e6137373cb18d3e5f9b6307551b7d84b86c63",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Using \"_\" as a type name is deprecated since 8.4 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-namespaced-constant",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "c2e4fbe2582bb212b08bc3ca3899ba53bcdf5d89941ca9dfb9d11fc9bd298e16",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-namespaced-constant",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "c2e4fbe2582bb212b08bc3ca3899ba53bcdf5d89941ca9dfb9d11fc9bd298e16",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Calling a constant \"is\" is deprecated since 8.6 in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "is-upper-namespaced-constant",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "56824f35fe6300abc6abf7b3c858cd758a537fa554c762dea5b79b946d1e9407",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "is-upper-namespaced-constant",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "56824f35fe6300abc6abf7b3c858cd758a537fa554c762dea5b79b946d1e9407",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "namespace-class",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "eea59c717ba38fccd97278fe9a2428d02f737d2d008ef8a355fb2548eea78a92",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Declaring class constant called 'namespace' is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-class",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "eea59c717ba38fccd97278fe9a2428d02f737d2d008ef8a355fb2548eea78a92",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Declaring class constant called 'namespace' is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "namespace-interface",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "c778ab0604c39c6be29fbb5941add2f9c48f0ae52f72d5e0ecf595cd51d918ae",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Declaring interface constant called 'namespace' is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-interface",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "c778ab0604c39c6be29fbb5941add2f9c48f0ae52f72d5e0ecf595cd51d918ae",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Declaring interface constant called 'namespace' is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "namespace-trait",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "d1d5e98b52954f83715a7433eb45b07d3e7445b1766becc5864b7db04d9a730a",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Declaring trait constant called 'namespace' is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-trait",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "d1d5e98b52954f83715a7433eb45b07d3e7445b1766becc5864b7db04d9a730a",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Declaring trait constant called 'namespace' is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "namespace-enum",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "2f7e24d498ecf1671ac93d31d09900f15ae2a7fa6673fd562e398eaa1d56003a",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Declaring enum constant called 'namespace' is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-enum",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "2f7e24d498ecf1671ac93d31d09900f15ae2a7fa6673fd562e398eaa1d56003a",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Declaring enum constant called 'namespace' is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "namespace-case",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "5de1270b5b7fe4831beb240fa6c18726af7dd867df5dfa88ce3dabe8e1cf0963",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Declaring enum constant called 'namespace' is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-case",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "5de1270b5b7fe4831beb240fa6c18726af7dd867df5dfa88ce3dabe8e1cf0963",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Declaring enum constant called 'namespace' is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "namespace-controls",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "11d88ff6a9b76115274eceab09e47b0e609b27a232be8d256b6781618d6868ef",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "namespace-controls",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "11d88ff6a9b76115274eceab09e47b0e609b27a232be8d256b6781618d6868ef",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "finally-bare",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "c7c6ea67fb81b704681588076dc747f17e860000cd299292c1b60c877e7e6845",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning from a finally block is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-bare",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "c7c6ea67fb81b704681588076dc747f17e860000cd299292c1b60c877e7e6845",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning from a finally block is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "finally-value",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "ab591bc2ed663b002d14ec9e4e41b80965bdded84180cd7ebeba0c0367582d59",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning from a finally block is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-value",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "ab591bc2ed663b002d14ec9e4e41b80965bdded84180cd7ebeba0c0367582d59",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning from a finally block is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "finally-nested-try",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "3442ab6c1bd02e99f4451a5ffd9ab40a90ed20d304a4241c2efa3a6079501d03",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning from a finally block is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-nested-try",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "3442ab6c1bd02e99f4451a5ffd9ab40a90ed20d304a4241c2efa3a6079501d03",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning from a finally block is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "finally-closure",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "3c7de83a912ac360c13c4aae04b472fa2c190fa0af95510831e99c007e1f1f9c",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-closure",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "3c7de83a912ac360c13c4aae04b472fa2c190fa0af95510831e99c007e1f1f9c",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "finally-try-control",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "5c866e332273dc68864f5ac064ec72cf48cca8fee5710d26de8fd64e28ad693f",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-try-control",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "5c866e332273dc68864f5ac064ec72cf48cca8fee5710d26de8fd64e28ad693f",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "finally-discarded",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "6e019f4e5449be86ceb407620e1595d3ead67a2a7b05616ddc289dc8cf58acd8",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "finally-discarded",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "6e019f4e5449be86ceb407620e1595d3ead67a2a7b05616ddc289dc8cf58acd8",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "constructor-value",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "0f8d74b8385cdee672c2515834667de4cf378dc2ba6603d1efc9e91671becb19",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning a value from a constructor is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "constructor-value",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "0f8d74b8385cdee672c2515834667de4cf378dc2ba6603d1efc9e91671becb19",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning a value from a constructor is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "constructor-generator",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "d83011b02738772d34a05e31f4aa76682b43c6c387c1bc63f39d76e53680447f",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Making a constructor a Generator is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "constructor-generator",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "d83011b02738772d34a05e31f4aa76682b43c6c387c1bc63f39d76e53680447f",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Making a constructor a Generator is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "constructor-bare",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "cbbf0b6dd8ed69c14a4dea6251fba0c8768c3cbd0c28c093aced95a6d93da4d4",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "constructor-bare",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "cbbf0b6dd8ed69c14a4dea6251fba0c8768c3cbd0c28c093aced95a6d93da4d4",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "destructor-value",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "d5f0f2ff2723fd94f1517dc06b9e23650701d709ca572722924e4d893429555f",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning a value from a destructor is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "destructor-value",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "d5f0f2ff2723fd94f1517dc06b9e23650701d709ca572722924e4d893429555f",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning a value from a destructor is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "destructor-generator",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "466f6ffcc0dfac4bb233c1a3a1ea4941f8b5d2d9114e22081f521d3ee85474ae",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Making a destructor a Generator is deprecated in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "destructor-generator",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "466f6ffcc0dfac4bb233c1a3a1ea4941f8b5d2d9114e22081f521d3ee85474ae",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Making a destructor a Generator is deprecated in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "destructor-bare",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "6b6e31a5edb0190f3f41b5e594290ea4454a532c6bde06468836ea035a9c4424",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "destructor-bare",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "6b6e31a5edb0190f3f41b5e594290ea4454a532c6bde06468836ea035a9c4424",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "debug-nullable",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "7dcd41a2247499940f86bd877117675384a09c42c46eabea88951451fb7924c3",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning null from C::__debugInfo() is deprecated, make the return type non-nullable and return an empty array instead in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-nullable",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "7dcd41a2247499940f86bd877117675384a09c42c46eabea88951451fb7924c3",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning null from C::__debugInfo() is deprecated, make the return type non-nullable and return an empty array instead in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "debug-union",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "caa9ca4ea0d931f0c01258d1dc93eb3a45e52a80e09cb1442c611a66f1e09326",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning null from C::__debugInfo() is deprecated, make the return type non-nullable and return an empty array instead in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-union",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "caa9ca4ea0d931f0c01258d1dc93eb3a45e52a80e09cb1442c611a66f1e09326",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning null from C::__debugInfo() is deprecated, make the return type non-nullable and return an empty array instead in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "debug-null",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "bad1a19c2e7e37bfb153c373ced99e3e2b6fe4ff9b9fc49932efad7e735c26e0",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning null from C::__debugInfo() is deprecated, make the return type non-nullable and return an empty array instead in <probe> on line 2\nNo syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-null",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "bad1a19c2e7e37bfb153c373ced99e3e2b6fe4ff9b9fc49932efad7e735c26e0",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning null from C::__debugInfo() is deprecated, make the return type non-nullable and return an empty array instead in <probe> on line 2\n"
+            }
+        },
+        {
+            "id": "debug-array",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "38c3957137953bce01153f707d03f279138959287308df68c32c8f49619ae2ad",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-array",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "38c3957137953bce01153f707d03f279138959287308df68c32c8f49619ae2ad",
+            "result": {
+                "exit": 0,
+                "output": "object(C)#1 (0) {\n}\n"
+            }
+        },
+        {
+            "id": "debug-null-runtime",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "e016eea69cd4f73994173f79fc205b34e2592d20e1f76228837e17993d5ff859",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-null-runtime",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "e016eea69cd4f73994173f79fc205b34e2592d20e1f76228837e17993d5ff859",
+            "result": {
+                "exit": 0,
+                "output": "\nDeprecated: Returning null from C::__debugInfo() is deprecated, return an empty array instead in <probe> on line 2\nobject(C)#1 (0) {\n}\n"
+            }
+        },
+        {
+            "id": "debug-null-direct",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "7f4d817721588904b1cdc8935bbd93d2a52b26ccf3425935e3f32cf8469552d5",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "debug-null-direct",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "7f4d817721588904b1cdc8935bbd93d2a52b26ccf3425935e3f32cf8469552d5",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        },
+        {
+            "id": "sleep-wakeup-control",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "lint",
+            "sourceSha256": "681ec67574d135508023d0645f0de7e1bd94997595896e8168f756d9b89dbadd",
+            "result": {
+                "exit": 0,
+                "output": "No syntax errors detected in <probe>\n"
+            }
+        },
+        {
+            "id": "sleep-wakeup-control",
+            "finding": "PHP86-010",
+            "version": "8.6",
+            "stage": "execution",
+            "sourceSha256": "681ec67574d135508023d0645f0de7e1bd94997595896e8168f756d9b89dbadd",
+            "result": {
+                "exit": 0,
+                "output": ""
+            }
+        }
+    ]
+}

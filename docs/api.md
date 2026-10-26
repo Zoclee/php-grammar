@@ -147,6 +147,25 @@ No unrestricted wildcard substitution is introduced.
 
 ## CLI and maintenance boundaries
 
+Maintainers may opt into the separate `current-compatibility-v1` evidence format:
+
+```text
+php tools/evidence/historical-check.php --snapshot <historical-checkout> --supplement <preserved-checkout>
+php tools/evidence/compatibility.php --generate --revision <new-revision>
+php tools/evidence/compatibility.php --check --report docs/8.5/compatibility/<new-revision>/evidence.json
+php tools/8.6/certification.php --contract historical-plus-current-v1 --claims --compatibility-report docs/8.5/compatibility/<new-revision>/evidence.json
+```
+
+Generation refuses an existing revision. Validation is read-only; incomplete,
+stale or incompatible evidence returns nonzero. The successor schema is
+`schema/certification-compatibility.schema.json`; it is separate from manifest
+schema 1.0 and legacy evidence schema 1. The historical check verifies raw-byte
+integrity, not test execution. A current compatibility pass does not imply
+historical integrity, certification renewal or PHP 8.6 eligibility. Legacy
+commands/defaults, public loading/navigation APIs and package statuses are
+unchanged. The opt-in 8.6 contract adds two prerequisites and retains all legacy
+gates; its claim/run modes continue refusing unresolved mandatory blockers.
+
 `php bin/php-grammar --help` lists supported commands. Successful navigation
 commands emit JSON to stdout and exit 0; usage, unknown versions/rules/sections,
 or loading failures emit a diagnostic to stderr and exit 1. `versions`, `rules`,

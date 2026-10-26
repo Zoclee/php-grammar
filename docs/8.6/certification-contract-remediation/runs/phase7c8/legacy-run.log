@@ -1,0 +1,30 @@
+{
+  "mode": "run",
+  "status": "blocked",
+  "errors": [
+    "Release gate not passed: parser-scanner-correspondence",
+    "Release gate not passed: rfc-implementation-traceability",
+    "Release gate not passed: historical-preservation",
+    "Release gate not passed: historical-certification-check",
+    "Release gate not passed: production-coverage-closure",
+    "Release gate not passed: alternative-coverage-closure",
+    "Release gate not passed: scanner-state-closure",
+    "Release gate not passed: ast-binding",
+    "Release gate not passed: folding-order",
+    "Release gate not passed: discovery-closure",
+    "Release gate not passed: writable-target-validity",
+    "Release gate not passed: contextual-enforcement-scope",
+    "Release gate not passed: discarded-hook-disposition",
+    "Release gate not passed: exact-pin-executable",
+    "Unresolved blocking finding: PHP86-013",
+    "Unresolved blocking finding: PHP86-014",
+    "Unresolved blocking finding: PHP86-015",
+    "Unresolved blocking finding: CA86-001",
+    "Unresolved blocking finding: C6-CONTEXT",
+    "Unresolved blocking finding: C6-COVERAGE",
+    "Unresolved blocking finding: C6-PROVENANCE",
+    "Exact-pin interpreter provenance unavailable",
+    "Phase 7A prepares evidence only; Phase 7B certification is not authorized by this report"
+  ],
+  "certificationGranted": false
+}

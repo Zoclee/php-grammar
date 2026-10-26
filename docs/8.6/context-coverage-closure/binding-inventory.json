@@ -1,0 +1,22 @@
+{
+  "original": {
+    "status": "open",
+    "requiredAction": "Independent operand/AST and interpolation binding evidence, including closed-yield/prefix/dangling-else and retained ambiguities."
+  },
+  "observations": [
+    "unary-power",
+    "not-instanceof",
+    "yield-key-value",
+    "yield-from-assignment",
+    "pfa-argument"
+  ],
+  "method": "Unique native expression derivation -> complete operand spans -> forced-parentheses fixture -> equal nonempty pre-optimizer opcode lines under exact source.",
+  "astEquivalenceClaim": false,
+  "remaining": [
+    "Writable-target value category and authoritative intended validity (PHP86-014).",
+    "Interpolation AST correspondence (scanner evidence is separate).",
+    "Declaration member relationships and transitive dispatch.",
+    "Reference-result and broader PFA/argument combinations."
+  ],
+  "nativeTokenAdapter": "PHP 8.5 test-only token adapter; exact PHP 8.6 performs both opcode compilations."
+}

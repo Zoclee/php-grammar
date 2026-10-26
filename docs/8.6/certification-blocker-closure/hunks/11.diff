@@ -1,0 +1,24 @@
+@@ -2919,18 +2949,18 @@ ZEND_API void zend_add_magic_method(zend_class_entry *ce, zend_function *fptr, z
+ 		ce->ce_flags |= ZEND_ACC_USE_GUARDS;
+ 	} else if (zend_string_equals_literal(lcname, ZEND_ISSET_FUNC_NAME)) {
+ 		ce->__isset = fptr;
+ 		ce->ce_flags |= ZEND_ACC_USE_GUARDS;
+-	} else if (zend_string_equals_literal(lcname, ZEND_CALLSTATIC_FUNC_NAME)) {
++	} else if (zend_string_equals_literal(lcname, ZEND_CALLSTATIC_FUNC_LCNAME)) {
+ 		ce->__callstatic = fptr;
+-	} else if (zend_string_equals_literal(lcname, ZEND_TOSTRING_FUNC_NAME)) {
++	} else if (zend_string_equals_literal(lcname, ZEND_TOSTRING_FUNC_LCNAME)) {
+ 		ce->__tostring = fptr;
+-	} else if (zend_string_equals_literal(lcname, ZEND_DEBUGINFO_FUNC_NAME)) {
++	} else if (zend_string_equals_literal(lcname, ZEND_DEBUGINFO_FUNC_LCNAME)) {
+ 		ce->__debugInfo = fptr;
+ 		ce->ce_flags |= ZEND_ACC_USE_GUARDS;
+-	} else if (zend_string_equals_literal(lcname, "__serialize")) {
++	} else if (zend_string_equals_literal(lcname, ZEND_SERIALIZE_FUNC_NAME)) {
+ 		ce->__serialize = fptr;
+-	} else if (zend_string_equals_literal(lcname, "__unserialize")) {
++	} else if (zend_string_equals_literal(lcname, ZEND_UNSERIALIZE_FUNC_NAME)) {
+ 		ce->__unserialize = fptr;
+ 	}
+ }
+ 

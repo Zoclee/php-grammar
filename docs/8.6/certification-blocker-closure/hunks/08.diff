@@ -1,0 +1,11 @@
+@@ -8871,9 +9574,9 @@ static void zend_compile_prop_decl(zend_ast *ast, zend_ast *type_ast, uint32_t f
+ 		zend_string *name = zval_make_interned_string(zend_ast_get_zval(name_ast));
+ 		zend_string *doc_comment = NULL;
+ 		zval value_zv;
+ 		zend_type type = ZEND_TYPE_INIT_NONE(0);
+-		flags |= zend_property_is_virtual(ce, name, hooks_ast, flags) ? ZEND_ACC_VIRTUAL : 0;
++		flags |= zend_property_is_virtual(ce, name, hooks_ast) ? ZEND_ACC_VIRTUAL : 0;
+ 
+ 		zend_string *old_active_property_info_name = CG(context).active_property_info_name;
+ 		CG(context).active_property_info_name = name;
+ 

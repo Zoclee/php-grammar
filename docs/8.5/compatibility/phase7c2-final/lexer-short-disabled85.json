@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "-d",
+    "short_open_tag=0",
+    "tools/8.5/lexer-differential.php"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "log": "lexer-short-disabled85.log",
+  "logSha256": "8b99a39867a6336253f6e64f0d67eb44dbca4deeca3013ffd5ab1734d99c05d4",
+  "totals": null
+}

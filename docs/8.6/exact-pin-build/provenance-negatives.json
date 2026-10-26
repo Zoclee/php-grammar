@@ -1,0 +1,77 @@
+{
+  "different-commit": {
+    "rejected": true,
+    "errors": [
+      "Wrong source commit"
+    ]
+  },
+  "version-string-only": {
+    "rejected": true,
+    "errors": [
+      "Missing exact-source evidence contract",
+      "Missing official source origin",
+      "Unverified build configuration",
+      "Exact-source build unavailable",
+      "Missing provenance: sourceTree",
+      "Missing provenance: sourceDirectory",
+      "Missing provenance: authentication",
+      "Missing provenance: sourceLockSha256",
+      "Missing provenance: toolchain",
+      "Missing provenance: generatedFiles",
+      "Missing provenance: runtimeFiles",
+      "Missing provenance: binary",
+      "Invalid source tree identity",
+      "Invalid digest: sourceLockSha256",
+      "Unreviewed build task: configure",
+      "Incomplete build step: configure",
+      "Incomplete build log: configure/stdout",
+      "Incomplete build log: configure/stderr",
+      "Unreviewed build task: compile",
+      "Incomplete build step: compile",
+      "Incomplete build log: compile/stdout",
+      "Incomplete build log: compile/stderr"
+    ]
+  },
+  "incomplete-build-log": {
+    "rejected": true,
+    "errors": [
+      "Incomplete build log: compile/stderr"
+    ]
+  },
+  "mismatched-source-lock": {
+    "rejected": true,
+    "errors": [
+      "Unverified controller custody receipt"
+    ]
+  },
+  "unverified-configuration": {
+    "rejected": true,
+    "errors": [
+      "Unverified build configuration"
+    ]
+  },
+  "missing-toolchain": {
+    "rejected": true,
+    "errors": [
+      "Missing provenance: toolchain"
+    ]
+  },
+  "missing-source-correspondence": {
+    "rejected": true,
+    "errors": [
+      "Missing provenance: authentication"
+    ]
+  },
+  "altered-build-task": {
+    "rejected": true,
+    "errors": [
+      "Unreviewed build task: compile"
+    ]
+  },
+  "substituted-executable": {
+    "errors": [
+      "Modified or substituted executable"
+    ],
+    "rejected": true
+  }
+}

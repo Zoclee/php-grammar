@@ -1,0 +1,543 @@
+{
+  "scope": "Individual existing case identities supporting the four newly associated discovery hunks. Mapping is not an extension of the accepted language or whole-finding closure.",
+  "groups": {
+    "C7C6-G08": {
+      "finding": "PHP86-003",
+      "manifest": "tests/fixtures/php/8.6/context-cases.json",
+      "cases": [
+        {
+          "id": "readonly-default",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/valid/context-readonly-default.php",
+          "stage": "lint",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_prop_decl; readonly_props/readonly_with_default.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "readonly-class",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/valid/context-readonly-class.php",
+          "stage": "lint",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_prop_decl; readonly_props/readonly_with_default.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "readonly-nullable",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/valid/context-readonly-nullable.php",
+          "stage": "lint",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_prop_decl; readonly_props/readonly_with_default.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "readonly-array",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/valid/context-readonly-array.php",
+          "stage": "lint",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_prop_decl; readonly_props/readonly_with_default.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "readonly-inherit",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/valid/context-readonly-inherit.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "readonly_props/readonly_with_default_inheritance.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "readonly-promotion",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/valid/context-readonly-promotion.php",
+          "stage": "lint",
+          "accept85": true,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_prop_decl; readonly_props/readonly_with_default.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "readonly-untyped",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-untyped.php",
+          "stage": "lint",
+          "accept85": false,
+          "accept86": false,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_prop_decl; readonly_props/readonly_with_default.phpt",
+          "diagnostic86": "must have type",
+          "output86": null
+        },
+        {
+          "id": "readonly-static",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-static.php",
+          "stage": "lint",
+          "accept85": false,
+          "accept86": false,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_prop_decl; readonly_props/readonly_with_default.phpt",
+          "diagnostic86": "cannot be readonly",
+          "output86": null
+        },
+        {
+          "id": "readonly-type",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-type.php",
+          "stage": "lint",
+          "accept85": false,
+          "accept86": false,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_prop_decl; readonly_props/readonly_with_default.phpt",
+          "diagnostic86": "Cannot use string as default value",
+          "output86": null
+        },
+        {
+          "id": "readonly-new",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-new.php",
+          "stage": "lint",
+          "accept85": false,
+          "accept86": false,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_prop_decl; readonly_props/readonly_with_default.phpt",
+          "diagnostic86": "New expressions are not supported in this context",
+          "output86": null
+        },
+        {
+          "id": "readonly-hook",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-hook.php",
+          "stage": "lint",
+          "accept85": false,
+          "accept86": false,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_prop_decl; readonly_props/readonly_with_default.phpt",
+          "diagnostic86": "Hooked properties cannot be readonly",
+          "output86": null
+        },
+        {
+          "id": "readonly-change-flag",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-readonly-change-flag.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": false,
+          "structural": true,
+          "evidence": "Zend/zend_inheritance.c:do_inherit_property",
+          "diagnostic86": "Cannot redeclare readonly property",
+          "output86": null
+        },
+        {
+          "id": "readonly-discarded",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/valid/context-readonly-discarded.php",
+          "stage": "lint",
+          "accept85": true,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_compile.c:zend_compile_short_circuiting",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "readonly-initialized",
+          "finding": "PHP86-003",
+          "fixture": "tests/fixtures/php/8.6/valid/context-readonly-initialized.php",
+          "stage": "controlled-runtime",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "readonly_props/readonly_with_default.phpt",
+          "diagnostic86": null,
+          "output86": "Cannot modify readonly property C::$p"
+        }
+      ],
+      "observations": "docs/8.6/exact-pin-context-integration/exact.json",
+      "verification": "docs/8.6/certification-blocker-closure/support-exact-context-check.log"
+    },
+    "C7C6-G09": {
+      "finding": "PHP86-005",
+      "manifest": "tests/fixtures/php/8.6/context-cases.json",
+      "cases": [
+        {
+          "id": "override-parent",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/valid/context-override-parent.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_inheritance.c:do_inherit_class_constant; attributes/override/constants/basic.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "override-interface",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/valid/context-override-interface.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_inheritance.c:do_inherit_class_constant; attributes/override/constants/basic.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "override-implementation",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/valid/context-override-implementation.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_inheritance.c:do_inherit_class_constant; attributes/override/constants/basic.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "override-enum",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/valid/context-override-enum.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_inheritance.c:do_inherit_class_constant; attributes/override/constants/basic.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "override-enum-constant",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/valid/context-override-enum-constant.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_inheritance.c:do_inherit_class_constant; attributes/override/constants/basic.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "override-protected",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/valid/context-override-protected.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "attributes/override/constants/visibility_03.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "override-missing",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-override-missing.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": false,
+          "structural": true,
+          "evidence": "attributes/override/constants/failure.phpt",
+          "diagnostic86": "no matching parent constant exists",
+          "output86": null
+        },
+        {
+          "id": "override-private",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-override-private.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": false,
+          "structural": true,
+          "evidence": "attributes/override/constants/visibility_01.phpt",
+          "diagnostic86": "no matching parent constant exists",
+          "output86": null
+        },
+        {
+          "id": "override-final",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-override-final.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": false,
+          "structural": true,
+          "evidence": "Zend/zend_inheritance.c:do_inherit_class_constant",
+          "diagnostic86": "cannot override final constant",
+          "output86": null
+        },
+        {
+          "id": "override-type",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/context-override-type.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": false,
+          "structural": true,
+          "evidence": "Zend/zend_inheritance.c:class_constant_types_compatible",
+          "diagnostic86": "must be compatible",
+          "output86": null
+        },
+        {
+          "id": "override-delayed",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/valid/context-override-delayed.php",
+          "stage": "declaration-link",
+          "accept85": false,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_inheritance.c:do_inherit_class_constant; attributes/override/constants/basic.phpt",
+          "diagnostic86": null,
+          "output86": null
+        },
+        {
+          "id": "override-control",
+          "finding": "PHP86-005",
+          "fixture": "tests/fixtures/php/8.6/valid/context-override-control.php",
+          "stage": "declaration-link",
+          "accept85": true,
+          "accept86": true,
+          "structural": true,
+          "evidence": "Zend/zend_inheritance.c:do_inherit_class_constant; attributes/override/constants/basic.phpt",
+          "diagnostic86": null,
+          "output86": null
+        }
+      ],
+      "observations": "docs/8.6/exact-pin-context-integration/exact.json",
+      "verification": "docs/8.6/certification-blocker-closure/support-exact-context-check.log"
+    },
+    "C7C6-G11": {
+      "finding": "PHP86-001",
+      "manifest": "tests/fixtures/php/8.6/pfa-cases.json",
+      "cases": [
+        {
+          "id": "unpack-control",
+          "fixture": "tests/fixtures/php/8.6/valid/pfa-unpack-control.php",
+          "kind": "valid",
+          "structural85": true,
+          "structural86": true,
+          "lint85": true,
+          "lint86": true,
+          "evidence": "argument_list / argument_no_expr",
+          "diagnostic86": null
+        },
+        {
+          "id": "named-unpack",
+          "fixture": "tests/fixtures/php/8.6/invalid/pfa-named-unpack.php",
+          "kind": "invalid",
+          "structural85": false,
+          "structural86": false,
+          "lint85": false,
+          "lint86": false,
+          "evidence": "argument_list / argument_no_expr",
+          "diagnostic86": null
+        },
+        {
+          "id": "unpack-first",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-first.php",
+          "kind": "contextual-invalid",
+          "structural85": false,
+          "structural86": true,
+          "lint85": false,
+          "lint86": false,
+          "evidence": "compile_errors_006.phpt; zend_compile_args_ex",
+          "diagnostic86": "Cannot combine partial application and unpacking"
+        },
+        {
+          "id": "unpack-last",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-last.php",
+          "kind": "contextual-invalid",
+          "structural85": false,
+          "structural86": true,
+          "lint85": false,
+          "lint86": false,
+          "evidence": "zend_compile_args_ex",
+          "diagnostic86": "Cannot combine partial application and unpacking"
+        },
+        {
+          "id": "constant-unpack",
+          "fixture": "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-unpack.php",
+          "kind": "contextual-invalid",
+          "structural85": false,
+          "structural86": true,
+          "lint85": false,
+          "lint86": false,
+          "evidence": "zend_compile_const_expr_args",
+          "diagnostic86": "Argument unpacking in constant expressions is not supported"
+        }
+      ],
+      "observations": "docs/8.6/certification-blocker-closure/exact-pfa.json"
+    },
+    "C7C6-G10": {
+      "finding": "PHP86-010",
+      "manifest": "tests/fixtures/php/8.6/deprecation-cases.json",
+      "cases": [
+        {
+          "id": "debug-nullable",
+          "finding": "PHP86-010",
+          "group": "debug",
+          "source": "<?php\nclass C {function __debugInfo():?array{return null;}}\n",
+          "accepted": true,
+          "expected": {
+            "8.5": {
+              "lint": "",
+              "execution": ""
+            },
+            "8.6": {
+              "lint": "make the return type non-nullable",
+              "execution": "make the return type non-nullable"
+            }
+          }
+        },
+        {
+          "id": "debug-union",
+          "finding": "PHP86-010",
+          "group": "debug",
+          "source": "<?php\nclass C {function __debugInfo():array|null{return null;}}\n",
+          "accepted": true,
+          "expected": {
+            "8.5": {
+              "lint": "",
+              "execution": ""
+            },
+            "8.6": {
+              "lint": "make the return type non-nullable",
+              "execution": "make the return type non-nullable"
+            }
+          }
+        },
+        {
+          "id": "debug-null",
+          "finding": "PHP86-010",
+          "group": "debug",
+          "source": "<?php\nclass C {function __debugInfo():null{return null;}}\n",
+          "accepted": true,
+          "expected": {
+            "8.5": {
+              "lint": "",
+              "execution": ""
+            },
+            "8.6": {
+              "lint": "make the return type non-nullable",
+              "execution": "make the return type non-nullable"
+            }
+          }
+        },
+        {
+          "id": "debug-array",
+          "finding": "PHP86-010",
+          "group": "debug",
+          "source": "<?php\nclass C {function __debugInfo():array{return [];}} var_dump(new C);\n",
+          "accepted": true,
+          "expected": {
+            "8.5": {
+              "lint": "",
+              "execution": ""
+            },
+            "8.6": {
+              "lint": "",
+              "execution": ""
+            }
+          }
+        },
+        {
+          "id": "debug-null-runtime",
+          "finding": "PHP86-010",
+          "group": "debug",
+          "source": "<?php\nclass C {function __debugInfo(){return null;}} var_dump(new C);\n",
+          "accepted": true,
+          "expected": {
+            "8.5": {
+              "lint": "",
+              "execution": "return an empty array instead"
+            },
+            "8.6": {
+              "lint": "",
+              "execution": "return an empty array instead"
+            }
+          }
+        },
+        {
+          "id": "debug-null-direct",
+          "finding": "PHP86-010",
+          "group": "debug",
+          "source": "<?php\nclass C {function __debugInfo(){return null;}} (new C)->__debugInfo();\n",
+          "accepted": true,
+          "expected": {
+            "8.5": {
+              "lint": "",
+              "execution": ""
+            },
+            "8.6": {
+              "lint": "",
+              "execution": ""
+            }
+          }
+        }
+      ],
+      "observations": "docs/8.6/certification-blocker-closure/exact-deprecation.json"
+    }
+  },
+  "inputs": {
+    "docs/8.6/certification-blocker-closure/exact-deprecation.json": "0054caf9b3acf9c8c2553e798f7c2d2ac36ecc4cd353fdf860df802f9a75c069",
+    "docs/8.6/certification-blocker-closure/exact-pfa.json": "3b89a708534baf2f45e59ed906c29b76f6a6bf7b785bdf6afa42dec4b6439293",
+    "docs/8.6/exact-pin-context-integration/exact.json": "c0d888fa13731ed7cbb3f4acd7812e0aba29687aa3ba510ff3dea3c60597b779",
+    "tests/fixtures/php/8.6/context-cases.json": "59d291190a1b5947956c897729e3022152613eb67b1607aa7a15d6e00e35fa6a",
+    "tests/fixtures/php/8.6/contextual-invalid/context-override-final.php": "0ccff4c03fc50b7844a33724e35afd0106863310e8fb19832d6b8096da21ab0c",
+    "tests/fixtures/php/8.6/contextual-invalid/context-override-missing.php": "53f1900952bb1f86a074cf6101587170655c5bbe528954153d3509f4f0ef93fe",
+    "tests/fixtures/php/8.6/contextual-invalid/context-override-private.php": "4c1b5c26549a294458b0ad45724be53164879c0f12791a5512c847fbacb71214",
+    "tests/fixtures/php/8.6/contextual-invalid/context-override-type.php": "bf8c749b6ecf81ff8cb6390492b87f3aeda358d56c66cf415940c00855e29cfb",
+    "tests/fixtures/php/8.6/contextual-invalid/context-readonly-change-flag.php": "0caf9472db254c8ab4d8c13d9618aec07fb99bea63039624c66745894ee1f6f3",
+    "tests/fixtures/php/8.6/contextual-invalid/context-readonly-hook.php": "66a40465460d70397b8ec71891464d96eb68620443d8b7d8c27ca3069115e946",
+    "tests/fixtures/php/8.6/contextual-invalid/context-readonly-new.php": "ac769846d62cdd4cb2c547eac960197e7a3b097d303f498ca3dedfe77672369b",
+    "tests/fixtures/php/8.6/contextual-invalid/context-readonly-static.php": "e33ba2be4ec27a80a078f0a20d6dae99deb774d4173f07750702a7b1caab440b",
+    "tests/fixtures/php/8.6/contextual-invalid/context-readonly-type.php": "46f7e371c4b71550d7d172bc89fd2c06b52561329b08f11edf5695d575cb7037",
+    "tests/fixtures/php/8.6/contextual-invalid/context-readonly-untyped.php": "13f35741dfb246a82de3b5ef2f1746a2d2d3f363a8f21e22acb60c4ce0d9cfa7",
+    "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-unpack.php": "543b4dc1321eb6ee40a0f1a878469d9d3808fe720572d25bf20e24bac1090bb1",
+    "tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-first.php": "38b9cf6384929d2052638e7aff001e0a903929af098d80133621260aa55857a0",
+    "tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-last.php": "ed23ec196017842263a13e6d8627a9a201f8717b227e4bb71a7192f43449ae99",
+    "tests/fixtures/php/8.6/deprecation-cases.json": "b1708a9404aefe66a3a98cd193ade2ee1cd12a6308a417895fb5def22d521e16",
+    "tests/fixtures/php/8.6/invalid/pfa-named-unpack.php": "fc5359a09be2bdd0c800d2b533d7edf3f8cdace91f966c5159c96610fb46013a",
+    "tests/fixtures/php/8.6/pfa-cases.json": "001eba899b6e356eb5bb146b64e0b5cbc35a19301264109a7c29869f08a39a30",
+    "tests/fixtures/php/8.6/valid/context-override-control.php": "1e79abedccbcf908791aba3216ff46719c2955343c75a9ae9ccced058cd71540",
+    "tests/fixtures/php/8.6/valid/context-override-delayed.php": "8798ee2a2e96711d0f81f9c7350cc56526a5a30812880ed2d4d2b66ed8bce67e",
+    "tests/fixtures/php/8.6/valid/context-override-enum-constant.php": "799300019a8dac9fae28aa9ead2734e16014016b20508e80055d68a987bdea20",
+    "tests/fixtures/php/8.6/valid/context-override-enum.php": "b3f062479d7aa26cb2f49a8507f1532ab02b8ab9f02eab5b23787cd13524b72b",
+    "tests/fixtures/php/8.6/valid/context-override-implementation.php": "f654a4e6cf2e46c0abea7f84aa6cb0e171bb7e1d1fa8ad33b2e5b008f5083415",
+    "tests/fixtures/php/8.6/valid/context-override-interface.php": "48aa83ae112f286dc92d71a2389151197fdb7b674180d2162754eb02fd60607f",
+    "tests/fixtures/php/8.6/valid/context-override-parent.php": "03b12424bbccd837ce65ab0fb3ba1923d0e8f2904870c6c84f1229e8fc259d95",
+    "tests/fixtures/php/8.6/valid/context-override-protected.php": "97376cb80564a8027b22577029abbac838d830ef08b5206b319f27397d15b1d2",
+    "tests/fixtures/php/8.6/valid/context-readonly-array.php": "699cc6e4f8a8885cf09a8d6dec334b0e30d33a6e0e47083cbd87a52b3c3e893b",
+    "tests/fixtures/php/8.6/valid/context-readonly-class.php": "060b59a269a5357fe0df574fb692c05b5d673ed795f124e6b83395d1bf9ace12",
+    "tests/fixtures/php/8.6/valid/context-readonly-default.php": "11d0b4178d80910d090200732ac42e64afca5c7924d6f980c5a120729a629edf",
+    "tests/fixtures/php/8.6/valid/context-readonly-discarded.php": "4e876a98bee732c8a29a17104104aa930885817b1a4a77eb0e20d6186fb2a78e",
+    "tests/fixtures/php/8.6/valid/context-readonly-inherit.php": "97a6536f39ff75ee6f497f5f33a3674ac1761402673d3c429942f760cc03d051",
+    "tests/fixtures/php/8.6/valid/context-readonly-initialized.php": "73c726116f381287dc697244c030b29ca871f06a9907acaa1869b0f1e0e4606d",
+    "tests/fixtures/php/8.6/valid/context-readonly-nullable.php": "981a2f08ddf1f4ccda6b9d83edc40754bfaace32b759cf5da64903a9c6c409d0",
+    "tests/fixtures/php/8.6/valid/context-readonly-promotion.php": "179f53686311ca9f7c95e66a7c7e129066931da0c10ea17906300f7d6b7c3ef3",
+    "tests/fixtures/php/8.6/valid/pfa-unpack-control.php": "2039a76524f6ae7729077e0175577d788cc9598ee324f23e2c41da47b2187b23"
+  }
+}

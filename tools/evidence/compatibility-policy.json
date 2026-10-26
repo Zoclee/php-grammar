@@ -1,0 +1,24 @@
+{
+  "contract": "current-compatibility-v1",
+  "version": "8.5",
+  "claim": "Current PHP 8.5 regression compatibility within the executed matrices, including shared APIs and paired version boundaries; not certification renewal.",
+  "trees": {
+    "src": "shared parser, matcher, lexer, adapters and public APIs",
+    "tests": "complete current regression suite, test discovery, helpers and cross-version fixtures",
+    "grammar": "registered independent grammars exercised by the current suite",
+    "bin": "consumer CLI and conformance entry points",
+    "tools": "all current validators, runners, source locks and dependency policies",
+    "schema": "manifest and evidence format contracts",
+    "vendor": "actual installed runtime and test dependencies"
+  },
+  "files": [".gitattributes", "AGENTS.md", "README.md", "composer.json", "composer.lock", "phpunit.xml.dist", "php-grammar.json", "docs/api.md", "docs/usage.md", "docs/versioning.md", "docs/sources.md", "docs/conformance-policy.md", "docs/grammar-conventions.md"],
+  "documentation": "All existing docs/8.5 records except compatibility outputs; explicit PHP 8.6 evidence dependencies in documentation-inputs.json. New PHP 8.6 prose outside that list is excluded unless referenced by a manifest or literal executable dependency.",
+  "exclusions": {
+    "docs/8.5/compatibility/": "revision-specific generated observations, independently checked as outputs; never executable input",
+    "docs/8.6/hybrid-evidence/": "implementation assessment outputs, not consumed by runtime tests",
+    ".audit/": "external caches/snapshots are verified separately; ignored scratch files are not runtime inputs",
+    "unreferenced PHP 8.6 research prose": "no input edge to this bounded current compatibility claim"
+  },
+  "historical": "Separate historical-integrity-v1 result is required by the hybrid consumer, not implied by current compatibility.",
+  "legacy": "Legacy repository-wide freshness and all legacy release obligations remain unchanged. No schema-1 gate is relabeled or granted by this bounded companion."
+}

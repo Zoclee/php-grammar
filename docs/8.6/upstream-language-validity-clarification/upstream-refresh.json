@@ -1,0 +1,569 @@
+{
+    "scope": "Read-only GET refresh, at most 100 issue/review comments per PR and 100 results per query. Pagination/incomplete flags retained. No publication.",
+    "requests": {
+        "pr-20628": {
+            "url": "https://api.github.com/repos/php/php-src/pulls/20628",
+            "retrievedAt": "2026-10-26T19:12:52+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/pr-20628.headers",
+                "-o",
+                ".audit/phase7g/upstream/pr-20628.json",
+                "https://api.github.com/repos/php/php-src/pulls/20628"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/pr-20628.json",
+            "sha256": "f6701c5c12eb47abc92490fbfbe80b309e54b206654ebdfbd74cee482b072174",
+            "nextPagePresent": false,
+            "prior": {
+                "url": "https://api.github.com/repos/php/php-src/pulls/20628",
+                "retrievedAt": "2026-10-25T16:16:51+00:00",
+                "exit_code": 0,
+                "error": "",
+                "path": "docs/8.6/certification-blocker-closure/upstream/pr-20628.json",
+                "sha256": "a826e29c8fed52d4be88be4fdb57e6e7a858d3012ab2dbdd345c0327de99830d",
+                "materialRecordChanged": false,
+                "priorSha256": "717e4dd09c16c7f0cc216f6e7fa16e706ff8942f71441edc15ebc1260dd707c1"
+            },
+            "materialRecordChanged": false,
+            "originalCapturePath": ".audit/phase7g/upstream/pr-20628.json",
+            "headersSha256": "cf1d55762ba1e177e288ca9c7b8b28307ce0a2117c977b80663d9e0342bb8084"
+        },
+        "issue-comments-20628": {
+            "url": "https://api.github.com/repos/php/php-src/issues/20628/comments?per_page=100",
+            "retrievedAt": "2026-10-26T19:12:53+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/issue-comments-20628.headers",
+                "-o",
+                ".audit/phase7g/upstream/issue-comments-20628.json",
+                "https://api.github.com/repos/php/php-src/issues/20628/comments?per_page=100"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/issue-comments-20628.json",
+            "sha256": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd",
+            "nextPagePresent": false,
+            "prior": {
+                "url": "https://api.github.com/repos/php/php-src/issues/20628/comments?per_page=100",
+                "retrievedAt": "2026-10-25T16:16:52+00:00",
+                "exit_code": 0,
+                "error": "",
+                "path": "docs/8.6/certification-blocker-closure/upstream/issue-comments-20628.json",
+                "sha256": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd",
+                "materialRecordChanged": false,
+                "priorSha256": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd",
+                "count": 17
+            },
+            "materialRecordChanged": false,
+            "originalCapturePath": ".audit/phase7g/upstream/issue-comments-20628.json",
+            "headersSha256": "bff7bd44ba4fe3e7bd7657dacdfef745f15824dc517ca93eb6437fbbb8897cc4"
+        },
+        "review-comments-20628": {
+            "url": "https://api.github.com/repos/php/php-src/pulls/20628/comments?per_page=100",
+            "retrievedAt": "2026-10-26T19:12:53+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/review-comments-20628.headers",
+                "-o",
+                ".audit/phase7g/upstream/review-comments-20628.json",
+                "https://api.github.com/repos/php/php-src/pulls/20628/comments?per_page=100"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/review-comments-20628.json",
+            "sha256": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe",
+            "nextPagePresent": false,
+            "prior": {
+                "url": "https://api.github.com/repos/php/php-src/pulls/20628/comments?per_page=100",
+                "retrievedAt": "2026-10-25T16:16:53+00:00",
+                "exit_code": 0,
+                "error": "",
+                "path": "docs/8.6/certification-blocker-closure/upstream/review-comments-20628.json",
+                "sha256": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe",
+                "materialRecordChanged": false,
+                "priorSha256": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe",
+                "count": 15
+            },
+            "materialRecordChanged": false,
+            "originalCapturePath": ".audit/phase7g/upstream/review-comments-20628.json",
+            "headersSha256": "1140b5ad88652918d9fa002f2815ee0ebe52db581833d89f9b6419d3abdad5ba"
+        },
+        "pr-19658": {
+            "url": "https://api.github.com/repos/php/php-src/pulls/19658",
+            "retrievedAt": "2026-10-26T19:12:54+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/pr-19658.headers",
+                "-o",
+                ".audit/phase7g/upstream/pr-19658.json",
+                "https://api.github.com/repos/php/php-src/pulls/19658"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/pr-19658.json",
+            "sha256": "217c24f145d49ee406dbd8bf065e5f6de27adad9b1bc288077f71cc3e8a18b06",
+            "nextPagePresent": false,
+            "prior": {
+                "url": "https://api.github.com/repos/php/php-src/pulls/19658",
+                "retrievedAt": "2026-10-25T16:16:54+00:00",
+                "exit_code": 0,
+                "error": "",
+                "path": "docs/8.6/certification-blocker-closure/upstream/pr-19658.json",
+                "sha256": "00e0c9e0d85e09d9069408e8eed460df7e760d5a74669e2f75bf818025afc3cd",
+                "materialRecordChanged": false,
+                "priorSha256": "138ece1aec6bfe106b6bb5911a1b3fadc031c489e12c1829ebf09a95b4f9ca74"
+            },
+            "materialRecordChanged": false,
+            "originalCapturePath": ".audit/phase7g/upstream/pr-19658.json",
+            "headersSha256": "8cabd65fe9fab1d46c5623c523495d8631564bb7c0728b0827add0a51171e6af"
+        },
+        "issue-comments-19658": {
+            "url": "https://api.github.com/repos/php/php-src/issues/19658/comments?per_page=100",
+            "retrievedAt": "2026-10-26T19:12:54+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/issue-comments-19658.headers",
+                "-o",
+                ".audit/phase7g/upstream/issue-comments-19658.json",
+                "https://api.github.com/repos/php/php-src/issues/19658/comments?per_page=100"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/issue-comments-19658.json",
+            "sha256": "5c728bc485faa289b5a61bbb5f612e9932639f038aed9aef7e203e41aa7bb33c",
+            "nextPagePresent": false,
+            "prior": {
+                "url": "https://api.github.com/repos/php/php-src/issues/19658/comments?per_page=100",
+                "retrievedAt": "2026-10-25T16:16:54+00:00",
+                "exit_code": 0,
+                "error": "",
+                "path": "docs/8.6/certification-blocker-closure/upstream/issue-comments-19658.json",
+                "sha256": "5c728bc485faa289b5a61bbb5f612e9932639f038aed9aef7e203e41aa7bb33c",
+                "materialRecordChanged": false,
+                "priorSha256": "5c728bc485faa289b5a61bbb5f612e9932639f038aed9aef7e203e41aa7bb33c",
+                "count": 8
+            },
+            "materialRecordChanged": false,
+            "originalCapturePath": ".audit/phase7g/upstream/issue-comments-19658.json",
+            "headersSha256": "1dd0d3eae85fbe0f0cd33acac126e60affe524f57ea27287bd01daf80ae84765"
+        },
+        "review-comments-19658": {
+            "url": "https://api.github.com/repos/php/php-src/pulls/19658/comments?per_page=100",
+            "retrievedAt": "2026-10-26T19:12:56+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/review-comments-19658.headers",
+                "-o",
+                ".audit/phase7g/upstream/review-comments-19658.json",
+                "https://api.github.com/repos/php/php-src/pulls/19658/comments?per_page=100"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/review-comments-19658.json",
+            "sha256": "f48ba1e8a44a4a647f8ca052bd84f9149352b61989eff38063cbb995b5b7e61c",
+            "nextPagePresent": false,
+            "prior": {
+                "url": "https://api.github.com/repos/php/php-src/pulls/19658/comments?per_page=100",
+                "retrievedAt": "2026-10-25T16:16:56+00:00",
+                "exit_code": 0,
+                "error": "",
+                "path": "docs/8.6/certification-blocker-closure/upstream/review-comments-19658.json",
+                "sha256": "f48ba1e8a44a4a647f8ca052bd84f9149352b61989eff38063cbb995b5b7e61c",
+                "materialRecordChanged": false,
+                "priorSha256": "f48ba1e8a44a4a647f8ca052bd84f9149352b61989eff38063cbb995b5b7e61c",
+                "count": 15
+            },
+            "materialRecordChanged": false,
+            "originalCapturePath": ".audit/phase7g/upstream/review-comments-19658.json",
+            "headersSha256": "da96fd1da49c6c722d418a1cbe1788f629e9a6bce838845213738b39b7c8b8bf"
+        },
+        "search-hook-discarded": {
+            "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22hook%22%20%22discarded%22&per_page=100",
+            "retrievedAt": "2026-10-26T19:12:57+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/search-hook-discarded.headers",
+                "-o",
+                ".audit/phase7g/upstream/search-hook-discarded.json",
+                "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22hook%22%20%22discarded%22&per_page=100"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/search-hook-discarded.json",
+            "sha256": "f43085dc23e994ffd697511d20d2c8580ff9db3583b4bbb50b7fed0839bc549a",
+            "nextPagePresent": false,
+            "totalCount": 3,
+            "incompleteResults": false,
+            "items": [
+                {
+                    "number": 6772,
+                    "title": "Add FPM early bootstrapping mode",
+                    "url": "https://github.com/php/php-src/pull/6772",
+                    "updated_at": "2026-01-18T22:32:45Z"
+                },
+                {
+                    "number": 17395,
+                    "title": "Fix JIT for overridden properties with added hooks",
+                    "url": "https://github.com/php/php-src/pull/17395",
+                    "updated_at": "2025-02-20T21:27:54Z"
+                },
+                {
+                    "number": 8348,
+                    "title": "Test oci8 & pdo_oci in CI",
+                    "url": "https://github.com/php/php-src/pull/8348",
+                    "updated_at": "2022-09-11T12:43:34Z"
+                }
+            ],
+            "originalCapturePath": ".audit/phase7g/upstream/search-hook-discarded.json",
+            "headersSha256": "763a2848beb7820b9d60589a5a3e9adaba92da6a46d0c4048e3a4801e98cd5fd"
+        },
+        "search-hook-unknown": {
+            "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22unknown%20hook%22&per_page=100",
+            "retrievedAt": "2026-10-26T19:12:57+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/search-hook-unknown.headers",
+                "-o",
+                ".audit/phase7g/upstream/search-hook-unknown.json",
+                "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22unknown%20hook%22&per_page=100"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/search-hook-unknown.json",
+            "sha256": "c9938edecb99d754b2d039ac9eec320a94c769b6a6417921e2dcbef9e2fe01a0",
+            "nextPagePresent": false,
+            "totalCount": 0,
+            "incompleteResults": false,
+            "items": [],
+            "originalCapturePath": ".audit/phase7g/upstream/search-hook-unknown.json",
+            "headersSha256": "3bd610b13d66d7e1dac2eae05ee7c7983b925333598aa7dee15540de30275dbb"
+        },
+        "search-writable-opcode": {
+            "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22Invalid%20opcode%22%20%22assignment%22&per_page=100",
+            "retrievedAt": "2026-10-26T19:12:58+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/search-writable-opcode.headers",
+                "-o",
+                ".audit/phase7g/upstream/search-writable-opcode.json",
+                "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22Invalid%20opcode%22%20%22assignment%22&per_page=100"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/search-writable-opcode.json",
+            "sha256": "406a5bc06c2ffaa0f69f60c533f32fc0aba53393aa6b41b29b9ff36adde12e39",
+            "nextPagePresent": false,
+            "totalCount": 2,
+            "incompleteResults": false,
+            "items": [
+                {
+                    "number": 20903,
+                    "title": "Fix GH-10497: Allow const obj->prop = value",
+                    "url": "https://github.com/php/php-src/pull/20903",
+                    "updated_at": "2026-08-13T11:07:11Z"
+                },
+                {
+                    "number": 1393,
+                    "title": "Temporary cleaning",
+                    "url": "https://github.com/php/php-src/pull/1393",
+                    "updated_at": "2015-07-07T13:03:24Z"
+                }
+            ],
+            "originalCapturePath": ".audit/phase7g/upstream/search-writable-opcode.json",
+            "headersSha256": "8b5a3d30abe6bab5046e4a3726f813f7bf29b71a878eaec7faae9c1f92b9633d"
+        },
+        "search-new-writable": {
+            "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20updated%3A%3E%3D2026-10-25%20%28%22writable%22%20OR%20%22opcode%22%29&per_page=100",
+            "retrievedAt": "2026-10-26T19:12:58+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/search-new-writable.headers",
+                "-o",
+                ".audit/phase7g/upstream/search-new-writable.json",
+                "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20updated%3A%3E%3D2026-10-25%20%28%22writable%22%20OR%20%22opcode%22%29&per_page=100"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/search-new-writable.json",
+            "sha256": "c962465b2697a6e9746b9e3a8f8ae5495dd43cf31cf565233f15033935a4568e",
+            "nextPagePresent": false,
+            "totalCount": 9,
+            "incompleteResults": false,
+            "items": [
+                {
+                    "number": 24487,
+                    "title": "Fix temporaries leaking when a VM interrupt throws at the op that fre\u2026",
+                    "url": "https://github.com/php/php-src/pull/24487",
+                    "updated_at": "2026-10-26T16:20:12Z"
+                },
+                {
+                    "number": 24566,
+                    "title": "php8.6: Fix set visibility bypass through a primed ZEND_ASSIGN_OBJ cache slot",
+                    "url": "https://github.com/php/php-src/pull/24566",
+                    "updated_at": "2026-10-26T13:09:02Z"
+                },
+                {
+                    "number": 24699,
+                    "title": "Fix GH-24438: Preserve indirect types in JIT side traces",
+                    "url": "https://github.com/php/php-src/pull/24699",
+                    "updated_at": "2026-10-26T17:54:17Z"
+                },
+                {
+                    "number": 24745,
+                    "title": "OPcache: file cache loses attributes on constants on 32-bit builds",
+                    "url": "https://github.com/php/php-src/issues/24745",
+                    "updated_at": "2026-10-26T17:37:03Z"
+                },
+                {
+                    "number": 24713,
+                    "title": "ext/gmp: operator-overloaded ** and << crash with SIGFPE on large operand (shift_operator_helper unbounded)",
+                    "url": "https://github.com/php/php-src/issues/24713",
+                    "updated_at": "2026-10-26T09:38:50Z"
+                },
+                {
+                    "number": 22709,
+                    "title": "Make property resolution direction-aware; amortize asymmetric visibility set checks into the runtime cache",
+                    "url": "https://github.com/php/php-src/pull/22709",
+                    "updated_at": "2026-10-26T02:34:00Z"
+                },
+                {
+                    "number": 22635,
+                    "title": "feat: Implement extension methods (RFC prototype, phase 1)",
+                    "url": "https://github.com/php/php-src/pull/22635",
+                    "updated_at": "2026-10-26T02:34:00Z"
+                },
+                {
+                    "number": 24481,
+                    "title": "Use-after-free in var_destroy() during unserialize() re-entrancy allows __destruct to read a freed var_entries chunk",
+                    "url": "https://github.com/php/php-src/issues/24481",
+                    "updated_at": "2026-10-26T12:47:58Z"
+                },
+                {
+                    "number": 17733,
+                    "title": "System entropy does not take into account function order, resulting in wrong functions possibly called in different configurations",
+                    "url": "https://github.com/php/php-src/issues/17733",
+                    "updated_at": "2026-10-26T17:44:14Z"
+                }
+            ],
+            "originalCapturePath": ".audit/phase7g/upstream/search-new-writable.json",
+            "headersSha256": "5d3c2159761adc25fd42bb5014c483870da17371e2641ac55b83d795f89ac23d"
+        },
+        "search-new-traversal": {
+            "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20updated%3A%3E%3D2026-10-25%20%28%22printf%22%20OR%20%22sprintf%22%29&per_page=100",
+            "retrievedAt": "2026-10-26T19:13:00+00:00",
+            "command": [
+                "curl.exe",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--location",
+                "--max-time",
+                "60",
+                "--user-agent",
+                "php-grammar-local-evidence-review",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-D",
+                ".audit/phase7g/upstream/search-new-traversal.headers",
+                "-o",
+                ".audit/phase7g/upstream/search-new-traversal.json",
+                "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20updated%3A%3E%3D2026-10-25%20%28%22printf%22%20OR%20%22sprintf%22%29&per_page=100"
+            ],
+            "exit_code": 0,
+            "error": "",
+            "path": "docs/8.6/upstream-language-validity-clarification/upstream/search-new-traversal.json",
+            "sha256": "de3270630bf72d36adee2cab546e7fa460e30441cf784c2c2b2e0d11e9bd3b34",
+            "nextPagePresent": false,
+            "totalCount": 12,
+            "incompleteResults": false,
+            "items": [
+                {
+                    "number": 24492,
+                    "title": "sprintf()/pack()/bin2hex() _exit(137) at hard memory limit where 8.5.11 raised a catchable OOM (incomplete fallible-alloc conversion, 8.5.12/8.4.27)",
+                    "url": "https://github.com/php/php-src/issues/24492",
+                    "updated_at": "2026-10-25T00:41:28Z"
+                },
+                {
+                    "number": 24563,
+                    "title": "Allocation-failure call sites still on zend_error_noreturn(E_ERROR) on master (zend_strtod.c \"Balloc() failed\", zend_multiply.h) \u2014 the EOL-7.4 minimal mitigation hardened these, master did not",
+                    "url": "https://github.com/php/php-src/issues/24563",
+                    "updated_at": "2026-10-25T13:57:27Z"
+                },
+                {
+                    "number": 24674,
+                    "title": "var_destroy() UAF also reachable through SplObjectStorage::__unserialize() \u2014 separate entry point from #24481",
+                    "url": "https://github.com/php/php-src/issues/24674",
+                    "updated_at": "2026-10-25T17:28:20Z"
+                },
+                {
+                    "number": 24735,
+                    "title": "DateTime::setTime() in the repeated hour of Europe/Dublin moves to the later occurrence (an hour ahead)",
+                    "url": "https://github.com/php/php-src/issues/24735",
+                    "updated_at": "2026-10-26T09:38:04Z"
+                },
+                {
+                    "number": 24675,
+                    "title": "JIT: function with >~1.7 MB of machine code corrupts JIT buffer accounting; next compilation crashes (SIGBUS on arm64)",
+                    "url": "https://github.com/php/php-src/issues/24675",
+                    "updated_at": "2026-10-25T12:34:51Z"
+                },
+                {
+                    "number": 24661,
+                    "title": "FPM: pools with different disable_functions sharing one opcache run scripts wrongly (var_export() calls var_dump(), SIGSEGV in the restricted pool) on 8.4/8.5/8.6",
+                    "url": "https://github.com/php/php-src/issues/24661",
+                    "updated_at": "2026-10-25T10:07:13Z"
+                },
+                {
+                    "number": 24683,
+                    "title": "Tracing JIT: local keeps a stale constant after a trace links into a loop trace",
+                    "url": "https://github.com/php/php-src/issues/24683",
+                    "updated_at": "2026-10-26T16:18:20Z"
+                },
+                {
+                    "number": 24731,
+                    "title": "Assertion failure in zend_objects_store_del() when a bailout interrupts zend_fcc_dtor() in header_register_callback()",
+                    "url": "https://github.com/php/php-src/issues/24731",
+                    "updated_at": "2026-10-26T08:50:55Z"
+                },
+                {
+                    "number": 24691,
+                    "title": "Tracing JIT: interpreter loop gives different results than without the JIT",
+                    "url": "https://github.com/php/php-src/issues/24691",
+                    "updated_at": "2026-10-25T16:11:22Z"
+                },
+                {
+                    "number": 24481,
+                    "title": "Use-after-free in var_destroy() during unserialize() re-entrancy allows __destruct to read a freed var_entries chunk",
+                    "url": "https://github.com/php/php-src/issues/24481",
+                    "updated_at": "2026-10-26T12:47:58Z"
+                },
+                {
+                    "number": 22709,
+                    "title": "Make property resolution direction-aware; amortize asymmetric visibility set checks into the runtime cache",
+                    "url": "https://github.com/php/php-src/pull/22709",
+                    "updated_at": "2026-10-26T02:34:00Z"
+                },
+                {
+                    "number": 23016,
+                    "title": "pdo_odbc: NULL values come back as garbage binary strings (8.5.9 regression)",
+                    "url": "https://github.com/php/php-src/issues/23016",
+                    "updated_at": "2026-10-25T17:40:01Z"
+                }
+            ],
+            "originalCapturePath": ".audit/phase7g/upstream/search-new-traversal.json",
+            "headersSha256": "bb5ac68fcac42d6119ce95b9bcb00f84a316c7c63ebdabf1fb89e54c4f24c2b2"
+        }
+    }
+}

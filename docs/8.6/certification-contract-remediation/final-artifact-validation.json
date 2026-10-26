@@ -1,0 +1,31 @@
+{
+  "jsonFiles": 101,
+  "documentationLinks": 20,
+  "phpSyntax": {
+    "tools/lib/Preservation86.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tools/lib/Preservation86.php\n"
+    },
+    "tools/lib/CertificationCurrent.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tools/lib/CertificationCurrent.php\n"
+    },
+    "tools/lib/CertificationCurrentRun.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tools/lib/CertificationCurrentRun.php\n"
+    },
+    "tools/lib/HistoricalReleaseDependency.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tools/lib/HistoricalReleaseDependency.php\n"
+    },
+    "tools/8.6/certification-current.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tools/8.6/certification-current.php\n"
+    },
+    "tests/CertificationCurrentTest.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tests/CertificationCurrentTest.php\n"
+    }
+  },
+  "errors": []
+}

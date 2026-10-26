@@ -1,0 +1,110 @@
+{
+  "provenanceErrors": [],
+  "binarySha256": "445d2bde0998cd54e04b4be4401ae45b5e54df4ef677294a64cbcd1faf6d9fe6",
+  "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "commands": {
+    "exact-pfa": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/pfa-check.php",
+        "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "--php86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+        "--sources=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+        "--report=docs/8.6/certification-blocker-closure/exact-pfa.json"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/certification-blocker-closure/support-exact-pfa.log",
+      "sha256": "7bd9a30c14871ab1be125157aa997320e374ade167a0b7f23216c11fbe263fdd"
+    },
+    "exact-deprecation": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/deprecation-check.php",
+        "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "--php86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+        "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+        "--sources86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+        "--report=docs/8.6/certification-blocker-closure/exact-deprecation.json"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/certification-blocker-closure/support-exact-deprecation.log",
+      "sha256": "ad1c7ab8e7e36ba0abd7e95f1d97678561689cff76ac219270ab41da61a1192f"
+    },
+    "exact-context-check": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/context-profile.php",
+        "--check",
+        "--profile",
+        "exact-pin-rc4",
+        "--report",
+        "docs/8.6/exact-pin-context-integration/exact.json"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/certification-blocker-closure/support-exact-context-check.log",
+      "sha256": "1ae83d1f5f0f67d1ae95fa1e1ddf8f3a4c929bb205df439c30b0865e1f009f77"
+    },
+    "closure-evidence": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/blocker-closure-check.php"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/certification-blocker-closure/support-closure-evidence.log",
+      "sha256": "9199a42561aed55129788902331746037fef96fb3d68fb64d0c052253ee369e2"
+    },
+    "certification-negatives": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "-d",
+        "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress",
+        "--filter",
+        "BlockerClosureTest|Certification86Test|ContextEvidenceTest|ExactPinProvenanceTest|HistoricalEvidenceContractTest|CompatibilityEvidenceTest"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/certification-blocker-closure/support-certification-negatives.log",
+      "sha256": "92c116a96c75b238fdb9eb26b83e55f32d4f24db97227f8f2b223e7140923742"
+    },
+    "traceability": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/change-traceability.php",
+        "--report=docs/8.6/certification-blocker-closure/traceability.json"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/certification-blocker-closure/support-traceability.log",
+      "sha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+    },
+    "manifest": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/validate-manifest.php"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/certification-blocker-closure/support-manifest.log",
+      "sha256": "e2b231fd276610052d6d579479dd352de5ab52944b36d2c95e6db7de0a9f6da3"
+    },
+    "whitespace": {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=C:/Data/GitHub/php-grammar",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/certification-blocker-closure/support-whitespace.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

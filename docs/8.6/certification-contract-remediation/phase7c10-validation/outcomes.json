@@ -1,0 +1,204 @@
+{
+  "original36": {
+    "passed": 21,
+    "failed": 5,
+    "blocked": 10
+  },
+  "v2Current36": {
+    "passed": 26,
+    "failed": 1,
+    "blocked": 9
+  },
+  "v2Current38": {
+    "passed": 28,
+    "failed": 1,
+    "blocked": 9
+  },
+  "successor36": {
+    "passed": 27,
+    "failed": 0,
+    "blocked": 9
+  },
+  "successor38": {
+    "passed": 29,
+    "failed": 0,
+    "blocked": 9
+  },
+  "release85": {
+    "commands": 27,
+    "passed": 25,
+    "failed": 2
+  },
+  "checks": {
+    "preservation": true,
+    "audit": true,
+    "historical-integrity": true,
+    "current-compatibility": true,
+    "exact-provenance": true,
+    "exact-context": true,
+    "blockers": true,
+    "legacy-ledger": true,
+    "release85": true,
+    "ordinary-differential-successor": true
+  },
+  "claimErrors": [
+    "Mandatory obligation unmet: production-coverage-closure",
+    "Mandatory obligation unmet: alternative-coverage-closure",
+    "Mandatory obligation unmet: scanner-state-closure",
+    "Mandatory obligation unmet: ast-binding",
+    "Mandatory obligation unmet: folding-order",
+    "Mandatory obligation unmet: discovery-closure",
+    "Mandatory obligation unmet: writable-target-validity",
+    "Mandatory obligation unmet: contextual-enforcement-scope",
+    "Mandatory obligation unmet: discarded-hook-disposition",
+    "Unresolved blocker: PHP86-013",
+    "Unresolved blocker: PHP86-014",
+    "Unresolved blocker: PHP86-015",
+    "Unresolved blocker: CA86-001",
+    "Unresolved blocker: C6-CONTEXT",
+    "Unresolved blocker: C6-COVERAGE",
+    "Unresolved blocker: C6-PROVENANCE"
+  ],
+  "compatibilityCommands": 15,
+  "compatibilityFailures": [],
+  "compatibilityDependencies": 4032,
+  "fullSuite": {
+    "tests": 6267,
+    "assertions": 58569
+  },
+  "ordinaryGateSuccessor": {
+    "id": "ordinary-differential",
+    "contract": "php86-certification-v3",
+    "obligation": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+    "legacy": {
+      "obligation": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+      "status": "failed",
+      "exit_code": 1,
+      "command": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/certification-boundaries.php",
+        "--php86",
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+        "--report",
+        "docs/8.6/certification/boundaries.json"
+      ],
+      "log": "docs/8.6/certification/logs/ordinary-differential.log",
+      "logSha256": "1492a5a162465d9a1d776e98503a1e2d475421ac0965b6087eb4cbe26ab7583e"
+    },
+    "requiredInputs": [
+      "current-dependencies",
+      "legacy-snapshot",
+      "docs/8.6/differential-inventory-reconciliation/inventory.json",
+      "independently-verified-exact-differential"
+    ],
+    "sourcePin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+    "sourceRequirements": {
+      "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+      "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+    },
+    "executableProfile": "exact-pin-rc4",
+    "verificationCommand": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/differential-inventory.php",
+      "--check",
+      "--profile",
+      "exact-pin-rc4",
+      "--report",
+      "docs/8.6/differential-inventory-reconciliation/differential.json"
+    ],
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/differential-inventory.php",
+      "--generate",
+      "--profile",
+      "exact-pin-rc4",
+      "--report",
+      "docs/8.6/differential-inventory-reconciliation/differential.json"
+    ],
+    "expectedEvidence": "All 313 predecessor expectations preserved; exactly 26 anchored additions; complete live corpus, source correspondence, exact-source structural/lexical/lint/diagnostic observations, stable inputs and independent verification.",
+    "actualEvidence": "docs/8.6/differential-inventory-reconciliation/differential.json",
+    "freshness": "current-verified",
+    "execution": "executed-exact-source-and-independently-verified",
+    "blockingDependencies": [],
+    "result": "passed",
+    "successorIdentity": "ordinary-differential@v2",
+    "predecessorCurrentRow": {
+      "id": "ordinary-differential",
+      "contract": "php86-certification-v2",
+      "obligation": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+      "legacy": {
+        "obligation": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+        "status": "failed",
+        "exit_code": 1,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-boundaries.php",
+          "--php86",
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--report",
+          "docs/8.6/certification/boundaries.json"
+        ],
+        "log": "docs/8.6/certification/logs/ordinary-differential.log",
+        "logSha256": "1492a5a162465d9a1d776e98503a1e2d475421ac0965b6087eb4cbe26ab7583e"
+      },
+      "requiredInputs": [
+        "current-dependencies",
+        "legacy-snapshot"
+      ],
+      "sourcePin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+      "sourceRequirements": {
+        "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+        "8.6": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+      },
+      "executableProfile": "historical-rc4",
+      "verificationCommand": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification-current.php",
+        "--contract",
+        "php86-certification-v2",
+        "--check",
+        "--report",
+        "docs/8.6/certification-contract-remediation/runs/phase7c10-base/evidence.json"
+      ],
+      "command": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0",
+        "tools/8.6/certification-boundaries.php",
+        "--php86",
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+        "--report",
+        "docs/8.6/certification/boundaries.json"
+      ],
+      "expectedEvidence": "Independently verified command outcome and complete input membership",
+      "actualEvidence": "docs/8.6/certification/logs/ordinary-differential.log",
+      "freshness": "current-verified",
+      "execution": "executed",
+      "blockingDependencies": [],
+      "result": "failed"
+    }
+  },
+  "certificationGranted": false
+}

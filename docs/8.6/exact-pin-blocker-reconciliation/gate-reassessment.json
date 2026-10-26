@@ -1,0 +1,276 @@
+{
+  "scope": "Evidence reassessment, not certification execution. Counts retain the actual prior gate-run statuses, not newly certified passes.",
+  "legacyReport": "docs/8.6/final-evidence.json",
+  "legacyReportSha256": "adfba9e20460a8124df86d7cfb0ee84cf63b1629fc017c98447f5d11297fee58",
+  "gates": {
+    "manifest-schema": {
+      "obligation": "Validate schema, metadata paths, RC4 pin and draft/stable status.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "manifest-regressions": {
+      "obligation": "Exercise valid and invalid manifest contracts.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "standalone-structure-parity": {
+      "obligation": "Load only 8.6; check EBNF structure/references, parity, version selection and CLI.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "positive-negative-fixtures": {
+      "obligation": "Run registered positive and structural-negative fixture providers.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "ordinary-differential": {
+      "obligation": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "lexer-profiles": {
+      "obligation": "Compare version-specific token boundaries and both short-tag profiles with both distributions.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "pfa-differential": {
+      "obligation": "Validate PFA positives, structural/contextual negatives and paired lint with pinned hashes.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "contextual-differential": {
+      "obligation": "Check compiler, declaration-link and controlled-runtime expectations at their declared stage.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "diagnostic-differential": {
+      "obligation": "Separate warning presence/stage from rejection in both distributions.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "version-boundaries": {
+      "obligation": "Discover structural/lint/link boundaries and verify paired outcomes and finding identity.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "coverage-measurement": {
+      "obligation": "Measure actual 8.6 production/alternative witnesses and compare source-backed lexical cases.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "parser-scanner-correspondence": {
+      "obligation": "Recompute the 176-production/623-alternative and 190-header inventories, source locks and mappings.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "compiler-contextual-reconciliation": {
+      "obligation": "Verify bounded semantic groups, inventories, source references and preserved uncertainties.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "rfc-implementation-traceability": {
+      "obligation": "Recompute all RFC candidate dispositions at the selected source pin; no RFC-only permission.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "production-change-traceability": {
+      "obligation": "Reject unexplained added/removed/modified productions, lexical/prose drift and stale witnesses.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "changes-document-completeness": {
+      "obligation": "Verify all ten sections, finding IDs, source pins and regression references.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "historical-preservation": {
+      "obligation": "Compare every pre-7A project file, including all 8.5 evidence/fixtures/locks and both 8.6 specifications.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "public-api-cli": {
+      "obligation": "Run consumer workflow, package contract and navigation CLI regressions.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "source-lock-integrity": {
+      "obligation": "Verify independent RC4 lock completeness and every required source SHA-256.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "evidence-freshness": {
+      "obligation": "Verify historical audit inputs; final --check also compares complete current input/output sets.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "blocker-dispositions": {
+      "obligation": "Require all seven complete, unchanged Phase 6 blocking dispositions.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "documentation-json": {
+      "obligation": "Validate new JSON, local documentation links, status wording and whitespace.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "full-regression": {
+      "obligation": "Run the entire repository PHPUnit suite without cached results.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "infrastructure-negatives": {
+      "obligation": "Exercise isolated missing/stale/invalid inputs, failed gates and false certification claims.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "historical-certification-check": {
+      "obligation": "Run unmodified 8.5 certification --check; record pre-existing freshness failures, never rewrite history.",
+      "legacyRecordedStatus": "failed",
+      "currentReleaseGateStatus": "failed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "composer-validation": {
+      "obligation": "Validate Composer metadata strictly.",
+      "legacyRecordedStatus": "passed",
+      "currentReleaseGateStatus": "passed",
+      "freshReleaseRun": false,
+      "reason": "Preserved prior release-run result; fresh bounded validation is separately recorded, not a new certification run."
+    },
+    "production-coverage-closure": {
+      "obligation": "Disposition every uncovered production with independent evidence; unresolved meaningful gaps block.",
+      "legacyRecordedStatus": "blocked",
+      "currentReleaseGateStatus": "blocked",
+      "freshReleaseRun": false,
+      "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+    },
+    "alternative-coverage-closure": {
+      "obligation": "Disposition every uncovered alternative, including context-only from; percentages do not waive gaps.",
+      "legacyRecordedStatus": "blocked",
+      "currentReleaseGateStatus": "blocked",
+      "freshReleaseRun": false,
+      "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+    },
+    "scanner-state-closure": {
+      "obligation": "Supply independent RC4 scanner state/helper/error products; header equality is insufficient.",
+      "legacyRecordedStatus": "blocked",
+      "currentReleaseGateStatus": "blocked",
+      "freshReleaseRun": false,
+      "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+    },
+    "ast-binding": {
+      "obligation": "Supply independent RC4 operand/AST and interpolation binding evidence, including retained ambiguities.",
+      "legacyRecordedStatus": "blocked",
+      "currentReleaseGateStatus": "blocked",
+      "freshReleaseRun": false,
+      "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+    },
+    "folding-order": {
+      "obligation": "Resolve optimized-call traversal and independently reconcile live/retained/discarded validation order.",
+      "legacyRecordedStatus": "blocked",
+      "currentReleaseGateStatus": "blocked",
+      "freshReleaseRun": false,
+      "reason": "PHP86-015: Phase 6 mandatory finding remains unresolved."
+    },
+    "discovery-closure": {
+      "obligation": "Resolve outstanding syntax-relevant compiler/AST/linking/optimizer discovery records.",
+      "legacyRecordedStatus": "blocked",
+      "currentReleaseGateStatus": "blocked",
+      "freshReleaseRun": false,
+      "reason": "PHP86-013: Phase 6 mandatory finding remains unresolved."
+    },
+    "writable-target-validity": {
+      "obligation": "Establish intended writable-target validity and compiler/VM consistency.",
+      "legacyRecordedStatus": "blocked",
+      "currentReleaseGateStatus": "blocked",
+      "freshReleaseRun": false,
+      "reason": "PHP86-014: Phase 6 mandatory finding remains unresolved."
+    },
+    "contextual-enforcement-scope": {
+      "obligation": "Adjudicate incomplete contextual enforcement and predicate-level evidence for the bounded claim.",
+      "legacyRecordedStatus": "blocked",
+      "currentReleaseGateStatus": "blocked",
+      "freshReleaseRun": false,
+      "reason": "C6-CONTEXT: Phase 6 mandatory finding remains unresolved."
+    },
+    "discarded-hook-disposition": {
+      "obligation": "Independently adjudicate the inherited get/set-only discrepancy; do not inherit an 8.5 conclusion.",
+      "legacyRecordedStatus": "blocked",
+      "currentReleaseGateStatus": "blocked",
+      "freshReleaseRun": false,
+      "reason": "CA86-001: Phase 6 mandatory finding remains unresolved."
+    },
+    "exact-pin-executable": {
+      "obligation": "Require reviewed source/build/generated-file/configuration/binary provenance; a version string is insufficient.",
+      "legacyRecordedStatus": "blocked",
+      "currentReleaseGateStatus": "blocked",
+      "freshReleaseRun": false,
+      "reason": "Exact-source evidence passes the existing --provenance inspection. Legacy gateErrors still requires this gate to remain blocked, and legacy reports forbid exactPinExecutableVerified=true. No historical report or gate definition is rewritten; T7B-RUNNER integration remains separate.",
+      "prerequisiteStatus": "passed",
+      "evidence": "docs/8.6/exact-pin-blocker-reconciliation/validation-runner-provenance.log"
+    }
+  },
+  "legacyGateCounts": {
+    "passed": 25,
+    "failed": 1,
+    "blocked": 10
+  },
+  "legacyGateCount": 36,
+  "hybridGateCount": 38,
+  "hybridAdditionalObligations": {
+    "historical-artifact-integrity": "verified separately",
+    "current-compatibility": "verify phase7c4-verified separately"
+  },
+  "exactSourceObligationRequiresSecondBuild": false,
+  "secondBuildClaim": "No bit-for-bit reproduction claim; gate requires reviewed exact-source correspondence, not an independent second compilation.",
+  "freshValidation": "docs/8.6/exact-pin-blocker-reconciliation/validation.json",
+  "certificationGranted": false
+}

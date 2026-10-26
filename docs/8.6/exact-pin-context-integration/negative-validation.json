@@ -1,0 +1,86 @@
+{
+  "scenarios": {
+    "valid-distribution-wrong-exact-profile": {
+      "rejected": true,
+      "errors": [
+        "Wrong executable identity/profile: 8.6"
+      ]
+    },
+    "valid-exact-build-wrong-historical-profile": {
+      "rejected": true,
+      "errors": [
+        "Wrong executable identity/profile: 8.6"
+      ]
+    },
+    "no-implicit-profile": {
+      "rejected": true,
+      "errors": [
+        "Context preflight: Explicit known context profile required"
+      ]
+    },
+    "modified-real-executable": {
+      "rejected": true,
+      "errors": [
+        "Wrong executable identity/profile: 8.6"
+      ]
+    },
+    "missing-provenance-selection": {
+      "rejected": true,
+      "errors": [
+        "Unreviewed provenance record"
+      ]
+    },
+    "wrong-source-correspondence": {
+      "rejected": true,
+      "errors": [
+        "Context source mismatch: 8.6/Zend/zend_compile.c",
+        "Context source mismatch: 8.6/Zend/zend_inheritance.c",
+        "Context source mismatch: 8.6/Zend/zend_enum.c",
+        "Context source mismatch: 8.6/Zend/zend_attributes.stub.php",
+        "Context source mismatch: 8.6/Zend/zend_attributes_arginfo.h",
+        "Context source mismatch: 8.6/Zend/zend_API.c",
+        "Context source mismatch: 8.6/Zend/zend_object_handlers.c",
+        "Context source mismatch: 8.6/Zend/zend_language_parser.y",
+        "Context source mismatch: 8.6/Zend/tests/readonly_props/readonly_with_default.phpt",
+        "Context source mismatch: 8.6/Zend/tests/readonly_props/readonly_with_default_inheritance.phpt",
+        "Context source mismatch: 8.6/Zend/tests/gh10497_write_targets.phpt",
+        "Context source mismatch: 8.6/Zend/tests/gh10497_write_targets_guardrail.phpt",
+        "Context source mismatch: 8.6/Zend/tests/gh10497_dim_arr.phpt",
+        "Context source mismatch: 8.6/Zend/tests/gh10497_func_arg.phpt",
+        "Context source mismatch: 8.6/Zend/tests/gh10497_non_object.phpt",
+        "Context source mismatch: 8.6/Zend/tests/attributes/override/constants/basic.phpt",
+        "Context source mismatch: 8.6/Zend/tests/attributes/override/constants/visibility_01.phpt",
+        "Context source mismatch: 8.6/Zend/tests/attributes/override/constants/visibility_03.phpt",
+        "Context source mismatch: 8.6/Zend/tests/attributes/override/constants/failure.phpt",
+        "Context source mismatch: 8.6/Zend/tests/enum/debugInfo/magic_method.phpt",
+        "Context source mismatch: 8.6/Zend/tests/enum/debugInfo/backed_enum_value.phpt",
+        "Context source mismatch: 8.6/Zend/tests/enum/debugInfo/param_validation.phpt",
+        "Context source mismatch: 8.6/Zend/tests/enum/debugInfo/return_validation.phpt",
+        "Context source mismatch: 8.6/Zend/tests/enum/debugInfo/visibility_validation.phpt",
+        "Context source mismatch: 8.6/Zend/tests/gh20628_001.phpt"
+      ]
+    },
+    "missing-observation-even-with-matching-receipt": {
+      "rejected": true,
+      "errors": [
+        "Missing or extra contextual observations",
+        "Missing contextual observation identities"
+      ]
+    },
+    "tampered-run-metadata": {
+      "rejected": true,
+      "errors": [
+        "Changed contextual evidence receipt"
+      ]
+    },
+    "valid-report-wrong-profile": {
+      "rejected": true,
+      "errors": [
+        "Context evidence contract/profile/claim mismatch",
+        "Context configuration/profile mismatch"
+      ]
+    }
+  },
+  "errors": [],
+  "additionalUnitCoverage": "ContextEvidenceTest covers missing/tampered build record, mismatched commit/configuration/hash, custody receipt alteration, historical report/fixture changes and incomplete stage receipts."
+}

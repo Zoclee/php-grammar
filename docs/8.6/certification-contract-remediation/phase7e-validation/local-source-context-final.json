@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "tools/8.6/local-source-context.php",
+    "--check"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/certification-contract-remediation/phase7e-validation/local-source-context-final.log",
+  "sha256": "f9b986a36a37ff6d0055e5cf507175d274f8b99f5cfb58bb69d9cd6ddc011486",
+  "queuePartitionVerified": true
+}

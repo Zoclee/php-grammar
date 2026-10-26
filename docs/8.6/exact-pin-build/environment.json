@@ -1,0 +1,135 @@
+{
+  "os": "Windows NT ALWYNLAPTOP 10.0 build 26200 (Windows 11) AMD64",
+  "architecture": 64,
+  "commands": {
+    "cl": {
+      "command": [
+        "where.exe",
+        "cl"
+      ],
+      "exit_code": 1,
+      "output": "INFO: Could not find files for the given pattern(s).\r\n"
+    },
+    "nmake": {
+      "command": [
+        "where.exe",
+        "nmake"
+      ],
+      "exit_code": 1,
+      "output": "INFO: Could not find files for the given pattern(s).\r\n"
+    },
+    "docker": {
+      "command": [
+        "where.exe",
+        "docker"
+      ],
+      "exit_code": 1,
+      "output": "INFO: Could not find files for the given pattern(s).\r\n"
+    },
+    "podman": {
+      "command": [
+        "where.exe",
+        "podman"
+      ],
+      "exit_code": 1,
+      "output": "INFO: Could not find files for the given pattern(s).\r\n"
+    },
+    "wsl": {
+      "command": [
+        "where.exe",
+        "wsl"
+      ],
+      "exit_code": 0,
+      "output": "C:\\Windows\\System32\\wsl.exe\r\nC:\\Users\\alwyn\\AppData\\Local\\Microsoft\\WindowsApps\\wsl.exe\r\n"
+    },
+    "gcc": {
+      "command": [
+        "where.exe",
+        "gcc"
+      ],
+      "exit_code": 0,
+      "output": "C:\\mingw64\\bin\\gcc.exe\r\n"
+    },
+    "cmake": {
+      "command": [
+        "where.exe",
+        "cmake"
+      ],
+      "exit_code": 0,
+      "output": "C:\\Program Files\\CMake\\bin\\cmake.exe\r\n"
+    },
+    "php": {
+      "command": [
+        "where.exe",
+        "php"
+      ],
+      "exit_code": 0,
+      "output": "C:\\Users\\alwyn\\.config\\herd\\bin\\php.bat\r\nC:\\wamp64\\bin\\php\\php8.3.6\\php.exe\r\n"
+    },
+    "bison": {
+      "command": [
+        "where.exe",
+        "bison"
+      ],
+      "exit_code": 1,
+      "output": "INFO: Could not find files for the given pattern(s).\r\n"
+    },
+    "re2c": {
+      "command": [
+        "where.exe",
+        "re2c"
+      ],
+      "exit_code": 1,
+      "output": "INFO: Could not find files for the given pattern(s).\r\n"
+    },
+    "phpsdk_buildtree": {
+      "command": [
+        "where.exe",
+        "phpsdk_buildtree"
+      ],
+      "exit_code": 1,
+      "output": "INFO: Could not find files for the given pattern(s).\r\n"
+    },
+    "phpsdk_deps": {
+      "command": [
+        "where.exe",
+        "phpsdk_deps"
+      ],
+      "exit_code": 1,
+      "output": "INFO: Could not find files for the given pattern(s).\r\n"
+    },
+    "wsl-distributions": {
+      "command": [
+        "wsl.exe",
+        "--list",
+        "--quiet"
+      ],
+      "exit_code": -1,
+      "output": "Windows Subsystem for Linux has no installed distributions.\r\nYou can resolve this by installing a distribution with the instructions below:\r\n\r\nUse 'wsl.exe --list --online' to list available distributions\r\nand 'wsl.exe --install <Distro>' to install.\r\n"
+    },
+    "visual-studio": {
+      "command": [
+        "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe",
+        "-products",
+        "*",
+        "-requires",
+        "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+        "-format",
+        "json"
+      ],
+      "exit_code": 0,
+      "output": "[\r\n  {\r\n    \"instanceId\": \"0560161e\",\r\n    \"installDate\": \"2025-01-05T08:29:40Z\",\r\n    \"installationName\": \"VisualStudio/17.12.3+35527.113\",\r\n    \"installationPath\": \"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\2022\\\\Community\",\r\n    \"installationVersion\": \"17.12.35527.113\",\r\n    \"productId\": \"Microsoft.VisualStudio.Product.Community\",\r\n    \"productPath\": \"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\2022\\\\Community\\\\Common7\\\\IDE\\\\devenv.exe\",\r\n    \"state\": 4294967295,\r\n    \"isComplete\": true,\r\n    \"isLaunchable\": true,\r\n    \"isPrerelease\": false,\r\n    \"isRebootRequired\": false,\r\n    \"displayName\": \"Visual Studio Community 2022\",\r\n    \"description\": \"Powerful IDE, free for students, open-source contributors, and individuals\",\r\n    \"channelId\": \"VisualStudio.17.Release\",\r\n    \"channelUri\": \"https://aka.ms/vs/17/release/channel\",\r\n    \"enginePath\": \"C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\Installer\\\\resources\\\\app\\\\ServiceHub\\\\Services\\\\Microsoft.VisualStudio.Setup.Service\",\r\n    \"installedChannelId\": \"VisualStudio.17.Release\",\r\n    \"installedChannelUri\": \"https://aka.ms/vs/17/release/channel\",\r\n    \"releaseNotes\": \"https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes-v17.12#17.12.3\",\r\n    \"resolvedInstallationPath\": \"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\2022\\\\Community\",\r\n    \"thirdPartyNotices\": \"https://go.microsoft.com/fwlink/?LinkId=661288\",\r\n    \"updateDate\": \"2025-01-05T08:29:40.7668187Z\",\r\n    \"catalog\": {\r\n      \"buildBranch\": \"d17.12\",\r\n      \"buildVersion\": \"17.12.35527.113\",\r\n      \"id\": \"VisualStudio/17.12.3+35527.113\",\r\n      \"localBuild\": \"build-lab\",\r\n      \"manifestName\": \"VisualStudio\",\r\n      \"manifestType\": \"installer\",\r\n      \"productDisplayVersion\": \"17.12.3\",\r\n      \"productLine\": \"Dev17\",\r\n      \"productLineVersion\": \"2022\",\r\n      \"productMilestone\": \"RTW\",\r\n      \"productMilestoneIsPreRelease\": \"False\",\r\n      \"productName\": \"Visual Studio\",\r\n      \"productPatchVersion\": \"3\",\r\n      \"productPreReleaseMilestoneSuffix\": \"1.0\",\r\n      \"productSemanticVersion\": \"17.12.3+35527.113\",\r\n      \"requiredEngineVersion\": \"3.12.2149.20818\"\r\n    },\r\n    \"properties\": {\r\n      \"campaignId\": \"2030:e11d580fd86c4dea804fcc8292b27788\",\r\n      \"channelManifestId\": \"VisualStudio.17.Release/17.12.3+35527.113\",\r\n      \"includeRecommended\": \"1\",\r\n      \"nickname\": \"\",\r\n      \"setupEngineFilePath\": \"C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\Installer\\\\setup.exe\"\r\n    }\r\n  }\r\n]\r\n"
+    }
+  },
+  "toolchain": {
+    "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/cl.exe": "3e761c082f491950ed5565f198f2113a8043897ce4d8084e37de8e0fee43202a",
+    "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/lib.exe": "b8e7d03d9149891a8202058a9e189ad2ae173f00ffa2bd5fbfb6d6ee784c7f6b",
+    "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/link.exe": "f627ee8b9983af24d4b5ab6efab25f4a3be7a02bb09253aa2f5abab3c1fb2c6b",
+    "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/nmake.exe": "7568aecc4f9fb61ae52d875fb88f55f4cd4cf05fcbeede3147a650ec81246ede"
+  },
+  "windowsSdkHeaders": [
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.10586.0",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0"
+  ],
+  "scope": "Read-only inventory; no global environment changes."
+}

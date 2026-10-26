@@ -1,0 +1,1 @@
+<?php $x="$a[12] $a[key] $a->match $a?->readonly";

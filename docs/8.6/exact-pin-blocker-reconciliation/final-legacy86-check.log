@@ -1,0 +1,13 @@
+{
+  "mode": "check",
+  "errors": [
+    "Stale evidence input set/digest; review changes and rerun --prepare",
+    "Stale evidence digest: docs/api.md",
+    "Stale evidence digest: docs/conformance-policy.md",
+    "Stale evidence digest: docs/versioning.md",
+    "Stale evidence digest: tools/8.6/certification.php",
+    "Stale evidence digest: tools/lib/Certification86.php"
+  ],
+  "certificationGranted": false,
+  "note": "A valid preparation ledger is not certification."
+}

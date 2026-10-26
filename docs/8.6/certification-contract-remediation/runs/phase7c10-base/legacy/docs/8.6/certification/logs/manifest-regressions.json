@@ -1,0 +1,24 @@
+{
+  "obligation": "Exercise valid and invalid manifest contracts.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "-d",
+    "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "ToolManifestTest"
+  ],
+  "log": "docs/8.6/certification/logs/manifest-regressions.log",
+  "logSha256": "2a1b2117724c7fae6c6cf0f291fb3d4bc124ae779863420396862eb30a8f28d4"
+}

@@ -1,0 +1,31 @@
+{
+  "scope": "Phase 7D artifact hashes; self excluded. Local reviewed custody, not a signature.",
+  "files": {
+    "docs/8.6/final-certification-readiness.md": "fe3ebdca9f6d8175ee4e7c6109ec112933fd5eaad866c528c0101eb63b391e3c",
+    "docs/8.6/final-certification-readiness/CA86-001-draft.md": "67743d0eea6251cf37f05b2edd15406c7c2638309a9ff0e39f49180de4fc9e0a",
+    "docs/8.6/final-certification-readiness/PHP86-014-draft.md": "3b4f845048c2847751d237f9b0648434863749e33a2df2c4fe901d07ae910599",
+    "docs/8.6/final-certification-readiness/PHP86-015-draft.md": "9c4c36f450dbbd9d49eefeefdf99cefd7624eee3e7aa8ad8c62a1398775c5a99",
+    "docs/8.6/final-certification-readiness/baseline.json": "fa40e31aa6fdf92ab3259512901e3f2e4f7ac6d0fdb7bf3b9778dea61e12ebe6",
+    "docs/8.6/final-certification-readiness/blockers.log": "9199a42561aed55129788902331746037fef96fb3d68fb64d0c052253ee369e2",
+    "docs/8.6/final-certification-readiness/claims.log": "30fe7e458b2875b3d442b789ea0309a16aab0d835b693c37b1202c4793f6c158",
+    "docs/8.6/final-certification-readiness/compatibility.log": "ff84316b88c850b2295f88b5f877fa91358436fb31773ed23e42034b6dfca6e1",
+    "docs/8.6/final-certification-readiness/context.log": "1ae83d1f5f0f67d1ae95fa1e1ddf8f3a4c929bb205df439c30b0865e1f009f77",
+    "docs/8.6/final-certification-readiness/coverage.log": "93fb45aa5e322fc40dca10fbaaee18f237b3f8560ee050389586eb131abfba6a",
+    "docs/8.6/final-certification-readiness/current.log": "0cc18c8ccf76beb6744a62013a08dc3cd0b4afe7242372d3b62e70b446dde0b1",
+    "docs/8.6/final-certification-readiness/differential.log": "e8dba6da74f3c35c7f2ed06abef89600e703d5fe8234f8df0dfbb2f532dad765",
+    "docs/8.6/final-certification-readiness/final-whitespace.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/8.6/final-certification-readiness/full-phpunit.log": "251dbca1eac041495a72c8f5c6c3ac15dfe6d30787a2f829372709f421462b22",
+    "docs/8.6/final-certification-readiness/historical.log": "16842a9853c6d7f76d1ddf6f279578951e9c6e696a9af948a93a9150636e2747",
+    "docs/8.6/final-certification-readiness/inventory.log": "e8dba6da74f3c35c7f2ed06abef89600e703d5fe8234f8df0dfbb2f532dad765",
+    "docs/8.6/final-certification-readiness/manifest.log": "e2b231fd276610052d6d579479dd352de5ab52944b36d2c95e6db7de0a9f6da3",
+    "docs/8.6/final-certification-readiness/postpublication-current.log": "3ff56fd10b3c07ea4bd42287c0054ba6292e987826b62649424399e8c3d71b63",
+    "docs/8.6/final-certification-readiness/prepublication-preservation.json": "1501cfa52bb9f2b74aa82788e33e80b263d2cd39ff2f8f54fe4212f447d0583a",
+    "docs/8.6/final-certification-readiness/publication-validation.json": "c2bc52a453507f6f3c48a2c7b7b6e56c5f881d9f55afb5cf338e56f8303bcf15",
+    "docs/8.6/final-certification-readiness/remaining-work.json": "086920e1eb1ac7a530d9cb0298d32bd8ada6051b1fbc9393998999df89cce268",
+    "docs/8.6/final-certification-readiness/source.log": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37",
+    "docs/8.6/final-certification-readiness/traceability.log": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312",
+    "docs/8.6/final-certification-readiness/upstream-draft-evidence.json": "e6b454c7b6e24ebac0aa0a5f5d2c3f885264c6988974ad11d6e9af0f74c15704",
+    "docs/8.6/final-certification-readiness/validation.json": "42ae625467516d8d1996981049f65994c86ff65afb35975df5e5e7099e64a528",
+    "docs/8.6/final-certification-readiness/whitespace.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

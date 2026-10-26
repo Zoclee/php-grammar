@@ -1,0 +1,2349 @@
+{
+  "sources": {
+    "docs/8.6/compiler-contextual-probes.json": "bb372882b3a6cd9e7b03e79b7aa97bd7cab2437bddc5569e7a9f287c5eb57aaf",
+    "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3"
+  },
+  "observations": {
+    "PHP86-014": [
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/2",
+        "observation": {
+          "id": "assign-write",
+          "family": "writable",
+          "groups": [
+            "C5C-G01"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/assign-write.php",
+          "input": "<?php\n($a=[1])[0]=2; echo json_encode($a);\n",
+          "sha256": "3c8d6a370e48cbf661fdb9cde3d120854c38c0620af5e1ef64d73cb300ebc03f",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 255,
+              "contains": "Cannot use temporary expression in write context"
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/assign-write.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Cannot use temporary expression in write context in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/assign-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/assign-write.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": false,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/3",
+        "observation": {
+          "id": "assign-write",
+          "family": "writable",
+          "groups": [
+            "C5C-G01"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/assign-write.php",
+          "input": "<?php\n($a=[1])[0]=2; echo json_encode($a);\n",
+          "sha256": "3c8d6a370e48cbf661fdb9cde3d120854c38c0620af5e1ef64d73cb300ebc03f",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 0
+            },
+            "execution": {
+              "exit": 255,
+              "contains": "Invalid opcode 23/2/1."
+            }
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/assign-write.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/assign-write.php\n",
+            "stderr": ""
+          },
+          "execution": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/assign-write.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Invalid opcode 23/2/1. in C:\\Data\\GitHub\\php-grammar\\tests\\fixtures\\php\\8.6\\reconciliation\\assign-write.php on line 2\nStack trace:\n#0 {main}\n",
+            "stderr": ""
+          },
+          "executionStage": "runtime",
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/assign-write.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/assign-write.php\n",
+            "stderr": "\n$_main:\n     ; (lines=8, args=0, vars=1, tmps=3)\n     ; (before optimizer)\n     ; C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/assign-write.php:1-3\n0000 T1 = ASSIGN CV0($a) array(...)\n0001 ASSIGN_DIM T1 int(0)\n0002 OP_DATA int(2)\n0003 INIT_FCALL 1 96 string(\"json_encode\")\n0004 SEND_VAR CV0($a) 1\n0005 T3 = DO_ICALL\n0006 ECHO T3\n0007 RETURN int(1)\n"
+          },
+          "opcodes": [
+            "0000 T1 = ASSIGN CV0($a) array(...)",
+            "0001 ASSIGN_DIM T1 int(0)",
+            "0002 OP_DATA int(2)",
+            "0003 INIT_FCALL 1 96 string(\"json_encode\")",
+            "0004 SEND_VAR CV0($a) 1",
+            "0005 T3 = DO_ICALL",
+            "0006 ECHO T3",
+            "0007 RETURN int(1)"
+          ],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": true,
+            "executionSucceeded": false,
+            "opcodeDumpObserved": true,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/82",
+        "observation": {
+          "id": "assign-write",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": true,
+          "lint": {
+            "exit": 0,
+            "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/reconciliation/assign-write.php\n",
+            "stderr": ""
+          },
+          "executionStage": "runtime",
+          "execution": {
+            "exit": 255,
+            "stdout": "\nFatal error: Invalid opcode 23/2/1. in <repository>\\tests\\fixtures\\php\\8.6\\reconciliation\\assign-write.php on line 2\nStack trace:\n#0 {main}\n",
+            "stderr": ""
+          },
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/4",
+        "observation": {
+          "id": "reference-write",
+          "family": "writable",
+          "groups": [
+            "C5C-G01"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/reference-write.php",
+          "input": "<?php\n$b=[1]; ($a=&$b)[0]=2; echo json_encode([$a,$b]);\n",
+          "sha256": "2f1b548b4df329bb8f00a39b4a8a96afb27a39d42d64dc8e26b91dcde0010acd",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 255,
+              "contains": "Cannot use temporary expression in write context"
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/reference-write.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Cannot use temporary expression in write context in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/reference-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/reference-write.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": false,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/5",
+        "observation": {
+          "id": "reference-write",
+          "family": "writable",
+          "groups": [
+            "C5C-G01"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/reference-write.php",
+          "input": "<?php\n$b=[1]; ($a=&$b)[0]=2; echo json_encode([$a,$b]);\n",
+          "sha256": "2f1b548b4df329bb8f00a39b4a8a96afb27a39d42d64dc8e26b91dcde0010acd",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 0
+            },
+            "execution": {
+              "exit": 0,
+              "stdout": "[[2],[2]]"
+            }
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/reference-write.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/reference-write.php\n",
+            "stderr": ""
+          },
+          "execution": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/reference-write.php"
+            ],
+            "exit": 0,
+            "stdout": "[[2],[2]]",
+            "stderr": ""
+          },
+          "executionStage": "runtime",
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/reference-write.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/reference-write.php\n",
+            "stderr": "\n$_main:\n     ; (lines=11, args=0, vars=2, tmps=5)\n     ; (before optimizer)\n     ; C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/reference-write.php:1-3\n0000 ASSIGN CV0($b) array(...)\n0001 V3 = ASSIGN_REF CV1($a) CV0($b)\n0002 ASSIGN_DIM V3 int(0)\n0003 OP_DATA int(2)\n0004 INIT_FCALL 1 96 string(\"json_encode\")\n0005 T5 = INIT_ARRAY 2 (packed) CV1($a) NEXT\n0006 T5 = ADD_ARRAY_ELEMENT CV0($b) NEXT\n0007 SEND_VAL T5 1\n0008 T6 = DO_ICALL\n0009 ECHO T6\n0010 RETURN int(1)\nLIVE RANGES:\n     5: 0006 - 0007 (tmp/var)\n"
+          },
+          "opcodes": [
+            "0000 ASSIGN CV0($b) array(...)",
+            "0001 V3 = ASSIGN_REF CV1($a) CV0($b)",
+            "0002 ASSIGN_DIM V3 int(0)",
+            "0003 OP_DATA int(2)",
+            "0004 INIT_FCALL 1 96 string(\"json_encode\")",
+            "0005 T5 = INIT_ARRAY 2 (packed) CV1($a) NEXT",
+            "0006 T5 = ADD_ARRAY_ELEMENT CV0($b) NEXT",
+            "0007 SEND_VAL T5 1",
+            "0008 T6 = DO_ICALL",
+            "0009 ECHO T6",
+            "0010 RETURN int(1)"
+          ],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": true,
+            "executionSucceeded": true,
+            "opcodeDumpObserved": true,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/83",
+        "observation": {
+          "id": "reference-write",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": true,
+          "lint": {
+            "exit": 0,
+            "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/reconciliation/reference-write.php\n",
+            "stderr": ""
+          },
+          "executionStage": "runtime",
+          "execution": {
+            "exit": 0,
+            "stdout": "[[2],[2]]",
+            "stderr": ""
+          },
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/6",
+        "observation": {
+          "id": "list-variable-write",
+          "family": "writable",
+          "groups": [
+            "C5C-G01"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/list-variable-write.php",
+          "input": "<?php\n$b=[1]; ([$a]=$b)[0]=2; echo json_encode([$a,$b]);\n",
+          "sha256": "32d20224fc58bb63abc4b99efb483ffe67ce08830dff6f9b2c41f6a6428576c7",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 255,
+              "contains": "Cannot use temporary expression in write context"
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-variable-write.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Cannot use temporary expression in write context in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-variable-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-variable-write.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": false,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/7",
+        "observation": {
+          "id": "list-variable-write",
+          "family": "writable",
+          "groups": [
+            "C5C-G01"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/list-variable-write.php",
+          "input": "<?php\n$b=[1]; ([$a]=$b)[0]=2; echo json_encode([$a,$b]);\n",
+          "sha256": "32d20224fc58bb63abc4b99efb483ffe67ce08830dff6f9b2c41f6a6428576c7",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 0
+            },
+            "execution": {
+              "exit": 255,
+              "contains": "Invalid opcode 23/2/1."
+            }
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-variable-write.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-variable-write.php\n",
+            "stderr": ""
+          },
+          "execution": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-variable-write.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Invalid opcode 23/2/1. in C:\\Data\\GitHub\\php-grammar\\tests\\fixtures\\php\\8.6\\reconciliation\\list-variable-write.php on line 2\nStack trace:\n#0 {main}\n",
+            "stderr": ""
+          },
+          "executionStage": "runtime",
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-variable-write.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-variable-write.php\n",
+            "stderr": "\n$_main:\n     ; (lines=13, args=0, vars=2, tmps=7)\n     ; (before optimizer)\n     ; C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-variable-write.php:1-3\n0000 ASSIGN CV0($b) array(...)\n0001 T3 = QM_ASSIGN CV0($b)\n0002 T4 = FETCH_LIST_R T3 int(0)\n0003 ASSIGN CV1($a) T4\n0004 ASSIGN_DIM T3 int(0)\n0005 OP_DATA int(2)\n0006 INIT_FCALL 1 96 string(\"json_encode\")\n0007 T7 = INIT_ARRAY 2 (packed) CV1($a) NEXT\n0008 T7 = ADD_ARRAY_ELEMENT CV0($b) NEXT\n0009 SEND_VAL T7 1\n0010 T8 = DO_ICALL\n0011 ECHO T8\n0012 RETURN int(1)\nLIVE RANGES:\n     3: 0002 - 0004 (tmp/var)\n     7: 0008 - 0009 (tmp/var)\n"
+          },
+          "opcodes": [
+            "0000 ASSIGN CV0($b) array(...)",
+            "0001 T3 = QM_ASSIGN CV0($b)",
+            "0002 T4 = FETCH_LIST_R T3 int(0)",
+            "0003 ASSIGN CV1($a) T4",
+            "0004 ASSIGN_DIM T3 int(0)",
+            "0005 OP_DATA int(2)",
+            "0006 INIT_FCALL 1 96 string(\"json_encode\")",
+            "0007 T7 = INIT_ARRAY 2 (packed) CV1($a) NEXT",
+            "0008 T7 = ADD_ARRAY_ELEMENT CV0($b) NEXT",
+            "0009 SEND_VAL T7 1",
+            "0010 T8 = DO_ICALL",
+            "0011 ECHO T8",
+            "0012 RETURN int(1)"
+          ],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": true,
+            "executionSucceeded": false,
+            "opcodeDumpObserved": true,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/84",
+        "observation": {
+          "id": "list-variable-write",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": true,
+          "lint": {
+            "exit": 0,
+            "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/reconciliation/list-variable-write.php\n",
+            "stderr": ""
+          },
+          "executionStage": "runtime",
+          "execution": {
+            "exit": 255,
+            "stdout": "\nFatal error: Invalid opcode 23/2/1. in <repository>\\tests\\fixtures\\php\\8.6\\reconciliation\\list-variable-write.php on line 2\nStack trace:\n#0 {main}\n",
+            "stderr": ""
+          },
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/8",
+        "observation": {
+          "id": "list-literal-write",
+          "family": "writable",
+          "groups": [
+            "C5C-G01"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/list-literal-write.php",
+          "input": "<?php\n([$a]=[1])[0]=2; echo json_encode($a);\n",
+          "sha256": "e665c782d1cc8a54054de4034d22d0f99f57ba1b12b4e24630ed0cb3898216ac",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 255,
+              "contains": "Cannot use temporary expression in write context"
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-literal-write.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Cannot use temporary expression in write context in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-literal-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-literal-write.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": false,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/9",
+        "observation": {
+          "id": "list-literal-write",
+          "family": "writable",
+          "groups": [
+            "C5C-G01"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/list-literal-write.php",
+          "input": "<?php\n([$a]=[1])[0]=2; echo json_encode($a);\n",
+          "sha256": "e665c782d1cc8a54054de4034d22d0f99f57ba1b12b4e24630ed0cb3898216ac",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 0
+            },
+            "execution": {
+              "exit": 255,
+              "contains": "Invalid opcode 23/1/1."
+            }
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-literal-write.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-literal-write.php\n",
+            "stderr": ""
+          },
+          "execution": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-literal-write.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Invalid opcode 23/1/1. in C:\\Data\\GitHub\\php-grammar\\tests\\fixtures\\php\\8.6\\reconciliation\\list-literal-write.php on line 2\nStack trace:\n#0 {main}\n",
+            "stderr": ""
+          },
+          "executionStage": "runtime",
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-literal-write.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-literal-write.php\n",
+            "stderr": "\n$_main:\n     ; (lines=9, args=0, vars=1, tmps=4)\n     ; (before optimizer)\n     ; C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/list-literal-write.php:1-3\n0000 T1 = FETCH_LIST_R array(...) int(0)\n0001 ASSIGN CV0($a) T1\n0002 ASSIGN_DIM array(...) int(0)\n0003 OP_DATA int(2)\n0004 INIT_FCALL 1 96 string(\"json_encode\")\n0005 SEND_VAR CV0($a) 1\n0006 T4 = DO_ICALL\n0007 ECHO T4\n0008 RETURN int(1)\n"
+          },
+          "opcodes": [
+            "0000 T1 = FETCH_LIST_R array(...) int(0)",
+            "0001 ASSIGN CV0($a) T1",
+            "0002 ASSIGN_DIM array(...) int(0)",
+            "0003 OP_DATA int(2)",
+            "0004 INIT_FCALL 1 96 string(\"json_encode\")",
+            "0005 SEND_VAR CV0($a) 1",
+            "0006 T4 = DO_ICALL",
+            "0007 ECHO T4",
+            "0008 RETURN int(1)"
+          ],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": true,
+            "executionSucceeded": false,
+            "opcodeDumpObserved": true,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/85",
+        "observation": {
+          "id": "list-literal-write",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": true,
+          "lint": {
+            "exit": 0,
+            "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/reconciliation/list-literal-write.php\n",
+            "stderr": ""
+          },
+          "executionStage": "runtime",
+          "execution": {
+            "exit": 255,
+            "stdout": "\nFatal error: Invalid opcode 23/1/1. in <repository>\\tests\\fixtures\\php\\8.6\\reconciliation\\list-literal-write.php on line 2\nStack trace:\n#0 {main}\n",
+            "stderr": ""
+          },
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      }
+    ],
+    "PHP86-015": [
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/52",
+        "observation": {
+          "id": "printf-or",
+          "family": "traversal",
+          "groups": [
+            "C5C-G02"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/printf-or.php",
+          "input": "<?php\nprintf(true || (unset)$x);\n",
+          "sha256": "8d456ffa6b7698e523ef122c4a54ed5cd2d6086c8befcea258f9b228f87c0b16",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 0
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-or.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-or.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/53",
+        "observation": {
+          "id": "printf-or",
+          "family": "traversal",
+          "groups": [
+            "C5C-G02"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/printf-or.php",
+          "input": "<?php\nprintf(true || (unset)$x);\n",
+          "sha256": "8d456ffa6b7698e523ef122c4a54ed5cd2d6086c8befcea258f9b228f87c0b16",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 255,
+              "contains": "The (unset) cast is no longer supported"
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-or.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: The (unset) cast is no longer supported in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-or.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-or.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-or.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: The (unset) cast is no longer supported in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-or.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-or.php\n",
+            "stderr": ""
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": false,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/107",
+        "observation": {
+          "id": "printf-or",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": true,
+          "lint": {
+            "exit": 255,
+            "stdout": "\nFatal error: The (unset) cast is no longer supported in <repository>/tests/fixtures/php/8.6/reconciliation/printf-or.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/reconciliation/printf-or.php\n",
+            "stderr": ""
+          },
+          "executionStage": null,
+          "execution": null,
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/56",
+        "observation": {
+          "id": "dynamic-or",
+          "family": "traversal",
+          "groups": [
+            "C5C-G02",
+            "C5C-G03"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/dynamic-or.php",
+          "input": "<?php\n$f=\"printf\"; $f(true || (unset)$x);\n",
+          "sha256": "0c7646f695f8e0d149b4db71ae5c1046515da74b238ed067208c654ed7a3ac62",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 0
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/dynamic-or.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/dynamic-or.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/57",
+        "observation": {
+          "id": "dynamic-or",
+          "family": "traversal",
+          "groups": [
+            "C5C-G02",
+            "C5C-G03"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/dynamic-or.php",
+          "input": "<?php\n$f=\"printf\"; $f(true || (unset)$x);\n",
+          "sha256": "0c7646f695f8e0d149b4db71ae5c1046515da74b238ed067208c654ed7a3ac62",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 0
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/dynamic-or.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/dynamic-or.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/dynamic-or.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/dynamic-or.php\n",
+            "stderr": "\n$_main:\n     ; (lines=5, args=0, vars=1, tmps=2)\n     ; (before optimizer)\n     ; C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/dynamic-or.php:1-3\n0000 ASSIGN CV0($f) string(\"printf\")\n0001 INIT_DYNAMIC_CALL 1 CV0($f)\n0002 SEND_VAL_EX bool(true) 1\n0003 DO_FCALL\n0004 RETURN int(1)\n"
+          },
+          "opcodes": [
+            "0000 ASSIGN CV0($f) string(\"printf\")",
+            "0001 INIT_DYNAMIC_CALL 1 CV0($f)",
+            "0002 SEND_VAL_EX bool(true) 1",
+            "0003 DO_FCALL",
+            "0004 RETURN int(1)"
+          ],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": true,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/109",
+        "observation": {
+          "id": "dynamic-or",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": true,
+          "lint": {
+            "exit": 0,
+            "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/reconciliation/dynamic-or.php\n",
+            "stderr": ""
+          },
+          "executionStage": null,
+          "execution": null,
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/58",
+        "observation": {
+          "id": "printf-ternary",
+          "family": "traversal",
+          "groups": [
+            "C5C-G02"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/printf-ternary.php",
+          "input": "<?php\nprintf(false ? (unset)$x : \"ok\");\n",
+          "sha256": "336bb062e228013a1d527237b9b85cb7f1cd06a5c263316a8ca75f0f04e05364",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 255,
+              "contains": "The (unset) cast is no longer supported"
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-ternary.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: The (unset) cast is no longer supported in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-ternary.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-ternary.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": false,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/59",
+        "observation": {
+          "id": "printf-ternary",
+          "family": "traversal",
+          "groups": [
+            "C5C-G02"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/printf-ternary.php",
+          "input": "<?php\nprintf(false ? (unset)$x : \"ok\");\n",
+          "sha256": "336bb062e228013a1d527237b9b85cb7f1cd06a5c263316a8ca75f0f04e05364",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 0
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-ternary.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-ternary.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-ternary.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-ternary.php\n",
+            "stderr": "\n$_main:\n     ; (lines=2, args=0, vars=0, tmps=0)\n     ; (before optimizer)\n     ; C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/printf-ternary.php:1-3\n0000 ECHO string(\"ok\")\n0001 RETURN int(1)\n"
+          },
+          "opcodes": [
+            "0000 ECHO string(\"ok\")",
+            "0001 RETURN int(1)"
+          ],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": true,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/110",
+        "observation": {
+          "id": "printf-ternary",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": true,
+          "lint": {
+            "exit": 0,
+            "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/reconciliation/printf-ternary.php\n",
+            "stderr": ""
+          },
+          "executionStage": null,
+          "execution": null,
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      }
+    ],
+    "CA86-001": [
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/108",
+        "observation": {
+          "id": "hook-live",
+          "family": "predicates",
+          "groups": [
+            "C5C-G11"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/hook-live.php",
+          "input": "<?php\nclass C {public int $x {unknown=>1;}}\n",
+          "sha256": "29448c72c108ac7be43bcf0317e6e57b71d0b3663997c8039c4362ad680da0c2",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": false,
+            "lint": {
+              "exit": 255,
+              "contains": "Unknown hook \"unknown\" for property C::$x, expected \"get\" or \"set\""
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": false,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-live.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Unknown hook \"unknown\" for property C::$x, expected \"get\" or \"set\" in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-live.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": false,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/109",
+        "observation": {
+          "id": "hook-live",
+          "family": "predicates",
+          "groups": [
+            "C5C-G11"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/hook-live.php",
+          "input": "<?php\nclass C {public int $x {unknown=>1;}}\n",
+          "sha256": "29448c72c108ac7be43bcf0317e6e57b71d0b3663997c8039c4362ad680da0c2",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": false,
+            "lint": {
+              "exit": 255,
+              "contains": "Unknown hook \"unknown\" for property C::$x, expected \"get\" or \"set\""
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": false,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-live.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Unknown hook \"unknown\" for property C::$x, expected \"get\" or \"set\" in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-live.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-live.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Unknown hook \"unknown\" for property C::$x, expected \"get\" or \"set\" in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-live.php\n",
+            "stderr": ""
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": false,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/135",
+        "observation": {
+          "id": "hook-live",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": false,
+          "lint": {
+            "exit": 255,
+            "stdout": "\nFatal error: Unknown hook \"unknown\" for property C::$x, expected \"get\" or \"set\" in <repository>/tests/fixtures/php/8.6/reconciliation/hook-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/reconciliation/hook-live.php\n",
+            "stderr": ""
+          },
+          "executionStage": null,
+          "execution": null,
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/110",
+        "observation": {
+          "id": "hook-retained",
+          "family": "predicates",
+          "groups": [
+            "C5C-G11"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/hook-retained.php",
+          "input": "<?php\n$f=static function(){return new class {public int $x {unknown=>1;}};};\n",
+          "sha256": "a33c67d3ffc9bc91bfec583c16dd47be932697d8aaa10a1689c8b41c0e2d4e91",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": false,
+            "lint": {
+              "exit": 255,
+              "contains": "Unknown hook \"unknown\" for property class@anonymous::$x, expected \"get\" or \"set\""
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": false,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-retained.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Unknown hook \"unknown\" for property class@anonymous::$x, expected \"get\" or \"set\" in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-retained.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": false,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/111",
+        "observation": {
+          "id": "hook-retained",
+          "family": "predicates",
+          "groups": [
+            "C5C-G11"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/hook-retained.php",
+          "input": "<?php\n$f=static function(){return new class {public int $x {unknown=>1;}};};\n",
+          "sha256": "a33c67d3ffc9bc91bfec583c16dd47be932697d8aaa10a1689c8b41c0e2d4e91",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": false,
+            "lint": {
+              "exit": 255,
+              "contains": "Unknown hook \"unknown\" for property class@anonymous::$x, expected \"get\" or \"set\""
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": false,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-retained.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Unknown hook \"unknown\" for property class@anonymous::$x, expected \"get\" or \"set\" in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-retained.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-retained.php"
+            ],
+            "exit": 255,
+            "stdout": "\nFatal error: Unknown hook \"unknown\" for property class@anonymous::$x, expected \"get\" or \"set\" in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-retained.php\n",
+            "stderr": ""
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": false,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/136",
+        "observation": {
+          "id": "hook-retained",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": false,
+          "lint": {
+            "exit": 255,
+            "stdout": "\nFatal error: Unknown hook \"unknown\" for property class@anonymous::$x, expected \"get\" or \"set\" in <repository>/tests/fixtures/php/8.6/reconciliation/hook-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/reconciliation/hook-retained.php\n",
+            "stderr": ""
+          },
+          "executionStage": null,
+          "execution": null,
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/112",
+        "observation": {
+          "id": "hook-discarded",
+          "family": "predicates",
+          "groups": [
+            "C5C-G11"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/hook-discarded.php",
+          "input": "<?php\nfalse && static function(){return new class {public int $x {unknown=>1;}};};\n",
+          "sha256": "bcaf8bba8d2c705c8added05cf1e8e2f93889079479c65609d20b7d1dd3ddd76",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": false,
+            "lint": {
+              "exit": 0
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": false,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-discarded.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-discarded.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/113",
+        "observation": {
+          "id": "hook-discarded",
+          "family": "predicates",
+          "groups": [
+            "C5C-G11"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/hook-discarded.php",
+          "input": "<?php\nfalse && static function(){return new class {public int $x {unknown=>1;}};};\n",
+          "sha256": "bcaf8bba8d2c705c8added05cf1e8e2f93889079479c65609d20b7d1dd3ddd76",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": false,
+            "lint": {
+              "exit": 0
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": false,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-discarded.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-discarded.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-discarded.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-discarded.php\n",
+            "stderr": "\n$_main:\n     ; (lines=1, args=0, vars=0, tmps=0)\n     ; (before optimizer)\n     ; C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-discarded.php:1-3\n0000 RETURN int(1)\n"
+          },
+          "opcodes": [
+            "0000 RETURN int(1)"
+          ],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": true,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/137",
+        "observation": {
+          "id": "hook-discarded",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": false,
+          "lint": {
+            "exit": 0,
+            "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/reconciliation/hook-discarded.php\n",
+            "stderr": ""
+          },
+          "executionStage": null,
+          "execution": null,
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/114",
+        "observation": {
+          "id": "hook-constant-discarded",
+          "family": "predicates",
+          "groups": [
+            "C5C-G11"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php",
+          "input": "<?php\nconst F=true ? 1 : static function(){return new class {public int $x {unknown=>1;}};};\n",
+          "sha256": "3d080c726c263fc00fcbea95105af9af2ac280d2e1aac87d96a76754a89863a5",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": false,
+            "lint": {
+              "exit": 0
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": false,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/115",
+        "observation": {
+          "id": "hook-constant-discarded",
+          "family": "predicates",
+          "groups": [
+            "C5C-G11"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php",
+          "input": "<?php\nconst F=true ? 1 : static function(){return new class {public int $x {unknown=>1;}};};\n",
+          "sha256": "3d080c726c263fc00fcbea95105af9af2ac280d2e1aac87d96a76754a89863a5",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": false,
+            "lint": {
+              "exit": 0
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": false,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php\n",
+            "stderr": "\n$_main:\n     ; (lines=2, args=0, vars=0, tmps=0)\n     ; (before optimizer)\n     ; C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php:1-3\n0000 DECLARE_CONST string(\"F\") int(1)\n0001 RETURN int(1)\n"
+          },
+          "opcodes": [
+            "0000 DECLARE_CONST string(\"F\") int(1)",
+            "0001 RETURN int(1)"
+          ],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": true,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/138",
+        "observation": {
+          "id": "hook-constant-discarded",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": false,
+          "lint": {
+            "exit": 0,
+            "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php\n",
+            "stderr": ""
+          },
+          "executionStage": null,
+          "execution": null,
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/116",
+        "observation": {
+          "id": "hook-get-repair",
+          "family": "predicates",
+          "groups": [
+            "C5C-G11"
+          ],
+          "version": "8.5",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/hook-get-repair.php",
+          "input": "<?php\nclass C {public int $x {get=>1;}}\n",
+          "sha256": "afdac1044ee3e1745054f81b4e80ed35f40751707ad8ea012031a9f2d399e2de",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 0
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-get-repair.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-get-repair.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "stdout": "",
+            "stderr": "",
+            "exit": null
+          },
+          "opcodes": [],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": false,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "pointer": "/observations/117",
+        "observation": {
+          "id": "hook-get-repair",
+          "family": "predicates",
+          "groups": [
+            "C5C-G11"
+          ],
+          "version": "8.6",
+          "fixture": "tests/fixtures/php/8.6/reconciliation/hook-get-repair.php",
+          "input": "<?php\nclass C {public int $x {get=>1;}}\n",
+          "sha256": "afdac1044ee3e1745054f81b4e80ed35f40751707ad8ea012031a9f2d399e2de",
+          "expected": {
+            "lexerAccepted": true,
+            "structural": true,
+            "lint": {
+              "exit": 0
+            },
+            "execution": null
+          },
+          "lexical": true,
+          "structural": true,
+          "lint": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-get-repair.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-get-repair.php\n",
+            "stderr": ""
+          },
+          "execution": null,
+          "executionStage": null,
+          "opcodeDiagnostic": {
+            "command": [
+              "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+              "-n",
+              "-d",
+              "zend.multibyte=0",
+              "-d",
+              "short_open_tag=1",
+              "-d",
+              "error_reporting=-1",
+              "-d",
+              "memory_limit=64M",
+              "-d",
+              "max_execution_time=5",
+              "-d",
+              "opcache.enable_cli=0",
+              "-d",
+              "opcache.jit=0",
+              "-d",
+              "opcache.enable_cli=1",
+              "-d",
+              "opcache.optimization_level=0",
+              "-d",
+              "opcache.opt_debug_level=65536",
+              "-d",
+              "opcache.file_update_protection=0",
+              "-l",
+              "C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-get-repair.php"
+            ],
+            "exit": 0,
+            "stdout": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-get-repair.php\n",
+            "stderr": "\n$_main:\n     ; (lines=2, args=0, vars=0, tmps=0)\n     ; (before optimizer)\n     ; C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-get-repair.php:1-3\n0000 DECLARE_CLASS_DELAYED string(\"c\") string(\"\")\n0001 RETURN int(1)\n\nC::$x::get:\n     ; (lines=3, args=0, vars=0, tmps=0)\n     ; (before optimizer)\n     ; C:/Data/GitHub/php-grammar/tests/fixtures/php/8.6/reconciliation/hook-get-repair.php:2-2\n0000 RETURN int(1)\n0001 VERIFY_RETURN_TYPE\n0002 RETURN null\n"
+          },
+          "opcodes": [
+            "0000 DECLARE_CLASS_DELAYED string(\"c\") string(\"\")",
+            "0001 RETURN int(1)",
+            "0000 RETURN int(1)",
+            "0001 VERIFY_RETURN_TYPE",
+            "0002 RETURN null"
+          ],
+          "stageSummary": {
+            "lintAccepted": true,
+            "executionObserved": false,
+            "executionSucceeded": null,
+            "opcodeDumpObserved": true,
+            "independentZendParserVerdict": false,
+            "intendedLanguageValidityEstablished": false
+          }
+        }
+      },
+      {
+        "report": "docs/8.6/compiler-contextual-probes.json",
+        "pointer": "/observations/139",
+        "observation": {
+          "id": "hook-get-repair",
+          "version": "8.6",
+          "lexicalBytePreservation": true,
+          "structural": true,
+          "lint": {
+            "exit": 0,
+            "stdout": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/reconciliation/hook-get-repair.php\n",
+            "stderr": ""
+          },
+          "executionStage": null,
+          "execution": null,
+          "opcodeObservation": "No opcode dump. Lint combines parsing and compilation; operand-kind mechanism is source analysis, not a separately observed generation stage."
+        }
+      }
+    ]
+  },
+  "newProbeExecutions": 0,
+  "publishedExternally": false
+}

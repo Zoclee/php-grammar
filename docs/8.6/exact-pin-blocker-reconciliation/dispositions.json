@@ -1,0 +1,417 @@
+{
+  "phase": "7C.4",
+  "contract": "supplemental-blocker-reconciliation-v1",
+  "previousRecord": "docs/8.6/source-audit-dispositions.json",
+  "previousSha256": "a61b605afb5d6e5a1942f46b4acf66643f72678b4d6e516867731b334503e8f8",
+  "scope": "Current supplemental assessment; original observations, legacy gate definitions and original dispositions remain immutable.",
+  "matrix": {
+    "historical-certification-check": {
+      "blocker": "H85-FRESHNESS",
+      "originalClassification": "stale historical artifact; cross-version dependency design limitation",
+      "currentClaim": "Historical integrity and separate current compatibility are available; old mandatory freshness gate is not substituted.",
+      "evidenceRequired": [
+        "certification-execution/historical-freshness.json",
+        "tools/8.5/certification.php:197-220",
+        "docs/conformance-policy.md:67-91",
+        "docs/8.6/shared-lexer-regression.json"
+      ],
+      "evidenceNowAvailable": "Historical integrity and separate current compatibility are available; old mandatory freshness gate is not substituted.",
+      "remainingUncertainty": "Verify original 8.5 hashes, independent before/after shared behavior, all legacy release gates, changed/missing/added dependency negative tests, and an explicit bounded claim review. Current failure remains visible until then.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "Verify original 8.5 hashes, independent before/after shared behavior, all legacy release gates, changed/missing/added dependency negative tests, and an explicit bounded claim review. Current failure remains visible until then.",
+      "originalClaim": "The unchanged PHP 8.5 generator hashes whole src/tests/grammar/bin/tools trees plus explicit policy inputs. Its 1545-input historical ledger differs from the 2030-input Phase 7B baseline: 12 changed paths and 485 additions, no missing old paths. All 1437 protected 8.5 files remain unchanged.",
+      "categories": [
+        "certification infrastructure limitation"
+      ]
+    },
+    "production-coverage-closure": {
+      "blocker": "C6-COVERAGE",
+      "originalClassification": "missing independently justified conformance evidence",
+      "currentClaim": "Exact interpreter removes one evidence prerequisite; the stated coverage/contextual/binding obligations remain incomplete.",
+      "evidenceRequired": [
+        "docs/8.6/source-audit-coverage.json#/remaining",
+        "docs/8.6/source-completeness-ledger.json#/canonical",
+        "docs/8.6/final-coverage-remaining.json"
+      ],
+      "evidenceNowAvailable": "Exact interpreter removes one evidence prerequisite; the stated coverage/contextual/binding obligations remain incomplete.",
+      "remainingUncertainty": "Recompute every production identity and witness, verify justified exclusions independently, preserve denominators, and obtain an explicit completeness disposition rather than a percentage target.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "Recompute every production identity and witness, verify justified exclusions independently, preserve denominators, and obtain an explicit completeness disposition rather than a percentage target.",
+      "originalClaim": "64 of 361 canonical productions remain unexercised: 52 primitive-bypassed, 11 trivia-removed, and reserved-non-modifiers. Classification is not proof of every source/scanner abstraction.",
+      "categories": [
+        "missing coverage/scanner/binding evidence"
+      ]
+    },
+    "alternative-coverage-closure": {
+      "blocker": "C6-COVERAGE",
+      "originalClassification": "missing alternative-specific evidence and unresolved lexical identity",
+      "currentClaim": "Exact interpreter removes one evidence prerequisite; the stated coverage/contextual/binding obligations remain incomplete.",
+      "evidenceRequired": [
+        "docs/8.6/source-audit-coverage.json#/remaining",
+        "docs/8.6/source-completeness-ledger.json#/canonical/elements"
+      ],
+      "evidenceNowAvailable": "Exact interpreter removes one evidence prerequisite; the stated coverage/contextual/binding obligations remain incomplete.",
+      "remainingUncertainty": "No unexplained alternative or source association; reviewed residual identities, fresh positive/negative evidence and independent binding checks.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "No unexplained alternative or source association; reviewed residual identities, fresh positive/negative evidence and independent binding checks.",
+      "originalClaim": "318 of 800 alternatives are unexercised: 174 primitive-bypassed, 9 trivia-removed, 134 meaningful gaps and one unresolved context-only from identity.",
+      "categories": [
+        "missing coverage/scanner/binding evidence"
+      ]
+    },
+    "scanner-state-closure": {
+      "blocker": "C6-COVERAGE",
+      "originalClassification": "missing RC4 scanner state/helper evidence",
+      "currentClaim": "Exact interpreter removes one evidence prerequisite; the stated coverage/contextual/binding obligations remain incomplete.",
+      "evidenceRequired": [
+        "docs/8.6/source-completeness-ledger.json#/scanner",
+        "tests/fixtures/php/8.6/coverage-lexical.json",
+        "tests/fixtures/php/8.6/final-coverage-lexical.json"
+      ],
+      "evidenceNowAvailable": "Exact interpreter removes one evidence prerequisite; the stated coverage/contextual/binding obligations remain incomplete.",
+      "remainingUncertainty": "Independently reviewed rule/state/helper ledger with witnesses or justified bounds, both short-tag profiles, negative/error cases and no invented scanner coverage numerator.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "Independently reviewed rule/state/helper ledger with witnesses or justified bounds, both short-tag profiles, negative/error cases and no invented scanner coverage numerator.",
+      "originalClaim": "190 headers and eleven states are inventoried, but only 34 rule ranges associate with the 51 later lexical entries; 156 have family-level evidence. Range overlap is not an instrumented rule hit.",
+      "categories": [
+        "missing coverage/scanner/binding evidence"
+      ]
+    },
+    "ast-binding": {
+      "blocker": "C6-COVERAGE",
+      "originalClassification": "missing independent RC4 binding evidence",
+      "currentClaim": "Exact interpreter removes one evidence prerequisite; the stated coverage/contextual/binding obligations remain incomplete.",
+      "evidenceRequired": [
+        "docs/8.6/source-completeness-ledger.json#/parser",
+        "docs/8.6/source-completeness-ledger.json#/canonical",
+        "docs/8.6/final-coverage-expansion.md"
+      ],
+      "evidenceNowAvailable": "Exact interpreter removes one evidence prerequisite; the stated coverage/contextual/binding obligations remain incomplete.",
+      "remainingUncertainty": "Fresh independent binding matrices with precise supported scopes, rejected/malformed controls, remaining ambiguity dispositions and verified oracle/build identity.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "Fresh independent binding matrices with precise supported scopes, rejected/malformed controls, remaining ambiguity dispositions and verified oracle/build identity.",
+      "originalClaim": "Parser-family mapping and finite acceptance do not prove operand spans, AST construction, aggregate interpolation binding or individual upstream-alternative equivalence.",
+      "categories": [
+        "missing coverage/scanner/binding evidence"
+      ]
+    },
+    "folding-order": {
+      "blocker": "PHP86-015",
+      "originalClassification": "unresolved language/compatibility discrepancy and incomplete traversal evidence",
+      "currentClaim": "31 exact-pin traversal controls, emitted/absent instruction evidence, refreshed bounded upstream discussions.",
+      "evidenceRequired": [
+        "docs/8.6/compiler-contextual-groups.json#/groups/1",
+        "docs/8.6/compiler-contextual-groups.json#/groups/2",
+        "docs/8.6/source-audit-probes.json",
+        "docs/8.6/source-audit-upstream.json"
+      ],
+      "evidenceNowAvailable": "31 exact-pin traversal controls, emitted/absent instruction evidence, refreshed bounded upstream discussions.",
+      "remainingUncertainty": "Reviewed dispatch/predicate matrix, authoritative intended boundary, corresponding build observations and no unexplained validity differences in the retained controls.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "Reviewed dispatch/predicate matrix, authoritative intended boundary, corresponding build observations and no unexplained validity differences in the retained controls.",
+      "originalClaim": "Optimized printf/sprintf and array/constant traversal differ from ordinary calls; current observations do not define a universal intended discarded-expression validity rule.",
+      "categories": [
+        "language-validity uncertainty",
+        "missing compiler evidence",
+        "missing contextual enforcement"
+      ]
+    },
+    "discovery-closure": {
+      "blocker": "PHP86-013",
+      "originalClassification": "incomplete syntax-relevant source discovery",
+      "currentClaim": "11 retained source-group dispositions plus five new bounded constant-reference/reentrant controls; no new raw-hunk discharge.",
+      "evidenceRequired": [
+        "docs/8.6/source-completeness-ledger.json#/discovery",
+        "docs/8.6/compiler-contextual-groups.json",
+        "docs/8.6/upstream-test-reconciliation.json",
+        "docs/8.6/rfc-review.json"
+      ],
+      "evidenceNowAvailable": "11 retained source-group dispositions plus five new bounded constant-reference/reentrant controls; no new raw-hunk discharge.",
+      "remainingUncertainty": "Every material finding has a reviewed disposition, source mapping, tests or evidenced exclusion; all pending and unresolved identities are resolved rather than hidden by aggregate counts.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "Every material finding has a reviewed disposition, source mapping, tests or evidenced exclusion; all pending and unresolved identities are resolved rather than hidden by aggregate counts.",
+      "originalClaim": "The 578-hunk inventory retains 230 pending-direct-review and 14 examined-unresolved records, plus bounded semantic groups, unassociated PHPTs and transitive/outside-ledger paths.",
+      "categories": [
+        "missing parser/compiler evidence"
+      ]
+    },
+    "writable-target-validity": {
+      "blocker": "PHP86-014",
+      "originalClassification": "unresolved intended validity with compiler/VM inconsistencies",
+      "currentClaim": "26 exact-pin constructs with structural/lint/runtime data and pre-optimizer dumps; compiler/VM operand mismatch confirmed.",
+      "evidenceRequired": [
+        "docs/8.6/compiler-contextual-groups.json#/groups/0",
+        "docs/8.6/source-audit-probes.json",
+        "docs/8.6/source-audit-upstream.json"
+      ],
+      "evidenceNowAvailable": "26 exact-pin constructs with structural/lint/runtime data and pre-optimizer dumps; compiler/VM operand mismatch confirmed.",
+      "remainingUncertainty": "Authoritative decision plus coherent source/VM behavior and stage-specific regressions; no unsupported inference from lint/runtime observations.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "Authoritative decision plus coherent source/VM behavior and stage-specific regressions; no unsupported inference from lint/runtime observations.",
+      "originalClaim": "Assignment/reference/list-derived property and dimension writes can lint successfully but reach inconsistent compiler/VM paths. Neither runtime failure nor successful reference-result execution defines intended structural validity.",
+      "categories": [
+        "language-validity uncertainty",
+        "known upstream implementation defect"
+      ]
+    },
+    "contextual-enforcement-scope": {
+      "blocker": "C6-CONTEXT",
+      "originalClassification": "incomplete contextual predicate evidence and unadjudicated claim scope",
+      "currentClaim": "Exact interpreter removes one evidence prerequisite; the stated coverage/contextual/binding obligations remain incomplete.",
+      "evidenceRequired": [
+        "docs/8.6/source-completeness-ledger.json#/contextual",
+        "docs/8.6/compiler-contextual-reconciliation.json",
+        "docs/8.6/source-audit-context.json"
+      ],
+      "evidenceNowAvailable": "Exact interpreter removes one evidence prerequisite; the stated coverage/contextual/binding obligations remain incomplete.",
+      "remainingUncertainty": "Independent predicate/stage evidence and authorized bounded-claim disposition; never count structural matches of contextual negatives as whole-source rejection.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "Independent predicate/stage evidence and authorized bounded-claim disposition; never count structural matches of contextual negatives as whole-source rejection.",
+      "originalClaim": "73 restriction descriptions have family mappings, not 73 isolated RC4 predicates; the matcher is not a complete contextual validator.",
+      "categories": [
+        "missing contextual enforcement"
+      ]
+    },
+    "discarded-hook-disposition": {
+      "blocker": "CA86-001",
+      "originalClassification": "known inherited structural discrepancy requiring independent policy disposition",
+      "currentClaim": "Five paired hook controls with discarded/retained distinction; inherited intentional restriction confirmed.",
+      "evidenceRequired": [
+        "docs/8.6/compiler-contextual-reconciliation.json",
+        "docs/8.6/source-audit-probes.json",
+        "grammar/8.6/php.md#property-hooks-and-promotion"
+      ],
+      "evidenceNowAvailable": "Five paired hook controls with discarded/retained distinction; inherited intentional restriction confirmed.",
+      "remainingUncertainty": "Signed-off bounded scope or a source-backed separately authorized correction, fresh live/discarded regressions, and unchanged 8.5 historical artifacts.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "Signed-off bounded scope or a source-backed separately authorized correction, fresh live/discarded regressions, and unchanged 8.5 historical artifacts.",
+      "originalClaim": "The get/set-only grammar rejects an unknown hook name that Zend can accept when its declaration is discarded.",
+      "categories": [
+        "historical specification discrepancy",
+        "missing contextual enforcement"
+      ]
+    },
+    "exact-pin-executable": {
+      "blocker": "C6-PROVENANCE",
+      "originalClassification": "source-provenance limitation; unavailable build prerequisites; attestation tooling gap",
+      "currentClaim": "Verified exact-source executable, DLL, source tree, logs/configuration and negative tests; current provenance inspection passes.",
+      "evidenceRequired": [
+        "certification-execution/environment.json",
+        "certification-execution/run/docs/8.6/certification/interpreters.json",
+        "docs/8.6/certification-build.md",
+        "tools/lib/Certification86.php:233-243"
+      ],
+      "evidenceNowAvailable": "Verified exact-source executable, DLL, source tree, logs/configuration and negative tests; current provenance inspection passes.",
+      "remainingUncertainty": "Independently validated complete build attestation, actual tested binary identity and explicit configuration, negative attestation tests, then all differential and release gates rerun.",
+      "certificationImpact": "Original mandatory obligation remains; no accepted-limitation waiver.",
+      "resolutionCriteria": "Independently validated complete build attestation, actual tested binary identity and explicit configuration, negative attestation tests, then all differential and release gates rerun.",
+      "originalClaim": "Distribution hashes/version strings do not attest source ancestry. VS 2022 C++ is installed but unconfigured; PHP SDK/dependency tools and bison/re2c are unavailable in the checked environment. No Docker/Podman or WSL distribution is available. The existing provenance validator also rejects every attestation by construction.",
+      "categories": [
+        "executable provenance prerequisite satisfied",
+        "certification infrastructure/release evidence limitation"
+      ]
+    }
+  },
+  "blockers": [
+    {
+      "id": "PHP86-013",
+      "classification": "unresolved discovery blocker",
+      "construct": "Compiler/AST/optimizer, declaration linking, contextual traversal and unassociated upstream test changes",
+      "evidence": [
+        "source-completeness-ledger.json#/discovery",
+        "compiler-contextual-groups.json",
+        "discovery-final-review.json",
+        "upstream-test-reconciliation.json"
+      ],
+      "missingEvidence": "230 effective pending-direct-review and 14 examined-unresolved raw hunks remain; G01/G02/G03/G07 stay bounded/open. Named mandatory-reference defaults and one reentrant lookup now have exact-source controls; other signatures, cycles, failure recovery and outside-ledger source/test associations remain.",
+      "risk": "An unrepresented validity change may remain; broad discovery cannot close.",
+      "draftImpact": "Continue independently justified work with explicit incomplete status.",
+      "candidateImpact": "Blocks belief-of-completeness promotion.",
+      "stableImpact": "Blocks certification.",
+      "remediation": "Review the exact hunk IDs and source functions in the ledger; associate relevant tests, inspect transitive validation and optimizer/linking paths, and record evidence-backed exclusions or Gate B changes.",
+      "priority": "P0",
+      "blocksCertification": true,
+      "previousEvidenceRecord": "docs/8.6/source-audit-dispositions.json",
+      "newEvidence": [
+        "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/source-review.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/upstream.json"
+      ]
+    },
+    {
+      "id": "PHP86-014",
+      "classification": "bounded unresolved intended validity; exact-source compiler/VM defect confirmed",
+      "construct": "Assignment/reference/list-derived dimension and property writes, compound/inc/unset/reference operations",
+      "evidence": [
+        "compiler-contextual-groups.json#/groups/0",
+        "source-audit-probes.json",
+        "source-audit-upstream.json"
+      ],
+      "missingEvidence": "Authoritative intended-validity decision for exact assignment-derived writes and coherent compiler/VM treatment. Exact-source reproduction and direct pre-optimizer dumps now exist.",
+      "risk": "Runtime invalid opcode cannot establish a structural rejection; successful reference-result execution cannot establish a new permission.",
+      "draftImpact": "Retain current explicit uncertainty and separate PHP86-004 constant-object rules.",
+      "candidateImpact": "Blocks affected-area correctness and promotion.",
+      "stableImpact": "Blocks certification.",
+      "remediation": "Obtain intended-validity evidence before proposing the smallest contextual correction. Gate B must cover ordinary/reference/list bases, result kinds, operations, discarded/live forms and VM profiles.",
+      "priority": "P1",
+      "blocksCertification": true,
+      "previousEvidenceRecord": "docs/8.6/source-audit-dispositions.json",
+      "newEvidence": [
+        "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/source-review.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/upstream.json"
+      ],
+      "subfindings": {
+        "mechanism": "confirmed upstream implementation defect",
+        "ordinaryAndListWrites": "parser-accepted but runtime-defective",
+        "referenceDerivedWrites": "observed successful; intended new validity unresolved"
+      }
+    },
+    {
+      "id": "PHP86-015",
+      "classification": "bounded unresolved intended compatibility; exact-source traversal mechanism confirmed",
+      "construct": "Optimized printf/sprintf, arrays and constant-expression traversal versus ordinary calls",
+      "evidence": [
+        "compiler-contextual-groups.json#/groups/1",
+        "compiler-contextual-groups.json#/groups/2",
+        "source-audit-probes.json",
+        "source-audit-upstream.json",
+        "correctness-remediation.md"
+      ],
+      "missingEvidence": "Authoritative general intended compatibility boundary and exhaustive dispatch/visited-AST correspondence. Existing Phase 5D wording is already appropriately scoped.",
+      "risk": "An unconditional argument-traversal rule would wrongly accept or reject source.",
+      "draftImpact": "Phase 5D informative scope remains accurate; preserve bounded observations.",
+      "candidateImpact": "Blocks complete traversal claim and promotion.",
+      "stableImpact": "Blocks certification.",
+      "remediation": "Resolve intent and dispatch semantics; retain direct/imported/qualified/namespace/dynamic/named/unpack/PFA controls and logical/ternary/coalesce/array/live/discarded cases. No function-specific EBNF without structural evidence.",
+      "priority": "P1",
+      "blocksCertification": true,
+      "previousEvidenceRecord": "docs/8.6/source-audit-dispositions.json",
+      "newEvidence": [
+        "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/source-review.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/upstream.json"
+      ],
+      "requiredActions": [
+        "no EBNF action",
+        "no additional normative documentation edit established",
+        "contextual validation remains incomplete",
+        "upstream clarification required",
+        "retain certification blocking"
+      ]
+    },
+    {
+      "id": "CA86-001",
+      "classification": "known inherited policy discrepancy",
+      "construct": "Unknown property-hook name in a discarded declaration",
+      "evidence": [
+        "compiler-contextual-reconciliation.json",
+        "source-audit-probes.json",
+        "../../grammar/8.6/php.md#property-hooks-and-promotion",
+        "../8.5/final-evidence.json#/known_discrepancies"
+      ],
+      "missingEvidence": "Separate policy disposition and authorization before changing the intentional get/set-only structural restriction.",
+      "risk": "EBNF rejects an unknown hook that Zend can accept after discarding its declaration; blanket parser-equivalence claim is false.",
+      "draftImpact": "Retain documented divergence without modifying either version.",
+      "candidateImpact": "Independent PHP 8.6 certification must explicitly adjudicate the narrowed claim; historical acceptance is not automatically inherited.",
+      "stableImpact": "Cannot silently treat it as exact parser equivalence.",
+      "remediation": "If policy authorizes equivalence correction, consider identifier in hook-name with compilation-time get/set validation. Gate B needs live/discarded controls, canonical/parity changes and a separate PHP 8.5 correction review.",
+      "priority": "P2",
+      "blocksCertification": true,
+      "previousEvidenceRecord": "docs/8.6/source-audit-dispositions.json",
+      "newEvidence": [
+        "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/source-review.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/upstream.json"
+      ]
+    },
+    {
+      "id": "C6-CONTEXT",
+      "classification": "documented enforcement limitation plus unresolved predicate evidence",
+      "construct": "73 inherited contextual restriction descriptions and changed-rule interactions",
+      "evidence": [
+        "source-completeness-ledger.json#/contextual",
+        "source-audit-context.json",
+        "source-audit-boundaries.json"
+      ],
+      "missingEvidence": "Individual RC4 predicates, upstream PHPT and positive/negative stage isolation wherever family-level references remain. No native complete contextual validator exists.",
+      "risk": "Structural matches may violate parser actions, compiler checks or deferred linking; historical readonly-default restriction labels must not be copied as current rules.",
+      "draftImpact": "Document external enforcement and current normative clauses.",
+      "candidateImpact": "Requires independent evidence and claim adjudication; not an automatic permissible release limitation.",
+      "stableImpact": "Blocks whole-source-validator claims; bounded grammar certification requires policy disposition.",
+      "remediation": "Prioritize retained/discarded declarations, type/member constraints, writable/reference forms, attributes, enum and constant-expression paths. Reuse hashed finding fixtures and add only missing isolating evidence in an authorized phase.",
+      "priority": "P1",
+      "blocksCertification": true,
+      "previousEvidenceRecord": "docs/8.6/source-audit-dispositions.json",
+      "newEvidence": [
+        "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/source-review.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/upstream.json"
+      ]
+    },
+    {
+      "id": "C6-COVERAGE",
+      "classification": "bounded coverage and correspondence gap",
+      "construct": "64 unexercised productions, 318 alternatives; scanner state/helper products; family-only parser correspondence",
+      "evidence": [
+        "source-audit-coverage.json",
+        "source-completeness-ledger.json#/canonical",
+        "source-completeness-ledger.json#/scanner",
+        "final-coverage-remaining.json"
+      ],
+      "missingEvidence": "Alternative-specific correspondence/AST binding, scanner state products and individual witnesses. The 51 source/profile entries are not 51 verified scanner rules.",
+      "risk": "Coverage or name/section association can conceal a validity/binding mismatch; no defect follows solely from low coverage.",
+      "draftImpact": "Retain every identity and justified obligation without deleting alternatives.",
+      "candidateImpact": "Requires independent gap disposition under the conformance policy.",
+      "stableImpact": "Not an automatic exemption from scanner, binding and classified-coverage gates.",
+      "remediation": "Prioritize reserved token categories (including context-only from), namespace/type/declaration alternatives, dereference/constructor forms and closed-yield/prefix/dangling-else binding. Test lexical bodies through scanner primitives, not invented chart coverage.",
+      "priority": "P1",
+      "blocksCertification": true,
+      "previousEvidenceRecord": "docs/8.6/source-audit-dispositions.json",
+      "newEvidence": [
+        "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/source-review.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/upstream.json"
+      ]
+    },
+    {
+      "id": "C6-PROVENANCE",
+      "classification": "exact-source prerequisite satisfied; release evidence and final correspondence remain",
+      "construct": "RC4 distributions, configuration profiles and final-release correspondence",
+      "evidence": [
+        "source-audit-upstream.json",
+        "source-audit-probes.json#/interpreters",
+        "source-audit-validation.json"
+      ],
+      "missingEvidence": "Independent prerelease release-runner evidence, fresh complete release gates, later RC/final-source correspondence and final-release checks. No second build is required by the current exact-source obligation, but bit-for-bit reproducibility is unproved.",
+      "risk": "Matching immutable source hashes do not prove executable ancestry; RC4 cannot certify a final release.",
+      "draftImpact": "Report source-backed and executable-backed evidence separately.",
+      "candidateImpact": "Preparation is possible; current evidence does not authorize promotion.",
+      "stableImpact": "Blocks final-release and exact-executable certification.",
+      "remediation": "Retain verified RC4 build evidence; remedy remaining runner/freshness integration under its own contract, then obtain separate authorization for independent prerelease certification and subsequent RC/final-source review.",
+      "priority": "P1",
+      "blocksCertification": true,
+      "previousEvidenceRecord": "docs/8.6/source-audit-dispositions.json",
+      "newEvidence": [
+        "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/source-review.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/upstream.json",
+        "docs/8.6/exact-pin-build/build.json",
+        "docs/8.6/exact-pin-blocker-reconciliation/validation-runner-provenance.log"
+      ],
+      "subfindings": {
+        "exactSourceBuild": "evidence-satisfied, independently verified",
+        "bitForBitReproduction": "not claimed; not a stated prerequisite of the exact-source gate",
+        "prereleaseCertification": "not executed; remains open",
+        "finalReleaseCorrespondence": "not reviewed; remains open"
+      }
+    }
+  ],
+  "certificationGranted": false,
+  "normativeCorrectionsEstablished": [],
+  "gateBProposals": {
+    "PHP86-014": "Not ready: intent/repair authority missing; do not add a temporary-target grammar prohibition or relaxation.",
+    "PHP86-015": "No new normative correction established; Phase 5D already clarifies traversal scope. Future stage-aware contextual enforcement must preserve dispatch distinctions.",
+    "CA86-001": "Conditional policy proposal only: identifier hook-name plus visited-declaration get/set validation if unrestricted compiler acceptance becomes the authorized claim. Preserve separate 8.5 governance."
+  }
+}

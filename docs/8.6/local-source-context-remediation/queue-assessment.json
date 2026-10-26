@@ -1,0 +1,2081 @@
+{
+  "sourceReviewSha256": "1914b672de1c228250c39759c337644800c492a0837362449dee4f540ee5231a",
+  "rows": [
+    {
+      "id": "Zend/zend_compile.c:27:26",
+      "diffSha256": "131b79cb7dae4b8f349520a5c37223757346320b23158e63c41f282f5411d9f5",
+      "group": "Compiler setup and names",
+      "originalAnchor": "",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:37:39",
+      "diffSha256": "74918cf32696860a3f29883b8ba3203458b629f39aebcd72b78b625fc14eaa45",
+      "group": "Compiler setup and names",
+      "originalAnchor": "",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:99:102",
+      "diffSha256": "8cfa82f969989b273dec1e5eb49f3c44915dacf04197b81fb740592d6ffc517d",
+      "group": "Compiler setup and names",
+      "originalAnchor": "static void zend_eval_const_expr(zend_ast **ast_ptr);",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:342:352",
+      "diffSha256": "6547b48a7364ff67d9279d05b28ae7116517cf7e66e3c22a5d9d58cae6439bd1",
+      "group": "Compiler setup and names",
+      "originalAnchor": "void zend_oparray_context_begin(zend_oparray_context *prev_context, zend_op_arra",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:463:474",
+      "diffSha256": "ae1657f67dc9de50c7055b5ece93a8265302ca056b6d6afb46ca1618e7bdba12",
+      "group": "Compiler setup and names",
+      "originalAnchor": "void init_compiler(void) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:517:529",
+      "diffSha256": "5a2f4d3dc5bf36c74f2399d95a914b664aaa87819ce4251367a54d7dc3abc109",
+      "group": "Compiler setup and names",
+      "originalAnchor": "ZEND_API zend_string *zend_get_compiled_filename(void) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:529:541",
+      "diffSha256": "cd9771c410979ad47f980d1588679dcb6af14c22c3ae8ec44b30c8dd2b5e3578",
+      "group": "Compiler setup and names",
+      "originalAnchor": "ZEND_API bool zend_is_compiling(void) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:587:605",
+      "diffSha256": "14f5bdc0b4076cb87b75cff6308430d33067e00ee79148336c11049975f5377f",
+      "group": "Compiler setup and names",
+      "originalAnchor": "static inline void zend_insert_literal(zend_op_array *op_array, zval *zv, int li",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:666:684",
+      "diffSha256": "962aa3d26255f33bf8535c2a5553888d140b43d3b86765c925f16c95740ea80c",
+      "group": "Compiler setup and names",
+      "originalAnchor": "static int zend_add_const_name_literal(zend_string *name, bool unqualified) /* {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:683:699",
+      "diffSha256": "7b2af4ad45422a4de3fae2da239c0347a0c3f3a27099a2cc12d9292eb67285b4",
+      "group": "Compiler setup and names",
+      "originalAnchor": "static int zend_add_const_name_literal(zend_string *name, bool unqualified) /* {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:751:768",
+      "diffSha256": "a3c974a8e1fb0c605a22845e09c03ff6bd11fb73330e9c45822ce6a818a25f93",
+      "group": "Freeing, modifiers and type diagnostics",
+      "originalAnchor": "static inline void zend_end_loop(int cont_addr, const znode *var_node) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:777:824",
+      "diffSha256": "7e227565d7c3684501a6235f4419823818e43191f0061d0a738d90c52a5d75c4",
+      "group": "Freeing, modifiers and type diagnostics",
+      "originalAnchor": "static void zend_do_free(znode *op1) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:814:851",
+      "diffSha256": "7e178a97bb6f45a0c9590e8543caa7b3d0de4f10c61d6fad7aa6ada6f69ace3d",
+      "group": "Freeing, modifiers and type diagnostics",
+      "originalAnchor": "static void zend_do_free(znode *op1) /* {{{ */",
+      "disposition": "narrow-exclusion-proven"
+    },
+    {
+      "id": "Zend/zend_compile.c:871:906",
+      "diffSha256": "0823814909c5fb557979eab0f53facb0e8ae7b33622ea116564680f8d1869d33",
+      "group": "Freeing, modifiers and type diagnostics",
+      "originalAnchor": "static const char *zend_modifier_token_to_string(uint32_t token)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:1223:1258",
+      "diffSha256": "5a4fbdf7206469f27ceb48ebb8330eb99a2dbbfda23c9b95927416027ab0f204",
+      "group": "Freeing, modifiers and type diagnostics",
+      "originalAnchor": "static void str_dtor(zval *zv)  /* {{{ */ {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:1262:1295",
+      "diffSha256": "b120d4f173b164330e77084305e55e5c20a65fdbf68a00862d475de1c3544ae2",
+      "group": "Freeing, modifiers and type diagnostics",
+      "originalAnchor": "ZEND_API void function_add_ref(zend_function *function) /* {{{ */",
+      "disposition": "narrow-exclusion-proven"
+    },
+    {
+      "id": "Zend/zend_compile.c:1344:1377",
+      "diffSha256": "d1a79fcff21ca6f1c122f8bb786aaf83c2ea433cf465df4ed0d9ac0e88a1023c",
+      "group": "Freeing, modifiers and type diagnostics",
+      "originalAnchor": "ZEND_API zend_class_entry *zend_bind_class_in_slot(",
+      "disposition": "narrow-exclusion-proven"
+    },
+    {
+      "id": "Zend/zend_compile.c:1400:1432",
+      "diffSha256": "7ce137a83e3da65ea6e024bdeed017ec91bb3718cbb54411482b59d01f8584a4",
+      "group": "Freeing, modifiers and type diagnostics",
+      "originalAnchor": "static zend_string *resolve_class_name(zend_string *name, zend_class_entry *scop",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:1425:1457",
+      "diffSha256": "99c3a221d83bb9a018b1a53ed38ef00512e4d7a12fefee1e76c724be7b2decd5",
+      "group": "Freeing, modifiers and type diagnostics",
+      "originalAnchor": "static zend_string *add_intersection_type(zend_string *str,",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:1969:2001",
+      "diffSha256": "a8011c0dbc8d1f6decbd090add9e0dd19bd6d5ac88973d99988b79993d933507",
+      "group": "Variable and constant-object modes",
+      "originalAnchor": "static void zend_do_extended_fcall_end(void) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:2050:2079",
+      "diffSha256": "25e8b8953815e5232653f220afff2e533096d64cbac83f6e5f4aa692701c4bfc",
+      "group": "Variable and constant-object modes",
+      "originalAnchor": "ZEND_API void zend_initialize_class_data(zend_class_entry *ce, bool nullify_hand",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:2263:2293",
+      "diffSha256": "8c501d65928d1b7aa0af76c59187857ca1ae0d13a9d0232b876c07c8a9f4b0f3",
+      "group": "Variable and constant-object modes",
+      "originalAnchor": "static void zend_adjust_for_fetch_type(zend_op *opline, znode *result, uint32_t",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:2426:2456",
+      "diffSha256": "1d8d794a0b88d63366bce0e32b7183dcdf96476f13f5d3ed181878548f0f3ac0",
+      "group": "Variable and constant-object modes",
+      "originalAnchor": "static inline void zend_update_jump_target(uint32_t opnum_jump, uint32_t opnum_t",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:2459:2489",
+      "diffSha256": "2a74660385a66cbfb6c9f7eb33a1e22f839b6f443acee76e436a2fa45585608f",
+      "group": "Variable and constant-object modes",
+      "originalAnchor": "static inline zend_op *zend_delayed_emit_op(znode *result, uint8_t opcode, znode",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:2570:2605",
+      "diffSha256": "d4ac174a6cd84bdbac91e71533b51dcf44242b658e0bf7b5303b54a3a02c5b9a",
+      "group": "Variable and constant-object modes",
+      "originalAnchor": "static void zend_short_circuiting_commit(uint32_t checkpoint, znode *result, zen",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:2583:2632",
+      "diffSha256": "81ac223dc447ad1ef565b6bc87b59191ba9d1c0608eaa0d8e9d53d3b303110b5",
+      "group": "Variable and constant-object modes",
+      "originalAnchor": "static void zend_emit_jmp_null(znode *obj_node, uint32_t bp_type)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:2649:2704",
+      "diffSha256": "293c734c7d13a85b57507abc1420de5e6eb82cb752ee1688e369e44eaf496f6d",
+      "group": "Variable and constant-object modes",
+      "originalAnchor": "static void zend_emit_return_type_check(",
+      "disposition": "narrow-exclusion-proven"
+    },
+    {
+      "id": "Zend/zend_compile.c:2734:2803",
+      "diffSha256": "adce7e88175c5cac501fa683c44d3f284c9a8e7e83c423176df86e0f074d12d7",
+      "group": "Variable and constant-object modes",
+      "originalAnchor": "static inline bool zend_is_call(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:2933:3009",
+      "diffSha256": "8a17bfb26a6c3f64c74c1cf77bca0db152514c58da2ada11654c1d0b76305810",
+      "group": "Variable and constant-object modes",
+      "originalAnchor": "static zend_op *zend_compile_simple_var_no_cv(znode *result, zend_ast *ast, uint",
+      "disposition": "narrow-exclusion-proven"
+    },
+    {
+      "id": "Zend/zend_compile.c:3131:3206",
+      "diffSha256": "f840ae2ecf30ccc4ffb51e8cd8f17cebd1fe518f366dcd67a76bf8c68274a6a5",
+      "group": "Assignments and reference targets",
+      "originalAnchor": "static zend_op *zend_delayed_compile_prop(znode *result, zend_ast *ast, uint32_t",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:3153:3234",
+      "diffSha256": "dc557bb8670dc4895d1e4e48bf92f72951f48736ad6cc775a20daa08fb3f2db9",
+      "group": "Assignments and reference targets",
+      "originalAnchor": "static zend_op *zend_delayed_compile_prop(znode *result, zend_ast *ast, uint32_t",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:3283:3365",
+      "diffSha256": "b46f31e22d00e60004cd354241189b71b2766d8d5e3ee6ce394fc5d8a19117e1",
+      "group": "Assignments and reference targets",
+      "originalAnchor": "static bool zend_propagate_list_refs(zend_ast *ast) { /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:3433:3524",
+      "diffSha256": "f050c0f03c3c5d1ea3ce1df1759b0b3bb736cf6fafeaef76e0d212777bd65b29",
+      "group": "Assignments and reference targets",
+      "originalAnchor": "static bool zend_is_assign_to_self(zend_ast *var_ast, zend_ast *expr_ast) /* {{{",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:3684:3790",
+      "diffSha256": "8641f06d9c816031c2d85fc01577a64fab002159947f5b52da620439e2a0cefc",
+      "group": "Assignments and reference targets",
+      "originalAnchor": "static void zend_compile_compound_assign(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:3774:3878",
+      "diffSha256": "977a9e32e2973ad2bace1dfc3f824c2cde175354e05a067518af2ebeb32b373f",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static uint32_t zend_compile_args(",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:3825:3988",
+      "diffSha256": "66bdb9a83b26cd33b1bc5129c1d19a866e027f7de516a762ae83e995ea34b0a2",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static uint32_t zend_compile_args(",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:3908:4071",
+      "diffSha256": "01aaa2eafbf33fb5b4a3221a7cf976ed191b9a05d6c95ca1e43c2b32f447e529",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static uint32_t zend_compile_args(",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:3949:4121",
+      "diffSha256": "51c3d14c72e14b806ff84b64186855ae2ccf4d72b053e357cd088820eb81bee7",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "ZEND_API uint8_t zend_get_call_op(const zend_op *init_op, zend_function *fbc, bo",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:3977:4262",
+      "diffSha256": "23fa7f49f0bf566c293e7d4cac114f876aa5e7b777488cd29ab22a71786398ea",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static bool zend_compile_call_common(znode *result, zend_ast *args_ast, zend_fun",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:3992:4278",
+      "diffSha256": "fb4e978fcadd9380db718a4c6b031b462986c9c653832a15bf1aa1258baacdcc",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static bool zend_compile_call_common(znode *result, zend_ast *args_ast, zend_fun",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4014:4306",
+      "diffSha256": "531b4e2c8ad582457d7a3ec6975d6a78f3c4d15da286c693eeadf5184506d74d",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static bool zend_compile_function_name(znode *name_node, zend_ast *name_ast) /*",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4044:4336",
+      "diffSha256": "6816211877f0bf2307955a3e7cc5c7404fc7e2c431ee3cef15810a2ac752e6cc",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static void zend_compile_dynamic_call(znode *result, znode *name_node, zend_ast",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4286:4578",
+      "diffSha256": "4ec52d3c1397098b1256ef1da472931c425d5c212e43d905a0882c29d32193bb",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static void zend_compile_init_user_func(zend_ast *name_ast, uint32_t num_args, z",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4321:4613",
+      "diffSha256": "5e001c4ce45104dcd3ddf498a7ed28991b5883ad23d916c2f3c71fe648e0e261",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static zend_result zend_compile_func_cufa(znode *result, zend_ast_list *args, ze",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4332:4628",
+      "diffSha256": "ebaff4ddd5239c2a7ff7c11f8fe8b9dc53151836be2199a5df42116aff335161",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static zend_result zend_compile_func_cufa(znode *result, zend_ast_list *args, ze",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4359:4659",
+      "diffSha256": "b2e804cedb3cf425a4466cf0f016208714c328ee0ca03b011a37e3cdc33d411a",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static zend_result zend_compile_func_cuf(znode *result, zend_ast_list *args, zen",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4400:4704",
+      "diffSha256": "97e624b3035360a5ffa3777de7e445838965fe6a3e17cabf272759fe27d42a1b",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static void zend_compile_assert(znode *result, zend_ast_list *args, zend_string",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4645:4949",
+      "diffSha256": "ab1af922de5d0623f97dfec03b733709272eaf367dd8fe04df34edabe852b65d",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static uint32_t find_frameless_function_offset(uint32_t arity, void *handler)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4686:4986",
+      "diffSha256": "c7e4f4f7b816853e9777c633af843017c74a8798a7bdd6327d65a9a4244130e2",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static const zend_frameless_function_info *find_frameless_function_info(zend_ast",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4765:5065",
+      "diffSha256": "50bcaed11c0a11800fcff44332496b495e5ed54274334a460d048542d335e1e2",
+      "group": "Calls, partials and frameless dispatch",
+      "originalAnchor": "static void zend_compile_ns_call(znode *result, znode *name_node, zend_ast *args",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:4974:5329",
+      "diffSha256": "a98a9ef145c0b3a06769e5b87801ed0b588ca3b770f8a8acefe35ef01b7df202",
+      "group": "Specialized calls",
+      "originalAnchor": "static zend_result zend_compile_func_clone(znode *result, zend_ast_list *args)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5005:5547",
+      "diffSha256": "d8e8c5558d9b600a95f78a853cbf5dc57c448dcc7f4574fcd037ab2eddd63026",
+      "group": "Specialized calls",
+      "originalAnchor": "static zend_result zend_try_compile_special_func_ex(znode *result, zend_string *",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5018:5558",
+      "diffSha256": "c385decd020393427e56cd2f05a1059a1ae8741c0db785797a537ca2012ec08a",
+      "group": "Specialized calls",
+      "originalAnchor": "static zend_result zend_try_compile_special_func_ex(znode *result, zend_string *",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5078:5622",
+      "diffSha256": "7eb3510875e8f91862d2861c053c55db3470e69ba7e17e85e475e0c99d35137a",
+      "group": "Parent hooks and method construction",
+      "originalAnchor": "static const char *zend_get_cstring_from_property_hook_kind(zend_property_hook_k",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5092:5636",
+      "diffSha256": "66aae2fb5f1d25cd9ed3d7b77ead05a0a2337446d7799d83beae51531c425d3e",
+      "group": "Parent hooks and method construction",
+      "originalAnchor": "static zend_string *zend_copy_unmangled_prop_name(zend_string *prop_name)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5151:5685",
+      "diffSha256": "e046cb0c482b1e1048f0f670ebda2c7f52e30371c0e17a04981825a63fdc251a",
+      "group": "Parent hooks and method construction",
+      "originalAnchor": "static bool zend_compile_parent_property_hook_call(znode *result, zend_ast *ast,",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5167:5700",
+      "diffSha256": "01ac248da4d80324c2c986d69a3bd5f9952cd22aa1cd30f5fd42853d796ce77a",
+      "group": "Parent hooks and method construction",
+      "originalAnchor": "static void zend_compile_call(znode *result, zend_ast *ast, uint32_t type) /* {{",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5206:5736",
+      "diffSha256": "fc85552c13fa816df213531063ac6ff9f70e4aad1c2362c1c29b1a1ff6ccf61f",
+      "group": "Parent hooks and method construction",
+      "originalAnchor": "static void zend_compile_call(znode *result, zend_ast *ast, uint32_t type) /* {{",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5227:5757",
+      "diffSha256": "0f292d13fc81326dfb683570ade4a9258445f7e29fdbb94b8ab853a3b693321a",
+      "group": "Parent hooks and method construction",
+      "originalAnchor": "static void zend_compile_call(znode *result, zend_ast *ast, uint32_t type) /* {{",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5244:5774",
+      "diffSha256": "a0de8f48603f705707f5ac50a6e5c8db36f469b7bde6c013e27726a9ad2d91ad",
+      "group": "Parent hooks and method construction",
+      "originalAnchor": "static void zend_compile_method_call(znode *result, zend_ast *ast, uint32_t type",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5295:5825",
+      "diffSha256": "93881b6024828945eec0764f2827542cca14308e084d512c4084dd5c867b7b29",
+      "group": "Parent hooks and method construction",
+      "originalAnchor": "static void zend_compile_method_call(znode *result, zend_ast *ast, uint32_t type",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5400:5934",
+      "diffSha256": "7915f337aa735f4bf11ccd87e718ab81ec77c4f9af1444f54f01fad3491f472e",
+      "group": "Parent hooks and method construction",
+      "originalAnchor": "static void zend_compile_static_call(znode *result, zend_ast *ast, uint32_t type",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5414:5948",
+      "diffSha256": "13449209977deef43db355e34c8ab33163f4b6f20c191f9ee042c73c2e900806",
+      "group": "Parent hooks and method construction",
+      "originalAnchor": "static void zend_compile_new(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5493:6051",
+      "diffSha256": "6cd035b924de7b326d01567a6627bde166ab68331ea519b9813a83a03900876f",
+      "group": "Control flow and pipes",
+      "originalAnchor": "static void zend_compile_static_var_common(zend_string *var_name, zval *value, u",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5591:6151",
+      "diffSha256": "a1582a5e5d2a211e4e119e6db563a91504cfdabb3d6464021ba95fafc024898a",
+      "group": "Control flow and pipes",
+      "originalAnchor": "static void zend_compile_unset(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5888:6462",
+      "diffSha256": "a72f1d65ea54a971701ccb61846cfdeca765081d14b23dc7d4f1ab3442ec2131",
+      "group": "Control flow and pipes",
+      "originalAnchor": "static void zend_compile_break_continue(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:5905:6479",
+      "diffSha256": "a866b9abf2fdc0ce5abf8ab420b4393a06df507519b0886a8410ae098974909a",
+      "group": "Control flow and pipes",
+      "originalAnchor": "void zend_resolve_goto_label(zend_op_array *op_array, zend_op *opline) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:6097:6671",
+      "diffSha256": "c429df801c52741af2fc1c8de889a84eaef42c9814d57f9f881146577e207f2b",
+      "group": "Control flow and pipes",
+      "originalAnchor": "static void zend_compile_foreach(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:6132:6707",
+      "diffSha256": "e39fe47081d452c383dc3a2f50110555b84a6c5cd03db25a3fd69772591acb72",
+      "group": "Control flow and pipes",
+      "originalAnchor": "static void zend_compile_foreach(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:6144:6723",
+      "diffSha256": "62803814e415b3420c162d8b9c8a40932095978840a98c6204ddc96c79e731bd",
+      "group": "Control flow and pipes",
+      "originalAnchor": "static void zend_compile_foreach(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:6480:7059",
+      "diffSha256": "16ac16d1158fd2a6966728dcf6b51507c4821ad0f11375ba363ba4021b88682d",
+      "group": "Control flow and pipes",
+      "originalAnchor": "static bool zend_is_pipe_optimizable_callable_name(zend_ast *ast)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:6880:7534",
+      "diffSha256": "54cf2906e5845a65335f3499d596be4e3c773141cd2a7fb4655edc358d48ebb9",
+      "group": "Control flow and pipes",
+      "originalAnchor": "static void zend_compile_try(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:8085:8744",
+      "diffSha256": "0c2c951d80daccfc7aa493377d9ff2e050a28fe08b0921cc2d3ec1110965a463",
+      "group": "Closures and synthesized hooks",
+      "originalAnchor": "typedef struct {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:8106:8767",
+      "diffSha256": "6fcfa3d4237a977793340be24856759604ce44859c00b193406e186b184cc46e",
+      "group": "Closures and synthesized hooks",
+      "originalAnchor": "static void find_implicit_binds_recursively(closure_info *info, zend_ast *ast) {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:8140:8809",
+      "diffSha256": "50d0f4aaa2d53728b59bc5ba6882262d2b43865398bc28f940e30aebac6d5781",
+      "group": "Closures and synthesized hooks",
+      "originalAnchor": "static void find_implicit_binds_recursively(closure_info *info, zend_ast *ast) {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:8316:8986",
+      "diffSha256": "e930398a157a7dc677aca60d17d066334e3dd3c049b94f25ac44d76d9aad1a7b",
+      "group": "Closures and synthesized hooks",
+      "originalAnchor": "static zend_string *zend_begin_method_decl(zend_op_array *op_array, zend_string",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:8416:9094",
+      "diffSha256": "778940f2725acc5274533f11735f25a3f3afc6082e81897a4967519471513f03",
+      "group": "Closures and synthesized hooks",
+      "originalAnchor": "static zend_string *zend_begin_func_decl(znode *result, zend_op_array *op_array,",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:8453:9132",
+      "diffSha256": "dde5bdbc3553d8d8b53dc7814089be214b4e398ad4ef27e0ebc076b3b4ccb785",
+      "group": "Closures and synthesized hooks",
+      "originalAnchor": "static zend_op_array *zend_compile_func_decl_ex(",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:8767:9470",
+      "diffSha256": "510287e1ed5873595f78c1eb22817ded9e3271b4f8ea2a9bdbf8795128a54913",
+      "group": "Closures and synthesized hooks",
+      "originalAnchor": "static void zend_compile_property_hooks(",
+      "disposition": "narrow-exclusion-proven"
+    },
+    {
+      "id": "Zend/zend_compile.c:9162:9869",
+      "diffSha256": "b67844367f92da7de58026a0bf476fbbe48fa8b35195a5df6c59a73a5712787a",
+      "group": "Trait/import/namespace constants",
+      "originalAnchor": "static void zend_compile_use_trait(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:9536:10259",
+      "diffSha256": "7aae0e4ded720664549a6db20de7c38678ac2ff2e96dd5d958b795cddfee6bf6",
+      "group": "Trait/import/namespace constants",
+      "originalAnchor": "static HashTable *zend_get_import_ht(uint32_t type) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:9552:10275",
+      "diffSha256": "4dbfdcd636dfccac43d62a65a163d2b400743b5355bddc3ef8f53102810acd32",
+      "group": "Trait/import/namespace constants",
+      "originalAnchor": "static char *zend_get_use_type_str(uint32_t type) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:9800:10545",
+      "diffSha256": "7ca3c5e6c35c63e98f4ea20a701ba4d01c51044caf491b50807c46c8342c7575",
+      "group": "Trait/import/namespace constants",
+      "originalAnchor": "static void zend_compile_namespace(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:9919:10663",
+      "diffSha256": "d6ec7da6b08567d8439a874697531157d646f91bcb832713b852bc1649e9af0f",
+      "group": "Trait/import/namespace constants",
+      "originalAnchor": "static bool zend_try_ct_eval_magic_const(zval *zv, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:10194:10938",
+      "diffSha256": "b40ef46ef029e92aa30aabe58a5235c6328ae7756bac49c7332f1a82201f65e2",
+      "group": "Trait/import/namespace constants",
+      "originalAnchor": "static bool zend_try_ct_eval_array(zval *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:10554:11297",
+      "diffSha256": "8de9919929a21f7818ce0fe412c728035a69d16fc7c13069f4dcb5a5ef81f680",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_conditional(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:10796:11539",
+      "diffSha256": "487d75cb62bf178004a543a7e0dc4df91628105965c421d3a96cf7e91ef55594",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_instanceof(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:10875:11618",
+      "diffSha256": "0399ff6a4dc675346ef0a47f1c1a03ce2c8154d2925e25b81573d905cd5812f7",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_isset_or_empty(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:11010:11753",
+      "diffSha256": "17f7026cd648a4c2f95c55cf178a702b83c1a0af13a1dae501e871ce7fae64ef",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_array(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:11044:11805",
+      "diffSha256": "1493de1f5cb62caca89e0cae5950566c14ed68776ebcafba910a041af184cb54",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_const(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:11091:11849",
+      "diffSha256": "500e5742746cb58913a5bb985cb50e2b7aaa037ccd38395eecfa727a4b97848c",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_class_const(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:11333:12095",
+      "diffSha256": "565b4b96ad176930164917b86dc8652e8135e41affe22373737afa17508b38d0",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static bool zend_is_allowed_in_const_expr(zend_ast_kind kind) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:11577:12362",
+      "diffSha256": "3c5020915ff5c5b2e4c99a957396842a7d51763ade76c4bb3150cf4bb388576c",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "typedef struct {",
+      "disposition": "narrow-exclusion-proven"
+    },
+    {
+      "id": "Zend/zend_compile.c:11786:12571",
+      "diffSha256": "260d5f3dcb5b0ddcfdec2abf2eadeaeef6d4e485269c601ab1a4f0b4f8d5223f",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_stmt(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:11800:12594",
+      "diffSha256": "f30b2216e0ca5ffd9ae08aecaac3d905031bafb8e38e426ec9c7a472d8c1a4c8",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_stmt(zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:11827:12623",
+      "diffSha256": "0c3e62d38757a6e7aaf24cd3a3602f67e50b1d632e931e5485901c79d761d64a",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_expr_inner(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:11909:12705",
+      "diffSha256": "05107659d3f8e955596cf9bb8f3d4ac34e8205c9d3a55d0f7e5fe8b1547fd6eb",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_expr_inner(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:11933:12732",
+      "diffSha256": "4ac04cd149254cfc32a1abb73905a96358472b6c7992bdbc0011ae32e12bd0e7",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_expr_inner(znode *result, zend_ast *ast) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:11949:12745",
+      "diffSha256": "200d1a59eefdb15830bc2e9c49f083182505a7973d5d558ea55e8b5d0083933b",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static void zend_compile_expr(znode *result, zend_ast *ast)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:12033:12852",
+      "diffSha256": "6e55a155d80f44db7fcccfdcc4a39db8a2940c9f21d96c4b3b7e035400e9c30f",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "static zend_op *zend_delayed_compile_var(znode *result, zend_ast *ast, uint32_t",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_compile.c:12048:12889",
+      "diffSha256": "17405987c905f8c0f216cc9dc1630d6ffa715b3b196dfa4123fab30cc27d3204",
+      "group": "Expression and constant traversal",
+      "originalAnchor": "bool zend_try_ct_eval_cast(zval *result, uint32_t type, zval *op1)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:25:24",
+      "diffSha256": "c59edfb3b1c89ff8b4f06895e7f9f502f928871a833648a29657acda4b0fd9b0",
+      "group": "AST lifetime",
+      "originalAnchor": "",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:557:642",
+      "diffSha256": "1bb02f0e454b3bc6ffceaa17b6d566322e8ccc945ea4fb2df0d5d67008bee0a1",
+      "group": "AST lifetime",
+      "originalAnchor": "static zend_class_entry *zend_ast_fetch_class(zend_ast *ast, zend_class_entry *s",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:730:898",
+      "diffSha256": "56f36877ef73bfc39861262ba63f58f8ffaf4a294c3db00775dc418fe1ca4ad9",
+      "group": "AST lifetime",
+      "originalAnchor": "ZEND_API zend_result ZEND_FASTCALL zend_ast_evaluate_inner(",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:1254:1468",
+      "diffSha256": "fc348556bc2b35db499625d7d4b86a79acd193f2ab9bd5f70d068594536fdf24",
+      "group": "AST lifetime",
+      "originalAnchor": "static size_t ZEND_FASTCALL zend_ast_tree_size(zend_ast *ast)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:1329:1544",
+      "diffSha256": "ae4ce793621bc70b5e24a2b70f5f8d689a2e8836971319d393208f2d6a9f7e50",
+      "group": "AST lifetime",
+      "originalAnchor": "static void* ZEND_FASTCALL zend_ast_tree_copy(zend_ast *ast, void *buf)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:1367:1594",
+      "diffSha256": "53b13cfc0a9b30c59d31e6362737c6eadfbce63a9d16ec42d7dcc2585e87c1f9",
+      "group": "AST lifetime",
+      "originalAnchor": "ZEND_API zend_ast_ref * ZEND_FASTCALL zend_ast_copy(zend_ast *ast)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:1414:1651",
+      "diffSha256": "4de63b868b2e396d5a3d6aca8dbd7056dbe03d23399cccdac5faf5428928dd2b",
+      "group": "AST lifetime",
+      "originalAnchor": "tail_call:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:1481:1732",
+      "diffSha256": "9b0c18904eadfb08460eb3edf0ab28889c1807d5487d7c5eb72c71b897de8288",
+      "group": "AST export",
+      "originalAnchor": "ZEND_API void zend_ast_apply(zend_ast *ast, zend_ast_apply_func fn, void *contex",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:1496:1745",
+      "diffSha256": "4887d0f624f31642f534d2513107e12e506097eda107923e84b0210690eeae55",
+      "group": "AST export",
+      "originalAnchor": "static ZEND_COLD void zend_ast_export_str(smart_str *str, const zend_string *s)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:1539:1786",
+      "diffSha256": "386892b8d9400be730ff885c34953f41bc6f2b516df74302166a4a4981ecfc9b",
+      "group": "AST export",
+      "originalAnchor": "static ZEND_COLD void zend_ast_export_qstr(smart_str *str, char quote, const zen",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:1594:1840",
+      "diffSha256": "e9d1e1be22b2a3d4f20aa665fe9895bceab6b012b6ff4827c8fcbad1b8eadb91",
+      "group": "AST export",
+      "originalAnchor": "static ZEND_COLD void zend_ast_export_ns_name(smart_str *str, zend_ast *ast, int",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:1690:1936",
+      "diffSha256": "1fc0230959a8a6038b26e0261f831337f4d5316dbfafda2b10af309d304dd4c8",
+      "group": "AST export",
+      "originalAnchor": "static ZEND_COLD void zend_ast_export_encaps_list(smart_str *str, char quote, co",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:1864:2102",
+      "diffSha256": "5674756d27029385b6b80da886a789d3ae7732e0d6e6b0b180bb8386efc2a4ce",
+      "group": "AST export",
+      "originalAnchor": "static ZEND_COLD void zend_ast_export_zval(smart_str *str, const zval *zv, int p",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2076:2313",
+      "diffSha256": "206fc8a545b528b691439cadf6af3c2e3cf391bdae1beb94b8d4038053b24567",
+      "group": "AST export",
+      "originalAnchor": "tail_call:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2126:2363",
+      "diffSha256": "d113d35e15e3295f3a625aaf21cde4300022d142f8e5b4801e1fdf029bc181ab",
+      "group": "AST export",
+      "originalAnchor": "tail_call:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2184:2421",
+      "diffSha256": "ca04426adbb0d43b00e4841c1602e2621c689b6b9745a6332b4142841655b5ac",
+      "group": "AST export",
+      "originalAnchor": "tail_call:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2312:2549",
+      "diffSha256": "5e39130bc81441647caa26fc53ef53ddaefc99894dccfc3d2dea39eb1bbb1ba2",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2348:2592",
+      "diffSha256": "50f15433e55c0be436cedf66e82368281ac6f6aeaa9e5bdfb046dcc39706eb5c",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2382:2626",
+      "diffSha256": "1f89c61394dec3689469020aadd91839c16d37bcb65e0fd5d39faad33090b51e",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2443:2687",
+      "diffSha256": "f49a78e8eb127f8627d5908855e28435a7dd30b3389a646a25fcb46e700775da",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2488:2721",
+      "diffSha256": "44c83a826863fe12ec61a2c853fdb01230788361a64504b08441e2c7d3cc24a8",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2511:2744",
+      "diffSha256": "3825dd62f37a5b4b5bd15e38b771f60f0ce840f7cad512fa72d4beb8e6218ab7",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2537:2770",
+      "diffSha256": "d012fefc5f396ebcd62e64517a2862b3072826ab96db9ae96b45a0d1d80e6f3c",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2570:2803",
+      "diffSha256": "4cd68570671e682655ff976a0288912660d603ed811b9534f3a2e45679b69a43",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2716:2949",
+      "diffSha256": "e6f4e4dea2e24edb5c52896108d58ddd61c59805a1b9dcb62c6feed5e22b3135",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2766:2999",
+      "diffSha256": "b18eb649f0da8145ccecf3ee6bcfed6047cc34ec3c25899b2573352bec5ed4d4",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2810:3048",
+      "diffSha256": "ce2dbd522c062084b910b300fb27ac18b705e14622e181be71648dcfbf3c95f7",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2889:3127",
+      "diffSha256": "d59c987a2efa87f6c752e025901b97ba7f4cc796bb9dd93e1eac915ce7e2f83d",
+      "group": "AST export",
+      "originalAnchor": "simple_list:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.c:2986:3224",
+      "diffSha256": "428614d60d5fe149ab7f8c81ddc354fb0beecbcbcb73446357a6239cbe4881c8",
+      "group": "AST helpers and layout",
+      "originalAnchor": "zend_ast * ZEND_FASTCALL zend_ast_with_attributes(zend_ast *ast, zend_ast *attr)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.h:75:74",
+      "diffSha256": "7fcbf4037c5db084a750f256653a619c42917d87a30eee592658bf3b507daf17",
+      "group": "AST helpers and layout",
+      "originalAnchor": "enum _zend_ast_kind {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.h:142:142",
+      "diffSha256": "0200e0c77c7d3a9d31476900d7fef38ca6fb7925ee191cf7101b20ea6699e4a2",
+      "group": "AST helpers and layout",
+      "originalAnchor": "enum _zend_ast_kind {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.h:228:227",
+      "diffSha256": "5c9ad9b574e857b6425969d43c61a0724cf6790caf8496633a6b13d1ab3fec20",
+      "group": "AST helpers and layout",
+      "originalAnchor": "typedef struct _zend_ast_decl {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.h:306:309",
+      "diffSha256": "eebff176e2d606b6b3d2d9331d20c3da3c9d9cdf4dc4f78c934cdc267db9305a",
+      "group": "AST helpers and layout",
+      "originalAnchor": "static zend_always_inline zend_ast * zend_ast_create_ex_5(zend_ast_kind kind, ze",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.h:336:351",
+      "diffSha256": "3ea1007bd76d8ebd5ce0c8dd07e080fb766a2e5ef458b07f4a259079652b177f",
+      "group": "AST helpers and layout",
+      "originalAnchor": "typedef struct {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_ast.h:424:442",
+      "diffSha256": "a35a5fd5d8c1fa6109c2a429a6364ef0ed855223545e69f2cc576a17e0e3a29e",
+      "group": "AST helpers and layout",
+      "originalAnchor": "static zend_always_inline zend_ast *zend_ast_list_rtrim(zend_ast *ast) {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_enum.c:35:34",
+      "diffSha256": "3714fe2136a2c25ed28445468aae1142bd0c0ad6c746d59c91df6b47da77834a",
+      "group": "Enum registration",
+      "originalAnchor": "",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_enum.c:165:174",
+      "diffSha256": "94af049c74b81c2cb26eeaa9c0a1c71ebe1018056bd4d2c29726143b23c4ddde",
+      "group": "Enum registration",
+      "originalAnchor": "void zend_register_enum_ce(void)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_enum.c:445:455",
+      "diffSha256": "971e8e74b1464af8d150ac444a79135a3e96c8017d87322e70d6a80e3c30e6f8",
+      "group": "Enum registration",
+      "originalAnchor": "void zend_enum_register_funcs(zend_class_entry *ce)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_enum.c:456:466",
+      "diffSha256": "f4c01ab6c6360fad4eba2a847fd7f650d8bdcf14774e849561ad6d593ff5779e",
+      "group": "Enum registration",
+      "originalAnchor": "void zend_enum_register_funcs(zend_class_entry *ce)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_enum.c:466:476",
+      "diffSha256": "3a8e8e5e1b2ef83230c08a1c3a0280ff155e6a915921a127062a6c26079b7a04",
+      "group": "Enum registration",
+      "originalAnchor": "void zend_enum_register_funcs(zend_class_entry *ce)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_enum.c:534:544",
+      "diffSha256": "5c1a2b24db1e7be5375c4681fa66e4010fe48ffd03b409396dc85d77f7b5d1cf",
+      "group": "Enum registration",
+      "originalAnchor": "ZEND_API zend_class_entry *zend_register_internal_enum(",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_enum.c:597:632",
+      "diffSha256": "e5f0d86a9c2e3a0c4fceeff55212dcc8d2ae93225616da652cb32e6f715dfe02",
+      "group": "Enum registration",
+      "originalAnchor": "ZEND_API void zend_enum_add_case(zend_class_entry *ce, zend_string *case_name, z",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_enum.c:634:671",
+      "diffSha256": "95abd26688df9d369b0b9e6827334fcbb00c087f714cfbaf22617a5b723c9a89",
+      "group": "Enum registration",
+      "originalAnchor": "ZEND_API zend_object *zend_enum_get_case(zend_class_entry *ce, zend_string *name",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_attributes.c:155:154",
+      "diffSha256": "2018e133395545329a92f48a1e8ee6136f35b4323af41b8d14b809287ef1df1f",
+      "group": "Attributes and API entry points",
+      "originalAnchor": "ZEND_METHOD(SensitiveParameter, __construct)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:19:18",
+      "diffSha256": "b393f78def4dda92664333e67a15a93e10e3fe196035090df6a717f0ddb1b490",
+      "group": "Attributes and API entry points",
+      "originalAnchor": "",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:33:33",
+      "diffSha256": "e63673da21044df187e69c97b9d8a30152fae16c3b188e5aa751d0d08d1827f0",
+      "group": "Attributes and API entry points",
+      "originalAnchor": "",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:46:47",
+      "diffSha256": "95556293d0e15c566112d42587e5f7a5ab9892860e63f750d116fd1273e47e4d",
+      "group": "Attributes and API entry points",
+      "originalAnchor": "static zend_module_entry **module_request_startup_handlers;",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:75:74",
+      "diffSha256": "772345a1d0cb9eeb5d76c794ea4818091e3e52b26d408b183e63331c55bef04d",
+      "group": "Attributes and API entry points",
+      "originalAnchor": "ZEND_API zend_result zend_get_parameters_array_ex(uint32_t param_count, zval *ar",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:146:123",
+      "diffSha256": "799fc29583b2e95a975d415544acc25047ba43cdf2b066d5b8a538d697f59239",
+      "group": "Attributes and API entry points",
+      "originalAnchor": "ZEND_API const char *zend_get_type_by_const(int type) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:219:196",
+      "diffSha256": "5b5958fb61c6512fe7ae451a01150d2b8b9e138c408895d874f9e341cf3f8791",
+      "group": "Attributes and API entry points",
+      "originalAnchor": "ZEND_API zend_string *zend_zval_get_legacy_type(const zval *arg) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:246:223",
+      "diffSha256": "7a1573c039cf4ba41bf2806967eedd99051cd4bc480126081965ce2eb47d1ac9",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "ZEND_API ZEND_COLD void ZEND_FASTCALL zend_wrong_parameters_count_error(uint32_t",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:282:259",
+      "diffSha256": "e4f3678c9168a0a8cc45655cf26add4225a2c56a94fd8bfb6dbe7397d67aca8b",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "ZEND_API ZEND_COLD void ZEND_FASTCALL zend_wrong_parameter_error(int error_code,",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:304:282",
+      "diffSha256": "933caa8f48834e734b2c9bc3ce40897780b6aa85e55a8e0f6400d247ec07b777",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "ZEND_API ZEND_COLD void ZEND_FASTCALL zend_wrong_parameter_type_error(uint32_t n",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:390:378",
+      "diffSha256": "ffc880b08c941e2bcfd4c12e0a3f63ecde2ea988cf679be867e3f5afcf0c1c59",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "ZEND_API ZEND_COLD void ZEND_FASTCALL zend_wrong_callback_or_null_error(uint32_t",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:414:404",
+      "diffSha256": "bc8537825eba832ef1aa2a1e0dbb64faa81a5a3f86ed72c152b12e296e89b1dc",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "ZEND_API ZEND_COLD void ZEND_FASTCALL zend_argument_error_variadic(zend_class_en",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:466:487",
+      "diffSha256": "0e8250fafeab0b464d1f3cb3a353f72874bf60888b9d5e6d34965dad8265661e",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "ZEND_API ZEND_COLD void zend_class_redeclaration_error_ex(int type, zend_string",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:529:557",
+      "diffSha256": "f28f89afc035c581317ade3f8644b4e40255a266601835e76da92e854feb093b",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static ZEND_COLD bool zend_null_arg_deprecated(const char *fallback_type, uint32",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:616:643",
+      "diffSha256": "b0e438c966828f78a58a756d5fb167d831db38ef66800722a32ec1d45e8c08b8",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "ZEND_API bool ZEND_FASTCALL zend_parse_arg_long_weak(const zval *arg, zend_long",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:650:674",
+      "diffSha256": "86947694319590f2570d25a2febb2584157424f16c5aaf709099b9e00fbfd7d9",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "ZEND_API bool ZEND_FASTCALL zend_flf_parse_arg_long_slow(const zval *arg, zend_l",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:757:780",
+      "diffSha256": "5ae7112288d36a81199538067ff0d4220fee7390ae8d994a58d9d574fa9d6b27",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "ZEND_API bool ZEND_FASTCALL zend_parse_arg_number_or_str_slow(zval *arg, zval **",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:853:876",
+      "diffSha256": "a810f162f4b80bc3a164301ab999b2980f023d6e51251278bed10f11fc05d40c",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:868:891",
+      "diffSha256": "debbd9c0a5d5c498c5c46ef72fc1968a36566a1dddd73ca10a0babb11adcb3c1",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:878:901",
+      "diffSha256": "07aa21190373086bb3c640b2f3184a1cfe5e00c869381464f204a67486667182",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:888:911",
+      "diffSha256": "d6151f54b6b20f5c278fba33e2e2151fcbc2326d2ef8811e9e2f8f93ca72dca0",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:898:921",
+      "diffSha256": "163172d998a14575ff4b91cda6b9224c43dd8ccc448cac8de97af89e909cd467",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:941:954",
+      "diffSha256": "49a430b24c5a6beac2693e98acd4e33beced76d9ccd3d3faa50680d760850f2b",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:951:964",
+      "diffSha256": "54497c32571a10d35dd319ed455399ab675e0703024c0531a67a0878f770a114",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:962:975",
+      "diffSha256": "021d9159943537e9ff4a1253f27520c14af20e97d418e80c9e2f4bf466a522c6",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:973:986",
+      "diffSha256": "cbcb96e1e1f117c37be293ab33fcd3ced860970e49dfc49936a517af8b6b5adb",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:983:996",
+      "diffSha256": "0fa27017b020f892dcb1f76687739ba19249388a1e6e5def1f75a251c4260847",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:995:1008",
+      "diffSha256": "77bffd25f79c04c73304cef9fe35a9c0c0952791fa402c13462de7264e5c32f2",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:1050:1063",
+      "diffSha256": "0bcd7237fda710f3c60a8f2ecd99865634e9f4075d3d9eaf05f63775708858b6",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:1091:1083",
+      "diffSha256": "c89526ff777ae3d28ab0d877d6e1cb79d287002a71f7c75ac1808b367fcf8cce",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:1132:1155",
+      "diffSha256": "cf8c501a7f3a132e95042bd85af81eeb5cfca0610ad8d3db186f8fe99987b357",
+      "group": "Argument parsing and coercion",
+      "originalAnchor": "static zend_result zend_parse_arg(uint32_t arg_num, zval *arg, va_list *va, cons",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:1714:1725",
+      "diffSha256": "0f56025ff5f208e253591cd0ac55fe09d6059d0bf51027ca1f4d8b8ce2f833bd",
+      "group": "Objects and array keys",
+      "originalAnchor": "ZEND_API void object_properties_init_ex(zend_object *object, HashTable *properti",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:1773:1783",
+      "diffSha256": "122b2f7a670438c44b6ebfeea95de43914e05a04c7c7f8dbc79243823ec7f674",
+      "group": "Objects and array keys",
+      "originalAnchor": "ZEND_API void object_properties_load(zend_object *object, HashTable *properties)",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:1949:1997",
+      "diffSha256": "ae50d80979575e6b75680f88d2521a27b718d8e37b740501b15d8c1573313cf3",
+      "group": "Objects and array keys",
+      "originalAnchor": "ZEND_API void object_init(zval *arg) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2262:2322",
+      "diffSha256": "43318fe8aa8199247337bbf826f81c4a08e04f608210ef93168abb00701500cd",
+      "group": "Objects and array keys",
+      "originalAnchor": "ZEND_API zend_result array_set_zval_key(HashTable *ht, zval *key, zval *value) /",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2273:2336",
+      "diffSha256": "f81d041e7c6450d9e21993f488799f17c45015e40d1c8d2de64315296374b389",
+      "group": "Objects and array keys",
+      "originalAnchor": "ZEND_API zend_result array_set_zval_key(HashTable *ht, zval *key, zval *value) /",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2415:2483",
+      "diffSha256": "2e9b626dcea63cc869c064cb86ef353477ed23e8d0d52432c34b6587a1469c97",
+      "group": "Module lifecycle",
+      "originalAnchor": "ZEND_API void add_property_zval_ex(zval *arg, const char *key, size_t key_len, z",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2429:2494",
+      "diffSha256": "a9a278f363e9b9960e20b6f93e036db5db85669080bced8227f4070113bd8d78",
+      "group": "Module lifecycle",
+      "originalAnchor": "ZEND_API zend_result zend_startup_module_ex(zend_module_entry *module) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2462:2522",
+      "diffSha256": "decb2ae2294b5ab473a1994c0fa36e6315bff1c6ebffb7f62dffc7eeb42dae44",
+      "group": "Module lifecycle",
+      "originalAnchor": "ZEND_API zend_result zend_startup_module_ex(zend_module_entry *module) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2521:2579",
+      "diffSha256": "32cfb3e24ac68940e226a2d5c53447912f0e69f374718c26c5d13e042edcbafb",
+      "group": "Module lifecycle",
+      "originalAnchor": "ZEND_API void zend_collect_module_handlers(void) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2539:2595",
+      "diffSha256": "1b715ee39553b8458c73df021521c216639723e0d4ec288eb20343e3ae1d0da3",
+      "group": "Module lifecycle",
+      "originalAnchor": "ZEND_API void zend_collect_module_handlers(void) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2569:2625",
+      "diffSha256": "80e91d5a5fe4e2620883f18650e743fbec5fba7868c2dfb06a23226bb98a6f1f",
+      "group": "Module lifecycle",
+      "originalAnchor": "ZEND_API void zend_collect_module_handlers(void) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2604:2637",
+      "diffSha256": "6ad72f57f944937536b565c39525affec98509aa63447a53d42d5690b1293db1",
+      "group": "Module lifecycle",
+      "originalAnchor": "ZEND_API void zend_startup_modules(void) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2632:2663",
+      "diffSha256": "1a5dda0c2c5145e5cbee301f74cb49abbda6ac2229a4c7e8c59bb8e109f1c70e",
+      "group": "Module lifecycle",
+      "originalAnchor": "ZEND_API zend_module_entry* zend_register_module_ex(zend_module_entry *module, i",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2961:2991",
+      "diffSha256": "2a3a2e88550c4461fac720af2bc08ef84d2cf738021c3525d81224f68faef9ea",
+      "group": "Internal arginfo",
+      "originalAnchor": "static zend_always_inline void zend_normalize_internal_type(zend_type *type) {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:2972:3077",
+      "diffSha256": "009b112f1e69c1d6b9ddcb2a15e68a1eb3ec24bf8bcb800e758aed2090d4f51f",
+      "group": "Internal arginfo",
+      "originalAnchor": "ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3003:3109",
+      "diffSha256": "8314be7e88abaefbdea7cc8cfc7968a6f562feae38d6d72cb7d716d694e17888",
+      "group": "Internal arginfo",
+      "originalAnchor": "ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3013:3123",
+      "diffSha256": "4dffa7389935dee18cc2c1d6bcd133c3013edaf09fe975383818df860936e5e9",
+      "group": "Internal arginfo",
+      "originalAnchor": "ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3025:3135",
+      "diffSha256": "6f7cff85ab849064b22c86c1f8359d856a5db77c752f5c5ec34cce63beb54a23",
+      "group": "Internal arginfo",
+      "originalAnchor": "ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3058:3169",
+      "diffSha256": "fbbce71aebfced8b05e9cc28ce4cda3110087ae9c06871cb5cccb8f978f8051f",
+      "group": "Internal arginfo",
+      "originalAnchor": "ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3103:3212",
+      "diffSha256": "872ceba582a2632d8a40f7aba097c5ebb9c0093bbeb92d91781e0468bcd939da",
+      "group": "Internal arginfo",
+      "originalAnchor": "ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3121:3230",
+      "diffSha256": "9f10685c1d0e0c1ea9771310899a44bfebd036653d5aac379104ed2c34e3d990",
+      "group": "Internal arginfo",
+      "originalAnchor": "ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3140:3250",
+      "diffSha256": "45423943f648432abda75382b9b582647197ae3f0078104433159709eb80e90b",
+      "group": "Internal arginfo",
+      "originalAnchor": "ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3160:3270",
+      "diffSha256": "29fc2e704f584bdb4148b1c646ecf06f4baddd7226499a1bdd1f3ce25246dc7b",
+      "group": "Internal arginfo",
+      "originalAnchor": "ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3244:3300",
+      "diffSha256": "d9ad8dca7ce54ab12dbdeba48f25e47ed67e73bd64325efe9f420025fa7b9ddd",
+      "group": "Internal arginfo",
+      "originalAnchor": "ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3322:3375",
+      "diffSha256": "e2f7c6d9886f31b8b46f9de2b6f8771e30e52cf196db9782e47eaa5cdad4cafa",
+      "group": "Class and callable helpers",
+      "originalAnchor": "static void clean_module_classes(int module_number) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3505:3558",
+      "diffSha256": "93c559f4e0f04da03650dd16f1c0ee208540fdc74acf1b04e72d3f7ca7b04c30",
+      "group": "Class and callable helpers",
+      "originalAnchor": "ZEND_API int zend_next_free_module(void) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3639:3692",
+      "diffSha256": "c74254eb5a8d20b06f076179934808644b89d177ae077a72ded614ee578a40ac",
+      "group": "Class and callable helpers",
+      "originalAnchor": "ZEND_API zend_result zend_register_class_alias_ex(const char *name, size_t name_",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3780:3810",
+      "diffSha256": "a62ded33b5cf8e89ab7564a41544bfdada85de6367437be72ffe0b146d404010",
+      "group": "Class and callable helpers",
+      "originalAnchor": "static bool zend_is_callable_check_class(zend_string *name, zend_class_entry *sc",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3825:3855",
+      "diffSha256": "22608d3d48f614d5de4d7ad5cb18d5bb6f1d4895716a558740db470b353b7ef5",
+      "group": "Callable validation/cache",
+      "originalAnchor": "ZEND_API void zend_release_fcall_info_cache(zend_fcall_info_cache *fcc) {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3893:3892",
+      "diffSha256": "32d74e56a8f8bde75ba9918e1cde644db0c251047bc1e0dbf041f1db6b191b8a",
+      "group": "Callable validation/cache",
+      "originalAnchor": "static zend_always_inline bool zend_is_callable_check_func(zval *callable, zend_",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3910:3909",
+      "diffSha256": "4572dd3fd05f12abb95813597cc46b349212d4d701e92492b8922a337a6b5d2f",
+      "group": "Callable validation/cache",
+      "originalAnchor": "static zend_always_inline bool zend_is_callable_check_func(zval *callable, zend_",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3925:3924",
+      "diffSha256": "b4327e50fbace806864e81ce8ee7a9fcba3502de8f559d8cac0b4b8992e2f6c0",
+      "group": "Callable validation/cache",
+      "originalAnchor": "static zend_always_inline bool zend_is_callable_check_func(zval *callable, zend_",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:3977:3973",
+      "diffSha256": "28df343e8aa99b42652da0a1502c5e424fe8c618c1feec923a426533cba57684",
+      "group": "Callable validation/cache",
+      "originalAnchor": "static zend_always_inline bool zend_is_callable_check_func(zval *callable, zend_",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:4129:4125",
+      "diffSha256": "7f2cfda5c33422d75495e175f4aced7df25cbe3266d89c6fb9244e62fe7bc057",
+      "group": "Callable validation/cache",
+      "originalAnchor": "try_again:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:4159:4195",
+      "diffSha256": "81257460231c83c5aeb018f73e64d73fe7c49bdc602c11eb455ab09341a7578d",
+      "group": "Callable validation/cache",
+      "originalAnchor": "ZEND_API bool zend_is_callable_at_frame(",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:4221:4265",
+      "diffSha256": "c8f845438cc3f5886404c9225b9e85bc2a0e1d3a6227598f4aad8f86a2f250a4",
+      "group": "Callable validation/cache",
+      "originalAnchor": "check_func:",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:4261:4308",
+      "diffSha256": "5ec80e83f201bda62235ccc583d9bdf5dc05cf1c603e51540d2ed56597d25088",
+      "group": "Callable validation/cache",
+      "originalAnchor": "ZEND_API bool zend_is_callable_ex(zval *callable, zend_object *object, uint32_t",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:4298:4321",
+      "diffSha256": "bfb63b53060a1bbac43b9832cbef6b262b45e37929b01902cf525a23dee67ac6",
+      "group": "Callable validation/cache",
+      "originalAnchor": "ZEND_API zend_result zend_fcall_info_init(zval *callable, uint32_t check_flags,",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:4463:4487",
+      "diffSha256": "526e2b69bd3ceb76530fda9fde6e43d48106c5e867600264a55a2b998fe957ea",
+      "group": "Callable validation/cache",
+      "originalAnchor": "ZEND_API void zend_get_callable_zval_from_fcc(const zend_fcall_info_cache *fcc,",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:4600:4617",
+      "diffSha256": "c758253ef55972c5278ce6f54ddff28d24db5b28a4ff323064bfb2d587d5d191",
+      "group": "Property/constant/default APIs",
+      "originalAnchor": "ZEND_API zend_property_info *zend_declare_typed_property(zend_class_entry *ce, z",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:4819:4836",
+      "diffSha256": "ac0aaaed7ef94c7c453a1f9617234dcfce6afac5b87b6691f5a5fd1755ef7e8f",
+      "group": "Property/constant/default APIs",
+      "originalAnchor": "ZEND_API void zend_declare_property_double(zend_class_entry *ce, const char *nam",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:4846:4863",
+      "diffSha256": "52625fc13aa71af84f92345562d9290c6fd7352ce4167b5bc06a1e45a208cb43",
+      "group": "Property/constant/default APIs",
+      "originalAnchor": "ZEND_API zend_class_constant *zend_declare_typed_class_constant(zend_class_entry",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:4942:4962",
+      "diffSha256": "e03c48016a73a1ee90ac7b7704ecbbf1963d0bdf05565f2acf21eb7d115747ee",
+      "group": "Property/constant/default APIs",
+      "originalAnchor": "ZEND_API void zend_declare_class_constant_double(zend_class_entry *ce, const cha",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:5209:5229",
+      "diffSha256": "498a2617938aac68f810d83a8c1b722ee8475a2c8a6f9487be50d9f4673f1bd3",
+      "group": "Property/constant/default APIs",
+      "originalAnchor": "ZEND_API zval *zend_read_static_property(zend_class_entry *scope, const char *na",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:5261:5275",
+      "diffSha256": "befb8d382a2727ab478a23d897d62e709f0a7daab1dd86982ec1e57a3a823671",
+      "group": "Property/constant/default APIs",
+      "originalAnchor": "ZEND_API bool zend_is_iterable(const zval *iterable) /* {{{ */",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_API.c:5327:5324",
+      "diffSha256": "dd65ee5a6c9870ba1eed4c323f2447831224ec33fbe88a6d5d1bb51db43ad5a6",
+      "group": "Property/constant/default APIs",
+      "originalAnchor": "static zend_string *try_parse_string(const char *str, size_t len, char quote) {",
+      "disposition": "blocking-local-correspondence-required"
+    },
+    {
+      "id": "Zend/zend_constants.c:538:537",
+      "diffSha256": "5ccc5d1b5ef3f6d78bf79660d40ce78b79414bdee44064cd63ea8f5606063f22",
+      "group": "Property/constant/default APIs",
+      "originalAnchor": "ZEND_API zend_constant *zend_register_constant(zend_constant *c)",
+      "disposition": "blocking-local-correspondence-required"
+    }
+  ],
+  "groups": [
+    {
+      "name": "Compiler setup and names",
+      "ids": [
+        "Zend/zend_compile.c:27:26",
+        "Zend/zend_compile.c:37:39",
+        "Zend/zend_compile.c:99:102",
+        "Zend/zend_compile.c:342:352",
+        "Zend/zend_compile.c:463:474",
+        "Zend/zend_compile.c:517:529",
+        "Zend/zend_compile.c:529:541",
+        "Zend/zend_compile.c:587:605",
+        "Zend/zend_compile.c:666:684",
+        "Zend/zend_compile.c:683:699"
+      ],
+      "mechanism": "Call-mode prototypes, in_finally state, fallible interning, unsigned indices and unqualified-name factoring affect different mechanisms.",
+      "remaining": "Prove index bounds, initialization/use correspondence and identical name helper expansion; header movement alone is not an exclusion.",
+      "relatedConstructs": [
+        "name",
+        "function-declaration"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Freeing, modifiers and type diagnostics",
+      "ids": [
+        "Zend/zend_compile.c:751:768",
+        "Zend/zend_compile.c:777:824",
+        "Zend/zend_compile.c:814:851",
+        "Zend/zend_compile.c:871:906",
+        "Zend/zend_compile.c:1223:1258",
+        "Zend/zend_compile.c:1262:1295",
+        "Zend/zend_compile.c:1344:1377",
+        "Zend/zend_compile.c:1400:1432",
+        "Zend/zend_compile.c:1425:1457"
+      ],
+      "mechanism": "Result elision/opcode sets and switch defaults differ from the isolated comment/const substitutions.",
+      "remaining": "Prove result consumer sets, modifier token domain and unused display-scope argument before excluding remaining hunks.",
+      "relatedConstructs": [
+        "expression",
+        "type"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Variable and constant-object modes",
+      "ids": [
+        "Zend/zend_compile.c:1969:2001",
+        "Zend/zend_compile.c:2050:2079",
+        "Zend/zend_compile.c:2263:2293",
+        "Zend/zend_compile.c:2426:2456",
+        "Zend/zend_compile.c:2459:2489",
+        "Zend/zend_compile.c:2570:2605",
+        "Zend/zend_compile.c:2583:2632",
+        "Zend/zend_compile.c:2649:2704",
+        "Zend/zend_compile.c:2734:2803",
+        "Zend/zend_compile.c:2933:3009"
+      ],
+      "mechanism": "Autoglobal factoring, delayed-stack indices, memoized expression modes and constant-object write permission feed operand selection.",
+      "remaining": "PHP86-004 controls establish named permissions, not every memoized read/write mode or class flag initialization.",
+      "relatedConstructs": [
+        "variable",
+        "assignment-expression"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Assignments and reference targets",
+      "ids": [
+        "Zend/zend_compile.c:3131:3206",
+        "Zend/zend_compile.c:3153:3234",
+        "Zend/zend_compile.c:3283:3365",
+        "Zend/zend_compile.c:3433:3524",
+        "Zend/zend_compile.c:3684:3790"
+      ],
+      "mechanism": "Delayed property/list assignment changes alter fetch mode and writable operand construction.",
+      "remaining": "Separate legitimate constant-object permissions from PHP86-014 TMP/CONST assignment-result targets; source intended validity remains external.",
+      "relatedConstructs": [
+        "assignment-expression",
+        "variable"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Calls, partials and frameless dispatch",
+      "ids": [
+        "Zend/zend_compile.c:3774:3878",
+        "Zend/zend_compile.c:3825:3988",
+        "Zend/zend_compile.c:3908:4071",
+        "Zend/zend_compile.c:3949:4121",
+        "Zend/zend_compile.c:3977:4262",
+        "Zend/zend_compile.c:3992:4278",
+        "Zend/zend_compile.c:4014:4306",
+        "Zend/zend_compile.c:4044:4336",
+        "Zend/zend_compile.c:4286:4578",
+        "Zend/zend_compile.c:4321:4613",
+        "Zend/zend_compile.c:4332:4628",
+        "Zend/zend_compile.c:4359:4659",
+        "Zend/zend_compile.c:4400:4704",
+        "Zend/zend_compile.c:4645:4949",
+        "Zend/zend_compile.c:4686:4986",
+        "Zend/zend_compile.c:4765:5065"
+      ],
+      "mechanism": "Placeholder/named argument ordering, by-reference decisions, FCC cache and internal frameless metadata select distinct compiler paths.",
+      "remaining": "Preserved G03 controls prove bound constant required-reference rejection only; signatures, named arguments, variable reference modes and dispatch fallback still need correspondence.",
+      "relatedConstructs": [
+        "argument",
+        "first-class-callable-arguments"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Specialized calls",
+      "ids": [
+        "Zend/zend_compile.c:4974:5329",
+        "Zend/zend_compile.c:5005:5547",
+        "Zend/zend_compile.c:5018:5558"
+      ],
+      "mechanism": "array_map synthesizes a loop; numeric typecheck aliases and cuf/cufa specialization selection change.",
+      "remaining": "Known strict-types/nonliteral guards are inspected. Fallback rollback, alias diagnostic/traversal differences and optimized PFA references remain unproved.",
+      "relatedConstructs": [
+        "function-call-expression"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Parent hooks and method construction",
+      "ids": [
+        "Zend/zend_compile.c:5078:5622",
+        "Zend/zend_compile.c:5092:5636",
+        "Zend/zend_compile.c:5151:5685",
+        "Zend/zend_compile.c:5167:5700",
+        "Zend/zend_compile.c:5206:5736",
+        "Zend/zend_compile.c:5227:5757",
+        "Zend/zend_compile.c:5244:5774",
+        "Zend/zend_compile.c:5295:5825",
+        "Zend/zend_compile.c:5400:5934",
+        "Zend/zend_compile.c:5414:5948"
+      ],
+      "mechanism": "Parent-hook recognition helper and call/method/static/constructor mode propagation affect callable conversion and access checks.",
+      "remaining": "Trace all helper users and nonliteral/relative/class-name cases; a moved predicate does not establish all access/dispatch correspondence.",
+      "relatedConstructs": [
+        "property-hook",
+        "callable-conversion"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Control flow and pipes",
+      "ids": [
+        "Zend/zend_compile.c:5493:6051",
+        "Zend/zend_compile.c:5591:6151",
+        "Zend/zend_compile.c:5888:6462",
+        "Zend/zend_compile.c:5905:6479",
+        "Zend/zend_compile.c:6097:6671",
+        "Zend/zend_compile.c:6132:6707",
+        "Zend/zend_compile.c:6144:6723",
+        "Zend/zend_compile.c:6480:7059",
+        "Zend/zend_compile.c:6880:7534"
+      ],
+      "mechanism": "Bucket assertion, unset, unsigned goto indices, foreach reference paths, partial application in pipes and finally state have different consumers.",
+      "remaining": "Prove assertion/layout equivalence, goto bounds, reference result kinds and pipe dispatch separately; finally deprecation evidence alone does not close the group.",
+      "relatedConstructs": [
+        "foreach-statement",
+        "pipe-expression",
+        "try-statement"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Closures and synthesized hooks",
+      "ids": [
+        "Zend/zend_compile.c:8085:8744",
+        "Zend/zend_compile.c:8106:8767",
+        "Zend/zend_compile.c:8140:8809",
+        "Zend/zend_compile.c:8316:8986",
+        "Zend/zend_compile.c:8416:9094",
+        "Zend/zend_compile.c:8453:9132",
+        "Zend/zend_compile.c:8767:9470"
+      ],
+      "mechanism": "Implicit captures, callable cache flags, op-array initialization and synthesized return type affect separate declaration operations.",
+      "remaining": "Only the synthesized void return hunk is excluded. Capture traversal, removed memset initialization and cache ownership retain local review.",
+      "relatedConstructs": [
+        "closure-expression",
+        "property-hook"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Trait/import/namespace constants",
+      "ids": [
+        "Zend/zend_compile.c:9162:9869",
+        "Zend/zend_compile.c:9536:10259",
+        "Zend/zend_compile.c:9552:10275",
+        "Zend/zend_compile.c:9800:10545",
+        "Zend/zend_compile.c:9919:10663",
+        "Zend/zend_compile.c:10194:10938"
+      ],
+      "mechanism": "Const/bool/default-switch substitutions coexist with unreachable fatal-control changes.",
+      "remaining": "Exact selector domains, caller pointer usage and nonreturn declarations must be proven per hunk; retain existing status until reviewed.",
+      "relatedConstructs": [
+        "trait-use-clause",
+        "namespace-definition"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Expression and constant traversal",
+      "ids": [
+        "Zend/zend_compile.c:10554:11297",
+        "Zend/zend_compile.c:10796:11539",
+        "Zend/zend_compile.c:10875:11618",
+        "Zend/zend_compile.c:11010:11753",
+        "Zend/zend_compile.c:11044:11805",
+        "Zend/zend_compile.c:11091:11849",
+        "Zend/zend_compile.c:11333:12095",
+        "Zend/zend_compile.c:11577:12362",
+        "Zend/zend_compile.c:11786:12571",
+        "Zend/zend_compile.c:11800:12594",
+        "Zend/zend_compile.c:11827:12623",
+        "Zend/zend_compile.c:11909:12705",
+        "Zend/zend_compile.c:11933:12732",
+        "Zend/zend_compile.c:11949:12745",
+        "Zend/zend_compile.c:12033:12852",
+        "Zend/zend_compile.c:12048:12889"
+      ],
+      "mechanism": "TMP result modes, constant fetch writes, placeholder permission, statement/pipe dispatch and truth conversion cross AST traversal boundaries.",
+      "remaining": "Retain PHP86-001/004 associations and PHP86-014/015 dependencies separately. Only const context pointer substitution is excluded.",
+      "relatedConstructs": [
+        "expression",
+        "constant-expression"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "AST lifetime",
+      "ids": [
+        "Zend/zend_ast.c:25:24",
+        "Zend/zend_ast.c:557:642",
+        "Zend/zend_ast.c:730:898",
+        "Zend/zend_ast.c:1254:1468",
+        "Zend/zend_ast.c:1329:1544",
+        "Zend/zend_ast.c:1367:1594",
+        "Zend/zend_ast.c:1414:1651"
+      ],
+      "mechanism": "Callable AST copying, sizing and destruction gain fields and ownership transitions.",
+      "remaining": "Prove copied fields, child counts and allocation/destruction pairing across compiler and evaluator before excluding lifecycle changes.",
+      "relatedConstructs": [
+        "first-class-callable-arguments",
+        "constant-expression"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "AST export",
+      "ids": [
+        "Zend/zend_ast.c:1481:1732",
+        "Zend/zend_ast.c:1496:1745",
+        "Zend/zend_ast.c:1539:1786",
+        "Zend/zend_ast.c:1594:1840",
+        "Zend/zend_ast.c:1690:1936",
+        "Zend/zend_ast.c:1864:2102",
+        "Zend/zend_ast.c:2076:2313",
+        "Zend/zend_ast.c:2126:2363",
+        "Zend/zend_ast.c:2184:2421",
+        "Zend/zend_ast.c:2312:2549",
+        "Zend/zend_ast.c:2348:2592",
+        "Zend/zend_ast.c:2382:2626",
+        "Zend/zend_ast.c:2443:2687",
+        "Zend/zend_ast.c:2488:2721",
+        "Zend/zend_ast.c:2511:2744",
+        "Zend/zend_ast.c:2537:2770",
+        "Zend/zend_ast.c:2570:2803",
+        "Zend/zend_ast.c:2716:2949",
+        "Zend/zend_ast.c:2766:2999",
+        "Zend/zend_ast.c:2810:3048",
+        "Zend/zend_ast.c:2889:3127"
+      ],
+      "mechanism": "Loop-scope and string-const edits coexist with exported representation changes.",
+      "remaining": "Trace export callers and diagnostic/default-value consumers before asserting an output-only scope; no exclusion based merely on function names.",
+      "relatedConstructs": [
+        "expression"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "AST helpers and layout",
+      "ids": [
+        "Zend/zend_ast.c:2986:3224",
+        "Zend/zend_ast.h:75:74",
+        "Zend/zend_ast.h:142:142",
+        "Zend/zend_ast.h:228:227",
+        "Zend/zend_ast.h:306:309",
+        "Zend/zend_ast.h:336:351",
+        "Zend/zend_ast.h:424:442"
+      ],
+      "mechanism": "Parent-hook helper extraction, placeholder enum and callable AST structure/declarations change common helpers.",
+      "remaining": "Match every producer/consumer and AST child count; no general helper-equivalence claim without caller correspondence.",
+      "relatedConstructs": [
+        "property-hook",
+        "argument"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Enum registration",
+      "ids": [
+        "Zend/zend_enum.c:35:34",
+        "Zend/zend_enum.c:165:174",
+        "Zend/zend_enum.c:445:455",
+        "Zend/zend_enum.c:456:466",
+        "Zend/zend_enum.c:466:476",
+        "Zend/zend_enum.c:534:544",
+        "Zend/zend_enum.c:597:632",
+        "Zend/zend_enum.c:634:671"
+      ],
+      "mechanism": "Custom object/case ID, arginfo conversion and four-child case AST change allocation and lookup.",
+      "remaining": "Compiler initializer presence predicates are verified, but ID/table layout, internal method metadata and deferred evaluation remain separate.",
+      "relatedConstructs": [
+        "enum-declaration",
+        "enum-case"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Attributes and API entry points",
+      "ids": [
+        "Zend/zend_attributes.c:155:154",
+        "Zend/zend_API.c:19:18",
+        "Zend/zend_API.c:33:33",
+        "Zend/zend_API.c:46:47",
+        "Zend/zend_API.c:75:74",
+        "Zend/zend_API.c:146:123",
+        "Zend/zend_API.c:219:196"
+      ],
+      "mechanism": "SensitiveParameterValue initialization factoring, module globals and removed parameter-array API combine with error formatting.",
+      "remaining": "Prove helper/caller behavior and diagnostic-only scope individually; runtime API location does not justify source-validity exclusion.",
+      "relatedConstructs": [
+        "attribute"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Argument parsing and coercion",
+      "ids": [
+        "Zend/zend_API.c:246:223",
+        "Zend/zend_API.c:282:259",
+        "Zend/zend_API.c:304:282",
+        "Zend/zend_API.c:390:378",
+        "Zend/zend_API.c:414:404",
+        "Zend/zend_API.c:466:487",
+        "Zend/zend_API.c:529:557",
+        "Zend/zend_API.c:616:643",
+        "Zend/zend_API.c:650:674",
+        "Zend/zend_API.c:757:780",
+        "Zend/zend_API.c:853:876",
+        "Zend/zend_API.c:868:891",
+        "Zend/zend_API.c:878:901",
+        "Zend/zend_API.c:888:911",
+        "Zend/zend_API.c:898:921",
+        "Zend/zend_API.c:941:954",
+        "Zend/zend_API.c:951:964",
+        "Zend/zend_API.c:962:975",
+        "Zend/zend_API.c:973:986",
+        "Zend/zend_API.c:983:996",
+        "Zend/zend_API.c:995:1008",
+        "Zend/zend_API.c:1050:1063",
+        "Zend/zend_API.c:1091:1083",
+        "Zend/zend_API.c:1132:1155"
+      ],
+      "mechanism": "ZPP and weak/slow coercion paths alter argument count/type/diagnostic processing.",
+      "remaining": "Separate runtime argument outcomes from compiler-known function/default construction. Untraced callers prevent a blanket no-language-change exclusion.",
+      "relatedConstructs": [
+        "argument"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Objects and array keys",
+      "ids": [
+        "Zend/zend_API.c:1714:1725",
+        "Zend/zend_API.c:1773:1783",
+        "Zend/zend_API.c:1949:1997",
+        "Zend/zend_API.c:2262:2322",
+        "Zend/zend_API.c:2273:2336"
+      ],
+      "mechanism": "Property loading gains virtual/readonly/reference/type checks; object_finit and key-conversion exception handling change.",
+      "remaining": "Trace constant evaluation/deferred initialization callers and exception paths; ordinary runtime tests alone do not prove source acceptance.",
+      "relatedConstructs": [
+        "property-declaration",
+        "constant-expression"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Module lifecycle",
+      "ids": [
+        "Zend/zend_API.c:2415:2483",
+        "Zend/zend_API.c:2429:2494",
+        "Zend/zend_API.c:2462:2522",
+        "Zend/zend_API.c:2521:2579",
+        "Zend/zend_API.c:2539:2595",
+        "Zend/zend_API.c:2569:2625",
+        "Zend/zend_API.c:2604:2637",
+        "Zend/zend_API.c:2632:2663"
+      ],
+      "mechanism": "Persistent module registration, handler collection and allocation change initialization state.",
+      "remaining": "Establish the boundary to internal function/class metadata used during compilation; no filename-based exclusion.",
+      "relatedConstructs": [
+        "function-call-expression"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Internal arginfo",
+      "ids": [
+        "Zend/zend_API.c:2961:2991",
+        "Zend/zend_API.c:2972:3077",
+        "Zend/zend_API.c:3003:3109",
+        "Zend/zend_API.c:3013:3123",
+        "Zend/zend_API.c:3025:3135",
+        "Zend/zend_API.c:3058:3169",
+        "Zend/zend_API.c:3103:3212",
+        "Zend/zend_API.c:3121:3230",
+        "Zend/zend_API.c:3140:3250",
+        "Zend/zend_API.c:3160:3270",
+        "Zend/zend_API.c:3244:3300"
+      ],
+      "mechanism": "Type normalization and function registration convert internal argument info and names/defaults.",
+      "remaining": "Follow enum startup and compile-known calls through converted metadata; method registration and return/argument signatures remain separate obligations.",
+      "relatedConstructs": [
+        "argument",
+        "enum-declaration"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Class and callable helpers",
+      "ids": [
+        "Zend/zend_API.c:3322:3375",
+        "Zend/zend_API.c:3505:3558",
+        "Zend/zend_API.c:3639:3692",
+        "Zend/zend_API.c:3780:3810"
+      ],
+      "mechanism": "Cleanup const, persistent class allocation, removed symbol helper and callable class rename/bool updates coexist.",
+      "remaining": "Prove identity-specific local transformations and all changed helper consumers before excluding.",
+      "relatedConstructs": [
+        "class-declaration",
+        "callable-conversion"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Callable validation/cache",
+      "ids": [
+        "Zend/zend_API.c:3825:3855",
+        "Zend/zend_API.c:3893:3892",
+        "Zend/zend_API.c:3910:3909",
+        "Zend/zend_API.c:3925:3924",
+        "Zend/zend_API.c:3977:3973",
+        "Zend/zend_API.c:4129:4125",
+        "Zend/zend_API.c:4159:4195",
+        "Zend/zend_API.c:4221:4265",
+        "Zend/zend_API.c:4261:4308",
+        "Zend/zend_API.c:4298:4321",
+        "Zend/zend_API.c:4463:4487"
+      ],
+      "mechanism": "Cache release, trampolines, callable-at-frame checks, consumed arguments and persistent class lookup affect binding.",
+      "remaining": "Complete named/reference/callable signature and evaluation timing correspondence remains open; reuse G03 controls without extending their claim.",
+      "relatedConstructs": [
+        "callable-conversion",
+        "argument"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    },
+    {
+      "name": "Property/constant/default APIs",
+      "ids": [
+        "Zend/zend_API.c:4600:4617",
+        "Zend/zend_API.c:4819:4836",
+        "Zend/zend_API.c:4846:4863",
+        "Zend/zend_API.c:4942:4962",
+        "Zend/zend_API.c:5209:5229",
+        "Zend/zend_API.c:5261:5275",
+        "Zend/zend_API.c:5327:5324",
+        "Zend/zend_constants.c:538:537"
+      ],
+      "mechanism": "Class type equality checks, constant deprecations, saved error state and default-string conversion have distinct effects.",
+      "remaining": "Prove class flag domains and error-state substitutions; PHP86-010 deprecation coverage is not blanket closure of default conversion and constant evaluation.",
+      "relatedConstructs": [
+        "property-declaration",
+        "class-constant-declaration",
+        "constant-expression"
+      ],
+      "constructLimit": "Review navigation labels; not assertions of exact canonical production-name correspondence or grammar edits.",
+      "testAssociation": "Use named per-predicate/source mechanism associations where present; otherwise no identity-specific PHPT association is claimed."
+    }
+  ],
+  "boundary": "Complete partition of changed-line triage, not a complete semantic call graph. Blocking local gaps remain local; they are not all deferred to upstream. Exclusion authority remains only the seven source-review proofs.",
+  "outsideLedgerOriginal": "No harmless default: optimizer, VM, reentrant linking and test/component associations remain PHP86-013 obligations."
+}

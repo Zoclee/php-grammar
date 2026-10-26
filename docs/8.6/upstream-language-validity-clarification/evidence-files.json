@@ -1,0 +1,52 @@
+{
+    "phase": "7G",
+    "kind": "Final artifact digests; no independent archive-custody claim",
+    "gitWhitespaceCheck": {
+        "command": [
+            "git",
+            "-c",
+            "safe.directory=C:/Data/GitHub/php-grammar",
+            "diff",
+            "--check"
+        ],
+        "exit_code": 0,
+        "context": "Repository owner; sandbox could not read Git metadata"
+    },
+    "files": {
+        "docs/8.6/upstream-language-validity-clarification.md": "2780760f92c7e257f26c900b2a67f82d495206476d0027d901e069cd9d118f62",
+        "docs/8.6/upstream-language-validity-clarification/CA86-001-draft.md": "363eb9bb3332a2e369cc7598915e200e3aab3a904460cc7c2a9721d0fd64511e",
+        "docs/8.6/upstream-language-validity-clarification/PHP86-014-draft.md": "19c5a1794010c98048388af350079c67974617d25d8c7f3498438478d96c9c59",
+        "docs/8.6/upstream-language-validity-clarification/PHP86-015-draft.md": "59e23a894f44b0810e3dba4efd762b6da2549ceaecba4ae47695fc761f9e3390",
+        "docs/8.6/upstream-language-validity-clarification/baseline.json": "f517a0920a459d370c95a184efa36261d0c2b4c4c91875a30a6952fd9bc5f332",
+        "docs/8.6/upstream-language-validity-clarification/freshness.json": "dec7de75652df93936a0007ff719e0360715d8af5b873d2e9ed171f902036699",
+        "docs/8.6/upstream-language-validity-clarification/provenance.json": "c9e8a37caa158b7197e10978438d73161a6638862c5c11c18a3a6d6ec1d487ed",
+        "docs/8.6/upstream-language-validity-clarification/provenance.log": "d11ff3a6df40d51ad8714965a947dff1454ab5ebb7d7ddc709babc6648d22726",
+        "docs/8.6/upstream-language-validity-clarification/reproducers.json": "ab87ddc7df9d0c8e30ef059d3b8b585c281cc197477366919458552b9bd26eaa",
+        "docs/8.6/upstream-language-validity-clarification/response-actions.json": "5a961beff0909f210c205cb55edfb862b3079595b4bbf736159488a6d313d7b7",
+        "docs/8.6/upstream-language-validity-clarification/upstream-refresh.json": "66ad3ebb1429a9a517ef3ba4b13d15749dbb89af9553ed9b0349dbb3a35d3cbc",
+        "docs/8.6/upstream-language-validity-clarification/upstream-review.md": "e28dbce6e341756a7c59f8a94e5cb7e4c5b0dc2c165e2b9451d921263b84886b",
+        "docs/8.6/upstream-language-validity-clarification/upstream/issue-comments-19658.headers": "1dd0d3eae85fbe0f0cd33acac126e60affe524f57ea27287bd01daf80ae84765",
+        "docs/8.6/upstream-language-validity-clarification/upstream/issue-comments-19658.json": "5c728bc485faa289b5a61bbb5f612e9932639f038aed9aef7e203e41aa7bb33c",
+        "docs/8.6/upstream-language-validity-clarification/upstream/issue-comments-20628.headers": "bff7bd44ba4fe3e7bd7657dacdfef745f15824dc517ca93eb6437fbbb8897cc4",
+        "docs/8.6/upstream-language-validity-clarification/upstream/issue-comments-20628.json": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd",
+        "docs/8.6/upstream-language-validity-clarification/upstream/pr-19658.headers": "8cabd65fe9fab1d46c5623c523495d8631564bb7c0728b0827add0a51171e6af",
+        "docs/8.6/upstream-language-validity-clarification/upstream/pr-19658.json": "217c24f145d49ee406dbd8bf065e5f6de27adad9b1bc288077f71cc3e8a18b06",
+        "docs/8.6/upstream-language-validity-clarification/upstream/pr-20628.headers": "cf1d55762ba1e177e288ca9c7b8b28307ce0a2117c977b80663d9e0342bb8084",
+        "docs/8.6/upstream-language-validity-clarification/upstream/pr-20628.json": "f6701c5c12eb47abc92490fbfbe80b309e54b206654ebdfbd74cee482b072174",
+        "docs/8.6/upstream-language-validity-clarification/upstream/review-comments-19658.headers": "da96fd1da49c6c722d418a1cbe1788f629e9a6bce838845213738b39b7c8b8bf",
+        "docs/8.6/upstream-language-validity-clarification/upstream/review-comments-19658.json": "f48ba1e8a44a4a647f8ca052bd84f9149352b61989eff38063cbb995b5b7e61c",
+        "docs/8.6/upstream-language-validity-clarification/upstream/review-comments-20628.headers": "1140b5ad88652918d9fa002f2815ee0ebe52db581833d89f9b6419d3abdad5ba",
+        "docs/8.6/upstream-language-validity-clarification/upstream/review-comments-20628.json": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe",
+        "docs/8.6/upstream-language-validity-clarification/upstream/search-hook-discarded.headers": "763a2848beb7820b9d60589a5a3e9adaba92da6a46d0c4048e3a4801e98cd5fd",
+        "docs/8.6/upstream-language-validity-clarification/upstream/search-hook-discarded.json": "f43085dc23e994ffd697511d20d2c8580ff9db3583b4bbb50b7fed0839bc549a",
+        "docs/8.6/upstream-language-validity-clarification/upstream/search-hook-unknown.headers": "3bd610b13d66d7e1dac2eae05ee7c7983b925333598aa7dee15540de30275dbb",
+        "docs/8.6/upstream-language-validity-clarification/upstream/search-hook-unknown.json": "c9938edecb99d754b2d039ac9eec320a94c769b6a6417921e2dcbef9e2fe01a0",
+        "docs/8.6/upstream-language-validity-clarification/upstream/search-new-traversal.headers": "bb5ac68fcac42d6119ce95b9bcb00f84a316c7c63ebdabf1fb89e54c4f24c2b2",
+        "docs/8.6/upstream-language-validity-clarification/upstream/search-new-traversal.json": "de3270630bf72d36adee2cab546e7fa460e30441cf784c2c2b2e0d11e9bd3b34",
+        "docs/8.6/upstream-language-validity-clarification/upstream/search-new-writable.headers": "5d3c2159761adc25fd42bb5014c483870da17371e2641ac55b83d795f89ac23d",
+        "docs/8.6/upstream-language-validity-clarification/upstream/search-new-writable.json": "c962465b2697a6e9746b9e3a8f8ae5495dd43cf31cf565233f15033935a4568e",
+        "docs/8.6/upstream-language-validity-clarification/upstream/search-writable-opcode.headers": "8b5a3d30abe6bab5046e4a3726f813f7bf29b71a878eaec7faae9c1f92b9633d",
+        "docs/8.6/upstream-language-validity-clarification/upstream/search-writable-opcode.json": "406a5bc06c2ffaa0f69f60c533f32fc0aba53393aa6b41b29b9ff36adde12e39",
+        "docs/8.6/upstream-language-validity-clarification/validation.json": "a54f87fb9935bee903935238559e9e71dc3612bd591a9c4d7dd094a345fadf00"
+    }
+}

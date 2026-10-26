@@ -1,0 +1,7 @@
+{
+  "initialRecord": "artifact-validation-initial.json",
+  "cause": "The artifact helper checked documentation links before writing its own preservation, validation and artifact-index receipts. Those three targets did not yet exist during the first link scan.",
+  "resolution": "Retain the initial diagnostic and rerun all artifact checks after the receipts exist. No source, executable, release gate, preservation rule or historical evidence was changed.",
+  "finalRecord": "final-artifact-validation.json",
+  "certificationGranted": false
+}

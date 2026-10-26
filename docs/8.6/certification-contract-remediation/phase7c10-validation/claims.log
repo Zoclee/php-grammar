@@ -1,0 +1,22 @@
+{
+  "contract": "php86-certification-v3",
+  "errors": [
+    "Mandatory obligation unmet: production-coverage-closure",
+    "Mandatory obligation unmet: alternative-coverage-closure",
+    "Mandatory obligation unmet: scanner-state-closure",
+    "Mandatory obligation unmet: ast-binding",
+    "Mandatory obligation unmet: folding-order",
+    "Mandatory obligation unmet: discovery-closure",
+    "Mandatory obligation unmet: writable-target-validity",
+    "Mandatory obligation unmet: contextual-enforcement-scope",
+    "Mandatory obligation unmet: discarded-hook-disposition",
+    "Unresolved blocker: PHP86-013",
+    "Unresolved blocker: PHP86-014",
+    "Unresolved blocker: PHP86-015",
+    "Unresolved blocker: CA86-001",
+    "Unresolved blocker: C6-CONTEXT",
+    "Unresolved blocker: C6-COVERAGE",
+    "Unresolved blocker: C6-PROVENANCE"
+  ],
+  "certificationGranted": false
+}

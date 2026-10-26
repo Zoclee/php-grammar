@@ -1,0 +1,28 @@
+{
+  "command": [
+    "cmd.exe",
+    "/d",
+    "/c",
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\sdk\\phpsdk-vs17-x64.bat",
+    "-t",
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\environment-quoted.bat"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar/.audit/php86-exact",
+  "started": "2026-10-25T10:44:26+00:00",
+  "task": "C:/Data/GitHub/php-grammar/.audit/php86-exact/environment-quoted.bat",
+  "windowsCommandLine": "cmd.exe /d /s /c \"\"C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\sdk\\phpsdk-vs17-x64.bat\" -t \"C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\environment-quoted.bat\"\"",
+  "taskSha256": "cb1e703d053a6e4309f911fc7d3bfa59717e285c153af317772e33c0379a9b08",
+  "taskContents": "@echo off\r\ncd /d \"C:/Data/GitHub/php-grammar/.audit/php86-exact/source\"\r\nwhere cl\r\nwhere nmake\r\nwhere bison\r\nwhere re2c\r\ncl\r\nbison --version\r\nre2c --version\r\necho WindowsSDKVersion=%WindowsSDKVersion%\r\necho VCToolsVersion=%VCToolsVersion%\r\nexit /b 0\r\n",
+  "controllerSha256": "95878bd525c08def86029468be5bb74ae6d28b84dddccfddbb22f1ac4ee211b3",
+  "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "exit_code": 0,
+  "finished": "2026-10-25T10:44:30+00:00",
+  "stdout": {
+    "path": "docs/8.6/exact-pin-build/environment-quoted.stdout.log",
+    "sha256": "29e3ccf0442d9caad7b52e6d38e7a57eba6ed47cddc692420a71f1a7d4d2f432"
+  },
+  "stderr": {
+    "path": "docs/8.6/exact-pin-build/environment-quoted.stderr.log",
+    "sha256": "66bc94af5c081661b01f050f38dba343231b7f9e0a6a4ddf6c18b20e568c18a5"
+  }
+}

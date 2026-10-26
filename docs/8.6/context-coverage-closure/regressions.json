@@ -1,0 +1,46 @@
+{
+  "exact-pfa": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/pfa-check.php",
+      "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "--php86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+      "--sources=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "--report=docs/8.6/context-coverage-closure/exact-pfa.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/context-coverage-closure/exact-pfa.log",
+    "sha256": "7bd9a30c14871ab1be125157aa997320e374ade167a0b7f23216c11fbe263fdd"
+  },
+  "exact-deprecation": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/deprecation-check.php",
+      "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "--php86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+      "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+      "--sources86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "--report=docs/8.6/context-coverage-closure/exact-deprecation.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/context-coverage-closure/exact-deprecation.log",
+    "sha256": "ad1c7ab8e7e36ba0abd7e95f1d97678561689cff76ac219270ab41da61a1192f"
+  },
+  "exact-context-check": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/context-profile.php",
+      "--check",
+      "--profile",
+      "exact-pin-rc4",
+      "--report",
+      "docs/8.6/exact-pin-context-integration/exact.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/context-coverage-closure/exact-context-check.log",
+    "sha256": "1ae83d1f5f0f67d1ae95fa1e1ddf8f3a4c929bb205df439c30b0865e1f009f77"
+  }
+}

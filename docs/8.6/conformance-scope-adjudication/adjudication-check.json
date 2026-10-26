@@ -1,0 +1,10 @@
+{
+  "restrictionIdentities": 73,
+  "originalRecordsByteEquivalentAsJsonValues": true,
+  "fixtureReferencesChecked": 445,
+  "observationReferencesChecked": 248,
+  "baselineFiles": 3412,
+  "baselineErrors": [],
+  "errors": [],
+  "scope": "Identity, hash, pointer and clause checks; not independent proof of each semantic classification."
+}

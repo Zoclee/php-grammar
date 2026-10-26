@@ -1,0 +1,40 @@
+{
+  "provenance": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/exact-pin-check.php"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/exact-pin-context-integration/baseline-provenance.log",
+    "sha256": "d11ff3a6df40d51ad8714965a947dff1454ab5ebb7d7ddc709babc6648d22726"
+  },
+  "compatibility": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/compatibility.php",
+      "--check",
+      "--report",
+      "docs/8.5/compatibility/phase7c4-verified/evidence.json"
+    ],
+    "exit_code": 1,
+    "log": "docs/8.6/exact-pin-context-integration/baseline-compatibility.log",
+    "sha256": "a9b4b91912049b498eb39331d4e4663a4a0cc41db69f4bf53c906a0a7111d8e0"
+  },
+  "legacy-context": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/context-check.php",
+      "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "--php86=C:/Data/GitHub/php-grammar/.audit/php86/php.exe",
+      "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+      "--sources86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "--report=docs/8.6/exact-pin-context-integration/baseline-context.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/exact-pin-context-integration/baseline-legacy-context.log",
+    "sha256": "4c14401a51ee0d72efa6e56bc0f85f52a28d6e9d0f87f5ca5736179627e8424f"
+  }
+}

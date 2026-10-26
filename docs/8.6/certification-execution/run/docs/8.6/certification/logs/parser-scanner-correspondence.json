@@ -1,0 +1,21 @@
+{
+  "obligation": "Recompute the 176-production/623-alternative and 190-header inventories, source locks and mappings.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/source-completeness-audit.php",
+    "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+    "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+    "--check"
+  ],
+  "log": "docs/8.6/certification/logs/parser-scanner-correspondence.log",
+  "logSha256": "8a58f3618dcff126f1dac69a18b78c972e87f15d440ae219543bd78a074344f0"
+}

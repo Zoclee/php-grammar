@@ -1,0 +1,16 @@
+{
+  "mode": "context-evidence",
+  "contextEvidenceVerified": true,
+  "errors": [],
+  "certificationGranted": false,
+  "blockers": [
+    "PHP86-013",
+    "PHP86-014",
+    "PHP86-015",
+    "CA86-001",
+    "C6-CONTEXT",
+    "C6-COVERAGE",
+    "C6-PROVENANCE"
+  ],
+  "note": "Additive context prerequisite inspection only; all mandatory release gates remain required."
+}

@@ -1,0 +1,8 @@
+{
+  "contract": "php86-certification-v2",
+  "operation": "check",
+  "errors": [
+    "Stale or incomplete current dependency set"
+  ],
+  "certificationGranted": false
+}

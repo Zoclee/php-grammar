@@ -1,0 +1,19 @@
+{
+  "obligation": "Reject unexplained added/removed/modified productions, lexical/prose drift and stale witnesses.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/change-traceability.php",
+    "--report=docs/8.6/certification/traceability.json"
+  ],
+  "log": "docs/8.6/certification/logs/production-change-traceability.log",
+  "logSha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+}

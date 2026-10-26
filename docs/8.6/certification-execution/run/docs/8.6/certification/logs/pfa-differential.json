@@ -1,0 +1,22 @@
+{
+  "obligation": "Validate PFA positives, structural/contextual negatives and paired lint with pinned hashes.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/pfa-check.php",
+    "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+    "--sources=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+    "--report=docs/8.6/certification/pfa.json"
+  ],
+  "log": "docs/8.6/certification/logs/pfa-differential.log",
+  "logSha256": "7bd9a30c14871ab1be125157aa997320e374ade167a0b7f23216c11fbe263fdd"
+}

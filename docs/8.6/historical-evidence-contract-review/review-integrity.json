@@ -1,0 +1,29 @@
+{
+  "scope": "Review artifact digest inventory, not authentication or certification.",
+  "files": {
+    "docs/8.6/historical-evidence-contract-review/audit-freshness86.log": "61086d86a645f8ff1c51984771d55d193cbff6134d670afdbfc72142863d9306",
+    "docs/8.6/historical-evidence-contract-review/baseline.json": "dc96b1f1edf12b74754822882b32099fdb94b92c56eb2f0f07e4e51786ead635",
+    "docs/8.6/historical-evidence-contract-review/changed-inputs.diff": "471b2fa83d4742a9e37321aca1fe30ceff4bf2025ad89251696bf4d335dc4892",
+    "docs/8.6/historical-evidence-contract-review/claim-history.json": "08ea4ba9253d7308fbe388f3fbe7550f3edced7662e9bdf6ef3b6a49b6164a02",
+    "docs/8.6/historical-evidence-contract-review/current-input-delta.json": "8df508c66e220c7ff0b1f633e8abcbb33bf6f317a47aec308f5a29dbbd874114",
+    "docs/8.6/historical-evidence-contract-review/evidence-history.log": "f1dc4fd3170a839b6beff51dd6581822ea0e90c62d0d0f2b16bf1f5743dd4959",
+    "docs/8.6/historical-evidence-contract-review/freshness85.log": "e053a6cc40e83dd5b936eaf693f4e69d650ad738842af86fcf039e06e36590cd",
+    "docs/8.6/historical-evidence-contract-review/freshness86-current.log": "361c95ac4861f36a03531c826fb2c50835fe01b6f74c49081ac13e8b0ebbca56",
+    "docs/8.6/historical-evidence-contract-review/git-batch-errors.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/8.6/historical-evidence-contract-review/historical-baseline.json": "a165cd2a4b9fca9dd9251bd8b98974ba0968f860dea5bd2593238f4b9f715409",
+    "docs/8.6/historical-evidence-contract-review/historical-byte-review.json": "8cde8e223baadc6afe8017d883d1ca8c5aea871e3f4b7f089fc0ca3b17ddb1c8",
+    "docs/8.6/historical-evidence-contract-review/historical-checkout.json": "afab4bcc37534f93ce7c6fd5d21bca12a64e26acfe512d5494bf4d827ab3f1b2",
+    "docs/8.6/historical-evidence-contract-review/historical-release-runner.txt": "ba92031c622a322536d63e7f0d487cc9b83c8eac09e533662f04537c1b793c99",
+    "docs/8.6/historical-evidence-contract-review/input-classification.json": "1b484d289e0915f4b9100f35cf1fd7749115fd11a5c692834491c6de6b71ba7c",
+    "docs/8.6/historical-evidence-contract-review/manifest.log": "e2b231fd276610052d6d579479dd352de5ab52944b36d2c95e6db7de0a9f6da3",
+    "docs/8.6/historical-evidence-contract-review/phase7b-integrity.log": "d863596ac278ff96b40f11feeedf9e59b8e38c2411209c5e39a9c351661d9bc6",
+    "docs/8.6/historical-evidence-contract-review/preservation86.log": "d7dbdba14e62d40d32069ddce95242935aa49ab63060a282d5976f16f078ad51",
+    "docs/8.6/historical-evidence-contract-review/relevant-tests.log": "6388424a21f92efb70be1d346b317a8769fbc2ee16614c02dee8987c589f68c2",
+    "docs/8.6/historical-evidence-contract-review/review-validation.json": "62726fc02d10c125893fb965d64dfa481a3948abba7c9654c3c83222358bbf33",
+    "docs/8.6/historical-evidence-contract-review/source85.log": "7f173bd1f7ab7e1543b8370067b9374cc056057d6f39056ee1e2d6a415e3b192",
+    "docs/8.6/historical-evidence-contract-review/source86.log": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37",
+    "docs/8.6/historical-evidence-contract-review/validation.json": "f2836491ab664dd33589ea1c120881aeed53479cf6c1f4db3911446b1b43b998",
+    "docs/8.6/historical-evidence-contract-review/whitespace.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/8.6/historical-evidence-contract-review.md": "948d426312d3f5d2e8e7bd34df4f6264deb7f59526dd30dbbaf5486dca31acac"
+  }
+}

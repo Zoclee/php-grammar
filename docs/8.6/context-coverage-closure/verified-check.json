@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "tools/8.6/context-coverage.php",
+    "--check",
+    "--report",
+    "docs/8.6/context-coverage-closure/observations-verified.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/context-coverage-closure/verified-check.log",
+  "sha256": "93fb45aa5e322fc40dca10fbaaee18f237b3f8560ee050389586eb131abfba6a",
+  "supersedes": "validation-evidence.log (stale test input checkpoint)",
+  "retainedEarlierFailure": true
+}

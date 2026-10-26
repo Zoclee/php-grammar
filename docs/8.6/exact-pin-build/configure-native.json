@@ -1,0 +1,28 @@
+{
+  "command": [
+    "cmd.exe",
+    "/d",
+    "/c",
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\sdk\\phpsdk-vs17-x64.bat",
+    "-t",
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\configure-native.bat"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar/.audit/php86-exact",
+  "started": "2026-10-25T10:44:45+00:00",
+  "task": "C:/Data/GitHub/php-grammar/.audit/php86-exact/configure-native.bat",
+  "windowsCommandLine": "cmd.exe /d /s /c \"\"C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\sdk\\phpsdk-vs17-x64.bat\" -t \"C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\configure-native.bat\"\"",
+  "taskSha256": "f455c13039fd07c8fa63c85ecd3fad2b8a86d98a20fcbe00a030fa16e44a1905",
+  "taskContents": "@echo off\r\ncd /d \"C:/Data/GitHub/php-grammar/.audit/php86-exact/source\"\r\ncall buildconf.bat\r\nif errorlevel 1 exit /b %errorlevel%\r\ncall configure.bat --disable-all --enable-cli --enable-tokenizer --disable-zts --disable-cgi --disable-phpdbg\r\nexit /b %errorlevel%\r\n",
+  "controllerSha256": "95878bd525c08def86029468be5bb74ae6d28b84dddccfddbb22f1ac4ee211b3",
+  "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "exit_code": 0,
+  "finished": "2026-10-25T10:44:54+00:00",
+  "stdout": {
+    "path": "docs/8.6/exact-pin-build/configure-native.stdout.log",
+    "sha256": "a14299f1e9b63b169084977f9a3a65d3bae689d86982fa3519941ac55340635f"
+  },
+  "stderr": {
+    "path": "docs/8.6/exact-pin-build/configure-native.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

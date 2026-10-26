@@ -1,0 +1,2288 @@
+{
+  "contract": "php86-scanner-grammar-binding-v1",
+  "sourcePin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "coverage": [
+    {
+      "id": "if-chain",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-if-chain.php",
+      "sha256": "d91681c9f10bd50b2d0cfff06d844b1be2ee1914a49384132cc294f8e690f021",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "alt-elseif-list/alternative:3"
+      ],
+      "sourceIds": [
+        "parser-if"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "if-else",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-if-else.php",
+      "sha256": "4f55f3eba4177e259eb3dc4a2e390bafe719349baeccb9537e02a0659ca9e721",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "alternative-if-statement/alternative:4"
+      ],
+      "sourceIds": [
+        "parser-if"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "final-static",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-final-static.php",
+      "sha256": "b92c3cb8b4c621fa83f20ba1a75103ba8750a2e18f9da909ed045de24fbbf3ec",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "class-modifier/alternative:2",
+        "method-modifier/alternative:6",
+        "property-modifier/alternative:3",
+        "set-visibility-modifier/alternative:1"
+      ],
+      "sourceIds": [
+        "parser-members",
+        "parser-class-modifiers",
+        "parser-property-modifiers"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "readonly-function",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-readonly-function.php",
+      "sha256": "d95d4aab3c7712561dc3ec8cd0a2682d1f8ab6c90c0b9267c0d2c3c67bed0a0f",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [
+        "Deprecated: Calling a function \"readonly\" is deprecated since 8.6"
+      ],
+      "selectedIdentities": [
+        "function-call/alternative:2",
+        "function-declaration/alternative:2"
+      ],
+      "sourceIds": [
+        "parser-function",
+        "parser-function-call"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "static-new",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-static-new.php",
+      "sha256": "adda08a710a42d77e2949af65a1d81626259cced200f98ae14370d8080a92d81",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "new-variable/alternative:6"
+      ],
+      "sourceIds": [
+        "parser-new",
+        "parser-new-variable"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "primary-builtins",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-primary-builtins.php",
+      "sha256": "cd93bc86f5c4550c79a35de5c191ac38604ee23e5695e5bb5fb3370a86792edf",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "primary-expression/alternative:12",
+        "primary-expression/alternative:13",
+        "primary-expression/alternative:14"
+      ],
+      "sourceIds": [
+        "parser-builtins",
+        "parser-binding"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "group-use",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-group-use.php",
+      "sha256": "ee9d7f7ecf7ec99cc47eddf057f78791942c0f0363bd1b422d8987566c6daa9f",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "unprefixed-use-declaration/alternative:2"
+      ],
+      "sourceIds": [
+        "parser-use"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "ref-foreach",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-ref-foreach.php",
+      "sha256": "d1c080ed233d42e0f630404842f0c6bd2a08b3b1f79e61b212d1f457c70d9b74",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "foreach-variable/alternative:3"
+      ],
+      "sourceIds": [
+        "parser-foreach"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "members",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-members.php",
+      "sha256": "7fd4b95df2110f28ae7b09c8cdfe8b36e9386d40118c673dd45a631d4e0073f0",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "property-declaration/alternative:3"
+      ],
+      "sourceIds": [
+        "parser-members",
+        "parser-property-modifiers"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "dynamic-new",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-dynamic-new.php",
+      "sha256": "4b365cb0e5718674d50c7b952a598a5ada0ae0de84a1af43b148748adca408c6",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "class-name-reference/alternative:3"
+      ],
+      "sourceIds": [
+        "parser-new",
+        "parser-function-call",
+        "parser-new-variable"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "dynamic-member",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-dynamic-member.php",
+      "sha256": "223ace24ff5c1872996b076cd4878a290f594758168156ef1f675a7e1453f78e",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "class-constant/alternative:4",
+        "member-name/alternative:2"
+      ],
+      "sourceIds": [
+        "parser-new-variable",
+        "parser-function-call"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "attributed-const",
+      "batch": "A",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-attributed-const.php",
+      "sha256": "a25f6042a312c1d490b73e459ea6c1d0b271cd2fba60366104b59ae12e5dbc6a",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "attributed-top-declaration/alternative:8"
+      ],
+      "sourceIds": [
+        "parser-attributes"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "yield-arrow",
+      "batch": "B",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-yield-arrow.php",
+      "sha256": "24834c0570886485e0519cb41d82acdc904d559298b7e1b984d37136d197b254",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "closed-yield-arrow-expression/alternative:2"
+      ],
+      "sourceIds": [
+        "parser-operators",
+        "parser-precedence"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "yield-include",
+      "batch": "B",
+      "fixture": "tests/fixtures/php/8.6/valid/coverage7f-yield-include.php",
+      "sha256": "844f5c022fad879c84ed3565ef267331a6f26ccdc9c6fb85b5bb1512e28f6b7a",
+      "structural": true,
+      "accepted": true,
+      "diagnostics": [],
+      "selectedIdentities": [
+        "closed-yield-include-expression/alternative:2"
+      ],
+      "sourceIds": [
+        "parser-binding",
+        "parser-builtins",
+        "parser-precedence"
+      ],
+      "stage": "lint (parser/compiler combined)",
+      "remaining": "Finite source-backed witness; no full contextual validity or AST-equivalence claim."
+    },
+    {
+      "id": "constructor-callable",
+      "batch": "B",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/constructor-callable.php",
+      "sha256": "d5863d7ea7509af67a93534db7b1d629e360c9bfc0649cc6f347ef820b9c5ab2",
+      "structural": true,
+      "accepted": false,
+      "diagnostics": [
+        "Fatal error: Cannot create Closure for new expression"
+      ],
+      "selectedIdentities": [],
+      "sourceIds": [
+        "parser-arguments",
+        "parser-operators"
+      ],
+      "stage": "compiler rejection",
+      "remaining": "Dedicated negative boundary excluded from accepted ordinary coverage."
+    },
+    {
+      "id": "yield-or",
+      "batch": "B",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/yield-or.php",
+      "sha256": "b53f2f0309b34b52c67ac566d9d85bd3d164a95bbb275c962c347e2a8cb096e9",
+      "structural": false,
+      "accepted": false,
+      "diagnostics": [
+        "Parse error: syntax error, unexpected token \"=>\""
+      ],
+      "selectedIdentities": [],
+      "sourceIds": [
+        "parser-arguments",
+        "parser-operators"
+      ],
+      "stage": "parser rejection",
+      "remaining": "Dedicated negative boundary excluded from accepted ordinary coverage."
+    },
+    {
+      "id": "instanceof-prefix",
+      "batch": "B",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/instanceof-prefix.php",
+      "sha256": "18b7ba762b8e493cbbabbdf28f6b32d751d912b3c537be463f3336c7d8c2a950",
+      "structural": false,
+      "accepted": false,
+      "diagnostics": [
+        "Parse error: syntax error, unexpected token \"!\""
+      ],
+      "selectedIdentities": [],
+      "sourceIds": [
+        "parser-arguments",
+        "parser-operators"
+      ],
+      "stage": "parser rejection",
+      "remaining": "Dedicated negative boundary excluded from accepted ordinary coverage."
+    }
+  ],
+  "scanner": [
+    {
+      "id": "shebang",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-shebang.php",
+      "sha256": "bb8bdc565165d8c3e4dea98c1f0a7a9442f8bc3be7f0837806e429e83e0e0da8",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-155",
+        "S86-158"
+      ],
+      "states": [
+        "SHEBANG",
+        "INITIAL",
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": true,
+      "lexerAccepted": true,
+      "diagnostics": [],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_INLINE_HTML",
+            "#!/usr/bin/php\n"
+          ],
+          [
+            "T_OPEN_TAG",
+            "<?php "
+          ],
+          [
+            "T_ECHO",
+            "echo"
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_LNUMBER",
+            "1"
+          ],
+          [
+            null,
+            ";"
+          ],
+          [
+            "T_WHITESPACE",
+            "\n"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "<?php",
+        "echo",
+        "1",
+        ";"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "CLI lint initializes SHEBANG; token_get_all exposes the shebang as inline HTML. Source-informed state association, not an instrumented trace.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "shebang-eof",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-shebang-eof.php",
+      "sha256": "11b42b01908f55b88f0922a0af1eaa90dca25b6038e9844c996f0ddd218d240d",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-156",
+        "S86-161"
+      ],
+      "states": [
+        "SHEBANG",
+        "INITIAL"
+      ],
+      "accepted": true,
+      "lexerAccepted": true,
+      "diagnostics": [],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_INLINE_HTML",
+            "#!/usr/bin/php"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "#!/usr/bin/php"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "CLI lint initializes SHEBANG; token_get_all exposes the shebang as inline HTML. Source-informed state association, not an instrumented trace.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "tags",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-tags.php",
+      "sha256": "6bbc3e2999ba1ac57875ca7772b65bf5f442984903f2f8e48165d9d02f7d3c9e",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-157",
+        "S86-158",
+        "S86-177",
+        "S86-161"
+      ],
+      "states": [
+        "INITIAL",
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": true,
+      "lexerAccepted": true,
+      "diagnostics": [],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_INLINE_HTML",
+            "before"
+          ],
+          [
+            "T_OPEN_TAG_WITH_ECHO",
+            "<?="
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_LNUMBER",
+            "1"
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_CLOSE_TAG",
+            "?>\r\n"
+          ],
+          [
+            "T_INLINE_HTML",
+            "after"
+          ],
+          [
+            "T_OPEN_TAG",
+            "<?php "
+          ],
+          [
+            "T_ECHO",
+            "echo"
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_LNUMBER",
+            "2"
+          ],
+          [
+            null,
+            ";"
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_CLOSE_TAG",
+            "?>"
+          ],
+          [
+            "T_INLINE_HTML",
+            "tail"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "before",
+        "<?=",
+        "1",
+        "?>",
+        "after",
+        "<?php",
+        "echo",
+        "2",
+        ";",
+        "?>",
+        "tail"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "numbers",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-numbers.php",
+      "sha256": "e7db3fafd4b39c55639edc5a3b1d3a0689d57a0ff0b6a01311b5493ed98cbe19",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-139",
+        "S86-140",
+        "S86-141",
+        "S86-142",
+        "S86-145"
+      ],
+      "states": [
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": true,
+      "lexerAccepted": true,
+      "diagnostics": [],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php "
+          ],
+          [
+            "T_VARIABLE",
+            "$x"
+          ],
+          [
+            null,
+            "="
+          ],
+          [
+            null,
+            "["
+          ],
+          [
+            "T_LNUMBER",
+            "0b10_01"
+          ],
+          [
+            null,
+            ","
+          ],
+          [
+            "T_LNUMBER",
+            "0o7_1"
+          ],
+          [
+            null,
+            ","
+          ],
+          [
+            "T_LNUMBER",
+            "07"
+          ],
+          [
+            null,
+            ","
+          ],
+          [
+            "T_LNUMBER",
+            "0xF_F"
+          ],
+          [
+            null,
+            ","
+          ],
+          [
+            "T_LNUMBER",
+            "123_456"
+          ],
+          [
+            null,
+            ","
+          ],
+          [
+            "T_DNUMBER",
+            "1.2e+3"
+          ],
+          [
+            null,
+            ","
+          ],
+          [
+            "T_DNUMBER",
+            ".5"
+          ],
+          [
+            null,
+            ","
+          ],
+          [
+            "T_DNUMBER",
+            "5."
+          ],
+          [
+            null,
+            "]"
+          ],
+          [
+            null,
+            ";"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "<?php",
+        "$x",
+        "=",
+        "[",
+        "0b10_01",
+        ",",
+        "0o7_1",
+        ",",
+        "07",
+        ",",
+        "0xF_F",
+        ",",
+        "123_456",
+        ",",
+        "1.2e+3",
+        ",",
+        ".5",
+        ",",
+        "5.",
+        "]",
+        ";"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "numeric-error",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-numeric-error.php",
+      "sha256": "7a1e76af1fe4ce26dff51aec28726fa1a5f7d9ccc89619da0f7c90a8be215f4a",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-139",
+        "S86-141"
+      ],
+      "states": [
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": false,
+      "lexerAccepted": true,
+      "diagnostics": [
+        "Parse error: syntax error, unexpected integer \"2\""
+      ],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php "
+          ],
+          [
+            "T_VARIABLE",
+            "$x"
+          ],
+          [
+            null,
+            "="
+          ],
+          [
+            "T_LNUMBER",
+            "0b10"
+          ],
+          [
+            "T_LNUMBER",
+            "2"
+          ],
+          [
+            null,
+            ";"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "<?php",
+        "$x",
+        "=",
+        "0b10",
+        "2",
+        ";"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "offset-property",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-offset-property.php",
+      "sha256": "8562110c4e33211afdfdd9f0a27cfc991e6b77843fab1eda66b92f39515148b5",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-143",
+        "S86-162",
+        "S86-163",
+        "S86-164",
+        "S86-166",
+        "S86-173",
+        "S86-184"
+      ],
+      "states": [
+        "ST_DOUBLE_QUOTES",
+        "ST_VAR_OFFSET",
+        "ST_LOOKING_FOR_PROPERTY",
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": true,
+      "lexerAccepted": true,
+      "diagnostics": [],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php "
+          ],
+          [
+            "T_VARIABLE",
+            "$x"
+          ],
+          [
+            null,
+            "="
+          ],
+          [
+            null,
+            "\""
+          ],
+          [
+            "T_VARIABLE",
+            "$a"
+          ],
+          [
+            null,
+            "["
+          ],
+          [
+            "T_NUM_STRING",
+            "12"
+          ],
+          [
+            null,
+            "]"
+          ],
+          [
+            "T_ENCAPSED_AND_WHITESPACE",
+            " "
+          ],
+          [
+            "T_VARIABLE",
+            "$a"
+          ],
+          [
+            null,
+            "["
+          ],
+          [
+            "T_STRING",
+            "key"
+          ],
+          [
+            null,
+            "]"
+          ],
+          [
+            "T_ENCAPSED_AND_WHITESPACE",
+            " "
+          ],
+          [
+            "T_VARIABLE",
+            "$a"
+          ],
+          [
+            "T_OBJECT_OPERATOR",
+            "->"
+          ],
+          [
+            "T_STRING",
+            "match"
+          ],
+          [
+            "T_ENCAPSED_AND_WHITESPACE",
+            " "
+          ],
+          [
+            "T_VARIABLE",
+            "$a"
+          ],
+          [
+            "T_NULLSAFE_OBJECT_OPERATOR",
+            "?->"
+          ],
+          [
+            "T_STRING",
+            "readonly"
+          ],
+          [
+            null,
+            "\""
+          ],
+          [
+            null,
+            ";"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "<?php",
+        "$x",
+        "=",
+        "\"$a[12] $a[key] $a->match $a?->readonly\"",
+        ";"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "heredoc-nested",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-heredoc-nested.php",
+      "sha256": "d26856ccb0176c8a0fb6f4bcc320b0c12c1bd64e5234d16a021c8f5ca8c95996",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-180",
+        "S86-183",
+        "S86-188",
+        "S86-182"
+      ],
+      "states": [
+        "ST_IN_SCRIPTING",
+        "ST_HEREDOC",
+        "ST_END_HEREDOC"
+      ],
+      "accepted": true,
+      "lexerAccepted": true,
+      "diagnostics": [],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php\n"
+          ],
+          [
+            "T_VARIABLE",
+            "$x"
+          ],
+          [
+            null,
+            "="
+          ],
+          [
+            "T_START_HEREDOC",
+            "<<<OUT\n"
+          ],
+          [
+            "T_CURLY_OPEN",
+            "{"
+          ],
+          [
+            "T_VARIABLE",
+            "$a"
+          ],
+          [
+            null,
+            "["
+          ],
+          [
+            "T_START_HEREDOC",
+            "<<<IN\n"
+          ],
+          [
+            "T_ENCAPSED_AND_WHITESPACE",
+            "key\n"
+          ],
+          [
+            "T_END_HEREDOC",
+            "IN"
+          ],
+          [
+            null,
+            "]"
+          ],
+          [
+            null,
+            "}"
+          ],
+          [
+            "T_ENCAPSED_AND_WHITESPACE",
+            "\n"
+          ],
+          [
+            "T_END_HEREDOC",
+            "OUT"
+          ],
+          [
+            null,
+            ";"
+          ],
+          [
+            "T_WHITESPACE",
+            "\n"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "<?php",
+        "$x",
+        "=",
+        "<<<OUT\n{$a[<<<IN\nkey\nIN]}\nOUT",
+        ";"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "nowdoc-indent",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-nowdoc-indent.php",
+      "sha256": "a16c2ca259c3e06a5cfa425af0a0f5f63d868b336cc38eb40c63112b9ab70353",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-180",
+        "S86-189",
+        "S86-182"
+      ],
+      "states": [
+        "ST_NOWDOC",
+        "ST_END_HEREDOC",
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": true,
+      "lexerAccepted": true,
+      "diagnostics": [],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php\n"
+          ],
+          [
+            "T_VARIABLE",
+            "$x"
+          ],
+          [
+            null,
+            "="
+          ],
+          [
+            "T_START_HEREDOC",
+            "<<<'END'\n"
+          ],
+          [
+            "T_ENCAPSED_AND_WHITESPACE",
+            "  literal \\n $name\n"
+          ],
+          [
+            "T_END_HEREDOC",
+            "  END"
+          ],
+          [
+            null,
+            ";"
+          ],
+          [
+            "T_WHITESPACE",
+            "\n"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "<?php",
+        "$x",
+        "=",
+        "<<<'END'\n  literal \\n $name\n  END",
+        ";"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "nowdoc-indent-error",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-nowdoc-indent-error.php",
+      "sha256": "1f91aeba2c6a63713db2c880d97a15f647049eb4170c0993f495b0d4ab13666f",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-180",
+        "S86-189"
+      ],
+      "states": [
+        "ST_NOWDOC"
+      ],
+      "accepted": false,
+      "lexerAccepted": false,
+      "diagnostics": [
+        "Parse error: Invalid body indentation level (expecting an indentation level of at least 2)"
+      ],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php\n"
+          ],
+          [
+            "T_VARIABLE",
+            "$x"
+          ],
+          [
+            null,
+            "="
+          ],
+          [
+            "T_START_HEREDOC",
+            "<<<'END'\n"
+          ],
+          [
+            "T_ENCAPSED_AND_WHITESPACE",
+            " x\n"
+          ],
+          [
+            "T_END_HEREDOC",
+            "  END"
+          ],
+          [
+            null,
+            ";"
+          ],
+          [
+            "T_WHITESPACE",
+            "\n"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "comment-eof",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-comment-eof.php",
+      "sha256": "3c9a9eff7ac34409eb4e9cb0ad468460c11c2c7677933c804ebd27bdf3461714",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-175"
+      ],
+      "states": [
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": false,
+      "lexerAccepted": false,
+      "diagnostics": [
+        "Parse error: Unterminated comment starting line 1"
+      ],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php "
+          ],
+          [
+            "T_COMMENT",
+            "/* unclosed"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "unicode-escape",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-unicode-escape.php",
+      "sha256": "dbebde6501519ee8827d0d22dac64a8918b28f882cddf7fc48dae338756b2cb6",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-179"
+      ],
+      "states": [
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": true,
+      "lexerAccepted": true,
+      "diagnostics": [],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php "
+          ],
+          [
+            "T_VARIABLE",
+            "$x"
+          ],
+          [
+            null,
+            "="
+          ],
+          [
+            "T_CONSTANT_ENCAPSED_STRING",
+            "\"\\u{41}\\n\\x42\""
+          ],
+          [
+            null,
+            ";"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "<?php",
+        "$x",
+        "=",
+        "\"\\u{41}\\n\\x42\"",
+        ";"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "unicode-error",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-unicode-error.php",
+      "sha256": "8e4d6d2fc8a6e99c9c12488f357c5a0095e74949ac632d891da63a828e6c713c",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-179"
+      ],
+      "states": [
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": false,
+      "lexerAccepted": true,
+      "diagnostics": [
+        "Parse error: Invalid UTF-8 codepoint escape sequence: Codepoint too large"
+      ],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php "
+          ],
+          [
+            "T_VARIABLE",
+            "$x"
+          ],
+          [
+            null,
+            "="
+          ],
+          [
+            "T_CONSTANT_ENCAPSED_STRING",
+            "\"\\u{110000}\""
+          ],
+          [
+            null,
+            ";"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "<?php",
+        "$x",
+        "=",
+        "\"\\u{110000}\"",
+        ";"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "pfa-attribute",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-pfa-attribute.php",
+      "sha256": "6e0dc03a77f8d0f5b94855f9b0cbf1fb90930242c5d95be5dc7928842d4ed689",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-007",
+        "S86-133"
+      ],
+      "states": [
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": true,
+      "lexerAccepted": true,
+      "diagnostics": [],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php "
+          ],
+          [
+            "T_ATTRIBUTE",
+            "#["
+          ],
+          [
+            "T_STRING",
+            "A"
+          ],
+          [
+            null,
+            "]"
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_FUNCTION",
+            "function"
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_STRING",
+            "f"
+          ],
+          [
+            null,
+            "("
+          ],
+          [
+            null,
+            ")"
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            null,
+            "{"
+          ],
+          [
+            null,
+            "}"
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_VARIABLE",
+            "$x"
+          ],
+          [
+            null,
+            "="
+          ],
+          [
+            "T_STRING",
+            "f"
+          ],
+          [
+            null,
+            "("
+          ],
+          [
+            null,
+            "?"
+          ],
+          [
+            null,
+            ","
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_ELLIPSIS",
+            "..."
+          ],
+          [
+            null,
+            ")"
+          ],
+          [
+            null,
+            ";"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "<?php",
+        "#[",
+        "A",
+        "]",
+        "function",
+        "f",
+        "(",
+        ")",
+        "{",
+        "}",
+        "$x",
+        "=",
+        "f",
+        "(",
+        "?",
+        ",",
+        "...",
+        ")",
+        ";"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    },
+    {
+      "id": "qualified-names",
+      "batch": "C",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/scanner-qualified-names.php",
+      "sha256": "59dbfb96166adca695dea61c55b39c4f4bece0d87180b17bd88f2b5ae7572015",
+      "shortOpenTag": true,
+      "sourceIds": [
+        "S86-169",
+        "S86-170",
+        "S86-171"
+      ],
+      "states": [
+        "ST_IN_SCRIPTING"
+      ],
+      "accepted": true,
+      "lexerAccepted": true,
+      "diagnostics": [],
+      "expectedTokens": {
+        "tokens": [
+          [
+            "T_OPEN_TAG",
+            "<?php "
+          ],
+          [
+            "T_NAME_QUALIFIED",
+            "A\\B"
+          ],
+          [
+            null,
+            "("
+          ],
+          [
+            null,
+            ")"
+          ],
+          [
+            null,
+            ";"
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_NAME_FULLY_QUALIFIED",
+            "\\A\\B"
+          ],
+          [
+            null,
+            "("
+          ],
+          [
+            null,
+            ")"
+          ],
+          [
+            null,
+            ";"
+          ],
+          [
+            "T_WHITESPACE",
+            " "
+          ],
+          [
+            "T_NAME_RELATIVE",
+            "namespace\\f"
+          ],
+          [
+            null,
+            "("
+          ],
+          [
+            null,
+            ")"
+          ],
+          [
+            null,
+            ";"
+          ]
+        ]
+      },
+      "expectedNativeLexemes": [
+        "<?php",
+        "A\\B",
+        "(",
+        ")",
+        ";",
+        "\\A\\B",
+        "(",
+        ")",
+        ";",
+        "namespace\\f",
+        "(",
+        ")",
+        ";"
+      ],
+      "stage": "native lexing; token_get_all without TOKEN_PARSE; exact-source lint",
+      "instrumentedRuleHit": false,
+      "mappingPrecision": "Observed token bytes/error and lint boundary; source rule association inferred from pinned actions, not instrumented execution.",
+      "remaining": "ZTS, multibyte/filter configuration and reentrant exception restoration are not exercised."
+    }
+  ],
+  "binding": [
+    {
+      "id": "bitwise-power",
+      "batch": "D",
+      "expression": "~$a ** $b",
+      "differentExpression": "(~$a) ** $b",
+      "productions": [
+        "unary-expression",
+        "power-expression"
+      ],
+      "astKinds": [
+        "ZEND_AST_UNARY_OP",
+        "ZEND_BW_NOT",
+        "ZEND_POW"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "UNARY_OP(BW_NOT, BINARY_OP(POW,a,b)); reversed grouping is BINARY_OP(POW,UNARY_OP(BW_NOT,a),b).",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-bitwise-power-original.php",
+      "sha256": "70f59b5cac28a0bfa94b932966e78702476a26a12606f7c41cc07d71452b3e69",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-bitwise-power-forced.php",
+      "forcedSha256": "cf2ed45bbf0f7651e810d4d14128746bed2935972e0d102fd76d8469dd3d138b",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-bitwise-power-different.php",
+      "differentSha256": "83945f49759866eda05e5471d8bad28752148b0dcf816b0719e89cca87121ba2"
+    },
+    {
+      "id": "arithmetic",
+      "batch": "D",
+      "expression": "$a + $b * $c",
+      "differentExpression": "($a + $b) * $c",
+      "productions": [
+        "additive-expression",
+        "multiplicative-expression"
+      ],
+      "astKinds": [
+        "ZEND_ADD",
+        "ZEND_MUL"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "BINARY_OP(ADD,a,BINARY_OP(MUL,b,c)); reversed control changes the left operand of MUL.",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-arithmetic-original.php",
+      "sha256": "2d9f0efd1151bc8c3528c05eb8f647bd0a633363c350c2a0790fe0b97282d1f8",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-arithmetic-forced.php",
+      "forcedSha256": "cc203cd3e56b9dc1c8b863cb753df3ffa95c9d3ab2d4e2372ee8b5c48a7a3845",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-arithmetic-different.php",
+      "differentSha256": "4417e0d4a18b0958b0d93ff7054a6ca94c45a285b09deff953de7b237bbce502"
+    },
+    {
+      "id": "yield-from-coalesce",
+      "batch": "D",
+      "expression": "yield from $a ?? $b",
+      "differentExpression": "(yield from $a) ?? $b",
+      "productions": [
+        "yield-from-expression",
+        "coalesce-expression"
+      ],
+      "astKinds": [
+        "ZEND_AST_YIELD_FROM",
+        "ZEND_AST_COALESCE"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "YIELD_FROM(COALESCE(a,b)); control applies COALESCE to the completed YIELD_FROM.",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-from-coalesce-original.php",
+      "sha256": "692bcdaa900537b7e4e03346668cf2ec20bfd2c707c46e7a9f54c32b307b371e",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-from-coalesce-forced.php",
+      "forcedSha256": "f5254d871e54e5738888a2af3dcd4fa9505e97e304ff3ff44fcc0f4e25789b89",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-from-coalesce-different.php",
+      "differentSha256": "93f96014e8d8d5abbcedb2a640d6cb9a48bc10f502e5170696409e0eb5a10ebb"
+    },
+    {
+      "id": "pfa-argument",
+      "batch": "D",
+      "expression": "f(?, $a * $b + $c)",
+      "differentExpression": "f(?, $a * ($b + $c))",
+      "productions": [
+        "argument-list",
+        "additive-expression"
+      ],
+      "astKinds": [
+        "ZEND_AST_CALL",
+        "ZEND_AST_ARG_LIST"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "CALL(name,ARG_LIST(placeholder,ADD(MUL(a,b),c))); changed control keeps placeholder slot but changes the second argument operand.",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-pfa-argument-original.php",
+      "sha256": "15ddb8a371216a50265bb9a94fad1075021d45722c06a425efe751ba2a64f497",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-pfa-argument-forced.php",
+      "forcedSha256": "a780a4a15f5e30733674108bb2cdab7b50ee605671a7118a9931679936a39ff6",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-pfa-argument-different.php",
+      "differentSha256": "5eea83416f688351ae1be59ef69d11190b4f0fb78862309831c619098b922eca"
+    },
+    {
+      "id": "clone-power",
+      "batch": "D",
+      "expression": "clone $a ** $b",
+      "differentExpression": "clone ($a ** $b)",
+      "productions": [
+        "clone-expression",
+        "power-expression"
+      ],
+      "astKinds": [
+        "ZEND_AST_CALL",
+        "ZEND_POW"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "POW(CALL(fully-qualified clone,ARG_LIST(a)),b); control supplies POW(a,b) as the clone argument.",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-clone-power-original.php",
+      "sha256": "3c51f2bed0725bd6665b1da2fb516289d98a0a44437398b34f088acc30a7f18b",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-clone-power-forced.php",
+      "forcedSha256": "ea1a6097a936c22612c0c1f9f1da0a72aa4c4b46be4b6a0a300b7475d8cdcc66",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-clone-power-different.php",
+      "differentSha256": "947a3dba5e1fc1330ce2205bc2fcfbdb9399c6395466a478304b724ac4501fae"
+    },
+    {
+      "id": "yield-key",
+      "batch": "D",
+      "expression": "yield $a ?? $b => $c + $d",
+      "differentExpression": "yield $a => $b ?? $c + $d",
+      "productions": [
+        "yield-key",
+        "yield-expression"
+      ],
+      "astKinds": [
+        "ZEND_AST_YIELD",
+        "ZEND_AST_COALESCE"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "YIELD(value=ADD(c,d),key=COALESCE(a,b)); control moves b into the value-side coalesce.",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-key-original.php",
+      "sha256": "761b3381d04795afb6f3072b53901a1b40e08825c89e0035ab6e1e95893181ba",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-key-forced.php",
+      "forcedSha256": "6945d2f775a51c1b0a796bb132d18819992a87af914262c1ecf1e4240929dad1",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-key-different.php",
+      "differentSha256": "cad877b514266fb6cca7eb914e5c97f392ec5eb8866677be9e7bfd68c32aa7aa"
+    }
+  ],
+  "sources": [
+    {
+      "id": "variadic-default",
+      "path": "Zend/zend_compile.c",
+      "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+      "start": 8473,
+      "end": 8485,
+      "sliceSha256": "9e9238d9b988a699cfdab85d7c22d46b4bce37d600cd5d1cf18b358073e182f1"
+    },
+    {
+      "id": "duplicate-parameter",
+      "path": "Zend/zend_compile.c",
+      "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+      "start": 8458,
+      "end": 8468,
+      "sliceSha256": "e36816c239eccb8cff2c6e3fba782c0d090e45ae1f973e8ad6439a3ae62d4ec9"
+    },
+    {
+      "id": "empty-hooks",
+      "path": "Zend/zend_compile.c",
+      "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+      "start": 9358,
+      "end": 9371,
+      "sliceSha256": "55ec1718da3f0ae004c9d3b9f9f1f173289b145cb2601d7026f292aada484fcd"
+    },
+    {
+      "id": "duplicate-hooks",
+      "path": "Zend/zend_compile.c",
+      "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+      "start": 9487,
+      "end": 9498,
+      "sliceSha256": "f9147e161b9b929519aa7554752ae8bcd53be499e15db7fb851d3d6978dad64e"
+    },
+    {
+      "id": "get-parentheses",
+      "path": "Zend/zend_compile.c",
+      "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+      "start": 9431,
+      "end": 9441,
+      "sliceSha256": "305c9c6a3e2719546b93f98d28f0e22e5248a72fedd9736a44f882f27a3cb893"
+    },
+    {
+      "id": "enum-backing",
+      "path": "Zend/zend_compile.c",
+      "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+      "start": 9924,
+      "end": 9941,
+      "sliceSha256": "5f0fdfe6ed701be08e94841cad55aa448892b8dd17c47abe7b039b2471308c1e"
+    },
+    {
+      "id": "bare-try",
+      "path": "Zend/zend_compile.c",
+      "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+      "start": 7389,
+      "end": 7405,
+      "sliceSha256": "0685833d8cfec62a161e067f1a39bab9ee91dd4d272e51341c18ee5fed9b912e"
+    },
+    {
+      "id": "PHPT:Zend/tests/variadic/no_default_error.phpt",
+      "path": "Zend/tests/variadic/no_default_error.phpt",
+      "fileSha256": "f960ae02b041d736c431a50a2ecbbadb1bb862911a85afe541ce1710c8618793"
+    },
+    {
+      "id": "PHPT:Zend/tests/bug54013.phpt",
+      "path": "Zend/tests/bug54013.phpt",
+      "fileSha256": "fc6facdfccc42ca836a2026a2a81c12f7b92521797d9fa78ec092f062aaed193"
+    },
+    {
+      "id": "PHPT:Zend/tests/bug64515.phpt",
+      "path": "Zend/tests/bug64515.phpt",
+      "fileSha256": "846e7a31aa19cbbdec6a87c5e6a3e8c69210c765277f15ca0d8036113bba6d30"
+    },
+    {
+      "id": "PHPT:Zend/tests/property_hooks/invalid_empty_hooks.phpt",
+      "path": "Zend/tests/property_hooks/invalid_empty_hooks.phpt",
+      "fileSha256": "8c0705d3193551fcb6d56ef79713b6f75047c6c55510aab5bb61126f3371e1d8"
+    },
+    {
+      "id": "PHPT:Zend/tests/property_hooks/duplicate_hook.phpt",
+      "path": "Zend/tests/property_hooks/duplicate_hook.phpt",
+      "fileSha256": "259532f41c99b867d0a687350f83009e52f2914d09979825e49250d232e0696a"
+    },
+    {
+      "id": "PHPT:Zend/tests/property_hooks/no_get_parameters.phpt",
+      "path": "Zend/tests/property_hooks/no_get_parameters.phpt",
+      "fileSha256": "a5e587924c26095a0eb5f281ff57933838d27b230359a320aa253d9666b83577"
+    },
+    {
+      "id": "PHPT:Zend/tests/enum/backed-invalid.phpt",
+      "path": "Zend/tests/enum/backed-invalid.phpt",
+      "fileSha256": "dbd35fe46b25bf9ea2edda5ab8ec68237033a7ac84b3206d6f4c4d6761f6a288"
+    },
+    {
+      "id": "PHPT:Zend/tests/enum/backed-type-no-union.phpt",
+      "path": "Zend/tests/enum/backed-type-no-union.phpt",
+      "fileSha256": "1ee918e8c462b4fb4d57f8d69a16f48cec3625e4e058996d50866038d86cb25c"
+    },
+    {
+      "id": "PHPT:Zend/tests/try/try_finally_004.phpt",
+      "path": "Zend/tests/try/try_finally_004.phpt",
+      "fileSha256": "994e0f6162160e6eede8466dc56aa242581974d1877ee70f4c3365a5560febda"
+    },
+    {
+      "id": "parser",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235"
+    },
+    {
+      "id": "parser-aliases",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 305,
+      "end": 325,
+      "sliceSha256": "1c6e0239dacf3d5aa27d832f7fc9692f5bca55d16bff4c01bbe79c00916ccd1d"
+    },
+    {
+      "id": "parser-trait-alias",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1039,
+      "end": 1055,
+      "sliceSha256": "18cbd202470ef8b02725e4e7a3d8fd64d05ae9a2682fc300e5c70856b4c79238"
+    },
+    {
+      "id": "parser-types",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 805,
+      "end": 899,
+      "sliceSha256": "67ea13fd2a56b4440eca7bf889bfc58e549c579d2d6d0564a4e4934d84ad9061"
+    },
+    {
+      "id": "parser-members",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 984,
+      "end": 1012,
+      "sliceSha256": "1c053fbfcb9c96829af0cad705b32baf3fb288ceed7559e311574dd119efaccb"
+    },
+    {
+      "id": "parser-hooks",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1139,
+      "end": 1220,
+      "sliceSha256": "75809307f9692d063d9cde24d208a11e0908b53b067e825a6bdd75c84fa4ec38"
+    },
+    {
+      "id": "parser-statements",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 507,
+      "end": 582,
+      "sliceSha256": "09e4feff9e98c90b66e32e61a2a1ee43a68485520807526e61c9d7ba522d81fb"
+    },
+    {
+      "id": "parser-if",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 759,
+      "end": 792,
+      "sliceSha256": "1d9759042b3b743c7cddca5c23d54aba196ebe6ab91b69572caf9caf5721e92d"
+    },
+    {
+      "id": "parser-namespace",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 401,
+      "end": 442,
+      "sliceSha256": "7f0215544d510e7f42142974563cce713f6c00fade2d2a3cef3c779adf4b53e8"
+    },
+    {
+      "id": "parser-attributes",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 359,
+      "end": 400,
+      "sliceSha256": "2f40b0c99e79a5027694c49cbb2acd35cda60d3097594c5b5e537d4377aee744"
+    },
+    {
+      "id": "parser-operators",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1300,
+      "end": 1387,
+      "sliceSha256": "c69c6e873d5ea323e8daac714a42e0fcaed8c5a07542e04e7f8fc554204ce045"
+    },
+    {
+      "id": "parser-magic",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1505,
+      "end": 1519,
+      "sliceSha256": "f464c8095d992576d16bb40e8258f8dd83c8bf566c4274c49c6fad2c8ceb907f"
+    },
+    {
+      "id": "parser-precedence",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 60,
+      "end": 85,
+      "sliceSha256": "e4b24c35e28d602314765122e8cc7c4af90483429cd5c5478581ae906792bcf9"
+    },
+    {
+      "id": "parser-arguments",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 901,
+      "end": 969,
+      "sliceSha256": "a70bdf443c16843517a0940fc6eaac4ee7f3a8311f0810f2e11689f27b5b6f8f"
+    },
+    {
+      "id": "S86-007",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 1452,
+      "end": 1456,
+      "sliceSha256": "b616d68755f54ea96ea74568946a5d949eb9d7567e3cd44be7572044d17c51b3"
+    },
+    {
+      "id": "S86-174",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2489,
+      "end": 2512,
+      "sliceSha256": "0508a627bfec6407ccbaa945f4bdad547a4c9abd7d7a60c2011d82d75492c9f8"
+    },
+    {
+      "id": "S86-177",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2555,
+      "end": 2566,
+      "sliceSha256": "706c827358cb630d171c876f48658e6de8d84568f17e2ac4f4f1f49bbb748ff7"
+    },
+    {
+      "id": "S86-049",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 1630,
+      "end": 1633,
+      "sliceSha256": "126133699e074ea557a1be8a367debe82178218055c5014f19a3aefe4ede9c0d"
+    },
+    {
+      "id": "S86-050",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 1634,
+      "end": 1637,
+      "sliceSha256": "a1ffb82f6bf06aa221a5894b750403d3b9a36b69d9c6231b5c1e37748751a1e4"
+    },
+    {
+      "id": "S86-051",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 1638,
+      "end": 1642,
+      "sliceSha256": "2008476b8ad17170ca4fd0f43d798009e75daea4fb596593ea12ecf4ce7e719b"
+    },
+    {
+      "id": "S86-053",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 1647,
+      "end": 1650,
+      "sliceSha256": "9704a807d7e5212a387c41bb8887b76675835d692ebb59be5fb37fe2e4399518"
+    },
+    {
+      "id": "S86-008",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 1457,
+      "end": 1462,
+      "sliceSha256": "57689322469af0370146f98b7e4da45585287cc96899f823f7a3ed95232ab6dd"
+    },
+    {
+      "id": "S86-139",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2040,
+      "end": 2081,
+      "sliceSha256": "d3b6cefc6851ee4b0fbcc48156167c8b0f21eb1922653d6dda3fe343e76b8172"
+    },
+    {
+      "id": "S86-145",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2262,
+      "end": 2281,
+      "sliceSha256": "11d4e638ecbde8258442bc130ad89acfa9457648a068e81cf7eb7b3ed4d4d43e"
+    },
+    {
+      "id": "S86-144",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2253,
+      "end": 2261,
+      "sliceSha256": "ee3e187190b6f2d4b8d17a121dc91b7bd7deb4478cd10a42ad5d6fc9aa6f253b"
+    },
+    {
+      "id": "S86-183",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2875,
+      "end": 2882,
+      "sliceSha256": "87dffa5e9c6206495f9e0c7dc0a8aa83446b1d57e02b252ee9b1d7b50ed45d08"
+    },
+    {
+      "id": "S86-135",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2010,
+      "end": 2015,
+      "sliceSha256": "636ac5e197fecab441506ece978c76f8837453d5dd3e1271a11188ce3103e785"
+    },
+    {
+      "id": "S86-137",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2025,
+      "end": 2032,
+      "sliceSha256": "9967a04ffd0a3ec15589bc5aebb229291585e7e632c8740c51d7d0128fc2a1bc"
+    },
+    {
+      "id": "S86-181",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2855,
+      "end": 2860,
+      "sliceSha256": "058dcc25fd3c54ac2899df9dd003878b114fc49cd136736729318a02a2b02c10"
+    },
+    {
+      "id": "S86-185",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2888,
+      "end": 2893,
+      "sliceSha256": "6647ea2f190e6a31b96385eca1a525188e7d349b0de338ea5a7caf05b7bc217e"
+    },
+    {
+      "id": "S86-180",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2707,
+      "end": 2854,
+      "sliceSha256": "ea403bbd3173259f292977be3925932a5103c1fb9db97446948e4180904c2330"
+    },
+    {
+      "id": "S86-182",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2861,
+      "end": 2874,
+      "sliceSha256": "5de7aaf9498ef636bf7c2822cadba9538379ca7974029f024bd7e3549a2ca91b"
+    },
+    {
+      "id": "S86-189",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 3118,
+      "end": 3208,
+      "sliceSha256": "8e354072efff53074568172aa77e7920cdf989c9d0e05f25dc4906246272b982"
+    },
+    {
+      "id": "S86-160",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2361,
+      "end": 2369,
+      "sliceSha256": "80e957484bb22975741061fca2a742ad64d9aeaab371f398b234eb3a6805a981"
+    },
+    {
+      "id": "S86-161",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2370,
+      "end": 2425,
+      "sliceSha256": "a968e31f06b83c40fa9e14d1d783bb82197ae0e0e138061b05ea7d4543d0cad8"
+    },
+    {
+      "id": "unicode-helper",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 950,
+      "end": 1120,
+      "sliceSha256": "e28b9d7b9f3f20a7f0d32576ecb7a57f4ca0f938052086250d7c4e26dcc57aec"
+    },
+    {
+      "id": "S86-155",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2318,
+      "end": 2323,
+      "sliceSha256": "21c0a98df36e4e23d240cadfe6603f1b3f2075e06e200c80fd64a20fd12deea1"
+    },
+    {
+      "id": "S86-158",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2340,
+      "end": 2345,
+      "sliceSha256": "a4707d13d04c2a124c44d6ecbc9861c86680c962e432b1d08546e00be878f78a"
+    },
+    {
+      "id": "S86-156",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2324,
+      "end": 2329,
+      "sliceSha256": "1f193e7f4d0046ca306c74f80351e390eda915a625868ff4b1926a1ad6d0fb22"
+    },
+    {
+      "id": "S86-157",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2330,
+      "end": 2339,
+      "sliceSha256": "1ac0736e1de3b925b6c575bb39bad3d756945c00f33c84a4162ce5ccf815276b"
+    },
+    {
+      "id": "S86-140",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2082,
+      "end": 2131,
+      "sliceSha256": "f98a64a0800298ce2c3c835989cff97efc502f2dfb938de58b4c4bccfe208f95"
+    },
+    {
+      "id": "S86-141",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2132,
+      "end": 2194,
+      "sliceSha256": "bde6575ed7b64dc65cc03cb712e4abfd70b95b060c38d33fc6c1d8d7d96f8611"
+    },
+    {
+      "id": "S86-142",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2195,
+      "end": 2236,
+      "sliceSha256": "8dfacfb65df6b06dd9b3543ef93a0f7e5e01c4e2ec586bbb6d4ea2dd6eccc2bd"
+    },
+    {
+      "id": "S86-143",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2237,
+      "end": 2252,
+      "sliceSha256": "99c0c8af01bdeb68ea6891bd3a75642c00e41c4c90b2efb9660930b1b8cdcbaa"
+    },
+    {
+      "id": "S86-162",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2426,
+      "end": 2431,
+      "sliceSha256": "7a489f15edf6a5e2b8a9b272d8facedf80f7239bc978fd5cfb4b23a00138d44d"
+    },
+    {
+      "id": "S86-163",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2432,
+      "end": 2439,
+      "sliceSha256": "46cbc96652d7e3d470cf4df226711afe37762bcd08c24817487d2a4344aed68d"
+    },
+    {
+      "id": "S86-164",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2440,
+      "end": 2445,
+      "sliceSha256": "74fbe0a5edeebb813544ad6be53f73748edafb5d4520cd533b2db5a81626bd20"
+    },
+    {
+      "id": "S86-166",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2450,
+      "end": 2454,
+      "sliceSha256": "e2f7d580f1f674e4919f9856719fd3b2a3541ae02a40291d98571b8f3368ef93"
+    },
+    {
+      "id": "S86-173",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2484,
+      "end": 2488,
+      "sliceSha256": "8d4b33d0ffd90ec92ca43fe1d4d5f8fd40a29a0cfb5ce2c05d1d4a3047b21780"
+    },
+    {
+      "id": "S86-184",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2883,
+      "end": 2887,
+      "sliceSha256": "645383c85cd6b00a75b21b6f81f2e64765d0d0647778bd7a42423ae6d6c2d00e"
+    },
+    {
+      "id": "S86-188",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2994,
+      "end": 3117,
+      "sliceSha256": "47fdef145465b04945b466808906c6f260d943be7e513b6ac3f4be6819f8037c"
+    },
+    {
+      "id": "S86-175",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2513,
+      "end": 2548,
+      "sliceSha256": "95fe7d21671cbdba1fcf8744268e7679ac444c22b8d140b3999e7ee5a81f4ffb"
+    },
+    {
+      "id": "S86-179",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2661,
+      "end": 2706,
+      "sliceSha256": "62f434c2624b1083918d052b06d0a16fdf645105b3421a6ab8bf75faf120c416"
+    },
+    {
+      "id": "S86-133",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 1998,
+      "end": 2002,
+      "sliceSha256": "6d2dd1f1d5858cf8765ab7acd6872c6982d2d0242efc18526e3f74b2b93051a4"
+    },
+    {
+      "id": "S86-169",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2468,
+      "end": 2471,
+      "sliceSha256": "6bcb731a4fbeb3f17152d168f54499133725404e7485a472be4ac83ec0d28d54"
+    },
+    {
+      "id": "S86-170",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2472,
+      "end": 2475,
+      "sliceSha256": "c35c3a2180a0dda9d10011c1546ee3cdd409c47e03d5620ac315c844da2b3013"
+    },
+    {
+      "id": "S86-171",
+      "path": "Zend/zend_language_scanner.l",
+      "fileSha256": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "start": 2476,
+      "end": 2479,
+      "sliceSha256": "c3c2ef36fe4a96d03857fa5b6d6359f63d838110f08d211c0d9bcd387ac12962"
+    },
+    {
+      "id": "parser-clone-reference",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1250,
+      "end": 1271,
+      "sliceSha256": "cdb9cfee09a511af254eef202d9ad95d7b4f610f002ad9c0beb247bfeab2e2f0"
+    },
+    {
+      "id": "parser-binding",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1302,
+      "end": 1387,
+      "sliceSha256": "1170df3dca2ce97631b4f2b99e17e383cd017d517080e644691a34bf97d0f117"
+    },
+    {
+      "id": "parser-call-args",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 901,
+      "end": 969,
+      "sliceSha256": "a70bdf443c16843517a0940fc6eaac4ee7f3a8311f0810f2e11689f27b5b6f8f"
+    },
+    {
+      "id": "parser-interpolation",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1630,
+      "end": 1700,
+      "sliceSha256": "ecbbc16c344493dd7f9ad8d86446b66653e133b55387ba23c3bd57b5eb31a7b3"
+    },
+    {
+      "id": "parser-use",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 450,
+      "end": 490,
+      "sliceSha256": "89dcf6d5dfc5e18c76c3f0c02ac0b40fcbd1434801dc52e9064161a07d3f012f"
+    },
+    {
+      "id": "parser-function",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 576,
+      "end": 601,
+      "sliceSha256": "800d72e42c20d131663d5575cd8de2625d517482acaf1f849515219e456fd00b"
+    },
+    {
+      "id": "parser-class-modifiers",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 611,
+      "end": 628,
+      "sliceSha256": "35eb20879c737e930e05e5e8252a27f30715447807e0c27bcfa92819cb9058d1"
+    },
+    {
+      "id": "parser-foreach",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 683,
+      "end": 694,
+      "sliceSha256": "2716866efef4c7e7dad2edf147853fb8f09c37d318301bab8e8d674c5771fb08"
+    },
+    {
+      "id": "parser-property-modifiers",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1074,
+      "end": 1137,
+      "sliceSha256": "3873bfc170063f7bad4f376cd1fdccf80ed7b1b80c6ae43a6b40961b9d96e5e4"
+    },
+    {
+      "id": "parser-new",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1237,
+      "end": 1252,
+      "sliceSha256": "6d230693475e02f91bb5c7b7dddb78b3621518ff3c943fa708d7c792faa27a60"
+    },
+    {
+      "id": "parser-function-call",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1444,
+      "end": 1473,
+      "sliceSha256": "dc274c53b647c1d47340fb981124e49f9ccaee6e9cea727749c5d744d27782b9"
+    },
+    {
+      "id": "parser-new-variable",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1600,
+      "end": 1625,
+      "sliceSha256": "2995d2ed15dc9b4ebb3d38263f374d4f7c02bd3ea08ee413a97ef48f740dc919"
+    },
+    {
+      "id": "parser-builtins",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1704,
+      "end": 1717,
+      "sliceSha256": "17346e584a17aa9bc24ef101188ecb6c0627751b22262f0632a77a83bead8ada"
+    }
+  ]
+}

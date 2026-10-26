@@ -1,0 +1,32 @@
+{
+  "jsonFiles": 78,
+  "localDocumentationLinks": 23,
+  "sourceInventoryCases": 339,
+  "inheritedOriginalRows": 313,
+  "additions": 26,
+  "baselineFiles": 3819,
+  "finalCurrentInputsUnchanged": true,
+  "syntax": {
+    "tools/lib/DifferentialInventory.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tools/lib/DifferentialInventory.php\n"
+    },
+    "tools/lib/DifferentialCertification.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tools/lib/DifferentialCertification.php\n"
+    },
+    "tools/8.6/differential-inventory.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tools/8.6/differential-inventory.php\n"
+    },
+    "tools/8.6/certification-differential.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tools/8.6/certification-differential.php\n"
+    },
+    "tests/DifferentialInventoryTest.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in tests/DifferentialInventoryTest.php\n"
+    }
+  },
+  "errors": []
+}

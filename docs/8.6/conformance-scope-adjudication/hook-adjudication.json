@@ -1,0 +1,311 @@
+{
+  "decision": "D",
+  "status": "blocking",
+  "scope": "Intended validity unresolved; known intentional structural divergence, mechanism verified.",
+  "alternatives": {
+    "A": "Observed Zend acceptance establishes implementation mismatch, not intended language membership sufficient for this phase to authorize a correction.",
+    "B": "Rejected as a complete disposition: get/set-only EBNF is narrower than Zend parser T_STRING. Missing contextual functionality alone does not explain native false rejection.",
+    "C": "No authoritative intended restriction covering discarded declarations establishes a compiler defect.",
+    "D": "Retain blocker; require intended-validity adjudication or concrete separately reviewed bounded exclusion/correction."
+  },
+  "observations": [
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/108",
+      "id": "hook-live",
+      "version": "8.5",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-live.php",
+      "sha256": "29448c72c108ac7be43bcf0317e6e57b71d0b3663997c8039c4362ad680da0c2",
+      "structural": false,
+      "lintExit": 255,
+      "opcodes": []
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/109",
+      "id": "hook-live",
+      "version": "8.6",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-live.php",
+      "sha256": "29448c72c108ac7be43bcf0317e6e57b71d0b3663997c8039c4362ad680da0c2",
+      "structural": false,
+      "lintExit": 255,
+      "opcodes": []
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/110",
+      "id": "hook-retained",
+      "version": "8.5",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-retained.php",
+      "sha256": "a33c67d3ffc9bc91bfec583c16dd47be932697d8aaa10a1689c8b41c0e2d4e91",
+      "structural": false,
+      "lintExit": 255,
+      "opcodes": []
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/111",
+      "id": "hook-retained",
+      "version": "8.6",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-retained.php",
+      "sha256": "a33c67d3ffc9bc91bfec583c16dd47be932697d8aaa10a1689c8b41c0e2d4e91",
+      "structural": false,
+      "lintExit": 255,
+      "opcodes": []
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/112",
+      "id": "hook-discarded",
+      "version": "8.5",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-discarded.php",
+      "sha256": "bcaf8bba8d2c705c8added05cf1e8e2f93889079479c65609d20b7d1dd3ddd76",
+      "structural": false,
+      "lintExit": 0,
+      "opcodes": []
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/113",
+      "id": "hook-discarded",
+      "version": "8.6",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-discarded.php",
+      "sha256": "bcaf8bba8d2c705c8added05cf1e8e2f93889079479c65609d20b7d1dd3ddd76",
+      "structural": false,
+      "lintExit": 0,
+      "opcodes": [
+        "0000 RETURN int(1)"
+      ]
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/114",
+      "id": "hook-constant-discarded",
+      "version": "8.5",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php",
+      "sha256": "3d080c726c263fc00fcbea95105af9af2ac280d2e1aac87d96a76754a89863a5",
+      "structural": false,
+      "lintExit": 0,
+      "opcodes": []
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/115",
+      "id": "hook-constant-discarded",
+      "version": "8.6",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php",
+      "sha256": "3d080c726c263fc00fcbea95105af9af2ac280d2e1aac87d96a76754a89863a5",
+      "structural": false,
+      "lintExit": 0,
+      "opcodes": [
+        "0000 DECLARE_CONST string(\"F\") int(1)",
+        "0001 RETURN int(1)"
+      ]
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/116",
+      "id": "hook-get-repair",
+      "version": "8.5",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-get-repair.php",
+      "sha256": "afdac1044ee3e1745054f81b4e80ed35f40751707ad8ea012031a9f2d399e2de",
+      "structural": true,
+      "lintExit": 0,
+      "opcodes": []
+    },
+    {
+      "pointer": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json#/observations/117",
+      "id": "hook-get-repair",
+      "version": "8.6",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-get-repair.php",
+      "sha256": "afdac1044ee3e1745054f81b4e80ed35f40751707ad8ea012031a9f2d399e2de",
+      "structural": true,
+      "lintExit": 0,
+      "opcodes": [
+        "0000 DECLARE_CLASS_DELAYED string(\"c\") string(\"\")",
+        "0001 RETURN int(1)",
+        "0000 RETURN int(1)",
+        "0001 VERIFY_RETURN_TYPE",
+        "0002 RETURN null"
+      ]
+    }
+  ],
+  "sourceSlices": [
+    {
+      "commit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+      "path": "Zend/zend_language_parser.y",
+      "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "start": 1160,
+      "end": 1169,
+      "sha256": "d6e341bda9ec28bbebfc835f85be217e2960e014151ecff6d2dcdd33a5a3761f",
+      "text": "property_hook:\n\t\tproperty_hook_modifiers returns_ref T_STRING\n\t\tbackup_doc_comment { $<num>$ = CG(zend_lineno); }\n\t\toptional_parameter_list backup_fn_flags property_hook_body backup_fn_flags {\n\t\t\t$$ = zend_ast_create_decl(\n\t\t\t\tZEND_AST_PROPERTY_HOOK, $1 | $2 | $9, $<num>5, $4, zend_ast_get_str($3),\n\t\t\t\t$6, NULL, $8, NULL, NULL);\n\t\t\tCG(extra_fn_flags) = $7;\n\t\t}\n;\n"
+    },
+    {
+      "commit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+      "path": "Zend/zend_compile.c",
+      "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+      "start": 9348,
+      "end": 9421,
+      "sha256": "9d703db1ebdaaaa94c8eca0160717725f498e9fc21fd1619cb209e978f7ca250",
+      "text": "zend_property_hook_kind zend_get_property_hook_kind_from_name(const zend_string *name) {\n\tif (zend_string_equals_literal_ci(name, \"get\")) {\n\t\treturn ZEND_PROPERTY_HOOK_GET;\n\t} else if (zend_string_equals_literal_ci(name, \"set\")) {\n\t\treturn ZEND_PROPERTY_HOOK_SET;\n\t} else {\n\t\treturn (zend_property_hook_kind)-1;\n\t}\n}\n\nstatic void zend_compile_property_hooks(\n\t\tzend_property_info *prop_info, zend_string *prop_name,\n\t\tzend_ast *prop_type_ast, const zend_ast_list *hooks)\n{\n\tzend_class_entry *ce = CG(active_class_entry);\n\n\tif (prop_info->flags & ZEND_ACC_READONLY) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Hooked properties cannot be readonly\");\n\t}\n\n\tif (hooks->children == 0) {\n\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Property hook list must not be empty\");\n\t}\n\n\tfor (uint32_t i = 0; i < hooks->children; i++) {\n\t\tzend_ast_decl *hook = (zend_ast_decl *) hooks->child[i];\n\t\tzend_string *name = hook->name;\n\t\tzend_ast *stmt_ast = hook->child[2];\n\t\tzend_ast **return_type_ast_ptr = NULL;\n\t\tzend_ast **value_type_ast_ptr = NULL;\n\t\tCG(zend_lineno) = hook->start_lineno;\n\n\t\t/* Non-private hooks are always public. This avoids having to copy the hook when inheriting\n\t\t * hooks from protected properties to public ones. */\n\t\tuint32_t hook_visibility = (prop_info->flags & ZEND_ACC_PPP_MASK) != ZEND_ACC_PRIVATE ? ZEND_ACC_PUBLIC : ZEND_ACC_PRIVATE;\n\t\thook->flags |= hook_visibility;\n\n\t\tif (prop_info->flags & ZEND_ACC_STATIC) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Cannot declare hooks for static property\");\n\t\t}\n\t\tif ((hook->flags & ZEND_ACC_FINAL) && (hook->flags & ZEND_ACC_PRIVATE)) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Property hook cannot be both final and private\");\n\t\t}\n\t\tif ((ce->ce_flags & ZEND_ACC_INTERFACE)\n\t\t || ((prop_info->flags & ZEND_ACC_ABSTRACT) && !stmt_ast)) {\n\t\t\thook->flags |= ZEND_ACC_ABSTRACT;\n\n\t\t\tif (stmt_ast) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Abstract property hook cannot have body\");\n\t\t\t}\n\t\t\tif (hook->flags & ZEND_ACC_PRIVATE) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\t\t\"Property hook cannot be both abstract and private\");\n\t\t\t}\n\t\t\tif (hook->flags & ZEND_ACC_FINAL) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Property hook cannot be both abstract and final\");\n\t\t\t}\n\t\t} else if (!stmt_ast) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR, \"Non-abstract property hook must have a body\");\n\t\t}\n\n\t\tzend_property_hook_kind hook_kind = zend_get_property_hook_kind_from_name(name);\n\t\tif (hook_kind == (zend_property_hook_kind)-1) {\n\t\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\t\"Unknown hook \\\"%s\\\" for property %s::$%s, expected \\\"get\\\" or \\\"set\\\"\",\n\t\t\t\tZSTR_VAL(name), ZSTR_VAL(ce->name), ZSTR_VAL(prop_name));\n\t\t}\n\n\t\tif (stmt_ast && stmt_ast->kind == ZEND_AST_PROPERTY_HOOK_SHORT_BODY) {\n\t\t\tstmt_ast = stmt_ast->child[0];\n\t\t\tif (hook_kind == ZEND_PROPERTY_HOOK_GET) {\n\t\t\t\tstmt_ast = zend_ast_create(ZEND_AST_RETURN, stmt_ast);\n\t\t\t} else {\n\t\t\t\tZEND_ASSERT(hook_kind == ZEND_PROPERTY_HOOK_SET);\n"
+    },
+    {
+      "commit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+      "path": "Zend/zend_compile.c",
+      "fileSha256": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+      "start": 11093,
+      "end": 11141,
+      "sha256": "89489ef738619bdd63d279bcba6001c1633a729e377289420e9aba0a4c0ee442",
+      "text": "static void zend_compile_short_circuiting(znode *result, zend_ast *ast) /* {{{ */\n{\n\tzend_ast *left_ast = ast->child[0];\n\tzend_ast *right_ast = ast->child[1];\n\n\tznode left_node, right_node;\n\tzend_op *opline_jmpz, *opline_bool;\n\tuint32_t opnum_jmpz;\n\n\tZEND_ASSERT(ast->kind == ZEND_AST_AND || ast->kind == ZEND_AST_OR);\n\n\tzend_compile_expr(&left_node, left_ast);\n\n\tif (left_node.op_type == IS_CONST) {\n\t\tif ((ast->kind == ZEND_AST_AND && !zend_is_true(&left_node.u.constant))\n\t\t || (ast->kind == ZEND_AST_OR && zend_is_true(&left_node.u.constant))) {\n\t\t\tresult->op_type = IS_CONST;\n\t\t\tZVAL_BOOL(&result->u.constant, zend_is_true(&left_node.u.constant));\n\t\t} else {\n\t\t\tzend_compile_expr(&right_node, right_ast);\n\n\t\t\tif (right_node.op_type == IS_CONST) {\n\t\t\t\tresult->op_type = IS_CONST;\n\t\t\t\tZVAL_BOOL(&result->u.constant, zend_is_true(&right_node.u.constant));\n\n\t\t\t\tzval_ptr_dtor(&right_node.u.constant);\n\t\t\t} else {\n\t\t\t\tzend_emit_op_tmp(result, ZEND_BOOL, &right_node, NULL);\n\t\t\t}\n\t\t}\n\n\t\tzval_ptr_dtor(&left_node.u.constant);\n\t\treturn;\n\t}\n\n\topnum_jmpz = get_next_op_number();\n\topline_jmpz = zend_emit_op(NULL, ast->kind == ZEND_AST_AND ? ZEND_JMPZ_EX : ZEND_JMPNZ_EX,\n\t\t&left_node, NULL);\n\n\tif (left_node.op_type == IS_TMP_VAR) {\n\t\tSET_NODE(opline_jmpz->result, &left_node);\n\t\tGET_NODE(result, opline_jmpz->result);\n\t} else {\n\t\tzend_make_tmp_result(result, opline_jmpz);\n\t}\n\n\tzend_compile_expr(&right_node, right_ast);\n\n\topline_bool = zend_emit_op(NULL, ZEND_BOOL, &right_node, NULL);\n"
+    }
+  ],
+  "reportSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+  "originalDefinitions": {
+    "phase": 6,
+    "date": "2026-10-24",
+    "claim": "Audit dispositions, not permission to waive release gates",
+    "blockers": [
+      {
+        "id": "PHP86-013",
+        "classification": "unresolved discovery blocker",
+        "construct": "Compiler/AST/optimizer, declaration linking, contextual traversal and unassociated upstream test changes",
+        "evidence": [
+          "source-completeness-ledger.json#/discovery",
+          "compiler-contextual-groups.json",
+          "discovery-final-review.json",
+          "upstream-test-reconciliation.json"
+        ],
+        "missingEvidence": "230 effective pending-direct-review hunk records and 14 examined-unresolved records remain, plus bounded-group uncertainties, outside-ledger implementation paths and PHPT/component associations. These are not counts of language changes.",
+        "risk": "An unrepresented validity change may remain; broad discovery cannot close.",
+        "draftImpact": "Continue independently justified work with explicit incomplete status.",
+        "candidateImpact": "Blocks belief-of-completeness promotion.",
+        "stableImpact": "Blocks certification.",
+        "remediation": "Review the exact hunk IDs and source functions in the ledger; associate relevant tests, inspect transitive validation and optimizer/linking paths, and record evidence-backed exclusions or Gate B changes.",
+        "priority": "P0",
+        "blocksCertification": true
+      },
+      {
+        "id": "PHP86-014",
+        "classification": "unresolved intended validity; source-explained compiler/VM implementation defect",
+        "construct": "Assignment/reference/list-derived dimension and property writes, compound/inc/unset/reference operations",
+        "evidence": [
+          "compiler-contextual-groups.json#/groups/0",
+          "source-audit-probes.json",
+          "source-audit-upstream.json"
+        ],
+        "missingEvidence": "Authoritative intended-validity decision for exact write forms, coherent compiler/VM fix and source-corresponding execution. Refreshed PR 20628 comments do not decide those forms.",
+        "risk": "Runtime invalid opcode cannot establish a structural rejection; successful reference-result execution cannot establish a new permission.",
+        "draftImpact": "Retain current explicit uncertainty and separate PHP86-004 constant-object rules.",
+        "candidateImpact": "Blocks affected-area correctness and promotion.",
+        "stableImpact": "Blocks certification.",
+        "remediation": "Obtain intended-validity evidence before proposing the smallest contextual correction. Gate B must cover ordinary/reference/list bases, result kinds, operations, discarded/live forms and VM profiles.",
+        "priority": "P1",
+        "blocksCertification": true
+      },
+      {
+        "id": "PHP86-015",
+        "classification": "unresolved intended compatibility; verified contextual traversal observation",
+        "construct": "Optimized printf/sprintf, arrays and constant-expression traversal versus ordinary calls",
+        "evidence": [
+          "compiler-contextual-groups.json#/groups/1",
+          "compiler-contextual-groups.json#/groups/2",
+          "source-audit-probes.json",
+          "source-audit-upstream.json",
+          "correctness-remediation.md"
+        ],
+        "missingEvidence": "General intended language boundary and complete dispatch/visited-AST correspondence. PR 19658 discussion addresses optimization and constant collection, not a universal discarded-cast validity rule.",
+        "risk": "An unconditional argument-traversal rule would wrongly accept or reject source.",
+        "draftImpact": "Phase 5D informative scope remains accurate; preserve bounded observations.",
+        "candidateImpact": "Blocks complete traversal claim and promotion.",
+        "stableImpact": "Blocks certification.",
+        "remediation": "Resolve intent and dispatch semantics; retain direct/imported/qualified/namespace/dynamic/named/unpack/PFA controls and logical/ternary/coalesce/array/live/discarded cases. No function-specific EBNF without structural evidence.",
+        "priority": "P1",
+        "blocksCertification": true
+      },
+      {
+        "id": "CA86-001",
+        "classification": "known inherited policy discrepancy",
+        "construct": "Unknown property-hook name in a discarded declaration",
+        "evidence": [
+          "compiler-contextual-reconciliation.json",
+          "source-audit-probes.json",
+          "../../grammar/8.6/php.md#property-hooks-and-promotion",
+          "../8.5/final-evidence.json#/known_discrepancies"
+        ],
+        "missingEvidence": "Separate policy disposition and authorization before changing the intentional get/set-only structural restriction.",
+        "risk": "EBNF rejects an unknown hook that Zend can accept after discarding its declaration; blanket parser-equivalence claim is false.",
+        "draftImpact": "Retain documented divergence without modifying either version.",
+        "candidateImpact": "Independent PHP 8.6 certification must explicitly adjudicate the narrowed claim; historical acceptance is not automatically inherited.",
+        "stableImpact": "Cannot silently treat it as exact parser equivalence.",
+        "remediation": "If policy authorizes equivalence correction, consider identifier in hook-name with compilation-time get/set validation. Gate B needs live/discarded controls, canonical/parity changes and a separate PHP 8.5 correction review.",
+        "priority": "P2",
+        "blocksCertification": true
+      },
+      {
+        "id": "C6-CONTEXT",
+        "classification": "documented enforcement limitation plus unresolved predicate evidence",
+        "construct": "73 inherited contextual restriction descriptions and changed-rule interactions",
+        "evidence": [
+          "source-completeness-ledger.json#/contextual",
+          "source-audit-context.json",
+          "source-audit-boundaries.json"
+        ],
+        "missingEvidence": "Individual RC4 predicates, upstream PHPT and positive/negative stage isolation wherever family-level references remain. No native complete contextual validator exists.",
+        "risk": "Structural matches may violate parser actions, compiler checks or deferred linking; historical readonly-default restriction labels must not be copied as current rules.",
+        "draftImpact": "Document external enforcement and current normative clauses.",
+        "candidateImpact": "Requires independent evidence and claim adjudication; not an automatic permissible release limitation.",
+        "stableImpact": "Blocks whole-source-validator claims; bounded grammar certification requires policy disposition.",
+        "remediation": "Prioritize retained/discarded declarations, type/member constraints, writable/reference forms, attributes, enum and constant-expression paths. Reuse hashed finding fixtures and add only missing isolating evidence in an authorized phase.",
+        "priority": "P1",
+        "blocksCertification": true
+      },
+      {
+        "id": "C6-COVERAGE",
+        "classification": "bounded coverage and correspondence gap",
+        "construct": "64 unexercised productions, 318 alternatives; scanner state/helper products; family-only parser correspondence",
+        "evidence": [
+          "source-audit-coverage.json",
+          "source-completeness-ledger.json#/canonical",
+          "source-completeness-ledger.json#/scanner",
+          "final-coverage-remaining.json"
+        ],
+        "missingEvidence": "Alternative-specific correspondence/AST binding, scanner state products and individual witnesses. The 51 source/profile entries are not 51 verified scanner rules.",
+        "risk": "Coverage or name/section association can conceal a validity/binding mismatch; no defect follows solely from low coverage.",
+        "draftImpact": "Retain every identity and justified obligation without deleting alternatives.",
+        "candidateImpact": "Requires independent gap disposition under the conformance policy.",
+        "stableImpact": "Not an automatic exemption from scanner, binding and classified-coverage gates.",
+        "remediation": "Prioritize reserved token categories (including context-only from), namespace/type/declaration alternatives, dereference/constructor forms and closed-yield/prefix/dangling-else binding. Test lexical bodies through scanner primitives, not invented chart coverage.",
+        "priority": "P1",
+        "blocksCertification": true
+      },
+      {
+        "id": "C6-PROVENANCE",
+        "classification": "exact-executable and release evidence missing",
+        "construct": "RC4 distributions, configuration profiles and final-release correspondence",
+        "evidence": [
+          "source-audit-upstream.json",
+          "source-audit-probes.json#/interpreters",
+          "source-audit-validation.json"
+        ],
+        "missingEvidence": "Proven exact-pin build, independent PHP 8.6 prerelease release-runner evidence, subsequent RC/final-source review and final release gates. Upstream PHPT suite was not run.",
+        "risk": "Matching immutable source hashes do not prove executable ancestry; RC4 cannot certify a final release.",
+        "draftImpact": "Report source-backed and executable-backed evidence separately.",
+        "candidateImpact": "Preparation is possible; current evidence does not authorize promotion.",
+        "stableImpact": "Blocks final-release and exact-executable certification.",
+        "remediation": "Prepare build provenance and independent gate inputs, then seek authorization for the separate certification phase; compare subsequent releases incrementally.",
+        "priority": "P1",
+        "blocksCertification": true
+      }
+    ],
+    "newVerifiedNormativeDefects": [],
+    "phase7Readiness": {
+      "grammarSpecificationRemediation": "READY WITH BOUNDED LIMITATIONS",
+      "independentPrereleaseCertificationPreparation": "READY WITH BOUNDED LIMITATIONS",
+      "candidateStatusPromotion": "NOT READY",
+      "stableReleaseCertification": "NOT READY"
+    },
+    "readinessScope": "Preparation and evidence-backed proposals only. No speculative writable/traversal rule, historical hook correction, certification execution or status promotion is authorized or performed."
+  },
+  "noNewHookProbeExecution": true,
+  "narrowlySatisfied": [
+    "Source mechanism and finite paired behavior identified.",
+    "Independent alternatives and publication-scope assessment recorded."
+  ],
+  "remaining": [
+    "No accepted release exclusion for discarded unknown hooks.",
+    "No intended-validity decision sufficient for normative correction.",
+    "No complete stage-sensitive source validator."
+  ],
+  "certificationGranted": false
+}

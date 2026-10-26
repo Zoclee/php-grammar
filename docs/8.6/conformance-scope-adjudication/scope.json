@@ -1,0 +1,322 @@
+{
+  "phase": "7C.8",
+  "date": "2026-10-26",
+  "normativeChange": false,
+  "policyChange": false,
+  "certificationGranted": false,
+  "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "exactExecutableSha256": "445d2bde0998cd54e04b4be4401ae45b5e54df4ef677294a64cbcd1faf6d9fe6",
+  "inputs": {
+    "docs/8.5/completeness.md": "a11fd2524e1ab889246b675b1d7541e5fe00768cd252d8483e1e526da460511d",
+    "docs/8.5/final-evidence.json": "cce919d8b848a9892c33d62b09d5b4d87d6f6a50bf551746cefce634fd47ac9c",
+    "docs/8.6/certification-blocker-closure/dispositions.json": "fa5e029e31f74e8a0a8115dc1e298e02254e2b498d207b7628a0ebf30ceefb87",
+    "docs/8.6/completeness-source-inventory.json": "4af907567827c297839073e42268d9f3c66fab2a31fcb25849d2f6aaffae2f7c",
+    "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+    "docs/8.6/exact-pin-context-integration/exact.json": "c0d888fa13731ed7cbb3f4acd7812e0aba29687aa3ba510ff3dea3c60597b779",
+    "docs/8.6/source-completeness-ledger.json": "c5b0d2e2e56f0bcbcfe2423b291072feca0c7b2ddebf124b5076fc01f2b4d827",
+    "docs/api.md": "251c58bafc4d8097c8f462d133b062bc0c390724af3312cc032a508d394eab15",
+    "docs/conformance-policy.md": "058d638b95c66cd5bd54fc8ea1f27a3dc59a50785e5a9d8047f9a0d719b4af2f",
+    "docs/grammar-conventions.md": "e1b21fcbd5f0b6b888e093316111d408248174ce17270e7dd08ec7ec60050db1",
+    "docs/sources.md": "cd487c679b725851f399c085c6bf117585a2753c35d5081c3ebc4a8b470dc59a",
+    "docs/versioning.md": "3a741eb85bc8c49e9453c75471912f083a429b61fb68742fdf6ae38402c3563e",
+    "grammar/8.5/php.ebnf": "2acfcf904ba14cbdfab787854cee449205a805cdc8ac8c24bad1fd44983b4ceb",
+    "grammar/8.5/php.md": "bbb81cbda09da80a6e326c5153ccfb4bc436ba9e306a3e1fa419b1ff002f6d7f",
+    "grammar/8.6/php.ebnf": "12cfcfa3a0122eeac769862a7644740eb20a533048267f23c8ea984e261dbaf4",
+    "grammar/8.6/php.md": "45688b7d36ff16d823360f9072f43aa8e52c4dbd9189c890a6fdeef592bca521",
+    "php-grammar.json": "56f05d24b50bade238cc1d03d2c41b2036b8ded435fcbddea0db719d903d42fb",
+    "src/Php/Conformance/Php85ModifierValidator.php": "42f697a7fe1e8382772605d6c37d7a6a12cf647f69b5a39318f1b33c2e68b0a0",
+    "src/Php/Conformance/PhpGrammarMatcher.php": "7b4906218b064690cdbc0eba35610bfa5c94fba893a0332d51e48671b4dc6457",
+    "tools/lib/CertificationCurrent.php": "3baec679d12b3d98e2b4502aa8ba21c50fdc2992a431c05c45ebd7d7eddf45df",
+    "tools/lib/CertificationCurrentRun.php": "6d3c08dc93c37acf1842568da2e9d1e7f4cfaec16b961f09fd32723d9587f85b"
+  },
+  "layers": [
+    {
+      "id": "structural",
+      "contract": "grammar/8.6/php.ebnf; docs/api.md#matching-and-diagnostics",
+      "capability": "EBNF parser/reference integrity, chart recognition, complete token consumption and Markdown parity.",
+      "evidence": "Full PHPUnit; source-completeness-ledger.json parser/canonical inventories.",
+      "limitations": "No source AST or contextual verdict; CA86-001 false rejection relative to discarded-hook Zend acceptance; C6-COVERAGE binding/correspondence gaps.",
+      "permitted": "Draft standalone canonical artifact with structural integrity/parity evidence.",
+      "prohibited": "All PHP source validity or complete parser equivalence."
+    },
+    {
+      "id": "lexical",
+      "contract": "grammar/8.6/php.md#source-and-lexical-model; docs/api.md#lexical-primitives",
+      "capability": "Version-selected byte lexer, stateful strings/comments/tags, token primitives and recursive interpolation fragment checks.",
+      "evidence": "Shared lexer regressions and source-audit scanner inventory: 190 headers/11 states.",
+      "limitations": "Aggregated strings differ from Zend tokens; 156 rule ranges have only family-level evidence in the named matrix; no multibyte/ZTS/unbounded state-product claim.",
+      "permitted": "Named byte-source/configuration scanner regression results.",
+      "prohibited": "Every scanner path or raw-token identity for aggregated strings."
+    },
+    {
+      "id": "contextual",
+      "contract": "grammar/8.6/php.md#contextual-syntax-constraints; docs/conformance-policy.md",
+      "capability": "Normative external rules, separate Php85ModifierValidator for supplied target/list, stage-aware oracle harness.",
+      "evidence": "73-row restriction inventory; exact-pin-context-integration/exact.json.",
+      "limitations": "Modifier API is not called by PhpGrammarMatcher; missing individual RC4 predicates; no native whole-source validator.",
+      "permitted": "Documented external requirements and named stage-expectation evidence.",
+      "prohibited": "Structural matching enforces all parser/compiler constraints."
+    },
+    {
+      "id": "linking",
+      "contract": "grammar/8.6/php.md#class-constants and #enums",
+      "capability": "Controlled interpreter execution for selected declaration-link cases.",
+      "evidence": "44 retained linking observations across both versions, including Override and enum cases.",
+      "limitations": "No native inheritance/name/member resolver; reentrant graphs and many target predicates unreviewed.",
+      "permitted": "Observed linking outcomes for exact named fixtures/profile.",
+      "prohibited": "Lint alone proves declaration validity or all inheritance graphs."
+    },
+    {
+      "id": "constant-evaluation",
+      "contract": "grammar/8.6/php.md#constant-expression-validation-order",
+      "capability": "Documented visited-AST ordering and finite oracle regression harnesses; no native ordered evaluator.",
+      "evidence": "Historical folding matrices and exact-pin reconciliation retained controls.",
+      "limitations": "PHP86-015 dispatch boundary and transitive PFA/reference paths remain unresolved.",
+      "permitted": "Named ordinary/initializer/optimized-call observations with source explanation.",
+      "prohibited": "Unconditional syntax rejection inferred from a late predicate or complete optimizer equivalence."
+    },
+    {
+      "id": "runtime",
+      "contract": "AGENTS.md Scope Boundaries; grammar/8.6/php.md#status-and-scope",
+      "capability": "Explicitly authorized controlled oracle fixtures only.",
+      "evidence": "Six retained controlled-runtime context observations plus writable-target investigation.",
+      "limitations": "No interpreter implementation; runtime invalid opcode/type failures are not parser rejections.",
+      "permitted": "Exact recorded outputs/diagnostics for reviewed fixtures.",
+      "prohibited": "General runtime correctness or treating lint success as safe execution."
+    },
+    {
+      "id": "differential",
+      "contract": "docs/conformance-policy.md#defined-claims",
+      "capability": "Harness compares structural/lexical and stage expectations against selected interpreters.",
+      "evidence": "Exact 63-case contextual matrix (126 stage observations); other corpora retain independent profiles.",
+      "limitations": "Finite corpus; 8.5 is a distribution with scoped source comparison, not an exact-pin build; known discrepancies are not zero mismatches.",
+      "permitted": "Conformance-validated stage expectations in precisely named mismatch-free matrices/configuration, disclosed external enforcement.",
+      "prohibited": "All fixture passes imply exhaustive equivalence or independent certification."
+    },
+    {
+      "id": "complete-source",
+      "contract": "docs/api.md#matching-and-diagnostics; docs/conformance-policy.md#defined-claims",
+      "capability": "Not implemented.",
+      "evidence": "Matcher implementation delegates lexer/token chart matching and does not construct context/link/folding representation.",
+      "limitations": "All external layers and remaining discovery/intent/coverage obligations apply.",
+      "permitted": "Explicit statement that no complete source validity verdict is supplied.",
+      "prohibited": "Complete PHP validator, exhaustive equivalence, unqualified fully conformant."
+    }
+  ],
+  "claims": [
+    {
+      "id": "draft-structural-integrity",
+      "decision": "permitted evidence statement",
+      "scope": "The unchanged standalone PHP 8.6 canonical EBNF parses, has valid references and matches its Markdown production section under repository checks.",
+      "stages": [
+        "EBNF integrity",
+        "documentation parity"
+      ],
+      "evidence": [
+        "full-phpunit.log",
+        "baseline.json"
+      ],
+      "exclusions": [
+        "Zend source-language equivalence",
+        "contextual/linking/runtime validity",
+        "grammar completeness"
+      ],
+      "knownDiscrepancies": [
+        "CA86-001"
+      ],
+      "blockers": [
+        "PHP86-013",
+        "C6-COVERAGE"
+      ],
+      "publicationConditions": "Name draft status, exact artifact hashes and checks; do not call this certification.",
+      "supportsStatus": "draft only"
+    },
+    {
+      "id": "source-backed-correspondence",
+      "decision": "bounded mapping statement only; completeness claim not permitted",
+      "scope": "Enumerated 176 parser productions, 623 alternatives and 190 scanner headers at RC4 have retained mapping records with stated family-level limits.",
+      "stages": [
+        "source inventory",
+        "mapping"
+      ],
+      "evidence": [
+        "../source-completeness-ledger.json",
+        "../certification-contract-remediation.md"
+      ],
+      "exclusions": [
+        "individual equivalence proof",
+        "full discovery closure"
+      ],
+      "knownDiscrepancies": [
+        "CA86-001"
+      ],
+      "blockers": [
+        "PHP86-013",
+        "PHP86-014",
+        "PHP86-015",
+        "C6-COVERAGE"
+      ],
+      "publicationConditions": "Report mapping precision and gaps; no source-complete or grammar-complete claim.",
+      "supportsStatus": "draft only"
+    },
+    {
+      "id": "exact-context-63-stage-expectations",
+      "decision": "permitted bounded draft conformance evidence; not a release exclusion",
+      "scope": "All 63 existing context-cases.json identities, both versions, the exact-pin-rc4 context report configuration and expected stage tuples. Structural positives of contextual negatives are expected policy boundary evidence, not source-validity predictions.",
+      "stages": [
+        "76 lint observations",
+        "44 declaration-link observations",
+        "6 controlled-runtime observations"
+      ],
+      "evidence": [
+        "../exact-pin-context-integration/exact.json",
+        "../../../tests/fixtures/php/8.6/context-cases.json",
+        "baseline-context.log"
+      ],
+      "exclusions": [
+        "unlisted fixtures",
+        "unknown-hook corpus",
+        "all-predicate enforcement",
+        "general linking/runtime correctness",
+        "exact-source 8.5 executable"
+      ],
+      "knownDiscrepancies": [
+        "CA86-001 outside this preexisting named matrix; remains disclosed and blocking"
+      ],
+      "blockers": [
+        "C6-CONTEXT and all other mandatory release blockers remain"
+      ],
+      "publicationConditions": "Live provenance/context verification must pass; preserve all 63 identities and expected outcomes, exact configuration and fixture hashes. Describe retained execution freshly verified, not fresh probe execution. No dynamically selected passing subset.",
+      "supportsStatus": "draft only; cannot promote to candidate/stable"
+    },
+    {
+      "id": "grammar-with-external-constraints",
+      "decision": "not currently certifiable",
+      "scope": "Potential bounded grammar claim with named external constraints under existing policy.",
+      "stages": [
+        "structural",
+        "lexical",
+        "external contextual specification"
+      ],
+      "evidence": [
+        "restrictions.json",
+        "hook-adjudication.json"
+      ],
+      "exclusions": [
+        "native whole-source validation"
+      ],
+      "knownDiscrepancies": [
+        "CA86-001 not accepted as exclusion"
+      ],
+      "blockers": [
+        "PHP86-013",
+        "PHP86-014",
+        "PHP86-015",
+        "CA86-001",
+        "C6-CONTEXT",
+        "C6-COVERAGE",
+        "C6-PROVENANCE"
+      ],
+      "publicationConditions": "Independent justified coverage/predicate dispositions, specific mismatch/exclusion decision, all mandatory versioned release obligations, final-source correspondence where required.",
+      "supportsStatus": "No candidate/stable claim now"
+    }
+  ],
+  "blockerAssessments": [
+    {
+      "id": "CA86-001",
+      "original": {
+        "id": "CA86-001",
+        "classification": "known inherited policy discrepancy",
+        "construct": "Unknown property-hook name in a discarded declaration",
+        "evidence": [
+          "compiler-contextual-reconciliation.json",
+          "source-audit-probes.json",
+          "../../grammar/8.6/php.md#property-hooks-and-promotion",
+          "../8.5/final-evidence.json#/known_discrepancies"
+        ],
+        "missingEvidence": "Separate policy disposition and authorization before changing the intentional get/set-only structural restriction.",
+        "risk": "EBNF rejects an unknown hook that Zend can accept after discarding its declaration; blanket parser-equivalence claim is false.",
+        "draftImpact": "Retain documented divergence without modifying either version.",
+        "candidateImpact": "Independent PHP 8.6 certification must explicitly adjudicate the narrowed claim; historical acceptance is not automatically inherited.",
+        "stableImpact": "Cannot silently treat it as exact parser equivalence.",
+        "remediation": "If policy authorizes equivalence correction, consider identifier in hook-name with compilation-time get/set validation. Gate B needs live/discarded controls, canonical/parity changes and a separate PHP 8.5 correction review.",
+        "priority": "P2",
+        "blocksCertification": true
+      },
+      "wholeRequirementSatisfied": false,
+      "status": "blocking",
+      "narrowlyComplete": [
+        "Finite mismatch and stage mechanism adjudicated.",
+        "A/B/C/D alternatives independently assessed; D retained."
+      ],
+      "remaining": [
+        "Intended-validity decision or independently accepted concrete exclusion/correction."
+      ],
+      "gateChange": false
+    },
+    {
+      "id": "C6-CONTEXT",
+      "original": {
+        "id": "C6-CONTEXT",
+        "classification": "documented enforcement limitation plus unresolved predicate evidence",
+        "construct": "73 inherited contextual restriction descriptions and changed-rule interactions",
+        "evidence": [
+          "source-completeness-ledger.json#/contextual",
+          "source-audit-context.json",
+          "source-audit-boundaries.json"
+        ],
+        "missingEvidence": "Individual RC4 predicates, upstream PHPT and positive/negative stage isolation wherever family-level references remain. No native complete contextual validator exists.",
+        "risk": "Structural matches may violate parser actions, compiler checks or deferred linking; historical readonly-default restriction labels must not be copied as current rules.",
+        "draftImpact": "Document external enforcement and current normative clauses.",
+        "candidateImpact": "Requires independent evidence and claim adjudication; not an automatic permissible release limitation.",
+        "stableImpact": "Blocks whole-source-validator claims; bounded grammar certification requires policy disposition.",
+        "remediation": "Prioritize retained/discarded declarations, type/member constraints, writable/reference forms, attributes, enum and constant-expression paths. Reuse hashed finding fixtures and add only missing isolating evidence in an authorized phase.",
+        "priority": "P1",
+        "blocksCertification": true
+      },
+      "wholeRequirementSatisfied": false,
+      "status": "blocking",
+      "narrowlyComplete": [
+        "All 73 description identities classified by capability and stage.",
+        "Exact-context executable-selection prerequisite already satisfied, subject to live verification."
+      ],
+      "remaining": [
+        "Individual RC4 predicate/PHPT/stage mappings and controlled witnesses.",
+        "Separate disposition of external enforcement and semantic exclusions under release policy."
+      ],
+      "gateChange": false
+    }
+  ],
+  "governanceIssue": {
+    "id": "G7C8-H85-SCOPE",
+    "status": "separate historical clarification needed; not a new grammar defect",
+    "evidence": [
+      "docs/8.5/completeness.md",
+      "docs/8.5/final-evidence.json#/known_discrepancies",
+      "grammar/8.5/php.md#property-hooks-and-promotion"
+    ],
+    "issue": "Historical grammar-complete/external-constraint wording coexists with deliberate discarded-hook divergence; unqualified parser equivalence would contradict the retained evidence. Current known-discrepancy fields and C1-C4 limits must accompany historical claims. No historical certification is renewed or redefined here."
+  },
+  "currentContract": "php86-certification-v2",
+  "retainedCurrentResults": {
+    "revision": "phase7c7-verified",
+    "original36": {
+      "passed": 22,
+      "failed": 4,
+      "blocked": 10
+    },
+    "current36": {
+      "passed": 27,
+      "failed": 0,
+      "blocked": 9
+    },
+    "current38": {
+      "passed": 29,
+      "failed": 0,
+      "blocked": 9
+    },
+    "status": "Historical baseline results; new ordinary docs stale this revision."
+  },
+  "freshRevision": "phase7c8",
+  "allSevenOriginalBlockersRemain": true
+}

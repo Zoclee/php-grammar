@@ -1,0 +1,83 @@
+{
+  "compatibility-generate": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/compatibility.php",
+      "--generate",
+      "--revision",
+      "phase7f"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7f-validation/compatibility-generate.log",
+    "sha256": "0c877b22ee210a1f4afcc67f682f2bd94d01a75101b15a342689482d51d3bb54"
+  },
+  "compatibility-check": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/compatibility.php",
+      "--check",
+      "--report",
+      "docs/8.5/compatibility/phase7f/evidence.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7f-validation/compatibility-check.log",
+    "sha256": "ff84316b88c850b2295f88b5f877fa91358436fb31773ed23e42034b6dfca6e1"
+  },
+  "generate-base": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification-current.php",
+      "--contract",
+      "php86-certification-v2",
+      "--generate",
+      "--revision",
+      "phase7f-base",
+      "--profile",
+      "exact-pin-rc4",
+      "--legacyProfile",
+      "historical-rc4",
+      "--compatibility-report",
+      "docs/8.5/compatibility/phase7f/evidence.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7f-validation/generate-base.log",
+    "sha256": "e42a5b61f5567d912cad212a52753d3bf71a17cde55674e939f62c009d867728"
+  },
+  "generate": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification-scanner-differential.php",
+      "--contract",
+      "php86-certification-v4",
+      "--generate",
+      "--revision",
+      "phase7f",
+      "--assessment",
+      "docs/8.6/certification-contract-remediation/runs/phase7f-base/evidence.json",
+      "--differential-report",
+      "docs/8.6/scanner-grammar-binding-closure/differential.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7f-validation/generate.log",
+    "sha256": "9afb0dcd657ca1563d753068309c60d39933c97283bba9c42d9bab6e0d955f39"
+  },
+  "check": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification-scanner-differential.php",
+      "--contract",
+      "php86-certification-v4",
+      "--check",
+      "--report",
+      "docs/8.6/certification-contract-remediation/runs/phase7f/evidence.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7f-validation/check.log",
+    "sha256": "4e0daef934a51d6db087a688d070b4415524910745a338ab17a63185f7b2e134"
+  }
+}

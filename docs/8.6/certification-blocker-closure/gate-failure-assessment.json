@@ -1,0 +1,44 @@
+{
+  "id": "H86-PRESERVATION",
+  "gate": "historical-preservation",
+  "category": "B",
+  "status": "blocking",
+  "definition": "The unchanged gate requires all 2151 Phase 7A baseline bytes; three authorized Phase 7C.2 policy/API documents differ.",
+  "paths": {
+    "docs/api.md": {
+      "phase7aExpected": "6a3f837b52f626f6bf6844990846ffd830691ca527c496cb1fe32143e2d2b630",
+      "phase7c6Baseline": "251c58bafc4d8097c8f462d133b062bc0c390724af3312cc032a508d394eab15",
+      "current": "251c58bafc4d8097c8f462d133b062bc0c390724af3312cc032a508d394eab15",
+      "phase7c2CompatibilityDependency": {
+        "sha256": "251c58bafc4d8097c8f462d133b062bc0c390724af3312cc032a508d394eab15",
+        "reason": "shared policy, discovery or execution configuration"
+      },
+      "changedDuringThisPhase": false
+    },
+    "docs/conformance-policy.md": {
+      "phase7aExpected": "4be4aa15365d1c2bc11936d479f9a10f138283da6be627ca47b94d83046297e8",
+      "phase7c6Baseline": "058d638b95c66cd5bd54fc8ea1f27a3dc59a50785e5a9d8047f9a0d719b4af2f",
+      "current": "058d638b95c66cd5bd54fc8ea1f27a3dc59a50785e5a9d8047f9a0d719b4af2f",
+      "phase7c2CompatibilityDependency": {
+        "sha256": "058d638b95c66cd5bd54fc8ea1f27a3dc59a50785e5a9d8047f9a0d719b4af2f",
+        "reason": "shared policy, discovery or execution configuration"
+      },
+      "changedDuringThisPhase": false
+    },
+    "docs/versioning.md": {
+      "phase7aExpected": "60a5e6f3faf0fb49a857cace8c665eb94ff8f90e656925cf943d26936b51272a",
+      "phase7c6Baseline": "3a741eb85bc8c49e9453c75471912f083a429b61fb68742fdf6ae38402c3563e",
+      "current": "3a741eb85bc8c49e9453c75471912f083a429b61fb68742fdf6ae38402c3563e",
+      "phase7c2CompatibilityDependency": {
+        "sha256": "3a741eb85bc8c49e9453c75471912f083a429b61fb68742fdf6ae38402c3563e",
+        "reason": "shared policy, discovery or execution configuration"
+      },
+      "changedDuringThisPhase": false
+    }
+  },
+  "cause": "Versioned evidence-contract policy/API additions from Phase 7C.2, not missing snapshot inputs or a new grammar change.",
+  "authority": "docs/8.6/historical-evidence-contract-implementation.md#tests-validation-and-preservation",
+  "resolution": "An explicitly versioned preservation contract must retain the old baseline and authenticate the authorized change chain. Do not refresh expected hashes or waive this failure in the legacy gate.",
+  "independentCurrentPhasePreservation": "Checked separately against the Phase 7C.6 baseline; all three already had current bytes before this phase.",
+  "certificationGranted": false
+}

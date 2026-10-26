@@ -1,0 +1,28 @@
+{
+  "command": [
+    "cmd.exe",
+    "/d",
+    "/c",
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\sdk\\phpsdk-vs17-x64.bat",
+    "-t",
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\compile-native.bat"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar/.audit/php86-exact",
+  "started": "2026-10-25T10:45:05+00:00",
+  "task": "C:/Data/GitHub/php-grammar/.audit/php86-exact/compile-native.bat",
+  "windowsCommandLine": "cmd.exe /d /s /c \"\"C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\sdk\\phpsdk-vs17-x64.bat\" -t \"C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\compile-native.bat\"\"",
+  "taskSha256": "54bcf2cea5029d245c77aeb6800a19afedf308f3344162013655a3f4ed273d9f",
+  "taskContents": "@echo off\r\ncd /d \"C:/Data/GitHub/php-grammar/.audit/php86-exact/source\"\r\nnmake\r\nexit /b %errorlevel%\r\n",
+  "controllerSha256": "95878bd525c08def86029468be5bb74ae6d28b84dddccfddbb22f1ac4ee211b3",
+  "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "exit_code": 0,
+  "finished": "2026-10-25T10:47:15+00:00",
+  "stdout": {
+    "path": "docs/8.6/exact-pin-build/compile-native.stdout.log",
+    "sha256": "fa633389b7a2eec8afc1394674365391ecb2be5c84a2d83573bf581924b6268e"
+  },
+  "stderr": {
+    "path": "docs/8.6/exact-pin-build/compile-native.stderr.log",
+    "sha256": "509c20bc47f5e8d1a5ed62dbb703e77ada4897f248b5513168076d4bd9f0b165"
+  }
+}

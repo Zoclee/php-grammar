@@ -1,0 +1,21 @@
+{
+  "jsonFiles": 21,
+  "phpSyntax": {
+    "tools/lib/LocalSourceContextEvidence.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tools/lib/LocalSourceContextEvidence.php\n"
+    },
+    "tools/8.6/local-source-context.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tools/8.6/local-source-context.php\n"
+    },
+    "tests/LocalSourceContextEvidenceTest.php": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in C:/Data/GitHub/php-grammar/tests/LocalSourceContextEvidenceTest.php\n"
+    }
+  },
+  "researchFixtureSyntax": "Expected accept/reject outcomes are checked by exact-pin observation manifest; invalid research sources are not unconditional lint-pass requirements.",
+  "links": 22,
+  "filesHashed": 124,
+  "errors": []
+}

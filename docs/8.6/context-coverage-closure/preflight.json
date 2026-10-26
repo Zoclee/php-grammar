@@ -1,0 +1,1782 @@
+{
+    "sourceProfile": "exact-pin-rc4",
+    "baselineProof": "c2f1e0f3b519d27c8f7e02612c91a425ebe949a91eb4aa26caef3143fc88becd",
+    "rows": [
+        {
+            "group": "context",
+            "id": "variadic-default-repair",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-variadic-default-repair.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-variadic-default-repair.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "variadic-default-live",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-variadic-default-live.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Variadic parameter cannot have a default value in .audit/phase7c9-preflight/context-variadic-default-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-variadic-default-live.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "variadic-default-retained",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-variadic-default-retained.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Variadic parameter cannot have a default value in .audit/phase7c9-preflight/context-variadic-default-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-variadic-default-retained.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "variadic-default-discarded",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-variadic-default-discarded.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-variadic-default-discarded.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "variadic-default-unreachable",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-variadic-default-unreachable.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Variadic parameter cannot have a default value in .audit/phase7c9-preflight/context-variadic-default-unreachable.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-variadic-default-unreachable.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "duplicate-parameter-repair",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-duplicate-parameter-repair.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-duplicate-parameter-repair.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "duplicate-parameter-live",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-duplicate-parameter-live.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Redefinition of parameter $a in .audit/phase7c9-preflight/context-duplicate-parameter-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-duplicate-parameter-live.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "duplicate-parameter-retained",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-duplicate-parameter-retained.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Redefinition of parameter $a in .audit/phase7c9-preflight/context-duplicate-parameter-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-duplicate-parameter-retained.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "duplicate-parameter-discarded",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-duplicate-parameter-discarded.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-duplicate-parameter-discarded.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "duplicate-parameter-unreachable",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-duplicate-parameter-unreachable.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Redefinition of parameter $a in .audit/phase7c9-preflight/context-duplicate-parameter-unreachable.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-duplicate-parameter-unreachable.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "empty-hooks-repair",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-empty-hooks-repair.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-empty-hooks-repair.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "empty-hooks-live",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-empty-hooks-live.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Property hook list must not be empty in .audit/phase7c9-preflight/context-empty-hooks-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-empty-hooks-live.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "empty-hooks-retained",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-empty-hooks-retained.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Property hook list must not be empty in .audit/phase7c9-preflight/context-empty-hooks-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-empty-hooks-retained.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "empty-hooks-discarded",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-empty-hooks-discarded.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-empty-hooks-discarded.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "empty-hooks-unreachable",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-empty-hooks-unreachable.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Property hook list must not be empty in .audit/phase7c9-preflight/context-empty-hooks-unreachable.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-empty-hooks-unreachable.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "duplicate-hooks-repair",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-duplicate-hooks-repair.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-duplicate-hooks-repair.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "duplicate-hooks-live",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-duplicate-hooks-live.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Cannot redeclare property hook \"get\" in .audit/phase7c9-preflight/context-duplicate-hooks-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-duplicate-hooks-live.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "duplicate-hooks-retained",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-duplicate-hooks-retained.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Cannot redeclare property hook \"get\" in .audit/phase7c9-preflight/context-duplicate-hooks-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-duplicate-hooks-retained.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "duplicate-hooks-discarded",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-duplicate-hooks-discarded.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-duplicate-hooks-discarded.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "duplicate-hooks-unreachable",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-duplicate-hooks-unreachable.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Cannot redeclare property hook \"get\" in .audit/phase7c9-preflight/context-duplicate-hooks-unreachable.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-duplicate-hooks-unreachable.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "get-parentheses-repair",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-get-parentheses-repair.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-get-parentheses-repair.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "get-parentheses-live",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-get-parentheses-live.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: get hook of property C::$p must not have a parameter list in .audit/phase7c9-preflight/context-get-parentheses-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-get-parentheses-live.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "get-parentheses-retained",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-get-parentheses-retained.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: get hook of property C::$p must not have a parameter list in .audit/phase7c9-preflight/context-get-parentheses-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-get-parentheses-retained.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "get-parentheses-discarded",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-get-parentheses-discarded.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-get-parentheses-discarded.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "get-parentheses-unreachable",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-get-parentheses-unreachable.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: get hook of property C::$p must not have a parameter list in .audit/phase7c9-preflight/context-get-parentheses-unreachable.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-get-parentheses-unreachable.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "enum-backing-repair",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-enum-backing-repair.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-enum-backing-repair.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "enum-backing-live",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-enum-backing-live.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Enum backing type must be int or string, float given in .audit/phase7c9-preflight/context-enum-backing-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-enum-backing-live.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "enum-backing-retained",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-enum-backing-retained.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Enum backing type must be int or string, float given in .audit/phase7c9-preflight/context-enum-backing-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-enum-backing-retained.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "enum-backing-discarded",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-enum-backing-discarded.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-enum-backing-discarded.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "enum-backing-unreachable",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-enum-backing-unreachable.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Enum backing type must be int or string, float given in .audit/phase7c9-preflight/context-enum-backing-unreachable.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-enum-backing-unreachable.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "bare-try-repair",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-bare-try-repair.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-bare-try-repair.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "bare-try-live",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-bare-try-live.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Cannot use try without catch or finally in .audit/phase7c9-preflight/context-bare-try-live.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-bare-try-live.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "bare-try-retained",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-bare-try-retained.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Cannot use try without catch or finally in .audit/phase7c9-preflight/context-bare-try-retained.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-bare-try-retained.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "bare-try-discarded",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-bare-try-discarded.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/context-bare-try-discarded.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "context",
+            "id": "bare-try-unreachable",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/context-bare-try-unreachable.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nFatal error: Cannot use try without catch or finally in .audit/phase7c9-preflight/context-bare-try-unreachable.php on line 2\nStack trace:\n#0 {main}\nErrors parsing .audit/phase7c9-preflight/context-bare-try-unreachable.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "alias-return",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-alias-return.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-alias-return.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "alias-keywords",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-alias-keywords.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-alias-keywords.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "types",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-types.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-types.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "return-types",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-return-types.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-return-types.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "discarded-types",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-discarded-types.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-discarded-types.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "type-intersection",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-type-intersection.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-type-intersection.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "members",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-members.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-members.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "promotions",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-promotions.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-promotions.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "nested-attribute",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-nested-attribute.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-nested-attribute.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "namespace",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-namespace.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-namespace.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "namespace-braces",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-namespace-braces.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-namespace-braces.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "equality",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-equality.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-equality.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "magic-property",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-magic-property.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-magic-property.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "matched-loops",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-matched-loops.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-matched-loops.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "matched-declare",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-matched-declare.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-matched-declare.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "alternative-elseif",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-alternative-elseif.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-alternative-elseif.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "yield-key",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-yield-key.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-yield-key.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "prefix-concat",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-prefix-concat.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-prefix-concat.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "prefix-pipe",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-prefix-pipe.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-prefix-pipe.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "unmatched-nesting",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-unmatched-nesting.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-unmatched-nesting.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "alias-missing",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-alias-missing.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nParse error: syntax error, unexpected token \";\" in .audit/phase7c9-preflight/coverage-alias-missing.php on line 2\nErrors parsing .audit/phase7c9-preflight/coverage-alias-missing.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "type-missing",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-type-missing.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/coverage-type-missing.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": false
+        },
+        {
+            "group": "coverage",
+            "id": "yield-missing",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-yield-missing.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nParse error: syntax error, unexpected token \";\" in .audit/phase7c9-preflight/coverage-yield-missing.php on line 2\nErrors parsing .audit/phase7c9-preflight/coverage-yield-missing.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "hook-terminator",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-hook-terminator.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nParse error: syntax error, unexpected token \"}\" in .audit/phase7c9-preflight/coverage-hook-terminator.php on line 2\nErrors parsing .audit/phase7c9-preflight/coverage-hook-terminator.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "coverage",
+            "id": "alternative-separator",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/coverage-alternative-separator.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nParse error: syntax error, unexpected token \"else\", expecting \",\" or \";\" in .audit/phase7c9-preflight/coverage-alternative-separator.php on line 2\nErrors parsing .audit/phase7c9-preflight/coverage-alternative-separator.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "attribute-close",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-attribute-close.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/scanner-attribute-close.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "property-keyword",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-property-keyword.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/scanner-property-keyword.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "pfa-trivia",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-pfa-trivia.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/scanner-pfa-trivia.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "yield-comment",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-yield-comment.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/scanner-yield-comment.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "numeric-boundaries",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-numeric-boundaries.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/scanner-numeric-boundaries.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "offset-key",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-offset-key.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/scanner-offset-key.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "legacy-name",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-legacy-name.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "\nDeprecated: Using ${var} in strings is deprecated, use {$var} instead in .audit/phase7c9-preflight/scanner-legacy-name.php on line 1\nNo syntax errors detected in .audit/phase7c9-preflight/scanner-legacy-name.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "backtick-nesting",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-backtick-nesting.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "\nDeprecated: The backtick (`) operator is deprecated, use shell_exec() instead in .audit/phase7c9-preflight/scanner-backtick-nesting.php on line 1\nNo syntax errors detected in .audit/phase7c9-preflight/scanner-backtick-nesting.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "heredoc-return",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-heredoc-return.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/scanner-heredoc-return.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "nowdoc-literal",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-nowdoc-literal.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/scanner-nowdoc-literal.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "short-disabled",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=0",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-short-disabled.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/scanner-short-disabled.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "bad-indent",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-bad-indent.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nParse error: Invalid body indentation level (expecting an indentation level of at least 2) in .audit/phase7c9-preflight/scanner-bad-indent.php on line 3\nErrors parsing .audit/phase7c9-preflight/scanner-bad-indent.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "unicode-max",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-unicode-max.php"
+            ],
+            "result": {
+                "exit_code": 0,
+                "output": "No syntax errors detected in .audit/phase7c9-preflight/scanner-unicode-max.php\n"
+            },
+            "expectedAccepted": true,
+            "pass": true
+        },
+        {
+            "group": "scanner",
+            "id": "unicode-overflow",
+            "command": [
+                "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+                "-n",
+                "-d",
+                "zend.multibyte=0",
+                "-d",
+                "short_open_tag=1",
+                "-d",
+                "opcache.enable_cli=0",
+                "-d",
+                "opcache.jit=0",
+                "-l",
+                ".audit/phase7c9-preflight/scanner-unicode-overflow.php"
+            ],
+            "result": {
+                "exit_code": 255,
+                "output": "\nParse error: Invalid UTF-8 codepoint escape sequence: Codepoint too large in .audit/phase7c9-preflight/scanner-unicode-overflow.php on line 1\nErrors parsing .audit/phase7c9-preflight/scanner-unicode-overflow.php\n"
+            },
+            "expectedAccepted": false,
+            "pass": true
+        }
+    ]
+}

@@ -1,0 +1,256 @@
+{
+  "dependency": "H86-BOUNDARY-INVENTORY",
+  "gate": "ordinary-differential",
+  "status": "failed; do not waive",
+  "originalInventory": "docs/8.6/source-audit-boundaries.json",
+  "originalInventorySha256": "262e9549c65c36d8e75930bd6c14e9c8b7dbbdfe50f98a8c62e732f9a59e0f04",
+  "originalReviewedCases": 313,
+  "currentCorpusCases": 339,
+  "added": [
+    "tests/fixtures/php/8.6/invalid/cc9-coverage-alias-missing.php",
+    "tests/fixtures/php/8.6/invalid/cc9-coverage-alternative-separator.php",
+    "tests/fixtures/php/8.6/invalid/cc9-coverage-hook-terminator.php",
+    "tests/fixtures/php/8.6/invalid/cc9-coverage-type-missing.php",
+    "tests/fixtures/php/8.6/invalid/cc9-coverage-yield-missing.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-alias-keywords.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-alias-return.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-alternative-elseif.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-discarded-types.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-equality.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-magic-property.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-matched-declare.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-matched-loops.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-members.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-namespace-braces.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-namespace.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-nested-attribute.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-prefix-concat.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-prefix-pipe.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-promotions.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-return-types.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-type-intersection.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-type-reference-control.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-types.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-unmatched-nesting.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-yield-key.php"
+  ],
+  "missing": [],
+  "changedOriginalCases": [],
+  "newCaseEvidence": [
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-alias-return.php",
+      "sha256": "6894e30c2b95978d10315cb9a56e5127a94956790a962ec6a3d82fd8264bf6e6",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/35",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-alias-keywords.php",
+      "sha256": "6e697d0db239b7690ef76ddd2a0b2449b3a0abf0bbfc49557e03b791b0359fa9",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/36",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-types.php",
+      "sha256": "9550ec1994303e6e763237be3af7508d9f5e069adc7420b693d6c8e1355d9d07",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/37",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-return-types.php",
+      "sha256": "02d0dadfbe233f8aea4ab64e2ba032b1588f2f04d51838470c6f9fe72591f24e",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/38",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-discarded-types.php",
+      "sha256": "b944a0a0627e857dac111eada72a9924ab2fe22d7e2144aecc47843d7670e641",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/39",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-type-intersection.php",
+      "sha256": "d8134e95c733c25e0417a90cbb15e06f97431adf64ef358ebc0800b368148d89",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/40",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-members.php",
+      "sha256": "c324bb5b856da53431a3342ac3e44a337527429e9f7ea2bdd539067d3ae67355",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/41",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-promotions.php",
+      "sha256": "571b6f5f563e78811df3c8c737487b4fad565af4951c25477a1621c5ab674e23",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/42",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-nested-attribute.php",
+      "sha256": "7306f8d780a28018a949547d34e9c4ef7b1c5b77b3fe59307857bc8d90bdd67f",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/43",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-namespace.php",
+      "sha256": "96cfe8c7f06f605dfde2095c06e59c3199d57098ecd16e0b2152a337cca02c8c",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/44",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-namespace-braces.php",
+      "sha256": "f20c0c7be5a512b61eb111c6fe9b22d02c95b008f85dda9500fd0437f3cd4061",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/45",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-equality.php",
+      "sha256": "a3a0b5ef10a2fb0f4a448568ac7f63eded63ccf9d6e49988327853baa0971788",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/46",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-magic-property.php",
+      "sha256": "329a8b6b04c33b416750686144cdf7c13985f693fd4e70d1a24c4a31e909016d",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/47",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-matched-loops.php",
+      "sha256": "50e7a66e0232c146f112f0eb1845f1614828c489ea26d2c2edb7415cd8add8a9",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/48",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-matched-declare.php",
+      "sha256": "23eee38eb91f6bbfea08100b9a6cc54fea05875a2987e41ea3b7b5f01c5beb42",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/49",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-alternative-elseif.php",
+      "sha256": "6253049ebd60fb60273f0b7f9b6e1840b7915add4bbd79eb2fd680f0f346ce03",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/50",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-yield-key.php",
+      "sha256": "6a27d42e7b9f20bb5da1b33c362772103da412da5f9f258994cae7feaffd940d",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/51",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-prefix-concat.php",
+      "sha256": "8add344166d5ff6ba5275f1df830a268731a4745e8de933f389c6c71273ea03a",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/52",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-prefix-pipe.php",
+      "sha256": "9d94a5350584ba30d5e072586e3f571ff3ee2a3c43e441dac9dddf1eb580898c",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/53",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-unmatched-nesting.php",
+      "sha256": "f1eacd5e82405f175c46879e2cfe6da082a83dc1024af76af3688d5a55d68402",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/54",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-type-reference-control.php",
+      "sha256": "b8cafb396ac4d077a838b8f540f0608528c9c9691a7303daa810945a66b8f052",
+      "nativeAccepted": true,
+      "exactSourceLintExit": 0,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/55",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-alias-missing.php",
+      "sha256": "64e95c1ce58ab99d9dbd24dd211a6c7ee28678edc42322e03279172654894f59",
+      "nativeAccepted": false,
+      "exactSourceLintExit": 255,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/56",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-type-missing.php",
+      "sha256": "ecfa7d553b89c9d693605a9c09a987c9761732da785f57ab9fc8ea42d2b3a74e",
+      "nativeAccepted": false,
+      "exactSourceLintExit": 255,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/57",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-yield-missing.php",
+      "sha256": "095ce64404b503b9968f8c3ac1c32c9039b30c6eade4362d59c371972577560d",
+      "nativeAccepted": false,
+      "exactSourceLintExit": 255,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/58",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-hook-terminator.php",
+      "sha256": "d75f88f4c24958f1cb397914cfe7f9469c0a9687c41f29bcace609bb858332f0",
+      "nativeAccepted": false,
+      "exactSourceLintExit": 255,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/59",
+      "releaseInventoryRegistrationSatisfied": false
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-alternative-separator.php",
+      "sha256": "e9989c37823822aed56b216410e69a467bcf46c628a60e00137447433fa8cf9e",
+      "nativeAccepted": false,
+      "exactSourceLintExit": 255,
+      "exactSourceObservation": "docs/8.6/context-coverage-closure/observations-verified.json#/observations/60",
+      "releaseInventoryRegistrationSatisfied": false
+    }
+  ],
+  "failureMechanism": "The unchanged runner requires exact membership of the retained Phase 6 boundary report before comparing its 313 recorded cases. The expanded corpus has 26 additional ordinary witnesses.",
+  "languageOutcomeMismatchEstablished": false,
+  "priorExpectationsPreserved": true,
+  "remaining": "Introduce an obligation-preserving versioned boundary inventory and wire it into the current runner, retaining all original cases and reviewing every additional outcome under the selected executable profile. No gate obligation may be waived.",
+  "readiness": "26 exact-source/native case observations are available for review; legacy-profile inventory registration and runner integration remain unsatisfied.",
+  "scopeDecision": "Do not overwrite the historical Phase 6 report or redesign the runner contract in this bounded evidence phase.",
+  "certificationGranted": false
+}

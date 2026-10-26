@@ -112,3 +112,41 @@ compatibility review. Any denominator change needs a written explanation and
 fresh classified coverage. New versions reuse this policy and evidence schema,
 but must supply independent grammar, scanner configuration, pin and witnesses;
 see [versioning.md](versioning.md#14-evidence-required-for-a-mature-new-version).
+
+## Hybrid historical and current evidence (opt-in contract v1)
+
+The legacy schema-1 ledger, repository-wide freshness calculation, 27-gate
+release command and published PHP 8.5 claim above retain their meaning. A stale
+legacy ledger does not become current evidence through a compatibility result.
+
+`tools/evidence/historical-check.php` authenticates the retained ledger against
+its reviewed immutable Git blob and checks all raw input digests. The eight
+documented checkout-byte exceptions may be supplied only as exact preserved
+bytes matching that anchored ledger. Text normalization is never verification.
+Missing Git objects, source identity, ledger or input bytes produce incomplete
+integrity, not fallback success. Content authentication does not attest archive
+custody or rerun historical tests.
+
+`tools/evidence/compatibility.php` generates revision-specific
+`current-compatibility-v1` observations under `docs/8.5/compatibility/`. Its
+independent `--check` derives the mandatory current dependency inventory, checks
+commands/receipts/logs, actual test totals, paired boundaries and source/oracle
+identity. This is a bounded current regression claim, not certification renewal.
+The reviewed policy includes shared implementation, all test discovery, actual
+installed dependencies, both registered grammars and cross-version fixtures.
+Explicit document inputs and discovered literal/manifest references remain
+protected regardless of their directory. Unreferenced PHP 8.6 research prose is
+outside this claim. An execution/configuration/dependency change requires new
+evidence; no existing revision is overwritten. Hashes assume trusted reviewed
+tooling and run artifacts; coordinated replacement is not authenticated by a
+self-supplied digest alone.
+
+The PHP 8.6 runner's explicit `--contract historical-plus-current-v1` adds
+`historical-artifact-integrity85` AND `current-compatibility85` to the original
+36 obligations. It retains the original historical freshness gate, identifier
+and failure rather than substituting a narrower claim for the legacy aggregate.
+This additive 38-obligation contract cannot grant certification or waive any
+PHP 8.6 blocker. A future substitution or certification renewal requires a
+separate complete release-obligation decision and fresh validation; it is not
+implied by these current compatibility observations. See the
+[implementation report](8.6/historical-evidence-contract-implementation.md).

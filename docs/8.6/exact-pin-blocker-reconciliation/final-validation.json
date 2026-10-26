@@ -1,0 +1,43 @@
+{
+  "commands": {
+    "current-compatibility": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/evidence/compatibility.php",
+        "--check",
+        "--report",
+        "docs/8.5/compatibility/phase7c4-verified/evidence.json"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/final-current-compatibility.log",
+      "sha256": "ff84316b88c850b2295f88b5f877fa91358436fb31773ed23e42034b6dfca6e1"
+    },
+    "hybrid-claims": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification.php",
+        "--claims",
+        "--contract",
+        "historical-plus-current-v1",
+        "--compatibility-report",
+        "docs/8.5/compatibility/phase7c4-verified/evidence.json"
+      ],
+      "exit_code": 1,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/final-hybrid-claims.log",
+      "sha256": "5a2535781c1bc2e9696133d4dbd8d78ea33e8bee8a0c2860f931e536ed327c44"
+    }
+  },
+  "jsonFilesChecked": 39,
+  "localLinksChecked": 13,
+  "phpFilesLinted": 8,
+  "sourceSlicesChecked": 20,
+  "upstreamTestsChecked": 11,
+  "baselineFilesUnchanged": 2576,
+  "compatibilityCommands": 15,
+  "compatibilityDependencies": 3917,
+  "compatibilityInputsUnchanged": true,
+  "compatibilityFailedCommands": [],
+  "errors": []
+}

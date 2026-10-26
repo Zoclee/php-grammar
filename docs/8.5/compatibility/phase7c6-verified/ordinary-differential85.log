@@ -1,0 +1,11 @@
+PHP 8.5.10; short_open_tag=1 and 0; zend.multibyte=0
+KNOWN DISCREPANCY boundary-hook-name-discarded.php: EBNF=0, PHP=1
+{
+    "valid": 653,
+    "invalid": 365,
+    "contextual-invalid": 353,
+    "known-discrepancies": 1,
+    "mismatches": 0
+}
+Contextual-invalid fixtures intentionally pass structural EBNF and fail PHP compilation.
+Known discrepancies remain; zero unexpected mismatches is not full conformance.

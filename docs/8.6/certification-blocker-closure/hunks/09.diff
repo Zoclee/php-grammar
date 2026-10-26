@@ -1,0 +1,23 @@
+@@ -7918,18 +8577,18 @@ static void zend_compile_params(zend_ast *ast, zend_ast *return_type_ast, uint32
+ 				ZEND_TYPE_FULL_MASK(arg_info->type) : MAY_BE_ANY;
+ 		}
+ 
+ 		if (is_promoted) {
+-			zend_op_array *op_array = CG(active_op_array);
+-			zend_class_entry *scope = op_array->scope;
++			const zend_op_array *active_op_array = CG(active_op_array);
++			zend_class_entry *scope = active_op_array->scope;
+ 
+ 			bool is_ctor =
+-				scope && zend_is_constructor(op_array->function_name);
++				scope && zend_is_constructor(active_op_array->function_name);
+ 			if (!is_ctor) {
+ 				zend_error_noreturn(E_COMPILE_ERROR,
+ 					"Cannot declare promoted property outside a constructor");
+ 			}
+-			if ((op_array->fn_flags & ZEND_ACC_ABSTRACT)
++			if ((active_op_array->fn_flags & ZEND_ACC_ABSTRACT)
+ 					|| (scope->ce_flags & ZEND_ACC_INTERFACE)) {
+ 				zend_error_noreturn(E_COMPILE_ERROR,
+ 					"Cannot declare promoted property in an abstract constructor");
+ 			}

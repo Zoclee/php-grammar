@@ -1,0 +1,24 @@
+@@ -3744,15 +3843,20 @@ static uint32_t zend_compile_args(
+ 				zend_error_noreturn(E_COMPILE_ERROR,
+ 					"Cannot use argument unpacking after named arguments");
+ 			}
+ 
++			if (is_call_partial) {
++				zend_error_noreturn(E_COMPILE_ERROR,
++					"Cannot combine partial application and unpacking");
++			}
++
+ 			/* Unpack may contain named arguments. */
+-			may_have_undef = 1;
++			may_have_undef = true;
+ 			if (!fbc || (fbc->common.fn_flags & ZEND_ACC_VARIADIC)) {
+-				*may_have_extra_named_args = 1;
++				*may_have_extra_named_args = true;
+ 			}
+ 
+-			uses_arg_unpack = 1;
++			uses_arg_unpack = true;
+ 			fbc = NULL;
+ 
+ 			zend_compile_expr(&arg_node, arg->child[0]);
+ 			opline = zend_emit_op(NULL, ZEND_SEND_UNPACK, &arg_node, NULL);

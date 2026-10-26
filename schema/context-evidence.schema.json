@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "php-grammar/context-evidence/1",
+  "title": "Additive PHP 8.6 contextual observations; not certification",
+  "type": "object",
+  "required": ["schemaVersion", "contract", "evidenceKind", "generatedAt", "profile", "configuration", "inputs", "observations", "historicalComparison", "errors", "certificationGranted", "blockers"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "contract": {"const": "php86-context-profiles-v1"},
+    "evidenceKind": {"const": "contextual-observations"},
+    "generatedAt": {"type": "string", "format": "date-time"},
+    "profile": {"type": "object", "required": ["id", "contract", "sourceCommit", "executableSha256", "sourceBinding", "provenance", "historicalObservations", "fixtureSet", "stages", "flags", "configuration"]},
+    "configuration": {"type": "object"},
+    "inputs": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}},
+    "observations": {"type": "array", "minItems": 126, "maxItems": 126, "items": {"type": "object", "required": ["id", "finding", "version", "stage", "fixture", "fixtureSha256", "expected", "lint", "result"]}},
+    "historicalComparison": {"type": "string"},
+    "errors": {"type": "array", "items": {"type": "string"}},
+    "certificationGranted": {"const": false},
+    "blockers": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

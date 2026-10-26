@@ -1,0 +1,23 @@
+{
+  "obligation": "Separate warning presence/stage from rejection in both distributions.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/deprecation-check.php",
+    "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+    "--sources85=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-7a4c627",
+    "--sources86=C:\\Data\\GitHub\\php-grammar\\.audit\\php-php-src-f23b4c2",
+    "--report=docs/8.6/certification/deprecation.json"
+  ],
+  "log": "docs/8.6/certification/logs/diagnostic-differential.log",
+  "logSha256": "ad1c7ab8e7e36ba0abd7e95f1d97678561689cff76ac219270ab41da61a1192f"
+}

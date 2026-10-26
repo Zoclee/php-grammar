@@ -1,0 +1,42 @@
+{
+  "8.5": {
+    "path": "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "sha256": "32da1562c56dfe511a621627e3bbd9721058e855a6f14225c5803bc19ba623e9",
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+      "-n",
+      "-d",
+      "zend.multibyte=0",
+      "-d",
+      "opcache.enable_cli=0",
+      "-d",
+      "opcache.jit=0",
+      "-i"
+    ],
+    "exit_code": 0,
+    "metadata": "PHP Version => 8.5.10\nBuild Date => Aug 25 2026 21:23:48\nBuild System => Microsoft Windows Server 2022 Datacenter [10.0.20348]\nBuild Provider => The PHP Group\nCompiler => Visual C++ 2022\nArchitecture => x64\nConfigure Command => cscript /nologo /e:jscript configure.js  \"--enable-snapshot-build\" \"--enable-debug-pack\" \"--disable-zts\" \"--enable-object-out-dir=../obj/\" \"--enable-com-dotnet=shared\" \"--without-analyzer\" \"--with-pgo\"\nServer API => Command Line Interface\nLoaded Configuration File => (none)\nScan this dir for additional .ini files => (none)\nAdditional .ini files parsed => (none)\nZend Extension Build => API420250925,NTS,VS17\nPHP Extension Build => API20250925,NTS,VS17\nDebug Build => no\nThread Safety => disabled\nPHP Version => 8.5.10\nshort_open_tag => On => On\nzend.multibyte => Off => Off\nopcache.enable_cli => Off => Off\nopcache.jit => 0 => 0\n",
+    "sourceCommit": null,
+    "exactPinExecutableVerified": false,
+    "difference": "Distribution binary; build ancestry, generated sources and build configuration not attested to the normative pin."
+  },
+  "8.6": {
+    "path": "C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+    "sha256": "c545e69850c3d8af1cd2edef4d1682ad07232a231b7f49a06657538ccdf1db0a",
+    "command": [
+      "C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+      "-n",
+      "-d",
+      "zend.multibyte=0",
+      "-d",
+      "opcache.enable_cli=0",
+      "-d",
+      "opcache.jit=0",
+      "-i"
+    ],
+    "exit_code": 0,
+    "metadata": "PHP Version => 8.6.0RC4\nBuild Date => Oct 21 2026 15:12:05\nBuild System => Microsoft Windows Server 2025 Datacenter [10.0.26100]\nBuild Provider => The PHP Group\nCompiler => Visual C++ 2026\nArchitecture => x64\nConfigure Command => cscript /nologo /e:jscript configure.js  \"--enable-snapshot-build\" \"--enable-debug-pack\" \"--disable-zts\" \"--enable-object-out-dir=../obj/\" \"--enable-com-dotnet=shared\" \"--without-analyzer\" \"--with-pgo\"\nServer API => Command Line Interface\nLoaded Configuration File => (none)\nScan this dir for additional .ini files => (none)\nAdditional .ini files parsed => (none)\nZend Extension Build => API420260924,NTS,VS18\nPHP Extension Build => API20260924,NTS,VS18\nDebug Build => no\nThread Safety => disabled\nPHP Version => 8.6.0RC4\nshort_open_tag => On => On\nzend.multibyte => Off => Off\nopcache.enable_cli => Off => Off\nopcache.jit => 0 => 0\n",
+    "sourceCommit": null,
+    "exactPinExecutableVerified": false,
+    "difference": "Distribution binary; build ancestry, generated sources and build configuration not attested to the normative pin."
+  }
+}

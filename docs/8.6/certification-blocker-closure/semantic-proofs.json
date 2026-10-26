@@ -1,0 +1,113 @@
+{
+  "scope": "Reviewed local identities only, not an automated C semantic proof. Headers authenticated against immutable official raw sources in upstream-refresh.json.",
+  "proofs": {
+    "ZEND_TYPE_LIST_FOREACH": {
+      "old": {
+        "line": 210,
+        "text": "#define ZEND_TYPE_LIST_FOREACH(list, type_ptr) do { \\\n\tconst zend_type *_list = (list)->types; \\\n\tconst zend_type *_end = _list + (list)->num_types; \\\n\tfor (; _list < _end; _list++) { \\\n\t\ttype_ptr = _list;"
+      },
+      "new": {
+        "line": 196,
+        "text": "#define ZEND_TYPE_LIST_FOREACH(list, type_ptr) do { \\\n\tconst zend_type *_list = (list)->types; \\\n\tconst zend_type *_end = _list + (list)->num_types; \\\n\tfor (; _list < _end; _list++) { \\\n\t\ttype_ptr = _list;"
+      },
+      "identical": true
+    },
+    "ZEND_TYPE_LIST_FOREACH_END": {
+      "old": {
+        "line": 222,
+        "text": "#define ZEND_TYPE_LIST_FOREACH_END() \\\n\t} \\\n} while (0)"
+      },
+      "new": {
+        "line": 208,
+        "text": "#define ZEND_TYPE_LIST_FOREACH_END() \\\n\t} \\\n} while (0)"
+      },
+      "identical": true
+    },
+    "ZEND_TYPE_FOREACH": {
+      "old": {
+        "line": 228,
+        "text": "#define ZEND_TYPE_FOREACH(type, type_ptr) do { \\\n\tconst zend_type *_cur, *_end; \\\n\tif (ZEND_TYPE_HAS_LIST(type)) { \\\n\t\tzend_type_list *_list = ZEND_TYPE_LIST(type); \\\n\t\t_cur = _list->types; \\\n\t\t_end = _cur + _list->num_types; \\\n\t} else { \\\n\t\t_cur = &(type); \\\n\t\t_end = _cur + 1; \\\n\t} \\\n\tdo { \\\n\t\ttype_ptr = _cur;"
+      },
+      "new": {
+        "line": 214,
+        "text": "#define ZEND_TYPE_FOREACH(type, type_ptr) do { \\\n\tconst zend_type *_cur, *_end; \\\n\tif (ZEND_TYPE_HAS_LIST(type)) { \\\n\t\tzend_type_list *_list = ZEND_TYPE_LIST(type); \\\n\t\t_cur = _list->types; \\\n\t\t_end = _cur + _list->num_types; \\\n\t} else { \\\n\t\t_cur = &(type); \\\n\t\t_end = _cur + 1; \\\n\t} \\\n\tdo { \\\n\t\ttype_ptr = _cur;"
+      },
+      "identical": true
+    },
+    "ZEND_TYPE_FOREACH_END": {
+      "old": {
+        "line": 256,
+        "text": "#define ZEND_TYPE_FOREACH_END() \\\n\t} while (++_cur < _end); \\\n} while (0)"
+      },
+      "new": {
+        "line": 242,
+        "text": "#define ZEND_TYPE_FOREACH_END() \\\n\t} while (++_cur < _end); \\\n} while (0)"
+      },
+      "identical": true
+    },
+    "Z_CONSTANT": {
+      "line": 943,
+      "text": "#define Z_CONSTANT(zval)\t\t\t(Z_TYPE(zval) == IS_CONSTANT_AST)"
+    },
+    "zend_property_is_virtual": {
+      "old": {
+        "line": 7708,
+        "signature": "static bool zend_property_is_virtual(zend_class_entry *ce, zend_string *property_name, zend_ast *hooks_ast, uint32_t flags)\n{",
+        "body": "{\n\tif (ce->ce_flags & ZEND_ACC_INTERFACE) {\n\t\treturn true;\n\t}\n\tif (!hooks_ast) {\n\t\treturn false;\n\t}\n\n\tbool is_virtual = true;\n\n\tzend_ast_list *hooks = zend_ast_get_list(hooks_ast);\n\tfor (uint32_t i = 0; i < hooks->children; i++) {\n\t\tzend_ast_decl *hook = (zend_ast_decl *) hooks->child[i];\n\t\tzend_ast *body = hook->child[2];\n\t\tif (body && zend_property_hook_uses_property(property_name, hook->name, body)) {\n\t\t\tis_virtual = false;\n\t\t}\n\t}\n\n\treturn is_virtual;\n}"
+      },
+      "new": {
+        "line": 8364,
+        "signature": "static bool zend_property_is_virtual(const zend_class_entry *ce, const zend_string *property_name, zend_ast *hooks_ast)\n{",
+        "body": "{\n\tif (ce->ce_flags & ZEND_ACC_INTERFACE) {\n\t\treturn true;\n\t}\n\tif (!hooks_ast) {\n\t\treturn false;\n\t}\n\n\tbool is_virtual = true;\n\n\tconst zend_ast_list *hooks = zend_ast_get_list(hooks_ast);\n\tfor (uint32_t i = 0; i < hooks->children; i++) {\n\t\tconst zend_ast_decl *hook = (const zend_ast_decl *) hooks->child[i];\n\t\tzend_ast *body = hook->child[2];\n\t\tif (body && zend_property_hook_uses_property(property_name, hook->name, body)) {\n\t\t\tis_virtual = false;\n\t\t}\n\t}\n\n\treturn is_virtual;\n}"
+      },
+      "bodyEqualIgnoringCConstAndWhitespace": true,
+      "removedParameterAbsentFromBody": true
+    },
+    "zend_check_magic_method_public": {
+      "old": {
+        "line": 2778,
+        "signature": "static void zend_check_magic_method_public(\n\t\tconst zend_class_entry *ce, const zend_function *fptr, int error_type)\n{",
+        "body": "{\n\t// TODO: Remove this warning after adding proper visibility handling.\n\tif (!(fptr->common.fn_flags & ZEND_ACC_PUBLIC)) {\n\t\tzend_error(E_WARNING, \"The magic method %s::%s() must have public visibility\",\n\t\t\tZSTR_VAL(ce->name), ZSTR_VAL(fptr->common.function_name));\n\t}\n}"
+      },
+      "new": {
+        "line": 2804,
+        "signature": "static void zend_check_magic_method_public(\n\t\tconst zend_class_entry *ce, const zend_function *fptr)\n{",
+        "body": "{\n\t// TODO: Remove this warning after adding proper visibility handling.\n\tif (!(fptr->common.fn_flags & ZEND_ACC_PUBLIC)) {\n\t\tzend_error(E_WARNING, \"The magic method %s::%s() must have public visibility\",\n\t\t\tZSTR_VAL(ce->name), ZSTR_VAL(fptr->common.function_name));\n\t}\n}"
+      },
+      "bodyEqualIgnoringCConstAndWhitespace": true,
+      "removedParameterAbsentFromBody": true
+    },
+    "magicMethodConstants": {
+      "CALLSTATIC": {
+        "old": {
+          "line": 1241,
+          "text": "#define ZEND_CALLSTATIC_FUNC_NAME   \"__callstatic\""
+        },
+        "new": {
+          "line": 1255,
+          "text": "#define ZEND_CALLSTATIC_FUNC_LCNAME \"__callstatic\""
+        }
+      },
+      "TOSTRING": {
+        "old": {
+          "line": 1242,
+          "text": "#define ZEND_TOSTRING_FUNC_NAME     \"__tostring\""
+        },
+        "new": {
+          "line": 1257,
+          "text": "#define ZEND_TOSTRING_FUNC_LCNAME   \"__tostring\""
+        }
+      },
+      "DEBUGINFO": {
+        "old": {
+          "line": 1244,
+          "text": "#define ZEND_DEBUGINFO_FUNC_NAME    \"__debuginfo\""
+        },
+        "new": {
+          "line": 1260,
+          "text": "#define ZEND_DEBUGINFO_FUNC_LCNAME  \"__debuginfo\""
+        }
+      }
+    }
+  }
+}

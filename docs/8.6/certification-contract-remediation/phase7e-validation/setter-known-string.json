@@ -1,0 +1,22 @@
+{
+  "supportingProof": "ZSTR_KNOWN(ZEND_STR_VOID) literal identity used by the setter equivalence proof",
+  "sources": {
+    "8.5": {
+      "commit": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+      "path": "Zend/zend_string.h",
+      "line": 614,
+      "fileSha256": "0adb9eb3dd4a1ca35c6afcfcafdf8deda598bbcef966af9fb3288f487a6ff5bc",
+      "text": "\t_(ZEND_STR_VOID,                   \"void\") \\\n",
+      "sliceSha256": "72eaa6206f34da0536d6a2d6e5df2287b9eaa3e420c631c3070205bcd400a1da"
+    },
+    "8.6": {
+      "commit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+      "path": "Zend/zend_string.h",
+      "line": 797,
+      "fileSha256": "7499e8810b2ae9ecd5a6eff07a7992c473d10f88a21336059c9b7ddeb22eb623",
+      "text": "\t_(ZEND_STR_VOID,                   \"void\") \\\n",
+      "sliceSha256": "72eaa6206f34da0536d6a2d6e5df2287b9eaa3e420c631c3070205bcd400a1da"
+    }
+  },
+  "errors": []
+}

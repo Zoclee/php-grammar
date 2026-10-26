@@ -1,0 +1,146 @@
+{
+  "verifiedBuild": "docs/8.6/exact-pin-build/build.json",
+  "verifiedExecutableSha256": "445d2bde0998cd54e04b4be4401ae45b5e54df4ef677294a64cbcd1faf6d9fe6",
+  "commands": {
+    "runner-provenance": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification.php",
+        "--provenance",
+        "--php86",
+        "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-runner-provenance.log",
+      "sha256": "8ac773415b36c76077fbec8cc78c78750fd82e3982ef07402d74b37ec87515dd"
+    },
+    "pfa": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/pfa-check.php",
+        "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "--php86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+        "--sources=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+        "--report=docs/8.6/exact-pin-blocker-reconciliation/pfa.json"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-pfa.log",
+      "sha256": "7bd9a30c14871ab1be125157aa997320e374ade167a0b7f23216c11fbe263fdd"
+    },
+    "context": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/context-check.php",
+        "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "--php86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+        "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+        "--sources86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+        "--report=docs/8.6/exact-pin-blocker-reconciliation/context.json"
+      ],
+      "exit_code": 1,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-context.log",
+      "sha256": "710402460e3b0a109eb10e48db2c9d8ffa97b309aa4849d90565f3d35d8f7751"
+    },
+    "deprecation": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/deprecation-check.php",
+        "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "--php86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+        "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+        "--sources86=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+        "--report=docs/8.6/exact-pin-blocker-reconciliation/deprecation.json"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-deprecation.log",
+      "sha256": "ad1c7ab8e7e36ba0abd7e95f1d97678561689cff76ac219270ab41da61a1192f"
+    },
+    "exact-differential": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/exact-pin-differential.php",
+        "--report",
+        "docs/8.6/exact-pin-blocker-reconciliation/differential.json"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-exact-differential.log",
+      "sha256": "4b13b6595d7efef3ecfd63e2452981b257732354f3c53fb99a38f81b66c93a8c"
+    },
+    "traceability": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/change-traceability.php",
+        "--report=docs/8.6/exact-pin-blocker-reconciliation/traceability.json"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-traceability.log",
+      "sha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+    },
+    "source": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "source",
+        "--sources86",
+        "C:/Data/GitHub/php-grammar/.audit/php86-exact/source"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-source.log",
+      "sha256": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37"
+    },
+    "manifest": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "manifest"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-manifest.log",
+      "sha256": "8d33e37fb7cfebb7e8ec69251ee37a3d55e642abd218ab930ec9e6998106be5e"
+    },
+    "blockers": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification-gate.php",
+        "--gate",
+        "blockers"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-blockers.log",
+      "sha256": "d6950dc49f486121a863878a43b6497dc8fe41915bd64eaf47c02bd715a8a0ba"
+    },
+    "historical": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/evidence/historical-check.php"
+      ],
+      "exit_code": 0,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-historical.log",
+      "sha256": "16842a9853c6d7f76d1ddf6f279578951e9c6e696a9af948a93a9150636e2747"
+    },
+    "legacy-claims": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification.php",
+        "--claims"
+      ],
+      "exit_code": 1,
+      "log": "docs/8.6/exact-pin-blocker-reconciliation/validation-legacy-claims.log",
+      "sha256": "4385002185b317ffb33d7a3c962a47d80720c2e9354912c115cef246657f2e66"
+    }
+  },
+  "note": "Legacy child tools do not themselves attest exact source. The successful provenance command binds their explicitly selected interpreter."
+}

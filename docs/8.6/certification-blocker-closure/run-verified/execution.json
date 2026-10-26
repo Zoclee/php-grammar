@@ -1,0 +1,83 @@
+{
+  "runnerSha256": "63592f8bdc157f0e1c0e12704e3ff4fc6e21dc2ede5f37885e644fd191beb2c2",
+  "snapshot": "C:/Data/GitHub/php-grammar/.audit/phase7c6-certification-verified",
+  "commands": {
+    "prepare": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification.php",
+        "--prepare",
+        "--php85",
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "--php86",
+        "C:/Data/GitHub/php-grammar/.audit/php86/php.exe",
+        "--sources85",
+        "C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+        "--sources86",
+        "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+        "--source-cache",
+        "C:/Data/GitHub/php-grammar/.audit/phase7-sources",
+        "--composer",
+        "composer"
+      ],
+      "cwd": "C:/Data/GitHub/php-grammar/.audit/phase7c6-certification-verified",
+      "exit_code": 0,
+      "log": "docs/8.6/certification-blocker-closure/run-verified/prepare.log",
+      "sha256": "88491c0f257cf661a75b11064d7dd3fba9ec83531ee3ba3c1eaef428476a7998"
+    },
+    "check": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification.php",
+        "--check"
+      ],
+      "cwd": "C:/Data/GitHub/php-grammar/.audit/phase7c6-certification-verified",
+      "exit_code": 0,
+      "log": "docs/8.6/certification-blocker-closure/run-verified/check.log",
+      "sha256": "01567b736ae22683061dc15ed409a38c7210faa3d8b76b1411b77ee110ef8afb"
+    },
+    "claims": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification.php",
+        "--claims"
+      ],
+      "cwd": "C:/Data/GitHub/php-grammar/.audit/phase7c6-certification-verified",
+      "exit_code": 1,
+      "log": "docs/8.6/certification-blocker-closure/run-verified/claims.log",
+      "sha256": "0cd234ad3adf3b7db8f7df707f032d997d8296cfea337e46c7baf2ad81550557"
+    },
+    "run-refusal": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "tools/8.6/certification.php",
+        "--run"
+      ],
+      "cwd": "C:/Data/GitHub/php-grammar/.audit/phase7c6-certification-verified",
+      "exit_code": 1,
+      "log": "docs/8.6/certification-blocker-closure/run-verified/run-refusal.log",
+      "sha256": "bd15e35a318cf43a68c900d1f8b23941bfb8dfb3c9d38d90c56b4570da2b271f"
+    }
+  },
+  "gateCounts": {
+    "passed": 22,
+    "failed": 4,
+    "blocked": 10
+  },
+  "totalGates": 36,
+  "executedGates": 26,
+  "validation": {
+    "tests": 6195,
+    "assertions": 58288,
+    "exit_code": 0,
+    "log": "docs/8.6/certification/logs/full-regression.log"
+  },
+  "readOnlyPaths": 2977,
+  "errors": [],
+  "certificationGranted": false,
+  "scope": "Fresh existing-runner execution. Blocked obligations are not executed tests. Gate failures remain failures."
+}

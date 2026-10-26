@@ -1,0 +1,103 @@
+@@ -3774,36 +3878,95 @@ static uint32_t zend_compile_args(
+ 					arg_name = NULL;
+ 					arg_count++;
+ 				} else {
+ 					// TODO: We could track which arguments were passed, even if out of order.
+-					may_have_undef = 1;
++					may_have_undef = true;
+ 					if (arg_num == (uint32_t) -1 && (fbc->common.fn_flags & ZEND_ACC_VARIADIC)) {
+-						*may_have_extra_named_args = 1;
++						*may_have_extra_named_args = true;
+ 					}
+ 				}
+ 			} else {
+ 				arg_num = (uint32_t) -1;
+-				may_have_undef = 1;
+-				*may_have_extra_named_args = 1;
++				may_have_undef = true;
++				*may_have_extra_named_args = true;
++			}
++
++			if (uses_variadic_placeholder) {
++				zend_error_noreturn(E_COMPILE_ERROR,
++					"Variadic placeholder must be last");
+ 			}
+ 		} else {
+ 			if (uses_arg_unpack) {
+ 				zend_error_noreturn(E_COMPILE_ERROR,
+ 					"Cannot use positional argument after argument unpacking");
+ 			}
+ 
+-			if (uses_named_args) {
++			bool is_variadic_placeholder = arg->kind == ZEND_AST_PLACEHOLDER_ARG
++				&& arg->attr == ZEND_PLACEHOLDER_VARIADIC;
++
++			if (uses_named_args && !is_variadic_placeholder) {
+ 				zend_error_noreturn(E_COMPILE_ERROR,
+ 					"Cannot use positional argument after named argument");
+ 			}
+ 
+-			arg_count++;
++			if (uses_variadic_placeholder) {
++				if (is_variadic_placeholder) {
++					zend_error_noreturn(E_COMPILE_ERROR,
++						"Variadic placeholder may only appear once");
++				} else {
++					zend_error_noreturn(E_COMPILE_ERROR,
++						"Variadic placeholder must be last");
++				}
++			}
++
++			if (!is_variadic_placeholder) {
++				arg_count++;
++			}
++		}
++
++		if (arg->kind == ZEND_AST_PLACEHOLDER_ARG) {
++			if (uses_arg_unpack) {
++				zend_error_noreturn(E_COMPILE_ERROR,
++					"Cannot combine partial application and unpacking");
++			}
++
++			if (arg->attr == ZEND_PLACEHOLDER_VARIADIC) {
++				uses_variadic_placeholder = true;
++				/* Do not emit ZEND_SEND_PLACEHOLDER: We represent the variadic
++				 * placeholder with a flag on the ZEND_CONVERT_CALLABLE_PARTIAL
++				 * op instead. */
++				continue;
++			}
++
++			if (arg_name) {
++				if (Z_ISUNDEF_P(named_positions)) {
++					array_init(named_positions);
++				}
++				zval tmp;
++				ZVAL_LONG(&tmp, zend_hash_num_elements(Z_ARRVAL_P(named_positions)));
++				zend_hash_add(Z_ARRVAL_P(named_positions), arg_name, &tmp);
++			}
++
++			opline = zend_emit_op(NULL, ZEND_SEND_PLACEHOLDER, NULL, NULL);
++			if (arg_name) {
++				opline->op2_type = IS_CONST;
++				zend_string_addref(arg_name);
++				opline->op2.constant = zend_add_literal_string(&arg_name);
++				opline->result.num = zend_alloc_cache_slots(2);
++			} else if (arg->attr != ZEND_PLACEHOLDER_VARIADIC) {
++				opline->op2.opline_num = arg_num;
++				opline->result.var = EX_NUM_TO_VAR(arg_num - 1);
++			}
++
++			continue;
+ 		}
+ 
+ 		/* Treat passing of $GLOBALS the same as passing a call.
+ 		 * This will error at runtime if the argument is by-ref. */
+ 		if (zend_is_call(arg) || is_globals_fetch(arg)) {
+-			zend_compile_var(&arg_node, arg, BP_VAR_R, 0);
++			uint32_t type = is_globals_fetch(arg) || (fbc && !ARG_SHOULD_BE_SENT_BY_REF(fbc, arg_num))
++				? BP_VAR_R : BP_VAR_FUNC_ARG;
++			zend_compile_var(&arg_node, arg, type, /* by_ref */ false);
+ 			if (arg_node.op_type & (IS_CONST|IS_TMP_VAR)) {
+ 				/* Function call was converted into builtin instruction */
+ 				if (!fbc || ARG_MUST_BE_SENT_BY_REF(fbc, arg_num)) {
+ 					opcode = ZEND_SEND_VAL_EX;

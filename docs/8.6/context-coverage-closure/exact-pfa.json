@@ -1,0 +1,1602 @@
+{
+    "scope": "PHP86-001 only; lint is not runtime or exact-pin certification",
+    "checks": [
+        {
+            "check": "Protected PHP 8.5 EBNF hash",
+            "pass": true
+        },
+        {
+            "check": "Protected PHP 8.5 Markdown hash",
+            "pass": true
+        },
+        {
+            "check": "No production addition, removal, rename or reorder",
+            "pass": true
+        },
+        {
+            "check": "Every structural difference mapped to PHP86-001",
+            "pass": true
+        },
+        {
+            "check": "Copied specification production parity",
+            "pass": true
+        },
+        {
+            "check": "Change record names ordinary-argument-list",
+            "pass": true
+        },
+        {
+            "check": "Change record names first-class-callable-arguments",
+            "pass": true
+        },
+        {
+            "check": "Change record names clone-argument-list",
+            "pass": true
+        },
+        {
+            "check": "Change record names argument",
+            "pass": true
+        },
+        {
+            "check": "Change record names argument-no-expression",
+            "pass": true
+        },
+        {
+            "check": "Ten change-document sections in order",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: basic",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: multiple",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: mixed",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: named",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: named-required",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: trailing",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: fcc-trailing",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: method",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: static",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: dynamic",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: nested",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: invoke",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: clone",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: clone-bound",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: clone-array",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: clone-named",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: clone-trailing",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: default",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: constant",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: static-constant",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: named-constant",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: attribute-value",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: discarded-order",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: discarded-constructor",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: discarded-nullsafe",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: discarded-attribute",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: ordinary-folding",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: ordinary-control",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: unpack-control",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: fcc-control",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: clone-unary-control",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: clone-comma-control",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: named-ellipsis",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: double-question",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: placeholder-expression",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: outside-list",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: missing-comma",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: extra-comma",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: named-unpack",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: reference-placeholder",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: variadic-repeat",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: variadic-first",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: named-order",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: variadic-named",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: variadic-bound",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: unpack-first",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: unpack-last",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: constructor",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: anonymous-constructor",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: nullsafe",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: attribute",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: constant-variable",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: constant-unpack",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: constant-order",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: constant-method",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: constant-name",
+            "pass": true
+        },
+        {
+            "check": "Fixture and source mapping: constant-traversal",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/zend_language_parser.y",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/zend_language_scanner.l",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/zend_compile.c",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/zend_ast.c",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/zend_partial.c",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/rfc_examples_overview.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/rfc_examples_const_expr.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/named_placeholders.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/clone.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/optional_placeholder.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/compile_errors_001.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/compile_errors_002.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/compile_errors_003.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/compile_errors_004.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/compile_errors_005.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/compile_errors_006.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/constexpr_001.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/constexpr_002.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/constexpr_003.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/constexpr_004.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/constexpr_005.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/constexpr_006.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/constexpr_007.phpt",
+            "pass": true
+        },
+        {
+            "check": "Pinned source hash: Zend/tests/partial_application/constexpr_008.phpt",
+            "pass": true
+        },
+        {
+            "check": "Interpreter version 8.5",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: basic",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: multiple",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: mixed",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: named",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: named-required",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: trailing",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: fcc-trailing",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: method",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: static",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: dynamic",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: nested",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: invoke",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: clone",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: clone-bound",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: clone-array",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: clone-named",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: clone-trailing",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: default",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: constant",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: static-constant",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: named-constant",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: attribute-value",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: discarded-order",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: discarded-constructor",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: discarded-nullsafe",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: discarded-attribute",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: ordinary-folding",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: ordinary-control",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: unpack-control",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: fcc-control",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: clone-unary-control",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: clone-comma-control",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: named-ellipsis",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: double-question",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: placeholder-expression",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: outside-list",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: missing-comma",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: extra-comma",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: named-unpack",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: reference-placeholder",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: variadic-repeat",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: variadic-first",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: named-order",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: variadic-named",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: variadic-bound",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: unpack-first",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: unpack-last",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: constructor",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: anonymous-constructor",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: nullsafe",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: attribute",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: constant-variable",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: constant-unpack",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: constant-order",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: constant-method",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: constant-name",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.5: constant-traversal",
+            "pass": true
+        },
+        {
+            "check": "Interpreter version 8.6",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: basic",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: multiple",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: mixed",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: named",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: named-required",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: trailing",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: fcc-trailing",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: method",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: static",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: dynamic",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: nested",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: invoke",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: clone",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: clone-bound",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: clone-array",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: clone-named",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: clone-trailing",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: default",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: constant",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: static-constant",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: named-constant",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: attribute-value",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: discarded-order",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: discarded-constructor",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: discarded-nullsafe",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: discarded-attribute",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: ordinary-folding",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: ordinary-control",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: unpack-control",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: fcc-control",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: clone-unary-control",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: clone-comma-control",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: named-ellipsis",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: double-question",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: placeholder-expression",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: outside-list",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: missing-comma",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: extra-comma",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: named-unpack",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: reference-placeholder",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: variadic-repeat",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: variadic-repeat",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: variadic-first",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: variadic-first",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: named-order",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: named-order",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: variadic-named",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: variadic-named",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: variadic-bound",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: variadic-bound",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: unpack-first",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: unpack-first",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: unpack-last",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: unpack-last",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: constructor",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: constructor",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: anonymous-constructor",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: anonymous-constructor",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: nullsafe",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: nullsafe",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: attribute",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: attribute",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: constant-variable",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: constant-variable",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: constant-unpack",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: constant-unpack",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: constant-order",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: constant-order",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: constant-method",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: constant-method",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: constant-name",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: constant-name",
+            "pass": true
+        },
+        {
+            "check": "Lint 8.6: constant-traversal",
+            "pass": true
+        },
+        {
+            "check": "RC4 diagnostic: constant-traversal",
+            "pass": true
+        }
+    ],
+    "observations": [
+        {
+            "id": "basic",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-basic.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-basic.php"
+        },
+        {
+            "id": "multiple",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-multiple.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-multiple.php"
+        },
+        {
+            "id": "mixed",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/valid/pfa-mixed.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-mixed.php"
+        },
+        {
+            "id": "named",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-named.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-named.php"
+        },
+        {
+            "id": "named-required",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-named-required.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-named-required.php"
+        },
+        {
+            "id": "trailing",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-trailing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-trailing.php"
+        },
+        {
+            "id": "fcc-trailing",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \",\" in <repository>/tests/fixtures/php/8.6/valid/pfa-fcc-trailing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-fcc-trailing.php"
+        },
+        {
+            "id": "method",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-method.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-method.php"
+        },
+        {
+            "id": "static",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/valid/pfa-static.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-static.php"
+        },
+        {
+            "id": "dynamic",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-dynamic.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-dynamic.php"
+        },
+        {
+            "id": "nested",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-nested.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-nested.php"
+        },
+        {
+            "id": "invoke",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-invoke.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-invoke.php"
+        },
+        {
+            "id": "clone",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-clone.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-clone.php"
+        },
+        {
+            "id": "clone-bound",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-bound.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-clone-bound.php"
+        },
+        {
+            "id": "clone-array",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-array.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-clone-array.php"
+        },
+        {
+            "id": "clone-named",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-named.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-clone-named.php"
+        },
+        {
+            "id": "clone-trailing",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \",\" in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-trailing.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-clone-trailing.php"
+        },
+        {
+            "id": "default",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/valid/pfa-default.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-default.php"
+        },
+        {
+            "id": "constant",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/valid/pfa-constant.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-constant.php"
+        },
+        {
+            "id": "static-constant",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/valid/pfa-static-constant.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-static-constant.php"
+        },
+        {
+            "id": "named-constant",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-named-constant.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-named-constant.php"
+        },
+        {
+            "id": "attribute-value",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-attribute-value.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-attribute-value.php"
+        },
+        {
+            "id": "discarded-order",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \",\" in <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-order.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-order.php"
+        },
+        {
+            "id": "discarded-constructor",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-constructor.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-constructor.php"
+        },
+        {
+            "id": "discarded-nullsafe",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-nullsafe.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-nullsafe.php"
+        },
+        {
+            "id": "discarded-attribute",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-attribute.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-attribute.php"
+        },
+        {
+            "id": "ordinary-folding",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/valid/pfa-ordinary-folding.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/valid/pfa-ordinary-folding.php"
+        },
+        {
+            "id": "ordinary-control",
+            "version": "8.5",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-ordinary-control.php"
+        },
+        {
+            "id": "unpack-control",
+            "version": "8.5",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-unpack-control.php"
+        },
+        {
+            "id": "fcc-control",
+            "version": "8.5",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-fcc-control.php"
+        },
+        {
+            "id": "clone-unary-control",
+            "version": "8.5",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-unary-control.php"
+        },
+        {
+            "id": "clone-comma-control",
+            "version": "8.5",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-comma-control.php"
+        },
+        {
+            "id": "named-ellipsis",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"...\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-named-ellipsis.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-named-ellipsis.php"
+        },
+        {
+            "id": "double-question",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"??\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-double-question.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-double-question.php"
+        },
+        {
+            "id": "placeholder-expression",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-placeholder-expression.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-placeholder-expression.php"
+        },
+        {
+            "id": "outside-list",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-outside-list.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-outside-list.php"
+        },
+        {
+            "id": "missing-comma",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-missing-comma.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-missing-comma.php"
+        },
+        {
+            "id": "extra-comma",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-extra-comma.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-extra-comma.php"
+        },
+        {
+            "id": "named-unpack",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"...\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-named-unpack.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-named-unpack.php"
+        },
+        {
+            "id": "reference-placeholder",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"&\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-reference-placeholder.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-reference-placeholder.php"
+        },
+        {
+            "id": "variadic-repeat",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \",\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-repeat.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-repeat.php"
+        },
+        {
+            "id": "variadic-first",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \",\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-first.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-first.php"
+        },
+        {
+            "id": "named-order",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-named-order.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-named-order.php"
+        },
+        {
+            "id": "variadic-named",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \",\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-named.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-named.php"
+        },
+        {
+            "id": "variadic-bound",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \",\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-bound.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-bound.php"
+        },
+        {
+            "id": "unpack-first",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-first.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-first.php"
+        },
+        {
+            "id": "unpack-last",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-last.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-last.php"
+        },
+        {
+            "id": "constructor",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constructor.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constructor.php"
+        },
+        {
+            "id": "anonymous-constructor",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-anonymous-constructor.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-anonymous-constructor.php"
+        },
+        {
+            "id": "nullsafe",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-nullsafe.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-nullsafe.php"
+        },
+        {
+            "id": "attribute",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-attribute.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-attribute.php"
+        },
+        {
+            "id": "constant-variable",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-variable.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-variable.php"
+        },
+        {
+            "id": "constant-unpack",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-unpack.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-unpack.php"
+        },
+        {
+            "id": "constant-order",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \",\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-order.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-order.php"
+        },
+        {
+            "id": "constant-method",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-method.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-method.php"
+        },
+        {
+            "id": "constant-name",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-name.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-name.php"
+        },
+        {
+            "id": "constant-traversal",
+            "version": "8.5",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-traversal.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-traversal.php"
+        },
+        {
+            "id": "basic",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-basic.php"
+        },
+        {
+            "id": "multiple",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-multiple.php"
+        },
+        {
+            "id": "mixed",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-mixed.php"
+        },
+        {
+            "id": "named",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-named.php"
+        },
+        {
+            "id": "named-required",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-named-required.php"
+        },
+        {
+            "id": "trailing",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-trailing.php"
+        },
+        {
+            "id": "fcc-trailing",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-fcc-trailing.php"
+        },
+        {
+            "id": "method",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-method.php"
+        },
+        {
+            "id": "static",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-static.php"
+        },
+        {
+            "id": "dynamic",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-dynamic.php"
+        },
+        {
+            "id": "nested",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-nested.php"
+        },
+        {
+            "id": "invoke",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-invoke.php"
+        },
+        {
+            "id": "clone",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-clone.php"
+        },
+        {
+            "id": "clone-bound",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-bound.php"
+        },
+        {
+            "id": "clone-array",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-array.php"
+        },
+        {
+            "id": "clone-named",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-named.php"
+        },
+        {
+            "id": "clone-trailing",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-trailing.php"
+        },
+        {
+            "id": "default",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-default.php"
+        },
+        {
+            "id": "constant",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-constant.php"
+        },
+        {
+            "id": "static-constant",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-static-constant.php"
+        },
+        {
+            "id": "named-constant",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-named-constant.php"
+        },
+        {
+            "id": "attribute-value",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-attribute-value.php"
+        },
+        {
+            "id": "discarded-order",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-order.php"
+        },
+        {
+            "id": "discarded-constructor",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-constructor.php"
+        },
+        {
+            "id": "discarded-nullsafe",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-nullsafe.php"
+        },
+        {
+            "id": "discarded-attribute",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-discarded-attribute.php"
+        },
+        {
+            "id": "ordinary-folding",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-ordinary-folding.php"
+        },
+        {
+            "id": "ordinary-control",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-ordinary-control.php"
+        },
+        {
+            "id": "unpack-control",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-unpack-control.php"
+        },
+        {
+            "id": "fcc-control",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-fcc-control.php"
+        },
+        {
+            "id": "clone-unary-control",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-unary-control.php"
+        },
+        {
+            "id": "clone-comma-control",
+            "version": "8.6",
+            "exit": 0,
+            "output": "No syntax errors detected in <repository>/tests/fixtures/php/8.6/valid/pfa-clone-comma-control.php"
+        },
+        {
+            "id": "named-ellipsis",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"...\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-named-ellipsis.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-named-ellipsis.php"
+        },
+        {
+            "id": "double-question",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"??\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-double-question.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-double-question.php"
+        },
+        {
+            "id": "placeholder-expression",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"+\", expecting \")\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-placeholder-expression.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-placeholder-expression.php"
+        },
+        {
+            "id": "outside-list",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-outside-list.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-outside-list.php"
+        },
+        {
+            "id": "missing-comma",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"?\", expecting \")\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-missing-comma.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-missing-comma.php"
+        },
+        {
+            "id": "extra-comma",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \",\", expecting \")\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-extra-comma.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-extra-comma.php"
+        },
+        {
+            "id": "named-unpack",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"...\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-named-unpack.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-named-unpack.php"
+        },
+        {
+            "id": "reference-placeholder",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Parse error: syntax error, unexpected token \"&\" in <repository>/tests/fixtures/php/8.6/invalid/pfa-reference-placeholder.php on line 2\nErrors parsing <repository>/tests/fixtures/php/8.6/invalid/pfa-reference-placeholder.php"
+        },
+        {
+            "id": "variadic-repeat",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Variadic placeholder may only appear once in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-repeat.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-repeat.php"
+        },
+        {
+            "id": "variadic-first",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Variadic placeholder must be last in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-first.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-first.php"
+        },
+        {
+            "id": "named-order",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Cannot use positional argument after named argument in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-named-order.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-named-order.php"
+        },
+        {
+            "id": "variadic-named",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Variadic placeholder must be last in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-named.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-named.php"
+        },
+        {
+            "id": "variadic-bound",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Variadic placeholder must be last in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-bound.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-bound.php"
+        },
+        {
+            "id": "unpack-first",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Cannot combine partial application and unpacking in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-first.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-first.php"
+        },
+        {
+            "id": "unpack-last",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Cannot combine partial application and unpacking in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-last.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-last.php"
+        },
+        {
+            "id": "constructor",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Cannot create Closure for new expression in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constructor.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constructor.php"
+        },
+        {
+            "id": "anonymous-constructor",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Cannot create Closure for new expression in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-anonymous-constructor.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-anonymous-constructor.php"
+        },
+        {
+            "id": "nullsafe",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Cannot combine nullsafe operator with Closure creation in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-nullsafe.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-nullsafe.php"
+        },
+        {
+            "id": "attribute",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Cannot create Closure as attribute argument in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-attribute.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-attribute.php"
+        },
+        {
+            "id": "constant-variable",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Constant expression contains invalid operations in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-variable.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-variable.php"
+        },
+        {
+            "id": "constant-unpack",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Argument unpacking in constant expressions is not supported in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-unpack.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-unpack.php"
+        },
+        {
+            "id": "constant-order",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Variadic placeholder must be last in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-order.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-order.php"
+        },
+        {
+            "id": "constant-method",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Constant expression contains invalid operations in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-method.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-method.php"
+        },
+        {
+            "id": "constant-name",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: Cannot use dynamic function name in constant expression in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-name.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-name.php"
+        },
+        {
+            "id": "constant-traversal",
+            "version": "8.6",
+            "exit": 255,
+            "output": "Fatal error: The (unset) cast is no longer supported in <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-traversal.php on line 2\nStack trace:\n#0 {main}\nErrors parsing <repository>/tests/fixtures/php/8.6/contextual-invalid/pfa-constant-traversal.php"
+        }
+    ],
+    "interpreters": {
+        "8.5": {
+            "exit": 0,
+            "output": "PHP 8.5.10 (cli) (built: Aug 25 2026 21:23:48) (NTS Visual C++ 2022 x64)\nCopyright (c) The PHP Group\nBuilt by The PHP Group\nZend Engine v4.5.10, Copyright (c) Zend Technologies\n    with Zend OPcache v8.5.10, Copyright (c), by Zend Technologies"
+        },
+        "8.6": {
+            "exit": 0,
+            "output": "PHP 8.6.0RC4 (cli) (built: Oct 25 2026 12:45:36) (NTS Visual C++ 2022 x64)\nCopyright \u00a9 The PHP Group and Contributors\nZend Engine v4.6.0RC4, Copyright \u00a9 Zend by Perforce\n    with Zend OPcache v8.6.0RC4, Copyright \u00a9, by Zend by Perforce"
+        }
+    },
+    "errors": []
+}

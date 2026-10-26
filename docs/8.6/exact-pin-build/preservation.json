@@ -1,0 +1,16 @@
+{
+  "baselineFiles": 2458,
+  "unchanged": 2456,
+  "changes": {
+    "tools/8.6/certification.php": {
+      "before": "b244bb2b165699c617f600f4a146f41fc280492157bf8870bd100b585dbd5e43",
+      "after": "74eaf0411721a19766a92a60616bb05f45a30484dd3977c9af3dcfcc43594e93"
+    },
+    "tools/lib/Certification86.php": {
+      "before": "b5bb43c0d7eb05bd089f10c802f2a95dcf151a6c1fd4acdda7d46a5e5a149bf2",
+      "after": "50408facbb5ee59c9c4b342027016bca560fecdac751881bb3731cc78c63d139"
+    }
+  },
+  "unexpectedChanges": [],
+  "scope": "Only additive opt-in provenance dispatch in existing Phase 7A tooling. All original grammar, specification, fixtures, source locks, historical evidence, and prior compatibility revisions remain byte-identical."
+}

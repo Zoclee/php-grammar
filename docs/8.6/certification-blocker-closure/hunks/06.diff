@@ -1,0 +1,11 @@
+@@ -7704,9 +8360,9 @@ static bool zend_property_hook_uses_property(zend_string *property_name, zend_st
+ 	zend_property_hook_find_property_usage(&hook_ast, &context);
+ 	return context.uses_property;
+ }
+ 
+-static bool zend_property_is_virtual(zend_class_entry *ce, zend_string *property_name, zend_ast *hooks_ast, uint32_t flags)
++static bool zend_property_is_virtual(const zend_class_entry *ce, const zend_string *property_name, zend_ast *hooks_ast)
+ {
+ 	if (ce->ce_flags & ZEND_ACC_INTERFACE) {
+ 		return true;
+ 	}

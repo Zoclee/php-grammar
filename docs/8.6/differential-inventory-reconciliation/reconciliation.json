@@ -1,0 +1,1465 @@
+{
+  "predecessor": {
+    "path": "docs/8.6/source-audit-boundaries.json",
+    "sha256": "262e9549c65c36d8e75930bd6c14e9c8b7dbbdfe50f98a8c62e732f9a59e0f04",
+    "date": "2026-10-24",
+    "profileSha256": "c545e69850c3d8af1cd2edef4d1682ad07232a231b7f49a06657538ccdf1db0a",
+    "outcomesChanged": false
+  },
+  "originalCaseCount": 313,
+  "currentCaseCount": 339,
+  "added": [
+    "tests/fixtures/php/8.6/invalid/cc9-coverage-alias-missing.php",
+    "tests/fixtures/php/8.6/invalid/cc9-coverage-alternative-separator.php",
+    "tests/fixtures/php/8.6/invalid/cc9-coverage-hook-terminator.php",
+    "tests/fixtures/php/8.6/invalid/cc9-coverage-type-missing.php",
+    "tests/fixtures/php/8.6/invalid/cc9-coverage-yield-missing.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-alias-keywords.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-alias-return.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-alternative-elseif.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-discarded-types.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-equality.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-magic-property.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-matched-declare.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-matched-loops.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-members.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-namespace-braces.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-namespace.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-nested-attribute.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-prefix-concat.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-prefix-pipe.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-promotions.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-return-types.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-type-intersection.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-type-reference-control.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-types.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-unmatched-nesting.php",
+    "tests/fixtures/php/8.6/valid/cc9-coverage-yield-key.php"
+  ],
+  "missing": [],
+  "changedOriginalCases": [],
+  "additionClassifications": {
+    "accepted-in-lint-and-structure": 20,
+    "accepted-discarded-declaration": 1,
+    "structural-or-lexical-adapter-rejection": 5
+  },
+  "newCases": [
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-alias-return.php",
+      "sha256": "6894e30c2b95978d10315cb9a56e5127a94956790a962ec6a3d82fd8264bf6e6",
+      "origin": "phase7c9",
+      "id": "alias-return",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/0",
+        "sources": [
+          {
+            "id": "parser-aliases",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 305,
+            "end": 325,
+            "sliceSha256": "1c6e0239dacf3d5aa27d832f7fc9692f5bca55d16bff4c01bbe79c00916ccd1d"
+          },
+          {
+            "id": "parser-trait-alias",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1039,
+            "end": 1055,
+            "sliceSha256": "18cbd202470ef8b02725e4e7a3d8fd64d05ae9a2682fc300e5c70856b4c79238"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "alias-return"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-alias-keywords.php",
+      "sha256": "6e697d0db239b7690ef76ddd2a0b2449b3a0abf0bbfc49557e03b791b0359fa9",
+      "origin": "phase7c9",
+      "id": "alias-keywords",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/1",
+        "sources": [
+          {
+            "id": "parser-aliases",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 305,
+            "end": 325,
+            "sliceSha256": "1c6e0239dacf3d5aa27d832f7fc9692f5bca55d16bff4c01bbe79c00916ccd1d"
+          },
+          {
+            "id": "parser-trait-alias",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1039,
+            "end": 1055,
+            "sliceSha256": "18cbd202470ef8b02725e4e7a3d8fd64d05ae9a2682fc300e5c70856b4c79238"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "alias-keywords"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-types.php",
+      "sha256": "9550ec1994303e6e763237be3af7508d9f5e069adc7420b693d6c8e1355d9d07",
+      "origin": "phase7c9",
+      "id": "types",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/2",
+        "sources": [
+          {
+            "id": "parser-types",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 805,
+            "end": 899,
+            "sliceSha256": "67ea13fd2a56b4440eca7bf889bfc58e549c579d2d6d0564a4e4934d84ad9061"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "types"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-return-types.php",
+      "sha256": "02d0dadfbe233f8aea4ab64e2ba032b1588f2f04d51838470c6f9fe72591f24e",
+      "origin": "phase7c9",
+      "id": "return-types",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/3",
+        "sources": [
+          {
+            "id": "parser-types",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 805,
+            "end": 899,
+            "sliceSha256": "67ea13fd2a56b4440eca7bf889bfc58e549c579d2d6d0564a4e4934d84ad9061"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "return-types"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-discarded-types.php",
+      "sha256": "b944a0a0627e857dac111eada72a9924ab2fe22d7e2144aecc47843d7670e641",
+      "origin": "phase7c9",
+      "id": "discarded-types",
+      "kind": "valid",
+      "classification": "accepted-discarded-declaration",
+      "stage": "lint; enclosing declaration discarded before parameter constraints",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/4",
+        "sources": [
+          {
+            "id": "parser-types",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 805,
+            "end": 899,
+            "sliceSha256": "67ea13fd2a56b4440eca7bf889bfc58e549c579d2d6d0564a4e4934d84ad9061"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "discarded-types"
+      },
+      "inclusion": "Ordinary whole-source structural witness with exact lint acceptance after discard; not evidence that live never/void/self/parent parameters are generally valid."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-type-intersection.php",
+      "sha256": "d8134e95c733c25e0417a90cbb15e06f97431adf64ef358ebc0800b368148d89",
+      "origin": "phase7c9",
+      "id": "type-intersection",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/5",
+        "sources": [
+          {
+            "id": "parser-types",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 805,
+            "end": 899,
+            "sliceSha256": "67ea13fd2a56b4440eca7bf889bfc58e549c579d2d6d0564a4e4934d84ad9061"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "type-intersection"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-members.php",
+      "sha256": "c324bb5b856da53431a3342ac3e44a337527429e9f7ea2bdd539067d3ae67355",
+      "origin": "phase7c9",
+      "id": "members",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/6",
+        "sources": [
+          {
+            "id": "parser-members",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 984,
+            "end": 1012,
+            "sliceSha256": "1c053fbfcb9c96829af0cad705b32baf3fb288ceed7559e311574dd119efaccb"
+          },
+          {
+            "id": "parser-hooks",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1139,
+            "end": 1220,
+            "sliceSha256": "75809307f9692d063d9cde24d208a11e0908b53b067e825a6bdd75c84fa4ec38"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "members"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-promotions.php",
+      "sha256": "571b6f5f563e78811df3c8c737487b4fad565af4951c25477a1621c5ab674e23",
+      "origin": "phase7c9",
+      "id": "promotions",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/7",
+        "sources": [
+          {
+            "id": "parser-types",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 805,
+            "end": 899,
+            "sliceSha256": "67ea13fd2a56b4440eca7bf889bfc58e549c579d2d6d0564a4e4934d84ad9061"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "promotions"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-nested-attribute.php",
+      "sha256": "7306f8d780a28018a949547d34e9c4ef7b1c5b77b3fe59307857bc8d90bdd67f",
+      "origin": "phase7c9",
+      "id": "nested-attribute",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/8",
+        "sources": [
+          {
+            "id": "parser-attributes",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 359,
+            "end": 400,
+            "sliceSha256": "2f40b0c99e79a5027694c49cbb2acd35cda60d3097594c5b5e537d4377aee744"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "nested-attribute"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-namespace.php",
+      "sha256": "96cfe8c7f06f605dfde2095c06e59c3199d57098ecd16e0b2152a337cca02c8c",
+      "origin": "phase7c9",
+      "id": "namespace",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/9",
+        "sources": [
+          {
+            "id": "parser-namespace",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 401,
+            "end": 442,
+            "sliceSha256": "7f0215544d510e7f42142974563cce713f6c00fade2d2a3cef3c779adf4b53e8"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "namespace"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-namespace-braces.php",
+      "sha256": "f20c0c7be5a512b61eb111c6fe9b22d02c95b008f85dda9500fd0437f3cd4061",
+      "origin": "phase7c9",
+      "id": "namespace-braces",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/10",
+        "sources": [
+          {
+            "id": "parser-namespace",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 401,
+            "end": 442,
+            "sliceSha256": "7f0215544d510e7f42142974563cce713f6c00fade2d2a3cef3c779adf4b53e8"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "namespace-braces"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-equality.php",
+      "sha256": "a3a0b5ef10a2fb0f4a448568ac7f63eded63ccf9d6e49988327853baa0971788",
+      "origin": "phase7c9",
+      "id": "equality",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/11",
+        "sources": [
+          {
+            "id": "parser-operators",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1300,
+            "end": 1387,
+            "sliceSha256": "c69c6e873d5ea323e8daac714a42e0fcaed8c5a07542e04e7f8fc554204ce045"
+          },
+          {
+            "id": "parser-precedence",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 60,
+            "end": 85,
+            "sliceSha256": "e4b24c35e28d602314765122e8cc7c4af90483429cd5c5478581ae906792bcf9"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "equality"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-magic-property.php",
+      "sha256": "329a8b6b04c33b416750686144cdf7c13985f693fd4e70d1a24c4a31e909016d",
+      "origin": "phase7c9",
+      "id": "magic-property",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/12",
+        "sources": [
+          {
+            "id": "parser-magic",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1505,
+            "end": 1519,
+            "sliceSha256": "f464c8095d992576d16bb40e8258f8dd83c8bf566c4274c49c6fad2c8ceb907f"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "magic-property"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-matched-loops.php",
+      "sha256": "50e7a66e0232c146f112f0eb1845f1614828c489ea26d2c2edb7415cd8add8a9",
+      "origin": "phase7c9",
+      "id": "matched-loops",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/13",
+        "sources": [
+          {
+            "id": "parser-statements",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 507,
+            "end": 582,
+            "sliceSha256": "09e4feff9e98c90b66e32e61a2a1ee43a68485520807526e61c9d7ba522d81fb"
+          },
+          {
+            "id": "parser-if",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 759,
+            "end": 792,
+            "sliceSha256": "1d9759042b3b743c7cddca5c23d54aba196ebe6ab91b69572caf9caf5721e92d"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "matched-loops"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-matched-declare.php",
+      "sha256": "23eee38eb91f6bbfea08100b9a6cc54fea05875a2987e41ea3b7b5f01c5beb42",
+      "origin": "phase7c9",
+      "id": "matched-declare",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/14",
+        "sources": [
+          {
+            "id": "parser-statements",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 507,
+            "end": 582,
+            "sliceSha256": "09e4feff9e98c90b66e32e61a2a1ee43a68485520807526e61c9d7ba522d81fb"
+          },
+          {
+            "id": "parser-if",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 759,
+            "end": 792,
+            "sliceSha256": "1d9759042b3b743c7cddca5c23d54aba196ebe6ab91b69572caf9caf5721e92d"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "matched-declare"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-alternative-elseif.php",
+      "sha256": "6253049ebd60fb60273f0b7f9b6e1840b7915add4bbd79eb2fd680f0f346ce03",
+      "origin": "phase7c9",
+      "id": "alternative-elseif",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/15",
+        "sources": [
+          {
+            "id": "parser-if",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 759,
+            "end": 792,
+            "sliceSha256": "1d9759042b3b743c7cddca5c23d54aba196ebe6ab91b69572caf9caf5721e92d"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "alternative-elseif"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-yield-key.php",
+      "sha256": "6a27d42e7b9f20bb5da1b33c362772103da412da5f9f258994cae7feaffd940d",
+      "origin": "phase7c9",
+      "id": "yield-key",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/16",
+        "sources": [
+          {
+            "id": "parser-operators",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1300,
+            "end": 1387,
+            "sliceSha256": "c69c6e873d5ea323e8daac714a42e0fcaed8c5a07542e04e7f8fc554204ce045"
+          },
+          {
+            "id": "parser-precedence",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 60,
+            "end": 85,
+            "sliceSha256": "e4b24c35e28d602314765122e8cc7c4af90483429cd5c5478581ae906792bcf9"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "yield-key"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-prefix-concat.php",
+      "sha256": "8add344166d5ff6ba5275f1df830a268731a4745e8de933f389c6c71273ea03a",
+      "origin": "phase7c9",
+      "id": "prefix-concat",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/17",
+        "sources": [
+          {
+            "id": "parser-operators",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1300,
+            "end": 1387,
+            "sliceSha256": "c69c6e873d5ea323e8daac714a42e0fcaed8c5a07542e04e7f8fc554204ce045"
+          },
+          {
+            "id": "parser-precedence",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 60,
+            "end": 85,
+            "sliceSha256": "e4b24c35e28d602314765122e8cc7c4af90483429cd5c5478581ae906792bcf9"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "prefix-concat"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-prefix-pipe.php",
+      "sha256": "9d94a5350584ba30d5e072586e3f571ff3ee2a3c43e441dac9dddf1eb580898c",
+      "origin": "phase7c9",
+      "id": "prefix-pipe",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/18",
+        "sources": [
+          {
+            "id": "parser-operators",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1300,
+            "end": 1387,
+            "sliceSha256": "c69c6e873d5ea323e8daac714a42e0fcaed8c5a07542e04e7f8fc554204ce045"
+          },
+          {
+            "id": "parser-precedence",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 60,
+            "end": 85,
+            "sliceSha256": "e4b24c35e28d602314765122e8cc7c4af90483429cd5c5478581ae906792bcf9"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "prefix-pipe"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-unmatched-nesting.php",
+      "sha256": "f1eacd5e82405f175c46879e2cfe6da082a83dc1024af76af3688d5a55d68402",
+      "origin": "phase7c9",
+      "id": "unmatched-nesting",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/19",
+        "sources": [
+          {
+            "id": "parser-statements",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 507,
+            "end": 582,
+            "sliceSha256": "09e4feff9e98c90b66e32e61a2a1ee43a68485520807526e61c9d7ba522d81fb"
+          },
+          {
+            "id": "parser-if",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 759,
+            "end": 792,
+            "sliceSha256": "1d9759042b3b743c7cddca5c23d54aba196ebe6ab91b69572caf9caf5721e92d"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "unmatched-nesting"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/valid/cc9-coverage-type-reference-control.php",
+      "sha256": "b8cafb396ac4d077a838b8f540f0608528c9c9691a7303daa810945a66b8f052",
+      "origin": "phase7c9",
+      "id": "type-reference-control",
+      "kind": "valid",
+      "classification": "accepted-in-lint-and-structure",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": true,
+        "lintExit": 0,
+        "diagnostics": []
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/20",
+        "sources": [
+          {
+            "id": "parser-types",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 805,
+            "end": 899,
+            "sliceSha256": "67ea13fd2a56b4440eca7bf889bfc58e549c579d2d6d0564a4e4934d84ad9061"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "type-reference-control"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-alias-missing.php",
+      "sha256": "64e95c1ce58ab99d9dbd24dd211a6c7ee28678edc42322e03279172654894f59",
+      "origin": "phase7c9",
+      "id": "alias-missing",
+      "kind": "invalid",
+      "classification": "structural-or-lexical-adapter-rejection",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": false,
+        "lintExit": 255,
+        "diagnostics": [
+          "Parse error: syntax error, unexpected token \";\""
+        ]
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/21",
+        "sources": [
+          {
+            "id": "parser-aliases",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 305,
+            "end": 325,
+            "sliceSha256": "1c6e0239dacf3d5aa27d832f7fc9692f5bca55d16bff4c01bbe79c00916ccd1d"
+          },
+          {
+            "id": "parser-trait-alias",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1039,
+            "end": 1055,
+            "sliceSha256": "18cbd202470ef8b02725e4e7a3d8fd64d05ae9a2682fc300e5c70856b4c79238"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "alias-missing"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-type-missing.php",
+      "sha256": "ecfa7d553b89c9d693605a9c09a987c9761732da785f57ab9fc8ea42d2b3a74e",
+      "origin": "phase7c9",
+      "id": "type-missing",
+      "kind": "invalid",
+      "classification": "structural-or-lexical-adapter-rejection",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": false,
+        "lintExit": 255,
+        "diagnostics": [
+          "Parse error: syntax error, unexpected token \"|\""
+        ]
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/22",
+        "sources": [
+          {
+            "id": "parser-types",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 805,
+            "end": 899,
+            "sliceSha256": "67ea13fd2a56b4440eca7bf889bfc58e549c579d2d6d0564a4e4934d84ad9061"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "type-missing"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-yield-missing.php",
+      "sha256": "095ce64404b503b9968f8c3ac1c32c9039b30c6eade4362d59c371972577560d",
+      "origin": "phase7c9",
+      "id": "yield-missing",
+      "kind": "invalid",
+      "classification": "structural-or-lexical-adapter-rejection",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": false,
+        "lintExit": 255,
+        "diagnostics": [
+          "Parse error: syntax error, unexpected token \";\""
+        ]
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/23",
+        "sources": [
+          {
+            "id": "parser-operators",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1300,
+            "end": 1387,
+            "sliceSha256": "c69c6e873d5ea323e8daac714a42e0fcaed8c5a07542e04e7f8fc554204ce045"
+          },
+          {
+            "id": "parser-precedence",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 60,
+            "end": 85,
+            "sliceSha256": "e4b24c35e28d602314765122e8cc7c4af90483429cd5c5478581ae906792bcf9"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "yield-missing"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-hook-terminator.php",
+      "sha256": "d75f88f4c24958f1cb397914cfe7f9469c0a9687c41f29bcace609bb858332f0",
+      "origin": "phase7c9",
+      "id": "hook-terminator",
+      "kind": "invalid",
+      "classification": "structural-or-lexical-adapter-rejection",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": false,
+        "lintExit": 255,
+        "diagnostics": [
+          "Parse error: syntax error, unexpected token \"}\""
+        ]
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/24",
+        "sources": [
+          {
+            "id": "parser-members",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 984,
+            "end": 1012,
+            "sliceSha256": "1c053fbfcb9c96829af0cad705b32baf3fb288ceed7559e311574dd119efaccb"
+          },
+          {
+            "id": "parser-hooks",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 1139,
+            "end": 1220,
+            "sliceSha256": "75809307f9692d063d9cde24d208a11e0908b53b067e825a6bdd75c84fa4ec38"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "hook-terminator"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    },
+    {
+      "fixture": "tests/fixtures/php/8.6/invalid/cc9-coverage-alternative-separator.php",
+      "sha256": "e9989c37823822aed56b216410e69a467bcf46c628a60e00137447433fa8cf9e",
+      "origin": "phase7c9",
+      "id": "alternative-separator",
+      "kind": "invalid",
+      "classification": "structural-or-lexical-adapter-rejection",
+      "stage": "lint (parser/compiler combined)",
+      "expected": {
+        "lexicalAccepted": true,
+        "structuralAccepted": false,
+        "lintExit": 255,
+        "diagnostics": [
+          "Parse error: syntax error, unexpected token \"else\", expecting \",\" or \";\""
+        ]
+      },
+      "sourceEvidence": {
+        "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "manifest": "tests/fixtures/php/8.6/context-coverage-cases.json#/coverage/25",
+        "sources": [
+          {
+            "id": "parser-if",
+            "path": "Zend/zend_language_parser.y",
+            "fileSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+            "start": 759,
+            "end": 792,
+            "sliceSha256": "1d9759042b3b743c7cddca5c23d54aba196ebe6ab91b69572caf9caf5721e92d"
+          }
+        ],
+        "observationReport": "docs/8.6/context-coverage-closure/observations-verified.json",
+        "observationId": "alternative-separator"
+      },
+      "inclusion": "Existing ordinary corpus member with reviewed structural and exact-source lint expectation."
+    }
+  ],
+  "separateInventories": [
+    {
+      "group": "context",
+      "id": "variadic-default-repair",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-variadic-default-repair.php",
+      "sha256": "fb327361870507c40e09f0b6a19860b3ea15f2de78526ccdaa7588c74b93d66f",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "variadic-default-live",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-variadic-default-live.php",
+      "sha256": "94fc8741aa31c6406387247584bd6c0242072e78bc523ecccea12e4a12614b0b",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "variadic-default-retained",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-variadic-default-retained.php",
+      "sha256": "0a0cc4d9f9ec30495dc5a6b10f2e9cb0615d50be0bde4e18904e3c3484e9cb7c",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "variadic-default-discarded",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-variadic-default-discarded.php",
+      "sha256": "bf0f660140efce107971b75464ddd7c457095f865de4db2de376faf444458580",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "variadic-default-unreachable",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-variadic-default-unreachable.php",
+      "sha256": "d5b943e30b6f9edf2a562003c08d4d526975ded54a3a20f1b70f95bdd6ee5079",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "duplicate-parameter-repair",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-parameter-repair.php",
+      "sha256": "d00f28108ed60e694782c2a8a0fa0afeb6f9e0421f1c4679883dedd42065e714",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "duplicate-parameter-live",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-parameter-live.php",
+      "sha256": "148814e40651017fca651b234a667851605a1a9d90d3b2f60be05c1d7e1aae7e",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "duplicate-parameter-retained",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-parameter-retained.php",
+      "sha256": "6db2a932871e01dbb08016bf96ae631f83ba0cffbad083a7d6fb43f13160d298",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "duplicate-parameter-discarded",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-parameter-discarded.php",
+      "sha256": "f7d1a9a819ae72b10cf771871350c95e244fdbd8d9ff5d7018374b18c0f9bce9",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "duplicate-parameter-unreachable",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-parameter-unreachable.php",
+      "sha256": "03ade5a3f256509cd340cb10fe2e4a683d27c83486b82dbbedd8496f731bf359",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "empty-hooks-repair",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-empty-hooks-repair.php",
+      "sha256": "553deb56255e045550fe8af7a9605994f5250bb8273a83e05e4945b2e1b7bf7b",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "empty-hooks-live",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-empty-hooks-live.php",
+      "sha256": "1eed1f258967ef8fb7a94e030fd6c06a61a52369cecfe8749f7fb195497188c7",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "empty-hooks-retained",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-empty-hooks-retained.php",
+      "sha256": "6dcb60d894e00f95378616b21f4cefea016d36bf0fbf899b1228d020a3edbea8",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "empty-hooks-discarded",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-empty-hooks-discarded.php",
+      "sha256": "5ad0cb41160509de744743fc8f0e72000bb9a86eb7b94980d361c21b5d7babf6",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "empty-hooks-unreachable",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-empty-hooks-unreachable.php",
+      "sha256": "9e697926046a0bb3bc79c26fb0e5e94347d1955aa6bc2cabd72817722b117020",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "duplicate-hooks-repair",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-hooks-repair.php",
+      "sha256": "ac432620c64db46f0edb36abebffccaa89850aab973265601e0266c6413667f3",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "duplicate-hooks-live",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-hooks-live.php",
+      "sha256": "5eda587f1ed081c055ef5106b145367661ef30092f2d90d4f480d66331b429ce",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "duplicate-hooks-retained",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-hooks-retained.php",
+      "sha256": "f8990ea16cf0313629c06ba522a70a86cf6bdd604cb043bba55819a5ed55962d",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "duplicate-hooks-discarded",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-hooks-discarded.php",
+      "sha256": "d71bf17636e6ace41e04ef2e0d984a6c738de0c8e20ee1a8de512bbb9443a588",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "duplicate-hooks-unreachable",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-duplicate-hooks-unreachable.php",
+      "sha256": "a665bea22b197d7274630c2487124d677b738a4b13800db3dad08503da88d5fb",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "get-parentheses-repair",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-get-parentheses-repair.php",
+      "sha256": "553deb56255e045550fe8af7a9605994f5250bb8273a83e05e4945b2e1b7bf7b",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "get-parentheses-live",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-get-parentheses-live.php",
+      "sha256": "160e4946cbf9ac25a0a01d642db6ad77f8b2ab2866629c5b2c493a2d0e1c61d9",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "get-parentheses-retained",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-get-parentheses-retained.php",
+      "sha256": "baa08ba7dbbc831297607f286edb4231e7a69fc3f0f88fc436d125d35d72934a",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "get-parentheses-discarded",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-get-parentheses-discarded.php",
+      "sha256": "9a167d6bafc7dba0c103691a4a2f75ba63cf54e41ca7c40f106b632bd0947142",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "get-parentheses-unreachable",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-get-parentheses-unreachable.php",
+      "sha256": "397c001fd60a168096d89981c904208cebb1a4d9c670c9e352827cc2117ea5e5",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "enum-backing-repair",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-enum-backing-repair.php",
+      "sha256": "4acc076e0634de240131fda14bc4e80d6269ef361609f165b43e1a38bed25d23",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "enum-backing-live",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-enum-backing-live.php",
+      "sha256": "43df73dd6cc40f3076f93b32d54a7b6598d53bb10a19f28736ba1f4cdc0ead28",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "enum-backing-retained",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-enum-backing-retained.php",
+      "sha256": "55ca9efadec93a6b7ee55c4374379b297d0e68c77c065e078e64d9a3cfd132ca",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "enum-backing-discarded",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-enum-backing-discarded.php",
+      "sha256": "ed93a6e7127cf780bdb07fe7ca2a5fe960157f987a4b0a7b0e954b4bbcefc21f",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "enum-backing-unreachable",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-enum-backing-unreachable.php",
+      "sha256": "e73ba5ae9dc616e32b8e03b9af86763b57bed47862578a2fad7abea2635c9cb2",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "bare-try-repair",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-bare-try-repair.php",
+      "sha256": "6d03c27e4a0cf562e7ec80ec7c9e8f68dd7169fdf060938f24a26ae815006363",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "bare-try-live",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-bare-try-live.php",
+      "sha256": "b5618a527c7224a0ab2fa2c7301604db2a53a908667e68e40b303b7ef36a472e",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "bare-try-retained",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-bare-try-retained.php",
+      "sha256": "cd3116c6df039b0516b436d9f67e82a4916e8f09ff606acce8786526bd3a1bef",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "bare-try-discarded",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-bare-try-discarded.php",
+      "sha256": "157f5702422d416f8dcb26864d603e6b6e7db569800e25d638df9182864117a3",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "context",
+      "id": "bare-try-unreachable",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-context-bare-try-unreachable.php",
+      "sha256": "6f9f17b82cedbcb1404d26a8c99d61bd814cb7ea4b911131521622a548adda34",
+      "stage": "lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "attribute-close",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-attribute-close.php",
+      "sha256": "976cf07330e9618e67b52f7d9c5868a127bacbf34661f467de3996cfc7b6c578",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "property-keyword",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-property-keyword.php",
+      "sha256": "1b82e3c6e5c33392d7b3fdcf01ccd53f63eedb162ee6a2e24c75668771a5f5a2",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "pfa-trivia",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-pfa-trivia.php",
+      "sha256": "f9a20a8b3faf63988fe5accf51be9d3456948b47166f4ae8c49b8bd07e7b5f19",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "yield-comment",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-yield-comment.php",
+      "sha256": "5c1d18cb008229aa91d673d3fdf50af2bdffec2dd670d4f3e15a0fa85bee09f0",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "numeric-boundaries",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-numeric-boundaries.php",
+      "sha256": "008820d66b6cda0866ffe9fc1266ad91861aa5038097da13b885d9546ef5c7d0",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "offset-key",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-offset-key.php",
+      "sha256": "d19e031eabd94cc6dc7f2ffbf2b78b66efed26bf6c1ef03134a577b1d4a40917",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "legacy-name",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-legacy-name.php",
+      "sha256": "b1d0ec9256861f9559083b6d9fe1edecdf0304d695086904e941f539972f4d21",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "backtick-nesting",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-backtick-nesting.php",
+      "sha256": "b3b22162a03913c085176a683de38e351188d061d62a9078a9a6658695c4a703",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "heredoc-return",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-heredoc-return.php",
+      "sha256": "1a72f5f6f39f7f0e14dd75e672e8d63b5d656e0d279677e89a1905a7f776bbf1",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "nowdoc-literal",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-nowdoc-literal.php",
+      "sha256": "1823ef766d8d486babc9289b03a5ca7246ebebd69aa45267a58c53959434135f",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "short-disabled",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-short-disabled.php",
+      "sha256": "1a9619b5d095b44530689abcef4287be63dedfad80a595820f199549520b1875",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "bad-indent",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-bad-indent.php",
+      "sha256": "c1f23c015e8384cc1279d8c658505c2f862d129ec5e6138b476af81a4e8faec1",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "unicode-max",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-unicode-max.php",
+      "sha256": "30395ac6621b7c714ea4df92c6ae26ac994f88d396006043a5bc403079af53c0",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "scanner",
+      "id": "unicode-overflow",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-scanner-unicode-overflow.php",
+      "sha256": "69dfaa9b4ccb8e9e2c3e4cd0ab54684dcc7810903626b05d9e1a0d872f00b54c",
+      "stage": "lexical and lint",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "binding",
+      "id": "unary-power",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-unary-power.php",
+      "sha256": "6dc567f85da89e7ef0d907e4c96f2c662b7206afdd9ab77a7fb62453ec3999b7",
+      "stage": "native derivation and exact-source pre-optimizer opcode comparison",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "binding",
+      "id": "not-instanceof",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-not-instanceof.php",
+      "sha256": "c7acb49e12a5b4b76d456ba600dda836cb38877616357e6ab4c514006984a758",
+      "stage": "native derivation and exact-source pre-optimizer opcode comparison",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "binding",
+      "id": "yield-key-value",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-yield-key-value.php",
+      "sha256": "2299a72d5c7d6805ea7f19bb354517d1e49d6b589af93d39f02d2a8e551a29f5",
+      "stage": "native derivation and exact-source pre-optimizer opcode comparison",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "binding",
+      "id": "yield-from-assignment",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-yield-from-assignment.php",
+      "sha256": "7ab5e50705bac6983c954e8f8f8a29fb84259833f63ffcc00cde972e0888cadc",
+      "stage": "native derivation and exact-source pre-optimizer opcode comparison",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    },
+    {
+      "group": "binding",
+      "id": "pfa-argument",
+      "fixture": "tests/fixtures/php/8.6/context-coverage/cc9-binding-pfa-argument.php",
+      "sha256": "8f4042f2085fab73741c6c0024a16a2c22f8be7f992705184603ccbf2eca162c",
+      "stage": "native derivation and exact-source pre-optimizer opcode comparison",
+      "reason": "Dedicated stage/lexer/operand experiment; not an ordinary corpus addition."
+    }
+  ],
+  "originalExpectationRowsPreserved": true,
+  "allClassifications": {
+    "accepted-with-diagnostic": 11,
+    "accepted-in-lint-and-structure": 208,
+    "structural-or-lexical-adapter-rejection": 52,
+    "lexical-rejection": 3,
+    "deferred-declaration-link-rejection": 4,
+    "compiler-contextual-rejection": 60,
+    "accepted-discarded-declaration": 1
+  },
+  "execution": {
+    "cases": 339,
+    "lintObservations": 339,
+    "nativeLexicalObservations": 339,
+    "nativeStructuralObservations": 339,
+    "mismatches": [],
+    "lintExitCounts": {
+      "0": 224,
+      "255": 115
+    }
+  },
+  "stageLimits": [
+    "Lint combines parsing and compilation.",
+    "Four inherited deferred-link negatives retain their separate stage and are not expected to fail lint.",
+    "One new discarded-declaration positive does not authorize its parameter types in live declarations.",
+    "Ordinary fixtures are not executed at runtime; diagnostic messages are checked separately from exit status."
+  ],
+  "blockers": [
+    "PHP86-013",
+    "PHP86-014",
+    "PHP86-015",
+    "CA86-001",
+    "C6-CONTEXT",
+    "C6-COVERAGE",
+    "C6-PROVENANCE"
+  ],
+  "certificationGranted": false
+}

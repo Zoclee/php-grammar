@@ -1,0 +1,913 @@
+{
+  "contract": "Existing 36 obligations plus two separately verified opt-in prerequisites; no replacement",
+  "legacyGates": {
+    "manifest-schema": {
+      "obligation": "Validate schema, metadata paths, RC4 pin and draft/stable status.",
+      "actual": {
+        "obligation": "Validate schema, metadata paths, RC4 pin and draft/stable status.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "manifest",
+          "--sources86",
+          "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/manifest-schema.log",
+        "logSha256": "8d33e37fb7cfebb7e8ec69251ee37a3d55e642abd218ab930ec9e6998106be5e"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/manifest-schema.log",
+      "remainingDependency": null
+    },
+    "manifest-regressions": {
+      "obligation": "Exercise valid and invalid manifest contracts.",
+      "actual": {
+        "obligation": "Exercise valid and invalid manifest contracts.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "ToolManifestTest"
+        ],
+        "log": "docs/8.6/certification/logs/manifest-regressions.log",
+        "logSha256": "21c0ee940e6dc0217fa66b96ad690173e2fba06fa4bada1dcfb4c2b2ad127578"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/manifest-regressions.log",
+      "remainingDependency": null
+    },
+    "standalone-structure-parity": {
+      "obligation": "Load only 8.6; check EBNF structure/references, parity, version selection and CLI.",
+      "actual": {
+        "obligation": "Load only 8.6; check EBNF structure/references, parity, version selection and CLI.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "Php86IntegrationTest|VersionPackageConsistencyTest|RepositoryManifestTest"
+        ],
+        "log": "docs/8.6/certification/logs/standalone-structure-parity.log",
+        "logSha256": "d02a8d3e855d73262e366566ae52230b090c07b235b468ed50a5df3c75930751"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/standalone-structure-parity.log",
+      "remainingDependency": null
+    },
+    "positive-negative-fixtures": {
+      "obligation": "Run registered positive and structural-negative fixture providers.",
+      "actual": {
+        "obligation": "Run registered positive and structural-negative fixture providers.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "PhpConformanceFixtureTest"
+        ],
+        "log": "docs/8.6/certification/logs/positive-negative-fixtures.log",
+        "logSha256": "7a3bfc46dc200c28b65f6992525c3a981b1b5e0190e26d2a3c106bdb1b3a0e8a"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/positive-negative-fixtures.log",
+      "remainingDependency": null
+    },
+    "ordinary-differential": {
+      "obligation": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+      "actual": {
+        "obligation": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-boundaries.php",
+          "--php86",
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--report",
+          "docs/8.6/certification/boundaries.json"
+        ],
+        "log": "docs/8.6/certification/logs/ordinary-differential.log",
+        "logSha256": "1e858e2ec9a0260e8fc52fd1b2cb4ec93401e6ea55725a00a54cff9e4e68cc50"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/ordinary-differential.log",
+      "remainingDependency": null
+    },
+    "lexer-profiles": {
+      "obligation": "Compare version-specific token boundaries and both short-tag profiles with both distributions.",
+      "actual": {
+        "obligation": "Compare version-specific token boundaries and both short-tag profiles with both distributions.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/integration-check.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+          "--sources86=C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/integration.json"
+        ],
+        "log": "docs/8.6/certification/logs/lexer-profiles.log",
+        "logSha256": "90c92a8d896be6a42a85477c0dac0a6a12fe010994b96bb4eadf1a800420e29a"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/lexer-profiles.log",
+      "remainingDependency": null
+    },
+    "pfa-differential": {
+      "obligation": "Validate PFA positives, structural/contextual negatives and paired lint with pinned hashes.",
+      "actual": {
+        "obligation": "Validate PFA positives, structural/contextual negatives and paired lint with pinned hashes.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/pfa-check.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources=C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/pfa.json"
+        ],
+        "log": "docs/8.6/certification/logs/pfa-differential.log",
+        "logSha256": "7bd9a30c14871ab1be125157aa997320e374ade167a0b7f23216c11fbe263fdd"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/pfa-differential.log",
+      "remainingDependency": null
+    },
+    "contextual-differential": {
+      "obligation": "Check compiler, declaration-link and controlled-runtime expectations at their declared stage.",
+      "actual": {
+        "obligation": "Check compiler, declaration-link and controlled-runtime expectations at their declared stage.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/context-check.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+          "--sources86=C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/context.json"
+        ],
+        "log": "docs/8.6/certification/logs/contextual-differential.log",
+        "logSha256": "4c14401a51ee0d72efa6e56bc0f85f52a28d6e9d0f87f5ca5736179627e8424f"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/contextual-differential.log",
+      "remainingDependency": null
+    },
+    "diagnostic-differential": {
+      "obligation": "Separate warning presence/stage from rejection in both distributions.",
+      "actual": {
+        "obligation": "Separate warning presence/stage from rejection in both distributions.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/deprecation-check.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+          "--sources86=C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/deprecation.json"
+        ],
+        "log": "docs/8.6/certification/logs/diagnostic-differential.log",
+        "logSha256": "ad1c7ab8e7e36ba0abd7e95f1d97678561689cff76ac219270ab41da61a1192f"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/diagnostic-differential.log",
+      "remainingDependency": null
+    },
+    "version-boundaries": {
+      "obligation": "Discover structural/lint/link boundaries and verify paired outcomes and finding identity.",
+      "actual": {
+        "obligation": "Discover structural/lint/link boundaries and verify paired outcomes and finding identity.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/integration-check.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+          "--sources86=C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/integration.json"
+        ],
+        "log": "docs/8.6/certification/logs/version-boundaries.log",
+        "logSha256": "90c92a8d896be6a42a85477c0dac0a6a12fe010994b96bb4eadf1a800420e29a"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/version-boundaries.log",
+      "remainingDependency": null
+    },
+    "coverage-measurement": {
+      "obligation": "Measure actual 8.6 production/alternative witnesses and compare source-backed lexical cases.",
+      "actual": {
+        "obligation": "Measure actual 8.6 production/alternative witnesses and compare source-backed lexical cases.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/final-coverage-expansion.php",
+          "--php85=C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "--php86=C:\\Data\\GitHub\\php-grammar\\.audit\\php86\\php.exe",
+          "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+          "--sources86=C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+          "--report=docs/8.6/certification/coverage-oracles.json",
+          "--coverage=docs/8.6/certification/coverage.json"
+        ],
+        "log": "docs/8.6/certification/logs/coverage-measurement.log",
+        "logSha256": "cab22ac107cc3080c397333ac111f1647f886775313e8734bc30844f360f0d51"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/coverage-measurement.log",
+      "remainingDependency": null
+    },
+    "parser-scanner-correspondence": {
+      "obligation": "Recompute the 176-production/623-alternative and 190-header inventories, source locks and mappings.",
+      "actual": {
+        "obligation": "Recompute the 176-production/623-alternative and 190-header inventories, source locks and mappings.",
+        "status": "failed",
+        "exit_code": 1,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/source-completeness-audit.php",
+          "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+          "--sources86=C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+          "--check"
+        ],
+        "log": "docs/8.6/certification/logs/parser-scanner-correspondence.log",
+        "logSha256": "41265a6a900ed9790f754361d6741b4749774625e5376483798ad850326740a8"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/parser-scanner-correspondence.log",
+      "remainingDependency": "H86-AUDIT-FRESHNESS"
+    },
+    "compiler-contextual-reconciliation": {
+      "obligation": "Verify bounded semantic groups, inventories, source references and preserved uncertainties.",
+      "actual": {
+        "obligation": "Verify bounded semantic groups, inventories, source references and preserved uncertainties.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "Php86CompilerContextualTest"
+        ],
+        "log": "docs/8.6/certification/logs/compiler-contextual-reconciliation.log",
+        "logSha256": "268469b725b70d28833a120fbaeeaf6940358fc6134f76eb5ee47714181e9138"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/compiler-contextual-reconciliation.log",
+      "remainingDependency": null
+    },
+    "rfc-implementation-traceability": {
+      "obligation": "Recompute all RFC candidate dispositions at the selected source pin; no RFC-only permission.",
+      "actual": {
+        "obligation": "Recompute all RFC candidate dispositions at the selected source pin; no RFC-only permission.",
+        "status": "failed",
+        "exit_code": 1,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/source-completeness-audit.php",
+          "--sources85=C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+          "--sources86=C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+          "--check"
+        ],
+        "log": "docs/8.6/certification/logs/rfc-implementation-traceability.log",
+        "logSha256": "41265a6a900ed9790f754361d6741b4749774625e5376483798ad850326740a8"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/rfc-implementation-traceability.log",
+      "remainingDependency": "H86-AUDIT-FRESHNESS"
+    },
+    "production-change-traceability": {
+      "obligation": "Reject unexplained added/removed/modified productions, lexical/prose drift and stale witnesses.",
+      "actual": {
+        "obligation": "Reject unexplained added/removed/modified productions, lexical/prose drift and stale witnesses.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/change-traceability.php",
+          "--report=docs/8.6/certification/traceability.json"
+        ],
+        "log": "docs/8.6/certification/logs/production-change-traceability.log",
+        "logSha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/production-change-traceability.log",
+      "remainingDependency": null
+    },
+    "changes-document-completeness": {
+      "obligation": "Verify all ten sections, finding IDs, source pins and regression references.",
+      "actual": {
+        "obligation": "Verify all ten sections, finding IDs, source pins and regression references.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/change-traceability.php",
+          "--report=docs/8.6/certification/traceability.json"
+        ],
+        "log": "docs/8.6/certification/logs/changes-document-completeness.log",
+        "logSha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/changes-document-completeness.log",
+      "remainingDependency": null
+    },
+    "historical-preservation": {
+      "obligation": "Compare every pre-7A project file, including all 8.5 evidence/fixtures/locks and both 8.6 specifications.",
+      "actual": {
+        "obligation": "Compare every pre-7A project file, including all 8.5 evidence/fixtures/locks and both 8.6 specifications.",
+        "status": "failed",
+        "exit_code": 1,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "preservation",
+          "--sources86",
+          "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/historical-preservation.log",
+        "logSha256": "272b238bf092bb6eca4cd5884fb1ad08a2c92dd512dc2abbf5ca01126a1b1359"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/historical-preservation.log",
+      "remainingDependency": "H86-PRESERVATION"
+    },
+    "public-api-cli": {
+      "obligation": "Run consumer workflow, package contract and navigation CLI regressions.",
+      "actual": {
+        "obligation": "Run consumer workflow, package contract and navigation CLI regressions.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "Consumer|ConformanceVersionSupportTest"
+        ],
+        "log": "docs/8.6/certification/logs/public-api-cli.log",
+        "logSha256": "6e03d1eb15dcc5071edb6d69ef0dc6bf3d4b2c303eb496995cc50b9255dc6e21"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/public-api-cli.log",
+      "remainingDependency": null
+    },
+    "source-lock-integrity": {
+      "obligation": "Verify independent RC4 lock completeness and every required source SHA-256.",
+      "actual": {
+        "obligation": "Verify independent RC4 lock completeness and every required source SHA-256.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "source",
+          "--sources86",
+          "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/source-lock-integrity.log",
+        "logSha256": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/source-lock-integrity.log",
+      "remainingDependency": null
+    },
+    "evidence-freshness": {
+      "obligation": "Verify historical audit inputs; final --check also compares complete current input/output sets.",
+      "actual": {
+        "obligation": "Verify historical audit inputs; final --check also compares complete current input/output sets.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "freshness",
+          "--sources86",
+          "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/evidence-freshness.log",
+        "logSha256": "61086d86a645f8ff1c51984771d55d193cbff6134d670afdbfc72142863d9306"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/evidence-freshness.log",
+      "remainingDependency": null
+    },
+    "blocker-dispositions": {
+      "obligation": "Require all seven complete, unchanged Phase 6 blocking dispositions.",
+      "actual": {
+        "obligation": "Require all seven complete, unchanged Phase 6 blocking dispositions.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "blockers",
+          "--sources86",
+          "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/blocker-dispositions.log",
+        "logSha256": "d6950dc49f486121a863878a43b6497dc8fe41915bd64eaf47c02bd715a8a0ba"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/blocker-dispositions.log",
+      "remainingDependency": null
+    },
+    "documentation-json": {
+      "obligation": "Validate new JSON, local documentation links, status wording and whitespace.",
+      "actual": {
+        "obligation": "Validate new JSON, local documentation links, status wording and whitespace.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.6/certification-gate.php",
+          "--gate",
+          "documentation",
+          "--sources86",
+          "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+        ],
+        "log": "docs/8.6/certification/logs/documentation-json.log",
+        "logSha256": "aea523efbb6df7a3123f9ad42bec5d2d0c2b8551d38c044fa4c5df6f935638d7"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/documentation-json.log",
+      "remainingDependency": null
+    },
+    "full-regression": {
+      "obligation": "Run the entire repository PHPUnit suite without cached results.",
+      "actual": {
+        "obligation": "Run the entire repository PHPUnit suite without cached results.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress"
+        ],
+        "log": "docs/8.6/certification/logs/full-regression.log",
+        "logSha256": "26701e4da25724ee5cf3eba9239bb2523e0eda80d64f9abfceacbcbfcaf96b9c"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/full-regression.log",
+      "remainingDependency": null
+    },
+    "infrastructure-negatives": {
+      "obligation": "Exercise isolated missing/stale/invalid inputs, failed gates and false certification claims.",
+      "actual": {
+        "obligation": "Exercise isolated missing/stale/invalid inputs, failed gates and false certification claims.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+          "vendor/phpunit/phpunit/phpunit",
+          "--do-not-cache-result",
+          "--no-progress",
+          "--filter",
+          "Certification86Test"
+        ],
+        "log": "docs/8.6/certification/logs/infrastructure-negatives.log",
+        "logSha256": "5bb1fd1764d3c89e1a320752c3d5b935ad5655f5ee5cc74f3dcaab4b9f273a5e"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/infrastructure-negatives.log",
+      "remainingDependency": null
+    },
+    "historical-certification-check": {
+      "obligation": "Run unmodified 8.5 certification --check; record pre-existing freshness failures, never rewrite history.",
+      "actual": {
+        "obligation": "Run unmodified 8.5 certification --check; record pre-existing freshness failures, never rewrite history.",
+        "status": "failed",
+        "exit_code": 1,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "tools/8.5/certification.php",
+          "--source-cache",
+          "C:/Data/GitHub/php-grammar/.audit/phase7-sources",
+          "--check"
+        ],
+        "log": "docs/8.6/certification/logs/historical-certification-check.log",
+        "logSha256": "e053a6cc40e83dd5b936eaf693f4e69d650ad738842af86fcf039e06e36590cd"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/historical-certification-check.log",
+      "remainingDependency": "H85-FRESHNESS"
+    },
+    "composer-validation": {
+      "obligation": "Validate Composer metadata strictly.",
+      "actual": {
+        "obligation": "Validate Composer metadata strictly.",
+        "status": "passed",
+        "exit_code": 0,
+        "command": [
+          "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+          "-n",
+          "-d",
+          "zend.multibyte=0",
+          "-d",
+          "opcache.enable_cli=0",
+          "-d",
+          "opcache.jit=0",
+          "-d",
+          "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_openssl.dll",
+          "C:\\ProgramData\\ComposerSetup\\bin/composer.phar",
+          "validate",
+          "--strict"
+        ],
+        "log": "docs/8.6/certification/logs/composer-validation.log",
+        "logSha256": "617d39e3b4752168f63039991b7e1efaca11e54a1f5a9153d93b0d4efe91fe05"
+      },
+      "executed": true,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/composer-validation.log",
+      "remainingDependency": null
+    },
+    "production-coverage-closure": {
+      "obligation": "Disposition every uncovered production with independent evidence; unresolved meaningful gaps block.",
+      "actual": {
+        "obligation": "Disposition every uncovered production with independent evidence; unresolved meaningful gaps block.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/final-evidence.json",
+      "remainingDependency": "C6-COVERAGE"
+    },
+    "alternative-coverage-closure": {
+      "obligation": "Disposition every uncovered alternative, including context-only from; percentages do not waive gaps.",
+      "actual": {
+        "obligation": "Disposition every uncovered alternative, including context-only from; percentages do not waive gaps.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/final-evidence.json",
+      "remainingDependency": "C6-COVERAGE"
+    },
+    "scanner-state-closure": {
+      "obligation": "Supply independent RC4 scanner state/helper/error products; header equality is insufficient.",
+      "actual": {
+        "obligation": "Supply independent RC4 scanner state/helper/error products; header equality is insufficient.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/final-evidence.json",
+      "remainingDependency": "C6-COVERAGE"
+    },
+    "ast-binding": {
+      "obligation": "Supply independent RC4 operand/AST and interpolation binding evidence, including retained ambiguities.",
+      "actual": {
+        "obligation": "Supply independent RC4 operand/AST and interpolation binding evidence, including retained ambiguities.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-COVERAGE: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/final-evidence.json",
+      "remainingDependency": "C6-COVERAGE"
+    },
+    "folding-order": {
+      "obligation": "Resolve optimized-call traversal and independently reconcile live/retained/discarded validation order.",
+      "actual": {
+        "obligation": "Resolve optimized-call traversal and independently reconcile live/retained/discarded validation order.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "PHP86-015: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/final-evidence.json",
+      "remainingDependency": "PHP86-015"
+    },
+    "discovery-closure": {
+      "obligation": "Resolve outstanding syntax-relevant compiler/AST/linking/optimizer discovery records.",
+      "actual": {
+        "obligation": "Resolve outstanding syntax-relevant compiler/AST/linking/optimizer discovery records.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "PHP86-013: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/final-evidence.json",
+      "remainingDependency": "PHP86-013"
+    },
+    "writable-target-validity": {
+      "obligation": "Establish intended writable-target validity and compiler/VM consistency.",
+      "actual": {
+        "obligation": "Establish intended writable-target validity and compiler/VM consistency.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "PHP86-014: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/final-evidence.json",
+      "remainingDependency": "PHP86-014"
+    },
+    "contextual-enforcement-scope": {
+      "obligation": "Adjudicate incomplete contextual enforcement and predicate-level evidence for the bounded claim.",
+      "actual": {
+        "obligation": "Adjudicate incomplete contextual enforcement and predicate-level evidence for the bounded claim.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-CONTEXT: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/final-evidence.json",
+      "remainingDependency": "C6-CONTEXT"
+    },
+    "discarded-hook-disposition": {
+      "obligation": "Independently adjudicate the inherited get/set-only discrepancy; do not inherit an 8.5 conclusion.",
+      "actual": {
+        "obligation": "Independently adjudicate the inherited get/set-only discrepancy; do not inherit an 8.5 conclusion.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "CA86-001: Phase 6 mandatory finding remains unresolved."
+      },
+      "executed": false,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/final-evidence.json",
+      "remainingDependency": "CA86-001"
+    },
+    "exact-pin-executable": {
+      "obligation": "Require reviewed source/build/generated-file/configuration/binary provenance; a version string is insufficient.",
+      "actual": {
+        "obligation": "Require reviewed source/build/generated-file/configuration/binary provenance; a version string is insufficient.",
+        "status": "blocked",
+        "exit_code": null,
+        "reason": "C6-PROVENANCE: Interpreter/source provenance mismatch: source commit; Exact-pin build attestation has not been independently verified"
+      },
+      "executed": false,
+      "evidence": "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/final-evidence.json",
+      "remainingDependency": "C6-PROVENANCE / T7B-RUNNER"
+    }
+  },
+  "legacyTotal": 36,
+  "legacyExecuted": 26,
+  "legacyCounts": {
+    "passed": 22,
+    "failed": 4,
+    "blocked": 10
+  },
+  "additionalPrerequisites": {
+    "historical-artifact-integrity85": {
+      "status": "passed",
+      "command": {
+        "command": [
+          "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+          "-n",
+          "tools/evidence/historical-check.php"
+        ],
+        "exit_code": 0,
+        "expectedExit": 0,
+        "log": "docs/8.6/certification-blocker-closure/final-historical-integrity.json",
+        "sha256": "16842a9853c6d7f76d1ddf6f279578951e9c6e696a9af948a93a9150636e2747"
+      }
+    },
+    "current-compatibility85": {
+      "status": "passed",
+      "command": {
+        "command": [
+          "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+          "-n",
+          "tools/evidence/compatibility.php",
+          "--check",
+          "--report",
+          "docs/8.5/compatibility/phase7c6-verified/evidence.json"
+        ],
+        "exit_code": 0,
+        "expectedExit": 0,
+        "log": "docs/8.6/certification-blocker-closure/final-current-compatibility.json",
+        "sha256": "ff84316b88c850b2295f88b5f877fa91358436fb31773ed23e42034b6dfca6e1"
+      }
+    }
+  },
+  "hybridTotal": 38,
+  "hybridExecutedOrIndependentlyVerified": 28,
+  "hybridCounts": {
+    "passed": 24,
+    "failed": 4,
+    "blocked": 10
+  },
+  "exactSourceInspection": "Separate verified prerequisite; not an additional release gate or a relabeled legacy gate result.",
+  "firstAttempt": "docs/8.6/certification-blocker-closure/run/execution.json",
+  "firstAttemptLimitation": "Passed the exact build directory to an old source-absence audit. The generated scanner header caused an extra source-audit error. Corrected clean-source run is authoritative; both runs are retained.",
+  "certificationGranted": false
+}

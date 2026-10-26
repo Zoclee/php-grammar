@@ -1,0 +1,7 @@
+{
+  "contract": "php86-context-coverage-evidence-1",
+  "errors": [
+    "Stale/incomplete input inventory"
+  ],
+  "certificationGranted": false
+}

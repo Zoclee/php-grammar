@@ -1,0 +1,6 @@
+{
+  "contract": "php86-blocker-triage-v1",
+  "errors": [],
+  "certificationGranted": false,
+  "scope": "Identity, source-range, evidence-digest and disposition integrity; not an automated proof of semantic equivalence or a release gate."
+}

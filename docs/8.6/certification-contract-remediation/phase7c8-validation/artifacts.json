@@ -1,0 +1,8 @@
+{
+  "jsonFiles": 54,
+  "localDocumentationLinks": 24,
+  "restrictionIdentities": 73,
+  "baselineFiles": 3412,
+  "errors": [],
+  "limits": "Local target existence and normative clause checks; no external website crawl. No new repository PHP implementation was introduced."
+}

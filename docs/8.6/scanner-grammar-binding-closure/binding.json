@@ -1,0 +1,211 @@
+{
+  "contract": "php86-scanner-grammar-binding-v1",
+  "workItem": "D-S03",
+  "predecessor": {
+    "original": {
+      "status": "open",
+      "requiredAction": "Independent operand/AST and interpolation binding evidence, including closed-yield/prefix/dangling-else and retained ambiguities."
+    },
+    "observations": [
+      "unary-power",
+      "not-instanceof",
+      "yield-key-value",
+      "yield-from-assignment",
+      "pfa-argument"
+    ],
+    "method": "Unique native expression derivation -> complete operand spans -> forced-parentheses fixture -> equal nonempty pre-optimizer opcode lines under exact source.",
+    "astEquivalenceClaim": false,
+    "remaining": [
+      "Writable-target value category and authoritative intended validity (PHP86-014).",
+      "Interpolation AST correspondence (scanner evidence is separate).",
+      "Declaration member relationships and transitive dispatch.",
+      "Reference-result and broader PFA/argument combinations."
+    ],
+    "nativeTokenAdapter": "PHP 8.5 test-only token adapter; exact PHP 8.6 performs both opcode compilations."
+  },
+  "newObservations": [
+    {
+      "id": "bitwise-power",
+      "batch": "D",
+      "expression": "~$a ** $b",
+      "differentExpression": "(~$a) ** $b",
+      "productions": [
+        "unary-expression",
+        "power-expression"
+      ],
+      "astKinds": [
+        "ZEND_AST_UNARY_OP",
+        "ZEND_BW_NOT",
+        "ZEND_POW"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "UNARY_OP(BW_NOT, BINARY_OP(POW,a,b)); reversed grouping is BINARY_OP(POW,UNARY_OP(BW_NOT,a),b).",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-bitwise-power-original.php",
+      "sha256": "70f59b5cac28a0bfa94b932966e78702476a26a12606f7c41cc07d71452b3e69",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-bitwise-power-forced.php",
+      "forcedSha256": "cf2ed45bbf0f7651e810d4d14128746bed2935972e0d102fd76d8469dd3d138b",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-bitwise-power-different.php",
+      "differentSha256": "83945f49759866eda05e5471d8bad28752148b0dcf816b0719e89cca87121ba2"
+    },
+    {
+      "id": "arithmetic",
+      "batch": "D",
+      "expression": "$a + $b * $c",
+      "differentExpression": "($a + $b) * $c",
+      "productions": [
+        "additive-expression",
+        "multiplicative-expression"
+      ],
+      "astKinds": [
+        "ZEND_ADD",
+        "ZEND_MUL"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "BINARY_OP(ADD,a,BINARY_OP(MUL,b,c)); reversed control changes the left operand of MUL.",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-arithmetic-original.php",
+      "sha256": "2d9f0efd1151bc8c3528c05eb8f647bd0a633363c350c2a0790fe0b97282d1f8",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-arithmetic-forced.php",
+      "forcedSha256": "cc203cd3e56b9dc1c8b863cb753df3ffa95c9d3ab2d4e2372ee8b5c48a7a3845",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-arithmetic-different.php",
+      "differentSha256": "4417e0d4a18b0958b0d93ff7054a6ca94c45a285b09deff953de7b237bbce502"
+    },
+    {
+      "id": "yield-from-coalesce",
+      "batch": "D",
+      "expression": "yield from $a ?? $b",
+      "differentExpression": "(yield from $a) ?? $b",
+      "productions": [
+        "yield-from-expression",
+        "coalesce-expression"
+      ],
+      "astKinds": [
+        "ZEND_AST_YIELD_FROM",
+        "ZEND_AST_COALESCE"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "YIELD_FROM(COALESCE(a,b)); control applies COALESCE to the completed YIELD_FROM.",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-from-coalesce-original.php",
+      "sha256": "692bcdaa900537b7e4e03346668cf2ec20bfd2c707c46e7a9f54c32b307b371e",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-from-coalesce-forced.php",
+      "forcedSha256": "f5254d871e54e5738888a2af3dcd4fa9505e97e304ff3ff44fcc0f4e25789b89",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-from-coalesce-different.php",
+      "differentSha256": "93f96014e8d8d5abbcedb2a640d6cb9a48bc10f502e5170696409e0eb5a10ebb"
+    },
+    {
+      "id": "pfa-argument",
+      "batch": "D",
+      "expression": "f(?, $a * $b + $c)",
+      "differentExpression": "f(?, $a * ($b + $c))",
+      "productions": [
+        "argument-list",
+        "additive-expression"
+      ],
+      "astKinds": [
+        "ZEND_AST_CALL",
+        "ZEND_AST_ARG_LIST"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "CALL(name,ARG_LIST(placeholder,ADD(MUL(a,b),c))); changed control keeps placeholder slot but changes the second argument operand.",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-pfa-argument-original.php",
+      "sha256": "15ddb8a371216a50265bb9a94fad1075021d45722c06a425efe751ba2a64f497",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-pfa-argument-forced.php",
+      "forcedSha256": "a780a4a15f5e30733674108bb2cdab7b50ee605671a7118a9931679936a39ff6",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-pfa-argument-different.php",
+      "differentSha256": "5eea83416f688351ae1be59ef69d11190b4f0fb78862309831c619098b922eca"
+    },
+    {
+      "id": "clone-power",
+      "batch": "D",
+      "expression": "clone $a ** $b",
+      "differentExpression": "clone ($a ** $b)",
+      "productions": [
+        "clone-expression",
+        "power-expression"
+      ],
+      "astKinds": [
+        "ZEND_AST_CALL",
+        "ZEND_POW"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "POW(CALL(fully-qualified clone,ARG_LIST(a)),b); control supplies POW(a,b) as the clone argument.",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-clone-power-original.php",
+      "sha256": "3c51f2bed0725bd6665b1da2fb516289d98a0a44437398b34f088acc30a7f18b",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-clone-power-forced.php",
+      "forcedSha256": "ea1a6097a936c22612c0c1f9f1da0a72aa4c4b46be4b6a0a300b7475d8cdcc66",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-clone-power-different.php",
+      "differentSha256": "947a3dba5e1fc1330ce2205bc2fcfbdb9399c6395466a478304b724ac4501fae"
+    },
+    {
+      "id": "yield-key",
+      "batch": "D",
+      "expression": "yield $a ?? $b => $c + $d",
+      "differentExpression": "yield $a => $b ?? $c + $d",
+      "productions": [
+        "yield-key",
+        "yield-expression"
+      ],
+      "astKinds": [
+        "ZEND_AST_YIELD",
+        "ZEND_AST_COALESCE"
+      ],
+      "sourceIds": [
+        "parser-precedence",
+        "parser-binding",
+        "parser-clone-reference",
+        "parser-call-args"
+      ],
+      "sourceCorrespondence": "YIELD(value=ADD(c,d),key=COALESCE(a,b)); control moves b into the value-side coalesce.",
+      "precision": "Reviewed Zend parser actions and precedence plus native operand spans and discriminating compiler-output observations; no live AST dump or general AST equivalence.",
+      "remaining": "Declarations/interpolation and writable-reference result categories retain broader obligations; PHP86-014 intended validity is unchanged.",
+      "fixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-key-original.php",
+      "sha256": "761b3381d04795afb6f3072b53901a1b40e08825c89e0035ab6e1e95893181ba",
+      "forcedFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-key-forced.php",
+      "forcedSha256": "6945d2f775a51c1b0a796bb132d18819992a87af914262c1ecf1e4240929dad1",
+      "differentFixture": "tests/fixtures/php/8.6/scanner-grammar-binding/binding-yield-key-different.php",
+      "differentSha256": "cad877b514266fb6cca7eb914e5c97f392ec5eb8866677be9e7bfd68c32aa7aa"
+    }
+  ],
+  "astEquivalenceClaim": false,
+  "remaining": [
+    "No live Zend AST dump or general grammar-to-AST isomorphism is established.",
+    "Dangling-else, declaration/member and interpolation associations need further per-branch proof.",
+    "Reference/PFA propagation and writable operand result categories retain PHP86-014 upstream validity dependence.",
+    "Compiler validation-stage completeness remains under C6-CONTEXT."
+  ],
+  "complete": false
+}

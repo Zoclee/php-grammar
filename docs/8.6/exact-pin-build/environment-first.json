@@ -1,0 +1,27 @@
+{
+  "command": [
+    "cmd.exe",
+    "/d",
+    "/c",
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\sdk\\phpsdk-vs17-x64.bat",
+    "-t",
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php86-exact\\environment-first.bat"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar/.audit/php86-exact",
+  "started": "2026-10-25T10:43:43+00:00",
+  "task": "C:/Data/GitHub/php-grammar/.audit/php86-exact/environment-first.bat",
+  "taskSha256": "cb1e703d053a6e4309f911fc7d3bfa59717e285c153af317772e33c0379a9b08",
+  "taskContents": "@echo off\r\ncd /d \"C:/Data/GitHub/php-grammar/.audit/php86-exact/source\"\r\nwhere cl\r\nwhere nmake\r\nwhere bison\r\nwhere re2c\r\ncl\r\nbison --version\r\nre2c --version\r\necho WindowsSDKVersion=%WindowsSDKVersion%\r\necho VCToolsVersion=%VCToolsVersion%\r\nexit /b 0\r\n",
+  "controllerSha256": "ff245393f760707e70af55b40769d406073ce021fde051b3e0b154f0b130267f",
+  "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "exit_code": 255,
+  "finished": "2026-10-25T10:43:43+00:00",
+  "stdout": {
+    "path": "docs/8.6/exact-pin-build/environment-first.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "docs/8.6/exact-pin-build/environment-first.stderr.log",
+    "sha256": "6bf64187472dcd64b7055e5ee036702be3e6b457f7461defd9dc473d481b11ab"
+  }
+}

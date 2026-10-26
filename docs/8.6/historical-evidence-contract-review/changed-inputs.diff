@@ -1,0 +1,582 @@
+diff --git a/README.md b/README.md
+index e607260..df74766 100644
+--- a/README.md
++++ b/README.md
+@@ -20,6 +20,14 @@ The included APIs let you inspect productions and check source against grammar
+ rules; these checks cover structural syntax, not every compiler constraint or
+ runtime behavior.
+ 
++PHP 8.5 remains the recommended stable version and the default for existing
++maintainer commands. PHP 8.6 is available by explicit selection as an incomplete
++RC4 draft; see [draft integration](docs/8.6/draft-integration.md) and its
++[change document](grammar/8.6/changes.md). `latestVersion()` returns the highest
++advertised number, including drafts (currently 8.6); it is not a stable alias.
++PHP86-013/014/015 remain unresolved, and structural matches do not certify
++compiler-context validity.
++
+ Start with the [PHP 8.5 specification](grammar/8.5/php.md) for a readable overview,
+ or explore the [canonical EBNF](grammar/8.5/php.ebnf) directly. When you are ready
+ to integrate the grammar into your tooling, see the [integration guide](docs/usage.md)
+@@ -456,11 +464,12 @@ tests/fixtures/version-boundaries/
+ 
+ Boundary metadata can describe a syntax feature, its first supported version,
+ an optional last supported version, the source snippet or fixture path, and an
+-authoritative reference. With only PHP 8.5 currently present, no real
+-cross-version boundary fixtures are required; the framework handles a
+-single-version repository cleanly. When another grammar version is added,
+-boundary fixtures should verify introduced or removed syntax across the
+-manifest versions.
++authoritative reference. Six PHP 8.6 PFA boundaries use structural matching;
++seven contextual boundaries retain their lint or declaration-link stage.
++The structural runner rejects contextual records rather than reporting a
++compiler verdict. `tools/8.6/integration-check.php` checks all thirteen with
++the selected interpreters and pinned sources. Empty-directory and isolated
++single-version behavior remain covered by tests.
+ 
+ When adding a new PHP grammar version:
+ 
+diff --git a/bin/php-grammar b/bin/php-grammar
+index 170f539..27e5701 100644
+--- a/bin/php-grammar
++++ b/bin/php-grammar
+@@ -26,6 +26,8 @@ try {
+         $output = array_map(static fn ($package): array => [
+             'version' => $package->version, 'status' => $package->status,
+             'grammar' => $package->grammarPath, 'documentation' => $package->documentationPath,
++            'sourceProfile' => $package->sourceProfile, 'phpSource' => $package->phpSource,
++            'metadata' => $package->metadata,
+         ], $manifest->packages());
+     } else {
+         $grammar = $repository->load($argv[2]);
+diff --git a/docs/versioning.md b/docs/versioning.md
+index c184478..a3728f7 100644
+--- a/docs/versioning.md
++++ b/docs/versioning.md
+@@ -29,7 +29,9 @@ php-grammar.json
+ 
+ The manifest is the source of truth for version discovery, grammar loading,
+ conformance fixture discovery, lexer configuration, and version-boundary tests.
+-Adding a grammar directory without adding a manifest entry is incomplete.
++Adding a grammar directory without adding a manifest entry is incomplete as a
++supported package; an explicitly labeled Gate A working baseline is permitted
++under section 3.1 and must remain unregistered.
+ Adding a manifest version without its required package files is invalid.
+ 
+ For example, future repositories may contain packages such as:
+@@ -82,7 +84,8 @@ grammar/<new-major.minor>/
+ 
+ When adding a new version:
+ 
+-1. use the previous version as a starting point where appropriate;
++1. record the repository baseline commit and begin with exact, byte-for-byte
++   copies of the immediately preceding supported version's `php.ebnf` and `php.md`;
+ 2. identify all syntax changes introduced by the new PHP version;
+ 3. verify those changes against authoritative sources;
+ 4. update the canonical `.ebnf` grammar;
+@@ -90,10 +93,84 @@ When adding a new version:
+ 6. add or update conformance fixtures;
+ 7. add the version package to `php-grammar.json`;
+ 8. add version-boundary fixtures for syntax introduced or removed in the new version;
+-9. document meaningful differences from the previous PHP version.
++9. document every material difference in `changes.md` using section 15.
++
++Preserve unchanged productions and documentation. Apply only incremental changes
++justified by the pinned PHP implementation; avoid unrelated restructuring,
++renaming, formatting, and simplification. Do not regenerate or rewrite a whole
++grammar to introduce incremental syntax. Synchronizing existing generated
++documentation sections after reviewed edits remains appropriate.
++
++Every new version after PHP 8.5 must provide three files:
++
++```text
++grammar/<major.minor>/php.ebnf
++grammar/<major.minor>/php.md
++grammar/<major.minor>/changes.md
++```
++
++This includes the future PHP 8.6 package; it does not register or create it now.
++PHP 8.5 is exempt from retroactive `changes.md` creation. Both grammar and
++specification remain complete and standalone; neither may depend on the preceding
++version or on `changes.md` to reconstruct its accepted syntax.
++
++For an upgrade, preserve the preceding version as an immutable historical
++baseline. Introducing PHP 8.6 must leave PHP 8.5's `php.ebnf`, `php.md`, fixtures,
++and conformance evidence unchanged. Compare them with the recorded repository
++baseline before completion. Document unrelated historical defects separately;
++section 4 permits evidenced corrections in a separate change, not silent repairs
++within an upgrade. Keep existing version-boundary tests passing and preserve all
++release gates.
+ 
+ Do not assume that only headline language features affect the grammar.
+ 
++## 3.1. Readiness gates
++
++Policy adjustment, October 23, 2026 (Phase 2.3): provisional baseline creation
++is distinct from verified implementation, discovery completion, and final
++certification. Earlier PHP 8.6 Phase 3A blocking decisions correctly applied
++the then-existing discovery-before-copying requirement; this adjustment changes
++that requirement prospectively, without resolving any research finding.
++
++**Gate A — Provisional baseline creation.** A future baseline step may copy the
++immediately preceding supported version's `php.ebnf` and `php.md` before discovery
++is complete, provided it:
++
++1. Records the repository baseline commit and verifies and records SHA-256 hashes
++   of both original files against that commit.
++2. Copies both files without modification and verifies byte-for-byte equality
++   and matching hashes, preserving every existing historical artifact.
++3. Labels both copies explicitly as an **unverified working baseline** in an
++   accompanying preparation record outside the copied files. The unchanged
++   version labels inside the copies describe their origin, not PHP 8.6 accuracy.
++4. Keeps the baseline unregistered in the manifest and unadvertised as supported;
++   it is not a complete PHP 8.6 package or conformance evidence.
++5. Makes no production, lexical behavior, or contextual restriction changes and
++   retains all unresolved findings and their implementation/release impacts.
++
++The preparation record must identify both destination paths, the commit, original
++and copy hashes, equality results, preservation checks, and outstanding findings.
++The three-file package requirement in section 3 applies to the later version
++package; Gate A copies alone do not satisfy it. Gate A does not require completed
++PHP 8.6 research because it makes no PHP 8.6 language-accuracy claim.
++
++**Gate B — Verified grammar implementation.** Each edit requires authoritative
++evidence at the immutable PHP source pin, traceability to a verified finding,
++identified affected productions or lexical/contextual constructs, and defined
++positive, negative, stage-specific, and version-boundary test obligations.
++Unresolved syntax questions must not be implemented speculatively. A finding
++may block an affected area without blocking an independently verified change;
++dependencies and interactions must be assessed before treating a change as
++independent. Gate A success does not establish Gate B readiness.
++
++Discovery completion still requires disposition of the material research gaps.
++Implementation completion and final certification still require all existing
++source-pinning, structural/reference, parity, differential-interpreter, lexer
++contextual-conformance, version-boundary, traceability, historical-preservation,
++and release evidence. Sections 14–17 and the conformance policy remain in force,
++including prerelease versus final-release distinctions. No release gate is waived.
++Phase 2.3 authorizes this policy clarification only, not execution of Phase 3A.
++
+ ## 4. Historical Grammar Corrections
+ 
+ Published grammar files may be corrected when they are demonstrably inaccurate.
+@@ -328,3 +405,134 @@ manifest schema or inventing PHP 8.6/8.7 packages. Before another version is
+ called mature, implement its release runner and certify its independent source
+ pin, coverage classifications, boundary behavior and limitations under the
+ [regression policy](conformance-policy.md).
++
++## 15. Required changes.md format
++
++Use the following headings, in order, in each new version's `changes.md`:
++
++```markdown
++# PHP <version> grammar changes
++## 1. Overview and comparison baseline
++## 2. Added syntax
++## 3. Modified syntax
++## 4. Removed syntax
++## 5. Lexical and tokenization changes
++## 6. Contextual and compiler-enforced restrictions
++## 7. Compatibility and unchanged syntax
++## 8. Authoritative source references
++## 9. Conformance and regression evidence
++## 10. Known limitations and outstanding uncertainties
++```
++
++Retain all sections. State when a category has no verified changes, and
++distinguish that finding from an area still awaiting review. The overview must
++identify the immediately preceding supported version, the repository baseline
++commit, both PHP source revisions, and the new grammar's development/release
++status and audited source profile.
++
++Give each material change a stable identifier and record:
++
++- affected production names or language constructs;
++- previous behavior and new behavior;
++- affected layers: `php.ebnf`, `php.md`, lexer/tokenization, or contextual
++  validation, including whether contextual enforcement is implemented;
++- authoritative source locations at the immutable PHP commit, with supporting
++  upstream tests and implemented RFC references where applicable;
++- corresponding local conformance/regression fixture paths, version-boundary
++  evidence, and validation results (or an explicit outstanding test obligation).
++
++Entries may cross-reference a shared source or evidence section without
++duplicating records. Cover contextual changes even when EBNF is unchanged.
++Classify cosmetic or representation-only differences separately from PHP language
++changes and justify any necessary production rename or structural rewrite.
++Compatibility claims must name the regression evidence, not assume inheritance.
++Record excluded proposals and changes without syntax implications with their
++dispositions. Unresolved discrepancies must identify evidence, affected syntax,
++risk, release impact, and remaining work under the conformance policy.
++
++`changes.md` is explanatory, non-canonical documentation. Put the complete new
++version's rules in its own `php.ebnf` and `php.md`.
++
++## 16. Prerelease and final-release review
++
++Use manifest schema 1.0's existing `status`, `phpSource.branch`,
++`phpSource.commit`, `sourceProfile`, and `metadata` fields. No new schema or
++status enumeration is needed. A future package may link `changes.md` through
++`metadata.changes`; the conventional path is still required by this policy.
++Registration occurs when the implementation supplies the required package,
++fixtures, and lexer configuration, not during governance or source discovery.
++
++For an unfinished version use `draft`; use `candidate` only when believed
++complete but awaiting validation. Record the PHP development or prerelease
++identifier explicitly in the specification and change document. Do not equate
++a grammar's candidate status with an official PHP release candidate.
++
++Record the actual upstream development/release branch and full immutable commit
++used for verification. Do not assume a `PHP-8.6` branch exists or use a moving
++branch tip as reproducible evidence. Keep source locks and hashes under
++`tools/<version>/` and evidence under `docs/<version>/`, following existing
++conventions. Record the interpreter version/build, configuration, and its
++correspondence to the pin; disclose any difference from an exact-pin executable.
++
++For each subsequent PHP release candidate, compare its immutable source revision
++with the last reviewed pin, including scanner, parser, relevant compiler code,
++and tests. Record the review even if no syntax changed. Incorporate verified
++changes incrementally into the new version only, update its change/source/test
++evidence and locks, and rerun applicable gates. Preserve prior review results
++and historical version evidence; do not rewrite the grammar wholesale.
++
++Before claiming compatibility with a final PHP release, record its exact release
++identifier and immutable source revision, reconcile differences from the last
++candidate, verify source/executable correspondence, and run the version's full
++release gates and differential tests against that release. All material changes
++must be accounted for, with remaining discrepancies explicitly disposed under
++[conformance-policy.md](conformance-policy.md). Promote to `stable` only when
++the evidence supports that policy's bounded claim. Neither prerelease results
++nor stable status establish exhaustive equivalence or exact-executable
++certification.
++
++## 17. Change traceability validation contract
++
++The following is a requirement for the implementation phase; comparison tooling
++is not implemented in PHP 8.6 Phase 1. Extend the existing PHP EBNF parser,
++validation, and reporting infrastructure through `php tools/<name>.php` entry
++points rather than introducing another framework or runtime.
++
++The comparison must take the recorded preceding-version baseline, the new
++standalone package, and its `changes.md` records. Compare parsed productions by
++name and structure to inventory additions, removals, and modifications, including
++alternatives, optionality, repetition, terminals, and non-terminal/token
++references. Review textual differences as well so documentation, lexical
++contracts, and contextual restrictions outside EBNF are not missed. Treat
++cosmetic differences separately; structural equivalence alone cannot prove
++language equivalence or completeness of prose review.
++
++Map every material difference to a change identifier, pinned source evidence,
++and regression evidence. Report unmapped differences, stale/nonexistent
++production or fixture references, missing required sections, and unresolved
++obligations explicitly. Renames must account for both old and new productions.
++Human review must reconcile non-EBNF changes and verify that entries describe
++actual implementation behavior. Unexplained material differences or missing
++required evidence fail completion; documented limitations remain subject to
++the existing release/blocker policy, not automatic acceptance.
++
++Before declaring implementation complete, retain command results and evidence
++for all of the following:
++
++1. EBNF structural validity, production references, and standalone loading.
++2. EBNF/Markdown production parity and consistency of normative prose.
++3. Correct manifest registration, package paths, and version discovery.
++4. Version-specific scanner/token contracts and parser compatibility.
++5. Focused positive, structural-negative, and contextual-negative fixtures.
++6. Differential checks with the appropriate PHP interpreter and declared profile.
++7. Version-boundary tests for introduced, removed, or restricted syntax.
++8. Previous-version regression tests and unchanged baseline artifacts/evidence.
++9. Complete `changes.md` sections and traceability reconciliation.
++10. Explicit unresolved discrepancy dispositions and bounded completion claims.
++
++Use `tests/fixtures/php/<version>/` and `tests/fixtures/version-boundaries/`.
++Preserve the current release runner, evidence categories, logs, freshness checks,
++and blocker dispositions described in [conformance-policy.md](conformance-policy.md).
++Future version runners must supply their own evidence without disabling or
++weakening existing gates. Coverage must be classified; do not invent percentage
++targets or copy PHP 8.5's totals or certification conclusions.
+diff --git a/php-grammar.json b/php-grammar.json
+index c21a2d0..d65272e 100644
+--- a/php-grammar.json
++++ b/php-grammar.json
+@@ -23,6 +23,32 @@
+                 "coverage": "docs/8.5/phase3-coverage.json",
+                 "contextualConstraints": "docs/8.5/compiler-boundaries.json"
+             }
++        },
++        {
++            "version": "8.6",
++            "rootProduction": "source-file",
++            "grammar": "grammar/8.6/php.ebnf",
++            "documentation": "grammar/8.6/php.md",
++            "conformanceFixtures": "tests/fixtures/php/8.6",
++            "lexer": "8.6",
++            "status": "draft",
++            "sourceProfile": "Provisional PHP 8.6.0RC4 structural grammar; byte-oriented source; zend.multibyte=0; short tags enabled and disabled in the focused integration matrix. Contextual constraints are incompletely enforced. Distribution builds are not exact-pin verified. PHP86-013/014/015 remain open.",
++            "phpSource": {
++                "branch": "PHP-8.6",
++                "commit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
++            },
++            "metadata": {
++                "changes": "grammar/8.6/changes.md",
++                "sourceLock": "tools/8.6/source-lock.json",
++                "sourceEvidence": "docs/8.6/source-evidence.json",
++                "changeTraceability": "tools/8.6/change-map.json",
++                "boundaryCases": "tests/fixtures/php/8.6/boundary-cases.json",
++                "integration": "docs/8.6/draft-integration.md",
++                "pfaValidation": "docs/8.6/pfa-validation.json",
++                "contextValidation": "docs/8.6/context-validation.json",
++                "deprecationValidation": "docs/8.6/deprecation-validation.json",
++                "discoveryReview": "docs/8.6/discovery-final-review.md"
++            }
+         }
+     ],
+     "lexicalPrimitives": [
+diff --git a/src/Php/Conformance/VersionBoundaryCase.php b/src/Php/Conformance/VersionBoundaryCase.php
+index d16ac1f..8f39d8c 100644
+--- a/src/Php/Conformance/VersionBoundaryCase.php
++++ b/src/Php/Conformance/VersionBoundaryCase.php
+@@ -12,7 +12,12 @@ final readonly class VersionBoundaryCase
+         public ?string $lastSupportedVersion,
+         public string $source,
+         public ?string $reference = null,
++        public string $validationStage = 'structural',
++        public ?string $finding = null,
+     ) {
++        if (!in_array($validationStage, ['structural', 'lint', 'declaration-link'], true)) {
++            throw new ConformanceException('Unsupported boundary validation stage: ' . $validationStage);
++        }
+     }
+ 
+     public function shouldAccept(string $version): bool
+@@ -62,6 +67,11 @@ final readonly class VersionBoundaryCase
+             throw new ConformanceException('Boundary fixture reference must be a string when present.');
+         }
+ 
+-        return new self($data['name'], $data['firstSupportedVersion'], $lastSupportedVersion, $source, $reference);
++        $stage = $data['validationStage'] ?? 'structural';
++        $finding = $data['finding'] ?? null;
++        if (!is_string($stage) || ($finding !== null && !is_string($finding))) {
++            throw new ConformanceException('Boundary validationStage and finding must be strings.');
++        }
++        return new self($data['name'], $data['firstSupportedVersion'], $lastSupportedVersion, $source, $reference, $stage, $finding);
+     }
+ }
+diff --git a/src/Php/Conformance/VersionBoundaryRunner.php b/src/Php/Conformance/VersionBoundaryRunner.php
+index bca76f7..a1d5148 100644
+--- a/src/Php/Conformance/VersionBoundaryRunner.php
++++ b/src/Php/Conformance/VersionBoundaryRunner.php
+@@ -19,6 +19,9 @@ final readonly class VersionBoundaryRunner
+      */
+     public function evaluate(VersionBoundaryCase $case): array
+     {
++        if ($case->validationStage !== 'structural') {
++            throw new ConformanceException('Boundary requires ' . $case->validationStage . ' evidence; structural matching is insufficient.');
++        }
+         $results = [];
+         foreach ($this->manifest->versions() as $version) {
+             $results[$version] = $this->matcher->matches($version, $case->source)->matched;
+diff --git a/src/Php/Lexing/PhpVersion.php b/src/Php/Lexing/PhpVersion.php
+index 816e96b..8cff14a 100644
+--- a/src/Php/Lexing/PhpVersion.php
++++ b/src/Php/Lexing/PhpVersion.php
+@@ -17,6 +17,18 @@ final readonly class PhpVersion
+     }
+ 
+     public static function php85(): self
++    {
++        return new self('8.5', self::keywords());
++    }
++
++    /** RC4 retains the keyword/token contract; deprecations do not reserve names. */
++    public static function php86(): self
++    {
++        return new self('8.6', self::keywords());
++    }
++
++    /** @return array<string, true> Shared spellings, independent version identities. */
++    private static function keywords(): array
+     {
+         $keywords = [
+             '__halt_compiler', 'abstract', 'and', 'array', 'as', 'break',
+@@ -36,13 +48,14 @@ final readonly class PhpVersion
+             '__function__', '__property__', '__namespace__',
+         ];
+ 
+-        return new self('8.5', array_fill_keys($keywords, true));
++        return array_fill_keys($keywords, true);
+     }
+ 
+     public static function forVersion(string $version): self
+     {
+         return match ($version) {
+             '8.5' => self::php85(),
++            '8.6' => self::php86(),
+             default => throw new LexerException(sprintf('No PHP lexical configuration exists for version "%s".', $version)),
+         };
+     }
+diff --git a/tests/Php/Conformance/VersionBoundaryTest.php b/tests/Php/Conformance/VersionBoundaryTest.php
+index c5ee711..ee6b762 100644
+--- a/tests/Php/Conformance/VersionBoundaryTest.php
++++ b/tests/Php/Conformance/VersionBoundaryTest.php
+@@ -28,7 +28,10 @@ final class VersionBoundaryTest extends TestCase
+ 
+     public function testBoundaryRunnerHandlesSingleVersionRepository(): void
+     {
+-        $manifest = RepositoryManifest::fromRepositoryRoot(dirname(__DIR__, 3));
++        $root = dirname(__DIR__, 3);
++        $data = json_decode(file_get_contents($root . '/php-grammar.json'), true);
++        $data['versions'] = array_values(array_filter($data['versions'], static fn ($p) => $p['version'] === '8.5'));
++        $manifest = RepositoryManifest::fromArray($root, $data);
+         $runner = new VersionBoundaryRunner($manifest, PhpGrammarMatcher::forManifest($manifest));
+         $case = new VersionBoundaryCase('current-valid-source', '8.5', null, '<?php echo 1;');
+ 
+@@ -38,11 +41,50 @@ final class VersionBoundaryTest extends TestCase
+ 
+     public function testBoundaryFixtureRepositoryAllowsEmptyDirectory(): void
+     {
+-        $cases = (new VersionBoundaryFixtureRepository(
+-            dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'fixtures' . DIRECTORY_SEPARATOR . 'version-boundaries',
+-        ))->load();
++        $directory = $this->temporaryDirectory();
++        try {
++            self::assertSame([], (new VersionBoundaryFixtureRepository($directory))->load());
++        } finally {
++            rmdir($directory);
++        }
++    }
++
++    public function testAbsentBoundaryDirectoryIsEmpty(): void
++    {
++        self::assertSame([], (new VersionBoundaryFixtureRepository(sys_get_temp_dir() . '/missing-' . bin2hex(random_bytes(8))))->load());
++    }
+ 
+-        self::assertSame([], $cases);
++    public function testRepositoryBoundariesRetainStagesAndStructuralExpectations(): void
++    {
++        $root = dirname(__DIR__, 3);
++        $manifest = RepositoryManifest::fromRepositoryRoot($root);
++        $runner = new VersionBoundaryRunner($manifest, PhpGrammarMatcher::forManifest($manifest));
++        $cases = (new VersionBoundaryFixtureRepository($root . '/tests/fixtures/version-boundaries'))->load();
++        self::assertCount(36, $cases);
++        $stages = [];
++        foreach ($cases as $case) {
++            $stages[$case->validationStage] = ($stages[$case->validationStage] ?? 0) + 1;
++            self::assertStringContainsString('f23b4c222cebe33be93ee8ecaaa14390c5507a08', $case->reference);
++            if ($case->validationStage === 'structural') {
++                self::assertSame($runner->expected($case), $runner->evaluate($case));
++            } else {
++                self::assertNotNull($case->finding);
++                try {
++                    $runner->evaluate($case);
++                    self::fail('Contextual boundary must not use structural verdicts');
++                } catch (ConformanceException $error) {
++                    self::assertStringContainsString($case->validationStage, $error->getMessage());
++                }
++            }
++        }
++        ksort($stages);
++        self::assertSame(['declaration-link' => 9, 'lint' => 11, 'structural' => 16], $stages);
++    }
++
++    public function testUnknownStageIsRejected(): void
++    {
++        $this->expectException(ConformanceException::class);
++        VersionBoundaryCase::fromArray(['name'=>'bad', 'firstSupportedVersion'=>'8.6', 'source'=>'', 'validationStage'=>'runtime'], '');
+     }
+ 
+     public function testBoundaryFixtureCanLoadInlineSourceMetadata(): void
+diff --git a/tests/Php/Lexing/Php85ScannerAuditTest.php b/tests/Php/Lexing/Php85ScannerAuditTest.php
+index dc61bb8..70965c0 100644
+--- a/tests/Php/Lexing/Php85ScannerAuditTest.php
++++ b/tests/Php/Lexing/Php85ScannerAuditTest.php
+@@ -82,8 +82,21 @@ final class Php85ScannerAuditTest extends TestCase
+     {
+         $root = dirname(__DIR__, 3);
+         $data = Php85LexicalAudit::report($root);
+-        self::assertSame(json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n",
+-            file_get_contents($root . '/docs/8.5/phase5-lexical-evidence.json'));
++        $historical = file_get_contents($root . '/docs/8.5/phase5-lexical-evidence.json');
++        $current = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
++        // Preserve the historical ledger; lock the exact reviewed shared-code delta.
++        // Every other input, mapping, family and disposition must remain identical.
++        $review = json_decode(file_get_contents($root . '/docs/8.6/shared-lexer-regression.json'), true, flags: JSON_THROW_ON_ERROR);
++        self::assertSame($review['historicalLedgerSha256'], hash('sha256', $historical));
++        self::assertSame($review['currentLedgerSha256'], hash('sha256', $current));
++        $expected = json_decode($historical, true, flags: JSON_THROW_ON_ERROR);
++        self::assertSame(['src/Php/Lexing/PhpVersion.php'], array_keys($review['inputChanges']));
++        foreach ($review['inputChanges'] as $path => $change) {
++            self::assertSame($change['before'], $expected['input_hashes'][$path]);
++            self::assertSame($change['after'], hash_file('sha256', $root . '/' . $path));
++            $expected['input_hashes'][$path] = $change['after'];
++        }
++        self::assertSame($expected, $data);
+         self::assertCount(190, $data['rules']);
+         $counts = [];
+         foreach ($data['grammar_bypasses'] as $entry) {
+diff --git a/tests/Repository/ConsumerCliTest.php b/tests/Repository/ConsumerCliTest.php
+index 94fe172..3a85b41 100644
+--- a/tests/Repository/ConsumerCliTest.php
++++ b/tests/Repository/ConsumerCliTest.php
+@@ -39,4 +39,21 @@ final class ConsumerCliTest extends TestCase
+             self::assertNotSame('', $stderr);
+         }
+     }
++
++    public function testDraftNavigationAndMetadata(): void
++    {
++        [$exit, $stdout, $stderr] = $this->runCli(['versions']);
++        self::assertSame(0, $exit, $stderr);
++        $versions = json_decode($stdout, true, flags: JSON_THROW_ON_ERROR);
++        self::assertSame(['stable','draft'], array_column($versions, 'status'));
++        self::assertSame('f23b4c222cebe33be93ee8ecaaa14390c5507a08', $versions[1]['phpSource']['commit']);
++        self::assertSame('grammar/8.6/changes.md', $versions[1]['metadata']['changes']);
++        foreach ([['rules','8.6'],['rule','8.6','argument'],['refs','8.6','argument'],['sections','8.6'],['section','8.6','arguments']] as $args) {
++            [$exit,$stdout,$stderr] = $this->runCli($args);
++            self::assertSame(0,$exit,$stderr);
++            self::assertIsArray(json_decode($stdout,true,flags: JSON_THROW_ON_ERROR));
++        }
++        [$exit,$stdout,$stderr] = $this->runCli(['rule','8.6','missing']);
++        self::assertSame(1,$exit); self::assertSame('',$stdout); self::assertNotSame('',$stderr);
++    }
+ }
+diff --git a/tests/Repository/ConsumerWorkflowTest.php b/tests/Repository/ConsumerWorkflowTest.php
+index c8d0f86..912e743 100644
+--- a/tests/Repository/ConsumerWorkflowTest.php
++++ b/tests/Repository/ConsumerWorkflowTest.php
+@@ -22,10 +22,11 @@ final class ConsumerWorkflowTest extends TestCase
+     public function testDiscoverLoadInspectAndMatch(): void
+     {
+         $manifest = $this->manifest();
+-        self::assertSame(['8.5'], $manifest->versions());
++        self::assertSame(['8.5', '8.6'], $manifest->versions());
+         self::assertTrue($manifest->hasVersion('8.5'));
+-        self::assertFalse($manifest->hasVersion('8.6'));
+-        self::assertSame('8.5', $manifest->latestVersion());
++        self::assertTrue($manifest->hasVersion('8.6'));
++        self::assertSame('draft', $manifest->package('8.6')->status);
++        self::assertSame('8.6', $manifest->latestVersion());
+         $package = $manifest->package('8.5');
+         self::assertSame('stable', $package->status);
+         self::assertFileExists($manifest->absolutePath($package->grammarPath));
+@@ -67,7 +68,7 @@ final class ConsumerWorkflowTest extends TestCase
+     public function testUnknownVersionDiagnostic(): void
+     {
+         $this->expectException(RepositoryManifestException::class);
+-        $this->expectExceptionMessage('Unsupported grammar version "9.9". Available versions: 8.5. Use versions() to discover packages.');
++        $this->expectExceptionMessage('Unsupported grammar version "9.9". Available versions: 8.5, 8.6. Use versions() to discover packages.');
+         (new GrammarRepository($this->manifest()))->load('9.9');
+     }
+ 
+diff --git a/tests/Repository/RepositoryManifestTest.php b/tests/Repository/RepositoryManifestTest.php
+index dd3baf8..f336323 100644
+--- a/tests/Repository/RepositoryManifestTest.php
++++ b/tests/Repository/RepositoryManifestTest.php
+@@ -14,7 +14,7 @@ final class RepositoryManifestTest extends TestCase
+     {
+         $manifest = RepositoryManifest::fromRepositoryRoot(dirname(__DIR__, 2));
+ 
+-        self::assertSame(['8.5'], $manifest->versions());
++        self::assertSame(['8.5', '8.6'], $manifest->versions());
+         self::assertSame([
+             'code-unit', 'non-ascii-code-unit', 'html-code-unit', 'line-comment-code-unit',
+             'block-comment-code-unit', 'single-quoted-code-unit', 'encapsed-code-unit', 'nowdoc-code-unit',

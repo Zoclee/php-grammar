@@ -1,0 +1,162 @@
+{
+  "scope": "Bounded refresh of two relevant PRs, up to 100 issue/review comments each and two date-bounded searches (first 30 results). Search absence is not a proof of intent or exhaustive issue coverage. No maintainer contacted. Supplemental immutable source headers independently compared to local bytes.",
+  "requests": {
+    "pr-20628": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/20628",
+      "retrievedAt": "2026-10-25T16:16:51+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/pr-20628.json",
+      "sha256": "a826e29c8fed52d4be88be4fdb57e6e7a858d3012ab2dbdd345c0327de99830d",
+      "materialRecordChanged": false,
+      "priorSha256": "717e4dd09c16c7f0cc216f6e7fa16e706ff8942f71441edc15ebc1260dd707c1"
+    },
+    "issue-comments-20628": {
+      "url": "https://api.github.com/repos/php/php-src/issues/20628/comments?per_page=100",
+      "retrievedAt": "2026-10-25T16:16:52+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/issue-comments-20628.json",
+      "sha256": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd",
+      "materialRecordChanged": false,
+      "priorSha256": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd",
+      "count": 17
+    },
+    "review-comments-20628": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/20628/comments?per_page=100",
+      "retrievedAt": "2026-10-25T16:16:53+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/review-comments-20628.json",
+      "sha256": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe",
+      "materialRecordChanged": false,
+      "priorSha256": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe",
+      "count": 15
+    },
+    "pr-19658": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/19658",
+      "retrievedAt": "2026-10-25T16:16:54+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/pr-19658.json",
+      "sha256": "00e0c9e0d85e09d9069408e8eed460df7e760d5a74669e2f75bf818025afc3cd",
+      "materialRecordChanged": false,
+      "priorSha256": "138ece1aec6bfe106b6bb5911a1b3fadc031c489e12c1829ebf09a95b4f9ca74"
+    },
+    "issue-comments-19658": {
+      "url": "https://api.github.com/repos/php/php-src/issues/19658/comments?per_page=100",
+      "retrievedAt": "2026-10-25T16:16:54+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/issue-comments-19658.json",
+      "sha256": "5c728bc485faa289b5a61bbb5f612e9932639f038aed9aef7e203e41aa7bb33c",
+      "materialRecordChanged": false,
+      "priorSha256": "5c728bc485faa289b5a61bbb5f612e9932639f038aed9aef7e203e41aa7bb33c",
+      "count": 8
+    },
+    "review-comments-19658": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/19658/comments?per_page=100",
+      "retrievedAt": "2026-10-25T16:16:56+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/review-comments-19658.json",
+      "sha256": "f48ba1e8a44a4a647f8ca052bd84f9149352b61989eff38063cbb995b5b7e61c",
+      "materialRecordChanged": false,
+      "priorSha256": "f48ba1e8a44a4a647f8ca052bd84f9149352b61989eff38063cbb995b5b7e61c",
+      "count": 15
+    },
+    "search-new-writable": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20updated%3A%3E%3D2026-10-25%20%22assignment%22%20%22opcode%22&per_page=30",
+      "retrievedAt": "2026-10-25T16:16:57+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/search-new-writable.json",
+      "sha256": "c9938edecb99d754b2d039ac9eec320a94c769b6a6417921e2dcbef9e2fe01a0",
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    "search-new-traversal": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20updated%3A%3E%3D2026-10-25%20%22printf%22%20%22constant%22&per_page=30",
+      "retrievedAt": "2026-10-25T16:16:57+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/search-new-traversal.json",
+      "sha256": "3a45340773b54ee3d9286c6dfc6d682e291b89cc1e27efdb5492c9f5444e52a4",
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "title": "Tracing JIT: local keeps a stale constant after a trace links into a loop trace",
+          "url": "https://github.com/php/php-src/issues/24683"
+        }
+      ]
+    },
+    "source-85-zend_types.h": {
+      "url": "https://raw.githubusercontent.com/php/php-src/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_types.h",
+      "retrievedAt": "2026-10-25T16:16:58+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/source-85-zend_types.h.txt",
+      "sha256": "601ed337205b2258ff0de217d40aaf38afd3a52f67a8edf0f91182414a6bcccd",
+      "localPath": ".audit/php-php-src-7a4c627/Zend/zend_types.h",
+      "localSha256": "601ed337205b2258ff0de217d40aaf38afd3a52f67a8edf0f91182414a6bcccd",
+      "localMatches": true
+    },
+    "source-85-zend_compile.h": {
+      "url": "https://raw.githubusercontent.com/php/php-src/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend_compile.h",
+      "retrievedAt": "2026-10-25T16:16:58+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/source-85-zend_compile.h.txt",
+      "sha256": "9f6b0fc3cb3398810c5ba17eb8b993e7d856b304f5dff43901d80dcbec1c7f61",
+      "localPath": ".audit/php-php-src-7a4c627/Zend/zend_compile.h",
+      "localSha256": "9f6b0fc3cb3398810c5ba17eb8b993e7d856b304f5dff43901d80dcbec1c7f61",
+      "localMatches": true
+    },
+    "source-85-zend.h": {
+      "url": "https://raw.githubusercontent.com/php/php-src/7a4c62795365ed6a97a0184c96375b9fb4d53b1e/Zend/zend.h",
+      "retrievedAt": "2026-10-25T16:16:59+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/source-85-zend.h.txt",
+      "sha256": "dda33f39640a61f7ce44dd27c9af6fcf54ffd4c4c3a319a8d7dbee9667a368a3",
+      "localPath": ".audit/php-php-src-7a4c627/Zend/zend.h",
+      "localSha256": "dda33f39640a61f7ce44dd27c9af6fcf54ffd4c4c3a319a8d7dbee9667a368a3",
+      "localMatches": true
+    },
+    "source-86-zend_types.h": {
+      "url": "https://raw.githubusercontent.com/php/php-src/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_types.h",
+      "retrievedAt": "2026-10-25T16:17:00+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/source-86-zend_types.h.txt",
+      "sha256": "0386987db5e3e15c0cf2209125592115241c8bd2cc7ab36d5bdbc78d5db617a3",
+      "localPath": ".audit/php86-exact/source/Zend/zend_types.h",
+      "localSha256": "0386987db5e3e15c0cf2209125592115241c8bd2cc7ab36d5bdbc78d5db617a3",
+      "localMatches": true
+    },
+    "source-86-zend_compile.h": {
+      "url": "https://raw.githubusercontent.com/php/php-src/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.h",
+      "retrievedAt": "2026-10-25T16:17:01+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/source-86-zend_compile.h.txt",
+      "sha256": "3a43384f3c49a629ddc11de2e2303d4cd710b8ec699cdfcf9d5092353831e02d",
+      "localPath": ".audit/php86-exact/source/Zend/zend_compile.h",
+      "localSha256": "3a43384f3c49a629ddc11de2e2303d4cd710b8ec699cdfcf9d5092353831e02d",
+      "localMatches": true
+    },
+    "source-86-zend.h": {
+      "url": "https://raw.githubusercontent.com/php/php-src/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend.h",
+      "retrievedAt": "2026-10-25T16:17:01+00:00",
+      "exit_code": 0,
+      "error": "",
+      "path": "docs/8.6/certification-blocker-closure/upstream/source-86-zend.h.txt",
+      "sha256": "5e46f9e2eeada5d4a1a5aebb83e8f20bf64083a8936794ae276d22dea36aa73d",
+      "localPath": ".audit/php86-exact/source/Zend/zend.h",
+      "localSha256": "5e46f9e2eeada5d4a1a5aebb83e8f20bf64083a8936794ae276d22dea36aa73d",
+      "localMatches": true
+    }
+  }
+}

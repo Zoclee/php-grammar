@@ -1,0 +1,376 @@
+{
+  "observationReport": "docs/8.6/scanner-grammar-binding-closure/observations.json",
+  "sha256": "afe39ddd7bde5ac7c40e76104fed0af04ab7d7e4fd42bb9d119b41e8af42f872",
+  "method": "Remove only T_WHITESPACE/T_COMMENT/T_DOC_COMMENT from exact token_get_all; trim each token; compare with retained native withoutTrivia lexemes. Rejections and different arrays stay distinct.",
+  "rows": [
+    {
+      "id": "shebang",
+      "status": "different retained boundary arrays",
+      "native": [
+        "<?php",
+        "echo",
+        "1",
+        ";"
+      ],
+      "exactTokenization": [
+        "#!/usr/bin/php",
+        "<?php",
+        "echo",
+        "1",
+        ";"
+      ],
+      "limitation": "CLI/shebang trivia treatment differs from token_get_all inline HTML; source/lint distinction retained."
+    },
+    {
+      "id": "shebang-eof",
+      "status": "equal normalized nontrivia boundaries",
+      "native": [
+        "#!/usr/bin/php"
+      ],
+      "exactTokenization": [
+        "#!/usr/bin/php"
+      ],
+      "limitation": "CLI/shebang trivia treatment differs from token_get_all inline HTML; source/lint distinction retained."
+    },
+    {
+      "id": "tags",
+      "status": "equal normalized nontrivia boundaries",
+      "native": [
+        "before",
+        "<?=",
+        "1",
+        "?>",
+        "after",
+        "<?php",
+        "echo",
+        "2",
+        ";",
+        "?>",
+        "tail"
+      ],
+      "exactTokenization": [
+        "before",
+        "<?=",
+        "1",
+        "?>",
+        "after",
+        "<?php",
+        "echo",
+        "2",
+        ";",
+        "?>",
+        "tail"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "numbers",
+      "status": "equal normalized nontrivia boundaries",
+      "native": [
+        "<?php",
+        "$x",
+        "=",
+        "[",
+        "0b10_01",
+        ",",
+        "0o7_1",
+        ",",
+        "07",
+        ",",
+        "0xF_F",
+        ",",
+        "123_456",
+        ",",
+        "1.2e+3",
+        ",",
+        ".5",
+        ",",
+        "5.",
+        "]",
+        ";"
+      ],
+      "exactTokenization": [
+        "<?php",
+        "$x",
+        "=",
+        "[",
+        "0b10_01",
+        ",",
+        "0o7_1",
+        ",",
+        "07",
+        ",",
+        "0xF_F",
+        ",",
+        "123_456",
+        ",",
+        "1.2e+3",
+        ",",
+        ".5",
+        ",",
+        "5.",
+        "]",
+        ";"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "numeric-error",
+      "status": "equal normalized nontrivia boundaries",
+      "native": [
+        "<?php",
+        "$x",
+        "=",
+        "0b10",
+        "2",
+        ";"
+      ],
+      "exactTokenization": [
+        "<?php",
+        "$x",
+        "=",
+        "0b10",
+        "2",
+        ";"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "offset-property",
+      "status": "different retained boundary arrays",
+      "native": [
+        "<?php",
+        "$x",
+        "=",
+        "\"$a[12] $a[key] $a->match $a?->readonly\"",
+        ";"
+      ],
+      "exactTokenization": [
+        "<?php",
+        "$x",
+        "=",
+        "\"",
+        "$a",
+        "[",
+        "12",
+        "]",
+        "",
+        "$a",
+        "[",
+        "key",
+        "]",
+        "",
+        "$a",
+        "->",
+        "match",
+        "",
+        "$a",
+        "?->",
+        "readonly",
+        "\"",
+        ";"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "heredoc-nested",
+      "status": "different retained boundary arrays",
+      "native": [
+        "<?php",
+        "$x",
+        "=",
+        "<<<OUT\n{$a[<<<IN\nkey\nIN]}\nOUT",
+        ";"
+      ],
+      "exactTokenization": [
+        "<?php",
+        "$x",
+        "=",
+        "<<<OUT",
+        "{",
+        "$a",
+        "[",
+        "<<<IN",
+        "key",
+        "IN",
+        "]",
+        "}",
+        "",
+        "OUT",
+        ";"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "nowdoc-indent",
+      "status": "different retained boundary arrays",
+      "native": [
+        "<?php",
+        "$x",
+        "=",
+        "<<<'END'\n  literal \\n $name\n  END",
+        ";"
+      ],
+      "exactTokenization": [
+        "<?php",
+        "$x",
+        "=",
+        "<<<'END'",
+        "literal \\n $name",
+        "END",
+        ";"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "nowdoc-indent-error",
+      "status": "native lexer rejects",
+      "native": [],
+      "exactTokenization": [
+        "<?php",
+        "$x",
+        "=",
+        "<<<'END'",
+        "x",
+        "END",
+        ";"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "comment-eof",
+      "status": "native lexer rejects",
+      "native": [],
+      "exactTokenization": [
+        "<?php"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "unicode-escape",
+      "status": "equal normalized nontrivia boundaries",
+      "native": [
+        "<?php",
+        "$x",
+        "=",
+        "\"\\u{41}\\n\\x42\"",
+        ";"
+      ],
+      "exactTokenization": [
+        "<?php",
+        "$x",
+        "=",
+        "\"\\u{41}\\n\\x42\"",
+        ";"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "unicode-error",
+      "status": "equal normalized nontrivia boundaries",
+      "native": [
+        "<?php",
+        "$x",
+        "=",
+        "\"\\u{110000}\"",
+        ";"
+      ],
+      "exactTokenization": [
+        "<?php",
+        "$x",
+        "=",
+        "\"\\u{110000}\"",
+        ";"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "pfa-attribute",
+      "status": "equal normalized nontrivia boundaries",
+      "native": [
+        "<?php",
+        "#[",
+        "A",
+        "]",
+        "function",
+        "f",
+        "(",
+        ")",
+        "{",
+        "}",
+        "$x",
+        "=",
+        "f",
+        "(",
+        "?",
+        ",",
+        "...",
+        ")",
+        ";"
+      ],
+      "exactTokenization": [
+        "<?php",
+        "#[",
+        "A",
+        "]",
+        "function",
+        "f",
+        "(",
+        ")",
+        "{",
+        "}",
+        "$x",
+        "=",
+        "f",
+        "(",
+        "?",
+        ",",
+        "...",
+        ")",
+        ";"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    },
+    {
+      "id": "qualified-names",
+      "status": "equal normalized nontrivia boundaries",
+      "native": [
+        "<?php",
+        "A\\B",
+        "(",
+        ")",
+        ";",
+        "\\A\\B",
+        "(",
+        ")",
+        ";",
+        "namespace\\f",
+        "(",
+        ")",
+        ";"
+      ],
+      "exactTokenization": [
+        "<?php",
+        "A\\B",
+        "(",
+        ")",
+        ";",
+        "\\A\\B",
+        "(",
+        ")",
+        ";",
+        "namespace\\f",
+        "(",
+        ")",
+        ";"
+      ],
+      "limitation": "Token text comparison is not scanner instrumentation, parser validity or AST equivalence. Differences remain visible rather than automatically waived."
+    }
+  ],
+  "totals": {
+    "different retained boundary arrays": 4,
+    "equal normalized nontrivia boundaries": 8,
+    "native lexer rejects": 2
+  },
+  "certificationGranted": false
+}

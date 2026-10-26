@@ -1,0 +1,736 @@
+{
+  "contract": "php86-local-source-context-v1",
+  "predicates": {
+    "variadic-last": {
+      "description": "C6-C018",
+      "source": "params-new",
+      "start": 8472,
+      "end": 8474,
+      "predicateDiagnostic": "Only the last parameter can be variadic",
+      "upstreamTest": "Zend/tests/variadic/only_last_error.phpt",
+      "upstreamLimit": "Supporting pinned test retained; new local stage controls distinguish traversal.",
+      "productions": [
+        "parameter",
+        "function-declaration",
+        "closure-expression"
+      ],
+      "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+      "stage": "Visited declaration contextual compilation; enclosing closure can be removed by constant folding. Lint is not an isolated parser verdict.",
+      "nativeEnforcement": false,
+      "externalCompilerRequired": true,
+      "wholeDescriptionClosed": false,
+      "remaining": "Finite source/stage witnesses only; other declaration contexts, transitive traversal and native enforcement remain open."
+    },
+    "setter-arity": {
+      "description": "C6-C029",
+      "source": "setter-new",
+      "start": 9443,
+      "end": 9448,
+      "predicateDiagnostic": "must accept exactly one",
+      "upstreamTest": null,
+      "upstreamLimit": "No isolated upstream PHPT association established; local exact-pin controls and predicate evidence only.",
+      "productions": [
+        "property-declaration",
+        "property-hook",
+        "hook-name"
+      ],
+      "normativeClause": "grammar/8.6/php.md#hooks",
+      "stage": "Visited declaration contextual compilation; enclosing closure can be removed by constant folding. Lint is not an isolated parser verdict.",
+      "nativeEnforcement": false,
+      "externalCompilerRequired": true,
+      "wholeDescriptionClosed": false,
+      "remaining": "Finite source/stage witnesses only; other declaration contexts, transitive traversal and native enforcement remain open."
+    },
+    "setter-reference": {
+      "description": "C6-C029",
+      "source": "setter-new",
+      "start": 9449,
+      "end": 9453,
+      "predicateDiagnostic": "must not be pass-by-reference",
+      "upstreamTest": "Zend/tests/property_hooks/set_by_ref.phpt",
+      "upstreamLimit": "Supporting pinned test retained; new local stage controls distinguish traversal.",
+      "productions": [
+        "property-declaration",
+        "property-hook",
+        "hook-name"
+      ],
+      "normativeClause": "grammar/8.6/php.md#hooks",
+      "stage": "Visited declaration contextual compilation; enclosing closure can be removed by constant folding. Lint is not an isolated parser verdict.",
+      "nativeEnforcement": false,
+      "externalCompilerRequired": true,
+      "wholeDescriptionClosed": false,
+      "remaining": "Finite source/stage witnesses only; other declaration contexts, transitive traversal and native enforcement remain open."
+    },
+    "setter-variadic": {
+      "description": "C6-C029",
+      "source": "setter-new",
+      "start": 9454,
+      "end": 9457,
+      "predicateDiagnostic": "must not be variadic",
+      "upstreamTest": "Zend/tests/property_hooks/set_variadic.phpt",
+      "upstreamLimit": "Supporting pinned test retained; new local stage controls distinguish traversal.",
+      "productions": [
+        "property-declaration",
+        "property-hook",
+        "hook-name"
+      ],
+      "normativeClause": "grammar/8.6/php.md#hooks",
+      "stage": "Visited declaration contextual compilation; enclosing closure can be removed by constant folding. Lint is not an isolated parser verdict.",
+      "nativeEnforcement": false,
+      "externalCompilerRequired": true,
+      "wholeDescriptionClosed": false,
+      "remaining": "Finite source/stage witnesses only; other declaration contexts, transitive traversal and native enforcement remain open."
+    },
+    "setter-default": {
+      "description": "C6-C029",
+      "source": "setter-new",
+      "start": 9458,
+      "end": 9461,
+      "predicateDiagnostic": "must not have a default value",
+      "upstreamTest": "Zend/tests/property_hooks/bug004.phpt",
+      "upstreamLimit": "Supporting pinned test retained; new local stage controls distinguish traversal.",
+      "productions": [
+        "property-declaration",
+        "property-hook",
+        "hook-name"
+      ],
+      "normativeClause": "grammar/8.6/php.md#hooks",
+      "stage": "Visited declaration contextual compilation; enclosing closure can be removed by constant folding. Lint is not an isolated parser verdict.",
+      "nativeEnforcement": false,
+      "externalCompilerRequired": true,
+      "wholeDescriptionClosed": false,
+      "remaining": "Finite source/stage witnesses only; other declaration contexts, transitive traversal and native enforcement remain open."
+    },
+    "setter-typedness": {
+      "description": "C6-C029",
+      "source": "setter-new",
+      "start": 9462,
+      "end": 9464,
+      "predicateDiagnostic": "must be compatible",
+      "upstreamTest": "Zend/tests/property_hooks/explicit_set_value_parameter_type.phpt",
+      "upstreamLimit": "Supporting pinned test retained; new local stage controls distinguish traversal.",
+      "productions": [
+        "property-declaration",
+        "property-hook",
+        "hook-name"
+      ],
+      "normativeClause": "grammar/8.6/php.md#hooks",
+      "stage": "Visited declaration contextual compilation; enclosing closure can be removed by constant folding. Lint is not an isolated parser verdict.",
+      "nativeEnforcement": false,
+      "externalCompilerRequired": true,
+      "wholeDescriptionClosed": false,
+      "remaining": "Finite source/stage witnesses only; other declaration contexts, transitive traversal and native enforcement remain open."
+    },
+    "setter-void": {
+      "description": "C6-C021",
+      "source": "return-new",
+      "start": 2678,
+      "end": 2698,
+      "predicateDiagnostic": "A void method must not return a value",
+      "upstreamTest": "Zend/tests/property_hooks/set.phpt",
+      "upstreamLimit": "Supporting pinned test retained; new local stage controls distinguish traversal.",
+      "productions": [
+        "parameter",
+        "function-declaration",
+        "closure-expression"
+      ],
+      "normativeClause": "grammar/8.6/php.md#parameter-and-closure-constraints",
+      "stage": "Visited declaration contextual compilation; enclosing closure can be removed by constant folding. Lint is not an isolated parser verdict.",
+      "nativeEnforcement": false,
+      "externalCompilerRequired": true,
+      "wholeDescriptionClosed": false,
+      "remaining": "Finite source/stage witnesses only; other declaration contexts, transitive traversal and native enforcement remain open."
+    },
+    "backed-value": {
+      "description": "C6-C035",
+      "source": "enum-compile",
+      "start": 10193,
+      "end": 10196,
+      "predicateDiagnostic": "must have a value",
+      "upstreamTest": "Zend/tests/enum/backed-int-case-without-value.phpt",
+      "upstreamLimit": "Supporting pinned test retained; new local stage controls distinguish traversal.",
+      "productions": [
+        "enum-declaration",
+        "enum-case"
+      ],
+      "normativeClause": "grammar/8.6/php.md#enums",
+      "stage": "Visited declaration contextual compilation; enclosing closure can be removed by constant folding. Lint is not an isolated parser verdict.",
+      "nativeEnforcement": false,
+      "externalCompilerRequired": true,
+      "wholeDescriptionClosed": false,
+      "remaining": "Finite source/stage witnesses only; other declaration contexts, transitive traversal and native enforcement remain open."
+    },
+    "unbacked-value": {
+      "description": "C6-C036",
+      "source": "enum-compile",
+      "start": 10197,
+      "end": 10200,
+      "predicateDiagnostic": "must not have a value",
+      "upstreamTest": "Zend/tests/enum/non-backed-enum-with-int-value.phpt",
+      "upstreamLimit": "Supporting pinned test retained; new local stage controls distinguish traversal.",
+      "productions": [
+        "enum-declaration",
+        "enum-case"
+      ],
+      "normativeClause": "grammar/8.6/php.md#enums",
+      "stage": "Visited declaration contextual compilation; enclosing closure can be removed by constant folding. Lint is not an isolated parser verdict.",
+      "nativeEnforcement": false,
+      "externalCompilerRequired": true,
+      "wholeDescriptionClosed": false,
+      "remaining": "Finite source/stage witnesses only; other declaration contexts, transitive traversal and native enforcement remain open."
+    }
+  },
+  "cases": [
+    {
+      "id": "variadic-last-repair",
+      "predicate": "variadic-last",
+      "stage": "repair",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/variadic-last-repair.php",
+      "sha256": "9eda33698d51399c56ee4476ce33e8b6d135dbb4ed0b08684e3da10c685e5b17",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "variadic-last-live",
+      "predicate": "variadic-last",
+      "stage": "live",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/variadic-last-live.php",
+      "sha256": "acae5261c221345b123d35314ac527cd84be546d1957737d7f250c1fb1ac94f9",
+      "accept": false,
+      "diagnostic": "Only the last parameter can be variadic",
+      "mode": "lint"
+    },
+    {
+      "id": "variadic-last-retained",
+      "predicate": "variadic-last",
+      "stage": "retained",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/variadic-last-retained.php",
+      "sha256": "30965ccb90926711ff557d2c2f35dd658628c60b62bbb845f6c8ab7921ee3ad0",
+      "accept": false,
+      "diagnostic": "Only the last parameter can be variadic",
+      "mode": "lint"
+    },
+    {
+      "id": "variadic-last-discarded",
+      "predicate": "variadic-last",
+      "stage": "discarded",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/variadic-last-discarded.php",
+      "sha256": "d0772c690eda5616965bdebec516fccba022b2da282b86d5a2889c903aaf9dd8",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "variadic-last-ordinary-false",
+      "predicate": "variadic-last",
+      "stage": "ordinary-false",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/variadic-last-ordinary-false.php",
+      "sha256": "36f52609cedc0172a266efce86501d0be0581edfcbe32024a88451906e34c761",
+      "accept": false,
+      "diagnostic": "Only the last parameter can be variadic",
+      "mode": "lint"
+    },
+    {
+      "id": "variadic-last-dead",
+      "predicate": "variadic-last",
+      "stage": "dead",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/variadic-last-dead.php",
+      "sha256": "92b1fcf6d4a2c8d939e33686a9b562e47b102cbc612e9222a85d0f374ea14246",
+      "accept": false,
+      "diagnostic": "Only the last parameter can be variadic",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-arity-repair",
+      "predicate": "setter-arity",
+      "stage": "repair",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-arity-repair.php",
+      "sha256": "bd5b79f481526fb0f78b3e2f304a2ef308c4e2976664d73700e161fb70e1fc03",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-arity-live",
+      "predicate": "setter-arity",
+      "stage": "live",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-arity-live.php",
+      "sha256": "b0deb7097cb79cf05ddb8d90373d64d79464aa6ae5a78f0a6f134c7941f5f825",
+      "accept": false,
+      "diagnostic": "must accept exactly one",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-arity-retained",
+      "predicate": "setter-arity",
+      "stage": "retained",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-arity-retained.php",
+      "sha256": "61278642140440df88894f36480d834dd935dc04f2561925c1e2f2e2954c585e",
+      "accept": false,
+      "diagnostic": "must accept exactly one",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-arity-discarded",
+      "predicate": "setter-arity",
+      "stage": "discarded",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-arity-discarded.php",
+      "sha256": "bb5a45ee22f0411790e5b2cdd84a52d89e51189111b251034b05fcc97934378b",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-arity-ordinary-false",
+      "predicate": "setter-arity",
+      "stage": "ordinary-false",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-arity-ordinary-false.php",
+      "sha256": "d5bc96a1a04e525fd8ac7b98c23be267e1e85b0b1aa788d7fd74b98940bfd93a",
+      "accept": false,
+      "diagnostic": "must accept exactly one",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-arity-dead",
+      "predicate": "setter-arity",
+      "stage": "dead",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-arity-dead.php",
+      "sha256": "41a7afb1e14825c9effc4473c205951f50c42ee0ac767ac3c1b2edc87b460ec1",
+      "accept": false,
+      "diagnostic": "must accept exactly one",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-reference-repair",
+      "predicate": "setter-reference",
+      "stage": "repair",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-reference-repair.php",
+      "sha256": "bd5b79f481526fb0f78b3e2f304a2ef308c4e2976664d73700e161fb70e1fc03",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-reference-live",
+      "predicate": "setter-reference",
+      "stage": "live",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-reference-live.php",
+      "sha256": "58abb9940eec074a7467c32848e55e8d56f56d6d3df5d17b883dc5488f117c08",
+      "accept": false,
+      "diagnostic": "must not be pass-by-reference",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-reference-retained",
+      "predicate": "setter-reference",
+      "stage": "retained",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-reference-retained.php",
+      "sha256": "293151c7ae3791b3dee284a3d67d3c7b13edfabf0a7d124b0eb44ad63051d9fa",
+      "accept": false,
+      "diagnostic": "must not be pass-by-reference",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-reference-discarded",
+      "predicate": "setter-reference",
+      "stage": "discarded",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-reference-discarded.php",
+      "sha256": "b19eb0b1722b24407338b3815837e4e90085e1fdd412c6837e917027435764a0",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-reference-ordinary-false",
+      "predicate": "setter-reference",
+      "stage": "ordinary-false",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-reference-ordinary-false.php",
+      "sha256": "eac4f85c5d852886fea56c5feb4ff1c99079704c0d99baa2dd32add9cdb675b4",
+      "accept": false,
+      "diagnostic": "must not be pass-by-reference",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-reference-dead",
+      "predicate": "setter-reference",
+      "stage": "dead",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-reference-dead.php",
+      "sha256": "5721e93757b368b4230b57ab77be1ce1b58ef486b8b18c4d02593217c452a616",
+      "accept": false,
+      "diagnostic": "must not be pass-by-reference",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-variadic-repair",
+      "predicate": "setter-variadic",
+      "stage": "repair",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-variadic-repair.php",
+      "sha256": "bd5b79f481526fb0f78b3e2f304a2ef308c4e2976664d73700e161fb70e1fc03",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-variadic-live",
+      "predicate": "setter-variadic",
+      "stage": "live",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-variadic-live.php",
+      "sha256": "07d456390d377018f16979b4eb77ae504d4d3666486d17ef05749c3b1e094f73",
+      "accept": false,
+      "diagnostic": "must not be variadic",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-variadic-retained",
+      "predicate": "setter-variadic",
+      "stage": "retained",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-variadic-retained.php",
+      "sha256": "11879277fc821741fabf60c7d000fe45efc67f2e2c17d6060fa4201c080978ff",
+      "accept": false,
+      "diagnostic": "must not be variadic",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-variadic-discarded",
+      "predicate": "setter-variadic",
+      "stage": "discarded",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-variadic-discarded.php",
+      "sha256": "45ca2165ce71ec9bdaebbad79d4009effa8abb517c3c7a11ccec131ff5d477ee",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-variadic-ordinary-false",
+      "predicate": "setter-variadic",
+      "stage": "ordinary-false",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-variadic-ordinary-false.php",
+      "sha256": "8f6bfc8e4e821f5d6cfcf7ab41bba40ad9961a87f35bf617890a1ebb5e2ebc36",
+      "accept": false,
+      "diagnostic": "must not be variadic",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-variadic-dead",
+      "predicate": "setter-variadic",
+      "stage": "dead",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-variadic-dead.php",
+      "sha256": "627dd8166e9ad6a6deb95cea1ef3f556ce1235a97094f47816903176c366304c",
+      "accept": false,
+      "diagnostic": "must not be variadic",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-default-repair",
+      "predicate": "setter-default",
+      "stage": "repair",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-default-repair.php",
+      "sha256": "bd5b79f481526fb0f78b3e2f304a2ef308c4e2976664d73700e161fb70e1fc03",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-default-live",
+      "predicate": "setter-default",
+      "stage": "live",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-default-live.php",
+      "sha256": "f201eb14abb480c95b9398f02a716e263bb10a00ea46c16cb6f9d6aceae57be9",
+      "accept": false,
+      "diagnostic": "must not have a default value",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-default-retained",
+      "predicate": "setter-default",
+      "stage": "retained",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-default-retained.php",
+      "sha256": "d79b4acf7589e391ee26c40c4a48e7fdef17a6dc72ccc51bc582ae00eeaedcca",
+      "accept": false,
+      "diagnostic": "must not have a default value",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-default-discarded",
+      "predicate": "setter-default",
+      "stage": "discarded",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-default-discarded.php",
+      "sha256": "a8f63aa21afd9c18e86f53b4a10ba761bc4a1b30d408d5e56645752f24081c9a",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-default-ordinary-false",
+      "predicate": "setter-default",
+      "stage": "ordinary-false",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-default-ordinary-false.php",
+      "sha256": "b1d7c5338ef8f354dc54e22eafdf92fc3d8d03006a1f00d57a7b7ea1708b9cea",
+      "accept": false,
+      "diagnostic": "must not have a default value",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-default-dead",
+      "predicate": "setter-default",
+      "stage": "dead",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-default-dead.php",
+      "sha256": "aa853989344eba64c6f5e354033519c275745c4a4483d3a65cfca98a805c35ac",
+      "accept": false,
+      "diagnostic": "must not have a default value",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-typedness-repair",
+      "predicate": "setter-typedness",
+      "stage": "repair",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-typedness-repair.php",
+      "sha256": "bd5b79f481526fb0f78b3e2f304a2ef308c4e2976664d73700e161fb70e1fc03",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-typedness-live",
+      "predicate": "setter-typedness",
+      "stage": "live",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-typedness-live.php",
+      "sha256": "262b151f497c66492206920bc0d805ea8a26ba78650228f15d7501868f344e92",
+      "accept": false,
+      "diagnostic": "must be compatible",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-typedness-retained",
+      "predicate": "setter-typedness",
+      "stage": "retained",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-typedness-retained.php",
+      "sha256": "6205d9ccbd5a461ec4d2a40038f35fed5b3cebabec73e74a372bcb5550a5c14f",
+      "accept": false,
+      "diagnostic": "must be compatible",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-typedness-discarded",
+      "predicate": "setter-typedness",
+      "stage": "discarded",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-typedness-discarded.php",
+      "sha256": "493d0f5e0e7ce2dc43c31f93c49791f6c03e00573c52c2b9bc8a222e89c96624",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-typedness-ordinary-false",
+      "predicate": "setter-typedness",
+      "stage": "ordinary-false",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-typedness-ordinary-false.php",
+      "sha256": "a8cb504ef941c3f00acf7c1cdb51e96b26d811a1b169c0aa8c5bfaa4bc30ad1f",
+      "accept": false,
+      "diagnostic": "must be compatible",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-typedness-dead",
+      "predicate": "setter-typedness",
+      "stage": "dead",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-typedness-dead.php",
+      "sha256": "4ae54949cc0e8e14c6e639aa94a42b3feacf1d2b957c6dc93cbba617872ec2a8",
+      "accept": false,
+      "diagnostic": "must be compatible",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-void-repair",
+      "predicate": "setter-void",
+      "stage": "repair",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-void-repair.php",
+      "sha256": "4a8aee512e3ffba0486cb8c3de1d574c800b391156a771e7df01065add8b5104",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-void-live",
+      "predicate": "setter-void",
+      "stage": "live",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-void-live.php",
+      "sha256": "c8a8919138927a4a36cf0d5ed00809ad03f6464c8ce0e53c4443cd793cb0764b",
+      "accept": false,
+      "diagnostic": "A void method must not return a value",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-void-retained",
+      "predicate": "setter-void",
+      "stage": "retained",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-void-retained.php",
+      "sha256": "bd3aa4cf9f99166441153e207fb2eb0a796edd0f53f1927c3c39f0093b2d3fef",
+      "accept": false,
+      "diagnostic": "A void method must not return a value",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-void-discarded",
+      "predicate": "setter-void",
+      "stage": "discarded",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-void-discarded.php",
+      "sha256": "06b03754015f544d963d83f09394505f25cee7e31567d28972d83f66023b4617",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "setter-void-ordinary-false",
+      "predicate": "setter-void",
+      "stage": "ordinary-false",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-void-ordinary-false.php",
+      "sha256": "96bd6de37576a40f1bd2a14f418654813a66e85ec5e4b1f2ed13cd0eaca432ae",
+      "accept": false,
+      "diagnostic": "A void method must not return a value",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-void-dead",
+      "predicate": "setter-void",
+      "stage": "dead",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-void-dead.php",
+      "sha256": "8de7b9e72cb950696bd5b8ef4c41e3b9c2ab3ef2059b19c891abac81d95b3724",
+      "accept": false,
+      "diagnostic": "A void method must not return a value",
+      "mode": "lint"
+    },
+    {
+      "id": "backed-value-repair",
+      "predicate": "backed-value",
+      "stage": "repair",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/backed-value-repair.php",
+      "sha256": "505c7452c569bbf615d822cad0f527479545a04c3c27a5ddd5e4ec90598090c3",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "backed-value-live",
+      "predicate": "backed-value",
+      "stage": "live",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/backed-value-live.php",
+      "sha256": "5eb85de5f2411be5a5c1a3a5759f7cf117717ab82d4c32160cfab4dd356d3f1d",
+      "accept": false,
+      "diagnostic": "must have a value",
+      "mode": "lint"
+    },
+    {
+      "id": "backed-value-retained",
+      "predicate": "backed-value",
+      "stage": "retained",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/backed-value-retained.php",
+      "sha256": "a3e56c4d1aa34ef949e7c140795b75068aa7d69b892ee27ca75c7934958eb2bf",
+      "accept": false,
+      "diagnostic": "must have a value",
+      "mode": "lint"
+    },
+    {
+      "id": "backed-value-discarded",
+      "predicate": "backed-value",
+      "stage": "discarded",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/backed-value-discarded.php",
+      "sha256": "69588d4a433e6c37e06a60211e436ed835a9079d853e6ad37b008adc99e8250b",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "backed-value-ordinary-false",
+      "predicate": "backed-value",
+      "stage": "ordinary-false",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/backed-value-ordinary-false.php",
+      "sha256": "b4387fc1f1195dcec6e9a7e91fb80e1300da614f22c1659e572707d6500d43d6",
+      "accept": false,
+      "diagnostic": "must have a value",
+      "mode": "lint"
+    },
+    {
+      "id": "backed-value-dead",
+      "predicate": "backed-value",
+      "stage": "dead",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/backed-value-dead.php",
+      "sha256": "4596c2997751f031edfd45dcad0623fafab9d7c7ebb18b8855c16c0cba84dfdd",
+      "accept": false,
+      "diagnostic": "must have a value",
+      "mode": "lint"
+    },
+    {
+      "id": "unbacked-value-repair",
+      "predicate": "unbacked-value",
+      "stage": "repair",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/unbacked-value-repair.php",
+      "sha256": "4a4dd11c944f7c48b7c993f2eeeaf830446d21696af1a0ae8448355aaa29f060",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "unbacked-value-live",
+      "predicate": "unbacked-value",
+      "stage": "live",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/unbacked-value-live.php",
+      "sha256": "a628e91eba6750d138dacf5927b45919e2495eb8fad268b7779b9df83318ffe8",
+      "accept": false,
+      "diagnostic": "must not have a value",
+      "mode": "lint"
+    },
+    {
+      "id": "unbacked-value-retained",
+      "predicate": "unbacked-value",
+      "stage": "retained",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/unbacked-value-retained.php",
+      "sha256": "d3457e0051ce503754f1f428f2b0f1d6af6e7c6b29201f0381e50d7def52962e",
+      "accept": false,
+      "diagnostic": "must not have a value",
+      "mode": "lint"
+    },
+    {
+      "id": "unbacked-value-discarded",
+      "predicate": "unbacked-value",
+      "stage": "discarded",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/unbacked-value-discarded.php",
+      "sha256": "f62c6fc4909e58af932e6e31228c3e88f6f5734992f84f7fc5542a1c21744e0b",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "lint"
+    },
+    {
+      "id": "unbacked-value-ordinary-false",
+      "predicate": "unbacked-value",
+      "stage": "ordinary-false",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/unbacked-value-ordinary-false.php",
+      "sha256": "455e18d113200c359f8980bf039bac66064ff163640e1f6f29e53071bdc40add",
+      "accept": false,
+      "diagnostic": "must not have a value",
+      "mode": "lint"
+    },
+    {
+      "id": "unbacked-value-dead",
+      "predicate": "unbacked-value",
+      "stage": "dead",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/unbacked-value-dead.php",
+      "sha256": "8b77645aeccaf955fb664ad84b87cde81a61c050d7f0d7560e550a29c12f9d33",
+      "accept": false,
+      "diagnostic": "must not have a value",
+      "mode": "lint"
+    },
+    {
+      "id": "setter-imported-void",
+      "predicate": "setter-void",
+      "stage": "controlled-runtime-reflection",
+      "fixture": "tests/fixtures/php/8.6/local-source-context/setter-imported-void.php",
+      "sha256": "c25bd80a2d79a77877122930b2a07fdc11da622e4830b2a2ea96f28d5593225c",
+      "accept": true,
+      "diagnostic": null,
+      "mode": "execute",
+      "expectedOutput": "implicit:void\nexplicit:void\n"
+    }
+  ]
+}

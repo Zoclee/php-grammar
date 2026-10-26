@@ -1,0 +1,22 @@
+{
+  "obligation": "Validate schema, metadata paths, RC4 pin and draft/stable status.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/certification-gate.php",
+    "--gate",
+    "manifest",
+    "--sources86",
+    "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+  ],
+  "log": "docs/8.6/certification/logs/manifest-schema.log",
+  "logSha256": "8d33e37fb7cfebb7e8ec69251ee37a3d55e642abd218ab930ec9e6998106be5e"
+}

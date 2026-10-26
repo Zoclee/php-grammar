@@ -1,0 +1,34 @@
+{
+  "source-clone": {
+    "command": [
+      "git",
+      "-c",
+      "core.autocrlf=false",
+      "clone",
+      "--depth",
+      "1",
+      "--branch",
+      "php-8.6.0RC4",
+      "https://github.com/php/php-src.git",
+      "C:/Data/GitHub/php-grammar/.audit/php86-exact/source"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/exact-pin-build/source-clone.log",
+    "sha256": "fceb9886160b66fca397030c3ac2ecf082acdba4e0abeb5258f953727cc3cac9"
+  },
+  "sdk-clone": {
+    "command": [
+      "git",
+      "-c",
+      "core.autocrlf=false",
+      "clone",
+      "--depth",
+      "1",
+      "https://github.com/php/php-sdk-binary-tools.git",
+      "C:/Data/GitHub/php-grammar/.audit/php86-exact/sdk"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/exact-pin-build/sdk-clone.log",
+    "sha256": "e6ceac6c87fb8b47bda7a9208694a9969dcfe4acbc44d03d15b59e5f8ce8cc68"
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "contract": "php86-blocker-triage-v1",
+  "historicalPredecessor": "docs/8.6/certification-remediation.json",
+  "plans": [
+    {
+      "id": "PHP86-013",
+      "priority": "P0",
+      "categories": [
+        "B",
+        "C"
+      ],
+      "action": "Prioritize mixed call/reference hunks, synthesized setter-type AST, enum registration/constant evaluation, and C5C-G07 interface graphs. Use exact hunk IDs; associate PHPTs and isolate only uncertain predicates before any Gate B proposal.",
+      "closureEvidence": [
+        "204 pending-direct-review and 18 examined-unresolved hunk identities; retain 28 bounded-group references rather than treating them as closed.",
+        "Complete acceptance-capable compiler/AST/linking/optimizer and outside-ledger/test associations; four original high-risk groups remain unresolved."
+      ],
+      "localWork": "22 precisely scoped hunk review obligations discharged (18 no-language-change, four mapped findings); four mixed hunks now explicitly unresolved. All 578 original identities preserved.",
+      "upstream": "Needed where discovery reaches PHP86-014/015 intended-validity questions; not needed for purely local macro/source correspondence.",
+      "finalRelease": "RC4 discovery can progress now; subsequent RC/final changes require incremental review separately.",
+      "grammarEditAuthorized": false
+    },
+    {
+      "id": "PHP86-014",
+      "priority": "P1",
+      "categories": [
+        "C"
+      ],
+      "action": "Prepare exact-form upstream clarification using retained opcode/control evidence. No maintainer contact was made; no function of runtime failure is converted into a parser restriction.",
+      "closureEvidence": [
+        "Authoritative intended validity for ordinary assignment, list and reference-result bases used in dimension/property writes, compound/inc/unset/reference operations.",
+        "Coherent compiler/VM treatment at the normative source pin or an explicitly reviewed successor pin, plus operation/result-kind/live/discarded correspondence."
+      ],
+      "localWork": "Existing 26-control matrix and TMP/VAR/CONST opcode explanation retain their authenticated identities. No duplicate broad probes.",
+      "upstream": "Required: should each parser-accepted assignment-derived target be rejected contextually, or supported by compatible VM operands? Do successful reference-derived forms intentionally gain writable permission?",
+      "finalRelease": "Intent may be clarified before final release; any upstream fix must be reconciled against the selected pin and then subsequent releases.",
+      "grammarEditAuthorized": false
+    },
+    {
+      "id": "PHP86-015",
+      "priority": "P1",
+      "categories": [
+        "C",
+        "B"
+      ],
+      "action": "Seek an exact-form upstream decision; retain ordinary versus constant-initializer and namespace/builtin distinctions. The new JIT issue 24683 is runtime trace-state behavior on PHP 8.5.12, not this compile-time validity decision.",
+      "closureEvidence": [
+        "General intended validity boundary for constant evaluation during optimized printf/sprintf argument handling versus ordinary dispatch and discarded ASTs.",
+        "Complete dispatch/visited-AST mapping for direct/imported/qualified/namespace/dynamic/named/unpack/PFA paths before any generalized enforcement rule."
+      ],
+      "localWork": "Retain the authenticated 31-control traversal matrix and compiler-versus-constant-evaluator explanation. Phase 5D wording remains accurate.",
+      "upstream": "Required: are optimized-call dependent early checks of otherwise discarded invalid constructs intentional language behavior or optimizer leakage? Which dispatch/initializer contexts are normative exceptions?",
+      "finalRelease": "Not inherently final-dependent; reconcile any later fix/intent decision incrementally before final certification.",
+      "grammarEditAuthorized": false
+    },
+    {
+      "id": "CA86-001",
+      "priority": "P2",
+      "categories": [
+        "D"
+      ],
+      "action": "Propose the precise bounded claim and its known exclusions for independent adjudication; do not treat documented divergence as automatically accepted certification scope.",
+      "closureEvidence": [
+        "Independent PHP 8.6 claim adjudication for intentional get/set-only structural restriction versus Zend acceptance of discarded unknown-hook declarations.",
+        "If correction is chosen, separately authorized contextual enforcement/parity/regression work and separate historical-version review."
+      ],
+      "localWork": "Known divergence reconfirmed by retained live/retained/discarded/repair controls; no new historical grammar defect established.",
+      "upstream": "Not necessary to establish the observed divergence; the unresolved dependency is repository claim/policy adjudication.",
+      "finalRelease": "Can be adjudicated before final release; final-source regression remains necessary.",
+      "grammarEditAuthorized": false
+    },
+    {
+      "id": "C6-CONTEXT",
+      "priority": "P1",
+      "categories": [
+        "A",
+        "B",
+        "D"
+      ],
+      "action": "Build a predicate-by-predicate ledger for retained/discarded declarations, types/members, references, attributes/enums and deferred linking. Reuse existing fixtures and add only missing stage-isolating witnesses; implement validator capabilities only in separately scoped work.",
+      "closureEvidence": [
+        "73 inherited restriction descriptions need individual RC4 predicate/test/stage correspondence where references remain family-level; changed readonly-default labels must follow PHP86-003.",
+        "Incomplete native contextual enforcement requires an explicit bounded claim decision; named finite matrices do not establish whole-source validation."
+      ],
+      "localWork": "Exact-source contextual profile independently verifies all 126 observations; type/promotion/hook source review adds 24 paired lint observations. Profile-selection infrastructure prerequisite is satisfied.",
+      "upstream": "Only where predicates intersect unresolved PHP86-014/015 intent; ordinary predicate/source mapping is local work.",
+      "finalRelease": "RC4 mapping/scope work can proceed now; final release needs new source correspondence.",
+      "grammarEditAuthorized": false
+    },
+    {
+      "id": "C6-COVERAGE",
+      "priority": "P1",
+      "categories": [
+        "B",
+        "D"
+      ],
+      "action": "Prioritize ordinary namespace/type/declaration/dereference alternatives and context-only from; cover lexical bodies through scanner primitive/state tests, and add operand/binding witnesses for closed-yield/prefix/dangling-else. No policy requires 100% raw chart coverage, but meaningful unexplained gaps still block.",
+      "closureEvidence": [
+        "64 unexercised productions and 318 alternatives require identity-specific evidence/classification, not an arbitrary percentage target.",
+        "Scanner state/helper/error products and individual parser/AST binding correspondences remain incomplete; 51 source/profile entries overlap 34 rule ranges, not 51 proved scanner rule hits."
+      ],
+      "localWork": "Coverage identities are retained unchanged. No newly reviewed source hunk is counted as a production, scanner hit or AST witness.",
+      "upstream": "Not normally needed for local missing witnesses; only if a source/grammar mismatch or intended-validity question is encountered.",
+      "finalRelease": "RC4 coverage and mapping can progress now; later-source differences require targeted renewal.",
+      "grammarEditAuthorized": false
+    },
+    {
+      "id": "C6-PROVENANCE",
+      "priority": "P1",
+      "categories": [
+        "A",
+        "B",
+        "E"
+      ],
+      "action": "Review evidence-backed successor consumption of the existing provenance/context verifiers without changing legacy results; separately resolve the original historical aggregate gate and remaining language obligations. Await and reconcile final source only for final-release claims.",
+      "closureEvidence": [
+        "Legacy gate orchestrator still constructs a distribution-only provenance record and requires blocked provenance status; consuming verified exact-source evidence must preserve all mandatory obligations.",
+        "Complete successful independent prerelease release evidence remains absent while other gates/freshness requirements block.",
+        "Subsequent RC and final-release source/executable correspondence and release gates remain outstanding."
+      ],
+      "localWork": "Exact-source build identity, 235-file source lock, 28,445-file source inventory, executable/core DLL, configuration/toolchain/build custody and existing differential/contextual observations have been independently verified. Historical integrity and pre-edit current compatibility separately pass.",
+      "upstream": "Not required for existing RC4 provenance. A second independent build or bit-for-bit reproduction is not required by the current policy/gate and is not invented as a blocker; neither is claimed.",
+      "finalRelease": "Required for final PHP 8.6 compatibility and stable certification; RC4 identity cannot satisfy it.",
+      "grammarEditAuthorized": false
+    }
+  ],
+  "additionalDependencies": [
+    {
+      "id": "H85-FRESHNESS",
+      "originalGate": "historical-certification-check",
+      "status": "blocking",
+      "category": "B",
+      "requirement": "The original mandatory aggregate PHP 8.5 certification check must be satisfied or replaced only through an explicitly reviewed complete successor release-obligation contract.",
+      "verifiedPrerequisites": [
+        "1545 historical input bytes authenticate",
+        "Bounded current compatibility verifies independently"
+      ],
+      "remaining": "Neither narrower prerequisite substitutes for the failed aggregate. All 27 legacy release obligations need valid renewal/mapping; immutable old reports must not be regenerated."
+    },
+    {
+      "id": "T7B-RUNNER",
+      "status": "blocking-infrastructure",
+      "category": "B",
+      "requirement": "Fixed child paths, static blocked gates and preparation-only claims must be addressed in an evidence-backed versioned contract if certification is later attempted.",
+      "verifiedPrerequisites": [
+        "Existing --provenance and --context-evidence inspections recognize authenticated artifacts",
+        "Snapshot execution preserves old reports"
+      ],
+      "remaining": "No blanket authorization-error removal, result relabeling, gate deletion or automatic status promotion. This phase records genuine execution using the unchanged runner."
+    },
+    {
+      "id": "H86-PRESERVATION",
+      "status": "blocking",
+      "category": "B",
+      "gates": [
+        "historical-preservation"
+      ],
+      "requirement": "Authenticate a versioned preservation transition for the three authorized Phase 7C.2 policy/API changes without modifying the original Phase 7A baseline.",
+      "evidence": [
+        "docs/8.6/certification-blocker-closure/gate-failure-assessment.json",
+        "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/historical-preservation.log"
+      ],
+      "remaining": "Existing gate still fails; no waiver or expected-hash refresh performed."
+    },
+    {
+      "id": "H86-AUDIT-FRESHNESS",
+      "status": "blocking",
+      "category": "B",
+      "gates": [
+        "parser-scanner-correspondence",
+        "rfc-implementation-traceability"
+      ],
+      "requirement": "An obligation-preserving current source-audit contract must account for authorized policy changes while retaining the old baseline/ledger.",
+      "evidence": [
+        "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/parser-scanner-correspondence.log",
+        "docs/8.6/certification-blocker-closure/run-verified/artifacts/docs/8.6/certification/logs/rfc-implementation-traceability.log"
+      ],
+      "remaining": "Both gate IDs invoke the same source-audit command. On the correct clean-source profile, only pre-audit preservation and ledger freshness assertions fail; source locks and 176/623/190 inventory counts remain corroborated."
+    }
+  ],
+  "priorityOrder": [
+    "Complete highest-risk source associations and predicate mapping",
+    "Obtain exact-form upstream validity decisions",
+    "Adjudicate bounded claim for hook/context capabilities",
+    "Close meaningful coverage and binding gaps",
+    "Integrate verified provenance through an obligation-preserving successor contract",
+    "Reconcile later RC/final source before release claims"
+  ],
+  "subsequentPhaseStarted": false,
+  "currentGateEvidence": "docs/8.6/certification-blocker-closure/run-verified/execution.json"
+}

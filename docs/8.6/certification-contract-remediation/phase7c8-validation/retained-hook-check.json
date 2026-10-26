@@ -1,0 +1,81 @@
+{
+  "ledger": "docs/8.6/exact-pin-blocker-reconciliation/evidence-files.json",
+  "ledgerSha256": "b996e5019ce8a7d4f46b09c3f2cc09a7665d5676f1110c30510d46a987435790",
+  "report": "docs/8.6/exact-pin-blocker-reconciliation/probes-verified.json",
+  "expectedSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+  "actualSha256": "3b05f0e311c580ed1601ede42d68b43f66113e3d2e429db687ef375a651efff3",
+  "observations": [
+    {
+      "pointer": "/observations/108",
+      "id": "hook-live",
+      "version": "8.5",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-live.php",
+      "sha256": "29448c72c108ac7be43bcf0317e6e57b71d0b3663997c8039c4362ad680da0c2"
+    },
+    {
+      "pointer": "/observations/109",
+      "id": "hook-live",
+      "version": "8.6",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-live.php",
+      "sha256": "29448c72c108ac7be43bcf0317e6e57b71d0b3663997c8039c4362ad680da0c2"
+    },
+    {
+      "pointer": "/observations/110",
+      "id": "hook-retained",
+      "version": "8.5",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-retained.php",
+      "sha256": "a33c67d3ffc9bc91bfec583c16dd47be932697d8aaa10a1689c8b41c0e2d4e91"
+    },
+    {
+      "pointer": "/observations/111",
+      "id": "hook-retained",
+      "version": "8.6",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-retained.php",
+      "sha256": "a33c67d3ffc9bc91bfec583c16dd47be932697d8aaa10a1689c8b41c0e2d4e91"
+    },
+    {
+      "pointer": "/observations/112",
+      "id": "hook-discarded",
+      "version": "8.5",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-discarded.php",
+      "sha256": "bcaf8bba8d2c705c8added05cf1e8e2f93889079479c65609d20b7d1dd3ddd76"
+    },
+    {
+      "pointer": "/observations/113",
+      "id": "hook-discarded",
+      "version": "8.6",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-discarded.php",
+      "sha256": "bcaf8bba8d2c705c8added05cf1e8e2f93889079479c65609d20b7d1dd3ddd76"
+    },
+    {
+      "pointer": "/observations/114",
+      "id": "hook-constant-discarded",
+      "version": "8.5",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php",
+      "sha256": "3d080c726c263fc00fcbea95105af9af2ac280d2e1aac87d96a76754a89863a5"
+    },
+    {
+      "pointer": "/observations/115",
+      "id": "hook-constant-discarded",
+      "version": "8.6",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-constant-discarded.php",
+      "sha256": "3d080c726c263fc00fcbea95105af9af2ac280d2e1aac87d96a76754a89863a5"
+    },
+    {
+      "pointer": "/observations/116",
+      "id": "hook-get-repair",
+      "version": "8.5",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-get-repair.php",
+      "sha256": "afdac1044ee3e1745054f81b4e80ed35f40751707ad8ea012031a9f2d399e2de"
+    },
+    {
+      "pointer": "/observations/117",
+      "id": "hook-get-repair",
+      "version": "8.6",
+      "fixture": "tests/fixtures/php/8.6/reconciliation/hook-get-repair.php",
+      "sha256": "afdac1044ee3e1745054f81b4e80ed35f40751707ad8ea012031a9f2d399e2de"
+    }
+  ],
+  "errors": [],
+  "scope": "Retained artifact digest and fixture checks under existing local custody; not new executions or an independent signed attestation."
+}

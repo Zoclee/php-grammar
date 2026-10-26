@@ -1,0 +1,73 @@
+{
+  "evidence": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/context-coverage.php",
+      "--check",
+      "--report",
+      "docs/8.6/context-coverage-closure/observations.json"
+    ],
+    "exit_code": 1,
+    "log": "docs/8.6/context-coverage-closure/validation-evidence.log",
+    "sha256": "69efb565bf8d0b6fb5f90e6bc4e07c1852a29ffc82e5398086bf662b34da155e"
+  },
+  "focused": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "-d",
+      "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+      "vendor/phpunit/phpunit/phpunit",
+      "--do-not-cache-result",
+      "--no-progress",
+      "--filter",
+      "ContextCoverageEvidenceTest|CertificationCurrentTest|Certification86Test|HistoricalEvidenceContractTest|CompatibilityEvidenceTest|ContextEvidenceTest|ExactPinProvenanceTest|BlockerClosureTest|ExactPinReconciliationTest|Hook|Context|Boundary|Manifest|Api|Lexer|Binding"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/context-coverage-closure/validation-focused.log",
+    "sha256": "ac4f55909cdbc51d8583213dc9caa5d6fc08c53e2b0efb38f2903afa74c023b6"
+  },
+  "manifest": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/validate-manifest.php"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/context-coverage-closure/validation-manifest.log",
+    "sha256": "e2b231fd276610052d6d579479dd352de5ab52944b36d2c95e6db7de0a9f6da3"
+  },
+  "traceability": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/change-traceability.php"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/context-coverage-closure/validation-traceability.log",
+    "sha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+  },
+  "historical": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/historical-check.php"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/context-coverage-closure/validation-historical.log",
+    "sha256": "16842a9853c6d7f76d1ddf6f279578951e9c6e696a9af948a93a9150636e2747"
+  },
+  "whitespace": {
+    "command": [
+      "git",
+      "-c",
+      "safe.directory=C:/Data/GitHub/php-grammar",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/context-coverage-closure/validation-whitespace.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

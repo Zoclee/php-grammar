@@ -1,0 +1,57 @@
+{
+  "tag": {
+    "command": [
+      "git",
+      "-c",
+      "safe.directory=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "-C",
+      "C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "rev-parse",
+      "refs/tags/php-8.6.0RC4"
+    ],
+    "exit_code": 0,
+    "output": "2363aac87f03893686ee28db710ed2ca11cf701e\n"
+  },
+  "peeled": {
+    "command": [
+      "git",
+      "-c",
+      "safe.directory=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "-C",
+      "C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "rev-parse",
+      "refs/tags/php-8.6.0RC4^{}"
+    ],
+    "exit_code": 0,
+    "output": "f23b4c222cebe33be93ee8ecaaa14390c5507a08\n"
+  },
+  "object": {
+    "command": [
+      "git",
+      "-c",
+      "safe.directory=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "-C",
+      "C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "cat-file",
+      "-p",
+      "refs/tags/php-8.6.0RC4"
+    ],
+    "exit_code": 0,
+    "output": "object f23b4c222cebe33be93ee8ecaaa14390c5507a08\ntype commit\ntag php-8.6.0RC4\ntagger Matteo Beccati <mbeccati@php.net> 1792593759 +0000\n\nTag for php-8.6.0RC4\n-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQBaJXemkdREdU3puaRNP8wvFqZtQUCatjPXwAKCRCRNP8wvFqZ\ntUV6APsFZUajLLCQXgHrN36gYG15s5zX5zcj8Y9uKKgI/bAQxgD+JevwGlMMr0aN\nHGxTpQ5Nr1ZizCKlFJU78LF58j5ksQg=\n=iQkf\n-----END PGP SIGNATURE-----\n"
+  },
+  "remote": {
+    "command": [
+      "git",
+      "-c",
+      "safe.directory=C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "-C",
+      "C:/Data/GitHub/php-grammar/.audit/php86-exact/source",
+      "ls-remote",
+      "https://github.com/php/php-src.git",
+      "refs/tags/php-8.6.0RC4",
+      "refs/tags/php-8.6.0RC4^{}"
+    ],
+    "exit_code": 0,
+    "output": "2363aac87f03893686ee28db710ed2ca11cf701e\trefs/tags/php-8.6.0RC4\nf23b4c222cebe33be93ee8ecaaa14390c5507a08\trefs/tags/php-8.6.0RC4^{}\n"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "current": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification-current.php",
+      "--contract",
+      "php86-certification-v2",
+      "--check",
+      "--report",
+      "docs/8.6/certification-contract-remediation/runs/phase7c7-verified/evidence.json"
+    ],
+    "exit_code": 1,
+    "log": "docs/8.6/conformance-scope-adjudication/baseline-current.log",
+    "sha256": "82ffcae7ef28a0682f91dd3d8ac29004b057128c367997852bce918f9d0fd937"
+  },
+  "compatibility": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/compatibility.php",
+      "--check",
+      "--report",
+      "docs/8.5/compatibility/phase7c7-verified/evidence.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/conformance-scope-adjudication/baseline-compatibility.log",
+    "sha256": "ff84316b88c850b2295f88b5f877fa91358436fb31773ed23e42034b6dfca6e1"
+  },
+  "source": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification-gate.php",
+      "--gate",
+      "source",
+      "--sources86",
+      "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/conformance-scope-adjudication/baseline-source.log",
+    "sha256": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37"
+  },
+  "historical": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/historical-check.php"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/conformance-scope-adjudication/baseline-historical.log",
+    "sha256": "16842a9853c6d7f76d1ddf6f279578951e9c6e696a9af948a93a9150636e2747"
+  },
+  "context": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/context-profile.php",
+      "--check",
+      "--profile",
+      "exact-pin-rc4",
+      "--report",
+      "docs/8.6/exact-pin-context-integration/exact.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/conformance-scope-adjudication/baseline-context.log",
+    "sha256": "1ae83d1f5f0f67d1ae95fa1e1ddf8f3a4c929bb205df439c30b0865e1f009f77"
+  }
+}

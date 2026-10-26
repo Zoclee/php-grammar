@@ -1,0 +1,22 @@
+{
+  "obligation": "Verify independent RC4 lock completeness and every required source SHA-256.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/certification-gate.php",
+    "--gate",
+    "source",
+    "--sources86",
+    "C:/Data/GitHub/php-grammar/.audit/php86-exact/source"
+  ],
+  "log": "docs/8.6/certification/logs/source-lock-integrity.log",
+  "logSha256": "caf348291346fbf8ba01166a13977a0cf6a3a622828fa6e481d3f8ac2fc02d37"
+}

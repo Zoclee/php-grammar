@@ -1,0 +1,75 @@
+{
+  "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "profiles": {
+    "historical": {
+      "id": "historical-rc4",
+      "contract": "php86-context-profiles-v1",
+      "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+      "executableSha256": "c545e69850c3d8af1cd2edef4d1682ad07232a231b7f49a06657538ccdf1db0a",
+      "sourceBinding": "reviewed-source-lock; distribution ancestry not attested",
+      "provenance": "tools/8.6/context-source-lock.json",
+      "historicalObservations": "docs/8.6/context-validation.json",
+      "fixtureSet": "tests/fixtures/php/8.6/context-cases.json",
+      "stages": [
+        "lint",
+        "declaration-link",
+        "controlled-runtime"
+      ],
+      "flags": [
+        "-n",
+        "-d",
+        "error_reporting=-1",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "short_open_tag=1",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0"
+      ],
+      "configuration": "No ini; CLI OPcache/JIT disabled; inherited host environment is not hermetic"
+    },
+    "exact": {
+      "id": "exact-pin-rc4",
+      "contract": "php86-context-profiles-v1",
+      "sourceCommit": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+      "executableSha256": "445d2bde0998cd54e04b4be4401ae45b5e54df4ef677294a64cbcd1faf6d9fe6",
+      "sourceBinding": "verified-local-build",
+      "provenance": "docs/8.6/exact-pin-build/build.json",
+      "historicalObservations": "docs/8.6/context-validation.json",
+      "fixtureSet": "tests/fixtures/php/8.6/context-cases.json",
+      "stages": [
+        "lint",
+        "declaration-link",
+        "controlled-runtime"
+      ],
+      "flags": [
+        "-n",
+        "-d",
+        "error_reporting=-1",
+        "-d",
+        "zend.multibyte=0",
+        "-d",
+        "short_open_tag=1",
+        "-d",
+        "opcache.enable_cli=0",
+        "-d",
+        "opcache.jit=0"
+      ],
+      "configuration": "No ini; CLI OPcache/JIT disabled; inherited host environment is not hermetic"
+    }
+  },
+  "observationsPerProfile": 126,
+  "stagesPerProfile": {
+    "lint": 76,
+    "declaration-link": 44,
+    "controlled-runtime": 6
+  },
+  "lintInvocationsPerProfile": 126,
+  "laterStageInvocationsPerProfile": 50,
+  "rawStreamDifferences": [],
+  "repositoryCommit": "4625873a6bac908b5cff4c677dba4ac10dd050e0",
+  "baselineFiles": 2716,
+  "certificationGranted": false
+}

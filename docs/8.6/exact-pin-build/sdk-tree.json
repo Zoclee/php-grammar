@@ -1,0 +1,23 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "safe.directory=C:/Data/GitHub/php-grammar/.audit/php86-exact/sdk",
+    "-C",
+    "C:/Data/GitHub/php-grammar/.audit/php86-exact/sdk",
+    "rev-parse",
+    "HEAD^{tree}"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "started": "2026-10-25T10:43:06+00:00",
+  "finished": "2026-10-25T10:43:06+00:00",
+  "exit_code": 0,
+  "stdout": {
+    "path": "docs/8.6/exact-pin-build/sdk-tree.stdout.log",
+    "sha256": "b85b75616ef07fac785843fd3630135f6784946e7ef2ae836fdcfd391a92d36d"
+  },
+  "stderr": {
+    "path": "docs/8.6/exact-pin-build/sdk-tree.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

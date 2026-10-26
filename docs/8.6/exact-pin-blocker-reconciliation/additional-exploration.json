@@ -1,0 +1,142 @@
+{
+  "constant-pfa-reference-bound": {
+    "8.5": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "-d",
+        "max_execution_time=5",
+        "-d",
+        "memory_limit=64M",
+        "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-bound.php"
+      ],
+      "exit_code": 255,
+      "output": "\nParse error: syntax error, unexpected token \")\" in C:\\Data\\GitHub\\php-grammar\\tests\\fixtures\\php\\8.6\\exact-pin-reconciliation\\constant-pfa-reference-bound.php on line 3\n"
+    },
+    "8.6": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "max_execution_time=5",
+        "-d",
+        "memory_limit=64M",
+        "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-bound.php"
+      ],
+      "exit_code": 0,
+      "output": "declared;target(): Argument #1 ($value) could not be passed by reference"
+    }
+  },
+  "constant-pfa-reference-named": {
+    "8.5": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "-d",
+        "max_execution_time=5",
+        "-d",
+        "memory_limit=64M",
+        "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-named.php"
+      ],
+      "exit_code": 255,
+      "output": "\nParse error: syntax error, unexpected token \"?\" in C:\\Data\\GitHub\\php-grammar\\tests\\fixtures\\php\\8.6\\exact-pin-reconciliation\\constant-pfa-reference-named.php on line 3\n"
+    },
+    "8.6": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "max_execution_time=5",
+        "-d",
+        "memory_limit=64M",
+        "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-named.php"
+      ],
+      "exit_code": 0,
+      "output": "declared;target(): Argument #2 ($value) could not be passed by reference"
+    }
+  },
+  "constant-pfa-reference-placeholder": {
+    "8.5": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "-d",
+        "max_execution_time=5",
+        "-d",
+        "memory_limit=64M",
+        "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-placeholder.php"
+      ],
+      "exit_code": 255,
+      "output": "\nParse error: syntax error, unexpected token \"?\" in C:\\Data\\GitHub\\php-grammar\\tests\\fixtures\\php\\8.6\\exact-pin-reconciliation\\constant-pfa-reference-placeholder.php on line 3\n"
+    },
+    "8.6": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "max_execution_time=5",
+        "-d",
+        "memory_limit=64M",
+        "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-placeholder.php"
+      ],
+      "exit_code": 0,
+      "output": "2"
+    }
+  },
+  "constant-pfa-reference-variadic": {
+    "8.5": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "-d",
+        "max_execution_time=5",
+        "-d",
+        "memory_limit=64M",
+        "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-variadic.php"
+      ],
+      "exit_code": 255,
+      "output": "\nParse error: syntax error, unexpected token \")\" in C:\\Data\\GitHub\\php-grammar\\tests\\fixtures\\php\\8.6\\exact-pin-reconciliation\\constant-pfa-reference-variadic.php on line 3\n"
+    },
+    "8.6": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "max_execution_time=5",
+        "-d",
+        "memory_limit=64M",
+        "tests/fixtures/php/8.6/exact-pin-reconciliation/constant-pfa-reference-variadic.php"
+      ],
+      "exit_code": 0,
+      "output": "declared;target(): Argument #1 could not be passed by reference"
+    }
+  },
+  "reentrant-interface-lookup": {
+    "8.5": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+        "-n",
+        "-d",
+        "max_execution_time=5",
+        "-d",
+        "memory_limit=64M",
+        "tests/fixtures/php/8.6/exact-pin-reconciliation/reentrant-interface-lookup.php"
+      ],
+      "exit_code": 0,
+      "output": "hidden;linked"
+    },
+    "8.6": {
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/php86-exact/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "max_execution_time=5",
+        "-d",
+        "memory_limit=64M",
+        "tests/fixtures/php/8.6/exact-pin-reconciliation/reentrant-interface-lookup.php"
+      ],
+      "exit_code": 0,
+      "output": "hidden;linked"
+    }
+  }
+}
