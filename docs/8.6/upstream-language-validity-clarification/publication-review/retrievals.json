@@ -1,0 +1,311 @@
+{
+  "scope": "Read-only GET; at most 100 results/comments per endpoint; no publication.",
+  "requests": {
+    "pr-20628": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/20628",
+      "retrievedAt": "2026-10-27T13:08:21+00:00",
+      "exit": 0,
+      "error": "[rtk] /!\\ No hook installed \u2014 run `rtk init -g` for automatic token savings\n",
+      "path": "docs/8.6/upstream-language-validity-clarification/publication-review/pr-20628.json",
+      "sha256": "f1145548207c5bac8aee4cbe7f81e6638e79a96ecc5f0be5ad69a151048d3244",
+      "headersSha256": "5df077c2bd8cfb8c19267a9d2088e3e3709508495069e7b3331c83a14745c4a7",
+      "nextPagePresent": false,
+      "materialRecordChanged": false
+    },
+    "issue-comments-20628": {
+      "url": "https://api.github.com/repos/php/php-src/issues/20628/comments?per_page=100",
+      "retrievedAt": "2026-10-27T13:08:21+00:00",
+      "exit": 0,
+      "error": "[rtk] /!\\ No hook installed \u2014 run `rtk init -g` for automatic token savings\n",
+      "path": "docs/8.6/upstream-language-validity-clarification/publication-review/issue-comments-20628.json",
+      "sha256": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd",
+      "headersSha256": "cd7ddb09a99db1ec380b2f176314256c744b9fbc13f8594298eedcd320acc148",
+      "nextPagePresent": false,
+      "materialRecordChanged": false
+    },
+    "review-comments-20628": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/20628/comments?per_page=100",
+      "retrievedAt": "2026-10-27T13:08:22+00:00",
+      "exit": 0,
+      "error": "[rtk] /!\\ No hook installed \u2014 run `rtk init -g` for automatic token savings\n",
+      "path": "docs/8.6/upstream-language-validity-clarification/publication-review/review-comments-20628.json",
+      "sha256": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe",
+      "headersSha256": "6f013dfcf8109bbbf3ba10d4c5a3f8a43abbac5531f71418150ce1cc058586e5",
+      "nextPagePresent": false,
+      "materialRecordChanged": false
+    },
+    "pr-19658": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/19658",
+      "retrievedAt": "2026-10-27T13:08:23+00:00",
+      "exit": 0,
+      "error": "[rtk] /!\\ No hook installed \u2014 run `rtk init -g` for automatic token savings\n",
+      "path": "docs/8.6/upstream-language-validity-clarification/publication-review/pr-19658.json",
+      "sha256": "0f98c82989780b1af16a188d443abd6531bc4f9fddda9392613ae8914079cfd1",
+      "headersSha256": "f69510aa26ee26fd4bdcc7a8a59381fdd07c1147e3f26683ded10607531736be",
+      "nextPagePresent": false,
+      "materialRecordChanged": false
+    },
+    "issue-comments-19658": {
+      "url": "https://api.github.com/repos/php/php-src/issues/19658/comments?per_page=100",
+      "retrievedAt": "2026-10-27T13:08:23+00:00",
+      "exit": 0,
+      "error": "[rtk] /!\\ No hook installed \u2014 run `rtk init -g` for automatic token savings\n",
+      "path": "docs/8.6/upstream-language-validity-clarification/publication-review/issue-comments-19658.json",
+      "sha256": "5c728bc485faa289b5a61bbb5f612e9932639f038aed9aef7e203e41aa7bb33c",
+      "headersSha256": "331c2346b3081648baa9dbf6602796ae3b7e9276cb2c7f867fa68ac1f32d7017",
+      "nextPagePresent": false,
+      "materialRecordChanged": false
+    },
+    "review-comments-19658": {
+      "url": "https://api.github.com/repos/php/php-src/pulls/19658/comments?per_page=100",
+      "retrievedAt": "2026-10-27T13:08:25+00:00",
+      "exit": 0,
+      "error": "[rtk] /!\\ No hook installed \u2014 run `rtk init -g` for automatic token savings\n",
+      "path": "docs/8.6/upstream-language-validity-clarification/publication-review/review-comments-19658.json",
+      "sha256": "f48ba1e8a44a4a647f8ca052bd84f9149352b61989eff38063cbb995b5b7e61c",
+      "headersSha256": "fe0116ac9d1dc1c5e5fbc02cff938c051cc0fa5857c465d74f469632c2c6f579",
+      "nextPagePresent": false,
+      "materialRecordChanged": false
+    },
+    "search-assignment": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22Invalid%20opcode%22%20%22assignment%22&per_page=100",
+      "retrievedAt": "2026-10-27T13:08:25+00:00",
+      "exit": 0,
+      "error": "[rtk] /!\\ No hook installed \u2014 run `rtk init -g` for automatic token savings\n",
+      "path": "docs/8.6/upstream-language-validity-clarification/publication-review/search-assignment.json",
+      "sha256": "406a5bc06c2ffaa0f69f60c533f32fc0aba53393aa6b41b29b9ff36adde12e39",
+      "headersSha256": "fe821772d30be3bfbf7b158ec339fea0a78482a4133093d664830e8884974a50",
+      "nextPagePresent": false,
+      "totalCount": 2,
+      "incompleteResults": false,
+      "items": [
+        {
+          "number": 20903,
+          "title": "Fix GH-10497: Allow const obj->prop = value",
+          "url": "https://github.com/php/php-src/pull/20903"
+        },
+        {
+          "number": 1393,
+          "title": "Temporary cleaning",
+          "url": "https://github.com/php/php-src/pull/1393"
+        }
+      ]
+    },
+    "search-printf": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22printf%22%20%22unset%22&per_page=100",
+      "retrievedAt": "2026-10-27T13:08:27+00:00",
+      "exit": 0,
+      "error": "[rtk] /!\\ No hook installed \u2014 run `rtk init -g` for automatic token savings\n",
+      "path": "docs/8.6/upstream-language-validity-clarification/publication-review/search-printf.json",
+      "sha256": "5169e0441e52c6fa126d8f23f2000211e585201fbdbecc0bfe326b4c26a51a37",
+      "headersSha256": "0b2be508f1acec5efbafdb1c0abef22f6d6c338ff3221c8addb563065f80de89",
+      "nextPagePresent": false,
+      "totalCount": 32,
+      "incompleteResults": false,
+      "items": [
+        {
+          "number": 24444,
+          "title": "ext/gd: keep the brush and tile images alive while the destination uses them",
+          "url": "https://github.com/php/php-src/pull/24444"
+        },
+        {
+          "number": 23517,
+          "title": "PHP array_shift(): Optimize tail move on hole-free packed arrays",
+          "url": "https://github.com/php/php-src/pull/23517"
+        },
+        {
+          "number": 7691,
+          "title": "Reduce memory usage when unserializing packed arrays of size 1",
+          "url": "https://github.com/php/php-src/pull/7691"
+        },
+        {
+          "number": 24731,
+          "title": "Assertion failure in zend_objects_store_del() when a bailout interrupts zend_fcc_dtor() in header_register_callback()",
+          "url": "https://github.com/php/php-src/issues/24731"
+        },
+        {
+          "number": 9429,
+          "title": "array_key_exists on $GLOBALS takes linear time in PHP 8.1.0+",
+          "url": "https://github.com/php/php-src/issues/9429"
+        },
+        {
+          "number": 24173,
+          "title": "Sockets from synchronous stream_socket_client() are left in non-blocking mode on Windows",
+          "url": "https://github.com/php/php-src/issues/24173"
+        },
+        {
+          "number": 23886,
+          "title": "array_splice(): Presize the result when nothing is removed",
+          "url": "https://github.com/php/php-src/pull/23886"
+        },
+        {
+          "number": 22709,
+          "title": "Make property resolution direction-aware; amortize asymmetric visibility set checks into the runtime cache",
+          "url": "https://github.com/php/php-src/pull/22709"
+        },
+        {
+          "number": 23786,
+          "title": "ext/standard: Optimize array_column()",
+          "url": "https://github.com/php/php-src/pull/23786"
+        },
+        {
+          "number": 23418,
+          "title": "phar extension heap use after free",
+          "url": "https://github.com/php/php-src/issues/23418"
+        },
+        {
+          "number": 23210,
+          "title": "ext/pdo_pgsql: Add `Pdo\\Pgsql::ATTR_CHUNK_SIZE` for chunked result fetching",
+          "url": "https://github.com/php/php-src/pull/23210"
+        },
+        {
+          "number": 21516,
+          "title": "Fix Use-After-Free in RecursiveArrayIterator::getChildren()",
+          "url": "https://github.com/php/php-src/pull/21516"
+        },
+        {
+          "number": 5820,
+          "title": "Implementation for StackFrame class as an alternative to debug_backtrace()",
+          "url": "https://github.com/php/php-src/pull/5820"
+        },
+        {
+          "number": 21520,
+          "title": "Fix Use-After-Free in RecursiveArrayIterator::getChildren()",
+          "url": "https://github.com/php/php-src/pull/21520"
+        },
+        {
+          "number": 21480,
+          "title": "Fix GH-21478: Forward property operations to real instance for initialized lazy proxies",
+          "url": "https://github.com/php/php-src/pull/21480"
+        },
+        {
+          "number": 7500,
+          "title": "RFC: Add `final class Collections\\Deque` to PHP",
+          "url": "https://github.com/php/php-src/pull/7500"
+        },
+        {
+          "number": 21463,
+          "title": "Fix GH-20875: Propagate IN_GET guard in get_property_ptr_ptr for lazy proxies",
+          "url": "https://github.com/php/php-src/pull/21463"
+        },
+        {
+          "number": 21499,
+          "title": "Use-After-Free in RecursiveArrayIterator::getChildren()",
+          "url": "https://github.com/php/php-src/issues/21499"
+        },
+        {
+          "number": 20352,
+          "title": "UAF in php_output_handler_free via re-entrant ob_start() during error deactivation",
+          "url": "https://github.com/php/php-src/issues/20352"
+        },
+        {
+          "number": 19884,
+          "title": "curl api may erase cookie jar",
+          "url": "https://github.com/php/php-src/issues/19884"
+        },
+        {
+          "number": 17083,
+          "title": "handle apache DocumentRoot cyrillic encoding",
+          "url": "https://github.com/php/php-src/pull/17083"
+        },
+        {
+          "number": 8940,
+          "title": "Support hardened malloc",
+          "url": "https://github.com/php/php-src/issues/8940"
+        },
+        {
+          "number": 10323,
+          "title": "Fix substr_replace with slots in repl_ht being UNDEF",
+          "url": "https://github.com/php/php-src/pull/10323"
+        },
+        {
+          "number": 7488,
+          "title": "Proposal: Add `final class Vector` to PHP",
+          "url": "https://github.com/php/php-src/pull/7488"
+        },
+        {
+          "number": 6552,
+          "title": "Optimize SplFixedArray when magic methods aren't overridden",
+          "url": "https://github.com/php/php-src/pull/6552"
+        },
+        {
+          "number": 7672,
+          "title": "Optimize the destructor of WeakMap for large WeakMaps",
+          "url": "https://github.com/php/php-src/pull/7672"
+        },
+        {
+          "number": 7690,
+          "title": "Improve performance of WeakReference/WeakMap. Avoid hash collisions on pointers.",
+          "url": "https://github.com/php/php-src/pull/7690"
+        },
+        {
+          "number": 6489,
+          "title": "Implement enums",
+          "url": "https://github.com/php/php-src/pull/6489"
+        },
+        {
+          "number": 4753,
+          "title": "Reduce memory used by token_get_all()",
+          "url": "https://github.com/php/php-src/pull/4753"
+        },
+        {
+          "number": 2103,
+          "title": "Implement stream_vt100_support user function",
+          "url": "https://github.com/php/php-src/pull/2103"
+        },
+        {
+          "number": 2859,
+          "title": "Fix #74243: pdo_dblib option to get milliseconds",
+          "url": "https://github.com/php/php-src/pull/2859"
+        },
+        {
+          "number": 2293,
+          "title": "Add print zend string function to gdbinit",
+          "url": "https://github.com/php/php-src/pull/2293"
+        }
+      ]
+    },
+    "search-hooks": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22unknown%20hook%22&per_page=100",
+      "retrievedAt": "2026-10-27T13:08:27+00:00",
+      "exit": 0,
+      "error": "[rtk] /!\\ No hook installed \u2014 run `rtk init -g` for automatic token savings\n",
+      "path": "docs/8.6/upstream-language-validity-clarification/publication-review/search-hooks.json",
+      "sha256": "c9938edecb99d754b2d039ac9eec320a94c769b6a6417921e2dcbef9e2fe01a0",
+      "headersSha256": "0b839143eafd2e9b66f8d244a9b4c5925d0344e566d0c45dc72aeaafc42cd08d",
+      "nextPagePresent": false,
+      "totalCount": 0,
+      "incompleteResults": false,
+      "items": []
+    },
+    "search-discarded-hooks": {
+      "url": "https://api.github.com/search/issues?q=repo%3Aphp%2Fphp-src%20%22hook%22%20%22discarded%22&per_page=100",
+      "retrievedAt": "2026-10-27T13:08:28+00:00",
+      "exit": 0,
+      "error": "[rtk] /!\\ No hook installed \u2014 run `rtk init -g` for automatic token savings\n",
+      "path": "docs/8.6/upstream-language-validity-clarification/publication-review/search-discarded-hooks.json",
+      "sha256": "f43085dc23e994ffd697511d20d2c8580ff9db3583b4bbb50b7fed0839bc549a",
+      "headersSha256": "19f77b86a44ec499bb1a250a1484c24df99147ec529f1ee9217e36a0b8159861",
+      "nextPagePresent": false,
+      "totalCount": 3,
+      "incompleteResults": false,
+      "items": [
+        {
+          "number": 6772,
+          "title": "Add FPM early bootstrapping mode",
+          "url": "https://github.com/php/php-src/pull/6772"
+        },
+        {
+          "number": 17395,
+          "title": "Fix JIT for overridden properties with added hooks",
+          "url": "https://github.com/php/php-src/pull/17395"
+        },
+        {
+          "number": 8348,
+          "title": "Test oci8 & pdo_oci in CI",
+          "url": "https://github.com/php/php-src/pull/8348"
+        }
+      ]
+    }
+  }
+}

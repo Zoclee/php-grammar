@@ -1,0 +1,43 @@
+{
+  "baselineFiles": 4616,
+  "unchangedFiles": 4612,
+  "changedFiles": [
+    "docs/8.6/upstream-language-validity-clarification.md",
+    "docs/8.6/upstream-language-validity-clarification/CA86-001-draft.md",
+    "docs/8.6/upstream-language-validity-clarification/PHP86-014-draft.md",
+    "docs/8.6/upstream-language-validity-clarification/PHP86-015-draft.md"
+  ],
+  "localLinksChecked": 24,
+  "hashes": {
+    "docs/8.6/upstream-language-validity-clarification.md": "42a143aafea5f930afe33c25626b22c25e2b4c15269e7c6774190880d9ed6026",
+    "docs/8.6/upstream-language-validity-clarification/PHP86-014-draft.md": "1f947b5e68d4c7b1be71684a7bf1927b64e3f5200ab77f1c5c47d8946232e265",
+    "docs/8.6/upstream-language-validity-clarification/PHP86-015-draft.md": "ea0b08f7b26d1886174286a71b27298ed19a42b0c0df1043524a0da5ac447a27",
+    "docs/8.6/upstream-language-validity-clarification/CA86-001-draft.md": "127c6c36f590051e03037ad9f8a638de2a6f746a49da4081b397c5c8535cf299",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/examples.json": "2b1cc342660ab4b05898dac7356a52254e59c9000f16bf5ed399049bedeb2748",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/integrity.json": "4967a16cad99f51db94adfac18bc62676f815cfc3ea58287b89ddf2635c813d7",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/issue-comments-19658.headers": "331c2346b3081648baa9dbf6602796ae3b7e9276cb2c7f867fa68ac1f32d7017",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/issue-comments-19658.json": "5c728bc485faa289b5a61bbb5f612e9932639f038aed9aef7e203e41aa7bb33c",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/issue-comments-20628.headers": "cd7ddb09a99db1ec380b2f176314256c744b9fbc13f8594298eedcd320acc148",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/issue-comments-20628.json": "5da957d2dc352d8bcf5bcf59989e6f7e824e6720addfccda8239b6b1ca3c26dd",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/pr-19658.headers": "f69510aa26ee26fd4bdcc7a8a59381fdd07c1147e3f26683ded10607531736be",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/pr-19658.json": "0f98c82989780b1af16a188d443abd6531bc4f9fddda9392613ae8914079cfd1",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/pr-20628.headers": "5df077c2bd8cfb8c19267a9d2088e3e3709508495069e7b3331c83a14745c4a7",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/pr-20628.json": "f1145548207c5bac8aee4cbe7f81e6638e79a96ecc5f0be5ad69a151048d3244",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/retrievals.json": "71f67a75d353b2c7967890dafcecff35b55217ddad38dba7566ebe6074927af6",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/review-comments-19658.headers": "fe0116ac9d1dc1c5e5fbc02cff938c051cc0fa5857c465d74f469632c2c6f579",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/review-comments-19658.json": "f48ba1e8a44a4a647f8ca052bd84f9149352b61989eff38063cbb995b5b7e61c",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/review-comments-20628.headers": "6f013dfcf8109bbbf3ba10d4c5a3f8a43abbac5531f71418150ce1cc058586e5",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/review-comments-20628.json": "0348bc92b416e4d4c70854cf814025c4c9635481df8b168e097f73e07db15cbe",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/search-assignment.headers": "fe821772d30be3bfbf7b158ec339fea0a78482a4133093d664830e8884974a50",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/search-assignment.json": "406a5bc06c2ffaa0f69f60c533f32fc0aba53393aa6b41b29b9ff36adde12e39",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/search-discarded-hooks.headers": "19f77b86a44ec499bb1a250a1484c24df99147ec529f1ee9217e36a0b8159861",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/search-discarded-hooks.json": "f43085dc23e994ffd697511d20d2c8580ff9db3583b4bbb50b7fed0839bc549a",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/search-hooks.headers": "0b839143eafd2e9b66f8d244a9b4c5925d0344e566d0c45dc72aeaafc42cd08d",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/search-hooks.json": "c9938edecb99d754b2d039ac9eec320a94c769b6a6417921e2dcbef9e2fe01a0",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/search-printf.headers": "0b2be508f1acec5efbafdb1c0abef22f6d6c338ff3221c8addb563065f80de89",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/search-printf.json": "5169e0441e52c6fa126d8f23f2000211e585201fbdbecc0bfe326b4c26a51a37",
+    "docs/8.6/upstream-language-validity-clarification/publication-review/whitespace.json": "b090fe813a6a6fc8445c3ae98243c267abd223c7349823112519196b4d4d701d",
+    "docs/8.6/upstream-language-validity-clarification/publication-review.md": "8269962af4cc40a2c3d4b6569aea96a227783b2f31e1cd0e48a598bfde9d0f93"
+  },
+  "errors": []
+}

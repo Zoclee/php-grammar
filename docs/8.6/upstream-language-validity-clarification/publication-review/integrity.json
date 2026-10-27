@@ -1,0 +1,18 @@
+{
+    "phase": "7G.1",
+    "checkedAt": "2026-10-27T13:15:17+00:00",
+    "method": "Read-only hash/byte comparisons and retained-observation verification using .audit/check7g.php; no probes rerun. Source slices recomputed with original line terminators in clean and build source trees.",
+    "validatorSha256": "4909c43feb8c680bf281ed0e06b9e8a85e1c74b2f20c253bf9c9f00cc1f5211b",
+    "counts": {
+        "assertions": 5067,
+        "preservedBaselineFiles": 4580,
+        "retainedProbeInputs": 93,
+        "selectedPairedObservations": 40,
+        "sourceSlicesComparedInBothTrees": 20,
+        "upstreamRequests": 11,
+        "jsonFiles": 33,
+        "markdownFiles": 6,
+        "localLinks": 25
+    },
+    "errors": []
+}

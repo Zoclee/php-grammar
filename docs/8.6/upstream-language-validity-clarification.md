@@ -1,5 +1,22 @@
 # PHP 8.6 upstream language-validity clarification
 
+## October 27 editorial finalization (Phase 7G.1)
+
+The three linked drafts now use the publication-ready six-section issue format.
+The [final publication review](upstream-language-validity-clarification/publication-review.md)
+records the editorial changes, refreshed duplicate search, example verification,
+preservation checks and per-issue recommendations. Nothing has been published.
+
+The sections below retain the October 26 research record. Their twelve-block
+count, reproduction-profile wording, validation receipt and artifact ledger
+describe that earlier draft revision, not the revised public bodies. The current
+drafts retain eight fenced PHP examples and eight supporting table cases;
+omitted controls and full profiles remain in `reproducers.json`. The new review
+retains separate receipts rather than rewriting historical validation or hashes.
+All blockers, response/action mappings and certification dispositions remain unchanged.
+
+## October 26 research record
+
 October 26, 2026 — Phase 7G. **Three final drafts are ready for user review and
 remain unpublished.** This phase prepares questions; it establishes no new
 language rule, blocker closure, certification claim or release status.

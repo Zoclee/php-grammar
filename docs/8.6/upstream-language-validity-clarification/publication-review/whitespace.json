@@ -1,0 +1,13 @@
+{
+  "command": [
+    "rtk",
+    "proxy",
+    "git",
+    "-c",
+    "safe.directory=C:/Data/GitHub/php-grammar",
+    "diff",
+    "--check"
+  ],
+  "exit": 0,
+  "context": "Repository owner; separate local-link and trailing-whitespace validation includes new review documentation."
+}
