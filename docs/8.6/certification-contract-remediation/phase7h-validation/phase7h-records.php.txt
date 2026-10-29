@@ -1,0 +1,41 @@
+<?php
+declare(strict_types=1);
+require __DIR__.'/../tools/lib/bootstrap.php';
+use PhpGrammar\Tools\Support as S;
+chdir(dirname(__DIR__));
+$out='docs/8.6/upstream-maintainer-resolution';
+$read=static fn(string $p)=>json_decode(file_get_contents($p),true,512,JSON_THROW_ON_ERROR);
+$write=static fn(string $p,array $d)=>file_put_contents($p,json_encode($d,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES)."\n");
+$issues=[];
+foreach ([24795=>'CA86-001',24794=>'PHP86-015'] as $id=>$finding) {
+    $issue=$read("$out/$id-issue.json"); $comments=$read("$out/$id-comments.json"); $events=$read("$out/$id-events.json");
+    if ($issue['state']!=='closed'||$issue['state_reason']!=='not_planned'||count($comments)!==$issue['comments']) throw new RuntimeException('Incomplete issue');
+    $issues[$finding]=array_intersect_key($issue,array_flip(['number','title','html_url','state','state_reason','created_at','updated_at','closed_at']));
+    $issues[$finding]['comments']=array_map(static fn($c)=>['id'=>$c['id'],'url'=>$c['html_url'],'author'=>$c['user']['login'],'authorAssociation'=>$c['author_association'],'createdAt'=>$c['created_at'],'updatedAt'=>$c['updated_at'],'body'=>$c['body']],$comments);
+    $issues[$finding]['closureEvents']=array_values(array_filter($events,static fn($e)=>$e['event']==='closed'));
+}
+$write("$out/upstream.json",['contract'=>'php86-upstream-maintainer-response-v1','issues'=>$issues,'authentication'=>'Direct HTTPS GitHub API responses; GitHub MEMBER attribution and closure events; raw bytes and HTTP headers retained. Local controller custody and SHA-256 integrity, not a signature or immutable upstream comment guarantee.','pagination'=>'per_page=100; comment counts agree; no next-page Link header.','retrievalDate'=>'2026-10-28']);
+$prior=$read('docs/8.6/final-certification-readiness/remaining-work.json');
+$updates=[
+'D-U01'=>['status'=>'unresolved','finding'=>'PHP86-014','conclusion'=>'No disposition change; writable-target intent and coherent compiler/VM operation/result-kind treatment remain required.'],
+'D-U02'=>['status'=>'partial-blocking','finding'=>'PHP86-015','resolved'=>'Maintainer attributes skipped errors to general dead-expression compilation and closes upstream as not planned; root cause is not printf-specific.','remaining'=>'Reconcile all retained 31 dispatch/traversal controls individually against pinned implementation and intended validity; preserve initializer/logical/ternary/coalesce distinctions and conformance enforcement limits. The reply is not a universal call traversal rule.'],
+'D-U03'=>['status'=>'partial-blocking','finding'=>'CA86-001','resolved'=>'Confirmed compiler behavior: dead expressions may be removed before contextual compilation, bypassing errors; upstream declines a fix.','remaining'=>'Known discarded-hook false rejection remains. Separate Gate B correction or independently justified enforceable claim exclusion accepted under conformance policy; no such exclusion granted here.']];
+$items=[];foreach($prior['workItems'] as $item)$items[]=['original'=>$item,'phase7h'=>$updates[$item['id']]??['status'=>'unchanged','conclusion'=>'Outside this phase; retain latest Phase 7E/7F progress and original completion requirements.']];
+$write("$out/work-items.json",['contract'=>'php86-maintainer-work-adjudication-v1','predecessor'=>'docs/8.6/final-certification-readiness/remaining-work.json','predecessorSha256'=>hash_file('sha256','docs/8.6/final-certification-readiness/remaining-work.json'),'progressPredecessors'=>['docs/8.6/local-source-context-remediation/work-items.json','docs/8.6/scanner-grammar-binding-closure/work-items.json'],'workItems'=>$items,'originalBlockerRows'=>$prior['originalBlockerRows'],'originalBlockedGates'=>$prior['blockedGates'],'blockersClosed'=>[],'certificationGranted'=>false]);
+$rows=[];foreach($prior['originalBlockerRows'] as $r){$id=$r['id'];$rows[]=['id'=>$id,'original'=>$r,'status'=>'blocking','blocksCertification'=>true,'phase7h'=>match($id){'CA86-001'=>$updates['D-U03'],'PHP86-015'=>$updates['D-U02'],'PHP86-014'=>$updates['D-U01'],default=>['status'=>'unchanged','reason'=>'Original material requirements remain; Phase 7H introduces no closure.']}];}
+$write("$out/dispositions.json",['contract'=>'php86-maintainer-disposition-v1','scope'=>'Additive explanatory adjudication, not a replacement of executable release-blocker authority. Original gate requirements and all seven blocking flags retained.','blockers'=>$rows,'blockersClosed'=>[],'gateTransitions'=>[],'certificationGranted'=>false,'packageStatus'=>'draft']);
+// Reexecute only retained lint commands; never run fixture programs.
+$selected=$read('docs/8.6/upstream-language-validity-clarification/reproducers.json');$observations=[];$errors=[];
+foreach(['CA86-001','PHP86-015'] as $finding)foreach($selected['findings'][$finding] as $id=>$versions)foreach($versions as $version=>$row){
+    $old=$row['observation'];if(hash_file('sha256',$old['fixture'])!==$old['sha256'])throw new RuntimeException('Fixture drift');
+    $cmd=$old['lint']['command'];if(!in_array('-l',$cmd,true))throw new RuntimeException('Not lint');
+    $run=S::run($cmd,getcwd());$ok=$run['exit_code']===$old['lint']['exit'];
+    if(!$ok)$errors[]="$id $version exit differs";
+    if($old['lint']['exit']!==0 && !str_contains($run['output'],$finding==='CA86-001'?'Unknown hook':'(unset) cast is no longer supported'))$errors[]="$id $version diagnostic differs";
+    $observations[]=['finding'=>$finding,'id'=>$id,'version'=>$version,'originalPointer'=>$row['pointer'],'fixture'=>$old['fixture'],'sha256'=>$old['sha256'],'command'=>$cmd,'exit_code'=>$run['exit_code'],'output'=>$run['output'],'matchesRetainedExit'=>$ok];
+}
+// Newly distinguishing maintainer witness, kept outside normative fixture discovery.
+file_put_contents("$out/standalone-short-circuit.php","<?php\ntrue || (unset)\$x;\n");
+foreach(['8.5'=>'.audit/php85/php.exe','8.6'=>'.audit/php86-exact/source/x64/Release/php.exe'] as $version=>$php){$cmd=[$php,'-n','-d','opcache.enable_cli=0','-d','opcache.jit=0','-l',"$out/standalone-short-circuit.php"];$run=S::run($cmd,getcwd());if($run['exit_code']!==0)$errors[]="Standalone $version rejected";$observations[]=['finding'=>'PHP86-015','id'=>'maintainer-standalone','version'=>$version,'command'=>$cmd,'exit_code'=>$run['exit_code'],'output'=>$run['output']];}
+$write("$out/regression.json",['contract'=>'php86-maintainer-lint-regression-v1','sourcePin'=>'f23b4c222cebe33be93ee8ecaaa14390c5507a08','comparator'=>'PHP 8.5.10 distribution, not exact PHP 8.5 source build','observations'=>$observations,'errors'=>$errors,'runtimeExecuted'=>false,'certificationGranted'=>false]);
+echo count($observations)." lint observations; ".count($errors)." errors\n";

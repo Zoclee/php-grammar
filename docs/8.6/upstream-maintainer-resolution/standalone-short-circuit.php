@@ -1,0 +1,2 @@
+<?php
+true || (unset)$x;

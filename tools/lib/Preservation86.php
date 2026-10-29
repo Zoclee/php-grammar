@@ -3,11 +3,13 @@ declare(strict_types=1);
 namespace PhpGrammar\Tools;
 require_once __DIR__ . '/Certification86.php';
 require_once __DIR__ . '/HistoricalEvidence.php';
+require_once __DIR__ . '/UpstreamResolutionFreshness.php';
 
 /** Reviewed, closed transition: no caller-supplied allowlist or learned hashes. */
 final class Preservation86
 {
     public const CONTRACT = 'php86-preservation-v2';
+    public const UPSTREAM_CONTRACT = 'php86-preservation-v3';
     public const ANCHORS = [
         'docs/8.6/certification-baseline.json' => 'd48a8d06f372e7d97377b4fd5f070abb13c5d2071f9c1bad046bc614ce6acd49',
         'docs/8.6/source-audit-baseline.json' => '45adabc6d0890584e546a7c480dcd855a9049c556f14e94deca495e1277621d0',
@@ -20,7 +22,21 @@ final class Preservation86
         'docs/conformance-policy.md' => ['4be4aa15365d1c2bc11936d479f9a10f138283da6be627ca47b94d83046297e8', '058d638b95c66cd5bd54fc8ea1f27a3dc59a50785e5a9d8047f9a0d719b4af2f'],
         'docs/versioning.md' => ['60a5e6f3faf0fb49a857cace8c665eb94ff8f90e656925cf943d26936b51272a', '3a741eb85bc8c49e9453c75471912f083a429b61fb68742fdf6ae38402c3563e'],
     ];
-    public function __construct(private readonly string $root) {}
+    public function __construct(private readonly string $root, private readonly string $contract = self::CONTRACT)
+    {
+        if (!in_array($contract, [self::CONTRACT, self::UPSTREAM_CONTRACT], true)) throw new \RuntimeException('Unknown preservation contract');
+    }
+
+    public function changes(): array
+    {
+        return self::CHANGES + ($this->contract === self::UPSTREAM_CONTRACT ? UpstreamResolutionFreshness::CHANGES : []);
+    }
+
+    public function predecessorPath(string $path): string
+    {
+        if (!isset($this->changes()[$path])) throw new \RuntimeException('Unreviewed projection path');
+        return $this->root . '/' . (isset(self::CHANGES[$path]) ? '.audit/phase7b-certification/' : UpstreamResolutionFreshness::ROOT . '/predecessor/') . $path;
+    }
 
     public function derive(): array
     {
@@ -37,9 +53,25 @@ final class Preservation86
             }
             $baselines[$path] = ['original' => $original, 'successor' => $successor];
         }
-        return ['contract' => self::CONTRACT, 'authority' => 'Phase 7C.2 hybrid policy/API additions; Phase 7C.7 restricted successor transition',
+        $result = ['contract' => self::CONTRACT, 'authority' => 'Phase 7C.2 hybrid policy/API additions; Phase 7C.7 restricted successor transition',
             'anchors' => self::ANCHORS, 'changes' => self::CHANGES, 'baselines' => $baselines,
             'historicalCertificationRenewed' => false, 'certificationGranted' => false];
+        if ($this->contract === self::UPSTREAM_CONTRACT) {
+            $freshness = new UpstreamResolutionFreshness($this->root);
+            $errors = $freshness->authorityErrors();
+            if ($errors) throw new \RuntimeException(implode('; ', $errors));
+            $result['predecessorTransition'] = $result;
+            $result['contract'] = self::UPSTREAM_CONTRACT;
+            $result['authority'] = 'Phase 7H.1: exact Phase 7H informative bytes and minimal current-evidence test transition; no caller-extensible exceptions.';
+            $result['upstreamTransition'] = $freshness->transition();
+            $result['changes'] = $this->changes();
+            foreach ($result['baselines'] as &$row) foreach (UpstreamResolutionFreshness::CHANGES as $path => [$before, $after]) {
+                if (($row['original'][$path] ?? null) !== $before) throw new \RuntimeException('Unexpected original preservation identity: ' . $path);
+                $row['successor'][$path] = $after;
+            }
+            unset($row);
+        }
+        return $result;
     }
 
     public function verify(array $transition): array
@@ -56,7 +88,7 @@ final class Preservation86
     public function projectionErrors(string $snapshot, array $inputs): array
     {
         $errors = $this->verify($this->derive()); $c = new Certification86($snapshot);
-        foreach (self::CHANGES as $path => [$before, $after]) {
+        foreach ($this->changes() as $path => [$before, $after]) {
             if (($inputs[$path] ?? null) !== $after) $errors[] = 'Projection lacks current policy dependency: ' . $path;
             $inputs[$path] = $before;
         }

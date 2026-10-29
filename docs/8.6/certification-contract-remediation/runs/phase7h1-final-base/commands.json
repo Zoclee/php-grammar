@@ -1,0 +1,98 @@
+{
+  "legacy-prepare": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification.php",
+      "--prepare",
+      "--php85",
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "--php86",
+      "C:/Data/GitHub/php-grammar/.audit/php86/php.exe",
+      "--sources85",
+      "C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+      "--sources86",
+      "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2",
+      "--source-cache",
+      "C:/Data/GitHub/php-grammar/.audit/phase7-sources",
+      "--composer",
+      "composer"
+    ],
+    "cwd": "C:/Data/GitHub/php-grammar/.audit/certification-v2-phase7h1-final-base",
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/runs/phase7h1-final-base/legacy-prepare.log",
+    "sha256": "a9fc488500ef3f527b08bdd2baef8580c878671a97a736d14240d01d84c86002"
+  },
+  "legacy-check": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification.php",
+      "--check"
+    ],
+    "cwd": "C:/Data/GitHub/php-grammar/.audit/certification-v2-phase7h1-final-base",
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/runs/phase7h1-final-base/legacy-check.log",
+    "sha256": "01567b736ae22683061dc15ed409a38c7210faa3d8b76b1411b77ee110ef8afb"
+  },
+  "legacy-claims": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification.php",
+      "--claims"
+    ],
+    "cwd": "C:/Data/GitHub/php-grammar/.audit/certification-v2-phase7h1-final-base",
+    "exit_code": 1,
+    "log": "docs/8.6/certification-contract-remediation/runs/phase7h1-final-base/legacy-claims.log",
+    "sha256": "c67e12efbb95b7a341b368d09a03df0aaacac0601b383a16938c8ab5cb0e94d8"
+  },
+  "legacy-run": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification.php",
+      "--run"
+    ],
+    "cwd": "C:/Data/GitHub/php-grammar/.audit/certification-v2-phase7h1-final-base",
+    "exit_code": 1,
+    "log": "docs/8.6/certification-contract-remediation/runs/phase7h1-final-base/legacy-run.log",
+    "sha256": "5406d5884d9360cadb4b530ddb68e7709272f407bd72f2c709cc4654ccc8429e"
+  },
+  "current-audit": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/source-completeness-audit.php",
+      "--check",
+      "--sources85",
+      "C:/Data/GitHub/php-grammar/.audit/php-php-src-7a4c627",
+      "--sources86",
+      "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+    ],
+    "cwd": "C:/Data/GitHub/php-grammar/.audit/certification-v2-phase7h1-final-base-audit",
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/runs/phase7h1-final-base/current-audit.log",
+    "sha256": "8a58f3618dcff126f1dac69a18b78c972e87f15d440ae219543bd78a074344f0"
+  },
+  "release85": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "tools/grammar-release.php",
+      "--php",
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "--composer",
+      "composer",
+      "--source-directory",
+      "C:/Data/GitHub/php-grammar/.audit",
+      "--source-cache",
+      "C:/Data/GitHub/php-grammar/.audit/phase7-sources",
+      "--logs",
+      "C:/Data/GitHub/php-grammar/docs/8.6/certification-contract-remediation/runs/phase7h1-final-base/release85"
+    ],
+    "cwd": "C:/Data/GitHub/php-grammar/.audit/certification-v2-phase7h1-final-base-85",
+    "exit_code": 1,
+    "log": "docs/8.6/certification-contract-remediation/runs/phase7h1-final-base/release85.log",
+    "sha256": "b9c651a283ef086cefc9279db61a74919c1dece806e8ac10918a0f300822548c"
+  }
+}

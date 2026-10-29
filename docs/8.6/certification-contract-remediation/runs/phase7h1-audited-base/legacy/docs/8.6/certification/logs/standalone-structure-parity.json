@@ -1,0 +1,24 @@
+{
+  "obligation": "Load only 8.6; check EBNF structure/references, parity, version selection and CLI.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "-d",
+    "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "Php86IntegrationTest|VersionPackageConsistencyTest|RepositoryManifestTest"
+  ],
+  "log": "docs/8.6/certification/logs/standalone-structure-parity.log",
+  "logSha256": "be7b1a1d96a863571bba7ee149546e0e91230a960407622c7dc34479b5159200"
+}

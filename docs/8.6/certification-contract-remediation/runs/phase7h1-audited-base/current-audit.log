@@ -1,0 +1,32 @@
+{
+    "checks": 2247,
+    "errors": [],
+    "parser": 176,
+    "scanner": 190,
+    "canonical": 1161,
+    "classifications": {
+        "production": {
+            "source-corroborated-and-covered": 160,
+            "covered-with-family-correspondence-only": 137,
+            "context-dependent-lexical-abstraction": 63,
+            "source-corroborated-but-unexercised": 1
+        },
+        "alternative": {
+            "source-corroborated-and-covered": 232,
+            "source-corroborated-but-unexercised": 109,
+            "context-dependent-lexical-abstraction": 183,
+            "covered-with-family-correspondence-only": 250,
+            "unexercised-with-family-correspondence-only": 25,
+            "unresolved": 1
+        }
+    },
+    "hunks": {
+        "pending-direct-review": 230,
+        "grouped-evidence-excluded": 237,
+        "source-reviewed-phase3d; retain-record-limitations": 52,
+        "see-bounded-semantic-group": 28,
+        "prior-focused-review": 7,
+        "examined-unresolved": 14,
+        "reviewed": 10
+    }
+}

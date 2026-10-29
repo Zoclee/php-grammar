@@ -43,7 +43,9 @@ final class Php86CompilerContextualTest extends TestCase
 
     public function testRecordedOracleEvidenceIsFreshAndStageSpecific(): void
     {
-        $report = self::read('docs/8.6/correctness-remediation-probes.json');
+        require_once self::root() . '/tools/lib/UpstreamResolutionFreshness.php';
+        $report = self::read(\PhpGrammar\Tools\UpstreamResolutionFreshness::PROBES);
+        self::assertSame([], (new \PhpGrammar\Tools\UpstreamResolutionFreshness(self::root()))->probeErrors($report));
         self::assertSame([], $report['errors']);
         self::assertCount(162, $report['observations']);
         foreach ($report['inputHashes'] + $report['fixtureHashes'] as $path => $hash) {

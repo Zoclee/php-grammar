@@ -1,0 +1,73 @@
+Checking manifest-schema
+manifest-schema: PASSED
+Checking manifest-regressions
+manifest-regressions: PASSED
+Checking standalone-structure-parity
+standalone-structure-parity: PASSED
+Checking positive-negative-fixtures
+positive-negative-fixtures: PASSED
+Checking ordinary-differential
+ordinary-differential: FAILED
+Checking lexer-profiles
+lexer-profiles: PASSED
+Checking pfa-differential
+pfa-differential: PASSED
+Checking contextual-differential
+contextual-differential: PASSED
+Checking diagnostic-differential
+diagnostic-differential: PASSED
+Checking version-boundaries
+version-boundaries: PASSED
+Checking coverage-measurement
+coverage-measurement: FAILED
+Checking parser-scanner-correspondence
+parser-scanner-correspondence: FAILED
+Checking compiler-contextual-reconciliation
+compiler-contextual-reconciliation: PASSED
+Checking rfc-implementation-traceability
+rfc-implementation-traceability: FAILED
+Checking production-change-traceability
+production-change-traceability: PASSED
+Checking changes-document-completeness
+changes-document-completeness: PASSED
+Checking historical-preservation
+historical-preservation: FAILED
+Checking public-api-cli
+public-api-cli: PASSED
+Checking source-lock-integrity
+source-lock-integrity: PASSED
+Checking evidence-freshness
+evidence-freshness: FAILED
+Checking blocker-dispositions
+blocker-dispositions: PASSED
+Checking documentation-json
+documentation-json: PASSED
+Checking full-regression
+full-regression: PASSED
+Checking infrastructure-negatives
+infrastructure-negatives: PASSED
+Checking historical-certification-check
+historical-certification-check: FAILED
+Checking composer-validation
+composer-validation: PASSED
+Checking production-coverage-closure
+Checking alternative-coverage-closure
+Checking scanner-state-closure
+Checking ast-binding
+Checking folding-order
+Checking discovery-closure
+Checking writable-target-validity
+Checking contextual-enforcement-scope
+Checking discarded-hook-disposition
+Checking exact-pin-executable
+{
+  "report": "docs/8.6/final-evidence.json",
+  "gates": {
+    "passed": 19,
+    "failed": 7,
+    "blocked": 10
+  },
+  "certificationGranted": false,
+  "inputsUnchangedDuringPreparation": true,
+  "next": "Run --check independently. --claims must refuse certification."
+}

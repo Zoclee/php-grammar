@@ -1088,6 +1088,17 @@ static closure can therefore contain an unknown hook without a PHP error.
 That deliberate difference is retained as a known-discrepancy fixture rather
 than accepted by the canonical grammar. Other hook constraints remain contextual.
 
+**CA86-001 maintainer clarification (informative, October 28, 2026).**
+In [php-src #24795](https://github.com/php/php-src/issues/24795#issuecomment-6455687623),
+the maintainer confirms that expressions known to be dead can be eliminated
+before contextual compilation, skipping checks within them. The issue is closed
+as not planned. This explains the discarded unknown-hook witnesses; it does not
+permit unknown hooks in declarations that are compiled. The inherited structural
+restriction remains a known divergence, pending a separate Gate B correction or
+an explicitly accepted, enforceable scope disposition. CA86-001 remains blocking;
+upstream closure is not repository certification. See the
+[resolution evidence](../../docs/8.6/upstream-maintainer-resolution.md).
+
 Evidence: PHP source pin `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`,
 `Zend/zend_compile.c`, `zend_get_property_hook_kind_from_name` (case-insensitive
 `get`/`set` comparisons) and `zend_compile_property_hooks` (unknown-name error);
@@ -1167,8 +1178,16 @@ ordinary calls. Dynamic and namespace-fallback calls, named/unpacked arguments,
 and PFA contexts have separate eligibility and traversal paths. Array literals
 can independently enter constant evaluation even when a call bypasses builtin
 specialization. These observations do not establish one rule for all builtins
-or restore the unset cast. Intended compatibility implications remain unresolved
-under PHP86-015. The repository's structural matcher does not implement this
+or restore the unset cast. In
+[php-src #24794](https://github.com/php/php-src/issues/24794#issuecomment-6455774723),
+the maintainer identifies the same dead-expression cause as #24795 and explains
+that it is not specific to `printf()`; standalone `true || (unset)$x` also
+demonstrates skipped validation. The issue is closed as not planned. This does
+not negate the retained PHP 8.5/8.6 dispatch differences or establish every
+dispatch/initializer boundary. PHP86-015 remains blocking for that bounded
+source-correspondence and conformance work, as recorded in the
+[resolution evidence](../../docs/8.6/upstream-maintainer-resolution.md).
+The repository's structural matcher does not implement this
 compiler traversal model. See the
 [paired dispatch controls and source mappings](../../docs/8.6/compiler-contextual-reconciliation.md#3-php86-015-optimized-call-validation-order).
 

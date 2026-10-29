@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.5/coverage-report.php",
+    "--check"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "log": "positive-evidence85.log",
+  "logSha256": "9f5a0ae83eaebdab217fb9c1536a942925a6490465506971b28d01f47d533dde",
+  "totals": null
+}

@@ -46,15 +46,16 @@ final class CertificationCurrentRun
         return [...$errors, ...HistoricalReleaseDependency::executionErrors($lexerLog)];
     }
 
-    private function snapshot(string $path, array $inputs, bool $projection): void
+    private function snapshot(string $path, array $inputs, bool $projection, string $preservationContract = Preservation86::CONTRACT): void
     {
+        $preservation = new Preservation86($this->root, $preservationContract);
         if (file_exists($path) || is_link(dirname($path))) throw new \RuntimeException('Snapshot exists or unsafe parent');
         mkdir($path, 0777, true);
         foreach ($inputs as $p => $hash) {
             $source = $this->root . '/' . $p;
-            if ($projection && isset(Preservation86::CHANGES[$p])) {
-                $source = $this->root . '/.audit/phase7b-certification/' . $p;
-                $hash = Preservation86::CHANGES[$p][0];
+            if ($projection && isset($preservation->changes()[$p])) {
+                $source = $preservation->predecessorPath($p);
+                $hash = $preservation->changes()[$p][0];
             }
             if (!is_file($source) || hash_file('sha256', $source) !== $hash) throw new \RuntimeException('Snapshot input mismatch: ' . $p);
             $target = $path . '/' . $p;
@@ -75,10 +76,13 @@ final class CertificationCurrentRun
         return [$config['php85'], '-n', 'tools/8.6/source-completeness-audit.php', '--check', '--sources85', $config['sources85'], '--sources86', $config['sources86']];
     }
 
-    public static function auditErrors(array $audit, array $inputs, string $snapshot, array $original): array
+    public static function auditErrors(array $audit, array $inputs, string $snapshot, array $original, string $preservationContract = Preservation86::CONTRACT): array
     {
-        if (($audit['contract'] ?? '') !== 'php86-current-source-audit-v2' || ($audit['inputs'] ?? []) !== $inputs
-            || ($audit['projection'] ?? []) !== Preservation86::CHANGES || ($audit['snapshot'] ?? '') !== $snapshot
+        if (!in_array($preservationContract, [Preservation86::CONTRACT, Preservation86::UPSTREAM_CONTRACT], true)) return ['Unknown audit preservation contract'];
+        $upstream = $preservationContract === Preservation86::UPSTREAM_CONTRACT;
+        $changes = Preservation86::CHANGES + ($upstream ? UpstreamResolutionFreshness::CHANGES : []);
+        if (($audit['contract'] ?? '') !== ($upstream ? 'php86-current-source-audit-v3' : 'php86-current-source-audit-v2') || ($audit['inputs'] ?? []) !== $inputs
+            || ($audit['projection'] ?? []) !== $changes || ($audit['snapshot'] ?? '') !== $snapshot
             || ($audit['correspondence'] ?? []) !== $original || ($audit['certificationGranted'] ?? null) !== false) return ['Missing, modified or stale full correspondence'];
         return [];
     }
@@ -106,7 +110,8 @@ final class CertificationCurrentRun
     public function generate(string $revision, array $config): string
     {
         if (!preg_match('/^[a-zA-Z0-9][a-zA-Z0-9_-]*$/D', $revision)) throw new \RuntimeException('Safe new revision required');
-        $c = new Certification86($this->root); $e = new CertificationCurrent($this->root); $p = new Preservation86($this->root);
+        $preservationContract = $config['preservation-contract'] ?? Preservation86::CONTRACT;
+        $c = new Certification86($this->root); $e = new CertificationCurrent($this->root); $p = new Preservation86($this->root, $preservationContract);
         $transition = $p->derive(); $errors = [...$p->verify($transition), ...CertificationCurrent::profileErrors($config)];
         if ($errors) throw new \RuntimeException(implode('; ', $errors));
         $out = CertificationCurrent::OUT . '/runs/' . $revision;
@@ -116,7 +121,7 @@ final class CertificationCurrentRun
         mkdir($c->path($out), 0777, true);
         $c->write($out . '/transition.json', $transition);
         foreach (['legacy' => [$snap, false], 'audit' => [$snap . '-audit', true], 'release85' => [$snap . '-85', false]] as $kind => [$path, $projection]) {
-            echo 'Copying ' . $kind . "\n"; flush(); $this->snapshot($path, $inputs, $projection);
+            echo 'Copying ' . $kind . "\n"; flush(); $this->snapshot($path, $inputs, $projection, $preservationContract);
         }
         $commands = [];
         $run = function(string $id, array $command, string $cwd) use ($c, $out, &$commands): array {
@@ -150,9 +155,9 @@ final class CertificationCurrentRun
             if (!copy($snap . '/' . $file, $dest)) throw new \RuntimeException('Evidence export failed');
         }
         $audit = $c->read('docs/8.6/source-completeness-ledger.json');
-        $c->write($out . '/audit.json', ['contract' => 'php86-current-source-audit-v2', 'inputs' => $inputs, 'snapshot' => $snap . '-audit',
-            'projection' => Preservation86::CHANGES, 'correspondence' => $audit, 'certificationGranted' => false,
-            'scope' => 'Recomputed complete original correspondence ledger, including every unresolved obligation; current dependency/preservation transition is independently checked. Three restored documents affect only the historical preservation comparison.']);
+        $c->write($out . '/audit.json', ['contract' => $preservationContract === Preservation86::UPSTREAM_CONTRACT ? 'php86-current-source-audit-v3' : 'php86-current-source-audit-v2', 'inputs' => $inputs, 'snapshot' => $snap . '-audit',
+            'projection' => $p->changes(), 'correspondence' => $audit, 'certificationGranted' => false,
+            'scope' => 'Recomputed complete original correspondence ledger, including every unresolved obligation. Explicit versioned preservation transition authenticates all current and predecessor bytes; source-relevant change-map fields must remain identical.']);
         $draft = ['contract' => CertificationCurrent::CONTRACT, 'evidenceKind' => 'current-assessment', 'revision' => $revision, 'output' => $out,
             'configuration' => $config, 'inputs' => $inputs, 'runtime' => $runtime, 'runtimeUnchanged' => $runtime === $this->runtimeHashes($config),
             'snapshots' => ['legacy' => $snap, 'audit' => $snap . '-audit', 'release85' => $snap . '-85'],
@@ -163,7 +168,7 @@ final class CertificationCurrentRun
         $verification = $this->checks($draft);
         $draft['checks'] = $verification['checks']; $draft['verificationErrors'] = $verification['errors'];
         $draft['blockers'] = $c->read(BlockerClosure::ROOT . '/dispositions.json')['blockers'];
-        $draft['gates'] = CertificationCurrent::gates($legacy['gates'], $draft['checks'], $draft['blockers'], CertificationCurrent::verificationCommand($draft));
+        $draft['gates'] = CertificationCurrent::gates($legacy['gates'], $draft['checks'], $draft['blockers'], CertificationCurrent::verificationCommand($draft), $preservationContract);
         $draft['prerequisites'] = ['historical-artifact-integrity85' => $draft['checks']['historical-integrity'], 'current-compatibility85' => $draft['checks']['current-compatibility']];
         $paths = []; foreach (Support::files($c->path($out)) as $file) $paths[] = substr($file, strlen($this->root) + 1);
         // Bind the selected compatibility revision and its independent receipt/logs too.
@@ -176,13 +181,14 @@ final class CertificationCurrentRun
 
     public function checks(array $report): array
     {
-        $c = new Certification86($this->root); $p = new Preservation86($this->root); $out = $report['output']; $config = $report['configuration']; $errors = [];
+        $config = $report['configuration']; $preservationContract = $config['preservation-contract'] ?? Preservation86::CONTRACT;
+        $c = new Certification86($this->root); $p = new Preservation86($this->root, $preservationContract); $out = $report['output']; $errors = [];
         $errors['preservation'] = $p->verify($c->read($out . '/transition.json'));
         $errors['audit'] = $p->projectionErrors($report['snapshots']['audit'], $report['inputs']);
         $audit = $c->read($out . '/audit.json');
-        $errors['audit'] = [...$errors['audit'], ...self::auditErrors($audit, $report['inputs'], $report['snapshots']['audit'], $c->read('docs/8.6/source-completeness-ledger.json'))];
+        $errors['audit'] = [...$errors['audit'], ...self::auditErrors($audit, $report['inputs'], $report['snapshots']['audit'], $c->read('docs/8.6/source-completeness-ledger.json'), $preservationContract)];
         $projected = (new CertificationCurrent($report['snapshots']['audit']))->inventory();
-        $expectedProjection = $report['inputs']; foreach (Preservation86::CHANGES as $path => [$before]) $expectedProjection[$path] = $before;
+        $expectedProjection = $report['inputs']; foreach ($p->changes() as $path => [$before]) $expectedProjection[$path] = $before;
         if ($projected !== $expectedProjection) $errors['audit'][] = 'Projection dependency membership changed';
         if ($errors['audit'] === []) {
             $r = Support::run($this->auditCommand($config), $report['snapshots']['audit']);

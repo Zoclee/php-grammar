@@ -1,0 +1,136 @@
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.10
+Configuration: C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\phpunit.xml.dist
+
+Time: 03:13.557, Memory: 112.00 MB
+
+There were 18 errors:
+
+1) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testSuccessorPreservesEveryOriginalObservationAndDependency
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+2) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testSuccessorCannotInventOrDropEvidence with data set "observation" ('observation')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+3) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testSuccessorCannotInventOrDropEvidence with data set "missing-observation" ('missing-observation')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+4) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testSuccessorCannotInventOrDropEvidence with data set "missing-dependency" ('missing-dependency')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+5) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testSuccessorCannotInventOrDropEvidence with data set "fixture" ('fixture')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+6) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testSuccessorCannotInventOrDropEvidence with data set "source" ('source')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+7) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testSuccessorCannotInventOrDropEvidence with data set "oracle" ('oracle')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+8) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testSuccessorCannotInventOrDropEvidence with data set "claim" ('claim')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+9) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testChangedInputsFailEvenWithAnUnchangedSuccessor with data set "docs/8.6/correctness-remediation-probes.json" ('docs/8.6/correctness-remediat...s.json')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+10) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testChangedInputsFailEvenWithAnUnchangedSuccessor with data set "grammar/8.6/php.md" ('grammar/8.6/php.md')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+11) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testChangedInputsFailEvenWithAnUnchangedSuccessor with data set "grammar/8.6/php.ebnf" ('grammar/8.6/php.ebnf')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+12) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testChangedInputsFailEvenWithAnUnchangedSuccessor with data set "tools/8.6/change-map.json" ('tools/8.6/change-map.json')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+13) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testChangedInputsFailEvenWithAnUnchangedSuccessor with data set "docs/8.6/upstream-resolution-freshness/predecessor/grammar/8.6/php.md" ('docs/8.6/upstream-resolution-...php.md')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+14) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testChangedInputsFailEvenWithAnUnchangedSuccessor with data set "docs/8.6/upstream-maintainer-resolution/24794-comments.json" ('docs/8.6/upstream-maintainer-...s.json')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+15) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testChangedInputsFailEvenWithAnUnchangedSuccessor with data set "docs/8.6/upstream-maintainer-resolution/dispositions.json" ('docs/8.6/upstream-maintainer-...s.json')
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+16) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testMissingAuthorityAndCallerSuppliedTransitionsFailClosed
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+17) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testAuditProjectionRequiresTheExactVersionAndFullCorrespondence
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+18) PhpGrammar\Tests\UpstreamResolutionFreshnessTest::testVersionedDependencyCannotCloseAnyOriginalGateOrBlocker
+RuntimeException: Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tools\lib\Certification86.php:31
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\UpstreamResolutionFreshnessTest.php:19
+
+--
+
+There was 1 failure:
+
+1) PhpGrammar\Tests\Php\Conformance\Php86CompilerContextualTest::testRecordedOracleEvidenceIsFreshAndStageSpecific
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json',
++]
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base-85\tests\Php\Conformance\Php86CompilerContextualTest.php:48
+
+ERRORS!
+Tests: 6310, Assertions: 58104, Errors: 18, Failures: 1.
+Script phpunit handling the test event returned with error code 2

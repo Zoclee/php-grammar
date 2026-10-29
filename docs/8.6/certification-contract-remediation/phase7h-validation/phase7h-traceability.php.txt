@@ -1,0 +1,15 @@
+<?php
+require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../tools/lib/ChangeTraceability.php';
+chdir(dirname(__DIR__));
+$path='tools/8.6/change-map.json';
+$out='docs/8.6/upstream-maintainer-resolution';
+copy($path,"$out/change-map-before.json");
+$m=json_decode(file_get_contents($path),true,512,JSON_THROW_ON_ERROR);
+$sections=\PhpGrammar\Tools\ChangeTraceability::sections(file_get_contents('grammar/8.6/php.md'));
+foreach(['## Parser/compiler boundary rules','## Deprecated but accepted syntax'] as $key){
+    $m['documentation'][$key]['after']=hash('sha256',$sections[$key]);
+    $m['documentation'][$key]['reason'].=' Phase 7H: informative maintainer clarification for CA86-001/PHP86-015; retained dead-expression behavior, dispatch observations and blocking conformance requirements. See docs/8.6/upstream-maintainer-resolution.md and its authenticated response index. No production or enforcement change.';
+}
+$m['changesSha256']=hash_file('sha256','grammar/8.6/changes.md');
+file_put_contents($path,json_encode($m,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES)."\n");

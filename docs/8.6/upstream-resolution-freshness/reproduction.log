@@ -1,0 +1,24 @@
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.10
+Configuration: C:\Data\GitHub\php-grammar\phpunit.xml.dist
+
+F                                                                   1 / 1 (100%)
+
+Time: 00:00.146, Memory: 38.00 MB
+
+There was 1 failure:
+
+1) PhpGrammar\Tests\Php\Conformance\Php86CompilerContextualTest::testRecordedOracleEvidenceIsFreshAndStageSpecific
+grammar/8.6/php.md
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'45688b7d36ff16d823360f9072f43aa8e52c4dbd9189c890a6fdeef592bca521'
++'1aa67b423e391c55f92f5b65ffba81bdd9d0dd8ab4c49201e66fab9eff1d100e'
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86CompilerContextualTest.php:50
+
+FAILURES!
+Tests: 1, Assertions: 10, Failures: 1.

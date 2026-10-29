@@ -1,0 +1,9 @@
+{
+  "contract": "php86-certification-v2",
+  "operation": "check",
+  "errors": [
+    "Unverified current prerequisite: release85",
+    "Read-only validation modified artifacts"
+  ],
+  "certificationGranted": false
+}

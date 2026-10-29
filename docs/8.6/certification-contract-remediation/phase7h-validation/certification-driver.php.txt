@@ -1,0 +1,13 @@
+<?php
+require __DIR__.'/../tools/lib/bootstrap.php';
+use PhpGrammar\Tools\Support as S;
+chdir(dirname(__DIR__));
+$out='docs/8.6/certification-contract-remediation/phase7h-validation';
+$php=getcwd().'/.audit/php85/php.exe';$rows=[];
+$commands=[
+'current-generate'=>['tools/8.6/certification-current.php','--contract','php86-certification-v2','--generate','--revision','phase7h-base','--profile','exact-pin-rc4','--legacyProfile','historical-rc4','--compatibility-report','docs/8.5/compatibility/phase7h/evidence.json'],
+'current-check'=>['tools/8.6/certification-scanner-differential.php','--contract','php86-certification-v4','--check','--report','docs/8.6/certification-contract-remediation/runs/phase7f/evidence.json'],
+'current-claims'=>['tools/8.6/certification-scanner-differential.php','--contract','php86-certification-v4','--claims','--report','docs/8.6/certification-contract-remediation/runs/phase7f/evidence.json'],
+];
+foreach($commands as $id=>$args){$cmd=[$php,'-n',...$args];$r=S::run($cmd,getcwd(),"$out/$id.log");$rows[$id]=['command'=>$cmd,'exit_code'=>$r['exit_code'],'log'=>"$out/$id.log",'sha256'=>hash_file('sha256',"$out/$id.log"),'output'=>$r['output']];echo "$id: {$r['exit_code']}\n";flush();file_put_contents("$out/certification.json",S::json(['contract'=>'php86-maintainer-certification-checks-v1','evaluatedContracts'=>['php86-certification-v2','php86-certification-v4'],'commands'=>$rows,'originalSubstantiveBlockedGates'=>9,'originalMixedBlockers'=>7,'freshAggregateAvailable'=>false,'certificationGranted'=>false]));}
+copy(__FILE__,"$out/certification-driver.php.txt");

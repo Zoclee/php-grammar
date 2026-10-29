@@ -1,0 +1,23 @@
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.10
+Configuration: C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base\phpunit.xml.dist
+
+Time: 00:04.974, Memory: 46.00 MB
+
+There was 1 failure:
+
+1) PhpGrammar\Tests\Php\Conformance\Php86CompilerContextualTest::testRecordedOracleEvidenceIsFreshAndStageSpecific
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'Missing evidence artifact: docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json',
++]
+
+C:\Data\GitHub\php-grammar\.audit\certification-v2-phase7h1-verified-base\tests\Php\Conformance\Php86CompilerContextualTest.php:48
+
+FAILURES!
+Tests: 84, Assertions: 479, Failures: 1.

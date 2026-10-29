@@ -1,0 +1,104 @@
+diff --git a/grammar/8.6/changes.md b/grammar/8.6/changes.md
+index d5c7fe7..8db92cd 100644
+--- a/grammar/8.6/changes.md
++++ b/grammar/8.6/changes.md
+@@ -298,7 +298,19 @@ property-cache optimization require no additional production. Phase 3B/C rules
+ and their historical validation evidence remain unchanged.
+ 
+ PHP86-013 (discovery gaps), PHP86-014 (assignment-based writable targets), and
+-PHP86-015 (optimized-call traversal) remain open with unchanged dispositions.
++PHP86-015 (compiler traversal and skipped validation) remain open. Phase 7H
++narrows the unresolved explanation for PHP86-015 and CA86-001: maintainer
++responses in [#24794](https://github.com/php/php-src/issues/24794#issuecomment-6455774723)
++and [#24795](https://github.com/php/php-src/issues/24795#issuecomment-6455687623)
++confirm dead-expression elimination can skip contextual compile errors and is
++not specific to `printf()`. Both issues are closed as not planned, not fixed.
++Earlier paired observations remain valid evidence at their recorded profiles;
++the replies do not establish all dispatch/initializer boundaries. The inherited
++get/set-only divergence still needs a separate Gate B correction or an accepted,
++enforceable scope disposition. Both repository blockers remain; PHP86-014 is
++unresolved. These are informative clarifications, with no EBNF, fixture, source
++pin or release-gate change. See the
++[Phase 7H resolution](../../docs/8.6/upstream-maintainer-resolution.md).
+ PHP86-003 through PHP86-007 have the bounded Phase 3C specification and evidence
+ scope above; their contextual validator integration remains unimplemented.
+ PHP86-010 is documented with the bounded diagnostic evidence above;
+diff --git a/grammar/8.6/php.md b/grammar/8.6/php.md
+index fabdc45..ac18915 100644
+--- a/grammar/8.6/php.md
++++ b/grammar/8.6/php.md
+@@ -1088,6 +1088,17 @@ static closure can therefore contain an unknown hook without a PHP error.
+ That deliberate difference is retained as a known-discrepancy fixture rather
+ than accepted by the canonical grammar. Other hook constraints remain contextual.
+ 
++**CA86-001 maintainer clarification (informative, October 28, 2026).**
++In [php-src #24795](https://github.com/php/php-src/issues/24795#issuecomment-6455687623),
++the maintainer confirms that expressions known to be dead can be eliminated
++before contextual compilation, skipping checks within them. The issue is closed
++as not planned. This explains the discarded unknown-hook witnesses; it does not
++permit unknown hooks in declarations that are compiled. The inherited structural
++restriction remains a known divergence, pending a separate Gate B correction or
++an explicitly accepted, enforceable scope disposition. CA86-001 remains blocking;
++upstream closure is not repository certification. See the
++[resolution evidence](../../docs/8.6/upstream-maintainer-resolution.md).
++
+ Evidence: PHP source pin `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`,
+ `Zend/zend_compile.c`, `zend_get_property_hook_kind_from_name` (case-insensitive
+ `get`/`set` comparisons) and `zend_compile_property_hooks` (unknown-name error);
+@@ -1167,8 +1178,16 @@ ordinary calls. Dynamic and namespace-fallback calls, named/unpacked arguments,
+ and PFA contexts have separate eligibility and traversal paths. Array literals
+ can independently enter constant evaluation even when a call bypasses builtin
+ specialization. These observations do not establish one rule for all builtins
+-or restore the unset cast. Intended compatibility implications remain unresolved
+-under PHP86-015. The repository's structural matcher does not implement this
++or restore the unset cast. In
++[php-src #24794](https://github.com/php/php-src/issues/24794#issuecomment-6455774723),
++the maintainer identifies the same dead-expression cause as #24795 and explains
++that it is not specific to `printf()`; standalone `true || (unset)$x` also
++demonstrates skipped validation. The issue is closed as not planned. This does
++not negate the retained PHP 8.5/8.6 dispatch differences or establish every
++dispatch/initializer boundary. PHP86-015 remains blocking for that bounded
++source-correspondence and conformance work, as recorded in the
++[resolution evidence](../../docs/8.6/upstream-maintainer-resolution.md).
++The repository's structural matcher does not implement this
+ compiler traversal model. See the
+ [paired dispatch controls and source mappings](../../docs/8.6/compiler-contextual-reconciliation.md#3-php86-015-optimized-call-validation-order).
+ 
+diff --git a/tools/8.6/change-map.json b/tools/8.6/change-map.json
+index f001b42..acec22f 100644
+--- a/tools/8.6/change-map.json
++++ b/tools/8.6/change-map.json
+@@ -10,7 +10,7 @@
+         "markdown": "bbb81cbda09da80a6e326c5153ccfb4bc436ba9e306a3e1fa419b1ff002f6d7f"
+     },
+     "pin": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+-    "changesSha256": "27754b1eb2f9806753e94243e1c25bba6c1039aed0c43943d13f5c0655643d9d",
++    "changesSha256": "627be3da6c3dfdb5d431fea82f486fe5e42794b1c16cf0cc276bd1bb79261611",
+     "productions": {
+         "ordinary-argument-list": {
+             "kind": "modified",
+@@ -448,11 +448,11 @@
+         },
+         "## Parser/compiler boundary rules": {
+             "before": "e0bd5975ae9df1435215189116e6fa449232eca6455a046ba4166639abcf1f5a",
+-            "after": "7ac7e0be053b502f8be2f2505c1c5cb42ebf41630945694c4b1da4ebc1f20882",
++            "after": "870b9d964b89f9cc167c1f45216ec1239cf5e3ebcfd99a19e8ec7004f9ec1911",
+             "findings": [
+                 "PHP86-001"
+             ],
+-            "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
++            "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification. Phase 7H: informative maintainer clarification for CA86-001/PHP86-015; retained dead-expression behavior, dispatch observations and blocking conformance requirements. See docs/8.6/upstream-maintainer-resolution.md and its authenticated response index. No production or enforcement change."
+         },
+         "## Conformance evidence": {
+             "before": "274277dc4eefd89d9303348989f1e4ef58e1436b2b643d54d6da80440d2c05e0",
+@@ -467,8 +467,8 @@
+             "findings": [
+                 "PHP86-015"
+             ],
+-            "reason": "Phase 5D: informative PHP86-015 scope clarification only; no normative acceptance change. Phase 5C source/probe evidence and docs/8.6/correctness-remediation.md record reviewed boundaries.",
+-            "after": "9c4f415108c211f4375168538a8b516d190e74843f1beee451696ac841f11d9c"
++            "reason": "Phase 5D: informative PHP86-015 scope clarification only; no normative acceptance change. Phase 5C source/probe evidence and docs/8.6/correctness-remediation.md record reviewed boundaries. Phase 7H: informative maintainer clarification for CA86-001/PHP86-015; retained dead-expression behavior, dispatch observations and blocking conformance requirements. See docs/8.6/upstream-maintainer-resolution.md and its authenticated response index. No production or enforcement change.",
++            "after": "4c8977e0cc6113c7ac89fc9cea0d477c8c10dd024c5f283befd912da5df790c3"
+         }
+     },
+     "openFindings": [

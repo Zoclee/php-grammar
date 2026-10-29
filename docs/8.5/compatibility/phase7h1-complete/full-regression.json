@@ -1,0 +1,25 @@
+{
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "log": "full-regression.log",
+  "logSha256": "b0cc85aa7b5c0072b1ddd03cb7938257fa184d31c39bde7ebb913ed3907423fa",
+  "totals": {
+    "tests": 6311,
+    "assertions": 58955
+  }
+}

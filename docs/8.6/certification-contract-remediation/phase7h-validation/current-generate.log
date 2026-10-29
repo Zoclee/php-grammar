@@ -1,0 +1,6 @@
+{
+  "errors": [
+    "Stale evidence digest: grammar/8.6/changes.md; Stale evidence digest: grammar/8.6/php.md; Stale evidence digest: tools/8.6/change-map.json"
+  ],
+  "certificationGranted": false
+}

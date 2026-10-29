@@ -1,0 +1,15 @@
+{
+    "coverage": {
+        "productions": 298,
+        "totalProductions": 361,
+        "productionPercent": 82.54847645429363,
+        "alternatives": 545,
+        "totalAlternatives": 800,
+        "alternativePercent": 68.125
+    },
+    "checks": 1131,
+    "observations": 156,
+    "errors": [
+        "Unchanged 8.6 specification"
+    ]
+}

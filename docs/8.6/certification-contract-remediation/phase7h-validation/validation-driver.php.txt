@@ -1,0 +1,40 @@
+<?php
+declare(strict_types=1);
+require __DIR__.'/../tools/lib/bootstrap.php';
+use PhpGrammar\Tools\Support as S;
+chdir(dirname(__DIR__));
+$out='docs/8.6/certification-contract-remediation/phase7h-validation';
+if(!is_dir($out))mkdir($out,0777,true);
+$bundle='docs/8.6/upstream-maintainer-resolution';
+$read=static fn($p)=>json_decode(file_get_contents($p),true,512,JSON_THROW_ON_ERROR);
+$write=static fn($p,$d)=>file_put_contents($p,json_encode($d,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES)."\n");
+$errors=[];$changed=[];$baseline=$read("$bundle/baseline.json");
+foreach($baseline['files'] as $p=>$h)if(!is_file($p)||hash_file('sha256',$p)!==$h)$changed[]=$p;
+$expected=['grammar/8.6/changes.md','grammar/8.6/php.md','tools/8.6/change-map.json'];sort($expected);sort($changed);
+if($changed!==$expected)$errors[]='Unexpected predecessor changes';
+if(hash_file('sha256',"$bundle/change-map-before.json")!==$baseline['files']['tools/8.6/change-map.json'])$errors[]='Prior map not preserved';
+$b=$read("$bundle/change-map-before.json");$a=$read('tools/8.6/change-map.json');
+foreach(['## Parser/compiler boundary rules','## Deprecated but accepted syntax'] as $key){$a['documentation'][$key]['after']=$b['documentation'][$key]['after'];$a['documentation'][$key]['reason']=$b['documentation'][$key]['reason'];}
+$a['changesSha256']=$b['changesSha256'];if($a!==$b)$errors[]='Unexpected traceability transition';
+foreach(glob("$bundle/*.headers.json") as $p){$meta=$read($p);$body=str_replace('.headers.json','.json',$p);if(hash_file('sha256',$body)!==$meta['sha256'])$errors[]='Response digest mismatch '.$p;if(!str_starts_with($meta['url'],'https://api.github.com/'))$errors[]='Non-GitHub source';foreach($meta['headers'] as $h)if(str_starts_with(strtolower($h),'link:')&&str_contains($h,'rel="next"'))$errors[]='Uncaptured pagination';}
+$up=$read("$bundle/upstream.json");
+foreach([24795=>'CA86-001',24794=>'PHP86-015'] as $id=>$finding){$issue=$read("$bundle/$id-issue.json");$comments=$read("$bundle/$id-comments.json");$events=$read("$bundle/$id-events.json");if($issue['number']!==$id||$issue['state']!=='closed'||$issue['state_reason']!=='not_planned'||count($comments)!==$issue['comments'])$errors[]='Issue mismatch';foreach($comments as $i=>$c){$record=$up['issues'][$finding]['comments'][$i];if($record['body']!==$c['body']||$record['url']!==$c['html_url']||$record['createdAt']!==$c['created_at']||$record['updatedAt']!==$c['updated_at'])$errors[]='Comment mismatch';}$closed=array_values(array_filter($events,static fn($e)=>$e['event']==='closed'));if($closed!==$up['issues'][$finding]['closureEvents']||count($closed)!==1||$closed[0]['actor']['login']!=='iluuu1994'||$closed[0]['state_reason']!=='not_planned'||$closed[0]['created_at']!==($id===24795?'2026-10-27T23:00:30Z':'2026-10-27T23:05:41Z'))$errors[]='Closure event mismatch';}
+$prior=$read('docs/8.6/final-certification-readiness/remaining-work.json');$work=$read("$bundle/work-items.json");
+if(array_column($work['workItems'],'original')!==$prior['workItems']||$work['originalBlockerRows']!==$prior['originalBlockerRows']||$work['originalBlockedGates']!==$prior['blockedGates'])$errors[]='Original requirements changed';
+$disp=$read("$bundle/dispositions.json");if(count($disp['blockers'])!==7||$disp['blockersClosed']!==[]||$disp['gateTransitions']!==[])$errors[]='Unsupported closure';foreach($disp['blockers'] as $r)if($r['status']!=='blocking'||!$r['blocksCertification'])$errors[]='Lost blocker';
+$reg=$read("$bundle/regression.json");if(count($reg['observations'])!==18||$reg['errors']!==[])$errors[]='Regression mismatch';
+$links=0;foreach(['docs/8.6/upstream-maintainer-resolution.md','grammar/8.6/php.md','grammar/8.6/changes.md'] as $p){preg_match_all('~\[[^\]]*\]\(([^)]+)\)~',file_get_contents($p),$m);foreach($m[1] as $url){if(preg_match('~^(https?://|#)~',$url))continue;++$links;if(!file_exists(dirname($p).'/'.explode('#',$url)[0]))$errors[]='Missing link '.$url;}}
+$write("$out/integrity.json",['contract'=>'php86-maintainer-resolution-integrity-v1','checkedAt'=>gmdate(DATE_ATOM),'predecessorFiles'=>count($baseline['files']),'changedPredecessors'=>$changed,'upstreamIssues'=>2,'comments'=>6,'regressionObservations'=>18,'localLinks'=>$links,'errors'=>$errors,'certificationGranted'=>false]);
+if(($argv[1]??'')==='--integrity-only'){copy(__FILE__,"$out/validation-driver.php.txt");echo json_encode($errors)."\n";exit($errors?1:0);}
+$commands=[
+'source'=>['tools/8.6/certification-gate.php','--gate','source','--sources86',getcwd().'/.audit/php-php-src-f23b4c2'],
+'provenance'=>['tools/8.6/exact-pin-check.php'],
+'historical'=>['tools/evidence/historical-check.php'],
+'traceability'=>['tools/8.6/change-traceability.php'],
+'blocker-evidence'=>['tools/8.6/blocker-closure-check.php'],
+'manifest'=>['tools/validate-manifest.php'],
+'differential-retained'=>['tools/8.6/scanner-differential-inventory.php','--check','--profile','exact-pin-rc4','--report','docs/8.6/scanner-grammar-binding-closure/differential.json'],
+];
+$receipts=[];foreach($commands as $id=>$args){echo "Running $id\n";flush();$cmd=[getcwd().'/.audit/php85/php.exe','-n',...$args];$run=S::run($cmd,getcwd(),"$out/$id.log");$receipts[$id]=['command'=>$cmd,'exit_code'=>$run['exit_code'],'log'=>"$out/$id.log",'sha256'=>hash_file('sha256',"$out/$id.log")];$write("$out/checks.json",$receipts);echo "$id: {$run['exit_code']}\n";}
+copy(__FILE__,"$out/validation-driver.php.txt");
+echo 'Integrity errors: '.json_encode($errors)."\n";

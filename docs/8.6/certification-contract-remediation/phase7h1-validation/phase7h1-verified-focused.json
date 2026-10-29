@@ -1,0 +1,59 @@
+{
+  "historical-integrity": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/historical-check.php"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7h1-validation/phase7h1-verified-historical-integrity.log",
+    "sha256": "16842a9853c6d7f76d1ddf6f279578951e9c6e696a9af948a93a9150636e2747"
+  },
+  "upstream-preservation": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/upstream-freshness.php",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7h1-validation/phase7h1-verified-upstream-preservation.log",
+    "sha256": "6941f9436bce0558a964ae614a1e8b3e08be48e45c02eaf006b2fdf0b0759f9a"
+  },
+  "negative-regression": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "-d",
+      "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+      "vendor/phpunit/phpunit/phpunit",
+      "--do-not-cache-result",
+      "--no-progress",
+      "--filter",
+      "UpstreamResolutionFreshnessTest|CertificationCurrentTest|Certification86Test|ScannerDifferentialCertificationTest|Php86CompilerContextualTest"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7h1-validation/phase7h1-verified-negative-regression.log",
+    "sha256": "7ea108179c94bbc3dccf6679cd5f0ea64d0806a55079fdb067201ce4266a4c19"
+  },
+  "traceability": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/8.6/change-traceability.php"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7h1-validation/phase7h1-verified-traceability.log",
+    "sha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+  },
+  "manifest": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/validate-manifest.php"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7h1-validation/phase7h1-verified-manifest.log",
+    "sha256": "e2b231fd276610052d6d579479dd352de5ab52944b36d2c95e6db7de0a9f6da3"
+  }
+}

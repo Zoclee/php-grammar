@@ -1,0 +1,27 @@
+<?php
+declare(strict_types=1);
+$root = dirname(__DIR__);
+$out = $root . '/docs/8.6/upstream-maintainer-resolution';
+if (!is_dir($out)) mkdir($out, 0777, true);
+$baseline = [];
+foreach (['docs','grammar','tools','tests','src','schema','bin'] as $dir) {
+    foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($root.'/'.$dir, FilesystemIterator::SKIP_DOTS)) as $f) {
+        if ($f->isFile()) $baseline[str_replace('\\','/',substr($f->getPathname(),strlen($root)+1))] = hash_file('sha256',$f->getPathname());
+    }
+}
+ksort($baseline);
+file_put_contents($out.'/baseline.json',json_encode(['contract'=>'php86-maintainer-resolution-preservation-v1','capturedAt'=>gmdate(DATE_ATOM),'files'=>$baseline],JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES)."\n");
+foreach ([24795,24794] as $id) {
+    foreach (['issue'=>'','comments'=>'/comments?per_page=100','events'=>'/events?per_page=100'] as $kind=>$suffix) {
+        $url = "https://api.github.com/repos/php/php-src/issues/$id$suffix";
+        $ctx=stream_context_create(['http'=>['header'=>"User-Agent: php-grammar-evidence\r\nAccept: application/vnd.github+json\r\n",'timeout'=>45]]);
+        $body=file_get_contents($url,false,$ctx);
+        if ($body===false || !str_contains($http_response_header[0],'200')) throw new RuntimeException($url);
+        json_decode($body,true,512,JSON_THROW_ON_ERROR);
+        file_put_contents("$out/$id-$kind.json",$body);
+        file_put_contents("$out/$id-$kind.headers.json",json_encode(['url'=>$url,'retrievedAt'=>gmdate(DATE_ATOM),'headers'=>$http_response_header,'sha256'=>hash('sha256',$body)],JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES)."\n");
+        echo "$id $kind captured\n";
+    }
+}
+copy($root.'/.audit/phase7h-search.json',$out.'/issue-search.json');
+copy($root.'/.audit/phase7h-search.json.headers.json',$out.'/issue-search.headers.json');

@@ -1,0 +1,110 @@
+[
+  {
+    "gate": "composer-validate",
+    "exit_code": 0
+  },
+  {
+    "gate": "manifest-schema",
+    "exit_code": 0
+  },
+  {
+    "gate": "manifest-regressions",
+    "exit_code": 0
+  },
+  {
+    "gate": "consumer-contract",
+    "exit_code": 0
+  },
+  {
+    "gate": "expression-generation",
+    "exit_code": 0
+  },
+  {
+    "gate": "phpunit",
+    "exit_code": 0
+  },
+  {
+    "gate": "grammar-coverage",
+    "exit_code": 0
+  },
+  {
+    "gate": "lexer-coverage",
+    "exit_code": 1
+  },
+  {
+    "gate": "ordinary-differential",
+    "exit_code": 0
+  },
+  {
+    "gate": "explicit-ast",
+    "exit_code": 0
+  },
+  {
+    "gate": "systematic-structure",
+    "exit_code": 0
+  },
+  {
+    "gate": "declaration-folding",
+    "exit_code": 0
+  },
+  {
+    "gate": "phase6-matrices",
+    "exit_code": 0
+  },
+  {
+    "gate": "phase6-matrix-freshness",
+    "exit_code": 0
+  },
+  {
+    "gate": "scanner-product",
+    "exit_code": 0
+  },
+  {
+    "gate": "lexer-short-enabled",
+    "exit_code": 0
+  },
+  {
+    "gate": "lexer-short-disabled",
+    "exit_code": 0
+  },
+  {
+    "gate": "positive-report-freshness",
+    "exit_code": 0
+  },
+  {
+    "gate": "negative-report-freshness",
+    "exit_code": 0
+  },
+  {
+    "gate": "compiler-source-hashes",
+    "exit_code": 0
+  },
+  {
+    "gate": "parser-reconciliation",
+    "exit_code": 0
+  },
+  {
+    "gate": "phase6-evidence-freshness",
+    "exit_code": 0
+  },
+  {
+    "gate": "interpolation-binding",
+    "exit_code": 0
+  },
+  {
+    "gate": "diagnostic-predicates",
+    "exit_code": 0
+  },
+  {
+    "gate": "source-correspondence",
+    "exit_code": 0
+  },
+  {
+    "gate": "final-certification",
+    "exit_code": 1
+  },
+  {
+    "gate": "diff-whitespace",
+    "exit_code": 0
+  }
+]

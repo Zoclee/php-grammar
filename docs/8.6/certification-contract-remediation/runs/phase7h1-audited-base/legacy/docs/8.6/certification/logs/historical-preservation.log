@@ -1,0 +1,29 @@
+{
+  "gate": "preservation",
+  "errors": [
+    "Stale evidence digest: docs/api.md",
+    "Stale evidence digest: docs/conformance-policy.md",
+    "Stale evidence digest: docs/versioning.md",
+    "Stale evidence digest: grammar/8.6/changes.md",
+    "Stale evidence digest: grammar/8.6/php.md",
+    "Stale evidence digest: tests/Php/Conformance/Php86CompilerContextualTest.php",
+    "Stale evidence digest: tools/8.6/change-map.json"
+  ],
+  "details": {
+    "preservedFiles": 2151,
+    "historicalFreshnessDifferencesAlreadyInBaseline": [
+      "README.md",
+      "bin/php-grammar",
+      "docs/versioning.md",
+      "php-grammar.json",
+      "src/Php/Conformance/VersionBoundaryCase.php",
+      "src/Php/Conformance/VersionBoundaryRunner.php",
+      "src/Php/Lexing/PhpVersion.php",
+      "tests/Php/Conformance/VersionBoundaryTest.php",
+      "tests/Php/Lexing/Php85ScannerAuditTest.php",
+      "tests/Repository/ConsumerCliTest.php",
+      "tests/Repository/ConsumerWorkflowTest.php",
+      "tests/Repository/RepositoryManifestTest.php"
+    ]
+  }
+}

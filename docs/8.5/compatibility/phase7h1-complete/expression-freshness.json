@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.5/generate-expressions.php",
+    "--check"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "log": "expression-freshness.log",
+  "logSha256": "f44fe2ef7ce5139a96a44b2776c362a0d372605ec694066d79d1aabbbaf3b575",
+  "totals": null
+}

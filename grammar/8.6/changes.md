@@ -298,7 +298,19 @@ property-cache optimization require no additional production. Phase 3B/C rules
 and their historical validation evidence remain unchanged.
 
 PHP86-013 (discovery gaps), PHP86-014 (assignment-based writable targets), and
-PHP86-015 (optimized-call traversal) remain open with unchanged dispositions.
+PHP86-015 (compiler traversal and skipped validation) remain open. Phase 7H
+narrows the unresolved explanation for PHP86-015 and CA86-001: maintainer
+responses in [#24794](https://github.com/php/php-src/issues/24794#issuecomment-6455774723)
+and [#24795](https://github.com/php/php-src/issues/24795#issuecomment-6455687623)
+confirm dead-expression elimination can skip contextual compile errors and is
+not specific to `printf()`. Both issues are closed as not planned, not fixed.
+Earlier paired observations remain valid evidence at their recorded profiles;
+the replies do not establish all dispatch/initializer boundaries. The inherited
+get/set-only divergence still needs a separate Gate B correction or an accepted,
+enforceable scope disposition. Both repository blockers remain; PHP86-014 is
+unresolved. These are informative clarifications, with no EBNF, fixture, source
+pin or release-gate change. See the
+[Phase 7H resolution](../../docs/8.6/upstream-maintainer-resolution.md).
 PHP86-003 through PHP86-007 have the bounded Phase 3C specification and evidence
 scope above; their contextual validator integration remains unimplemented.
 PHP86-010 is documented with the bounded diagnostic evidence above;

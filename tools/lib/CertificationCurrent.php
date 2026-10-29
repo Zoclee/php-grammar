@@ -25,7 +25,14 @@ final class CertificationCurrent
             if (HistoricalEvidence::safeFile($this->root, $p) === null) throw new \RuntimeException('Unsafe current dependency: ' . $p);
             $paths[] = $p;
         }
-        $paths = [...$paths, ...array_keys(Preservation86::ANCHORS)];
+        // Consumed historical authority is an input even when stored under an
+        // otherwise excluded revision-output directory. Keep the sealed bundle
+        // in every snapshot; excluding it makes isolated regression incomplete.
+        $authority = 'docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json';
+        $errors = $c->verifyHashes(UpstreamResolutionFreshness::ANCHORS);
+        if ($errors) throw new \RuntimeException(implode('; ', $errors));
+        $paths = [...$paths, ...array_keys(Preservation86::ANCHORS), ...array_keys(UpstreamResolutionFreshness::ANCHORS),
+            ...array_keys($c->read($authority)['files'])];
         return $c->hashes(array_unique($paths));
     }
 
@@ -38,6 +45,7 @@ final class CertificationCurrent
     public static function profileErrors(array $config): array
     {
         $errors = [];
+        if (!in_array($config['preservation-contract'] ?? Preservation86::CONTRACT, [Preservation86::CONTRACT, Preservation86::UPSTREAM_CONTRACT], true)) $errors[] = 'Unknown preservation contract';
         if (($config['profile'] ?? '') !== 'exact-pin-rc4' || ($config['legacyProfile'] ?? '') !== 'historical-rc4') $errors[] = 'Explicit exact and legacy profile selection required';
         foreach (['exact' => 'exact-pin-rc4', 'php86' => 'historical-rc4'] as $key => $profile) {
             $path = $config[$key] ?? '';
@@ -49,7 +57,7 @@ final class CertificationCurrent
     }
 
     /** Stable mapping preserves every original obligation and the original result. */
-    public static function gates(array $legacy, array $checks, array $dispositions, array $verificationCommand = ['CertificationCurrentRun::verify']): array
+    public static function gates(array $legacy, array $checks, array $dispositions, array $verificationCommand = ['CertificationCurrentRun::verify'], string $preservationContract = Preservation86::CONTRACT): array
     {
         $rows = []; $byId = array_column($dispositions, null, 'id');
         foreach (Certification86::gates() as $id => [$kind, $obligation]) {
@@ -69,6 +77,10 @@ final class CertificationCurrent
                 $row['successorIdentity'] = $id . '@v2'; $row['requiredInputs'][] = $dependency;
                 $row['actualEvidence'] = 'checks/' . $dependency; $row['command'] = $verificationCommand;
                 $row['execution'] = 'verified-retained-evidence'; $row['result'] = ($checks[$dependency] ?? false) ? 'passed' : 'failed';
+                if ($preservationContract === Preservation86::UPSTREAM_CONTRACT && in_array($dependency, ['preservation', 'audit'], true)) {
+                    $row['successorIdentity'] = $id . '@v3';
+                    $row['requiredInputs'][] = UpstreamResolutionFreshness::CONTRACT;
+                }
             }
             if (str_starts_with($kind, 'blocked:')) {
                 $blocker = substr($kind, 8); $b = $byId[$blocker] ?? [];
@@ -101,7 +113,7 @@ final class CertificationCurrent
         $errors = [];
         if (($report['contract'] ?? null) !== self::CONTRACT || ($report['evidenceKind'] ?? null) !== 'current-assessment') $errors[] = 'Incorrect current evidence identity';
         foreach (['certificationGranted', 'grammarComplete', 'wholeSourceValidatorComplete', 'historicalCertificationRenewed'] as $key) if (($report[$key] ?? null) !== false) $errors[] = 'Unsupported certification claim: ' . $key;
-        if (($report['gates'] ?? null) !== self::gates($legacy, $checks, $dispositions, self::verificationCommand($report))) $errors[] = 'Gate inventory, dependency, status or evidence differs from independently derived assessment';
+        if (($report['gates'] ?? null) !== self::gates($legacy, $checks, $dispositions, self::verificationCommand($report), $report['configuration']['preservation-contract'] ?? Preservation86::CONTRACT)) $errors[] = 'Gate inventory, dependency, status or evidence differs from independently derived assessment';
         if (($report['blockers'] ?? null) !== $dispositions) $errors[] = 'Unsupported blocker removal or disposition change';
         if (($report['checks'] ?? null) !== $checks || array_keys($checks) !== self::CHECKS) $errors[] = 'Incorrect independent verification inventory';
         $prerequisites = ['historical-artifact-integrity85' => $checks['historical-integrity'] ?? false, 'current-compatibility85' => $checks['current-compatibility'] ?? false];

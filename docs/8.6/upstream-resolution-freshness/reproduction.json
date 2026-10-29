@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "extension=C:\\Data\\GitHub\\php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--filter",
+    "testRecordedOracleEvidenceIsFreshAndStageSpecific"
+  ],
+  "exit_code": 1,
+  "logSha256": "f3e57813c3182ecd4493e7927eb237f59748e4521f85415e0cb6747e731676c5"
+}

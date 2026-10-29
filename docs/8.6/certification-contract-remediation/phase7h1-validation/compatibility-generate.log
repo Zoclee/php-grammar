@@ -1,0 +1,37 @@
+Running manifest-schema
+manifest-schema: 0
+Running full-regression
+full-regression: 0
+Running consumer-api-cli
+consumer-api-cli: 0
+Running version-boundary-regressions
+version-boundary-regressions: 0
+Running infrastructure-negatives
+infrastructure-negatives: 0
+Running expression-freshness
+expression-freshness: 0
+Running ordinary-differential85
+ordinary-differential85: 0
+Running lexer-short-enabled85
+lexer-short-enabled85: 0
+Running lexer-short-disabled85
+lexer-short-disabled85: 0
+Running positive-evidence85
+positive-evidence85: 0
+Running negative-evidence85
+negative-evidence85: 0
+Running phase6-evidence85
+phase6-evidence85: 0
+Running source-correspondence85
+source-correspondence85: 0
+Running source-lock86
+source-lock86: 0
+Running paired-boundaries
+paired-boundaries: 0
+{
+  "report": "docs/8.5/compatibility/phase7h1/evidence.json",
+  "commandFailures": [],
+  "inputsUnchanged": false,
+  "note": "Generation is not verification. Run --check separately.",
+  "certificationGranted": false
+}

@@ -1,0 +1,20 @@
+{
+    "contract": "php86-maintainer-resolution-integrity-v1",
+    "checkedAt": "2026-10-28T15:06:10+00:00",
+    "predecessorFiles": 4634,
+    "changedPredecessors": [
+        "grammar/8.6/changes.md",
+        "grammar/8.6/php.md",
+        "tools/8.6/change-map.json"
+    ],
+    "upstreamIssues": 2,
+    "comments": 6,
+    "regressionObservations": 18,
+    "localLinks": 66,
+    "errors": [
+        "Closure event mismatch",
+        "Closure event mismatch",
+        "Missing link certification-contract-remediation/phase7h-validation/results.md"
+    ],
+    "certificationGranted": false
+}

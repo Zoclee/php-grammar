@@ -1,0 +1,28 @@
+{
+  "compatibility-generate": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/compatibility.php",
+      "--generate",
+      "--revision",
+      "phase7h1-final"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7h1-validation/phase7h1-final-compatibility-generate.log",
+    "sha256": "23072fa3056a4c329e883ebe24481ffca74c5cb14655f4b4cfee5a8755050086"
+  },
+  "compatibility-check": {
+    "command": [
+      "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+      "-n",
+      "tools/evidence/compatibility.php",
+      "--check",
+      "--report",
+      "docs/8.5/compatibility/phase7h1-final/evidence.json"
+    ],
+    "exit_code": 0,
+    "log": "docs/8.6/certification-contract-remediation/phase7h1-validation/phase7h1-final-compatibility-check.log",
+    "sha256": "ff84316b88c850b2295f88b5f877fa91358436fb31773ed23e42034b6dfca6e1"
+  }
+}

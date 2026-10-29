@@ -1,0 +1,24 @@
+{
+  "obligation": "Run registered positive and structural-negative fixture providers.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "-d",
+    "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "PhpConformanceFixtureTest"
+  ],
+  "log": "docs/8.6/certification/logs/positive-negative-fixtures.log",
+  "logSha256": "207bb25317e2284ce74d7c05c9559c14c7e34949b5bcf8d5b802c571f00e6268"
+}

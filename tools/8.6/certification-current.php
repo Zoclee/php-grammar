@@ -9,6 +9,7 @@ use PhpGrammar\Tools\CertificationCurrentRun as R;
 use PhpGrammar\Tools\Certification86 as C;
 $root = str_replace('\\', '/', realpath(S::ROOT));
 $args = S::args(['contract' => '', 'revision' => '', 'report' => '', 'profile' => '', 'legacyProfile' => '',
+    'preservation-contract' => \PhpGrammar\Tools\Preservation86::CONTRACT,
     'php85' => $root . '/.audit/php85/php.exe', 'php86' => $root . '/.audit/php86/php.exe', 'exact' => $root . '/.audit/php86-exact/source/x64/Release/php.exe',
     'sources85' => $root . '/.audit/php-php-src-7a4c627', 'sources86' => $root . '/.audit/php-php-src-f23b4c2',
     'source-cache' => $root . '/.audit/phase7-sources', 'composer' => 'composer', 'compatibility-report' => '',

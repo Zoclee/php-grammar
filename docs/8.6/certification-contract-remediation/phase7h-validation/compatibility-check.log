@@ -1,0 +1,9 @@
+{
+  "contract": "current-compatibility-v1",
+  "errors": [
+    "Invalid or failed command: full-regression",
+    "Missing actual PHPUnit result: full-regression"
+  ],
+  "currentCompatibilityVerified": false,
+  "certificationGranted": false
+}

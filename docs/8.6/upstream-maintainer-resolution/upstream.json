@@ -1,0 +1,156 @@
+{
+    "contract": "php86-upstream-maintainer-response-v1",
+    "issues": {
+        "CA86-001": {
+            "html_url": "https://github.com/php/php-src/issues/24795",
+            "number": 24795,
+            "title": "PHP: Unknown property hooks are accepted inside discarded declarations",
+            "state": "closed",
+            "created_at": "2026-10-27T17:18:49Z",
+            "updated_at": "2026-10-28T05:46:59Z",
+            "closed_at": "2026-10-27T23:00:29Z",
+            "state_reason": "not_planned",
+            "comments": [
+                {
+                    "id": 6449699275,
+                    "url": "https://github.com/php/php-src/issues/24795#issuecomment-6449699275",
+                    "author": "iluuu1994",
+                    "authorAssociation": "MEMBER",
+                    "createdAt": "2026-10-27T17:59:55Z",
+                    "updatedAt": "2026-10-27T17:59:55Z",
+                    "body": "Hi @alwyn1024. You'll likely find the same for many other compile errors. I don't think this is worth fixing."
+                },
+                {
+                    "id": 6451988015,
+                    "url": "https://github.com/php/php-src/issues/24795#issuecomment-6451988015",
+                    "author": "alwyn1024",
+                    "authorAssociation": "NONE",
+                    "createdAt": "2026-10-27T19:49:12Z",
+                    "updatedAt": "2026-10-27T19:49:12Z",
+                    "body": "Thank you @iluuu1994, I appreciate the response. \n\nI am working on an EBNF grammar specification for PHP 8.6 and just wanted to get some input regarding this from the community."
+                },
+                {
+                    "id": 6455687623,
+                    "url": "https://github.com/php/php-src/issues/24795#issuecomment-6455687623",
+                    "author": "iluuu1994",
+                    "authorAssociation": "MEMBER",
+                    "createdAt": "2026-10-27T23:00:29Z",
+                    "updatedAt": "2026-10-27T23:00:29Z",
+                    "body": "No worries. Here's a demonstration that this affects all compile errors: https://3v4l.org/bpPsX We skip compilation of the rhs when it is known to be dead at compile time. A fix would be non-trivial, requiring compilation of the AST while discarding the generated opcodes. I don't think that's worth the complexity.\n\nBut if you disagree, feel free to start a discussion in [internals](https://news-web.php.net/php.internals). \ud83d\ude42 \n\nThanks for the report."
+                },
+                {
+                    "id": 6461721039,
+                    "url": "https://github.com/php/php-src/issues/24795#issuecomment-6461721039",
+                    "author": "alwyn1024",
+                    "authorAssociation": "NONE",
+                    "createdAt": "2026-10-28T05:46:59Z",
+                    "updatedAt": "2026-10-28T05:46:59Z",
+                    "body": "I fully agree with your assessment @iluuu1994. Once again, thank you for the feedback."
+                }
+            ],
+            "closureEvents": [
+                {
+                    "id": 34420947389,
+                    "node_id": "CE_lADOAB0Los8AAAABaXSrZ88AAAAIA6X5vQ",
+                    "url": "https://api.github.com/repos/php/php-src/issues/events/34420947389",
+                    "actor": {
+                        "login": "iluuu1994",
+                        "id": 1752683,
+                        "node_id": "MDQ6VXNlcjE3NTI2ODM=",
+                        "avatar_url": "https://avatars.githubusercontent.com/u/1752683?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/iluuu1994",
+                        "html_url": "https://github.com/iluuu1994",
+                        "followers_url": "https://api.github.com/users/iluuu1994/followers",
+                        "following_url": "https://api.github.com/users/iluuu1994/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/iluuu1994/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/iluuu1994/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/iluuu1994/subscriptions",
+                        "organizations_url": "https://api.github.com/users/iluuu1994/orgs",
+                        "repos_url": "https://api.github.com/users/iluuu1994/repos",
+                        "events_url": "https://api.github.com/users/iluuu1994/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/iluuu1994/received_events",
+                        "type": "User",
+                        "user_view_type": "public",
+                        "site_admin": false
+                    },
+                    "event": "closed",
+                    "commit_id": null,
+                    "commit_url": null,
+                    "created_at": "2026-10-27T23:00:30Z",
+                    "state_reason": "not_planned",
+                    "intent": null,
+                    "performed_via_github_app": null
+                }
+            ]
+        },
+        "PHP86-015": {
+            "html_url": "https://github.com/php/php-src/issues/24794",
+            "number": 24794,
+            "title": "PHP 8.6: Optimized printf changes compile-time acceptance of discarded expressions",
+            "state": "closed",
+            "created_at": "2026-10-27T16:56:26Z",
+            "updated_at": "2026-10-28T05:44:20Z",
+            "closed_at": "2026-10-27T23:05:40Z",
+            "state_reason": "not_planned",
+            "comments": [
+                {
+                    "id": 6455774723,
+                    "url": "https://github.com/php/php-src/issues/24794#issuecomment-6455774723",
+                    "author": "iluuu1994",
+                    "authorAssociation": "MEMBER",
+                    "createdAt": "2026-10-27T23:05:40Z",
+                    "updatedAt": "2026-10-27T23:05:40Z",
+                    "body": "Hi @alwyn1024. Thanks for the report. As with GH-24795, this has the same root cause. This is unrelated to `printf()`, `true || (unset)$x` alone reproduces the issue. So I'm closing this as a wontfix with the same argumentation. Thanks anyway. \ud83d\ude42 "
+                },
+                {
+                    "id": 6461672069,
+                    "url": "https://github.com/php/php-src/issues/24794#issuecomment-6461672069",
+                    "author": "alwyn1024",
+                    "authorAssociation": "NONE",
+                    "createdAt": "2026-10-28T05:44:20Z",
+                    "updatedAt": "2026-10-28T05:44:20Z",
+                    "body": "Thank you for clarifying @iluuu1994 , much appreciated."
+                }
+            ],
+            "closureEvents": [
+                {
+                    "id": 34421331870,
+                    "node_id": "CE_lADOAB0Los8AAAABaW8w7c8AAAAIA6vXng",
+                    "url": "https://api.github.com/repos/php/php-src/issues/events/34421331870",
+                    "actor": {
+                        "login": "iluuu1994",
+                        "id": 1752683,
+                        "node_id": "MDQ6VXNlcjE3NTI2ODM=",
+                        "avatar_url": "https://avatars.githubusercontent.com/u/1752683?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/iluuu1994",
+                        "html_url": "https://github.com/iluuu1994",
+                        "followers_url": "https://api.github.com/users/iluuu1994/followers",
+                        "following_url": "https://api.github.com/users/iluuu1994/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/iluuu1994/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/iluuu1994/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/iluuu1994/subscriptions",
+                        "organizations_url": "https://api.github.com/users/iluuu1994/orgs",
+                        "repos_url": "https://api.github.com/users/iluuu1994/repos",
+                        "events_url": "https://api.github.com/users/iluuu1994/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/iluuu1994/received_events",
+                        "type": "User",
+                        "user_view_type": "public",
+                        "site_admin": false
+                    },
+                    "event": "closed",
+                    "commit_id": null,
+                    "commit_url": null,
+                    "created_at": "2026-10-27T23:05:41Z",
+                    "state_reason": "not_planned",
+                    "intent": null,
+                    "performed_via_github_app": null
+                }
+            ]
+        }
+    },
+    "authentication": "Direct HTTPS GitHub API responses; GitHub MEMBER attribution and closure events; raw bytes and HTTP headers retained. Local controller custody and SHA-256 integrity, not a signature or immutable upstream comment guarantee.",
+    "pagination": "per_page=100; comment counts agree; no next-page Link header.",
+    "retrievalDate": "2026-10-28"
+}

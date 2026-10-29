@@ -1,0 +1,8 @@
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.10
+Configuration: C:\Data\GitHub\php-grammar\phpunit.xml.dist
+
+Time: 04:00.574, Memory: 110.00 MB
+
+OK (6310 tests, 58864 assertions)

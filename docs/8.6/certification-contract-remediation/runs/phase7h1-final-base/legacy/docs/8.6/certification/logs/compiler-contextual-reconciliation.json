@@ -1,0 +1,24 @@
+{
+  "obligation": "Verify bounded semantic groups, inventories, source references and preserved uncertainties.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "-d",
+    "extension=C:\\Data\\GitHub\\php-grammar\\.audit\\php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "Php86CompilerContextualTest"
+  ],
+  "log": "docs/8.6/certification/logs/compiler-contextual-reconciliation.log",
+  "logSha256": "7b73c8db6ed54a967b66697da5b542c1a8acdda0f9365b55c2927031719f8ddc"
+}

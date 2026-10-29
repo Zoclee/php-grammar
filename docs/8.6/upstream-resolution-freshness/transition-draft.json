@@ -1,0 +1,22 @@
+{
+  "grammar/8.6/php.md": {
+    "before": "45688b7d36ff16d823360f9072f43aa8e52c4dbd9189c890a6fdeef592bca521",
+    "after": "1aa67b423e391c55f92f5b65ffba81bdd9d0dd8ab4c49201e66fab9eff1d100e",
+    "predecessor": "docs/8.6/upstream-resolution-freshness/predecessor/grammar/8.6/php.md"
+  },
+  "grammar/8.6/changes.md": {
+    "before": "27754b1eb2f9806753e94243e1c25bba6c1039aed0c43943d13f5c0655643d9d",
+    "after": "627be3da6c3dfdb5d431fea82f486fe5e42794b1c16cf0cc276bd1bb79261611",
+    "predecessor": "docs/8.6/upstream-resolution-freshness/predecessor/grammar/8.6/changes.md"
+  },
+  "tools/8.6/change-map.json": {
+    "before": "1396186ea1a2d022a22fdaf36090b9d523db77ab16590c453c9a01e4002b9903",
+    "after": "b609105cf760075d9dea32d97d0689c228840cc9c37b3401bf9b63510652c38f",
+    "predecessor": "docs/8.6/upstream-resolution-freshness/predecessor/tools/8.6/change-map.json"
+  },
+  "tests/Php/Conformance/Php86CompilerContextualTest.php": {
+    "before": "e3a9a8f01ff94250e272db888ce71e3ed8deb5a3cc790af81e3185da035b1a89",
+    "after": "e3a9a8f01ff94250e272db888ce71e3ed8deb5a3cc790af81e3185da035b1a89",
+    "predecessor": "docs/8.6/upstream-resolution-freshness/predecessor/tests/Php/Conformance/Php86CompilerContextualTest.php"
+  }
+}

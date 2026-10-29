@@ -1,0 +1,22 @@
+{
+  "obligation": "Verify historical audit inputs; final --check also compares complete current input/output sets.",
+  "status": "failed",
+  "exit_code": 1,
+  "command": [
+    "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+    "-n",
+    "-d",
+    "zend.multibyte=0",
+    "-d",
+    "opcache.enable_cli=0",
+    "-d",
+    "opcache.jit=0",
+    "tools/8.6/certification-gate.php",
+    "--gate",
+    "freshness",
+    "--sources86",
+    "C:/Data/GitHub/php-grammar/.audit/php-php-src-f23b4c2"
+  ],
+  "log": "docs/8.6/certification/logs/evidence-freshness.log",
+  "logSha256": "eb585d0915427b1fc4ee516946cc8f5ce791fa0e1066a692a2cf02400c50bd45"
+}
