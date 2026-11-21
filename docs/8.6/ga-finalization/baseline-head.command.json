@@ -1,0 +1,10 @@
+{
+  "command": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/baseline-head.log",
+  "sha256": "5320a4e34667e3ba3fc9e4882cd5eaa673a81a17bd3e004c7229422b69232ffe"
+}

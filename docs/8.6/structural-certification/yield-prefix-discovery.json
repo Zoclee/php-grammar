@@ -1,0 +1,258 @@
+[
+  {
+    "source": "<?php function g(){ yield throw throw new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield throw throw 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield throw fn()=> new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield throw fn()=> 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield throw include new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield throw include 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield throw print new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield throw print 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield fn()=> throw new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield fn()=> throw 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield fn()=> fn()=> new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield fn()=> fn()=> 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield fn()=> include new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield fn()=> include 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield fn()=> print new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield fn()=> print 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield include throw new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield include throw 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield include fn()=> new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield include fn()=> 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield include include new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield include include 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield include print new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield include print 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield print throw new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield print throw 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield print fn()=> new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield print fn()=> 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield print include new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield print include 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield print print new Exception => 2; }",
+    "lint": {
+      "exit_code": 0,
+      "output": "No syntax errors detected in .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  },
+  {
+    "source": "<?php function g(){ yield print print 1 and 2 => 2; }",
+    "lint": {
+      "exit_code": 255,
+      "output": "\nParse error: syntax error, unexpected token \"=>\" in .audit/structural-yield-probe.php on line 1\nErrors parsing .audit/structural-yield-probe.php\n"
+    },
+    "native": true
+  }
+]

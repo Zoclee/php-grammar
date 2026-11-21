@@ -1,5 +1,5 @@
-(* Provisional standalone PHP 8.6 syntactic EBNF over the source-token stream.
-   PHP86-001 only; other PHP 8.6 changes remain pending.
+(* Standalone PHP 8.6.0 GA structural EBNF over the source-token stream.
+   PHP86-001 syntax and CA86-001 structural correction; contextual checks are external.
    Binary expression/prefix families: tools/8.5/generate-expressions.php.
    Apply the lexical-state contract and contextual constraints in php.md. *)
 
@@ -789,10 +789,10 @@ property-hook =
     property-hook-modifiers , [ "&" ] , hook-name ,
     [ "(" , parameter-list , ")" ] , property-hook-body ;
 
-(* Hook-name terminals are case-insensitive, without reserving these names
-   outside hooks. Unknown names are excluded even in discarded declarations. *)
+(* Hook names are lexical identifiers. Visited declarations require get/set,
+   compared case-insensitively by the compiler; see php.md. *)
 hook-name =
-    "get" | "set" ;
+    identifier ;
 
 property-hook-body =
       ";"
@@ -1434,6 +1434,9 @@ yield-key =
     closed-yield-yield-expression
     | [ yield-key-prefix-context ] ,
       ( "throw" , closed-yield-throw-expression
-      | arrow-function-header , closed-yield-arrow-expression
-      | include-operator , closed-yield-include-expression
-      | "print" , closed-yield-print-expression ) ;
+      | arrow-function-header , closed-yield-throw-expression
+      | include-operator , closed-yield-throw-expression
+      | "print" , ( closed-yield-print-expression
+          | [ closed-yield-print-prefix-context ] ,
+            ( "throw" | arrow-function-header | include-operator ) ,
+            closed-yield-throw-expression ) ) ;

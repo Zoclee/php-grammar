@@ -1,0 +1,13 @@
+{
+  "command": [
+    ".audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "C:\\Data\\GitHub\\php-grammar\\tools\\8.6\\ga-finalization.php",
+    "--verify-build"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/final-build-verification.log",
+  "sha256": "b6311a6a45ef2f955ca94b2a5168ac5f1e92794463eba27e1abba09d96736e39"
+}

@@ -1,0 +1,17 @@
+{
+  "obligation": "Recompute every retained production, action and scanner slice mapping",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "parser-scanner-correspondence",
+    "--output",
+    "docs/8.6/structural-certification/runs/prepromotion-r1/parser-scanner-correspondence.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r1/parser-scanner-correspondence.log",
+  "sha256": "7c5858d4aadc0f548143f0e6d398f927976ce28f8ccaf1ad3a8f4d33f32330ae"
+}

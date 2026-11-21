@@ -1,0 +1,10 @@
+{
+  "command": [
+    "git",
+    "tag",
+    "--list"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/baseline-tags.log",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

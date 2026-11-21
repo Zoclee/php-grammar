@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "blocked:C6-COVERAGE",
+    "Supply independent RC4 operand/AST and interpolation binding evidence, including retained ambiguities."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "ast-binding",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/ast-binding.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "blocked",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/ast-binding.log",
+  "logSha256": "9599a104fcb92331a0836842bfa0644f1e5aa0039302719f07bd612f2ab3dc7a"
+}

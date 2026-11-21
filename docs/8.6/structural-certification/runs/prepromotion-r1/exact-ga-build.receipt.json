@@ -1,0 +1,14 @@
+{
+  "obligation": "Full retained source/build/generated-file/toolchain/binary provenance",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/ga-finalization.php",
+    "--verify-build"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r1/exact-ga-build.log",
+  "sha256": "b6311a6a45ef2f955ca94b2a5168ac5f1e92794463eba27e1abba09d96736e39"
+}

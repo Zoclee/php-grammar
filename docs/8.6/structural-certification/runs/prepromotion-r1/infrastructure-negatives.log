@@ -1,0 +1,171 @@
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.10
+Configuration: C:\Data\GitHub\php-grammar\phpunit.xml.dist
+
+Time: 00:21.961, Memory: 66.00 MB
+
+There were 32 errors:
+
+1) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-0" (['prefix-matrix-0', 'source-file', '<?php function g(){ yield thr...> 2; }', true, 'tests/fixtures/php/8.6/struct...-0.php', '4691683ff9006d16e76da1f601e4a...32582e', 0, true])
+ErrorException: Undefined array key "prefix-matrix-0"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+2) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-1" (['prefix-matrix-1', 'source-file', '<?php function g(){ yield thr...> 2; }', true, 'tests/fixtures/php/8.6/struct...-1.php', '38aaa6ffc7566cf5ef9adeca03566...002a79', 0, true])
+ErrorException: Undefined array key "prefix-matrix-1"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+3) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-2" (['prefix-matrix-2', 'source-file', '<?php function g(){ yield thr...> 2; }', true, 'tests/fixtures/php/8.6/struct...-2.php', '2c4447f54be87bebb99bcd79616ab...61d73b', 0, true])
+ErrorException: Undefined array key "prefix-matrix-2"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+4) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-3" (['prefix-matrix-3', 'source-file', '<?php function g(){ yield thr...> 2; }', true, 'tests/fixtures/php/8.6/struct...-3.php', 'ee94777f5eea118eac4d45c01c35a...52128b', 0, true])
+ErrorException: Undefined array key "prefix-matrix-3"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+5) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-4" (['prefix-matrix-4', 'source-file', '<?php function g(){ yield thr...> 2; }', true, 'tests/fixtures/php/8.6/struct...-4.php', '64c38277f80248c134eafcfc7e4a0...2f460b', 0, true])
+ErrorException: Undefined array key "prefix-matrix-4"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+6) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-5" (['prefix-matrix-5', 'source-file', '<?php function g(){ yield thr...> 2; }', true, 'tests/fixtures/php/8.6/struct...-5.php', '5496e2ae08a4ff8696d1f51dee4d6...133159', 0, true])
+ErrorException: Undefined array key "prefix-matrix-5"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+7) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-6" (['prefix-matrix-6', 'source-file', '<?php function g(){ yield thr...> 2; }', true, 'tests/fixtures/php/8.6/struct...-6.php', '995eb3e6c4f79067aa43a2f39ee4f...29fbbb', 0, true])
+ErrorException: Undefined array key "prefix-matrix-6"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+8) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-7" (['prefix-matrix-7', 'source-file', '<?php function g(){ yield thr...> 2; }', true, 'tests/fixtures/php/8.6/struct...-7.php', '2186cda0fca822262d75d055ddbcb...b0cc98', 0, true])
+ErrorException: Undefined array key "prefix-matrix-7"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+9) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-8" (['prefix-matrix-8', 'source-file', '<?php function g(){ yield fn(...> 2; }', true, 'tests/fixtures/php/8.6/struct...-8.php', 'bffbc18cf4d40ae0add7d1285525d...ab1563', 0, true])
+ErrorException: Undefined array key "prefix-matrix-8"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+10) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-9" (['prefix-matrix-9', 'source-file', '<?php function g(){ yield fn(...> 2; }', true, 'tests/fixtures/php/8.6/struct...-9.php', 'c82528f8fbb42a6fa2def12f71174...08885a', 0, true])
+ErrorException: Undefined array key "prefix-matrix-9"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+11) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-10" (['prefix-matrix-10', 'source-file', '<?php function g(){ yield fn(...> 2; }', true, 'tests/fixtures/php/8.6/struct...10.php', '865f4c9f9c2f6facdd9fe38694ee2...6703f8', 0, true])
+ErrorException: Undefined array key "prefix-matrix-10"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+12) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-11" (['prefix-matrix-11', 'source-file', '<?php function g(){ yield fn(...> 2; }', true, 'tests/fixtures/php/8.6/struct...11.php', '9b61e156fa2fa2cd686a295c3f2fe...cbf98a', 0, true])
+ErrorException: Undefined array key "prefix-matrix-11"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+13) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-12" (['prefix-matrix-12', 'source-file', '<?php function g(){ yield fn(...> 2; }', true, 'tests/fixtures/php/8.6/struct...12.php', '156df827d54dc3164b366c093211f...f7b4fc', 0, true])
+ErrorException: Undefined array key "prefix-matrix-12"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+14) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-13" (['prefix-matrix-13', 'source-file', '<?php function g(){ yield fn(...> 2; }', true, 'tests/fixtures/php/8.6/struct...13.php', '557d446120d7a6b87e9e5f30e5950...d9ff89', 0, true])
+ErrorException: Undefined array key "prefix-matrix-13"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+15) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-14" (['prefix-matrix-14', 'source-file', '<?php function g(){ yield fn(...> 2; }', true, 'tests/fixtures/php/8.6/struct...14.php', 'fe10298be1e92232b1cec933d588b...ea9740', 0, true])
+ErrorException: Undefined array key "prefix-matrix-14"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+16) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-15" (['prefix-matrix-15', 'source-file', '<?php function g(){ yield fn(...> 2; }', true, 'tests/fixtures/php/8.6/struct...15.php', 'cef7e6ac0ba9223efa512eb8a21a0...d9f0fb', 0, true])
+ErrorException: Undefined array key "prefix-matrix-15"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+17) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-16" (['prefix-matrix-16', 'source-file', '<?php function g(){ yield inc...> 2; }', true, 'tests/fixtures/php/8.6/struct...16.php', '70d4c0e9cb87a45c411315ff9adc8...7f3d76', 0, true])
+ErrorException: Undefined array key "prefix-matrix-16"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+18) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-17" (['prefix-matrix-17', 'source-file', '<?php function g(){ yield inc...> 2; }', true, 'tests/fixtures/php/8.6/struct...17.php', 'e31528c74b2b0d753c46da04a0455...89a54b', 0, true])
+ErrorException: Undefined array key "prefix-matrix-17"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+19) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-18" (['prefix-matrix-18', 'source-file', '<?php function g(){ yield inc...> 2; }', true, 'tests/fixtures/php/8.6/struct...18.php', '51ac20c916ee2b4a0b156e98d4365...212a16', 0, true])
+ErrorException: Undefined array key "prefix-matrix-18"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+20) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-19" (['prefix-matrix-19', 'source-file', '<?php function g(){ yield inc...> 2; }', true, 'tests/fixtures/php/8.6/struct...19.php', '77ed42c9180ec0194d26618607392...4bf7a5', 0, true])
+ErrorException: Undefined array key "prefix-matrix-19"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+21) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-20" (['prefix-matrix-20', 'source-file', '<?php function g(){ yield inc...> 2; }', true, 'tests/fixtures/php/8.6/struct...20.php', 'ce0044b80d4b8afe6711aeed76e50...7a5a9c', 0, true])
+ErrorException: Undefined array key "prefix-matrix-20"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+22) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-21" (['prefix-matrix-21', 'source-file', '<?php function g(){ yield inc...> 2; }', true, 'tests/fixtures/php/8.6/struct...21.php', '1b4f59a7b42d5ae88960e48275381...10d837', 0, true])
+ErrorException: Undefined array key "prefix-matrix-21"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+23) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-22" (['prefix-matrix-22', 'source-file', '<?php function g(){ yield inc...> 2; }', true, 'tests/fixtures/php/8.6/struct...22.php', 'c77fcaa726e0e7f947a00b47e4a3f...c49b28', 0, true])
+ErrorException: Undefined array key "prefix-matrix-22"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+24) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-23" (['prefix-matrix-23', 'source-file', '<?php function g(){ yield inc...> 2; }', true, 'tests/fixtures/php/8.6/struct...23.php', '4299fc6e8a79ed4b4ed1108c04ca3...77c41d', 0, true])
+ErrorException: Undefined array key "prefix-matrix-23"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+25) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-24" (['prefix-matrix-24', 'source-file', '<?php function g(){ yield pri...> 2; }', true, 'tests/fixtures/php/8.6/struct...24.php', 'fa94abde7abe115b149366cb1b133...f0213a', 0, true])
+ErrorException: Undefined array key "prefix-matrix-24"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+26) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-25" (['prefix-matrix-25', 'source-file', '<?php function g(){ yield pri...> 2; }', true, 'tests/fixtures/php/8.6/struct...25.php', 'b2493cfbfac0df0eff8c6014be8c4...3165ae', 0, true])
+ErrorException: Undefined array key "prefix-matrix-25"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+27) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-26" (['prefix-matrix-26', 'source-file', '<?php function g(){ yield pri...> 2; }', true, 'tests/fixtures/php/8.6/struct...26.php', '297e69b56ee2c9d2a9c85e94bbc3c...0a2ba0', 0, true])
+ErrorException: Undefined array key "prefix-matrix-26"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+28) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-27" (['prefix-matrix-27', 'source-file', '<?php function g(){ yield pri...> 2; }', true, 'tests/fixtures/php/8.6/struct...27.php', '0cae1cc6e9ef60b168f01bb322b1c...1b6e77', 0, true])
+ErrorException: Undefined array key "prefix-matrix-27"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+29) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-28" (['prefix-matrix-28', 'source-file', '<?php function g(){ yield pri...> 2; }', true, 'tests/fixtures/php/8.6/struct...28.php', '21a2cd1ef0ea62cbbd4e4ede85769...ce4566', 0, true])
+ErrorException: Undefined array key "prefix-matrix-28"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+30) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-29" (['prefix-matrix-29', 'source-file', '<?php function g(){ yield pri...> 2; }', true, 'tests/fixtures/php/8.6/struct...29.php', 'b42c71d3ab2a2489db47c79e20bd6...bdf281', 0, true])
+ErrorException: Undefined array key "prefix-matrix-29"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+31) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-30" (['prefix-matrix-30', 'source-file', '<?php function g(){ yield pri...> 2; }', true, 'tests/fixtures/php/8.6/struct...30.php', '500d5b422dbb3a3ede1970e919ce6...03fba6', 0, true])
+ErrorException: Undefined array key "prefix-matrix-30"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+32) PhpGrammar\Tests\Php\Conformance\Php86StructuralWitnessTest::testSourceBackedStructuralWitness with data set "prefix-matrix-31" (['prefix-matrix-31', 'source-file', '<?php function g(){ yield pri...> 2; }', false, 'tests/fixtures/php/8.6/struct...31.php', '85e0b5121a568380a2c4e29a9aa9f...81eb5c', 255, false])
+ErrorException: Undefined array key "prefix-matrix-31"
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86StructuralWitnessTest.php:16
+
+ERRORS!
+Tests: 228, Assertions: 889, Errors: 32.

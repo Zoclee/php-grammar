@@ -90,6 +90,9 @@ final class Certification86Test extends TestCase
     {
         $c = new C(realpath(__DIR__ . '/..'));
         $manifest = json_decode(file_get_contents($c->path('php-grammar.json')));
+        // Legacy RC4 contract remains pinned after explicit GA adoption.
+        self::assertContains('Invalid PHP 8.6 draft metadata/source/package', $c->manifestErrors($manifest));
+        $manifest = json_decode(file_get_contents($c->path('docs/8.6/ga-certification-remediation/predecessor/php-grammar.json')));
         self::assertSame([], $c->manifestErrors($manifest));
         $manifest->versions[1]->metadata->changes = '../outside.md';
         self::assertNotSame([], $c->manifestErrors($manifest));
@@ -189,7 +192,8 @@ final class Certification86Test extends TestCase
         // The existing isolated traceability suite mutates production trees, not
         // historical grammar files. Keep that validator as the runner's authority.
         $root = realpath(__DIR__ . '/..');
-        $map = json_decode(file_get_contents($root . '/tools/8.6/change-map.json'), true);
+        $manifest = json_decode(file_get_contents($root . '/php-grammar.json'), true);
+        $map = json_decode(file_get_contents($root . '/' . $manifest['versions'][1]['metadata']['changeTraceability']), true);
         $valid = ChangeTraceability::validate($root, $map);
         self::assertSame([], $valid['errors']);
         $map['productions'] = [];

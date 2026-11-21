@@ -1,0 +1,7 @@
+{
+  "gate": "ast-binding",
+  "errors": [
+    "C6-COVERAGE: material closure obligations remain; see reviewed GA disposition. Observations do not waive closure."
+  ],
+  "certificationGranted": false
+}

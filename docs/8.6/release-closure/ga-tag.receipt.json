@@ -1,0 +1,7 @@
+{
+  "url": "https://api.github.com/repos/php/php-src/git/tags/48a5ee8a311db69103a6fa25b330e5ff3847af3d",
+  "httpStatus": 200,
+  "retrievedAt": "2026-11-20T18:44:21+00:00",
+  "bodySha256": "7b75c24b2381bcf49c487f6573f83ed19793b8a22f4f09e10b6f1f6e2be44883",
+  "headersSha256": "0f04bb0f8fbe2736871dea56dd5fe4937760aeb70d5479f081ca47ae6f75c313"
+}

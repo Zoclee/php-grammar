@@ -1,0 +1,772 @@
+{
+  "baseline": {
+    "repositoryCommit": "d4cd2c5446a9de7fa783533ef8d9e8f8f0fad3ee",
+    "phpSource": {
+      "branch": "PHP-8.5",
+      "commit": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+      "lock": "tools/8.5/source-lock.json"
+    },
+    "ebnf": "2acfcf904ba14cbdfab787854cee449205a805cdc8ac8c24bad1fd44983b4ceb",
+    "markdown": "bbb81cbda09da80a6e326c5153ccfb4bc436ba9e306a3e1fa419b1ff002f6d7f"
+  },
+  "pin": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "changesSha256": "c0c2a05919d28effc4a2750d92526baf2939c03b1a5d84e3f4fa6f429cb71487",
+  "productions": {
+    "ordinary-argument-list": {
+      "kind": "modified",
+      "finding": "PHP86-001",
+      "before": "75c880f711b236e66c21d42047826a20922868dc725365f9e3dee349002a69b8",
+      "after": "31a542480d8c1deadee66b37064ef04fbb64bcf734e61da799c75560be3fbb4e"
+    },
+    "first-class-callable-arguments": {
+      "kind": "modified",
+      "finding": "PHP86-001",
+      "before": "176e23bc6ec4babd9a5720994a6f15315c163e15081d9cd44906376af8042d29",
+      "after": "4f545abe6d65a1461b3053913f63dbef33483ecbc27d8937daf28097cf675be3"
+    },
+    "clone-argument-list": {
+      "kind": "modified",
+      "finding": "PHP86-001",
+      "before": "b89c40d9de378f6499581bc8ae5fd53dd87a42b981015ddc6f03287187c2fbb2",
+      "after": "5910a355b1346e48a2c443c9a18043986db16716869dadb231aa652a66b06543"
+    },
+    "argument": {
+      "kind": "modified",
+      "finding": "PHP86-001",
+      "before": "473ac2814b1c15e12078b66e2ef67eafb23af567943f29e92dea5551701d0046",
+      "after": "239ea9c41605733e441faf7517b68652fc5b9866a362fbf52e5ed21cfd514fc5"
+    },
+    "argument-no-expression": {
+      "kind": "modified",
+      "finding": "PHP86-001",
+      "before": "91970e6aa56a38e178fcd93c19b93694cda5394b3c220d551f6add82f05e671b",
+      "after": "5966aa06c4eb6468c20c80088c5fbfe55bd2cdcacf573a56b26fd730191e6c40"
+    },
+    "hook-name": {
+      "kind": "modified",
+      "before": "bf8e94470e37ae210dc25045dae9e88a21c6473b92871f8095346536a1840321",
+      "after": "6e848b3cb32155007736bddd34063e34d9ccd3ad9b0574669f792f8556ebfe36",
+      "finding": "CA86-001-STRUCTURAL"
+    },
+    "yield-key": {
+      "kind": "modified",
+      "before": "566d6043333ea76ab2cf5cdfc837572d6204672f6730e7bb8daee26b5c1be503",
+      "after": "6572eceebad439d4e38e6198fd2ac22fc954d8c597c697330e6c32ffb92e335b",
+      "finding": "SG86-002"
+    }
+  },
+  "findings": {
+    "PHP86-001": {
+      "productions": [
+        "ordinary-argument-list",
+        "first-class-callable-arguments",
+        "clone-argument-list",
+        "argument",
+        "argument-no-expression"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c",
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/valid/pfa-basic.php": "28644cdf3995f4063cfd0597959188063d062677d94fd4fcf56843604d1812bc",
+        "tests/fixtures/php/8.6/valid/pfa-multiple.php": "de681d19b2f50cc16f22985311018139ebfe8d6adfac4c70ba1a824e8bd2bc27",
+        "tests/fixtures/php/8.6/valid/pfa-mixed.php": "8de643f24bbc51948ecc01b7360ce7d05c13accc5635ab38a64607518f400bac",
+        "tests/fixtures/php/8.6/valid/pfa-named.php": "c7e6d97046a637a3e58cc953bbbb2476989a2d67490f23497c89aca6d5a70a08",
+        "tests/fixtures/php/8.6/valid/pfa-named-required.php": "ad0d8b8ed19a907d7d47c7f507bf537f30a37cd7b57a06e81723de81148970ce",
+        "tests/fixtures/php/8.6/valid/pfa-trailing.php": "30b750672331b91be1c361cb97fc41c502d31bc779464ca1b5fa489459546393",
+        "tests/fixtures/php/8.6/valid/pfa-fcc-trailing.php": "058d1843a478f8526d45fbef3153bf9c92c03c4d75570c5ad977cac172359f2b",
+        "tests/fixtures/php/8.6/valid/pfa-method.php": "3107c4d69ad87eb0814e545b7013b8c53e906b163380e271c07e857faac8c4ea",
+        "tests/fixtures/php/8.6/valid/pfa-static.php": "506fa0914a5ea6b498558f531796cddc88f126b429eac17e7ff28c9f6c016c2a",
+        "tests/fixtures/php/8.6/valid/pfa-dynamic.php": "8151fff917e99a44d717ebaaad7b599bd7e1a6b4f9d72f36eebd0efa08418f55",
+        "tests/fixtures/php/8.6/valid/pfa-nested.php": "3e2c14f684abd1572f858207733c908d8b017a94b627c03b61aef6e04695b390",
+        "tests/fixtures/php/8.6/valid/pfa-invoke.php": "142afb8a5b4a6214af4edfbb6ec1c1df759763fc6fb7035a41db7d644c2e27a8",
+        "tests/fixtures/php/8.6/valid/pfa-clone.php": "05c83a7c1c3f89d9783b118f1d11dfd49cdb07d7990f152b9814a8be393e63a3",
+        "tests/fixtures/php/8.6/valid/pfa-clone-bound.php": "ab33173e6c08d4fb51871a8e6604cd38af0fc21aafdd878cac7665099ecea68e",
+        "tests/fixtures/php/8.6/valid/pfa-clone-array.php": "002ab18ebf370881791317169184852e709ca83431c40343e8729eab9e680bfa",
+        "tests/fixtures/php/8.6/valid/pfa-clone-named.php": "3cc88eb8c3fef6aee6c3fe1ee55e134a804d074fad3a24676312208b8b7047d7",
+        "tests/fixtures/php/8.6/valid/pfa-clone-trailing.php": "1613526a2e02d10f9ef4db295757eb6efc57935498deae4f56f4e5a140e9d7b2",
+        "tests/fixtures/php/8.6/valid/pfa-default.php": "eac679e28ce60ea74c057d1f6e75b78688d842d1cfd0e3019d042c788deed957",
+        "tests/fixtures/php/8.6/valid/pfa-constant.php": "d6a30a1511e9ed2cf677bac135bde069baa00e63f720dc36b36ba0f43f87a9da",
+        "tests/fixtures/php/8.6/valid/pfa-static-constant.php": "52cd2f5bca4613744a6db1da617c78e824ea6417781a3e973d3dade9660278eb",
+        "tests/fixtures/php/8.6/valid/pfa-named-constant.php": "ae927ea14a55a8e2a53d8a59ffdc417577cb6499d162968bf86c0ffded8265c5",
+        "tests/fixtures/php/8.6/valid/pfa-attribute-value.php": "5654d70f73b2f5450e92324711b5323f8875e9085cdc3ec0bcf9d89a342adf69",
+        "tests/fixtures/php/8.6/valid/pfa-discarded-order.php": "7ca3e8000488d58031787850508a285e98e6b44392b452467801c9a73d01076c",
+        "tests/fixtures/php/8.6/valid/pfa-discarded-constructor.php": "9fd8f911bae43d349053acaa1d7495d8890a81eb448d14ac89ead7160895930b",
+        "tests/fixtures/php/8.6/valid/pfa-discarded-nullsafe.php": "9db3ddcf1b42579774acca52d05d52192ca858ee5f0070f9e08e08ab2770adf8",
+        "tests/fixtures/php/8.6/valid/pfa-discarded-attribute.php": "2ca7016b7c700eb72962f93e54800437b35a26cd230d1d8243da4b9101fde1a2",
+        "tests/fixtures/php/8.6/valid/pfa-ordinary-folding.php": "9f80ac5310e1b53761a42c6c9e9858e7cb4b6ef1e1ad357705cd588b66d2c0af",
+        "tests/fixtures/php/8.6/valid/pfa-ordinary-control.php": "5db7ecbd427bcfbef452873d625a6d6058de0f24ffcab9da8d406afcace79f0a",
+        "tests/fixtures/php/8.6/valid/pfa-unpack-control.php": "2039a76524f6ae7729077e0175577d788cc9598ee324f23e2c41da47b2187b23",
+        "tests/fixtures/php/8.6/valid/pfa-fcc-control.php": "40c1768ebe940c5f6ea1961455fcf819ec25ee892ddb4361d1516336e787353f",
+        "tests/fixtures/php/8.6/valid/pfa-clone-unary-control.php": "386a92663c1132bd30ce10aef4adde5748e5486f8d9c61f53544bb36abf0f5d9",
+        "tests/fixtures/php/8.6/valid/pfa-clone-comma-control.php": "9896ca5dac6eee9b52ac9e6e8e771711ec9a64fc8965213600bcdb654811a0b1",
+        "tests/fixtures/php/8.6/invalid/pfa-named-ellipsis.php": "b367f90c55a27191ba63c0df1b9e4586daebea77dbd0591feffe9058ca9c115e",
+        "tests/fixtures/php/8.6/invalid/pfa-double-question.php": "31b96e98a12d38c9842352938e0e2b7ef44be823b2a836322b13b3aaf570e9d5",
+        "tests/fixtures/php/8.6/invalid/pfa-placeholder-expression.php": "c3147480c21bde7de4ddb78ccef34cc5af0f8e9d997706bb2c155e90184cf467",
+        "tests/fixtures/php/8.6/invalid/pfa-outside-list.php": "37476f104dedf10ddbb4d4b2cdadba1c4fdc5db59a768770d510eea25f5e85a9",
+        "tests/fixtures/php/8.6/invalid/pfa-missing-comma.php": "68be498456f41e50bbe333943da8200182251fae4547233ac6e2396881f27852",
+        "tests/fixtures/php/8.6/invalid/pfa-extra-comma.php": "c0c7ea0c3b2ce7696729ad3449abd6ba625cb4ea75a4ef56cd8809894ab93ad0",
+        "tests/fixtures/php/8.6/invalid/pfa-named-unpack.php": "fc5359a09be2bdd0c800d2b533d7edf3f8cdace91f966c5159c96610fb46013a",
+        "tests/fixtures/php/8.6/invalid/pfa-reference-placeholder.php": "71f6d8d473e4fb70e489609db8479332cb090802b20aeb33c25c3babb92f3c14",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-repeat.php": "73bc70965650909bc4c2c73776b86b5027f615f6bf985439b7279df985ef9d25",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-first.php": "47d3ece6d844bdb224df06e8f1b1a645a72ccef480c6e562e786654a19c1f439",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-named-order.php": "de6ad5aa3167fea2214c36c25cbd4f735598627f6add6cce74222ed6041b8df6",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-named.php": "0e9bfbe91f2dbf493034f1d76724942e445ca917e3c829d35af5e3e3ee3a58b3",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-variadic-bound.php": "ef8c4082cfcfe4264a3a044e654f2cca2b8013d102afe5699198d69f4b44590f",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-first.php": "38b9cf6384929d2052638e7aff001e0a903929af098d80133621260aa55857a0",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-unpack-last.php": "ed23ec196017842263a13e6d8627a9a201f8717b227e4bb71a7192f43449ae99",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-constructor.php": "69ae8a41f73c1502251f337247a65f4917386174bba18f0d7bb0492f7297e93c",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-anonymous-constructor.php": "a127fd300320bdcbfce092b4c9b312ee577ae541856e5096428e4be5690e86e5",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-nullsafe.php": "76fab64b14befb365866602b750f74e8623bce78cef2de63ac9e65e089c39e49",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-attribute.php": "96380509a2eb07bf7ece8cdf2366020a9dcaf46fd51ff1476de53bd1fa9224b2",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-variable.php": "897025affedc819ad55a6f8fe00ff28061dba687f462742001478ef3ca82071b",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-unpack.php": "543b4dc1321eb6ee40a0f1a878469d9d3808fe720572d25bf20e24bac1090bb1",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-order.php": "08dd4f8ea2f003e2abc4f14b94537afd311507802592a3b2f7e718e4177d7e20",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-method.php": "9bd6f63beaa106a51484c83f623f6f8bc6abc07a35df493de6b00df9175e2fac",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-name.php": "b903e4662cb855085d6cdfdc2a02160084f9a510991ea7a949af5192cfad739a",
+        "tests/fixtures/php/8.6/contextual-invalid/pfa-constant-traversal.php": "f1b53658890670f2b3910f566dee875833e3e332d6d8a40de4d6be22f68ca9e6",
+        "tests/fixtures/php/8.6/valid/coverage-pfa-method.php": "de6e42b995dd655c97cf19ad1264ab2a6ed421f613ab9dc696872b451c83d718",
+        "tests/fixtures/php/8.6/valid/coverage-pfa-static.php": "601c188580f08f52c393c01fa1d88bad9724dc8a8fce82605380defa5268c368",
+        "tests/fixtures/php/8.6/valid/coverage-pfa-dynamic.php": "1280cd261ca9276014d925ed0dcef86e4e6994fae7b16066cc0701910f7c07e7",
+        "tests/fixtures/php/8.6/valid/coverage-pfa-method-fcc.php": "151c994901bf56047d3be6cd255ab2858766276dad0ecb183bebb684cc82ed59",
+        "tests/fixtures/php/8.6/valid/coverage-pfa-static-fcc.php": "f84a0448820a75a36a0dd20173e41d56b0503c41e9a58544c0be6b39f6e8853d",
+        "tests/fixtures/php/8.6/valid/coverage-pfa-dynamic-fcc.php": "57c88edfcb4bccbbebbf1254d41648e8d0d4238dffc7dfcbf422c41d05b54ba3",
+        "tests/fixtures/php/8.6/valid/coverage-pfa-clone-fcc.php": "2ef7f596ea9ec121f405456576b07c91ed0f6e7c7064be5f8c090d696d76dff9",
+        "tests/fixtures/php/8.6/valid/coverage-pfa-constant-class.php": "e8cb818617d8a36400ec0ef044e3b9538b172297dd3d1b80970e04a451035a01",
+        "tests/fixtures/php/8.6/valid/coverage-pfa-constant-enum.php": "c5d783ecfb3b4d1dab9b6e0041994513ecc41deb900b4a4443f0e3c3e6ca050c",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-pfa-nullsafe-fcc.php": "fdaa2de9b9cce4f23e4f2e429ca16ff62f22008dd0d40670bb8435a5c8640587",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-pfa-constructor-fcc.php": "7686f9c154b69fabf0c481f02310fae1487067eaf968cf0a08ab624834448fe1",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-pfa-named-after-unpack.php": "19de2e9c313b1840cdc6ae40d913b75bba047d504da805313e5ac101a186bd2a",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-parent-hook-pfa.php": "f1a861bb3579167b2b3270a67b43b597f5b0492719c0760dc7948f75b3159477",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-parent-hook-fcc.php": "04133600a6106c64e23d54eeec71814140e64a881770b7b3d92182d0688daa9d",
+        "tests/fixtures/php/8.6/valid/coverage-parent-hook-discarded.php": "60021b3781e07e212d55c5fb665f389d68f0f94be4ae3ef1dbcac6ee77b08f0b"
+      },
+      "enforcement": "Structural grammar plus external contextual constraints",
+      "evidence": "grammar/8.6/changes.md"
+    },
+    "PHP86-003": {
+      "productions": [
+        "property-declaration"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c",
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/valid/context-readonly-default.php": "11d0b4178d80910d090200732ac42e64afca5c7924d6f980c5a120729a629edf",
+        "tests/fixtures/php/8.6/valid/context-readonly-class.php": "060b59a269a5357fe0df574fb692c05b5d673ed795f124e6b83395d1bf9ace12",
+        "tests/fixtures/php/8.6/valid/context-readonly-nullable.php": "981a2f08ddf1f4ccda6b9d83edc40754bfaace32b759cf5da64903a9c6c409d0",
+        "tests/fixtures/php/8.6/valid/context-readonly-array.php": "699cc6e4f8a8885cf09a8d6dec334b0e30d33a6e0e47083cbd87a52b3c3e893b",
+        "tests/fixtures/php/8.6/valid/context-readonly-inherit.php": "97a6536f39ff75ee6f497f5f33a3674ac1761402673d3c429942f760cc03d051",
+        "tests/fixtures/php/8.6/valid/context-readonly-promotion.php": "179f53686311ca9f7c95e66a7c7e129066931da0c10ea17906300f7d6b7c3ef3",
+        "tests/fixtures/php/8.6/contextual-invalid/context-readonly-untyped.php": "13f35741dfb246a82de3b5ef2f1746a2d2d3f363a8f21e22acb60c4ce0d9cfa7",
+        "tests/fixtures/php/8.6/contextual-invalid/context-readonly-static.php": "e33ba2be4ec27a80a078f0a20d6dae99deb774d4173f07750702a7b1caab440b",
+        "tests/fixtures/php/8.6/contextual-invalid/context-readonly-type.php": "46f7e371c4b71550d7d172bc89fd2c06b52561329b08f11edf5695d575cb7037",
+        "tests/fixtures/php/8.6/contextual-invalid/context-readonly-new.php": "ac769846d62cdd4cb2c547eac960197e7a3b097d303f498ca3dedfe77672369b",
+        "tests/fixtures/php/8.6/contextual-invalid/context-readonly-hook.php": "66a40465460d70397b8ec71891464d96eb68620443d8b7d8c27ca3069115e946",
+        "tests/fixtures/php/8.6/contextual-invalid/context-readonly-change-flag.php": "0caf9472db254c8ab4d8c13d9618aec07fb99bea63039624c66745894ee1f6f3",
+        "tests/fixtures/php/8.6/valid/context-readonly-discarded.php": "4e876a98bee732c8a29a17104104aa930885817b1a4a77eb0e20d6186fb2a78e",
+        "tests/fixtures/php/8.6/valid/context-readonly-initialized.php": "73c726116f381287dc697244c030b29ca871f06a9907acaa1869b0f1e0e4606d",
+        "tests/fixtures/php/8.6/valid/coverage-readonly-inherit-default.php": "eaa1ab30e9d0caa34f3c49654a3b25e3ee2fcb7613673e87cc13b43c7843f3de",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-readonly-class-static.php": "9f4b9d0dd94a07ad7df026d3b64e47e13c949fb63311410f8d8a1a940776ab23",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-readonly-class-untyped.php": "beef0475ea65cff0847faa3bd9b426fb3a10d58b5e54e9f15dba333b60dabae7",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-readonly-inherit-type.php": "bfbf82287895c356950d38d7954968b201861dec79da5d69d560e1a8cb2179a2"
+      },
+      "enforcement": "Documented contextual constraints; not a compiler validator",
+      "evidence": "grammar/8.6/changes.md"
+    },
+    "PHP86-004": {
+      "productions": [
+        "variable-expression",
+        "assignment-expression",
+        "unset-statement",
+        "foreach-statement"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c",
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/valid/context-object-property.php": "3ce84fd129d62edeed1bfa664a6cfd71bae9caa0dc8d022690fc93f947a7fd4f",
+        "tests/fixtures/php/8.6/valid/context-object-class-property.php": "f6e869d0e5503093ae68d03551bdeaf305f4b9d3f96f24c535adb9b8f92e8191",
+        "tests/fixtures/php/8.6/valid/context-object-dimension-before.php": "0343bea9ec2e019684aaa6e953d0732bb00fea327e66237c78a3a8995287fb1c",
+        "tests/fixtures/php/8.6/valid/context-object-dimension-after.php": "13d5be249b7156110e85872342c2a0e5ef81d5f3b3b045251c23f454520ae8f0",
+        "tests/fixtures/php/8.6/valid/context-object-reference.php": "512d9fc2c1ea7bf0b5c877b88a6f0f5b5892817fbf7eb03065c641160c2bbd1f",
+        "tests/fixtures/php/8.6/valid/context-object-unset.php": "ac0119f616095b56961e4b5ee87c03cc4873b024784687c77cdb28b4b61aa772",
+        "tests/fixtures/php/8.6/valid/context-object-increment.php": "08c580b879f2a53a05c0dc09e40cab5571c81ffc89046daf49699c0c4e0cbeb3",
+        "tests/fixtures/php/8.6/valid/context-object-compound.php": "0f56e21733ef99ed3419d277e20a64b3749ee302738630ade237439856add438",
+        "tests/fixtures/php/8.6/valid/context-object-destructure.php": "bdb8b72bb8e05c4f319a402b9f4e9288b1dc9b4278f74ec17ce5a36411e0c85d",
+        "tests/fixtures/php/8.6/valid/context-object-foreach.php": "882601a31538127e2af802ac18c781435fc40ef02806198ed683109574ae28b1",
+        "tests/fixtures/php/8.6/contextual-invalid/context-object-direct-array.php": "5ef930cfd8433b1fa61ee597bf973285cc0ef9d5e975e3bb9e66b19cc513dad9",
+        "tests/fixtures/php/8.6/contextual-invalid/context-object-array-destructure.php": "363cc9429dd9e68910d2a0b6dfb7a059658f953ff54a519da7d380bf03228f7b",
+        "tests/fixtures/php/8.6/contextual-invalid/context-object-nullsafe.php": "f9b80eef767bbefc25f46109cefa023b3e9f33e211b0c51b6c757dbbc87cce86",
+        "tests/fixtures/php/8.6/valid/context-object-read.php": "6058f19a23a924269e75f6e65ed22c0cac7f59f185915a7117f60e90b3b809ec",
+        "tests/fixtures/php/8.6/valid/context-object-runtime.php": "764e3568a02f7f699855a7cebb9543a175fb1b9392cf64bc563509cafd83108f",
+        "tests/fixtures/php/8.6/runtime/context-object-nonobject.php": "1b36dba182f617c72a29b823ac6c7f7dbea67690bcfdffc507ce88d1e26b172f",
+        "tests/fixtures/php/8.6/valid/coverage-object-reference-element.php": "9f1c4db213d6999ac3327fde3c57077d09a678e4a764d856db549bf925f2c49b",
+        "tests/fixtures/php/8.6/valid/coverage-object-compound-dimension.php": "72f729f708fb9da75bdf4fbbd20aff8e77eba3d99c1b31c0917e9ed53f878a2a",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-constant-array-reference.php": "05d6051eb954e0c723299e64513d1fa15a7c6beb0b1c07d302650e435234b094",
+        "tests/fixtures/php/8.6/invalid/coverage-constant-reassign.php": "c50569349be2cefb8f114a82010d8ce74081ea621a89aaf32a058c7296de30a5"
+      },
+      "enforcement": "Documented contextual constraints; not a compiler validator",
+      "evidence": "grammar/8.6/changes.md"
+    },
+    "PHP86-005": {
+      "productions": [
+        "attribute",
+        "class-constant-declaration",
+        "enum-case"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c",
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/valid/context-override-parent.php": "03b12424bbccd837ce65ab0fb3ba1923d0e8f2904870c6c84f1229e8fc259d95",
+        "tests/fixtures/php/8.6/valid/context-override-interface.php": "48aa83ae112f286dc92d71a2389151197fdb7b674180d2162754eb02fd60607f",
+        "tests/fixtures/php/8.6/valid/context-override-implementation.php": "f654a4e6cf2e46c0abea7f84aa6cb0e171bb7e1d1fa8ad33b2e5b008f5083415",
+        "tests/fixtures/php/8.6/valid/context-override-enum.php": "b3f062479d7aa26cb2f49a8507f1532ab02b8ab9f02eab5b23787cd13524b72b",
+        "tests/fixtures/php/8.6/valid/context-override-enum-constant.php": "799300019a8dac9fae28aa9ead2734e16014016b20508e80055d68a987bdea20",
+        "tests/fixtures/php/8.6/valid/context-override-protected.php": "97376cb80564a8027b22577029abbac838d830ef08b5206b319f27397d15b1d2",
+        "tests/fixtures/php/8.6/contextual-invalid/context-override-missing.php": "53f1900952bb1f86a074cf6101587170655c5bbe528954153d3509f4f0ef93fe",
+        "tests/fixtures/php/8.6/contextual-invalid/context-override-private.php": "4c1b5c26549a294458b0ad45724be53164879c0f12791a5512c847fbacb71214",
+        "tests/fixtures/php/8.6/contextual-invalid/context-override-final.php": "0ccff4c03fc50b7844a33724e35afd0106863310e8fb19832d6b8096da21ab0c",
+        "tests/fixtures/php/8.6/contextual-invalid/context-override-type.php": "bf8c749b6ecf81ff8cb6390492b87f3aeda358d56c66cf415940c00855e29cfb",
+        "tests/fixtures/php/8.6/valid/context-override-delayed.php": "8798ee2a2e96711d0f81f9c7350cc56526a5a30812880ed2d4d2b66ed8bce67e",
+        "tests/fixtures/php/8.6/valid/context-override-control.php": "1e79abedccbcf908791aba3216ff46719c2955343c75a9ae9ccced058cd71540",
+        "tests/fixtures/php/8.6/valid/coverage-override-interface-chain.php": "225ca9c84ef4d815bb988700ed393829383539db58d429ee12d5659bd1cc1984",
+        "tests/fixtures/php/8.6/valid/coverage-override-enum-case.php": "e3c48bb460d3e367dfa8c578e60b7ba97e8f5f7131459295a3050e872f9af5fd",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-override-enum-missing.php": "279f9684a303fab00da82f55ba62858463641887edef6fcc19638e8e4499a0f5"
+      },
+      "enforcement": "Documented contextual constraints; not a compiler validator",
+      "evidence": "grammar/8.6/changes.md"
+    },
+    "PHP86-006": {
+      "productions": [
+        "enum-declaration",
+        "method-declaration"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c",
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/valid/context-enum-debug.php": "250a741befc260a67833ad0da96bd3ebabe3b8c1b2aee06d5378389a6e1a66c9",
+        "tests/fixtures/php/8.6/valid/context-enum-backed.php": "1f7ab398550498f466c04cfc150ab85514173c6e295825a64773d5ddbba99e45",
+        "tests/fixtures/php/8.6/valid/context-enum-untyped-return.php": "056e5a3d8c9e2ac9e55f63c32b4bce6bc2665c93f8113794001bb284714cb6fb",
+        "tests/fixtures/php/8.6/contextual-invalid/context-enum-get.php": "2d5336c51156f829e8e0454c8d3c46911d78bd5e3997eec0028f029b90837a9b",
+        "tests/fixtures/php/8.6/contextual-invalid/context-enum-parameters.php": "534aa6d8fbbd764021b7588a4117849acd096960b6ac300154930c26e0b0a04c",
+        "tests/fixtures/php/8.6/contextual-invalid/context-enum-return.php": "e49b0259df55d31072ca46dc62484f3164d31cb48996d49ac92685934fd27853",
+        "tests/fixtures/php/8.6/contextual-invalid/context-enum-static.php": "50acfcba725a5416b2d2ae2d379330828a0c9f7682f95a30689b11e0df52037d",
+        "tests/fixtures/php/8.6/valid/context-enum-visibility-warning.php": "54615dab5aaaa0dd3b1637e6b4fc244a5bc2f929f27e63df162e1dd879ed78e0",
+        "tests/fixtures/php/8.6/valid/context-enum-lint-limit.php": "77e1eaf20a006bb6d54b7a9a25f7a6bc55b7d50826252d86077758978ff72e49",
+        "tests/fixtures/php/8.6/valid/coverage-enum-debug-nullable.php": "962c8ba6a04abab13b7a213833ab02ea1337779f07577f043f168b511aa20aed",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-enum-debug-required.php": "434d83884e44a95654a7440b513081612e17fb976ef145a82b3786b091a79b38",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-enum-forbidden-clone.php": "28aaa927499a47c5279b5c03bf39a5ad10f4b4e2bfbfb8ba8cf695d56d9cf0e8"
+      },
+      "enforcement": "Documented contextual constraints; not a compiler validator",
+      "evidence": "grammar/8.6/changes.md"
+    },
+    "PHP86-007": {
+      "productions": [
+        "return-statement",
+        "yield-expression",
+        "function-declaration"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c",
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-return.php": "d36610132e3c9580333489e837743f234a4d062782512a47c4fafc5aa733f228",
+        "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-yield.php": "8237534094c53d9e08ec7367396ee4143650452af86834360455a6529b2cd24a",
+        "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-property.php": "29c178d5b1a6685c576153e346a2b55a8b59bbb2024644c1265de724918cfddd",
+        "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-reference-bind.php": "3fd49c3a3348494df150d8dc28b06b1a7f7fe8762950922501a6234bdcd75f8d",
+        "tests/fixtures/php/8.6/valid/context-nullsafe-value.php": "39b92c80e08334d62919fe85781820449513a54beb0d98c167c4d6e3b5ebcc04",
+        "tests/fixtures/php/8.6/valid/context-nullsafe-value-yield.php": "ca59a02c31326a1129418b87975d972ea81aa56a05014d3e8b7978f906483f5b",
+        "tests/fixtures/php/8.6/valid/context-ordinary-reference.php": "8ae5c6486b80ae8c0ba592114f22b66ef5603396775ae0dbbb9210f91403a55b",
+        "tests/fixtures/php/8.6/valid/context-nullsafe-discarded.php": "a16f4c190bfc32c97f2ec3edafdf51ca95418c0e3349988097818a783defbfea",
+        "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-unreachable.php": "14cea402b3234869ebb051e2233a990f3dbd2023f4a2f16469904a9e0aea328b",
+        "tests/fixtures/php/8.6/contextual-invalid/context-nullsafe-dead-if.php": "1b5eaf8417269ac486ab0061144e91b90a3a0bf63eb6466974317a55aacef335",
+        "tests/fixtures/php/8.6/valid/context-nullsafe-foreach.php": "e36f5f1e00eadf473ee36ea9a004dff1e353e9c12b93674d12b94be7627b26d4",
+        "tests/fixtures/php/8.6/valid/context-nullsafe-foreach-ref.php": "d969b6c2e45c768a7a186816def5b55e67457feb8ee8014b07c6b06e125a931d",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-nullsafe-chain-return.php": "4e3a791b972e780930d14abe49e2cad186d9b1f156a2e5684081e3a24ed68b0a",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-nullsafe-chain-yield.php": "55bf9407559a330c7eea739dc026981985ff3758c44f43f478514931eb14d705",
+        "tests/fixtures/php/8.6/valid/coverage-nullsafe-chain-discarded.php": "5fb8bea0b69b7148c140d6169abbf2293692d566245076d941ebcbad63fa4d08",
+        "tests/fixtures/php/8.6/contextual-invalid/coverage-nullsafe-chain-dead.php": "cbb74d72578728905f3eb172020b38e71749a4718dee114f0f790557a52d5bb5"
+      },
+      "enforcement": "Documented contextual constraints; not a compiler validator",
+      "evidence": "grammar/8.6/changes.md"
+    },
+    "PHP86-010": {
+      "productions": [
+        "identifier",
+        "function-declaration",
+        "class-constant-declaration",
+        "namespace-use-declaration",
+        "return-statement",
+        "yield-expression"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c",
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/deprecation-cases.json": "b1708a9404aefe66a3a98cd193ade2ee1cd12a6308a417895fb5def22d521e16",
+        "tests/fixtures/php/8.6/valid/coverage-deprecated-namespace-method.php": "49d94b043d240a1af7598cbb12e41770630ca37fb5c3cd7edd22431718be3412",
+        "tests/fixtures/php/8.6/valid/coverage-deprecated-finally-closure.php": "bdbdecec574b4c2f629222ebbee152b501f8a5c0afc1b5a0c0f4a99d25fca4de"
+      },
+      "enforcement": "Diagnostic-only; accepted structure retained",
+      "evidence": "grammar/8.6/changes.md"
+    },
+    "PHP86-014": {
+      "scope": "Informative evidence limitation only; unresolved finding, not implemented language correction.",
+      "productions": [
+        "assignment-expression",
+        "variable-expression",
+        "array-object-dereferenceable"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c",
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_vm_def.h"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/reconciliation/assign-write.php": "3c8d6a370e48cbf661fdb9cde3d120854c38c0620af5e1ef64d73cb300ebc03f",
+        "tests/fixtures/php/8.6/reconciliation/assign-property.php": "dfed857150cbf2a00dde329bfed364fb820c436fc3377b249a7c39d7933b2bf4",
+        "tests/fixtures/php/8.6/reconciliation/reference-write.php": "2f1b548b4df329bb8f00a39b4a8a96afb27a39d42d64dc8e26b91dcde0010acd"
+      }
+    },
+    "PHP86-015": {
+      "scope": "Informative evidence limitation only; unresolved finding, not implemented language correction.",
+      "productions": [
+        "function-call",
+        "cast-expression",
+        "conditional-expression",
+        "coalesce-expression"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c",
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_ast.c"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/reconciliation/printf-or.php": "8d456ffa6b7698e523ef122c4a54ed5cd2d6086c8befcea258f9b228f87c0b16",
+        "tests/fixtures/php/8.6/reconciliation/printf-named.php": "89cce9dd9c4f57f6ab8f9d20e802b2cf2cc295e013451f668c0f9360ecd9a54d",
+        "tests/fixtures/php/8.6/reconciliation/printf-ternary.php": "336bb062e228013a1d527237b9b85cb7f1cd06a5c263316a8ca75f0f04e05364",
+        "tests/fixtures/php/8.6/reconciliation/printf-pfa.php": "3a934360b265e5cfd1f9f792e35dd6f48747088f5b17c3fc99679b11d3206848"
+      }
+    },
+    "CA86-001-STRUCTURAL": {
+      "productions": [
+        "hook-name",
+        "property-hook"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y#L1160",
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c#L9426"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/structural-hooks/hook-0-live.php": "0e16f5b203543a1f8824cd24d3790cc2f6890ec7c759a8d9dd4e267c0eec6884",
+        "tests/fixtures/php/8.6/structural-hooks/hook-0-retained.php": "a89e3cf62f37de2c3e6819b31878aef895b53695ee3ad59b6ba7a6e250236c49",
+        "tests/fixtures/php/8.6/structural-hooks/hook-0-discarded.php": "462440ff91c0883f992cb41f537f148d241f2caf609dfb7a3565343986c6b42a",
+        "tests/fixtures/php/8.6/structural-hooks/hook-0-promoted-live.php": "cb998a203296698b50347e3b26f498c4c0d1c459ad152a1653f0136aaa26614b",
+        "tests/fixtures/php/8.6/structural-hooks/hook-0-promoted-discarded.php": "2df533afd0c6382f94f379a41e2f9b30ed7f6a29d556d0d4fd5b4271439ff48b",
+        "tests/fixtures/php/8.6/structural-hooks/hook-1-live.php": "d584c0a1f8c6bfdc0c887f95ef79538e921bfbd59029311f88298f90a52d452f",
+        "tests/fixtures/php/8.6/structural-hooks/hook-1-retained.php": "32d14073d1095222c904d72a01ba706c5170d01645f157e71e383936788d3c49",
+        "tests/fixtures/php/8.6/structural-hooks/hook-1-discarded.php": "f7c00f8eebbf6950171c033e0e30b6033a798c8a11ce0e4b7c01c2cf17d9883c",
+        "tests/fixtures/php/8.6/structural-hooks/hook-1-promoted-live.php": "e18dafb712b2e25389cd6a5a4ae0fa658404d958642f2cb644c39b6adbe89258",
+        "tests/fixtures/php/8.6/structural-hooks/hook-1-promoted-discarded.php": "636b0c0dfe58bac505e5355a0860895896aab5fba137a4ea9aa8c8c77bba0438",
+        "tests/fixtures/php/8.6/structural-hooks/hook-2-live.php": "c4626ae9a081a569b88a22c641374d23ba0401e2867fc4a3a9ada252020a3c48",
+        "tests/fixtures/php/8.6/structural-hooks/hook-2-retained.php": "e8b14112a152355d2d8968702fa3558e44e4c92646360d06a27342e740cdbc03",
+        "tests/fixtures/php/8.6/structural-hooks/hook-2-discarded.php": "c307dd5d3275086e31a9eb15b1546c9dc9b847ae095e12f2c57627e3ad371bba",
+        "tests/fixtures/php/8.6/structural-hooks/hook-2-promoted-live.php": "c7e2746c4f8f59e500e8c15ceb2a42a8fe9ec6bfafd607b41cab38bed8526ef2",
+        "tests/fixtures/php/8.6/structural-hooks/hook-2-promoted-discarded.php": "e5cb00cbe3d5ad4792832feed1bb5454535feee3761394bd2d1022a2bbbf5c39",
+        "tests/fixtures/php/8.6/structural-hooks/hook-3-live.php": "cdc3638ee2b48978610b31dd2124f55576d4f3bebc85409dc4529ca3d683b5f4",
+        "tests/fixtures/php/8.6/structural-hooks/hook-3-retained.php": "e3779df9bde95d166a3f87034c28af6cc3e72085becf6db519436ace7fcc9e60",
+        "tests/fixtures/php/8.6/structural-hooks/hook-3-discarded.php": "d7b5e7f1ad930ef66f48ba860cc493c6f0ff08da2778b6d7bec1c2b62b09140a",
+        "tests/fixtures/php/8.6/structural-hooks/hook-3-promoted-live.php": "b0dd533e5ae9765a850c485d67e1f4336df65748736011e73de524881785ee0b",
+        "tests/fixtures/php/8.6/structural-hooks/hook-3-promoted-discarded.php": "a802a3e646581b7e123dd3c3aebd29627a16a9bb9268c2e076be5f2234a3cc28",
+        "tests/fixtures/php/8.6/structural-hooks/hook-4-live.php": "f37a2ffe8ff8dcb730e49d29b309538ffcfa04ed5366f15c6b5a6109d8a2ed0b",
+        "tests/fixtures/php/8.6/structural-hooks/hook-4-retained.php": "1c96f0795a18fb12e6b0fa34e41b01d38f4a18338e7c0d7acda21a15148958c6",
+        "tests/fixtures/php/8.6/structural-hooks/hook-4-discarded.php": "69dfbcd23d1355bd3e1229ecdf84244715f734322270e167668d1e86057f8d64",
+        "tests/fixtures/php/8.6/structural-hooks/hook-4-promoted-live.php": "1fe9af0476097c54e24200dd542d562cf99c95f737d807fb59d6eefe52f1e67e",
+        "tests/fixtures/php/8.6/structural-hooks/hook-4-promoted-discarded.php": "286d3bb2b4c493dfc544703d28e3ea9859c4bf3187f08b95dc08edadd93ace87",
+        "tests/fixtures/php/8.6/structural-hooks/hook-5-live.php": "21e823769058e4592d1bf58037d224a0dfceacb30e62a77dec23304f7a4ee143",
+        "tests/fixtures/php/8.6/structural-hooks/hook-5-retained.php": "f2e41465e21dc921b21e496bd7c40128e4e2099e4d776e0253848e5b216be7c1",
+        "tests/fixtures/php/8.6/structural-hooks/hook-5-discarded.php": "5c2c212c37ede0041707870bdcce68aa2efba0a9f3b1461038a9d96ca75be292",
+        "tests/fixtures/php/8.6/structural-hooks/hook-5-promoted-live.php": "117d22d35587ad271d506e70588bf1c986df49a87dc3a2e7df7d6e54f919e409",
+        "tests/fixtures/php/8.6/structural-hooks/hook-5-promoted-discarded.php": "fdc3ce664c443fa8639f88259ba4aaa251a7e0408ae57d023db750c3cc3dd57b",
+        "tests/fixtures/php/8.6/structural-hooks/hook-6-live.php": "8bfdb4831ed230255799db9ac29594e1aaef8fbd34523e35d64083733974e75d",
+        "tests/fixtures/php/8.6/structural-hooks/hook-6-retained.php": "6f0e69f634a3797079ca6b21ccc03d76aa82d666c3238d7511473be61ccd54d6",
+        "tests/fixtures/php/8.6/structural-hooks/hook-6-discarded.php": "5fc79a3f2b929493d125058bc9064d7090399bfabe70816caf5561eb56b2d4fb",
+        "tests/fixtures/php/8.6/structural-hooks/hook-6-promoted-live.php": "98caba1ebb8f3e2404a63d5bc6cb8baebb1949f55d94b9d6e09131535034f414",
+        "tests/fixtures/php/8.6/structural-hooks/hook-6-promoted-discarded.php": "a1770b27fed29c53ba8f7670f35ec2eb92cce5ff0846ed8f2ffa0f79845cfce2",
+        "tests/fixtures/php/8.6/structural-hooks/hook-7-live.php": "b4310dafb1fcbc028227bfefc87d581b26731f0518fb3847a2133f8527540e0e",
+        "tests/fixtures/php/8.6/structural-hooks/hook-7-retained.php": "2e481240ea1e67701f10d41c417e169cd96bcfc3a877e67b758c602ab96384ce",
+        "tests/fixtures/php/8.6/structural-hooks/hook-7-discarded.php": "396f1a1aa383b514ff9d6110dcff18fcee8d7edab0a23e422e930be05b586109",
+        "tests/fixtures/php/8.6/structural-hooks/hook-7-promoted-live.php": "18f94b5afad2e183972ef3ee876010164add9d2d99e9469dccbe3284657580a8",
+        "tests/fixtures/php/8.6/structural-hooks/hook-7-promoted-discarded.php": "202ecd6a96a220cc699972c25a39e5c08ccd5923abd49bbbaa6631c10fc0be3c",
+        "tests/fixtures/php/8.6/structural-hooks/hook-8-live.php": "826c8d7825f4a04e637a13bbbf81ae785cecf6c2c5b2b2086adbed8ddad36d03",
+        "tests/fixtures/php/8.6/structural-hooks/hook-8-retained.php": "61c5c217ba9bd5a6cd274eb9d64a1224e4c47aeb5dedf12a0e037aea9ad1cc1c",
+        "tests/fixtures/php/8.6/structural-hooks/hook-8-discarded.php": "04106bd37f0cc2d4554da7993549fba950d4ed3854070f66915bafb0e193d173",
+        "tests/fixtures/php/8.6/structural-hooks/hook-8-promoted-live.php": "2d70512a5034502c7ceddcb55caf8e76f0fe1ef3d07f310a37e670fbd90d6750",
+        "tests/fixtures/php/8.6/structural-hooks/hook-8-promoted-discarded.php": "019a2565b81b038fc23ce468c32b4c094a0c67ce96e3bd9ed2aa1ca8e3de294d",
+        "tests/fixtures/php/8.6/structural-hooks/hook-9-live.php": "ef120a2ea3d54c35daea7d0412fdc4fbaedc277ce326ad87f58f49cb2253e789",
+        "tests/fixtures/php/8.6/structural-hooks/hook-9-retained.php": "2d64a088b79f444a5c0cc1d3ead865555f45d001b42ab5e0114fd6730430afe5",
+        "tests/fixtures/php/8.6/structural-hooks/hook-9-discarded.php": "bffa1c059607480b4360713d23d45c753ee1395f50148288faed88a6dfd51678",
+        "tests/fixtures/php/8.6/structural-hooks/hook-9-promoted-live.php": "196f769a0780a65cfd312eab9864bc9d9d92efdca16c5f8b7a7b193beb8072ef",
+        "tests/fixtures/php/8.6/structural-hooks/hook-9-promoted-discarded.php": "fa6fd03a5235574d4023feddc8bc0b30c407fda3820bbaf60339cca700515378",
+        "tests/fixtures/php/8.6/structural-hooks/hook-10-live.php": "33e3d407ac952044b1a578ed66bd0e77fde8e7fe6ac06ce55ad296d3e3fd453b",
+        "tests/fixtures/php/8.6/structural-hooks/hook-10-retained.php": "a02b80f283c184eb7afe943637d75e43f7b21a7cde19e77dfb7cc2db7cab0b33",
+        "tests/fixtures/php/8.6/structural-hooks/hook-10-discarded.php": "8aa3fe8ec6122034b73e0f8b476541d16bde2a3a5282d485307dc91e2451db59",
+        "tests/fixtures/php/8.6/structural-hooks/hook-10-promoted-live.php": "0066235102fcbdff3c489762e90a488c514beba8f84bc049eba0d4059145da57",
+        "tests/fixtures/php/8.6/structural-hooks/hook-10-promoted-discarded.php": "5231c8fd3762efa80a5ce413f96b421edbab74d43f09ed0418fe08c884229115",
+        "tests/fixtures/php/8.6/structural-hooks/hook-11-live.php": "5589c005333de207c7332008a3fa8f0a677bc604ecb206c18a58e5211e352135",
+        "tests/fixtures/php/8.6/structural-hooks/hook-11-retained.php": "141541b017811a7042076dec634086f24ec76d7cd0801ae0f69c8b7088ed4c3f",
+        "tests/fixtures/php/8.6/structural-hooks/hook-11-discarded.php": "da2e812006891fb8b6c2a2fd5c86009062643eb340640f4e3f2c6d3792a5b1be",
+        "tests/fixtures/php/8.6/structural-hooks/hook-11-promoted-live.php": "a3ea766f5d2ae6ea998e84eaaea8e6bba602ee06c2dfda16376bc27ff0f73cf8",
+        "tests/fixtures/php/8.6/structural-hooks/hook-11-promoted-discarded.php": "cb564aaf68debb815d39a95fc57eb6a508c3e25f528fb979d7c62cbf5be3dd6b",
+        "tests/fixtures/php/8.6/structural-hooks/hook-12-live.php": "b4de93fc8b1c53a8e662d56aead3ecec6457619e94086b8d1d7eb8afbfdaf789",
+        "tests/fixtures/php/8.6/structural-hooks/hook-12-retained.php": "17ec07c8b6db911e9cf1051704979548c2d1c59b40057a162120743cb2efd5f6",
+        "tests/fixtures/php/8.6/structural-hooks/hook-12-discarded.php": "0ce2e0a7dcc7b6ef38c94b59a805fe59fed3ad3ca4887d4203eb80834c5b2be1",
+        "tests/fixtures/php/8.6/structural-hooks/hook-12-promoted-live.php": "2f166f25304d480919b784581948b79a15e9ba18e35f2c4f56bd6d835715a5d6",
+        "tests/fixtures/php/8.6/structural-hooks/hook-12-promoted-discarded.php": "957361885a2277293310c80b7a02ee87c93f81c0d09eb001d5a09b98afcb3b82",
+        "tests/fixtures/php/8.6/structural-hooks/hook-13-live.php": "2aebf26ab07fd7100313aef25484d3a92c71ea295cf3318fcd061ce70037a89b",
+        "tests/fixtures/php/8.6/structural-hooks/hook-13-retained.php": "a507edefbb0a9c652a2e2a95b7209b6cee38ccee49c1545056c2e97fc6c02048",
+        "tests/fixtures/php/8.6/structural-hooks/hook-13-discarded.php": "f141cb1e489d5f9e28b4d8999a9fbe8a1a4a8340b6c2183af2a82643e09162ed",
+        "tests/fixtures/php/8.6/structural-hooks/hook-13-promoted-live.php": "4a264801fdf8a1cbf869c80a817edca7b7d933a46b2868390e8ad74c7d657883",
+        "tests/fixtures/php/8.6/structural-hooks/hook-13-promoted-discarded.php": "3ca9d1cefcdc3c1ff39d49fef365946d46aa6d5900f4498f755461fce1c3bc4f",
+        "tests/fixtures/php/8.6/structural-hooks/hook-14-live.php": "4f7270e7aca29ea40e3b51ba26f3b7448181346f2d4989d5194b91da0b9283ee",
+        "tests/fixtures/php/8.6/structural-hooks/hook-14-retained.php": "78349a3552b6bd948cd91b33a565d4a5ec9762699adc53bcf80d52cff5f6c8cb",
+        "tests/fixtures/php/8.6/structural-hooks/hook-14-discarded.php": "1c2e4d9f1f4ab276c5d4bf41bcac3ccc3e550563f72e41d46cada088bd0eb8ee",
+        "tests/fixtures/php/8.6/structural-hooks/hook-14-promoted-live.php": "6f6f034c3c65007772840e0ae0bb6ea65dcc1655e3f4c7f7c1f6cba0df261be6",
+        "tests/fixtures/php/8.6/structural-hooks/hook-14-promoted-discarded.php": "a635a140c76798e8d06253d6b95ab42857228f3cdad5c9afc1b30ed16d054021",
+        "tests/fixtures/php/8.6/structural-hooks/hook-15-live.php": "f70f33a68cec272a9f84ae9ebcbe99cbda4be033567e3fa58c144889b496e8e5",
+        "tests/fixtures/php/8.6/structural-hooks/hook-15-retained.php": "4274759cbfaef0e78029b187a349b8c026266d70d08e2796b777561d447246f6",
+        "tests/fixtures/php/8.6/structural-hooks/hook-15-discarded.php": "4c5860f6f19c50bdd56b115366a51ef1852ff988aa92c8b8c2b20fc259e00b51",
+        "tests/fixtures/php/8.6/structural-hooks/hook-15-promoted-live.php": "bdaded796b769684155d4d92845e66671d96c96065a23e65bb83107f611088e3",
+        "tests/fixtures/php/8.6/structural-hooks/hook-15-promoted-discarded.php": "db585b74a088aad53a50bc3b13a3e0b289ab95fec91a61549d83a174814717a7",
+        "tests/fixtures/php/8.6/structural-hooks/hook-16-live.php": "d3cd34a17046973a66f93274a5de0fb402e68fc761c3c740831e0bf0f1d88ac4",
+        "tests/fixtures/php/8.6/structural-hooks/hook-16-retained.php": "3e59a81569c69085eb487bc6bd67825cbfc6de0367915107142f9d954238b6a7",
+        "tests/fixtures/php/8.6/structural-hooks/hook-16-discarded.php": "c33b768de3db0d3d76e565975202ef30ec5b0b1bf85e67ac41d249445c364704",
+        "tests/fixtures/php/8.6/structural-hooks/hook-16-promoted-live.php": "2f12e5958741a310b9658e7d83dd26c8e6fc38690b4e261ba0a4a3923e29dd0b",
+        "tests/fixtures/php/8.6/structural-hooks/hook-16-promoted-discarded.php": "64a6f6a4850e79812483dd26c233ce4f6c254b892e5eeabf1e7708d1f8882fa2",
+        "tests/fixtures/php/8.6/structural-hooks/hook-17-live.php": "b6c59b31d405785a29e83abad0c22dfdfc57d9cd117e83d37f764cfef0c0a2c1",
+        "tests/fixtures/php/8.6/structural-hooks/hook-17-retained.php": "05e9758b38739d081f7a8f6a3a52a76f91029e48b19c28224c53bdca103b2869",
+        "tests/fixtures/php/8.6/structural-hooks/hook-17-discarded.php": "0908c1453dff39465e9732f51cc6430fdd9c39ca060addeac8dc759a87873640",
+        "tests/fixtures/php/8.6/structural-hooks/hook-17-promoted-live.php": "f147ba33193f44f40d8c09807bc27ba37440bb74453474d7f26a82856ab84c74",
+        "tests/fixtures/php/8.6/structural-hooks/hook-17-promoted-discarded.php": "9c50b5f05102da6e1c332085ea63bfb8c357c07a026ac5dd96f0d28c6de3fa22"
+      },
+      "classification": "historical representation correction; not new 8.6 syntax"
+    },
+    "SG86-002": {
+      "productions": [
+        "yield-key"
+      ],
+      "sources": [
+        "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y#L1383"
+      ],
+      "fixtures": {
+        "tests/fixtures/php/8.6/structural-evidence/reserved-0.php": "f2969472272e7b4b6cb29ab52c5f192a92bb5d8c1b20975560ab461c5f0d99a3",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-1.php": "da1bf5ac279deb50d290973fe2d3c80db4793820964fd8ae4600344ffbad2de1",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-2.php": "56eb7166f71f08a54c4b6d08e4eb97c2708c747d1e35040c5d2d55fafe9e8974",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-3.php": "2a4f4771abe98860abdb15422bd3506951dd77c061dc0d7a8df99e68711085a7",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-4.php": "0dfc4da9e0f80f95eaa7f201dc713f295c3c559e7b47307bd1c1864285d518af",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-5.php": "7424cf2688767837e430a65432fb894062c109d61d32f324fe835804cffd1d1d",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-6.php": "d7fd80b4b1c705ca0fe8003a7a9aac343b2cda8501cd1ef3877677b2d544d341",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-7.php": "3c7d7c4d4c064ee140a2cf78c1a0a9daa652bb42cb46ce78b443dbe61a3503e1",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-8.php": "e1b5fc313b8e40f72e8ba71ef6dda654332d038adbbd6e759ef6597e241005c6",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-9.php": "fb1b0a149ed550ab319701e40388731a51a4ae1eb1f2629e280a40f369761f44",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-10.php": "08844acb3e15ae11483ea0c3bedd1955cf8c5297c20e336f0ea61ad3845b7388",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-11.php": "499e92b5932a8de559f548c5e6a12a3090bb75abae0647025c267952b416ed05",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-12.php": "482b2de9831e12c62f20dd9c35b0390574e14998355ea8f0f3c4f4eaeb0dd656",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-13.php": "f231a5b2410757100b60a12031447f38b324a6ef0046aa77ffccf8f415f0584b",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-14.php": "d880993cd0bd681239874dace6fbd339e550e520c886244edd5e082ae9053699",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-15.php": "70e4fdea7c0b085e8ae426830f2ee44aa04b31afe5ff0600c5adc1061bda28b0",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-16.php": "632c8667f642cf9333a3a7e552b0c7bcee1779dee698f105defd17583c8bf6c9",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-17.php": "b7e6bf10a43f4f025c43220024c40ac14b4826c4a278b8bd96ef019d9ae70a87",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-18.php": "fee27285b5488931cd8dcf66ae7b388414b89f2e0147a1ab2e73d1844bc3b818",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-19.php": "57b685295d35d3ca6eb9e4f48c8f29da836f003cff8b0ed0b5ae1b9903a8d1af",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-20.php": "52c49be73b8768036813b125e7696f9271dbf6a509b4a62d471f91d65aa912d6",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-21.php": "b396a21c1316c58cd08b345ccbe72d4affa0aba5dda3643e8f61e45c058ae33f",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-22.php": "cb7ab0c5c8011c8888e08420a0ca3bb672c6420521ab7a2af9bf1a4a34fcaa57",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-23.php": "b780c35934715650f3c7c7c25d9c2651549653f370f8d177dbb3bd56efa3e9d8",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-24.php": "74d69bded434d991c6c0f44c6e5d8710a33107bbb8325228ac1743c19cfe76dd",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-25.php": "96c4c0db3c1f823c853ffbc823a7d4c2dbb97685c151fb0ae98ead191f044cc8",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-26.php": "777bacb89ecd907312b4f626d348c69cb20a1b1b85243bc711b8baf277a79ad3",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-27.php": "fd1bcd1838b5a2147f044ae909ea36a23763e8c7069aea1877ca3ac3acc42ec7",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-28.php": "5620af4969b80501f8de754aa17d37e7c70d4767380a0c19e197e149ed784a13",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-29.php": "4c1645ed5b6c5858767b199c9fdb3d44e4fef8eb6b26187df597e09edcdd6ae4",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-30.php": "36f66eab84a4b997950fd89b047aa99842d63ab6e432ea84b60547936719c495",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-31.php": "4b347aa78aca93f631c388ec2bc95985959d87444b1328a879f44058e981d365",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-32.php": "489566ea07336a95d300875b1a38c2624524cc528a4536fcf281178865d46c02",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-33.php": "879a9919b229dfd8dda19e242b4a203d43a42f7fbeb27f778ef8deced6c54ee6",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-34.php": "e20957e7f5a1ff29aacb94b2d5ff76b6b46945564f49dd380f2993a4f604b4e3",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-35.php": "756fcd3b0e091c59637e5ba10dacba22df87ae8f5cbf04d0db1c56295f538a1a",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-36.php": "06cd49ec42d7f8b1b6e23d0d40ce7dcc7a1afeb1d80a7cc26bca568f90c12b56",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-37.php": "0c60ce6a16b117df5a692b8a71407fdbd9f6066d3ae41bc9c150769b5a86e6aa",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-38.php": "8e0a0771d95bbb70500b695663ec92f4c19e646db795b582e9adbe61ff2c9f43",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-39.php": "ab692985d4d437dc4793b0a10a913f6ff470c17c351f2d9d43a9029830853f48",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-40.php": "beff4829fa734033c022c9c25cbd78f480b381ce9c69955e5b2a78ca68760dd3",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-41.php": "db9d2ce818a11604a6054e013b02034717a1e1c2d4256c65512cb63b53f564f3",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-42.php": "a4ce51c45c8357d71f8497b24b04d87a0c5dd8338526ae3b1cf1156371070b70",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-43.php": "3827036891554c7344463b654d5fb23197345ee441a0d87d8ca4e5357291db32",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-44.php": "eff792e1a9a95d5382110eda168388399c34d8ff33167d971e2f692cb90d3f5a",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-45.php": "4828db16d32a339094b1ae3d063a0932307a46f349f04ff5da22fce6950efd97",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-46.php": "9b0cfcd64d84327e611b7667658dac721230196d07b881e4a7f56946de56efdd",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-47.php": "37804ecce9d8f96ce2c071e69b626398087d3f798613701b0962137fa4391b4d",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-48.php": "75e869b4e236224416cb4e5e0a20ed49ad28bba0b50e1c720ffec3bb74d40dc2",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-49.php": "9b298c8fc8f90e7d98845cb66dfad9d8da98ad10ca3874db677022a74c193e14",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-50.php": "cee22b33a597f029858dd416df9e62f64ab60413a1c574a35fe7f1b64aa114a1",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-51.php": "61db44b75f2a19f5e70833fed7b18ab5f1714f468dc9bb325e987e689292823c",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-52.php": "11e8e65e0f1cf86ed849d85f60c0dee9f6364689266142448c800ef56376ed17",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-53.php": "ef92d5e8436ffcc9dd3841dde7ed64935edac86fcf399932730c147166fecd99",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-54.php": "2c35dafee2ec9c1c839ebabf579b857e7f8d67108e9507e8fddaab473e87c00c",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-55.php": "136a1dc3f2d976282f0d66d82c49d441d01494c78b932bef471faee13d86e4da",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-56.php": "85b157b9561b91388f6ec72d13ac4710cb917a943427fbe92a73e8b00fabd160",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-57.php": "a732335d42ffb2f0b6169bdb847c1b5ef42c8266ac3931a954b0fc22a743eeca",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-58.php": "f65e87d23cc07b97e4304441348fb242afad09d915f7a2be9a56c2c00a6227ab",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-59.php": "2fc45126bf2b4d0b3c3641d008abada1c9645bb4f7f97dcbf2019fa5aefcbfed",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-60.php": "2e9d130b5b27e7fe77dd9fee28839d8fc444d6761a6ff824c095ef176c82fcde",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-61.php": "b542295c05ddb7338cbd71c1f37b567b8c084ac8fb33870ec1aa34a5945e3b28",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-62.php": "2e0eba093d84fd25dfa064071bf3a9440693b67a9ab5d9ac7d03d2cac45d9beb",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-arrow.php": "bffbc18cf4d40ae0add7d1285525d3b1ab35684795946e23bb58f338bdab1563",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-include.php": "70d4c0e9cb87a45c411315ff9adc8c1351942a3604f5daf01e9f8735027f3d76",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-logical-and.php": "3573775e96a8c5d64d84d1aa21389ffefc7e4e54d8438485400a06e99d7d38ae",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-logical-or.php": "a1b8ca67ef2b1c66669630f607179e723cd6cfbf8fca89a16ecb54a100e0a289",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-logical-xor.php": "8d24cef0e62766b6b71058212b11773ff8a1661edefbc52897bc0ca84aba2213",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-print.php": "fa94abde7abe115b149366cb1b1334082a040ff34e51c1c581d0e8dff7f0213a",
+        "tests/fixtures/php/8.6/structural-evidence/constructor-fcc.php": "e948470fa391441a2e7b07e5786d9bd5629cca63c76948726ea9f94088948d10",
+        "tests/fixtures/php/8.6/structural-evidence/instanceof-prefix.php": "72b5ddd776c67b61a7def12bdbf0670192d4ad43ab4dd24fa4aaa4f7666f2abe",
+        "tests/fixtures/php/8.6/structural-evidence/qualified-use.php": "0dff57520c5ab70fea1a9763167098a6e006eb9171e5faf5a4e66c107a828ddb",
+        "tests/fixtures/php/8.6/structural-evidence/static-new.php": "a6b42b39aeb3f14fe9cf5668210d70ea89e9363334aa1e4fcedabe646a207fc9",
+        "tests/fixtures/php/8.6/structural-evidence/postfix-dec.php": "6bde28214a579195c6a56fd73a8b5cae904272338fbc4beaa70de7cf97723a79",
+        "tests/fixtures/php/8.6/structural-evidence/void-type.php": "b5edc9edc474464725457df7175c983c8c2479f46fb519d8e40a2a7b717bbdb3",
+        "tests/fixtures/php/8.6/structural-evidence/unmatched-elseif.php": "8aa0a4447bd4e2a4bbc3ec9926579d17a81db52be24705bf9b1d6f9aa4f02f5b",
+        "tests/fixtures/php/8.6/structural-evidence/unmatched-while.php": "5820e8fae8c54f714701d02cd9464ef7aa48120e8a7658acad53adc2988a7464",
+        "tests/fixtures/php/8.6/structural-evidence/unmatched-foreach.php": "0d9bb0a6d610c297bfee3d3d0d7d0fb4ec8cc2736de8de9da339c0dd393acb53",
+        "tests/fixtures/php/8.6/structural-evidence/unmatched-declare.php": "2bde45b85064a6667ae63cca19d3f414a63061270999fd0029866e559c510110",
+        "tests/fixtures/php/8.6/structural-evidence/yield-arrow-basic.php": "e5252a6b35352167662fcccdc7a27006c79145718a40232d4f22f10be3f8962e",
+        "tests/fixtures/php/8.6/structural-evidence/yield-include-basic.php": "c2e94d9ced1d945ec8321e84537bbceeed60ebc27622438868702732692f39c5",
+        "tests/fixtures/php/8.6/structural-evidence/yield-print-basic.php": "cb41352f613b4611b2e6de41ef2762ef4acb28b429373df92d27e1895e4bf184",
+        "tests/fixtures/php/8.6/structural-evidence/yield-arrow-throw-nested.php": "edd0b05a5b23dacc8d2bf9f1561c20f55a392a8f734f7d36ee04d7b10ea58fe2",
+        "tests/fixtures/php/8.6/structural-evidence/yield-print-throw-arrow.php": "7d8652f4a47a109ed31de92bc9e7a4fa02130c7213e94e969645ffe7e41c9126",
+        "tests/fixtures/php/8.6/structural-evidence/yield-key-parenthesized-logical.php": "7db6fae7d5e8e1a96c8d626f62d59cfbfc6b773d6dca4032659e55778ca9c468",
+        "tests/fixtures/php/8.6/structural-evidence/nested-logical-and.php": "4f14aab3223a76e6a9abcbb62859617544b9db3a90634e2762113d02c2235c38",
+        "tests/fixtures/php/8.6/structural-evidence/nested-logical-or.php": "e6cd1950a8d2966d7eda7beb21b7d615c6dcc95ae9d5413c2449bda122417076",
+        "tests/fixtures/php/8.6/structural-evidence/nested-logical-xor.php": "e2ee66a335ef93e4fb12f13f01dbc7e6ab5002afc7e5085082ac460fb2280ab9",
+        "tests/fixtures/php/8.6/structural-evidence/dynamic-static-new.php": "6d7f2f7f105e2e2790822e100f83b104c89cfffd9477ad87ee6b346abe550df2",
+        "tests/fixtures/php/8.6/structural-evidence/magic-reserved.php": "374d6fe303de19e379dfbe655216e2b43e4f4d8ccf8a64875aaa9d8a3774c9ca",
+        "tests/fixtures/php/8.6/structural-evidence/unmatched-else.php": "3801203c5a850488d5c19010e647f8aa89d47c5308fdce43083d5c1195ae8843",
+        "tests/fixtures/php/8.6/structural-evidence/nullsafe-new.php": "4c21bfcf750f60ce98a281bef21ae9151f1d4787e090b204d2a539c4a1d39c33",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-0.php": "4691683ff9006d16e76da1f601e4a17b28b4bad178374d2bcf6c6e4bac32582e",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-1.php": "38aaa6ffc7566cf5ef9adeca03566bda9ffbf1b294be426c8a85407947002a79",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-2.php": "2c4447f54be87bebb99bcd79616abe65655fe1b2c98cb61dc6ceb2d52b61d73b",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-3.php": "ee94777f5eea118eac4d45c01c35a990857ca3f5bd1e4164dc181023b752128b",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-4.php": "64c38277f80248c134eafcfc7e4a0b47b0a375011fcb8996c35f5c7b6b2f460b",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-5.php": "5496e2ae08a4ff8696d1f51dee4d6ebc896ed4f5f7ac5f433883ccfb9c133159",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-6.php": "995eb3e6c4f79067aa43a2f39ee4f9e4f0404040ac1ce27717f36b78d529fbbb",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-7.php": "2186cda0fca822262d75d055ddbcbaaee83f114d5a17cdbc10c165e8fbb0cc98",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-8.php": "bffbc18cf4d40ae0add7d1285525d3b1ab35684795946e23bb58f338bdab1563",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-9.php": "c82528f8fbb42a6fa2def12f7117483457550e4941753c87b1f02a588c08885a",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-10.php": "865f4c9f9c2f6facdd9fe38694ee27bfa6f56dd97d2585b7c7325e91996703f8",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-11.php": "9b61e156fa2fa2cd686a295c3f2fead2a0935e18c994c3bee2b0f759b9cbf98a",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-12.php": "156df827d54dc3164b366c093211f4a371b5d2beceb3b97793b0022632f7b4fc",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-13.php": "557d446120d7a6b87e9e5f30e595083e73f5a8f8fe4607b3b9bfad115fd9ff89",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-14.php": "fe10298be1e92232b1cec933d588b3b1037a19ef13a545d68d95821fbaea9740",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-15.php": "cef7e6ac0ba9223efa512eb8a21a0df81f8373b3d1a7182af91ecf874fd9f0fb",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-16.php": "70d4c0e9cb87a45c411315ff9adc8c1351942a3604f5daf01e9f8735027f3d76",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-17.php": "e31528c74b2b0d753c46da04a0455360a3a8c6c8994cd81a153f7a503489a54b",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-18.php": "51ac20c916ee2b4a0b156e98d4365e8cb702fe49cc427dc9826243aabc212a16",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-19.php": "77ed42c9180ec0194d26618607392acd2e4a582fe815e34ad3897f45ad4bf7a5",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-20.php": "ce0044b80d4b8afe6711aeed76e50fd1950ccf09f04bd90a109dfc52d67a5a9c",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-21.php": "1b4f59a7b42d5ae88960e4827538197100911cb1faf022e50b71c507c410d837",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-22.php": "c77fcaa726e0e7f947a00b47e4a3ffde167f9870b6b7c263b191cb90dfc49b28",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-23.php": "4299fc6e8a79ed4b4ed1108c04ca3612304f7ea24b09029bb7541df8ab77c41d",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-24.php": "fa94abde7abe115b149366cb1b1334082a040ff34e51c1c581d0e8dff7f0213a",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-25.php": "b2493cfbfac0df0eff8c6014be8c49700931642e847da796cc9b61a0e83165ae",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-26.php": "297e69b56ee2c9d2a9c85e94bbc3c6fdca0af4662bc4a1718123cf9e1b0a2ba0",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-27.php": "0cae1cc6e9ef60b168f01bb322b1c780628d04761681aa9d8043dcd9e21b6e77",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-28.php": "21a2cd1ef0ea62cbbd4e4ede85769a2fe80761cc46581bd18d1db4b740ce4566",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-29.php": "b42c71d3ab2a2489db47c79e20bd6c14ba736ab4d62478c4f0faa32597bdf281",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-30.php": "500d5b422dbb3a3ede1970e919ce620ba84a6670fb499d3d5d287e550c03fba6",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-matrix-31.php": "85e0b5121a568380a2c4e29a9aa9fc1477adbc4e4aa51eb982b83e516481eb5c"
+      },
+      "classification": "historical prefix composition correction; not new 8.6 syntax"
+    }
+  },
+  "documentation": {
+    "preamble": {
+      "before": "6d5e70dbeaee85233aa674bd1035885c4649a78e4f95850417e9677c149274a5",
+      "after": "5bbe2343f105d55560a0819a19facd539d5c5a16d66b2f2ab7fc44121b1ba0c2",
+      "findings": [
+        "integration-status"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Status and scope": {
+      "before": "7b7195531a02b9e178923217bd60e07c2884fc3d65c8896b366c76b46967516c",
+      "after": "0a3eec46367eff9d71f8148071722b27eea2922f405b69c8d92be12feaf3b04d",
+      "findings": [
+        "integration-status",
+        "inherited-evidence-label"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Conformance model": {
+      "before": "64263592fb42b3ceb437d3996bb7139310fdac6a53b86e097dd3ed316f2d5c6c",
+      "after": "6deb988c00a390bac7ab7f9b058ed80874e0878c77eaa4359e337550063891f1",
+      "findings": [
+        "inherited-evidence-label"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Names and tokens": {
+      "before": "e4912ebdfc0ea978ed4111ad9c51dd2d7e2b793c3fe332e27551607890e3cf12",
+      "after": "3942472657f7e3acfc6adc59fda326dbef3cdf7ae7445604b7e278d251d145a5",
+      "findings": [
+        "PHP86-010"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Arguments and arrays": {
+      "before": "0f21ed7add0584498fe7cf246c32ea1b2ad75889275a9fe3f702209e22a1afdc",
+      "after": "a6dfa58d939b4ad77ce3510ada3d941b5b70bbcdba81d08c05bfb8bc57593f9d",
+      "findings": [
+        "PHP86-001"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Functions, closures and parameters": {
+      "before": "11853da5ee1dcbf243e06f731abb3858c22814fc91faf7082c9a4e496cccfd96",
+      "after": "824e32b00794de07e604e6c4f68d58c37bdb59638898da5e86da2006104703a6",
+      "findings": [
+        "PHP86-010"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Classes, interfaces, traits and enums": {
+      "before": "a04b456fb8c47d2792d60dd457c095c89ea5537375eca5dd5b87ce2478eb9d44",
+      "after": "9c6b5362a16034c3459fe4cbd8f26310ccf646c3669042da4a61075519784c66",
+      "findings": [
+        "PHP86-003",
+        "PHP86-005",
+        "PHP86-006",
+        "PHP86-010"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Namespaces and imports": {
+      "before": "abebe2cfb29c6c24bdab4af665c006164f246b9c59c0574509e7afcfef447e69",
+      "after": "3efe54b15829d57238f93bd58d26f1d0be31c59339ed0e743a5231c813f398bd",
+      "findings": [
+        "PHP86-010"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Attributes": {
+      "before": "c843cf2dc6826f3b33f67614b19d3aaea9cf1082f6b9ee0ccd3660d81ba3bc31",
+      "after": "8f8a9100c72c32276c6c77a878bcfcbecf2bb67427d2ec6400450e55062e74e7",
+      "findings": [
+        "PHP86-001",
+        "PHP86-005"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Constant expressions": {
+      "before": "9722d0b244a71c254ff9c317b0897eee2c923cc07716a6aca79c46d25100097d",
+      "after": "6408ee4f54216e69c8484885cee40fc50ac633e47d2741c76dc680d142aa3e60",
+      "findings": [
+        "PHP86-001"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Contextual syntax constraints": {
+      "before": "682766a96634e1382fc0229dccce4d272f3f599f19f3a62a41dd4825ed935e96",
+      "after": "b809b022ccab3e5aa364173631f02ae0f420028d6cef1f059467d90d5bc9803f",
+      "findings": [
+        "PHP86-001",
+        "PHP86-003",
+        "PHP86-004",
+        "PHP86-005",
+        "PHP86-006",
+        "PHP86-007",
+        "PHP86-010",
+        "PHP86-014"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification. Phase 5D: informative PHP86-014 scope clarification only; no normative acceptance change. Phase 5C source/probe evidence and docs/8.6/correctness-remediation.md record reviewed boundaries."
+    },
+    "## Parser/compiler boundary rules": {
+      "before": "e0bd5975ae9df1435215189116e6fa449232eca6455a046ba4166639abcf1f5a",
+      "after": "0ea8858ab146155fb4c3cb111a4e4c46e177be6a8760bc0b630afd07de471c26",
+      "findings": [
+        "PHP86-001"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification. Phase 7H: informative maintainer clarification for CA86-001/PHP86-015; retained dead-expression behavior, dispatch observations and blocking conformance requirements. See docs/8.6/upstream-maintainer-resolution.md and its authenticated response index. No production or enforcement change."
+    },
+    "## Conformance evidence": {
+      "before": "274277dc4eefd89d9303348989f1e4ef58e1436b2b643d54d6da80440d2c05e0",
+      "after": "8d4bb0ee7239b41808983faaf10a1caca8479b29f2264f3255ac10bb7c60fde8",
+      "findings": [
+        "inherited-evidence-label"
+      ],
+      "reason": "Reviewed Phase 3B/C/E clauses and Phase 4B status; source, constructs, fixtures and remaining obligations are recorded in changes.md sections 3, 6, 9 and 10. Inherited audit descriptions are not PHP 8.6 certification."
+    },
+    "## Deprecated but accepted syntax": {
+      "before": "4e8e8a049bdfdb5aa2501a2e3a4d9297108bd8a255f4202e9c452fe83376f237",
+      "findings": [
+        "PHP86-015"
+      ],
+      "reason": "Phase 5D: informative PHP86-015 scope clarification only; no normative acceptance change. Phase 5C source/probe evidence and docs/8.6/correctness-remediation.md record reviewed boundaries. Phase 7H: informative maintainer clarification for CA86-001/PHP86-015; retained dead-expression behavior, dispatch observations and blocking conformance requirements. See docs/8.6/upstream-maintainer-resolution.md and its authenticated response index. No production or enforcement change.",
+      "after": "4c8977e0cc6113c7ac89fc9cea0d477c8c10dd024c5f283befd912da5df790c3"
+    },
+    "## Canonical EBNF": {
+      "reason": "GA structural scope and source reconciliation",
+      "findings": [
+        "CA86-001-STRUCTURAL"
+      ],
+      "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "after": "4a2c3d8bda9c89caa35fee70e5dce4474a1121de994fb00797e48883019b4076"
+    }
+  },
+  "openFindings": [
+    "PHP86-013",
+    "PHP86-014",
+    "PHP86-015"
+  ],
+  "obligations": [
+    "Discovery remains incomplete (PHP86-013).",
+    "No intended writable-target expansion is verified (PHP86-014).",
+    "Optimized-call traversal rules remain unresolved (PHP86-015).",
+    "Parent-get-hook variants, wider initializer and optimizer interactions remain deferred; bounded parent-set-hook evidence added in Phase 5B.",
+    "No whole-source contextual validator or exact-pin executable certification."
+  ],
+  "ebnfSha256": "29f07eb51057e4878c90a7e2692f4e4b0a02ea03ab5cf5169e60e46226679b79",
+  "implementation": {
+    "src/Php/Lexing/PhpVersion.php": {
+      "sha256": "fd4c6cf9362a305cbb0c9586d3e6e9ad91c828cf6d43229ca0d789e5696b2a37",
+      "reason": "Phase 4B review: explicit version identity and shared unchanged scanner/matcher contracts; finite lexical, PFA, deprecation and compatibility witnesses. No new contextual enforcement or reserved keyword."
+    },
+    "src/Php/Lexing/Lexer.php": {
+      "sha256": "d2da555fc5ec7fabecfa5719ca1f5cc08287886008b5cf6e62d825b65d4172c9",
+      "reason": "Phase 4B review: explicit version identity and shared unchanged scanner/matcher contracts; finite lexical, PFA, deprecation and compatibility witnesses. No new contextual enforcement or reserved keyword."
+    },
+    "src/Php/Lexing/StringSyntax.php": {
+      "sha256": "7b634e9aeafc6b1b1625e1c257577829e75cce78897f5a4c96d27a974ff1857a",
+      "reason": "Phase 4B review: explicit version identity and shared unchanged scanner/matcher contracts; finite lexical, PFA, deprecation and compatibility witnesses. No new contextual enforcement or reserved keyword."
+    },
+    "src/Php/Conformance/PhpGrammarMatcher.php": {
+      "sha256": "7b4906218b064690cdbc0eba35610bfa5c94fba893a0332d51e48671b4dc6457",
+      "reason": "Phase 4B review: explicit version identity and shared unchanged scanner/matcher contracts; finite lexical, PFA, deprecation and compatibility witnesses. No new contextual enforcement or reserved keyword."
+    },
+    "tests/fixtures/php/8.6/integration-cases.json": {
+      "sha256": "9ff5c4eae97ea45877016c6bbc856f910b2a197f4b65a7146445c5114a01c9f4",
+      "reason": "Phase 4B review: explicit version identity and shared unchanged scanner/matcher contracts; finite lexical, PFA, deprecation and compatibility witnesses. No new contextual enforcement or reserved keyword."
+    }
+  },
+  "predecessor": {
+    "path": "tools/8.6/change-map-ga-v1.json",
+    "sha256": "d1984c199f969f2d1ae302176050482451059be1d5cf5c56af1e609a907a8619"
+  },
+  "contract": "php86-structural-traceability-v1"
+}

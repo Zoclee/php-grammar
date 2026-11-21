@@ -1,0 +1,15 @@
+{
+  "sourcePins": {
+    "8.5": "7a4c62795365ed6a97a0184c96375b9fb4d53b1e",
+    "8.6": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9"
+  },
+  "baseLockSha256": "dfde69fd5fa851635538f770b89e13f9eb3c1e2b3668972683e9d842b6fb24f7",
+  "extraRc4Files": {
+    "Zend/tests/partial_application/hook.phpt": "d538300a69f081c867e357e30282848881c76c478a6054dfed9055aefa29df0e",
+    "Zend/tests/property_hooks/unknown_hook.phpt": "a83246ac7959aba409f9b7b985dbca4c878a46de35a231efce66b9157e86843a",
+    "Zend/tests/property_hooks/parent_set.phpt": "22c3c0a0c558c709f313a78d6a1b7bc4037bb40fad7e2033b46ac87c706b87d7"
+  },
+  "grammarSha256": "12cfcfa3a0122eeac769862a7644740eb20a533048267f23c8ea984e261dbaf4",
+  "specificationSha256": "1aa67b423e391c55f92f5b65ffba81bdd9d0dd8ab4c49201e66fab9eff1d100e",
+  "scope": "GA successor of Phase 5E checks. Historical extraRc4Files key retained for algorithm parity; values authenticate GA files. Current specification includes the previously reviewed documentary scope correction."
+}

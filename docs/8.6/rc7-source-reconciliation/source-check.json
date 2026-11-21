@@ -1,0 +1,1277 @@
+{
+  "rc4": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "rc7": "b63cd83da3279445ca4a913f03186141f5c3466e",
+  "commands": {
+    "tree-rc4": {
+      "command": [
+        "git",
+        "-c",
+        "gc.auto=0",
+        "--git-dir=.audit/rc7-git",
+        "ls-tree",
+        "-r",
+        "f23b4c222cebe33be93ee8ecaaa14390c5507a08"
+      ],
+      "exitCode": 0,
+      "path": "docs/8.6/rc7-source-reconciliation/tree-rc4.log",
+      "sha256": "1699c9b0f034dc516096e4052a91ea6496443768d6cd5a0c06aae37a71528cca"
+    },
+    "tree-rc7": {
+      "command": [
+        "git",
+        "-c",
+        "gc.auto=0",
+        "--git-dir=.audit/rc7-git",
+        "ls-tree",
+        "-r",
+        "b63cd83da3279445ca4a913f03186141f5c3466e"
+      ],
+      "exitCode": 0,
+      "path": "docs/8.6/rc7-source-reconciliation/tree-rc7.log",
+      "sha256": "ca7e97b6fbba74d3c5e2c3c3ba0a5c280e7279f6d30577d280f7c740787e7f0f"
+    },
+    "source-diff": {
+      "command": [
+        "git",
+        "-c",
+        "gc.auto=0",
+        "--git-dir=.audit/rc7-git",
+        "diff",
+        "--no-ext-diff",
+        "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "b63cd83da3279445ca4a913f03186141f5c3466e",
+        "--",
+        "Zend",
+        "NEWS",
+        "UPGRADING",
+        "UPGRADING.INTERNALS"
+      ],
+      "exitCode": 0,
+      "path": "docs/8.6/rc7-source-reconciliation/source-diff.log",
+      "sha256": "ffd09a5da95468e09b0739b06dda0814a23b7629c28e76b437b5491e65e5a485"
+    },
+    "changed-files": {
+      "command": [
+        "git",
+        "-c",
+        "gc.auto=0",
+        "--git-dir=.audit/rc7-git",
+        "diff",
+        "--name-status",
+        "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+        "b63cd83da3279445ca4a913f03186141f5c3466e"
+      ],
+      "exitCode": 0,
+      "path": "docs/8.6/rc7-source-reconciliation/changed-files.log",
+      "sha256": "37e582dbd6f346760f2739e3a984b288d9951b427785184743e94fc564572614"
+    },
+    "history": {
+      "command": [
+        "git",
+        "-c",
+        "gc.auto=0",
+        "--git-dir=.audit/rc7-git",
+        "log",
+        "--format=%H %s",
+        "f23b4c222cebe33be93ee8ecaaa14390c5507a08..b63cd83da3279445ca4a913f03186141f5c3466e"
+      ],
+      "exitCode": 0,
+      "path": "docs/8.6/rc7-source-reconciliation/history.log",
+      "sha256": "21f58684744466ddf38cacb66fd77b4cf548a3b7b6bee04d53ddcddb6c76cc93"
+    },
+    "tag": {
+      "command": [
+        "git",
+        "-c",
+        "gc.auto=0",
+        "--git-dir=.audit/rc7-git",
+        "cat-file",
+        "-p",
+        "php-8.6.0RC7"
+      ],
+      "exitCode": 0,
+      "path": "docs/8.6/rc7-source-reconciliation/tag.log",
+      "sha256": "06e3540d13801b3a747357210a9cd18b5be4684ace8e07206bee30af3938219f"
+    }
+  },
+  "files": {
+    "NEWS": {
+      "rc4": "8e13896eb2d4715b77044b27362c173027bba41a3a61925996f4d3a85199001c",
+      "rc7": "0bd186766cf4df413fa9074804c6cf8f64fb64137ad4395e50ab378c420af8b4",
+      "archive": "db709774aece005421bbfcf5151a6390cfb05fbe64f956edde2f75de5e5042bb"
+    },
+    "UPGRADING": {
+      "rc4": "68a38fb324aa867c3e92a5834cd948fa36a5e9d71216d0a1b9a1cd742c5c7749",
+      "rc7": "0d5c034565f125a996dad1442b3c72e7dd3bdd96d2e21942d862bcdd9463964f",
+      "archive": "0d5c034565f125a996dad1442b3c72e7dd3bdd96d2e21942d862bcdd9463964f"
+    },
+    "Zend/tests/attributes/override/constants/basic.phpt": {
+      "rc4": "3a7030bf866e13224f076d5e66d6f1056cd75c955fd8a50a5c019e6a49d47214",
+      "rc7": "3a7030bf866e13224f076d5e66d6f1056cd75c955fd8a50a5c019e6a49d47214",
+      "archive": "3a7030bf866e13224f076d5e66d6f1056cd75c955fd8a50a5c019e6a49d47214"
+    },
+    "Zend/tests/attributes/override/constants/failure.phpt": {
+      "rc4": "94728fe50715e906129022ddbc40a93f26927d08b7e17da2326b777024c3ab9a",
+      "rc7": "94728fe50715e906129022ddbc40a93f26927d08b7e17da2326b777024c3ab9a",
+      "archive": "94728fe50715e906129022ddbc40a93f26927d08b7e17da2326b777024c3ab9a"
+    },
+    "Zend/tests/attributes/override/constants/visibility_01.phpt": {
+      "rc4": "a71552fe5562fabb68e79c80bc76b6174714989f2c3eaecfc28405212f427753",
+      "rc7": "a71552fe5562fabb68e79c80bc76b6174714989f2c3eaecfc28405212f427753",
+      "archive": "a71552fe5562fabb68e79c80bc76b6174714989f2c3eaecfc28405212f427753"
+    },
+    "Zend/tests/attributes/override/constants/visibility_03.phpt": {
+      "rc4": "68e1801363114ceb57c67cb81851958ec8123b9f305bb156f6678f8a1a5930bc",
+      "rc7": "68e1801363114ceb57c67cb81851958ec8123b9f305bb156f6678f8a1a5930bc",
+      "archive": "68e1801363114ceb57c67cb81851958ec8123b9f305bb156f6678f8a1a5930bc"
+    },
+    "Zend/tests/debug_info/debug_info.phpt": {
+      "rc4": "b451b330809c2c48db0ea70c02ea6e9c4a190022d99f077fe3bb0e89953643f2",
+      "rc7": "b451b330809c2c48db0ea70c02ea6e9c4a190022d99f077fe3bb0e89953643f2",
+      "archive": "b451b330809c2c48db0ea70c02ea6e9c4a190022d99f077fe3bb0e89953643f2"
+    },
+    "Zend/tests/deprecate_namespace_class_constant.phpt": {
+      "rc4": "63af61d533a4fa5d4be081538d4c63ef9eb18b01bb311fc40587960a3fefe59d",
+      "rc7": "63af61d533a4fa5d4be081538d4c63ef9eb18b01bb311fc40587960a3fefe59d",
+      "archive": "63af61d533a4fa5d4be081538d4c63ef9eb18b01bb311fc40587960a3fefe59d"
+    },
+    "Zend/tests/deprecated_identifiers/is/class_alias.phpt": {
+      "rc4": "91c7b3bf8c7a3b4b8832e4d59684b09996e3db42ee719a0f239f73aa3cd0bc43",
+      "rc7": "91c7b3bf8c7a3b4b8832e4d59684b09996e3db42ee719a0f239f73aa3cd0bc43",
+      "archive": "91c7b3bf8c7a3b4b8832e4d59684b09996e3db42ee719a0f239f73aa3cd0bc43"
+    },
+    "Zend/tests/deprecated_identifiers/is/class_as_name.phpt": {
+      "rc4": "8a3562756610e0e12aa034b11fc30e5c3b675ff3b6eb0372eaca849c1a9b0b79",
+      "rc7": "8a3562756610e0e12aa034b11fc30e5c3b675ff3b6eb0372eaca849c1a9b0b79",
+      "archive": "8a3562756610e0e12aa034b11fc30e5c3b675ff3b6eb0372eaca849c1a9b0b79"
+    },
+    "Zend/tests/deprecated_identifiers/is/class_as_name_use.phpt": {
+      "rc4": "b6ae14cf4122797e128d97dba6b77bd84e119a7ee790e97ceedf887bbdf6fbda",
+      "rc7": "b6ae14cf4122797e128d97dba6b77bd84e119a7ee790e97ceedf887bbdf6fbda",
+      "archive": "b6ae14cf4122797e128d97dba6b77bd84e119a7ee790e97ceedf887bbdf6fbda"
+    },
+    "Zend/tests/deprecated_identifiers/is/constant_as_name.phpt": {
+      "rc4": "7f7d08de858b16ad9cdf6861271254cab4fee29aa8a63ea93654292b09b0c25c",
+      "rc7": "7f7d08de858b16ad9cdf6861271254cab4fee29aa8a63ea93654292b09b0c25c",
+      "archive": "7f7d08de858b16ad9cdf6861271254cab4fee29aa8a63ea93654292b09b0c25c"
+    },
+    "Zend/tests/deprecated_identifiers/is/constant_as_name_use.phpt": {
+      "rc4": "640ad3839923c2894ea00778f79fd2ae8249a4cc344b08ae6e189cd330287325",
+      "rc7": "640ad3839923c2894ea00778f79fd2ae8249a4cc344b08ae6e189cd330287325",
+      "archive": "640ad3839923c2894ea00778f79fd2ae8249a4cc344b08ae6e189cd330287325"
+    },
+    "Zend/tests/deprecated_identifiers/is/function_as_name.phpt": {
+      "rc4": "219c1ae32eb167590d751ec6631653999d792bbc7f682897999dc47aa66e95e0",
+      "rc7": "219c1ae32eb167590d751ec6631653999d792bbc7f682897999dc47aa66e95e0",
+      "archive": "219c1ae32eb167590d751ec6631653999d792bbc7f682897999dc47aa66e95e0"
+    },
+    "Zend/tests/deprecated_identifiers/is/function_as_name_use.phpt": {
+      "rc4": "6fdd0cf729125930f0ad13d550cb2426d76f9e8d8f407e31e4ab7c4b0a930f03",
+      "rc7": "6fdd0cf729125930f0ad13d550cb2426d76f9e8d8f407e31e4ab7c4b0a930f03",
+      "archive": "6fdd0cf729125930f0ad13d550cb2426d76f9e8d8f407e31e4ab7c4b0a930f03"
+    },
+    "Zend/tests/deprecated_identifiers/let/class_alias.phpt": {
+      "rc4": "cfb930a673156aee518b01eb1ff9237aec1610b614660a4c2464b79590612b92",
+      "rc7": "cfb930a673156aee518b01eb1ff9237aec1610b614660a4c2464b79590612b92",
+      "archive": "cfb930a673156aee518b01eb1ff9237aec1610b614660a4c2464b79590612b92"
+    },
+    "Zend/tests/deprecated_identifiers/let/class_as_name.phpt": {
+      "rc4": "681f8b2c7d6113982ab25c871d694817f479e1d54a7c0e209e83794a4a003378",
+      "rc7": "681f8b2c7d6113982ab25c871d694817f479e1d54a7c0e209e83794a4a003378",
+      "archive": "681f8b2c7d6113982ab25c871d694817f479e1d54a7c0e209e83794a4a003378"
+    },
+    "Zend/tests/deprecated_identifiers/let/class_as_name_use.phpt": {
+      "rc4": "48789fd738595bd8ccc6af5525bf997777b0b77b28c80c234401f6dbcef0c25b",
+      "rc7": "48789fd738595bd8ccc6af5525bf997777b0b77b28c80c234401f6dbcef0c25b",
+      "archive": "48789fd738595bd8ccc6af5525bf997777b0b77b28c80c234401f6dbcef0c25b"
+    },
+    "Zend/tests/deprecated_identifiers/let/constant_as_name.phpt": {
+      "rc4": "aacd5c6b4046ff55d70350b314663f7d946eb7fe6a044abbf8a6ee8653dee8eb",
+      "rc7": "aacd5c6b4046ff55d70350b314663f7d946eb7fe6a044abbf8a6ee8653dee8eb",
+      "archive": "aacd5c6b4046ff55d70350b314663f7d946eb7fe6a044abbf8a6ee8653dee8eb"
+    },
+    "Zend/tests/deprecated_identifiers/let/constant_as_name_use.phpt": {
+      "rc4": "4a37e07654b809da165cfba89ced36fd947d0f336f1fbe8394c1374f815cd742",
+      "rc7": "4a37e07654b809da165cfba89ced36fd947d0f336f1fbe8394c1374f815cd742",
+      "archive": "4a37e07654b809da165cfba89ced36fd947d0f336f1fbe8394c1374f815cd742"
+    },
+    "Zend/tests/deprecated_identifiers/let/function_as_name.phpt": {
+      "rc4": "adf1d070b39a05614d37473acec452507f306e1e36972ec8a51a288b326bd341",
+      "rc7": "adf1d070b39a05614d37473acec452507f306e1e36972ec8a51a288b326bd341",
+      "archive": "adf1d070b39a05614d37473acec452507f306e1e36972ec8a51a288b326bd341"
+    },
+    "Zend/tests/deprecated_identifiers/let/function_as_name_use.phpt": {
+      "rc4": "6c417a6c5bc59dc07f196c245cbf3a60bc9fcdd40e81e42c0db53f35fc7944ab",
+      "rc7": "6c417a6c5bc59dc07f196c245cbf3a60bc9fcdd40e81e42c0db53f35fc7944ab",
+      "archive": "6c417a6c5bc59dc07f196c245cbf3a60bc9fcdd40e81e42c0db53f35fc7944ab"
+    },
+    "Zend/tests/deprecated_identifiers/readonly/function_as_name.phpt": {
+      "rc4": "02aed6e8f30db0772d32b23cf5363f42bf2e7a9000349e0841f02a9620bc2505",
+      "rc7": "02aed6e8f30db0772d32b23cf5363f42bf2e7a9000349e0841f02a9620bc2505",
+      "archive": "02aed6e8f30db0772d32b23cf5363f42bf2e7a9000349e0841f02a9620bc2505"
+    },
+    "Zend/tests/deprecated_identifiers/readonly/function_as_name_use.phpt": {
+      "rc4": "bab8f8c8bdd6ccb2383e56ff75190b801cbaf133b2981a53a8ef37f5edf3073c",
+      "rc7": "bab8f8c8bdd6ccb2383e56ff75190b801cbaf133b2981a53a8ef37f5edf3073c",
+      "archive": "bab8f8c8bdd6ccb2383e56ff75190b801cbaf133b2981a53a8ef37f5edf3073c"
+    },
+    "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated.phpt": {
+      "rc4": "d89c6d4b3156b3d6bc4d367210d91a4801cb025d44dcd9b0b7caad0185d0b92e",
+      "rc7": "d89c6d4b3156b3d6bc4d367210d91a4801cb025d44dcd9b0b7caad0185d0b92e",
+      "archive": "d89c6d4b3156b3d6bc4d367210d91a4801cb025d44dcd9b0b7caad0185d0b92e"
+    },
+    "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_namespaced.phpt": {
+      "rc4": "f32598edff01357b8727e4986481f2d4fcbd00f3348fd4effcb99ac36aedf045",
+      "rc7": "f32598edff01357b8727e4986481f2d4fcbd00f3348fd4effcb99ac36aedf045",
+      "archive": "f32598edff01357b8727e4986481f2d4fcbd00f3348fd4effcb99ac36aedf045"
+    },
+    "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_throw_handler.phpt": {
+      "rc4": "61f2a26dbd5d8723fb53de1a67b94fa2f044507cdb30eba1f396247fc955978d",
+      "rc7": "61f2a26dbd5d8723fb53de1a67b94fa2f044507cdb30eba1f396247fc955978d",
+      "archive": "61f2a26dbd5d8723fb53de1a67b94fa2f044507cdb30eba1f396247fc955978d"
+    },
+    "Zend/tests/deprecated_identifiers/underscore/class_alias_underscore.phpt": {
+      "rc4": "4934365e7ebe996753af126cf8909370532cec073ec3a7160ff81ff5329c9a62",
+      "rc7": "4934365e7ebe996753af126cf8909370532cec073ec3a7160ff81ff5329c9a62",
+      "archive": "4934365e7ebe996753af126cf8909370532cec073ec3a7160ff81ff5329c9a62"
+    },
+    "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name.phpt": {
+      "rc4": "1d33a9224be39661c27a9aa9217d9fbfff35b6a5d8abaa36374851f98076f9ab",
+      "rc7": "1d33a9224be39661c27a9aa9217d9fbfff35b6a5d8abaa36374851f98076f9ab",
+      "archive": "1d33a9224be39661c27a9aa9217d9fbfff35b6a5d8abaa36374851f98076f9ab"
+    },
+    "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name_use.phpt": {
+      "rc4": "af348252c028f04309837ac9a597047adc25f20222d0bc6f92f584d8e8e0caf3",
+      "rc7": "af348252c028f04309837ac9a597047adc25f20222d0bc6f92f584d8e8e0caf3",
+      "archive": "af348252c028f04309837ac9a597047adc25f20222d0bc6f92f584d8e8e0caf3"
+    },
+    "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name.phpt": {
+      "rc4": "631e9ae9e9c8c9597734a24c3c6adf4e3ff252477b9e188f74a12d62c918e004",
+      "rc7": "631e9ae9e9c8c9597734a24c3c6adf4e3ff252477b9e188f74a12d62c918e004",
+      "archive": "631e9ae9e9c8c9597734a24c3c6adf4e3ff252477b9e188f74a12d62c918e004"
+    },
+    "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name_use.phpt": {
+      "rc4": "15021ed6ab675ab7f371804e07c4120f87ae829f279d6a23d5eca23ba2665ace",
+      "rc7": "15021ed6ab675ab7f371804e07c4120f87ae829f279d6a23d5eca23ba2665ace",
+      "archive": "15021ed6ab675ab7f371804e07c4120f87ae829f279d6a23d5eca23ba2665ace"
+    },
+    "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name.phpt": {
+      "rc4": "dcb0c11dcf6bd86b1c77756dfc5750f3d2c6cb6b5ceb825d5404945f2be932d1",
+      "rc7": "dcb0c11dcf6bd86b1c77756dfc5750f3d2c6cb6b5ceb825d5404945f2be932d1",
+      "archive": "dcb0c11dcf6bd86b1c77756dfc5750f3d2c6cb6b5ceb825d5404945f2be932d1"
+    },
+    "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name_use.phpt": {
+      "rc4": "94b7c52513691038e524c928c7b44a3d37231b3b236ec1d4cd84e173be4274ec",
+      "rc7": "94b7c52513691038e524c928c7b44a3d37231b3b236ec1d4cd84e173be4274ec",
+      "archive": "94b7c52513691038e524c928c7b44a3d37231b3b236ec1d4cd84e173be4274ec"
+    },
+    "Zend/tests/enum/debugInfo/backed_enum_value.phpt": {
+      "rc4": "469cd8410788eb5333bf44fe1187fc5a12aae15b5b69ebb8efaa35a82db5e609",
+      "rc7": "469cd8410788eb5333bf44fe1187fc5a12aae15b5b69ebb8efaa35a82db5e609",
+      "archive": "469cd8410788eb5333bf44fe1187fc5a12aae15b5b69ebb8efaa35a82db5e609"
+    },
+    "Zend/tests/enum/debugInfo/magic_method.phpt": {
+      "rc4": "bc3b052a4db8a9cb4d9edf34ba37ab50a0f3c264bad3d41b5691b3b4da48c278",
+      "rc7": "bc3b052a4db8a9cb4d9edf34ba37ab50a0f3c264bad3d41b5691b3b4da48c278",
+      "archive": "bc3b052a4db8a9cb4d9edf34ba37ab50a0f3c264bad3d41b5691b3b4da48c278"
+    },
+    "Zend/tests/enum/debugInfo/param_validation.phpt": {
+      "rc4": "82d5d1772b84bf0fbd972934a8b5f213e9dea3aa386e53a8c70749077823fd0b",
+      "rc7": "82d5d1772b84bf0fbd972934a8b5f213e9dea3aa386e53a8c70749077823fd0b",
+      "archive": "82d5d1772b84bf0fbd972934a8b5f213e9dea3aa386e53a8c70749077823fd0b"
+    },
+    "Zend/tests/enum/debugInfo/return_validation.phpt": {
+      "rc4": "fe8cd69410c37aa325c3f15df1614a16902556620f397e011601a87f1790f587",
+      "rc7": "fe8cd69410c37aa325c3f15df1614a16902556620f397e011601a87f1790f587",
+      "archive": "fe8cd69410c37aa325c3f15df1614a16902556620f397e011601a87f1790f587"
+    },
+    "Zend/tests/enum/debugInfo/visibility_validation.phpt": {
+      "rc4": "4ff36126a522128d922632e5336ef48605310dfd1b4e0d4f2dda81499229a7f4",
+      "rc7": "4ff36126a522128d922632e5336ef48605310dfd1b4e0d4f2dda81499229a7f4",
+      "archive": "4ff36126a522128d922632e5336ef48605310dfd1b4e0d4f2dda81499229a7f4"
+    },
+    "Zend/tests/functions/readonly_as_method_name_is_ok.phpt": {
+      "rc4": "f5e0e6057b49aadecab4bcc4ce603582fa6843a2bd503333dad9b7df6c5e0f29",
+      "rc7": "f5e0e6057b49aadecab4bcc4ce603582fa6843a2bd503333dad9b7df6c5e0f29",
+      "archive": "f5e0e6057b49aadecab4bcc4ce603582fa6843a2bd503333dad9b7df6c5e0f29"
+    },
+    "Zend/tests/gh10497_dim_arr.phpt": {
+      "rc4": "2d1d2cd168d79e38a63408e0766e8d00dc3da6869752d42dc74b21b564eff52f",
+      "rc7": "2d1d2cd168d79e38a63408e0766e8d00dc3da6869752d42dc74b21b564eff52f",
+      "archive": "2d1d2cd168d79e38a63408e0766e8d00dc3da6869752d42dc74b21b564eff52f"
+    },
+    "Zend/tests/gh10497_func_arg.phpt": {
+      "rc4": "5f846be583a1963c628f8d9cd28b042af80b03dde728ec4202e16690c20188cd",
+      "rc7": "5f846be583a1963c628f8d9cd28b042af80b03dde728ec4202e16690c20188cd",
+      "archive": "5f846be583a1963c628f8d9cd28b042af80b03dde728ec4202e16690c20188cd"
+    },
+    "Zend/tests/gh10497_non_object.phpt": {
+      "rc4": "0d65bd4505718a11fd8a27fa4f80aebc6040c82cade4cc978e9846d1977a2fa5",
+      "rc7": "0d65bd4505718a11fd8a27fa4f80aebc6040c82cade4cc978e9846d1977a2fa5",
+      "archive": "0d65bd4505718a11fd8a27fa4f80aebc6040c82cade4cc978e9846d1977a2fa5"
+    },
+    "Zend/tests/gh10497_write_targets.phpt": {
+      "rc4": "009d4e7ac76f872b898fec357d1292df057b193aaff5daf2e25905caf2714232",
+      "rc7": "009d4e7ac76f872b898fec357d1292df057b193aaff5daf2e25905caf2714232",
+      "archive": "009d4e7ac76f872b898fec357d1292df057b193aaff5daf2e25905caf2714232"
+    },
+    "Zend/tests/gh10497_write_targets_guardrail.phpt": {
+      "rc4": "0d5d10093dea351116871d675a3a4123e16ebfa71115e27b1932eb18219e5544",
+      "rc7": "0d5d10093dea351116871d675a3a4123e16ebfa71115e27b1932eb18219e5544",
+      "archive": "0d5d10093dea351116871d675a3a4123e16ebfa71115e27b1932eb18219e5544"
+    },
+    "Zend/tests/gh20628_001.phpt": {
+      "rc4": "29ed8fb245de9ceff22098cb13fef4307513c665cf05b2fc9ed2f82ecb4f2ef5",
+      "rc7": "29ed8fb245de9ceff22098cb13fef4307513c665cf05b2fc9ed2f82ecb4f2ef5",
+      "archive": "29ed8fb245de9ceff22098cb13fef4307513c665cf05b2fc9ed2f82ecb4f2ef5"
+    },
+    "Zend/tests/magic_methods/constructor_destructor_return.phpt": {
+      "rc4": "180c1af24f8fd7e183e1f98b9edf71148a38335e8601abc30bbc5efe48c25f90",
+      "rc7": "180c1af24f8fd7e183e1f98b9edf71148a38335e8601abc30bbc5efe48c25f90",
+      "archive": "180c1af24f8fd7e183e1f98b9edf71148a38335e8601abc30bbc5efe48c25f90"
+    },
+    "Zend/tests/partial_application/clone.phpt": {
+      "rc4": "2fc00f119fd47e3a897440f7a4d3c6b85dd5109f7ed801dc53724cfb19e22c68",
+      "rc7": "2fc00f119fd47e3a897440f7a4d3c6b85dd5109f7ed801dc53724cfb19e22c68",
+      "archive": "2fc00f119fd47e3a897440f7a4d3c6b85dd5109f7ed801dc53724cfb19e22c68"
+    },
+    "Zend/tests/partial_application/compile_errors_001.phpt": {
+      "rc4": "edec00ff601d5fe160adcfbe21e1e4ad0067bb30da41526e36f7123f7220b979",
+      "rc7": "edec00ff601d5fe160adcfbe21e1e4ad0067bb30da41526e36f7123f7220b979",
+      "archive": "edec00ff601d5fe160adcfbe21e1e4ad0067bb30da41526e36f7123f7220b979"
+    },
+    "Zend/tests/partial_application/compile_errors_002.phpt": {
+      "rc4": "c0d2a439a35e8dc88e262a32bbaaeb1aa882fef27e5596032c826fc0b18a87d6",
+      "rc7": "c0d2a439a35e8dc88e262a32bbaaeb1aa882fef27e5596032c826fc0b18a87d6",
+      "archive": "c0d2a439a35e8dc88e262a32bbaaeb1aa882fef27e5596032c826fc0b18a87d6"
+    },
+    "Zend/tests/partial_application/compile_errors_003.phpt": {
+      "rc4": "e8bde981b21cabf7bbe528c21b3e9cc1f7c98b07541874835f988171bf608390",
+      "rc7": "e8bde981b21cabf7bbe528c21b3e9cc1f7c98b07541874835f988171bf608390",
+      "archive": "e8bde981b21cabf7bbe528c21b3e9cc1f7c98b07541874835f988171bf608390"
+    },
+    "Zend/tests/partial_application/compile_errors_004.phpt": {
+      "rc4": "e9ae78ffb2085295d6cc2108c8e6fff769bd67dac8b812a9d5a6bd94be5719e3",
+      "rc7": "e9ae78ffb2085295d6cc2108c8e6fff769bd67dac8b812a9d5a6bd94be5719e3",
+      "archive": "e9ae78ffb2085295d6cc2108c8e6fff769bd67dac8b812a9d5a6bd94be5719e3"
+    },
+    "Zend/tests/partial_application/compile_errors_005.phpt": {
+      "rc4": "2604219436b1e9245fb39203ecaf511cf3ce4d0e36a59a01e2740172a279830b",
+      "rc7": "2604219436b1e9245fb39203ecaf511cf3ce4d0e36a59a01e2740172a279830b",
+      "archive": "2604219436b1e9245fb39203ecaf511cf3ce4d0e36a59a01e2740172a279830b"
+    },
+    "Zend/tests/partial_application/compile_errors_006.phpt": {
+      "rc4": "bdbcd72e7cbb962c02b83b3b1981a98c61d32d88850fdc91c82ddc9271183b77",
+      "rc7": "bdbcd72e7cbb962c02b83b3b1981a98c61d32d88850fdc91c82ddc9271183b77",
+      "archive": "bdbcd72e7cbb962c02b83b3b1981a98c61d32d88850fdc91c82ddc9271183b77"
+    },
+    "Zend/tests/partial_application/constexpr_001.phpt": {
+      "rc4": "a6aaa6bca716959dbb1deefbc0a21c759f59a0c33d1d851e233da1d4bbc93f97",
+      "rc7": "a6aaa6bca716959dbb1deefbc0a21c759f59a0c33d1d851e233da1d4bbc93f97",
+      "archive": "a6aaa6bca716959dbb1deefbc0a21c759f59a0c33d1d851e233da1d4bbc93f97"
+    },
+    "Zend/tests/partial_application/constexpr_002.phpt": {
+      "rc4": "8de890bcba8c0c90cc6aae998c77694636152c1e397317f6fa2b2c48ff88608a",
+      "rc7": "8de890bcba8c0c90cc6aae998c77694636152c1e397317f6fa2b2c48ff88608a",
+      "archive": "8de890bcba8c0c90cc6aae998c77694636152c1e397317f6fa2b2c48ff88608a"
+    },
+    "Zend/tests/partial_application/constexpr_003.phpt": {
+      "rc4": "1769eaed6a680c739cc5e6b146c2f01fbfa670c13ad77de3fbaa31614061b604",
+      "rc7": "1769eaed6a680c739cc5e6b146c2f01fbfa670c13ad77de3fbaa31614061b604",
+      "archive": "1769eaed6a680c739cc5e6b146c2f01fbfa670c13ad77de3fbaa31614061b604"
+    },
+    "Zend/tests/partial_application/constexpr_004.phpt": {
+      "rc4": "1c03f4e96d4441573c5f9e9216028640ceb7368713600c429613628038548a1e",
+      "rc7": "1c03f4e96d4441573c5f9e9216028640ceb7368713600c429613628038548a1e",
+      "archive": "1c03f4e96d4441573c5f9e9216028640ceb7368713600c429613628038548a1e"
+    },
+    "Zend/tests/partial_application/constexpr_005.phpt": {
+      "rc4": "745f7c091bf2a366cea866ebd60c443cfb754d7e3e02029009eb45e909196adb",
+      "rc7": "745f7c091bf2a366cea866ebd60c443cfb754d7e3e02029009eb45e909196adb",
+      "archive": "745f7c091bf2a366cea866ebd60c443cfb754d7e3e02029009eb45e909196adb"
+    },
+    "Zend/tests/partial_application/constexpr_006.phpt": {
+      "rc4": "860c673653274738feb788f8f64ddddaefeb9a53b4e3924dd0369c09d9732217",
+      "rc7": "860c673653274738feb788f8f64ddddaefeb9a53b4e3924dd0369c09d9732217",
+      "archive": "860c673653274738feb788f8f64ddddaefeb9a53b4e3924dd0369c09d9732217"
+    },
+    "Zend/tests/partial_application/constexpr_007.phpt": {
+      "rc4": "3791f691cfb5c225d1e81c971d5a637c45bab84ceb937ad5b5fe27268b7fd161",
+      "rc7": "3791f691cfb5c225d1e81c971d5a637c45bab84ceb937ad5b5fe27268b7fd161",
+      "archive": "3791f691cfb5c225d1e81c971d5a637c45bab84ceb937ad5b5fe27268b7fd161"
+    },
+    "Zend/tests/partial_application/constexpr_008.phpt": {
+      "rc4": "96bc0053ee9aa0ff7e90e3e1d9e1be9f8f0b0b1283d9f6e3ea9d4684973ec6af",
+      "rc7": "96bc0053ee9aa0ff7e90e3e1d9e1be9f8f0b0b1283d9f6e3ea9d4684973ec6af",
+      "archive": "96bc0053ee9aa0ff7e90e3e1d9e1be9f8f0b0b1283d9f6e3ea9d4684973ec6af"
+    },
+    "Zend/tests/partial_application/named_placeholders.phpt": {
+      "rc4": "20a8bc9708277436af082cef456c00b6359146e28d2fcd0237bf37968ae33f94",
+      "rc7": "20a8bc9708277436af082cef456c00b6359146e28d2fcd0237bf37968ae33f94",
+      "archive": "20a8bc9708277436af082cef456c00b6359146e28d2fcd0237bf37968ae33f94"
+    },
+    "Zend/tests/partial_application/optional_placeholder.phpt": {
+      "rc4": "35e01e4187408b47d56db98d63fb60c9bc9d898f118515ab7790311eb4ab06e5",
+      "rc7": "35e01e4187408b47d56db98d63fb60c9bc9d898f118515ab7790311eb4ab06e5",
+      "archive": "35e01e4187408b47d56db98d63fb60c9bc9d898f118515ab7790311eb4ab06e5"
+    },
+    "Zend/tests/partial_application/rfc_examples_const_expr.phpt": {
+      "rc4": "a472adcc416e7013013e94bbcc1ae830a165063cbebcd7fff82750b8cc512947",
+      "rc7": "a472adcc416e7013013e94bbcc1ae830a165063cbebcd7fff82750b8cc512947",
+      "archive": "a472adcc416e7013013e94bbcc1ae830a165063cbebcd7fff82750b8cc512947"
+    },
+    "Zend/tests/partial_application/rfc_examples_overview.phpt": {
+      "rc4": "96f8a83bac718695a5bde39b39107e5ada3be19e69308b12ede1e22b598bcade",
+      "rc7": "96f8a83bac718695a5bde39b39107e5ada3be19e69308b12ede1e22b598bcade",
+      "archive": "96f8a83bac718695a5bde39b39107e5ada3be19e69308b12ede1e22b598bcade"
+    },
+    "Zend/tests/readonly_props/readonly_with_default.phpt": {
+      "rc4": "e07257a5b03c3a6324939cab330174f7791b9f04055260ba26784115fcae16ed",
+      "rc7": "e07257a5b03c3a6324939cab330174f7791b9f04055260ba26784115fcae16ed",
+      "archive": "e07257a5b03c3a6324939cab330174f7791b9f04055260ba26784115fcae16ed"
+    },
+    "Zend/tests/readonly_props/readonly_with_default_inheritance.phpt": {
+      "rc4": "50e2febce4e3d9b3e416a8e569e91f070dd8182f42ef40fa6f680dfb3abd417a",
+      "rc7": "50e2febce4e3d9b3e416a8e569e91f070dd8182f42ef40fa6f680dfb3abd417a",
+      "archive": "50e2febce4e3d9b3e416a8e569e91f070dd8182f42ef40fa6f680dfb3abd417a"
+    },
+    "Zend/tests/return_types/042.phpt": {
+      "rc4": "657396748b4cd43cf82d1f7d468e37eb4ac596c81349c9d021e10dc76c9fd026",
+      "rc7": "657396748b4cd43cf82d1f7d468e37eb4ac596c81349c9d021e10dc76c9fd026",
+      "archive": "657396748b4cd43cf82d1f7d468e37eb4ac596c81349c9d021e10dc76c9fd026"
+    },
+    "Zend/tests/try/finally_return_deprecation.phpt": {
+      "rc4": "01449826d418c2c04d7672d2135ee8de16d7b5053f620dfce7e4ba8bb556fdd4",
+      "rc7": "01449826d418c2c04d7672d2135ee8de16d7b5053f620dfce7e4ba8bb556fdd4",
+      "archive": "01449826d418c2c04d7672d2135ee8de16d7b5053f620dfce7e4ba8bb556fdd4"
+    },
+    "Zend/zend.c": {
+      "rc4": "1d3ba46206a922db233fe7b619e50e700ab76ced877d86be7338aeec1c9b479e",
+      "rc7": "feb991d8cdb4e25edf4974fa5eaa7f19fe2294b79255069dcf03801d081d5f97",
+      "archive": "feb991d8cdb4e25edf4974fa5eaa7f19fe2294b79255069dcf03801d081d5f97"
+    },
+    "Zend/zend.h": {
+      "rc4": "5e46f9e2eeada5d4a1a5aebb83e8f20bf64083a8936794ae276d22dea36aa73d",
+      "rc7": "818deeefd1c9977ea69da015bc9cbec30015e6877764d817bbda762e23ef0ec4",
+      "archive": "818deeefd1c9977ea69da015bc9cbec30015e6877764d817bbda762e23ef0ec4"
+    },
+    "Zend/zend_API.c": {
+      "rc4": "666d6f9c311bef02b50a5cfe09ddf66fac310834a88c94dac9be37a83ee238db",
+      "rc7": "2f11e9f544581e120675d05b94bfe502a20f2e2683d6876c4457abd7de3e55df",
+      "archive": "2f11e9f544581e120675d05b94bfe502a20f2e2683d6876c4457abd7de3e55df"
+    },
+    "Zend/zend_API.h": {
+      "rc4": "d29471309db862ab42d8acb900e99673cf10ee15e906371addcc7f6d477ffe1d",
+      "rc7": "d29471309db862ab42d8acb900e99673cf10ee15e906371addcc7f6d477ffe1d",
+      "archive": "d29471309db862ab42d8acb900e99673cf10ee15e906371addcc7f6d477ffe1d"
+    },
+    "Zend/zend_alloc.c": {
+      "rc4": "5790d29d02751306a569670a14fae716eb7c566f97959a4d62007168de7946df",
+      "rc7": "fd15d0d422d4354f6b600ad9e09f1d11c89e2b75e4b8f2f44b3259fe382fc418",
+      "archive": "fd15d0d422d4354f6b600ad9e09f1d11c89e2b75e4b8f2f44b3259fe382fc418"
+    },
+    "Zend/zend_alloc.h": {
+      "rc4": "92130e04c89ef5ce72658c0cbc6c59deafc5b4a3611ca4b666f5bc8e8b46c196",
+      "rc7": "92130e04c89ef5ce72658c0cbc6c59deafc5b4a3611ca4b666f5bc8e8b46c196",
+      "archive": "92130e04c89ef5ce72658c0cbc6c59deafc5b4a3611ca4b666f5bc8e8b46c196"
+    },
+    "Zend/zend_alloc_sizes.h": {
+      "rc4": "6adf12a0d0fc48b21a001ad543ccd222ea0774981ddd47f05151b3c3ac5142d5",
+      "rc7": "6adf12a0d0fc48b21a001ad543ccd222ea0774981ddd47f05151b3c3ac5142d5",
+      "archive": "6adf12a0d0fc48b21a001ad543ccd222ea0774981ddd47f05151b3c3ac5142d5"
+    },
+    "Zend/zend_arena.h": {
+      "rc4": "f28ab6f427d89ec0937178c0cc0b76cc4e5b7a4e470c1e0f4719d24b11f96b37",
+      "rc7": "f28ab6f427d89ec0937178c0cc0b76cc4e5b7a4e470c1e0f4719d24b11f96b37",
+      "archive": "f28ab6f427d89ec0937178c0cc0b76cc4e5b7a4e470c1e0f4719d24b11f96b37"
+    },
+    "Zend/zend_ast.c": {
+      "rc4": "e6e793245e60d377f109b3d1e154665e84ab9a5cc60736576c4ff89d99eee5a9",
+      "rc7": "e38008adfbb5d1aab0039074b4099aee2482c13bea170cec08e9347747b59094",
+      "archive": "e38008adfbb5d1aab0039074b4099aee2482c13bea170cec08e9347747b59094"
+    },
+    "Zend/zend_ast.h": {
+      "rc4": "b207e9873e492ca95b13b580ce8683258d5a6b4f1e5b5034ed2eb16a38e4a3f2",
+      "rc7": "b207e9873e492ca95b13b580ce8683258d5a6b4f1e5b5034ed2eb16a38e4a3f2",
+      "archive": "b207e9873e492ca95b13b580ce8683258d5a6b4f1e5b5034ed2eb16a38e4a3f2"
+    },
+    "Zend/zend_atomic.c": {
+      "rc4": "5f972fe82b20712ddb4bfc6db60f42c80dd51792c65b07216a70dec967543bff",
+      "rc7": "5f972fe82b20712ddb4bfc6db60f42c80dd51792c65b07216a70dec967543bff",
+      "archive": "5f972fe82b20712ddb4bfc6db60f42c80dd51792c65b07216a70dec967543bff"
+    },
+    "Zend/zend_atomic.h": {
+      "rc4": "36d95e75b80fcb26de82411ec3f376ec2c0233e574ee46aae257bc5beb47e8ac",
+      "rc7": "87777a12a007cd91c543eb064c8f24bc71f9ea0f171b0322a3056f7fcf906d5a",
+      "archive": "87777a12a007cd91c543eb064c8f24bc71f9ea0f171b0322a3056f7fcf906d5a"
+    },
+    "Zend/zend_attributes.c": {
+      "rc4": "2a6411820e3a64ed650c7a75c229ed8ce789c62985220fb24e0f7f09a8ced5ab",
+      "rc7": "f5b41d9165e85125830ab434a038afd8db280ef5b3514cd7d7809264b1b61e21",
+      "archive": "f5b41d9165e85125830ab434a038afd8db280ef5b3514cd7d7809264b1b61e21"
+    },
+    "Zend/zend_attributes.h": {
+      "rc4": "ec93771ee62aecee787951184f6536f9eb55006afac77a36716f5da45efdc83a",
+      "rc7": "ec93771ee62aecee787951184f6536f9eb55006afac77a36716f5da45efdc83a",
+      "archive": "ec93771ee62aecee787951184f6536f9eb55006afac77a36716f5da45efdc83a"
+    },
+    "Zend/zend_attributes.stub.php": {
+      "rc4": "bb3078146b4bda3f188953065e4dfaeda688d85d39871bcd57c4c14b810e5749",
+      "rc7": "bb3078146b4bda3f188953065e4dfaeda688d85d39871bcd57c4c14b810e5749",
+      "archive": "bb3078146b4bda3f188953065e4dfaeda688d85d39871bcd57c4c14b810e5749"
+    },
+    "Zend/zend_attributes_arginfo.h": {
+      "rc4": "a003d88c6bb6cebc083703b1c23957770d63f0dd2c02ad26bca55519f94f3c3a",
+      "rc7": "a003d88c6bb6cebc083703b1c23957770d63f0dd2c02ad26bca55519f94f3c3a",
+      "archive": "a003d88c6bb6cebc083703b1c23957770d63f0dd2c02ad26bca55519f94f3c3a"
+    },
+    "Zend/zend_autoload.c": {
+      "rc4": "aa9c9bd1963cc16198c12c6bd82123115ae32346156b6e2bbd62f1ce0fe815b6",
+      "rc7": "aa9c9bd1963cc16198c12c6bd82123115ae32346156b6e2bbd62f1ce0fe815b6",
+      "archive": "aa9c9bd1963cc16198c12c6bd82123115ae32346156b6e2bbd62f1ce0fe815b6"
+    },
+    "Zend/zend_autoload.h": {
+      "rc4": "114117ede4d3021faa4e993b58967fd5dc36999a7ebfa937f6d2043cca9e1e75",
+      "rc7": "114117ede4d3021faa4e993b58967fd5dc36999a7ebfa937f6d2043cca9e1e75",
+      "archive": "114117ede4d3021faa4e993b58967fd5dc36999a7ebfa937f6d2043cca9e1e75"
+    },
+    "Zend/zend_bitset.h": {
+      "rc4": "6eab9242c7af6d9513398f6196ccbae7c384e6655c20aa425efa65611146a8da",
+      "rc7": "6eab9242c7af6d9513398f6196ccbae7c384e6655c20aa425efa65611146a8da",
+      "archive": "6eab9242c7af6d9513398f6196ccbae7c384e6655c20aa425efa65611146a8da"
+    },
+    "Zend/zend_build.h": {
+      "rc4": "c543f3b93b244d4301ba48c5e087f3d9c5a542e73034379360584832b40e9136",
+      "rc7": "c543f3b93b244d4301ba48c5e087f3d9c5a542e73034379360584832b40e9136",
+      "archive": "c543f3b93b244d4301ba48c5e087f3d9c5a542e73034379360584832b40e9136"
+    },
+    "Zend/zend_builtin_functions.c": {
+      "rc4": "ec4428dd53248e01f63975a6f1fa17588aaa49877e4865fde83155206e65cdb0",
+      "rc7": "f2c1745facd0df2e277f132689457a0d5c98de2d6b775649096e4b3051375653",
+      "archive": "f2c1745facd0df2e277f132689457a0d5c98de2d6b775649096e4b3051375653"
+    },
+    "Zend/zend_builtin_functions.h": {
+      "rc4": "d8753d9b29400f56da839950d59d57b50fa14bcb21270c3af565c597ddbe2d52",
+      "rc7": "d8753d9b29400f56da839950d59d57b50fa14bcb21270c3af565c597ddbe2d52",
+      "archive": "d8753d9b29400f56da839950d59d57b50fa14bcb21270c3af565c597ddbe2d52"
+    },
+    "Zend/zend_builtin_functions.stub.php": {
+      "rc4": "94147568635c7a2d4df72aaeab00c6e769dc8d161f2f1874360e43bfd4304add",
+      "rc7": "94147568635c7a2d4df72aaeab00c6e769dc8d161f2f1874360e43bfd4304add",
+      "archive": "94147568635c7a2d4df72aaeab00c6e769dc8d161f2f1874360e43bfd4304add"
+    },
+    "Zend/zend_builtin_functions_arginfo.h": {
+      "rc4": "a7a11b0007293114935cad9b10645d512b2e2fe4829a6537b70490156d5f83c6",
+      "rc7": "a7a11b0007293114935cad9b10645d512b2e2fe4829a6537b70490156d5f83c6",
+      "archive": "a7a11b0007293114935cad9b10645d512b2e2fe4829a6537b70490156d5f83c6"
+    },
+    "Zend/zend_call_stack.c": {
+      "rc4": "973b825a6ee8f146760bf65ad8ff9525bde8a4339fa09a6d06a94fe2a6f89ff3",
+      "rc7": "973b825a6ee8f146760bf65ad8ff9525bde8a4339fa09a6d06a94fe2a6f89ff3",
+      "archive": "973b825a6ee8f146760bf65ad8ff9525bde8a4339fa09a6d06a94fe2a6f89ff3"
+    },
+    "Zend/zend_call_stack.h": {
+      "rc4": "6f965d63d42d1927883870858de41147c6e50bdbdd035f3df1632a5732532270",
+      "rc7": "6f965d63d42d1927883870858de41147c6e50bdbdd035f3df1632a5732532270",
+      "archive": "6f965d63d42d1927883870858de41147c6e50bdbdd035f3df1632a5732532270"
+    },
+    "Zend/zend_closures.c": {
+      "rc4": "776b1f200807fc4f4b81df3dcb7ebb790346ba067bd94230ad8cf115c3d18bb4",
+      "rc7": "bb1978411235b000f2c2e24a9b7f4c5476fd4631b9208d6069094cfc19b7bc93",
+      "archive": "bb1978411235b000f2c2e24a9b7f4c5476fd4631b9208d6069094cfc19b7bc93"
+    },
+    "Zend/zend_closures.h": {
+      "rc4": "4ac4a9f418d285fd1303c2dbe04deb72185c35d38d3b1bfdb63e815a8d363e1d",
+      "rc7": "3f1f105d5e2c9d1446740e949480ff513bf3d946e05461cfdf9d8a753c08f00e",
+      "archive": "3f1f105d5e2c9d1446740e949480ff513bf3d946e05461cfdf9d8a753c08f00e"
+    },
+    "Zend/zend_closures_arginfo.h": {
+      "rc4": "69c6bc7a3ceffed5098442404bb64fc12a8688db012c8a1d80e61424081496f1",
+      "rc7": "69c6bc7a3ceffed5098442404bb64fc12a8688db012c8a1d80e61424081496f1",
+      "archive": "69c6bc7a3ceffed5098442404bb64fc12a8688db012c8a1d80e61424081496f1"
+    },
+    "Zend/zend_compile.c": {
+      "rc4": "377701d28fa678b41b2d8ca7ffeeb34d9f6e1b7aa953830d7f8eec57f34f34cd",
+      "rc7": "d2b57b75a6a5585a71be3d244428a8a13b7632b02e933ee9db44274b86c74f5f",
+      "archive": "d2b57b75a6a5585a71be3d244428a8a13b7632b02e933ee9db44274b86c74f5f"
+    },
+    "Zend/zend_compile.h": {
+      "rc4": "3a43384f3c49a629ddc11de2e2303d4cd710b8ec699cdfcf9d5092353831e02d",
+      "rc7": "3a43384f3c49a629ddc11de2e2303d4cd710b8ec699cdfcf9d5092353831e02d",
+      "archive": "3a43384f3c49a629ddc11de2e2303d4cd710b8ec699cdfcf9d5092353831e02d"
+    },
+    "Zend/zend_config.w32.h": {
+      "rc4": "002a072e1b08fafad41ad032f202a0e1dbb851ab863b2a0423c3c7cece134e07",
+      "rc7": "002a072e1b08fafad41ad032f202a0e1dbb851ab863b2a0423c3c7cece134e07",
+      "archive": "002a072e1b08fafad41ad032f202a0e1dbb851ab863b2a0423c3c7cece134e07"
+    },
+    "Zend/zend_constants.c": {
+      "rc4": "6c5cd44f8d3def91202d199f4e05f3d81ebba6beafdbe24f894740b8817e6985",
+      "rc7": "648df17ee29f60962f20635ba98518b5f4da66396bb4435f7a2b73a9c5711bde",
+      "archive": "648df17ee29f60962f20635ba98518b5f4da66396bb4435f7a2b73a9c5711bde"
+    },
+    "Zend/zend_constants.h": {
+      "rc4": "e1f03a37c5289de3679c3be20dde658281bf5077a195806dc74aa946f5b0b024",
+      "rc7": "e1f03a37c5289de3679c3be20dde658281bf5077a195806dc74aa946f5b0b024",
+      "archive": "e1f03a37c5289de3679c3be20dde658281bf5077a195806dc74aa946f5b0b024"
+    },
+    "Zend/zend_constants_arginfo.h": {
+      "rc4": "be23590451303c907476419c071df06eea49b828b2e6e26bc39d127215e198d7",
+      "rc7": "be23590451303c907476419c071df06eea49b828b2e6e26bc39d127215e198d7",
+      "archive": "be23590451303c907476419c071df06eea49b828b2e6e26bc39d127215e198d7"
+    },
+    "Zend/zend_cpuinfo.c": {
+      "rc4": "4d90c94f226b6c093d9b6aebaed0d69a5c4a4c87820ef7e4e621bb502946c1f5",
+      "rc7": "4d90c94f226b6c093d9b6aebaed0d69a5c4a4c87820ef7e4e621bb502946c1f5",
+      "archive": "4d90c94f226b6c093d9b6aebaed0d69a5c4a4c87820ef7e4e621bb502946c1f5"
+    },
+    "Zend/zend_cpuinfo.h": {
+      "rc4": "e82493728864ea4cbcddab939e922d9621fa7a3ad598a935199c4f2f132c3a19",
+      "rc7": "e82493728864ea4cbcddab939e922d9621fa7a3ad598a935199c4f2f132c3a19",
+      "archive": "e82493728864ea4cbcddab939e922d9621fa7a3ad598a935199c4f2f132c3a19"
+    },
+    "Zend/zend_default_classes.c": {
+      "rc4": "8e2af5a233e5a23745ad9f601233d20adbdf31c5a1c4b1aaa5ef495dc55c53b1",
+      "rc7": "8e2af5a233e5a23745ad9f601233d20adbdf31c5a1c4b1aaa5ef495dc55c53b1",
+      "archive": "8e2af5a233e5a23745ad9f601233d20adbdf31c5a1c4b1aaa5ef495dc55c53b1"
+    },
+    "Zend/zend_dtrace.c": {
+      "rc4": "1f3b0092bf995a6584f67246c80d0311924877899f98e01a3dad6eb7d2d11b22",
+      "rc7": "1f3b0092bf995a6584f67246c80d0311924877899f98e01a3dad6eb7d2d11b22",
+      "archive": "1f3b0092bf995a6584f67246c80d0311924877899f98e01a3dad6eb7d2d11b22"
+    },
+    "Zend/zend_dtrace.h": {
+      "rc4": "e99bfe06db76f506309324fd89790b2bdccc88b8980fb3d030fef8af92b77903",
+      "rc7": "e99bfe06db76f506309324fd89790b2bdccc88b8980fb3d030fef8af92b77903",
+      "archive": "e99bfe06db76f506309324fd89790b2bdccc88b8980fb3d030fef8af92b77903"
+    },
+    "Zend/zend_enum.c": {
+      "rc4": "edd67c50fc77a9bff98845272d9ac06c9867f0410b5aa8fe1c7e942dc71f53f8",
+      "rc7": "dc33cb0ac00a7d5dd820c9ee4a039ebf2e38b78728ba4db7bc1e37e34428f894",
+      "archive": "dc33cb0ac00a7d5dd820c9ee4a039ebf2e38b78728ba4db7bc1e37e34428f894"
+    },
+    "Zend/zend_enum.h": {
+      "rc4": "6763953d631533b4f05033f95a8ace3bedc57f866a465c2f560d8c7b7121760b",
+      "rc7": "6763953d631533b4f05033f95a8ace3bedc57f866a465c2f560d8c7b7121760b",
+      "archive": "6763953d631533b4f05033f95a8ace3bedc57f866a465c2f560d8c7b7121760b"
+    },
+    "Zend/zend_enum_arginfo.h": {
+      "rc4": "342305ccf7f825a2070bad878d2d9e4b2446c51effd6516fac80550d7b614e99",
+      "rc7": "342305ccf7f825a2070bad878d2d9e4b2446c51effd6516fac80550d7b614e99",
+      "archive": "342305ccf7f825a2070bad878d2d9e4b2446c51effd6516fac80550d7b614e99"
+    },
+    "Zend/zend_errors.h": {
+      "rc4": "d8758ae0d320b6d37b76bf3ac41370b26e4345d1bb384126ea4518670ce35af7",
+      "rc7": "d8758ae0d320b6d37b76bf3ac41370b26e4345d1bb384126ea4518670ce35af7",
+      "archive": "d8758ae0d320b6d37b76bf3ac41370b26e4345d1bb384126ea4518670ce35af7"
+    },
+    "Zend/zend_exceptions.c": {
+      "rc4": "bdf9c74d56282960d65c05d509ed6123f30cbf9eb0a9bec965025f3555c18638",
+      "rc7": "be62c2eac4d44c9ff399e8ca64eb4c59935759fcf6086855f81cb546dbd6d2b9",
+      "archive": "be62c2eac4d44c9ff399e8ca64eb4c59935759fcf6086855f81cb546dbd6d2b9"
+    },
+    "Zend/zend_exceptions.h": {
+      "rc4": "a6c208a201875f1df672ca6e6cc8798d38412bbdda4048c9ce0dc9da9b732d4e",
+      "rc7": "a6c208a201875f1df672ca6e6cc8798d38412bbdda4048c9ce0dc9da9b732d4e",
+      "archive": "a6c208a201875f1df672ca6e6cc8798d38412bbdda4048c9ce0dc9da9b732d4e"
+    },
+    "Zend/zend_exceptions_arginfo.h": {
+      "rc4": "2034af345a97e9a061a55d358d86fa9b6808b41f718c4ac52fc86bbc23d3f78f",
+      "rc7": "2034af345a97e9a061a55d358d86fa9b6808b41f718c4ac52fc86bbc23d3f78f",
+      "archive": "2034af345a97e9a061a55d358d86fa9b6808b41f718c4ac52fc86bbc23d3f78f"
+    },
+    "Zend/zend_execute.c": {
+      "rc4": "14d16d4923caae8ff3432b236890429bc61914f6c926465e89a06e6e830f518c",
+      "rc7": "fb04c0c077bba2dd90cc2733c2b564bcb9e053fa52ece222fdbc7ce55d3a49a3",
+      "archive": "fb04c0c077bba2dd90cc2733c2b564bcb9e053fa52ece222fdbc7ce55d3a49a3"
+    },
+    "Zend/zend_execute.h": {
+      "rc4": "4d5fce584a1088c05773065d6ae76a46ab4bb9d24c7bf18ef5a616a3b562044e",
+      "rc7": "1a80057b0575ffb17c99541da517838fa4975392641f63e5c2b05c7a819aca49",
+      "archive": "1a80057b0575ffb17c99541da517838fa4975392641f63e5c2b05c7a819aca49"
+    },
+    "Zend/zend_execute_API.c": {
+      "rc4": "6968137da4c032b384a9f3e7abf955654468f024f06d038ece6f4e1cc1849230",
+      "rc7": "2dc6028930616bce76a0273304294684824520f63a71ea26730b08933b9fe8ce",
+      "archive": "2dc6028930616bce76a0273304294684824520f63a71ea26730b08933b9fe8ce"
+    },
+    "Zend/zend_extensions.c": {
+      "rc4": "7d6398f61a94ded9edfca46047d6edf030105c7ec7c8e947dbdf27adc74b5191",
+      "rc7": "7d6398f61a94ded9edfca46047d6edf030105c7ec7c8e947dbdf27adc74b5191",
+      "archive": "7d6398f61a94ded9edfca46047d6edf030105c7ec7c8e947dbdf27adc74b5191"
+    },
+    "Zend/zend_extensions.h": {
+      "rc4": "7d47202e6f01f1f3dacc885418ec7cfb66af891f009d5cb13b6a7953530088b8",
+      "rc7": "a0334b3415137ba0ca8a2a1120e1b8afb95352fefac7946bc716293c71644795",
+      "archive": "a0334b3415137ba0ca8a2a1120e1b8afb95352fefac7946bc716293c71644795"
+    },
+    "Zend/zend_fibers.c": {
+      "rc4": "02a25f484f51adb16d400737ae909797c64cd5a4b755e166daeb1a98f475a6d1",
+      "rc7": "d3001262d197c0b6877fc21f86f85317c358780b8607adbc69cffdca09cfba13",
+      "archive": "d3001262d197c0b6877fc21f86f85317c358780b8607adbc69cffdca09cfba13"
+    },
+    "Zend/zend_fibers.h": {
+      "rc4": "d4cd5165ff2b9e3a692dd3a2fa044f4d420140184ff052c97fdcd0837421731a",
+      "rc7": "d4cd5165ff2b9e3a692dd3a2fa044f4d420140184ff052c97fdcd0837421731a",
+      "archive": "d4cd5165ff2b9e3a692dd3a2fa044f4d420140184ff052c97fdcd0837421731a"
+    },
+    "Zend/zend_fibers_arginfo.h": {
+      "rc4": "176e2b15e7da931a90a96964d62d1110fb94fa3cfb9627f43951fbca2e7a8650",
+      "rc7": "176e2b15e7da931a90a96964d62d1110fb94fa3cfb9627f43951fbca2e7a8650",
+      "archive": "176e2b15e7da931a90a96964d62d1110fb94fa3cfb9627f43951fbca2e7a8650"
+    },
+    "Zend/zend_float.c": {
+      "rc4": "91cdf5b06a469aa35be369507655eb95e3895a2a252a896f8be7a40c20fc52f4",
+      "rc7": "91cdf5b06a469aa35be369507655eb95e3895a2a252a896f8be7a40c20fc52f4",
+      "archive": "91cdf5b06a469aa35be369507655eb95e3895a2a252a896f8be7a40c20fc52f4"
+    },
+    "Zend/zend_float.h": {
+      "rc4": "85cdd20cc77cffa594f1c4b359534cb92cf2d5f4f4bd9a742e32d83b6d54b485",
+      "rc7": "85cdd20cc77cffa594f1c4b359534cb92cf2d5f4f4bd9a742e32d83b6d54b485",
+      "archive": "85cdd20cc77cffa594f1c4b359534cb92cf2d5f4f4bd9a742e32d83b6d54b485"
+    },
+    "Zend/zend_frameless_function.c": {
+      "rc4": "a588cdb8437e28317eb59ea3a6490df5f135327f65f377090b31565e7070b6bb",
+      "rc7": "a588cdb8437e28317eb59ea3a6490df5f135327f65f377090b31565e7070b6bb",
+      "archive": "a588cdb8437e28317eb59ea3a6490df5f135327f65f377090b31565e7070b6bb"
+    },
+    "Zend/zend_frameless_function.h": {
+      "rc4": "0163fcdc33d85f8e8d20847e621415cb6a8447184198283b35a8872eb5d6a95f",
+      "rc7": "0163fcdc33d85f8e8d20847e621415cb6a8447184198283b35a8872eb5d6a95f",
+      "archive": "0163fcdc33d85f8e8d20847e621415cb6a8447184198283b35a8872eb5d6a95f"
+    },
+    "Zend/zend_gc.c": {
+      "rc4": "beb9775976a7389d4f262fbc474d8abcc9024b07af10aa0509607e739e1016cf",
+      "rc7": "beb9775976a7389d4f262fbc474d8abcc9024b07af10aa0509607e739e1016cf",
+      "archive": "beb9775976a7389d4f262fbc474d8abcc9024b07af10aa0509607e739e1016cf"
+    },
+    "Zend/zend_gc.h": {
+      "rc4": "26868c53818170267e0b77b92feb496199d8ddd8bce1c06ed4e31a3f0452f766",
+      "rc7": "26868c53818170267e0b77b92feb496199d8ddd8bce1c06ed4e31a3f0452f766",
+      "archive": "26868c53818170267e0b77b92feb496199d8ddd8bce1c06ed4e31a3f0452f766"
+    },
+    "Zend/zend_gdb.c": {
+      "rc4": "660ff47202e18ce00fa51ff17f9d7e0c26a397f06ec06cb53aee3806d7e1e387",
+      "rc7": "660ff47202e18ce00fa51ff17f9d7e0c26a397f06ec06cb53aee3806d7e1e387",
+      "archive": "660ff47202e18ce00fa51ff17f9d7e0c26a397f06ec06cb53aee3806d7e1e387"
+    },
+    "Zend/zend_gdb.h": {
+      "rc4": "d27d0fc9efafc39217fa2ee30239396923184f34405f0f811405c55823287a3b",
+      "rc7": "d27d0fc9efafc39217fa2ee30239396923184f34405f0f811405c55823287a3b",
+      "archive": "d27d0fc9efafc39217fa2ee30239396923184f34405f0f811405c55823287a3b"
+    },
+    "Zend/zend_generators.c": {
+      "rc4": "e8d52c0805f13f0310c5bafbd2d1d7f3035018ee32e35ae742d72ff236508bd6",
+      "rc7": "e8d52c0805f13f0310c5bafbd2d1d7f3035018ee32e35ae742d72ff236508bd6",
+      "archive": "e8d52c0805f13f0310c5bafbd2d1d7f3035018ee32e35ae742d72ff236508bd6"
+    },
+    "Zend/zend_generators.h": {
+      "rc4": "fc91bd17fa55876e0daec2443c58630511ca4e036e9812c82830ed14365a2e61",
+      "rc7": "fc91bd17fa55876e0daec2443c58630511ca4e036e9812c82830ed14365a2e61",
+      "archive": "fc91bd17fa55876e0daec2443c58630511ca4e036e9812c82830ed14365a2e61"
+    },
+    "Zend/zend_generators_arginfo.h": {
+      "rc4": "9f48bbb2424263ca0a4affd86c22c2b76918996d6905decb8c5faebe6d202158",
+      "rc7": "9f48bbb2424263ca0a4affd86c22c2b76918996d6905decb8c5faebe6d202158",
+      "archive": "9f48bbb2424263ca0a4affd86c22c2b76918996d6905decb8c5faebe6d202158"
+    },
+    "Zend/zend_globals.h": {
+      "rc4": "385c983d03e6069ebb620fd38094c6f8ff12945c208897dcd6ffb3eb5096d7fd",
+      "rc7": "393f3d3b00fe6590b7b24b618bdd63fc8c35e3d625b794d45663e68817ca61dc",
+      "archive": "393f3d3b00fe6590b7b24b618bdd63fc8c35e3d625b794d45663e68817ca61dc"
+    },
+    "Zend/zend_globals_macros.h": {
+      "rc4": "35cd8fcd7d61ba49e3cb9517bcd26a64de7bf4ad64e3ba47ad8d62461ac626e7",
+      "rc7": "35cd8fcd7d61ba49e3cb9517bcd26a64de7bf4ad64e3ba47ad8d62461ac626e7",
+      "archive": "35cd8fcd7d61ba49e3cb9517bcd26a64de7bf4ad64e3ba47ad8d62461ac626e7"
+    },
+    "Zend/zend_hash.c": {
+      "rc4": "8ac0f415400c164adbd3f0bbe15e0366d0ff48ed599ba94eed0088c7f1dd4272",
+      "rc7": "8ac0f415400c164adbd3f0bbe15e0366d0ff48ed599ba94eed0088c7f1dd4272",
+      "archive": "8ac0f415400c164adbd3f0bbe15e0366d0ff48ed599ba94eed0088c7f1dd4272"
+    },
+    "Zend/zend_hash.h": {
+      "rc4": "f32a845ffcc5b68aa6f29d98bb9e284072aca7d018a5fb547fe9337cad3fa2ab",
+      "rc7": "f32a845ffcc5b68aa6f29d98bb9e284072aca7d018a5fb547fe9337cad3fa2ab",
+      "archive": "f32a845ffcc5b68aa6f29d98bb9e284072aca7d018a5fb547fe9337cad3fa2ab"
+    },
+    "Zend/zend_highlight.c": {
+      "rc4": "e033783a551b189b53618e221d70ff7a169e8a19009dcc7a6033946e0dff625e",
+      "rc7": "e033783a551b189b53618e221d70ff7a169e8a19009dcc7a6033946e0dff625e",
+      "archive": "e033783a551b189b53618e221d70ff7a169e8a19009dcc7a6033946e0dff625e"
+    },
+    "Zend/zend_highlight.h": {
+      "rc4": "f39bdf46f923203c486fff19c64d853c6a52804624afa691267beaf2c246cf91",
+      "rc7": "f39bdf46f923203c486fff19c64d853c6a52804624afa691267beaf2c246cf91",
+      "archive": "f39bdf46f923203c486fff19c64d853c6a52804624afa691267beaf2c246cf91"
+    },
+    "Zend/zend_hrtime.c": {
+      "rc4": "a4d8e3f792323653096fc0b9235cd8e9ad96ba683ccd2f99d804b3ca117e4de4",
+      "rc7": "a4d8e3f792323653096fc0b9235cd8e9ad96ba683ccd2f99d804b3ca117e4de4",
+      "archive": "a4d8e3f792323653096fc0b9235cd8e9ad96ba683ccd2f99d804b3ca117e4de4"
+    },
+    "Zend/zend_hrtime.h": {
+      "rc4": "802d149e6c0f842320c1dd9766fb7c32cf113beab7afdca2f029adcd4ac9b1f9",
+      "rc7": "802d149e6c0f842320c1dd9766fb7c32cf113beab7afdca2f029adcd4ac9b1f9",
+      "archive": "802d149e6c0f842320c1dd9766fb7c32cf113beab7afdca2f029adcd4ac9b1f9"
+    },
+    "Zend/zend_inheritance.c": {
+      "rc4": "d3f0f10319e7ffe0490ee85fd4b42f5dca9efa7804bc8e72b1b23d8df7dccf46",
+      "rc7": "cbddd161ecc6ad0a4e46a4d8a2fd6d46b9ec1b572b487a39543ff48a6be4ed1a",
+      "archive": "cbddd161ecc6ad0a4e46a4d8a2fd6d46b9ec1b572b487a39543ff48a6be4ed1a"
+    },
+    "Zend/zend_inheritance.h": {
+      "rc4": "d6ac11d705a0785b5e292cfb3a109350a937f8af93566b7713a1455a0caf235a",
+      "rc7": "d6ac11d705a0785b5e292cfb3a109350a937f8af93566b7713a1455a0caf235a",
+      "archive": "d6ac11d705a0785b5e292cfb3a109350a937f8af93566b7713a1455a0caf235a"
+    },
+    "Zend/zend_ini.c": {
+      "rc4": "f07409d2c0ad5ed9b24db75788a935cc2bde8e8f088694d024156dae14ed2424",
+      "rc7": "5a7d842d3c467b2463d1fb0dde934bcd78f7ce4dc4cfae7c57969ad67b99afae",
+      "archive": "5a7d842d3c467b2463d1fb0dde934bcd78f7ce4dc4cfae7c57969ad67b99afae"
+    },
+    "Zend/zend_ini.h": {
+      "rc4": "c442b7f36387666690d58295e781ac7f4adec04d935ca2f2df02bb1124bf9e85",
+      "rc7": "c442b7f36387666690d58295e781ac7f4adec04d935ca2f2df02bb1124bf9e85",
+      "archive": "c442b7f36387666690d58295e781ac7f4adec04d935ca2f2df02bb1124bf9e85"
+    },
+    "Zend/zend_ini_parser.y": {
+      "rc4": "07bdfccf6eed56e8a8c3a3e05a6a73faa239e84b4aa8fea4fa1c706e4934c739",
+      "rc7": "07bdfccf6eed56e8a8c3a3e05a6a73faa239e84b4aa8fea4fa1c706e4934c739",
+      "archive": "07bdfccf6eed56e8a8c3a3e05a6a73faa239e84b4aa8fea4fa1c706e4934c739"
+    },
+    "Zend/zend_ini_scanner.h": {
+      "rc4": "fdc54e6644c469f956070a4297e28591d75b49e08f3db534bc1cdc7930421497",
+      "rc7": "fdc54e6644c469f956070a4297e28591d75b49e08f3db534bc1cdc7930421497",
+      "archive": "fdc54e6644c469f956070a4297e28591d75b49e08f3db534bc1cdc7930421497"
+    },
+    "Zend/zend_ini_scanner.l": {
+      "rc4": "1cd18913152cc9805d5417fa513a08964cf9ee93bfb88e2bb11c8bdac92e2217",
+      "rc7": "1cd18913152cc9805d5417fa513a08964cf9ee93bfb88e2bb11c8bdac92e2217",
+      "archive": "1cd18913152cc9805d5417fa513a08964cf9ee93bfb88e2bb11c8bdac92e2217"
+    },
+    "Zend/zend_interfaces.c": {
+      "rc4": "6c14da3cf3a64499a26c5765a9bb85553f335bcc71e275e07aeff420ef413e2c",
+      "rc7": "3499416d6fbf0a8bbc6e922c89a94adea422e49942934279cc44dc5e0fe6f807",
+      "archive": "3499416d6fbf0a8bbc6e922c89a94adea422e49942934279cc44dc5e0fe6f807"
+    },
+    "Zend/zend_interfaces.h": {
+      "rc4": "47d8fad04ccdeeb6070cc1a33f6e984795db3814b78256c98c797fb1dc6ea518",
+      "rc7": "47d8fad04ccdeeb6070cc1a33f6e984795db3814b78256c98c797fb1dc6ea518",
+      "archive": "47d8fad04ccdeeb6070cc1a33f6e984795db3814b78256c98c797fb1dc6ea518"
+    },
+    "Zend/zend_interfaces_arginfo.h": {
+      "rc4": "918ed9f07f9bf9d6cc2461f2ec1e7a751fc8052741a45b9225a2afc290dfda20",
+      "rc7": "918ed9f07f9bf9d6cc2461f2ec1e7a751fc8052741a45b9225a2afc290dfda20",
+      "archive": "918ed9f07f9bf9d6cc2461f2ec1e7a751fc8052741a45b9225a2afc290dfda20"
+    },
+    "Zend/zend_iterators.c": {
+      "rc4": "9852c74fe77a512e427a066011d5fdf696a682d839d538808879bc90668973df",
+      "rc7": "9852c74fe77a512e427a066011d5fdf696a682d839d538808879bc90668973df",
+      "archive": "9852c74fe77a512e427a066011d5fdf696a682d839d538808879bc90668973df"
+    },
+    "Zend/zend_iterators.h": {
+      "rc4": "54fb877bfa288c9da352e565da72b3954e1345ec6f2eb723ee0bd01a9682eee2",
+      "rc7": "54fb877bfa288c9da352e565da72b3954e1345ec6f2eb723ee0bd01a9682eee2",
+      "archive": "54fb877bfa288c9da352e565da72b3954e1345ec6f2eb723ee0bd01a9682eee2"
+    },
+    "Zend/zend_language_parser.y": {
+      "rc4": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "rc7": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "archive": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235"
+    },
+    "Zend/zend_language_scanner.h": {
+      "rc4": "0a85951a7fcef8c373ebd6f8ccc91699e7a94796b7b6cbdd55860b5659dbc738",
+      "rc7": "0a85951a7fcef8c373ebd6f8ccc91699e7a94796b7b6cbdd55860b5659dbc738",
+      "archive": "0a85951a7fcef8c373ebd6f8ccc91699e7a94796b7b6cbdd55860b5659dbc738"
+    },
+    "Zend/zend_language_scanner.l": {
+      "rc4": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "rc7": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "archive": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39"
+    },
+    "Zend/zend_lazy_objects.c": {
+      "rc4": "8cd297a16a9698d59f168b421d6d72fa903f61de648962385a65ab27c078a935",
+      "rc7": "fb0ae0d5812feacc0909cc1c4ce4bc5f2f578c676d0eb2ded2dadcbd8d8263f3",
+      "archive": "fb0ae0d5812feacc0909cc1c4ce4bc5f2f578c676d0eb2ded2dadcbd8d8263f3"
+    },
+    "Zend/zend_lazy_objects.h": {
+      "rc4": "dfb9645131d952d7ed11420dd4fca5b0b44947be6f276767236f58bc688c3802",
+      "rc7": "dfb9645131d952d7ed11420dd4fca5b0b44947be6f276767236f58bc688c3802",
+      "archive": "dfb9645131d952d7ed11420dd4fca5b0b44947be6f276767236f58bc688c3802"
+    },
+    "Zend/zend_list.c": {
+      "rc4": "e9f9ca62371cf6b3b46da2e11da3b2cd19e7b75010128917e744888e39a6b56f",
+      "rc7": "e9f9ca62371cf6b3b46da2e11da3b2cd19e7b75010128917e744888e39a6b56f",
+      "archive": "e9f9ca62371cf6b3b46da2e11da3b2cd19e7b75010128917e744888e39a6b56f"
+    },
+    "Zend/zend_list.h": {
+      "rc4": "c1fd2838ee715ab61d5df1d4c0960de4ef248796090541dfad2a72f579360b11",
+      "rc7": "c1fd2838ee715ab61d5df1d4c0960de4ef248796090541dfad2a72f579360b11",
+      "archive": "c1fd2838ee715ab61d5df1d4c0960de4ef248796090541dfad2a72f579360b11"
+    },
+    "Zend/zend_llist.c": {
+      "rc4": "fb7fd837e82a3f71d8f6f7b71f5991e48d213c2876a4cdc431af20d3a9de7477",
+      "rc7": "fb7fd837e82a3f71d8f6f7b71f5991e48d213c2876a4cdc431af20d3a9de7477",
+      "archive": "fb7fd837e82a3f71d8f6f7b71f5991e48d213c2876a4cdc431af20d3a9de7477"
+    },
+    "Zend/zend_llist.h": {
+      "rc4": "459820afc984d74eedb546900510d0c93910bbd3877404536d24b8e1676d5297",
+      "rc7": "459820afc984d74eedb546900510d0c93910bbd3877404536d24b8e1676d5297",
+      "archive": "459820afc984d74eedb546900510d0c93910bbd3877404536d24b8e1676d5297"
+    },
+    "Zend/zend_long.h": {
+      "rc4": "3451f4ed6642004996b1429c7bf3bc621ab93c38c70bf822545684bf38e14d5a",
+      "rc7": "3451f4ed6642004996b1429c7bf3bc621ab93c38c70bf822545684bf38e14d5a",
+      "archive": "3451f4ed6642004996b1429c7bf3bc621ab93c38c70bf822545684bf38e14d5a"
+    },
+    "Zend/zend_map_ptr.h": {
+      "rc4": "ee1fd8984a7c649338e67cecae7eb299bd710984ecd753ff7da3fa72336d1901",
+      "rc7": "ee1fd8984a7c649338e67cecae7eb299bd710984ecd753ff7da3fa72336d1901",
+      "archive": "ee1fd8984a7c649338e67cecae7eb299bd710984ecd753ff7da3fa72336d1901"
+    },
+    "Zend/zend_max_execution_timer.c": {
+      "rc4": "1f87091f1ba344336ab175122e8fbf9a625d3904415eb9fbce6b5981dd816c87",
+      "rc7": "1f87091f1ba344336ab175122e8fbf9a625d3904415eb9fbce6b5981dd816c87",
+      "archive": "1f87091f1ba344336ab175122e8fbf9a625d3904415eb9fbce6b5981dd816c87"
+    },
+    "Zend/zend_max_execution_timer.h": {
+      "rc4": "b6859f0590517469376f0cfc2fb7e3567cefca5e1abd2cdca64b679b954c4c5f",
+      "rc7": "b6859f0590517469376f0cfc2fb7e3567cefca5e1abd2cdca64b679b954c4c5f",
+      "archive": "b6859f0590517469376f0cfc2fb7e3567cefca5e1abd2cdca64b679b954c4c5f"
+    },
+    "Zend/zend_mmap.h": {
+      "rc4": "69fddbe8ea487e78918ac50c0918732d13cbac13a587041b9370526b2579615d",
+      "rc7": "69fddbe8ea487e78918ac50c0918732d13cbac13a587041b9370526b2579615d",
+      "archive": "69fddbe8ea487e78918ac50c0918732d13cbac13a587041b9370526b2579615d"
+    },
+    "Zend/zend_modules.h": {
+      "rc4": "58803e6179abc3142b2b757b1bec1f836ebdc196165b6f8ffdd5175bef3bda29",
+      "rc7": "e85b847d068e80a776a5a555cd94c83d13f5c4635c33f8c32030d988fe3e4d41",
+      "archive": "e85b847d068e80a776a5a555cd94c83d13f5c4635c33f8c32030d988fe3e4d41"
+    },
+    "Zend/zend_multibyte.c": {
+      "rc4": "428592c530bafa6a965941d1645596c2badcdb2bfaa11df6ca2b816bc5234845",
+      "rc7": "428592c530bafa6a965941d1645596c2badcdb2bfaa11df6ca2b816bc5234845",
+      "archive": "428592c530bafa6a965941d1645596c2badcdb2bfaa11df6ca2b816bc5234845"
+    },
+    "Zend/zend_multibyte.h": {
+      "rc4": "540f34d1ffefc577c2bb93c74b046e75cb63f3c21aaa8a25df16703e2e368790",
+      "rc7": "540f34d1ffefc577c2bb93c74b046e75cb63f3c21aaa8a25df16703e2e368790",
+      "archive": "540f34d1ffefc577c2bb93c74b046e75cb63f3c21aaa8a25df16703e2e368790"
+    },
+    "Zend/zend_multiply.h": {
+      "rc4": "3001350ec2c6a17245bf7e8d27410c37144c1279f0a49ac9ad4339ddc8035aae",
+      "rc7": "3001350ec2c6a17245bf7e8d27410c37144c1279f0a49ac9ad4339ddc8035aae",
+      "archive": "3001350ec2c6a17245bf7e8d27410c37144c1279f0a49ac9ad4339ddc8035aae"
+    },
+    "Zend/zend_object_handlers.c": {
+      "rc4": "1a3b3708ab7e5f270ac0da6faf9d53bac3ebb5ac6395e38e695fb0e5638451d6",
+      "rc7": "bcd4a6f8ab2c05f64a57010c2c020a301908dd5b18fb60de4fdd1ef95de41dd6",
+      "archive": "bcd4a6f8ab2c05f64a57010c2c020a301908dd5b18fb60de4fdd1ef95de41dd6"
+    },
+    "Zend/zend_object_handlers.h": {
+      "rc4": "a4d8c28c60275bde1c56d6c61b1f9b12e9e8c29aad5aaa1ce69d992df5cd6641",
+      "rc7": "a4d8c28c60275bde1c56d6c61b1f9b12e9e8c29aad5aaa1ce69d992df5cd6641",
+      "archive": "a4d8c28c60275bde1c56d6c61b1f9b12e9e8c29aad5aaa1ce69d992df5cd6641"
+    },
+    "Zend/zend_objects.c": {
+      "rc4": "2e07102edf2c2084f182c3393c4c5fe39c1b67180b4870455968cea49ffbb6e5",
+      "rc7": "e5c4e71fcd56b248e8d67172c065ca772c6e2748e226115e4e81d3821ecad2d1",
+      "archive": "e5c4e71fcd56b248e8d67172c065ca772c6e2748e226115e4e81d3821ecad2d1"
+    },
+    "Zend/zend_objects.h": {
+      "rc4": "f58adddfacee169e4426b7fd23f93d611f8e9da4482b6cadc0736b155c7f133e",
+      "rc7": "f58adddfacee169e4426b7fd23f93d611f8e9da4482b6cadc0736b155c7f133e",
+      "archive": "f58adddfacee169e4426b7fd23f93d611f8e9da4482b6cadc0736b155c7f133e"
+    },
+    "Zend/zend_objects_API.c": {
+      "rc4": "481a0778a329608c918ec247550811f215c5a72dcbbbe136de56974fbb98aab8",
+      "rc7": "481a0778a329608c918ec247550811f215c5a72dcbbbe136de56974fbb98aab8",
+      "archive": "481a0778a329608c918ec247550811f215c5a72dcbbbe136de56974fbb98aab8"
+    },
+    "Zend/zend_objects_API.h": {
+      "rc4": "46e6be70fb20bf3b03336d4d8a63bb33848d3995c7dbf1e5e2047e7a1b813872",
+      "rc7": "46e6be70fb20bf3b03336d4d8a63bb33848d3995c7dbf1e5e2047e7a1b813872",
+      "archive": "46e6be70fb20bf3b03336d4d8a63bb33848d3995c7dbf1e5e2047e7a1b813872"
+    },
+    "Zend/zend_observer.c": {
+      "rc4": "38111df0ab00ad87c5e7e789a9f338170709351e2393d910c97797e5a1089150",
+      "rc7": "38111df0ab00ad87c5e7e789a9f338170709351e2393d910c97797e5a1089150",
+      "archive": "38111df0ab00ad87c5e7e789a9f338170709351e2393d910c97797e5a1089150"
+    },
+    "Zend/zend_observer.h": {
+      "rc4": "0dd61aef26a5ab70385a272155b575c1e97b105e948668a652779f43efdca50f",
+      "rc7": "0dd61aef26a5ab70385a272155b575c1e97b105e948668a652779f43efdca50f",
+      "archive": "0dd61aef26a5ab70385a272155b575c1e97b105e948668a652779f43efdca50f"
+    },
+    "Zend/zend_opcode.c": {
+      "rc4": "0fcbbb56b464e33f1f21361944362fd3ce746a1a4c6461c095ecf7ccf08489e5",
+      "rc7": "0fcbbb56b464e33f1f21361944362fd3ce746a1a4c6461c095ecf7ccf08489e5",
+      "archive": "0fcbbb56b464e33f1f21361944362fd3ce746a1a4c6461c095ecf7ccf08489e5"
+    },
+    "Zend/zend_operators.c": {
+      "rc4": "79eca34f92cb0a2a183ebc505726d6a20d3241fc09188327aa84faf16d088184",
+      "rc7": "fee1f2fea82c8bdb1cc617cb0ddc389b7aded98ab6f9d7988feed81981d73d74",
+      "archive": "fee1f2fea82c8bdb1cc617cb0ddc389b7aded98ab6f9d7988feed81981d73d74"
+    },
+    "Zend/zend_operators.h": {
+      "rc4": "e82eadf7c81e8793c3d2ee5d3f64c75859262c176b1f77a375044ef4290d2fea",
+      "rc7": "e82eadf7c81e8793c3d2ee5d3f64c75859262c176b1f77a375044ef4290d2fea",
+      "archive": "e82eadf7c81e8793c3d2ee5d3f64c75859262c176b1f77a375044ef4290d2fea"
+    },
+    "Zend/zend_partial.c": {
+      "rc4": "149db16c425a107c1d969e0bf7704eff1bfb5b1dee626f76bb7bacd99d64ecff",
+      "rc7": "4c42a029921b7f06b68f70f238ae15d0cd8bb945c8d2522d3db4d6a052bd4bd9",
+      "archive": "4c42a029921b7f06b68f70f238ae15d0cd8bb945c8d2522d3db4d6a052bd4bd9"
+    },
+    "Zend/zend_partial.h": {
+      "rc4": "5cd78807ba6cbcb3474f492653e4e36e10b44640eaf0fdaca1e2238fabe38826",
+      "rc7": "5cd78807ba6cbcb3474f492653e4e36e10b44640eaf0fdaca1e2238fabe38826",
+      "archive": "5cd78807ba6cbcb3474f492653e4e36e10b44640eaf0fdaca1e2238fabe38826"
+    },
+    "Zend/zend_perf_stat.h": {
+      "rc4": "4df71d9ab3b5ef88e427541841d619bb360546d475ebe500b16354919a2d19e3",
+      "rc7": "4df71d9ab3b5ef88e427541841d619bb360546d475ebe500b16354919a2d19e3",
+      "archive": "4df71d9ab3b5ef88e427541841d619bb360546d475ebe500b16354919a2d19e3"
+    },
+    "Zend/zend_portability.h": {
+      "rc4": "283db9d160edd04a1302e4c3ace6902e60a3abf71a0f92d39a3e631c9e31f8dc",
+      "rc7": "4528b496e813236d3f1bdb077845ebd692d4e715b6d2a50808da4b356510e8d9",
+      "archive": "4528b496e813236d3f1bdb077845ebd692d4e715b6d2a50808da4b356510e8d9"
+    },
+    "Zend/zend_property_hooks.c": {
+      "rc4": "2a3f935099abc7793e901f4d1271fb1e3383d9c35cba3378013759392d54b277",
+      "rc7": "23e1f4725c2481f78054e27ec1056ff05956bf04982f638d6a2d6995d6ec3d78",
+      "archive": "23e1f4725c2481f78054e27ec1056ff05956bf04982f638d6a2d6995d6ec3d78"
+    },
+    "Zend/zend_property_hooks.h": {
+      "rc4": "f63dda353539b508b076d4c9ae73e383a06b1db104553ebb23dee419a1854db8",
+      "rc7": "f63dda353539b508b076d4c9ae73e383a06b1db104553ebb23dee419a1854db8",
+      "archive": "f63dda353539b508b076d4c9ae73e383a06b1db104553ebb23dee419a1854db8"
+    },
+    "Zend/zend_ptr_stack.c": {
+      "rc4": "c506b9241856f5f9dec7720c8e84b76456ff7382a06bc9ce8f248d26dd547bfc",
+      "rc7": "c506b9241856f5f9dec7720c8e84b76456ff7382a06bc9ce8f248d26dd547bfc",
+      "archive": "c506b9241856f5f9dec7720c8e84b76456ff7382a06bc9ce8f248d26dd547bfc"
+    },
+    "Zend/zend_ptr_stack.h": {
+      "rc4": "5549ec0ce6a0032b7390463f4d18270f920699359f80e61d894622eece9ef70a",
+      "rc7": "5549ec0ce6a0032b7390463f4d18270f920699359f80e61d894622eece9ef70a",
+      "archive": "5549ec0ce6a0032b7390463f4d18270f920699359f80e61d894622eece9ef70a"
+    },
+    "Zend/zend_range_check.h": {
+      "rc4": "85c61f53cedb0b5fd52a8385c20e430ad207266b93d6d30d7186bdedc0da6cfd",
+      "rc7": "683344b2c6477a1eb975830ca097a7cdf1e4e313f7eaa594b2e4ed0eaa9cdba7",
+      "archive": "683344b2c6477a1eb975830ca097a7cdf1e4e313f7eaa594b2e4ed0eaa9cdba7"
+    },
+    "Zend/zend_signal.c": {
+      "rc4": "cebd8e917561405b30d60f7062988b8f9f17cbc38b655595d0aaa110e48d3e74",
+      "rc7": "cebd8e917561405b30d60f7062988b8f9f17cbc38b655595d0aaa110e48d3e74",
+      "archive": "cebd8e917561405b30d60f7062988b8f9f17cbc38b655595d0aaa110e48d3e74"
+    },
+    "Zend/zend_signal.h": {
+      "rc4": "5a5c9da3f26e6ea8083b23d55f5a9823d7738270182769ad4e70509add61fd01",
+      "rc7": "5a5c9da3f26e6ea8083b23d55f5a9823d7738270182769ad4e70509add61fd01",
+      "archive": "5a5c9da3f26e6ea8083b23d55f5a9823d7738270182769ad4e70509add61fd01"
+    },
+    "Zend/zend_simd.h": {
+      "rc4": "962eef62cca819b799f7660fcb1935ad3692a37de2ce9f4dee9a464b40454ff6",
+      "rc7": "962eef62cca819b799f7660fcb1935ad3692a37de2ce9f4dee9a464b40454ff6",
+      "archive": "962eef62cca819b799f7660fcb1935ad3692a37de2ce9f4dee9a464b40454ff6"
+    },
+    "Zend/zend_smart_str.c": {
+      "rc4": "985de45e8b7f9bcc9c2a814419356fb3a9f6c332d5f792cd53b16597f42ce631",
+      "rc7": "985de45e8b7f9bcc9c2a814419356fb3a9f6c332d5f792cd53b16597f42ce631",
+      "archive": "985de45e8b7f9bcc9c2a814419356fb3a9f6c332d5f792cd53b16597f42ce631"
+    },
+    "Zend/zend_smart_str.h": {
+      "rc4": "f3d3e81a25e53dde4fc5253b00274c60c2c12412c44e4ef5ee35400bda39c97d",
+      "rc7": "f3d3e81a25e53dde4fc5253b00274c60c2c12412c44e4ef5ee35400bda39c97d",
+      "archive": "f3d3e81a25e53dde4fc5253b00274c60c2c12412c44e4ef5ee35400bda39c97d"
+    },
+    "Zend/zend_smart_str_public.h": {
+      "rc4": "310647ef494dbdeec95cef9473b7c9808871a92a26cf61983a30ab9b93a8f440",
+      "rc7": "310647ef494dbdeec95cef9473b7c9808871a92a26cf61983a30ab9b93a8f440",
+      "archive": "310647ef494dbdeec95cef9473b7c9808871a92a26cf61983a30ab9b93a8f440"
+    },
+    "Zend/zend_smart_string.h": {
+      "rc4": "100acc86d4406ea9fa111f7f930586bc36e00ef7896a849a2ef6f661decdf98c",
+      "rc7": "100acc86d4406ea9fa111f7f930586bc36e00ef7896a849a2ef6f661decdf98c",
+      "archive": "100acc86d4406ea9fa111f7f930586bc36e00ef7896a849a2ef6f661decdf98c"
+    },
+    "Zend/zend_smart_string_public.h": {
+      "rc4": "ae5d5857f9bc5b285d304f8f3f73f595bedd0309717383217fc14dafe96720ba",
+      "rc7": "ae5d5857f9bc5b285d304f8f3f73f595bedd0309717383217fc14dafe96720ba",
+      "archive": "ae5d5857f9bc5b285d304f8f3f73f595bedd0309717383217fc14dafe96720ba"
+    },
+    "Zend/zend_sort.c": {
+      "rc4": "87ae4ccacc207fb1cbb4e258940ea62f116a6572f5ffc2d3000d64997e4777a3",
+      "rc7": "87ae4ccacc207fb1cbb4e258940ea62f116a6572f5ffc2d3000d64997e4777a3",
+      "archive": "87ae4ccacc207fb1cbb4e258940ea62f116a6572f5ffc2d3000d64997e4777a3"
+    },
+    "Zend/zend_sort.h": {
+      "rc4": "68a50a781df95bf894b6a7d46122b50ed789f90eaf139bfa503fc6bf012b0703",
+      "rc7": "68a50a781df95bf894b6a7d46122b50ed789f90eaf139bfa503fc6bf012b0703",
+      "archive": "68a50a781df95bf894b6a7d46122b50ed789f90eaf139bfa503fc6bf012b0703"
+    },
+    "Zend/zend_stack.c": {
+      "rc4": "af326a349f26ef905392c7f5c44c9971f488525692640119e20da26e8fd0ad82",
+      "rc7": "af326a349f26ef905392c7f5c44c9971f488525692640119e20da26e8fd0ad82",
+      "archive": "af326a349f26ef905392c7f5c44c9971f488525692640119e20da26e8fd0ad82"
+    },
+    "Zend/zend_stack.h": {
+      "rc4": "b8a02965c5081dc888e8929995d0c8789243e5080d6519649aeaba4a0189592c",
+      "rc7": "b8a02965c5081dc888e8929995d0c8789243e5080d6519649aeaba4a0189592c",
+      "archive": "b8a02965c5081dc888e8929995d0c8789243e5080d6519649aeaba4a0189592c"
+    },
+    "Zend/zend_stream.c": {
+      "rc4": "2c85aec2b67970ab96941951021b48b904525e67f811ae4dbd59bb457af0e4df",
+      "rc7": "2c85aec2b67970ab96941951021b48b904525e67f811ae4dbd59bb457af0e4df",
+      "archive": "2c85aec2b67970ab96941951021b48b904525e67f811ae4dbd59bb457af0e4df"
+    },
+    "Zend/zend_stream.h": {
+      "rc4": "39fbfbe375cd029350c9bb8ebbdf77e17c522ec6e59ea5f2432fd02b4efbbcaf",
+      "rc7": "39fbfbe375cd029350c9bb8ebbdf77e17c522ec6e59ea5f2432fd02b4efbbcaf",
+      "archive": "39fbfbe375cd029350c9bb8ebbdf77e17c522ec6e59ea5f2432fd02b4efbbcaf"
+    },
+    "Zend/zend_string.c": {
+      "rc4": "9214d62063e0f144b68b4cfbb652c3a1e0aca75fdab8e85767f87b1fc3a4bc9e",
+      "rc7": "9214d62063e0f144b68b4cfbb652c3a1e0aca75fdab8e85767f87b1fc3a4bc9e",
+      "archive": "9214d62063e0f144b68b4cfbb652c3a1e0aca75fdab8e85767f87b1fc3a4bc9e"
+    },
+    "Zend/zend_string.h": {
+      "rc4": "7499e8810b2ae9ecd5a6eff07a7992c473d10f88a21336059c9b7ddeb22eb623",
+      "rc7": "7499e8810b2ae9ecd5a6eff07a7992c473d10f88a21336059c9b7ddeb22eb623",
+      "archive": "7499e8810b2ae9ecd5a6eff07a7992c473d10f88a21336059c9b7ddeb22eb623"
+    },
+    "Zend/zend_strtod.c": {
+      "rc4": "0ac5610b718fe1ef27ad86d26cc7a1f9637ae4b52a6d36dd406644d9d2226eff",
+      "rc7": "0ac5610b718fe1ef27ad86d26cc7a1f9637ae4b52a6d36dd406644d9d2226eff",
+      "archive": "0ac5610b718fe1ef27ad86d26cc7a1f9637ae4b52a6d36dd406644d9d2226eff"
+    },
+    "Zend/zend_strtod.h": {
+      "rc4": "3510317aa1db9061f5ba23e8a588157ce4d985be9b755768b1addfb8bed9312d",
+      "rc7": "3510317aa1db9061f5ba23e8a588157ce4d985be9b755768b1addfb8bed9312d",
+      "archive": "3510317aa1db9061f5ba23e8a588157ce4d985be9b755768b1addfb8bed9312d"
+    },
+    "Zend/zend_strtod_int.h": {
+      "rc4": "97bce628e5adf0ff2386880b58ccf0ca4e5cc3bb638605ca17c39249454b04cb",
+      "rc7": "97bce628e5adf0ff2386880b58ccf0ca4e5cc3bb638605ca17c39249454b04cb",
+      "archive": "97bce628e5adf0ff2386880b58ccf0ca4e5cc3bb638605ca17c39249454b04cb"
+    },
+    "Zend/zend_system_id.c": {
+      "rc4": "5b454bf9c5a8f00844b687e2862876858605143c9ca5694224ba4618a56c1043",
+      "rc7": "4e432175747709e2665514e028989c4e7455e3431b525ae5552eb4b8579983e4",
+      "archive": "4e432175747709e2665514e028989c4e7455e3431b525ae5552eb4b8579983e4"
+    },
+    "Zend/zend_system_id.h": {
+      "rc4": "3d7f87d80887f0a25af5ad23cdc2c2b5975745c6b677e0a313bbc430293e054e",
+      "rc7": "3d7f87d80887f0a25af5ad23cdc2c2b5975745c6b677e0a313bbc430293e054e",
+      "archive": "3d7f87d80887f0a25af5ad23cdc2c2b5975745c6b677e0a313bbc430293e054e"
+    },
+    "Zend/zend_type_info.h": {
+      "rc4": "d70add22998ca36c47d139d2045b4ce21fdb03990f9e7aa2e22031835701209d",
+      "rc7": "d70add22998ca36c47d139d2045b4ce21fdb03990f9e7aa2e22031835701209d",
+      "archive": "d70add22998ca36c47d139d2045b4ce21fdb03990f9e7aa2e22031835701209d"
+    },
+    "Zend/zend_types.h": {
+      "rc4": "0386987db5e3e15c0cf2209125592115241c8bd2cc7ab36d5bdbc78d5db617a3",
+      "rc7": "ac6c2be7aa985a99b96c03aad4aaf0da4f96de782a66a0e076be2193762ec5a8",
+      "archive": "ac6c2be7aa985a99b96c03aad4aaf0da4f96de782a66a0e076be2193762ec5a8"
+    },
+    "Zend/zend_variables.c": {
+      "rc4": "ee66a88e007a00a5f934a2bcb45fe34c77f9337606bf76ad09c868519657de1f",
+      "rc7": "ee66a88e007a00a5f934a2bcb45fe34c77f9337606bf76ad09c868519657de1f",
+      "archive": "ee66a88e007a00a5f934a2bcb45fe34c77f9337606bf76ad09c868519657de1f"
+    },
+    "Zend/zend_variables.h": {
+      "rc4": "d9e020751a4f6b801e099c91dbf69e1bb254764a5dc1308e89eafaa147303f2e",
+      "rc7": "d9e020751a4f6b801e099c91dbf69e1bb254764a5dc1308e89eafaa147303f2e",
+      "archive": "d9e020751a4f6b801e099c91dbf69e1bb254764a5dc1308e89eafaa147303f2e"
+    },
+    "Zend/zend_verify_type_inference.h": {
+      "rc4": "802c4077b376636ef8374b45b03720b520211cee876e58f31e73deef3b45a85b",
+      "rc7": "802c4077b376636ef8374b45b03720b520211cee876e58f31e73deef3b45a85b",
+      "archive": "802c4077b376636ef8374b45b03720b520211cee876e58f31e73deef3b45a85b"
+    },
+    "Zend/zend_virtual_cwd.c": {
+      "rc4": "b462fb65f1e0a1302eea16e46b16e9e0ff5d4121e89d91c4433a606694bf775c",
+      "rc7": "b462fb65f1e0a1302eea16e46b16e9e0ff5d4121e89d91c4433a606694bf775c",
+      "archive": "b462fb65f1e0a1302eea16e46b16e9e0ff5d4121e89d91c4433a606694bf775c"
+    },
+    "Zend/zend_virtual_cwd.h": {
+      "rc4": "32d31dffecd660295f00dab3d27e3ab98d364bc68d55cf43fccc7518888db068",
+      "rc7": "32d31dffecd660295f00dab3d27e3ab98d364bc68d55cf43fccc7518888db068",
+      "archive": "32d31dffecd660295f00dab3d27e3ab98d364bc68d55cf43fccc7518888db068"
+    },
+    "Zend/zend_vm.h": {
+      "rc4": "1e952365c575dfcaba707e4454a1e1860ea1b703e34f32f10fd0d78b93b1b36a",
+      "rc7": "1e952365c575dfcaba707e4454a1e1860ea1b703e34f32f10fd0d78b93b1b36a",
+      "archive": "1e952365c575dfcaba707e4454a1e1860ea1b703e34f32f10fd0d78b93b1b36a"
+    },
+    "Zend/zend_vm_def.h": {
+      "rc4": "8d1ee0248255c74deb34817e461b613ded1ca4c3ae5fee04cfa6bf6f0c28766e",
+      "rc7": "10932596710465263cf0b324718c50063b4f04a486910da3a39cc5e6a06d00f2",
+      "archive": "10932596710465263cf0b324718c50063b4f04a486910da3a39cc5e6a06d00f2"
+    },
+    "Zend/zend_vm_execute.h": {
+      "rc4": "6fa16a0a120f0596b5d0b213657236a5478b352f0230672c4ce4f71411c4ac15",
+      "rc7": "2954352c8a2458e47c7de89450c6ee1c7f20a78587f1df7893a2d7ff7e87276a",
+      "archive": "2954352c8a2458e47c7de89450c6ee1c7f20a78587f1df7893a2d7ff7e87276a"
+    },
+    "Zend/zend_vm_gen.php": {
+      "rc4": "972b6d59c0da2e4b04dd2fdc6d11ca72429c6fde89287bc1b149eb4a8cd4f38f",
+      "rc7": "e4fd1f0b0952920bcff63f6d94e6256e7fcf7356e9e7b028815dc7d3197365f4",
+      "archive": "e4fd1f0b0952920bcff63f6d94e6256e7fcf7356e9e7b028815dc7d3197365f4"
+    },
+    "Zend/zend_vm_handlers.h": {
+      "rc4": "6561c4801f8350099757998193ddb95b7abcc297757622642c20fcce59a137e3",
+      "rc7": "6561c4801f8350099757998193ddb95b7abcc297757622642c20fcce59a137e3",
+      "archive": "6561c4801f8350099757998193ddb95b7abcc297757622642c20fcce59a137e3"
+    },
+    "Zend/zend_vm_opcodes.c": {
+      "rc4": "7c249ac3841dbb3e23a4cbe456712ca9756a7183b0c81a4e521e6d980467d555",
+      "rc7": "7c249ac3841dbb3e23a4cbe456712ca9756a7183b0c81a4e521e6d980467d555",
+      "archive": "7c249ac3841dbb3e23a4cbe456712ca9756a7183b0c81a4e521e6d980467d555"
+    },
+    "Zend/zend_vm_opcodes.h": {
+      "rc4": "43c25fa88d575e40a8f6b9cc4d56a3633476f6549a1b01e1ddf663b760ebca8e",
+      "rc7": "43c25fa88d575e40a8f6b9cc4d56a3633476f6549a1b01e1ddf663b760ebca8e",
+      "archive": "43c25fa88d575e40a8f6b9cc4d56a3633476f6549a1b01e1ddf663b760ebca8e"
+    },
+    "Zend/zend_vm_trace_handlers.h": {
+      "rc4": "0f60846ee94887922e4e5f23da23b5e1d7a894e319ad6762dfc1d3cc2d4e9ce9",
+      "rc7": "0f60846ee94887922e4e5f23da23b5e1d7a894e319ad6762dfc1d3cc2d4e9ce9",
+      "archive": "0f60846ee94887922e4e5f23da23b5e1d7a894e319ad6762dfc1d3cc2d4e9ce9"
+    },
+    "Zend/zend_vm_trace_lines.h": {
+      "rc4": "f32e0314150a4eafedd8f26fec817108d842d3bbd65553afd5081f471c8a1f1f",
+      "rc7": "f32e0314150a4eafedd8f26fec817108d842d3bbd65553afd5081f471c8a1f1f",
+      "archive": "f32e0314150a4eafedd8f26fec817108d842d3bbd65553afd5081f471c8a1f1f"
+    },
+    "Zend/zend_vm_trace_map.h": {
+      "rc4": "01086522782adf6677ca06e69e9e7869c04e85457eb713b3e773fd789f57da1c",
+      "rc7": "01086522782adf6677ca06e69e9e7869c04e85457eb713b3e773fd789f57da1c",
+      "archive": "01086522782adf6677ca06e69e9e7869c04e85457eb713b3e773fd789f57da1c"
+    },
+    "Zend/zend_weakrefs.c": {
+      "rc4": "f7ebd63837543350d3ee315eeb0545d3e62081ebd9bbec03d97efc4dd2e1f496",
+      "rc7": "65368d68a412d5d1b7d38998cf582dca7c35a2c1f177f6d7a44db81406995087",
+      "archive": "65368d68a412d5d1b7d38998cf582dca7c35a2c1f177f6d7a44db81406995087"
+    },
+    "Zend/zend_weakrefs.h": {
+      "rc4": "67c000dd263bdf6cd4d02e171966bf824b3d522e562bad8bf36656869d4b7bdf",
+      "rc7": "67c000dd263bdf6cd4d02e171966bf824b3d522e562bad8bf36656869d4b7bdf",
+      "archive": "67c000dd263bdf6cd4d02e171966bf824b3d522e562bad8bf36656869d4b7bdf"
+    },
+    "Zend/zend_weakrefs_arginfo.h": {
+      "rc4": "cc3e658f7877f0cbca187467d70aa9d80a136814c985843a41f035a25a6fc7ef",
+      "rc7": "cc3e658f7877f0cbca187467d70aa9d80a136814c985843a41f035a25a6fc7ef",
+      "archive": "cc3e658f7877f0cbca187467d70aa9d80a136814c985843a41f035a25a6fc7ef"
+    }
+  },
+  "errors": [
+    "RC7 archive mismatch: NEWS"
+  ]
+}

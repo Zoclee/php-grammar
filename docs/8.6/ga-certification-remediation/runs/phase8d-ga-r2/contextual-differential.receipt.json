@@ -1,0 +1,23 @@
+{
+  "originalObligation": [
+    "context",
+    "Check compiler, declaration-link and controlled-runtime expectations at their declared stage."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/context-check-ga-v2.php",
+    "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "--php86=C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+    "--sources85=C:/Data/GitHub/php-grammar/.audit/phase8d/sources85",
+    "--sources86=C:/Data/GitHub/php-grammar/.audit/phase8b/source",
+    "--report=docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/contextual-differential.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/contextual-differential.log",
+  "logSha256": "4c14401a51ee0d72efa6e56bc0f85f52a28d6e9d0f87f5ca5736179627e8424f"
+}

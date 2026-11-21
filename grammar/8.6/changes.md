@@ -2,13 +2,13 @@
 
 ## 1. Overview and comparison baseline
 
-**Registered draft; provisional and incomplete working document.** Phase 3B
+**PHP 8.6.0 GA structural grammar; stable structural certification passed.** Phase 3B
 implements PHP86-001 partial function application (PFA) and callable
 trailing commas. Phase 3C adds the contextual specification changes PHP86-003
 through PHP86-007 below, with no further EBNF change or new contextual validator.
 Phase 3E documents PHP86-010 accepted-but-deprecated forms and their diagnostic
 stages, also without EBNF changes.
-No complete PHP 8.6 compatibility or certification is claimed.
+No exhaustive PHP compiler compatibility is claimed. Structural certification is independent of the retained extended contracts.
 The preceding supported version is PHP 8.5; the repository copying baseline is
 `d4cd2c5446a9de7fa783533ef8d9e8f8f0fad3ee`.
 The pre-edit EBNF SHA-256 is
@@ -19,10 +19,18 @@ The same hashes still identify the protected PHP 8.5 artifacts.
 
 Upstream comparison: branch `PHP-8.5` at
 `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`, versus branch `PHP-8.6`, tag
-`php-8.6.0RC4`, at `f23b4c222cebe33be93ee8ecaaa14390c5507a08`.
-The audited profile here is byte-oriented ordinary PHP source and lint of the
-focused PFA corpus, with `-n` and no opcache/JIT. Executables are PHP 8.5.10
-and PHP 8.6.0RC4 Windows distributions, not proven exact-pin builds.
+`php-8.6.0`, at `8aaada3f9605d81a38b8240f93c7389dfbc77ef9`.
+The active GA profile uses the authenticated exact-Git local PHP 8.6.0 build
+and the retained PHP 8.5.10 distribution. The byte-oriented profile uses `-n`,
+`zend.multibyte=0`, explicit short-tag settings, and no opcache/JIT except in
+named opcode-generation probes. Build custody is local, not hermetic attestation.
+
+Phase 8D adopts the [versioned GA source lock](../../tools/8.6/source-lock-ga-v2.json).
+The [RC7-to-GA review](../../docs/8.6/ga-finalization/review.json) identifies no
+additional structural, lexical, or contextual change; this does not close the
+remaining discovery queue. RC4 and RC7 observations remain historical evidence.
+The [GA remediation report](../../docs/8.6/ga-certification-remediation.md)
+records current gate outcomes and limitations. PHP 8.6 remains draft.
 
 ## 2. Added syntax
 
@@ -42,6 +50,30 @@ Local coverage includes `pfa-basic`, `pfa-multiple`, `pfa-mixed`, `pfa-named`,
 under [invalid fixtures](../../tests/fixtures/php/8.6/invalid).
 
 ## 3. Modified syntax
+
+**SG86-002 — yield-key prefix composition correction.** The `yield-key`
+production now permits a throw-expression operand under its arrow-function,
+include/require and print prefixes, as accepted by the GA parser `expr` rules
+for `T_YIELD expr T_DOUBLE_ARROW expr`, `T_THROW expr`, `T_PRINT expr`,
+include/require and `arrow_function`. This corrects three demonstrated false
+rejections without adding new PHP 8.6 syntax. PHP 8.5 remains unchanged.
+[Source-backed controls](../../tests/fixtures/php/8.6/structural-evidence/cases.json)
+and [Gate B evidence](../../docs/8.6/structural-certification/yield-gate-b.json)
+retain positives and logical-prefix negatives.
+
+
+**CA86-001-STRUCTURAL — representation correction, not new PHP syntax.**
+`hook-name` now references `identifier`, matching GA parser `property_hook`
+(`T_STRING`, line 1160). The compiler's case-insensitive get/set legality check
+remains contextual and applies to visited declarations. The ninety
+[hook controls](../../tests/fixtures/php/8.6/structural-hooks/cases.json) cover
+case, unknown identifiers, keywords and other token categories, live/retained/
+discarded declarations and promoted parameters.
+[Gate B evidence](../../docs/8.6/structural-certification/gate-b.json) records
+source hashes and obligations. PHP 8.5 is unchanged and retains a separate
+historical correction obligation; the cross-version matcher difference is not a
+PHP 8.6 language addition. The five PHP86-001 production changes below are retained.
+
 
 **PHP86-001/lists.** Exactly five productions change; none is added, removed,
 renamed, or reordered:
@@ -72,7 +104,7 @@ all PHP 8.6 changes; other findings remain outside this phase.
 No new token, keyword, or scanner state is required. Existing `?` and
 `T_ELLIPSIS` spellings distinguish placeholders from `??` and from unpacking
 `...expression`. Scanner source is pinned in the
-[PFA source lock](../../tools/8.6/pfa-source-lock.json).
+[PFA source lock](../../tools/8.6/pfa-source-lock-ga-v1.json).
 The original Phase 3B tests used the PHP 8.5 lexer through an in-memory test
 manifest, with comments between tokens and a `??` negative. Phase 4B uses the
 registered 8.6 configuration and verifies both tag profiles and token boundaries.
@@ -128,7 +160,7 @@ expectations. Prefixes below refer to `context-<prefix>*.php` in the 8.6 valid,
 contextual-invalid, and runtime fixture directories. Structural acceptance remains true in
 both grammars, including all contextual-negative cases.
 
-| Finding | PHP 8.5 versus RC4; normative scope | Existing productions and local evidence |
+| Finding | PHP 8.5 versus GA; normative scope | Existing productions and local evidence |
 |---|---|---|
 | PHP86-003 | Ordinary readonly defaults prohibited -> eligible typed instance defaults permitted, including readonly classes. Type/constant-expression, nonstatic, unhooked, inheritance, and initialization constraints remain. Promotion defaults still initialize parameters. | `property-declaration`; Properties and Promotion prose. `readonly-*` fixtures cover defaults, implicit readonly, types, inheritance, promotion, discarded closure, and controlled reassignment. |
 | PHP86-004 | Constant-derived property write paths rejected -> property mutation through global/class constant objects and intervening dimensions permitted. Dimension-only constant array writes remain invalid. No assignment-based writable-target relaxation. | `variable-expression`, `assignment-expression`, `unset-statement`, `foreach-statement`; Writable variables and destructuring prose. `object-*` fixtures cover references, unset, increment, compound writes, dimensions, destructuring, nonobject failure, and mutation execution. Existing foreach lint acceptance is a control, not a new acceptance boundary. |
@@ -137,15 +169,15 @@ both grammars, including all contextual-negative cases.
 | PHP86-007 | Nullsafe method-call reference returns/yields pass tested 8.5 lint -> rejected when compiled in RC4. Existing nullsafe property/binding restrictions remain. No blanket value-return, yield, or foreach restriction. | `return-statement`, `yield-expression`, `function-declaration`; Control-flow constraints prose. `nullsafe-*` cases distinguish by-reference/value contexts, ordinary calls, property binding, discarded closure, unreachable/dead statements, and foreach controls. |
 
 Immutable implementation evidence at
-`f23b4c222cebe33be93ee8ecaaa14390c5507a08`:
+`8aaada3f9605d81a38b8240f93c7389dfbc77ef9`:
 
-- PHP86-003: [compiler](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c), `zend_compile_prop_decl`; [inheritance](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_inheritance.c) property checks. Upstream `readonly_props/readonly_with_default.phpt` and `readonly_with_default_inheritance.phpt`.
+- PHP86-003: [compiler](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c), `zend_compile_prop_decl`; [inheritance](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_inheritance.c) property checks. Upstream `readonly_props/readonly_with_default.phpt` and `readonly_with_default_inheritance.phpt`.
 - PHP86-004: compiler `zend_can_write_to_variable`, `zend_mark_const_object_fetch` and constant/property fetch compilation. Upstream `gh10497_write_targets.phpt`, `gh10497_write_targets_guardrail.phpt`, `gh10497_dim_arr.phpt`, `gh10497_func_arg.phpt`, `gh10497_non_object.phpt`.
-- PHP86-005: compiler `zend_compile_class_const_decl`, `zend_compile_enum_case`; inheritance constant matching and unresolved Override checks; [attribute target definition](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_attributes.stub.php) and generated arginfo. Upstream `attributes/override/constants/basic.phpt`, `failure.phpt`, `visibility_01.phpt`, `visibility_03.phpt`.
-- PHP86-006: [enum checks](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_enum.c), `zend_verify_enum_magic_methods`; [magic-method checks](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_API.c), `zend_check_magic_method_implementation`. Upstream `enum/debugInfo/` magic method, backed value, parameter, return, and visibility PHPTs. Nullable-return deprecation is diagnostic, not a new structural rejection.
+- PHP86-005: compiler `zend_compile_class_const_decl`, `zend_compile_enum_case`; inheritance constant matching and unresolved Override checks; [attribute target definition](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_attributes.stub.php) and generated arginfo. Upstream `attributes/override/constants/basic.phpt`, `failure.phpt`, `visibility_01.phpt`, `visibility_03.phpt`.
+- PHP86-006: [enum checks](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_enum.c), `zend_verify_enum_magic_methods`; [magic-method checks](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_API.c), `zend_check_magic_method_implementation`. Upstream `enum/debugInfo/` magic method, backed value, parameter, return, and visibility PHPTs. Nullable-return deprecation is diagnostic, not a new structural rejection.
 - PHP86-007: compiler `zend_compile_return`, `zend_compile_yield`, `zend_is_variable_or_call`, and `zend_assert_not_short_circuited`; upstream `gh20628_001.phpt` plus recorded ordinary/discarded research probes.
 
-The [context source lock](../../tools/8.6/context-source-lock.json) preserves both
+The [context source lock](../../tools/8.6/context-source-lock-ga-v1.json) preserves both
 source pins, hashes, pre-edit artifact hashes, and interpreter distribution hashes.
 The [Phase 3C report](../../docs/8.6/context-implementation.md) records exact
 commands and limitations. Seven [contextual boundary records](../../tests/fixtures/version-boundaries/contextual-8.6)
@@ -161,7 +193,7 @@ contextual restrictions. There are **zero EBNF, token, or lexical edits**.
 Warnings are separate from source rejection. The existing `readonly` import
 alias rejection is a negative control, not a new deprecation or removal.
 
-| Construct / unchanged productions | PHP 8.5 versus RC4 | Source and local case group |
+| Construct / unchanged productions | PHP 8.5 versus GA | Source and local case group |
 |---|---|---|
 | Names, `identifier`, `type`, class-like declarations | `let`/`is` declaration and type-name diagnostics added; qualified `_` type/alias checks broadened. `_` class declarations already warned, including namespaced declarations. Qualified suffix matching differs from unqualified matching; runtime class aliases lowercase first. | Compiler `zend_assert_valid_class_name`, `zend_compile_typename_ex`, `zend_compile_class_decl`; API `zend_register_class_alias_ex`; `names` cases. |
 | `function-declaration`, `method-declaration` | Functions named `readonly`, `let`, `is` now warn during compilation; methods and `_` functions retain warning-free controls. | Compiler `zend_begin_func_decl`; `names` cases. |
@@ -172,13 +204,13 @@ alias rejection is a negative control, not a new deprecation or removal.
 | `method-declaration`, `return-statement`, `yield-expression` | Constructor/destructor value returns and generator declarations newly warn during compilation; bare returns do not. | Compiler `zend_compile_return`, `zend_compile_func_decl_ex`; `returns` cases. |
 | `method-declaration`, `type` for `__debugInfo` | Nullable return declarations newly warn during compilation. Null received by the debug handler already warned at runtime in PHP 8.5; an ordinary direct call is distinct. | API `zend_check_magic_method_implementation`; object handlers `zend_std_get_debug_info`; `debug` cases. |
 
-Immutable implementation sources at the RC4 pin:
-[compiler](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c),
-[constants](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_constants.c),
-[API](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_API.c),
-[object handlers](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_object_handlers.c).
+Immutable implementation sources at the GA pin:
+[compiler](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c),
+[constants](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_constants.c),
+[API](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_API.c),
+[object handlers](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_object_handlers.c).
 Upstream evidence includes
-[deprecated identifiers](https://github.com/php/php-src/tree/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/tests/deprecated_identifiers),
+[deprecated identifiers](https://github.com/php/php-src/tree/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/tests/deprecated_identifiers),
 `functions/readonly_as_method_name_is_ok.phpt`,
 `deprecate_namespace_class_constant.phpt`,
 `try/finally_return_deprecation.phpt`,
@@ -186,7 +218,7 @@ Upstream evidence includes
 and `debug_info/debug_info.phpt` under that tree's `Zend/tests` directory.
 Both-side source/test hashes and 67 isolated sources with explicit paired
 lint/execution expectations are in the
-[deprecation case manifest](../../tests/fixtures/php/8.6/deprecation-cases.json).
+[deprecation case manifest](../../tools/8.6/deprecation-cases-ga-v1.json).
 The [Phase 3E report](../../docs/8.6/deprecation-implementation.md) and
 [paired results](../../docs/8.6/deprecation-validation.json) record validation
 and limits. `__sleep`/`__wakeup` deprecation was reverted and is not introduced
@@ -205,22 +237,33 @@ the draft; PHP 8.5 remains the recommended stable version. The numeric
 
 ## 8. Authoritative source references
 
-All new implementation references use the immutable RC4 tree:
+Current implementation references use the immutable GA tree:
 
-- [Parser](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y): `argument_list`, `argument_no_expr`, `argument`, clone lists, `ctor_arguments`, call and attribute entry points.
-- [Compiler](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c): functions in section 6, `zend_is_allowed_in_const_expr`, and ordinary short-circuit compilation.
-- [AST](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_ast.c): `zend_ast_create_arg_list*`, `zend_ast_arg_list_add`, and placeholder-to-callable conversion markers.
-- [Upstream tests](https://github.com/php/php-src/tree/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/tests/partial_application): tests named above, `rfc_examples_overview.phpt`, `rfc_examples_const_expr.phpt`, `named_placeholders.phpt`, `clone.phpt`, and `optional_placeholder.phpt`.
+- [Parser](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y): `argument_list`, `argument_no_expr`, `argument`, clone lists, `ctor_arguments`, call and attribute entry points.
+- [Compiler](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c): functions in section 6, `zend_is_allowed_in_const_expr`, and ordinary short-circuit compilation.
+- [AST](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_ast.c): `zend_ast_create_arg_list*`, `zend_ast_arg_list_add`, and placeholder-to-callable conversion markers.
+- [Upstream tests](https://github.com/php/php-src/tree/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/tests/partial_application): tests named above, `rfc_examples_overview.phpt`, `rfc_examples_const_expr.phpt`, `named_placeholders.phpt`, `clone.phpt`, and `optional_placeholder.phpt`.
 - [Implemented PFA v2 RFC](https://wiki.php.net/rfc/partial_function_application_v2), supporting the implementation evidence rather than substituting for it.
 
 Source hashes, reviewed test hashes, production mappings, and protected baseline
-hashes are in the [PFA source lock](../../tools/8.6/pfa-source-lock.json).
+hashes are in the [PFA source lock](../../tools/8.6/pfa-source-lock-ga-v1.json).
 Earlier [inventory](../../docs/8.6/language-change-inventory.md),
 [probes](../../docs/8.6/syntax-probes.json), and
 [implementation plan](../../docs/8.6/implementation-plan.md) remain research
 evidence, not retroactive conformance results.
 
 ## 9. Conformance and regression evidence
+
+The original phase results below describe their recorded source profiles.
+The GA successor independently executes the mandatory 36 original plus two
+hybrid obligations. Freshness, gate results, and unresolved requirements are
+recorded in the GA remediation report; earlier pass counts are not GA sign-off.
+
+Current GA certification uses `php tools/8.6/certification-ga.php --run
+--revision=<new-revision>`, followed by separate `--check --report=<evidence>`
+and `--claims --report=<evidence>` invocations. The fixed local profile and
+prerequisites are recorded in the source lock. The phase-specific RC4 commands
+and results below remain historical instructions, not GA certification.
 
 Phase 5D adds informative scope clarifications in the specification's Writable
 variables and destructuring and Ordinary compilation versus constant folding
@@ -330,3 +373,10 @@ empty-boundary test failures while retaining their intended invariants.
 Inherited certification evidence is not refreshed.
 The draft is available for further independently verified Gate B work, not for
 release certification. No completeness or release-certification phase is started.
+
+Under the independently authorized [structural contract](../../docs/structural-certification.md),
+CA86-001-STRUCTURAL is corrected by the evidence above. Original PHP86-013,
+PHP86-014, PHP86-015, CA86-001, C6-CONTEXT, C6-COVERAGE and C6-PROVENANCE
+remain unresolved in the preserved extended contracts. See the
+[structural scope decisions](../../docs/8.6/structural-certification/scope.json);
+no original failed result is relabeled as a pass.

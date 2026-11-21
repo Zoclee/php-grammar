@@ -1,0 +1,6 @@
+{
+  "gate": "ordinary-ga-differential",
+  "errors": [
+    "Ordinary structural/oracle mismatch: tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php"
+  ]
+}

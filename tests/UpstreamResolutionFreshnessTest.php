@@ -14,7 +14,7 @@ final class UpstreamResolutionFreshnessTest extends TestCase
     {
         $this->temporary = str_replace('\\', '/', sys_get_temp_dir()) . '/php-upstream-freshness-' . bin2hex(random_bytes(8));
         mkdir($this->temporary);
-        $root = dirname(__DIR__); $c = new C($root);
+        $root = \PhpGrammar\Tests\Support\StructuralPredecessor::root(); $c = new C($root);
         $paths = [...array_keys(E::ANCHORS), ...array_keys(P::ANCHORS), ...array_keys(E::CHANGES), E::PROBES];
         $paths = [...$paths, ...array_keys($c->read('docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json')['files'])];
         $old = $c->read(E::ORIGINAL);
@@ -23,7 +23,11 @@ final class UpstreamResolutionFreshnessTest extends TestCase
         foreach (array_unique($paths) as $p) {
             $target = $this->temporary . '/' . $p;
             if (!is_dir(dirname($target))) mkdir(dirname($target), 0777, true);
-            copy($root . '/' . $p, $target);
+            // These are RC4 contract tests. Authenticate its exact predecessor
+            // document rather than silently treating the GA document as RC4.
+            $source = in_array($p, ['php-grammar.json', 'grammar/8.6/changes.md', 'tests/Php/Conformance/Php86CompilerContextualTest.php'], true)
+                ? 'docs/8.6/ga-certification-remediation/predecessor/' . $p : $p;
+            copy($root . '/' . $source, $target);
         }
     }
     protected function tearDown(): void
@@ -37,11 +41,18 @@ final class UpstreamResolutionFreshnessTest extends TestCase
 
     public function testCurrentSnapshotInventoryIncludesConsumedHistoricalAuthority(): void
     {
-        $root = str_replace('\\', '/', dirname(__DIR__));
+        $root = \PhpGrammar\Tests\Support\StructuralPredecessor::root();
         $inventory = (new A($root))->inventory();
         $authority = 'docs/8.6/certification-contract-remediation/phase7h-validation/evidence-files.json';
         $required = E::ANCHORS + (new C($root))->read($authority)['files'];
-        foreach ($required as $path => $hash) self::assertSame($hash, $inventory[$path] ?? null, $path);
+        foreach ($required as $path => $hash) {
+            if ($path === 'grammar/8.6/changes.md') {
+                self::assertSame($hash, hash_file('sha256', $root . '/docs/8.6/ga-certification-remediation/predecessor/' . $path));
+                self::assertSame(hash_file('sha256', $root . '/' . $path), $inventory[$path]);
+                self::assertNotSame($hash, $inventory[$path]);
+            } else self::assertSame($hash, $inventory[$path] ?? null, $path);
+        }
+        self::assertSame(['Stale evidence digest: grammar/8.6/changes.md', 'Stale evidence digest: tests/Php/Conformance/Php86CompilerContextualTest.php'], (new E($root))->probeErrors($this->report()));
     }
 
     public function testSuccessorPreservesEveryOriginalObservationAndDependency(): void

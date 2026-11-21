@@ -1,0 +1,17 @@
+{
+  "obligation": "Exact canonical/generated Markdown production parity",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "markdown-parity",
+    "--output",
+    "docs/8.6/structural-certification/runs/prepromotion-r1/markdown-parity.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r1/markdown-parity.log",
+  "sha256": "580a017f4806afd0cf9c68d36993230e9edc5d0dfd305977e709af83ff9a2790"
+}

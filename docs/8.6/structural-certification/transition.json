@@ -1,0 +1,121 @@
+{
+  "contract": "php86-structural-preservation-v1",
+  "baselineSha256": "6b06748bf3bc7cc7badbd3c432e794c36511c5619f6cb7c0d7f62f7bdb56478b",
+  "changes": {
+    ".gitattributes": {
+      "before": "025ea1fe9e91797353544d90ad9c191de28bf003c481c0ce29ba9b754ce34787",
+      "after": "a09d8517e325bf7ca7f5c65b15f713bd2693a1e4a338fde5b3d582898aa699e8",
+      "reason": "Explicitly authorized structural governance and accurate consumer documentation."
+    },
+    ".gitignore": {
+      "before": "c6727b8ecc047d8979e7f62462493e2c5a927b2392a02146fc229d7630e36776",
+      "after": "615412442a5ec370de6f50c4d19be361692d0e103a57a300f66ab09c7e57cad8",
+      "reason": "Explicitly authorized structural governance and accurate consumer documentation."
+    },
+    "AGENTS.md": {
+      "before": "ed95f10cf0f0bb9b174d52177f6bb99b09f9d2dd2b568d2498890b1e92a414f0",
+      "after": "4079ea1dd2105db4fd5dcdaf2ff0a42ba213416a455d6a400a798850e3b6aeaf",
+      "reason": "Explicitly authorized structural governance and accurate consumer documentation."
+    },
+    "README.md": {
+      "before": "969198fd4390cbc9d32817ae3d6f5676e0e2fb2c1eface07779a5f40847e14bc",
+      "after": "5131f61350f5db4b68c7c7985f18083c25e9e89d4f28df58cfaf348beba8d770",
+      "reason": "Explicitly authorized structural governance and accurate consumer documentation."
+    },
+    "docs/api.md": {
+      "before": "251c58bafc4d8097c8f462d133b062bc0c390724af3312cc032a508d394eab15",
+      "after": "79023d632956e4c4479c83bc17a9ae747f8287bd4bf7b23879118adc7a5407e9",
+      "reason": "Explicitly authorized structural governance and accurate consumer documentation."
+    },
+    "docs/conformance-policy.md": {
+      "before": "058d638b95c66cd5bd54fc8ea1f27a3dc59a50785e5a9d8047f9a0d719b4af2f",
+      "after": "ad3b2d7b2caeee26b58fd7c9f9780c7af6783ebc84ccdefa8711d7da80aa73d9",
+      "reason": "Explicitly authorized structural governance and accurate consumer documentation."
+    },
+    "docs/sources.md": {
+      "before": "cd487c679b725851f399c085c6bf117585a2753c35d5081c3ebc4a8b470dc59a",
+      "after": "342c36cd4aba99fd9e55a8b4f52d7681c1f2ad5a6ec5bdbccae25d14882e4cb4",
+      "reason": "Explicitly authorized structural governance and accurate consumer documentation."
+    },
+    "docs/usage.md": {
+      "before": "5779424cb1686d5890ba23693d1c07c971c00f4fa9664d07e80ab561ed074c29",
+      "after": "9beb739ddecef67d7b7e71af05dd14af8f498d833e7f056d5b5692afbb70c665",
+      "reason": "Explicitly authorized structural governance and accurate consumer documentation."
+    },
+    "docs/versioning.md": {
+      "before": "3a741eb85bc8c49e9453c75471912f083a429b61fb68742fdf6ae38402c3563e",
+      "after": "e1a41b05f2380c043def31aa08530b544fce5385df22434c1c5f4ebf06d38a8a",
+      "reason": "Explicitly authorized structural governance and accurate consumer documentation."
+    },
+    "grammar/8.6/changes.md": {
+      "before": "d8646847f828db89d54516a7f2a07f3abbda6681b96a63cc88a3d136d2cf2997",
+      "after": "c0c2a05919d28effc4a2750d92526baf2939c03b1a5d84e3f4fa6f429cb71487",
+      "reason": "GA structural scope and source-backed CA86-001 correction; retain five PFA production changes."
+    },
+    "grammar/8.6/php.ebnf": {
+      "before": "12cfcfa3a0122eeac769862a7644740eb20a533048267f23c8ea984e261dbaf4",
+      "after": "29f07eb51057e4878c90a7e2692f4e4b0a02ea03ab5cf5169e60e46226679b79",
+      "reason": "GA structural scope and source-backed CA86-001 correction; retain five PFA production changes."
+    },
+    "grammar/8.6/php.md": {
+      "before": "1aa67b423e391c55f92f5b65ffba81bdd9d0dd8ab4c49201e66fab9eff1d100e",
+      "after": "9027e2971f051521c7d33ede7f1657c4b81c8ecc538d194b962188f3619156e6",
+      "reason": "GA structural scope and source-backed CA86-001 correction; retain five PFA production changes."
+    },
+    "php-grammar.json": {
+      "before": "1371ba16f408d7b477b2fae217737bb118ba19b237d4e61c22c81098631b36c5",
+      "after": "dfad6bc1fc51b2c8dcce31852bd85412e3d0e8a8ded931a8b15fc9ea80708daf",
+      "reason": "Independent structural contract metadata; promotion only after verified structural gates."
+    },
+    "tests/GaCertificationTest.php": {
+      "before": "793be25e76d569bf21875650b7c2b21a5a13c32556d2758acb5f70662e91679d",
+      "after": "c8eae3756208af21cf32e1ae573f85ef423b159ba6eb0febb21c7956b19454eb",
+      "reason": "Preserve legacy assertions on authenticated predecessor inputs and test current structural semantics."
+    },
+    "tests/Php/Conformance/Php86CompilerContextualTest.php": {
+      "before": "f38dbbe3e67d1a31a11aeb734fe4ba2b46c8b9b7439fd0ddd6cecc0db941f0e5",
+      "after": "21d031ae2d81279931661b32af0415b66a45fc26ec8cae385e4c0ee70a446b3d",
+      "reason": "Preserve legacy assertions on authenticated predecessor inputs and test current structural semantics."
+    },
+    "tests/Php/Conformance/Php86ContextualChangesTest.php": {
+      "before": "3f7c2e9c1b2f5c4dbd7b65ea773322235c6d704171fb5a3a4523be340ed8918f",
+      "after": "81f1cf0dcbd79eb34708e265c3173b5e534140d907366a29db2130e1a3204830",
+      "reason": "Preserve legacy assertions on authenticated predecessor inputs and test current structural semantics."
+    },
+    "tests/Php/Conformance/Php86CoverageExpansionTest.php": {
+      "before": "fdf36a40208bef4de1543b35666fc1d3955fe9993a132183ae0654ce4fe66856",
+      "after": "de13183e626fc05bf9425fb14ecc51861a298e13b4e460f842b6d1e800ccdcda",
+      "reason": "Preserve legacy assertions on authenticated predecessor inputs and test current structural semantics."
+    },
+    "tests/Php/Conformance/Php86IntegrationTest.php": {
+      "before": "95732b99f00fc933f896a5b672cab877cf8741973717cd90350d055498fcb487",
+      "after": "d075280d6b28102468a5a6ff7f7ca09da7da4d15ab0c3d38c73c7ccf7617c0c9",
+      "reason": "Preserve legacy assertions on authenticated predecessor inputs and test current structural semantics."
+    },
+    "tests/Php/Conformance/Php86PartialApplicationTest.php": {
+      "before": "2055b92e1b1a8975fb52e1181a226956685592df4cad68bd36477fe9f0ef9aec",
+      "after": "aca31b960a983e59736939156a5fd94dfeb464c679cbe2971ef3e5f3954e7be2",
+      "reason": "Preserve legacy assertions on authenticated predecessor inputs and test current structural semantics."
+    },
+    "tests/Php/Conformance/Php86TraceabilityTest.php": {
+      "before": "0dd9ed5c84a6fe7a8041671ca7040f6ab6e07d798eda5358c4ac8138dc2f4bd9",
+      "after": "3ad5f999056d38c4ac111c453b9eeeaf6539b148972378b7708e69f967971b02",
+      "reason": "Preserve legacy assertions on authenticated predecessor inputs and test current structural semantics."
+    },
+    "tests/Repository/ConsumerCliTest.php": {
+      "before": "b867e2a50b5c0afa91504771171805f919e4685a7f6d01756715a2daa6c47f81",
+      "after": "f37985da23cb2ad2ed3c5a621b0ac5116537ea3b32053d606d3d52ef66b629a4",
+      "reason": "Preserve legacy assertions on authenticated predecessor inputs and test current structural semantics."
+    },
+    "tests/Repository/ConsumerWorkflowTest.php": {
+      "before": "a877c79336b17e591f3e461e7108d71064a611da03203e6c39d3892d3b4bcca8",
+      "after": "b032ec292fe91d1b8bc6330f6272cffce7ca3b062bab8a4964db3f74749f213e",
+      "reason": "Preserve legacy assertions on authenticated predecessor inputs and test current structural semantics."
+    },
+    "tests/UpstreamResolutionFreshnessTest.php": {
+      "before": "a0aecd8fd154580846ea90692be35fd44b18dfa7881ddf12caa718949876842f",
+      "after": "ac72016d2951cfb96dd9f0124335d59c36455f36715b609bcc6d2cd206d0bbbc",
+      "reason": "Preserve legacy assertions on authenticated predecessor inputs and test current structural semantics."
+    }
+  }
+}

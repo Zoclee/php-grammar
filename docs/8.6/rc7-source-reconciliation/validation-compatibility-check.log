@@ -1,0 +1,8 @@
+{
+  "contract": "current-compatibility-v1",
+  "errors": [
+    "Stale or incomplete mandatory dependency scope"
+  ],
+  "currentCompatibilityVerified": false,
+  "certificationGranted": false
+}

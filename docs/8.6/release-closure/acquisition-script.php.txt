@@ -1,0 +1,284 @@
+<?php
+declare(strict_types=1);
+require __DIR__ . '/../tools/lib/bootstrap.php';
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../tools/lib/GaCertification.php';
+use PhpGrammar\Tools\Support as S;
+use PhpGrammar\Tools\GaCertification as G;
+chdir(dirname(__DIR__));
+$root = str_replace('\\', '/', getcwd());
+$out = 'docs/8.6/release-closure';
+if (!is_dir($out)) mkdir($out, 0777, true);
+function save(string $name, mixed $data): void {
+    global $out;
+    $path = "$out/$name.json";
+    if (file_exists($path)) throw new RuntimeException("Refusing overwrite: $path");
+    file_put_contents($path, S::json($data));
+}
+function command(string $name, array $cmd): array {
+    global $root, $out;
+    if (file_exists("$out/$name.log")) throw new RuntimeException('Existing log');
+    $r = S::run($cmd, $root, "$out/$name.log");
+    save($name . '.receipt', ['command' => $cmd, 'exitCode' => $r['exit_code'], 'sha256' => hash_file('sha256', "$out/$name.log")]);
+    return $r;
+}
+$mode = $argv[1] ?? '';
+if ($mode === 'baseline') {
+    $g = new G($root);
+    $report = G::OUT . '/runs/phase8d-ga-r2/evidence.json';
+    $errors = $g->verify($g->read($report), $report);
+    // This script is in .audit and this new output directory was empty before this verification.
+    save('baseline', ['time' => gmdate('c'), 'head' => S::run(['git','rev-parse','HEAD'], $root),
+        'workingTree' => S::run(['git','status','--porcelain=v1'], $root), 'inputs' => $g->inventory(),
+        'priorEvidence' => $report, 'priorSha256' => hash_file('sha256', $report), 'verificationErrors' => $errors,
+        'grammarHashes' => $g->hashes(['grammar/8.5/php.ebnf','grammar/8.5/php.md','grammar/8.6/php.ebnf','grammar/8.6/php.md','grammar/8.6/changes.md']),
+        'profileErrors' => $g->profileErrors(), 'preservationErrors' => $g->preservation()]);
+    echo S::json(['verificationErrors' => $errors]);
+} elseif ($mode === 'upstream') {
+    foreach (['ga-ref' => 'https://api.github.com/repos/php/php-src/git/ref/tags/php-8.6.0',
+        'ga-tag' => 'https://api.github.com/repos/php/php-src/git/tags/48a5ee8a311db69103a6fa25b330e5ff3847af3d',
+        'release' => 'https://api.github.com/repos/Zoclee/php-grammar/releases/latest',
+        'pr25046' => 'https://api.github.com/repos/php/php-src/pulls/25046',
+        'issue24792' => 'https://api.github.com/repos/php/php-src/issues/24792',
+        'issue24792-comments' => 'https://api.github.com/repos/php/php-src/issues/24792/comments?per_page=100',
+        'issue24794-comments' => 'https://api.github.com/repos/php/php-src/issues/24794/comments?per_page=100',
+        'issue24795-comments' => 'https://api.github.com/repos/php/php-src/issues/24795/comments?per_page=100'] as $id => $url) {
+        $headers = ''; $c = curl_init($url);
+        curl_setopt_array($c, [CURLOPT_RETURNTRANSFER => true, CURLOPT_FOLLOWLOCATION => true, CURLOPT_SSL_OPTIONS => CURLSSLOPT_NATIVE_CA, CURLOPT_USERAGENT => 'php-grammar-release-closure', CURLOPT_TIMEOUT => 60,
+            CURLOPT_HEADERFUNCTION => static function($c, $line) use (&$headers) { $headers .= $line; return strlen($line); }]);
+        $body = curl_exec($c); $status = curl_getinfo($c, CURLINFO_RESPONSE_CODE);
+        if ($body === false) throw new RuntimeException(curl_error($c));
+        if (file_exists("$out/$id.body")) throw new RuntimeException('Existing response');
+        file_put_contents("$out/$id.body", $body); file_put_contents("$out/$id.headers", $headers);
+        save($id . '.receipt', ['url' => $url, 'httpStatus' => $status, 'retrievedAt' => gmdate('c'), 'bodySha256' => hash('sha256', $body), 'headersSha256' => hash('sha256', $headers)]);
+        echo "$id: HTTP $status\n";
+        if ($status !== 200) throw new RuntimeException('Non-success HTTP response');
+    }
+    command('remote-tags', ['git','ls-remote','--tags','https://github.com/Zoclee/php-grammar.git']);
+    $pr = json_decode(file_get_contents("$out/pr25046.body"), true, 512, JSON_THROW_ON_ERROR);
+    command('proposal-ga-ancestry', ['git','--git-dir=.audit/rc7-git','merge-base','--is-ancestor',$pr['head']['sha'],G::PIN]);
+} elseif ($mode === 'historical') {
+    $expected = '0280ff2b531e0e5cdaa9db2b6265991c3b5d511f4905683a88c2bea5ce2ac373';
+    $list = S::run(['git','cat-file','--batch-all-objects','--batch-check=%(objectname) %(objecttype) %(objectsize)'], $root);
+    if ($list['exit_code'] !== 0) throw new RuntimeException($list['output']);
+    $proc = proc_open(['git','cat-file','--batch'], [0=>['pipe','r'],1=>['pipe','w'],2=>['file', "$out/object-scan.stderr",'w']], $pipes, $root);
+    $count = 0; $bytes = 0; $matches = []; $jsonCandidates = [];
+    foreach (explode("\n", trim($list['output'])) as $line) {
+        [$oid,$type,$size] = explode(' ',trim($line)); $size = (int)$size;
+        if ($type !== 'blob' || $size < 100 || $size > 100000) continue;
+        fwrite($pipes[0], "$oid\n"); fflush($pipes[0]);
+        $header = fgets($pipes[1]);
+        if ($header !== "$oid blob $size\n") throw new RuntimeException('Unexpected object header');
+        $blob = ''; while (strlen($blob) < $size) { $part = fread($pipes[1], $size - strlen($blob)); if ($part === '' || $part === false) throw new RuntimeException('Truncated object'); $blob .= $part; }
+        if (fread($pipes[1], 1) !== "\n") throw new RuntimeException('Unexpected delimiter');
+        ++$count; $bytes += $size;
+        $hash = hash('sha256',$blob);
+        if (str_contains($blob, '"versions"') && str_contains($blob, '"schemaVersion"') && json_decode($blob, true) !== null) $jsonCandidates[$oid] = $hash;
+        if ($hash === $expected) { $matches[] = $oid; file_put_contents('.audit/phase8d/historical/php-grammar.json', $blob); }
+    }
+    fclose($pipes[0]); fclose($pipes[1]); $exit = proc_close($proc);
+    save('historical-object-search', ['expectedSha256'=>$expected, 'scope'=>'Every locally available Git blob of 100 through 100000 bytes, including unreachable objects; no byte normalization', 'objectListSha256'=>hash('sha256',$list['output']), 'objectsScanned'=>$count, 'bytesScanned'=>$bytes, 'manifestCandidates'=>$jsonCandidates, 'matches'=>$matches, 'exitCode'=>$exit]);
+    echo S::json(['objectsScanned'=>$count, 'matches'=>$matches, 'exitCode'=>$exit]);
+} elseif ($mode === 'inspect') {
+    foreach (['ga-ref','ga-tag','release','pr25046','issue24792'] as $id) {
+        $r = json_decode(file_get_contents("$out/$id.body"), true, 512, JSON_THROW_ON_ERROR);
+        echo S::json([$id => array_intersect_key($r, array_flip(['ref','tag','object','tag_name','target_commitish','state','state_reason','merged','merged_at','body','head','base']))]);
+    }
+    foreach (['issue24792-comments','issue24794-comments','issue24795-comments'] as $id) {
+        $r = json_decode(file_get_contents("$out/$id.body"), true, 512, JSON_THROW_ON_ERROR);
+        foreach ($r as $row) echo S::json(['record'=>$id, 'url'=>$row['html_url'], 'author'=>$row['user']['login'], 'association'=>$row['author_association'], 'body'=>$row['body']]);
+    }
+} elseif ($mode === 'requirements') {
+    foreach (['coverage','scanner','binding'] as $name) {
+        $r = S::read("docs/8.6/scanner-grammar-binding-closure/$name.json");
+        echo S::json([$name => array_map(static fn($v) => is_array($v) ? ['count'=>count($v), 'keys'=>array_slice(array_keys($v),0,20)] : $v, $r)]);
+    }
+    $r = S::read('docs/8.6/local-source-context-remediation/source-review.json');
+    $pending = [];
+    foreach ($r['reviewQueue'] as $row) if (in_array($row['effectiveDisposition'], ['pending-direct-review','examined-unresolved'], true) && $row['id'] !== 'Zend/zend_compile.c:27:26') $pending[] = array_intersect_key($row,array_flip(['id','effectiveDisposition','remaining','reviewScope']));
+    save('remaining-source-identities', ['source'=>'docs/8.6/local-source-context-remediation/source-review.json','sha256'=>hash_file('sha256','docs/8.6/local-source-context-remediation/source-review.json'),'scope'=>'Existing material queue only; not new discovery or a language-change count','records'=>$pending]);
+    foreach (['issue24795-comments','pr25046'] as $id) {
+        $r = json_decode(file_get_contents("$out/$id.body"),true,512,JSON_THROW_ON_ERROR);
+        if ($id === 'pr25046') echo $r['body'];
+        else foreach($r as $row) if ($row['id'] === 6455687623) echo $row['body'];
+        echo "\n";
+    }
+} elseif ($mode === 'report') {
+    $baseline = S::read("$out/baseline.json");
+    $prior = S::read(G::OUT . '/runs/phase8d-ga-r2/evidence.json');
+    $tag = json_decode(file_get_contents("$out/ga-tag.body"),true,512,JSON_THROW_ON_ERROR);
+    $ref = json_decode(file_get_contents("$out/ga-ref.body"),true,512,JSON_THROW_ON_ERROR);
+    if ($tag['object']['sha'] !== G::PIN || $ref['object']['sha'] !== '48a5ee8a311db69103a6fa25b330e5ff3847af3d') throw new RuntimeException('GA identity changed');
+    $repo = \PhpGrammar\Repository\RepositoryManifest::fromRepositoryRoot($root);
+    save('consumer-selection', ['versions'=>$repo->versions(), 'latestVersion'=>$repo->latestVersion(), 'php85Status'=>$repo->package('8.5')->status, 'php86Status'=>$repo->package('8.6')->status, 'meaning'=>'latestVersion selects the highest advertised version, including drafts; no stable alias']);
+    file_put_contents("$out/acquisition-script.php.txt",file_get_contents(__FILE__));
+    $files = []; foreach (S::files($root . '/' . $out) as $file) $files[substr($file,strlen($root)+1)] = hash_file('sha256',$file);
+    save('artifacts', ['scope'=>'Additive final release assessment; not a new certification contract', 'files'=>$files]);
+    $text = <<<'MD'
+# PHP 8.6 stable release sign-off
+
+**NOT SIGNED OFF — EXACT REMAINING REQUIREMENTS.** The authenticated GA
+profile remains `draft`. Stable `php-grammar v1.1.0` is not ready. No release
+commit, tag, publication, package deployment, or official PHP endorsement is
+claimed. This decision applies the existing policy; it does not replace a
+failed obligation with a narrower passing check.
+
+## Authenticated baseline and release identity
+
+The official `php-8.6.0` annotated tag object is
+`48a5ee8a311db69103a6fa25b330e5ff3847af3d`, pointing to
+`8aaada3f9605d81a38b8240f93c7389dfbc77ef9`. Fresh official API responses,
+headers, retrieval times and SHA-256 receipts are in
+[the closure inventory](release-closure/artifacts.json). The
+[baseline](release-closure/baseline.json) records the repository HEAD,
+preexisting staged and unstaged work, complete certification input hashes,
+successful independent verification of R2, source/executable checks and
+preservation results before these additive reports were written.
+
+The official repository latest-release API and remote tags still identify
+`v1.0.2`; `v1.1.0` is the appropriate proposed minor version for additive PHP
+8.6 support under [versioning section 6](../versioning.md#6-repository-release-versioning).
+Composer has no hard-coded package version. No version field needs inventing.
+
+The exact local GA executable SHA-256 is
+`880d0073cb54474a886e2dd4d9e4088374c0e945920490ad60b7809b8d9b804b`;
+its DLL is
+`9b2a8bad3ff00c1aa57c83676cff79a830df63ed5af1fc3eb6d55de8b8ab57f9`.
+The [adopted source lock](../../tools/8.6/source-lock-ga-v2.json) and
+[build source inventory](ga-finalization/build-source.json) retain 28,633
+authenticated source files and the reviewed local build chain. This is local
+custody evidence, not a hermetic or reproducible-build assertion.
+
+## Grammar identity and material changes
+
+No canonical grammar, lexical rule, normative specification, fixture, PHP 8.5
+artifact, or certification algorithm was changed during this final assessment.
+The three PHP 8.6 artifacts remain standalone; these are their assessed hashes:
+
+| Artifact | SHA-256 |
+|---|---|
+MD;
+    foreach ($baseline['grammarHashes'] as $path=>$hash) $text .= "\n| `$path` | `$hash` |";
+    $text .= <<<'MD'
+
+
+The [ten-section changes document](../../grammar/8.6/changes.md) remains the
+complete material-change record: PHP86-001 adds partial function application
+and callable trailing commas through five modified productions, with no added
+or removed productions. PHP86-003 through PHP86-007 describe readonly defaults,
+constant-object write paths, Override on constants/enum cases, enum
+`__debugInfo`, and nullsafe call reference restrictions. PHP86-010 records
+accepted-but-deprecated forms and diagnostic stages, not syntax removals.
+The locks and finding-specific witnesses in that document remain authoritative.
+The RC7-to-GA comparison identified no additional structural or lexical change.
+
+## Three failed obligations
+
+| Obligation | Why it remains mandatory | Exact next action |
+|---|---|---|
+| `rfc-implementation-traceability` | Versioning sections 3.1 and 16 require disposition of material source changes. GA parser equality does not resolve compiler, optimizer, linking or candidate ancestry/absence obligations. | Close the existing candidate/component/absence/reversion rows in R2's RFC gate details and the [214 outstanding source identities](release-closure/remaining-source-identities.json): 197 pending and 17 examined-unresolved. Retain bounded-group and outside-ledger associations in the source review. For each, supply an immutable implementation/test association or evidence-backed exclusion; implement only findings satisfying Gate B. |
+| `historical-artifact-integrity85` | The hybrid contract requires every byte of the anchored historical inventory. Current compatibility is a separate claim. | Restore `php-grammar.json` with SHA-256 `0280ff2b531e0e5cdaa9db2b6265991c3b5d511f4905683a88c2bea5ce2ac373` to the historical snapshot and rerun the unmodified checker. 1,544/1,545 inputs authenticate. The new [Git object search](release-closure/historical-object-search.json) checked 2,398 locally available blobs, including unreachable objects, without finding it. The search was bounded to blobs of 100–100,000 bytes; it is not proof that no external archive exists. |
+| `historical-certification-check` | The [opt-in contract](../conformance-policy.md#hybrid-historical-and-current-evidence-opt-in-contract-v1) explicitly retains the original aggregate and forbids substitution by the two added checks. | Complete a separate release-obligation decision and validated successor contract for how immutable historical certification and current compatibility satisfy the release requirement. Keep the original `Stale certification artifact: docs/8.5/final-evidence.json` refusal as historical evidence. Merely restoring the missing manifest does not cure this separate failure. Do not regenerate the old ledger against new inputs or silently remove this gate. |
+
+The new search recovered no bytes, so it changes neither the historical result
+nor its scope. No runner defect was identified that would justify converting
+any of these failures to success.
+
+## Nine blocked obligations and all seven blocker dispositions
+
+The [existing GA adjudication](ga-certification-remediation/blockers-v2.json)
+retains each original requirement, affected syntax, risk and release impact.
+The following is the concrete closure checklist, not a new discovery program.
+
+| Gate / blocker | Evidence and remaining action required by policy |
+|---|---|
+| `production-coverage-closure` / C6-COVERAGE | Use `scanner-grammar-binding-closure/coverage.json` at `after.remainingProductions` and the corresponding `rows`. Classify each material gap as a demonstrated witness, scanner/primitive abstraction with evidence, contextual boundary, or justified non-language obligation. Current ordinary witnesses cover 298/361 productions; uncovered counts alone are not defects or a percentage gate. |
+| `alternative-coverage-closure` / C6-COVERAGE | Resolve the exact `after.remainingAlternatives` identities and their row obligations, including context-only `from`. Current witnesses cover 545/800 alternatives. Supply the missing branch-specific correspondence or a justified classification; do not delete alternatives or require arbitrary 100% fixture coverage. |
+| `scanner-state-closure` / C6-COVERAGE | Close the `scanner-grammar-binding-closure/scanner.json` row/helper/error obligations and `remaining` entries. The 190 source slices and 11 state names authenticate, but source-range associations are not instrumented branch/state hits. Document any excluded encoding/filter configuration with an enforceable byte-source profile, and supply source-backed transition/error evidence for the supported profile. |
+| `ast-binding` / C6-COVERAGE | Finish `scanner-grammar-binding-closure/binding.json` at `remaining` and its predecessor's `remaining`: declaration/interpolation, writable/reference result categories, and PFA/argument binding. Preserve the reviewed operand-span/discriminating observations and retained ambiguities. Source equality and equivalent program output do not alone establish AST correspondence. |
+| `folding-order` / PHP86-015 | Reconcile the retained optimized-call/constant-expression dispatch predicates with live, retained and discarded cases. Include direct/imported/qualified/namespace/dynamic/named/unpack/PFA controls already named in the original obligation. The maintainer's #24794 explanation establishes skipped compilation as the cause, not an unconditional argument-traversal rule or completion of every row. |
+| `discovery-closure` / PHP86-013 | Discharge the exact source identities and candidate obligations listed above, including bounded groups and transitive paths. The previously proved redundant-include hunk remains the sole GA exclusion added to that queue. No unexamined hunk is classified as harmless by this assessment. |
+| `writable-target-validity` / PHP86-014 | Obtain an authoritative intended-validity disposition for the ordinary/reference/destructuring write forms and validate the corresponding compiler/VM consistency or an explicit enforceable exclusion under the conformance contract. GA lint and opcode construction accept cases whose execution fails with `Invalid opcode 23/2/1`; this is independently supported as a compiler/VM defect. Fresh #24792 and #25046 records still show an open issue and open, unmerged proposal; the proposal head is not a GA ancestor (exit 1, not an ancestry error). Do not turn the VM defect into an EBNF restriction or use proposed patched behavior as GA behavior. |
+| `contextual-enforcement-scope` / C6-CONTEXT | Finish predicate/source/stage and positive/negative/live/discarded associations for material entries in the 73-description contextual inventory and record which are external. Existing policy permits external contextual constraints; it does not equate 73 descriptions with 73 isolated predicates or waive unexplained source-validity discrepancies. A complete PHP compiler is not required. |
+| `discarded-hook-disposition` / CA86-001 | GA parser `property_hook` at `Zend/zend_language_parser.y:1160` consumes `T_STRING`; `zend_compile_property_hooks` rejects unknown names only if visited. The repository's `hook-name = "get" | "set"` rejects them even when discarded. #24795 confirms that dead ASTs skip compilation. The concrete correction candidate is a T_STRING-equivalent hook-name production with get/set legality external at the visited compilation stage, backed by identifier/keyword, case, live/retained/discarded and parameter-hook controls, canonical/Markdown parity and a versioned preservation/traceability transition. Alternatively, a separately evidenced enforceable claim restriction must be explicitly adjudicated. No such correction or restriction was completed here; issue closure alone does not close this in-scope mismatch. PHP 8.5 corrections must remain separate. |
+
+**C6-PROVENANCE:** exact GA source/build custody is satisfied under the stated
+local assumptions. Its remaining requirement is successful complete release
+evidence, including the separate historical and current obligations and an
+independent verifier. It is not a demand to rebuild an already authenticated
+executable. None of the seven complete blockers is closed by this assessment.
+
+Fresh upstream comments retain the maintainer's explanation that compiling dead
+ASTs while discarding generated opcodes would be nontrivial and is not planned.
+This supports the visited-AST distinction already documented. It does not grant
+this repository an exemption from its own explicit source-validity contract.
+
+## Actual gate evidence and conformance bounds
+
+The independently authenticated R2 execution ran **36 original + 2 hybrid = 38**
+obligations: **26 passed, 3 failed, 9 blocked**. Its full PHPUnit run passed
+**6,320 tests / 59,008 assertions**, and its separate current-compatibility
+regression passed the same totals. The table below records those actual R2
+outcomes; it does not predict a later execution.
+
+| Obligation | R2 result |
+|---|---|
+MD;
+    foreach ($prior['results'] as $id=>$row) $text .= "\n| `$id` | {$row['status']} |";
+    $text .= <<<'MD'
+
+
+The final repeat execution is retained separately at
+`docs/8.6/ga-certification-remediation/runs/stable-closure-r1/evidence.json`.
+That immutable record supplies the repeat's actual per-command outcomes and
+input/output hashes. It includes this sign-off assessment and all closure
+receipts as protected inputs. Its independently checked results, rather than
+the earlier counts above, determine whether the repeat execution is fresh.
+Verification and claim-refusal logs are retained under the adjacent
+`runs/stable-closure-verification/` directory, outside the sealed run folder.
+No execution is considered complete merely because these destinations are named.
+
+Use `php tools/8.6/certification-ga.php --check --report=docs/8.6/ga-certification-remediation/runs/stable-closure-r1/evidence.json`
+to independently verify the repeat. Use the separate `--claims` mode to test
+release eligibility; authenticating failed outcomes is not sign-off.
+R2 is retained unchanged and its successful pre-assessment verification is
+recorded in the closure baseline. New report files change the input inventory,
+so R2 is not presented as fresh evidence for the expanded workspace.
+
+The strongest supported claim remains a standalone draft structural grammar
+with the named executed matrices and explicitly external contextual constraints.
+The evidence does not establish grammar-completeness, whole-source validation,
+exhaustive equivalence, or stable release readiness. The additive contract
+expressly cannot grant certification; the complete release-obligation decision
+must precede any certifying successor and must preserve all mandatory evidence.
+
+## PHP 8.5 preservation and remaining release preparation
+
+The baseline records no PHP 8.5 change; the existing current-compatibility gate
+independently covers shared implementation and paired boundaries. Its success
+does not renew historical certification. The [consumer observation](release-closure/consumer-selection.json)
+confirms `latestVersion()` is 8.6 including drafts, while 8.5 remains stable and
+8.6 remains draft. Existing maintainer defaults remain 8.5.
+
+Before a stable release, reconcile the RC4 status/source prose still present in
+`grammar/8.6/php.md`, `README.md`, `docs/usage.md` and `docs/api.md` through an
+explicit successor preservation transition. Retain historical RC4 observations
+as historical, update current GA references, and verify complete EBNF/Markdown
+production parity. Do not relabel the specification as complete while the
+material requirements above remain open. The current ten-section `changes.md`
+already identifies the active GA profile and its unresolved findings.
+
+After those mandatory obligations are satisfied, the remaining release steps
+are: validate the final package inventory/distribution, update stable consumer
+documentation and release notes, promote the manifest in the reviewed certifying
+transition, and independently certify that exact candidate. Current Composer
+metadata already identifies the library and excludes `.audit`, PHPUnit cache
+and `vendor` from Composer archives; that configuration is not a validated
+v1.1.0 distribution. No signed-off release description or release commands are
+provided for this blocked candidate. Publication remains a separate action.
+
+MD;
+    if (file_exists('docs/8.6/release-signoff.md')) throw new RuntimeException('Existing signoff');
+    file_put_contents('docs/8.6/release-signoff.md',$text);
+    echo "Wrote exact remaining requirements and closure artifact inventory.\n";
+} else { throw new RuntimeException('Select baseline, upstream, historical, inspect, requirements, or report'); }

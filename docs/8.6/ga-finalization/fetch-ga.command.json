@@ -1,0 +1,15 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "gc.auto=0",
+    "--git-dir=.audit/rc7-git",
+    "fetch",
+    "--no-tags",
+    "https://github.com/php/php-src.git",
+    "refs/tags/php-8.6.0:refs/tags/php-8.6.0"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/fetch-ga.log",
+  "sha256": "efbc06aef043c982e9cd11a1f17586e6f6bdad40d54858136356ca108e45059a"
+}

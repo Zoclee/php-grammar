@@ -1,0 +1,4316 @@
+{
+  "rc4": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "rc7": "b63cd83da3279445ca4a913f03186141f5c3466e",
+  "treeCounts": {
+    "rc4": 28445,
+    "rc7": 28612
+  },
+  "changes": {
+    ".gitattributes": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "74fd9f995e8da96a21c6342cd3825b8008907a30"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "8eb7dc05a96c8b7a797cd82bc18353676db04a53"
+      }
+    },
+    ".github/scripts/download-bundled/uriparser.sh": {
+      "rc4": {
+        "mode": "100755",
+        "oid": "2b8d61a2d56f223058eef4cd53b94124814c9b99"
+      },
+      "rc7": {
+        "mode": "100755",
+        "oid": "34d4b7fc5de5bae501a12da71f18eb12ae2615b8"
+      }
+    },
+    ".github/workflows/docs.yml": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ffb45c9a20cd3102463eac19269ced80b312601b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d6ce0f3b433d3815c9a47d18664c16ba37fd2f60"
+      }
+    },
+    ".github/workflows/real-time-benchmark.yml": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "4147157ccfcb4ef57b19be0ca763499820e9cc6c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1c95321022ed3649d45e568528f4bc98792c12d2"
+      }
+    },
+    ".github/workflows/test-suite.yml": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a9bb570f92124d4f7845466066636a6f837829a0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "dcd61adf17c8c6c8ab9cecf5add070b02d69bd24"
+      }
+    },
+    ".github/workflows/test.yml": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "057ed83eb2260cb183a4f21834a7da50f8e70640"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "4128a854b525afa4a0c705df023ccf312660979c"
+      }
+    },
+    ".github/workflows/unit-tests.yml": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "fa79580f42ecace01b0bd18f9f4788e8929266af"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "844267544608325ac00d0aa79743c9e76b2ab3ad"
+      }
+    },
+    ".github/workflows/verify-bundled-files.yml": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f36317473110f6159dbcb14b9bed21ad8fd07a6e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "502e923fa9b0f289a563ccfa2df3b4ea6718fe53"
+      }
+    },
+    ".gitignore": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "769ac62cc5d8b74e891f8e640e404dd0a4ce06a7"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "456bc575fb2b7e0a6b9f99bbf828577484715644"
+      }
+    },
+    "NEWS": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d450f4408e5f2b2478ec5abebc1976e2a517f44a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2e2cedb40fe773500184a77b293f4ec7d001acb3"
+      }
+    },
+    "UPGRADING": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "2d48a1da05ca971904607164438daa14c01b4504"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "3fe0fe1116384ae3b9b1436f104d4e8564a73daa"
+      }
+    },
+    "Zend/Optimizer/block_pass.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6f67fb0e0a78f6a79e0e2bce77b58d64088bc28e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "0601994479e6312023cc1e36ff6b8cc9d6b1f72b"
+      }
+    },
+    "Zend/Optimizer/compact_literals.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a73b46c0e3323cd9ef22e3310ffae723cb9e6102"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "6ed7e870da61afdbd28a9fe6a0e8814a2be30a3c"
+      }
+    },
+    "Zend/Optimizer/dfa_pass.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ff4c2de4eaf74fc6eea06830d01ec5e68f45f7eb"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "93dae48a03ef45ffa086ab04a227015b478ae9a6"
+      }
+    },
+    "Zend/Optimizer/zend_inference.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "dc6dcb052d698b018fdf3e55523ecbaafd2fae90"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "25376de43adab9f2ff4e893bd7cd81ac722dcf37"
+      }
+    },
+    "Zend/Optimizer/zend_optimizer.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6d5b5f541a908418d03b68bd0c77893a880f1f6c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "93706a8a0d4ccf2f82969a15f180ee123cf2f888"
+      }
+    },
+    "Zend/tests/anon/012.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d82f237c1c8cfea5c17ee6f63c7c27bf8fe896f8"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "74bf25518e4cb310ae8533a039ff1a0eec1db6cc"
+      }
+    },
+    "Zend/tests/anon/013.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "b66be660d70c8ba4b8397e18fb2d6d6df4d32fbe"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "298ae7837428cb4bebf4f6057d0087bc405c4bd0"
+      }
+    },
+    "Zend/tests/anon/gh15994.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "815b392ada4329f077480ed13f914c1cba0b43b3"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b90fb7a8d6f901208f4b223214b7da8bf083331c"
+      }
+    },
+    "Zend/tests/array_map_foreach_optimization_function_name.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ae9ea191dacbcbb746d8fcd22d406ec153ba8e78"
+      }
+    },
+    "Zend/tests/assert/expect_final_abstract_modifiers.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "5dd87976faf5aee83ebbe35f8bd0b35aeefd9d66"
+      }
+    },
+    "Zend/tests/assert/expect_readonly_anon_class.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "5944475ffc4e6111802328f3e4741761370afe7b"
+      }
+    },
+    "Zend/tests/attributes/override/constants/anon_failure.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c43cedda81d7d5eff349fb51804805f05fadcdeb"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f0a8e9c6dd9180d9bedf5e2256e3538688a75369"
+      }
+    },
+    "Zend/tests/attributes/override/properties_16.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "57ea17818c40662ddd0bfe0d7a554600a6d86686"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "0157f290638bc50a4bb4419ce39cfdc5e8d6bf99"
+      }
+    },
+    "Zend/tests/bug72598.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "741abc35e227b6dd24bd31c963f01b3df382a798"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d546332c79f4de31619acdbb9620cb9921e446eb"
+      }
+    },
+    "Zend/tests/bug73816.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "aea392be5e1823d9b97bb0c7fa287b3677f13e4c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "08f735607880e667185c12a3cfe0478fd3e78db3"
+      }
+    },
+    "Zend/tests/closures/gh23911.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "d522a9e8cbbce471a0a21244d5a424aa636ce438"
+      }
+    },
+    "Zend/tests/constexpr/new_anon_class.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "49fc120f6b92ba060ce82bcf72d11911c631228c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "197f594f68817c64a241bec24f83511a45047daf"
+      }
+    },
+    "Zend/tests/constexpr/new_named_params_duplicate_leak.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "244b670ab1c6087b40171c0a7ad885e4238c1440"
+      }
+    },
+    "Zend/tests/dynamic_prop_deprecation_002.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "980bbef7d8dd3f4af6c591e2c5637953c6ff37d6"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9eba6af552ee618d1143586307ff8d7d1dce6086"
+      }
+    },
+    "Zend/tests/fibers/gh24265-001.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "d4eed32fc624ccfc95fe178418c0ecbc08ffe35b"
+      }
+    },
+    "Zend/tests/fibers/gh24265-002.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "2a794bc3d02fbe44e44da0d29b5f84fa583a0a53"
+      }
+    },
+    "Zend/tests/first_class_callable/constexpr/trait_scope_001.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "8199b47afa970197f30ee1cd6803af8da2d90e58"
+      }
+    },
+    "Zend/tests/first_class_callable/constexpr/trait_scope_002.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "5390f6337a522683379cc93f85564fa82d981262"
+      }
+    },
+    "Zend/tests/first_class_callable/constexpr/trait_scope_003.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ae63777392ba610f039eeae4f401a9ab44982e2f"
+      }
+    },
+    "Zend/tests/first_class_callable/constexpr/trait_scope_004.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "da1608e2d9181a898c01ed90ec964aff95311473"
+      }
+    },
+    "Zend/tests/first_class_callable/constexpr/trait_scope_005.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "50382a4499394bd8d171326fb789af953c3f8f87"
+      }
+    },
+    "Zend/tests/first_class_callable/constexpr/trait_scope_006.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "4ffb56841caa31591d5f40ad1027d946a3c574cf"
+      }
+    },
+    "Zend/tests/gh19304.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f3f7fab3f1fe00330073207030255d3d83d4ae60"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2d658948a4e059201409b697ffd70efec1b5016c"
+      }
+    },
+    "Zend/tests/gh24989.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "02b12b3e70aeffff3d89d4bbdf2334beee0dccbb"
+      }
+    },
+    "Zend/tests/gh24989_uncaught.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "5d3d317e806ecea4cf0bbee89361705395106ea5"
+      }
+    },
+    "Zend/tests/partial_application/gh25007.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "99899a6157780a29d458b98f2bdef978b7afaa61"
+      }
+    },
+    "Zend/tests/partial_application/static_pfa_004.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "093430232d43ea27b702ac7a16361fa9e2fe13ed"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9a7de941bf43479776a1f5fbb975befba44de2db"
+      }
+    },
+    "Zend/tests/property_hooks/oss_fuzz_403308724.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "b27b08dd703b6718bf7bad02b7861b2979c6a9c6"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "683814387f4d6d7f22580f233fc0d4ebd710e6df"
+      }
+    },
+    "Zend/tests/readonly_classes/gh10377_1.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "fba1605ff0849ee7fcf95fa006b892a979bca274"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2b2fe82804c3ec39ce8ce772ac53d6b04297b856"
+      }
+    },
+    "Zend/tests/shift_left_overflow_range.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "fb016393a8344daea8584084db8d88f2aa63edaa"
+      }
+    },
+    "Zend/tests/temporary_cleaning/temporary_cleaning_013.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6e6dc58baad0edc01564041030271b4a3dcb6c18"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "742f7f369390dfc1c6cfcfbd96370107a597836b"
+      }
+    },
+    "Zend/tests/try/finally_interrupt_after_return.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "1dfd3db00590cb83d884c6f92d260761cfca1e10"
+      }
+    },
+    "Zend/tests/try/finally_interrupt_after_return_generator.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "da5c64bae3c6cf26ae77b62917c61b09d2fc44b3"
+      }
+    },
+    "Zend/tests/try/finally_interrupt_after_return_nested.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "f4a2d09c0771ba050c2b81a634740d3b88811128"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_001.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ce791cd4b56ed938b1533564630072e09e39aaf0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d6136642b24075da1ded2e1cedd0e18c835a220d"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_002.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "b10aaf95bf807593066033fd52e11555fb68d827"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "0527902b9f676339dd93a0ef264eb9075bf4a878"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_003.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6cde9cc604345404e67571e0924f0e4ff35b3dfa"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "99c452934bcf7f88ea2fe645fdc022749d2e1cae"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_004.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "eb8e1ef6b4a3ec99b46adcc59527d225c6bf13f0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "86a5260f0ed47c8c6476dd55c0ce7cb5e3fadf0d"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_005.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "71f264a926aa577e1492d72b40668b04fc8cce8f"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e92ec7256ca87f9d1cdc925c63322f5ee35bde00"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_033.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "76d57e4ec48ff60b8f7128c398dadf14f420c14c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b48b54370302a2150ac02b2d95d6f1ea4393a26a"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_034.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "dcda621774a7278b5884b9ac16e620ef153abf87"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9c7f10f91705c8be55a0a058563dec0a86eec6a1"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_037.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "87efa3317a0af6bd76ea0d398d0c8caae673104d"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "54616103600ad34f4c0bc8fc1792bdd0b7f805b9"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_038.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "e9843aea3594120377e5969b8654eccc348e0fe2"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d62df628ff8e0753aa4141cc02a1da37a62ffae6"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_044.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "9933c15203a4c9936d0143f7884da1edacf31b08"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f6a5b0cb36143a2643c19e5a3a3610156353c0cd"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_062.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ba12c77a1845a24bd6fe68444f535d8001fa64fe"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "10cfbc538384b0394803116a8cf590025dc4f4b9"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_063.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6a299a11afdf2ecfe16a3a9d2ec2797758cb731a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "046f797289bf63991d374c2491365a911387a29b"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_064.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "4880707f8f68a0ddb8a554341d96f7b7b28295e0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e725440812f88090a51af688e58c7c53f270aded"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_065.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a4d0aa4c0c0c9b68b07764a42a0e38ef390cfaf5"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "c3e7abda3344854d9df19a6aabbcfbe4dd4557bd"
+      }
+    },
+    "Zend/tests/type_declarations/typed_properties_078.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "346516b4b22726aa75aa54fde7d200c31be3e224"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1de60d852d495177d4fbd584dd79f29b46793bfe"
+      }
+    },
+    "Zend/tests/type_declarations/union_types/anonymous_class.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "1ffec32de05e73fd38d868c8dc030e98c5db25f1"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "0fd4e379a3c02da4f8b4060906120d50481862df"
+      }
+    },
+    "Zend/tests/vm_interrupt_rearm.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "605cb59086d7ac0811f8c808a99fe3632c2d91e6"
+      }
+    },
+    "Zend/tests/zend_mm_chunk_alloc_mmap_failure.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "b137f25620c595dc66f63dc013dfa17bb930d862"
+      }
+    },
+    "Zend/zend.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "2cbdd0267c2a481bc1b9d94494c7497a836cf5d2"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ad08fe1a630dbf7b59f5f2ee492a349453932bb4"
+      }
+    },
+    "Zend/zend.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7e3b4e9dd18f885cb74820662547bd573ed526ac"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5fe5ad2bd8a2e1130b55b0c594ada47d676d76d4"
+      }
+    },
+    "Zend/zend_API.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "40ea1a5d60de5e0fa414dedbd95cd1aab0ff8563"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5d6bd22027d4050163f140905e23f0f6f1551369"
+      }
+    },
+    "Zend/zend_alloc.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "050fb252e78cefab7ee074dcde3ca2d38541ebdb"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "219c75e019107d20bcc7be08625bbfefcf4819f7"
+      }
+    },
+    "Zend/zend_ast.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "b81296599d6da6b66609610bcba3172cc82ae7bc"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5891974946d611c6c2bf944e94bce750f4c97878"
+      }
+    },
+    "Zend/zend_atomic.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5dee78c0570a9ac455cfbe624fb347e2c5d5c2cc"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "a8418066507161444077c9a330fdb9442dd4f292"
+      }
+    },
+    "Zend/zend_attributes.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c49b060ecd6f5d387bb154bcb1fe6aedb5af8623"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d57b4c91446699f984fba15baf5be9fd0ce1728b"
+      }
+    },
+    "Zend/zend_builtin_functions.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ffd6e9b7fae7a9b584cdb42b95e9c7aab52a9642"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ad2c0dd2009a6f857ad3ff2616750bef1fd1ddee"
+      }
+    },
+    "Zend/zend_closures.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d4c0b588136900cc05c52235f0f1933c94f8dc09"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "3d729cbd52248f6e71ce62c9023051d4df4dad9c"
+      }
+    },
+    "Zend/zend_closures.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c421c100833acda25dc0e2da3a92dc5586fcd88d"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1d3fc89c1dfd5fe196e0ebc41cc1c321ebb55980"
+      }
+    },
+    "Zend/zend_compile.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "faa93804457e09cda9a0beea92e9eae44cbf915e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9a0d330f04bf6ecb4724068a4c4b0fe78febb4ac"
+      }
+    },
+    "Zend/zend_constants.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6f50c59641c2b0553f093172de09b55e5a985937"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "736539f1a79e2e9d214904570a46b16f1d38e1ec"
+      }
+    },
+    "Zend/zend_enum.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ecebe7a5d51bcb05a5b14629c49d61f37c20227f"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "a9b922a8f317d01dc7e1c6304fa00c5a02e6e49d"
+      }
+    },
+    "Zend/zend_exceptions.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a34d9f007786ccad7c8fed09222d467b2e5cc97f"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "c123f44db95d393936425dcb0e184d8a1edf7e4e"
+      }
+    },
+    "Zend/zend_execute.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "4e82fa207594513d7f7bb2651e62f77e731c24b6"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e929bc41a03d6c35c1dab495623426f51e3184f4"
+      }
+    },
+    "Zend/zend_execute.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "14c1e6701f0945027c948060ccea2e2617a14b96"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "bdb4f66cb2f654f2a0d1d8817fe6c18cac4e0d38"
+      }
+    },
+    "Zend/zend_execute_API.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "75126daa55f4f5fe73a90d4533491ee32b9e6bfb"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2c361bb495090dd5a655738bbfc85663c0470430"
+      }
+    },
+    "Zend/zend_extensions.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "fad6b251b01967d45e2197d754069cd7b594ff57"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d9cb91d45f9f15e11ce3c2884fa3b4c572b34dcd"
+      }
+    },
+    "Zend/zend_fibers.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "dc8b3f609c68efaadc7ef3d9e63b91107db6051c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "be797008c520e1c7ab03827e013dd84697a1457c"
+      }
+    },
+    "Zend/zend_globals.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c3034f8c8edceef7ae7f293073a3ee12d5f3d8ad"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "81d04b5b1596386fc365595b712e4cc4a2baa4ff"
+      }
+    },
+    "Zend/zend_inheritance.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "4424c9a1a3abcb98a57941daed7a83c4585ff6b7"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5a11a5d8bd8b80006a836bdc6157620cc12c75ef"
+      }
+    },
+    "Zend/zend_ini.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "093683526d31b220be5dc510a5b759e8c67c6386"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "21bd9d486a0b3c6cee45b32ab5bc98870b0f0a5f"
+      }
+    },
+    "Zend/zend_interfaces.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "49169dfca2344fd1732d6de9892aeb695d1db9d5"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "109766e4f09311f68ef4c0f31e6c28b1daad97a4"
+      }
+    },
+    "Zend/zend_lazy_objects.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "368cc6bf78b6a971e2f4ce60ebe16a0c35db9109"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2494418a16478ecfea42b00a574565bed9c638c0"
+      }
+    },
+    "Zend/zend_modules.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "fda478c0c339f455ae0d2ba847e6e68dca285f83"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2630199cdd76b08cfc7a4636e4ebb751d589db5e"
+      }
+    },
+    "Zend/zend_object_handlers.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "800f9111c3dee8b426037b51d16a38601fa621e5"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5bc9e4004eb824044f41688f7847f9ee8bd599c9"
+      }
+    },
+    "Zend/zend_objects.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "1401e089afd14e210b86052f40a6bb6cb1368517"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "447956752fa228d5f5ca4cd6b78854189d724327"
+      }
+    },
+    "Zend/zend_operators.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7b7e330b8ba77823f8fb2dc729125d3f84c7be23"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "fd45666a540f18b52920328b1b22441e0eb2c187"
+      }
+    },
+    "Zend/zend_partial.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "83bd67bccb8c0ea0a6d25d16067423464314609b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d367b5ee21aca37bd5a6be4e5f7e50b35d4cc524"
+      }
+    },
+    "Zend/zend_portability.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ccad24682fdb84917af8fd5f52f02a30f54eaeac"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "3549fe6f544be2a8845465804cc671e4bec76c05"
+      }
+    },
+    "Zend/zend_property_hooks.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "dd6fe95ef57a8aa88605953df91512b90a49b6a2"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ad99f622b9ff31eba0b9b7d2e980ffabd91cde22"
+      }
+    },
+    "Zend/zend_range_check.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "8db86743439927a255ae3c4c7e00f682c07058a7"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ed61097419f2d22baba9453628cfc55769d4b263"
+      }
+    },
+    "Zend/zend_system_id.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "3e5077279b7ef24f29f9579fed4e44eec56a3731"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "cdba4ea6fcafac45d855e8e4179c8001df4bde21"
+      }
+    },
+    "Zend/zend_types.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "932d131820d50ae18f4d01e05c65e305057e1ead"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1c409ec45a04c87cfb45e00c445a2996fa6218c1"
+      }
+    },
+    "Zend/zend_vm_def.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "3ea6d7250ab7dd06856cc3ac2f8ae129ddae41e9"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "351c67f2ab9fb9ad1d00877863acd6cd622601a9"
+      }
+    },
+    "Zend/zend_vm_execute.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "8b6a5533fa384fed6da9468dfac2542bab73d96c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "96405697644f091778f181e3d7f0ec4b4181886b"
+      }
+    },
+    "Zend/zend_vm_gen.php": {
+      "rc4": {
+        "mode": "100755",
+        "oid": "e73353daed0205cd6af46faee3c45f707786770d"
+      },
+      "rc7": {
+        "mode": "100755",
+        "oid": "4f4dacb8523bc82834a413644a9498701e51becb"
+      }
+    },
+    "Zend/zend_weakrefs.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ad0308f44e200824dd5385fbb9ed7de09b2b6f50"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "6e0e32c124dfd40e95c24597e548f401237dc288"
+      }
+    },
+    "configure.ac": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "16ce67dd6dea4991f50f82944f4dd2becd6ab0f3"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "26d5a5d7444aea3f5064a77fc976c80f45aa2085"
+      }
+    },
+    "ext/com_dotnet/com_typeinfo.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f80075c050ac3c019894e1232abadf806b59702b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "4d5ea0b85e5fe8e57ae0592602cfca11271f5a31"
+      }
+    },
+    "ext/com_dotnet/tests/gh25008.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "eba601c9d1d07e70ed3348d851906512f079b0ed"
+      }
+    },
+    "ext/curl/interface.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a484592aba77c4ec12c2e21dae53fd7b9c3f11aa"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f56fcdcea1ba6c1a6e7e0f480475a91e97d50d14"
+      }
+    },
+    "ext/curl/tests/curl_copy_handle_progress_null_uaf.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "1f362f472f98ba924fce87d94cfae0042066fc5f"
+      }
+    },
+    "ext/curl/tests/curl_copy_handle_stderr_uaf.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "9a46a27dfa0c7ff709f427d33ae4939b1c0e01fe"
+      }
+    },
+    "ext/date/lib/parse_date.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "41566f94ed62a690c32911d89f0bae457d41e19e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f317d4aa898454df08bae494f8be22978e2bf135"
+      }
+    },
+    "ext/date/lib/parse_date.re": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "0459037c7f89726e3fe20dbeec0c9dfd8b1a8c4d"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "6acd6ccad32c2abf2979f57305571306371339d4"
+      }
+    },
+    "ext/date/lib/parse_iso_intervals.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "0ae4888caac421a290633fd6b40cd981e2a260b0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "cc3a365c93693601c8470bb16d5b6b0a31581565"
+      }
+    },
+    "ext/date/lib/parse_iso_intervals.re": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "06d07ab6396585387e796d19ddf88fd4c029c010"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5a5268d54e55ff0261e8364d967ed61c97fbd7ef"
+      }
+    },
+    "ext/date/lib/timelib.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "87fefe1f2e2b20ecb5238860e0abaa0d1dd62255"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "01087c79fe66e588733d04987c000ae9ae40fd23"
+      }
+    },
+    "ext/date/lib/timezonedb.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "04cc75fb5e41a3da4066983fb3c75ff8467e4b18"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "931fa2f22d5df310f21c7c73a836cc2e9a1b987c"
+      }
+    },
+    "ext/date/php_date.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f8c8bf93124cd04f47971567df01521f28c41d99"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "415b7f4fbd74308be9075ce81c2120fdd26eb417"
+      }
+    },
+    "ext/date/tests/bug65672.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a3a4542e69db2e706704e9008ec614bbe87e5dfd"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "eefc93bc76f2e0325e988f1d889577fca02c2cdc"
+      }
+    },
+    "ext/date/tests/oom_date_parse.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c42bcea5b9566047240e5a417f73bdf63f0eeaa5"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "6cfb6018a9d39f2718195d62293a20dd295acbe9"
+      }
+    },
+    "ext/date/tests/unserialize-test.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "bf3bd117c0cce8f68679f0a3a9396e9278241c09"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "dc0b6b065caccc6e3bc1b884afaaca08938d482d"
+      }
+    },
+    "ext/dba/dba.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a9114753a8a65c1914d8027f33b43900b4fc4357"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "af9c62d2cfd6ba0bfe5ee85d6741e3931d7dcf0c"
+      }
+    },
+    "ext/dba/dba_ndbm.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c60ab7e5f42815774e6cbc069ac7093937adfdfe"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "8fd563857fd59ddf0befaa1591edea15da813cce"
+      }
+    },
+    "ext/dba/tests/gh24641.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "e7479b64333cc09b4f284fbb2ee06bfd1c02d723"
+      }
+    },
+    "ext/dom/document.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "605c4dae782bcb5fa1287e07c511c71369faedf9"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ccb2c08bc81539a5c300176282e6a9cadde13937"
+      }
+    },
+    "ext/dom/element.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5fcffaf42055dbd6e0464dce19bc17c714a96992"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "bab828815a638a7c6bcf520b5c1950502ed6224d"
+      }
+    },
+    "ext/dom/html5_parser.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6eeca2b0a2c453a412fb441d8f3c779b34b57804"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e38cc1c12e1ba4eab85131b9ae86cfa1a5120165"
+      }
+    },
+    "ext/dom/html_collection.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6310aef54bc28c1617eac257a508a65e6828245f"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "89dbf9f2765f7c395ab132830f0d5e117f5187c8"
+      }
+    },
+    "ext/dom/node.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a3d40a92bfb7e396c9af0f09993887d2c27bfa10"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "a562328cd26e51d8e3b287e85479d7cffa72f239"
+      }
+    },
+    "ext/dom/nodelist.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "197ff3ceb880ee76a3652970d9a053efb108ab3c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d311c2c110e243eceddcbbb96af46b2b65931fc0"
+      }
+    },
+    "ext/dom/parentnode/tree.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "13a99023781f3ff23d9403837b4a73c93621ec7b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "aacc991cc7359b60f0b8623c9a83fafba1e50488"
+      }
+    },
+    "ext/dom/php_dom.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "845507924c1e30af772068edfe30f7ee3bb55bb9"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1fdf87198d5a23f72315669a92d3de0ec7e0f3d3"
+      }
+    },
+    "ext/dom/php_dom.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "445081203afeba701b48c3fc47ca6185cc38ea07"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "24475022e614d93e84b194385ae24ee9e5e50235"
+      }
+    },
+    "ext/dom/private_data.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "dd624a2c2e9c0cfda7377f46474c206ecf816d42"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5a2fa1a9b02536236131bdf886af1b97ac821f15"
+      }
+    },
+    "ext/dom/private_data.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "086cd7bfc59cf985b363b09a47d42431cc4f09ac"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "00329435659f1463edbd4e3c9b38f6786382882b"
+      }
+    },
+    "ext/dom/tests/gh25118.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "790ae71ef3374eb93a8a13fbffdc6c2356f66d3e"
+      }
+    },
+    "ext/dom/tests/modern/xml/serialize_document_write_failure.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "2e33cb5420cfc59a6fec6fe7e3fce0acafb40a47"
+      }
+    },
+    "ext/dom/tests/modern/xml/serialize_document_write_mutation.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "66127130ecff185e8b1e275c2b5a5ae571534c90"
+      }
+    },
+    "ext/dom/tests/reflected_attribute_write_live_child.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "b387784a32cac773d4ed2b7aae8347326ec2e070"
+      }
+    },
+    "ext/dom/tests/xpath_php_function_foreign_doc_namespace_axis.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ad77a052d454a30c15daa049fc74292c979a26fd"
+      }
+    },
+    "ext/dom/token_list.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "30f308a14d67cba6bf8455d369b2a8554d01ef92"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "4adaf94c203da100116bf3b5528a3b61130e3fd1"
+      }
+    },
+    "ext/dom/xml_common.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ec45fcc08342596f2b05628851cb1b2ef6e573c3"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2c16b3efc41eb27faba378976b4eff9bb8643357"
+      }
+    },
+    "ext/dom/xml_serializer.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "0d6b320dd0efa7f3ea24179b84f677a70e5398fb"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "72381ae4c5b422127d297e0a0448cca1f0e202ec"
+      }
+    },
+    "ext/dom/xpath.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "892a64bbe79f4ef51064a3365d01db22b74a0cb2"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e3c5e48f6cd5534dd0c474277fbb35e0e72e01dd"
+      }
+    },
+    "ext/exif/exif.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "9d62c3e7611c8a98f5a27b77478977cff3eeb6cb"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "da0245caae8687995a451765d5e13aa2301733fe"
+      }
+    },
+    "ext/ffi/ffi.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "691af066d5b8ccf7da67f2a479970e7e4ed47c19"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f0ba22f96c3d8ac3ebf9d9fec10294af7a785266"
+      }
+    },
+    "ext/ffi/ffi.g": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "9ab8ee404edfd2f72f5fe53ad21960e4d8013580"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ceddcb409a6477c429867f10b98d247313dcc9cd"
+      }
+    },
+    "ext/ffi/ffi_parser.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "27f1469133fe7049e9b7a9bca01b13001cf9a263"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "0acf698b161a67a0537f499540a2b6e989329fee"
+      }
+    },
+    "ext/ffi/php_ffi.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "02fdb221c3dfc8c48769d28362bfd7ed012bb3da"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "360d15747652a11b473e136361d8df0628b51373"
+      }
+    },
+    "ext/ffi/tests/finalize_type_bailout_leak.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "11b487806b092f4317b5afca1bff7e4d143f776b"
+      }
+    },
+    "ext/fileinfo/create_data_file.php": {
+      "rc4": {
+        "mode": "100755",
+        "oid": "b7f70273da7ac03c5172dbf1ae3751b8f09b47fd"
+      },
+      "rc7": {
+        "mode": "100755",
+        "oid": "febd65e0c54f4cb13c863056bce49d6dd3c5fb96"
+      }
+    },
+    "ext/fileinfo/data_file.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7776f2807724f0c61746314d2dc443da7fabac31"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "011238a3c9f35383df484f2b3cc6e73ce9488d37"
+      }
+    },
+    "ext/fileinfo/magicdata.patch": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9c7cd1ecc19e6ca885afc7c2d054cc12979e378a"
+      }
+    },
+    "ext/fileinfo/tests/gh25051.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "10ff0b98809d9cc26a1751d347271025ce28fdaa"
+      }
+    },
+    "ext/fileinfo/tests/hwpx_mime.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "182d03a5a270a8bdb12f0eaaea080398b8a50b9c"
+      }
+    },
+    "ext/filter/tests/oom_filter_default_encoded.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "eb63678a68d7d51094f418b7a264f8d8cd8d19c4"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e8013ce1e24bc7e0654f4722c09a42662c8b3408"
+      }
+    },
+    "ext/filter/tests/oom_filter_input.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "68d56072f22713238728457a1dddc546087302a4"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "4b3b995fa9141e483c5881edb7e04c22eaad149a"
+      }
+    },
+    "ext/filter/tests/oom_filter_input_array.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "b36261f1dd59d53b363a9c2a46e965e1636f0367"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "acb88a6e0da0678b36761ba27c70ac07bdd199fb"
+      }
+    },
+    "ext/ftp/tests/server.inc": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "3fc167148a0e67e8c75d292112438c3a8842d320"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f5e5b1dec973a9291d7bc7575cf2ab7613fa11fa"
+      }
+    },
+    "ext/gd/gd.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "8d65d12aef6514a62eda0516cd89e630816a153a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "527ef8968d706af86cb85230927985bf3b4e2af9"
+      }
+    },
+    "ext/gd/tests/bug72697.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a7ab6114db34e22e652de6d581adef381baa4f67"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f8c21406ba0508d995e00334028140a525a35a01"
+      }
+    },
+    "ext/gd/tests/imagetruecolortopalette_error3.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "0cbeca7e6d8b00746738693be171287603f54de8"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d7726562572c49fe525fccbbef572a08a8ff36bd"
+      }
+    },
+    "ext/gd/tests/imagetruecolortopalette_error4.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d1e8cffc39d3baaa03f6f006a5dda145216333da"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "36b6d91b854b2f26b5c65d9c94daa9671eecd32c"
+      }
+    },
+    "ext/hash/hash_gost.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "91edbd50834ff41e00e8701bdd0a7215fec02030"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f141a58e8a3849a2e8f25ecf744449a1b08048ef"
+      }
+    },
+    "ext/hash/hash_snefru.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "3fe16b4398a329318d3aa307b007ed90cf848254"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "6ecca3bcb67eab2656714db2fc181ccbf6197f24"
+      }
+    },
+    "ext/hash/tests/gost_snefru_512mib.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "738c145a6d7279cde516796b89e9a238e9eb8591"
+      }
+    },
+    "ext/iconv/tests/gh7980.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "11be9e129e02baebb1ef31366c8ffab8a03654a1"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b748c9f7cc6387149e5f8927bf6b89106247db0b"
+      }
+    },
+    "ext/intl/dateformat/dateformat_parse.cpp": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "8a554ae404decede4df89df1139e494544fbc3bc"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d71c360026ae62a94579586bd38937e39ee6dd16"
+      }
+    },
+    "ext/intl/tests/dateformat_formatObject_calendar_variant_icu72-1.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6a2f7c6abd95a96f6910e9b043fc79a854adda2a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "618629cc1861e80a31f2b05d44d7d44aa3d09fe6"
+      }
+    },
+    "ext/intl/tests/dateformat_formatObject_calendar_variant_icu79-1.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "c467d64434314003444d45f9326bf948fbc19fb5"
+      }
+    },
+    "ext/intl/tests/dateformat_formatObject_datetime_variant_icu72-1.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d1aecab9819c02665416445f0f279e593e2599ef"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "37f7c9a8f917416604f513b4bb9e667d5c5b7a9c"
+      }
+    },
+    "ext/intl/tests/dateformat_formatObject_datetime_variant_icu79-1.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "60947db41cbcb26cb6a9a2380b30f88af5df4fb5"
+      }
+    },
+    "ext/intl/tests/dateformat_parse_offset_out_of_range.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "3347665eb3bf25b8aa90f0aa3d3be23be0b7ba03"
+      }
+    },
+    "ext/intl/tests/timezone_IDforWindowsID_basic_icu76_1.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d07c14797c6544ee70a068ceff44490e0227fa2d"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "8c2d38c17e4fa1e96aeafbffb8d42b1de5f9e8de"
+      }
+    },
+    "ext/intl/tests/timezone_IDforWindowsID_basic_icu79_1.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "a2fa96075cd71943849c967497784ab3dcd4e610"
+      }
+    },
+    "ext/json/json.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "04a62f52152f0c7d28fc86df8d60f7e0284d6de1"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b71b9aafe997ed560d13b55dc12d3d35e1f38c10"
+      }
+    },
+    "ext/json/json_encoder.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "9d46ceab3ccd8515d5c5864d3d9778d00404c434"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "87d8bc559581a793d5c8befeb379937ef44f9eb0"
+      }
+    },
+    "ext/json/tests/json_encode_depth.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "075228da472c19353f4c1877c4468588f461f5fa"
+      }
+    },
+    "ext/json/tests/json_encode_invalid_key_aborts.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "76afc5be43f3146f3ae87132eca4d29469993b29"
+      }
+    },
+    "ext/json/tests/json_encode_oom_hooked_property_recursion_guard.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "679ad189e3cf58e858f3cfe586180b738c80a942"
+      }
+    },
+    "ext/ldap/ldap.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "3e03df4c33755cd266d793c727a8a7a8e3157702"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "cbcd2f7c1b407b6c5f490be1724e9dfb4c55ec9b"
+      }
+    },
+    "ext/ldap/tests/ldap_exop_sync_without_response_data.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "111900c6a05a5f82779bf4163e533f3f0163eae5"
+      }
+    },
+    "ext/mbstring/mbstring.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d8c3b4eb5d055182660422b110e812e3ec08ef98"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "eb05a0986770064b5caa88fa2caf3e7cbeeda5c0"
+      }
+    },
+    "ext/mbstring/tests/mb_rfc1867_getword_overread.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "94bde9d9ff90fe5d91a561b6af39865b8a1023fc"
+      }
+    },
+    "ext/mbstring/tests/oom_mb_strcut_filter.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "011022592862b5818c39d2741e7fb4229793e2dc"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "76fe64817e2e2a3c1af40217c506f8626625e26a"
+      }
+    },
+    "ext/mbstring/tests/retry_limit_negative.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "b498a7463d281aef94f4fcef403ebbb175f654a8"
+      }
+    },
+    "ext/mysqlnd/mysqlnd_wireprotocol.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "65b0bceae5911ebff08eb891c105daadaeb9615b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "c48bff627eeb68503f333c033caa12e60d27ff80"
+      }
+    },
+    "ext/odbc/php_odbc.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "642307935c77616e90931b7f83829b269bf104ff"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e10d60d64cb35f4faae6c1621a4f1c0248d4df78"
+      }
+    },
+    "ext/odbc/tests/gh24736.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "a96fedeb39483b57b729cb5a68ee8e48624b10f3"
+      }
+    },
+    "ext/odbc/tests/gh25036.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "16b3226361cb4ef0de3cba32a0b5a8c626a315fa"
+      }
+    },
+    "ext/opcache/ZendAccelerator.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "8f88ce4bea2d20a065ea1ceae434e4a8a3e531ee"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9330a85a6ea2718f3a6fd06dd773a61b643b7d0e"
+      }
+    },
+    "ext/opcache/jit/ir/dynasm/dasm_arm64.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "8a22974ad3ff9f50c6a616cc1a36aef92fc1bf75"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1f28e843b24a09d243c52aee55f719b25dad722f"
+      }
+    },
+    "ext/opcache/jit/ir/ir_aarch64.dasc": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "539108dec9ac137ac808a7da1e713c29dde8307e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f9440ac7205b9d5fdc838209f0f75c77799ea182"
+      }
+    },
+    "ext/opcache/jit/ir/ir_x86.dasc": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5ce20343bd0055d65b8e98a9b408923e4affdcfb"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "73c4d8366ef85718ac0e1dc2eab00874b22763d9"
+      }
+    },
+    "ext/opcache/jit/zend_jit.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7b73bbd88e257dfef6a0628b8cff9263a19495ad"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "28e6f1e8217ed514472b3bd98ec1967904bee9e8"
+      }
+    },
+    "ext/opcache/jit/zend_jit.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c4080d86bc6d564e0abc2fb65f228e8620a7fdde"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "44d0b4eaf2aa1eb0443838c263950b4cebdf9c81"
+      }
+    },
+    "ext/opcache/jit/zend_jit_helpers.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "660a17c0568797d7e0e034c2fbd49cd266e05ce0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5fe56dcc71493c0d5bb82d1c35a6cb2fb28797bc"
+      }
+    },
+    "ext/opcache/jit/zend_jit_ir.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "0e7549a85630586ad9898db440c3721058c23dea"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "266f36269bd89975b3e3bfee8f95555ab4495e3f"
+      }
+    },
+    "ext/opcache/jit/zend_jit_trace.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "721f87a03f50febc05d5700e23a8d772f81eac35"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "4927a03ac8ce2983bf00935ff95884ea4f79a763"
+      }
+    },
+    "ext/opcache/tests/bug78937_1.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "657b306d68d4da655666cb94536b52eb015b0baa"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "64c3beed8aeebf790a8f40bffc63ce23058aff64"
+      }
+    },
+    "ext/opcache/tests/bug78937_2.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "eb359cee96bead04a19acab4b6453b5b3b35c468"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2415582054d10e91a8c2c601ce8cb775710a6344"
+      }
+    },
+    "ext/opcache/tests/gh17733.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "89f604597bd60dbca32c5cd81d94eddb6f440b68"
+      }
+    },
+    "ext/opcache/tests/gh23626.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "67e20da9def519475679850898d50daa9c4e3d9a"
+      }
+    },
+    "ext/opcache/tests/gh24534.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "99dad3386623e056c2d9cf553423acdea918dad1"
+      }
+    },
+    "ext/opcache/tests/gh24577.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "12374425c85902c23d6febc3c64f439fa9fc347e"
+      }
+    },
+    "ext/opcache/tests/gh24745.inc": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "d51e96835b2b740811cfb2b93e59644c473c3aff"
+      }
+    },
+    "ext/opcache/tests/gh24745.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "b35b0e45827d7aba5df7fe95639bb282017b1d3a"
+      }
+    },
+    "ext/opcache/tests/issue0149.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "29e6f02808a755695fd169451c49a870a334414d"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "20fe7636ff087caf7d8ae1965eb5b4d8bcd17db3"
+      }
+    },
+    "ext/opcache/tests/jit/and_003.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "8a6abbc0e1c3fe558ac693facbfbef58d6ed0702"
+      }
+    },
+    "ext/opcache/tests/jit/and_004.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "6debc67bf5e49d9d53d0b7a7e467295b68eab9bc"
+      }
+    },
+    "ext/opcache/tests/jit/assign_dim_op_008.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "67179c0b128711a8006017b4007e014ea0cf19ac"
+      }
+    },
+    "ext/opcache/tests/jit/assign_dim_op_009.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "479a4fa079c0e365a7772c798d02e88a2eee45a5"
+      }
+    },
+    "ext/opcache/tests/jit/assign_dim_op_010.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "2e50bef8577155f65a0f5b05e73a5d4202cb9fbe"
+      }
+    },
+    "ext/opcache/tests/jit/assign_dim_op_011.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "5f95a9111a96f2a8fd175f142e35f9a669fc2a5b"
+      }
+    },
+    "ext/opcache/tests/jit/assign_dim_op_012.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "e2f168708041b5211b7ca3f96579f62bb087b969"
+      }
+    },
+    "ext/opcache/tests/jit/assign_dim_packed_string_key_001.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "9147f22354dcb8d67391190c433212047294bebe"
+      }
+    },
+    "ext/opcache/tests/jit/assign_dim_packed_string_key_002.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "bbe512d1f475a9b885da4d38b2a381342ba4e6eb"
+      }
+    },
+    "ext/opcache/tests/jit/assign_dim_packed_string_key_003.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "e28dbb4c8e39dda25a98bfab23d7eca7fca16656"
+      }
+    },
+    "ext/opcache/tests/jit/cmp_010.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "562e4e1d5d70412e5f0baa50ab620ece8455fa36"
+      }
+    },
+    "ext/opcache/tests/jit/function_vm_interrupt_enter_001.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "2651180fde8f8f7907713bd62abaacb50459f54e"
+      }
+    },
+    "ext/opcache/tests/jit/gh23572.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "018e29cf1133c180395f464dfe96a493985c7e8d"
+      }
+    },
+    "ext/opcache/tests/jit/gh23572_001.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "d8db1e6341ce0198be3f556a99da89c2445b6680"
+      }
+    },
+    "ext/opcache/tests/jit/gh23572_002.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "15f35e3afa0ecc1f7365e689b92a4d8731e87919"
+      }
+    },
+    "ext/opcache/tests/jit/gh23572_003.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "69bdf71779f558387e3573cc0d6a4e873361a472"
+      }
+    },
+    "ext/opcache/tests/jit/gh23572_004.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "3e73ee4e35bd71424226c1d48a582a63959ed0ed"
+      }
+    },
+    "ext/opcache/tests/jit/gh24389.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "8c8d5725f614746487ae20419926ab1d87b0eb60"
+      }
+    },
+    "ext/opcache/tests/jit/gh24396.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "0ad5696b208f4e798e083a6932b208667ef8c2d5"
+      }
+    },
+    "ext/opcache/tests/jit/gh24397.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "1ef87a66f3dafee1c2d49b305815fd342a568933"
+      }
+    },
+    "ext/opcache/tests/jit/gh24398.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "948ac8f1b26101fc4caaad32df2732c506ebe384"
+      }
+    },
+    "ext/opcache/tests/jit/gh24398_002.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "b8b0c0481c779f1325c28cecbfd922367181170c"
+      }
+    },
+    "ext/opcache/tests/jit/gh24436.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "cc60764759c4906bacf9c1a95da9fd0919fd3268"
+      }
+    },
+    "ext/opcache/tests/jit/gh24438.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "43ab8f9a5bd39f8148153cd4d0dafff37cbe8459"
+      }
+    },
+    "ext/opcache/tests/jit/gh24988.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "f8cd56e5bec1d20a0cf77710ae43ddbc1474bbb0"
+      }
+    },
+    "ext/opcache/tests/jit/init_static_method_call_002.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "897c0377d6c347b687dd0eb0e6286150701c3ff4"
+      }
+    },
+    "ext/opcache/tests/jit/init_static_method_call_002_include.inc": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "66ea277d2da9d1c9ec3396f2f65a0446df460443"
+      }
+    },
+    "ext/opcache/tests/jit/loop_vm_interrupt_001.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "42196d595c4c310ed40fd27374bc9f2634c5fea4"
+      }
+    },
+    "ext/opcache/tests/jit/or_001.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "7adfd0fdf8950c9524b3238f63493cedb4f7b0ec"
+      }
+    },
+    "ext/opcache/tests/jit/or_002.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "8c2b37af297d91c679560782ece5d2d3416e3162"
+      }
+    },
+    "ext/opcache/tests/jit/preload_restart_function_jit.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ac8718d7d20b2592d4407b88488e392632b0435b"
+      }
+    },
+    "ext/opcache/tests/jit/preload_restart_hot_counters.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "3a2f625eedd6ca2e9b7399bdf123a4cda627fd95"
+      }
+    },
+    "ext/opcache/tests/jit/switch_002.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "580a1134c22ea73839e69b6d3dabca55381c6672"
+      }
+    },
+    "ext/opcache/tests/jit/switch_003.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "2a33f6dac45702e338f2a5aeb57e7a7db117ff50"
+      }
+    },
+    "ext/opcache/tests/jit/tailcall_vm_interrupt_opline_001.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ed9bef7e10eb363dded864007d16db1f8d0402cf"
+      }
+    },
+    "ext/opcache/tests/jit/tailcall_vm_interrupt_opline_002.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "0e13b0ca3bbd2fc31a1cdc88c953f43fd629202f"
+      }
+    },
+    "ext/opcache/tests/jit/xor_004.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "cb9709d841bd9d39ae3586f85abe4d836822329d"
+      }
+    },
+    "ext/opcache/tests/jit/xor_005.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "b0afa9f1da8ab7bba8fb0768f28ae39042b228db"
+      }
+    },
+    "ext/opcache/tests/opt/block_pass_fast_call_op2.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "a3222bcf4636a25321dbbc46669d3e8d25915bdf"
+      }
+    },
+    "ext/opcache/tests/opt/gh25061.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "7a784c8a28c8d5e166136bf1a46b3e70f762f824"
+      }
+    },
+    "ext/opcache/tests/preload_008.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c6ae2ce1d3b0fc40f9ee324f6758b39fbf9d8f03"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "746f83c004360f89d4589e799a2e54398b6818a8"
+      }
+    },
+    "ext/opcache/zend_accelerator_module.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a513627414ac25b6c99eeb1987ab04b8babeebba"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "aa8826e69f16c43d40874ade9d2121af499ededb"
+      }
+    },
+    "ext/opcache/zend_file_cache.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7465cd7d01d071e1ce8ef901546feaa4fffb8a90"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1235b1fc89fab63a7d1f4d399123d7b17f14cf61"
+      }
+    },
+    "ext/opcache/zend_persist.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "3d70dfcaccf09eb67c9987b40f0a79695e637e84"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "052411a0eb00598e4a6a863633137019a5c3e312"
+      }
+    },
+    "ext/openssl/openssl.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "0f36f7b42c59377ff6f35e410061c9be12f4d185"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d242df0bbba61206b0d59baacb77ff0df78ae15b"
+      }
+    },
+    "ext/openssl/openssl_backend_common.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "8ea132a1ab0cac91309473bfdcb00fc4e5618bac"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "995d836deead8a4dcff4d0045943c08f41e9baed"
+      }
+    },
+    "ext/openssl/php_openssl_backend.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "fcbb8d42542f96bfddc2da4c0cbdb8a3461b069e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "364f27eec23e7f9adf49509dde75bc7cc5488af5"
+      }
+    },
+    "ext/openssl/tests/gh24784.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "9cc7e7597bdf228fd6f0a52f02abe5b6c400d028"
+      }
+    },
+    "ext/openssl/tests/openssl_spki_export_challenge_binary.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "d5eb8617cb1f96c22fca7f982f07450b7f3d4882"
+      }
+    },
+    "ext/openssl/tests/session_resumption_get_cb_num_tickets_positive.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5563b0c22cf88675cede345ce3fcea4d89856cd1"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5c7512d73a35e951bc57ab899264399161c9f05d"
+      }
+    },
+    "ext/openssl/tests/session_resumption_remove_cb_closed_listener.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "05476a6ae37544bbbc41c17b1c55432e22b0ed01"
+      }
+    },
+    "ext/openssl/tests/session_resumption_server_alpn_closed_parent.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "f612fd5fbf9872793ab39a1d03d286e9f217399d"
+      }
+    },
+    "ext/openssl/tests/session_unserialize_repeat.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "b1e33c2d03bdf42f41c3b718d08976ceed253820"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "20084df4fb244ded66890c73b4b8aa90c4ff8ce9"
+      }
+    },
+    "ext/openssl/tests/tls_psk_oversized_identity.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "48b7680fd4f282118eb04aba20f8d2dacea1d999"
+      }
+    },
+    "ext/openssl/xp_ssl.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ad06af444ffe599fbe99cb997bdc7a3d6535401b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "15b7371f2c8e52d3fdb069576c681889bd8a9c22"
+      }
+    },
+    "ext/pcntl/pcntl.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "14f26291c0451d6eecd9c71ed75125372a06a314"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "933e9c4ddc8121b3ca2d7329fee3698b502fa93d"
+      }
+    },
+    "ext/pdo/pdo_dbh.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "58bb3b1727f6e43ca60e53dc69fd4f5fce663af0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9ccaebd5e8bb443c1cee4c7d06108598f6fc8106"
+      }
+    },
+    "ext/pdo_firebird/firebird_statement.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c508c34305ca790ea6769720f79a40ea7dcb1750"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "7bf2c6812bfcf2c6f7ee1170dd59e87a65cfaae2"
+      }
+    },
+    "ext/pdo_firebird/tests/gh25006.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "d0e9918322a255e46fc8414555cc25e030d27970"
+      }
+    },
+    "ext/pdo_pgsql/pgsql_driver.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "cbfd55fc1aa658aca22c8d440fd75e75b71a2285"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "20edb7f67339cab666fd484da55166b08c8c8b8e"
+      }
+    },
+    "ext/pdo_pgsql/pgsql_statement.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "2f07255349378afd2fe2053c04375532c838e3e3"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "de7d03bc726401b4e6347d4038bc39f4da155c3d"
+      }
+    },
+    "ext/pdo_pgsql/php_pdo_pgsql_int.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "dc71d5ae7a5f15f3b5a40642e53ddb54e1526600"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9ca729cd44a560468b43a7202df26f38f239c903"
+      }
+    },
+    "ext/pdo_pgsql/tests/gh24461.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "600a58f5123001221b153f3596dd792e88d672a3"
+      }
+    },
+    "ext/pdo_pgsql/tests/gh24461_aborted_transaction_close.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "9c07b739b9b7d67b6d7a5b99783b798d5c663a95"
+      }
+    },
+    "ext/pdo_pgsql/tests/gh24461_leftover_statement.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "a418e3ad358f6bd8fb59984b9c0fc982d9c12f19"
+      }
+    },
+    "ext/pdo_pgsql/tests/gh24461_shared_connection.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "f341beecb0812a45206d2d974da1826dc8f03dc7"
+      }
+    },
+    "ext/pdo_pgsql/tests/pdopgsql_setNoticeCallback_persistent.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "15c1d6d694321b7114951392b08c443a90db2932"
+      }
+    },
+    "ext/pdo_sqlite/sqlite_driver.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "39efa02dd5830616a1e0c1ceec74782e4b9de724"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9c0a6be0bc09f2af884ce30afc8858d577414ad9"
+      }
+    },
+    "ext/pdo_sqlite/sqlite_statement.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "891580cbb822946c9bf7b27d59ba72fee5ce3787"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "0d088c99ce7aa8333b58a5ce02a04670341c9a7f"
+      }
+    },
+    "ext/pdo_sqlite/tests/gh24990.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "89bfe35e74bc65142546bf6ef8468f827cd58989"
+      }
+    },
+    "ext/pdo_sqlite/tests/gh25021-udf.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ab7231c953b8e9589b354249af301182d632a66b"
+      }
+    },
+    "ext/pgsql/pgsql.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "144f191da58731406956573e4a94007bf1c85b77"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "7582c8505721bf64781282b7abfd375da9376a2d"
+      }
+    },
+    "ext/phar/phar_object.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c45ae86a3fa52cdbb37e55020810c95d4b83aecc"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9d3bd842cb72c63adf149ffb7beee6bbf9959100"
+      }
+    },
+    "ext/phar/stream.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ef8b153b7e9414e1e9af92018ab63001d368a375"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "86ec22e719fe89dc01a5a1cdb807f54e4f4fe2f4"
+      }
+    },
+    "ext/phar/tar.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "3ab23c81cc0a8cd88e1638fb7cc4b4f28baa7bc3"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ae1a6e46c0961882f4aca48986cd5bedb96f17d5"
+      }
+    },
+    "ext/phar/tests/buildFromIterator_user_overrides/getMTime_negative.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "315705781647818f5cbbb2377d1f1db8795a4562"
+      }
+    },
+    "ext/phar/tests/gh25090.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "4860e5abfe5e4974205407feb0dc8ebf3bccf891"
+      }
+    },
+    "ext/phar/tests/gh25091.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "3df6c7940ebaad2c32955d9c4f57b1f2a5e1d8a2"
+      }
+    },
+    "ext/phar/tests/gh25092.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "604094d76362f66a1cd37abb5d51836f9209d652"
+      }
+    },
+    "ext/phar/tests/gh25093.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "442a95e63c7a5300d771e48187d0e244974a917f"
+      }
+    },
+    "ext/phar/tests/gh8469.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ca34dca256ccacdc48b45312fd737ad86eae5ccc"
+      }
+    },
+    "ext/phar/tests/tar/gh24740.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "e42a38567d109355251b9f6a7d9183c108a3ff95"
+      }
+    },
+    "ext/phar/tests/zip/gh24531.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "44f9e17360608d2247413c84114d4da65aec6b7a"
+      }
+    },
+    "ext/phar/tests/zip/gh25089.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ec68c035f0c4c0f513c23bb0aded88593a258cfd"
+      }
+    },
+    "ext/phar/zip.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "8703979f234bfcc6d77d7b0bf01f7254c695cc66"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "13c34d8a3b0f84513aa62fa7b288e8f1663dbe04"
+      }
+    },
+    "ext/random/tests/03_randomizer/methods/shuffleArray_engine_throws_with_holes.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "b7c0a3b416a2947d4a3d2cb9a467f683e512345e"
+      }
+    },
+    "ext/reflection/php_reflection.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7552b00c115170010b5b2c303a4c2158a3a7d3a0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5bdd5e18bf222ff09e28d69c6f8beac2e05c59d8"
+      }
+    },
+    "ext/reflection/tests/ReflectionGenerator_basic.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f215bf4c0dd1306ebcb5524ee3211cedb8ccb4d6"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b541c483e99f297fe6d4ef855bc215bd1641e464"
+      }
+    },
+    "ext/reflection/tests/gh21768.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "eabc7f89f12396a267e48d70fdb30ed1f05f1952"
+      }
+    },
+    "ext/session/mod_files.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "03a2f4a2fcbf916827658146bc4bf5cade6527c4"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9b5b8f331dc7b202e9ff23dbe6251041b10bd11e"
+      }
+    },
+    "ext/session/php_session.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "e2b7a7e5a7d3caa48ef943cabaed15779eb9aaad"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ee36eb291e529cdeb227fa9ce8a2153678092f57"
+      }
+    },
+    "ext/session/session.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "cca448b5a415500a3a72c04f38d512ba41aff17c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "81c4455808bfb0dd0594c77d07a22c512d818eb7"
+      }
+    },
+    "ext/session/tests/session_id_nul_byte.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "287c28ae256c2ec55575993ed58d7de4784d9c2a"
+      }
+    },
+    "ext/session/tests/session_write_close_encode_failure.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "1c562f401df2c0192d512028408de532bf3e7b91"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "409f2627a61094df9a3f1d5eec23c84ed99165c5"
+      }
+    },
+    "ext/session/tests/session_write_failure_keeps_data.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7ef38fccea18585be950d7dddb8fe73765c8aee3"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "232b3e5313cfce5eb631e45c19dbf8a81e61c111"
+      }
+    },
+    "ext/simplexml/simplexml.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ca121625775992af309fd4948904b295fd31c587"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ae722d09aa30d2c0812e722ab8cdb035282788a8"
+      }
+    },
+    "ext/simplexml/tests/gh24488.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "c8eaf25d489e11f36b3d51b1a07a438c388b036b"
+      }
+    },
+    "ext/sockets/sockets.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "1d4214ea9bfc308d4f2f2202e1544eb9229abc64"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "6776ae4ee2f3fbe73ab124a831d06132c244054a"
+      }
+    },
+    "ext/sockets/tests/gh24748.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "84f2f127d005c3c5ea19722fc64048d52dd737bb"
+      }
+    },
+    "ext/sodium/libsodium.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f54d35506ab1c6a12ff18d1fb2362831b9fdb4b5"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "c44d49e283a5adb80d4e3c6ac652fc7e76c80413"
+      }
+    },
+    "ext/sodium/libsodium.stub.php": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f1fefefe65e9196fd1a7e4677344934950200a19"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "a9b6d345c66b7fc80d8b899fe9436e903a971700"
+      }
+    },
+    "ext/sodium/libsodium_arginfo.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d13759fd75f1b7b02b869868990b68acf984e6e0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ac6f90ef6035943112b61ef368672cd68c0977b3"
+      }
+    },
+    "ext/sodium/tests/crypto_xof_shake128.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "cb075b7ec2855b482baba628e26cd8642fbf0e65"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "c25e4328df8272aa43e5de26109f6a670f985fda"
+      }
+    },
+    "ext/sodium/tests/crypto_xof_shake256.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "3e691671332865b2ddf3e70ab932e27b1a9cc8f5"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "96a8b22c8e2ab1a7d825475008caacd02e059091"
+      }
+    },
+    "ext/sodium/tests/crypto_xof_turboshake.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "1f404140cc0ba61ba7db3f33bb459811e24a911e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e65f7c30356ea31223598eefc6da736097d46cda"
+      }
+    },
+    "ext/spl/php_spl.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "0c5f1ba99c1921ba80354a57c496a06c2526d85d"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "a3b0bfbe770e15d7e88aa24c2616c0ef7e3c45a1"
+      }
+    },
+    "ext/spl/spl_array.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "af603f3abf6b6e24dfa85b7834215440d0c603d2"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2f207b6e39dafb79f276c0527da82ca82f4c8527"
+      }
+    },
+    "ext/spl/spl_directory.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "16571158610d40f3030cb6b8d05a3599af0bb393"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "c5dc56d41c09bf4f5e33a1714c0bcf020e093492"
+      }
+    },
+    "ext/spl/spl_heap.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5a6cc33cf86cc1b4d0b5b0541f3c7eebae4bb407"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "74298a04c947be0e4efa9adb9c09d21cadf11159"
+      }
+    },
+    "ext/spl/spl_iterators.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "06d344990dfa6ebcfda8415231e61b2e17f82c1a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "94c89448d540f27add567fa257d3a85b0cff3da6"
+      }
+    },
+    "ext/spl/spl_observer.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7ad54781884ce84fefc48bcb4ad0aa848f2d3160"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "72d602bb2107377a3dfe6ec22ed0ccf33ef069d1"
+      }
+    },
+    "ext/spl/tests/autoloading/gh22118_internal_fake_closures.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "085e0fd6d6bb7ded2242fe55a6562b877d94c311"
+      }
+    },
+    "ext/spl/tests/gh24264_1.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "dd0005a815891739bfa6b3b65dcd2434f006a95a"
+      }
+    },
+    "ext/spl/tests/gh24264_2.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "d71c282a641015b5686893c3922377e22f741e3e"
+      }
+    },
+    "ext/spl/tests/gh24264_3.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "985ef5399e147973a113aac6415af304310d0518"
+      }
+    },
+    "ext/spl/tests/gh24264_4.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "b59950bc2a5492a6f04f3522c61b9f2a3ebe816e"
+      }
+    },
+    "ext/spl/tests/gh24264_5.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "620ee4a43403aaefbc258d806327dfcf36888256"
+      }
+    },
+    "ext/sqlite3/sqlite3.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "4698fe5cd096822d412e1e60226e30f6d0f6d44c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "27f67bb79935ffec81551f492df608dcedd38fea"
+      }
+    },
+    "ext/sqlite3/tests/gh25021-udf.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "5e9ad6f0ca6f400b5271f9dc53c5b266eb0e8066"
+      }
+    },
+    "ext/standard/array.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "39422639418a309ff7affb05f63b66379f16c085"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e9b06461325c4304601d8c30e2f2d5a1217667bf"
+      }
+    },
+    "ext/standard/basic_functions.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "cc5b587c04c8dc4858ba644fef05f1f84b137e9b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "52f57d7e8921055772a68bce68dee357596c2855"
+      }
+    },
+    "ext/standard/browscap.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7534615a946b99b71f81cac09068834421e744dd"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "742fadad562edd9a57ead92683f4086a34bd84db"
+      }
+    },
+    "ext/standard/dns_win32.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c9ff67e47b1e5cae585080833b8dba86cc34a959"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e8e970e0d22975edea725112cd42fafdd80815e1"
+      }
+    },
+    "ext/standard/file.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a3dd691b5d69d0f9737462c40be3f800d67bbc3e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b4eedd46c2182f9534305e4959ac0c4a204001e9"
+      }
+    },
+    "ext/standard/filestat.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "56722ce5ca821bf7fe89ae9315223e438ba1ac1e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ebf7f5f285491e0ed868c7c26843e3f3e6d3e8a4"
+      }
+    },
+    "ext/standard/fsock.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "42115fed5379c5371698ec7a7a38a55dc803b14b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "13485f9d1977a6cba7d8cac67bf6f2be9e128398"
+      }
+    },
+    "ext/standard/ftp_fopen_wrapper.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "97879a5c70006fa22226d02f3ce7bf3b7afa2239"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "da6562f1d143b6b5cdd9befadfac1fea03341728"
+      }
+    },
+    "ext/standard/head.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ba97a215427f8a2db8ed83724c1ef053e51dc15d"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2d7197488a81e4ba18d75d4364518ae8d3c4a7d4"
+      }
+    },
+    "ext/standard/http.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "eee1018672bde3f2ccaea3017e4ab2783f9e46c7"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "7d8f8786da37293ee4cf70ced420a983c3676e7e"
+      }
+    },
+    "ext/standard/http_fopen_wrapper.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "1ca79b172259610b3f6e60383d7e62ac75b3e13f"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f1c36defb1e1b239b648359fc58ee0990b8c2a63"
+      }
+    },
+    "ext/standard/info.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "2029679998dbfb9608cd5977e657404ea7097904"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "097f5900bc3267b9bdafb1e17ed223ec7d021404"
+      }
+    },
+    "ext/standard/io_poll.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c92201c1f299ee678ec0a6a3886d8bfa0ef3203d"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "583dfdbc0335e8862fd778d9fc8558ad20627fe5"
+      }
+    },
+    "ext/standard/mail.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6d85d06d1f6def44bc112396b35a77960159b62e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "346ed940d8d70de40b606ab58d39c858d79c0224"
+      }
+    },
+    "ext/standard/proc_open.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "e63cdbb13e63debd4f5854cf4dc7f2357114e92d"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "99c11dc7c6265093fb5e691d9ae069b33693afa0"
+      }
+    },
+    "ext/standard/streamsfuncs.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a03aed1ccdd4d6f6e781f1dc60d35464ba873d41"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "76a70f11732364228cf17a22531c21bcbe101561"
+      }
+    },
+    "ext/standard/string.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "0a05a1ae36f3e8ea1c187fcabe311a3fa7e8e548"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b8735b70126ab137f787469a47a15de3f7aaebe5"
+      }
+    },
+    "ext/standard/syslog.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "78dfb2297fdcd0abb221fb69b1978048138aade8"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "0dfe5bdf8c33a408b057093cea90ad66bd5db06d"
+      }
+    },
+    "ext/standard/tests/array/compact_this.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f3677e03e276cf050fca5614158ec4e8c2976622"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b7425c0e8153b34e1e50121b1ef0c43a04a4b38b"
+      }
+    },
+    "ext/standard/tests/class_object/bug78638.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "aaadcda836e712403a8e6946d9655f87d37800af"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "addad499213b46b291b9cfb378f85d19e1e17be1"
+      }
+    },
+    "ext/standard/tests/class_object/get_object_vars_variation_004.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "84827134c1b1878927ec459388f9faa3d1f2ecf2"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "a7af049ebd56bb9d4f702d0c415f04d6ff3ea623"
+      }
+    },
+    "ext/standard/tests/file/fscanf_error.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "fe30b36b4a53bed11a15b24a9879fd9be9f39a5a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "cd88f576f646c8399fbdb3e266a6ef0e2393d4a2"
+      }
+    },
+    "ext/standard/tests/general_functions/debug_zval_dump_gh19801_memory_leak.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "cf2f1d444f1dcc17949fb0b389b88ad099c93e81"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "012d0991515a21502f47c6fa5e1602f68dc436e5"
+      }
+    },
+    "ext/standard/tests/general_functions/gh24605_var_export_stack_guard.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "c6dc47b85bbc41cd76c306f318795536900ee3c9"
+      }
+    },
+    "ext/standard/tests/general_functions/header_over_4gib.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "8beb2521f88698b3a04e0174d27dd2fe15f64ad9"
+      }
+    },
+    "ext/standard/tests/general_functions/proc_open_descriptor_0_setup_failure.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ea654b0f497a26ef20ad0df60016a4ecaa2a5b6a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "0aca62b2903a9222ee317ad86db2f843201e6620"
+      }
+    },
+    "ext/standard/tests/general_functions/proc_open_socket_descriptor_0_setup_failure.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "88e4eee1b20ba5829d3bbb4eb1e8ec89c3236a73"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f2b30c89309c1ca177a43a1c0d662d8d8822f595"
+      }
+    },
+    "ext/standard/tests/general_functions/sleep_alertable_win32.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "55da154ccf75475d82abc8504c635239716c9515"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "33e08ed844b0c3864760e007a7c5677bd862ce18"
+      }
+    },
+    "ext/standard/tests/general_functions/var_dump_gh19801_memory_leak.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f0522916de4e64a448364c0d2aeca9a804f370dc"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "68333d3c884a5bb4c076e91294a578967d786d56"
+      }
+    },
+    "ext/standard/tests/http/gh24508.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "33f31f474746c6b158d3b0a8fc2cf065564ae231"
+      }
+    },
+    "ext/standard/tests/http/gh24509.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "0de807ad2101bbd60b3b3f529a8fe09561e60970"
+      }
+    },
+    "ext/standard/tests/mail/mail_basic7.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6663acdfa774406b7043948c4c4391c51330f9e7"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e97b95c37e6fa21ac87e9e1c8db220376f97ae7e"
+      }
+    },
+    "ext/standard/tests/network/gh24308.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "bfb50ae95e40fbb64750c5f9b9d021066085c907"
+      }
+    },
+    "ext/standard/tests/network/gh24616.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "5a039805f8a4e8675f8809374f3aebe546ee21fe"
+      }
+    },
+    "ext/standard/tests/poll/gh25086.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "8b6a9e864f0d57a283440cf336234258fa1db8b1"
+      }
+    },
+    "ext/standard/tests/poll/poll_stream_add_unpollable_wsapoll.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ac4d2f89ac2288520a35409197023f116657032f"
+      }
+    },
+    "ext/standard/tests/poll/poll_stream_buffered_edge.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "08495511fd8a0d2b57a4071635e68543b48cdfcb"
+      }
+    },
+    "ext/standard/tests/poll/poll_stream_buffered_level.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "b1ef50c3ed2cacfdd780b72fdf9415cfe938b697"
+      }
+    },
+    "ext/standard/tests/poll/poll_stream_buffered_max_events.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "6bb2109afb6b1cd4cdc6a8d88e343aba5f9a837d"
+      }
+    },
+    "ext/standard/tests/poll/poll_stream_buffered_merge.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "90111306ae4ca207aef053c5d3625f350e437614"
+      }
+    },
+    "ext/standard/tests/poll/poll_stream_buffered_oneshot.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "80eba04300c9959fb5b137b9e00a6d99c20dd0f7"
+      }
+    },
+    "ext/standard/tests/poll/poll_stream_modify_oneshot_flag.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "14a2553f5ab027796be2867dd228226a57b7d8ff"
+      }
+    },
+    "ext/standard/tests/serialize/__unserialize_malformed.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "6d43767e20f5db4adbde500e499749ed5cb27036"
+      }
+    },
+    "ext/standard/tests/serialize/__unserialize_malformed_nested_destructor.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "94ae62bb09707c4ea89969a09b15b5e5d0892670"
+      }
+    },
+    "ext/standard/tests/serialize/__wakeup_malformed.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "b8cceead72a8e873ba290025a8cd376d96a92478"
+      }
+    },
+    "ext/standard/tests/serialize/bug81111.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5a004476abb9bf78010cb36c0220fecd813992ab"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e7f21b7c6c1aa2f21e406c44127ed0cd209d7d8a"
+      }
+    },
+    "ext/standard/tests/serialize/gh24373.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "14da98ade0d084637b841604a216aefdcc24391b"
+      }
+    },
+    "ext/standard/tests/serialize/gh24373_unserialize.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "91bd6ee6bca0c6146186fc88603af0688b4b8640"
+      }
+    },
+    "ext/standard/tests/serialize/unserialize_allowed_classes_option_invalid_class_names.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "74997939817d87fa9f39e3eafa0d781794c83daf"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "3074076057044b5bffef1be4ea2388ede050e208"
+      }
+    },
+    "ext/standard/tests/serialize/unserialize_callback_func/fn_with_null_bytes.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5341d4bb6dd8d1b8495705709a54d3c245e01818"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d3b9b6fbb430b865c9d5975b3cf5759f5e7877df"
+      }
+    },
+    "ext/standard/tests/streams/bug69521.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d335a68736eb46db8330a6a5dacf6d3f328d60c3"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "71b619e79f03482d7d741e01418f4f15edc83562"
+      }
+    },
+    "ext/standard/tests/streams/ftp_fopen_do_pasv_reply_bounds.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ed7e902b48bc191ef63656587813eaef2aadd513"
+      }
+    },
+    "ext/standard/tests/streams/ftp_url_stat_mdtm_no_digits.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "033c8f016a00c8207df81d3d7d69e8be9e5a443b"
+      }
+    },
+    "ext/standard/tests/streams/gh24506.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "dc11c2c7cee63df924eeb5f13756b9936c4245a7"
+      }
+    },
+    "ext/standard/tests/strings/gh24552.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "97d350e2096e45a4ac15c78ce034b8b9b800e713"
+      }
+    },
+    "ext/standard/tests/strings/sapi_windows_cp_negative_codepage.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "997685f34ef3f3d10fad59596f482f23fdb4900b"
+      }
+    },
+    "ext/standard/var.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d788e23ecce780d19528d17ed8472485a55acbcd"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "c7db83f0062ab5aa14f5f8a5180b38182b78890a"
+      }
+    },
+    "ext/standard/var_unserializer.re": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "89f1c5a1a88e771606900fe4039295b42b795d92"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5d0859ce1ed61708658301f1119d705880422f9f"
+      }
+    },
+    "ext/uri/tests/rfc3986/parsing/port_success_leading_zeros.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "e3578fdc56caf61abb3c3e28a0b23c9e3ef6b9a0"
+      }
+    },
+    "ext/uri/tests/rfc3986/parsing/port_success_leading_zeros_zero.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "75796ddb9c6579a396407503c696810fd539cc49"
+      }
+    },
+    "ext/uri/uri_parser_rfc3986.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "1a936a273ede979bb9f4008e288304b52d3983db"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "94e6e0caffd356d78e015be75cfe28c8c6db135b"
+      }
+    },
+    "ext/uri/uriparser/include/uriparser/Uri.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ddbbd26f9e442393253972e7d8ab11fe8ae18ae1"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e05ebfb23842c2217a5822c28349b5d5602cdce3"
+      }
+    },
+    "ext/uri/uriparser/include/uriparser/UriBase.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "1cc91ceab77237a669f817d24c9934df3382d794"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "731a4c977db17024c1ab6b970eeffbfec3ae7c10"
+      }
+    },
+    "ext/uri/uriparser/include/uriparser/UriIp4.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5f84b62dd2fcebf53a55673be752e16a87c7fb5c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "cdbead83e4344ed9a6a77bb1dcc5cae905a82bc4"
+      }
+    },
+    "ext/uri/uriparser/src/UriCommon.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "e9a6992b01c2416400d0b44f098849cbc34ab05b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "6f36ea99ce503e19f9c8b01de4a9e1c6cf82c7f1"
+      }
+    },
+    "ext/uri/uriparser/src/UriCommon.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "12c691a73386c6fac95c56038915fcb91a3dc7d9"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "c1d69043a580ab016111c699223fbc5fed24ffc2"
+      }
+    },
+    "ext/uri/uriparser/src/UriCompare.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f9def86f66695c37dca4d4c3e934b89542fc988e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "3fa953fe501a723cfb5065538eb79ec1948c1b70"
+      }
+    },
+    "ext/uri/uriparser/src/UriCopy.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "fbe6340faa42de1af2e4e54efd16ce26419d8570"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9b2a76aa8f0e58a70529fa1845f7aaa4965ccdfa"
+      }
+    },
+    "ext/uri/uriparser/src/UriCopy.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "430f5dc6da24a2f2621fcddaabb0237ef37c613e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "dd2912c775dab138a8f1856501ae4d2ae5beb063"
+      }
+    },
+    "ext/uri/uriparser/src/UriEscape.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a1763f97153cffffc5750965f3ff068cd01d1496"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "a3b9e848a8f486df59d891b83b1e2550b39fa7c5"
+      }
+    },
+    "ext/uri/uriparser/src/UriFile.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "0af88480b0ada801ccc2851fdd83961b848ccc0f"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "3bcedfe07a09a2e0ab2ff98e47b8e318f1251310"
+      }
+    },
+    "ext/uri/uriparser/src/UriIp4.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ae61141f7a3ad5b8aa850a84c5bf75af482a18a0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ad404af0fe6832224bbd72be16644d15b2322b1d"
+      }
+    },
+    "ext/uri/uriparser/src/UriMemory.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "669f48dd682773c2c51ff3169d9547e472816b06"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ec3202d5deb828926e915afbbab0d1483b9b4282"
+      }
+    },
+    "ext/uri/uriparser/src/UriNormalize.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c73e22b288796ccdd05edb17380424d2636cd264"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "71aea31ab33a510ff50235296028d2c76be07645"
+      }
+    },
+    "ext/uri/uriparser/src/UriNormalize.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "41c87a382c3693131a4cf3e2f931c8c7fb82457a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "7090b5d20d48b3fa68270ec90c50c01727830dd3"
+      }
+    },
+    "ext/uri/uriparser/src/UriParse.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "cada02301e00c2e668237e5229902cf9ea05398a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "a20c290485fb380610fb9fee09f21377a11a0076"
+      }
+    },
+    "ext/uri/uriparser/src/UriParseBase.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "0ee66d4427e3bfdda0c8832db7efdd85f66b214a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "010e303264315f0e17666bcb5224b970153a89d4"
+      }
+    },
+    "ext/uri/uriparser/src/UriParseBase.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "cdb2c6f778790ac7f54e3f8df3e7839da2af9d8a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e139c71993803de0ae99724d9c73d4851b38ba6d"
+      }
+    },
+    "ext/uri/uriparser/src/UriQuery.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "de3a040de0420dee8e1ef2b2d5fe29c57759c468"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b895c48ad6157ad224d3353b95cac3f68dc1ca3a"
+      }
+    },
+    "ext/uri/uriparser/src/UriRecompose.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "055e0483d3f2c55450cc94b4520583f9f43b1d96"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "ddddbe46bb18d2953098e06a8eb07b9764afd345"
+      }
+    },
+    "ext/uri/uriparser/src/UriResolve.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "90c8bfd778dca941826b84dfeb4cb2bda51ef0ba"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "449418119ae8ea0269349e29e52081afb01b1f33"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetFragment.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "4479391d859dcbc4f24ee812e490f10335d35a70"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1b29ab383df6776c66ca904a07c18a43453031c3"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetHostAuto.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "df015880b33f6d917c3f650313a867a030c6876a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "95c40c2f6878cf0984a2b2851f9bc840cb699098"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetHostCommon.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "bd8095aea3cfa8e97ea193a9d7db1ccc7049f477"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "bd0ef8bef48301d435d38f55f9319cb7f08fc242"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetHostCommon.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6627767f2caf58848dddf82230e955649ddf7cb5"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b4eea4e3775b5b6b085a6f42e74252d3a45bafae"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetHostIp4.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "e52880be4c42193303bee0a22b956b9504a85f1e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "69107d16c9eb39063e7b647aebdc4f6b70bf0964"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetHostIp6.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "9637a4384b232151d0cf11c0215e8daf4690934e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "0b5b3de2fbd3a64d61dbe31843f4dfd933a7ba30"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetHostIpFuture.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c5044c49c76fcbefc6e3e628e609d2a64e2c9baf"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "10be0e05f2788966f41fdca05adab02cd99bf1da"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetHostRegName.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "01bc4e47f16ef1af4ce8948b22924b441c49d703"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1ea5ac56e33d07699e60f9b47254658467a7ea8e"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetPath.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "17aef0fca42d4678348fd26c0859c75ed56c450b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b572f1ea0ac0b5bc4aafecabca08deafc7382307"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetPort.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5e2160e309765c5d7239ec0ba24f24657d785274"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b6ed715eabf86291c0991970bda804f7b6e040fb"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetQuery.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "4f58c8286ed70baf906fc583efe33db07ca4730b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "18560bb154e32047b312f1fb45eb101df541e24f"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetScheme.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "3dfaf1e9f151bf94efe05901aca78a9247c3d848"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9baa19d1285b21d3108f5034c73e3919f635344b"
+      }
+    },
+    "ext/uri/uriparser/src/UriSetUserInfo.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7865e837deb668e827e9895673c997c1e0f26a9a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "93b26af6ec7127510c54aa6e224a702960d5662e"
+      }
+    },
+    "ext/uri/uriparser/src/UriShorten.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "001bd7db9990d4b6281fdcb8814aab3049b65ce5"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "3a024d2d2a1a4f96353a05ecde183b4959d3ed7f"
+      }
+    },
+    "ext/xmlreader/php_xmlreader.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a0126f3dce74d59b503b140a1248639483340373"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d547b9b3e904a2350d6f998bd6444811cb9da880"
+      }
+    },
+    "ext/zend_test/object_handlers.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6b8bf4ab99127b5e8b2ee415e7ecad4805f16375"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "3f26f687f45f7ca01cff06664a5fa2ca7afe2070"
+      }
+    },
+    "ext/zend_test/observer.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "799320357e35c9137ff6a846b6f3897d2800efc6"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1aec7f6150e9dfc163a73439915912ad89ac9c31"
+      }
+    },
+    "ext/zend_test/php_test.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7b5180d1a731c44a2504bfce43c0d3d876f8da7b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "db6feede7cafe2a177aa7c8634bd67872492f032"
+      }
+    },
+    "ext/zend_test/test.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "4867f2f41c6991bf0163a3dbc5b3791451202ba1"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "7851df8bbf902f65b653b304ee41afade4592bca"
+      }
+    },
+    "ext/zend_test/test.stub.php": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "db5ca629ade297f53ff3e8d8f85a670fd029e7c3"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "8719c6935a33a5b528b16be7c22a579b34bbf389"
+      }
+    },
+    "ext/zend_test/test_arginfo.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "87622c185cff8e4145ad6af6741a9b6900d2383e"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "c2509001e45c6a356cfb842311e25615c6731815"
+      }
+    },
+    "ext/zend_test/test_decl.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "db7652512c8389ebc5cb28d237a45cf29bf2ab09"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "291f7ab87afbcec4f0329fa549f5a582cefa08cc"
+      }
+    },
+    "ext/zend_test/test_legacy_arginfo.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "a673b373142a153c8e5ecddf6b9ea263376344bc"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d6e1f758e20914d531d343c460874ab438b41f50"
+      }
+    },
+    "ext/zend_test/tests/compile_to_ast/namespace.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ee0165a2600b205edeb33a19463bee273d8f19fd"
+      }
+    },
+    "ext/zend_test/tests/gh24523.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "633e88baec17fc99d4e9d24a1219fac4d722894f"
+      }
+    },
+    "ext/zend_test/tests/gh24668.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "291632be3348a5adfcca12fa8badbf47d67a178f"
+      }
+    },
+    "ext/zip/config.m4": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "590be44f6501d13a2a94e20883fdd3ab7ca73a26"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "2fd1145da06cc9a6426ef289b40c480ff9aa9e63"
+      }
+    },
+    "ext/zip/config.w32": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "8dd22c7761cfb4705955e4e3e26da7f26d6f17a5"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "8b8c7ed8f2c47a071966160b8882cf98115a9d2d"
+      }
+    },
+    "ext/zip/tests/stats_existing.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "a3d0190b8cd276f6aea8e63b37a8fc84fb52107f"
+      }
+    },
+    "ext/zip/tests/stats_missing.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "5f4df5745c3e8400bac4afb6968669bc6c20fed9"
+      }
+    },
+    "ext/zip/tests/stats_nonzip.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ef24c4c2c32d775175e57f433a2ff144ccd421a1"
+      }
+    },
+    "ext/zip/zip_stream.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "429342b36e3d2ec6e628307bbe46c0fccd443c19"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "d954796743da60042389be3f018446e997ed4c02"
+      }
+    },
+    "ext/zlib/config.w32": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "520ab11cd84d64a5c053c92bc511b87c8473202a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "8048d520619ca2fac7ad4ade3f8c43f5f542c2be"
+      }
+    },
+    "main/SAPI.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5c897c81c8c7da5cd0b351f90d497f709b97ca79"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "4b84b76633c2cc423d97e231468e67dcc9ab678f"
+      }
+    },
+    "main/network.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "01e4f2e778d42598da2c9a772719f56fa9e00309"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "cdd16df8edabec7da56de81ec2441106dca8d759"
+      }
+    },
+    "main/php.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d52a58544efd7692288dc910709a1b7df07b56d9"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "826e97fd1abdc98f0b52446ead3ea054c202dd3f"
+      }
+    },
+    "main/php_odbc_utils.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "dc91f637c566efa794b5c2d713237c73ed67ffcd"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "a34a539c68687e1a37d8dab079f9c7cccc3b88c3"
+      }
+    },
+    "main/php_poll.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "9b878d44bd20027409e0c66ee04c3c20ac697ca5"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "7f92e70ce7890ab8b55ca05c5c5927f5b654bae2"
+      }
+    },
+    "main/php_version.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5a014b9ccdfea8aab21fd5879b1acd4bf77ef51a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "554e5c73091608938168675889c28b86c264648b"
+      }
+    },
+    "main/poll/poll_backend_kqueue.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "f2c0212f4d15da7f69870f9ea220fdbe0c674b31"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "65e825dbf8584fc332ea184e070296aa8f2ae0a7"
+      }
+    },
+    "main/poll/poll_backend_wsapoll.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "101a7cfe0e4b0f6500c22818a558ef93a578d3b2"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "c89a02bfdd2402b616c4f41fb6400d0f34aeceae"
+      }
+    },
+    "main/poll/poll_handle.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "228d44e1e42002b9ef358e66733ed49dd544226a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "41adaebf91a3c23321f91085b8db8d02186328e0"
+      }
+    },
+    "main/streams/xp_socket.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "aae7915b3f08ff4148b4a482f1a2a09b5958f64a"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "5317f37661f034c9468977c9907f2cf4c996c1f8"
+      }
+    },
+    "pear/Makefile.frag": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "642267cc242e4f637f36be68835bdee395a10dec"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "fc56dfcbcbc17c7466a27787dd1656391672f1f1"
+      }
+    },
+    "pear/fetch.php": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "56767b62cb707673cc36dc8b92bee5d247ae16df"
+      },
+      "rc7": null
+    },
+    "pear/install-pear-nozlib.phar": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "fde49385da04c30d2c3b0dc27ff09498fcd6edbf"
+      }
+    },
+    "pear/install-pear.txt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "2005a56997210f6655cf816f744f7cfc588fc802"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "1d3dc5c7b6ac7a51fed7bbb9006c613074af7b91"
+      }
+    },
+    "sapi/cgi/tests/stream_error_default_context.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "240bd9342be79b013134fca31a06520dc02ef984"
+      }
+    },
+    "sapi/cli/cli.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "9502a6726fe449527991dc9b67297ab58ec3b8a9"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "abf41d510a59f54408695b98638a374ab653130a"
+      }
+    },
+    "sapi/cli/php_cli.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "9cd1f5a8c15847d84d90251d8523fcf4a04c3bb0"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "985ede04b5bd5f5ea7bbbfb5dc04cdf1aaaad105"
+      }
+    },
+    "sapi/cli/php_cli_server.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "c9ed8ff53c634beb63c7fd0dcdbad19e69e2fb76"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "13179d39e9cf184a056800583940fd82180b72a6"
+      }
+    },
+    "sapi/cli/php_http_parser.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "6d548ac1ec58cab2e3d1317554a007c787e38cb6"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b8c6748067e2e9c58e07664a92d2e75fcda8c852"
+      }
+    },
+    "sapi/cli/php_http_parser.h": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "d7006b6d04d7c06ba0de8cccf12a1d2ce8b82e4d"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b5d9099f16c855ead8827018222eb150c4415a1d"
+      }
+    },
+    "sapi/cli/ps_title.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ee977cd88cd1ebd63873d9368abb059a6d1c89c3"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "9c6972d8c7b5188ad57f20b1365d7e5501e7df67"
+      }
+    },
+    "sapi/cli/tests/gh16137_duplicate_headers.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "5fdc149de37b2544b7b0bbda46673d45da5b5926"
+      }
+    },
+    "sapi/cli/tests/gh9670.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "a84bc9713f069db28b562215f19a6eb0b2fc0339"
+      }
+    },
+    "sapi/fpm/fpm/fpm_children.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "285df91a9b690aeb2c3c2a3e6e7f0cd14d62b16f"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "4f86abd4038b48e9e4b50b45b5e269a7649afce9"
+      }
+    },
+    "sapi/fpm/fpm/fpm_status.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "ff6ef68f39498470479b511d2436a4d76e153c4b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "118be47bfeee62a08c55d1926e5a26b9cb08135d"
+      }
+    },
+    "sapi/fpm/fpm/zlog.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "b34d455e6bd6ca5f5f7aae11feebe27e22898d28"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "f11618b947731b9521642ebcd968de3cfe369c9c"
+      }
+    },
+    "sapi/fpm/tests/bug77023-pm-dynamic-blocking-sigquit.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "b20d55875034e0bce3a3b365755137a9ed3f01af"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "56fbffc3f9c78d36eb159c9861b2e0a91b90df2f"
+      }
+    },
+    "sapi/fpm/tests/fatal-error-backtrace-request-reset.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "da6941e5b39558ac013734007d2474344413771c"
+      }
+    },
+    "sapi/fpm/tests/gh24046-stdio-pipe-double-close.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "af0c8bd0c6d812f9aeed357ffbbc1e9ffe03b7d4"
+      }
+    },
+    "sapi/fpm/tests/log-bwd-long-pool-name.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "47c09f5cbfe07718c7f1a56f999436e11fbc1033"
+      }
+    },
+    "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "4a8fbf3a56e255c0f656fbb21874c50b5644b3ec"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "b4ff793b9f3a9a5d1d873b51645d2740a98574b5"
+      }
+    },
+    "sapi/fpm/tests/log-dwd-long-pool-name-limit-512.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "ffd099cb3bd612dcc0a341b6a72187e01eb6a885"
+      }
+    },
+    "sapi/fpm/tests/status-head.phpt": {
+      "rc4": null,
+      "rc7": {
+        "mode": "100644",
+        "oid": "a21fb7a7f1f8c7cbb861500aad0631e09b8f5a3b"
+      }
+    },
+    "sapi/fpm/tests/tester.inc": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "557f8c25e193e791d1b6274b45bc582e3006ce7c"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "136b9ac44ff0fed42d01050bdb601a422c23cee7"
+      }
+    },
+    "sapi/litespeed/README.md": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "3174bb55ad741c33f19527ef533b9656ec886ffd"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "27f13ad2ba093e8b49e89850755a10c9eae96ce4"
+      }
+    },
+    "sapi/litespeed/lsapi_main.c": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "5b7fc3b6c84e00573a30c0845a6b384e2b27091b"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "60d1ca358b55cc41704ebb21c28557dda5efe9bb"
+      }
+    },
+    "scripts/dev/makedist": {
+      "rc4": {
+        "mode": "100755",
+        "oid": "9417515fe1d8b11d760c26b1b1ac388a04238ad6"
+      },
+      "rc7": {
+        "mode": "100755",
+        "oid": "6c8ef3c1dc8a3b8d8b31c3ddc3e9d9c7c04b53a1"
+      }
+    },
+    "win32/build/confutils.js": {
+      "rc4": {
+        "mode": "100644",
+        "oid": "7d9297e8c2d624a588eb47835023697b1926bdbe"
+      },
+      "rc7": {
+        "mode": "100644",
+        "oid": "e3dbe97e367063642ef2b136862bbf752ef5ea15"
+      }
+    }
+  },
+  "archiveCorrespondence": {
+    "scope": "Every changed RC7 path plus the 235-file historical source inventory; unchanged unrelated files are not individually compared",
+    "matched": 673,
+    "notIndividuallyCompared": 27938,
+    "missing": [],
+    "different": {
+      "NEWS": {
+        "expectedGitBlob": "2e2cedb40fe773500184a77b293f4ec7d001acb3",
+        "archiveGitBlob": "ba5bd34ab0773a3228d8a62ae397e1cab70dd5e3",
+        "sha256": "db709774aece005421bbfcf5151a6390cfb05fbe64f956edde2f75de5e5042bb"
+      }
+    }
+  }
+}

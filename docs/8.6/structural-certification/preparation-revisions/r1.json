@@ -1,0 +1,6 @@
+{
+  "report": "docs/8.6/structural-certification/runs/release-v1_1_0-r1/evidence.json",
+  "signoff": "docs/8.6/structural-certification/preparation-revisions/r1-signoff.md",
+  "sha256": "52aaae62b507b8f5a895ef560a2832d626d0bd963f734aab081c48bbcde820ab",
+  "reason": "Structural gates passed. Local Git preparation stopped before refs because batch stored-blob length differs from filtered checkout length. Fix the checker and regenerate certification for the changed tooling."
+}

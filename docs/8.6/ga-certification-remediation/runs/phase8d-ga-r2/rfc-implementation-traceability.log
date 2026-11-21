@@ -1,0 +1,7 @@
+{
+  "gate": "rfc-implementation-traceability",
+  "errors": [
+    "PHP86-013: retained RFC candidates have unresolved implementation/component/absence/reversion obligations at GA; no RFC-only permission is granted."
+  ],
+  "certificationGranted": false
+}

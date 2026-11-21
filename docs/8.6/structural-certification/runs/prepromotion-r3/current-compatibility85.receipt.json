@@ -1,0 +1,17 @@
+{
+  "obligation": "Current PHP 8.5 shared implementation, source and paired-boundary checks",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "current-compatibility85",
+    "--output",
+    "docs/8.6/structural-certification/runs/prepromotion-r3/current-compatibility85.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r3/current-compatibility85.log",
+  "sha256": "2c2f88bebe08925c23375476065e751507cd71d532672963cadfb53e20dbbcea"
+}

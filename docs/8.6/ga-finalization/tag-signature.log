@@ -1,0 +1,5 @@
+gpg: directory '/c/Users/alwyn/.gnupg' created
+gpg: keybox '/c/Users/alwyn/.gnupg/pubring.kbx' created
+gpg: Signature made Tue Nov 17 16:25:08 2026 SAST
+gpg:                using EDDSA key 016895DE9A475111D537A6E69134FF30BC5A99B5
+gpg: Can't check signature: No public key

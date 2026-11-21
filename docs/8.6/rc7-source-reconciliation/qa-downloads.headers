@@ -1,0 +1,41 @@
+HTTP/2 302 
+date: Tue, 17 Nov 2026 19:10:08 GMT
+content-type: text/html; charset=iso-8859-1
+content-length: 343
+location: https://www.php.net/pre-release-builds.php
+server: BunnyCDN-JH1-1032
+cdn-pullzone: 5992847
+cdn-requestcountrycode: ZA
+cdn-proxyver: 1.72
+cdn-requestpullsuccess: True
+cdn-requestpullcode: 302
+cdn-cachedat: 11/17/2026 19:10:08
+cdn-edgestorageid: 1032
+cdn-requestid: 6b1be94a94b70d97fe74745e84126ccc
+cdn-cache: EXPIRED
+cdn-status: 302
+cdn-requesttime: 0
+
+HTTP/2 200 
+date: Tue, 17 Nov 2026 19:10:08 GMT
+content-type: text/html; charset=utf-8
+vary: Accept-Encoding
+server: BunnyCDN-JH1-1032
+cdn-pullzone: 5992589
+cdn-requestcountrycode: ZA
+cache-control: public, max-age=2592000
+content-language: en
+strict-transport-security: max-age=15768000
+permissions-policy: interest-cohort=()
+x-frame-options: SAMEORIGIN
+link: <https://www.php.net/qa>; rel=shorturl
+cdn-proxyver: 1.72
+cdn-requestpullcode: 200
+cdn-requestpullsuccess: True
+cdn-edgestorageid: 1317, 1032
+cdn-cachedat: 11/17/2026 19:10:08
+cdn-status: 200
+cdn-requesttime: 0
+cdn-requestid: 90d4a6024237ff43c1b433b87187866c
+cdn-cache: MISS
+

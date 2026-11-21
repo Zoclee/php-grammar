@@ -1,0 +1,11 @@
+{
+  "command": [
+    "git",
+    "ls-remote",
+    "--tags",
+    "https://github.com/Zoclee/php-grammar.git"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/baseline-remote-tags.log",
+  "sha256": "e4f0d7dce6eb9c23e146bcddf6d2d8d734903ae1f171ed863eecda5028bed899"
+}

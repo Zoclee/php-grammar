@@ -1,0 +1,20 @@
+{
+    "differences": {
+        "added": [],
+        "removed": [],
+        "modified": [
+            "ordinary-argument-list",
+            "first-class-callable-arguments",
+            "clone-argument-list",
+            "argument",
+            "argument-no-expression"
+        ]
+    },
+    "documentarySections": 14,
+    "openFindings": [
+        "PHP86-013",
+        "PHP86-014",
+        "PHP86-015"
+    ],
+    "errors": []
+}

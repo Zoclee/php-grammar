@@ -1,0 +1,9 @@
+{
+  "finding": "SG86-002",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "source": "Zend/zend_language_parser.y precedence declarations and expr productions",
+  "rejectedOverbroadCorrection": "tests/fixtures/php/8.6/invalid/final-yield-key-prefix.php",
+  "reason": "Print must not absorb bare logical operators into the yield key. A nested lower-precedence prefix can open such an operand. Existing negative fixture remains unchanged; add all 32 paired prefix/operand controls.",
+  "grammarSha256": "29f07eb51057e4878c90a7e2692f4e4b0a02ea03ab5cf5169e60e46226679b79",
+  "discoverySha256": "a60d119e5c21998f2adbb4459cfa166cba85a7de525ef4e74bea5a5dea478b31"
+}

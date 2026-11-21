@@ -1,0 +1,210 @@
+zend_compile_var_inner(znode *result, zend_ast *ast, uint32_t type, bool by_ref)
+{
+	CG(zend_lineno) = zend_ast_get_lineno(ast);
+
+	if (CG(memoize_mode) != ZEND_MEMOIZE_NONE) {
+		switch (ast->kind) {
+			case ZEND_AST_CALL:
+			case ZEND_AST_METHOD_CALL:
+			case ZEND_AST_NULLSAFE_METHOD_CALL:
+			case ZEND_AST_STATIC_CALL:
+			case ZEND_AST_PIPE:
+				zend_compile_memoized_expr(result, ast, BP_VAR_W);
+				/* This might not actually produce an opcode, e.g. for expressions evaluated at comptime. */
+				return NULL;
+		}
+	}
+
+	switch (ast->kind) {
+		case ZEND_AST_VAR:
+			return zend_compile_simple_var(result, ast, type, false);
+		case ZEND_AST_DIM:
+			return zend_compile_dim(result, ast, type, by_ref);
+		case ZEND_AST_PROP:
+		case ZEND_AST_NULLSAFE_PROP:
+			return zend_compile_prop(result, ast, type, by_ref);
+		case ZEND_AST_STATIC_PROP:
+			return zend_compile_static_prop(result, ast, type, by_ref, false);
+		case ZEND_AST_CALL:
+			zend_compile_call(result, ast, type);
+			return NULL;
+		case ZEND_AST_METHOD_CALL:
+		case ZEND_AST_NULLSAFE_METHOD_CALL:
+			zend_compile_method_call(result, ast, type);
+			return NULL;
+		case ZEND_AST_STATIC_CALL:
+			zend_compile_static_call(result, ast, type);
+			return NULL;
+		case ZEND_AST_PIPE:
+			zend_compile_pipe(result, ast, type);
+			return NULL;
+		case ZEND_AST_ZNODE:
+			*result = *zend_ast_get_znode(ast);
+			return NULL;
+		case ZEND_AST_ASSIGN_REF:
+			zend_compile_assign_ref(result, ast, type);
+			return NULL;
+		case ZEND_AST_ASSIGN:
+			zend_compile_assign(result, ast, false, type);
+			return NULL;
+		default:
+			if (type == BP_VAR_W || type == BP_VAR_RW || type == BP_VAR_UNSET) {
+				zend_error_noreturn(E_COMPILE_ERROR,
+					"Cannot use temporary expression in write context");
+			}
+
+			zend_compile_expr(result, ast);
+			return NULL;
+	}
+}
+
+static zend_op *zend_compile_var(znode *result, zend_ast *ast, uint32_t type, bool by_ref) /* {{{ */
+{
+	zend_check_stack_limit();
+
+	uint32_t checkpoint = zend_short_circuiting_checkpoint();
+	zend_op *opcode = zend_compile_var_inner(result, ast, type, by_ref);
+	zend_short_circuiting_commit(checkpoint, result, ast);
+#if ZEND_DEBUG
+	if (result
+	 && (type == BP_VAR_R || type == BP_VAR_IS)
+	 /* Don't check memoized result, as it will force BP_VAR_W even for BP_VAR_IS. */
+	 && CG(memoize_mode) == ZEND_MEMOIZE_NONE
+	) {
+		/* BP_VAR_{R,IS} is not allowed to produce IS_VAR. */
+		ZEND_ASSERT(result->op_type != IS_VAR);
+	}
+#endif
+	return opcode;
+}
+
+static zend_op *zend_delayed_compile_var(znode *result, zend_ast *ast, uint32_t type, bool by_ref) /* {{{ */
+{
+	zend_check_stack_limit();
+
+	switch (ast->kind) {
+		case ZEND_AST_VAR:
+			return zend_compile_simple_var(result, ast, type, true);
+		case ZEND_AST_DIM:
+			return zend_delayed_compile_dim(result, ast, type, by_ref);
+		case ZEND_AST_PROP:
+		case ZEND_AST_NULLSAFE_PROP:
+		{
+			zend_op *opline = zend_delayed_compile_prop(result, ast, type);
+			if (by_ref) {
+				opline->extended_value |= ZEND_FETCH_REF;
+			}
+			return opline;
+		}
+		case ZEND_AST_STATIC_PROP:
+			return zend_compile_static_prop(result, ast, type, by_ref, true);
+		case ZEND_AST_CONST:
+			if (!(ast->attr & ZEND_CONST_OBJECT_FETCH)) {
+				break;
+			}
+			zend_compile_const(result, ast, type);
+			if (!(type == BP_VAR_R || type == BP_VAR_IS) && result->op_type == IS_CONST) {
+				znode op1 = *result;
+				/* Intentionally IS_VAR result. */
+				zend_emit_op(result, ZEND_QM_ASSIGN, &op1, NULL);
+			}
+			return NULL;
+		case ZEND_AST_CLASS_CONST:
+			if (!(ast->attr & ZEND_CONST_OBJECT_FETCH)) {
+				break;
+			}
+			zend_compile_class_const(result, ast, type);
+			if (!(type == BP_VAR_R || type == BP_VAR_IS) && result->op_type == IS_CONST) {
+				znode op1 = *result;
+				/* Intentionally IS_VAR result. */
+				zend_emit_op(result, ZEND_QM_ASSIGN, &op1, NULL);
+			}
+			return NULL;
+	}
+
+	return zend_compile_var(result, ast, type, false);
+}
+/* }}} */
+
+bool zend_try_ct_eval_cast(zval *result, uint32_t type, zval *op1)
+{
+	/* NAN warns when casting */
+	if (UNEXPECTED(Z_TYPE_P(op1) == IS_DOUBLE && zend_isnan(Z_DVAL_P(op1)))) {
+		return false;
+	}
+	switch (type) {
+		case _IS_BOOL:
+			ZVAL_BOOL(result, zend_is_true(op1));
+			return true;
+		case IS_LONG:
+			if (Z_TYPE_P(op1) == IS_DOUBLE && !ZEND_DOUBLE_FITS_LONG(Z_DVAL_P((op1)))) {
+				return false;
+			}
+			ZVAL_LONG(result, zval_get_long(op1));
+			return true;
+		case IS_DOUBLE:
+			ZVAL_DOUBLE(result, zval_get_double(op1));
+			return true;
+		case IS_STRING:
+			/* Conversion from double to string takes into account run-time
+			   'precision' setting and cannot be evaluated at compile-time */
+			if (Z_TYPE_P(op1) != IS_ARRAY && Z_TYPE_P(op1) != IS_DOUBLE) {
+				ZVAL_STR(result, zval_get_string(op1));
+				return true;
+			}
+			break;
+		case IS_ARRAY:
+			ZVAL_COPY(result, op1);
+			convert_to_array(result);
+			return true;
+	}
+	return false;
+}
+
+static void zend_eval_const_expr(zend_ast **ast_ptr) /* {{{ */
+{
+	zend_ast *ast = *ast_ptr;
+	zval result;
+
+	if (!ast) {
+		return;
+	}
+
+	zend_check_stack_limit();
+
+	switch (ast->kind) {
+		case ZEND_AST_BINARY_OP:
+			zend_eval_const_expr(&ast->child[0]);
+			zend_eval_const_expr(&ast->child[1]);
+			if (ast->child[0]->kind != ZEND_AST_ZVAL || ast->child[1]->kind != ZEND_AST_ZVAL) {
+				return;
+			}
+
+			if (!zend_try_ct_eval_binary_op(&result, ast->attr,
+					zend_ast_get_zval(ast->child[0]), zend_ast_get_zval(ast->child[1]))
+			) {
+				return;
+			}
+			break;
+		case ZEND_AST_GREATER:
+		case ZEND_AST_GREATER_EQUAL:
+			zend_eval_const_expr(&ast->child[0]);
+			zend_eval_const_expr(&ast->child[1]);
+			if (ast->child[0]->kind != ZEND_AST_ZVAL || ast->child[1]->kind != ZEND_AST_ZVAL) {
+				return;
+			}
+
+			zend_ct_eval_greater(&result, ast->kind,
+				zend_ast_get_zval(ast->child[0]), zend_ast_get_zval(ast->child[1]));
+			break;
+		case ZEND_AST_AND:
+		case ZEND_AST_OR:
+		{
+			bool child0_is_true, child1_is_true;
+			zend_eval_const_expr(&ast->child[0]);
+			zend_eval_const_expr(&ast->child[1]);
+			if (ast->child[0]->kind != ZEND_AST_ZVAL) {
+				return;
+			}
+
+			child0_is_true = zend_is_t

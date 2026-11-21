@@ -1,0 +1,62 @@
+{
+  "contract": "php86-ga-certification-v1",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "gate": "folding-order",
+  "details": {
+    "original": [
+      {
+        "id": "PHP86-015",
+        "classification": "unresolved intended compatibility; verified contextual traversal observation",
+        "construct": "Optimized printf/sprintf, arrays and constant-expression traversal versus ordinary calls",
+        "evidence": [
+          "compiler-contextual-groups.json#/groups/1",
+          "compiler-contextual-groups.json#/groups/2",
+          "source-audit-probes.json",
+          "source-audit-upstream.json",
+          "correctness-remediation.md"
+        ],
+        "missingEvidence": "General intended language boundary and complete dispatch/visited-AST correspondence. PR 19658 discussion addresses optimization and constant collection, not a universal discarded-cast validity rule.",
+        "risk": "An unconditional argument-traversal rule would wrongly accept or reject source.",
+        "draftImpact": "Phase 5D informative scope remains accurate; preserve bounded observations.",
+        "candidateImpact": "Blocks complete traversal claim and promotion.",
+        "stableImpact": "Blocks certification.",
+        "remediation": "Resolve intent and dispatch semantics; retain direct/imported/qualified/namespace/dynamic/named/unpack/PFA controls and logical/ternary/coalesce/array/live/discarded cases. No function-specific EBNF without structural evidence.",
+        "priority": "P1",
+        "blocksCertification": true
+      }
+    ],
+    "gaDisposition": [
+      {
+        "id": "PHP86-015",
+        "originalRequirement": {
+          "id": "PHP86-015",
+          "classification": "unresolved intended compatibility; verified contextual traversal observation",
+          "construct": "Optimized printf/sprintf, arrays and constant-expression traversal versus ordinary calls",
+          "evidence": [
+            "compiler-contextual-groups.json#/groups/1",
+            "compiler-contextual-groups.json#/groups/2",
+            "source-audit-probes.json",
+            "source-audit-upstream.json",
+            "correctness-remediation.md"
+          ],
+          "missingEvidence": "General intended language boundary and complete dispatch/visited-AST correspondence. PR 19658 discussion addresses optimization and constant collection, not a universal discarded-cast validity rule.",
+          "risk": "An unconditional argument-traversal rule would wrongly accept or reject source.",
+          "draftImpact": "Phase 5D informative scope remains accurate; preserve bounded observations.",
+          "candidateImpact": "Blocks complete traversal claim and promotion.",
+          "stableImpact": "Blocks certification.",
+          "remediation": "Resolve intent and dispatch semantics; retain direct/imported/qualified/namespace/dynamic/named/unpack/PFA controls and logical/ternary/coalesce/array/live/discarded cases. No function-specific EBNF without structural evidence.",
+          "priority": "P1",
+          "blocksCertification": true
+        },
+        "gaEvidenceConclusion": "Issue #24794 explains skipped/ordered compiler visitation; GA retains the corresponding compiler behavior.",
+        "remainingRequirement": "Complete construct-specific source correspondence and live/retained/discarded visitation evidence. The explanation resolves cause, not the full validity/scope obligation.",
+        "boundedDispositionPermittedNow": false,
+        "blocksCertification": true
+      }
+    ]
+  },
+  "errors": [
+    "PHP86-015: material closure obligations remain; see reviewed GA disposition. Observations do not waive closure."
+  ],
+  "certificationGranted": false
+}

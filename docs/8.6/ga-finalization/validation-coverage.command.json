@@ -1,0 +1,13 @@
+{
+  "command": [
+    ".audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "bin/grammar-coverage.php",
+    "8.6"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/validation-coverage.log",
+  "sha256": "9a5d21c0fb25e7215968291d1b2fb4c034218bd03be2188676cef2e434e1d7d7"
+}

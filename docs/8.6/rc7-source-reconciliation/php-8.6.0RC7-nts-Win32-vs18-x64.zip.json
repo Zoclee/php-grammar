@@ -1,0 +1,7 @@
+{
+    "url": "https://downloads.php.net/~windows/qa/php-8.6.0RC7-nts-Win32-vs18-x64.zip",
+    "path": ".audit/phase8a/php-8.6.0RC7-nts-Win32-vs18-x64.zip",
+    "sha256": "03da81bc29974c42eb0678c2c4cf94e52c484d1dfa7a61b3c36d98eb23350588",
+    "publishedSha256": "03da81bc29974c42eb0678c2c4cf94e52c484d1dfa7a61b3c36d98eb23350588",
+    "bytes": 39672144
+}

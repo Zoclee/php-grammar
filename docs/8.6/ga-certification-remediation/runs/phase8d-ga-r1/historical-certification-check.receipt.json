@@ -1,0 +1,21 @@
+{
+  "originalObligation": [
+    "historical",
+    "Run unmodified 8.5 certification --check; record pre-existing freshness failures, never rewrite history."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.5/certification.php",
+    "--source-cache",
+    "C:/Data/GitHub/php-grammar/.audit/phase8d/source-cache",
+    "--check"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "failed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/historical-certification-check.log",
+  "logSha256": "e053a6cc40e83dd5b936eaf693f4e69d650ad738842af86fcf039e06e36590cd"
+}

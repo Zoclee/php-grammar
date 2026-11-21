@@ -1,0 +1,53 @@
+{
+  "evidence": "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/evidence.json",
+  "evidenceSha256": "7b9e1296f13c57d9ec9ee93a6d39e812bef9ba6df114f4a6b79c403dac8289d8",
+  "signoffSha256": "080d82788d69c2f5e48747431bfba3e46c0cec83f7f4abf9b6164bb5f50f8cfb",
+  "results": {
+    "passed": 26,
+    "failed": 3,
+    "blocked": 9
+  },
+  "commands": {
+    "independent-check": {
+      "command": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "memory_limit=1G",
+        "tools/8.6/certification-ga.php",
+        "--check",
+        "--report",
+        "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/evidence.json"
+      ],
+      "exitCode": 0,
+      "log": "docs/8.6/ga-certification-remediation/runs/stable-closure-verification/independent-check.log",
+      "sha256": "9e5b1dcb5d9047502e14f81123afbd088bd88f99150dafe9b97cc3dfd2d6bb3b"
+    },
+    "release-claims": {
+      "command": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        "-d",
+        "memory_limit=1G",
+        "tools/8.6/certification-ga.php",
+        "--claims",
+        "--report",
+        "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/evidence.json"
+      ],
+      "exitCode": 1,
+      "log": "docs/8.6/ga-certification-remediation/runs/stable-closure-verification/release-claims.log",
+      "sha256": "80edadb61e5bc174ecf8fa8486e959c785a3424a41a9cc6de8f46a9fcf5ebf4f"
+    },
+    "assessment-preservation": {
+      "command": [
+        "C:\\Data\\GitHub\\php-grammar\\.audit\\php85\\php.exe",
+        "-n",
+        ".audit/verify-release-assessment.php"
+      ],
+      "exitCode": 0,
+      "log": "docs/8.6/ga-certification-remediation/runs/stable-closure-verification/assessment-preservation.log",
+      "sha256": "68eb0a196207ece44dfff389c849aaac431f3387bd315b486b6e01402f03c5b6"
+    }
+  },
+  "certificationGranted": false
+}

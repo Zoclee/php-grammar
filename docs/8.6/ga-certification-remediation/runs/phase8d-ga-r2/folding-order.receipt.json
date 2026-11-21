@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "blocked:PHP86-015",
+    "Resolve optimized-call traversal and independently reconcile live/retained/discarded validation order."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "folding-order",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/folding-order.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "blocked",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/folding-order.log",
+  "logSha256": "69020b46c7176a44bd62d003ec2c2b5e55ad687ab63a6f5524ddb85958392cc4"
+}

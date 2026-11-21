@@ -3,10 +3,10 @@
 This contract covers the packaged artifacts and interfaces below. PHP language
 versions and package releases are independent; see [versioning](versioning.md).
 Select an explicit language version for reproducible results. PHP 8.5 remains
-the recommended stable version; PHP 8.6 is an incomplete RC4 draft. Both artifacts
-load standalone. Draft structural matching does not certify contextual validity;
+the compatibility default for existing maintainer commands; PHP 8.6 is a stable PHP 8.6.0 GA structural grammar. Both artifacts
+load standalone. Structural matching does not certify contextual validity;
 PHP86-013/014/015 remain open. Consult the version's `metadata.changes` and
-`metadata.integration` for scope, provenance, and results.
+`metadata.structuralCertification` for scope, provenance, and results.
 
 ## Artifacts and discovery
 
@@ -175,9 +175,11 @@ serialization is semi-public, so durable tooling should use the PHP node API or
 canonical EBNF. Rule lookup also parses/validates the selected grammar.
 
 `versions` also returns additive `sourceProfile`, `phpSource`, and `metadata`
-fields alongside version/status/artifact paths. PHP 8.6 is explicitly `draft`.
-Use `metadata.changes` for its change document and `metadata.integration` for
-bounded validation results; evidence is descriptive, not a runtime dependency.
+fields alongside version/status/artifact paths. PHP 8.6 is `stable` under the
+structural certification contract. Use `metadata.changes` for its change document
+and `metadata.structuralCertification` for the current certification scope.
+Other validation metadata retains historical evidence; it is descriptive,
+not a runtime dependency.
 
 Maintainer commands remain separate: `composer manifest:check`,
 `php tools/8.5/generate-expressions.php --check`,
@@ -218,3 +220,9 @@ Update stored selectors explicitly. API aliases were considered and declined:
 they would conceal canonical membership and could imply interface/enum-specific
 contextual validation that a shared member rule does not perform. All 360 current
 identifiers and bodies are unchanged by this consumer API work.
+
+The independent [structural certification contract](structural-certification.md) distinguishes
+structural grammar support from contextual compiler and runtime equivalence.
+Historical extended certification results remain available with their original
+failures and limitations. Stable promotion requires independently verified
+structural release evidence.

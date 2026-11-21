@@ -1,0 +1,23 @@
+HTTP/2 200 
+date: Tue, 17 Nov 2026 19:08:32 GMT
+content-type: text/html; charset=utf-8
+vary: Accept-Encoding
+server: BunnyCDN-JH1-1032
+cdn-pullzone: 5992589
+cdn-requestcountrycode: ZA
+cache-control: public, max-age=180
+content-language: en
+strict-transport-security: max-age=15768000
+permissions-policy: interest-cohort=()
+x-frame-options: SAMEORIGIN
+link: <https://www.php.net/downloads>; rel=shorturl
+cdn-proxyver: 1.72
+cdn-requestpullcode: 200
+cdn-requestpullsuccess: True
+cdn-edgestorageid: 1323, 1032
+cdn-cachedat: 11/17/2026 19:08:32
+cdn-status: 200
+cdn-requesttime: 0
+cdn-requestid: 5dcc2e62dab23beec1304f39f3ae803a
+cdn-cache: MISS
+

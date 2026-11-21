@@ -1,0 +1,9 @@
+{
+  "url": "https://windows.php.net/download/",
+  "effectiveUrl": "https://www.php.net/downloads.php?os=windows",
+  "status": 200,
+  "retrievedAt": "2026-11-20T16:20:09+00:00",
+  "curlError": "",
+  "sha256": "593b238d2e0074f65a788ac76df6c38a8ca4daa175f1adfd8283381a5d6eb4f8",
+  "headerSha256": "e60f34f1fc3c599881c1c47a9bca22a69520f1394277be0358a136cb135f872d"
+}

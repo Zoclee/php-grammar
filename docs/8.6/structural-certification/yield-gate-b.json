@@ -1,0 +1,13 @@
+{
+  "finding": "SG86-002",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "parserSha256": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+  "source": "Zend/zend_language_parser.y:expr, arrow_function and precedence declarations",
+  "beforeSha256": "79632461fb32b66973afb0539ed0db02c2f8b5189fa643d1a9704cc5eea62444",
+  "afterSha256": "f9181f8b74dba4eb3cd10891541692304b1a57a072fbfd28dc81ea9f1bdf7c0d",
+  "production": "yield-key",
+  "discovery": "docs/8.6/structural-certification/yield-discovery.json",
+  "discoverySha256": "f64ad1b0b917af84839bef856e9b313d175e024ddd49c5ebfd14640c07cbcd25",
+  "reason": "The first prefix establishes a yield key; its operand supports throw-prefix composition. Bare logical prefixes remain invalid, as the negative controls show.",
+  "historical85": "Same representation correction obligation; no PHP 8.6 language addition and no historical edit."
+}

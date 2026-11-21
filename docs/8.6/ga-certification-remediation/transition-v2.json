@@ -1,0 +1,73 @@
+{
+  "contract": "php86-ga-preservation-v2",
+  "baseline": "b2a0d55a7cec36ef78d9b7e307af04f407643965c5b33553fe2137bcdcd6f6ed",
+  "predecessor": {
+    "path": "docs/8.6/ga-certification-remediation/transition-v1.json",
+    "sha256": "6174edb66e11d6d87d12d612ba2446897d5d36e5f8f204c2a7b26eb75250597e"
+  },
+  "changes": {
+    "php-grammar.json": {
+      "before": "56f05d24b50bade238cc1d03d2c41b2036b8ded435fcbddea0db719d903d42fb",
+      "after": "1371ba16f408d7b477b2fae217737bb118ba19b237d4e61c22c81098631b36c5"
+    },
+    "grammar/8.6/changes.md": {
+      "before": "627be3da6c3dfdb5d431fea82f486fe5e42794b1c16cf0cc276bd1bb79261611",
+      "after": "d8646847f828db89d54516a7f2a07f3abbda6681b96a63cc88a3d136d2cf2997"
+    },
+    "tests/Certification86Test.php": {
+      "before": "9204d0ee010e04d48494f693bcde593d5009af1d57f85f0348abbcf6a02170f0",
+      "after": "1264597e28d6c04edab09e47b78946d60e103e34a8a5b1ba7b108a9146285022"
+    },
+    "tests/Php/Conformance/Php86TraceabilityTest.php": {
+      "before": "22bf6ff6c246ff8d438c42f65eff87550c50d6b23c332ad34705e22d6e0305e6",
+      "after": "0dd9ed5c84a6fe7a8041671ca7040f6ab6e07d798eda5358c4ac8138dc2f4bd9"
+    },
+    "tests/Repository/ConsumerCliTest.php": {
+      "before": "d4f91849262dab3f4756d67b526ac5b2e1f77055065bc37463a2b69befdf239f",
+      "after": "b867e2a50b5c0afa91504771171805f919e4685a7f6d01756715a2daa6c47f81"
+    },
+    "tools/8.6/ga-remediation-prepare.php": {
+      "before": "f27ae05cf4c380557c8f341fa6d1c40db55d3e0df522570662a37c4f6f8241e3",
+      "after": "a0c7e591e766f03cfb3b13cc3c87695175d57455b21cbd6ac8978ea02e21d1ca"
+    },
+    "tests/UpstreamResolutionFreshnessTest.php": {
+      "before": "2f547ba4d111d79b6c15093879a28fe02095baa5b595179a1c7f7f0717896ecc",
+      "after": "a0aecd8fd154580846ea90692be35fd44b18dfa7881ddf12caa718949876842f"
+    },
+    "tests/Php/Conformance/Php86CompilerContextualTest.php": {
+      "before": "86c38e1cc4364499134602d44787a046e316edd7ad92090732642c06eae73259",
+      "after": "f38dbbe3e67d1a31a11aeb734fe4ba2b46c8b9b7439fd0ddd6cecc0db941f0e5"
+    }
+  },
+  "additions": {
+    "tools/8.6/change-map-ga-v1.json": "d1984c199f969f2d1ae302176050482451059be1d5cf5c56af1e609a907a8619",
+    "tools/8.6/change-map-ga-v2.json": "8688b928d456fc3458baed6eb6ab69a286001a47fd9c43df7878a9ec07709883",
+    "tools/8.6/context-check-ga-v1.php": "d084590299ba32bc804acf109a78cb5348a9b169d3ba82571d1f39bf6d2e5e80",
+    "tools/8.6/context-check-ga-v2.php": "d084590299ba32bc804acf109a78cb5348a9b169d3ba82571d1f39bf6d2e5e80",
+    "tools/8.6/context-source-lock-ga-v1.json": "5994c6df587e58df97220fd01b01be7bd6f5a302f92e93076bc48d8f8cf72eb6",
+    "tools/8.6/deprecation-cases-ga-v1.json": "2c2f8e31b5d9f11bbeff165d920c248e29b87c50d7f8636d96284578789e5da9",
+    "tools/8.6/deprecation-check-ga-v1.php": "b0471eee51580a1a2d5294af1778aa191e22589fb941084e0b62fc53160bd1d6",
+    "tools/8.6/deprecation-check-ga-v2.php": "b0471eee51580a1a2d5294af1778aa191e22589fb941084e0b62fc53160bd1d6",
+    "tools/8.6/final-coverage-expansion-ga-v1.php": "802ac3142872da510bd553f34462d86b696e792d5f09f41b22a1c29211ed6efe",
+    "tools/8.6/final-coverage-expansion-ga-v2.php": "6071624297e445abad1b7e3aee9eaa1c138378e99eae69cea37b7f252e66fba8",
+    "tools/8.6/final-coverage-source-lock-ga-v1.json": "9864b159767cf41c8a8cc85477423ea3fc5b9713087c08aa0b4eb49991562e0c",
+    "tools/8.6/final-coverage-source-lock-ga-v2.json": "32793203369a7168ff3a2b9ebbb4455f6135dadd46c5b08e2ae6c9f29cbd4d7b",
+    "tools/8.6/ga-runner-transition-v1.json": "e34aefc63b168fa3594c5ffb6b73cd49e8e1172d6526197de8ddeb5df93429f5",
+    "tools/8.6/ga-runner-transition-v2.json": "ea57971e132ee5eaabe389a38f99dc579e3fb06808f15a82dc37a8d1a1a4a539",
+    "tools/8.6/integration-check-ga-v1.php": "cf0089c05c2489a77858502334d9a23708c403692b29882add86e6e46b24369b",
+    "tools/8.6/integration-check-ga-v2.php": "07e25e2451c95a549a22d7b99d26f1ed4ffce0b444234af97bb5666b1379e026",
+    "tools/8.6/pfa-check-ga-v1.php": "58d0b505ba01d4c32fd67fb9b8598b641063045af5e8b7110b6177ad4ac0763a",
+    "tools/8.6/pfa-check-ga-v2.php": "58d0b505ba01d4c32fd67fb9b8598b641063045af5e8b7110b6177ad4ac0763a",
+    "tools/8.6/pfa-source-lock-ga-v1.json": "9f7651b5b52f737d0a27c993faf3e692d47cacff9eed419508a92deb285c4414",
+    "tools/8.6/source-lock-ga-v1.json": "fa86b4fb4003882fe06a93653b90a9fd65cd6ca0d787ffbd72d0d95617f3f481",
+    "tools/8.6/source-lock-ga-v2.json": "dfde69fd5fa851635538f770b89e13f9eb3c1e2b3668972683e9d842b6fb24f7",
+    "docs/8.6/ga-certification-remediation/adoption-v1.json": "087eb7016e9b387a5ae86e60792997f5f7f135b99da3dcf1c877127571cfedfc",
+    "docs/8.6/ga-certification-remediation/adoption-v2.json": "2f0e616acbe172b1ba76ffba256ea5e26a01ba05ad0e87660e10c3be75c13d6e",
+    "docs/8.6/ga-certification-remediation/blockers-v1.json": "2cd5932c23e5826828df9c9c96d699ac9631cf568022ef81fb83a165d26cfdea",
+    "docs/8.6/ga-certification-remediation/blockers-v2.json": "fb36216605fc1b7a5624fdb73f8efaac378586f5f23cca5085440fd0a7fdc2a8",
+    "docs/8.6/ga-certification-remediation/local-obligations-v1.json": "46b871d6590e85bf8e4aaf726b64e8af7b33b891c8743477bef704c1d68c14de",
+    "docs/8.6/ga-certification-remediation/upstream-status.json": "9e984009b9c50d1e88c9481309656f05934e61b28a26fbed5175d1746d3a577c",
+    "docs/8.6/ga-certification-remediation/transition-v1.json": "6174edb66e11d6d87d12d612ba2446897d5d36e5f8f204c2a7b26eb75250597e"
+  },
+  "authorization": "Phase 8D current evidence successor. Restore original manifest formatting; finish GA documentary reconciliation; historical test snapshots authenticate exact original dependencies. No policy, legacy checker, grammar, lexer or fixture expectation changes."
+}

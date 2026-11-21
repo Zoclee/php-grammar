@@ -1,0 +1,9 @@
+
+In Factory.php line 652:
+                                                                                                                       
+  The openssl extension is required for SSL/TLS protection but is not available. If you can not enable the openssl ex  
+  tension, you can disable this error, at your own risk, by setting the 'disable-tls' option to true.                  
+                                                                                                                       
+
+validate [--no-check-all] [--check-lock] [--no-check-lock] [--no-check-publish] [--no-check-version] [-A|--with-dependencies] [--strict] [--] [<file>]
+

@@ -1,0 +1,25 @@
+8aaada3f9605d81a38b8240f93c7389dfbc77ef9 2026-11-17T14:21:54+00:00 Update versions for PHP 8.6.0
+bb7bffc11418ad247bb5e25cc188f7de12a827e2 2026-11-17T13:29:31+01:00 Merge remote-tracking branch 'staging/PHP-8.6.0-security' into PHP-8.6.0
+6bbfadaedc0de86d49b61b542d58fb0f8faf112e 2026-11-16T20:30:43+01:00 [ci skip] Consolidate NEWS file for PHP 8.6.0
+7d5c141811bd8d15fbd91d739062ff914854e77a 2026-11-16T13:21:06+01:00 Add NEWS entries
+38c29ecfb99f66f6670f30775eaa27dfa78b3c28 2026-11-10T12:12:55+01:00 Fix GHSA-2fjv-p558-g82m: do not set last_fatal_error_backtrace during shutdown
+25918cffa4a06625c1a14cef0de446b689baa175 2026-11-07T12:49:40+01:00 Fix GHSA-mg3p-mxj9-g2mm: handle uriparser failures in php_uri_parser_rfc3986_to_string()
+5a510fc4c4b7191a7a99feb3b785ab6ae270c435 2026-11-14T20:55:25+01:00 Fix GHSA-8mjj-2r7p-4hg2: UAF in debug_backtrace_get_args() on trampoline calls
+9c8f6efbb9ca00076eeb5ddac3d415741f17efcf 2026-10-23T23:09:37+02:00 Fix GHSA-x8r7-mg3g-74hg: Lifetime issue in Dom\XMLDocument serialiser
+e9c6c62cd3a9163126ca4d2687117f985e72a434 2026-11-10T17:33:58+01:00 Fix GHSA-g3vh-838c-65v7: Zero PS(session_started_filename) early
+fa6e653e1329257e93ac57bef88a6963b170b2b9 2026-10-06T15:29:19+02:00 Fix GHSA-mmf9-xm3v-hg2x: quadratic folded header concatenation
+35656eee42b7f0435f0e336ccec764f2c5a4bca0 2026-11-06T21:46:18+01:00 Fix GHSA-f6gg-rchx-xw8j: mixed case HTTPS and FTPS
+cc2dff98860071f1747c0346db5931e53f41b596 2026-11-09T12:02:32+01:00 Fix GHSA-658j-r8rw-q6mx: session.upload_progress.enabled is off by default
+b424e266ed5b0f224e43fed8d358e47039f89062 2026-11-11T16:53:47+01:00 Fix GHSA-fm2m-fjf5-v3cp: RCE via corrupted session file
+b083a4583e4f611817c046bd7fe747e522fa3229 2026-11-15T22:39:49+01:00 Revert "ext/session: Truncate session file after successful write"
+f90d5cbd39b0107dd21a1988e6580b884d404e17 2026-11-15T15:25:20+01:00 Fix GHSA-gr4f-wgx5-jpfv: DATEG(tzcache) use-after-free
+75a83495bfddf57b790e11d768ee1f08ef2349f4 2026-11-01T15:18:09+01:00 Fix GHSA-4646-p932-gw34: keep SOAP DTD alive during cleanup
+126a4938c764944ac181fd3c9ade3c5a8837cfa6 2026-10-29T11:19:04+01:00 Fix GHSA-qc49-hpvq-g2w6: Drain unread request bodies
+e2f99d8fc81ff8b1f626c4aaa7ba44cb562f2705 2026-10-26T20:10:08+01:00 Fix GHSA-3mg3-cr28-46gc: FPM XSS within status endpoint via user and script
+a1168c60791af9dc71a87e87abdc3377d5dcfff0 2026-10-26T18:54:31+01:00 Fix GHSA-5j3f-64r7-f564: PATH_INFO underflow in CGI init_request_info()
+531c2fc98f3bcdfd6f327355f5ac6c67cb0edcee 2026-11-13T08:33:23+01:00 Fix GHSA-68fq-fh7h-f8gr: refuse keyless phar signature when .pubkey exists
+0570f7bac7d51c53a6b4d8ca7ffe907edea3e13c 2026-09-21T15:49:40+02:00 Fix GHSA-q23r-hr55-xmpg: out-of-bounds read on empty SOAP-ENC:arraySize
+60b7ffa6a0a201addd1e3fed31b81d5bbe80d8f8 2026-11-12T19:05:20+05:30 Pin Linux x86 CI to Ubuntu 24.04 (#25416)
+2a6a7b66f93ea70ce40448dfde2f22b925b71e20 2026-11-16T11:44:24+01:00 Skip header_over_4gib.phpt when available memory is insufficient
+ed13285afa9e62740e167148547411b40ddddf84 2026-11-13T11:48:13+01:00 [skip ci] PHP 8.6: Fix RFC link in Upgrading (GH-25438)
+dbf9a3f9ffeedf145a7bf11ec18d2429fb1a9547 2026-11-11T23:22:05+00:00 [ci skip] Update NEWS for PHP 8.6.0 RC8

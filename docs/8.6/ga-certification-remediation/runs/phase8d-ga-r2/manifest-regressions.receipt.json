@@ -1,0 +1,24 @@
+{
+  "originalObligation": [
+    "test-manifest",
+    "Exercise valid and invalid manifest contracts."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "ToolManifestTest"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/manifest-regressions.log",
+  "logSha256": "9a1e1a0cf0afc87a7b113fd97aaa71dd88b7b85b932b9a24c0196c3b4c2dd3fd"
+}

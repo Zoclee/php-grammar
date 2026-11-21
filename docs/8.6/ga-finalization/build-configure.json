@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "commandLine": "cmd.exe /d /s /c \"\"C:\\Data\\GitHub\\php-grammar\\.audit\\phase8b\\sdk\\phpsdk-vs17-x64.bat\" -t \"C:\\Data\\GitHub\\php-grammar\\.audit\\phase8b\\build-configure.bat\"\"",
+  "taskContents": "@echo off\r\ncd /d \"C:/Data/GitHub/php-grammar/.audit/phase8b/source\"\r\ncall buildconf.bat\r\nif errorlevel 1 exit /b %errorlevel%\r\ncall configure.bat --disable-all --enable-cli --enable-tokenizer --disable-zts --disable-cgi --disable-phpdbg\r\nexit /b %errorlevel%\r\n",
+  "taskSha256": "256bd8f0b1ff09517e3b391d116a1f47cf68911061df90c98919daa5051428ba",
+  "started": "2026-11-20T16:46:48+00:00",
+  "finished": "2026-11-20T16:46:57+00:00",
+  "exitCode": 0,
+  "logs": {
+    "docs/8.6/ga-finalization/build-configure.stdout.log": "3cc65d09078e924962977dc1ce86576ea7bd7a10accbd10803d6f83b1af849e5",
+    "docs/8.6/ga-finalization/build-configure.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

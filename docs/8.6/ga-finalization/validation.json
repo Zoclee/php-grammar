@@ -1,0 +1,124 @@
+{
+  "interpreter": {
+    "exit_code": 0,
+    "output": "PHP 8.5.10 (cli) (built: Aug 25 2026 21:23:48) (NTS Visual C++ 2022 x64)\nCopyright (c) The PHP Group\nBuilt by The PHP Group\nZend Engine v4.5.10, Copyright (c) Zend Technologies\n    with Zend OPcache v8.5.10, Copyright (c), by Zend Technologies\n"
+  },
+  "commands": {
+    "manifest": {
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "memory_limit=1G",
+        "tools/validate-manifest.php"
+      ],
+      "exitCode": 0,
+      "log": "docs/8.6/ga-finalization/validation-manifest.log",
+      "sha256": "e2b231fd276610052d6d579479dd352de5ab52944b36d2c95e6db7de0a9f6da3"
+    },
+    "traceability": {
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "memory_limit=1G",
+        "tools/8.6/change-traceability.php",
+        "--report",
+        "docs/8.6/ga-finalization/traceability.json"
+      ],
+      "exitCode": 0,
+      "log": "docs/8.6/ga-finalization/validation-traceability.log",
+      "sha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+    },
+    "coverage": {
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "memory_limit=1G",
+        "bin/grammar-coverage.php",
+        "8.6"
+      ],
+      "exitCode": 0,
+      "log": "docs/8.6/ga-finalization/validation-coverage.log",
+      "sha256": "9a5d21c0fb25e7215968291d1b2fb4c034218bd03be2188676cef2e434e1d7d7"
+    },
+    "historical-integrity": {
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "memory_limit=1G",
+        "tools/evidence/historical-check.php"
+      ],
+      "exitCode": 1,
+      "log": "docs/8.6/ga-finalization/validation-historical-integrity.log",
+      "sha256": "4423abaf0bade1905b86c2d706708303e5d68fddac3212ba0e8540fdf506cbf0"
+    },
+    "compatibility-check": {
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "memory_limit=1G",
+        "tools/evidence/compatibility.php",
+        "--check",
+        "--report",
+        "docs/8.5/compatibility/phase7h1-audited/evidence.json"
+      ],
+      "exitCode": 1,
+      "log": "docs/8.6/ga-finalization/validation-compatibility-check.log",
+      "sha256": "a9b4b91912049b498eb39331d4e4663a4a0cc41db69f4bf53c906a0a7111d8e0"
+    },
+    "certification-check": {
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "memory_limit=1G",
+        "tools/8.6/certification-scanner-differential.php",
+        "--contract",
+        "php86-certification-v4",
+        "--check",
+        "--report",
+        "docs/8.6/certification-contract-remediation/runs/phase7h1-audited/evidence.json"
+      ],
+      "exitCode": 1,
+      "log": "docs/8.6/ga-finalization/validation-certification-check.log",
+      "sha256": "8cf346cdcd72dfc74b0aa2efec64ebe6db5bfd8d2e94325976c25b69ee3e7981"
+    },
+    "certification-claims": {
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "memory_limit=1G",
+        "tools/8.6/certification-scanner-differential.php",
+        "--contract",
+        "php86-certification-v4",
+        "--claims",
+        "--report",
+        "docs/8.6/certification-contract-remediation/runs/phase7h1-audited/evidence.json"
+      ],
+      "exitCode": 1,
+      "log": "docs/8.6/ga-finalization/validation-certification-claims.log",
+      "sha256": "8cf346cdcd72dfc74b0aa2efec64ebe6db5bfd8d2e94325976c25b69ee3e7981"
+    },
+    "phpunit": {
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "memory_limit=1G",
+        "-d",
+        "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+        "vendor/phpunit/phpunit/phpunit",
+        "--do-not-cache-result",
+        "--no-progress"
+      ],
+      "exitCode": 0,
+      "log": "docs/8.6/ga-finalization/validation-phpunit.log",
+      "sha256": "c66c8c910b1d972064b2836fcd6103640a774d53d5a51b40a5176ae7d01d9a44"
+    }
+  }
+}

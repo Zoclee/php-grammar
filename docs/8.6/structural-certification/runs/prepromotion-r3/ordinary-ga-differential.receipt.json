@@ -1,0 +1,17 @@
+{
+  "obligation": "Complete retained ordinary corpus against GA with explicit hook correction",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "ordinary-ga-differential",
+    "--output",
+    "docs/8.6/structural-certification/runs/prepromotion-r3/ordinary-ga-differential.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r3/ordinary-ga-differential.log",
+  "sha256": "98589df0982f1da6b48ab4610f3b48f9d972d6e88afb32914d805f50df503a2f"
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "gc.auto=0",
+    "--git-dir=.audit/rc7-git",
+    "verify-tag",
+    "48a5ee8a311db69103a6fa25b330e5ff3847af3d"
+  ],
+  "exitCode": 1,
+  "log": "docs/8.6/ga-finalization/tag-signature.log",
+  "sha256": "977051a6e8292fa8be74628da6df47d96a26d3dd84e4e1e63eabe19a7a1a2dde"
+}

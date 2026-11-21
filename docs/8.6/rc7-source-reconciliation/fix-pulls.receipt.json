@@ -1,0 +1,8 @@
+{
+    "url": "https://api.github.com/repos/php/php-src/commits/5089bcc83c8193e6a965dd1579767b1d503401ba/pulls",
+    "retrievedAt": "2026-11-17T19:08:31+00:00",
+    "httpStatus": 200,
+    "effectiveUrl": "https://api.github.com/repos/php/php-src/commits/5089bcc83c8193e6a965dd1579767b1d503401ba/pulls",
+    "error": "",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+}

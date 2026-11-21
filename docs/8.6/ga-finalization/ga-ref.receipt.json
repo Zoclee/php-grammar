@@ -1,0 +1,9 @@
+{
+  "url": "https://api.github.com/repos/php/php-src/git/ref/tags/php-8.6.0",
+  "effectiveUrl": "https://api.github.com/repos/php/php-src/git/ref/tags/php-8.6.0",
+  "status": 200,
+  "retrievedAt": "2026-11-20T16:20:05+00:00",
+  "curlError": "",
+  "sha256": "c6766670dd62dafaf3a2a3b066c036cc8b9165277a84ffe7191e30c4a2eacdf7",
+  "headerSha256": "054d4caf0ba36d9bf6f29500b01cf975ece5daa94b5a5ada3ede4873f7e4dc29"
+}

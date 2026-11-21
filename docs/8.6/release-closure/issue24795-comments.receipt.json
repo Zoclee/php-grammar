@@ -1,0 +1,7 @@
+{
+  "url": "https://api.github.com/repos/php/php-src/issues/24795/comments?per_page=100",
+  "httpStatus": 200,
+  "retrievedAt": "2026-11-20T18:44:24+00:00",
+  "bodySha256": "0ecda4577354e421b655e29c9752b8c36106c906b7dffe25d4e052555f291373",
+  "headersSha256": "68e9e620edb4025c96d7cb29d00cebb1bbbde94a3e262aa97e5f7766b5c2e75e"
+}

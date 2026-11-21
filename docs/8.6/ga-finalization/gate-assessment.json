@@ -1,0 +1,511 @@
+{
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "buildReceipt": "docs/8.6/ga-finalization/build-receipt.json",
+  "originalGateCount": 36,
+  "additionalPrerequisites": 2,
+  "obligationCount": 38,
+  "gates": {
+    "manifest-schema": {
+      "originalKind": "manifest",
+      "originalRequirement": "Validate schema, metadata paths, RC4 pin and draft/stable status.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-manifest.log"
+      ]
+    },
+    "manifest-regressions": {
+      "originalKind": "test-manifest",
+      "originalRequirement": "Exercise valid and invalid manifest contracts.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-phpunit.log"
+      ]
+    },
+    "standalone-structure-parity": {
+      "originalKind": "test-integration",
+      "originalRequirement": "Load only 8.6; check EBNF structure/references, parity, version selection and CLI.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-phpunit.log"
+      ]
+    },
+    "positive-negative-fixtures": {
+      "originalKind": "test-fixtures",
+      "originalRequirement": "Run registered positive and structural-negative fixture providers.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-phpunit.log"
+      ]
+    },
+    "ordinary-differential": {
+      "originalKind": "boundaries",
+      "originalRequirement": "Rerun every reviewed ordinary 8.6 positive, negative, contextual and discrepancy fixture through structure and RC4 lint.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/ordinary.json"
+      ]
+    },
+    "lexer-profiles": {
+      "originalKind": "integration",
+      "originalRequirement": "Compare version-specific token boundaries and both short-tag profiles with both distributions.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/observations-exact.json",
+        "docs/8.6/ga-finalization/focused.json"
+      ]
+    },
+    "pfa-differential": {
+      "originalKind": "pfa",
+      "originalRequirement": "Validate PFA positives, structural/contextual negatives and paired lint with pinned hashes.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/observations-exact.json",
+        "docs/8.6/ga-finalization/upstream.json"
+      ]
+    },
+    "contextual-differential": {
+      "originalKind": "context",
+      "originalRequirement": "Check compiler, declaration-link and controlled-runtime expectations at their declared stage.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/observations-exact.json"
+      ]
+    },
+    "diagnostic-differential": {
+      "originalKind": "deprecation",
+      "originalRequirement": "Separate warning presence/stage from rejection in both distributions.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/observations-exact.json"
+      ]
+    },
+    "version-boundaries": {
+      "originalKind": "integration",
+      "originalRequirement": "Discover structural/lint/link boundaries and verify paired outcomes and finding identity.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/observations-exact.json",
+        "docs/8.6/ga-finalization/focused.json"
+      ]
+    },
+    "coverage-measurement": {
+      "originalKind": "coverage",
+      "originalRequirement": "Measure actual 8.6 production/alternative witnesses and compare source-backed lexical cases.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-coverage.log",
+        "docs/8.6/ga-finalization/source-counts.json",
+        "docs/8.6/ga-finalization/focused.json"
+      ]
+    },
+    "parser-scanner-correspondence": {
+      "originalKind": "audit",
+      "originalRequirement": "Recompute the 176-production/623-alternative and 190-header inventories, source locks and mappings.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/review.json",
+        "docs/8.6/ga-finalization/source-counts.json"
+      ]
+    },
+    "compiler-contextual-reconciliation": {
+      "originalKind": "test-compiler",
+      "originalRequirement": "Verify bounded semantic groups, inventories, source references and preserved uncertainties.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-phpunit.log"
+      ]
+    },
+    "rfc-implementation-traceability": {
+      "originalKind": "audit",
+      "originalRequirement": "Recompute all RFC candidate dispositions at the selected source pin; no RFC-only permission.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/review.json",
+        "docs/8.6/ga-finalization/source-counts.json"
+      ]
+    },
+    "production-change-traceability": {
+      "originalKind": "traceability",
+      "originalRequirement": "Reject unexplained added/removed/modified productions, lexical/prose drift and stale witnesses.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-traceability.log"
+      ]
+    },
+    "changes-document-completeness": {
+      "originalKind": "traceability",
+      "originalRequirement": "Verify all ten sections, finding IDs, source pins and regression references.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-traceability.log"
+      ]
+    },
+    "historical-preservation": {
+      "originalKind": "preservation",
+      "originalRequirement": "Compare every pre-7A project file, including all 8.5 evidence/fixtures/locks and both 8.6 specifications.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": []
+    },
+    "public-api-cli": {
+      "originalKind": "test-consumer",
+      "originalRequirement": "Run consumer workflow, package contract and navigation CLI regressions.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-phpunit.log"
+      ]
+    },
+    "source-lock-integrity": {
+      "originalKind": "source",
+      "originalRequirement": "Verify independent RC4 lock completeness and every required source SHA-256.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/source-profile.json",
+        "docs/8.6/ga-finalization/archive-correspondence.json"
+      ]
+    },
+    "evidence-freshness": {
+      "originalKind": "freshness",
+      "originalRequirement": "Verify historical audit inputs; final --check also compares complete current input/output sets.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-certification-check.log"
+      ]
+    },
+    "blocker-dispositions": {
+      "originalKind": "blockers",
+      "originalRequirement": "Require all seven complete, unchanged Phase 6 blocking dispositions.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": []
+    },
+    "documentation-json": {
+      "originalKind": "documentation",
+      "originalRequirement": "Validate new JSON, local documentation links, status wording and whitespace.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": []
+    },
+    "full-regression": {
+      "originalKind": "test-all",
+      "originalRequirement": "Run the entire repository PHPUnit suite without cached results.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-phpunit.log"
+      ]
+    },
+    "infrastructure-negatives": {
+      "originalKind": "test-certification",
+      "originalRequirement": "Exercise isolated missing/stale/invalid inputs, failed gates and false certification claims.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-phpunit.log"
+      ]
+    },
+    "historical-certification-check": {
+      "originalKind": "historical",
+      "originalRequirement": "Run unmodified 8.5 certification --check; record pre-existing freshness failures, never rewrite history.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-certification-check.log"
+      ]
+    },
+    "composer-validation": {
+      "originalKind": "composer",
+      "originalRequirement": "Validate Composer metadata strictly.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": []
+    },
+    "production-coverage-closure": {
+      "originalKind": "blocked:C6-COVERAGE",
+      "originalRequirement": "Disposition every uncovered production with independent evidence; unresolved meaningful gaps block.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "C6-COVERAGE: original substantive closure remains outstanding",
+      "supplementalEvidence": []
+    },
+    "alternative-coverage-closure": {
+      "originalKind": "blocked:C6-COVERAGE",
+      "originalRequirement": "Disposition every uncovered alternative, including context-only from; percentages do not waive gaps.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "C6-COVERAGE: original substantive closure remains outstanding",
+      "supplementalEvidence": []
+    },
+    "scanner-state-closure": {
+      "originalKind": "blocked:C6-COVERAGE",
+      "originalRequirement": "Supply independent RC4 scanner state/helper/error products; header equality is insufficient.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "C6-COVERAGE: original substantive closure remains outstanding",
+      "supplementalEvidence": []
+    },
+    "ast-binding": {
+      "originalKind": "blocked:C6-COVERAGE",
+      "originalRequirement": "Supply independent RC4 operand/AST and interpolation binding evidence, including retained ambiguities.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "C6-COVERAGE: original substantive closure remains outstanding",
+      "supplementalEvidence": []
+    },
+    "folding-order": {
+      "originalKind": "blocked:PHP86-015",
+      "originalRequirement": "Resolve optimized-call traversal and independently reconcile live/retained/discarded validation order.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "PHP86-015: original substantive closure remains outstanding",
+      "supplementalEvidence": []
+    },
+    "discovery-closure": {
+      "originalKind": "blocked:PHP86-013",
+      "originalRequirement": "Resolve outstanding syntax-relevant compiler/AST/linking/optimizer discovery records.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "PHP86-013: original substantive closure remains outstanding",
+      "supplementalEvidence": []
+    },
+    "writable-target-validity": {
+      "originalKind": "blocked:PHP86-014",
+      "originalRequirement": "Establish intended writable-target validity and compiler/VM consistency.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "PHP86-014: original substantive closure remains outstanding",
+      "supplementalEvidence": []
+    },
+    "contextual-enforcement-scope": {
+      "originalKind": "blocked:C6-CONTEXT",
+      "originalRequirement": "Adjudicate incomplete contextual enforcement and predicate-level evidence for the bounded claim.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "C6-CONTEXT: original substantive closure remains outstanding",
+      "supplementalEvidence": []
+    },
+    "discarded-hook-disposition": {
+      "originalKind": "blocked:CA86-001",
+      "originalRequirement": "Independently adjudicate the inherited get/set-only discrepancy; do not inherit an 8.5 conclusion.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "CA86-001: original substantive closure remains outstanding",
+      "supplementalEvidence": []
+    },
+    "exact-pin-executable": {
+      "originalKind": "provenance",
+      "originalRequirement": "Require reviewed source/build/generated-file/configuration/binary provenance; a version string is insufficient.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/build-receipt.json"
+      ]
+    },
+    "historical-artifact-integrity85": {
+      "originalKind": "historical-integrity",
+      "originalRequirement": "Verify immutable 8.5 ledger and every historical input byte; not a historical test rerun.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-historical-integrity.log"
+      ]
+    },
+    "current-compatibility85": {
+      "originalKind": "current-compatibility",
+      "originalRequirement": "Independently verify current bounded 8.5 regression evidence, shared inputs and paired boundaries.",
+      "gaCertificationStatus": "not-satisfied",
+      "reason": "Supplemental observations do not constitute an adopted, independently verified GA successor of this release obligation",
+      "supplementalEvidence": [
+        "docs/8.6/ga-finalization/validation-compatibility-check.log"
+      ]
+    }
+  },
+  "blockers": [
+    {
+      "id": "PHP86-013",
+      "originalRequirement": {
+        "id": "PHP86-013",
+        "classification": "unresolved discovery blocker",
+        "construct": "Compiler/AST/optimizer, declaration linking, contextual traversal and unassociated upstream test changes",
+        "evidence": [
+          "source-completeness-ledger.json#/discovery",
+          "compiler-contextual-groups.json",
+          "discovery-final-review.json",
+          "upstream-test-reconciliation.json"
+        ],
+        "missingEvidence": "230 effective pending-direct-review hunk records and 14 examined-unresolved records remain, plus bounded-group uncertainties, outside-ledger implementation paths and PHPT/component associations. These are not counts of language changes.",
+        "risk": "An unrepresented validity change may remain; broad discovery cannot close.",
+        "draftImpact": "Continue independently justified work with explicit incomplete status.",
+        "candidateImpact": "Blocks belief-of-completeness promotion.",
+        "stableImpact": "Blocks certification.",
+        "remediation": "Review the exact hunk IDs and source functions in the ledger; associate relevant tests, inspect transitive validation and optimizer/linking paths, and record evidence-backed exclusions or Gate B changes.",
+        "priority": "P0",
+        "blocksCertification": true
+      },
+      "currentDisposition": "RC7-to-GA 53-path review is complete within its language-risk scope. The Phase 7E queue still has 198 pending and 17 examined-unresolved hunks, plus grouped/outside-ledger obligations. No whole discovery closure.",
+      "blocksCertification": true,
+      "releaseImpact": "Retain draft; no stable tag or publication"
+    },
+    {
+      "id": "PHP86-014",
+      "originalRequirement": {
+        "id": "PHP86-014",
+        "classification": "unresolved intended validity; source-explained compiler/VM implementation defect",
+        "construct": "Assignment/reference/list-derived dimension and property writes, compound/inc/unset/reference operations",
+        "evidence": [
+          "compiler-contextual-groups.json#/groups/0",
+          "source-audit-probes.json",
+          "source-audit-upstream.json"
+        ],
+        "missingEvidence": "Authoritative intended-validity decision for exact write forms, coherent compiler/VM fix and source-corresponding execution. Refreshed PR 20628 comments do not decide those forms.",
+        "risk": "Runtime invalid opcode cannot establish a structural rejection; successful reference-result execution cannot establish a new permission.",
+        "draftImpact": "Retain current explicit uncertainty and separate PHP86-004 constant-object rules.",
+        "candidateImpact": "Blocks affected-area correctness and promotion.",
+        "stableImpact": "Blocks certification.",
+        "remediation": "Obtain intended-validity evidence before proposing the smallest contextual correction. Gate B must cover ordinary/reference/list bases, result kinds, operations, discarded/live forms and VM profiles.",
+        "priority": "P1",
+        "blocksCertification": true
+      },
+      "currentDisposition": "PR 25046 remains open and unmerged; GA compiler is byte-identical to RC7. GA retains assignment-result invalid-opcode behavior and executable reference forms. Intended validity/coherent implementation remains unresolved.",
+      "blocksCertification": true,
+      "releaseImpact": "Retain draft; no stable tag or publication"
+    },
+    {
+      "id": "PHP86-015",
+      "originalRequirement": {
+        "id": "PHP86-015",
+        "classification": "unresolved intended compatibility; verified contextual traversal observation",
+        "construct": "Optimized printf/sprintf, arrays and constant-expression traversal versus ordinary calls",
+        "evidence": [
+          "compiler-contextual-groups.json#/groups/1",
+          "compiler-contextual-groups.json#/groups/2",
+          "source-audit-probes.json",
+          "source-audit-upstream.json",
+          "correctness-remediation.md"
+        ],
+        "missingEvidence": "General intended language boundary and complete dispatch/visited-AST correspondence. PR 19658 discussion addresses optimization and constant collection, not a universal discarded-cast validity rule.",
+        "risk": "An unconditional argument-traversal rule would wrongly accept or reject source.",
+        "draftImpact": "Phase 5D informative scope remains accurate; preserve bounded observations.",
+        "candidateImpact": "Blocks complete traversal claim and promotion.",
+        "stableImpact": "Blocks certification.",
+        "remediation": "Resolve intent and dispatch semantics; retain direct/imported/qualified/namespace/dynamic/named/unpack/PFA controls and logical/ternary/coalesce/array/live/discarded cases. No function-specific EBNF without structural evidence.",
+        "priority": "P1",
+        "blocksCertification": true
+      },
+      "currentDisposition": "Maintainer explanation and wontfix decision remain resolved. Fresh GA controls preserve the known traversal boundaries; complete ordered visitation/source correspondence and scope adjudication remain open.",
+      "blocksCertification": true,
+      "releaseImpact": "Retain draft; no stable tag or publication"
+    },
+    {
+      "id": "CA86-001",
+      "originalRequirement": {
+        "id": "CA86-001",
+        "classification": "known inherited policy discrepancy",
+        "construct": "Unknown property-hook name in a discarded declaration",
+        "evidence": [
+          "compiler-contextual-reconciliation.json",
+          "source-audit-probes.json",
+          "../../grammar/8.6/php.md#property-hooks-and-promotion",
+          "../8.5/final-evidence.json#/known_discrepancies"
+        ],
+        "missingEvidence": "Separate policy disposition and authorization before changing the intentional get/set-only structural restriction.",
+        "risk": "EBNF rejects an unknown hook that Zend can accept after discarding its declaration; blanket parser-equivalence claim is false.",
+        "draftImpact": "Retain documented divergence without modifying either version.",
+        "candidateImpact": "Independent PHP 8.6 certification must explicitly adjudicate the narrowed claim; historical acceptance is not automatically inherited.",
+        "stableImpact": "Cannot silently treat it as exact parser equivalence.",
+        "remediation": "If policy authorizes equivalence correction, consider identifier in hook-name with compilation-time get/set validation. Gate B needs live/discarded controls, canonical/parity changes and a separate PHP 8.5 correction review.",
+        "priority": "P2",
+        "blocksCertification": true
+      },
+      "currentDisposition": "Maintainer explanation remains resolved. The structural get/set restriction still excludes discarded unknown hooks accepted upstream. No independent correction or enforceable bounded exclusion has been adopted.",
+      "blocksCertification": true,
+      "releaseImpact": "Retain draft; no stable tag or publication"
+    },
+    {
+      "id": "C6-CONTEXT",
+      "originalRequirement": {
+        "id": "C6-CONTEXT",
+        "classification": "documented enforcement limitation plus unresolved predicate evidence",
+        "construct": "73 inherited contextual restriction descriptions and changed-rule interactions",
+        "evidence": [
+          "source-completeness-ledger.json#/contextual",
+          "source-audit-context.json",
+          "source-audit-boundaries.json"
+        ],
+        "missingEvidence": "Individual RC4 predicates, upstream PHPT and positive/negative stage isolation wherever family-level references remain. No native complete contextual validator exists.",
+        "risk": "Structural matches may violate parser actions, compiler checks or deferred linking; historical readonly-default restriction labels must not be copied as current rules.",
+        "draftImpact": "Document external enforcement and current normative clauses.",
+        "candidateImpact": "Requires independent evidence and claim adjudication; not an automatic permissible release limitation.",
+        "stableImpact": "Blocks whole-source-validator claims; bounded grammar certification requires policy disposition.",
+        "remediation": "Prioritize retained/discarded declarations, type/member constraints, writable/reference forms, attributes, enum and constant-expression paths. Reuse hashed finding fixtures and add only missing isolating evidence in an authorized phase.",
+        "priority": "P1",
+        "blocksCertification": true
+      },
+      "currentDisposition": "73 descriptions are not isolated predicates. External contextual enforcement remains disclosed; complete predicate/stage evidence and bounded-claim adjudication remain open.",
+      "blocksCertification": true,
+      "releaseImpact": "Retain draft; no stable tag or publication"
+    },
+    {
+      "id": "C6-COVERAGE",
+      "originalRequirement": {
+        "id": "C6-COVERAGE",
+        "classification": "bounded coverage and correspondence gap",
+        "construct": "64 unexercised productions, 318 alternatives; scanner state/helper products; family-only parser correspondence",
+        "evidence": [
+          "source-audit-coverage.json",
+          "source-completeness-ledger.json#/canonical",
+          "source-completeness-ledger.json#/scanner",
+          "final-coverage-remaining.json"
+        ],
+        "missingEvidence": "Alternative-specific correspondence/AST binding, scanner state products and individual witnesses. The 51 source/profile entries are not 51 verified scanner rules.",
+        "risk": "Coverage or name/section association can conceal a validity/binding mismatch; no defect follows solely from low coverage.",
+        "draftImpact": "Retain every identity and justified obligation without deleting alternatives.",
+        "candidateImpact": "Requires independent gap disposition under the conformance policy.",
+        "stableImpact": "Not an automatic exemption from scanner, binding and classified-coverage gates.",
+        "remediation": "Prioritize reserved token categories (including context-only from), namespace/type/declaration alternatives, dereference/constructor forms and closed-yield/prefix/dangling-else binding. Test lexical bodies through scanner primitives, not invented chart coverage.",
+        "priority": "P1",
+        "blocksCertification": true
+      },
+      "currentDisposition": "Fresh coverage retains 63 unexercised productions and 255 alternatives. Existing per-identity limitations, scanner helper/state and binding obligations remain; no percentage threshold or fixture deletion is used.",
+      "blocksCertification": true,
+      "releaseImpact": "Retain draft; no stable tag or publication"
+    },
+    {
+      "id": "C6-PROVENANCE",
+      "originalRequirement": {
+        "id": "C6-PROVENANCE",
+        "classification": "exact-executable and release evidence missing",
+        "construct": "RC4 distributions, configuration profiles and final-release correspondence",
+        "evidence": [
+          "source-audit-upstream.json",
+          "source-audit-probes.json#/interpreters",
+          "source-audit-validation.json"
+        ],
+        "missingEvidence": "Proven exact-pin build, independent PHP 8.6 prerelease release-runner evidence, subsequent RC/final-source review and final release gates. Upstream PHPT suite was not run.",
+        "risk": "Matching immutable source hashes do not prove executable ancestry; RC4 cannot certify a final release.",
+        "draftImpact": "Report source-backed and executable-backed evidence separately.",
+        "candidateImpact": "Preparation is possible; current evidence does not authorize promotion.",
+        "stableImpact": "Blocks final-release and exact-executable certification.",
+        "remediation": "Prepare build provenance and independent gate inputs, then seek authorization for the separate certification phase; compare subsequent releases incrementally.",
+        "priority": "P1",
+        "blocksCertification": true
+      },
+      "currentDisposition": "Authenticated GA source and local exact-source build add new provenance evidence. Complete successful release gates, historical dependencies, fresh compatibility, and an adopted GA certification contract remain absent.",
+      "blocksCertification": true,
+      "releaseImpact": "Retain draft; no stable tag or publication"
+    }
+  ],
+  "assessmentKind": "GA blocked-release preflight, not a replacement certification runner or a gate-pass ledger",
+  "certificationGranted": false,
+  "decision": "NOT SIGNED OFF \u2014 RELEASE BLOCKED"
+}

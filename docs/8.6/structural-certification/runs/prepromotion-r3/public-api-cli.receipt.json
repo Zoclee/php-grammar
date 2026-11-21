@@ -1,0 +1,19 @@
+{
+  "obligation": "Public API, standalone consumption and CLI compatibility",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "Consumer|ConformanceVersionSupportTest|Php86IntegrationTest"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r3/public-api-cli.log",
+  "sha256": "58daca6993315ea886844031e0fbf532cb76b7bf4ff6495bb5df151041de10a7"
+}

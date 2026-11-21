@@ -463,3 +463,17 @@ They cover removed unset casts, duplicate asymmetric visibility, abstract/final
 hooks, nonstatic/capturing constant closures and empty coalesce dimensions.
 The test executable is still PHP 8.5.10 rather than a build of the exact pin;
 [Phase 6](8.5/phase6-conformance-closure.md) records this as blocker C4.
+
+## PHP 8.6.0 GA structural certification
+
+The final `PHP-8.6` source is tag `php-8.6.0` at
+`8aaada3f9605d81a38b8240f93c7389dfbc77ef9`. The versioned GA lock and build
+receipt remain unchanged. The independent structural contract verifies all
+retained parser/scanner mappings, five PFA production changes, the
+CA86-001-STRUCTURAL hook correction and SG86-002 yield-key prefix correction.
+See [the structural contract](structural-certification.md),
+[hook Gate B evidence](8.6/structural-certification/gate-b.json), and
+[yield Gate B evidence](8.6/structural-certification/yield-gate-b.json).
+Neither correction is new PHP 8.6 syntax; PHP 8.5 remains unchanged.
+Compiler/VM, ordered contextual, AST and exhaustive scanner-state obligations
+remain visible in the original extended reports.

@@ -1,0 +1,12 @@
+{
+  "command": [
+    ".audit/php85/php.exe",
+    "-n",
+    "tools/8.6/change-traceability.php",
+    "--report",
+    "docs/8.6/ga-finalization/final-traceability.json"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/final-traceability.log",
+  "sha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+}

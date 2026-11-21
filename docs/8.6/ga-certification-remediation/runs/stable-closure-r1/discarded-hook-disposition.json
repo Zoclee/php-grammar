@@ -1,0 +1,60 @@
+{
+  "contract": "php86-ga-certification-v2",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "gate": "discarded-hook-disposition",
+  "details": {
+    "original": [
+      {
+        "id": "CA86-001",
+        "classification": "known inherited policy discrepancy",
+        "construct": "Unknown property-hook name in a discarded declaration",
+        "evidence": [
+          "compiler-contextual-reconciliation.json",
+          "source-audit-probes.json",
+          "../../grammar/8.6/php.md#property-hooks-and-promotion",
+          "../8.5/final-evidence.json#/known_discrepancies"
+        ],
+        "missingEvidence": "Separate policy disposition and authorization before changing the intentional get/set-only structural restriction.",
+        "risk": "EBNF rejects an unknown hook that Zend can accept after discarding its declaration; blanket parser-equivalence claim is false.",
+        "draftImpact": "Retain documented divergence without modifying either version.",
+        "candidateImpact": "Independent PHP 8.6 certification must explicitly adjudicate the narrowed claim; historical acceptance is not automatically inherited.",
+        "stableImpact": "Cannot silently treat it as exact parser equivalence.",
+        "remediation": "If policy authorizes equivalence correction, consider identifier in hook-name with compilation-time get/set validation. Gate B needs live/discarded controls, canonical/parity changes and a separate PHP 8.5 correction review.",
+        "priority": "P2",
+        "blocksCertification": true
+      }
+    ],
+    "gaDisposition": [
+      {
+        "id": "CA86-001",
+        "originalRequirement": {
+          "id": "CA86-001",
+          "classification": "known inherited policy discrepancy",
+          "construct": "Unknown property-hook name in a discarded declaration",
+          "evidence": [
+            "compiler-contextual-reconciliation.json",
+            "source-audit-probes.json",
+            "../../grammar/8.6/php.md#property-hooks-and-promotion",
+            "../8.5/final-evidence.json#/known_discrepancies"
+          ],
+          "missingEvidence": "Separate policy disposition and authorization before changing the intentional get/set-only structural restriction.",
+          "risk": "EBNF rejects an unknown hook that Zend can accept after discarding its declaration; blanket parser-equivalence claim is false.",
+          "draftImpact": "Retain documented divergence without modifying either version.",
+          "candidateImpact": "Independent PHP 8.6 certification must explicitly adjudicate the narrowed claim; historical acceptance is not automatically inherited.",
+          "stableImpact": "Cannot silently treat it as exact parser equivalence.",
+          "remediation": "If policy authorizes equivalence correction, consider identifier in hook-name with compilation-time get/set validation. Gate B needs live/discarded controls, canonical/parity changes and a separate PHP 8.5 correction review.",
+          "priority": "P2",
+          "blocksCertification": true
+        },
+        "gaEvidenceConclusion": "Issue #24795 confirms skipped contextual hook checks in eliminated ASTs. The EBNF still rejects the unknown hook before elimination.",
+        "remainingRequirement": "An in-scope false rejection blocks release. Prepare a separately evidenced Gate B correction or an explicit enforceable scope restriction; issue closure alone does not justify exclusion.",
+        "boundedDispositionPermittedNow": false,
+        "blocksCertification": true
+      }
+    ]
+  },
+  "errors": [
+    "CA86-001: material closure obligations remain; see reviewed GA disposition. Observations do not waive closure."
+  ],
+  "certificationGranted": false
+}

@@ -1,0 +1,24 @@
+HTTP/2 200 
+date: Fri, 20 Nov 2026 16:20:08 GMT
+content-type: text/html; charset=utf-8
+vary: Accept-Encoding
+server: BunnyCDN-JH1-1032
+cdn-pullzone: 5992589
+cdn-requestcountrycode: ZA
+cache-control: public, max-age=300
+content-language: en
+last-modified: Fri, 20 Nov 2026 16:08:57 GMT
+strict-transport-security: max-age=15768000
+permissions-policy: interest-cohort=()
+x-frame-options: SAMEORIGIN
+link: <https://www.php.net/manual/en/migration86.php>; rel=shorturl
+cdn-proxyver: 1.72
+cdn-requestpullcode: 200
+cdn-requestpullsuccess: True
+cdn-edgestorageid: 1325, 1032
+cdn-cachedat: 11/20/2026 16:20:08
+cdn-status: 200
+cdn-requesttime: 0
+cdn-requestid: 6a71c30edde8cb1ab45377ab6d000e8a
+cdn-cache: MISS
+

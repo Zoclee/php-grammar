@@ -1,0 +1,14 @@
+{
+  "command": [
+    "git",
+    "-C",
+    ".audit/phase8b/sdk-git",
+    "archive",
+    "--format=tar",
+    "--output=C:/Data/GitHub/php-grammar/.audit/phase8b/sdk.tar",
+    "87567dececcf806c83e67fceb89a3bd206e7f1b1"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/sdk-archive.log",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

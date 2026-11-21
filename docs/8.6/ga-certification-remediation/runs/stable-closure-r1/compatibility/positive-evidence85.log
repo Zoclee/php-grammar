@@ -1,0 +1,23 @@
+{
+    "current": {
+        "productions": 298,
+        "total_productions": 361,
+        "alternatives": 608,
+        "total_alternatives": 792,
+        "attempted_productions": 298,
+        "attempted_alternatives": 609,
+        "valid_fixtures_default_profile": 648,
+        "rule_cases": 246
+    },
+    "remaining_counts": {
+        "production": {
+            "primitive-bypassed": 52,
+            "trivia-removed": 11
+        },
+        "alternative": {
+            "primitive-bypassed": 174,
+            "scanner-context-only": 1,
+            "trivia-removed": 9
+        }
+    }
+}

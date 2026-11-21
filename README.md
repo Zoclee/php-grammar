@@ -20,12 +20,12 @@ The included APIs let you inspect productions and check source against grammar
 rules; these checks cover structural syntax, not every compiler constraint or
 runtime behavior.
 
-PHP 8.5 remains the recommended stable version and the default for existing
-maintainer commands. PHP 8.6 is available by explicit selection as an incomplete
-RC4 draft; see [draft integration](docs/8.6/draft-integration.md) and its
+PHP 8.5 remains the compatibility default for existing
+maintainer commands. Select PHP 8.6 explicitly for the stable PHP 8.6.0 GA
+structural grammar; see [structural scope](docs/structural-certification.md) and its
 [change document](grammar/8.6/changes.md). `latestVersion()` returns the highest
-advertised number, including drafts (currently 8.6); it is not a stable alias.
-PHP86-013/014/015 remain unresolved, and structural matches do not certify
+advertised number (currently 8.6), regardless of status; it is not a stable alias.
+PHP86-013/014/015 remain unresolved under extended conformance, and structural matches do not certify
 compiler-context validity.
 
 Start with the [PHP 8.5 specification](grammar/8.5/php.md) for a readable overview,
@@ -483,3 +483,9 @@ When adding a new PHP grammar version:
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE).
+
+The independent [structural certification contract](docs/structural-certification.md) distinguishes
+structural grammar support from contextual compiler and runtime equivalence.
+Historical extended certification results remain available with their original
+failures and limitations. Stable promotion requires independently verified
+structural release evidence.

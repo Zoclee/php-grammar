@@ -1,0 +1,10 @@
+{
+  "versions": [
+    "8.5",
+    "8.6"
+  ],
+  "latestVersion": "8.6",
+  "php85Status": "stable",
+  "php86Status": "draft",
+  "meaning": "latestVersion selects the highest advertised version, including drafts; no stable alias"
+}

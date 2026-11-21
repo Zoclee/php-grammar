@@ -1,0 +1,15 @@
+{
+  "contract": "php86-ga-r1-predecessor-v1",
+  "run": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/evidence.json",
+  "runSha256": "8ffd8255975e0883d5f29448848a60b7dbceb7ed802e6163c7ae65962931e83f",
+  "files": {
+    "php-grammar.json": "28f3fa9a2e37231554807b3468978afc090525f636fafa20ccccc1a4dd5c5e9d",
+    "grammar/8.6/changes.md": "66ca79afc4e0f77fa38b38529e7fac02a76b7687141b5f12fd28f36db0c5fb4f",
+    "tests/UpstreamResolutionFreshnessTest.php": "102484f638c7ade447a579953e07108d489eb07e778a876b473b1130330a28f0",
+    "tests/Php/Conformance/Php86CompilerContextualTest.php": "483eade2bfc16a47ad751fe13852f3356834c91dc19aed0e8b4be8cf07b6f6b8",
+    "tests/GaCertificationTest.php": "1728825c87a18f0da0dfb01ed512e7683bd35c3201a5d1997c203669ecf4d890",
+    "tools/lib/GaCertification.php": "5806ee59c67e541f4e735a6a4ebb8d519ae01cd0428198481b7300644537dacc",
+    "tools/8.6/certification-ga.php": "31559880bf5377307600dc6747153a2c2afee6e067b56b949d79bb260a4c7e8d"
+  },
+  "note": "Exact consumed inputs preserved before successor edits. Other R1 inputs remain unchanged. R1 was independently verified before this transition; it is not fresh current evidence."
+}

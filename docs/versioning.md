@@ -546,3 +546,15 @@ and blocker dispositions described in [conformance-policy.md](conformance-policy
 Future version runners must supply their own evidence without disabling or
 weakening existing gates. Coverage must be classified; do not invent percentage
 targets or copy PHP 8.5's totals or certification conclusions.
+
+## 18. Stable structural certification
+
+The maintainer-authorized `php86-structural-v1` contract in
+[structural certification](structural-certification.md) is an independent release
+route for a stable structural grammar. Stable status identifies this bounded
+claim, not compiler equivalence. The preceding phase and extended-conformance
+requirements remain attached to their original contracts. Promotion requires all
+new structural gates, independent verification and a final frozen package inventory.
+The original extended gates and blockers remain visible. PHP 8.5 preservation
+means unchanged grammar, specification, fixtures and historical evidence plus
+current API/tool compatibility; it does not authenticate unavailable historical bytes.

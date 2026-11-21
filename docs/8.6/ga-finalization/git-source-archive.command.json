@@ -1,0 +1,15 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "gc.auto=0",
+    "--git-dir=.audit/rc7-git",
+    "archive",
+    "--format=tar",
+    "--output=.audit/phase8b/ga-git.tar",
+    "8aaada3f9605d81a38b8240f93c7389dfbc77ef9"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/git-source-archive.log",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

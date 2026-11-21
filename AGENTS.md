@@ -13,6 +13,26 @@ The repository maintains grammar by PHP **major.minor** language version, for ex
 
 Patch releases such as `8.4.1` or `8.4.2` do not normally receive separate grammar versions. A patch-specific grammar should only be introduced if the PHP language syntax itself materially differs.
 
+## Certification levels
+
+Maintainer authorization, final structural-release phase: stable structural grammar
+certification and extended compiler/conformance certification are separate. Follow
+[the structural contract](docs/structural-certification.md) for a stable structural
+release. Its independent gates must prove parser/scanner correspondence, correct
+standalone grammar, parity, syntax witnesses, change traceability, current PHP 8.5
+compatibility and no unresolved material structural defect within the declared
+profile. It does not require exhaustive compiler, AST, folding or runtime equivalence.
+
+Preserve the original 36-gate and additive 38-obligation contracts, all seven
+blockers, source profiles and historical failed results unchanged in meaning. Their
+remaining extended obligations are not silently removed or relabeled. The missing
+historical manifest is disclosed; current compatibility is not historical renewal.
+Known structural or lexical defects cannot be excluded merely to obtain sign-off.
+Gate B, evidence-backed corrections and separate PHP 8.5 preservation still apply.
+The older phase-specific completion instructions below continue to govern their
+original phases and extended contracts; structural promotion uses the new explicit
+contract and its complete release evidence.
+
 ## Core Principles
 
 Repository tooling, tests, validation, report generation, and maintenance logic

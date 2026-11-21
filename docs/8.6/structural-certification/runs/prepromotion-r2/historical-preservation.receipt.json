@@ -1,0 +1,17 @@
+{
+  "obligation": "Unchanged PHP 8.5 artifacts and immutable extended evidence",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "historical-preservation",
+    "--output",
+    "docs/8.6/structural-certification/runs/prepromotion-r2/historical-preservation.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r2/historical-preservation.log",
+  "sha256": "74326e242847af515adb4320a48d71b82fe17d5d7d603609ebc101491bae908d"
+}

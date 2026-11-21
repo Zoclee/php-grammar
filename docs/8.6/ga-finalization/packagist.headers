@@ -1,0 +1,20 @@
+HTTP/2 404 
+date: Fri, 20 Nov 2026 16:59:31 GMT
+content-type: text/html
+vary: Accept-Encoding
+server: BunnyCDN-DE1-1048
+cdn-pullzone: 3363232
+cdn-requestcountrycode: ZA
+vary: Accept-Encoding
+cache-control: public, max-age=900
+cdn-storageserver: DE-1139
+cdn-proxyver: 1.73
+cdn-requestpullsuccess: True
+cdn-requestpullcode: 404
+cdn-cachedat: 11/20/2026 16:59:31
+cdn-edgestorageid: 1082
+cdn-requestid: 97a420a7e0e902c21497d1a465bc82e0
+cdn-cache: MISS
+cdn-status: 404
+cdn-requesttime: 0
+

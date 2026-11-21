@@ -1,0 +1,9 @@
+{
+  "url": "https://api.github.com/repos/php/php-src/git/tags/48a5ee8a311db69103a6fa25b330e5ff3847af3d",
+  "effectiveUrl": "https://api.github.com/repos/php/php-src/git/tags/48a5ee8a311db69103a6fa25b330e5ff3847af3d",
+  "status": 200,
+  "retrievedAt": "2026-11-20T16:20:06+00:00",
+  "curlError": "",
+  "sha256": "7b75c24b2381bcf49c487f6573f83ed19793b8a22f4f09e10b6f1f6e2be44883",
+  "headerSha256": "0f2e62dbf84c75945281d8773b7c82817fa778e786a8c5dfa4b287b2e85435d9"
+}

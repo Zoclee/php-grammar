@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "source",
+    "Verify independent RC4 lock completeness and every required source SHA-256."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "source-lock-integrity",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/source-lock-integrity.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/source-lock-integrity.log",
+  "logSha256": "9bbe06191622f9aea0a9e0b9502dc3f359050b48aea755bf5dc85a73e56953ba"
+}

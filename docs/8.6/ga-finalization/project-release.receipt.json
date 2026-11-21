@@ -1,0 +1,9 @@
+{
+  "url": "https://api.github.com/repos/Zoclee/php-grammar/releases/latest",
+  "effectiveUrl": "https://api.github.com/repos/Zoclee/php-grammar/releases/latest",
+  "status": 200,
+  "retrievedAt": "2026-11-20T16:59:30+00:00",
+  "curlError": "",
+  "sha256": "a66a964a88b52767765dc2a958940c6fc48227fe84e03d30f4d8e51c3a5356c9",
+  "headerSha256": "d3f93e19a364ef1bcd03666e6925ba1bc82ff95c6284d8657378670f0094a895"
+}

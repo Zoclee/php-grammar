@@ -1,0 +1,17 @@
+{
+  "obligation": "Measured production/alternative coverage with source-backed gap classifications",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "classified-coverage",
+    "--output",
+    "docs/8.6/structural-certification/runs/prepromotion-r1/classified-coverage.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r1/classified-coverage.log",
+  "sha256": "93ae6aec441e1ba0a6912838ee9056140223f343ba63c3d10488f04f2cd096aa"
+}

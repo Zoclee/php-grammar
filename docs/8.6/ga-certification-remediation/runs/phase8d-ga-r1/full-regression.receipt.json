@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "test-all",
+    "Run the entire repository PHPUnit suite without cached results."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 2,
+  "status": "failed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/full-regression.log",
+  "logSha256": "0cf06885906ab91b28f1cf3676a3d3d82c5f6a43db82c8157ef4881d54a42161"
+}

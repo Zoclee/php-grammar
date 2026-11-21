@@ -1,0 +1,29 @@
+{
+  "finding": "CA86-001-STRUCTURAL",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "sources": {
+    "Zend/zend_language_parser.y": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+    "Zend/zend_language_scanner.l": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+    "Zend/zend_compile.c": "d2b57b75a6a5585a71be3d244428a8a13b7632b02e933ee9db44274b86c74f5f"
+  },
+  "parser": "Zend/zend_language_parser.y:1160 property_hook uses T_STRING, not identifier/semi_reserved",
+  "compiler": "Zend/zend_compile.c:9426 zend_get_property_hook_kind_from_name; visited-AST get/set legality remains contextual",
+  "production": "hook-name",
+  "before": "\"get\" | \"set\"",
+  "after": "identifier",
+  "oracleControls": 90,
+  "oracleEvidence": {
+    "path": "docs/8.6/structural-certification/hooks-before.json",
+    "sha256": "e255bcf90b7ba15a397b01e1e62587a08d95e2d5ed3d7e126e8e9fcc903e3581"
+  },
+  "historical85": "Unchanged; the same historical restriction is a separate correction obligation, not new PHP 8.6 syntax.",
+  "obligations": [
+    "case-insensitive get/set",
+    "unknown identifiers including non-ASCII bytes",
+    "keyword/numeric/qualified/variable/string negatives",
+    "live/retained/discarded",
+    "promoted parameter hooks",
+    "Markdown parity",
+    "version boundary: representation correction only"
+  ]
+}

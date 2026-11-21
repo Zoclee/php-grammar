@@ -42,7 +42,7 @@ final class Php86IntegrationTest extends TestCase
         }
     }
 
-    public function testDraftLoadsWithNoHistoricalPackageOrEvidenceFiles(): void
+    public function testStableLoadsWithNoHistoricalPackageOrEvidenceFiles(): void
     {
         $root=sys_get_temp_dir().'/php86-standalone-'.bin2hex(random_bytes(6));
         mkdir($root.'/grammar/8.6',0777,true);
@@ -52,7 +52,7 @@ final class Php86IntegrationTest extends TestCase
         try {
             $manifest=RepositoryManifest::fromArray($root,$data);
             self::assertSame(['8.6'],$manifest->versions());
-            self::assertSame('draft',$manifest->package('8.6')->status);
+            self::assertSame('stable',$manifest->package('8.6')->status);
             self::assertCount(361,(new GrammarRepository($manifest))->load('8.6')->productions());
             self::assertTrue(PhpGrammarMatcher::forManifest($manifest)->matches('8.6','<?php f(?);')->matched);
             self::assertSame('grammar/8.6/changes.md',$manifest->package('8.6')->metadata['changes']);

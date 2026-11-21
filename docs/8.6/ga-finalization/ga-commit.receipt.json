@@ -1,0 +1,9 @@
+{
+  "url": "https://api.github.com/repos/php/php-src/commits/8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "effectiveUrl": "https://api.github.com/repos/php/php-src/commits/8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "status": 200,
+  "retrievedAt": "2026-11-20T16:20:06+00:00",
+  "curlError": "",
+  "sha256": "01eb84c32421fc42ff8fb75adbe4502177e7f65a847049967f552d89c47a488c",
+  "headerSha256": "56f336ffc57f2b5649e73d8de98ba9faa529189002e7c279ae61b7096f5cb8ec"
+}

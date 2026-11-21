@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "blockers",
+    "Require all seven complete, unchanged Phase 6 blocking dispositions."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "blocker-dispositions",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/blocker-dispositions.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/blocker-dispositions.log",
+  "logSha256": "b7c887dffed00ccb7a5758d36e3d6dbe4103eca6bc410b6ee1df948998c3b8a2"
+}

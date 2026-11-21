@@ -1,0 +1,7 @@
+{
+  "gate": "scanner-state-closure",
+  "errors": [
+    "C6-COVERAGE: material closure obligations remain; see reviewed GA disposition. Observations do not waive closure."
+  ],
+  "certificationGranted": false
+}

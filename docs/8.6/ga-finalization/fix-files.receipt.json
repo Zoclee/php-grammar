@@ -1,0 +1,9 @@
+{
+  "url": "https://api.github.com/repos/php/php-src/pulls/25046/files?per_page=100",
+  "effectiveUrl": "https://api.github.com/repos/php/php-src/pulls/25046/files?per_page=100",
+  "status": 200,
+  "retrievedAt": "2026-11-20T16:20:10+00:00",
+  "curlError": "",
+  "sha256": "6c69703c5f8f2e0c985a896b71254b6ff661b153aecc958bff230759b223c1f4",
+  "headerSha256": "0660f212f1d6c328f6faf4e04465c92e768685e929f8a2573e552a3b39ee6f55"
+}

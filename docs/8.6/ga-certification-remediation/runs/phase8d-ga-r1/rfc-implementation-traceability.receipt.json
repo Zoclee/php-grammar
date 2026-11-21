@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "audit",
+    "Recompute all RFC candidate dispositions at the selected source pin; no RFC-only permission."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "rfc-implementation-traceability",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/rfc-implementation-traceability.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "failed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/rfc-implementation-traceability.log",
+  "logSha256": "c35633d1d78dc499c70e0b8d7abb1fa848f3068f1d66049bcaae32086bc93244"
+}

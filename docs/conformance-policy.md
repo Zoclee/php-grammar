@@ -4,6 +4,25 @@ This policy governs claims for every version. PHP 8.5's current decision is in
 [its completeness report](8.5/completeness.md) and
 [final evidence ledger](8.5/final-evidence.json).
 
+## Two independent certification levels
+
+The maintainer-authorized [structural contract](structural-certification.md),
+`php86-structural-v1`, defines stable structural grammar certification. It certifies
+a complete standalone EBNF within an explicit byte-source profile, parser/scanner
+correspondence, normative parity, source-backed syntax and version-boundary tests,
+traceability, current compatibility and absence of known material in-scope defects.
+It does not assert exhaustive parser/compiler acceptance, contextual enforcement,
+AST/opcode, folding or runtime equivalence, or 100% fixture coverage.
+
+The existing 27-gate PHP 8.5 release system, 36-gate PHP 8.6 system and additive
+38-obligation contracts retain their original claims, checks and failed outcomes.
+They provide historical and extended-conformance evidence. Structural success
+does not close their blockers or renew historical certification. The legacy
+release-gate section below continues to describe those contracts, not an implicit
+substitution rule. Known structural false acceptance/rejection must be corrected
+or explicitly explained by a source-backed structural profile; naming a defect
+contextual does not remove that requirement.
+
 ## Defined claims
 
 **Canonical** means the repository's authoritative, standalone EBNF artifact.

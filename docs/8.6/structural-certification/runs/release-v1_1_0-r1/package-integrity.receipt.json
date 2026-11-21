@@ -1,0 +1,15 @@
+{
+  "obligation": "Complete distribution file/hash inventory and Composer metadata",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-package.php",
+    "--output",
+    "docs/8.6/structural-certification/runs/release-v1_1_0-r1/package-integrity.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/release-v1_1_0-r1/package-integrity.log",
+  "sha256": "3a9fd9719750110db9777008bff43546d29ff6d372e1658ae6a718fa44239d0d"
+}

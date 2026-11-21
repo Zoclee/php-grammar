@@ -1,0 +1,24 @@
+{
+  "originalObligation": [
+    "test-consumer",
+    "Run consumer workflow, package contract and navigation CLI regressions."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "Consumer|ConformanceVersionSupportTest"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/public-api-cli.log",
+  "logSha256": "511787aa393c252cacd1ff3adae093f261e02ddae73d0497be6e9dcc8d2ae53a"
+}

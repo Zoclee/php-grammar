@@ -1,0 +1,10 @@
+{
+  "contract": "php86-structural-v1",
+  "gate": "official-ga-source",
+  "details": {
+    "tag": "php-8.6.0",
+    "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+    "baselineSha256": "6b06748bf3bc7cc7badbd3c432e794c36511c5619f6cb7c0d7f62f7bdb56478b"
+  },
+  "errors": []
+}

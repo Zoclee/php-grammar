@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "historical-integrity",
+    "Verify immutable 8.5 ledger and every historical input byte; not a historical test rerun."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/evidence/historical-check.php",
+    "--snapshot",
+    "C:/Data/GitHub/php-grammar/.audit/phase8d/historical",
+    "--supplement",
+    "C:/Data/GitHub/php-grammar/.audit/phase8d/historical"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "failed",
+  "log": "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/historical-artifact-integrity85.log",
+  "logSha256": "ae45622ced71c7ffaabbf680322d9711b3a61fd2bf1bde25114281bcae53c5e4"
+}

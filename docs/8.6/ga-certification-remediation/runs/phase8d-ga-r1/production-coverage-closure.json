@@ -1,0 +1,60 @@
+{
+  "contract": "php86-ga-certification-v1",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "gate": "production-coverage-closure",
+  "details": {
+    "original": [
+      {
+        "id": "C6-COVERAGE",
+        "classification": "bounded coverage and correspondence gap",
+        "construct": "64 unexercised productions, 318 alternatives; scanner state/helper products; family-only parser correspondence",
+        "evidence": [
+          "source-audit-coverage.json",
+          "source-completeness-ledger.json#/canonical",
+          "source-completeness-ledger.json#/scanner",
+          "final-coverage-remaining.json"
+        ],
+        "missingEvidence": "Alternative-specific correspondence/AST binding, scanner state products and individual witnesses. The 51 source/profile entries are not 51 verified scanner rules.",
+        "risk": "Coverage or name/section association can conceal a validity/binding mismatch; no defect follows solely from low coverage.",
+        "draftImpact": "Retain every identity and justified obligation without deleting alternatives.",
+        "candidateImpact": "Requires independent gap disposition under the conformance policy.",
+        "stableImpact": "Not an automatic exemption from scanner, binding and classified-coverage gates.",
+        "remediation": "Prioritize reserved token categories (including context-only from), namespace/type/declaration alternatives, dereference/constructor forms and closed-yield/prefix/dangling-else binding. Test lexical bodies through scanner primitives, not invented chart coverage.",
+        "priority": "P1",
+        "blocksCertification": true
+      }
+    ],
+    "gaDisposition": [
+      {
+        "id": "C6-COVERAGE",
+        "originalRequirement": {
+          "id": "C6-COVERAGE",
+          "classification": "bounded coverage and correspondence gap",
+          "construct": "64 unexercised productions, 318 alternatives; scanner state/helper products; family-only parser correspondence",
+          "evidence": [
+            "source-audit-coverage.json",
+            "source-completeness-ledger.json#/canonical",
+            "source-completeness-ledger.json#/scanner",
+            "final-coverage-remaining.json"
+          ],
+          "missingEvidence": "Alternative-specific correspondence/AST binding, scanner state products and individual witnesses. The 51 source/profile entries are not 51 verified scanner rules.",
+          "risk": "Coverage or name/section association can conceal a validity/binding mismatch; no defect follows solely from low coverage.",
+          "draftImpact": "Retain every identity and justified obligation without deleting alternatives.",
+          "candidateImpact": "Requires independent gap disposition under the conformance policy.",
+          "stableImpact": "Not an automatic exemption from scanner, binding and classified-coverage gates.",
+          "remediation": "Prioritize reserved token categories (including context-only from), namespace/type/declaration alternatives, dereference/constructor forms and closed-yield/prefix/dangling-else binding. Test lexical bodies through scanner primitives, not invented chart coverage.",
+          "priority": "P1",
+          "blocksCertification": true
+        },
+        "gaEvidenceConclusion": "GA observations reproduce focused scanner/binding cases; current ordinary coverage retains material uncovered identities.",
+        "remainingRequirement": "Classify each remaining material production/alternative, scanner state/helper and binding obligation using the existing ledgers. No arbitrary percentage gate.",
+        "boundedDispositionPermittedNow": false,
+        "blocksCertification": true
+      }
+    ]
+  },
+  "errors": [
+    "C6-COVERAGE: material closure obligations remain; see reviewed GA disposition. Observations do not waive closure."
+  ],
+  "certificationGranted": false
+}

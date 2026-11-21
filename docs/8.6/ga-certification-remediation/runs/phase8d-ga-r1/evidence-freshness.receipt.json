@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "freshness",
+    "Verify historical audit inputs; final --check also compares complete current input/output sets."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "evidence-freshness",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/evidence-freshness.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/evidence-freshness.log",
+  "logSha256": "2b19ec2fd2842e69323687531eb4f57fdefc03ccb85f4250bb283e34c762b502"
+}

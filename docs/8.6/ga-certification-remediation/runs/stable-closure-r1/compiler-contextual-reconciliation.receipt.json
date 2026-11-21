@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "test-compiler",
+    "Verify bounded semantic groups, inventories, source references and preserved uncertainties."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "compiler-contextual-reconciliation",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/compiler-contextual-reconciliation.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/compiler-contextual-reconciliation.log",
+  "logSha256": "a4a487b41752e869b7e52ff36b2ae434d2a14002050f4b1e38502290578273ab"
+}

@@ -1,23 +1,33 @@
-# PHP 8.6 syntax specification (provisional)
+# PHP 8.6.0 structural syntax specification
 
 ## Status and scope
 
-**Registered draft: provisional, incomplete PHP 8.6 working specification.** Phase
-3B implements PHP86-001 structure; Phase 3C specifies PHP86-003 through PHP86-007
-contextual changes, against branch `PHP-8.6`, RC4 commit
-`f23b4c222cebe33be93ee8ecaaa14390c5507a08`. No contextual validator for these
-new rules is implemented here. Phase 3E documents PHP86-010 deprecations without
-changing accepted structure. Other PHP 8.6 changes remain
-pending or unresolved. The retained rules and historical audit discussion below
-originate in the PHP 8.5 baseline; they do not certify PHP 8.6 accuracy.
-PHP86-013, PHP86-014, and PHP86-015 remain open. See [changes](changes.md).
+**PHP 8.6.0 GA structural specification; stable structural certification passed.**
+The authoritative release is `php-8.6.0`, branch `PHP-8.6`, commit
+`8aaada3f9605d81a38b8240f93c7389dfbc77ef9`. The independent
+[structural contract](../../docs/structural-certification.md) certifies the
+standalone structural grammar and byte-oriented lexical profile, not exhaustive
+compiler, contextual, AST, folding, or runtime equivalence. Structural matching
+does not establish whole-source validity.
 
-For PFA, normative implementation evidence is the pinned RC4
-[parser](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_language_parser.y),
-[compiler](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_compile.c), and
-[AST construction](https://github.com/php/php-src/blob/f23b4c222cebe33be93ee8ecaaa14390c5507a08/Zend/zend_ast.c).
+PHP86-001 supplies partial application and callable trailing commas.
+PHP86-003 through PHP86-007 describe external contextual restrictions;
+PHP86-010 describes diagnostics rather than syntax removals. CA86-001-STRUCTURAL
+corrects hook names to lexical identifiers, with get/set legality checked only
+on visited declarations. PHP 8.5 remains unchanged; this correction is not a new
+PHP 8.6 language feature. See [changes](changes.md) for exact source mappings.
 
-This standalone working specification describes source syntax: byte-level
+Current normative source correspondence is the authenticated GA
+[parser](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_parser.y),
+[scanner](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_language_scanner.l)
+and [compiler](https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_compile.c).
+Historical Phase 3–8, PHP 8.5 and RC4 observations retained below describe their
+original audits; they are not final GA execution results. The seven original
+extended-conformance blockers remain unresolved under their original contracts.
+They are PHP86-013, PHP86-014, PHP86-015, CA86-001, C6-CONTEXT,
+C6-COVERAGE and C6-PROVENANCE; structural success does not close them.
+
+This standalone specification describes source syntax: byte-level
 recognition, structural syntax, and contextual syntax constraints. It is a
 repository specification grounded in the pinned PHP implementation, not an
 official PHP language standard or a proof of full PHP conformance.
@@ -1061,13 +1071,14 @@ then requires exactly int/string. `name-list` and `catch-type-list` consume
 Hook names are explicit in the canonical grammar:
 
 ```ebnf
-hook-name = "get" | "set" ;
+hook-name = identifier ;
 ```
 
-These terminals are case-insensitive: `GET`, `Set`, and other case variants
-are accepted. They do not reserve either name outside property hooks. Token
-adapters normalize these identifier spellings for terminal matching while
-preserving the original tokens for identifier productions.
+The hook name is a lexical identifier (`T_STRING` in the GA parser), not a
+semi-reserved name. Reserved keywords, qualified names, variables and numeric
+literals cannot occupy this position. The compiler compares `get` and `set`
+case-insensitively when it visits the declaration; unknown names are structurally
+accepted but fail that contextual check if visited.
 
 The surrounding syntax follows parser `property_hook_list`, `property_hook`
 and `property_hook_body`: an empty list is structurally possible; each hook has
@@ -1081,28 +1092,18 @@ discarded along with their enclosing static closure. Parameter hook lists use
 the same grammar. A hook list itself triggers promotion, even without explicit
 visibility; compilation requires a concrete constructor in an allowed context.
 
-**Compatibility change:** unknown hook names are now rejected by the EBNF,
-including inside discarded declarations. Zend's parser accepts an identifier
-and checks the hook name only when compiling the declaration; a discarded
-static closure can therefore contain an unknown hook without a PHP error.
-That deliberate difference is retained as a known-discrepancy fixture rather
-than accepted by the canonical grammar. Other hook constraints remain contextual.
+**CA86-001-STRUCTURAL correction:** unknown identifier hook names now match
+structurally, including discarded declarations. Live and retained declarations
+still require case-insensitive get/set under `zend_compile_property_hooks`.
+The same distinction applies to promoted parameter hooks. The maintainer's
+[explanation](https://github.com/php/php-src/issues/24795#issuecomment-6455687623)
+confirms that dead ASTs can skip compilation. The GA parser's `property_hook`
+uses `T_STRING`; compiler hook-kind validation is contextual. Ninety focused
+controls and the [Gate B record](../../docs/8.6/structural-certification/gate-b.json)
+justify this one-production correction. PHP 8.5's get/set-only EBNF remains
+unchanged and requires a separate historical correction. Original extended
+CA86-001 results and obligations are retained, not retroactively passed.
 
-**CA86-001 maintainer clarification (informative, October 28, 2026).**
-In [php-src #24795](https://github.com/php/php-src/issues/24795#issuecomment-6455687623),
-the maintainer confirms that expressions known to be dead can be eliminated
-before contextual compilation, skipping checks within them. The issue is closed
-as not planned. This explains the discarded unknown-hook witnesses; it does not
-permit unknown hooks in declarations that are compiled. The inherited structural
-restriction remains a known divergence, pending a separate Gate B correction or
-an explicitly accepted, enforceable scope disposition. CA86-001 remains blocking;
-upstream closure is not repository certification. See the
-[resolution evidence](../../docs/8.6/upstream-maintainer-resolution.md).
-
-Evidence: PHP source pin `7a4c62795365ed6a97a0184c96375b9fb4d53b1e`,
-`Zend/zend_compile.c`, `zend_get_property_hook_kind_from_name` (case-insensitive
-`get`/`set` comparisons) and `zend_compile_property_hooks` (unknown-name error);
-`Zend/zend_language_parser.y`, `property_hook` (identifier parsing).
 See also the [official property-hook manual](https://www.php.net/manual/en/language.oop5.property-hooks.php).
 
 The pinned compiler does **not** reject the reference-return marker on a set
@@ -1409,10 +1410,22 @@ the same numbered section headings appear in `php.ebnf`.
 
 ## Canonical EBNF
 
+
+**SG86-002 structural correction:** a yield key beginning with an arrow function,
+include/require, or print can contain a throw-expression operand. The GA parser
+accepts these prefix compositions before the yield delimiter. `yield-key` uses
+the closed-yield throw-expression operand for arrow/include prefixes. Print
+retains its higher-precedence operand unless a nested throw, arrow-function, or
+include prefix opens a lower-precedence operand. Bare unparenthesized
+logical-and/or/xor key prefixes remain invalid. The
+[Gate B record](../../docs/8.6/structural-certification/yield-gate-b.json) preserves
+the demonstrated old false rejections and focused positive/negative controls.
+This also affects the historical PHP 8.5 representation; PHP 8.5 is unchanged.
+
 <!-- BEGIN GENERATED EBNF -->
 ```ebnf
-(* Provisional standalone PHP 8.6 syntactic EBNF over the source-token stream.
-   PHP86-001 only; other PHP 8.6 changes remain pending.
+(* Standalone PHP 8.6.0 GA structural EBNF over the source-token stream.
+   PHP86-001 syntax and CA86-001 structural correction; contextual checks are external.
    Binary expression/prefix families: tools/8.5/generate-expressions.php.
    Apply the lexical-state contract and contextual constraints in php.md. *)
 
@@ -2202,10 +2215,10 @@ property-hook =
     property-hook-modifiers , [ "&" ] , hook-name ,
     [ "(" , parameter-list , ")" ] , property-hook-body ;
 
-(* Hook-name terminals are case-insensitive, without reserving these names
-   outside hooks. Unknown names are excluded even in discarded declarations. *)
+(* Hook names are lexical identifiers. Visited declarations require get/set,
+   compared case-insensitively by the compiler; see php.md. *)
 hook-name =
-    "get" | "set" ;
+    identifier ;
 
 property-hook-body =
       ";"
@@ -2847,9 +2860,12 @@ yield-key =
     closed-yield-yield-expression
     | [ yield-key-prefix-context ] ,
       ( "throw" , closed-yield-throw-expression
-      | arrow-function-header , closed-yield-arrow-expression
-      | include-operator , closed-yield-include-expression
-      | "print" , closed-yield-print-expression ) ;
+      | arrow-function-header , closed-yield-throw-expression
+      | include-operator , closed-yield-throw-expression
+      | "print" , ( closed-yield-print-expression
+          | [ closed-yield-print-prefix-context ] ,
+            ( "throw" | arrow-function-header | include-operator ) ,
+            closed-yield-throw-expression ) ) ;
 ```
 <!-- END GENERATED EBNF -->
 

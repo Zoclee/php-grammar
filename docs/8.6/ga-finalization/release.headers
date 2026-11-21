@@ -1,0 +1,25 @@
+HTTP/2 200 
+date: Fri, 20 Nov 2026 16:20:07 GMT
+content-type: text/html; charset=utf-8
+content-length: 29786
+vary: Accept-Encoding
+server: BunnyCDN-JH1-1032
+cdn-pullzone: 5992589
+cdn-requestcountrycode: ZA
+cache-control: public, max-age=1800
+content-language: en
+last-modified: Thu, 19 Nov 2026 14:20:02 GMT
+strict-transport-security: max-age=15768000
+permissions-policy: interest-cohort=()
+x-frame-options: SAMEORIGIN
+link: <https://www.php.net/releases/8_6_0>; rel=shorturl
+cdn-proxyver: 1.72
+cdn-requestpullcode: 200
+cdn-requestpullsuccess: True
+cdn-edgestorageid: 1327, 1032
+cdn-cachedat: 11/20/2026 12:31:29
+cdn-status: 200
+cdn-requesttime: 0
+cdn-requestid: 342c9d9b15d6b101b7ea4038962497a7
+cdn-cache: REVALIDATED
+

@@ -1,0 +1,17 @@
+{
+  "obligation": "Authenticated parser/scanner/compiler source and executable identities",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "source-locks",
+    "--output",
+    "docs/8.6/structural-certification/runs/release-v1_1_0-r1/source-locks.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/release-v1_1_0-r1/source-locks.log",
+  "sha256": "0e892dacbf4a84c2944dd71bbe84f869d230e49e1b6375a873abca8659143501"
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://api.github.com/repos/php/php-src/pulls/25046",
+  "httpStatus": 200,
+  "retrievedAt": "2026-11-20T17:32:51+00:00",
+  "bodySha256": "dba0f2107a204a431df37597cd7b5ff9763348c2aa31269ad38850ae49640d0c",
+  "headersSha256": "6bebc249f8ee40e07fa509bc64b999d71dec564f854fbe124593defc13aa30d7",
+  "state": "open",
+  "merged": false,
+  "head": "5089bcc83c8193e6a965dd1579767b1d503401ba",
+  "gaAncestry": {
+    "exit_code": 1,
+    "output": ""
+  },
+  "limitation": "A proposal is not implemented GA syntax; ancestry errors are not negative ancestry evidence."
+}

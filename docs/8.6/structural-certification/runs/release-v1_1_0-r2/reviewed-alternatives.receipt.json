@@ -1,0 +1,17 @@
+{
+  "obligation": "Five PFA changes preserved and only the justified hook production correction",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "reviewed-alternatives",
+    "--output",
+    "docs/8.6/structural-certification/runs/release-v1_1_0-r2/reviewed-alternatives.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/release-v1_1_0-r2/reviewed-alternatives.log",
+  "sha256": "e1b7d274a0b4ccb08f6e9b25a966753d180aa9f4d0cfd51332ee3d4ef61e0ca5"
+}

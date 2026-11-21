@@ -1,0 +1,17 @@
+{
+  "obligation": "EBNF syntax, references, naming, reachability and nullability",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "grammar-integrity",
+    "--output",
+    "docs/8.6/structural-certification/runs/prepromotion-r3/grammar-integrity.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r3/grammar-integrity.log",
+  "sha256": "95944523aa985c872d47a54362a156b3cd4b90a481cdd36883e0da5b66abc9e4"
+}

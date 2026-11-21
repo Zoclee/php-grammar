@@ -1,0 +1,989 @@
+{
+  "profiles": "Official distributions; proposed patch not applied",
+  "observations": [
+    {
+      "id": "ordinary-dimension",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php",
+      "sha256": "2c77ba82f787eed0f9b19deef7bf22e763871785ebcae9f379490bb46092fe32",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php on line 2\nStack trace:\n#0 {main}\nErrors parsing docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php\n"
+    },
+    {
+      "id": "ordinary-dimension",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php",
+      "sha256": "2c77ba82f787eed0f9b19deef7bf22e763871785ebcae9f379490bb46092fe32",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\ordinary-dimension.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "ordinary-dimension",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php",
+      "sha256": "2c77ba82f787eed0f9b19deef7bf22e763871785ebcae9f379490bb46092fe32",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php\n"
+    },
+    {
+      "id": "ordinary-dimension",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php",
+      "sha256": "2c77ba82f787eed0f9b19deef7bf22e763871785ebcae9f379490bb46092fe32",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Invalid opcode 23/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\ordinary-dimension.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "ordinary-property",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php",
+      "sha256": "3052939ba28bc4bab2d203e0616baac66b9b1cf6597dfd60191483f59a6bedfa",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php on line 2\nStack trace:\n#0 {main}\nErrors parsing docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php\n"
+    },
+    {
+      "id": "ordinary-property",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php",
+      "sha256": "3052939ba28bc4bab2d203e0616baac66b9b1cf6597dfd60191483f59a6bedfa",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\ordinary-property.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "ordinary-property",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php",
+      "sha256": "3052939ba28bc4bab2d203e0616baac66b9b1cf6597dfd60191483f59a6bedfa",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php\n"
+    },
+    {
+      "id": "ordinary-property",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php",
+      "sha256": "3052939ba28bc4bab2d203e0616baac66b9b1cf6597dfd60191483f59a6bedfa",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Invalid opcode 24/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\ordinary-property.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "compound",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/compound.php",
+      "sha256": "ee0366dc8016554ee46ef2915653b996afe56e8b6569779724a0a724e9927720",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/compound.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in docs/8.6/rc7-source-reconciliation/probes/compound.php on line 2\nStack trace:\n#0 {main}\nErrors parsing docs/8.6/rc7-source-reconciliation/probes/compound.php\n"
+    },
+    {
+      "id": "compound",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/compound.php",
+      "sha256": "ee0366dc8016554ee46ef2915653b996afe56e8b6569779724a0a724e9927720",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/compound.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\compound.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "compound",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/compound.php",
+      "sha256": "ee0366dc8016554ee46ef2915653b996afe56e8b6569779724a0a724e9927720",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/compound.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/compound.php\n"
+    },
+    {
+      "id": "compound",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/compound.php",
+      "sha256": "ee0366dc8016554ee46ef2915653b996afe56e8b6569779724a0a724e9927720",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/compound.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Invalid opcode 27/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\compound.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "increment",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/increment.php",
+      "sha256": "ab254ce3f7275b418794a06b5206f1b3d49a33389f6ed2cec370187e836298ab",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/increment.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in docs/8.6/rc7-source-reconciliation/probes/increment.php on line 2\nStack trace:\n#0 {main}\nErrors parsing docs/8.6/rc7-source-reconciliation/probes/increment.php\n"
+    },
+    {
+      "id": "increment",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/increment.php",
+      "sha256": "ab254ce3f7275b418794a06b5206f1b3d49a33389f6ed2cec370187e836298ab",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/increment.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\increment.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "increment",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/increment.php",
+      "sha256": "ab254ce3f7275b418794a06b5206f1b3d49a33389f6ed2cec370187e836298ab",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/increment.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/increment.php\n"
+    },
+    {
+      "id": "increment",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/increment.php",
+      "sha256": "ab254ce3f7275b418794a06b5206f1b3d49a33389f6ed2cec370187e836298ab",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/increment.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Invalid opcode 87/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\increment.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "unset",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/unset.php",
+      "sha256": "51766d2b2a00f9cacc6a4d99ce60e83a5fb19f3598f03f1350e3614febeafea3",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/unset.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in docs/8.6/rc7-source-reconciliation/probes/unset.php on line 2\nStack trace:\n#0 {main}\nErrors parsing docs/8.6/rc7-source-reconciliation/probes/unset.php\n"
+    },
+    {
+      "id": "unset",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/unset.php",
+      "sha256": "51766d2b2a00f9cacc6a4d99ce60e83a5fb19f3598f03f1350e3614febeafea3",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/unset.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\unset.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "unset",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/unset.php",
+      "sha256": "51766d2b2a00f9cacc6a4d99ce60e83a5fb19f3598f03f1350e3614febeafea3",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/unset.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/unset.php\n"
+    },
+    {
+      "id": "unset",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/unset.php",
+      "sha256": "51766d2b2a00f9cacc6a4d99ce60e83a5fb19f3598f03f1350e3614febeafea3",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/unset.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Invalid opcode 75/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\unset.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "reference-bind",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php",
+      "sha256": "a257f7c0c2ae90cc775c6f6dd7ee4c7d3c106605ea9283a9d62247757ca45802",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in docs/8.6/rc7-source-reconciliation/probes/reference-bind.php on line 2\nStack trace:\n#0 {main}\nErrors parsing docs/8.6/rc7-source-reconciliation/probes/reference-bind.php\n"
+    },
+    {
+      "id": "reference-bind",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php",
+      "sha256": "a257f7c0c2ae90cc775c6f6dd7ee4c7d3c106605ea9283a9d62247757ca45802",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\reference-bind.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "reference-bind",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php",
+      "sha256": "a257f7c0c2ae90cc775c6f6dd7ee4c7d3c106605ea9283a9d62247757ca45802",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-bind.php\n"
+    },
+    {
+      "id": "reference-bind",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php",
+      "sha256": "a257f7c0c2ae90cc775c6f6dd7ee4c7d3c106605ea9283a9d62247757ca45802",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Invalid opcode 84/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\reference-bind.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "reference-argument-dimension",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php",
+      "sha256": "7c3d7212cd299c3484ec35a4d1a033268bfe9019b0a5c656dc3248907a688cfd",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php on line 2\nStack trace:\n#0 {main}\nErrors parsing docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php\n"
+    },
+    {
+      "id": "reference-argument-dimension",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php",
+      "sha256": "7c3d7212cd299c3484ec35a4d1a033268bfe9019b0a5c656dc3248907a688cfd",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\reference-argument-dimension.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "reference-argument-dimension",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php",
+      "sha256": "7c3d7212cd299c3484ec35a4d1a033268bfe9019b0a5c656dc3248907a688cfd",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php\n"
+    },
+    {
+      "id": "reference-argument-dimension",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php",
+      "sha256": "7c3d7212cd299c3484ec35a4d1a033268bfe9019b0a5c656dc3248907a688cfd",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Invalid opcode 84/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\reference-argument-dimension.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "reference-assignment-write",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php",
+      "sha256": "2ed3b9e47d9a7486d57fe4376aadbf00680ab122bc61ba84654a1a7806069256",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php\n"
+    },
+    {
+      "id": "reference-assignment-write",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php",
+      "sha256": "2ed3b9e47d9a7486d57fe4376aadbf00680ab122bc61ba84654a1a7806069256",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\reference-assignment-write.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "reference-assignment-write",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php",
+      "sha256": "2ed3b9e47d9a7486d57fe4376aadbf00680ab122bc61ba84654a1a7806069256",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php\n"
+    },
+    {
+      "id": "reference-assignment-write",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php",
+      "sha256": "2ed3b9e47d9a7486d57fe4376aadbf00680ab122bc61ba84654a1a7806069256",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php"
+      ],
+      "exitCode": 0,
+      "output": "[[2],[2]]"
+    },
+    {
+      "id": "destructuring-reference-write",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php",
+      "sha256": "e523321d96758a55facc54744507859acb35be043ba5b324bc8dc8b283b0ea0f",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php on line 2\nStack trace:\n#0 {main}\nErrors parsing docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php\n"
+    },
+    {
+      "id": "destructuring-reference-write",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php",
+      "sha256": "e523321d96758a55facc54744507859acb35be043ba5b324bc8dc8b283b0ea0f",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php"
+      ],
+      "exitCode": 255,
+      "output": "\nFatal error: Cannot use temporary expression in write context in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\destructuring-reference-write.php on line 2\nStack trace:\n#0 {main}\n"
+    },
+    {
+      "id": "destructuring-reference-write",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php",
+      "sha256": "e523321d96758a55facc54744507859acb35be043ba5b324bc8dc8b283b0ea0f",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php\n"
+    },
+    {
+      "id": "destructuring-reference-write",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php",
+      "sha256": "e523321d96758a55facc54744507859acb35be043ba5b324bc8dc8b283b0ea0f",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php"
+      ],
+      "exitCode": 0,
+      "output": "[[5],5]"
+    },
+    {
+      "id": "destructuring-reference-argument",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php",
+      "sha256": "aabd56a68879f9fa3b0d73ea495ea816097fe9f694317659cc366eb77185bc9e",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php\n"
+    },
+    {
+      "id": "destructuring-reference-argument",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php",
+      "sha256": "aabd56a68879f9fa3b0d73ea495ea816097fe9f694317659cc366eb77185bc9e",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php"
+      ],
+      "exitCode": 0,
+      "output": "[[1],9]"
+    },
+    {
+      "id": "destructuring-reference-argument",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php",
+      "sha256": "aabd56a68879f9fa3b0d73ea495ea816097fe9f694317659cc366eb77185bc9e",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php\n"
+    },
+    {
+      "id": "destructuring-reference-argument",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php",
+      "sha256": "aabd56a68879f9fa3b0d73ea495ea816097fe9f694317659cc366eb77185bc9e",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php"
+      ],
+      "exitCode": 0,
+      "output": "[[1],9]"
+    },
+    {
+      "id": "reference-assignment-argument",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php",
+      "sha256": "f6e315f1357dd924dbe7c3dbd23e83e86083b4e217eac8de8ade563f8d0ca269",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php\n"
+    },
+    {
+      "id": "reference-assignment-argument",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php",
+      "sha256": "f6e315f1357dd924dbe7c3dbd23e83e86083b4e217eac8de8ade563f8d0ca269",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php"
+      ],
+      "exitCode": 0,
+      "output": "[[1,9],[1,9]]"
+    },
+    {
+      "id": "reference-assignment-argument",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php",
+      "sha256": "f6e315f1357dd924dbe7c3dbd23e83e86083b4e217eac8de8ade563f8d0ca269",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php\n"
+    },
+    {
+      "id": "reference-assignment-argument",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php",
+      "sha256": "f6e315f1357dd924dbe7c3dbd23e83e86083b4e217eac8de8ade563f8d0ca269",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php"
+      ],
+      "exitCode": 0,
+      "output": "[[1,9],[1,9]]"
+    },
+    {
+      "id": "foreach-reference-assignment",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php",
+      "sha256": "606dbe328dfa9f3ff78936782ffeace6b6b0a09695d033c6511a1feba6b02447",
+      "version": "8.5.10",
+      "stage": "lint",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php\n"
+    },
+    {
+      "id": "foreach-reference-assignment",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php",
+      "sha256": "606dbe328dfa9f3ff78936782ffeace6b6b0a09695d033c6511a1feba6b02447",
+      "version": "8.5.10",
+      "stage": "execution",
+      "command": [
+        ".audit/php85/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php"
+      ],
+      "exitCode": 0,
+      "output": "[[3],[3]]"
+    },
+    {
+      "id": "foreach-reference-assignment",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php",
+      "sha256": "606dbe328dfa9f3ff78936782ffeace6b6b0a09695d033c6511a1feba6b02447",
+      "version": "8.6.0RC7",
+      "stage": "lint",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "-l",
+        "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php"
+      ],
+      "exitCode": 0,
+      "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php\n"
+    },
+    {
+      "id": "foreach-reference-assignment",
+      "fixture": "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php",
+      "sha256": "606dbe328dfa9f3ff78936782ffeace6b6b0a09695d033c6511a1feba6b02447",
+      "version": "8.6.0RC7",
+      "stage": "execution",
+      "command": [
+        ".audit/phase8a/php86rc7/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-d",
+        "max_execution_time=5",
+        "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php"
+      ],
+      "exitCode": 0,
+      "output": "[[1],[1]]"
+    }
+  ]
+}

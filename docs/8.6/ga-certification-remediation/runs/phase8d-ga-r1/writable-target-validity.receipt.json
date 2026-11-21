@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "blocked:PHP86-014",
+    "Establish intended writable-target validity and compiler/VM consistency."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "writable-target-validity",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/writable-target-validity.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "blocked",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/writable-target-validity.log",
+  "logSha256": "e193136dd74f295ee3f6b5cd34e9a056a749799e76b4ceb48b674cdea155ab8d"
+}

@@ -1,0 +1,17 @@
+{
+  "obligation": "Entire current repository PHPUnit suite",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r3/full-regression.log",
+  "sha256": "bfc9d57d5a12a74fc20a4919e786d745f057ac84d82aae7e7f821da2a219c5cb"
+}

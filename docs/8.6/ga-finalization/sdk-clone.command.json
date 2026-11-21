@@ -1,0 +1,12 @@
+{
+  "command": [
+    "git",
+    "clone",
+    "--no-checkout",
+    "https://github.com/php/php-sdk-binary-tools.git",
+    ".audit/phase8b/sdk-git"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/sdk-clone.log",
+  "sha256": "52cbd25df4602acc435182e8da2ea117b35629d76b6de075607d46e829507360"
+}

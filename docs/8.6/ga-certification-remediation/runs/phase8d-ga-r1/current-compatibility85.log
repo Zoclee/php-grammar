@@ -1,0 +1,7 @@
+{
+  "gate": "current-compatibility85",
+  "errors": [
+    "Current compatibility obligation failed: full-regression"
+  ],
+  "certificationGranted": false
+}

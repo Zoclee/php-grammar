@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "traceability",
+    "Reject unexplained added/removed/modified productions, lexical/prose drift and stale witnesses."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "production-change-traceability",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/production-change-traceability.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/production-change-traceability.log",
+  "logSha256": "ba1501a21394452b67e08f421e550b88354fc2ff02b37c125326fef7f5bcba0b"
+}

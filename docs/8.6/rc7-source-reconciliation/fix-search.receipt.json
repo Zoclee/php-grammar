@@ -1,0 +1,8 @@
+{
+    "url": "https://api.github.com/search/issues?q=repo:php/php-src+24792",
+    "retrievedAt": "2026-11-17T19:10:11+00:00",
+    "httpStatus": 200,
+    "effectiveUrl": "https://api.github.com/search/issues?q=repo:php/php-src+24792",
+    "error": "",
+    "sha256": "80cfe1d27324b4b883f106155f81fdace058d182972f7bbd307f8c2f1f0c05d1"
+}

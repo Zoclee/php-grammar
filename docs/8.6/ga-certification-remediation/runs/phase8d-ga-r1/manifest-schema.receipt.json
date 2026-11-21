@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "manifest",
+    "Validate schema, metadata paths, RC4 pin and draft/stable status."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "manifest-schema",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/manifest-schema.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/manifest-schema.log",
+  "logSha256": "34b2f80d706f73c6b16993b595b0e1dbd2dd7eca19a4be57d7a60c4ab3ec3a8f"
+}

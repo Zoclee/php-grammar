@@ -1,0 +1,17 @@
+{
+  "obligation": "Official annotated GA tag and immutable source identity",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "official-ga-source",
+    "--output",
+    "docs/8.6/structural-certification/runs/prepromotion-r3/official-ga-source.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r3/official-ga-source.log",
+  "sha256": "0027dabfa60cc8dd0a5038fc450558fc875dd9f261fcc4403bc444cc27a93730"
+}

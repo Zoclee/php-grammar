@@ -1,0 +1,58 @@
+{
+  "contract": "php86-ga-certification-v2",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "gate": "contextual-enforcement-scope",
+  "details": {
+    "original": [
+      {
+        "id": "C6-CONTEXT",
+        "classification": "documented enforcement limitation plus unresolved predicate evidence",
+        "construct": "73 inherited contextual restriction descriptions and changed-rule interactions",
+        "evidence": [
+          "source-completeness-ledger.json#/contextual",
+          "source-audit-context.json",
+          "source-audit-boundaries.json"
+        ],
+        "missingEvidence": "Individual RC4 predicates, upstream PHPT and positive/negative stage isolation wherever family-level references remain. No native complete contextual validator exists.",
+        "risk": "Structural matches may violate parser actions, compiler checks or deferred linking; historical readonly-default restriction labels must not be copied as current rules.",
+        "draftImpact": "Document external enforcement and current normative clauses.",
+        "candidateImpact": "Requires independent evidence and claim adjudication; not an automatic permissible release limitation.",
+        "stableImpact": "Blocks whole-source-validator claims; bounded grammar certification requires policy disposition.",
+        "remediation": "Prioritize retained/discarded declarations, type/member constraints, writable/reference forms, attributes, enum and constant-expression paths. Reuse hashed finding fixtures and add only missing isolating evidence in an authorized phase.",
+        "priority": "P1",
+        "blocksCertification": true
+      }
+    ],
+    "gaDisposition": [
+      {
+        "id": "C6-CONTEXT",
+        "originalRequirement": {
+          "id": "C6-CONTEXT",
+          "classification": "documented enforcement limitation plus unresolved predicate evidence",
+          "construct": "73 inherited contextual restriction descriptions and changed-rule interactions",
+          "evidence": [
+            "source-completeness-ledger.json#/contextual",
+            "source-audit-context.json",
+            "source-audit-boundaries.json"
+          ],
+          "missingEvidence": "Individual RC4 predicates, upstream PHPT and positive/negative stage isolation wherever family-level references remain. No native complete contextual validator exists.",
+          "risk": "Structural matches may violate parser actions, compiler checks or deferred linking; historical readonly-default restriction labels must not be copied as current rules.",
+          "draftImpact": "Document external enforcement and current normative clauses.",
+          "candidateImpact": "Requires independent evidence and claim adjudication; not an automatic permissible release limitation.",
+          "stableImpact": "Blocks whole-source-validator claims; bounded grammar certification requires policy disposition.",
+          "remediation": "Prioritize retained/discarded declarations, type/member constraints, writable/reference forms, attributes, enum and constant-expression paths. Reuse hashed finding fixtures and add only missing isolating evidence in an authorized phase.",
+          "priority": "P1",
+          "blocksCertification": true
+        },
+        "gaEvidenceConclusion": "External enforcement is labeled; the inventory contains 73 descriptions, not 73 isolated predicates.",
+        "remainingRequirement": "Retain per-predicate source, stage, live/discarded controls and scope decisions; no claim of a complete PHP validator.",
+        "boundedDispositionPermittedNow": false,
+        "blocksCertification": true
+      }
+    ]
+  },
+  "errors": [
+    "C6-CONTEXT: material closure obligations remain; see reviewed GA disposition. Observations do not waive closure."
+  ],
+  "certificationGranted": false
+}

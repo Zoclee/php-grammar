@@ -1,0 +1,17 @@
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.10
+Configuration: C:\Data\GitHub\php-grammar\phpunit.xml.dist
+
+Time: 00:33.489, Memory: 96.00 MB
+
+There was 1 failure:
+
+1) PhpGrammar\Tests\Php\Conformance\PhpConformanceFixtureTest::testInvalidFixturesDoNotMatchCanonicalGrammar with data set "8.6/final-yield-key-prefix.php" ('8.6', 'C:\Data\GitHub\php-grammar\te...ix.php')
+C:\Data\GitHub\php-grammar\tests\fixtures\php\8.6\invalid\final-yield-key-prefix.php
+Failed asserting that true is false.
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\PhpConformanceFixtureTest.php:36
+
+FAILURES!
+Tests: 1299, Assertions: 2598, Failures: 1.

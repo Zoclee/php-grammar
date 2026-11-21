@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "blocked:PHP86-013",
+    "Resolve outstanding syntax-relevant compiler/AST/linking/optimizer discovery records."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "discovery-closure",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/discovery-closure.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "blocked",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/discovery-closure.log",
+  "logSha256": "d5f5d7dfaaeec263abd432fdcb87bf595575dabaa4b5a21c23c2cc1ae4f3d95c"
+}

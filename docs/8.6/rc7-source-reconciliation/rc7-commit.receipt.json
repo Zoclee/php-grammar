@@ -1,0 +1,8 @@
+{
+    "url": "https://api.github.com/repos/php/php-src/commits/php-8.6.0RC7",
+    "retrievedAt": "2026-11-17T19:08:24+00:00",
+    "httpStatus": 200,
+    "effectiveUrl": "https://api.github.com/repos/php/php-src/commits/php-8.6.0RC7",
+    "error": "",
+    "sha256": "913cdbc05c6c97d6a759ce01ff76fb098ad2bf2f07cd249688c8bc68bd1d2745"
+}

@@ -1,0 +1,17 @@
+{
+  "obligation": "GA partial application and first-class-callable boundaries",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/pfa-check-structural-v1.php",
+    "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "--php86=C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+    "--sources=C:/Data/GitHub/php-grammar/.audit/phase8b/source",
+    "--report=docs/8.6/structural-certification/runs/release-v1_1_0-r1/pfa-differential.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/release-v1_1_0-r1/pfa-differential.log",
+  "sha256": "996c2ff6b6dcd0d49a738d80d8c99e7362f36add8ebdb5495e7bca35551014ae"
+}

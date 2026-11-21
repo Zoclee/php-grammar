@@ -1,0 +1,13 @@
+{
+    "php": "8.5.10",
+    "short_open_tag": false,
+    "comparisons": {
+        "tokens": 273,
+        "lexical_rejections": 0,
+        "syntax": 0,
+        "corpus_tokens": 5,
+        "documented_oracle_exceptions": 0
+    },
+    "expected_diagnostic_count": 0,
+    "unexpected_mismatches": 0
+}

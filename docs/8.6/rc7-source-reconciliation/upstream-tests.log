@@ -1,0 +1,58 @@
+
+=====================================================================
+PHP         : C:\Data\GitHub\php-grammar/.audit/phase8a/php86rc7/php.exe 
+PHP_SAPI    : cli
+PHP_VERSION : 8.6.0RC7
+ZEND_VERSION: 4.6.0RC7
+PHP_OS      : WINNT - Windows NT ALWYNLAPTOP 10.0 build 26200 (Windows 11) AMD64
+INI actual  : C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7
+More .INIs  :  
+---------------------------------------------------------------------
+PHP         : C:\Data\GitHub\php-grammar\.audit\phase8a\php86rc7\php-cgi.exe 
+PHP_SAPI    : cgi-fcgi
+PHP_VERSION : 8.6.0RC7
+ZEND_VERSION: 4.6.0RC7
+PHP_OS      : WINNT - Windows NT ALWYNLAPTOP 10.0 build 26200 (Windows 11) AMD64
+INI actual  : C:\Users\alwyn\AppData\Local\Temp
+More .INIs  : 
+--------------------------------------------------------------------- 
+---------------------------------------------------------------------
+PHP         : C:\Data\GitHub\php-grammar\.audit\phase8a\php86rc7\phpdbg.exe 
+PHP_SAPI    : phpdbg
+PHP_VERSION : 8.6.0RC7
+ZEND_VERSION: 4.6.0RC7
+PHP_OS      : WINNT - Windows NT ALWYNLAPTOP 10.0 build 26200 (Windows 11) AMD64
+INI actual  : C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7
+More .INIs  : 
+---------------------------------------------------------------------
+CWD         : C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7
+Extra dirs  : 
+VALGRIND    : Not used
+=====================================================================
+Running selected tests.
+Spawning 8 workers... Done in 2.28s
+=====================================================================
+
+PASS FCC for named class private static method in trait default argument checks visibility per using class [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\first_class_callable\constexpr\trait_scope_005.phpt] 
+TEST 1/14 [7/8 concurrent test workers running]                                                PASS GH-25007 (PFA in constexpr: named args before a named placeholder) [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\partial_application\gh25007.phpt] 
+TEST 2/14 [7/8 concurrent test workers running]                                                PASS array_map(): foreach optimization resolves the function name of an FCC [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\array_map_foreach_optimization_function_name.phpt] 
+TEST 3/14 [7/8 concurrent test workers running]                                                PASS FCC for self:: static method in trait constant and property default is resolved per using class [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\first_class_callable\constexpr\trait_scope_003.phpt] 
+TEST 4/14 [7/8 concurrent test workers running]                                                PASS AST export of readonly anonymous class [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\assert\expect_readonly_anon_class.phpt] 
+TEST 5/14 [7/8 concurrent test workers running]                                                PASS FCC for self:: static method in trait default argument is resolved per using class [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\first_class_callable\constexpr\trait_scope_001.phpt] 
+TEST 6/14 [7/8 concurrent test workers running]                                                PASS GH-23911: Cached static closure keeps static:: of the first called class [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\closures\gh23911.phpt] 
+TEST 7/14 [7/8 concurrent test workers running]                                                PASS FCC for named class public static method in trait default argument is shared across using classes [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\first_class_callable\constexpr\trait_scope_006.phpt] 
+TEST 8/14 [7/8 concurrent test workers running]                                                PASS FCC for self:: private static method in trait default argument does not leak to other using classes [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\first_class_callable\constexpr\trait_scope_004.phpt] 
+TEST 9/14 [6/8 concurrent test workers running]                                                PASS #[\Override]: Constants - anonymous class, no interface or parent class [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\attributes\override\constants\anon_failure.phpt] 
+TEST 10/14 [5/8 concurrent test workers running]                                                 PASS AST printing of final and abstract modifiers on class constants and properties [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\assert\expect_final_abstract_modifiers.phpt] 
+TEST 11/14 [4/8 concurrent test workers running]                                                 PASS FCC for parent:: static method in trait default argument is resolved per using class [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\first_class_callable\constexpr\trait_scope_002.phpt] 
+TEST 12/14 [3/8 concurrent test workers running]                                                 PASS PFA of non-static closure is not static [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\partial_application\static_pfa_004.phpt] 
+TEST 13/14 [2/8 concurrent test workers running]                                                 PASS Duplicate named param in new in const expr does not leak the argument [C:\Data\GitHub\php-grammar\.audit\phase8a\php-8.6.0RC7\Zend\tests\constexpr\new_named_params_duplicate_leak.phpt] 
+TEST 14/14 [1/8 concurrent test workers running]                                                 =====================================================================
+Number of tests :    14                14
+Tests skipped   :     0 (  0.0%) --------
+Tests warned    :     0 (  0.0%) (  0.0%)
+Tests failed    :     0 (  0.0%) (  0.0%)
+Tests passed    :    14 (100.0%) (100.0%)
+---------------------------------------------------------------------
+Time taken      : 3.844 seconds
+=====================================================================

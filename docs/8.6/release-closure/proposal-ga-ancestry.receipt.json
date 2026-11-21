@@ -1,0 +1,12 @@
+{
+  "command": [
+    "git",
+    "--git-dir=.audit/rc7-git",
+    "merge-base",
+    "--is-ancestor",
+    "5089bcc83c8193e6a965dd1579767b1d503401ba",
+    "8aaada3f9605d81a38b8240f93c7389dfbc77ef9"
+  ],
+  "exitCode": 1,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

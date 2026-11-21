@@ -25,7 +25,7 @@ final class ConsumerWorkflowTest extends TestCase
         self::assertSame(['8.5', '8.6'], $manifest->versions());
         self::assertTrue($manifest->hasVersion('8.5'));
         self::assertTrue($manifest->hasVersion('8.6'));
-        self::assertSame('draft', $manifest->package('8.6')->status);
+        self::assertSame('stable', $manifest->package('8.6')->status);
         self::assertSame('8.6', $manifest->latestVersion());
         $package = $manifest->package('8.5');
         self::assertSame('stable', $package->status);

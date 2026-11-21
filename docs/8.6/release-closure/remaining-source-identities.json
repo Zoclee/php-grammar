@@ -1,0 +1,1333 @@
+{
+  "source": "docs/8.6/local-source-context-remediation/source-review.json",
+  "sha256": "1914b672de1c228250c39759c337644800c492a0837362449dee4f540ee5231a",
+  "scope": "Existing material queue only; not new discovery or a language-change count",
+  "records": [
+    {
+      "id": "Zend/zend_compile.c:37:39",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: . Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:99:102",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_eval_const_expr(zend_ast **ast_ptr);. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:342:352",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: void zend_oparray_context_begin(zend_oparray_context *prev_context, zend_op_arra. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:463:474",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: void init_compiler(void) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:517:529",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_string *zend_get_compiled_filename(void) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:529:541",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API bool zend_is_compiling(void) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:587:605",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static inline void zend_insert_literal(zend_op_array *op_array, zval *zv, int li. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:666:684",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static int zend_add_const_name_literal(zend_string *name, bool unqualified) /* {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:683:699",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static int zend_add_const_name_literal(zend_string *name, bool unqualified) /* {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:751:768",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static inline void zend_end_loop(int cont_addr, const znode *var_node) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:777:824",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_do_free(znode *op1) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:814:851",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Narrow hunk discharged; containing function/group not automatically closed."
+    },
+    {
+      "id": "Zend/zend_compile.c:871:906",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_modifier_token_to_string(uint32_t token). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:1223:1258",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void str_dtor(zval *zv)  /* {{{ */ {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:1262:1295",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Narrow hunk discharged; containing function/group not automatically closed."
+    },
+    {
+      "id": "Zend/zend_compile.c:1344:1377",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Narrow hunk discharged; containing function/group not automatically closed."
+    },
+    {
+      "id": "Zend/zend_compile.c:1400:1432",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_string *resolve_class_name(zend_string *name, zend_class_entry *scop. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:1425:1457",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_string *add_intersection_type(zend_string *str,. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:1969:2001",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_do_extended_fcall_end(void) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:2050:2079",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_initialize_class_data(zend_class_entry *ce, bool nullify_hand. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:2263:2293",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_adjust_for_fetch_type(zend_op *opline, znode *result, uint32_t. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:2426:2456",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static inline void zend_update_jump_target(uint32_t opnum_jump, uint32_t opnum_t. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:2459:2489",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static inline zend_op *zend_delayed_emit_op(znode *result, uint8_t opcode, znode. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:2570:2605",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_short_circuiting_commit(uint32_t checkpoint, znode *result, zen. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:2583:2632",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_emit_jmp_null(znode *obj_node, uint32_t bp_type). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:2649:2704",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Narrow hunk discharged; containing function/group not automatically closed."
+    },
+    {
+      "id": "Zend/zend_compile.c:2734:2803",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static inline bool zend_is_call(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:2933:3009",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Narrow hunk discharged; containing function/group not automatically closed."
+    },
+    {
+      "id": "Zend/zend_compile.c:3131:3206",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_op *zend_delayed_compile_prop(znode *result, zend_ast *ast, uint32_t. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:3153:3234",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_op *zend_delayed_compile_prop(znode *result, zend_ast *ast, uint32_t. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:3283:3365",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static bool zend_propagate_list_refs(zend_ast *ast) { /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:3433:3524",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static bool zend_is_assign_to_self(zend_ast *var_ast, zend_ast *expr_ast) /* {{{. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:3684:3790",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_compound_assign(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:3774:3878",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static uint32_t zend_compile_args(. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:3825:3988",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static uint32_t zend_compile_args(. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:3908:4071",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static uint32_t zend_compile_args(. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:3949:4121",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: ZEND_API uint8_t zend_get_call_op(const zend_op *init_op, zend_function *fbc, bo. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:3977:4262",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static bool zend_compile_call_common(znode *result, zend_ast *args_ast, zend_fun. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:3992:4278",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static bool zend_compile_call_common(znode *result, zend_ast *args_ast, zend_fun. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4014:4306",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static bool zend_compile_function_name(znode *name_node, zend_ast *name_ast) /*. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4044:4336",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_dynamic_call(znode *result, znode *name_node, zend_ast. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4286:4578",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_init_user_func(zend_ast *name_ast, uint32_t num_args, z. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4321:4613",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static zend_result zend_compile_func_cufa(znode *result, zend_ast_list *args, ze. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4332:4628",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static zend_result zend_compile_func_cufa(znode *result, zend_ast_list *args, ze. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4359:4659",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static zend_result zend_compile_func_cuf(znode *result, zend_ast_list *args, zen. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4400:4704",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_assert(znode *result, zend_ast_list *args, zend_string. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4645:4949",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static uint32_t find_frameless_function_offset(uint32_t arity, void *handler). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4686:4986",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const zend_frameless_function_info *find_frameless_function_info(zend_ast. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4765:5065",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_ns_call(znode *result, znode *name_node, zend_ast *args. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:4974:5329",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static zend_result zend_compile_func_clone(znode *result, zend_ast_list *args). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5005:5547",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_result zend_try_compile_special_func_ex(znode *result, zend_string *. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5018:5558",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_result zend_try_compile_special_func_ex(znode *result, zend_string *. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5078:5622",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_get_cstring_from_property_hook_kind(zend_property_hook_k. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5092:5636",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static zend_string *zend_copy_unmangled_prop_name(zend_string *prop_name). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5151:5685",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static bool zend_compile_parent_property_hook_call(znode *result, zend_ast *ast,. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5167:5700",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_call(znode *result, zend_ast *ast, uint32_t type) /* {{. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5206:5736",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_call(znode *result, zend_ast *ast, uint32_t type) /* {{. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5227:5757",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_call(znode *result, zend_ast *ast, uint32_t type) /* {{. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5244:5774",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_method_call(znode *result, zend_ast *ast, uint32_t type. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5295:5825",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static void zend_compile_method_call(znode *result, zend_ast *ast, uint32_t type. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5400:5934",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_static_call(znode *result, zend_ast *ast, uint32_t type. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5414:5948",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static void zend_compile_new(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5493:6051",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_static_var_common(zend_string *var_name, zval *value, u. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5591:6151",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_unset(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5888:6462",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_break_continue(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:5905:6479",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: void zend_resolve_goto_label(zend_op_array *op_array, zend_op *opline) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:6097:6671",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static void zend_compile_foreach(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:6132:6707",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static void zend_compile_foreach(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:6144:6723",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static void zend_compile_foreach(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:6480:7059",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: static bool zend_is_pipe_optimizable_callable_name(zend_ast *ast). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:6880:7534",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_try(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:8085:8744",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: typedef struct {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:8106:8767",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void find_implicit_binds_recursively(closure_info *info, zend_ast *ast) {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:8140:8809",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void find_implicit_binds_recursively(closure_info *info, zend_ast *ast) {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:8316:8986",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_string *zend_begin_method_decl(zend_op_array *op_array, zend_string. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:8416:9094",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_string *zend_begin_func_decl(znode *result, zend_op_array *op_array,. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:8453:9132",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_op_array *zend_compile_func_decl_ex(. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:8767:9470",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Narrow hunk discharged; containing function/group not automatically closed."
+    },
+    {
+      "id": "Zend/zend_compile.c:9162:9869",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_use_trait(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:9536:10259",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static HashTable *zend_get_import_ht(uint32_t type) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:9552:10275",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static char *zend_get_use_type_str(uint32_t type) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:9800:10545",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_namespace(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:9919:10663",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static bool zend_try_ct_eval_magic_const(zval *zv, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:10194:10938",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static bool zend_try_ct_eval_array(zval *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:10554:11297",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_conditional(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:10796:11539",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_instanceof(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:10875:11618",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_isset_or_empty(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:11010:11753",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_array(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:11044:11805",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_const(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:11091:11849",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_class_const(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:11333:12095",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static bool zend_is_allowed_in_const_expr(zend_ast_kind kind) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:11577:12362",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Narrow hunk discharged; containing function/group not automatically closed."
+    },
+    {
+      "id": "Zend/zend_compile.c:11786:12571",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_stmt(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:11800:12594",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_stmt(zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:11827:12623",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_expr_inner(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:11909:12705",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_expr_inner(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:11933:12732",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_expr_inner(znode *result, zend_ast *ast) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:11949:12745",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void zend_compile_expr(znode *result, zend_ast *ast). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:12033:12852",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_op *zend_delayed_compile_var(znode *result, zend_ast *ast, uint32_t. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_compile.c:12048:12889",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: bool zend_try_ct_eval_cast(zval *result, uint32_t type, zval *op1). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:25:24",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: . Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:557:642",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_class_entry *zend_ast_fetch_class(zend_ast *ast, zend_class_entry *s. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:730:898",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result ZEND_FASTCALL zend_ast_evaluate_inner(. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:1254:1468",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static size_t ZEND_FASTCALL zend_ast_tree_size(zend_ast *ast). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:1329:1544",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void* ZEND_FASTCALL zend_ast_tree_copy(zend_ast *ast, void *buf). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:1367:1594",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_ast_ref * ZEND_FASTCALL zend_ast_copy(zend_ast *ast). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:1414:1651",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: tail_call:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:1481:1732",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_ast_apply(zend_ast *ast, zend_ast_apply_func fn, void *contex. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:1496:1745",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static ZEND_COLD void zend_ast_export_str(smart_str *str, const zend_string *s). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:1539:1786",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static ZEND_COLD void zend_ast_export_qstr(smart_str *str, char quote, const zen. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:1594:1840",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static ZEND_COLD void zend_ast_export_ns_name(smart_str *str, zend_ast *ast, int. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:1690:1936",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static ZEND_COLD void zend_ast_export_encaps_list(smart_str *str, char quote, co. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:1864:2102",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static ZEND_COLD void zend_ast_export_zval(smart_str *str, const zval *zv, int p. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2076:2313",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: tail_call:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2126:2363",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: tail_call:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2184:2421",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: tail_call:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2312:2549",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2348:2592",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2382:2626",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2443:2687",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2488:2721",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2511:2744",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2537:2770",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2570:2803",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2716:2949",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2766:2999",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2810:3048",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2889:3127",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: simple_list:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.c:2986:3224",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: zend_ast * ZEND_FASTCALL zend_ast_with_attributes(zend_ast *ast, zend_ast *attr). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.h:75:74",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: enum _zend_ast_kind {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.h:142:142",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: enum _zend_ast_kind {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.h:228:227",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: typedef struct _zend_ast_decl {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.h:306:309",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_always_inline zend_ast * zend_ast_create_ex_5(zend_ast_kind kind, ze. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.h:336:351",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: typedef struct {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_ast.h:424:442",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_always_inline zend_ast *zend_ast_list_rtrim(zend_ast *ast) {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_enum.c:35:34",
+      "effectiveDisposition": "examined-unresolved",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain examined-unresolved: . Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_enum.c:165:174",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: void zend_register_enum_ce(void). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_enum.c:445:455",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: void zend_enum_register_funcs(zend_class_entry *ce). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_enum.c:456:466",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: void zend_enum_register_funcs(zend_class_entry *ce). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_enum.c:466:476",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: void zend_enum_register_funcs(zend_class_entry *ce). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_enum.c:534:544",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_class_entry *zend_register_internal_enum(. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_enum.c:597:632",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_enum_add_case(zend_class_entry *ce, zend_string *case_name, z. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_enum.c:634:671",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_object *zend_enum_get_case(zend_class_entry *ce, zend_string *name. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_attributes.c:155:154",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_METHOD(SensitiveParameter, __construct). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:19:18",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: . Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:33:33",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: . Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:46:47",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_module_entry **module_request_startup_handlers;. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:75:74",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_get_parameters_array_ex(uint32_t param_count, zval *ar. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:146:123",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API const char *zend_get_type_by_const(int type) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:219:196",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_string *zend_zval_get_legacy_type(const zval *arg) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:246:223",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API ZEND_COLD void ZEND_FASTCALL zend_wrong_parameters_count_error(uint32_t. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:282:259",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API ZEND_COLD void ZEND_FASTCALL zend_wrong_parameter_error(int error_code,. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:304:282",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API ZEND_COLD void ZEND_FASTCALL zend_wrong_parameter_type_error(uint32_t n. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:390:378",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API ZEND_COLD void ZEND_FASTCALL zend_wrong_callback_or_null_error(uint32_t. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:414:404",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API ZEND_COLD void ZEND_FASTCALL zend_argument_error_variadic(zend_class_en. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:466:487",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API ZEND_COLD void zend_class_redeclaration_error_ex(int type, zend_string. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:529:557",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static ZEND_COLD bool zend_null_arg_deprecated(const char *fallback_type, uint32. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:616:643",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API bool ZEND_FASTCALL zend_parse_arg_long_weak(const zval *arg, zend_long. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:650:674",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API bool ZEND_FASTCALL zend_flf_parse_arg_long_slow(const zval *arg, zend_l. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:757:780",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API bool ZEND_FASTCALL zend_parse_arg_number_or_str_slow(zval *arg, zval **. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:853:876",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:868:891",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:878:901",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:888:911",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:898:921",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:941:954",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:951:964",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:962:975",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:973:986",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:983:996",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:995:1008",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:1050:1063",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:1091:1083",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static const char *zend_parse_arg_impl(zval *arg, va_list *va, const char **spec. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:1132:1155",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_result zend_parse_arg(uint32_t arg_num, zval *arg, va_list *va, cons. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:1714:1725",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void object_properties_init_ex(zend_object *object, HashTable *properti. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:1773:1783",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void object_properties_load(zend_object *object, HashTable *properties). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:1949:1997",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void object_init(zval *arg) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2262:2322",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result array_set_zval_key(HashTable *ht, zval *key, zval *value) /. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2273:2336",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result array_set_zval_key(HashTable *ht, zval *key, zval *value) /. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2415:2483",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void add_property_zval_ex(zval *arg, const char *key, size_t key_len, z. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2429:2494",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_startup_module_ex(zend_module_entry *module) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2462:2522",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_startup_module_ex(zend_module_entry *module) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2521:2579",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_collect_module_handlers(void) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2539:2595",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_collect_module_handlers(void) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2569:2625",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_collect_module_handlers(void) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2604:2637",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_startup_modules(void) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2632:2663",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_module_entry* zend_register_module_ex(zend_module_entry *module, i. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2961:2991",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_always_inline void zend_normalize_internal_type(zend_type *type) {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:2972:3077",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3003:3109",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3013:3123",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3025:3135",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3058:3169",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3103:3212",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3121:3230",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3140:3250",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3160:3270",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3244:3300",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_functions(zend_class_entry *scope, const zend. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3322:3375",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static void clean_module_classes(int module_number) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3505:3558",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API int zend_next_free_module(void) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3639:3692",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_register_class_alias_ex(const char *name, size_t name_. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3780:3810",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static bool zend_is_callable_check_class(zend_string *name, zend_class_entry *sc. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3825:3855",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_release_fcall_info_cache(zend_fcall_info_cache *fcc) {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3893:3892",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_always_inline bool zend_is_callable_check_func(zval *callable, zend_. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3910:3909",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_always_inline bool zend_is_callable_check_func(zval *callable, zend_. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3925:3924",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_always_inline bool zend_is_callable_check_func(zval *callable, zend_. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:3977:3973",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_always_inline bool zend_is_callable_check_func(zval *callable, zend_. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:4129:4125",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: try_again:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:4159:4195",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API bool zend_is_callable_at_frame(. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:4221:4265",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: check_func:. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:4261:4308",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API bool zend_is_callable_ex(zval *callable, zend_object *object, uint32_t. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:4298:4321",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_result zend_fcall_info_init(zval *callable, uint32_t check_flags,. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:4463:4487",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_get_callable_zval_from_fcc(const zend_fcall_info_cache *fcc,. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:4600:4617",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_property_info *zend_declare_typed_property(zend_class_entry *ce, z. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:4819:4836",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_declare_property_double(zend_class_entry *ce, const char *nam. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:4846:4863",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_class_constant *zend_declare_typed_class_constant(zend_class_entry. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:4942:4962",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API void zend_declare_class_constant_double(zend_class_entry *ce, const cha. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:5209:5229",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zval *zend_read_static_property(zend_class_entry *scope, const char *na. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:5261:5275",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API bool zend_is_iterable(const zval *iterable) /* {{{ */. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_API.c:5327:5324",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: static zend_string *try_parse_string(const char *str, size_t len, char quote) {. Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    },
+    {
+      "id": "Zend/zend_constants.c:538:537",
+      "effectiveDisposition": "pending-direct-review",
+      "reviewScope": "Changed lines and original function anchor inspected; semantic closure only for separately enumerated proof IDs.",
+      "remaining": "Retain pending-direct-review: ZEND_API zend_constant *zend_register_constant(zend_constant *c). Full transitive accepted-source correspondence and identity-specific test associations are not established by this diff inspection."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "expectedSha256": "0280ff2b531e0e5cdaa9db2b6265991c3b5d511f4905683a88c2bea5ce2ac373",
+  "scope": "Every locally available Git blob of 100 through 100000 bytes, including unreachable objects; no byte normalization",
+  "objectListSha256": "56264d09544260e2ee968f8e639f6907971e4f1527991ae50cd360cd546a2700",
+  "objectsScanned": 2398,
+  "bytesScanned": 18357881,
+  "manifestCandidates": {
+    "1cda94ba2f84186fed825e006de3458c3e9d92ba": "3910b81bd3dff7caced6d1f493813f335c540b560a9b9da1b2f4d72cbf0cf2c4",
+    "3c01d85eef9d27910a4cfa535bd5e2426aeb85a6": "2936bcc16af6d5180e5811a9f78a3a806a8ae4b06a0e8deec857e5a7795ae5c0",
+    "c21a2d063586e4dfb26bb6919e32b8fffe497070": "2658a36e12d23f24b3ed73699e371da3a95352f2652c1b78e20d6cba2f8b7ee1",
+    "d65272eb3f794b8e9c4390395597e6cb789f487b": "e921f8a478eb09328b1d8eaed0c6225ee42541bfe69abae8dd48db12fa475e8d",
+    "ef9046f37989bf5d37751c5f4913d1978971ad33": "4d0a0923dd4229f4295e63892b19836efd47afc256e36c93d3f4fdee30e46c13"
+  },
+  "matches": [],
+  "exitCode": 0
+}

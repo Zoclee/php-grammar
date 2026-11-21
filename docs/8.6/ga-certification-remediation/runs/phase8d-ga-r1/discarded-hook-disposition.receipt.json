@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "blocked:CA86-001",
+    "Independently adjudicate the inherited get/set-only discrepancy; do not inherit an 8.5 conclusion."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "discarded-hook-disposition",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/discarded-hook-disposition.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "blocked",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/discarded-hook-disposition.log",
+  "logSha256": "2f83b9425ac9b094a58d90c64e9afa0964a993d22113101bf06180a49a1988ba"
+}

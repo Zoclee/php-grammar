@@ -1,0 +1,465 @@
+{
+  "rc7": "b63cd83da3279445ca4a913f03186141f5c3466e",
+  "ga": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "treeCounts": {
+    "rc7": 28612,
+    "ga": 28633
+  },
+  "changes": {
+    ".github/workflows/test-suite.yml": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "dcd61adf17c8c6c8ab9cecf5add070b02d69bd24"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "3bb169aac6c2b10b274789269128fb7373e37a1d"
+      }
+    },
+    "NEWS": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "2e2cedb40fe773500184a77b293f4ec7d001acb3"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "70ddadadb33325e99283795c0c7aaea5e5af2340"
+      }
+    },
+    "UPGRADING": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "3fe0fe1116384ae3b9b1436f104d4e8564a73daa"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "3f35954ac8d9a552aa1f947727cc71b4725a7229"
+      }
+    },
+    "Zend/zend.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "ad08fe1a630dbf7b59f5f2ee492a349453932bb4"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "4598fc63d00562c8a25abb2a57b7771d50d22ac1"
+      }
+    },
+    "Zend/zend.h": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "5fe5ad2bd8a2e1130b55b0c594ada47d676d76d4"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "cd89db5d275b4dd5240b0d02fd9944ea5d38315f"
+      }
+    },
+    "Zend/zend_API.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "5d6bd22027d4050163f140905e23f0f6f1551369"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "9dd9ad27b6d9ca8f558766fd5f9f55610a2e7a64"
+      }
+    },
+    "Zend/zend_builtin_functions.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "ad2c0dd2009a6f857ad3ff2616750bef1fd1ddee"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "2f37007f4be47731b99ddb84fb55bcfaee394038"
+      }
+    },
+    "configure.ac": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "26d5a5d7444aea3f5064a77fc976c80f45aa2085"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "5e37889b181b50aba4b9a0bcd01dd71596f0b3bd"
+      }
+    },
+    "ext/dom/xml_serializer.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "72381ae4c5b422127d297e0a0448cca1f0e202ec"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "9547a256fa3758007ae6589fc3a5edd5e5f383ce"
+      }
+    },
+    "ext/phar/util.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "539b927657b34c1f0cef6777a65f9a0465bfb116"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "fafe5282fda00417f5b101826e4b6bd8e2e75be2"
+      }
+    },
+    "ext/session/mod_files.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "9b5b8f331dc7b202e9ff23dbe6251041b10bd11e"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "15214c215d11efac2077982936dd47b1b207cd56"
+      }
+    },
+    "ext/session/session.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "81c4455808bfb0dd0594c77d07a22c512d818eb7"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "19581765c0735f630caa8932fdf87038cb8aec9b"
+      }
+    },
+    "ext/session/tests/session_files_repeated_write.phpt": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "d6f3446ba27fdc19330ab820acb4845b23ed08f5"
+      },
+      "ga": null
+    },
+    "ext/session/tests/session_write_failure_keeps_data.phpt": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "232b3e5313cfce5eb631e45c19dbf8a81e61c111"
+      },
+      "ga": null
+    },
+    "ext/soap/php_encoding.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "13ffe95cea82e27b26c67ff2a45d0d0d23cd015f"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "0ec79f8b4984133c359e5189e917e1bcbfa93a88"
+      }
+    },
+    "ext/soap/php_xml.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "72e562c1fd41c9ac9ab286f32217e19d798b3715"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "12a534e952d8e5f2f0ec1e647fefe6f649ffc8f9"
+      }
+    },
+    "ext/standard/ftp_fopen_wrapper.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "da6562f1d143b6b5cdd9befadfac1fea03341728"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "40bbd8420420c173eec70fac8dde49c0ffea0b5f"
+      }
+    },
+    "ext/standard/http_fopen_wrapper.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "f1c36defb1e1b239b648359fc58ee0990b8c2a63"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "8f0fbcbec9013ed658ba2fa3ad077b0f867ec731"
+      }
+    },
+    "ext/standard/tests/general_functions/header_over_4gib.phpt": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "8beb2521f88698b3a04e0174d27dd2fe15f64ad9"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "34055e991479458658c8bdebf011d52796f09c83"
+      }
+    },
+    "ext/uri/uri_parser_rfc3986.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "94e6e0caffd356d78e015be75cfe28c8c6db135b"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "f9e913063903fe6319fb46b8562375502d2cab46"
+      }
+    },
+    "ext/zend_test/php_test.h": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "db6feede7cafe2a177aa7c8634bd67872492f032"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "49061318242ae4cad2a0cb6157e591a447abc52c"
+      }
+    },
+    "ext/zend_test/test.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "7851df8bbf902f65b653b304ee41afade4592bca"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "9682d277e23f38b1e23129ae53a44e420b900d6b"
+      }
+    },
+    "main/SAPI.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "4b84b76633c2cc423d97e231468e67dcc9ab678f"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "d43adfeac45548c873d6fbde537fb5bce6cbc109"
+      }
+    },
+    "main/fastcgi.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "5a525a9d66be7c8de3f83cbb3b2ee9d66763f87b"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "84f5ad58d8be909c1ee200e5c6f032737eb41e3b"
+      }
+    },
+    "main/main.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "43c5fa087c527cf6b1c61806a186396f7da61f1c"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "1403ad93c5c81084ffdd1fe8876fcfbd9372b2e3"
+      }
+    },
+    "main/php_version.h": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "554e5c73091608938168675889c28b86c264648b"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "f16dc97725a453500f80fbacc541c7234fc1ac3a"
+      }
+    },
+    "sapi/cgi/cgi_main.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "a79eada2728bcef899287bdf588ae5add0f97367"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "55e195a254426ec5b9c9422e4217a46138127ef9"
+      }
+    },
+    "sapi/fpm/fpm/fpm_status.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "118be47bfeee62a08c55d1926e5a26b9cb08135d"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "0506ca102d9661bf65c9cf048eeee15797892baa"
+      }
+    },
+    "sapi/phpdbg/phpdbg.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "539d546e92236e320cca230922645115e3e5593b"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "c7bdd1cf15464668a9e023793611f4b4718c34b6"
+      }
+    },
+    "sapi/phpdbg/phpdbg_frame.c": {
+      "rc7": {
+        "mode": "100644",
+        "oid": "b08a877b707a5d5cc06dfed2bc2d4f3974ee9444"
+      },
+      "ga": {
+        "mode": "100644",
+        "oid": "fdab924638eaae9588fcdf7972c5321084ed3d2e"
+      }
+    },
+    "Zend/tests/GHSA-8mjj-2r7p-4hg2.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "1f5f34faf960a503b3e41b02aabfa9c2188a6915"
+      }
+    },
+    "ext/date/tests/GHSA-gr4f-wgx5-jpfv.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "bb81c93ddb272b2573cf9399aff9804a43947b07"
+      }
+    },
+    "ext/dom/tests/modern/xml/GHSA-x8r7-mg3g-74hg.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "ae30e129b50c2cea79c0c174ddd0c9c24c1c2047"
+      }
+    },
+    "ext/phar/tests/ghsa-68fq-fh7h-f8gr.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "e03123fcab2f32e0c9c0f33e276f3bb00c5733c7"
+      }
+    },
+    "ext/session/tests/session_ini_set_upload_progress_enabled.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "92c35f9a3c51ca4284f63a72484fdb9e5788adc4"
+      }
+    },
+    "ext/soap/tests/GHSA-4646-p932-gw34.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "8e3567d9660aa6540c2a699bf49673e37aa91675"
+      }
+    },
+    "ext/soap/tests/GHSA-q23r-hr55-xmpg-wsdl.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "ee2591f371609d024b9ce02e9aa9275034d836d4"
+      }
+    },
+    "ext/soap/tests/GHSA-q23r-hr55-xmpg-wsdl.wsdl": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "55b5b9207f63b75735a93684bba931f749f94f23"
+      }
+    },
+    "ext/soap/tests/GHSA-q23r-hr55-xmpg.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "886b3ff9042f27fc80440a2bcc03d86ff6004509"
+      }
+    },
+    "ext/standard/tests/http/ghsa-f6gg-rchx-xw8j.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "11bfa680a92e058237d2ad3e6872a2364c14dd97"
+      }
+    },
+    "ext/standard/tests/streams/ghsa-f6gg-rchx-xw8j.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "8c7001508c981cfb7d1c688b71a51ac89915f437"
+      }
+    },
+    "ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-1.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "57e9e9947d40e161e004c7428bf9478ff62fc19c"
+      }
+    },
+    "ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-2.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "60755a914dfbea8f88738bf79fe7dc1f1b547869"
+      }
+    },
+    "ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-3.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "199515635b115265391564ea77a44eb0487b0c8c"
+      }
+    },
+    "sapi/cgi/tests/ghsa-5j3f-64r7-f564.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "cab27ad5857edde97a6bdadc8e8c82f9499cb1cb"
+      }
+    },
+    "sapi/fpm/tests/ghsa-2fjv-p558-g82m-memory-limit.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "0285f76d5df2a85ad99570f6cb795a80c1023a58"
+      }
+    },
+    "sapi/fpm/tests/ghsa-2fjv-p558-g82m-zlib.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "3a2d44e61eb1fa8556b0fbfeac20f2cdd8448bea"
+      }
+    },
+    "sapi/fpm/tests/ghsa-3mg3-cr28-46gc-status-xss.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "0a40a5ad4b0a0bf02f2f361239bc8b853fad2add"
+      }
+    },
+    "sapi/fpm/tests/ghsa-g3vh-838c-65v7.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "cca31023418f42f8d779dbcba305d95f84517534"
+      }
+    },
+    "sapi/fpm/tests/unread-body-keep-conn.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "5d818c58c7f5388f67fccd589937d26239802e6d"
+      }
+    },
+    "sapi/fpm/tests/unread-body-partial-record.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "4f3eed4e717792659c6977ce277434e065ac2286"
+      }
+    },
+    "sapi/phpdbg/tests/GHSA-8mjj-2r7p-4hg2-001.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "67c95706cf27ec5a00fbecc7662981a6efcbbf6e"
+      }
+    },
+    "sapi/phpdbg/tests/GHSA-8mjj-2r7p-4hg2-002.phpt": {
+      "rc7": null,
+      "ga": {
+        "mode": "100644",
+        "oid": "173e58faaa0f524d879061f19020828c6039c702"
+      }
+    }
+  }
+}

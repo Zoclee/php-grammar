@@ -1,0 +1,17 @@
+{
+  "originalObligation": [
+    "composer",
+    "Validate Composer metadata strictly."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "C:\\ProgramData\\ComposerSetup\\bin/composer.phar",
+    "validate",
+    "--strict"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "failed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/composer-validation.log",
+  "logSha256": "b23c467ff113fb4221e14429b2466eab882eb72e6f4dc4d385440e09d23d28de"
+}

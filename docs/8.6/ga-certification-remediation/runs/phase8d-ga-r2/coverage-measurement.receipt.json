@@ -1,0 +1,24 @@
+{
+  "originalObligation": [
+    "coverage",
+    "Measure actual 8.6 production/alternative witnesses and compare source-backed lexical cases."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/final-coverage-expansion-ga-v2.php",
+    "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "--php86=C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+    "--sources85=C:/Data/GitHub/php-grammar/.audit/phase8d/sources85",
+    "--sources86=C:/Data/GitHub/php-grammar/.audit/phase8b/source",
+    "--report=docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/coverage-measurement.json",
+    "--coverage=docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/coverage.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/coverage-measurement.log",
+  "logSha256": "f2f0f3e49311bf31d0ab03457e1cd1ce56047ff34e8cf6d568b99f828953c037"
+}

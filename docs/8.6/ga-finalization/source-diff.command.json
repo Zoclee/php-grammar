@@ -1,0 +1,20 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "gc.auto=0",
+    "--git-dir=.audit/rc7-git",
+    "diff",
+    "--no-ext-diff",
+    "b63cd83da3279445ca4a913f03186141f5c3466e",
+    "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+    "--",
+    "Zend",
+    "NEWS",
+    "UPGRADING",
+    "UPGRADING.INTERNALS"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/source-diff.log",
+  "sha256": "9b7ded142e9c075f274956ca72f5d97b35e5afe101fc0aefe32eda0c8fb12f07"
+}

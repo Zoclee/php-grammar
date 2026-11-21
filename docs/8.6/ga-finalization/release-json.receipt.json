@@ -1,0 +1,9 @@
+{
+  "url": "https://www.php.net/releases/index.php?json&version=8.6.0",
+  "effectiveUrl": "https://www.php.net/releases/index.php?json&version=8.6.0",
+  "status": 200,
+  "retrievedAt": "2026-11-20T16:20:07+00:00",
+  "curlError": "",
+  "sha256": "b810703e87c663af378424c537fdecba9fb1f7d8a153ba241895ef30ddc04612",
+  "headerSha256": "bc6b4a922b66f18dfc0da200573e8ce9b842132f29a4184c8d7344e0e3b55dd4"
+}

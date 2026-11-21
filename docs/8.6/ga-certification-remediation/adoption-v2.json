@@ -1,0 +1,19 @@
+{
+  "contract": "php86-ga-adoption-v2",
+  "activeCertificationProfile": true,
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "status": "draft",
+  "sourceLock": "tools/8.6/source-lock-ga-v2.json",
+  "changeTraceability": "tools/8.6/change-map-ga-v2.json",
+  "executableReceipt": "docs/8.6/ga-finalization/build-receipt.json",
+  "retainedGaSeal": "05b43c14e487160b5451d34bbd330276feaffacedebbe3249d415e576563bfb7",
+  "preservationBaseline": "b2a0d55a7cec36ef78d9b7e307af04f407643965c5b33553fe2137bcdcd6f6ed",
+  "releaseGateAccounting": {
+    "original": 36,
+    "hybrid": 2
+  },
+  "certificationGranted": false,
+  "certificationContract": "php86-ga-certification-v2",
+  "localEvidence": "docs/8.6/ga-certification-remediation/local-obligations-v1.json",
+  "historicalRecords": "The metadata pfaValidation, contextValidation, deprecationValidation and integration records retain their original RC4 scope. Current GA observations are emitted by the explicit GA certification runner."
+}

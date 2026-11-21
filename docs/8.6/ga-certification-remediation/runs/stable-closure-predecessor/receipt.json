@@ -1,0 +1,6 @@
+{
+  "source": "docs/8.6/ga-certification-remediation.md",
+  "sha256": "160bf25b5174735be75ebbcdab8e8ce758bd65c81818a212c31c39df7c633a00",
+  "evidence": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/evidence.json",
+  "reason": "Preserve the exact R2 generated summary before the repeat runner writes its current summary; no certification input changes."
+}

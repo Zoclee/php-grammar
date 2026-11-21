@@ -1,0 +1,3247 @@
+{
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "observations": [
+    {
+      "id": "reserved-0",
+      "rule": "reserved-non-modifiers",
+      "fragment": "and",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-0.php",
+      "sha256": "f2969472272e7b4b6cb29ab52c5f192a92bb5d8c1b20975560ab461c5f0d99a3",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-0.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-0.php\n"
+      }
+    },
+    {
+      "id": "reserved-1",
+      "rule": "reserved-non-modifiers",
+      "fragment": "array",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-1.php",
+      "sha256": "da1bf5ac279deb50d290973fe2d3c80db4793820964fd8ae4600344ffbad2de1",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:2"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-1.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-1.php\n"
+      }
+    },
+    {
+      "id": "reserved-2",
+      "rule": "reserved-non-modifiers",
+      "fragment": "as",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-2.php",
+      "sha256": "56eb7166f71f08a54c4b6d08e4eb97c2708c747d1e35040c5d2d55fafe9e8974",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:3"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-2.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-2.php\n"
+      }
+    },
+    {
+      "id": "reserved-3",
+      "rule": "reserved-non-modifiers",
+      "fragment": "break",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-3.php",
+      "sha256": "2a4f4771abe98860abdb15422bd3506951dd77c061dc0d7a8df99e68711085a7",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:4"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-3.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-3.php\n"
+      }
+    },
+    {
+      "id": "reserved-4",
+      "rule": "reserved-non-modifiers",
+      "fragment": "callable",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-4.php",
+      "sha256": "0dfc4da9e0f80f95eaa7f201dc713f295c3c559e7b47307bd1c1864285d518af",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:5"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-4.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-4.php\n"
+      }
+    },
+    {
+      "id": "reserved-5",
+      "rule": "reserved-non-modifiers",
+      "fragment": "case",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-5.php",
+      "sha256": "7424cf2688767837e430a65432fb894062c109d61d32f324fe835804cffd1d1d",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:6"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-5.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-5.php\n"
+      }
+    },
+    {
+      "id": "reserved-6",
+      "rule": "reserved-non-modifiers",
+      "fragment": "catch",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-6.php",
+      "sha256": "d7fd80b4b1c705ca0fe8003a7a9aac343b2cda8501cd1ef3877677b2d544d341",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:7"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-6.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-6.php\n"
+      }
+    },
+    {
+      "id": "reserved-7",
+      "rule": "reserved-non-modifiers",
+      "fragment": "class",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-7.php",
+      "sha256": "3c7d7c4d4c064ee140a2cf78c1a0a9daa652bb42cb46ce78b443dbe61a3503e1",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:8"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-7.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-7.php\n"
+      }
+    },
+    {
+      "id": "reserved-8",
+      "rule": "reserved-non-modifiers",
+      "fragment": "clone",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-8.php",
+      "sha256": "e1b5fc313b8e40f72e8ba71ef6dda654332d038adbbd6e759ef6597e241005c6",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:9"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-8.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-8.php\n"
+      }
+    },
+    {
+      "id": "reserved-9",
+      "rule": "reserved-non-modifiers",
+      "fragment": "const",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-9.php",
+      "sha256": "fb1b0a149ed550ab319701e40388731a51a4ae1eb1f2629e280a40f369761f44",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:10"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-9.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-9.php\n"
+      }
+    },
+    {
+      "id": "reserved-10",
+      "rule": "reserved-non-modifiers",
+      "fragment": "continue",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-10.php",
+      "sha256": "08844acb3e15ae11483ea0c3bedd1955cf8c5297c20e336f0ea61ad3845b7388",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:11"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-10.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-10.php\n"
+      }
+    },
+    {
+      "id": "reserved-11",
+      "rule": "reserved-non-modifiers",
+      "fragment": "declare",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-11.php",
+      "sha256": "499e92b5932a8de559f548c5e6a12a3090bb75abae0647025c267952b416ed05",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:12"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-11.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-11.php\n"
+      }
+    },
+    {
+      "id": "reserved-12",
+      "rule": "reserved-non-modifiers",
+      "fragment": "default",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-12.php",
+      "sha256": "482b2de9831e12c62f20dd9c35b0390574e14998355ea8f0f3c4f4eaeb0dd656",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:13"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-12.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-12.php\n"
+      }
+    },
+    {
+      "id": "reserved-13",
+      "rule": "reserved-non-modifiers",
+      "fragment": "do",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-13.php",
+      "sha256": "f231a5b2410757100b60a12031447f38b324a6ef0046aa77ffccf8f415f0584b",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:14"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-13.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-13.php\n"
+      }
+    },
+    {
+      "id": "reserved-14",
+      "rule": "reserved-non-modifiers",
+      "fragment": "echo",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-14.php",
+      "sha256": "d880993cd0bd681239874dace6fbd339e550e520c886244edd5e082ae9053699",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:15"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-14.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-14.php\n"
+      }
+    },
+    {
+      "id": "reserved-15",
+      "rule": "reserved-non-modifiers",
+      "fragment": "else",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-15.php",
+      "sha256": "70e4fdea7c0b085e8ae426830f2ee44aa04b31afe5ff0600c5adc1061bda28b0",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:16"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-15.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-15.php\n"
+      }
+    },
+    {
+      "id": "reserved-16",
+      "rule": "reserved-non-modifiers",
+      "fragment": "elseif",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-16.php",
+      "sha256": "632c8667f642cf9333a3a7e552b0c7bcee1779dee698f105defd17583c8bf6c9",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:17"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-16.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-16.php\n"
+      }
+    },
+    {
+      "id": "reserved-17",
+      "rule": "reserved-non-modifiers",
+      "fragment": "empty",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-17.php",
+      "sha256": "b7e6bf10a43f4f025c43220024c40ac14b4826c4a278b8bd96ef019d9ae70a87",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:18"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-17.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-17.php\n"
+      }
+    },
+    {
+      "id": "reserved-18",
+      "rule": "reserved-non-modifiers",
+      "fragment": "enddeclare",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-18.php",
+      "sha256": "fee27285b5488931cd8dcf66ae7b388414b89f2e0147a1ab2e73d1844bc3b818",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:19"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-18.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-18.php\n"
+      }
+    },
+    {
+      "id": "reserved-19",
+      "rule": "reserved-non-modifiers",
+      "fragment": "endfor",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-19.php",
+      "sha256": "57b685295d35d3ca6eb9e4f48c8f29da836f003cff8b0ed0b5ae1b9903a8d1af",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:20"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-19.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-19.php\n"
+      }
+    },
+    {
+      "id": "reserved-20",
+      "rule": "reserved-non-modifiers",
+      "fragment": "endforeach",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-20.php",
+      "sha256": "52c49be73b8768036813b125e7696f9271dbf6a509b4a62d471f91d65aa912d6",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:21"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-20.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-20.php\n"
+      }
+    },
+    {
+      "id": "reserved-21",
+      "rule": "reserved-non-modifiers",
+      "fragment": "endif",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-21.php",
+      "sha256": "b396a21c1316c58cd08b345ccbe72d4affa0aba5dda3643e8f61e45c058ae33f",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:22"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-21.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-21.php\n"
+      }
+    },
+    {
+      "id": "reserved-22",
+      "rule": "reserved-non-modifiers",
+      "fragment": "endswitch",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-22.php",
+      "sha256": "cb7ab0c5c8011c8888e08420a0ca3bb672c6420521ab7a2af9bf1a4a34fcaa57",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:23"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-22.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-22.php\n"
+      }
+    },
+    {
+      "id": "reserved-23",
+      "rule": "reserved-non-modifiers",
+      "fragment": "endwhile",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-23.php",
+      "sha256": "b780c35934715650f3c7c7c25d9c2651549653f370f8d177dbb3bd56efa3e9d8",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:24"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-23.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-23.php\n"
+      }
+    },
+    {
+      "id": "reserved-24",
+      "rule": "reserved-non-modifiers",
+      "fragment": "enum",
+      "ruleExpected": false,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-24.php",
+      "sha256": "74d69bded434d991c6c0f44c6e5d8710a33107bbb8325228ac1743c19cfe76dd",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": false,
+      "native": true,
+      "matchedAlternatives": [],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-24.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-24.php\n"
+      }
+    },
+    {
+      "id": "reserved-25",
+      "rule": "reserved-non-modifiers",
+      "fragment": "eval",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-25.php",
+      "sha256": "96c4c0db3c1f823c853ffbc823a7d4c2dbb97685c151fb0ae98ead191f044cc8",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:26"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-25.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-25.php\n"
+      }
+    },
+    {
+      "id": "reserved-26",
+      "rule": "reserved-non-modifiers",
+      "fragment": "exit",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-26.php",
+      "sha256": "777bacb89ecd907312b4f626d348c69cb20a1b1b85243bc711b8baf277a79ad3",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:27"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-26.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-26.php\n"
+      }
+    },
+    {
+      "id": "reserved-27",
+      "rule": "reserved-non-modifiers",
+      "fragment": "die",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-27.php",
+      "sha256": "fd1bcd1838b5a2147f044ae909ea36a23763e8c7069aea1877ca3ac3acc42ec7",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:28"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-27.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-27.php\n"
+      }
+    },
+    {
+      "id": "reserved-28",
+      "rule": "reserved-non-modifiers",
+      "fragment": "extends",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-28.php",
+      "sha256": "5620af4969b80501f8de754aa17d37e7c70d4767380a0c19e197e149ed784a13",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:29"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-28.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-28.php\n"
+      }
+    },
+    {
+      "id": "reserved-29",
+      "rule": "reserved-non-modifiers",
+      "fragment": "finally",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-29.php",
+      "sha256": "4c1645ed5b6c5858767b199c9fdb3d44e4fef8eb6b26187df597e09edcdd6ae4",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:30"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-29.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-29.php\n"
+      }
+    },
+    {
+      "id": "reserved-30",
+      "rule": "reserved-non-modifiers",
+      "fragment": "fn",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-30.php",
+      "sha256": "36f66eab84a4b997950fd89b047aa99842d63ab6e432ea84b60547936719c495",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:31"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-30.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-30.php\n"
+      }
+    },
+    {
+      "id": "reserved-31",
+      "rule": "reserved-non-modifiers",
+      "fragment": "for",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-31.php",
+      "sha256": "4b347aa78aca93f631c388ec2bc95985959d87444b1328a879f44058e981d365",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:32"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-31.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-31.php\n"
+      }
+    },
+    {
+      "id": "reserved-32",
+      "rule": "reserved-non-modifiers",
+      "fragment": "foreach",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-32.php",
+      "sha256": "489566ea07336a95d300875b1a38c2624524cc528a4536fcf281178865d46c02",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:33"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-32.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-32.php\n"
+      }
+    },
+    {
+      "id": "reserved-33",
+      "rule": "reserved-non-modifiers",
+      "fragment": "function",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-33.php",
+      "sha256": "879a9919b229dfd8dda19e242b4a203d43a42f7fbeb27f778ef8deced6c54ee6",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:34"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-33.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-33.php\n"
+      }
+    },
+    {
+      "id": "reserved-34",
+      "rule": "reserved-non-modifiers",
+      "fragment": "global",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-34.php",
+      "sha256": "e20957e7f5a1ff29aacb94b2d5ff76b6b46945564f49dd380f2993a4f604b4e3",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:35"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-34.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-34.php\n"
+      }
+    },
+    {
+      "id": "reserved-35",
+      "rule": "reserved-non-modifiers",
+      "fragment": "goto",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-35.php",
+      "sha256": "756fcd3b0e091c59637e5ba10dacba22df87ae8f5cbf04d0db1c56295f538a1a",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:36"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-35.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-35.php\n"
+      }
+    },
+    {
+      "id": "reserved-36",
+      "rule": "reserved-non-modifiers",
+      "fragment": "if",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-36.php",
+      "sha256": "06cd49ec42d7f8b1b6e23d0d40ce7dcc7a1afeb1d80a7cc26bca568f90c12b56",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:37"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-36.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-36.php\n"
+      }
+    },
+    {
+      "id": "reserved-37",
+      "rule": "reserved-non-modifiers",
+      "fragment": "implements",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-37.php",
+      "sha256": "0c60ce6a16b117df5a692b8a71407fdbd9f6066d3ae41bc9c150769b5a86e6aa",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:38"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-37.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-37.php\n"
+      }
+    },
+    {
+      "id": "reserved-38",
+      "rule": "reserved-non-modifiers",
+      "fragment": "include",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-38.php",
+      "sha256": "8e0a0771d95bbb70500b695663ec92f4c19e646db795b582e9adbe61ff2c9f43",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:39"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-38.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-38.php\n"
+      }
+    },
+    {
+      "id": "reserved-39",
+      "rule": "reserved-non-modifiers",
+      "fragment": "include_once",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-39.php",
+      "sha256": "ab692985d4d437dc4793b0a10a913f6ff470c17c351f2d9d43a9029830853f48",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:40"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-39.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-39.php\n"
+      }
+    },
+    {
+      "id": "reserved-40",
+      "rule": "reserved-non-modifiers",
+      "fragment": "instanceof",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-40.php",
+      "sha256": "beff4829fa734033c022c9c25cbd78f480b381ce9c69955e5b2a78ca68760dd3",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:41"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-40.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-40.php\n"
+      }
+    },
+    {
+      "id": "reserved-41",
+      "rule": "reserved-non-modifiers",
+      "fragment": "insteadof",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-41.php",
+      "sha256": "db9d2ce818a11604a6054e013b02034717a1e1c2d4256c65512cb63b53f564f3",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:42"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-41.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-41.php\n"
+      }
+    },
+    {
+      "id": "reserved-42",
+      "rule": "reserved-non-modifiers",
+      "fragment": "interface",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-42.php",
+      "sha256": "a4ce51c45c8357d71f8497b24b04d87a0c5dd8338526ae3b1cf1156371070b70",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:43"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-42.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-42.php\n"
+      }
+    },
+    {
+      "id": "reserved-43",
+      "rule": "reserved-non-modifiers",
+      "fragment": "isset",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-43.php",
+      "sha256": "3827036891554c7344463b654d5fb23197345ee441a0d87d8ca4e5357291db32",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:44"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-43.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-43.php\n"
+      }
+    },
+    {
+      "id": "reserved-44",
+      "rule": "reserved-non-modifiers",
+      "fragment": "list",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-44.php",
+      "sha256": "eff792e1a9a95d5382110eda168388399c34d8ff33167d971e2f692cb90d3f5a",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:45"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-44.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-44.php\n"
+      }
+    },
+    {
+      "id": "reserved-45",
+      "rule": "reserved-non-modifiers",
+      "fragment": "match",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-45.php",
+      "sha256": "4828db16d32a339094b1ae3d063a0932307a46f349f04ff5da22fce6950efd97",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:46"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-45.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-45.php\n"
+      }
+    },
+    {
+      "id": "reserved-46",
+      "rule": "reserved-non-modifiers",
+      "fragment": "namespace",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-46.php",
+      "sha256": "9b0cfcd64d84327e611b7667658dac721230196d07b881e4a7f56946de56efdd",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:47"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-46.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-46.php\n"
+      }
+    },
+    {
+      "id": "reserved-47",
+      "rule": "reserved-non-modifiers",
+      "fragment": "new",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-47.php",
+      "sha256": "37804ecce9d8f96ce2c071e69b626398087d3f798613701b0962137fa4391b4d",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:48"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-47.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-47.php\n"
+      }
+    },
+    {
+      "id": "reserved-48",
+      "rule": "reserved-non-modifiers",
+      "fragment": "or",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-48.php",
+      "sha256": "75e869b4e236224416cb4e5e0a20ed49ad28bba0b50e1c720ffec3bb74d40dc2",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:49"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-48.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-48.php\n"
+      }
+    },
+    {
+      "id": "reserved-49",
+      "rule": "reserved-non-modifiers",
+      "fragment": "print",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-49.php",
+      "sha256": "9b298c8fc8f90e7d98845cb66dfad9d8da98ad10ca3874db677022a74c193e14",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:50"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-49.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-49.php\n"
+      }
+    },
+    {
+      "id": "reserved-50",
+      "rule": "reserved-non-modifiers",
+      "fragment": "require",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-50.php",
+      "sha256": "cee22b33a597f029858dd416df9e62f64ab60413a1c574a35fe7f1b64aa114a1",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:51"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-50.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-50.php\n"
+      }
+    },
+    {
+      "id": "reserved-51",
+      "rule": "reserved-non-modifiers",
+      "fragment": "require_once",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-51.php",
+      "sha256": "61db44b75f2a19f5e70833fed7b18ab5f1714f468dc9bb325e987e689292823c",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:52"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-51.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-51.php\n"
+      }
+    },
+    {
+      "id": "reserved-52",
+      "rule": "reserved-non-modifiers",
+      "fragment": "return",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-52.php",
+      "sha256": "11e8e65e0f1cf86ed849d85f60c0dee9f6364689266142448c800ef56376ed17",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:53"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-52.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-52.php\n"
+      }
+    },
+    {
+      "id": "reserved-53",
+      "rule": "reserved-non-modifiers",
+      "fragment": "switch",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-53.php",
+      "sha256": "ef92d5e8436ffcc9dd3841dde7ed64935edac86fcf399932730c147166fecd99",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:54"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-53.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-53.php\n"
+      }
+    },
+    {
+      "id": "reserved-54",
+      "rule": "reserved-non-modifiers",
+      "fragment": "throw",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-54.php",
+      "sha256": "2c35dafee2ec9c1c839ebabf579b857e7f8d67108e9507e8fddaab473e87c00c",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:55"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-54.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-54.php\n"
+      }
+    },
+    {
+      "id": "reserved-55",
+      "rule": "reserved-non-modifiers",
+      "fragment": "trait",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-55.php",
+      "sha256": "136a1dc3f2d976282f0d66d82c49d441d01494c78b932bef471faee13d86e4da",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:56"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-55.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-55.php\n"
+      }
+    },
+    {
+      "id": "reserved-56",
+      "rule": "reserved-non-modifiers",
+      "fragment": "try",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-56.php",
+      "sha256": "85b157b9561b91388f6ec72d13ac4710cb917a943427fbe92a73e8b00fabd160",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:57"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-56.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-56.php\n"
+      }
+    },
+    {
+      "id": "reserved-57",
+      "rule": "reserved-non-modifiers",
+      "fragment": "unset",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-57.php",
+      "sha256": "a732335d42ffb2f0b6169bdb847c1b5ef42c8266ac3931a954b0fc22a743eeca",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:58"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-57.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-57.php\n"
+      }
+    },
+    {
+      "id": "reserved-58",
+      "rule": "reserved-non-modifiers",
+      "fragment": "use",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-58.php",
+      "sha256": "f65e87d23cc07b97e4304441348fb242afad09d915f7a2be9a56c2c00a6227ab",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:59"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-58.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-58.php\n"
+      }
+    },
+    {
+      "id": "reserved-59",
+      "rule": "reserved-non-modifiers",
+      "fragment": "var",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-59.php",
+      "sha256": "2fc45126bf2b4d0b3c3641d008abada1c9645bb4f7f97dcbf2019fa5aefcbfed",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:60"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-59.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-59.php\n"
+      }
+    },
+    {
+      "id": "reserved-60",
+      "rule": "reserved-non-modifiers",
+      "fragment": "while",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-60.php",
+      "sha256": "2e9d130b5b27e7fe77dd9fee28839d8fc444d6761a6ff824c095ef176c82fcde",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:61"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-60.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-60.php\n"
+      }
+    },
+    {
+      "id": "reserved-61",
+      "rule": "reserved-non-modifiers",
+      "fragment": "xor",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-61.php",
+      "sha256": "b542295c05ddb7338cbd71c1f37b567b8c084ac8fb33870ec1aa34a5945e3b28",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:62"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-61.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-61.php\n"
+      }
+    },
+    {
+      "id": "reserved-62",
+      "rule": "reserved-non-modifiers",
+      "fragment": "yield",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/reserved-62.php",
+      "sha256": "2e0eba093d84fd25dfa064071bf3a9440693b67a9ab5d9ac7d03d2cac45d9beb",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "reserved-non-modifiers/alternative:63"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/reserved-62.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/reserved-62.php\n"
+      }
+    },
+    {
+      "id": "prefix-arrow",
+      "rule": "closed-yield-arrow-prefix-context",
+      "fragment": "fn()=>",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/prefix-arrow.php",
+      "sha256": "bffbc18cf4d40ae0add7d1285525d3b1ab35684795946e23bb58f338bdab1563",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "closed-yield-arrow-prefix-context/alternative:2"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-arrow.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/prefix-arrow.php\n"
+      }
+    },
+    {
+      "id": "prefix-include",
+      "rule": "closed-yield-include-prefix-context",
+      "fragment": "include",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/prefix-include.php",
+      "sha256": "70d4c0e9cb87a45c411315ff9adc8c1351942a3604f5daf01e9f8735027f3d76",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "closed-yield-include-prefix-context/alternative:2",
+        "include-operator/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-include.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/prefix-include.php\n"
+      }
+    },
+    {
+      "id": "prefix-logical-and",
+      "rule": "closed-yield-logical-and-prefix-context",
+      "fragment": "$a and",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/prefix-logical-and.php",
+      "sha256": "3573775e96a8c5d64d84d1aa21389ffefc7e4e54d8438485400a06e99d7d38ae",
+      "lintExit": 255,
+      "structuralExpected": false,
+      "ruleMatched": true,
+      "native": false,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "closed-yield-logical-and-prefix-context/alternative:2",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-yield-expression/alternative:1",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "postfix-expression/alternative:1",
+        "static-member/alternative:2",
+        "unary-expression/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-logical-and.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"=>\" in tests/fixtures/php/8.6/structural-evidence/prefix-logical-and.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-evidence/prefix-logical-and.php\n"
+      }
+    },
+    {
+      "id": "prefix-logical-or",
+      "rule": "closed-yield-logical-or-prefix-context",
+      "fragment": "$a or",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/prefix-logical-or.php",
+      "sha256": "a1b8ca67ef2b1c66669630f607179e723cd6cfbf8fca89a16ecb54a100e0a289",
+      "lintExit": 255,
+      "structuralExpected": false,
+      "ruleMatched": true,
+      "native": false,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "closed-yield-logical-or-prefix-context/alternative:2",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-yield-expression/alternative:1",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "postfix-expression/alternative:1",
+        "static-member/alternative:2",
+        "unary-expression/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-logical-or.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"=>\" in tests/fixtures/php/8.6/structural-evidence/prefix-logical-or.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-evidence/prefix-logical-or.php\n"
+      }
+    },
+    {
+      "id": "prefix-logical-xor",
+      "rule": "closed-yield-logical-xor-prefix-context",
+      "fragment": "$a xor",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/prefix-logical-xor.php",
+      "sha256": "8d24cef0e62766b6b71058212b11773ff8a1661edefbc52897bc0ca84aba2213",
+      "lintExit": 255,
+      "structuralExpected": false,
+      "ruleMatched": true,
+      "native": false,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "closed-yield-logical-xor-prefix-context/alternative:2",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-yield-expression/alternative:1",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "postfix-expression/alternative:1",
+        "static-member/alternative:2",
+        "unary-expression/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-logical-xor.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"=>\" in tests/fixtures/php/8.6/structural-evidence/prefix-logical-xor.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-evidence/prefix-logical-xor.php\n"
+      }
+    },
+    {
+      "id": "prefix-print",
+      "rule": "closed-yield-print-prefix-context",
+      "fragment": "print",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/prefix-print.php",
+      "sha256": "fa94abde7abe115b149366cb1b1334082a040ff34e51c1c581d0e8dff7f0213a",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "closed-yield-print-prefix-context/alternative:2"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/prefix-print.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/prefix-print.php\n"
+      }
+    },
+    {
+      "id": "constructor-fcc",
+      "rule": "constructor-argument-list",
+      "fragment": "(...)",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/constructor-fcc.php",
+      "sha256": "e948470fa391441a2e7b07e5786d9bd5629cca63c76948726ea9f94088948d10",
+      "lintExit": 255,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "constructor-argument-list/alternative:2"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/constructor-fcc.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Cannot create Closure for new expression in tests/fixtures/php/8.6/structural-evidence/constructor-fcc.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-evidence/constructor-fcc.php\n"
+      }
+    },
+    {
+      "id": "instanceof-prefix",
+      "rule": "instanceof-prefix-context",
+      "fragment": "$a instanceof Foo **",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/instanceof-prefix.php",
+      "sha256": "72b5ddd776c67b61a7def12bdbf0670192d4ad43ab4dd24fa4aaa4f7666f2abe",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "class-name-reference/alternative:1",
+        "class-name/alternative:1",
+        "clone-expression/alternative:3",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "instanceof-prefix-context/alternative:2",
+        "name/alternative:1",
+        "new-variable/alternative:7",
+        "postfix-expression/alternative:1",
+        "static-member/alternative:2",
+        "unary-expression/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/instanceof-prefix.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/instanceof-prefix.php\n"
+      }
+    },
+    {
+      "id": "qualified-use",
+      "rule": "legacy-namespace-name",
+      "fragment": "\\A\\B",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/qualified-use.php",
+      "sha256": "0dff57520c5ab70fea1a9763167098a6e006eb9171e5faf5a4e66c107a828ddb",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "legacy-namespace-name/alternative:3"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/qualified-use.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/qualified-use.php\n"
+      }
+    },
+    {
+      "id": "static-new",
+      "rule": "new-variable",
+      "fragment": "Foo::$class",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/static-new.php",
+      "sha256": "a6b42b39aeb3f14fe9cf5668210d70ea89e9363334aa1e4fcedabe646a207fc9",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "class-name/alternative:1",
+        "name/alternative:1",
+        "new-variable/alternative:6",
+        "new-variable/alternative:7",
+        "new-variable/alternative:8",
+        "variable-like/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/static-new.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/static-new.php\n"
+      }
+    },
+    {
+      "id": "postfix-dec",
+      "rule": "postfix-expression",
+      "fragment": "$a--",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/postfix-dec.php",
+      "sha256": "6bde28214a579195c6a56fd73a8b5cae904272338fbc4beaa70de7cf97723a79",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "postfix-expression/alternative:1",
+        "postfix-expression/alternative:3",
+        "static-member/alternative:2",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/postfix-dec.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/postfix-dec.php\n"
+      }
+    },
+    {
+      "id": "void-type",
+      "rule": "simple-type",
+      "fragment": "void",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/void-type.php",
+      "sha256": "b5edc9edc474464725457df7175c983c8c2479f46fb519d8e40a2a7b717bbdb3",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "name/alternative:1",
+        "simple-type/alternative:11",
+        "simple-type/alternative:18"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/void-type.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/void-type.php\n"
+      }
+    },
+    {
+      "id": "unmatched-elseif",
+      "rule": "unmatched-if-statement",
+      "fragment": "if($a) ; elseif($b) ;",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/unmatched-elseif.php",
+      "sha256": "8aa0a4447bd4e2a4bbc3ec9926579d17a81db52be24705bf9b1d6f9aa4f02f5b",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "arrow-expression/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "include-expression/alternative:1",
+        "matched-statement/alternative:1",
+        "postfix-expression/alternative:1",
+        "print-expression/alternative:1",
+        "simple-statement/alternative:17",
+        "statement/alternative:1",
+        "static-member/alternative:2",
+        "throw-expression/alternative:1",
+        "unary-expression/alternative:1",
+        "unmatched-if-statement/alternative:1",
+        "unmatched-if-statement/alternative:5",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/unmatched-elseif.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/unmatched-elseif.php\n"
+      }
+    },
+    {
+      "id": "unmatched-while",
+      "rule": "unmatched-statement",
+      "fragment": "while($a) if($b) ;",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/unmatched-while.php",
+      "sha256": "5820e8fae8c54f714701d02cd9464ef7aa48120e8a7658acad53adc2988a7464",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "arrow-expression/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "include-expression/alternative:1",
+        "matched-statement/alternative:1",
+        "postfix-expression/alternative:1",
+        "print-expression/alternative:1",
+        "simple-statement/alternative:17",
+        "statement/alternative:1",
+        "static-member/alternative:2",
+        "throw-expression/alternative:1",
+        "unary-expression/alternative:1",
+        "unmatched-if-statement/alternative:1",
+        "unmatched-statement/alternative:1",
+        "unmatched-statement/alternative:2",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/unmatched-while.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/unmatched-while.php\n"
+      }
+    },
+    {
+      "id": "unmatched-foreach",
+      "rule": "unmatched-statement",
+      "fragment": "foreach($a as $b) if($b) ;",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/unmatched-foreach.php",
+      "sha256": "0d9bb0a6d610c297bfee3d3d0d7d0fb4ec8cc2736de8de9da339c0dd393acb53",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "arrow-expression/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "foreach-variable/alternative:1",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "include-expression/alternative:1",
+        "matched-statement/alternative:1",
+        "postfix-expression/alternative:1",
+        "print-expression/alternative:1",
+        "simple-statement/alternative:17",
+        "statement/alternative:1",
+        "static-member/alternative:2",
+        "throw-expression/alternative:1",
+        "unary-expression/alternative:1",
+        "unmatched-if-statement/alternative:1",
+        "unmatched-statement/alternative:1",
+        "unmatched-statement/alternative:4",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/unmatched-foreach.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/unmatched-foreach.php\n"
+      }
+    },
+    {
+      "id": "unmatched-declare",
+      "rule": "unmatched-statement",
+      "fragment": "declare(ticks=1) if($a) ;",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/unmatched-declare.php",
+      "sha256": "2bde45b85064a6667ae63cca19d3f414a63061270999fd0029866e559c510110",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "arrow-expression/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "include-expression/alternative:1",
+        "integer-literal/alternative:1",
+        "literal/alternative:1",
+        "matched-statement/alternative:1",
+        "postfix-expression/alternative:1",
+        "postfix-expression/alternative:4",
+        "primary-expression/alternative:1",
+        "print-expression/alternative:1",
+        "simple-statement/alternative:17",
+        "statement/alternative:1",
+        "static-member/alternative:2",
+        "throw-expression/alternative:1",
+        "unary-expression/alternative:1",
+        "unmatched-if-statement/alternative:1",
+        "unmatched-statement/alternative:1",
+        "unmatched-statement/alternative:5",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/unmatched-declare.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/unmatched-declare.php\n"
+      }
+    },
+    {
+      "id": "yield-arrow-basic",
+      "rule": "source-file",
+      "fragment": "<?php function g(){ yield fn()=>1 => 2; }\n",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/yield-arrow-basic.php",
+      "sha256": "e5252a6b35352167662fcccdc7a27006c79145718a40232d4f22f10be3f8962e",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "arrow-expression/alternative:1",
+        "arrow-expression/alternative:2",
+        "arrow-prefix-context/alternative:1",
+        "arrow-prefix-context/alternative:2",
+        "assignment-expression/alternative:1",
+        "attributed-top-declaration/alternative:1",
+        "attributed-top-declaration/alternative:2",
+        "boolean-not-expression/alternative:1",
+        "clone-expression/alternative:3",
+        "closed-yield-arrow-expression/alternative:1",
+        "closed-yield-include-expression/alternative:1",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-throw-expression/alternative:1",
+        "closed-yield-yield-expression/alternative:1",
+        "function-declaration/alternative:1",
+        "include-expression/alternative:1",
+        "include-prefix-context/alternative:1",
+        "inner-statement/alternative:1",
+        "integer-literal/alternative:1",
+        "literal/alternative:1",
+        "logical-and-prefix-context/alternative:1",
+        "logical-or-prefix-context/alternative:1",
+        "logical-xor-prefix-context/alternative:1",
+        "postfix-expression/alternative:4",
+        "primary-expression/alternative:1",
+        "print-expression/alternative:1",
+        "print-prefix-context/alternative:1",
+        "simple-statement/alternative:6",
+        "statement/alternative:1",
+        "throw-expression/alternative:1",
+        "top-statement/alternative:2",
+        "unary-expression/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-expression/alternative:2",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1",
+        "yield-key-expression/alternative:2",
+        "yield-key-prefix-context/alternative:2",
+        "yield-key/alternative:2",
+        "yield-key/alternative:4",
+        "yield-prefix-context/alternative:1",
+        "yield-prefix-context/alternative:2"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/yield-arrow-basic.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/yield-arrow-basic.php\n"
+      }
+    },
+    {
+      "id": "yield-include-basic",
+      "rule": "source-file",
+      "fragment": "<?php function g(){ yield include $a => 2; }\n",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/yield-include-basic.php",
+      "sha256": "c2e94d9ced1d945ec8321e84537bbceeed60ebc27622438868702732692f39c5",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "arrow-expression/alternative:1",
+        "arrow-prefix-context/alternative:1",
+        "assignment-expression/alternative:1",
+        "attributed-top-declaration/alternative:1",
+        "attributed-top-declaration/alternative:2",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "closed-yield-arrow-expression/alternative:1",
+        "closed-yield-include-expression/alternative:1",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-throw-expression/alternative:1",
+        "closed-yield-yield-expression/alternative:1",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "function-declaration/alternative:1",
+        "include-expression/alternative:1",
+        "include-expression/alternative:2",
+        "include-operator/alternative:1",
+        "include-prefix-context/alternative:1",
+        "include-prefix-context/alternative:2",
+        "inner-statement/alternative:1",
+        "integer-literal/alternative:1",
+        "literal/alternative:1",
+        "logical-and-prefix-context/alternative:1",
+        "logical-or-prefix-context/alternative:1",
+        "logical-xor-prefix-context/alternative:1",
+        "postfix-expression/alternative:1",
+        "postfix-expression/alternative:4",
+        "primary-expression/alternative:1",
+        "print-expression/alternative:1",
+        "print-prefix-context/alternative:1",
+        "simple-statement/alternative:6",
+        "statement/alternative:1",
+        "static-member/alternative:2",
+        "throw-expression/alternative:1",
+        "top-statement/alternative:2",
+        "unary-expression/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-expression/alternative:2",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1",
+        "yield-key-expression/alternative:2",
+        "yield-key-prefix-context/alternative:2",
+        "yield-key/alternative:2",
+        "yield-key/alternative:5",
+        "yield-prefix-context/alternative:1",
+        "yield-prefix-context/alternative:2"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/yield-include-basic.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/yield-include-basic.php\n"
+      }
+    },
+    {
+      "id": "yield-print-basic",
+      "rule": "source-file",
+      "fragment": "<?php function g(){ yield print $a => 2; }\n",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/yield-print-basic.php",
+      "sha256": "cb41352f613b4611b2e6de41ef2762ef4acb28b429373df92d27e1895e4bf184",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "arrow-expression/alternative:1",
+        "arrow-prefix-context/alternative:1",
+        "assignment-expression/alternative:1",
+        "attributed-top-declaration/alternative:1",
+        "attributed-top-declaration/alternative:2",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "closed-yield-arrow-expression/alternative:1",
+        "closed-yield-include-expression/alternative:1",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-throw-expression/alternative:1",
+        "closed-yield-yield-expression/alternative:1",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "function-declaration/alternative:1",
+        "include-expression/alternative:1",
+        "include-prefix-context/alternative:1",
+        "inner-statement/alternative:1",
+        "integer-literal/alternative:1",
+        "literal/alternative:1",
+        "logical-and-prefix-context/alternative:1",
+        "logical-or-prefix-context/alternative:1",
+        "logical-xor-prefix-context/alternative:1",
+        "postfix-expression/alternative:1",
+        "postfix-expression/alternative:4",
+        "primary-expression/alternative:1",
+        "print-expression/alternative:1",
+        "print-expression/alternative:2",
+        "print-prefix-context/alternative:1",
+        "print-prefix-context/alternative:2",
+        "simple-statement/alternative:6",
+        "statement/alternative:1",
+        "static-member/alternative:2",
+        "throw-expression/alternative:1",
+        "top-statement/alternative:2",
+        "unary-expression/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-expression/alternative:2",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1",
+        "yield-key-expression/alternative:2",
+        "yield-key-prefix-context/alternative:2",
+        "yield-key/alternative:2",
+        "yield-key/alternative:6",
+        "yield-prefix-context/alternative:1",
+        "yield-prefix-context/alternative:2"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/yield-print-basic.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/yield-print-basic.php\n"
+      }
+    },
+    {
+      "id": "yield-arrow-throw-nested",
+      "rule": "source-file",
+      "fragment": "<?php function g(){ yield fn()=>fn()=>throw new Exception => 2; }\n",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/yield-arrow-throw-nested.php",
+      "sha256": "edd0b05a5b23dacc8d2bf9f1561c20f55a392a8f734f7d36ee04d7b10ea58fe2",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "arrow-expression/alternative:1",
+        "arrow-prefix-context/alternative:1",
+        "arrow-prefix-context/alternative:2",
+        "assignment-expression/alternative:1",
+        "attributed-top-declaration/alternative:1",
+        "attributed-top-declaration/alternative:2",
+        "boolean-not-expression/alternative:1",
+        "class-name-reference/alternative:1",
+        "class-name/alternative:1",
+        "clone-expression/alternative:3",
+        "closed-yield-arrow-expression/alternative:1",
+        "closed-yield-arrow-prefix-context/alternative:2",
+        "closed-yield-include-expression/alternative:1",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-throw-expression/alternative:1",
+        "closed-yield-throw-expression/alternative:2",
+        "closed-yield-yield-expression/alternative:1",
+        "function-declaration/alternative:1",
+        "include-expression/alternative:1",
+        "include-prefix-context/alternative:1",
+        "inner-statement/alternative:1",
+        "integer-literal/alternative:1",
+        "literal/alternative:1",
+        "logical-and-prefix-context/alternative:1",
+        "logical-or-prefix-context/alternative:1",
+        "logical-xor-prefix-context/alternative:1",
+        "name/alternative:1",
+        "new-variable/alternative:7",
+        "postfix-expression/alternative:4",
+        "primary-expression/alternative:1",
+        "primary-expression/alternative:8",
+        "print-expression/alternative:1",
+        "print-prefix-context/alternative:1",
+        "simple-statement/alternative:6",
+        "statement/alternative:1",
+        "throw-expression/alternative:1",
+        "throw-expression/alternative:2",
+        "top-statement/alternative:2",
+        "unary-expression/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-expression/alternative:2",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1",
+        "yield-key-expression/alternative:2",
+        "yield-key-prefix-context/alternative:2",
+        "yield-key/alternative:2",
+        "yield-key/alternative:4",
+        "yield-prefix-context/alternative:1",
+        "yield-prefix-context/alternative:2"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/yield-arrow-throw-nested.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/yield-arrow-throw-nested.php\n"
+      }
+    },
+    {
+      "id": "yield-print-throw-arrow",
+      "rule": "source-file",
+      "fragment": "<?php function g(){ yield print fn()=>throw new Exception => 2; }\n",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/yield-print-throw-arrow.php",
+      "sha256": "7d8652f4a47a109ed31de92bc9e7a4fa02130c7213e94e969645ffe7e41c9126",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "arrow-expression/alternative:1",
+        "arrow-prefix-context/alternative:1",
+        "arrow-prefix-context/alternative:2",
+        "assignment-expression/alternative:1",
+        "attributed-top-declaration/alternative:1",
+        "attributed-top-declaration/alternative:2",
+        "boolean-not-expression/alternative:1",
+        "class-name-reference/alternative:1",
+        "class-name/alternative:1",
+        "clone-expression/alternative:3",
+        "closed-yield-arrow-expression/alternative:1",
+        "closed-yield-arrow-prefix-context/alternative:2",
+        "closed-yield-include-expression/alternative:1",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-throw-expression/alternative:1",
+        "closed-yield-throw-expression/alternative:2",
+        "closed-yield-yield-expression/alternative:1",
+        "function-declaration/alternative:1",
+        "include-expression/alternative:1",
+        "include-prefix-context/alternative:1",
+        "inner-statement/alternative:1",
+        "integer-literal/alternative:1",
+        "literal/alternative:1",
+        "logical-and-prefix-context/alternative:1",
+        "logical-or-prefix-context/alternative:1",
+        "logical-xor-prefix-context/alternative:1",
+        "name/alternative:1",
+        "new-variable/alternative:7",
+        "postfix-expression/alternative:4",
+        "primary-expression/alternative:1",
+        "primary-expression/alternative:8",
+        "print-expression/alternative:1",
+        "print-prefix-context/alternative:1",
+        "print-prefix-context/alternative:2",
+        "simple-statement/alternative:6",
+        "statement/alternative:1",
+        "throw-expression/alternative:1",
+        "throw-expression/alternative:2",
+        "top-statement/alternative:2",
+        "unary-expression/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-expression/alternative:2",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1",
+        "yield-key-expression/alternative:2",
+        "yield-key-prefix-context/alternative:2",
+        "yield-key/alternative:2",
+        "yield-key/alternative:6",
+        "yield-prefix-context/alternative:1",
+        "yield-prefix-context/alternative:2"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/yield-print-throw-arrow.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/yield-print-throw-arrow.php\n"
+      }
+    },
+    {
+      "id": "yield-key-parenthesized-logical",
+      "rule": "source-file",
+      "fragment": "<?php function g(){ yield ($a and $b) => 2; }\n",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/yield-key-parenthesized-logical.php",
+      "sha256": "7db6fae7d5e8e1a96c8d626f62d59cfbfc6b773d6dca4032659e55778ca9c468",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "arrow-expression/alternative:1",
+        "arrow-prefix-context/alternative:1",
+        "assignment-expression/alternative:1",
+        "attributed-top-declaration/alternative:1",
+        "attributed-top-declaration/alternative:2",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-expression/alternative:2",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "closed-yield-yield-expression/alternative:1",
+        "fully-dereferenceable-expression/alternative:1",
+        "fully-dereferenceable-expression/alternative:2",
+        "function-call/alternative:5",
+        "function-declaration/alternative:1",
+        "include-expression/alternative:1",
+        "include-prefix-context/alternative:1",
+        "inner-statement/alternative:1",
+        "integer-literal/alternative:1",
+        "literal/alternative:1",
+        "logical-and-prefix-context/alternative:1",
+        "logical-and-prefix-context/alternative:2",
+        "logical-or-prefix-context/alternative:1",
+        "logical-xor-prefix-context/alternative:1",
+        "postfix-expression/alternative:1",
+        "postfix-expression/alternative:4",
+        "primary-expression/alternative:1",
+        "primary-expression/alternative:6",
+        "print-expression/alternative:1",
+        "print-prefix-context/alternative:1",
+        "simple-statement/alternative:6",
+        "statement/alternative:1",
+        "static-member/alternative:2",
+        "throw-expression/alternative:1",
+        "top-statement/alternative:2",
+        "unary-expression/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-expression/alternative:2",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1",
+        "yield-key-expression/alternative:2",
+        "yield-key-prefix-context/alternative:2",
+        "yield-key/alternative:1",
+        "yield-prefix-context/alternative:1",
+        "yield-prefix-context/alternative:2"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/yield-key-parenthesized-logical.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/yield-key-parenthesized-logical.php\n"
+      }
+    },
+    {
+      "id": "nested-logical-and",
+      "rule": "closed-yield-logical-and-prefix-context",
+      "fragment": "$a and",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/nested-logical-and.php",
+      "sha256": "4f14aab3223a76e6a9abcbb62859617544b9db3a90634e2762113d02c2235c38",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "closed-yield-logical-and-prefix-context/alternative:2",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-yield-expression/alternative:1",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "postfix-expression/alternative:1",
+        "static-member/alternative:2",
+        "unary-expression/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/nested-logical-and.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/nested-logical-and.php\n"
+      }
+    },
+    {
+      "id": "nested-logical-or",
+      "rule": "closed-yield-logical-or-prefix-context",
+      "fragment": "$a or",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/nested-logical-or.php",
+      "sha256": "e6cd1950a8d2966d7eda7beb21b7d615c6dcc95ae9d5413c2449bda122417076",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "closed-yield-logical-or-prefix-context/alternative:2",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-yield-expression/alternative:1",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "postfix-expression/alternative:1",
+        "static-member/alternative:2",
+        "unary-expression/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/nested-logical-or.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/nested-logical-or.php\n"
+      }
+    },
+    {
+      "id": "nested-logical-xor",
+      "rule": "closed-yield-logical-xor-prefix-context",
+      "fragment": "$a xor",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/nested-logical-xor.php",
+      "sha256": "e2ee66a335ef93e4fb12f13f01dbc7e6ab5002afc7e5085082ac460fb2280ab9",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "closed-yield-logical-xor-prefix-context/alternative:2",
+        "closed-yield-print-expression/alternative:1",
+        "closed-yield-yield-expression/alternative:1",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "postfix-expression/alternative:1",
+        "static-member/alternative:2",
+        "unary-expression/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/nested-logical-xor.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/nested-logical-xor.php\n"
+      }
+    },
+    {
+      "id": "dynamic-static-new",
+      "rule": "new-variable",
+      "fragment": "$foo::$bar",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/dynamic-static-new.php",
+      "sha256": "6d7f2f7f105e2e2790822e100f83b104c89cfffd9477ad87ee6b346abe550df2",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "new-variable/alternative:1",
+        "new-variable/alternative:6",
+        "new-variable/alternative:8",
+        "variable-like/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/dynamic-static-new.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/dynamic-static-new.php\n"
+      }
+    },
+    {
+      "id": "magic-reserved",
+      "rule": "reserved-non-modifiers",
+      "fragment": "__LINE__",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/magic-reserved.php",
+      "sha256": "374d6fe303de19e379dfbe655216e2b43e4f4d8ccf8a64875aaa9d8a3774c9ca",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "magic-constant/alternative:1",
+        "reserved-non-modifiers/alternative:64"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/magic-reserved.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/magic-reserved.php\n"
+      }
+    },
+    {
+      "id": "unmatched-else",
+      "rule": "unmatched-if-statement",
+      "fragment": "if($a);else if($b);",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/unmatched-else.php",
+      "sha256": "3801203c5a850488d5c19010e647f8aa89d47c5308fdce43083d5c1195ae8843",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "array-object-dereferenceable/alternative:1",
+        "arrow-expression/alternative:1",
+        "assignment-expression/alternative:1",
+        "boolean-not-expression/alternative:1",
+        "callable-expression/alternative:1",
+        "callable-variable/alternative:1",
+        "class-constant/alternative:2",
+        "clone-expression/alternative:3",
+        "fully-dereferenceable-expression/alternative:1",
+        "function-call/alternative:5",
+        "include-expression/alternative:1",
+        "matched-statement/alternative:1",
+        "postfix-expression/alternative:1",
+        "print-expression/alternative:1",
+        "simple-statement/alternative:17",
+        "statement/alternative:1",
+        "static-member/alternative:2",
+        "throw-expression/alternative:1",
+        "unary-expression/alternative:1",
+        "unmatched-if-statement/alternative:1",
+        "unmatched-if-statement/alternative:2",
+        "unmatched-if-statement/alternative:4",
+        "unmatched-statement/alternative:1",
+        "variable-expression/alternative:1",
+        "variable-like/alternative:1",
+        "yield-expression/alternative:1",
+        "yield-from-expression/alternative:1",
+        "yield-key-expression/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/unmatched-else.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/unmatched-else.php\n"
+      }
+    },
+    {
+      "id": "nullsafe-new",
+      "rule": "new-variable",
+      "fragment": "$foo?->bar",
+      "ruleExpected": true,
+      "fixture": "tests/fixtures/php/8.6/structural-evidence/nullsafe-new.php",
+      "sha256": "4c21bfcf750f60ce98a281bef21ae9151f1d4787e090b204d2a539c4a1d39c33",
+      "lintExit": 0,
+      "structuralExpected": true,
+      "ruleMatched": true,
+      "native": true,
+      "matchedAlternatives": [
+        "new-variable/alternative:1",
+        "new-variable/alternative:3",
+        "new-variable/alternative:5",
+        "new-variable/alternative:8",
+        "property-name/alternative:1",
+        "variable-like/alternative:1"
+      ],
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-evidence/nullsafe-new.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-evidence/nullsafe-new.php\n"
+      }
+    }
+  ],
+  "errors": []
+}

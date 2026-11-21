@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "pfa",
+    "Validate PFA positives, structural/contextual negatives and paired lint with pinned hashes."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/pfa-check-ga-v1.php",
+    "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "--php86=C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+    "--sources=C:/Data/GitHub/php-grammar/.audit/phase8b/source",
+    "--report=docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/pfa-differential.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/pfa-differential.log",
+  "logSha256": "7bd9a30c14871ab1be125157aa997320e374ade167a0b7f23216c11fbe263fdd"
+}

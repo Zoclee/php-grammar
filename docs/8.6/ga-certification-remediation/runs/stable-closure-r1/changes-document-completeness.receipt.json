@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "traceability",
+    "Verify all ten sections, finding IDs, source pins and regression references."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "changes-document-completeness",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/changes-document-completeness.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/changes-document-completeness.log",
+  "logSha256": "365b15b9d0fc677f664d4083cfa68e8a18ea6a5a449e4a1433307be00d6f3a33"
+}

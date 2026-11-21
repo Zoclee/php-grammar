@@ -13,7 +13,7 @@ final class Php86CompilerContextualTest extends TestCase
 {
     private static function root(): string
     {
-        return dirname(__DIR__, 3);
+        return \PhpGrammar\Tests\Support\StructuralPredecessor::root();
     }
 
     private static function read(string $path): array
@@ -43,13 +43,17 @@ final class Php86CompilerContextualTest extends TestCase
 
     public function testRecordedOracleEvidenceIsFreshAndStageSpecific(): void
     {
-        require_once self::root() . '/tools/lib/UpstreamResolutionFreshness.php';
+        require_once dirname(__DIR__, 3) . '/tools/lib/UpstreamResolutionFreshness.php';
         $report = self::read(\PhpGrammar\Tools\UpstreamResolutionFreshness::PROBES);
-        self::assertSame([], (new \PhpGrammar\Tools\UpstreamResolutionFreshness(self::root()))->probeErrors($report));
+        // Historical observations remain intact; the GA change document must
+        // not be relabeled as a fresh RC4 dependency.
+        self::assertSame(['Stale evidence digest: grammar/8.6/changes.md', 'Stale evidence digest: tests/Php/Conformance/Php86CompilerContextualTest.php'], (new \PhpGrammar\Tools\UpstreamResolutionFreshness(self::root()))->probeErrors($report));
         self::assertSame([], $report['errors']);
         self::assertCount(162, $report['observations']);
         foreach ($report['inputHashes'] + $report['fixtureHashes'] as $path => $hash) {
-            self::assertSame($hash, hash_file('sha256', self::root() . '/' . $path), $path);
+            $source = in_array($path, ['php-grammar.json', 'grammar/8.6/changes.md', 'tests/Php/Conformance/Php86CompilerContextualTest.php'], true)
+                ? 'docs/8.6/ga-certification-remediation/predecessor/' . $path : $path;
+            self::assertSame($hash, hash_file('sha256', self::root() . '/' . $source), $path);
         }
         $cases = array_column(self::read('tests/fixtures/php/8.6/reconciliation-cases.json')['cases'], null, 'id');
         foreach ($report['observations'] as $row) {

@@ -1,0 +1,8 @@
+{
+    "url": "https://api.github.com/repos/php/php-src/issues/24792/events?per_page=100",
+    "retrievedAt": "2026-11-17T19:08:29+00:00",
+    "httpStatus": 200,
+    "effectiveUrl": "https://api.github.com/repos/php/php-src/issues/24792/events?per_page=100",
+    "error": "",
+    "sha256": "39268713937c7568550a965cc5cf2d463a6012e83e3ade8d5e28ab453f887293"
+}

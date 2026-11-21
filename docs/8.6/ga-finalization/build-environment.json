@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "commandLine": "cmd.exe /d /s /c \"\"C:\\Data\\GitHub\\php-grammar\\.audit\\phase8b\\sdk\\phpsdk-vs17-x64.bat\" -t \"C:\\Data\\GitHub\\php-grammar\\.audit\\phase8b\\build-environment.bat\"\"",
+  "taskContents": "@echo off\r\ncd /d \"C:/Data/GitHub/php-grammar/.audit/phase8b/source\"\r\nwhere cl\r\nwhere nmake\r\nwhere bison\r\nwhere re2c\r\ncl\r\nbison --version\r\nre2c --version\r\necho WindowsSDKVersion=%WindowsSDKVersion%\r\necho VCToolsVersion=%VCToolsVersion%\r\nexit /b 0\r\n",
+  "taskSha256": "f14b80ccccca240e8d034ac5893436e67b77f3bac80fcb6c8494d5ac0efbac44",
+  "started": "2026-11-20T16:32:04+00:00",
+  "finished": "2026-11-20T16:32:11+00:00",
+  "exitCode": 0,
+  "logs": {
+    "docs/8.6/ga-finalization/build-environment.stdout.log": "ca5838490a17356930a9b976fce84566a2e8e660a5bf0a0a77429ba486ece878",
+    "docs/8.6/ga-finalization/build-environment.stderr.log": "66bc94af5c081661b01f050f38dba343231b7f9e0a6a4ddf6c18b20e568c18a5"
+  }
+}

@@ -1,0 +1,13 @@
+object 8aaada3f9605d81a38b8240f93c7389dfbc77ef9
+type commit
+tag php-8.6.0
+tagger Matteo Beccati <mbeccati@php.net> 1794925508 +0000
+
+Tag for php-8.6.0
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQQBaJXemkdREdU3puaRNP8wvFqZtQUCavxjxAAKCRCRNP8wvFqZ
+taf4AQDufqtoayAvBZMPXsJ7/fE5R6G9zLReiQL4LFwCw8leGwD+ICIYNHyq0uAg
+PmtIKDZa0qbup2hSZIQtW5UQZpOdNgw=
+=RDng
+-----END PGP SIGNATURE-----

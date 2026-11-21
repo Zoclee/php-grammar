@@ -1,0 +1,17 @@
+{
+  "obligation": "Immutable source references and complete reviewed source mappings",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "source-references",
+    "--output",
+    "docs/8.6/structural-certification/runs/prepromotion-r2/source-references.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r2/source-references.log",
+  "sha256": "a6b8592610a0572f1728f40a3c418d2bc209c5558af71352a4398ebf92fbcedf"
+}

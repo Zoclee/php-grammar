@@ -1,0 +1,89 @@
+{
+  "manifest": {
+    "command": [
+      ".audit/php85/php.exe",
+      "-n",
+      "tools/validate-manifest.php"
+    ],
+    "exitCode": 0,
+    "log": "docs/8.6/rc7-source-reconciliation/validation-manifest.log",
+    "sha256": "e2b231fd276610052d6d579479dd352de5ab52944b36d2c95e6db7de0a9f6da3"
+  },
+  "traceability": {
+    "command": [
+      ".audit/php85/php.exe",
+      "-n",
+      "tools/8.6/change-traceability.php"
+    ],
+    "exitCode": 0,
+    "log": "docs/8.6/rc7-source-reconciliation/validation-traceability.log",
+    "sha256": "650cfabf2adf43f795321e9f71e7f8cedb92b2bdf50840af9d4a17c32c206312"
+  },
+  "historical-integrity": {
+    "command": [
+      ".audit/php85/php.exe",
+      "-n",
+      "tools/evidence/historical-check.php"
+    ],
+    "exitCode": 1,
+    "log": "docs/8.6/rc7-source-reconciliation/validation-historical-integrity.log",
+    "sha256": "4423abaf0bade1905b86c2d706708303e5d68fddac3212ba0e8540fdf506cbf0"
+  },
+  "compatibility-check": {
+    "command": [
+      ".audit/php85/php.exe",
+      "-n",
+      "tools/evidence/compatibility.php",
+      "--check",
+      "--report",
+      "docs/8.5/compatibility/phase7h1-audited/evidence.json"
+    ],
+    "exitCode": 1,
+    "log": "docs/8.6/rc7-source-reconciliation/validation-compatibility-check.log",
+    "sha256": "a9b4b91912049b498eb39331d4e4663a4a0cc41db69f4bf53c906a0a7111d8e0"
+  },
+  "certification-check": {
+    "command": [
+      ".audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification-scanner-differential.php",
+      "--contract",
+      "php86-certification-v4",
+      "--check",
+      "--report",
+      "docs/8.6/certification-contract-remediation/runs/phase7h1-audited/evidence.json"
+    ],
+    "exitCode": 1,
+    "log": "docs/8.6/rc7-source-reconciliation/validation-certification-check.log",
+    "sha256": "8cf346cdcd72dfc74b0aa2efec64ebe6db5bfd8d2e94325976c25b69ee3e7981"
+  },
+  "certification-claims": {
+    "command": [
+      ".audit/php85/php.exe",
+      "-n",
+      "tools/8.6/certification-scanner-differential.php",
+      "--contract",
+      "php86-certification-v4",
+      "--claims",
+      "--report",
+      "docs/8.6/certification-contract-remediation/runs/phase7h1-audited/evidence.json"
+    ],
+    "exitCode": 1,
+    "log": "docs/8.6/rc7-source-reconciliation/validation-certification-claims.log",
+    "sha256": "8cf346cdcd72dfc74b0aa2efec64ebe6db5bfd8d2e94325976c25b69ee3e7981"
+  },
+  "phpunit": {
+    "command": [
+      ".audit/php85/php.exe",
+      "-n",
+      "-d",
+      "extension=C:\\Data\\GitHub\\php-grammar/.audit/php85/ext/php_mbstring.dll",
+      "vendor/phpunit/phpunit/phpunit",
+      "--do-not-cache-result",
+      "--no-progress"
+    ],
+    "exitCode": 0,
+    "log": "docs/8.6/rc7-source-reconciliation/validation-phpunit.log",
+    "sha256": "907ce6f4556494dedbfcb49d992bcaedc3076d395c3ec176fef4cead162cf6d7"
+  }
+}

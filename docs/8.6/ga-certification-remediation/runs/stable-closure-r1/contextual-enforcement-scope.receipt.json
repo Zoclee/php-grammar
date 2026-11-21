@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "blocked:C6-CONTEXT",
+    "Adjudicate incomplete contextual enforcement and predicate-level evidence for the bounded claim."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "contextual-enforcement-scope",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/contextual-enforcement-scope.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "blocked",
+  "log": "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/contextual-enforcement-scope.log",
+  "logSha256": "724fb5d696ab7c9407c36171451eabd34aa1c2816995de44ad8b393144f83f12"
+}

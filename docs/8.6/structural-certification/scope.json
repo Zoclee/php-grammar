@@ -1,0 +1,93 @@
+{
+  "contract": "php86-structural-scope-v1",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "claim": "Source-backed standalone structural grammar over the documented byte-source token profile; contextual validity and exhaustive implementation equivalence are external.",
+  "extendedAuthority": "docs/8.6/ga-certification-remediation/blockers-v2.json",
+  "historicalMissingManifestSha256": "0280ff2b531e0e5cdaa9db2b6265991c3b5d511f4905683a88c2bea5ce2ac373",
+  "blockers": [
+    {
+      "id": "PHP86-013",
+      "extendedStatus": "unresolved",
+      "structuralImpact": "Compiler/AST/optimizer/linking and RFC-component risk remains extended. Parser and scanner syntax are independently pinned, mapped and checked by the structural source, delta and fixture gates. Any discovered token/production defect must be added to knownStructuralDefects and blocks this contract.",
+      "evidence": [
+        "docs/8.6/source-completeness-ledger.json",
+        "docs/8.6/local-source-context-remediation/source-review.json",
+        "docs/8.6/ga-finalization/review.json"
+      ]
+    },
+    {
+      "id": "PHP86-014",
+      "extendedStatus": "unresolved",
+      "structuralImpact": "Assignment-derived write parsing is represented. The GA compiler emits invalid VM combinations after successful lint/opcode generation. Intended writable validity and compiler/VM consistency remain external; no EBNF rejection is inferred from runtime failure.",
+      "evidence": [
+        "docs/8.6/ga-finalization/writable.json",
+        "docs/8.6/release-closure/pr25046.body"
+      ]
+    },
+    {
+      "id": "PHP86-015",
+      "extendedStatus": "unresolved",
+      "structuralImpact": "Ordered validation after AST elimination is a contextual compiler obligation. Expression syntax and precedence remain in scope and receive source mapping plus existing binding regressions. No function-specific syntax rule is introduced.",
+      "evidence": [
+        "docs/8.6/upstream-maintainer-resolution.md",
+        "docs/8.6/scanner-grammar-binding-closure/binding.json"
+      ]
+    },
+    {
+      "id": "CA86-001",
+      "extendedStatus": "unresolved",
+      "structuralImpact": "The concrete hook-name false rejection is corrected independently as CA86-001-STRUCTURAL. The original extended gate and historical failed results remain unchanged; the new claim does not assert complete compiler equivalence.",
+      "evidence": [
+        "docs/8.6/structural-certification/gate-b.json",
+        "tests/fixtures/php/8.6/structural-hooks/cases.json"
+      ]
+    },
+    {
+      "id": "C6-CONTEXT",
+      "extendedStatus": "unresolved",
+      "structuralImpact": "The 73 descriptions document external context; they do not imply 73 isolated predicates or native whole-source enforcement. Source syntax before contextual actions is the structural claim. Known structural failures are not classified away by this boundary.",
+      "evidence": [
+        "docs/8.6/source-completeness-ledger.json",
+        "grammar/8.6/php.md"
+      ]
+    },
+    {
+      "id": "C6-COVERAGE",
+      "extendedStatus": "unresolved",
+      "structuralImpact": "Measured coverage and all gap identities are retained. Lexical primitive/trivia abstractions and source-corresponding alternatives can be classified without arbitrary fixture percentages. Scanner instrumentation and full AST equivalence remain extended; token boundaries, grammatical alternatives and precedence defects remain structural blockers.",
+      "evidence": [
+        "docs/8.6/scanner-grammar-binding-closure/coverage.json",
+        "docs/8.6/scanner-grammar-binding-closure/scanner.json",
+        "docs/8.6/scanner-grammar-binding-closure/binding.json"
+      ]
+    },
+    {
+      "id": "C6-PROVENANCE",
+      "extendedStatus": "unresolved",
+      "structuralImpact": "Exact GA build provenance is required and independently verified. Historical certification renewal, its missing manifest and success of all extended gates are not claimed. Unchanged PHP 8.5 artifacts and fresh shared compatibility are separately mandatory.",
+      "evidence": [
+        "docs/8.6/ga-finalization/build-source.json",
+        "docs/8.6/release-closure/historical-object-search.json"
+      ]
+    }
+  ],
+  "knownStructuralDefects": [
+    {
+      "id": "CA86-001-STRUCTURAL",
+      "status": "corrected-verified",
+      "production": "hook-name",
+      "expectedReference": "identifier",
+      "evidence": "docs/8.6/structural-certification/gate-b.json",
+      "tests": "tests/fixtures/php/8.6/structural-hooks/cases.json",
+      "executionEvidence": "docs/8.6/structural-certification/runs/prepromotion-r3/evidence.json"
+    },
+    {
+      "id": "SG86-002",
+      "status": "corrected-verified",
+      "production": "yield-key",
+      "evidence": "docs/8.6/structural-certification/yield-gate-b.json",
+      "tests": "tests/fixtures/php/8.6/structural-evidence/cases.json",
+      "executionEvidence": "docs/8.6/structural-certification/runs/prepromotion-r3/evidence.json"
+    }
+  ]
+}

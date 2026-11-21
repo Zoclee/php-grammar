@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "blocked:C6-COVERAGE",
+    "Supply independent RC4 scanner state/helper/error products; header equality is insufficient."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "scanner-state-closure",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/scanner-state-closure.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "blocked",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/scanner-state-closure.log",
+  "logSha256": "e8ad478e71d17f2dc15a48236b3338eb8a8e5beaaa629f2a3e24f1798ee108b9"
+}

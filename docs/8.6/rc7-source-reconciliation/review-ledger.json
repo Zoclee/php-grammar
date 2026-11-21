@@ -1,0 +1,5024 @@
+{
+  "contract": "php86-rc7-risk-review-v1",
+  "rc4": "f23b4c222cebe33be93ee8ecaaa14390c5507a08",
+  "rc7": "b63cd83da3279445ca4a913f03186141f5c3466e",
+  "scope": "Complete changed-path inventory; risk-based language review, not exhaustive runtime correctness certification.",
+  "unchanged": [
+    "Zend/zend_language_parser.y",
+    "Zend/zend_language_scanner.l"
+  ],
+  "findings": [
+    {
+      "id": "RC7-R01",
+      "classification": "Compiler implementation correction",
+      "source": "Zend/zend_compile.c:zend_compile_func_array_map",
+      "commit": "9a482311c094861fd7dffee26bab6e0e4c55fe2b",
+      "decision": "Preserve function-name AST for ordinary resolution in optimized array_map. No new argument grammar; runtime namespace/import/fallback correction.",
+      "tests": [
+        "Zend/tests/array_map_foreach_optimization_function_name.phpt"
+      ],
+      "grammarChanges": []
+    },
+    {
+      "id": "RC7-R02",
+      "classification": "Compiler implementation correction",
+      "source": "Zend/zend_ast.c:zend_ast_evaluate_arg_list",
+      "commit": "0ceaea99b2cc2b957a1b006d0ffd836e1bfaf43c",
+      "decision": "Record named positions only for placeholders. Fix PFA constant-expression out-of-bounds writes, not placeholder syntax.",
+      "tests": [
+        "Zend/tests/partial_application/gh25007.phpt"
+      ],
+      "grammarChanges": []
+    },
+    {
+      "id": "RC7-R03",
+      "classification": "Runtime-only change",
+      "source": "Zend/zend_ast.c:zend_ast_evaluate_inner",
+      "commit": "44a2a2c3db9e4e06c41a0603c3826fac3b1b99f3",
+      "decision": "Cache only scope-independent public callable resolutions; traits retain their using-class scope.",
+      "tests": [
+        "Zend/tests/first_class_callable/constexpr/trait_scope_001.phpt",
+        "Zend/tests/first_class_callable/constexpr/trait_scope_002.phpt",
+        "Zend/tests/first_class_callable/constexpr/trait_scope_003.phpt",
+        "Zend/tests/first_class_callable/constexpr/trait_scope_004.phpt",
+        "Zend/tests/first_class_callable/constexpr/trait_scope_005.phpt",
+        "Zend/tests/first_class_callable/constexpr/trait_scope_006.phpt"
+      ],
+      "grammarChanges": []
+    },
+    {
+      "id": "RC7-R04",
+      "classification": "Compiler implementation correction",
+      "source": "Zend/zend_compile.c:zend_compile_func_decl_ex; Zend/zend_vm_def.h:ZEND_DECLARE_LAMBDA_FUNCTION",
+      "commit": "e46e742f45e66cd4c6379160e3d378062a2e2b4f",
+      "decision": "Cache slot pair binds closure reuse to called scope; no source-validity predicate added.",
+      "tests": [
+        "Zend/tests/closures/gh23911.phpt"
+      ],
+      "grammarChanges": []
+    },
+    {
+      "id": "RC7-R05",
+      "classification": "Diagnostic-only change",
+      "source": "Zend/zend_compile.c; Zend/zend_inheritance.c; Zend/zend_API.c; Zend/zend_ast.c; Zend/zend_property_hooks.c",
+      "decision": "Migration to length-aware %pS preserves embedded NUL suffix of anonymous class names. Retained-hook rejection remains; historical diagnostic text is not rewritten.",
+      "tests": [
+        "Zend/tests/attributes/override/constants/anon_failure.phpt",
+        "Zend/tests/partial_application/static_pfa_004.phpt"
+      ],
+      "grammarChanges": [],
+      "futureFixtureObligation": "A new RC7 profile must carry versioned diagnostic expectations."
+    },
+    {
+      "id": "RC7-R06",
+      "classification": "Compiler implementation correction",
+      "source": "Zend/zend_ast.c:zend_ast_export_ex; ext/zend_test/test.c",
+      "decision": "Export final/abstract/readonly and import/group-use metadata correctly. Test-extension API and exporter output are not new source syntax.",
+      "tests": [
+        "Zend/tests/assert/expect_final_abstract_modifiers.phpt",
+        "Zend/tests/assert/expect_readonly_anon_class.phpt"
+      ],
+      "grammarChanges": []
+    },
+    {
+      "id": "RC7-R07",
+      "classification": "Compiler implementation correction",
+      "source": "Zend/zend_compile.c:zend_compile_match; Zend/zend_ast.c:zend_ast_evaluate_inner; Zend/zend_inheritance.c:track_class_dependency; Zend/Optimizer",
+      "decision": "Match throw live-range marking, duplicate named-argument cleanup, linked-class cache dependency, optimizer operand bookkeeping. No changed parser alternative or validity predicate identified.",
+      "tests": [
+        "Zend/tests/constexpr/new_named_params_duplicate_leak.phpt"
+      ],
+      "grammarChanges": []
+    },
+    {
+      "id": "RC7-R08",
+      "classification": "Runtime-only change",
+      "source": "Zend/zend_vm_def.h; Zend/zend_execute.c; Zend/zend_execute.h; Zend/zend_closures.c; Zend/zend_API.c; Zend/zend_fibers.c",
+      "decision": "Finally interrupt boundaries, closure equality, and return-reference unwrapping corrections do not implement the assignment-result guard. Preserve PHP86-014/015 obligations.",
+      "grammarChanges": []
+    },
+    {
+      "id": "RC7-R09",
+      "classification": "Unresolved",
+      "source": "PR25046 at 5089bcc83c8193e6a965dd1579767b1d503401ba",
+      "decision": "Submitted to PHP-8.6, open/unmerged, absent from RC7 and the pinned branch snapshot. Proposed rejection includes reference-assignment writes; foreach reference behavior remains outside patch scope. No normative update authorized.",
+      "grammarChanges": [],
+      "gateBReady": false
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/download-bundled/uriparser.sh",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs.yml",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/real-time-benchmark.yml",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-suite.yml",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test.yml",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/unit-tests.yml",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/verify-bundled-files.yml",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "NEWS",
+      "group": "release-notes",
+      "classifications": [
+        "Runtime-only change",
+        "Compiler implementation correction",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "UPGRADING",
+      "group": "release-notes",
+      "classifications": [
+        "Runtime-only change",
+        "Compiler implementation correction",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/Optimizer/block_pass.c",
+      "group": "optimizer-runtime",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/Optimizer/compact_literals.c",
+      "group": "optimizer-runtime",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/Optimizer/dfa_pass.c",
+      "group": "optimizer-runtime",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/Optimizer/zend_inference.c",
+      "group": "optimizer-runtime",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/Optimizer/zend_optimizer.c",
+      "group": "optimizer-runtime",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/anon/012.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/anon/013.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/anon/gh15994.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/array_map_foreach_optimization_function_name.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/assert/expect_final_abstract_modifiers.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/assert/expect_readonly_anon_class.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/attributes/override/constants/anon_failure.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/attributes/override/properties_16.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/bug72598.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/bug73816.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/closures/gh23911.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/constexpr/new_anon_class.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/constexpr/new_named_params_duplicate_leak.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/dynamic_prop_deprecation_002.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/fibers/gh24265-001.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/fibers/gh24265-002.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/first_class_callable/constexpr/trait_scope_001.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/first_class_callable/constexpr/trait_scope_002.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/first_class_callable/constexpr/trait_scope_003.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/first_class_callable/constexpr/trait_scope_004.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/first_class_callable/constexpr/trait_scope_005.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/first_class_callable/constexpr/trait_scope_006.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/gh19304.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/gh24989.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/gh24989_uncaught.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/partial_application/gh25007.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/partial_application/static_pfa_004.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/property_hooks/oss_fuzz_403308724.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/readonly_classes/gh10377_1.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/shift_left_overflow_range.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/temporary_cleaning/temporary_cleaning_013.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/try/finally_interrupt_after_return.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/try/finally_interrupt_after_return_generator.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/try/finally_interrupt_after_return_nested.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_001.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_002.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_003.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_004.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_005.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_033.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_034.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_037.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_038.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_044.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_062.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_063.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_064.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_065.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/typed_properties_078.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/tests/type_declarations/union_types/anonymous_class.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/vm_interrupt_rearm.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "Zend/tests/zend_mm_chunk_alloc_mmap_failure.phpt",
+      "group": "zend-regression-tests",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend.h",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_API.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_alloc.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_ast.c",
+      "group": "constant-evaluation-and-export",
+      "classifications": [
+        "Compiler implementation correction",
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_atomic.h",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_attributes.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_builtin_functions.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_closures.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_closures.h",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_compile.c",
+      "group": "compiler",
+      "classifications": [
+        "Compiler implementation correction",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_constants.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_enum.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_exceptions.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_execute.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_execute.h",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_execute_API.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_extensions.h",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_fibers.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_globals.h",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_inheritance.c",
+      "group": "declaration-linking",
+      "classifications": [
+        "Compiler implementation correction",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_ini.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_interfaces.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_lazy_objects.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_modules.h",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_object_handlers.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_objects.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_operators.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_partial.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_portability.h",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_property_hooks.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_range_check.h",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_system_id.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_types.h",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_vm_def.h",
+      "group": "vm-operands-and-control-flow",
+      "classifications": [
+        "Compiler implementation correction",
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_vm_execute.h",
+      "group": "vm-operands-and-control-flow",
+      "classifications": [
+        "Compiler implementation correction",
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_vm_gen.php",
+      "group": "vm-operands-and-control-flow",
+      "classifications": [
+        "Compiler implementation correction",
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "Zend/zend_weakrefs.c",
+      "group": "zend-runtime-and-diagnostics",
+      "classifications": [
+        "Runtime-only change",
+        "Diagnostic-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "configure.ac",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/com_dotnet/com_typeinfo.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/com_dotnet/tests/gh25008.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/curl/interface.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/curl/tests/curl_copy_handle_progress_null_uaf.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/curl/tests/curl_copy_handle_stderr_uaf.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/date/lib/parse_date.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/date/lib/parse_date.re",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/date/lib/parse_iso_intervals.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/date/lib/parse_iso_intervals.re",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/date/lib/timelib.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/date/lib/timezonedb.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/date/php_date.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/date/tests/bug65672.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/date/tests/oom_date_parse.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/date/tests/unserialize-test.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dba/dba.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dba/dba_ndbm.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/dba/tests/gh24641.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/document.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/element.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/html5_parser.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/html_collection.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/node.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/nodelist.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/parentnode/tree.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/php_dom.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/php_dom.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/private_data.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/private_data.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/dom/tests/gh25118.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/dom/tests/modern/xml/serialize_document_write_failure.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/dom/tests/modern/xml/serialize_document_write_mutation.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/dom/tests/reflected_attribute_write_live_child.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/dom/tests/xpath_php_function_foreign_doc_namespace_axis.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/token_list.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/xml_common.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/xml_serializer.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/dom/xpath.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/exif/exif.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/ffi/ffi.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/ffi/ffi.g",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/ffi/ffi_parser.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/ffi/php_ffi.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/ffi/tests/finalize_type_bailout_leak.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/fileinfo/create_data_file.php",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/fileinfo/data_file.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/fileinfo/magicdata.patch",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/fileinfo/tests/gh25051.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/fileinfo/tests/hwpx_mime.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/filter/tests/oom_filter_default_encoded.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/filter/tests/oom_filter_input.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/filter/tests/oom_filter_input_array.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/ftp/tests/server.inc",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/gd/gd.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/gd/tests/bug72697.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/gd/tests/imagetruecolortopalette_error3.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/gd/tests/imagetruecolortopalette_error4.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/hash/hash_gost.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/hash/hash_snefru.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/hash/tests/gost_snefru_512mib.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/iconv/tests/gh7980.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/intl/dateformat/dateformat_parse.cpp",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/intl/tests/dateformat_formatObject_calendar_variant_icu72-1.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/intl/tests/dateformat_formatObject_calendar_variant_icu79-1.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/intl/tests/dateformat_formatObject_datetime_variant_icu72-1.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/intl/tests/dateformat_formatObject_datetime_variant_icu79-1.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/intl/tests/dateformat_parse_offset_out_of_range.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/intl/tests/timezone_IDforWindowsID_basic_icu76_1.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/intl/tests/timezone_IDforWindowsID_basic_icu79_1.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/json/json.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/json/json_encoder.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/json/tests/json_encode_depth.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/json/tests/json_encode_invalid_key_aborts.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/json/tests/json_encode_oom_hooked_property_recursion_guard.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/ldap/ldap.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/ldap/tests/ldap_exop_sync_without_response_data.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/mbstring/mbstring.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/mbstring/tests/mb_rfc1867_getword_overread.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/mbstring/tests/oom_mb_strcut_filter.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/mbstring/tests/retry_limit_negative.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/mysqlnd/mysqlnd_wireprotocol.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/odbc/php_odbc.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/odbc/tests/gh24736.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/odbc/tests/gh25036.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/ZendAccelerator.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/jit/ir/dynasm/dasm_arm64.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/jit/ir/ir_aarch64.dasc",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/jit/ir/ir_x86.dasc",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/jit/zend_jit.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/jit/zend_jit.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/jit/zend_jit_helpers.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/jit/zend_jit_ir.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/jit/zend_jit_trace.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/tests/bug78937_1.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/tests/bug78937_2.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/gh17733.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/gh23626.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/gh24534.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/gh24577.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/gh24745.inc",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/gh24745.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/tests/issue0149.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/and_003.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/and_004.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/assign_dim_op_008.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/assign_dim_op_009.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/assign_dim_op_010.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/assign_dim_op_011.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/assign_dim_op_012.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/assign_dim_packed_string_key_001.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/assign_dim_packed_string_key_002.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/assign_dim_packed_string_key_003.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/cmp_010.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/function_vm_interrupt_enter_001.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh23572.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh23572_001.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh23572_002.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh23572_003.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh23572_004.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh24389.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh24396.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh24397.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh24398.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh24398_002.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh24436.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh24438.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/gh24988.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/init_static_method_call_002.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/init_static_method_call_002_include.inc",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/loop_vm_interrupt_001.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/or_001.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/or_002.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/preload_restart_function_jit.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/preload_restart_hot_counters.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/switch_002.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/switch_003.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/tailcall_vm_interrupt_opline_001.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/tailcall_vm_interrupt_opline_002.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/xor_004.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/jit/xor_005.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/opt/block_pass_fast_call_op2.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/opcache/tests/opt/gh25061.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/tests/preload_008.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/zend_accelerator_module.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/zend_file_cache.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/opcache/zend_persist.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/openssl/openssl.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/openssl/openssl_backend_common.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/openssl/php_openssl_backend.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/openssl/tests/gh24784.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/openssl/tests/openssl_spki_export_challenge_binary.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/openssl/tests/session_resumption_get_cb_num_tickets_positive.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/openssl/tests/session_resumption_remove_cb_closed_listener.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/openssl/tests/session_resumption_server_alpn_closed_parent.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/openssl/tests/session_unserialize_repeat.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/openssl/tests/tls_psk_oversized_identity.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/openssl/xp_ssl.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/pcntl/pcntl.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/pdo/pdo_dbh.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/pdo_firebird/firebird_statement.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/pdo_firebird/tests/gh25006.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/pdo_pgsql/pgsql_driver.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/pdo_pgsql/pgsql_statement.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/pdo_pgsql/php_pdo_pgsql_int.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/pdo_pgsql/tests/gh24461.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/pdo_pgsql/tests/gh24461_aborted_transaction_close.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/pdo_pgsql/tests/gh24461_leftover_statement.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/pdo_pgsql/tests/gh24461_shared_connection.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/pdo_pgsql/tests/pdopgsql_setNoticeCallback_persistent.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/pdo_sqlite/sqlite_driver.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/pdo_sqlite/sqlite_statement.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/pdo_sqlite/tests/gh24990.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/pdo_sqlite/tests/gh25021-udf.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/pgsql/pgsql.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/phar/phar_object.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/phar/stream.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/phar/tar.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/phar/tests/buildFromIterator_user_overrides/getMTime_negative.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/phar/tests/gh25090.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/phar/tests/gh25091.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/phar/tests/gh25092.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/phar/tests/gh25093.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/phar/tests/gh8469.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/phar/tests/tar/gh24740.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/phar/tests/zip/gh24531.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/phar/tests/zip/gh25089.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/phar/zip.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/random/tests/03_randomizer/methods/shuffleArray_engine_throws_with_holes.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/reflection/php_reflection.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/reflection/tests/ReflectionGenerator_basic.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/reflection/tests/gh21768.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/session/mod_files.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/session/php_session.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/session/session.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/session/tests/session_id_nul_byte.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/session/tests/session_write_close_encode_failure.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/session/tests/session_write_failure_keeps_data.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/simplexml/simplexml.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/simplexml/tests/gh24488.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/sockets/sockets.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/sockets/tests/gh24748.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/sodium/libsodium.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/sodium/libsodium.stub.php",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/sodium/libsodium_arginfo.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/sodium/tests/crypto_xof_shake128.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/sodium/tests/crypto_xof_shake256.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/sodium/tests/crypto_xof_turboshake.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/spl/php_spl.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/spl/spl_array.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/spl/spl_directory.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/spl/spl_heap.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/spl/spl_iterators.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/spl/spl_observer.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/spl/tests/autoloading/gh22118_internal_fake_closures.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/spl/tests/gh24264_1.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/spl/tests/gh24264_2.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/spl/tests/gh24264_3.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/spl/tests/gh24264_4.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/spl/tests/gh24264_5.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/sqlite3/sqlite3.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/sqlite3/tests/gh25021-udf.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/array.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/basic_functions.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/browscap.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/dns_win32.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/file.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/filestat.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/fsock.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/ftp_fopen_wrapper.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/head.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/http.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/http_fopen_wrapper.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/info.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/io_poll.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/mail.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/proc_open.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/streamsfuncs.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/string.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/syslog.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/array/compact_this.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/class_object/bug78638.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/class_object/get_object_vars_variation_004.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/file/fscanf_error.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/general_functions/debug_zval_dump_gh19801_memory_leak.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/general_functions/gh24605_var_export_stack_guard.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/general_functions/header_over_4gib.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/general_functions/proc_open_descriptor_0_setup_failure.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/general_functions/proc_open_socket_descriptor_0_setup_failure.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/general_functions/sleep_alertable_win32.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/general_functions/var_dump_gh19801_memory_leak.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/http/gh24508.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/http/gh24509.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/mail/mail_basic7.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/network/gh24308.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/network/gh24616.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/poll/gh25086.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/poll/poll_stream_add_unpollable_wsapoll.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/poll/poll_stream_buffered_edge.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/poll/poll_stream_buffered_level.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/poll/poll_stream_buffered_max_events.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/poll/poll_stream_buffered_merge.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/poll/poll_stream_buffered_oneshot.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/poll/poll_stream_modify_oneshot_flag.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/serialize/__unserialize_malformed.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/serialize/__unserialize_malformed_nested_destructor.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/serialize/__wakeup_malformed.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/serialize/bug81111.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/serialize/gh24373.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/serialize/gh24373_unserialize.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/serialize/unserialize_allowed_classes_option_invalid_class_names.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/serialize/unserialize_callback_func/fn_with_null_bytes.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/tests/streams/bug69521.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/streams/ftp_fopen_do_pasv_reply_bounds.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/streams/ftp_url_stat_mdtm_no_digits.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/streams/gh24506.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/strings/gh24552.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/standard/tests/strings/sapi_windows_cp_negative_codepage.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/var.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/standard/var_unserializer.re",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/uri/tests/rfc3986/parsing/port_success_leading_zeros.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/uri/tests/rfc3986/parsing/port_success_leading_zeros_zero.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uri_parser_rfc3986.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/include/uriparser/Uri.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/include/uriparser/UriBase.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/include/uriparser/UriIp4.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriCommon.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriCommon.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriCompare.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriCopy.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriCopy.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriEscape.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriFile.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriIp4.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriMemory.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriNormalize.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriNormalize.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriParse.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriParseBase.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriParseBase.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriQuery.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriRecompose.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriResolve.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetFragment.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetHostAuto.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetHostCommon.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetHostCommon.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetHostIp4.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetHostIp6.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetHostIpFuture.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetHostRegName.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetPath.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetPort.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetQuery.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetScheme.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriSetUserInfo.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/uri/uriparser/src/UriShorten.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/xmlreader/php_xmlreader.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zend_test/object_handlers.c",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zend_test/observer.c",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zend_test/php_test.h",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zend_test/test.c",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zend_test/test.stub.php",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zend_test/test_arginfo.h",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zend_test/test_decl.h",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zend_test/test_legacy_arginfo.h",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/zend_test/tests/compile_to_ast/namespace.phpt",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/zend_test/tests/gh24523.phpt",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/zend_test/tests/gh24668.phpt",
+      "group": "test-only-ast-export",
+      "classifications": [
+        "Compiler implementation correction"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zip/config.m4",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zip/config.w32",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/zip/tests/stats_existing.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/zip/tests/stats_missing.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "ext/zip/tests/stats_nonzip.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zip/zip_stream.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "ext/zlib/config.w32",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "main/SAPI.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "main/network.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "main/php.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "main/php_odbc_utils.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "main/php_poll.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "main/php_version.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "main/poll/poll_backend_kqueue.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "main/poll/poll_backend_wsapoll.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "main/poll/poll_handle.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "main/streams/xp_socket.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "pear/Makefile.frag",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "D",
+      "path": "pear/fetch.php",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "pear/install-pear-nozlib.phar",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "pear/install-pear.txt",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "sapi/cgi/tests/stream_error_default_context.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/cli/cli.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/cli/php_cli.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/cli/php_cli_server.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/cli/php_http_parser.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/cli/php_http_parser.h",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/cli/ps_title.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "sapi/cli/tests/gh16137_duplicate_headers.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "sapi/cli/tests/gh9670.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/fpm/fpm/fpm_children.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/fpm/fpm/fpm_status.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/fpm/fpm/zlog.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/fpm/tests/bug77023-pm-dynamic-blocking-sigquit.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "sapi/fpm/tests/fatal-error-backtrace-request-reset.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "sapi/fpm/tests/gh24046-stdio-pipe-double-close.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "sapi/fpm/tests/log-bwd-long-pool-name.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "sapi/fpm/tests/log-dwd-long-pool-name-limit-512.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "A",
+      "path": "sapi/fpm/tests/status-head.phpt",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/fpm/tests/tester.inc",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/litespeed/README.md",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "sapi/litespeed/lsapi_main.c",
+      "group": "extension-and-runtime",
+      "classifications": [
+        "Runtime-only change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "scripts/dev/makedist",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    },
+    {
+      "status": "M",
+      "path": "win32/build/confutils.js",
+      "group": "build-and-maintenance",
+      "classifications": [
+        "Nonmaterial implementation change"
+      ],
+      "structuralGrammarChangeIdentified": false,
+      "lexicalChangeIdentified": false
+    }
+  ],
+  "remainingBlockers": [
+    "PHP86-013",
+    "PHP86-014",
+    "PHP86-015",
+    "CA86-001",
+    "C6-CONTEXT",
+    "C6-COVERAGE",
+    "C6-PROVENANCE"
+  ],
+  "certificationGranted": false
+}

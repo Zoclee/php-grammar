@@ -1,0 +1,16 @@
+{
+  "command": [
+    ".audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/final-phpunit.log",
+  "sha256": "82f5e1b45aca644f7b3486686006501b11090546fc5c0c8e7d72bced253c783a"
+}

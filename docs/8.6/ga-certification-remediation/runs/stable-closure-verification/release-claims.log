@@ -1,0 +1,26 @@
+{
+  "contract": "php86-ga-certification-v2",
+  "evidenceVerified": false,
+  "errors": [
+    "Unsatisfied obligation: rfc-implementation-traceability",
+    "Unsatisfied obligation: historical-certification-check",
+    "Unsatisfied obligation: production-coverage-closure",
+    "Unsatisfied obligation: alternative-coverage-closure",
+    "Unsatisfied obligation: scanner-state-closure",
+    "Unsatisfied obligation: ast-binding",
+    "Unsatisfied obligation: folding-order",
+    "Unsatisfied obligation: discovery-closure",
+    "Unsatisfied obligation: writable-target-validity",
+    "Unsatisfied obligation: contextual-enforcement-scope",
+    "Unsatisfied obligation: discarded-hook-disposition",
+    "Unsatisfied obligation: historical-artifact-integrity85",
+    "Unresolved material blocker: PHP86-013",
+    "Unresolved material blocker: PHP86-014",
+    "Unresolved material blocker: PHP86-015",
+    "Unresolved material blocker: CA86-001",
+    "Unresolved material blocker: C6-CONTEXT",
+    "Unresolved material blocker: C6-COVERAGE",
+    "Unresolved material blocker: C6-PROVENANCE"
+  ],
+  "certificationGranted": false
+}

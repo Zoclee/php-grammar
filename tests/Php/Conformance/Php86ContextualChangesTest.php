@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 final class Php86ContextualChangesTest extends TestCase
 {
-    private static function root(): string {return dirname(__DIR__,3);}
+    private static function root(): string {return \PhpGrammar\Tests\Support\StructuralPredecessor::root();}
     private static function json(string $path): array {
         return json_decode(file_get_contents(self::root().'/'.$path),true,512,JSON_THROW_ON_ERROR);
     }

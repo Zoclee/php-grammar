@@ -1,0 +1,2437 @@
+{
+  "contract": "php86-hook-correction-v1",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "observations": [
+    {
+      "id": "hook-0-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-0-live.php",
+      "sha256": "0e16f5b203543a1f8824cd24d3790cc2f6890ec7c759a8d9dd4e267c0eec6884",
+      "nameHex": "676574",
+      "stage": "live",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-0-live.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-0-live.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0wLWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-0-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-0-retained.php",
+      "sha256": "a89e3cf62f37de2c3e6819b31878aef895b53695ee3ad59b6ba7a6e250236c49",
+      "nameHex": "676574",
+      "stage": "retained",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-0-retained.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-0-retained.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0wLXJldGFpbmVkLnBocAo="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-0-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-0-discarded.php",
+      "sha256": "462440ff91c0883f992cb41f537f148d241f2caf609dfb7a3565343986c6b42a",
+      "nameHex": "676574",
+      "stage": "discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-0-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-0-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0wLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-0-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-0-promoted-live.php",
+      "sha256": "cb998a203296698b50347e3b26f498c4c0d1c459ad152a1653f0136aaa26614b",
+      "nameHex": "676574",
+      "stage": "promoted-live",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-0-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-0-promoted-live.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0wLXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-0-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-0-promoted-discarded.php",
+      "sha256": "2df533afd0c6382f94f379a41e2f9b30ed7f6a29d556d0d4fd5b4271439ff48b",
+      "nameHex": "676574",
+      "stage": "promoted-discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-0-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-0-promoted-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0wLXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-1-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-1-live.php",
+      "sha256": "d584c0a1f8c6bfdc0c887f95ef79538e921bfbd59029311f88298f90a52d452f",
+      "nameHex": "474554",
+      "stage": "live",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-1-live.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-1-live.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xLWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-1-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-1-retained.php",
+      "sha256": "32d14073d1095222c904d72a01ba706c5170d01645f157e71e383936788d3c49",
+      "nameHex": "474554",
+      "stage": "retained",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-1-retained.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-1-retained.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xLXJldGFpbmVkLnBocAo="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-1-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-1-discarded.php",
+      "sha256": "f7c00f8eebbf6950171c033e0e30b6033a798c8a11ce0e4b7c01c2cf17d9883c",
+      "nameHex": "474554",
+      "stage": "discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-1-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-1-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-1-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-1-promoted-live.php",
+      "sha256": "e18dafb712b2e25389cd6a5a4ae0fa658404d958642f2cb644c39b6adbe89258",
+      "nameHex": "474554",
+      "stage": "promoted-live",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-1-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-1-promoted-live.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xLXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-1-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-1-promoted-discarded.php",
+      "sha256": "636b0c0dfe58bac505e5355a0860895896aab5fba137a4ea9aa8c8c77bba0438",
+      "nameHex": "474554",
+      "stage": "promoted-discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-1-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-1-promoted-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xLXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-2-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-2-live.php",
+      "sha256": "c4626ae9a081a569b88a22c641374d23ba0401e2867fc4a3a9ada252020a3c48",
+      "nameHex": "736574",
+      "stage": "live",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-2-live.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-2-live.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0yLWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-2-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-2-retained.php",
+      "sha256": "e8b14112a152355d2d8968702fa3558e44e4c92646360d06a27342e740cdbc03",
+      "nameHex": "736574",
+      "stage": "retained",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-2-retained.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-2-retained.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0yLXJldGFpbmVkLnBocAo="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-2-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-2-discarded.php",
+      "sha256": "c307dd5d3275086e31a9eb15b1546c9dc9b847ae095e12f2c57627e3ad371bba",
+      "nameHex": "736574",
+      "stage": "discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-2-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-2-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0yLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-2-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-2-promoted-live.php",
+      "sha256": "c7e2746c4f8f59e500e8c15ceb2a42a8fe9ec6bfafd607b41cab38bed8526ef2",
+      "nameHex": "736574",
+      "stage": "promoted-live",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-2-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-2-promoted-live.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0yLXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-2-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-2-promoted-discarded.php",
+      "sha256": "e5cb00cbe3d5ad4792832feed1bb5454535feee3761394bd2d1022a2bbbf5c39",
+      "nameHex": "736574",
+      "stage": "promoted-discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-2-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-2-promoted-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0yLXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-3-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-3-live.php",
+      "sha256": "cdc3638ee2b48978610b31dd2124f55576d4f3bebc85409dc4529ca3d683b5f4",
+      "nameHex": "536554",
+      "stage": "live",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-3-live.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-3-live.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0zLWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-3-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-3-retained.php",
+      "sha256": "e3779df9bde95d166a3f87034c28af6cc3e72085becf6db519436ace7fcc9e60",
+      "nameHex": "536554",
+      "stage": "retained",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-3-retained.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-3-retained.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0zLXJldGFpbmVkLnBocAo="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-3-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-3-discarded.php",
+      "sha256": "d7b5e7f1ad930ef66f48ba860cc493c6f0ff08da2778b6d7bec1c2b62b09140a",
+      "nameHex": "536554",
+      "stage": "discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-3-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-3-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0zLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-3-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-3-promoted-live.php",
+      "sha256": "b0dd533e5ae9765a850c485d67e1f4336df65748736011e73de524881785ee0b",
+      "nameHex": "536554",
+      "stage": "promoted-live",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-3-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-3-promoted-live.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0zLXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-3-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-3-promoted-discarded.php",
+      "sha256": "a802a3e646581b7e123dd3c3aebd29627a16a9bb9268c2e076be5f2234a3cc28",
+      "nameHex": "536554",
+      "stage": "promoted-discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-3-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-3-promoted-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0zLXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": true
+    },
+    {
+      "id": "hook-4-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-4-live.php",
+      "sha256": "f37a2ffe8ff8dcb730e49d29b309538ffcfa04ed5366f15c6b5a6109d8a2ed0b",
+      "nameHex": "756e6b6e6f776e",
+      "stage": "live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-4-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"unknown\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-4-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-4-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-4-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgInVua25vd24iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNC1saXZlLnBocDoxJDA6OiR4LCBleHBlY3RlZCAiZ2V0IiBvciAic2V0IiBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay00LWxpdmUucGhwIG9uIGxpbmUgMQpTdGFjayB0cmFjZToKIzAge21haW59CkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTQtbGl2ZS5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-4-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-4-retained.php",
+      "sha256": "1c96f0795a18fb12e6b0fa34e41b01d38f4a18338e7c0d7acda21a15148958c6",
+      "nameHex": "756e6b6e6f776e",
+      "stage": "retained",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-4-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"unknown\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-4-retained.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-4-retained.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-4-retained.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgInVua25vd24iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNC1yZXRhaW5lZC5waHA6MSQwOjokeCwgZXhwZWN0ZWQgImdldCIgb3IgInNldCIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNC1yZXRhaW5lZC5waHAgb24gbGluZSAxClN0YWNrIHRyYWNlOgojMCB7bWFpbn0KRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNC1yZXRhaW5lZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-4-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-4-discarded.php",
+      "sha256": "69dfbcd23d1355bd3e1229ecdf84244715f734322270e167668d1e86057f8d64",
+      "nameHex": "756e6b6e6f776e",
+      "stage": "discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-4-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-4-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay00LWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-4-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-4-promoted-live.php",
+      "sha256": "1fe9af0476097c54e24200dd542d562cf99c95f737d807fb59d6eefe52f1e67e",
+      "nameHex": "756e6b6e6f776e",
+      "stage": "promoted-live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-4-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"unknown\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-4-promoted-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-4-promoted-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-4-promoted-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgInVua25vd24iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNC1wcm9tb3RlZC1saXZlLnBocDoxJDA6OiR4LCBleHBlY3RlZCAiZ2V0IiBvciAic2V0IiBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay00LXByb21vdGVkLWxpdmUucGhwIG9uIGxpbmUgMQpTdGFjayB0cmFjZToKIzAge21haW59CkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTQtcHJvbW90ZWQtbGl2ZS5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-4-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-4-promoted-discarded.php",
+      "sha256": "286d3bb2b4c493dfc544703d28e3ea9859c4bf3187f08b95dc08edadd93ace87",
+      "nameHex": "756e6b6e6f776e",
+      "stage": "promoted-discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-4-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-4-promoted-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay00LXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-5-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-5-live.php",
+      "sha256": "21e823769058e4592d1bf58037d224a0dfceacb30e62a77dec23304f7a4ee143",
+      "nameHex": "554e4b4e4f574e",
+      "stage": "live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-5-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"UNKNOWN\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-5-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-5-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-5-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgIlVOS05PV04iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNS1saXZlLnBocDoxJDA6OiR4LCBleHBlY3RlZCAiZ2V0IiBvciAic2V0IiBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay01LWxpdmUucGhwIG9uIGxpbmUgMQpTdGFjayB0cmFjZToKIzAge21haW59CkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTUtbGl2ZS5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-5-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-5-retained.php",
+      "sha256": "f2e41465e21dc921b21e496bd7c40128e4e2099e4d776e0253848e5b216be7c1",
+      "nameHex": "554e4b4e4f574e",
+      "stage": "retained",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-5-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"UNKNOWN\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-5-retained.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-5-retained.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-5-retained.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgIlVOS05PV04iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNS1yZXRhaW5lZC5waHA6MSQwOjokeCwgZXhwZWN0ZWQgImdldCIgb3IgInNldCIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNS1yZXRhaW5lZC5waHAgb24gbGluZSAxClN0YWNrIHRyYWNlOgojMCB7bWFpbn0KRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNS1yZXRhaW5lZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-5-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-5-discarded.php",
+      "sha256": "5c2c212c37ede0041707870bdcce68aa2efba0a9f3b1461038a9d96ca75be292",
+      "nameHex": "554e4b4e4f574e",
+      "stage": "discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-5-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-5-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay01LWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-5-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-5-promoted-live.php",
+      "sha256": "117d22d35587ad271d506e70588bf1c986df49a87dc3a2e7df7d6e54f919e409",
+      "nameHex": "554e4b4e4f574e",
+      "stage": "promoted-live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-5-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"UNKNOWN\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-5-promoted-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-5-promoted-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-5-promoted-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgIlVOS05PV04iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNS1wcm9tb3RlZC1saXZlLnBocDoxJDA6OiR4LCBleHBlY3RlZCAiZ2V0IiBvciAic2V0IiBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay01LXByb21vdGVkLWxpdmUucGhwIG9uIGxpbmUgMQpTdGFjayB0cmFjZToKIzAge21haW59CkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTUtcHJvbW90ZWQtbGl2ZS5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-5-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-5-promoted-discarded.php",
+      "sha256": "fdc3ce664c443fa8639f88259ba4aaa251a7e0408ae57d023db750c3cc3dd57b",
+      "nameHex": "554e4b4e4f574e",
+      "stage": "promoted-discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-5-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-5-promoted-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay01LXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-6-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-6-live.php",
+      "sha256": "8bfdb4831ed230255799db9ac29594e1aaef8fbd34523e35d64083733974e75d",
+      "nameHex": "66726f6d",
+      "stage": "live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-6-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"from\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-6-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-6-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-6-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgImZyb20iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNi1saXZlLnBocDoxJDA6OiR4LCBleHBlY3RlZCAiZ2V0IiBvciAic2V0IiBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay02LWxpdmUucGhwIG9uIGxpbmUgMQpTdGFjayB0cmFjZToKIzAge21haW59CkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTYtbGl2ZS5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-6-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-6-retained.php",
+      "sha256": "6f0e69f634a3797079ca6b21ccc03d76aa82d666c3238d7511473be61ccd54d6",
+      "nameHex": "66726f6d",
+      "stage": "retained",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-6-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"from\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-6-retained.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-6-retained.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-6-retained.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgImZyb20iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNi1yZXRhaW5lZC5waHA6MSQwOjokeCwgZXhwZWN0ZWQgImdldCIgb3IgInNldCIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNi1yZXRhaW5lZC5waHAgb24gbGluZSAxClN0YWNrIHRyYWNlOgojMCB7bWFpbn0KRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNi1yZXRhaW5lZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-6-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-6-discarded.php",
+      "sha256": "5fc79a3f2b929493d125058bc9064d7090399bfabe70816caf5561eb56b2d4fb",
+      "nameHex": "66726f6d",
+      "stage": "discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-6-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-6-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay02LWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-6-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-6-promoted-live.php",
+      "sha256": "98caba1ebb8f3e2404a63d5bc6cb8baebb1949f55d94b9d6e09131535034f414",
+      "nameHex": "66726f6d",
+      "stage": "promoted-live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-6-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"from\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-6-promoted-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-6-promoted-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-6-promoted-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgImZyb20iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNi1wcm9tb3RlZC1saXZlLnBocDoxJDA6OiR4LCBleHBlY3RlZCAiZ2V0IiBvciAic2V0IiBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay02LXByb21vdGVkLWxpdmUucGhwIG9uIGxpbmUgMQpTdGFjayB0cmFjZToKIzAge21haW59CkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTYtcHJvbW90ZWQtbGl2ZS5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-6-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-6-promoted-discarded.php",
+      "sha256": "a1770b27fed29c53ba8f7670f35ec2eb92cce5ff0846ed8f2ffa0f79845cfce2",
+      "nameHex": "66726f6d",
+      "stage": "promoted-discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-6-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-6-promoted-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay02LXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-7-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-7-live.php",
+      "sha256": "b4310dafb1fcbc028227bfefc87d581b26731f0518fb3847a2133f8527540e0e",
+      "nameHex": "656e756d",
+      "stage": "live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-7-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"enum\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-7-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-7-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-7-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgImVudW0iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNy1saXZlLnBocDoxJDA6OiR4LCBleHBlY3RlZCAiZ2V0IiBvciAic2V0IiBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay03LWxpdmUucGhwIG9uIGxpbmUgMQpTdGFjayB0cmFjZToKIzAge21haW59CkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTctbGl2ZS5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-7-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-7-retained.php",
+      "sha256": "2e481240ea1e67701f10d41c417e169cd96bcfc3a877e67b758c602ab96384ce",
+      "nameHex": "656e756d",
+      "stage": "retained",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-7-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"enum\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-7-retained.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-7-retained.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-7-retained.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgImVudW0iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNy1yZXRhaW5lZC5waHA6MSQwOjokeCwgZXhwZWN0ZWQgImdldCIgb3IgInNldCIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNy1yZXRhaW5lZC5waHAgb24gbGluZSAxClN0YWNrIHRyYWNlOgojMCB7bWFpbn0KRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNy1yZXRhaW5lZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-7-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-7-discarded.php",
+      "sha256": "396f1a1aa383b514ff9d6110dcff18fcee8d7edab0a23e422e930be05b586109",
+      "nameHex": "656e756d",
+      "stage": "discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-7-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-7-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay03LWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-7-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-7-promoted-live.php",
+      "sha256": "18f94b5afad2e183972ef3ee876010164add9d2d99e9469dccbe3284657580a8",
+      "nameHex": "656e756d",
+      "stage": "promoted-live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-7-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"enum\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-7-promoted-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-7-promoted-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-7-promoted-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgImVudW0iIGZvciBwcm9wZXJ0eSBjbGFzc0Bhbm9ueW1vdXMAdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stNy1wcm9tb3RlZC1saXZlLnBocDoxJDA6OiR4LCBleHBlY3RlZCAiZ2V0IiBvciAic2V0IiBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay03LXByb21vdGVkLWxpdmUucGhwIG9uIGxpbmUgMQpTdGFjayB0cmFjZToKIzAge21haW59CkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTctcHJvbW90ZWQtbGl2ZS5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-7-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-7-promoted-discarded.php",
+      "sha256": "202ecd6a96a220cc699972c25a39e5c08ccd5923abd49bbbaa6631c10fc0be3c",
+      "nameHex": "656e756d",
+      "stage": "promoted-discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-7-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-7-promoted-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay03LXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-8-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-8-live.php",
+      "sha256": "826c8d7825f4a04e637a13bbbf81ae785cecf6c2c5b2b2086adbed8ddad36d03",
+      "nameHex": "5f5f676574",
+      "stage": "live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-8-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"__get\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-8-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-8-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-8-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgIl9fZ2V0IiBmb3IgcHJvcGVydHkgY2xhc3NAYW5vbnltb3VzAHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTgtbGl2ZS5waHA6MSQwOjokeCwgZXhwZWN0ZWQgImdldCIgb3IgInNldCIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stOC1saXZlLnBocCBvbiBsaW5lIDEKU3RhY2sgdHJhY2U6CiMwIHttYWlufQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay04LWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-8-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-8-retained.php",
+      "sha256": "61c5c217ba9bd5a6cd274eb9d64a1224e4c47aeb5dedf12a0e037aea9ad1cc1c",
+      "nameHex": "5f5f676574",
+      "stage": "retained",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-8-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"__get\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-8-retained.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-8-retained.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-8-retained.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgIl9fZ2V0IiBmb3IgcHJvcGVydHkgY2xhc3NAYW5vbnltb3VzAHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTgtcmV0YWluZWQucGhwOjEkMDo6JHgsIGV4cGVjdGVkICJnZXQiIG9yICJzZXQiIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTgtcmV0YWluZWQucGhwIG9uIGxpbmUgMQpTdGFjayB0cmFjZToKIzAge21haW59CkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTgtcmV0YWluZWQucGhwCg=="
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-8-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-8-discarded.php",
+      "sha256": "04106bd37f0cc2d4554da7993549fba950d4ed3854070f66915bafb0e193d173",
+      "nameHex": "5f5f676574",
+      "stage": "discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-8-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-8-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay04LWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-8-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-8-promoted-live.php",
+      "sha256": "2d70512a5034502c7ceddcb55caf8e76f0fe1ef3d07f310a37e670fbd90d6750",
+      "nameHex": "5f5f676574",
+      "stage": "promoted-live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-8-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"__get\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-8-promoted-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-8-promoted-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-8-promoted-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgIl9fZ2V0IiBmb3IgcHJvcGVydHkgY2xhc3NAYW5vbnltb3VzAHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTgtcHJvbW90ZWQtbGl2ZS5waHA6MSQwOjokeCwgZXhwZWN0ZWQgImdldCIgb3IgInNldCIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stOC1wcm9tb3RlZC1saXZlLnBocCBvbiBsaW5lIDEKU3RhY2sgdHJhY2U6CiMwIHttYWlufQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay04LXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-8-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-8-promoted-discarded.php",
+      "sha256": "019a2565b81b038fc23ce468c32b4c094a0c67ce96e3bd9ed2aa1ca8e3de294d",
+      "nameHex": "5f5f676574",
+      "stage": "promoted-discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-8-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-8-promoted-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay04LXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-9-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-9-live.php",
+      "sha256": "ef120a2ea3d54c35daea7d0412fdc4fbaedc277ce326ad87f58f49cb2253e789",
+      "nameHex": "68e9",
+      "stage": "live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-9-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"h\ufffd\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-9-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-9-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-9-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgImjpIiBmb3IgcHJvcGVydHkgY2xhc3NAYW5vbnltb3VzAHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTktbGl2ZS5waHA6MSQwOjokeCwgZXhwZWN0ZWQgImdldCIgb3IgInNldCIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stOS1saXZlLnBocCBvbiBsaW5lIDEKU3RhY2sgdHJhY2U6CiMwIHttYWlufQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay05LWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-9-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-9-retained.php",
+      "sha256": "2d64a088b79f444a5c0cc1d3ead865555f45d001b42ab5e0114fd6730430afe5",
+      "nameHex": "68e9",
+      "stage": "retained",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-9-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"h\ufffd\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-9-retained.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-9-retained.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-9-retained.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgImjpIiBmb3IgcHJvcGVydHkgY2xhc3NAYW5vbnltb3VzAHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTktcmV0YWluZWQucGhwOjEkMDo6JHgsIGV4cGVjdGVkICJnZXQiIG9yICJzZXQiIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTktcmV0YWluZWQucGhwIG9uIGxpbmUgMQpTdGFjayB0cmFjZToKIzAge21haW59CkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTktcmV0YWluZWQucGhwCg=="
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-9-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-9-discarded.php",
+      "sha256": "bffa1c059607480b4360713d23d45c753ee1395f50148288faed88a6dfd51678",
+      "nameHex": "68e9",
+      "stage": "discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-9-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-9-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay05LWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-9-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-9-promoted-live.php",
+      "sha256": "196f769a0780a65cfd312eab9864bc9d9d92efdca16c5f8b7a7b193beb8072ef",
+      "nameHex": "68e9",
+      "stage": "promoted-live",
+      "structural": true,
+      "lintAccepted": false,
+      "unknownHook": true,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-9-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Unknown hook \"h\ufffd\" for property class@anonymous\u0000tests/fixtures/php/8.6/structural-hooks/hook-9-promoted-live.php:1$0::$x, expected \"get\" or \"set\" in tests/fixtures/php/8.6/structural-hooks/hook-9-promoted-live.php on line 1\nStack trace:\n#0 {main}\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-9-promoted-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBVbmtub3duIGhvb2sgImjpIiBmb3IgcHJvcGVydHkgY2xhc3NAYW5vbnltb3VzAHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTktcHJvbW90ZWQtbGl2ZS5waHA6MSQwOjokeCwgZXhwZWN0ZWQgImdldCIgb3IgInNldCIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stOS1wcm9tb3RlZC1saXZlLnBocCBvbiBsaW5lIDEKU3RhY2sgdHJhY2U6CiMwIHttYWlufQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay05LXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-9-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-9-promoted-discarded.php",
+      "sha256": "fa6fd03a5235574d4023feddc8bc0b30c407fda3820bbaf60339cca700515378",
+      "nameHex": "68e9",
+      "stage": "promoted-discarded",
+      "structural": true,
+      "lintAccepted": true,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-9-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 0,
+        "output": "No syntax errors detected in tests/fixtures/php/8.6/structural-hooks/hook-9-promoted-discarded.php\n",
+        "outputBase64": "Tm8gc3ludGF4IGVycm9ycyBkZXRlY3RlZCBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay05LXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": true,
+      "historical85": false
+    },
+    {
+      "id": "hook-10-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-10-live.php",
+      "sha256": "33e3d407ac952044b1a578ed66bd0e77fde8e7fe6ac06ce55ad296d3e3fd453b",
+      "nameHex": "636c617373",
+      "stage": "live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-10-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"class\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-10-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-10-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gImNsYXNzIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTAtbGl2ZS5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTEwLWxpdmUucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-10-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-10-retained.php",
+      "sha256": "a02b80f283c184eb7afe943637d75e43f7b21a7cde19e77dfb7cc2db7cab0b33",
+      "nameHex": "636c617373",
+      "stage": "retained",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-10-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"class\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-10-retained.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-10-retained.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gImNsYXNzIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTAtcmV0YWluZWQucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xMC1yZXRhaW5lZC5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-10-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-10-discarded.php",
+      "sha256": "8aa3fe8ec6122034b73e0f8b476541d16bde2a3a5282d485307dc91e2451db59",
+      "nameHex": "636c617373",
+      "stage": "discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-10-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"class\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-10-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-10-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gImNsYXNzIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTAtZGlzY2FyZGVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTAtZGlzY2FyZGVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-10-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-10-promoted-live.php",
+      "sha256": "0066235102fcbdff3c489762e90a488c514beba8f84bc049eba0d4059145da57",
+      "nameHex": "636c617373",
+      "stage": "promoted-live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-10-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"class\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-10-promoted-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-10-promoted-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gImNsYXNzIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTAtcHJvbW90ZWQtbGl2ZS5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTEwLXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-10-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-10-promoted-discarded.php",
+      "sha256": "5231c8fd3762efa80a5ce413f96b421edbab74d43f09ed0418fe08c884229115",
+      "nameHex": "636c617373",
+      "stage": "promoted-discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-10-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"class\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-10-promoted-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-10-promoted-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gImNsYXNzIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTAtcHJvbW90ZWQtZGlzY2FyZGVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTAtcHJvbW90ZWQtZGlzY2FyZGVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-11-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-11-live.php",
+      "sha256": "5589c005333de207c7332008a3fa8f0a677bc604ecb206c18a58e5211e352135",
+      "nameHex": "7969656c64",
+      "stage": "live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-11-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"yield\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-11-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-11-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gInlpZWxkIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTEtbGl2ZS5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTExLWxpdmUucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-11-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-11-retained.php",
+      "sha256": "141541b017811a7042076dec634086f24ec76d7cd0801ae0f69c8b7088ed4c3f",
+      "nameHex": "7969656c64",
+      "stage": "retained",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-11-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"yield\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-11-retained.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-11-retained.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gInlpZWxkIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTEtcmV0YWluZWQucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xMS1yZXRhaW5lZC5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-11-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-11-discarded.php",
+      "sha256": "da2e812006891fb8b6c2a2fd5c86009062643eb340640f4e3f2c6d3792a5b1be",
+      "nameHex": "7969656c64",
+      "stage": "discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-11-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"yield\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-11-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-11-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gInlpZWxkIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTEtZGlzY2FyZGVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTEtZGlzY2FyZGVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-11-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-11-promoted-live.php",
+      "sha256": "a3ea766f5d2ae6ea998e84eaaea8e6bba602ee06c2dfda16376bc27ff0f73cf8",
+      "nameHex": "7969656c64",
+      "stage": "promoted-live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-11-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"yield\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-11-promoted-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-11-promoted-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gInlpZWxkIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTEtcHJvbW90ZWQtbGl2ZS5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTExLXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-11-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-11-promoted-discarded.php",
+      "sha256": "cb564aaf68debb815d39a95fc57eb6a508c3e25f528fb979d7c62cbf5be3dd6b",
+      "nameHex": "7969656c64",
+      "stage": "promoted-discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-11-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"yield\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-11-promoted-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-11-promoted-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gInlpZWxkIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTEtcHJvbW90ZWQtZGlzY2FyZGVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTEtcHJvbW90ZWQtZGlzY2FyZGVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-12-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-12-live.php",
+      "sha256": "b4de93fc8b1c53a8e662d56aead3ecec6457619e94086b8d1d7eb8afbfdaf789",
+      "nameHex": "6d61746368",
+      "stage": "live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-12-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"match\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-12-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-12-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gIm1hdGNoIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTItbGl2ZS5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTEyLWxpdmUucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-12-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-12-retained.php",
+      "sha256": "17ec07c8b6db911e9cf1051704979548c2d1c59b40057a162120743cb2efd5f6",
+      "nameHex": "6d61746368",
+      "stage": "retained",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-12-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"match\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-12-retained.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-12-retained.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gIm1hdGNoIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTItcmV0YWluZWQucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xMi1yZXRhaW5lZC5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-12-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-12-discarded.php",
+      "sha256": "0ce2e0a7dcc7b6ef38c94b59a805fe59fed3ad3ca4887d4203eb80834c5b2be1",
+      "nameHex": "6d61746368",
+      "stage": "discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-12-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"match\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-12-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-12-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gIm1hdGNoIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTItZGlzY2FyZGVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTItZGlzY2FyZGVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-12-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-12-promoted-live.php",
+      "sha256": "2f166f25304d480919b784581948b79a15e9ba18e35f2c4f56bd6d835715a5d6",
+      "nameHex": "6d61746368",
+      "stage": "promoted-live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-12-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"match\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-12-promoted-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-12-promoted-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gIm1hdGNoIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTItcHJvbW90ZWQtbGl2ZS5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTEyLXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-12-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-12-promoted-discarded.php",
+      "sha256": "957361885a2277293310c80b7a02ee87c93f81c0d09eb001d5a09b98afcb3b82",
+      "nameHex": "6d61746368",
+      "stage": "promoted-discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-12-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected token \"match\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-12-promoted-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-12-promoted-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdG9rZW4gIm1hdGNoIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTItcHJvbW90ZWQtZGlzY2FyZGVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTItcHJvbW90ZWQtZGlzY2FyZGVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-13-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-13-live.php",
+      "sha256": "2aebf26ab07fd7100313aef25484d3a92c71ea295cf3318fcd061ce70037a89b",
+      "nameHex": "726561646f6e6c79",
+      "stage": "live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-13-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Cannot use the readonly modifier on a property hook in tests/fixtures/php/8.6/structural-hooks/hook-13-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-13-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBDYW5ub3QgdXNlIHRoZSByZWFkb25seSBtb2RpZmllciBvbiBhIHByb3BlcnR5IGhvb2sgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTMtbGl2ZS5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTEzLWxpdmUucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-13-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-13-retained.php",
+      "sha256": "a507edefbb0a9c652a2e2a95b7209b6cee38ccee49c1545056c2e97fc6c02048",
+      "nameHex": "726561646f6e6c79",
+      "stage": "retained",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-13-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Cannot use the readonly modifier on a property hook in tests/fixtures/php/8.6/structural-hooks/hook-13-retained.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-13-retained.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBDYW5ub3QgdXNlIHRoZSByZWFkb25seSBtb2RpZmllciBvbiBhIHByb3BlcnR5IGhvb2sgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTMtcmV0YWluZWQucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xMy1yZXRhaW5lZC5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-13-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-13-discarded.php",
+      "sha256": "f141cb1e489d5f9e28b4d8999a9fbe8a1a4a8340b6c2183af2a82643e09162ed",
+      "nameHex": "726561646f6e6c79",
+      "stage": "discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-13-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Cannot use the readonly modifier on a property hook in tests/fixtures/php/8.6/structural-hooks/hook-13-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-13-discarded.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBDYW5ub3QgdXNlIHRoZSByZWFkb25seSBtb2RpZmllciBvbiBhIHByb3BlcnR5IGhvb2sgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTMtZGlzY2FyZGVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTMtZGlzY2FyZGVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-13-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-13-promoted-live.php",
+      "sha256": "4a264801fdf8a1cbf869c80a817edca7b7d933a46b2868390e8ad74c7d657883",
+      "nameHex": "726561646f6e6c79",
+      "stage": "promoted-live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-13-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Cannot use the readonly modifier on a property hook in tests/fixtures/php/8.6/structural-hooks/hook-13-promoted-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-13-promoted-live.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBDYW5ub3QgdXNlIHRoZSByZWFkb25seSBtb2RpZmllciBvbiBhIHByb3BlcnR5IGhvb2sgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTMtcHJvbW90ZWQtbGl2ZS5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTEzLXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-13-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-13-promoted-discarded.php",
+      "sha256": "3ca9d1cefcdc3c1ff39d49fef365946d46aa6d5900f4498f755461fce1c3bc4f",
+      "nameHex": "726561646f6e6c79",
+      "stage": "promoted-discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-13-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nFatal error: Cannot use the readonly modifier on a property hook in tests/fixtures/php/8.6/structural-hooks/hook-13-promoted-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-13-promoted-discarded.php\n",
+        "outputBase64": "CkZhdGFsIGVycm9yOiBDYW5ub3QgdXNlIHRoZSByZWFkb25seSBtb2RpZmllciBvbiBhIHByb3BlcnR5IGhvb2sgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTMtcHJvbW90ZWQtZGlzY2FyZGVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTMtcHJvbW90ZWQtZGlzY2FyZGVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-14-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-14-live.php",
+      "sha256": "4f7270e7aca29ea40e3b51ba26f3b7448181346f2d4989d5194b91da0b9283ee",
+      "nameHex": "313233",
+      "stage": "live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-14-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected integer \"123\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-14-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-14-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgaW50ZWdlciAiMTIzIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTQtbGl2ZS5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE0LWxpdmUucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-14-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-14-retained.php",
+      "sha256": "78349a3552b6bd948cd91b33a565d4a5ec9762699adc53bcf80d52cff5f6c8cb",
+      "nameHex": "313233",
+      "stage": "retained",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-14-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected integer \"123\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-14-retained.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-14-retained.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgaW50ZWdlciAiMTIzIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTQtcmV0YWluZWQucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNC1yZXRhaW5lZC5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-14-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-14-discarded.php",
+      "sha256": "1c2e4d9f1f4ab276c5d4bf41bcac3ccc3e550563f72e41d46cada088bd0eb8ee",
+      "nameHex": "313233",
+      "stage": "discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-14-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected integer \"123\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-14-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-14-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgaW50ZWdlciAiMTIzIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTQtZGlzY2FyZGVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTQtZGlzY2FyZGVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-14-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-14-promoted-live.php",
+      "sha256": "6f6f034c3c65007772840e0ae0bb6ea65dcc1655e3f4c7f7c1f6cba0df261be6",
+      "nameHex": "313233",
+      "stage": "promoted-live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-14-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected integer \"123\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-14-promoted-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-14-promoted-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgaW50ZWdlciAiMTIzIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTQtcHJvbW90ZWQtbGl2ZS5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE0LXByb21vdGVkLWxpdmUucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-14-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-14-promoted-discarded.php",
+      "sha256": "a635a140c76798e8d06253d6b95ab42857228f3cdad5c9afc1b30ed16d054021",
+      "nameHex": "313233",
+      "stage": "promoted-discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-14-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected integer \"123\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-14-promoted-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-14-promoted-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgaW50ZWdlciAiMTIzIiwgZXhwZWN0aW5nIGlkZW50aWZpZXIgaW4gdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTQtcHJvbW90ZWQtZGlzY2FyZGVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTQtcHJvbW90ZWQtZGlzY2FyZGVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-15-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-15-live.php",
+      "sha256": "f70f33a68cec272a9f84ae9ebcbe99cbda4be033567e3fa58c144889b496e8e5",
+      "nameHex": "2267657422",
+      "stage": "live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-15-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected double-quoted string \"get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-15-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-15-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgZG91YmxlLXF1b3RlZCBzdHJpbmcgImdldCIsIGV4cGVjdGluZyBpZGVudGlmaWVyIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE1LWxpdmUucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNS1saXZlLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-15-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-15-retained.php",
+      "sha256": "4274759cbfaef0e78029b187a349b8c026266d70d08e2796b777561d447246f6",
+      "nameHex": "2267657422",
+      "stage": "retained",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-15-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected double-quoted string \"get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-15-retained.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-15-retained.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgZG91YmxlLXF1b3RlZCBzdHJpbmcgImdldCIsIGV4cGVjdGluZyBpZGVudGlmaWVyIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE1LXJldGFpbmVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTUtcmV0YWluZWQucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-15-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-15-discarded.php",
+      "sha256": "4c5860f6f19c50bdd56b115366a51ef1852ff988aa92c8b8c2b20fc259e00b51",
+      "nameHex": "2267657422",
+      "stage": "discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-15-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected double-quoted string \"get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-15-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-15-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgZG91YmxlLXF1b3RlZCBzdHJpbmcgImdldCIsIGV4cGVjdGluZyBpZGVudGlmaWVyIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE1LWRpc2NhcmRlZC5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE1LWRpc2NhcmRlZC5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-15-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-15-promoted-live.php",
+      "sha256": "bdaded796b769684155d4d92845e66671d96c96065a23e65bb83107f611088e3",
+      "nameHex": "2267657422",
+      "stage": "promoted-live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-15-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected double-quoted string \"get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-15-promoted-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-15-promoted-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgZG91YmxlLXF1b3RlZCBzdHJpbmcgImdldCIsIGV4cGVjdGluZyBpZGVudGlmaWVyIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE1LXByb21vdGVkLWxpdmUucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNS1wcm9tb3RlZC1saXZlLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-15-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-15-promoted-discarded.php",
+      "sha256": "db585b74a088aad53a50bc3b13a3e0b289ab95fec91a61549d83a174814717a7",
+      "nameHex": "2267657422",
+      "stage": "promoted-discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-15-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected double-quoted string \"get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-15-promoted-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-15-promoted-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgZG91YmxlLXF1b3RlZCBzdHJpbmcgImdldCIsIGV4cGVjdGluZyBpZGVudGlmaWVyIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE1LXByb21vdGVkLWRpc2NhcmRlZC5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE1LXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-16-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-16-live.php",
+      "sha256": "d3cd34a17046973a66f93274a5de0fb402e68fc761c3c740831e0bf0f1d88ac4",
+      "nameHex": "415c676574",
+      "stage": "live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-16-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected namespaced name \"A\\get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-16-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-16-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgbmFtZXNwYWNlZCBuYW1lICJBXGdldCIsIGV4cGVjdGluZyBpZGVudGlmaWVyIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE2LWxpdmUucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNi1saXZlLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-16-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-16-retained.php",
+      "sha256": "3e59a81569c69085eb487bc6bd67825cbfc6de0367915107142f9d954238b6a7",
+      "nameHex": "415c676574",
+      "stage": "retained",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-16-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected namespaced name \"A\\get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-16-retained.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-16-retained.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgbmFtZXNwYWNlZCBuYW1lICJBXGdldCIsIGV4cGVjdGluZyBpZGVudGlmaWVyIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE2LXJldGFpbmVkLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTYtcmV0YWluZWQucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-16-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-16-discarded.php",
+      "sha256": "c33b768de3db0d3d76e565975202ef30ec5b0b1bf85e67ac41d249445c364704",
+      "nameHex": "415c676574",
+      "stage": "discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-16-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected namespaced name \"A\\get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-16-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-16-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgbmFtZXNwYWNlZCBuYW1lICJBXGdldCIsIGV4cGVjdGluZyBpZGVudGlmaWVyIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE2LWRpc2NhcmRlZC5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE2LWRpc2NhcmRlZC5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-16-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-16-promoted-live.php",
+      "sha256": "2f12e5958741a310b9658e7d83dd26c8e6fc38690b4e261ba0a4a3923e29dd0b",
+      "nameHex": "415c676574",
+      "stage": "promoted-live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-16-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected namespaced name \"A\\get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-16-promoted-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-16-promoted-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgbmFtZXNwYWNlZCBuYW1lICJBXGdldCIsIGV4cGVjdGluZyBpZGVudGlmaWVyIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE2LXByb21vdGVkLWxpdmUucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNi1wcm9tb3RlZC1saXZlLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-16-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-16-promoted-discarded.php",
+      "sha256": "64a6f6a4850e79812483dd26c233ce4f6c254b892e5eeabf1e7708d1f8882fa2",
+      "nameHex": "415c676574",
+      "stage": "promoted-discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-16-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected namespaced name \"A\\get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-16-promoted-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-16-promoted-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgbmFtZXNwYWNlZCBuYW1lICJBXGdldCIsIGV4cGVjdGluZyBpZGVudGlmaWVyIGluIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE2LXByb21vdGVkLWRpc2NhcmRlZC5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE2LXByb21vdGVkLWRpc2NhcmRlZC5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-17-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-17-live.php",
+      "sha256": "b6c59b31d405785a29e83abad0c22dfdfc57d9cd117e83d37f764cfef0c0a2c1",
+      "nameHex": "24676574",
+      "stage": "live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-17-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected variable \"$get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-17-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-17-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdmFyaWFibGUgIiRnZXQiLCBleHBlY3RpbmcgaWRlbnRpZmllciBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNy1saXZlLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTctbGl2ZS5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-17-retained",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-17-retained.php",
+      "sha256": "05e9758b38739d081f7a8f6a3a52a76f91029e48b19c28224c53bdca103b2869",
+      "nameHex": "24676574",
+      "stage": "retained",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-17-retained.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected variable \"$get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-17-retained.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-17-retained.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdmFyaWFibGUgIiRnZXQiLCBleHBlY3RpbmcgaWRlbnRpZmllciBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNy1yZXRhaW5lZC5waHAgb24gbGluZSAxCkVycm9ycyBwYXJzaW5nIHRlc3RzL2ZpeHR1cmVzL3BocC84LjYvc3RydWN0dXJhbC1ob29rcy9ob29rLTE3LXJldGFpbmVkLnBocAo="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-17-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-17-discarded.php",
+      "sha256": "0908c1453dff39465e9732f51cc6430fdd9c39ca060addeac8dc759a87873640",
+      "nameHex": "24676574",
+      "stage": "discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-17-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected variable \"$get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-17-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-17-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdmFyaWFibGUgIiRnZXQiLCBleHBlY3RpbmcgaWRlbnRpZmllciBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNy1kaXNjYXJkZWQucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNy1kaXNjYXJkZWQucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-17-promoted-live",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-17-promoted-live.php",
+      "sha256": "f147ba33193f44f40d8c09807bc27ba37440bb74453474d7f26a82856ab84c74",
+      "nameHex": "24676574",
+      "stage": "promoted-live",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-17-promoted-live.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected variable \"$get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-17-promoted-live.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-17-promoted-live.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdmFyaWFibGUgIiRnZXQiLCBleHBlY3RpbmcgaWRlbnRpZmllciBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNy1wcm9tb3RlZC1saXZlLnBocCBvbiBsaW5lIDEKRXJyb3JzIHBhcnNpbmcgdGVzdHMvZml4dHVyZXMvcGhwLzguNi9zdHJ1Y3R1cmFsLWhvb2tzL2hvb2stMTctcHJvbW90ZWQtbGl2ZS5waHAK"
+      },
+      "native": false,
+      "historical85": false
+    },
+    {
+      "id": "hook-17-promoted-discarded",
+      "fixture": "tests/fixtures/php/8.6/structural-hooks/hook-17-promoted-discarded.php",
+      "sha256": "9c50b5f05102da6e1c332085ea63bfb8c357c07a026ac5dd96f0d28c6de3fa22",
+      "nameHex": "24676574",
+      "stage": "promoted-discarded",
+      "structural": false,
+      "lintAccepted": false,
+      "unknownHook": false,
+      "command": [
+        "C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+        "-n",
+        "-d",
+        "display_errors=1",
+        "-d",
+        "log_errors=0",
+        "-l",
+        "tests/fixtures/php/8.6/structural-hooks/hook-17-promoted-discarded.php"
+      ],
+      "lint": {
+        "exit_code": 255,
+        "output": "\nParse error: syntax error, unexpected variable \"$get\", expecting identifier in tests/fixtures/php/8.6/structural-hooks/hook-17-promoted-discarded.php on line 1\nErrors parsing tests/fixtures/php/8.6/structural-hooks/hook-17-promoted-discarded.php\n",
+        "outputBase64": "ClBhcnNlIGVycm9yOiBzeW50YXggZXJyb3IsIHVuZXhwZWN0ZWQgdmFyaWFibGUgIiRnZXQiLCBleHBlY3RpbmcgaWRlbnRpZmllciBpbiB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNy1wcm9tb3RlZC1kaXNjYXJkZWQucGhwIG9uIGxpbmUgMQpFcnJvcnMgcGFyc2luZyB0ZXN0cy9maXh0dXJlcy9waHAvOC42L3N0cnVjdHVyYWwtaG9va3MvaG9vay0xNy1wcm9tb3RlZC1kaXNjYXJkZWQucGhwCg=="
+      },
+      "native": false,
+      "historical85": false
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,17 @@
+{
+  "obligation": "Reject unresolved material structural defects and false correction claims",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "no-structural-defects",
+    "--output",
+    "docs/8.6/structural-certification/runs/release-v1_1_0-r2/no-structural-defects.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/release-v1_1_0-r2/no-structural-defects.log",
+  "sha256": "ab35c8bd91071da63ef78a56abffcf427cd8d912c2fcefabcce45bc29b4c45d6"
+}

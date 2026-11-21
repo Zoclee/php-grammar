@@ -4,13 +4,12 @@ The project is not yet published as a Composer package. Use a local checkout
 to access the [canonical EBNF](../grammar/8.5/php.ebnf) and
 [matching specification](../grammar/8.5/php.md) directly.
 
-PHP 8.5 remains the recommended stable selection. PHP 8.6 is an incomplete RC4
-draft, available through `load('8.6')`, `matches('8.6', $source)`, and
+PHP 8.5 remains the compatibility default for existing maintainer commands. PHP 8.6 is a stable PHP 8.6.0 GA structural grammar, available through `load('8.6')`, `matches('8.6', $source)`, and
 `Lexer::forVersion('8.6')`. Structural acceptance does not certify compiler
 constraints; PHP86-013/014/015 remain open. The version's `status`, `phpSource`,
 and `metadata` expose these limits through the manifest and `php-grammar versions`.
 There is no implicit stable alias: `latestVersion()` includes drafts and returns
-8.6. Use explicit 8.5 selection to retain stable behavior.
+8.6. Select the language version explicitly for reproducible behavior.
 
 To use the PHP APIs and command-line tools, run this command from the checkout
 root to install dependencies and generate the local autoloader:
@@ -38,7 +37,7 @@ require $root . '/vendor/autoload.php';
 $manifest = RepositoryManifest::fromRepositoryRoot($root);
 $versions = $manifest->versions();                   // ['8.5', '8.6']
 $latest = $manifest->latestVersion();                // '8.6': includes drafts
-$package = $manifest->package('8.5');                // recommended stable selection
+$package = $manifest->package('8.5');                // compatibility selection
 $specification = $manifest->absolutePath($package->documentationPath);
 $repository = new GrammarRepository($manifest);
 $grammar = $repository->load('8.5');
@@ -131,3 +130,9 @@ They use the documented public interfaces without fixture-runner internals.
 Production identifiers are compatibility-sensitive. Pin a repository revision and
 explicit PHP versions, tolerate additive manifest fields, and follow the
 [alias migration and compatibility policy](api.md#compatibility-and-migration).
+
+The independent [structural certification contract](structural-certification.md) distinguishes
+structural grammar support from contextual compiler and runtime equivalence.
+Historical extended certification results remain available with their original
+failures and limitations. Stable promotion requires independently verified
+structural release evidence.

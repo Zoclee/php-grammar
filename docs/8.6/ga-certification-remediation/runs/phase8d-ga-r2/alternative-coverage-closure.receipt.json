@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "blocked:C6-COVERAGE",
+    "Disposition every uncovered alternative, including context-only from; percentages do not waive gaps."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "alternative-coverage-closure",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/alternative-coverage-closure.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "blocked",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r2/alternative-coverage-closure.log",
+  "logSha256": "105c5dd4aaeb5cd584b3fb132249c687ea8a202f3c355c6eed7fd79458d16a5a"
+}

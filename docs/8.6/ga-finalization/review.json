@@ -1,0 +1,941 @@
+{
+  "rc7": "b63cd83da3279445ca4a913f03186141f5c3466e",
+  "ga": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "core": {
+    "Zend/zend_language_parser.y": {
+      "rc7": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "ga": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "identical": true
+    },
+    "Zend/zend_language_scanner.l": {
+      "rc7": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "ga": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "identical": true
+    },
+    "Zend/zend_compile.c": {
+      "rc7": "d2b57b75a6a5585a71be3d244428a8a13b7632b02e933ee9db44274b86c74f5f",
+      "ga": "d2b57b75a6a5585a71be3d244428a8a13b7632b02e933ee9db44274b86c74f5f",
+      "identical": true
+    },
+    "Zend/zend_ast.c": {
+      "rc7": "e38008adfbb5d1aab0039074b4099aee2482c13bea170cec08e9347747b59094",
+      "ga": "e38008adfbb5d1aab0039074b4099aee2482c13bea170cec08e9347747b59094",
+      "identical": true
+    },
+    "Zend/zend_vm_def.h": {
+      "rc7": "10932596710465263cf0b324718c50063b4f04a486910da3a39cc5e6a06d00f2",
+      "ga": "10932596710465263cf0b324718c50063b4f04a486910da3a39cc5e6a06d00f2",
+      "identical": true
+    },
+    "Zend/zend_inheritance.c": {
+      "rc7": "cbddd161ecc6ad0a4e46a4d8a2fd6d46b9ec1b572b487a39543ff48a6be4ed1a",
+      "ga": "cbddd161ecc6ad0a4e46a4d8a2fd6d46b9ec1b572b487a39543ff48a6be4ed1a",
+      "identical": true
+    },
+    "Zend/zend_property_hooks.c": {
+      "rc7": "23e1f4725c2481f78054e27ec1056ff05956bf04982f638d6a2d6995d6ec3d78",
+      "ga": "23e1f4725c2481f78054e27ec1056ff05956bf04982f638d6a2d6995d6ec3d78",
+      "identical": true
+    },
+    "Zend/zend_attributes.c": {
+      "rc7": "f5b41d9165e85125830ab434a038afd8db280ef5b3514cd7d7809264b1b61e21",
+      "ga": "f5b41d9165e85125830ab434a038afd8db280ef5b3514cd7d7809264b1b61e21",
+      "identical": true
+    },
+    "Zend/zend_enum.c": {
+      "rc7": "dc33cb0ac00a7d5dd820c9ee4a039ebf2e38b78728ba4db7bc1e37e34428f894",
+      "ga": "dc33cb0ac00a7d5dd820c9ee4a039ebf2e38b78728ba4db7bc1e37e34428f894",
+      "identical": true
+    },
+    "Zend/zend_constants.c": {
+      "rc7": "648df17ee29f60962f20635ba98518b5f4da66396bb4435f7a2b73a9c5711bde",
+      "ga": "648df17ee29f60962f20635ba98518b5f4da66396bb4435f7a2b73a9c5711bde",
+      "identical": true
+    }
+  },
+  "changedPaths": [
+    {
+      "path": ".github/workflows/test-suite.yml",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "dcd61adf17c8c6c8ab9cecf5add070b02d69bd24"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "3bb169aac6c2b10b274789269128fb7373e37a1d"
+        }
+      },
+      "classification": "release infrastructure",
+      "reason": "Release/build/version metadata; no grammar change.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/.github/workflows/test-suite.yml",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "NEWS",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "2e2cedb40fe773500184a77b293f4ec7d001acb3"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "70ddadadb33325e99283795c0c7aaea5e5af2340"
+        }
+      },
+      "classification": "documentation",
+      "reason": "GA release/security notes replace prerelease history.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/NEWS",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "UPGRADING",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "3fe0fe1116384ae3b9b1436f104d4e8564a73daa"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "3f35954ac8d9a552aa1f947727cc71b4725a7229"
+        }
+      },
+      "classification": "documentation",
+      "reason": "Correct TLS session-resumption RFC URL; no language-rule change.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/UPGRADING",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "Zend/zend.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "ad08fe1a630dbf7b59f5f2ee492a349453932bb4"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "4598fc63d00562c8a25abb2a57b7771d50d22ac1"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Fatal-error backtrace creation/destruction only while executor active; runtime lifecycle correction.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "Zend/zend.h",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "5fe5ad2bd8a2e1130b55b0c594ada47d676d76d4"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "cd89db5d275b4dd5240b0d02fd9944ea5d38315f"
+        }
+      },
+      "classification": "release infrastructure",
+      "reason": "Release/build/version metadata; no grammar change.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend.h",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "Zend/zend_API.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "5d6bd22027d4050163f140905e23f0f6f1551369"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "9dd9ad27b6d9ca8f558766fd5f9f55610a2e7a64"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Incomplete module request shutdown terminates process; runtime lifecycle correction.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_API.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "Zend/zend_builtin_functions.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "ad2c0dd2009a6f857ad3ff2616750bef1fd1ddee"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "2f37007f4be47731b99ddb84fb55bcfaee394038"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Trampoline argument placement in debug backtraces; runtime memory safety, no argument grammar change.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/zend_builtin_functions.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "configure.ac",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "26d5a5d7444aea3f5064a77fc976c80f45aa2085"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "5e37889b181b50aba4b9a0bcd01dd71596f0b3bd"
+        }
+      },
+      "classification": "release infrastructure",
+      "reason": "Release/build/version metadata; no grammar change.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/configure.ac",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/dom/xml_serializer.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "72381ae4c5b422127d297e0a0448cca1f0e202ec"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "9547a256fa3758007ae6589fc3a5edd5e5f383ce"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Unowned descendant namespace data after copy-on-write; XML serialization runtime safety.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/dom/xml_serializer.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/phar/util.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "539b927657b34c1f0cef6777a65f9a0465bfb116"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "fafe5282fda00417f5b101826e4b6bd8e2e75be2"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Require OpenSSL signature when a public key exists; archive authentication, not PHP lexical acceptance.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/phar/util.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/session/mod_files.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "9b5b8f331dc7b202e9ff23dbe6251041b10bd11e"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "15214c215d11efac2077982936dd47b1b207cd56"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Truncate session file before write; runtime persistence.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/session/mod_files.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/session/session.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "81c4455808bfb0dd0594c77d07a22c512d818eb7"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "19581765c0735f630caa8932fdf87038cb8aec9b"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Disable upload progress by default, guard runtime ini changes and initialize request fields; session lifecycle.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/session/session.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/session/tests/session_files_repeated_write.phpt",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "d6f3446ba27fdc19330ab820acb4845b23ed08f5"
+        },
+        "ga": null
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/session/tests/session_files_repeated_write.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/session/tests/session_write_failure_keeps_data.phpt",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "232b3e5313cfce5eb631e45c19dbf8a81e61c111"
+        },
+        "ga": null
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/session/tests/session_write_failure_keeps_data.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/soap/php_encoding.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "13ffe95cea82e27b26c67ff2a45d0d0d23cd015f"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "0ec79f8b4984133c359e5189e917e1bcbfa93a88"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Zero-dimension SOAP array fallback; protocol decoding.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/soap/php_encoding.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/soap/php_xml.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "72e562c1fd41c9ac9ab286f32217e19d798b3715"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "12a534e952d8e5f2f0ec1e647fefe6f649ffc8f9"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Keep DTD alive for shared entity content; XML lifecycle.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/soap/php_xml.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/standard/ftp_fopen_wrapper.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "da6562f1d143b6b5cdd9befadfac1fea03341728"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "40bbd8420420c173eec70fac8dde49c0ffea0b5f"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Exact case-insensitive FTPS scheme test; network protocol selection.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/standard/ftp_fopen_wrapper.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/standard/http_fopen_wrapper.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "f1c36defb1e1b239b648359fc58ee0990b8c2a63"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "8f0fbcbec9013ed658ba2fa3ad077b0f867ec731"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Exact HTTPS scheme and smart-string header folding; HTTP parsing, not PHP tokenization.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/standard/http_fopen_wrapper.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/standard/tests/general_functions/header_over_4gib.phpt",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "8beb2521f88698b3a04e0174d27dd2fe15f64ad9"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "34055e991479458658c8bdebf011d52796f09c83"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/standard/tests/general_functions/header_over_4gib.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/uri/uri_parser_rfc3986.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "94e6e0caffd356d78e015be75cfe28c8c6db135b"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "f9e913063903fe6319fb46b8562375502d2cab46"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Check recomposition lengths and errors; URI data handling.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/uri/uri_parser_rfc3986.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/zend_test/php_test.h",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "db6feede7cafe2a177aa7c8634bd67872492f032"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "49061318242ae4cad2a0cb6157e591a447abc52c"
+        }
+      },
+      "classification": "implementation refactoring",
+      "reason": "Test-only startup warning instrumentation; no language parser/compiler changes.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/zend_test/php_test.h",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/zend_test/test.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "7851df8bbf902f65b653b304ee41afade4592bca"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "9682d277e23f38b1e23129ae53a44e420b900d6b"
+        }
+      },
+      "classification": "implementation refactoring",
+      "reason": "Test-only startup warning instrumentation; no language parser/compiler changes.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/zend_test/test.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "main/SAPI.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "4b84b76633c2cc423d97e231468e67dcc9ab678f"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "d43adfeac45548c873d6fbde537fb5bce6cbc109"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Consume remaining request input with existing body stream; request handling.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/main/SAPI.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "main/fastcgi.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "5a525a9d66be7c8de3f83cbb3b2ee9d66763f87b"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "84f5ad58d8be909c1ee200e5c6f032737eb41e3b"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Reject residual input records and clear connection state; FastCGI framing.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/main/fastcgi.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "main/main.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "43c5fa087c527cf6b1c61806a186396f7da61f1c"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "1403ad93c5c81084ffdd1fe8876fcfbd9372b2e3"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Use date and backtrace state only while modules/executor active; runtime logging.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/main/main.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "main/php_version.h",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "554e5c73091608938168675889c28b86c264648b"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "f16dc97725a453500f80fbacc541c7234fc1ac3a"
+        }
+      },
+      "classification": "release infrastructure",
+      "reason": "Release/build/version metadata; no grammar change.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/main/php_version.h",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/cgi/cgi_main.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "a79eada2728bcef899287bdf588ae5add0f97367"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "55e195a254426ec5b9c9422e4217a46138127ef9"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Bound PATH_INFO suffix before pointer arithmetic; request routing.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/cgi/cgi_main.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/fpm/fpm/fpm_status.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "118be47bfeee62a08c55d1926e5a26b9cb08135d"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "0506ca102d9661bf65c9cf048eeee15797892baa"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Escape method, authentication user and script filename in status output; output encoding.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/fpm/fpm/fpm_status.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/phpdbg/phpdbg.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "539d546e92236e320cca230922645115e3e5593b"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "c7bdd1cf15464668a9e023793611f4b4718c34b6"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Initialize frame generator; debugger state.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/phpdbg/phpdbg.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/phpdbg/phpdbg_frame.c",
+      "identity": {
+        "rc7": {
+          "mode": "100644",
+          "oid": "b08a877b707a5d5cc06dfed2bc2d4f3974ee9444"
+        },
+        "ga": {
+          "mode": "100644",
+          "oid": "fdab924638eaae9588fcdf7972c5321084ed3d2e"
+        }
+      },
+      "classification": "runtime-only change",
+      "reason": "Trampoline argument offsets and NUL termination; debugger backtrace formatting.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/phpdbg/phpdbg_frame.c",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "Zend/tests/GHSA-8mjj-2r7p-4hg2.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "1f5f34faf960a503b3e41b02aabfa9c2188a6915"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/Zend/tests/GHSA-8mjj-2r7p-4hg2.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/date/tests/GHSA-gr4f-wgx5-jpfv.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "bb81c93ddb272b2573cf9399aff9804a43947b07"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/date/tests/GHSA-gr4f-wgx5-jpfv.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/dom/tests/modern/xml/GHSA-x8r7-mg3g-74hg.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "ae30e129b50c2cea79c0c174ddd0c9c24c1c2047"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/dom/tests/modern/xml/GHSA-x8r7-mg3g-74hg.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/phar/tests/ghsa-68fq-fh7h-f8gr.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "e03123fcab2f32e0c9c0f33e276f3bb00c5733c7"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/phar/tests/ghsa-68fq-fh7h-f8gr.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/session/tests/session_ini_set_upload_progress_enabled.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "92c35f9a3c51ca4284f63a72484fdb9e5788adc4"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/session/tests/session_ini_set_upload_progress_enabled.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/soap/tests/GHSA-4646-p932-gw34.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "8e3567d9660aa6540c2a699bf49673e37aa91675"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/soap/tests/GHSA-4646-p932-gw34.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/soap/tests/GHSA-q23r-hr55-xmpg-wsdl.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "ee2591f371609d024b9ce02e9aa9275034d836d4"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/soap/tests/GHSA-q23r-hr55-xmpg-wsdl.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/soap/tests/GHSA-q23r-hr55-xmpg-wsdl.wsdl",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "55b5b9207f63b75735a93684bba931f749f94f23"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/soap/tests/GHSA-q23r-hr55-xmpg-wsdl.wsdl",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/soap/tests/GHSA-q23r-hr55-xmpg.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "886b3ff9042f27fc80440a2bcc03d86ff6004509"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/soap/tests/GHSA-q23r-hr55-xmpg.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/standard/tests/http/ghsa-f6gg-rchx-xw8j.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "11bfa680a92e058237d2ad3e6872a2364c14dd97"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/standard/tests/http/ghsa-f6gg-rchx-xw8j.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/standard/tests/streams/ghsa-f6gg-rchx-xw8j.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "8c7001508c981cfb7d1c688b71a51ac89915f437"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/standard/tests/streams/ghsa-f6gg-rchx-xw8j.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-1.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "57e9e9947d40e161e004c7428bf9478ff62fc19c"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-1.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-2.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "60755a914dfbea8f88738bf79fe7dc1f1b547869"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-2.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-3.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "199515635b115265391564ea77a44eb0487b0c8c"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-3.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/cgi/tests/ghsa-5j3f-64r7-f564.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "cab27ad5857edde97a6bdadc8e8c82f9499cb1cb"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/cgi/tests/ghsa-5j3f-64r7-f564.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/fpm/tests/ghsa-2fjv-p558-g82m-memory-limit.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "0285f76d5df2a85ad99570f6cb795a80c1023a58"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/fpm/tests/ghsa-2fjv-p558-g82m-memory-limit.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/fpm/tests/ghsa-2fjv-p558-g82m-zlib.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "3a2d44e61eb1fa8556b0fbfeac20f2cdd8448bea"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/fpm/tests/ghsa-2fjv-p558-g82m-zlib.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/fpm/tests/ghsa-3mg3-cr28-46gc-status-xss.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "0a40a5ad4b0a0bf02f2f361239bc8b853fad2add"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/fpm/tests/ghsa-3mg3-cr28-46gc-status-xss.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/fpm/tests/ghsa-g3vh-838c-65v7.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "cca31023418f42f8d779dbcba305d95f84517534"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/fpm/tests/ghsa-g3vh-838c-65v7.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/fpm/tests/unread-body-keep-conn.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "5d818c58c7f5388f67fccd589937d26239802e6d"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/fpm/tests/unread-body-keep-conn.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/fpm/tests/unread-body-partial-record.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "4f3eed4e717792659c6977ce277434e065ac2286"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/fpm/tests/unread-body-partial-record.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/phpdbg/tests/GHSA-8mjj-2r7p-4hg2-001.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "67c95706cf27ec5a00fbecc7662981a6efcbbf6e"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/phpdbg/tests/GHSA-8mjj-2r7p-4hg2-001.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    },
+    {
+      "path": "sapi/phpdbg/tests/GHSA-8mjj-2r7p-4hg2-002.phpt",
+      "identity": {
+        "rc7": null,
+        "ga": {
+          "mode": "100644",
+          "oid": "173e58faaa0f524d879061f19020828c6039c702"
+        }
+      },
+      "classification": "runtime regression evidence",
+      "reason": "Regression data for the associated runtime/security correction; does not add PHP syntax or a compile-time validity predicate.",
+      "source": "https://github.com/php/php-src/blob/8aaada3f9605d81a38b8240f93c7389dfbc77ef9/sapi/phpdbg/tests/GHSA-8mjj-2r7p-4hg2-002.phpt",
+      "ebnfChange": false,
+      "remainingRisk": "Does not adjudicate older PHP86-013 residual discovery."
+    }
+  ],
+  "PHP86-014": "PR remains open/unmerged; compiler is byte-identical to RC7. No GA fix or closure.",
+  "PHP86-013": "This bounded RC7-to-GA review does not close the original PHP-8.5-to-8.6 residual work queue.",
+  "additionalEbnfChangesIdentified": false,
+  "certificationGranted": false
+}

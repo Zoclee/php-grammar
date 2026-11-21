@@ -1,0 +1,15 @@
+{
+  "obligation": "Focused uncovered alternatives, token categories and yield-key correction controls",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-witnesses.php",
+    "--check",
+    "docs/8.6/structural-certification/runs/prepromotion-r3/targeted-structural-witnesses.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r3/targeted-structural-witnesses.log",
+  "sha256": "e5a671db375a683fb3656119c80c7edfbba29a8be6048315b44410574f816aa0"
+}

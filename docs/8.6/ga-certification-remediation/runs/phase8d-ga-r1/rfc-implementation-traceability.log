@@ -1,0 +1,7 @@
+{
+  "gate": "rfc-implementation-traceability",
+  "errors": [
+    "PHP86-013: GA source identity and inventories do not complete unreviewed parser/action/compiler/RFC correspondence."
+  ],
+  "certificationGranted": false
+}

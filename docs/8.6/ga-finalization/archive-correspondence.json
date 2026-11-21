@@ -1,0 +1,1405 @@
+{
+  "files": {
+    "NEWS": {
+      "git": "c0be82b0112b718b7303b3fefc8a4a8e4e2f8acc08ec0cdb8ea3aa2b691bf0e8",
+      "archive": "c0be82b0112b718b7303b3fefc8a4a8e4e2f8acc08ec0cdb8ea3aa2b691bf0e8",
+      "equal": true
+    },
+    "UPGRADING": {
+      "git": "a4098461a7af9f00f1d837371974d17375563e395d893038c63303d6a43f1cfa",
+      "archive": "a4098461a7af9f00f1d837371974d17375563e395d893038c63303d6a43f1cfa",
+      "equal": true
+    },
+    "Zend/tests/attributes/override/constants/basic.phpt": {
+      "git": "3a7030bf866e13224f076d5e66d6f1056cd75c955fd8a50a5c019e6a49d47214",
+      "archive": "3a7030bf866e13224f076d5e66d6f1056cd75c955fd8a50a5c019e6a49d47214",
+      "equal": true
+    },
+    "Zend/tests/attributes/override/constants/failure.phpt": {
+      "git": "94728fe50715e906129022ddbc40a93f26927d08b7e17da2326b777024c3ab9a",
+      "archive": "94728fe50715e906129022ddbc40a93f26927d08b7e17da2326b777024c3ab9a",
+      "equal": true
+    },
+    "Zend/tests/attributes/override/constants/visibility_01.phpt": {
+      "git": "a71552fe5562fabb68e79c80bc76b6174714989f2c3eaecfc28405212f427753",
+      "archive": "a71552fe5562fabb68e79c80bc76b6174714989f2c3eaecfc28405212f427753",
+      "equal": true
+    },
+    "Zend/tests/attributes/override/constants/visibility_03.phpt": {
+      "git": "68e1801363114ceb57c67cb81851958ec8123b9f305bb156f6678f8a1a5930bc",
+      "archive": "68e1801363114ceb57c67cb81851958ec8123b9f305bb156f6678f8a1a5930bc",
+      "equal": true
+    },
+    "Zend/tests/debug_info/debug_info.phpt": {
+      "git": "b451b330809c2c48db0ea70c02ea6e9c4a190022d99f077fe3bb0e89953643f2",
+      "archive": "b451b330809c2c48db0ea70c02ea6e9c4a190022d99f077fe3bb0e89953643f2",
+      "equal": true
+    },
+    "Zend/tests/deprecate_namespace_class_constant.phpt": {
+      "git": "63af61d533a4fa5d4be081538d4c63ef9eb18b01bb311fc40587960a3fefe59d",
+      "archive": "63af61d533a4fa5d4be081538d4c63ef9eb18b01bb311fc40587960a3fefe59d",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/is/class_alias.phpt": {
+      "git": "91c7b3bf8c7a3b4b8832e4d59684b09996e3db42ee719a0f239f73aa3cd0bc43",
+      "archive": "91c7b3bf8c7a3b4b8832e4d59684b09996e3db42ee719a0f239f73aa3cd0bc43",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/is/class_as_name.phpt": {
+      "git": "8a3562756610e0e12aa034b11fc30e5c3b675ff3b6eb0372eaca849c1a9b0b79",
+      "archive": "8a3562756610e0e12aa034b11fc30e5c3b675ff3b6eb0372eaca849c1a9b0b79",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/is/class_as_name_use.phpt": {
+      "git": "b6ae14cf4122797e128d97dba6b77bd84e119a7ee790e97ceedf887bbdf6fbda",
+      "archive": "b6ae14cf4122797e128d97dba6b77bd84e119a7ee790e97ceedf887bbdf6fbda",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/is/constant_as_name.phpt": {
+      "git": "7f7d08de858b16ad9cdf6861271254cab4fee29aa8a63ea93654292b09b0c25c",
+      "archive": "7f7d08de858b16ad9cdf6861271254cab4fee29aa8a63ea93654292b09b0c25c",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/is/constant_as_name_use.phpt": {
+      "git": "640ad3839923c2894ea00778f79fd2ae8249a4cc344b08ae6e189cd330287325",
+      "archive": "640ad3839923c2894ea00778f79fd2ae8249a4cc344b08ae6e189cd330287325",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/is/function_as_name.phpt": {
+      "git": "219c1ae32eb167590d751ec6631653999d792bbc7f682897999dc47aa66e95e0",
+      "archive": "219c1ae32eb167590d751ec6631653999d792bbc7f682897999dc47aa66e95e0",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/is/function_as_name_use.phpt": {
+      "git": "6fdd0cf729125930f0ad13d550cb2426d76f9e8d8f407e31e4ab7c4b0a930f03",
+      "archive": "6fdd0cf729125930f0ad13d550cb2426d76f9e8d8f407e31e4ab7c4b0a930f03",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/let/class_alias.phpt": {
+      "git": "cfb930a673156aee518b01eb1ff9237aec1610b614660a4c2464b79590612b92",
+      "archive": "cfb930a673156aee518b01eb1ff9237aec1610b614660a4c2464b79590612b92",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/let/class_as_name.phpt": {
+      "git": "681f8b2c7d6113982ab25c871d694817f479e1d54a7c0e209e83794a4a003378",
+      "archive": "681f8b2c7d6113982ab25c871d694817f479e1d54a7c0e209e83794a4a003378",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/let/class_as_name_use.phpt": {
+      "git": "48789fd738595bd8ccc6af5525bf997777b0b77b28c80c234401f6dbcef0c25b",
+      "archive": "48789fd738595bd8ccc6af5525bf997777b0b77b28c80c234401f6dbcef0c25b",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/let/constant_as_name.phpt": {
+      "git": "aacd5c6b4046ff55d70350b314663f7d946eb7fe6a044abbf8a6ee8653dee8eb",
+      "archive": "aacd5c6b4046ff55d70350b314663f7d946eb7fe6a044abbf8a6ee8653dee8eb",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/let/constant_as_name_use.phpt": {
+      "git": "4a37e07654b809da165cfba89ced36fd947d0f336f1fbe8394c1374f815cd742",
+      "archive": "4a37e07654b809da165cfba89ced36fd947d0f336f1fbe8394c1374f815cd742",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/let/function_as_name.phpt": {
+      "git": "adf1d070b39a05614d37473acec452507f306e1e36972ec8a51a288b326bd341",
+      "archive": "adf1d070b39a05614d37473acec452507f306e1e36972ec8a51a288b326bd341",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/let/function_as_name_use.phpt": {
+      "git": "6c417a6c5bc59dc07f196c245cbf3a60bc9fcdd40e81e42c0db53f35fc7944ab",
+      "archive": "6c417a6c5bc59dc07f196c245cbf3a60bc9fcdd40e81e42c0db53f35fc7944ab",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/readonly/function_as_name.phpt": {
+      "git": "02aed6e8f30db0772d32b23cf5363f42bf2e7a9000349e0841f02a9620bc2505",
+      "archive": "02aed6e8f30db0772d32b23cf5363f42bf2e7a9000349e0841f02a9620bc2505",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/readonly/function_as_name_use.phpt": {
+      "git": "bab8f8c8bdd6ccb2383e56ff75190b801cbaf133b2981a53a8ef37f5edf3073c",
+      "archive": "bab8f8c8bdd6ccb2383e56ff75190b801cbaf133b2981a53a8ef37f5edf3073c",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated.phpt": {
+      "git": "d89c6d4b3156b3d6bc4d367210d91a4801cb025d44dcd9b0b7caad0185d0b92e",
+      "archive": "d89c6d4b3156b3d6bc4d367210d91a4801cb025d44dcd9b0b7caad0185d0b92e",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_namespaced.phpt": {
+      "git": "f32598edff01357b8727e4986481f2d4fcbd00f3348fd4effcb99ac36aedf045",
+      "archive": "f32598edff01357b8727e4986481f2d4fcbd00f3348fd4effcb99ac36aedf045",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/readonly/readonly_as_fn_name_is_deprecated_throw_handler.phpt": {
+      "git": "61f2a26dbd5d8723fb53de1a67b94fa2f044507cdb30eba1f396247fc955978d",
+      "archive": "61f2a26dbd5d8723fb53de1a67b94fa2f044507cdb30eba1f396247fc955978d",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/underscore/class_alias_underscore.phpt": {
+      "git": "4934365e7ebe996753af126cf8909370532cec073ec3a7160ff81ff5329c9a62",
+      "archive": "4934365e7ebe996753af126cf8909370532cec073ec3a7160ff81ff5329c9a62",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name.phpt": {
+      "git": "1d33a9224be39661c27a9aa9217d9fbfff35b6a5d8abaa36374851f98076f9ab",
+      "archive": "1d33a9224be39661c27a9aa9217d9fbfff35b6a5d8abaa36374851f98076f9ab",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/underscore/class_underscore_as_name_use.phpt": {
+      "git": "af348252c028f04309837ac9a597047adc25f20222d0bc6f92f584d8e8e0caf3",
+      "archive": "af348252c028f04309837ac9a597047adc25f20222d0bc6f92f584d8e8e0caf3",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name.phpt": {
+      "git": "631e9ae9e9c8c9597734a24c3c6adf4e3ff252477b9e188f74a12d62c918e004",
+      "archive": "631e9ae9e9c8c9597734a24c3c6adf4e3ff252477b9e188f74a12d62c918e004",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/underscore/constant_underscore_as_name_use.phpt": {
+      "git": "15021ed6ab675ab7f371804e07c4120f87ae829f279d6a23d5eca23ba2665ace",
+      "archive": "15021ed6ab675ab7f371804e07c4120f87ae829f279d6a23d5eca23ba2665ace",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name.phpt": {
+      "git": "dcb0c11dcf6bd86b1c77756dfc5750f3d2c6cb6b5ceb825d5404945f2be932d1",
+      "archive": "dcb0c11dcf6bd86b1c77756dfc5750f3d2c6cb6b5ceb825d5404945f2be932d1",
+      "equal": true
+    },
+    "Zend/tests/deprecated_identifiers/underscore/function_underscore_as_name_use.phpt": {
+      "git": "94b7c52513691038e524c928c7b44a3d37231b3b236ec1d4cd84e173be4274ec",
+      "archive": "94b7c52513691038e524c928c7b44a3d37231b3b236ec1d4cd84e173be4274ec",
+      "equal": true
+    },
+    "Zend/tests/enum/debugInfo/backed_enum_value.phpt": {
+      "git": "469cd8410788eb5333bf44fe1187fc5a12aae15b5b69ebb8efaa35a82db5e609",
+      "archive": "469cd8410788eb5333bf44fe1187fc5a12aae15b5b69ebb8efaa35a82db5e609",
+      "equal": true
+    },
+    "Zend/tests/enum/debugInfo/magic_method.phpt": {
+      "git": "bc3b052a4db8a9cb4d9edf34ba37ab50a0f3c264bad3d41b5691b3b4da48c278",
+      "archive": "bc3b052a4db8a9cb4d9edf34ba37ab50a0f3c264bad3d41b5691b3b4da48c278",
+      "equal": true
+    },
+    "Zend/tests/enum/debugInfo/param_validation.phpt": {
+      "git": "82d5d1772b84bf0fbd972934a8b5f213e9dea3aa386e53a8c70749077823fd0b",
+      "archive": "82d5d1772b84bf0fbd972934a8b5f213e9dea3aa386e53a8c70749077823fd0b",
+      "equal": true
+    },
+    "Zend/tests/enum/debugInfo/return_validation.phpt": {
+      "git": "fe8cd69410c37aa325c3f15df1614a16902556620f397e011601a87f1790f587",
+      "archive": "fe8cd69410c37aa325c3f15df1614a16902556620f397e011601a87f1790f587",
+      "equal": true
+    },
+    "Zend/tests/enum/debugInfo/visibility_validation.phpt": {
+      "git": "4ff36126a522128d922632e5336ef48605310dfd1b4e0d4f2dda81499229a7f4",
+      "archive": "4ff36126a522128d922632e5336ef48605310dfd1b4e0d4f2dda81499229a7f4",
+      "equal": true
+    },
+    "Zend/tests/functions/readonly_as_method_name_is_ok.phpt": {
+      "git": "f5e0e6057b49aadecab4bcc4ce603582fa6843a2bd503333dad9b7df6c5e0f29",
+      "archive": "f5e0e6057b49aadecab4bcc4ce603582fa6843a2bd503333dad9b7df6c5e0f29",
+      "equal": true
+    },
+    "Zend/tests/gh10497_dim_arr.phpt": {
+      "git": "2d1d2cd168d79e38a63408e0766e8d00dc3da6869752d42dc74b21b564eff52f",
+      "archive": "2d1d2cd168d79e38a63408e0766e8d00dc3da6869752d42dc74b21b564eff52f",
+      "equal": true
+    },
+    "Zend/tests/gh10497_func_arg.phpt": {
+      "git": "5f846be583a1963c628f8d9cd28b042af80b03dde728ec4202e16690c20188cd",
+      "archive": "5f846be583a1963c628f8d9cd28b042af80b03dde728ec4202e16690c20188cd",
+      "equal": true
+    },
+    "Zend/tests/gh10497_non_object.phpt": {
+      "git": "0d65bd4505718a11fd8a27fa4f80aebc6040c82cade4cc978e9846d1977a2fa5",
+      "archive": "0d65bd4505718a11fd8a27fa4f80aebc6040c82cade4cc978e9846d1977a2fa5",
+      "equal": true
+    },
+    "Zend/tests/gh10497_write_targets.phpt": {
+      "git": "009d4e7ac76f872b898fec357d1292df057b193aaff5daf2e25905caf2714232",
+      "archive": "009d4e7ac76f872b898fec357d1292df057b193aaff5daf2e25905caf2714232",
+      "equal": true
+    },
+    "Zend/tests/gh10497_write_targets_guardrail.phpt": {
+      "git": "0d5d10093dea351116871d675a3a4123e16ebfa71115e27b1932eb18219e5544",
+      "archive": "0d5d10093dea351116871d675a3a4123e16ebfa71115e27b1932eb18219e5544",
+      "equal": true
+    },
+    "Zend/tests/gh20628_001.phpt": {
+      "git": "29ed8fb245de9ceff22098cb13fef4307513c665cf05b2fc9ed2f82ecb4f2ef5",
+      "archive": "29ed8fb245de9ceff22098cb13fef4307513c665cf05b2fc9ed2f82ecb4f2ef5",
+      "equal": true
+    },
+    "Zend/tests/magic_methods/constructor_destructor_return.phpt": {
+      "git": "180c1af24f8fd7e183e1f98b9edf71148a38335e8601abc30bbc5efe48c25f90",
+      "archive": "180c1af24f8fd7e183e1f98b9edf71148a38335e8601abc30bbc5efe48c25f90",
+      "equal": true
+    },
+    "Zend/tests/partial_application/clone.phpt": {
+      "git": "2fc00f119fd47e3a897440f7a4d3c6b85dd5109f7ed801dc53724cfb19e22c68",
+      "archive": "2fc00f119fd47e3a897440f7a4d3c6b85dd5109f7ed801dc53724cfb19e22c68",
+      "equal": true
+    },
+    "Zend/tests/partial_application/compile_errors_001.phpt": {
+      "git": "edec00ff601d5fe160adcfbe21e1e4ad0067bb30da41526e36f7123f7220b979",
+      "archive": "edec00ff601d5fe160adcfbe21e1e4ad0067bb30da41526e36f7123f7220b979",
+      "equal": true
+    },
+    "Zend/tests/partial_application/compile_errors_002.phpt": {
+      "git": "c0d2a439a35e8dc88e262a32bbaaeb1aa882fef27e5596032c826fc0b18a87d6",
+      "archive": "c0d2a439a35e8dc88e262a32bbaaeb1aa882fef27e5596032c826fc0b18a87d6",
+      "equal": true
+    },
+    "Zend/tests/partial_application/compile_errors_003.phpt": {
+      "git": "e8bde981b21cabf7bbe528c21b3e9cc1f7c98b07541874835f988171bf608390",
+      "archive": "e8bde981b21cabf7bbe528c21b3e9cc1f7c98b07541874835f988171bf608390",
+      "equal": true
+    },
+    "Zend/tests/partial_application/compile_errors_004.phpt": {
+      "git": "e9ae78ffb2085295d6cc2108c8e6fff769bd67dac8b812a9d5a6bd94be5719e3",
+      "archive": "e9ae78ffb2085295d6cc2108c8e6fff769bd67dac8b812a9d5a6bd94be5719e3",
+      "equal": true
+    },
+    "Zend/tests/partial_application/compile_errors_005.phpt": {
+      "git": "2604219436b1e9245fb39203ecaf511cf3ce4d0e36a59a01e2740172a279830b",
+      "archive": "2604219436b1e9245fb39203ecaf511cf3ce4d0e36a59a01e2740172a279830b",
+      "equal": true
+    },
+    "Zend/tests/partial_application/compile_errors_006.phpt": {
+      "git": "bdbcd72e7cbb962c02b83b3b1981a98c61d32d88850fdc91c82ddc9271183b77",
+      "archive": "bdbcd72e7cbb962c02b83b3b1981a98c61d32d88850fdc91c82ddc9271183b77",
+      "equal": true
+    },
+    "Zend/tests/partial_application/constexpr_001.phpt": {
+      "git": "a6aaa6bca716959dbb1deefbc0a21c759f59a0c33d1d851e233da1d4bbc93f97",
+      "archive": "a6aaa6bca716959dbb1deefbc0a21c759f59a0c33d1d851e233da1d4bbc93f97",
+      "equal": true
+    },
+    "Zend/tests/partial_application/constexpr_002.phpt": {
+      "git": "8de890bcba8c0c90cc6aae998c77694636152c1e397317f6fa2b2c48ff88608a",
+      "archive": "8de890bcba8c0c90cc6aae998c77694636152c1e397317f6fa2b2c48ff88608a",
+      "equal": true
+    },
+    "Zend/tests/partial_application/constexpr_003.phpt": {
+      "git": "1769eaed6a680c739cc5e6b146c2f01fbfa670c13ad77de3fbaa31614061b604",
+      "archive": "1769eaed6a680c739cc5e6b146c2f01fbfa670c13ad77de3fbaa31614061b604",
+      "equal": true
+    },
+    "Zend/tests/partial_application/constexpr_004.phpt": {
+      "git": "1c03f4e96d4441573c5f9e9216028640ceb7368713600c429613628038548a1e",
+      "archive": "1c03f4e96d4441573c5f9e9216028640ceb7368713600c429613628038548a1e",
+      "equal": true
+    },
+    "Zend/tests/partial_application/constexpr_005.phpt": {
+      "git": "745f7c091bf2a366cea866ebd60c443cfb754d7e3e02029009eb45e909196adb",
+      "archive": "745f7c091bf2a366cea866ebd60c443cfb754d7e3e02029009eb45e909196adb",
+      "equal": true
+    },
+    "Zend/tests/partial_application/constexpr_006.phpt": {
+      "git": "860c673653274738feb788f8f64ddddaefeb9a53b4e3924dd0369c09d9732217",
+      "archive": "860c673653274738feb788f8f64ddddaefeb9a53b4e3924dd0369c09d9732217",
+      "equal": true
+    },
+    "Zend/tests/partial_application/constexpr_007.phpt": {
+      "git": "3791f691cfb5c225d1e81c971d5a637c45bab84ceb937ad5b5fe27268b7fd161",
+      "archive": "3791f691cfb5c225d1e81c971d5a637c45bab84ceb937ad5b5fe27268b7fd161",
+      "equal": true
+    },
+    "Zend/tests/partial_application/constexpr_008.phpt": {
+      "git": "96bc0053ee9aa0ff7e90e3e1d9e1be9f8f0b0b1283d9f6e3ea9d4684973ec6af",
+      "archive": "96bc0053ee9aa0ff7e90e3e1d9e1be9f8f0b0b1283d9f6e3ea9d4684973ec6af",
+      "equal": true
+    },
+    "Zend/tests/partial_application/named_placeholders.phpt": {
+      "git": "20a8bc9708277436af082cef456c00b6359146e28d2fcd0237bf37968ae33f94",
+      "archive": "20a8bc9708277436af082cef456c00b6359146e28d2fcd0237bf37968ae33f94",
+      "equal": true
+    },
+    "Zend/tests/partial_application/optional_placeholder.phpt": {
+      "git": "35e01e4187408b47d56db98d63fb60c9bc9d898f118515ab7790311eb4ab06e5",
+      "archive": "35e01e4187408b47d56db98d63fb60c9bc9d898f118515ab7790311eb4ab06e5",
+      "equal": true
+    },
+    "Zend/tests/partial_application/rfc_examples_const_expr.phpt": {
+      "git": "a472adcc416e7013013e94bbcc1ae830a165063cbebcd7fff82750b8cc512947",
+      "archive": "a472adcc416e7013013e94bbcc1ae830a165063cbebcd7fff82750b8cc512947",
+      "equal": true
+    },
+    "Zend/tests/partial_application/rfc_examples_overview.phpt": {
+      "git": "96f8a83bac718695a5bde39b39107e5ada3be19e69308b12ede1e22b598bcade",
+      "archive": "96f8a83bac718695a5bde39b39107e5ada3be19e69308b12ede1e22b598bcade",
+      "equal": true
+    },
+    "Zend/tests/readonly_props/readonly_with_default.phpt": {
+      "git": "e07257a5b03c3a6324939cab330174f7791b9f04055260ba26784115fcae16ed",
+      "archive": "e07257a5b03c3a6324939cab330174f7791b9f04055260ba26784115fcae16ed",
+      "equal": true
+    },
+    "Zend/tests/readonly_props/readonly_with_default_inheritance.phpt": {
+      "git": "50e2febce4e3d9b3e416a8e569e91f070dd8182f42ef40fa6f680dfb3abd417a",
+      "archive": "50e2febce4e3d9b3e416a8e569e91f070dd8182f42ef40fa6f680dfb3abd417a",
+      "equal": true
+    },
+    "Zend/tests/return_types/042.phpt": {
+      "git": "657396748b4cd43cf82d1f7d468e37eb4ac596c81349c9d021e10dc76c9fd026",
+      "archive": "657396748b4cd43cf82d1f7d468e37eb4ac596c81349c9d021e10dc76c9fd026",
+      "equal": true
+    },
+    "Zend/tests/try/finally_return_deprecation.phpt": {
+      "git": "01449826d418c2c04d7672d2135ee8de16d7b5053f620dfce7e4ba8bb556fdd4",
+      "archive": "01449826d418c2c04d7672d2135ee8de16d7b5053f620dfce7e4ba8bb556fdd4",
+      "equal": true
+    },
+    "Zend/zend.c": {
+      "git": "02e6c7884385af162435d1a16dfcacc831ed944c0c9c746cb9576bd005794c25",
+      "archive": "02e6c7884385af162435d1a16dfcacc831ed944c0c9c746cb9576bd005794c25",
+      "equal": true
+    },
+    "Zend/zend.h": {
+      "git": "ab659c6ef75b80ddb1cdf3a68ffc92bdf1a796411cc8b888b6cbc1df5ea01fd9",
+      "archive": "ab659c6ef75b80ddb1cdf3a68ffc92bdf1a796411cc8b888b6cbc1df5ea01fd9",
+      "equal": true
+    },
+    "Zend/zend_API.c": {
+      "git": "8f2a03e3ad9c9230943915f0236b18e96e85c9c757e2a43c701ea55132d3abc0",
+      "archive": "8f2a03e3ad9c9230943915f0236b18e96e85c9c757e2a43c701ea55132d3abc0",
+      "equal": true
+    },
+    "Zend/zend_API.h": {
+      "git": "d29471309db862ab42d8acb900e99673cf10ee15e906371addcc7f6d477ffe1d",
+      "archive": "d29471309db862ab42d8acb900e99673cf10ee15e906371addcc7f6d477ffe1d",
+      "equal": true
+    },
+    "Zend/zend_alloc.c": {
+      "git": "fd15d0d422d4354f6b600ad9e09f1d11c89e2b75e4b8f2f44b3259fe382fc418",
+      "archive": "fd15d0d422d4354f6b600ad9e09f1d11c89e2b75e4b8f2f44b3259fe382fc418",
+      "equal": true
+    },
+    "Zend/zend_alloc.h": {
+      "git": "92130e04c89ef5ce72658c0cbc6c59deafc5b4a3611ca4b666f5bc8e8b46c196",
+      "archive": "92130e04c89ef5ce72658c0cbc6c59deafc5b4a3611ca4b666f5bc8e8b46c196",
+      "equal": true
+    },
+    "Zend/zend_alloc_sizes.h": {
+      "git": "6adf12a0d0fc48b21a001ad543ccd222ea0774981ddd47f05151b3c3ac5142d5",
+      "archive": "6adf12a0d0fc48b21a001ad543ccd222ea0774981ddd47f05151b3c3ac5142d5",
+      "equal": true
+    },
+    "Zend/zend_arena.h": {
+      "git": "f28ab6f427d89ec0937178c0cc0b76cc4e5b7a4e470c1e0f4719d24b11f96b37",
+      "archive": "f28ab6f427d89ec0937178c0cc0b76cc4e5b7a4e470c1e0f4719d24b11f96b37",
+      "equal": true
+    },
+    "Zend/zend_ast.c": {
+      "git": "e38008adfbb5d1aab0039074b4099aee2482c13bea170cec08e9347747b59094",
+      "archive": "e38008adfbb5d1aab0039074b4099aee2482c13bea170cec08e9347747b59094",
+      "equal": true
+    },
+    "Zend/zend_ast.h": {
+      "git": "b207e9873e492ca95b13b580ce8683258d5a6b4f1e5b5034ed2eb16a38e4a3f2",
+      "archive": "b207e9873e492ca95b13b580ce8683258d5a6b4f1e5b5034ed2eb16a38e4a3f2",
+      "equal": true
+    },
+    "Zend/zend_atomic.c": {
+      "git": "5f972fe82b20712ddb4bfc6db60f42c80dd51792c65b07216a70dec967543bff",
+      "archive": "5f972fe82b20712ddb4bfc6db60f42c80dd51792c65b07216a70dec967543bff",
+      "equal": true
+    },
+    "Zend/zend_atomic.h": {
+      "git": "87777a12a007cd91c543eb064c8f24bc71f9ea0f171b0322a3056f7fcf906d5a",
+      "archive": "87777a12a007cd91c543eb064c8f24bc71f9ea0f171b0322a3056f7fcf906d5a",
+      "equal": true
+    },
+    "Zend/zend_attributes.c": {
+      "git": "f5b41d9165e85125830ab434a038afd8db280ef5b3514cd7d7809264b1b61e21",
+      "archive": "f5b41d9165e85125830ab434a038afd8db280ef5b3514cd7d7809264b1b61e21",
+      "equal": true
+    },
+    "Zend/zend_attributes.h": {
+      "git": "ec93771ee62aecee787951184f6536f9eb55006afac77a36716f5da45efdc83a",
+      "archive": "ec93771ee62aecee787951184f6536f9eb55006afac77a36716f5da45efdc83a",
+      "equal": true
+    },
+    "Zend/zend_attributes.stub.php": {
+      "git": "bb3078146b4bda3f188953065e4dfaeda688d85d39871bcd57c4c14b810e5749",
+      "archive": "bb3078146b4bda3f188953065e4dfaeda688d85d39871bcd57c4c14b810e5749",
+      "equal": true
+    },
+    "Zend/zend_attributes_arginfo.h": {
+      "git": "a003d88c6bb6cebc083703b1c23957770d63f0dd2c02ad26bca55519f94f3c3a",
+      "archive": "a003d88c6bb6cebc083703b1c23957770d63f0dd2c02ad26bca55519f94f3c3a",
+      "equal": true
+    },
+    "Zend/zend_autoload.c": {
+      "git": "aa9c9bd1963cc16198c12c6bd82123115ae32346156b6e2bbd62f1ce0fe815b6",
+      "archive": "aa9c9bd1963cc16198c12c6bd82123115ae32346156b6e2bbd62f1ce0fe815b6",
+      "equal": true
+    },
+    "Zend/zend_autoload.h": {
+      "git": "114117ede4d3021faa4e993b58967fd5dc36999a7ebfa937f6d2043cca9e1e75",
+      "archive": "114117ede4d3021faa4e993b58967fd5dc36999a7ebfa937f6d2043cca9e1e75",
+      "equal": true
+    },
+    "Zend/zend_bitset.h": {
+      "git": "6eab9242c7af6d9513398f6196ccbae7c384e6655c20aa425efa65611146a8da",
+      "archive": "6eab9242c7af6d9513398f6196ccbae7c384e6655c20aa425efa65611146a8da",
+      "equal": true
+    },
+    "Zend/zend_build.h": {
+      "git": "c543f3b93b244d4301ba48c5e087f3d9c5a542e73034379360584832b40e9136",
+      "archive": "c543f3b93b244d4301ba48c5e087f3d9c5a542e73034379360584832b40e9136",
+      "equal": true
+    },
+    "Zend/zend_builtin_functions.c": {
+      "git": "ae35180a8d72b750a32ee311956d5f74400fa62c61b66270e3c64e0ebef2440e",
+      "archive": "ae35180a8d72b750a32ee311956d5f74400fa62c61b66270e3c64e0ebef2440e",
+      "equal": true
+    },
+    "Zend/zend_builtin_functions.h": {
+      "git": "d8753d9b29400f56da839950d59d57b50fa14bcb21270c3af565c597ddbe2d52",
+      "archive": "d8753d9b29400f56da839950d59d57b50fa14bcb21270c3af565c597ddbe2d52",
+      "equal": true
+    },
+    "Zend/zend_builtin_functions.stub.php": {
+      "git": "94147568635c7a2d4df72aaeab00c6e769dc8d161f2f1874360e43bfd4304add",
+      "archive": "94147568635c7a2d4df72aaeab00c6e769dc8d161f2f1874360e43bfd4304add",
+      "equal": true
+    },
+    "Zend/zend_builtin_functions_arginfo.h": {
+      "git": "a7a11b0007293114935cad9b10645d512b2e2fe4829a6537b70490156d5f83c6",
+      "archive": "a7a11b0007293114935cad9b10645d512b2e2fe4829a6537b70490156d5f83c6",
+      "equal": true
+    },
+    "Zend/zend_call_stack.c": {
+      "git": "973b825a6ee8f146760bf65ad8ff9525bde8a4339fa09a6d06a94fe2a6f89ff3",
+      "archive": "973b825a6ee8f146760bf65ad8ff9525bde8a4339fa09a6d06a94fe2a6f89ff3",
+      "equal": true
+    },
+    "Zend/zend_call_stack.h": {
+      "git": "6f965d63d42d1927883870858de41147c6e50bdbdd035f3df1632a5732532270",
+      "archive": "6f965d63d42d1927883870858de41147c6e50bdbdd035f3df1632a5732532270",
+      "equal": true
+    },
+    "Zend/zend_closures.c": {
+      "git": "bb1978411235b000f2c2e24a9b7f4c5476fd4631b9208d6069094cfc19b7bc93",
+      "archive": "bb1978411235b000f2c2e24a9b7f4c5476fd4631b9208d6069094cfc19b7bc93",
+      "equal": true
+    },
+    "Zend/zend_closures.h": {
+      "git": "3f1f105d5e2c9d1446740e949480ff513bf3d946e05461cfdf9d8a753c08f00e",
+      "archive": "3f1f105d5e2c9d1446740e949480ff513bf3d946e05461cfdf9d8a753c08f00e",
+      "equal": true
+    },
+    "Zend/zend_closures_arginfo.h": {
+      "git": "69c6bc7a3ceffed5098442404bb64fc12a8688db012c8a1d80e61424081496f1",
+      "archive": "69c6bc7a3ceffed5098442404bb64fc12a8688db012c8a1d80e61424081496f1",
+      "equal": true
+    },
+    "Zend/zend_compile.c": {
+      "git": "d2b57b75a6a5585a71be3d244428a8a13b7632b02e933ee9db44274b86c74f5f",
+      "archive": "d2b57b75a6a5585a71be3d244428a8a13b7632b02e933ee9db44274b86c74f5f",
+      "equal": true
+    },
+    "Zend/zend_compile.h": {
+      "git": "3a43384f3c49a629ddc11de2e2303d4cd710b8ec699cdfcf9d5092353831e02d",
+      "archive": "3a43384f3c49a629ddc11de2e2303d4cd710b8ec699cdfcf9d5092353831e02d",
+      "equal": true
+    },
+    "Zend/zend_config.w32.h": {
+      "git": "002a072e1b08fafad41ad032f202a0e1dbb851ab863b2a0423c3c7cece134e07",
+      "archive": "002a072e1b08fafad41ad032f202a0e1dbb851ab863b2a0423c3c7cece134e07",
+      "equal": true
+    },
+    "Zend/zend_constants.c": {
+      "git": "648df17ee29f60962f20635ba98518b5f4da66396bb4435f7a2b73a9c5711bde",
+      "archive": "648df17ee29f60962f20635ba98518b5f4da66396bb4435f7a2b73a9c5711bde",
+      "equal": true
+    },
+    "Zend/zend_constants.h": {
+      "git": "e1f03a37c5289de3679c3be20dde658281bf5077a195806dc74aa946f5b0b024",
+      "archive": "e1f03a37c5289de3679c3be20dde658281bf5077a195806dc74aa946f5b0b024",
+      "equal": true
+    },
+    "Zend/zend_constants_arginfo.h": {
+      "git": "be23590451303c907476419c071df06eea49b828b2e6e26bc39d127215e198d7",
+      "archive": "be23590451303c907476419c071df06eea49b828b2e6e26bc39d127215e198d7",
+      "equal": true
+    },
+    "Zend/zend_cpuinfo.c": {
+      "git": "4d90c94f226b6c093d9b6aebaed0d69a5c4a4c87820ef7e4e621bb502946c1f5",
+      "archive": "4d90c94f226b6c093d9b6aebaed0d69a5c4a4c87820ef7e4e621bb502946c1f5",
+      "equal": true
+    },
+    "Zend/zend_cpuinfo.h": {
+      "git": "e82493728864ea4cbcddab939e922d9621fa7a3ad598a935199c4f2f132c3a19",
+      "archive": "e82493728864ea4cbcddab939e922d9621fa7a3ad598a935199c4f2f132c3a19",
+      "equal": true
+    },
+    "Zend/zend_default_classes.c": {
+      "git": "8e2af5a233e5a23745ad9f601233d20adbdf31c5a1c4b1aaa5ef495dc55c53b1",
+      "archive": "8e2af5a233e5a23745ad9f601233d20adbdf31c5a1c4b1aaa5ef495dc55c53b1",
+      "equal": true
+    },
+    "Zend/zend_dtrace.c": {
+      "git": "1f3b0092bf995a6584f67246c80d0311924877899f98e01a3dad6eb7d2d11b22",
+      "archive": "1f3b0092bf995a6584f67246c80d0311924877899f98e01a3dad6eb7d2d11b22",
+      "equal": true
+    },
+    "Zend/zend_dtrace.h": {
+      "git": "e99bfe06db76f506309324fd89790b2bdccc88b8980fb3d030fef8af92b77903",
+      "archive": "e99bfe06db76f506309324fd89790b2bdccc88b8980fb3d030fef8af92b77903",
+      "equal": true
+    },
+    "Zend/zend_enum.c": {
+      "git": "dc33cb0ac00a7d5dd820c9ee4a039ebf2e38b78728ba4db7bc1e37e34428f894",
+      "archive": "dc33cb0ac00a7d5dd820c9ee4a039ebf2e38b78728ba4db7bc1e37e34428f894",
+      "equal": true
+    },
+    "Zend/zend_enum.h": {
+      "git": "6763953d631533b4f05033f95a8ace3bedc57f866a465c2f560d8c7b7121760b",
+      "archive": "6763953d631533b4f05033f95a8ace3bedc57f866a465c2f560d8c7b7121760b",
+      "equal": true
+    },
+    "Zend/zend_enum_arginfo.h": {
+      "git": "342305ccf7f825a2070bad878d2d9e4b2446c51effd6516fac80550d7b614e99",
+      "archive": "342305ccf7f825a2070bad878d2d9e4b2446c51effd6516fac80550d7b614e99",
+      "equal": true
+    },
+    "Zend/zend_errors.h": {
+      "git": "d8758ae0d320b6d37b76bf3ac41370b26e4345d1bb384126ea4518670ce35af7",
+      "archive": "d8758ae0d320b6d37b76bf3ac41370b26e4345d1bb384126ea4518670ce35af7",
+      "equal": true
+    },
+    "Zend/zend_exceptions.c": {
+      "git": "be62c2eac4d44c9ff399e8ca64eb4c59935759fcf6086855f81cb546dbd6d2b9",
+      "archive": "be62c2eac4d44c9ff399e8ca64eb4c59935759fcf6086855f81cb546dbd6d2b9",
+      "equal": true
+    },
+    "Zend/zend_exceptions.h": {
+      "git": "a6c208a201875f1df672ca6e6cc8798d38412bbdda4048c9ce0dc9da9b732d4e",
+      "archive": "a6c208a201875f1df672ca6e6cc8798d38412bbdda4048c9ce0dc9da9b732d4e",
+      "equal": true
+    },
+    "Zend/zend_exceptions_arginfo.h": {
+      "git": "2034af345a97e9a061a55d358d86fa9b6808b41f718c4ac52fc86bbc23d3f78f",
+      "archive": "2034af345a97e9a061a55d358d86fa9b6808b41f718c4ac52fc86bbc23d3f78f",
+      "equal": true
+    },
+    "Zend/zend_execute.c": {
+      "git": "fb04c0c077bba2dd90cc2733c2b564bcb9e053fa52ece222fdbc7ce55d3a49a3",
+      "archive": "fb04c0c077bba2dd90cc2733c2b564bcb9e053fa52ece222fdbc7ce55d3a49a3",
+      "equal": true
+    },
+    "Zend/zend_execute.h": {
+      "git": "1a80057b0575ffb17c99541da517838fa4975392641f63e5c2b05c7a819aca49",
+      "archive": "1a80057b0575ffb17c99541da517838fa4975392641f63e5c2b05c7a819aca49",
+      "equal": true
+    },
+    "Zend/zend_execute_API.c": {
+      "git": "2dc6028930616bce76a0273304294684824520f63a71ea26730b08933b9fe8ce",
+      "archive": "2dc6028930616bce76a0273304294684824520f63a71ea26730b08933b9fe8ce",
+      "equal": true
+    },
+    "Zend/zend_extensions.c": {
+      "git": "7d6398f61a94ded9edfca46047d6edf030105c7ec7c8e947dbdf27adc74b5191",
+      "archive": "7d6398f61a94ded9edfca46047d6edf030105c7ec7c8e947dbdf27adc74b5191",
+      "equal": true
+    },
+    "Zend/zend_extensions.h": {
+      "git": "a0334b3415137ba0ca8a2a1120e1b8afb95352fefac7946bc716293c71644795",
+      "archive": "a0334b3415137ba0ca8a2a1120e1b8afb95352fefac7946bc716293c71644795",
+      "equal": true
+    },
+    "Zend/zend_fibers.c": {
+      "git": "d3001262d197c0b6877fc21f86f85317c358780b8607adbc69cffdca09cfba13",
+      "archive": "d3001262d197c0b6877fc21f86f85317c358780b8607adbc69cffdca09cfba13",
+      "equal": true
+    },
+    "Zend/zend_fibers.h": {
+      "git": "d4cd5165ff2b9e3a692dd3a2fa044f4d420140184ff052c97fdcd0837421731a",
+      "archive": "d4cd5165ff2b9e3a692dd3a2fa044f4d420140184ff052c97fdcd0837421731a",
+      "equal": true
+    },
+    "Zend/zend_fibers_arginfo.h": {
+      "git": "176e2b15e7da931a90a96964d62d1110fb94fa3cfb9627f43951fbca2e7a8650",
+      "archive": "176e2b15e7da931a90a96964d62d1110fb94fa3cfb9627f43951fbca2e7a8650",
+      "equal": true
+    },
+    "Zend/zend_float.c": {
+      "git": "91cdf5b06a469aa35be369507655eb95e3895a2a252a896f8be7a40c20fc52f4",
+      "archive": "91cdf5b06a469aa35be369507655eb95e3895a2a252a896f8be7a40c20fc52f4",
+      "equal": true
+    },
+    "Zend/zend_float.h": {
+      "git": "85cdd20cc77cffa594f1c4b359534cb92cf2d5f4f4bd9a742e32d83b6d54b485",
+      "archive": "85cdd20cc77cffa594f1c4b359534cb92cf2d5f4f4bd9a742e32d83b6d54b485",
+      "equal": true
+    },
+    "Zend/zend_frameless_function.c": {
+      "git": "a588cdb8437e28317eb59ea3a6490df5f135327f65f377090b31565e7070b6bb",
+      "archive": "a588cdb8437e28317eb59ea3a6490df5f135327f65f377090b31565e7070b6bb",
+      "equal": true
+    },
+    "Zend/zend_frameless_function.h": {
+      "git": "0163fcdc33d85f8e8d20847e621415cb6a8447184198283b35a8872eb5d6a95f",
+      "archive": "0163fcdc33d85f8e8d20847e621415cb6a8447184198283b35a8872eb5d6a95f",
+      "equal": true
+    },
+    "Zend/zend_gc.c": {
+      "git": "beb9775976a7389d4f262fbc474d8abcc9024b07af10aa0509607e739e1016cf",
+      "archive": "beb9775976a7389d4f262fbc474d8abcc9024b07af10aa0509607e739e1016cf",
+      "equal": true
+    },
+    "Zend/zend_gc.h": {
+      "git": "26868c53818170267e0b77b92feb496199d8ddd8bce1c06ed4e31a3f0452f766",
+      "archive": "26868c53818170267e0b77b92feb496199d8ddd8bce1c06ed4e31a3f0452f766",
+      "equal": true
+    },
+    "Zend/zend_gdb.c": {
+      "git": "660ff47202e18ce00fa51ff17f9d7e0c26a397f06ec06cb53aee3806d7e1e387",
+      "archive": "660ff47202e18ce00fa51ff17f9d7e0c26a397f06ec06cb53aee3806d7e1e387",
+      "equal": true
+    },
+    "Zend/zend_gdb.h": {
+      "git": "d27d0fc9efafc39217fa2ee30239396923184f34405f0f811405c55823287a3b",
+      "archive": "d27d0fc9efafc39217fa2ee30239396923184f34405f0f811405c55823287a3b",
+      "equal": true
+    },
+    "Zend/zend_generators.c": {
+      "git": "e8d52c0805f13f0310c5bafbd2d1d7f3035018ee32e35ae742d72ff236508bd6",
+      "archive": "e8d52c0805f13f0310c5bafbd2d1d7f3035018ee32e35ae742d72ff236508bd6",
+      "equal": true
+    },
+    "Zend/zend_generators.h": {
+      "git": "fc91bd17fa55876e0daec2443c58630511ca4e036e9812c82830ed14365a2e61",
+      "archive": "fc91bd17fa55876e0daec2443c58630511ca4e036e9812c82830ed14365a2e61",
+      "equal": true
+    },
+    "Zend/zend_generators_arginfo.h": {
+      "git": "9f48bbb2424263ca0a4affd86c22c2b76918996d6905decb8c5faebe6d202158",
+      "archive": "9f48bbb2424263ca0a4affd86c22c2b76918996d6905decb8c5faebe6d202158",
+      "equal": true
+    },
+    "Zend/zend_globals.h": {
+      "git": "393f3d3b00fe6590b7b24b618bdd63fc8c35e3d625b794d45663e68817ca61dc",
+      "archive": "393f3d3b00fe6590b7b24b618bdd63fc8c35e3d625b794d45663e68817ca61dc",
+      "equal": true
+    },
+    "Zend/zend_globals_macros.h": {
+      "git": "35cd8fcd7d61ba49e3cb9517bcd26a64de7bf4ad64e3ba47ad8d62461ac626e7",
+      "archive": "35cd8fcd7d61ba49e3cb9517bcd26a64de7bf4ad64e3ba47ad8d62461ac626e7",
+      "equal": true
+    },
+    "Zend/zend_hash.c": {
+      "git": "8ac0f415400c164adbd3f0bbe15e0366d0ff48ed599ba94eed0088c7f1dd4272",
+      "archive": "8ac0f415400c164adbd3f0bbe15e0366d0ff48ed599ba94eed0088c7f1dd4272",
+      "equal": true
+    },
+    "Zend/zend_hash.h": {
+      "git": "f32a845ffcc5b68aa6f29d98bb9e284072aca7d018a5fb547fe9337cad3fa2ab",
+      "archive": "f32a845ffcc5b68aa6f29d98bb9e284072aca7d018a5fb547fe9337cad3fa2ab",
+      "equal": true
+    },
+    "Zend/zend_highlight.c": {
+      "git": "e033783a551b189b53618e221d70ff7a169e8a19009dcc7a6033946e0dff625e",
+      "archive": "e033783a551b189b53618e221d70ff7a169e8a19009dcc7a6033946e0dff625e",
+      "equal": true
+    },
+    "Zend/zend_highlight.h": {
+      "git": "f39bdf46f923203c486fff19c64d853c6a52804624afa691267beaf2c246cf91",
+      "archive": "f39bdf46f923203c486fff19c64d853c6a52804624afa691267beaf2c246cf91",
+      "equal": true
+    },
+    "Zend/zend_hrtime.c": {
+      "git": "a4d8e3f792323653096fc0b9235cd8e9ad96ba683ccd2f99d804b3ca117e4de4",
+      "archive": "a4d8e3f792323653096fc0b9235cd8e9ad96ba683ccd2f99d804b3ca117e4de4",
+      "equal": true
+    },
+    "Zend/zend_hrtime.h": {
+      "git": "802d149e6c0f842320c1dd9766fb7c32cf113beab7afdca2f029adcd4ac9b1f9",
+      "archive": "802d149e6c0f842320c1dd9766fb7c32cf113beab7afdca2f029adcd4ac9b1f9",
+      "equal": true
+    },
+    "Zend/zend_inheritance.c": {
+      "git": "cbddd161ecc6ad0a4e46a4d8a2fd6d46b9ec1b572b487a39543ff48a6be4ed1a",
+      "archive": "cbddd161ecc6ad0a4e46a4d8a2fd6d46b9ec1b572b487a39543ff48a6be4ed1a",
+      "equal": true
+    },
+    "Zend/zend_inheritance.h": {
+      "git": "d6ac11d705a0785b5e292cfb3a109350a937f8af93566b7713a1455a0caf235a",
+      "archive": "d6ac11d705a0785b5e292cfb3a109350a937f8af93566b7713a1455a0caf235a",
+      "equal": true
+    },
+    "Zend/zend_ini.c": {
+      "git": "5a7d842d3c467b2463d1fb0dde934bcd78f7ce4dc4cfae7c57969ad67b99afae",
+      "archive": "5a7d842d3c467b2463d1fb0dde934bcd78f7ce4dc4cfae7c57969ad67b99afae",
+      "equal": true
+    },
+    "Zend/zend_ini.h": {
+      "git": "c442b7f36387666690d58295e781ac7f4adec04d935ca2f2df02bb1124bf9e85",
+      "archive": "c442b7f36387666690d58295e781ac7f4adec04d935ca2f2df02bb1124bf9e85",
+      "equal": true
+    },
+    "Zend/zend_ini_parser.y": {
+      "git": "07bdfccf6eed56e8a8c3a3e05a6a73faa239e84b4aa8fea4fa1c706e4934c739",
+      "archive": "07bdfccf6eed56e8a8c3a3e05a6a73faa239e84b4aa8fea4fa1c706e4934c739",
+      "equal": true
+    },
+    "Zend/zend_ini_scanner.h": {
+      "git": "fdc54e6644c469f956070a4297e28591d75b49e08f3db534bc1cdc7930421497",
+      "archive": "fdc54e6644c469f956070a4297e28591d75b49e08f3db534bc1cdc7930421497",
+      "equal": true
+    },
+    "Zend/zend_ini_scanner.l": {
+      "git": "1cd18913152cc9805d5417fa513a08964cf9ee93bfb88e2bb11c8bdac92e2217",
+      "archive": "1cd18913152cc9805d5417fa513a08964cf9ee93bfb88e2bb11c8bdac92e2217",
+      "equal": true
+    },
+    "Zend/zend_interfaces.c": {
+      "git": "3499416d6fbf0a8bbc6e922c89a94adea422e49942934279cc44dc5e0fe6f807",
+      "archive": "3499416d6fbf0a8bbc6e922c89a94adea422e49942934279cc44dc5e0fe6f807",
+      "equal": true
+    },
+    "Zend/zend_interfaces.h": {
+      "git": "47d8fad04ccdeeb6070cc1a33f6e984795db3814b78256c98c797fb1dc6ea518",
+      "archive": "47d8fad04ccdeeb6070cc1a33f6e984795db3814b78256c98c797fb1dc6ea518",
+      "equal": true
+    },
+    "Zend/zend_interfaces_arginfo.h": {
+      "git": "918ed9f07f9bf9d6cc2461f2ec1e7a751fc8052741a45b9225a2afc290dfda20",
+      "archive": "918ed9f07f9bf9d6cc2461f2ec1e7a751fc8052741a45b9225a2afc290dfda20",
+      "equal": true
+    },
+    "Zend/zend_iterators.c": {
+      "git": "9852c74fe77a512e427a066011d5fdf696a682d839d538808879bc90668973df",
+      "archive": "9852c74fe77a512e427a066011d5fdf696a682d839d538808879bc90668973df",
+      "equal": true
+    },
+    "Zend/zend_iterators.h": {
+      "git": "54fb877bfa288c9da352e565da72b3954e1345ec6f2eb723ee0bd01a9682eee2",
+      "archive": "54fb877bfa288c9da352e565da72b3954e1345ec6f2eb723ee0bd01a9682eee2",
+      "equal": true
+    },
+    "Zend/zend_language_parser.y": {
+      "git": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "archive": "2daed30b2d5d3286c72d4b4794950a977263201213f876f5761dc4a068bd8235",
+      "equal": true
+    },
+    "Zend/zend_language_scanner.h": {
+      "git": "0a85951a7fcef8c373ebd6f8ccc91699e7a94796b7b6cbdd55860b5659dbc738",
+      "archive": "0a85951a7fcef8c373ebd6f8ccc91699e7a94796b7b6cbdd55860b5659dbc738",
+      "equal": true
+    },
+    "Zend/zend_language_scanner.l": {
+      "git": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "archive": "fecd6a22465408397133e6fe3357ed7c598b57d17e3f9886a0935896881fda39",
+      "equal": true
+    },
+    "Zend/zend_lazy_objects.c": {
+      "git": "fb0ae0d5812feacc0909cc1c4ce4bc5f2f578c676d0eb2ded2dadcbd8d8263f3",
+      "archive": "fb0ae0d5812feacc0909cc1c4ce4bc5f2f578c676d0eb2ded2dadcbd8d8263f3",
+      "equal": true
+    },
+    "Zend/zend_lazy_objects.h": {
+      "git": "dfb9645131d952d7ed11420dd4fca5b0b44947be6f276767236f58bc688c3802",
+      "archive": "dfb9645131d952d7ed11420dd4fca5b0b44947be6f276767236f58bc688c3802",
+      "equal": true
+    },
+    "Zend/zend_list.c": {
+      "git": "e9f9ca62371cf6b3b46da2e11da3b2cd19e7b75010128917e744888e39a6b56f",
+      "archive": "e9f9ca62371cf6b3b46da2e11da3b2cd19e7b75010128917e744888e39a6b56f",
+      "equal": true
+    },
+    "Zend/zend_list.h": {
+      "git": "c1fd2838ee715ab61d5df1d4c0960de4ef248796090541dfad2a72f579360b11",
+      "archive": "c1fd2838ee715ab61d5df1d4c0960de4ef248796090541dfad2a72f579360b11",
+      "equal": true
+    },
+    "Zend/zend_llist.c": {
+      "git": "fb7fd837e82a3f71d8f6f7b71f5991e48d213c2876a4cdc431af20d3a9de7477",
+      "archive": "fb7fd837e82a3f71d8f6f7b71f5991e48d213c2876a4cdc431af20d3a9de7477",
+      "equal": true
+    },
+    "Zend/zend_llist.h": {
+      "git": "459820afc984d74eedb546900510d0c93910bbd3877404536d24b8e1676d5297",
+      "archive": "459820afc984d74eedb546900510d0c93910bbd3877404536d24b8e1676d5297",
+      "equal": true
+    },
+    "Zend/zend_long.h": {
+      "git": "3451f4ed6642004996b1429c7bf3bc621ab93c38c70bf822545684bf38e14d5a",
+      "archive": "3451f4ed6642004996b1429c7bf3bc621ab93c38c70bf822545684bf38e14d5a",
+      "equal": true
+    },
+    "Zend/zend_map_ptr.h": {
+      "git": "ee1fd8984a7c649338e67cecae7eb299bd710984ecd753ff7da3fa72336d1901",
+      "archive": "ee1fd8984a7c649338e67cecae7eb299bd710984ecd753ff7da3fa72336d1901",
+      "equal": true
+    },
+    "Zend/zend_max_execution_timer.c": {
+      "git": "1f87091f1ba344336ab175122e8fbf9a625d3904415eb9fbce6b5981dd816c87",
+      "archive": "1f87091f1ba344336ab175122e8fbf9a625d3904415eb9fbce6b5981dd816c87",
+      "equal": true
+    },
+    "Zend/zend_max_execution_timer.h": {
+      "git": "b6859f0590517469376f0cfc2fb7e3567cefca5e1abd2cdca64b679b954c4c5f",
+      "archive": "b6859f0590517469376f0cfc2fb7e3567cefca5e1abd2cdca64b679b954c4c5f",
+      "equal": true
+    },
+    "Zend/zend_mmap.h": {
+      "git": "69fddbe8ea487e78918ac50c0918732d13cbac13a587041b9370526b2579615d",
+      "archive": "69fddbe8ea487e78918ac50c0918732d13cbac13a587041b9370526b2579615d",
+      "equal": true
+    },
+    "Zend/zend_modules.h": {
+      "git": "e85b847d068e80a776a5a555cd94c83d13f5c4635c33f8c32030d988fe3e4d41",
+      "archive": "e85b847d068e80a776a5a555cd94c83d13f5c4635c33f8c32030d988fe3e4d41",
+      "equal": true
+    },
+    "Zend/zend_multibyte.c": {
+      "git": "428592c530bafa6a965941d1645596c2badcdb2bfaa11df6ca2b816bc5234845",
+      "archive": "428592c530bafa6a965941d1645596c2badcdb2bfaa11df6ca2b816bc5234845",
+      "equal": true
+    },
+    "Zend/zend_multibyte.h": {
+      "git": "540f34d1ffefc577c2bb93c74b046e75cb63f3c21aaa8a25df16703e2e368790",
+      "archive": "540f34d1ffefc577c2bb93c74b046e75cb63f3c21aaa8a25df16703e2e368790",
+      "equal": true
+    },
+    "Zend/zend_multiply.h": {
+      "git": "3001350ec2c6a17245bf7e8d27410c37144c1279f0a49ac9ad4339ddc8035aae",
+      "archive": "3001350ec2c6a17245bf7e8d27410c37144c1279f0a49ac9ad4339ddc8035aae",
+      "equal": true
+    },
+    "Zend/zend_object_handlers.c": {
+      "git": "bcd4a6f8ab2c05f64a57010c2c020a301908dd5b18fb60de4fdd1ef95de41dd6",
+      "archive": "bcd4a6f8ab2c05f64a57010c2c020a301908dd5b18fb60de4fdd1ef95de41dd6",
+      "equal": true
+    },
+    "Zend/zend_object_handlers.h": {
+      "git": "a4d8c28c60275bde1c56d6c61b1f9b12e9e8c29aad5aaa1ce69d992df5cd6641",
+      "archive": "a4d8c28c60275bde1c56d6c61b1f9b12e9e8c29aad5aaa1ce69d992df5cd6641",
+      "equal": true
+    },
+    "Zend/zend_objects.c": {
+      "git": "e5c4e71fcd56b248e8d67172c065ca772c6e2748e226115e4e81d3821ecad2d1",
+      "archive": "e5c4e71fcd56b248e8d67172c065ca772c6e2748e226115e4e81d3821ecad2d1",
+      "equal": true
+    },
+    "Zend/zend_objects.h": {
+      "git": "f58adddfacee169e4426b7fd23f93d611f8e9da4482b6cadc0736b155c7f133e",
+      "archive": "f58adddfacee169e4426b7fd23f93d611f8e9da4482b6cadc0736b155c7f133e",
+      "equal": true
+    },
+    "Zend/zend_objects_API.c": {
+      "git": "481a0778a329608c918ec247550811f215c5a72dcbbbe136de56974fbb98aab8",
+      "archive": "481a0778a329608c918ec247550811f215c5a72dcbbbe136de56974fbb98aab8",
+      "equal": true
+    },
+    "Zend/zend_objects_API.h": {
+      "git": "46e6be70fb20bf3b03336d4d8a63bb33848d3995c7dbf1e5e2047e7a1b813872",
+      "archive": "46e6be70fb20bf3b03336d4d8a63bb33848d3995c7dbf1e5e2047e7a1b813872",
+      "equal": true
+    },
+    "Zend/zend_observer.c": {
+      "git": "38111df0ab00ad87c5e7e789a9f338170709351e2393d910c97797e5a1089150",
+      "archive": "38111df0ab00ad87c5e7e789a9f338170709351e2393d910c97797e5a1089150",
+      "equal": true
+    },
+    "Zend/zend_observer.h": {
+      "git": "0dd61aef26a5ab70385a272155b575c1e97b105e948668a652779f43efdca50f",
+      "archive": "0dd61aef26a5ab70385a272155b575c1e97b105e948668a652779f43efdca50f",
+      "equal": true
+    },
+    "Zend/zend_opcode.c": {
+      "git": "0fcbbb56b464e33f1f21361944362fd3ce746a1a4c6461c095ecf7ccf08489e5",
+      "archive": "0fcbbb56b464e33f1f21361944362fd3ce746a1a4c6461c095ecf7ccf08489e5",
+      "equal": true
+    },
+    "Zend/zend_operators.c": {
+      "git": "fee1f2fea82c8bdb1cc617cb0ddc389b7aded98ab6f9d7988feed81981d73d74",
+      "archive": "fee1f2fea82c8bdb1cc617cb0ddc389b7aded98ab6f9d7988feed81981d73d74",
+      "equal": true
+    },
+    "Zend/zend_operators.h": {
+      "git": "e82eadf7c81e8793c3d2ee5d3f64c75859262c176b1f77a375044ef4290d2fea",
+      "archive": "e82eadf7c81e8793c3d2ee5d3f64c75859262c176b1f77a375044ef4290d2fea",
+      "equal": true
+    },
+    "Zend/zend_partial.c": {
+      "git": "4c42a029921b7f06b68f70f238ae15d0cd8bb945c8d2522d3db4d6a052bd4bd9",
+      "archive": "4c42a029921b7f06b68f70f238ae15d0cd8bb945c8d2522d3db4d6a052bd4bd9",
+      "equal": true
+    },
+    "Zend/zend_partial.h": {
+      "git": "5cd78807ba6cbcb3474f492653e4e36e10b44640eaf0fdaca1e2238fabe38826",
+      "archive": "5cd78807ba6cbcb3474f492653e4e36e10b44640eaf0fdaca1e2238fabe38826",
+      "equal": true
+    },
+    "Zend/zend_perf_stat.h": {
+      "git": "4df71d9ab3b5ef88e427541841d619bb360546d475ebe500b16354919a2d19e3",
+      "archive": "4df71d9ab3b5ef88e427541841d619bb360546d475ebe500b16354919a2d19e3",
+      "equal": true
+    },
+    "Zend/zend_portability.h": {
+      "git": "4528b496e813236d3f1bdb077845ebd692d4e715b6d2a50808da4b356510e8d9",
+      "archive": "4528b496e813236d3f1bdb077845ebd692d4e715b6d2a50808da4b356510e8d9",
+      "equal": true
+    },
+    "Zend/zend_property_hooks.c": {
+      "git": "23e1f4725c2481f78054e27ec1056ff05956bf04982f638d6a2d6995d6ec3d78",
+      "archive": "23e1f4725c2481f78054e27ec1056ff05956bf04982f638d6a2d6995d6ec3d78",
+      "equal": true
+    },
+    "Zend/zend_property_hooks.h": {
+      "git": "f63dda353539b508b076d4c9ae73e383a06b1db104553ebb23dee419a1854db8",
+      "archive": "f63dda353539b508b076d4c9ae73e383a06b1db104553ebb23dee419a1854db8",
+      "equal": true
+    },
+    "Zend/zend_ptr_stack.c": {
+      "git": "c506b9241856f5f9dec7720c8e84b76456ff7382a06bc9ce8f248d26dd547bfc",
+      "archive": "c506b9241856f5f9dec7720c8e84b76456ff7382a06bc9ce8f248d26dd547bfc",
+      "equal": true
+    },
+    "Zend/zend_ptr_stack.h": {
+      "git": "5549ec0ce6a0032b7390463f4d18270f920699359f80e61d894622eece9ef70a",
+      "archive": "5549ec0ce6a0032b7390463f4d18270f920699359f80e61d894622eece9ef70a",
+      "equal": true
+    },
+    "Zend/zend_range_check.h": {
+      "git": "683344b2c6477a1eb975830ca097a7cdf1e4e313f7eaa594b2e4ed0eaa9cdba7",
+      "archive": "683344b2c6477a1eb975830ca097a7cdf1e4e313f7eaa594b2e4ed0eaa9cdba7",
+      "equal": true
+    },
+    "Zend/zend_signal.c": {
+      "git": "cebd8e917561405b30d60f7062988b8f9f17cbc38b655595d0aaa110e48d3e74",
+      "archive": "cebd8e917561405b30d60f7062988b8f9f17cbc38b655595d0aaa110e48d3e74",
+      "equal": true
+    },
+    "Zend/zend_signal.h": {
+      "git": "5a5c9da3f26e6ea8083b23d55f5a9823d7738270182769ad4e70509add61fd01",
+      "archive": "5a5c9da3f26e6ea8083b23d55f5a9823d7738270182769ad4e70509add61fd01",
+      "equal": true
+    },
+    "Zend/zend_simd.h": {
+      "git": "962eef62cca819b799f7660fcb1935ad3692a37de2ce9f4dee9a464b40454ff6",
+      "archive": "962eef62cca819b799f7660fcb1935ad3692a37de2ce9f4dee9a464b40454ff6",
+      "equal": true
+    },
+    "Zend/zend_smart_str.c": {
+      "git": "985de45e8b7f9bcc9c2a814419356fb3a9f6c332d5f792cd53b16597f42ce631",
+      "archive": "985de45e8b7f9bcc9c2a814419356fb3a9f6c332d5f792cd53b16597f42ce631",
+      "equal": true
+    },
+    "Zend/zend_smart_str.h": {
+      "git": "f3d3e81a25e53dde4fc5253b00274c60c2c12412c44e4ef5ee35400bda39c97d",
+      "archive": "f3d3e81a25e53dde4fc5253b00274c60c2c12412c44e4ef5ee35400bda39c97d",
+      "equal": true
+    },
+    "Zend/zend_smart_str_public.h": {
+      "git": "310647ef494dbdeec95cef9473b7c9808871a92a26cf61983a30ab9b93a8f440",
+      "archive": "310647ef494dbdeec95cef9473b7c9808871a92a26cf61983a30ab9b93a8f440",
+      "equal": true
+    },
+    "Zend/zend_smart_string.h": {
+      "git": "100acc86d4406ea9fa111f7f930586bc36e00ef7896a849a2ef6f661decdf98c",
+      "archive": "100acc86d4406ea9fa111f7f930586bc36e00ef7896a849a2ef6f661decdf98c",
+      "equal": true
+    },
+    "Zend/zend_smart_string_public.h": {
+      "git": "ae5d5857f9bc5b285d304f8f3f73f595bedd0309717383217fc14dafe96720ba",
+      "archive": "ae5d5857f9bc5b285d304f8f3f73f595bedd0309717383217fc14dafe96720ba",
+      "equal": true
+    },
+    "Zend/zend_sort.c": {
+      "git": "87ae4ccacc207fb1cbb4e258940ea62f116a6572f5ffc2d3000d64997e4777a3",
+      "archive": "87ae4ccacc207fb1cbb4e258940ea62f116a6572f5ffc2d3000d64997e4777a3",
+      "equal": true
+    },
+    "Zend/zend_sort.h": {
+      "git": "68a50a781df95bf894b6a7d46122b50ed789f90eaf139bfa503fc6bf012b0703",
+      "archive": "68a50a781df95bf894b6a7d46122b50ed789f90eaf139bfa503fc6bf012b0703",
+      "equal": true
+    },
+    "Zend/zend_stack.c": {
+      "git": "af326a349f26ef905392c7f5c44c9971f488525692640119e20da26e8fd0ad82",
+      "archive": "af326a349f26ef905392c7f5c44c9971f488525692640119e20da26e8fd0ad82",
+      "equal": true
+    },
+    "Zend/zend_stack.h": {
+      "git": "b8a02965c5081dc888e8929995d0c8789243e5080d6519649aeaba4a0189592c",
+      "archive": "b8a02965c5081dc888e8929995d0c8789243e5080d6519649aeaba4a0189592c",
+      "equal": true
+    },
+    "Zend/zend_stream.c": {
+      "git": "2c85aec2b67970ab96941951021b48b904525e67f811ae4dbd59bb457af0e4df",
+      "archive": "2c85aec2b67970ab96941951021b48b904525e67f811ae4dbd59bb457af0e4df",
+      "equal": true
+    },
+    "Zend/zend_stream.h": {
+      "git": "39fbfbe375cd029350c9bb8ebbdf77e17c522ec6e59ea5f2432fd02b4efbbcaf",
+      "archive": "39fbfbe375cd029350c9bb8ebbdf77e17c522ec6e59ea5f2432fd02b4efbbcaf",
+      "equal": true
+    },
+    "Zend/zend_string.c": {
+      "git": "9214d62063e0f144b68b4cfbb652c3a1e0aca75fdab8e85767f87b1fc3a4bc9e",
+      "archive": "9214d62063e0f144b68b4cfbb652c3a1e0aca75fdab8e85767f87b1fc3a4bc9e",
+      "equal": true
+    },
+    "Zend/zend_string.h": {
+      "git": "7499e8810b2ae9ecd5a6eff07a7992c473d10f88a21336059c9b7ddeb22eb623",
+      "archive": "7499e8810b2ae9ecd5a6eff07a7992c473d10f88a21336059c9b7ddeb22eb623",
+      "equal": true
+    },
+    "Zend/zend_strtod.c": {
+      "git": "0ac5610b718fe1ef27ad86d26cc7a1f9637ae4b52a6d36dd406644d9d2226eff",
+      "archive": "0ac5610b718fe1ef27ad86d26cc7a1f9637ae4b52a6d36dd406644d9d2226eff",
+      "equal": true
+    },
+    "Zend/zend_strtod.h": {
+      "git": "3510317aa1db9061f5ba23e8a588157ce4d985be9b755768b1addfb8bed9312d",
+      "archive": "3510317aa1db9061f5ba23e8a588157ce4d985be9b755768b1addfb8bed9312d",
+      "equal": true
+    },
+    "Zend/zend_strtod_int.h": {
+      "git": "97bce628e5adf0ff2386880b58ccf0ca4e5cc3bb638605ca17c39249454b04cb",
+      "archive": "97bce628e5adf0ff2386880b58ccf0ca4e5cc3bb638605ca17c39249454b04cb",
+      "equal": true
+    },
+    "Zend/zend_system_id.c": {
+      "git": "4e432175747709e2665514e028989c4e7455e3431b525ae5552eb4b8579983e4",
+      "archive": "4e432175747709e2665514e028989c4e7455e3431b525ae5552eb4b8579983e4",
+      "equal": true
+    },
+    "Zend/zend_system_id.h": {
+      "git": "3d7f87d80887f0a25af5ad23cdc2c2b5975745c6b677e0a313bbc430293e054e",
+      "archive": "3d7f87d80887f0a25af5ad23cdc2c2b5975745c6b677e0a313bbc430293e054e",
+      "equal": true
+    },
+    "Zend/zend_type_info.h": {
+      "git": "d70add22998ca36c47d139d2045b4ce21fdb03990f9e7aa2e22031835701209d",
+      "archive": "d70add22998ca36c47d139d2045b4ce21fdb03990f9e7aa2e22031835701209d",
+      "equal": true
+    },
+    "Zend/zend_types.h": {
+      "git": "ac6c2be7aa985a99b96c03aad4aaf0da4f96de782a66a0e076be2193762ec5a8",
+      "archive": "ac6c2be7aa985a99b96c03aad4aaf0da4f96de782a66a0e076be2193762ec5a8",
+      "equal": true
+    },
+    "Zend/zend_variables.c": {
+      "git": "ee66a88e007a00a5f934a2bcb45fe34c77f9337606bf76ad09c868519657de1f",
+      "archive": "ee66a88e007a00a5f934a2bcb45fe34c77f9337606bf76ad09c868519657de1f",
+      "equal": true
+    },
+    "Zend/zend_variables.h": {
+      "git": "d9e020751a4f6b801e099c91dbf69e1bb254764a5dc1308e89eafaa147303f2e",
+      "archive": "d9e020751a4f6b801e099c91dbf69e1bb254764a5dc1308e89eafaa147303f2e",
+      "equal": true
+    },
+    "Zend/zend_verify_type_inference.h": {
+      "git": "802c4077b376636ef8374b45b03720b520211cee876e58f31e73deef3b45a85b",
+      "archive": "802c4077b376636ef8374b45b03720b520211cee876e58f31e73deef3b45a85b",
+      "equal": true
+    },
+    "Zend/zend_virtual_cwd.c": {
+      "git": "b462fb65f1e0a1302eea16e46b16e9e0ff5d4121e89d91c4433a606694bf775c",
+      "archive": "b462fb65f1e0a1302eea16e46b16e9e0ff5d4121e89d91c4433a606694bf775c",
+      "equal": true
+    },
+    "Zend/zend_virtual_cwd.h": {
+      "git": "32d31dffecd660295f00dab3d27e3ab98d364bc68d55cf43fccc7518888db068",
+      "archive": "32d31dffecd660295f00dab3d27e3ab98d364bc68d55cf43fccc7518888db068",
+      "equal": true
+    },
+    "Zend/zend_vm.h": {
+      "git": "1e952365c575dfcaba707e4454a1e1860ea1b703e34f32f10fd0d78b93b1b36a",
+      "archive": "1e952365c575dfcaba707e4454a1e1860ea1b703e34f32f10fd0d78b93b1b36a",
+      "equal": true
+    },
+    "Zend/zend_vm_def.h": {
+      "git": "10932596710465263cf0b324718c50063b4f04a486910da3a39cc5e6a06d00f2",
+      "archive": "10932596710465263cf0b324718c50063b4f04a486910da3a39cc5e6a06d00f2",
+      "equal": true
+    },
+    "Zend/zend_vm_execute.h": {
+      "git": "2954352c8a2458e47c7de89450c6ee1c7f20a78587f1df7893a2d7ff7e87276a",
+      "archive": "2954352c8a2458e47c7de89450c6ee1c7f20a78587f1df7893a2d7ff7e87276a",
+      "equal": true
+    },
+    "Zend/zend_vm_gen.php": {
+      "git": "e4fd1f0b0952920bcff63f6d94e6256e7fcf7356e9e7b028815dc7d3197365f4",
+      "archive": "e4fd1f0b0952920bcff63f6d94e6256e7fcf7356e9e7b028815dc7d3197365f4",
+      "equal": true
+    },
+    "Zend/zend_vm_handlers.h": {
+      "git": "6561c4801f8350099757998193ddb95b7abcc297757622642c20fcce59a137e3",
+      "archive": "6561c4801f8350099757998193ddb95b7abcc297757622642c20fcce59a137e3",
+      "equal": true
+    },
+    "Zend/zend_vm_opcodes.c": {
+      "git": "7c249ac3841dbb3e23a4cbe456712ca9756a7183b0c81a4e521e6d980467d555",
+      "archive": "7c249ac3841dbb3e23a4cbe456712ca9756a7183b0c81a4e521e6d980467d555",
+      "equal": true
+    },
+    "Zend/zend_vm_opcodes.h": {
+      "git": "43c25fa88d575e40a8f6b9cc4d56a3633476f6549a1b01e1ddf663b760ebca8e",
+      "archive": "43c25fa88d575e40a8f6b9cc4d56a3633476f6549a1b01e1ddf663b760ebca8e",
+      "equal": true
+    },
+    "Zend/zend_vm_trace_handlers.h": {
+      "git": "0f60846ee94887922e4e5f23da23b5e1d7a894e319ad6762dfc1d3cc2d4e9ce9",
+      "archive": "0f60846ee94887922e4e5f23da23b5e1d7a894e319ad6762dfc1d3cc2d4e9ce9",
+      "equal": true
+    },
+    "Zend/zend_vm_trace_lines.h": {
+      "git": "f32e0314150a4eafedd8f26fec817108d842d3bbd65553afd5081f471c8a1f1f",
+      "archive": "f32e0314150a4eafedd8f26fec817108d842d3bbd65553afd5081f471c8a1f1f",
+      "equal": true
+    },
+    "Zend/zend_vm_trace_map.h": {
+      "git": "01086522782adf6677ca06e69e9e7869c04e85457eb713b3e773fd789f57da1c",
+      "archive": "01086522782adf6677ca06e69e9e7869c04e85457eb713b3e773fd789f57da1c",
+      "equal": true
+    },
+    "Zend/zend_weakrefs.c": {
+      "git": "65368d68a412d5d1b7d38998cf582dca7c35a2c1f177f6d7a44db81406995087",
+      "archive": "65368d68a412d5d1b7d38998cf582dca7c35a2c1f177f6d7a44db81406995087",
+      "equal": true
+    },
+    "Zend/zend_weakrefs.h": {
+      "git": "67c000dd263bdf6cd4d02e171966bf824b3d522e562bad8bf36656869d4b7bdf",
+      "archive": "67c000dd263bdf6cd4d02e171966bf824b3d522e562bad8bf36656869d4b7bdf",
+      "equal": true
+    },
+    "Zend/zend_weakrefs_arginfo.h": {
+      "git": "cc3e658f7877f0cbca187467d70aa9d80a136814c985843a41f035a25a6fc7ef",
+      "archive": "cc3e658f7877f0cbca187467d70aa9d80a136814c985843a41f035a25a6fc7ef",
+      "equal": true
+    },
+    ".github/workflows/test-suite.yml": {
+      "git": "e509c50e59959ac9146c92cb77243705ea5d2deb9c87baec9ff3474dbf4f35bd",
+      "archive": "e509c50e59959ac9146c92cb77243705ea5d2deb9c87baec9ff3474dbf4f35bd",
+      "equal": true
+    },
+    "configure.ac": {
+      "git": "687797ccc4461f646cd0c2201b2496b43c19bcb7edab143b1009a3465c0f35f5",
+      "archive": "687797ccc4461f646cd0c2201b2496b43c19bcb7edab143b1009a3465c0f35f5",
+      "equal": true
+    },
+    "ext/dom/xml_serializer.c": {
+      "git": "a0fc1934e3301388b66aaf3b98e62e0d3d4dacfd6a1da0ae0be782b8dbeb499c",
+      "archive": "a0fc1934e3301388b66aaf3b98e62e0d3d4dacfd6a1da0ae0be782b8dbeb499c",
+      "equal": true
+    },
+    "ext/phar/util.c": {
+      "git": "b6593b7277b7dd9e4f4779ac123fd9686db9cf4e185ddf4f2012b5baeb7fc580",
+      "archive": "b6593b7277b7dd9e4f4779ac123fd9686db9cf4e185ddf4f2012b5baeb7fc580",
+      "equal": true
+    },
+    "ext/session/mod_files.c": {
+      "git": "b5e3a4637b9de753f3176d3bdad462ae52f3a73b4712e7e9438dc3f364c475a9",
+      "archive": "b5e3a4637b9de753f3176d3bdad462ae52f3a73b4712e7e9438dc3f364c475a9",
+      "equal": true
+    },
+    "ext/session/session.c": {
+      "git": "b1a5ae6f24487b74676c0369d4253a41d90926eef51343d988b1c679de6af6e8",
+      "archive": "b1a5ae6f24487b74676c0369d4253a41d90926eef51343d988b1c679de6af6e8",
+      "equal": true
+    },
+    "ext/soap/php_encoding.c": {
+      "git": "74bd67ef971426a611ad3066c253d04b1f815d70a52aab35f50f842da027728e",
+      "archive": "74bd67ef971426a611ad3066c253d04b1f815d70a52aab35f50f842da027728e",
+      "equal": true
+    },
+    "ext/soap/php_xml.c": {
+      "git": "2e13e3184f696b9fff72dd04c1e70d5f17c07547b3ddb5bad557e618941fb711",
+      "archive": "2e13e3184f696b9fff72dd04c1e70d5f17c07547b3ddb5bad557e618941fb711",
+      "equal": true
+    },
+    "ext/standard/ftp_fopen_wrapper.c": {
+      "git": "8fb0d8780b217c6d9e7f0932e4795648f222d918d7be809e5877698976a586cc",
+      "archive": "8fb0d8780b217c6d9e7f0932e4795648f222d918d7be809e5877698976a586cc",
+      "equal": true
+    },
+    "ext/standard/http_fopen_wrapper.c": {
+      "git": "ee66f97af532ca2e9c74b635849dfffe914980096d38ea1504bd914ab94aab07",
+      "archive": "ee66f97af532ca2e9c74b635849dfffe914980096d38ea1504bd914ab94aab07",
+      "equal": true
+    },
+    "ext/standard/tests/general_functions/header_over_4gib.phpt": {
+      "git": "51ea72d37ca09bbd1ee89ab5ee5c477e86934da98399047467d60be7b2fdef98",
+      "archive": "51ea72d37ca09bbd1ee89ab5ee5c477e86934da98399047467d60be7b2fdef98",
+      "equal": true
+    },
+    "ext/uri/uri_parser_rfc3986.c": {
+      "git": "d8c91634da4a3c66f216966b5e5f68ae0f68156cf14180bb10290c86595afd93",
+      "archive": "d8c91634da4a3c66f216966b5e5f68ae0f68156cf14180bb10290c86595afd93",
+      "equal": true
+    },
+    "ext/zend_test/php_test.h": {
+      "git": "209a0b99e505cbcb266387bbde13abdebe04a4e37f5e6f3301983358cda94ab1",
+      "archive": "209a0b99e505cbcb266387bbde13abdebe04a4e37f5e6f3301983358cda94ab1",
+      "equal": true
+    },
+    "ext/zend_test/test.c": {
+      "git": "3809a73a22967a21bb60c5159afb43f16880797014938d0b74200b61615caca9",
+      "archive": "3809a73a22967a21bb60c5159afb43f16880797014938d0b74200b61615caca9",
+      "equal": true
+    },
+    "main/SAPI.c": {
+      "git": "0c85ac228424de1c35961cce2e2b1df40f9464adaec56db30df1737bd1bd68ae",
+      "archive": "0c85ac228424de1c35961cce2e2b1df40f9464adaec56db30df1737bd1bd68ae",
+      "equal": true
+    },
+    "main/fastcgi.c": {
+      "git": "d39c8464276543b779eaaccdf42cb90ee8b765937940fdd748b4d8f44662d8c6",
+      "archive": "d39c8464276543b779eaaccdf42cb90ee8b765937940fdd748b4d8f44662d8c6",
+      "equal": true
+    },
+    "main/main.c": {
+      "git": "fbdb3ab3ab927397328078c135053292f760023634f4b1b71402de4cf5d233fe",
+      "archive": "fbdb3ab3ab927397328078c135053292f760023634f4b1b71402de4cf5d233fe",
+      "equal": true
+    },
+    "main/php_version.h": {
+      "git": "3a4cadf21bd7998ddb17faa170e709df168a094a4d4ff61af725c2f4601f6b58",
+      "archive": "3a4cadf21bd7998ddb17faa170e709df168a094a4d4ff61af725c2f4601f6b58",
+      "equal": true
+    },
+    "sapi/cgi/cgi_main.c": {
+      "git": "98c8253e0a6bb2acd56d28f06b5a42f448feb2db86a9af3dbcadc320c7f929e9",
+      "archive": "98c8253e0a6bb2acd56d28f06b5a42f448feb2db86a9af3dbcadc320c7f929e9",
+      "equal": true
+    },
+    "sapi/fpm/fpm/fpm_status.c": {
+      "git": "68f5d899b456721179f17339ac2f511e817c13d8912c53e201d7b7c226636549",
+      "archive": "68f5d899b456721179f17339ac2f511e817c13d8912c53e201d7b7c226636549",
+      "equal": true
+    },
+    "sapi/phpdbg/phpdbg.c": {
+      "git": "c5562f0abd39b716771f5111eee03032cbc768399f0ee2f35fb0ae54b16b46c1",
+      "archive": "c5562f0abd39b716771f5111eee03032cbc768399f0ee2f35fb0ae54b16b46c1",
+      "equal": true
+    },
+    "sapi/phpdbg/phpdbg_frame.c": {
+      "git": "0100a62b601bb4ad4dd1afffc0f1849cc2c64e03e637008e7e64c3b8608ef435",
+      "archive": "0100a62b601bb4ad4dd1afffc0f1849cc2c64e03e637008e7e64c3b8608ef435",
+      "equal": true
+    },
+    "Zend/tests/GHSA-8mjj-2r7p-4hg2.phpt": {
+      "git": "aaf13271cbfaa375e569d90c687fb16940bfc73c396c2ea5826f1722de9d4546",
+      "archive": "aaf13271cbfaa375e569d90c687fb16940bfc73c396c2ea5826f1722de9d4546",
+      "equal": true
+    },
+    "ext/date/tests/GHSA-gr4f-wgx5-jpfv.phpt": {
+      "git": "a4ee91087256342316e24eaff5feba82eab5dce5ef815e9aaa66822df2dbfa0e",
+      "archive": "a4ee91087256342316e24eaff5feba82eab5dce5ef815e9aaa66822df2dbfa0e",
+      "equal": true
+    },
+    "ext/dom/tests/modern/xml/GHSA-x8r7-mg3g-74hg.phpt": {
+      "git": "701f85f8097f5b329d51c19a4a74e2675470c66b47b20872c934555b6359aeed",
+      "archive": "701f85f8097f5b329d51c19a4a74e2675470c66b47b20872c934555b6359aeed",
+      "equal": true
+    },
+    "ext/phar/tests/ghsa-68fq-fh7h-f8gr.phpt": {
+      "git": "fd07deac2897743eebbb3de635fe9690256b7ca0cae4edf5ac7cf4ba2ade2b0b",
+      "archive": "fd07deac2897743eebbb3de635fe9690256b7ca0cae4edf5ac7cf4ba2ade2b0b",
+      "equal": true
+    },
+    "ext/session/tests/session_ini_set_upload_progress_enabled.phpt": {
+      "git": "60480de023a46f1245bfdadcc97917bf544a0321113819f86a3a4ee21620d7e0",
+      "archive": "60480de023a46f1245bfdadcc97917bf544a0321113819f86a3a4ee21620d7e0",
+      "equal": true
+    },
+    "ext/soap/tests/GHSA-4646-p932-gw34.phpt": {
+      "git": "e4877709f5fca5f5d266aa72d4ce378fbdff004847162698a3780ce7bbef72c8",
+      "archive": "e4877709f5fca5f5d266aa72d4ce378fbdff004847162698a3780ce7bbef72c8",
+      "equal": true
+    },
+    "ext/soap/tests/GHSA-q23r-hr55-xmpg-wsdl.phpt": {
+      "git": "7a8525ceca4fe4b241f2edbf4d55fff0f39d79e66820a4e0cebfbaca07035bbb",
+      "archive": "7a8525ceca4fe4b241f2edbf4d55fff0f39d79e66820a4e0cebfbaca07035bbb",
+      "equal": true
+    },
+    "ext/soap/tests/GHSA-q23r-hr55-xmpg-wsdl.wsdl": {
+      "git": "e93bcdb7c89636d6c178ba139a48d9b866d1b4eb987e93862d4af69ebd59e40b",
+      "archive": "e93bcdb7c89636d6c178ba139a48d9b866d1b4eb987e93862d4af69ebd59e40b",
+      "equal": true
+    },
+    "ext/soap/tests/GHSA-q23r-hr55-xmpg.phpt": {
+      "git": "229ead328ad0530292c645aa0ab82d0146ce33f9b74c9febd4f1606dc4d4acb8",
+      "archive": "229ead328ad0530292c645aa0ab82d0146ce33f9b74c9febd4f1606dc4d4acb8",
+      "equal": true
+    },
+    "ext/standard/tests/http/ghsa-f6gg-rchx-xw8j.phpt": {
+      "git": "02204cd0a0b4d7b0bdc3080160f7848aa7d97b46215637a0414fc642991ad86c",
+      "archive": "02204cd0a0b4d7b0bdc3080160f7848aa7d97b46215637a0414fc642991ad86c",
+      "equal": true
+    },
+    "ext/standard/tests/streams/ghsa-f6gg-rchx-xw8j.phpt": {
+      "git": "0f703296db46aeb07562065a2296691583bef6e392acde61f37e5acba80dfb0f",
+      "archive": "0f703296db46aeb07562065a2296691583bef6e392acde61f37e5acba80dfb0f",
+      "equal": true
+    },
+    "ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-1.phpt": {
+      "git": "51b1f30ebaf640444429c0582c42f36660674b03797e96a21dec0bf34e007571",
+      "archive": "51b1f30ebaf640444429c0582c42f36660674b03797e96a21dec0bf34e007571",
+      "equal": true
+    },
+    "ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-2.phpt": {
+      "git": "60e288b18a0d5403f0aceca449c58ecdf4fe132f38df62a6038d4640de4788f1",
+      "archive": "60e288b18a0d5403f0aceca449c58ecdf4fe132f38df62a6038d4640de4788f1",
+      "equal": true
+    },
+    "ext/uri/tests/rfc3986/general/GHSA-mg3p-mxj9-g2mm-3.phpt": {
+      "git": "d2fb53654abec686c8f72f91cf837bf13f34fe749f363598946b286d3b11d6b9",
+      "archive": "d2fb53654abec686c8f72f91cf837bf13f34fe749f363598946b286d3b11d6b9",
+      "equal": true
+    },
+    "sapi/cgi/tests/ghsa-5j3f-64r7-f564.phpt": {
+      "git": "23b1fcc28079fbd2c73162ccc626226a02d2897f57fb22169acff3340fdd24c6",
+      "archive": "23b1fcc28079fbd2c73162ccc626226a02d2897f57fb22169acff3340fdd24c6",
+      "equal": true
+    },
+    "sapi/fpm/tests/ghsa-2fjv-p558-g82m-memory-limit.phpt": {
+      "git": "1d9124ea7a2794bac68178f5225a9b9fc0b69b2f5ab02b7a23402f8c0f8db231",
+      "archive": "1d9124ea7a2794bac68178f5225a9b9fc0b69b2f5ab02b7a23402f8c0f8db231",
+      "equal": true
+    },
+    "sapi/fpm/tests/ghsa-2fjv-p558-g82m-zlib.phpt": {
+      "git": "dfe9aa86543d8ea4db7f956042c41feec78c7329df2c4900ab24f0de843ce874",
+      "archive": "dfe9aa86543d8ea4db7f956042c41feec78c7329df2c4900ab24f0de843ce874",
+      "equal": true
+    },
+    "sapi/fpm/tests/ghsa-3mg3-cr28-46gc-status-xss.phpt": {
+      "git": "70fb256adb0d2f9f7a046936df046aa2c9254ce5a464c6705af3ffaed85c2d78",
+      "archive": "70fb256adb0d2f9f7a046936df046aa2c9254ce5a464c6705af3ffaed85c2d78",
+      "equal": true
+    },
+    "sapi/fpm/tests/ghsa-g3vh-838c-65v7.phpt": {
+      "git": "362ed9ccb4988facc83bd910ff30fc9e4d2bcaa7239b0f46a6515202d0fc4c99",
+      "archive": "362ed9ccb4988facc83bd910ff30fc9e4d2bcaa7239b0f46a6515202d0fc4c99",
+      "equal": true
+    },
+    "sapi/fpm/tests/unread-body-keep-conn.phpt": {
+      "git": "8d9b6bd59f7159542aeb60671d26f341d5c9787be0b2727d3fc4005802deee20",
+      "archive": "8d9b6bd59f7159542aeb60671d26f341d5c9787be0b2727d3fc4005802deee20",
+      "equal": true
+    },
+    "sapi/fpm/tests/unread-body-partial-record.phpt": {
+      "git": "f186c29395c497100450919a85e180d5a611d107e8948f0a937a83058bc7afb1",
+      "archive": "f186c29395c497100450919a85e180d5a611d107e8948f0a937a83058bc7afb1",
+      "equal": true
+    },
+    "sapi/phpdbg/tests/GHSA-8mjj-2r7p-4hg2-001.phpt": {
+      "git": "594983bdbd99b439a3492d2cc08b4f7351023781fc63569f01acfccfc3c9c310",
+      "archive": "594983bdbd99b439a3492d2cc08b4f7351023781fc63569f01acfccfc3c9c310",
+      "equal": true
+    },
+    "sapi/phpdbg/tests/GHSA-8mjj-2r7p-4hg2-002.phpt": {
+      "git": "17bf687093d5f9b23e5618cff484911d4fc00e16898d54c0a172191c6261233c",
+      "archive": "17bf687093d5f9b23e5618cff484911d4fc00e16898d54c0a172191c6261233c",
+      "equal": true
+    }
+  },
+  "differences": []
+}

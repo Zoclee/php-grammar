@@ -1,0 +1,10 @@
+{
+  "command": [
+    "git",
+    "status",
+    "--short"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/baseline-status.log",
+  "sha256": "de02f07e0e5e620423d3c627a01dc848ccaa4a0305a3fd5970759b556d3ccfb8"
+}

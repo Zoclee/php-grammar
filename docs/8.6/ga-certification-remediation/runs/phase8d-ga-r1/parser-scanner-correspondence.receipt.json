@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "audit",
+    "Recompute the 176-production/623-alternative and 190-header inventories, source locks and mappings."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "parser-scanner-correspondence",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/parser-scanner-correspondence.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 1,
+  "status": "failed",
+  "log": "docs/8.6/ga-certification-remediation/runs/phase8d-ga-r1/parser-scanner-correspondence.log",
+  "logSha256": "c0777a81ec9eb01697967b79156fe09909d8bdd3941cc78e013a473fc71e8a55"
+}

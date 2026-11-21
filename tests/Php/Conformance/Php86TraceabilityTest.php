@@ -9,13 +9,14 @@ final class Php86TraceabilityTest extends TestCase
 {
     private function validate(array $edit=[],array $override=[]):array {
         $root=dirname(__DIR__,3);
-        $map=json_decode(file_get_contents($root.'/tools/8.6/change-map.json'),true);
+        $manifest=json_decode(file_get_contents($root.'/php-grammar.json'),true);
+        $map=json_decode(file_get_contents($root.'/'.$manifest['versions'][1]['metadata']['changeTraceability']),true);
         return ChangeTraceability::validate($root,array_replace_recursive($map,$edit),$override);
     }
     public function testReviewedDifferences():void {
         $r=$this->validate();self::assertSame([],$r['errors']);
         self::assertSame([],$r['differences']['added']);self::assertSame([],$r['differences']['removed']);
-        self::assertCount(5,$r['differences']['modified']);self::assertCount(14,$r['documentationSections']);
+        self::assertCount(7,$r['differences']['modified']);self::assertCount(15,$r['documentationSections']);
     }
     public function testUnreviewedAlternativeFails():void {
         $p='grammar/8.6/php.ebnf';$s=file_get_contents(dirname(__DIR__,3).'/'.$p);

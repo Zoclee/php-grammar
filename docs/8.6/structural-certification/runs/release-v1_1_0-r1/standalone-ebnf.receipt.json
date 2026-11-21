@@ -1,0 +1,17 @@
+{
+  "obligation": "Standalone loading without another grammar package",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "standalone-ebnf",
+    "--output",
+    "docs/8.6/structural-certification/runs/release-v1_1_0-r1/standalone-ebnf.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/release-v1_1_0-r1/standalone-ebnf.log",
+  "sha256": "cb1c106dbce9fc0eb263ecfbd7a3c39248f040ab341528447df81fa5c2fa37e4"
+}

@@ -1,0 +1,60 @@
+{
+  "contract": "php86-ga-certification-v2",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "gate": "discovery-closure",
+  "details": {
+    "original": [
+      {
+        "id": "PHP86-013",
+        "classification": "unresolved discovery blocker",
+        "construct": "Compiler/AST/optimizer, declaration linking, contextual traversal and unassociated upstream test changes",
+        "evidence": [
+          "source-completeness-ledger.json#/discovery",
+          "compiler-contextual-groups.json",
+          "discovery-final-review.json",
+          "upstream-test-reconciliation.json"
+        ],
+        "missingEvidence": "230 effective pending-direct-review hunk records and 14 examined-unresolved records remain, plus bounded-group uncertainties, outside-ledger implementation paths and PHPT/component associations. These are not counts of language changes.",
+        "risk": "An unrepresented validity change may remain; broad discovery cannot close.",
+        "draftImpact": "Continue independently justified work with explicit incomplete status.",
+        "candidateImpact": "Blocks belief-of-completeness promotion.",
+        "stableImpact": "Blocks certification.",
+        "remediation": "Review the exact hunk IDs and source functions in the ledger; associate relevant tests, inspect transitive validation and optimizer/linking paths, and record evidence-backed exclusions or Gate B changes.",
+        "priority": "P0",
+        "blocksCertification": true
+      }
+    ],
+    "gaDisposition": [
+      {
+        "id": "PHP86-013",
+        "originalRequirement": {
+          "id": "PHP86-013",
+          "classification": "unresolved discovery blocker",
+          "construct": "Compiler/AST/optimizer, declaration linking, contextual traversal and unassociated upstream test changes",
+          "evidence": [
+            "source-completeness-ledger.json#/discovery",
+            "compiler-contextual-groups.json",
+            "discovery-final-review.json",
+            "upstream-test-reconciliation.json"
+          ],
+          "missingEvidence": "230 effective pending-direct-review hunk records and 14 examined-unresolved records remain, plus bounded-group uncertainties, outside-ledger implementation paths and PHPT/component associations. These are not counts of language changes.",
+          "risk": "An unrepresented validity change may remain; broad discovery cannot close.",
+          "draftImpact": "Continue independently justified work with explicit incomplete status.",
+          "candidateImpact": "Blocks belief-of-completeness promotion.",
+          "stableImpact": "Blocks certification.",
+          "remediation": "Review the exact hunk IDs and source functions in the ledger; associate relevant tests, inspect transitive validation and optimizer/linking paths, and record evidence-backed exclusions or Gate B changes.",
+          "priority": "P0",
+          "blocksCertification": true
+        },
+        "gaEvidenceConclusion": "GA adds no reviewed new syntax difference from RC7, but the existing PHP 8.5-to-8.6 discovery queue remains. One exact redundant-include hunk is independently discharged; no other hunk classification changes.",
+        "remainingRequirement": "Review the retained 197 pending and 17 examined-unresolved hunk identities, bounded groups, transitive paths and test associations. Unexamined source risk cannot be excluded.",
+        "boundedDispositionPermittedNow": false,
+        "blocksCertification": true
+      }
+    ]
+  },
+  "errors": [
+    "PHP86-013: material closure obligations remain; see reviewed GA disposition. Observations do not waive closure."
+  ],
+  "certificationGranted": false
+}

@@ -1,0 +1,24 @@
+{
+  "originalObligation": [
+    "test-integration",
+    "Load only 8.6; check EBNF structure/references, parity, version selection and CLI."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "Php86IntegrationTest|VersionPackageConsistencyTest|RepositoryManifestTest"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/standalone-structure-parity.log",
+  "logSha256": "75eec12ddc0ae1fffacb4d81dd414268a39bf88130f09e38bc4f416abea440b2"
+}

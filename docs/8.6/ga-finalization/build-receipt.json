@@ -1,0 +1,28 @@
+{
+  "contract": "php86-ga-local-build-observation-v1",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "sourceFiles": 28633,
+  "hashes": {
+    ".audit/phase8b/source/x64/Release/php.exe": "880d0073cb54474a886e2dd4d9e4088374c0e945920490ad60b7809b8d9b804b",
+    ".audit/phase8b/source/x64/Release/php8.dll": "9b2a8bad3ff00c1aa57c83676cff79a830df63ed5af1fc3eb6d55de8b8ab57f9",
+    "docs/8.6/ga-finalization/build-source.json": "f5aaf11a1674cf81c249f5414cd9c5ad67bfc598cbcf6c755608781b588b347c",
+    "docs/8.6/ga-finalization/build-environment.json": "72b56e3ba1d134b671a3484462aa9b01ecbd6fcded39a45a1e591b678d5bb091",
+    "docs/8.6/ga-finalization/build-configure.json": "f2eefa95cf5196f7398d1a1bb3a84fa0bb8e19a6067887434fdb1e05a1d674d3",
+    "docs/8.6/ga-finalization/build-compile.json": "5781fb29cd71fa3bd0ce6c9209a630f1b73c8df92b73e2a526355a659269c7bb",
+    ".audit/phase8b/source/Zend/zend_language_parser.c": "aeb336cbd45207da770da0656ed98ac6957f7f2269f5892d7d5b804de760cd95",
+    ".audit/phase8b/source/Zend/zend_language_parser.h": "a6241fb621da66741ea4a48cf1c792fa16a2e45223651c7291da436917473e60",
+    ".audit/phase8b/source/Zend/zend_language_scanner.c": "7003255490a3caab51248ad81047a5956058317c27a39ce80a0ab47403a7df89",
+    ".audit/phase8b/source/Zend/zend_ini_parser.c": "518573a514b9e702f5d8ec3d04cd3854a38e8fbe6c36eaed2101049ab3d5bca0",
+    ".audit/phase8b/source/Zend/zend_ini_scanner.c": "2e6a0a57cd14c468975194b0ae6b389ddec94d7ad95d95e308f3e3ba87dfe32e",
+    ".audit/phase8b/source/main/internal_functions.c": "5d3f72d29351a6655b9e863ce734ba73be71e0c921679a5beb84708eef7557c5",
+    ".audit/phase8b/source/Makefile": "98da230d2dd8d97b5ea5cbe9342e6f076d1a337c506e4eeadc8c6c8b5a031e21",
+    ".audit/phase8b/source/config.nice.bat": "88cc06b58c86967a04665f207bd2963855d2834e8b7ce000119b93af2998230b",
+    "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/cl.exe": "3e761c082f491950ed5565f198f2113a8043897ce4d8084e37de8e0fee43202a",
+    "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/nmake.exe": "7568aecc4f9fb61ae52d875fb88f55f4cd4cf05fcbeede3147a650ec81246ede",
+    "C:/Data/GitHub/php-grammar/.audit/phase8b/sdk/msys2/usr/bin/bison.exe": "4cfb62cdc16948de520cc1b7a01e5067e5e65c6e480037400d257c3a24aba128",
+    "C:/Data/GitHub/php-grammar/.audit/phase8b/sdk/msys2/usr/bin/re2c.exe": "096016ea142c5e002e6fe7cc30d3d6e6da82f60fb5306ba3b229ed695e2c42d3"
+  },
+  "trust": "Local reviewed controller/host custody, not independent bitwise reproduction; Windows runtime is a host dependency",
+  "certificationContractAdopted": false,
+  "certificationGranted": false
+}

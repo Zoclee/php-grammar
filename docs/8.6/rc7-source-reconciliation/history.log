@@ -1,0 +1,542 @@
+b63cd83da3279445ca4a913f03186141f5c3466e Update versions for PHP 8.6.0RC7
+365f34d3da622302b828005215c6fbd13a7fd1e5 Update NEWS after cherry-picking
+9a482311c094861fd7dffee26bab6e0e4c55fe2b Fix array_map() optimization not resolving the function name of an FCC (#25286)
+33e562e1404cd1d141931e44bb15d14a9e9b2eba ext/openssl: Fix shared SSL_CTX callbacks reading a freed session stream
+93aa71b4a62e1d082e831f209fd9132e3dd52b65 PHP-8.6.0 is now for PHP 8.6.0-dev
+934feaa36a85d264ffda6a15edc195c7c4a42e69 Add padding to globals to maintain ABI compatibility when adding fields in patches
+7efb601166e4ee4b4e7aa3d5edb9c7d63007d855 Bump API version numbers
+e76d6cb9591f3d72a45557cf2e0da972a4b1b6a6 UPGRADING: Note the TrueType font MIME type change in fileinfo (#25073)
+83fde6b4cb3b99caa8f89f584e5fecea07cd172a Fix GH-25051: Restore TrueType font MIME detection (#25063)
+7b110646ef9de7af67c93f324e6fbcce8442b948 ext/fileinfo: Fix HWPX misidentification as OOXML (#25105)
+906d31024bed0cacc8f9f2beba4ab50ab2b7615a 8.6: Fix UAF of the default stream context in the stream error code (#25321)
+23b66be337057b03cbd2c27d53002028e6898cfa Zend: follow-up for GH-22145. Fix zend_fcc_closure_equals_ex() implementation (#24007)
+4eb137603df93155c56c1c9edc55ab4c63947140 [ci skip] Update news
+6f161fa8fac851caee4514107477df8e829f47c8 Update test to reflect there are now maximum 16 (real) warnings and errors
+1b930eabe544d4b901964c20f4152456a7d200da Upgrade timelib to 2026.03
+61f6bc68d0071bdd756a9b6ee548b310e2835748 PHP-8.6.0 is now for PHP 8.6.0-dev
+cc66e380906cdfccb62e09001a81ada9faa3df02 Merge branch 'PHP-8.5' into PHP-8.6
+72a6885dd951b549d5bb8a95682a7a917aad3832 Merge branch 'PHP-8.4' into PHP-8.5
+53681619e957d79c9770d7b2a9e0452c3bf16275 sapi/cli: php_cli_server_client_save_header() crash on repeated headers
+ffc6e79ad7d39f0bf894657c41cf8c45e5d6092b Merge branch 'PHP-8.5' into PHP-8.6
+de12c867eb248ad4c48fa83a9daa6a78e92818e9 Merge branch 'PHP-8.4' into PHP-8.5
+601e215ddc3f293feb1b86f6e6810d940737c5fb [ci skip] Skip too slow on nightly test on PPC
+e229eeac907f40227587b281f8ba5c90302955fc Merge branch 'PHP-8.5' into PHP-8.6
+5a6116fe34b45f04f728a5708bee0be0cc2fd157 Fix windows embedded CLI argv overwriting (#24733)
+44a2a2c3db9e4e06c41a0603c3826fac3b1b99f3 Fix FCC in trait const expressions resolving to the first using class
+2b7045bc1aeb80a4e24f9d803aa2ceecbf51260f Fix test expectation match for 8.6+
+8a7d3bd73a88297e54954d4c027dbcf902443fe5 Merge branch 'PHP-8.5' into PHP-8.6
+9ea25b50585269f92ba192585f57d1a865845fc3 uri: Update to uriparser-1.0.3 (#25145)
+eab8f9c4fdd158c4f8d04a02fdbf6c287e470bbd Merge branch 'PHP-8.5' into PHP-8.6
+e27a3cf2cdae39646377288671dd89be5e079d87 Merge branch 'PHP-8.4' into PHP-8.5
+7774891f161faab183e6c83572a49e37cec8fed8 Fix out-of-bounds reads parsing ftp:// wrapper server replies
+ac1c8c42dbb8c1baa19696e678162c40071fa32b Merge branch 'PHP-8.5' into PHP-8.6
+21e34bd866ee54c4a173191b89dcb743464d1fb4 Merge branch 'PHP-8.4' into PHP-8.5
+4f2f4892061ec9d475cba3bfb31ce21c4b337ec5 ext/openssl: Restore OpenSSL 4.x compatibility on PHP 8.5 (#25139)
+fd996798308e5bfb8ed0b7a115924038f76b7687 ext/openssl: Restore OpenSSL 4.x compatibility on PHP 8.4 (#25140)
+27cf8c9c7dbd67198ed76946e110540157fbc5ee Merge branch 'PHP-8.5' into PHP-8.6
+5d0ccdb6f74df918ff1b2a58afc8ae64be468524 Merge branch 'PHP-8.4' into PHP-8.5
+030d2f274b28f70450a0930f58c11cd7b0a83b8d Merge branch 'PHP-8.3' into PHP-8.4
+8ce6fe8329096946477b68327d07996b50596f64 Merge branch 'PHP-8.2' into PHP-8.3
+a082f1211aa417096372dbca4b8d207308563e18 Persist the `pear/install-pear-nozlib.phar` file
+0c56d7b0d8a5c344c0f9dc8853b131527b3b61b6 Update PEAR failed download installation banner (#14216)
+00303940070cd3b23d98f288bbe656872375cb46 Merge branch 'PHP-8.5' into PHP-8.6
+0614b703d85fe2cd1debb7f04ce8a31682460893 Fix GH-25118: Dom\HTMLDocument::createFromString() crash on OOM
+1bc1503a540bf7638c311762eda9743e0039ea47 Merge branch 'PHP-8.5' into PHP-8.6
+9da12eec011f899108460b112e77612dd8e5c65c Merge branch 'PHP-8.4' into PHP-8.5
+6e6ec4b267e728874098c1e7a9908130eb000c1a ext/pdo_pgsql: Clear the notice callback when a persistent handle is released
+4bedd96375f0599ef4169ee65de6b39a4f2a18d8 Merge branch 'PHP-8.5' into PHP-8.6
+de0e21c7128271ba64410b76bf52150eade4b4f9 Merge branch 'PHP-8.4' into PHP-8.5
+78581318c408693bea892607958ff47c6a1ab509 Fix GH-24990: pdo_sqlite statement unusable after failed execute() (#24991)
+198bce1e6baa0499f6dd6b334b5ed664c1964a05 Merge branch 'PHP-8.5' into PHP-8.6
+273f8dbe27579ae60a318694a3a20d94b4b8f502 Merge branch 'PHP-8.4' into PHP-8.5
+07fc1f9d2f8da87519fcf955cef9ce23daf3944e Fix GH-24480: finally block running twice when a VM interrupt throws in FAST_RET
+9bcb8487a7adf5a0d0a9852bac0bb78f69838a60 Merge branch 'PHP-8.5' into PHP-8.6
+c6f843008a47e38e7c2efda99e1f0c44771a2db0 Merge branch 'PHP-8.4' into PHP-8.5
+4dece7547190100457b4f62ef0a4e68c2cf826cc Preserve PATH in filter OOM tests for Windows ASan (#25163)
+57978902becd3995db1acba0e9e3f825d0b4f2e3 Merge branch 'PHP-8.5' into PHP-8.6
+931d6f1c3f52853c3007ebcbd60caec479980195 Merge branch 'PHP-8.4' into PHP-8.5
+3c97f164ac572df3a633eb37d5f605ee2ac3c774 Fix imagetruecolortopalette() error message for $num_colors (#24780)
+eee28563404c2fe8cd3d4ccd3eaf2e59e69cb16d Add test for Phar::buildFromIterator() with a negative getMTime() (#24779)
+cda88b49783790ea49a7e1dacc17e85b58c75e77 Merge branch 'PHP-8.5' into PHP-8.6
+19346fa2f5e135a5b7865995cdca172e228b266e Merge branch 'PHP-8.4' into PHP-8.5
+2f404e73fc7bd8d7d112dfbc0df9eaedb832fd03 Fix ZEND_LONG_UINT_OVFL() accepting negative values on 32-bit platforms (#24778)
+e46e742f45e66cd4c6379160e3d378062a2e2b4f Don't use static closure cache when called_scope diverges
+da9c8bdaeb2b53cd959642a7a66e75a80e4c2539 Merge branch 'PHP-8.5' into PHP-8.6
+e29d731c8f45c8aba7e3bc40083878807ba6d492 Merge branch 'PHP-8.4' into PHP-8.5
+2c4fdd71b3f94828402a7b90666357ce41090e3e ext/com_dotnet: Fix GH-25008 event source typelib crash
+1e760d19649253f739fd223310c8da7888266b40 Merge branch 'PHP-8.5' into PHP-8.6
+722feedf42d9dcd049afd1db0ae631b74635e290 Merge branch 'PHP-8.4' into PHP-8.5
+2ff2085fa4583244fc6b3ff3596707453dca1b3c Fix GH-25093: Phar::webPhar() redirect reads past the request URI (#25102)
+f2fbe476d3bffd794864262403abc482cccf9de6 Fix the WSAPoll backend of Io\Poll accepting handles that are not sockets
+1e1eb7f63acb5fc96f8fbe307b1f4477e0d5948f Fix GH-25086: Io\Poll kqueue backend leaks memory on every modifyEvents() (#25087)
+4f2bee40e04aee162d65d5c102de6b1d8ba27b51 openssl: Fix heap buffer overflow in TLS PSK callbacks
+7e86f2c443382b2f03a546b51ca065872454c087 openssl: Fix use-after-free in TLS session remove callback
+5ed6625e4c0982512e6ec827716083e928f5406d [`%pS` migration] Use `%pS` in ext/standard/var.c
+6bfe63761f3370b2d9337368537a5b969f27c300 [`%pS` migration] Use `%pS` in ext/standard/var_unserializer.re
+9b622db7fcb3d557c79f6e29f8f3078c13835327 [`%pS` migration] Use `%pS` in ext/standard/string.c
+5ce8c887d7d451263b9507349ccc3dc1ac779255 [`%pS` migration] Use `%pS` in ext/standard/streamsfuncs.c
+4c73172d8b896ae571e84a90b7c740eb629ef470 [`%pS` migration] Use `%pS` in ext/standard/proc_open.c
+0c1a86426f3636cd21206dbb919df36ae7b295cb [`%pS` migration] Use `%pS` in ext/standard/mail.c
+2b9d25fe1aa52a7ed9e2b3c2ab329c07e4a24a18 [`%pS` migration] Use `%pS` in ext/standard/info.c
+921cb72ec85b67346a153ad47430e98f42eca83b [`%pS` migration] Use `%pS` in ext/standard/http.c
+3fb28307b81ea1ae39ab54700a4e0660c028eead [`%pS` migration] Use `%pS` in ext/standard/http_fopen_wrapper.c
+8b9336375801fb86e3ad1a0a6ef1f431f26bdb62 [`%pS` migration] Use `%pS` in ext/standard/head.c
+256ef3e816fd0e5e15b01430760c3a2c3e9242b7 [`%pS` migration] Use `%pS` in ext/standard/ftp_fopen_wrapper.c
+996e49b3a69f6f0fdb28fef35eddd6a87a227dda [`%pS` migration] Use `%pS` in ext/standard/fsock.c
+1589b65d5d9923a0b554ea9fc9522502383e7303 [`%pS` migration] Use `%pS` in ext/standard/filestat.c
+e13e9f1dbc18c3b363c8083f0be341a1c206bd6b [`%pS` migration] Use `%pS` in ext/standard/browscap.c
+9b69969a91290fb0a98c53d9e1af25bf5989262f [`%pS` migration] Use `%pS` in ext/standard/basic_functions.c
+954f79636e4e7f63ab2c0ce47a617b7beef755bf Report Io\Poll level watchers with buffered stream data (#24017)
+fbe85c10ae6f61f6e845322b5d9bc13a9023c101 Merge branch 'PHP-8.5' into PHP-8.6
+b054073410eaad7c335f41311e76793df74f38da Merge branch 'PHP-8.4' into PHP-8.5
+7091e5b029f24b7d091dee73432c2cca260a90fe Fix free of uninitialized date last_errors after a failed request startup (#25127)
+3f06ea000209a95a3d0736c4585aeeeed8a6c052 Merge branch 'PHP-8.5' into PHP-8.6
+9ea04a23aafe1bc8100686d4704a238e76bdadd8 Merge branch 'PHP-8.4' into PHP-8.5
+cbd65db2af75931436f49b947ec8ccc37e5c5313 Fix opcache phar check
+96cbae8f88e1d56bda11eaf2505564a0cedf45ec ext/session: Skip session lock test on Solaris
+0cf82508009a874f4b034ea4fb74d1e09682945b Merge branch 'PHP-8.5' into PHP-8.6
+dfaf9bf5c440dacb7698d0f5d1ef293d676bdec9 Merge branch 'PHP-8.4' into PHP-8.5
+8ee6865074bc889dc5ae348631f24d5e67c40d7f Merge branch 'PHP-8.3' into PHP-8.4
+75b2a711db708d18affc002a2b0d3c5554b0cdbf Merge branch 'PHP-8.2' into PHP-8.3
+dc5acdb60e04f44c5ef38d32eabf1a90da243289 Fix linking ext/curl against OpenSSL (#13262) (#25129)
+0f5866cf14b22e31f540b81a00a5a13e02d58e50 Merge branch 'PHP-8.5' into PHP-8.6
+7c0b41ed3ef7636c7e302e1326015fc2c6047f5d Merge branch 'PHP-8.4' into PHP-8.5
+985b66bb6723a7191ae0bbc5cb94a0eb0654d3af Fix GH-24531: Crash when flushing a renamed zip-based phar
+bbb21f0336a1b4a50cd57e55c81f0d328f55f6b2 Merge branch 'PHP-8.5' into PHP-8.6
+43c2c77a180a095c616654c26600140f1ed3d20e Merge branch 'PHP-8.4' into PHP-8.5
+0857fdc252af319c8cf139bedaf1d4d935a37aca Fix UAF in reflected attribute write paths (#25120)
+29d840a1b424fc2ff48f89911270f533b2e9f261 Merge branch 'PHP-8.5' into PHP-8.6
+9b3ca2e9e6983a32d187ece59332bc44600db838 Merge branch 'PHP-8.4' into PHP-8.5
+12562428837f5db6915dbbb5735ee4983ed9fd87 Fix coverage nightly job failure
+e84206f5c818761dc2bcae555fea874ad56f28d7 Merge branch 'PHP-8.5' into PHP-8.6
+cb2f0062786838ae5e37368e9161c90767a6aa8b Merge branch 'PHP-8.4' into PHP-8.5
+3ccde25486a9d81c3f6f2c6993a6f5f5308c3be6 Fix macOS nightly failure
+bd69eced20c08ca90ba9cd598c89f4121b76c39d Merge branch 'PHP-8.5' into PHP-8.6
+4056d6d063d4375e9001d7da599ae647f8555ab8 Merge branch 'PHP-8.4' into PHP-8.5
+4dd9bb4dc6d0c09ecde2341fc7ae1edf0967d40e Fix calling conventions in Windows alertable sleep test (#25125)
+5a31fb0ef4bc89659a89be7cc9f31609fd8f52f6 Merge branch 'PHP-8.5' into PHP-8.6
+7fcd2df9a6b8a7e05581a0e193dd831396300512 Merge branch 'PHP-8.4' into PHP-8.5
+113bc87d5ace933d99d04df9f0e307ef7cea42fe Fix GH-25009: GetConsoleTitleW() buffer size passed in bytes
+cf31f5b89160f022aac2d2aedfbd89df35affcc6 Fix merge in ext/phar
+bbe593d6a3454bbacb123f96652cf1cfd2075572 Merge branch 'PHP-8.5' into PHP-8.6
+628fb1f591f56e02de6889983ca190fe81c5ab6b Merge branch 'PHP-8.4' into PHP-8.5
+8b03a99f877e9b93748ab7259792885328b04814 Fix deprecation warn in test
+99ec10237ae814ecc1cbccba945b02e7d2bd57c7 Fix GH-25092: Double free in Phar::copy() on link and mounted entries
+f683b10128d62c6aa8e610dfb528deebf8414516 Merge branch 'PHP-8.5' into PHP-8.6
+a2b7ef35554338ac238423483d5f6056e49601ac Merge branch 'PHP-8.4' into PHP-8.5
+b4539c0e1b6a98a5dbc5d41d7d0129c2d7d7f633 Fix GH-9670: List -C and -q in the CLI help
+3cfaeecdb500d7cf2861721ff6ceebc6cd20f089 Merge branch 'PHP-8.5' into PHP-8.6
+bec9a009fd62db735eb91a1a37766e187a69f36a Merge branch 'PHP-8.4' into PHP-8.5
+24377a0adc16256d48873e237482a841f4f9662c Fix GH-25091: UAF in phar rename() when source and destination are equal
+d0828881d513105238cdb058d15716d1a12a0b45 Fix GH-25090: UAF in phar rename() of an entry with metadata
+d5b3917cec432847e13fe663a80a2bc404d7d586 Merge branch 'PHP-8.5' into PHP-8.6
+ef53e97e96a35e9c1e4dc0f54ab9b14638848b68 Merge branch 'PHP-8.4' into PHP-8.5
+ce76acbdbd3276f3cd37c59cf79fb5ba88cf9c61 Revert "Update LiteSpeed API to v8.4"
+635c85d89f80208859283e7924ccad1390c44479 Merge branch 'PHP-8.5' into PHP-8.6
+2283aa1fac94e1f1b5b918ef5437b9f9c0bcb446 Merge branch 'PHP-8.4' into PHP-8.5
+61edcf9be7d16a325ff94d714f1208bcb00e90a4 Fix GH-25089: Heap buffer over-read via crafted alias size in zip-based phar (#25099)
+8661547102c7f23cd38b2b640308583596528ff6 [`%pS` migration] Use `%pS` in ext/dom/xml_common.h
+b7f1b60a99e7ebea261d8ca755d5dad031eef45c [`%pS` migration] Use `%pS` in ext/dom/php_dom.h
+a78d5a604563327234eb54a7392adb77aad5c32e [`%pS` migration] Use `%pS` in ext/dom/php_dom.c
+1c921ff04a86a8e6cd1624332f73717c2ad03b00 [`%pS` migration] Use `%pS` in ext/dom/nodelist.c
+ff05c67e2ca58973f1e4150ec0bb1171ac388a7d [`%pS` migration] Use `%pS` in ext/dom/node.c
+67509a863615a2989fb417843191a4a670cd2422 [`%pS` migration] Use `%pS` in ext/dom/html_collection.c
+06c5e8b3134f0eaaf6ffd15ba7119f4836bcc569 [`%pS` migration] Use `%pS` in ext/dom/document.c
+e9afe3406a043026aa868753a95a9f05bcb044ed [`%pS` migration] Use `%pS` in ext/dom/parentnode/tree.c
+7ebcad9dfe545294d481c20027f038b662249df7 [`%pS` migration] Use `%pS` in ext/date (#23150)
+c01cd43bd8f9ce44fdbecc9079d6e7397898c165 Merge branch 'PHP-8.5' into PHP-8.6
+24380e4a413db58c867da4d055703ba6f5af223b Merge branch 'PHP-8.4' into PHP-8.5
+0c406ea1723d30fa64395a0e32db40f44a82036c Fix GH-25061: $x = $x - 1 on null is optimized to PRE_DEC
+99b8c6afed23434ce656705c4fc7f31970750b5c Merge branch 'PHP-8.5' into PHP-8.6
+95c838b165a95da798b66d26520803422864c563 Merge branch 'PHP-8.4' into PHP-8.5
+bc3a830f946d2871742f1cacaf1d0504c012110e Fix GH-24988: Incorrect opcode range check causes bugs with exceptions in function JIT
+2e166e15edcbf6eca44ee6551454c91eebe81879 Merge branch 'PHP-8.5' into PHP-8.6
+e1e07b9d03ba044f7ec68ec5a5177eb7dc1807ef Merge branch 'PHP-8.4' into PHP-8.5
+de6ffebd1a2a0145be891263432f34d237c609e3 ext/json: Stop encoding after a key fails to encode
+a80bf61b611594f303b76800d6362f92522427dd Merge branch 'PHP-8.5' into PHP-8.6
+1938dbaaf699f4e41ae87e064dbaacb814d7d740 Merge branch 'PHP-8.4' into PHP-8.5
+084e7a07b70e4597853ab9f61a8632bdd152ea49 Update LiteSpeed API to v8.4
+de1e70b3d7a45f6ff60b62725fe60eb02a916138 Merge branch 'PHP-8.5' into PHP-8.6
+115117f997dcf72760f570a16f3f1b046483a8d8 Merge branch 'PHP-8.4' into PHP-8.5
+dfcc0433fcda7fb732cba8d7ee8c857d23f9a9e7 Fix leak of duplicate named argument in new in initializer
+7153fabda5188e850cdc9ac954693a9ca0ed38ed Merge branch 'PHP-8.5' into PHP-8.6
+fc207d7be6f5144ac074127b543b91203007956a Merge branch 'PHP-8.4' into PHP-8.5
+5300734e3f6a268e7c3ee23086e006eb1f91d4c1 Fix AST export of readonly anonymous classes
+7412af20813d467092c77e9f99f434819c3fd0d0 Merge branch 'PHP-8.5' into PHP-8.6
+8e9bbc2a89b710f796ccea179714121c7fbce0a0 Merge branch 'PHP-8.4' into PHP-8.5
+896f76d2c72e4aa215dd55d40aef2be55149f376 Fix preloaded functions not JIT-compiled again after OPcache restart
+7d853a46079480f57ab4858a8d98a7ffa33e5cab Merge branch 'PHP-8.5' into PHP-8.6
+dc26653db5a42f10e5699fe5c32d69347b70224b Merge branch 'PHP-8.4' into PHP-8.5
+ce899c8c681b77147b7daa5b2729cdbfda194027 Fix AST printing of final and abstract on class constants and properties
+035ca2f393edeb493de003d73b69b27f710fc421 Merge branch 'PHP-8.5' into PHP-8.6
+1de9cb7beb77a37f45e0c27c5b1eedb9b4ccfbb0 Merge branch 'PHP-8.4' into PHP-8.5
+84da3f525a87fa47e3499c2acadc03466dec8677 ext/opcache: Clear vacated MERGE inputs before conversion to BEGIN
+334bdea0f4795bccedf16f9d48ccd626d457d42f Merge branch 'PHP-8.5' into PHP-8.6
+f9b87784e84d6261d4b2cc6f86669a05fa7301c1 Merge branch 'PHP-8.4' into PHP-8.5
+c8e6c8688ef6419ef348afaec6c921e00ec6525d [skip ci] Fix NEWS: GH-25021 affected pdo_sqlite only
+7403521b52d83ba425aaa235060d144caa630792 Merge branch 'PHP-8.5' into PHP-8.6
+fda14ed0e92af6041b19ca192598476391ced66f Merge branch 'PHP-8.4' into PHP-8.5
+9c69d7c6a7254fad4c405872d75b3cfe3531a3b1 Fix GH-25021: SQLite createFunction corrupts large integers
+8b7ab3787304f85e7886a87a876ba3a0e618ee7d Merge branch 'PHP-8.5' into PHP-8.6
+67378677232f6964e6f8f9bef2a0807bbcf6b0d2 Merge branch 'PHP-8.4' into PHP-8.5
+614f935fe0cb6a696f7d1f5728a73f52d5d66f1b Fix GH-24534: inheritance cache records unlinked child dependencies
+bbbb258882ef840421e89e968b065d64d9456800 Merge branch 'PHP-8.5' into PHP-8.6
+8dace271f0726c2a7fb00ae526e16b93e91632d0 Merge branch 'PHP-8.4' into PHP-8.5
+1ef1dd53bb11dbdc5a65f79d3dd1144cc38c4008 Fix json_encode() depth range check before narrowing
+8a5d674890a81ea76ab8b1f313ead3833fc4a85e [`%pS` migration] Use `%pS` in ext/xmlreader (#23174)
+172335ff1eddb4448992988ec558ad5d959970d2 Merge branch 'PHP-8.5' into PHP-8.6
+576e5853b45c14d461860c5fa1b068fa865b3d0e Merge branch 'PHP-8.4' into PHP-8.5
+56bd75634f931745f35bbbde52aa92e319557ca1 ext/ldap: fix crash in ldap_exop_sync() when $response_data is omitted
+9f84fc488be53919c153f1f1d87987cf5e3e9722 [`%pS` migration] Use `%pS` in ext/pgsql (#23165)
+627edcec45c84dc4e5e9eabeee28ecacb5fdf835 Merge branch 'PHP-8.5' into PHP-8.6
+a7a49e039d756d9d336b770316c282d02db08980 Fix JIT losing the called scope of self::/parent:: calls in included files
+38929f5ba2c9dfef6efd2d91931e5d2ca4b0058c [`%pS` migration] Use `%pS` in ext/pdo_pgsql (#23163)
+27563131578446d679aeb430f25c3dd83b2a46db Merge branch 'PHP-8.5' into PHP-8.6
+2a326cad23211bfb6138e965e417d6cd5aa870b9 Merge branch 'PHP-8.4' into PHP-8.5
+7dd0cebbc88f1cfceb599c303a7cba293de18b82 ext/phar: Fix repeated compression with the same algorithm
+b6de2d2877c1267c21ac66bf12920bde968e270b [`%pS` migration] Use `%pS` in ext/pcntl (#23161)
+524e66be8d455744d8571456a972ee501b54fce8 Merge branch 'PHP-8.5' into PHP-8.6
+c673cabdc36d3fe88bb00cf1ea3902bcd7bcb128 Merge branch 'PHP-8.4' into PHP-8.5
+8d63e87a496b8430a36f10b12e294639f4b3c590 Fix GH-8469: Phar::decompressFiles() keeps compressed contents (#25045)
+63045d5b99161c8bacb7267117602cff7bfa1c20 Regenerate stub file hash
+fba362b1961088ea58261ed4287788282c5db8dd Merge branch 'PHP-8.5' into PHP-8.6
+a4b065854001d8065fc937693595455ba27593c8 Fix merge
+4bba569f4c591d068c60b6c3388569654b72074d Merge branch 'PHP-8.5' into PHP-8.6
+6a45d3f198f87cc43042fd88939054e7a83821f3 Merge branch 'PHP-8.4' into PHP-8.5
+5f4d73a697bf83ea9d25f542c3641e8b0c0951f8 Fix potential infinite recursion in HYBRID/TAILCALL VMs (#25039)
+9eae3ff58ca5152a75f0281f6100b4d3c1a1d866 Load DECLARE_LAMBDA_FUNCTION cache slot once (#24598)
+8fc9e7c8e8f771ab55671cec00c4e468ec511efe Fix assertion in VM when taking ref-returning fcall by-value
+91dc887163795906f353fb82711e79417db015fa ext/uri: Fix decreasing of a cost variable
+b6df8227569b85b20a6c452d84bad6c7c945616f Merge branch 'PHP-8.5' into PHP-8.6
+c95e572696986461014e9743de7393f112b9c983 Fix GH-25019: Uri\Rfc3986\Uri rejects a port with leading zeros as out of range
+f752eddff8a46c2281bc8bae70ce3a83a5b38b4c Fix GH-21768: Reflection assertion failure on internal virtual properties
+d6bb264d4b46d3b86e73b9a096369616cc3421c3 Merge branch 'PHP-8.5' into PHP-8.6
+3323b8db05d51899069b7b715e10da6fc1da29d5 Merge branch 'PHP-8.4' into PHP-8.5
+2b99297b76457100e1688e49697bb0e6a5124327 ext/standard: Validate objects before queuing unserialize callbacks
+7dc666cf4f3b7e790a0bb3948b7fac2400f6eb21 Merge branch 'PHP-8.5' into PHP-8.6
+688a99a61db113f188993742cb4682f45cb3af68 Merge branch 'PHP-8.4' into PHP-8.5
+38eabd0452df61e4d871f38e8afe2306490dd3b4 Fix opcache.interned_strings_buffer being 0 in threads started later (ZTS)
+89dc21ec6004fd7f689577190387a263b6e40e13 Merge branch 'PHP-8.5' into PHP-8.6
+ad687b622944ea8a840f27d67990e9caf1c8a22a Merge branch 'PHP-8.4' into PHP-8.5
+a077e8a4cdab252413de5788d91aaed7acb1f63c Fix GH-25029: Align the fileinfo built-in magic database (#25030)
+e2fa0c9f7fef44b70106e33a72235c9dcd8ded26 [`%pS` migration] Use `%pS` in Zend/zend.c
+952452704e7fed7b5c7fdac864d9244f059b1fe4 [`%pS` migration] Use `%pS` in Zend/zend_weakrefs.c
+a95e8e26bbbfdf248f4a6114bbe204a6ba953a5a [`%pS` migration] Use `%pS` in Zend/zend_vm_def.h
+1ad7bc3098b6048169512611000b015dacee99d2 [`%pS` migration] Use `%pS` in Zend/zend_property_hooks.c
+b997563d2fa5bda62b1a148b045c576dc86e80e1 [`%pS` migration] Use `%pS` in Zend/zend_partial.c
+abcd49ef479439782718e3738069c07c625b12fa [`%pS` migration] Use `%pS` in Zend/zend_operators.c
+de62dd459fb67586ea2d3ff083f1a39c03cc33b6 [`%pS` migration] Use `%pS` in Zend/zend_objects.c
+387cefb4f578822e0e3ee65bba99f5b070b505ef [`%pS` migration] Use `%pS` in Zend/zend_object_handlers.c
+70f10de1ba106e378f13d385a70b2ef55383e074 [`%pS` migration] Use `%pS` in Zend/zend_lazy_objects.c
+86fc9764fea92b8c8a1c069a38e867e069f5f078 [`%pS` migration] Use `%pS` in Zend/zend_interfaces.c
+46e6ff6f66482553756b4bb3be120aff9cd28b32 [`%pS` migration] Use `%pS` in Zend/zend_ini.c
+6d12365bcea93648d126fb7d70609f4e49fd3780 [`%pS` migration] Use `%pS` in Zend/zend_inheritance.c
+e428710ef1f8e6969b61ddface61a810dcd7c3a5 [`%pS` migration] Use `%pS` in Zend/zend_fibers.c
+fc06d3954499b092f0c665704bd24d69a07dcefc [`%pS` migration] Use `%pS` in Zend/zend_execute.c
+ea78eb60ed18f2932dd9d041566b1f0db232dfc5 [`%pS` migration] Use `%pS` in Zend/zend_execute_API.c
+f62939f24311321764fe24111068beaf1f68d7fe [`%pS` migration] Use `%pS` in Zend/zend_exceptions.c
+4a3481a4cc66916eefa4b53cc20838f380fbf410 [`%pS` migration] Use `%pS` in Zend/zend_enum.c
+8b0165a27c92a6ac1f4562cc8f4a538fcda48542 [`%pS` migration] Use `%pS` in Zend/zend_constants.c
+20e627e09b938623c6f7594bb840834324ee3f1d [`%pS` migration] Use `%pS` in Zend/zend_compile.c
+35c796e90c31f708878b31bfcbc0d4ee5255b0e2 [`%pS` migration] Use `%pS` in Zend/zend_closures.c
+01dd5e368b8e9551721139f436a2e48763a74812 [`%pS` migration] Use `%pS` in Zend/zend_builtin_functions.c
+93260994f1ddc6b0cd9f5219fb4a5cdaaed18d96 [`%pS` migration] Use `%pS` in Zend/zend_attributes.c
+4be92aab67a530168a223ece308e85bc9b0c4f75 [`%pS` migration] Use `%pS` in Zend/zend_ast.c
+cb513b01eef018083dac5f0269e2503420236f70 [`%pS` migration] Use `%pS` in Zend/zend_API.c
+e2d40b5b1b1c4260c327fede68b54a990859050a Merge branch 'PHP-8.5' into PHP-8.6
+32c9c82f77513f5b73bec20a549888ccfdfa72e8 Merge branch 'PHP-8.4' into PHP-8.5
+083e1a6d79d8e913cec95f251c3c830709f5da92 ext/odbc: Fix double free on parameter description failure
+84bce6696d58f0efd2307d5863ecb727aeca3ff2 Merge branch 'PHP-8.5' into PHP-8.6
+a10fdef0a55c53b0c27cf101421b8c178a88e0ed Merge branch 'PHP-8.4' into PHP-8.5
+5577b0b54006c02cfcbfa4f1e29a57eeb95922e2 ext/pdo_firebird: Fix getColumnMeta() bounds check
+86780e22e84122b58f1904ca93b6c0cba5bb8a7d Merge branch 'PHP-8.5' into PHP-8.6
+02e0623f5e15a414f382a1685b44bfeca1e6b9a2 Merge branch 'PHP-8.4' into PHP-8.5
+5e7bad4748317a9bf06a2ece93ac2755d81c4579 Fix preloaded functions JIT-compiled on load being overwritten after restart
+4fbeee21f778477cac6b2eeac27895cd473f41a1 Merge branch 'PHP-8.5' into PHP-8.6
+ebc5463ca6af8308173405fd5918ee3e88b94bc6 Merge branch 'PHP-8.4' into PHP-8.5
+b175769022010659c721705ef1c12922f6c00e53 ext/standard: Free Windows DNS query results
+7ab1c1a1b4e7d8e8a4c868969ee46ab526957348 Merge branch 'PHP-8.5' into PHP-8.6
+422cded68df82875e6956bc97b0b2458e2537b55 Merge branch 'PHP-8.4' into PHP-8.5
+7abaad3e21dbc5ef8dec1a1db314d54ba1803800 Fix GH-24989: Use-after-free in GC when an exception is thrown.
+0fcc9cd978316cfd0533e8ee2da9e3ce4de1be4b Merge branch 'PHP-8.5' into PHP-8.6
+5266eaa998f0136360d8b4fd0d3bfe7685535ef0 Merge branch 'PHP-8.4' into PHP-8.5
+622f5802fb9e021d1b61682cb961c8298b5ca1fb Fix GH-24668: zend_set_local_var() leaks the previous CV value (#24670)
+1c92d577570e78ee3e3bd5b0ff443264862a3971 Merge branch 'PHP-8.5' into PHP-8.6
+0862a59e751aacd2dab3ede48a10c849ed680d44 Merge branch 'PHP-8.4' into PHP-8.5
+55230ecea9a303fd1eb7ebe47ba1347df42e5ed1 ext/session: validate full length of session ID
+c59451a35ceab585ced6df07f5ec460580e4be5e Merge branch 'PHP-8.5' into PHP-8.6
+599bf763cbfa6724d33af8a1fb5eec77d3f00f6d Merge branch 'PHP-8.4' into PHP-8.5
+aec4f5090808a04ac255de7fe86f0d94b4a59173 Updated to version 2026.6 (2026f)
+c2ca7bcccfb08da8674338aa7cfce6b7fa31486c Merge branch 'PHP-8.5' into PHP-8.6
+b695128aaa696201f780c782d9de27259e6e3580 Merge branch 'PHP-8.4' into PHP-8.5
+b6cf47f3666a3e394e51612d35f60972f9b7b2fd Fix GH-24609: mysqlnd OK packets without info rejected on x32 builds (#24614)
+0ceaea99b2cc2b957a1b006d0ffd836e1bfaf43c Fix GH-25007: PFA named args in constant expression write out of bounds (#25012)
+a8a3635199e2043a394ecd0e70782812d6f3da65 Merge branch 'PHP-8.5' into PHP-8.6
+b7b9c8be263a5d180ca639b69381869a9a2e923e Merge branch 'PHP-8.4' into PHP-8.5
+303bb88f1c5d420d0d7fc00e93023fc1fcd344f9 Fix json_encode() reporting false "Recursion detected" after OOM for hooked-property objects (#24992)
+e5e5a8a9d20df13d7d4d464af11c8422b6797cbe Fix GH-25023: ZEND_CONTAINER_OF() fails to compile with -std=c11 (#25027)
+c9126fba4244133bf4e25de5c25282bdb9481887 Merge branch 'PHP-8.5' into PHP-8.6
+00778a511041ddd56c30d33a0748592d26debb59 Merge branch 'PHP-8.4' into PHP-8.5
+a1b7cffba7359c6909f9548816c6469473d0ac86 Merge branch 'PHP-8.3' into PHP-8.4
+d25eef4d9cbb071c7ee5a5a670de0db21df6dc11 Merge branch 'PHP-8.2' into PHP-8.3
+084271b8fd895b8cdfdcb9552bdd3575e94e65bf Fix flaky FPM test for bug #77023 (#24999)
+66dc9f5c8e12314c431505f4aca4df992d71b5ec Update GitHub Action workflows to `actions/checkout@v7` (8.6)
+1b769c945c6a53b8be6b72f43f9a8b98534b4ccf Merge branch 'PHP-8.5' into PHP-8.6
+dad7ab67c5a6d583e67a29b9da5de68a4baee660 Update GitHub Action workflows to `actions/checkout@v7` (8.5)
+640d185647fa23871838c0e0099b882188cdc737 Merge branch 'PHP-8.4' into PHP-8.5
+6f5a41524dfb89a4a191cd4912730e48f91ef141 Update GitHub Action workflows to `actions/checkout@v7` (8.4)
+0ffed890fa0c0fc69645721e35a90bf416fc699f Merge branch 'PHP-8.3' into PHP-8.4
+ed504b59e5d33b69a1412963bdcd7973c4c55670 Merge branch 'PHP-8.2' into PHP-8.3
+6a1a57dc4bc3dff283b18bc5cc014a20ed46b831 Update GitHub Action workflows to `actions/checkout@v7`
+733d664f3ede1687e3f0649139fa4dc558d5b28f Merge branch 'PHP-8.5' into PHP-8.6
+6de713d23b2d419cac9be3b32fb409f6bad4cabd Merge branch 'PHP-8.4' into PHP-8.5
+c7ea9b17582dc4c0e39249ec5860dea62abe8728 Fix GH-23626: OPcache: orphaned temporaries cause leaks and assertions
+8d3974798290ee3a86d0e08e2a62e8a17cfb9443 Merge branch 'PHP-8.5' into PHP-8.6
+4eb07ccee8515273e48c062eb5e97dc4297a3260 Merge branch 'PHP-8.4' into PHP-8.5
+1319865a8dc4b6f4f1231a7b8aa416fd88949cd1 [ci skip] Fix comment
+2b6a3011b2e084833670561a31fa0b6f1eb39953 Merge branch 'PHP-8.5' into PHP-8.6
+772ea8e97699a4510dc593d3e65ace96a16447fd Merge branch 'PHP-8.4' into PHP-8.5
+139c84bc2da215820b83e439e328e8c8f069b80a Fix block pass dropping ZEND_FAST_CALL OP2 definition
+2290496110dba75dcabb9af1f137781153694c56 Merge branch 'PHP-8.5' into PHP-8.6
+62a2b3d8c9e270c54387edb1fd44d72891d99e57 Fix GH-23572: JIT calls wrong static method from trait clones
+3b8acb3290c2bc61fdf7a1e2932ed6663f48b549 Merge branch 'PHP-8.5' into PHP-8.6
+0544c34e21cfbddf9421028a3371f882f87c3e00 Merge branch 'PHP-8.4' into PHP-8.5
+3ace94211550ab1d018c93f3610681b27bc6e306 Fix GH-24784: Preserve certificates when reading PKCS7/CMS CRLs (#24785)
+0761161562c0203a2ef3012789fe105415f421b4 Merge branch 'PHP-8.5' into PHP-8.6
+a1a9f70cb2da43f6f0fa00d3b259fa5213f995df Merge branch 'PHP-8.4' into PHP-8.5
+e31cab6aacba72bd35484933e54a8cfb3ea99ba8 Fix flaky FPM log-bwd-multiple-msgs-stdout-stderr test and remove XFAIL (#24998)
+a3314e7018858bcd86bac38c4637ab62a00926a2 Merge branch 'PHP-8.5' into PHP-8.6
+6070ffa706aa1aba6679590255f9641bad2c0e11 Merge branch 'PHP-8.4' into PHP-8.5
+8df212a4b6c23c4c2314767eb2efe4a5f0f2fb52 Fix zend_inference: fix unsound shift_left_overflows range when shift wraps
+37999c737a46ca79e6bb510f76df5a138a5b4240 Merge branch 'PHP-8.5' into PHP-8.6
+8975c59b17981a7be9fcfe43fd0f803815bd0f0d JIT: fix vm_interrupt resumption in TAILCALL/CALL VMs (#24793)
+e427f87653f72e1aca95f8d4db7aac7e948c1ae7 Merge branch 'PHP-8.5' into PHP-8.6
+32b16a07d66c28d8e09cd2bbaeeda6f1c3f3c307 Merge branch 'PHP-8.4' into PHP-8.5
+a07ae61b365741eac38bbcf876ff899d2aaa014e Fix IntlDateFormatter parse functions truncating an $offset below INT_MIN (#24781)
+30bcf4bd89a7f3d31753ccaeb8dd10990507558a Merge branch 'PHP-8.5' into PHP-8.6
+dbd6ed433d884ed25e5c1b3b83dd9dfb88a9c1ee Merge branch 'PHP-8.4' into PHP-8.5
+3a8bcb6d186b4445e47de9adf8f44be5a48536af Fix use-after-free in Randomizer::shuffleArray() when the engine throws
+3299d94c808c898d5ae2e0c59bb21b0339f63389 Merge branch 'PHP-8.5' into PHP-8.6
+d657f7a3c7be246d0c71e272cbf51ca52d48fbe7 Merge branch 'PHP-8.4' into PHP-8.5
+98b580b0d26645a2c26fb7459f6c16d0d086b207 ext/dom: fix UAF on namespace axis results with foreign-doc XPath callback nodes
+7d6e9e6f59f3f576c80c1100f07266aaae0ea2f6 Merge branch 'PHP-8.5' into PHP-8.6
+0dd0c2faaf9648292702f9298d05ec549e421937 Merge branch 'PHP-8.4' into PHP-8.5
+aa6e3a84e8d0a3ff61d084384b637ac6be8be196 Fix AArch64 JIT encoding of invalid logical immediates
+f852fb7bcd723ec70f66d7fbe1c435ae219244f2 Merge branch 'PHP-8.5' into PHP-8.6
+c647ee5736fa57249154dcbe2a924cffb14a7596 Merge branch 'PHP-8.4' into PHP-8.5
+ef873f64f3962bc41f948992f049c71b2d3fb9ee Fix JIT SWITCH_STRING type checks on referenced operand
+f8176205c71cba0e34448a962ad5b7413712e8c9 Merge branch 'PHP-8.5' into PHP-8.6
+625892b77081359678336fe655ad06b528b9fba1 Merge branch 'PHP-8.4' into PHP-8.5
+154b090df25ff8d30820aea365265489c7c51613 curl: Fix UAF on clone due to callback data pointer mismatch
+0c122cc676e3720bb0b49326a68661b0580da9c0 Merge branch 'PHP-8.5' into PHP-8.6
+07e5953b275bfa32e06ceb507a4a5d9492672bfa Merge branch 'PHP-8.4' into PHP-8.5
+37f495c3f5f6501275295977a6aefff5db719cbb opcache: Call orig_post_shutdown_cb()
+11bea59cfb27092024caea44117613c2ecd7f283 JIT: Discard veneers if generation failed
+76c8a4d13e8be77f3f51f8999bd40aa7074e28d0 Merge branch 'PHP-8.5' into PHP-8.6
+6c1559d0e5b30c5e4d52e06f2fc1432112d9105d Merge branch 'PHP-8.4' into PHP-8.5
+de8c44e683781385cf52248495bd80532c26e31e [ci skip] Skip test for MSAN
+2df07dd25ed58aef40ed6a6c61c1afdb9547e5ad Merge branch 'PHP-8.5' into PHP-8.6
+97fe7d69f6ca62a747f16684c14ebcd8f3be7c6f Merge branch 'PHP-8.4' into PHP-8.5
+0e7e36c8969ee5d49cdd76e693522c44f8f3a785 fpm: fix _GET_str memory leaks and test headers_only status path
+3aa4da4a20707d81aa2a849177587595c8a8ac7a fpm: fix a use-after-free of scoreboard_p
+ce3e1bac173d31d7edba8d3035a2aebc89e5e766 fpm: fix potential null dereference in fpm_status_export_to_zval()
+14714531022607642fde9c918d51697473785887 Merge branch 'PHP-8.5' into PHP-8.6
+a5cb45ffa7add3aadeceda5ed4a762bfbba081b8 Merge branch 'PHP-8.4' into PHP-8.5
+cd161267c0d2ca293b6959114d7c68867273bbda Fix GH-24046: FPM worker stdio pipe fd closed twice
+f3dd8e11495bb4b9b0db780cc274da0d8817eb81 Merge branch 'PHP-8.5' into PHP-8.6
+94f0a9a158d25d63a3593e3e7cdcde3e55118337 Add `SodiumCryptoXof*State` classes to UPGRADING
+9fccc1cf4c2ffd6405210bef9e716c380458049c Merge branch 'PHP-8.4' into PHP-8.5
+98043f3a1cd4b7591d14d6d2cdcc25f5521dd21a Fix GH-23875: Skip gh7980.phpt without windows-1258 (#24789)
+bdca5a9f49840ac65214368907f4282317b268d2 sodium: Use opaque objects for SHAKE state (#24351)
+2bff391ff135990df45ba49182c89207e89a2b19 Merge branch 'PHP-8.5' into PHP-8.6
+4d303daf07cfd5eec89f4bba18be6774823c910c Merge branch 'PHP-8.4' into PHP-8.5
+974de49381dd9e8f2babd79b39777f9c57fec5d5 Fix FPM worker output prefix longer than its buffer or log_limit
+fed2b4e17fb67fb9e9354ff356f7e27d89028568 Merge branch 'PHP-8.5' into PHP-8.6
+247199192c52df6cc0c6ebc31ae302d3b6a7c70f Merge branch 'PHP-8.4' into PHP-8.5
+2b22ae0b36d6a58edec6393cd20afb3bd8468fc7 Merge branch 'PHP-8.5' into PHP-8.6
+5ba63ffdfcd0267fd0589d36e9875cc991b29f30 Merge branch 'PHP-8.4' into PHP-8.5
+bad5aaca7ae34c1002b5224a68cfc00b8a25a9a6 Fix GH-24616: Socket transports accept ports above 65535
+89f1fdab6725598606ae34cce474361906d3f26c JIT: fix lost register-allocated CVs on interrupt at the end of a loop trace (#24610)
+300bb17e3630ef151d0ed887862dff55ffe14976 Merge branch 'PHP-8.5' into PHP-8.6
+1c96238e5ea9fcce300cfd8844b7c59449f8bc36 Merge branch 'PHP-8.4' into PHP-8.5
+f9129bd1a169affba106ce9c6f4b7770c90aa8c8 ext/phar: Bound tar metadata size before allocation
+fc68de60d762ad4cdab4392ef0c6c3e5ee4892f4 Merge branch 'PHP-8.5' into PHP-8.6
+e3121ad5c38422792479fc466cc2ea0d3adda584 Merge branch 'PHP-8.4' into PHP-8.5
+9c7e43b3821fa38e46f8eb50df65b7ccb0953da3 Fix GH-24736: php_odbc_connstr_is_quoted() accepts missing closing brace (#24737)
+0fd65852446c4f9eb1415e276b661f8796169a8a Merge branch 'PHP-8.5' into PHP-8.6
+23a8e582967179f8edf5dd08a2f77be5337c3711 Merge branch 'PHP-8.4' into PHP-8.5
+7adcf5a580c3b6f2175dd2de053c1d440792ec26 ext/sockets: Handle declared object properties in socket_set_option()
+04a5da0ab6fcc2e3da90987a9daf70066cd8fe42 Merge branch 'PHP-8.5' into PHP-8.6
+6a020d606e493a6218a9a0cc1e5f1576dbc1cf08 Merge branch 'PHP-8.4' into PHP-8.5
+872c6e19c42986e6488561930aefb01cd1dde6d6 Fix GH-24552: Use ASCII case folding in string comparisons (#24558)
+10b26c49ec54ba2f730f7d3d22c48c101d1cf9c3 Merge branch 'PHP-8.5' into PHP-8.6
+6ee5be0f5d49ed59f9eda86a025163a538eb8796 Merge branch 'PHP-8.4' into PHP-8.5
+47d5c0c716860800dc9324cd0b73901e1dbc1606 Fix GH-24577: CE-cache flag on interned class name visible before map_ptr offset (#24585)
+c226a5931c5ccdafe531bc64fe30c6e92a5f83a8 Merge branch 'PHP-8.5' into PHP-8.6
+c9433e1ff13fc29850fc949923a457ea906cdc81 Add FPM test for INI diagnostics after fatal error with backtrace (#24638)
+5fe484c018f20ef879f6402dc0e2107ebde2c4c2 Merge branch 'PHP-8.5' into PHP-8.6
+d8caef31da9ee15559f87623029a54ccca8bac96 Merge branch 'PHP-8.4' into PHP-8.5
+810ce5e5f6e4bc64a01f998e30fd4c9418289e2c Fix GH-24695: FPM tester sends signal to process group when PID is missing (#24698)
+4f8d7bb6687bce8efc52dca751589662616d0c0c Merge branch 'PHP-8.5' into PHP-8.6
+71e8293fa29aaa7a38b9b028a731576058799de0 Merge branch 'PHP-8.4' into PHP-8.5
+afe5635c3ff58f1f4f62019c971e66119752a8e0 Fix GH-24605: Guard var_export() against native stack overflow (#24671)
+e5f67fb2da17d481e4a3fdbf8b4d5b86685ef7df LiteSpeed: document security considerations for executed paths (#24450)
+dc9660471d964cbad4f6c8e1a45a65f95d394b80 Merge branch 'PHP-8.5' into PHP-8.6
+2546fe9e827ef7f2cd1a6c5b337454ba991f05b3 Merge branch 'PHP-8.4' into PHP-8.5
+59f8e1d2653c39f8f6e3ef9ada7dac8264c82512 Fix use-after-free of CURLOPT_STDERR stream on cloned curl handle
+e356f985f1c07bc184751660bcd25d91ffb7abde Merge branch 'PHP-8.5' into PHP-8.6
+974487f00d7b046f25c9edb2479c7cd1623e1ca1 Merge branch 'PHP-8.4' into PHP-8.5
+ddde35ce8b3f36adefbb31ac14509378f22d01b6 IR: Backport code buffer rollback fix
+cc2b92ce9f0c2eb91b6337985180d42d7e3042fe Merge branch 'PHP-8.5' into PHP-8.6
+e46488dfc17a103b7c97da3803abc667707ff2c0 Merge branch 'PHP-8.4' into PHP-8.5
+d5c02ea66509fac69bea3a440f5e393a1698360e Merge branch 'PHP-8.3' into PHP-8.4
+a6fefc914b9d2419193a2747c194591256fd0105 Merge branch 'PHP-8.2' into PHP-8.3
+0cb9da1aadcc5fa5eef83a8cd1a3d360ce083c6b Fix SQL test on Windows (#24755)
+aad226626291bda1dfd92e342b101accf49e3abc Merge branch 'PHP-8.5' into PHP-8.6
+61156b65c7356181ee9fd479cd42c3268e0c14f6 Merge branch 'PHP-8.4' into PHP-8.5
+470af312dd196fbc7838a5b75560396d4503991f Fix GH-24697: cli: passing PHP_HTTP_PARSER_STRICT build option doesn't work
+ca0030ba189c7b60f4d36c52e1f2afa91541ad48 Merge branch 'PHP-8.5' into PHP-8.6
+018b0a8d4d54db3f1c9509d485049610a73919a5 Merge branch 'PHP-8.4' into PHP-8.5
+061f0ce293557c53075756fff894dcc8559b2930 Fix GH-24438: Preserve indirect types in JIT side traces
+d6541df639f2b58c04d2bf8ea69d697443c641a5 Fix GH-17733: System entropy does not take into account function order, resulting in wrong functions possibly called in different configurations
+3678f391d8f64738cdb37d3e2a95aeba615413c4 ext/openssl: Fix build with OpenSSL 4.1 (#24686)
+fdcca088d822fe1a2f141a37ea6fca2ae3ec4a3d Merge branch 'PHP-8.5' into PHP-8.6
+a2052f318ab4c7d4fb2e03d576e51488ad7aa097 Fix GH-24745: File cache loses attributes on constants on 32-bit builds
+02ddcc5ee20f5fd5e2b8b45908d0e516014bebec Merge branch 'PHP-8.5' into PHP-8.6
+f5a9dfa7e351ac394d7e3d77404842ff04f8d7e4 Merge branch 'PHP-8.4' into PHP-8.5
+cbda101fe3008d61e8474da41beff876daa82dcb Fix unmapping of an unrelated range when the aligned chunk mmap fails (#24542)
+a588565de2442ab7cb6420411d7045238b922db0 Merge branch 'PHP-8.5' into PHP-8.6
+3e6e268254651511af50fd666249adf11685c605 Merge branch 'PHP-8.4' into PHP-8.5
+8934441b85b92dabb9aef8519ef446de46548b16 Merge branch 'PHP-8.3' into PHP-8.4
+9e83ba3f051d9de04fcbf090fe8a620f7ea538a9 Merge branch 'PHP-8.2' into PHP-8.3
+563735da80ed2ae3b57921c802970a98f01e99d4 Backport: Adapt intl timezone test expectations for ICU 79.1 (#24724)
+fadc1e5e7e7568dd1068e85c4fde410df389d643 Merge branch 'PHP-8.5' into PHP-8.6
+d98dc49a9a5949d5bc6ead987b5d285403b233bd Merge branch 'PHP-8.4' into PHP-8.5
+d5ab3605e9c97c32ba1df3d554603df0618e9d0a Tracing JIT: keep the SEND_VAL type guard after assigning to a reference
+a18f6abe74c6e81c2bba83c61562772815b01590 Merge branch 'PHP-8.5' into PHP-8.6
+a4cbb651307b4b6b2a779009e083d7a39e840cb7 Merge branch 'PHP-8.4' into PHP-8.5
+b2777b715276755e034dfc36cb6aabb3385f2258 Backport: Adapt intl timezone test expectations for ICU 79.1 (#24684)
+92e3c068c56447057f6ac50ac54acf3eb42baaf8 Merge branch 'PHP-8.5' into PHP-8.6
+0fd5614ccab0b58af96c5aadf212f701295d13bb Merge branch 'PHP-8.4' into PHP-8.5
+a1eb2f8fa15ffc74325ff76ca12dd9e5278afcd7 ext/zip: Reject broken libzip versions on Windows (#24371)
+6f77d690dce783a9bb4c2d3baeccbf6ec04e3464 Merge branch 'PHP-8.5' into PHP-8.6
+47d959923c4a6cc6d8551710843a2e9b7381531f ext/intl: Adapt timezone test expectations for ICU 79.1
+19a386ec1cf341003cfd54975e81fc0366a9549f Merge branch 'PHP-8.5' into PHP-8.6
+5d32ef2a6f4ca60a0170526c50e3d08c2d0e29f1 Merge branch 'PHP-8.4' into PHP-8.5
+2f6fd11671e1a34067d8d63ed30eb2cacf7b281d ext/zip: Exclude broken libzip 1.12 (#24358)
+e284d8c25bdd0790f78cafd375e0b983272265c6 Merge branch 'PHP-8.5' into PHP-8.6
+48b01b8324379de41aaca34f9c2fbfddf58f7ec8 Merge branch 'PHP-8.4' into PHP-8.5
+861d2b6c4e15d20f59181e797cb5c6f8797bfdcd Fix GH-24264: Unwind/GracefulExit discarded in spl_iterators.c
+30999ac58ee78d3bd677abc7bd25a1a8bab21262 Merge branch 'PHP-8.5' into PHP-8.6
+c6de4e63c84a4a1832f37d92497c98b4c50ab917 Merge branch 'PHP-8.4' into PHP-8.5
+055e11e0c7e6fe5a9649afc2b79391608933ee79 phpdbg: Backport watchpoint fixes to PHP-8.4
+8bbe020b3a35460993de07a9654cbeac2c085716 Merge branch 'PHP-8.5' into PHP-8.6
+a47a2be280be3b41e587295cb8b8d1274008b81b Merge branch 'PHP-8.4' into PHP-8.5
+51808ac54782284428e80ffb2543fdff2d663bef Fix JIT reading packed-turned-hash array as packed after string key write
+a0538c006fbcd8d6b5fa2f2106e5e2435fe22edd Merge branch 'PHP-8.5' into PHP-8.6
+24f80278225cd5ffcbf959f9d7a6e99d5cf928de Merge branch 'PHP-8.4' into PHP-8.5
+0ddabc30e826393e5d9467bc77a479040be50ba7 ext/standard: Skip proc_open descriptor 0 tests without /proc/self/fd symlinks
+2de8cf9285712a17a5fc0f8034e7ed10fc55067a Merge branch 'PHP-8.5' into PHP-8.6
+102a693de2c596f805eb0c86a34e5b9d96bcd803 Merge branch 'PHP-8.4' into PHP-8.5
+755f9d9a2bed685fe1241fe034a6a66f8c072802 JIT: Fix operand type check in zend_redo_pass_two_ex() (#24658)
+6a74b16d272b88225c06e01db71500de6a469e72 Merge branch 'PHP-8.5' into PHP-8.6
+19aeda2d9697eef46395b765e39d8ed4c937d5df Merge branch 'PHP-8.4' into PHP-8.5
+6454e102d816e115b083af539792a4cb20246ce4 Fix error paths in dom_xml_serializing_a_document_node()
+c1667ca5a6ce6d4279d3643a863bd4d58f8cac2e Merge branch 'PHP-8.5' into PHP-8.6
+92830bd5d32a551b632f58298573d80b1cb9d4ef Merge branch 'PHP-8.4' into PHP-8.5
+b309533729f82df48ca1e9a96ddefb6c911f31ac dba: fix GH-24641 (NULL dereferencement with ndbm backend)
+1bc3dc51a2080a6119d2b3a8521146239c33ba08 Merge branch 'PHP-8.5' into PHP-8.6
+c3db616f3897e10a7293c8175e280aee8e871386 Merge branch 'PHP-8.4' into PHP-8.5
+afd156921e54ba889db59ae423b28721f17113b6 Fix GH-24265: zend_fiber_execute() discards exit() in a destroyed fiber
+d03c80e1ec102f5587ad9966cf0ee605b173927e Merge branch 'PHP-8.5' into PHP-8.6
+ae3acfd65a37d0d6f4ee84f602e95807a442f740 Merge branch 'PHP-8.4' into PHP-8.5
+f6c9428b97aa0f5ee38abbc3398dc833eb3e2eac zend_test: Fix function and constant imports in compile_to_ast and add support for grouping
+a395b297f4d1edb705bcf720bbd0b085fcff574e Merge branch 'PHP-8.5' into PHP-8.6
+2cbd17d4a4f2db32b152c1623ea894a7795c1274 Merge branch 'PHP-8.4' into PHP-8.5
+b97f7881de0f806c7294a2bd00015b0d287ca59b Fix GH-24582: Memory leaks in ext/ffi parser when finalize_type() bails out
+4d2be2e0185cfaa9d12bc82a6865861c8f9a9a91 Merge branch 'PHP-8.5' into PHP-8.6
+e36968e988028883b922964fce5aa91d2ee22138 Merge branch 'PHP-8.4' into PHP-8.5
+56ad5c4071ace9d316a9178771db70d100ed4180 JIT: Fix upper-bound inference in tracing JIT comparisons (#24633)
+509a3f63e32232b0b75c24dbb496606787967631 Merge branch 'PHP-8.5' into PHP-8.6
+8f6512d3f28ef4f4de88c07e97b41b4c5c77bb49 Merge branch 'PHP-8.4' into PHP-8.5
+89f4d82157ead3bc0a33988c631e0e90bc533b3e Fix GOST and Snefru digests of 512 MiB or more
+0e63b7a2552ce716368951bcc4609b8b38f43785 [`%pS` migration] Use `%pS` in ext/spl/spl_observer.c
+19e86db05ea318993e3fcc834a3b606e448a07b9 [`%pS` migration] Use `%pS` in ext/spl/spl_iterators.c
+7851dae949866fba578a50df780aad84df0082f3 [`%pS` migration] Use `%pS` in ext/spl/spl_heap.c
+1c6ed5db7ef07989b896ae540b07eb8c7b826193 [`%pS` migration] Use `%pS` in ext/spl/spl_directory.c
+ff85732a0edd5d352db01fca544f917c0cb66f76 [`%pS` migration] Use `%pS` in ext/spl/spl_array.c
+eb95848903579f9d8023be0eaf13b30479ba725b [`%pS` migration] Use `%pS` in ext/spl/php_spl.c
+fdfd003940c88242e68afb99037c339ff36d4875 [`%pS` migration] Use `%pS` in ext/dba (#23151)
+4c2924299cf088457cb0bbed973b26ffcfc3e2f5 Merge branch 'PHP-8.5' into PHP-8.6
+48b3f94fe2d1055d05b4bfdebd9d84ce6565a73a Merge branch 'PHP-8.4' into PHP-8.5
+ad7ad7c425ae816426ed88f2540b0be3626f4222 Fix GH-24509: HTTP wrapper leaks Location buffer on empty Location header
+37c8477bdb9ede283882227cecd79e3b6d9cc121 Merge branch 'PHP-8.5' into PHP-8.6
+cbc391bc13338115e1e9e9a81cc60e567e2050f0 Merge branch 'PHP-8.4' into PHP-8.5
+fc05c9bf2486d3d66593501bf78c1d83c32ecbc5 Fix GH-24396: Assertion failure in zend_jit_def_reg() "reg forwarding" with chained Pi nodes
+13f0820058ced987a0f2371a44462a702304c7fb Merge branch 'PHP-8.5' into PHP-8.6
+48786b4dc10c3512ce84c19d028325028c3b0b00 Merge branch 'PHP-8.4' into PHP-8.5
+b0c8e27b27b5c7676586b126a4e5c2982a46d63c Fix GH-24308: Preserve syslog handles not opened by PHP (#24310)
+6c916727337263b5b1d72f2c43db990988eaa126 Merge branch 'PHP-8.5' into PHP-8.6
+56e3429f253b24822c9f9e534239e42dab62e46a Merge branch 'PHP-8.4' into PHP-8.5
+a44a529d266b0152d90553582875a77445b43233 Fix GH-22554: ext/dom: UAF with XPath callback returning foreign-doc node
+644b5e88967cf3521de9631521849bf48daed390 Merge branch 'PHP-8.5' into PHP-8.6
+9da174f52a1d4f9f1f3613ade049283ca3995875 Merge branch 'PHP-8.4' into PHP-8.5
+f6852befa34b1107da57d26ead79e575ccd73e2a ext/mbstring: fix over-read in php_mb_rfc1867_getword()
+44437d1efbc761826a9df31611d20e879afe6572 ext/exif: avoid overflow in `exif_process_IFD_in_TIFF_impl()` (#23807)
+1ea350861a4c3910090345d540723c4bbf175fff ext/zip: use `ZIP_RDONLY` when calling `zip_open()` in zip_stream.c
+da4babf4fa1e68192c95cf8674cbdffff3647f75 ext/zip: add regression tests for behavior with `ZIP_CREATE`
+547a26bd170d9a4994e73139df64a4369a91fb8c JIT: Fix Windows build of zend_jit_ir.c
+2c3ae32fc320f1dfee14704f3ebed6193648c9a8 Merge branch 'PHP-8.5' into PHP-8.6
+267ec8e12b42cf410d908ad7174a57e8735fcbd5 Merge branch 'PHP-8.4' into PHP-8.5
+08f4b64e0ae69e51ca95b54717dc74405ba5f0f9 Fix GH-24373: serialize() context reused by destructors during teardown
+c2a706b246c3b042c90cb76255a6333b6b679521 Merge branch 'PHP-8.5' into PHP-8.6
+9323fa4f0c4658b3c342c776aac9904097559ce2 Merge branch 'PHP-8.4' into PHP-8.5
+359ce15176df8a115cf8bc99e9df46d4dd1fe13f zend_test: Backport zend_test_compile_to_ast() function
+1ec36cfdd9d67c8e3015e886ce43148cea2a19be Merge branch 'PHP-8.5' into PHP-8.6
+550255df0e6f9ee7db4634eb43d3bcd33e42256e Merge branch 'PHP-8.4' into PHP-8.5
+b232da5d0a84d372e5065546160e51265f802daa ci: Fix OOM failures in header_over_4gib.phpt
+730ef3d368369366c1bf921b56bd8a56ef476561 Merge branch 'PHP-8.5' into PHP-8.6
+2077092a537ad8d514be4a8feb25ba5351904a1a Merge branch 'PHP-8.4' into PHP-8.5
+fe8ce13ef7bf19a7571e693400fd5e52742d493a JIT: Fix use-after-free in ASSIGN_DIM_OP with CONCAT
+d6690b5157cf3d3a8b3eb4ba310491fbd85bf9a3 Merge branch 'PHP-8.5' into PHP-8.6
+a31088718703a735a26e05b467786679eb17bb5e Merge branch 'PHP-8.4' into PHP-8.5
+9e769f0a41b9b14a51e4d6759d95516c1f44c96f Merge branch 'PHP-8.5' into PHP-8.6
+7ff3af0f428b3848c9cca6a13cdd6c6633d015dc Fix infinite loop in sapi_header_op() for headers of 4 GiB or more (#24540)
+9080c462d5cb7b80c3e2cd07ebbdeb06bb6c5a1a Merge branch 'PHP-8.4' into PHP-8.5
+3d3d3665a7364e25cdcefbfca3caafed44d32a2b Fix GH-24533: Accept z.lib from zlib 1.3.2 CMake builds on Windows (#24539)
+acdb154f210465e1ab4f691a2b878ef60cd3f93b Merge branch 'PHP-8.5' into PHP-8.6
+674f99894a69d02c39bf34e00682cd2bb11f325f Merge branch 'PHP-8.4' into PHP-8.5
+07fc708950b0924e8d51a0cb8a922acb9ee23166 ext/opcache: Fix tracing JIT range narrowing against a non-integer operand
+1c5b0e5b128ca0c762ba554141dbca3245651005 Merge branch 'PHP-8.5' into PHP-8.6
+17b4c5f4f196e9dba9405aed97edfe3579927d97 Merge branch 'PHP-8.4' into PHP-8.5
+4fd56dc469fd6496af9c3216390b0baae7d0b2cd Fix GH-24508: HTTP wrapper leaks dechunk filter when header parsing fails
+2762817831d4aa86f242e38b9a9efc17d1b7877b Fix stream error operation leak in stream_select()
+11bbfc00228d7d8978e60c35c916d0afbb1ae980 Merge branch 'PHP-8.5' into PHP-8.6
+81dfb44d195be4b6e2a665a4e5bd5f2a394ca990 Fix GH-24523: UAF in zend_test_compile_to_ast() on parse error (#24524)
+8784e0a8a44f01f9d69b3a15da44de76f4aa58e6 Merge branch 'PHP-8.5' into PHP-8.6
+292db4946047d1e3088389e4972e7677cb5ed163 Merge branch 'PHP-8.4' into PHP-8.5
+b4ca62e3178c63a75b42c3dee3a423849dff3f39 Tracing JIT: give the type guard on entry of an inlined call an exit opline
+e4576ef7a4101de149986a890547d8f374e2992f Merge branch 'PHP-8.5' into PHP-8.6
+5bd92da0abd34fe141938ac44d137eea060bbd0c Merge branch 'PHP-8.4' into PHP-8.5
+f9634847258a8c3ed6c12bb79104eba60bb631ea Fix GH-24488: GC double-frees the SimpleXMLElement properties table
+b9fea728db1c1aa5ef012ca1d814fe0d4ca82624 [skip ci] Add NEWS entry
+296e8eac57883cfd54e84d80201ed7e5de9f7ee1 pdo_pgsql_request_shutdown() leaves statements of freed PDO objects prepared.
+ce6c46590286f407a951830f24352375112b674a ext/pdo_pgsql: persistent connection reset drops prepared statements and plans.
+a9138d768ad1760ad87308b5fcadd532bba29b05 ext/pdo: persistent_shutdown run while the connection is still shared.
+46ac97c265bc83aa57fb0f5ad09c863a6978a2da JIT: Fix TLS access with SHM reattachment (8.6 follow-up) (#24456)
+8f38f7ad741360b908c065da9e1724c8bd99f03a Merge branch 'PHP-8.5' into PHP-8.6
+166d2868f7b5a8485864e55b93bfe5678e017782 Merge branch 'PHP-8.4' into PHP-8.5
+cfe77b82a65a4750e32b1ca1ccfad90a32190fdb JIT: Fix function JIT level 1 crash on FETCH_OBJ_FUNC_ARG of a hooked property
+0916bac68e0ba4be4f2d06df09db2e08aaaa1d19 Merge branch 'PHP-8.5' into PHP-8.6
+5663382c50a757ae9ed27089508663479b38fe27 Merge branch 'PHP-8.4' into PHP-8.5
+aa098d7c4996e9ab01d41c9367574864ae2bc24d Merge branch 'PHP-8.3' into PHP-8.4
+f35ed4fb5cf44ef9ecc48e105b6a53b590d54f0b PHP-8.3 is now for PHP 8.3.37-dev
+49a2120842e5260e0955c396ceb318278c6a1a2f Merge branch 'PHP-8.5' into PHP-8.6
+b00ff79f1ec49a95428c9fb564280ad2d4191f1c Merge branch 'PHP-8.4' into PHP-8.5
+69604e1dd028d9846017837ae3ae63857556dab7 Merge branch 'PHP-8.3' into PHP-8.4
+ebf7241c6fb6bc0044ff99a911304a5c4b5ddee2 Merge branch 'PHP-8.2' into PHP-8.3
+a640b5288bc97882165631612bd6cb8e75dbf6d5 PHP-8.2 is now for PHP 8.2.36-dev
+4eeb8e1b31e45217a4f62dc5997117a80b257419 Merge branch 'PHP-8.5' into PHP-8.6
+cf5678f57865cc1a0f8bac4c569022d84c0c0acd Merge branch 'PHP-8.4' into PHP-8.5
+a322a641ecbe0d25341e43c9b94967edf2ce1de2 ci: Fix stale zend_test stub hash on PHP 8.4 (#24483)
+7559801d926a905dd373ae631a8bda61b8d1258b [ci skip] Update NEWS for 8.6.0RC5

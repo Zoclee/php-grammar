@@ -1,0 +1,37 @@
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.10
+Configuration: C:\Data\GitHub\php-grammar\phpunit.xml.dist
+
+Time: 03:29.207, Memory: 112.00 MB
+
+There were 2 failures:
+
+1) PhpGrammar\Tests\Certification86Test::testUnexplainedProductionChangeUsesExistingTraceabilityGate
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'Unreviewed EBNF text (including comments/formatting)',
++    1 => 'Unreviewed production structure: yield-key',
++    2 => 'EBNF/Markdown parity',
++]
+
+C:\Data\GitHub\php-grammar\tests\Certification86Test.php:198
+
+2) PhpGrammar\Tests\Php\Conformance\Php86TraceabilityTest::testReviewedDifferences
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'Unreviewed documentation difference: ## Canonical EBNF',
++]
+
+C:\Data\GitHub\php-grammar\tests\Php\Conformance\Php86TraceabilityTest.php:17
+
+FAILURES!
+Tests: 6516, Assertions: 59801, Failures: 2.

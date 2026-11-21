@@ -53,7 +53,7 @@ final class Php86PartialApplicationTest extends TestCase
             }
         }
         self::assertSame(['ordinary-argument-list', 'first-class-callable-arguments',
-            'clone-argument-list', 'argument', 'argument-no-expression'], $changed);
+            'clone-argument-list', 'argument', 'argument-no-expression', 'hook-name', 'yield-key'], $changed);
         $doc = file_get_contents(self::root() . '/grammar/8.6/php.md');
         self::assertSame(1, preg_match('/<!-- BEGIN GENERATED EBNF -->\R```ebnf\R(.*?)\R```\R<!-- END GENERATED EBNF -->/s', $doc, $match));
         self::assertSame(trim($source), trim($match[1]));

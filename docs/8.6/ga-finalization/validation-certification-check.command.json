@@ -1,0 +1,17 @@
+{
+  "command": [
+    ".audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-scanner-differential.php",
+    "--contract",
+    "php86-certification-v4",
+    "--check",
+    "--report",
+    "docs/8.6/certification-contract-remediation/runs/phase7h1-audited/evidence.json"
+  ],
+  "exitCode": 1,
+  "log": "docs/8.6/ga-finalization/validation-certification-check.log",
+  "sha256": "8cf346cdcd72dfc74b0aa2efec64ebe6db5bfd8d2e94325976c25b69ee3e7981"
+}

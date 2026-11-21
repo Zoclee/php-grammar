@@ -1,0 +1,15 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "gc.auto=0",
+    "--git-dir=.audit/rc7-git",
+    "diff",
+    "--no-ext-diff",
+    "b63cd83da3279445ca4a913f03186141f5c3466e",
+    "8aaada3f9605d81a38b8240f93c7389dfbc77ef9"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/complete-diff.log",
+  "sha256": "c0c93abe7e2070fd0bbdca88f8d3959110faac7d820ed5f2e814cb0013150b06"
+}

@@ -1,0 +1,19 @@
+{
+  "obligation": "Every registered positive and structural-negative fixture",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "PhpConformanceFixtureTest"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/release-v1_1_0-r2/positive-negative-syntax.log",
+  "sha256": "60a3add0b9b05e04b870805a943063e9d918259c368f564ef2366a9af55be1b3"
+}

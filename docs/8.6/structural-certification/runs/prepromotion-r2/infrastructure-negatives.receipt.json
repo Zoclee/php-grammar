@@ -1,0 +1,19 @@
+{
+  "obligation": "Mutation tests refusing invalid, missing, stale or falsified certification inputs",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_mbstring.dll",
+    "vendor/phpunit/phpunit/phpunit",
+    "--do-not-cache-result",
+    "--no-progress",
+    "--filter",
+    "StructuralCertificationTest|Php86StructuralHooksTest|Php86StructuralWitnessTest"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r2/infrastructure-negatives.log",
+  "sha256": "5eedc23e59e29eb6a3b09838c79659d35180509afc85944f7f99d01e1810c709"
+}

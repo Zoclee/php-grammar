@@ -1,0 +1,51 @@
+{
+  "proposedCommit": "5089bcc83c8193e6a965dd1579767b1d503401ba",
+  "officialSnapshots": {
+    "rc7": {
+      "commit": "b63cd83da3279445ca4a913f03186141f5c3466e",
+      "ancestryCommand": [
+        "git",
+        "-c",
+        "gc.auto=0",
+        "--git-dir=.audit/rc7-git",
+        "merge-base",
+        "--is-ancestor",
+        "5089bcc83c8193e6a965dd1579767b1d503401ba",
+        "b63cd83da3279445ca4a913f03186141f5c3466e"
+      ],
+      "ancestryExit": 1,
+      "function": "static zend_op *zend_compile_var_inner(znode *result, zend_ast *ast, uint32_t type, bool by_ref)\n{\n\tCG(zend_lineno) = zend_ast_get_lineno(ast);\n\n\tif (CG(memoize_mode) != ZEND_MEMOIZE_NONE) {\n\t\tswitch (ast->kind) {\n\t\t\tcase ZEND_AST_CALL:\n\t\t\tcase ZEND_AST_METHOD_CALL:\n\t\t\tcase ZEND_AST_NULLSAFE_METHOD_CALL:\n\t\t\tcase ZEND_AST_STATIC_CALL:\n\t\t\tcase ZEND_AST_PIPE:\n\t\t\t\tzend_compile_memoized_expr(result, ast, BP_VAR_W);\n\t\t\t\t/* This might not actually produce an opcode, e.g. for expressions evaluated at comptime. */\n\t\t\t\treturn NULL;\n\t\t}\n\t}\n\n\tswitch (ast->kind) {\n\t\tcase ZEND_AST_VAR:\n\t\t\treturn zend_compile_simple_var(result, ast, type, false);\n\t\tcase ZEND_AST_DIM:\n\t\t\treturn zend_compile_dim(result, ast, type, by_ref);\n\t\tcase ZEND_AST_PROP:\n\t\tcase ZEND_AST_NULLSAFE_PROP:\n\t\t\treturn zend_compile_prop(result, ast, type, by_ref);\n\t\tcase ZEND_AST_STATIC_PROP:\n\t\t\treturn zend_compile_static_prop(result, ast, type, by_ref, false);\n\t\tcase ZEND_AST_CALL:\n\t\t\tzend_compile_call(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_METHOD_CALL:\n\t\tcase ZEND_AST_NULLSAFE_METHOD_CALL:\n\t\t\tzend_compile_method_call(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_STATIC_CALL:\n\t\t\tzend_compile_static_call(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_PIPE:\n\t\t\tzend_compile_pipe(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_ZNODE:\n\t\t\t*result = *zend_ast_get_znode(ast);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_ASSIGN_REF:\n\t\t\tzend_compile_assign_ref(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_ASSIGN:\n\t\t\tzend_compile_assign(result, ast, false, type);\n\t\t\treturn NULL;\n\t\tdefault:\n\t\t\tif (type == BP_VAR_W || type == BP_VAR_RW || type == BP_VAR_UNSET) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\t\t\"Cannot use temporary expression in write context\");\n\t\t\t}\n\n\t\t\tzend_compile_expr(result, ast);\n\t\t\treturn NULL;\n\t}\n}",
+      "containsProposedGuard": false
+    },
+    "branchSnapshot": {
+      "commit": "ac377d55a9e7af2e1dd16446a9a1a7a7d6bd300e",
+      "ancestryCommand": [
+        "git",
+        "-c",
+        "gc.auto=0",
+        "--git-dir=.audit/rc7-git",
+        "merge-base",
+        "--is-ancestor",
+        "5089bcc83c8193e6a965dd1579767b1d503401ba",
+        "ac377d55a9e7af2e1dd16446a9a1a7a7d6bd300e"
+      ],
+      "ancestryExit": 1,
+      "function": "static zend_op *zend_compile_var_inner(znode *result, zend_ast *ast, uint32_t type, bool by_ref)\n{\n\tCG(zend_lineno) = zend_ast_get_lineno(ast);\n\n\tif (CG(memoize_mode) != ZEND_MEMOIZE_NONE) {\n\t\tswitch (ast->kind) {\n\t\t\tcase ZEND_AST_CALL:\n\t\t\tcase ZEND_AST_METHOD_CALL:\n\t\t\tcase ZEND_AST_NULLSAFE_METHOD_CALL:\n\t\t\tcase ZEND_AST_STATIC_CALL:\n\t\t\tcase ZEND_AST_PIPE:\n\t\t\t\tzend_compile_memoized_expr(result, ast, BP_VAR_W);\n\t\t\t\t/* This might not actually produce an opcode, e.g. for expressions evaluated at comptime. */\n\t\t\t\treturn NULL;\n\t\t}\n\t}\n\n\tswitch (ast->kind) {\n\t\tcase ZEND_AST_VAR:\n\t\t\treturn zend_compile_simple_var(result, ast, type, false);\n\t\tcase ZEND_AST_DIM:\n\t\t\treturn zend_compile_dim(result, ast, type, by_ref);\n\t\tcase ZEND_AST_PROP:\n\t\tcase ZEND_AST_NULLSAFE_PROP:\n\t\t\treturn zend_compile_prop(result, ast, type, by_ref);\n\t\tcase ZEND_AST_STATIC_PROP:\n\t\t\treturn zend_compile_static_prop(result, ast, type, by_ref, false);\n\t\tcase ZEND_AST_CALL:\n\t\t\tzend_compile_call(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_METHOD_CALL:\n\t\tcase ZEND_AST_NULLSAFE_METHOD_CALL:\n\t\t\tzend_compile_method_call(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_STATIC_CALL:\n\t\t\tzend_compile_static_call(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_PIPE:\n\t\t\tzend_compile_pipe(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_ZNODE:\n\t\t\t*result = *zend_ast_get_znode(ast);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_ASSIGN_REF:\n\t\t\tzend_compile_assign_ref(result, ast, type);\n\t\t\treturn NULL;\n\t\tcase ZEND_AST_ASSIGN:\n\t\t\tzend_compile_assign(result, ast, false, type);\n\t\t\treturn NULL;\n\t\tdefault:\n\t\t\tif (type == BP_VAR_W || type == BP_VAR_RW || type == BP_VAR_UNSET) {\n\t\t\t\tzend_error_noreturn(E_COMPILE_ERROR,\n\t\t\t\t\t\"Cannot use temporary expression in write context\");\n\t\t\t}\n\n\t\t\tzend_compile_expr(result, ast);\n\t\t\treturn NULL;\n\t}\n}",
+      "containsProposedGuard": false
+    }
+  },
+  "issue": "open",
+  "associatedPulls": [],
+  "submission": {
+    "url": "https://github.com/php/php-src/pull/25046",
+    "head": "5089bcc83c8193e6a965dd1579767b1d503401ba",
+    "targetBranch": "PHP-8.6",
+    "state": "open",
+    "merged": false,
+    "officialMergedCommit": null
+  },
+  "associationCaveat": "Empty commit-association response does not negate PR25046 found by repository-wide search.",
+  "final860Schedule": "Unestablished; proposed NEWS entry is 8.6.1, not a final-release scheduling commitment.",
+  "proposedPatchExecutedLocally": false,
+  "certificationGranted": false
+}

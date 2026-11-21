@@ -1,0 +1,14 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "gc.auto=0",
+    "--git-dir=.audit/rc7-git",
+    "ls-tree",
+    "-r",
+    "b63cd83da3279445ca4a913f03186141f5c3466e"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/tree-rc7.log",
+  "sha256": "ca7e97b6fbba74d3c5e2c3c3ba0a5c280e7279f6d30577d280f7c740787e7f0f"
+}

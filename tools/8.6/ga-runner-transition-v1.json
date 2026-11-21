@@ -1,0 +1,38 @@
+{
+  "contract": "php86-ga-runner-transition-v1",
+  "replacements": {
+    "source-lock.json": "source-lock-ga-v1.json",
+    "pfa-source-lock.json": "pfa-source-lock-ga-v1.json",
+    "context-source-lock.json": "context-source-lock-ga-v1.json",
+    "final-coverage-source-lock.json": "final-coverage-source-lock-ga-v1.json",
+    "tests/fixtures/php/8.6/deprecation-cases.json": "tools/8.6/deprecation-cases-ga-v1.json"
+  },
+  "runners": {
+    "tools/8.6/integration-check-ga-v1.php": {
+      "predecessor": "tools/8.6/integration-check.php",
+      "before": "3658170afd3b118f35887e67468d129614e55f9aae5740670fda1fdb2f7bd63f",
+      "after": "cf0089c05c2489a77858502334d9a23708c403692b29882add86e6e46b24369b"
+    },
+    "tools/8.6/pfa-check-ga-v1.php": {
+      "predecessor": "tools/8.6/pfa-check.php",
+      "before": "0f633c26eed4ef8aa25b3aaaf75a4de9e11ea4ad4ed1befb2df4bb785b02f245",
+      "after": "58d0b505ba01d4c32fd67fb9b8598b641063045af5e8b7110b6177ad4ac0763a"
+    },
+    "tools/8.6/context-check-ga-v1.php": {
+      "predecessor": "tools/8.6/context-check.php",
+      "before": "0c558cf091968e3cb18c46b0a118e1252350542ed9c3223f13c3d24e81caa756",
+      "after": "d084590299ba32bc804acf109a78cb5348a9b169d3ba82571d1f39bf6d2e5e80"
+    },
+    "tools/8.6/deprecation-check-ga-v1.php": {
+      "predecessor": "tools/8.6/deprecation-check.php",
+      "before": "c43a1deaef6be2a66dd335373a8b30729fb728254e853e38aaaabcf59e6b76fe",
+      "after": "b0471eee51580a1a2d5294af1778aa191e22589fb941084e0b62fc53160bd1d6"
+    },
+    "tools/8.6/final-coverage-expansion-ga-v1.php": {
+      "predecessor": "tools/8.6/final-coverage-expansion.php",
+      "before": "9c4ebe77c56b16c398ff7ec6d4cc654f4a9d82d88725cb71cfc1ed5039848a9f",
+      "after": "802ac3142872da510bd553f34462d86b696e792d5f09f41b22a1c29211ed6efe"
+    }
+  },
+  "meaning": "Identical check algorithms and case expectations, explicit GA source/profile inputs. No legacy runner is overwritten."
+}

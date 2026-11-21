@@ -1,0 +1,15 @@
+{
+  "obligation": "Ninety identifier/keyword/case/live/retained/discarded/promoted controls",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-hooks.php",
+    "--check",
+    "docs/8.6/structural-certification/runs/release-v1_1_0-r1/hook-stage-boundaries.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/release-v1_1_0-r1/hook-stage-boundaries.log",
+  "sha256": "4d18e6b96b5b39ef7b2ee1003a282dbeabc7c091d2c79a230516d659c0182de1"
+}

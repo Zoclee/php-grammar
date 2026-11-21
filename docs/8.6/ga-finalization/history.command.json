@@ -1,0 +1,15 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "gc.auto=0",
+    "--git-dir=.audit/rc7-git",
+    "log",
+    "--format=%H %ad %s",
+    "--date=iso-strict",
+    "b63cd83da3279445ca4a913f03186141f5c3466e..8aaada3f9605d81a38b8240f93c7389dfbc77ef9"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/history.log",
+  "sha256": "b41865d50337d1637773666ad8d3aeff1677b0a79901acc24a5ff65af3be3e4d"
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "gc.auto=0",
+    "--git-dir=.audit/rc7-git",
+    "cat-file",
+    "-p",
+    "48a5ee8a311db69103a6fa25b330e5ff3847af3d"
+  ],
+  "exitCode": 0,
+  "log": "docs/8.6/ga-finalization/tag-object.log",
+  "sha256": "f8c4c289c201af45522d1e01cf81c746346e359957fc7b8d5f212a5333a1ee03"
+}

@@ -1,0 +1,7 @@
+{
+  "gate": "folding-order",
+  "errors": [
+    "PHP86-015: material closure obligations remain; see reviewed GA disposition. Observations do not waive closure."
+  ],
+  "certificationGranted": false
+}

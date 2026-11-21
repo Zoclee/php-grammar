@@ -1,0 +1,15 @@
+{
+  "command": [
+    ".audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/evidence/compatibility.php",
+    "--check",
+    "--report",
+    "docs/8.5/compatibility/phase7h1-audited/evidence.json"
+  ],
+  "exitCode": 1,
+  "log": "docs/8.6/ga-finalization/validation-compatibility-check.log",
+  "sha256": "a9b4b91912049b498eb39331d4e4663a4a0cc41db69f4bf53c906a0a7111d8e0"
+}

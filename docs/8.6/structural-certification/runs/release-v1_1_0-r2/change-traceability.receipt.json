@@ -1,0 +1,17 @@
+{
+  "obligation": "Source-backed production/prose mapping and complete ten-section changes",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "change-traceability",
+    "--output",
+    "docs/8.6/structural-certification/runs/release-v1_1_0-r2/change-traceability.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/release-v1_1_0-r2/change-traceability.log",
+  "sha256": "e82e12b28d5c3d95a631e64244a9d6ed6ad0fd423f62b12cae7366000b0b7812"
+}

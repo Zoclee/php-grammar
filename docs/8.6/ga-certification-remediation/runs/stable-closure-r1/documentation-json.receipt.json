@@ -1,0 +1,22 @@
+{
+  "originalObligation": [
+    "documentation",
+    "Validate new JSON, local documentation links, status wording and whitespace."
+  ],
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/certification-ga.php",
+    "--gate",
+    "documentation-json",
+    "--output",
+    "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/documentation-json.json"
+  ],
+  "cwd": "C:/Data/GitHub/php-grammar",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "docs/8.6/ga-certification-remediation/runs/stable-closure-r1/documentation-json.log",
+  "logSha256": "2013993ffc55f993d36c8b719dafd630b4d55ab33da6348ba0bdbb525018b2fe"
+}

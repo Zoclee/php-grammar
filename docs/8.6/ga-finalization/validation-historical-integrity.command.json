@@ -1,0 +1,12 @@
+{
+  "command": [
+    ".audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/evidence/historical-check.php"
+  ],
+  "exitCode": 1,
+  "log": "docs/8.6/ga-finalization/validation-historical-integrity.log",
+  "sha256": "4423abaf0bade1905b86c2d706708303e5d68fddac3212ba0e8540fdf506cbf0"
+}

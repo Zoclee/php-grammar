@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "php-grammar/structural-certification/1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "schema", "claim", "sourceCommit", "output", "inputs", "inputsUnchanged", "results", "artifacts", "structuralCertified", "extendedCertified"],
+  "properties": {
+    "contract": {"const": "php86-structural-v1"},
+    "schema": {"const": "php86-structural-evidence-v1"},
+    "claim": {"type": "string"},
+    "sourceCommit": {"const": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9"},
+    "output": {"type": "string"},
+    "inputs": {"type": "object"},
+    "inputsUnchanged": {"type": "boolean"},
+    "results": {"type": "object", "minProperties": 27, "maxProperties": 27},
+    "artifacts": {"type": "object"},
+    "structuralCertified": {"type": "boolean"},
+    "extendedCertified": {"const": false}
+  }
+}

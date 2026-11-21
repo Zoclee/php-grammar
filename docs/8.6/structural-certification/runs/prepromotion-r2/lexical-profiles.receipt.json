@@ -1,0 +1,18 @@
+{
+  "obligation": "Both short-tag profiles and version-specific lexer boundaries",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/integration-check-ga-v2.php",
+    "--php85=C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "--php86=C:/Data/GitHub/php-grammar/.audit/phase8b/source/x64/Release/php.exe",
+    "--sources85=C:/Data/GitHub/php-grammar/.audit/phase8d/sources85",
+    "--sources86=C:/Data/GitHub/php-grammar/.audit/phase8b/source",
+    "--report=docs/8.6/structural-certification/runs/prepromotion-r2/lexical-profiles.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r2/lexical-profiles.log",
+  "sha256": "90c92a8d896be6a42a85477c0dac0a6a12fe010994b96bb4eadf1a800420e29a"
+}

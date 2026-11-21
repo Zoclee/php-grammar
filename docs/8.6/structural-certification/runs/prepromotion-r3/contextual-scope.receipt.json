@@ -1,0 +1,17 @@
+{
+  "obligation": "Explicit external constraints and preservation of all seven extended blockers",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "memory_limit=1G",
+    "tools/8.6/structural-certification.php",
+    "--gate",
+    "contextual-scope",
+    "--output",
+    "docs/8.6/structural-certification/runs/prepromotion-r3/contextual-scope.json"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r3/contextual-scope.log",
+  "sha256": "c54bec8e6680022ce13e0a14942590a9fa9447b41581d92b584dd53707c83b98"
+}

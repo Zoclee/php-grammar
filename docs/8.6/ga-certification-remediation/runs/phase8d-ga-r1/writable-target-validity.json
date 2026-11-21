@@ -1,0 +1,891 @@
+{
+  "contract": "php86-ga-certification-v1",
+  "sourceCommit": "8aaada3f9605d81a38b8240f93c7389dfbc77ef9",
+  "gate": "writable-target-validity",
+  "details": {
+    "predecessor": "docs/8.6/ga-finalization/writable.json",
+    "predecessorSha256": "d1a14180c94a06d5c945efd12f0c63ae26d44fe1c288160669f67a4eb2c13e85",
+    "observations": [
+      {
+        "id": "ordinary-dimension",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php",
+        "sha256": "2c77ba82f787eed0f9b19deef7bf22e763871785ebcae9f379490bb46092fe32",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "ordinary-dimension",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php",
+        "sha256": "2c77ba82f787eed0f9b19deef7bf22e763871785ebcae9f379490bb46092fe32",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=8, args=0, vars=1, tmps=3)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php:1-3\n0000 T1 = ASSIGN CV0($a) array(...)\n0001 ASSIGN_DIM T1 int(0)\n0002 OP_DATA int(2)\n0003 INIT_FCALL 1 96 string(\"json_encode\")\n0004 SEND_VAR CV0($a) 1\n0005 T3 = DO_ICALL\n0006 ECHO T3\n0007 RETURN int(1)\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php\n"
+        }
+      },
+      {
+        "id": "ordinary-dimension",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php",
+        "sha256": "2c77ba82f787eed0f9b19deef7bf22e763871785ebcae9f379490bb46092fe32",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/ordinary-dimension.php"
+        ],
+        "result": {
+          "exit_code": 255,
+          "output": "\nFatal error: Invalid opcode 23/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\ordinary-dimension.php on line 2\nStack trace:\n#0 {main}\n"
+        },
+        "rc7ExitCode": 255
+      },
+      {
+        "id": "ordinary-property",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php",
+        "sha256": "3052939ba28bc4bab2d203e0616baac66b9b1cf6597dfd60191483f59a6bedfa",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "ordinary-property",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php",
+        "sha256": "3052939ba28bc4bab2d203e0616baac66b9b1cf6597dfd60191483f59a6bedfa",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=10, args=0, vars=1, tmps=5)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php:1-3\n0000 T1 = NEW 0 string(\"stdClass\")\n0001 DO_FCALL\n0002 T3 = ASSIGN CV0($a) T1\n0003 ASSIGN_OBJ T3 string(\"p\")\n0004 OP_DATA int(1)\n0005 INIT_FCALL 1 96 string(\"json_encode\")\n0006 SEND_VAR CV0($a) 1\n0007 T5 = DO_ICALL\n0008 ECHO T5\n0009 RETURN int(1)\nLIVE RANGES:\n     1: 0001 - 0002 (new)\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php\n"
+        }
+      },
+      {
+        "id": "ordinary-property",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php",
+        "sha256": "3052939ba28bc4bab2d203e0616baac66b9b1cf6597dfd60191483f59a6bedfa",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/ordinary-property.php"
+        ],
+        "result": {
+          "exit_code": 255,
+          "output": "\nFatal error: Invalid opcode 24/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\ordinary-property.php on line 2\nStack trace:\n#0 {main}\n"
+        },
+        "rc7ExitCode": 255
+      },
+      {
+        "id": "compound",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/compound.php",
+        "sha256": "ee0366dc8016554ee46ef2915653b996afe56e8b6569779724a0a724e9927720",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/compound.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/compound.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "compound",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/compound.php",
+        "sha256": "ee0366dc8016554ee46ef2915653b996afe56e8b6569779724a0a724e9927720",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/compound.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=4, args=0, vars=1, tmps=2)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/compound.php:1-3\n0000 T1 = ASSIGN CV0($a) array(...)\n0001 ASSIGN_DIM_OP (ADD) T1 int(0)\n0002 OP_DATA int(2)\n0003 RETURN int(1)\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/compound.php\n"
+        }
+      },
+      {
+        "id": "compound",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/compound.php",
+        "sha256": "ee0366dc8016554ee46ef2915653b996afe56e8b6569779724a0a724e9927720",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/compound.php"
+        ],
+        "result": {
+          "exit_code": 255,
+          "output": "\nFatal error: Invalid opcode 27/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\compound.php on line 2\nStack trace:\n#0 {main}\n"
+        },
+        "rc7ExitCode": 255
+      },
+      {
+        "id": "increment",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/increment.php",
+        "sha256": "ab254ce3f7275b418794a06b5206f1b3d49a33389f6ed2cec370187e836298ab",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/increment.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/increment.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "increment",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/increment.php",
+        "sha256": "ab254ce3f7275b418794a06b5206f1b3d49a33389f6ed2cec370187e836298ab",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/increment.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=4, args=0, vars=1, tmps=3)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/increment.php:1-3\n0000 T1 = ASSIGN CV0($a) array(...)\n0001 V2 = FETCH_DIM_RW T1 int(0)\n0002 PRE_INC V2\n0003 RETURN int(1)\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/increment.php\n"
+        }
+      },
+      {
+        "id": "increment",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/increment.php",
+        "sha256": "ab254ce3f7275b418794a06b5206f1b3d49a33389f6ed2cec370187e836298ab",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/increment.php"
+        ],
+        "result": {
+          "exit_code": 255,
+          "output": "\nFatal error: Invalid opcode 87/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\increment.php on line 2\nStack trace:\n#0 {main}\n"
+        },
+        "rc7ExitCode": 255
+      },
+      {
+        "id": "unset",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/unset.php",
+        "sha256": "51766d2b2a00f9cacc6a4d99ce60e83a5fb19f3598f03f1350e3614febeafea3",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/unset.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/unset.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "unset",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/unset.php",
+        "sha256": "51766d2b2a00f9cacc6a4d99ce60e83a5fb19f3598f03f1350e3614febeafea3",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/unset.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=3, args=0, vars=1, tmps=1)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/unset.php:1-3\n0000 T1 = ASSIGN CV0($a) array(...)\n0001 UNSET_DIM T1 int(0)\n0002 RETURN int(1)\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/unset.php\n"
+        }
+      },
+      {
+        "id": "unset",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/unset.php",
+        "sha256": "51766d2b2a00f9cacc6a4d99ce60e83a5fb19f3598f03f1350e3614febeafea3",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/unset.php"
+        ],
+        "result": {
+          "exit_code": 255,
+          "output": "\nFatal error: Invalid opcode 75/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\unset.php on line 2\nStack trace:\n#0 {main}\n"
+        },
+        "rc7ExitCode": 255
+      },
+      {
+        "id": "reference-bind",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php",
+        "sha256": "a257f7c0c2ae90cc775c6f6dd7ee4c7d3c106605ea9283a9d62247757ca45802",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-bind.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "reference-bind",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php",
+        "sha256": "a257f7c0c2ae90cc775c6f6dd7ee4c7d3c106605ea9283a9d62247757ca45802",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=4, args=0, vars=2, tmps=2)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/reference-bind.php:1-3\n0000 T2 = ASSIGN CV1($a) array(...)\n0001 V3 = FETCH_DIM_W T2 int(0)\n0002 ASSIGN_REF CV0($r) V3\n0003 RETURN int(1)\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-bind.php\n"
+        }
+      },
+      {
+        "id": "reference-bind",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php",
+        "sha256": "a257f7c0c2ae90cc775c6f6dd7ee4c7d3c106605ea9283a9d62247757ca45802",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-bind.php"
+        ],
+        "result": {
+          "exit_code": 255,
+          "output": "\nFatal error: Invalid opcode 84/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\reference-bind.php on line 2\nStack trace:\n#0 {main}\n"
+        },
+        "rc7ExitCode": 255
+      },
+      {
+        "id": "reference-argument-dimension",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php",
+        "sha256": "7c3d7212cd299c3484ec35a4d1a033268bfe9019b0a5c656dc3248907a688cfd",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "reference-argument-dimension",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php",
+        "sha256": "7c3d7212cd299c3484ec35a4d1a033268bfe9019b0a5c656dc3248907a688cfd",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=6, args=0, vars=1, tmps=3)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php:1-3\n0000 INIT_FCALL 1 96 string(\"f\")\n0001 T1 = ASSIGN CV0($a) array(...)\n0002 V2 = FETCH_DIM_W T1 int(0)\n0003 SEND_REF V2 1\n0004 DO_UCALL\n0005 RETURN int(1)\n\nf:\n     ; (lines=2, args=1, vars=1, tmps=0)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php:2-2\n0000 CV0($x) = RECV 1\n0001 RETURN null\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php\n"
+        }
+      },
+      {
+        "id": "reference-argument-dimension",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php",
+        "sha256": "7c3d7212cd299c3484ec35a4d1a033268bfe9019b0a5c656dc3248907a688cfd",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-argument-dimension.php"
+        ],
+        "result": {
+          "exit_code": 255,
+          "output": "\nFatal error: Invalid opcode 84/2/1. in C:\\Data\\GitHub\\php-grammar\\docs\\8.6\\rc7-source-reconciliation\\probes\\reference-argument-dimension.php on line 2\nStack trace:\n#0 {main}\n"
+        },
+        "rc7ExitCode": 255
+      },
+      {
+        "id": "reference-assignment-write",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php",
+        "sha256": "2ed3b9e47d9a7486d57fe4376aadbf00680ab122bc61ba84654a1a7806069256",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "reference-assignment-write",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php",
+        "sha256": "2ed3b9e47d9a7486d57fe4376aadbf00680ab122bc61ba84654a1a7806069256",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=11, args=0, vars=2, tmps=5)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php:1-3\n0000 ASSIGN CV0($b) array(...)\n0001 V3 = ASSIGN_REF CV1($a) CV0($b)\n0002 ASSIGN_DIM V3 int(0)\n0003 OP_DATA int(2)\n0004 INIT_FCALL 1 96 string(\"json_encode\")\n0005 T5 = INIT_ARRAY 2 (packed) CV1($a) NEXT\n0006 T5 = ADD_ARRAY_ELEMENT CV0($b) NEXT\n0007 SEND_VAL T5 1\n0008 T6 = DO_ICALL\n0009 ECHO T6\n0010 RETURN int(1)\nLIVE RANGES:\n     5: 0006 - 0007 (tmp/var)\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php\n"
+        }
+      },
+      {
+        "id": "reference-assignment-write",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php",
+        "sha256": "2ed3b9e47d9a7486d57fe4376aadbf00680ab122bc61ba84654a1a7806069256",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-write.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "[[2],[2]]"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "destructuring-reference-write",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php",
+        "sha256": "e523321d96758a55facc54744507859acb35be043ba5b324bc8dc8b283b0ea0f",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "destructuring-reference-write",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php",
+        "sha256": "e523321d96758a55facc54744507859acb35be043ba5b324bc8dc8b283b0ea0f",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=14, args=0, vars=2, tmps=7)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php:1-3\n0000 ASSIGN CV0($arr) array(...)\n0001 V3 = MAKE_REF CV0($arr)\n0002 V4 = FETCH_LIST_W V3 int(0)\n0003 V5 = MAKE_REF V4\n0004 ASSIGN_REF CV1($x) V5\n0005 ASSIGN_DIM V3 int(0)\n0006 OP_DATA int(5)\n0007 INIT_FCALL 1 96 string(\"json_encode\")\n0008 T7 = INIT_ARRAY 2 (packed) CV0($arr) NEXT\n0009 T7 = ADD_ARRAY_ELEMENT CV1($x) NEXT\n0010 SEND_VAL T7 1\n0011 T8 = DO_ICALL\n0012 ECHO T8\n0013 RETURN int(1)\nLIVE RANGES:\n     3: 0002 - 0005 (tmp/var)\n     7: 0009 - 0010 (tmp/var)\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php\n"
+        }
+      },
+      {
+        "id": "destructuring-reference-write",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php",
+        "sha256": "e523321d96758a55facc54744507859acb35be043ba5b324bc8dc8b283b0ea0f",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-write.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "[[5],5]"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "destructuring-reference-argument",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php",
+        "sha256": "aabd56a68879f9fa3b0d73ea495ea816097fe9f694317659cc366eb77185bc9e",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "destructuring-reference-argument",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php",
+        "sha256": "aabd56a68879f9fa3b0d73ea495ea816097fe9f694317659cc366eb77185bc9e",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=13, args=0, vars=2, tmps=6)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php:1-3\n0000 ASSIGN CV0($arr) array(...)\n0001 INIT_FCALL 1 112 string(\"f\")\n0002 V3 = MAKE_REF CV0($arr)\n0003 V4 = FETCH_LIST_W V3 int(0)\n0004 V5 = MAKE_REF V4\n0005 ASSIGN_REF CV1($x) V5\n0006 SEND_REF V3 1\n0007 DO_UCALL\n0008 INIT_FCALL 1 96 string(\"json_encode\")\n0009 SEND_VAR CV0($arr) 1\n0010 T7 = DO_ICALL\n0011 ECHO T7\n0012 RETURN int(1)\nLIVE RANGES:\n     3: 0003 - 0006 (tmp/var)\n\nf:\n     ; (lines=4, args=1, vars=1, tmps=1)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php:2-2\n0000 CV0($x) = RECV 1\n0001 ASSIGN_DIM CV0($x) NEXT\n0002 OP_DATA int(9)\n0003 RETURN null\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php\n"
+        }
+      },
+      {
+        "id": "destructuring-reference-argument",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php",
+        "sha256": "aabd56a68879f9fa3b0d73ea495ea816097fe9f694317659cc366eb77185bc9e",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/destructuring-reference-argument.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "[[1],9]"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "reference-assignment-argument",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php",
+        "sha256": "f6e315f1357dd924dbe7c3dbd23e83e86083b4e217eac8de8ade563f8d0ca269",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "reference-assignment-argument",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php",
+        "sha256": "f6e315f1357dd924dbe7c3dbd23e83e86083b4e217eac8de8ade563f8d0ca269",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=12, args=0, vars=2, tmps=5)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php:1-3\n0000 ASSIGN CV0($b) array(...)\n0001 INIT_FCALL 1 112 string(\"f\")\n0002 V3 = ASSIGN_REF CV1($a) CV0($b)\n0003 SEND_REF V3 1\n0004 DO_UCALL\n0005 INIT_FCALL 1 96 string(\"json_encode\")\n0006 T5 = INIT_ARRAY 2 (packed) CV1($a) NEXT\n0007 T5 = ADD_ARRAY_ELEMENT CV0($b) NEXT\n0008 SEND_VAL T5 1\n0009 T6 = DO_ICALL\n0010 ECHO T6\n0011 RETURN int(1)\nLIVE RANGES:\n     5: 0007 - 0008 (tmp/var)\n\nf:\n     ; (lines=4, args=1, vars=1, tmps=1)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php:2-2\n0000 CV0($x) = RECV 1\n0001 ASSIGN_DIM CV0($x) NEXT\n0002 OP_DATA int(9)\n0003 RETURN null\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php\n"
+        }
+      },
+      {
+        "id": "reference-assignment-argument",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php",
+        "sha256": "f6e315f1357dd924dbe7c3dbd23e83e86083b4e217eac8de8ade563f8d0ca269",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/reference-assignment-argument.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "[[1,9],[1,9]]"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "foreach-reference-assignment",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php",
+        "sha256": "606dbe328dfa9f3ff78936782ffeace6b6b0a09695d033c6511a1feba6b02447",
+        "stage": "lint",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "No syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php\n"
+        },
+        "rc7ExitCode": 0
+      },
+      {
+        "id": "foreach-reference-assignment",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php",
+        "sha256": "606dbe328dfa9f3ff78936782ffeace6b6b0a09695d033c6511a1feba6b02447",
+        "stage": "opcode-generation",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "opcache.enable_cli=1",
+          "-d",
+          "opcache.optimization_level=0",
+          "-d",
+          "opcache.opt_debug_level=65536",
+          "-d",
+          "opcache.file_update_protection=0",
+          "-l",
+          "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "\n$_main:\n     ; (lines=15, args=0, vars=3, tmps=7)\n     ; (before optimizer)\n     ; docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php:1-3\n0000 ASSIGN CV0($b) array(...)\n0001 V4 = ASSIGN_REF CV1($a) CV0($b)\n0002 T5 = QM_ASSIGN V4\n0003 V6 = FE_RESET_RW T5 0007\n0004 FE_FETCH_RW V6 CV2($v) 0007\n0005 ASSIGN CV2($v) int(3)\n0006 JMP 0004\n0007 FE_FREE V6\n0008 INIT_FCALL 1 96 string(\"json_encode\")\n0009 T8 = INIT_ARRAY 2 (packed) CV1($a) NEXT\n0010 T8 = ADD_ARRAY_ELEMENT CV0($b) NEXT\n0011 SEND_VAL T8 1\n0012 T9 = DO_ICALL\n0013 ECHO T9\n0014 RETURN int(1)\nLIVE RANGES:\n     6: 0004 - 0007 (loop)\n     8: 0010 - 0011 (tmp/var)\nNo syntax errors detected in docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php\n"
+        }
+      },
+      {
+        "id": "foreach-reference-assignment",
+        "fixture": "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php",
+        "sha256": "606dbe328dfa9f3ff78936782ffeace6b6b0a09695d033c6511a1feba6b02447",
+        "stage": "execution",
+        "command": [
+          ".audit/phase8b/source/x64/Release/php.exe",
+          "-n",
+          "-d",
+          "display_errors=1",
+          "-d",
+          "log_errors=0",
+          "-d",
+          "max_execution_time=5",
+          "docs/8.6/rc7-source-reconciliation/probes/foreach-reference-assignment.php"
+        ],
+        "result": {
+          "exit_code": 0,
+          "output": "[[1],[1]]"
+        },
+        "rc7ExitCode": 0
+      }
+    ],
+    "errors": [],
+    "original": [
+      {
+        "id": "PHP86-014",
+        "classification": "unresolved intended validity; source-explained compiler/VM implementation defect",
+        "construct": "Assignment/reference/list-derived dimension and property writes, compound/inc/unset/reference operations",
+        "evidence": [
+          "compiler-contextual-groups.json#/groups/0",
+          "source-audit-probes.json",
+          "source-audit-upstream.json"
+        ],
+        "missingEvidence": "Authoritative intended-validity decision for exact write forms, coherent compiler/VM fix and source-corresponding execution. Refreshed PR 20628 comments do not decide those forms.",
+        "risk": "Runtime invalid opcode cannot establish a structural rejection; successful reference-result execution cannot establish a new permission.",
+        "draftImpact": "Retain current explicit uncertainty and separate PHP86-004 constant-object rules.",
+        "candidateImpact": "Blocks affected-area correctness and promotion.",
+        "stableImpact": "Blocks certification.",
+        "remediation": "Obtain intended-validity evidence before proposing the smallest contextual correction. Gate B must cover ordinary/reference/list bases, result kinds, operations, discarded/live forms and VM profiles.",
+        "priority": "P1",
+        "blocksCertification": true
+      }
+    ],
+    "gaDisposition": [
+      {
+        "id": "PHP86-014",
+        "originalRequirement": {
+          "id": "PHP86-014",
+          "classification": "unresolved intended validity; source-explained compiler/VM implementation defect",
+          "construct": "Assignment/reference/list-derived dimension and property writes, compound/inc/unset/reference operations",
+          "evidence": [
+            "compiler-contextual-groups.json#/groups/0",
+            "source-audit-probes.json",
+            "source-audit-upstream.json"
+          ],
+          "missingEvidence": "Authoritative intended-validity decision for exact write forms, coherent compiler/VM fix and source-corresponding execution. Refreshed PR 20628 comments do not decide those forms.",
+          "risk": "Runtime invalid opcode cannot establish a structural rejection; successful reference-result execution cannot establish a new permission.",
+          "draftImpact": "Retain current explicit uncertainty and separate PHP86-004 constant-object rules.",
+          "candidateImpact": "Blocks affected-area correctness and promotion.",
+          "stableImpact": "Blocks certification.",
+          "remediation": "Obtain intended-validity evidence before proposing the smallest contextual correction. Gate B must cover ordinary/reference/list bases, result kinds, operations, discarded/live forms and VM profiles.",
+          "priority": "P1",
+          "blocksCertification": true
+        },
+        "gaEvidenceConclusion": "GA zend_compile_var_inner dispatches assignment expressions in write context; lint and opcode generation succeed but controlled execution reaches Invalid opcode 23/2/1. PR #25046 remains open and unmerged, outside GA ancestry.",
+        "remainingRequirement": "The compiler/VM inconsistency is independently evidenced. Intended language validity and an enforceable bounded exclusion are not established by the proposal; preserve the blocker and grammar.",
+        "boundedDispositionPermittedNow": false,
+        "blocksCertification": true
+      }
+    ]
+  },
+  "errors": [
+    "PHP86-014: material closure obligations remain; see reviewed GA disposition. Observations do not waive closure."
+  ],
+  "certificationGranted": false
+}

@@ -1,0 +1,41 @@
+HTTP/2 302 
+date: Fri, 20 Nov 2026 16:20:09 GMT
+content-type: text/html; charset=iso-8859-1
+content-length: 350
+location: https://www.php.net/downloads.php?os=windows
+server: BunnyCDN-JH1-1032
+cdn-pullzone: 5992896
+cdn-requestcountrycode: ZA
+cdn-proxyver: 1.72
+cdn-requestpullsuccess: True
+cdn-requestpullcode: 302
+cdn-cachedat: 11/07/2026 13:18:17
+cdn-edgestorageid: 1032
+cdn-requestid: 937c3e1463d6ce37f35ec1f3e8ebfb2d
+cdn-cache: HIT
+cdn-status: 302
+cdn-requesttime: 0
+
+HTTP/2 200 
+date: Fri, 20 Nov 2026 16:20:09 GMT
+content-type: text/html; charset=utf-8
+vary: Accept-Encoding
+server: BunnyCDN-JH1-1032
+cdn-pullzone: 5992589
+cdn-requestcountrycode: ZA
+cache-control: public, max-age=300
+content-language: en
+strict-transport-security: max-age=15768000
+permissions-policy: interest-cohort=()
+x-frame-options: SAMEORIGIN
+link: <https://www.php.net/downloads>; rel=shorturl
+cdn-proxyver: 1.72
+cdn-requestpullcode: 200
+cdn-requestpullsuccess: True
+cdn-edgestorageid: 1325, 1032
+cdn-cachedat: 11/20/2026 16:20:09
+cdn-status: 200
+cdn-requesttime: 0
+cdn-requestid: be1bb273c7e80334f2c6ae126993500f
+cdn-cache: EXPIRED
+

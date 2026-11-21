@@ -1,0 +1,8 @@
+{
+    "url": "https://api.github.com/repos/php/php-src/compare/f23b4c222cebe33be93ee8ecaaa14390c5507a08...php-8.6.0RC7",
+    "retrievedAt": "2026-11-17T19:08:27+00:00",
+    "httpStatus": 200,
+    "effectiveUrl": "https://api.github.com/repos/php/php-src/compare/f23b4c222cebe33be93ee8ecaaa14390c5507a08...php-8.6.0RC7",
+    "error": "",
+    "sha256": "142fd5dda403a8bf1054c309c85d5eba4337574129f30917d399e0e036f25ec6"
+}

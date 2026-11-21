@@ -1,0 +1,15 @@
+{
+  "obligation": "Strict Composer package validation",
+  "command": [
+    "C:/Data/GitHub/php-grammar/.audit/php85/php.exe",
+    "-n",
+    "-d",
+    "extension=C:/Data/GitHub/php-grammar/.audit/php85/ext/php_openssl.dll",
+    "C:\\ProgramData\\ComposerSetup\\bin/composer.phar",
+    "validate",
+    "--strict"
+  ],
+  "exit_code": 0,
+  "log": "docs/8.6/structural-certification/runs/prepromotion-r3/composer-metadata.log",
+  "sha256": "617d39e3b4752168f63039991b7e1efaca11e54a1f5a9153d93b0d4efe91fe05"
+}
